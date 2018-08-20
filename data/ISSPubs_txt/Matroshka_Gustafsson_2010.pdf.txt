@@ -1,0 +1,393 @@
+"","x"
+"1","\~ xmmwe m. - - - - =
+,«WiA—yyﬁg Available onllne at www.smencedlrectcom
+gig ADVANCES IN
+@3511 SCIenceDIrect SPACE
+1E RESEARCH
+ELSEVIER Advances in Space Research 46 (2010) 1266—1272 w
+WWW.elseVier.com/10cate/asr
+PHITS Simulations of the Matroshka experiment
+K. Gustafsson a’*, L. Sihver a’b, D. Maneusi C, T. Sato 01, G. Reitz 6, T. Berger 6
+21Nuclear Engineering, Chalmers University of T echnology, SE—41296 Gothenburg, Sweden
+bDepaerent of Mathematics, Computer Science and Physics, Roanoke College, 221 College Lane, Salem, VA 24153, USA
+CFundamental Interactions in Physics and Astrophysics, University of Liege, 4000 Liege, Belgium
+dNuclear Science and Engineering Directorate, Japan Atomic Energy Agency (JAEA), Shirakala-Shirane 2-4, T okai-mura, Naka-gun,
+Ibaraki 319-1195, Japan
+6Institute of Aerospace Medicine, DLR-German Aerospace Center, Linder H0716, D-5I I 4 7 Cologne, Germany
+Received 17 May 2009; received in revised form 19 May 2010; accepted 29 May 2010
+Abstract
+The radiation environment in space is very different from the one encountered on Earth. In addition to the sparsely ionizing radiation,
+there are particles of different Z With energies ranging from keV up to hundreds of GeV Which can cause severe damage to both elec—
+tronics and humans. It is therefore important to understand the interactions of these highly ionizing particles with different materials
+such as the hull of space vehicles, human organs and electronics. We have used the Particle and Heavy—Ion Transport code System
+(PHITS), which is a three—dimensional Monte Carlo code able to calculate interactions and transport of particles and heavy ions with
+energies up to 100 GeV/nucleon in most matter. PHITS is developed and maintained by a collaboration between RIST (Research Orga—
+nization for Information Science & Technology), J AEA (J apan Atomic Energy Agency), KEK (High Energy Accelerator Research Orga—
+nization), Japan and Chalmers University of Technology, Sweden. For the purpose of examining the applicability of PHITS to the
+shielding design we have simulated the ESA facility Matroshka (MTR) designed and lead by the German Aerospace Center (DLR). Pre—
+liminary results are presented and discussed in this paper.
+© 2010 Published by Elsevier Ltd. on behalf of COSPAR.
+Keywords: PHITS; Simulation; Matroshka; Space radiation; Dose estimation
+1. Introduction are Matroshka (Reitz and Berger, 2006; Reitz et a1.,
+2009) and Matroshka-R (Semkova et a1., 2005) Which focus
+When aiming for longer and more advanced space mis- on depth dose determination outside and inside the ISS,
+sions, such as to the Moon or to Mars, several issues must and Altea (Narici et a1., 2001) Which focus on light ﬂashes
+be taken into consideration. One problem is the radiation phenomena. There are also ground based experiments, e.g.
+environment. Different types of radiation With a large measurements of projectile fragmentation (Webber et a1.,
+range in Charge and energy such as Galactic Cosmic Rays 1998; Zeitlin et a1., 1997, 2001, 2007; La Tessa et a1.,
+(GCRs), Solar Particle Events (SPE) and Trapped Protons 2005, 2007; Mancusi et a1., 2007), Which are of importance
+create a very complex radiation environment Which is a for benchmarking and validating the particles and heavy-
+threat to humans as well as for electronic equipment. ion transport codes needed for the estimation of the radia-
+Due to this, several experiments have been launched in tion environmentinside and outside the space vehicles. SeV-
+space, including on the International Space Station (188), eral transport codes are available, such as the one-
+in order to measure the radiation environment, and its dimensional deterministic codes HZETRN (Wilson et a1.,
+characterizing parameters. Examples of such experiments 1995) and HIBRAC (Sihver et a1., 1998; Sihver and
+Mancusi, 2009), and the three-dimensional Monte Carlo
+* Corresponding author. Fax: +46 31 772 2931. codes FLUKA (Fasso .et a1., 2005; Batt1sten1 et a1.,
+E—mail address: katarina@nephy.chalmers.se (K. Gustafsson). 2007): GEANT4 (AgOStmelh Ct 31-: 2003; Alhson Ct 31-:
+0273-1177/$36.00 © 2010 Published by Elsevier Ltd. on behalf of COSPAR.
+doi:10.1016/j.asr.2010.05.028
+
+"
+"2","K. Gustafsson et a1. /Advances in Space Research 46 {2010) 1266—1272 1267
+2006), SHIELD-HIT (Gudowska et a1., 2004), HETC // Foundation
+(Townsend et a1., 2005), MCNP (Forster et a1., 2004, and - C°ntainer
+references cited therein), and PHITS (Iwase et a1., 2002). ~ / A”
+The calculations presented in this paper have been per- 1‘ Humanhssue
+formed with PHITS (Particle and Heavy-Ion Transport {III I]!
+code System), developed by JAEA, KEK in Japan and ,1
+Chalmers, Sweden. PHITS can treat particle transport J- IIIIIIIIIIIIIHIIIII'III i
+and interactions in matter for energies up to 100 GGV/ ‘ III,
+nucleon, and is useful for several applications such as ~\~
+shielding in space, shielding at accelerator facilities, radio- \
+therapy with heavy ions, Boron Neutron Capture Therapy
+(BNCT) and transmutation. Fig. 1. Geometry setup including the phantom, the air, the container and
+To test the ability to use PHITS for estimation of the the feundaheh'
+radiation environment in space, we have simulated the , , , , ,
+ES A Matroshka (MTR) facility, under the scientiﬁc and dation. can be seen. The Simulated.phantom is built w1th
+project lead of DLR (German Aerospace Center), Ger- oval discs based on the polar coordinates of the real expei-
+many (Reitz and Berger, 2006). MTR focusses on the deter- imental phantom. It is 133th up Of polyurethane W1th a hm""
+mination of the radiation load on astronauts inside and form .dens1ty Of 1 g/em ' Arounzd the phantom there is a
+outside the 188 by using an anthropomorphic upper torso, container composed Of a 1 g/em 'thlek earbozn. The phah'
+equipped with active and passive radiation detectors posi- tom and the container are placed on a 1 g/em ithlek alumi-
+tioned throughout the whole phantom. num foundation. The inside of the foundation ahd the
+container is ﬁlled w1th air. The Chemical eompos1tion of
+2. Measurements the polyurethane and the carbon ﬁber is listed in Tables 1
+and 2. This geometry is positioned in vacuum and is sur-
+We compared the results of our simulations with mea- rouhded by a spherical source that is described In
+surements performed with thermoluminescence detectors Section 3'3'
+(TLDs), 7LinMg, Ti (TLD-700) read out and evaluated
+by DLR, positioned in 14 of the 33 slices of the phantom. 3.2. Geometry setup.“ part II
+More details about the read out and evaluation procedures
+can be found in Reitz et a1. (2009) and Berger and Hajek The geometry in part I includes only the phantom, the
+(2008). The detectors are positioned every 25 mm in poly— container and the foundation, which means a lack of mass
+ethy1e11etubesin an X/ Y/Z grid, giving a possibility to esti- compared to the experiment. The focus here is put on the
+mate the depth dose distribution in over 1600 measurement inﬂuence Of the mass from the 155; it is expected to protect
+points within the phantom. The detectors are positioned the phantom primarily from the high ﬂuxes of low-energy
+within the phantom and do not reach the surface. As a
+result, the simulation of skin dose is not investigated here. Table 1
+It is important to keep in mind that the detection efﬁciency The chemical composition Of the polyurethane.
+for neutrons for these TLDs is negligible and thus the sim- m
+u1ations do not include neutron detection. From the 26th (relative number
+of February 2004 to the 18th of October 2005, the Mat- of atom/vol)
+roshka phantom was mounted on the outside the Zvezda Hydrogen 4
+module of the 188 in order to simulate an astronaut per- Carbon 2
+forming an EVA. Experimental results from this time per- angen 2
+iod are simulated here. Further information about the b
+Matroshka experiment can be found in Reitz and Berger
+(2006) and Reitz et a1. (2009).
+Table 2
+3. Calculatlons Eﬁéehemical compos1tion of the carbon
+The calculations presented in this paper were based on a —Element Mess (0/0)
+very simpliﬁed geometry of the Matroshka phantom and Hydrogen 4-25
+it’s surrounding environment. garbeh 42'16
+xygen 4.19
+Nitrogen 28.52
+3.]. Geometry setup.“ part I Fluorine 8.35
+Silicon 11.71
+In Fig. 1, the geometrical setup in the simulations is Chlorine 0-56
+shown. The phantom, the air, the container and the foun- Sulphur—026
+
+"
+"3","1268 K. Gustafsson et a1. /Advances in Space Research 46 ( 2010 ) 1266—1272
+of the Matroshka phantom in relation to the ISS and the
+Sun. Particle ﬂuxes for protons up to nickel With energy
+range from lMeV/nueleon up to 100 GeV/nueleon are
+implemented as a source into PHITS, Where an external
+isotropic ﬁeld is created Within a sphere Where all the geom-
+etries are placed. The simulations are split in two, one With
+a source of only trapped protons and the second With a
+source of only GCR elements. One problem When creating
+the GCR source is a statistical issue. Based on the output
+of CREME96, the abundances of the particles are calcu-
+lated and Within PHITS these abundances are weighted
+as function of Z2. The contribution to absorbed dose from
+the primary particles and its daughters are then weighted
+Foundation/ISS With a factor of 1/Z2, Where Z is for the primary particle.
+- Container This method compensates for the relatively low abun-
+dances of heavy ions as compared to the proton abun-
+Fig. 2. Geometry setup including the phantom, the air, the container, the dance? al.1d W111 1mp1‘OVC the? Statlsucal p reels1on Of the
+foundation and the approximate ISS. contribution from the heavy-ion component.
+trapped protons. In order to estimate this inﬂuence, an
+approximate ISS geometry is included in part II of the 3-4- Simulated detector setup
+geometry setup. Fig. 2 shows a simpliﬁed ISS geometry . 3
+on Which the geometry from Section 3.1 is mounted. Since .The absorbed doses were calculated in 1 cm volumes
+the exact geometry of the 188 is unknown to the authors, Within three different sliees 1n the Simulated phantom. In
+the 188 is approximated as aluminum cylinders With a Figs. 3 and 4, these pos1tions are marked both in the phan-
+thickness of 125 g /ern2. torn and in the slices; the positions are in the head, at Chest
+height and in the stomach region. The TLD 700 detectors
+used in the experimental setup have a well known decrease
+33- 5071766 in detection efﬁciency depending on charge and LET (Ber-
+ger and Hajek, 2008). The relative thermoluminescence eﬂi-
+The CREME96 (Cosmic Ray Effects 011 MiCI‘O-EIGC- eieney curve as a function of LET is given in Fig. 5. In
+tI‘OIliCS COdG) (Tylka 6t al., 1997) iS USGd fOI‘ estimating order to investigate the impact of the detector efﬁciency
+the external radiation environment and as the source input one simulation was performed incorporating the detector
+111 PHITS. The period Of time Of interest 18 from the 26th Of efﬁciency as a function of LET_ The absorbed dose was
+February 2004 to the 18th of October 2005, Which corre-
+sponds mostly to solar minimum conditions. The trapped
+proton spectrum is based on the orbital data, shown in Il=%i
+Table 3, from the 1st of December 2004 Which represent 1'“.
+an average altitude of the 188 during the 539-day period U : : Slice 5
+Whereas for the galactic cosmic rays only the solar mini- lI-Ill
+mum condition is deﬁned due to the use of pre-ealeulated .l=%l
+geomagnetic ti‘ansmiss1on functions (Tylka et al., 1997) $i=ﬁ=i
+for an ISS OI‘blt. {-I-II-II-II:
+These geomagnetic transmission functions have an ng=m
+improved ability to consider geomagnetie disturbanees, g:===gg
+magnetospherie current systems and averaging over arrival Il-I-IV
+directions. CREME96 takes the shadow of the Earth into ' : H — -
+account, but the simulation does not regard the position Il—I—Il _ SllCe 19
+—-ll
+. . .:= :
+Orbit data for estimating the trapped protons ﬂux. ""-m
+Parameter Value I=E
+A 363.74 km ll-I-u
+pogee Il—-_II
+Perigee 346.62 km : :2 _ .
+Inclination 51.640 t 1 I — SllCC 31
+RA of node 194.400 M
+Average of perigee 67.25O ' ' —
+lVLeananomaly—35448O Fig. 3. Slices of interest inside the Matroshka phantom.
+
+"
+"4","K. Gustafsson et al. / Advances in Space Research 46 (2010) 1266—1272 1269
+dose adjusted for the efﬁciency as a function of LET, and
+"""""" (3) as case 2 but with a high LET out off at 2700 keV/
+""m ; um. Referring to Berger and Hajek (2008), it was decided
+‘ ? ; to use an efﬁciency of 1 for LET up to 10 keV/um, use
+- _ 1 I i , the efﬁciency function of Berger and Hajek for LETs
+I I Shce 5 between 10 and 2700 keV/um, and use a constant efﬁciency
+, I . above 2700 keV/um.1 Due to the unknown efﬁciency for
+I H II” I' y higher LET it is important to understand the contribution
+‘ . ’ to the absorbed dose from these high LET particles.
+
+x Therefore, in the third case a LET out off is incorporated
+for LET higher than 2700 keV/um. It is important to
+remember the approximation of using one detector efﬁ-
+
+I; t i E I I . E eieney curve for all types of particles.
+I g 4. Comparison of the simulated absorbed dose with the
+i .. I I experimental data
+I | 1 I ; ; Slice 19
+_ ‘ ‘ I In Fig. 6, one can see the absorbed dose, from experi-
+~ . '2 . l g I mental data and estimated by PHITS calculations, at spe-
+' ‘ 5 ‘ eiﬁe positions in the three slices of the phantom
+mentioned in Section 3.4. In Fig. 6a, which corresponds
+to slice 5 of the head, one can see the PHITS results and
+its components. The absorbed dose is 0.3—0.35 mGy/day,
+3 2 i e . with 80—84% of this coming from the trapped protons
+I 3 5 I E E and the rest from the GCR. The contribution from the
+. I | ' E trapped protons is higher than expected and is most likely
+g I I 3 due to the lack of mass around the phantom. In the real
+'1"" ' I 1 I Sli C e 31 conditions, there is shielding from the ISS and additional
+. I I I I shielding for slice 5 from a detector set on the top of the
+:e I I I I head. Including more mass around the phantom would
+‘ I :' ‘ ~ stop a large part of the low energetic trapped protons.
+3 5 Regarding the GCR, a large decrease of the absorbed
+dose is not expected even when the extra 188 material is
+Fig. 4' Positions inside the slices. included. Fig. 6b represents slice 19, located at Chest height.
+As can be seen, the level for the GCR contribution is the
+same as in slice 5; the absorbed dose for the trapped pro-
+tons has decreased, on the other hand. The positions for
+these detectors are deeper in the phantom and therefore
+1 A . . . this supports the earlier statement; the high dose contribu-
+; - tion by trapped protons would partly be stopped by the ISS
+; * if included. Slice 31, shown in Fig. 6C, is located in the
+g A lower part of the phantom, at the stomach region. A simi-
+g .. lar behavior is observed as before, although there is a dif-
+? ference between the experimental data and the PHITS
+F] data Close to the surface. Here the absorbed dose estimated
+by PHITS increases rapidly compared to the experimental
+data; the difference is due to the approximate geometry
+used in the simulations where these y coordinates are Closer
+0-1 to the surface than in the real conditions.
+100 101 102 103 10“
+LETQO H20 (keV/pm)
+1 The functional form for the detector efﬁciency is:
+Fig. 5. TLD efﬁciency (data from Berger and Hajek, 2008). *
+—0.183 log(LET) + 1.2636 when 10 < LET g 50
+0.8717*LET**(—0.13) when 50 < LET g 200
+then calculated in the 1 cm3 volumes with three different 0.8559*LET**(—0.125) when 200 < LET g 2700
+cases: (1) total absorbed dose, (2) the calculated absorbed 0318788434 when 2700 < LET.
+
+"
+"5","1270 K. Gustafsson et a1. /Advances in Space Research 46 ( 2010 ) 1266—1272
++ Experiment + Experiment
+- l- PHITS _ Total ' l' PHITS - Total
+_ r PHITS _ Trapped - A- PHITS - Trapped
+P Protons
+rotons +PHITS - Galactic
++PHITS - Galactic Cosmics Rays
+Cosmics Rays
+0.45
+a 0.45
+0 40 0.40
+9. ° I 5‘ 0.35
+.g 0.35 _ , — E}
+E. _ _ _ . -I' ‘ ca 0.30
+(50.30 -‘ — a
+5 h - z 0.25 .
+g '5 0.20 . _ _ _ _ — ‘ '
+""50.20 g '-l---l- ’A
+'5 a 0.15 . . ’
+30.15 =5 ~.___‘_ __‘____.-x
+=- m - ~A- - - -A- -
+8 a 0.10
+.2 0.10 <11
+('1 o—o—o—o 0-05
+0.05
+0.00
+0'00 -65 -45 -25 -5 15 35 55 75 95
+-40 -30 -20 -10 0 10 20 30 40
+Y (mm)
+Y (mm)
+0 45 Fig. 7. Absorbed dose in slice 19 including the approximate ISS geometry.
+b . The error bars With the calculations are smaller than the plotting symbols.
+0.40
+53 0.35 For the extended simulated geometry that includes the
+5» 0 30 approximate ISS geometry, one can see the absorbed dose
+g ° ’ in slice 19 in Fig. 7, for both the experimental data and the
+g 0'25 EV calculated dose. The calculated contribution from the
+'8 0.20 A ' ’ , ‘ trapped protons has decreased by 15—20% Whereas the eal-
+E 0 15 ‘ ‘ ~ _ _ _ . — “ culated contribution from the GCR instead has increased
+g 1' ' ' 7"" ' ' 1"" about 5%. This indicates the importance of including the
+Q 0'10 shielding from 188 in our calculations.
+0.05 Fig. 8 shows the absorbed dose at shoe 19 and illustrates
+0.00 the impact of the detector efﬁciency. The result shows a 15—
+0
+-65 _45 _25 _5 15 35 55 75 95 20 /0 decrease of the total absorbed dose calculated by
+Y (mm) PHITS and this demonstrates the importance of under-
+standing the detector efﬁciency. If the LET cut off,
+C 045 described in Section 3.4, is also included the calculated
+A 0.40 , absorbed dose Will decrease further, but no more than
+5‘ 0.35 7 1%. That indicates that particles With LET higher than
+E. X ,' 2700 keV/um do not contribute signiﬁcantly to the total
+CD 0.30 ’
+g . ~ ’ , i ,' absorbed dose.
+E); 0-25 3W ‘ When including both the approximate ISS geometry and
+8 0.20 . A , ' the detector efﬁciency the absorbed dose estimated by
+E 0 15 3‘ ' ' ‘A ' ' 'A ' ' ' _ PHITS is around 70% of the experimental data. One must
+§ ° be aware of the approximations made in these calculations
+g 010 such as the approximated geometry of the ISS and approx-
+o—o—o—H—a‘y—e - -
+0.05 imate detector eﬂi01ency.
+0.00
+-40 -20 0 20 40 60 80 100 120 5. Conclusions and future work
+Y (mm)
+
+_ _ _ _ _ We have performed calculations of the ESA project
+Fig. 6. (a) Absorbed dose in slice 5. The error bars With the calculations Matroshka (MTR), lea d by the German Aerospace Center
+are smaller than the plotting symbols. (b) Absorbed dose in slice 19. The DLR h IS S Th . b t . t 1
+error bars With the calculations are smaller than the plotting symbols. (0) ( )’ at t e ' e COHip 8.118011 6 ween experimen 8'
+Absorbed dose in slice 31. The error bars With the calculations are smaller data and calculated data estimated by PHITS ShOWS a rea'
+than the plotting symbols. sonable agreement. The ﬁrst set of calculations involved
+
+"
+"6","K. Gustafsson et a1. / Advances in Space Research 46 {2010) 1266—1272 1271
+. Battistoni, G., Muraro, S., Sala, P.R., et al.,The FLUKA code: descrip-
++Exper1ment . . . . .
+t1on and benchmarkmg, 1n: Albrow, M., Raja, R. (Eds.), Proceedmgs
+' "" PHITS ' Total of the Hadronic Shower Simulation Workshop 2006, Fermilab, 6—8
+- A- PHITS -Trapped September 2006, AIP Conference Proceeding, vol. 896, pp. 31—49,
+Protons 2007.
++PHITS - Galactic Berger, T., Hajek, M. TL-eﬁ‘iciency — overview and experimental results
+Cosmics Rays over the years. Radiat. Meas. 43, 146—156, 2008.
+0.45 Fasso, A., Ferrari, A., Ranft, J., Sala, P.R. FLUKA: a multi-particle
+transport code, CERN—2005-10, INFN/TC_05/11, SLAC-R-773,
+A 0-40 2005.
+E? 0.35 Forster, R.A., Cox, L.J., Barrett, R.F., et a1. MCNPTM Version 5. Nucl.
+a Instrum. Meth. B 213, 82—86, 2004.
+U 0-30 Gudowska, I., Sobolevsky, N., Andreo, P., et a1. Ion beam transport in
+g 0 25 tissue-like media using the Monte Carlo code SHIELD-HIT. Phys.
+g . W Med. 13101. 49 (10), 1933—1958, 2004.
+'5 0.20 ’ Iwase, H., Niita, K., Nakamura, T. Development of general-purpose
+E 0 15 l- - - I . _ _ _ _ _ _ _ _ _ . -l‘ ’ particle and heavy ion transport Monte Carlo code. J . Nucl. Sci.
+""g ° ‘ ’ . ' Technol. 39 (11), 1142—1151, 2002.
+3 0.10 . ' ' - _ _ _ _ _ _ _ - - ' ' "" La Tessa, C., Guetersloh, S., Heilbronn, L., et a1. Fragmentation of
+4 1 GeV/nucleon iron ions in thick targets relevant for space explora-
+0-05 4_—‘ ¥ ‘ tion. Adv. Space Res. 35, 223—229, 2005.
+0.00 La Tessa, C., Sihver, L., Zeitlin, C., et 211. Test of weak and strong
+factorization in nucleus—nucleus collision at several hundred MeV/
+'65 '45 '25 '5 15 35 55 75 95 nucleon. Nucl. Phys. A 791, 434450, 2007.
+Y(mm) Mancusi, D., Sihver, L., Gustafsson, K., et a1. PHITS — benchmark of
+partial charge-Changing cross sections for intermediate-mass systems.
+Fig. 8. Absorbed dose in slice 19 including the approximate ISS geometry Nucl. Instrum. Meth. B 254, 30—38, 2007.
+and the detector eﬁ‘iciency. The error bars With the calculations are smaller Narici, L., Bidoli, V., Casolino, M., et 31. The ALTEA facility on the
+than the plottlng symbols. International Space Station. Physica Med. 17 (Suppl. 1), 255—257,
+2001.
+. . . Reitz, G., Berger, T. The Matroshka facility — dose determination during
+
+only the phantom, contamer and foundatlon; 1t was shown an EVA. Radiat. prot. Dosim. 120, 442445, 2006.
+
+a high contribution from the trapped protons, about 80— Reitz, G., Berger, T., Bilski, P., Facius, R., Hajek, M., Petrov, V.,
+
+SSWO 0f the absorbed dose When a very simpliﬁed ISS Puchalska, M., 211011, D., BOSSlCr, J., AkatOV, Y., ShurshakOV, V.,
+geometry was included, the absorbed dose from the Olko, P., Ptaszk1ew1c2, M., Bergmann, R., Fugger, M., Yana, N.,
+t d t 11 decreased 1) 15—207 The calculations Beaujean, R., Burmelster, S., Bartlett, D., Hager, L., Palfa1V1, J.,
+rap p e p 1‘0 0 S . y . 0' . Szabo, J., O’Sullivan, D., Kitamura, H., Uchihori, Y., Yasuda, N.,
+also showed the 1mportance Of knowmg the experlmental Nagamatsu, A., Tawara, H., Benton, E., Gaza, R., McKeever, S.,
+detector efﬁciency in order to compare the simulated data Sawakuchi, G., Yukihara, E., Cucinotta, F., Semones, E., Zapp, N.,
+With the experimental data; the absorbed dose decreased Miller, J., Dettmann, J. Astronaut’s organ doses inferred from
+as much as 15_20% When integrated the approximate detec— meatsurements 1n a human phantom out31de the Internatlonal Space
+t fﬁ . T . th 1‘ f th 1 1 ti 11 Statlon. Radlat. Res. 171 (2), 225—235, 2009.
+
+01‘ e Clency' O InPrease e accu acy 0 6 08' cu 8' O 8’ Semkova, J ., Koleva, R., Todorova, G., et a1. Experiment for radiation
+the future work W111 lhelude (1) ereathh Of a phantom dose measurements in a human phantom onboard the ISS for
+based on the voxel data from a CT scan of the ex erimental estimation of the radiation risk in long duration space ﬂights, in:
+
+p
+phantom, (2) implementation Of a more realistic shielding Proceedings of the Second Ihternational Conference on Recent
+from the ISS, (3) simulation of other detectors in the Mat- givig‘geszgsssmce TeChnOIOgleS (IEEE cat NO' OSEXIOH)’ pp'
+rOShka p hantom’ and (4) teStmg Other radlatlon enV1ron- Sihver, L., Mancusi, D. Present status and validation of HIBRAC. Radiat.
+ment modGIS- Meas. 44(1), 38—46, 2009.
+Sihver, L., Schardt, D., Kanai, T. Depth-dose distribution of high-energy
+Acknowledgements carbon, oxygen and neon beams in water. Jpn. J . Med. Phys. 18, 1—21,
+1998.
+. . Townsend, L.W., Miller, T.M., Gabriel, TA. HETC radiation transport
+We aCknOWICdge ﬁnanCIal support. from the SWCdlSh code development for cosmic ray shielding applications in space.
+Natlonal Space Board, the Royal Swedlsh Academy of 801- Radiat. prot, Dosim. 116, 135439, 2005.
+ence and “Wilhelm and Martina Lundgrens Vetenskaps— Tylka, A.J., Adams, J.H., Boberg, P.R.,et a1. CREME96: areVision of the
+fond” are gratefully acknowledged by their support cosmic ray effects on micro-electronics code. IEEE Trans. Nucl. Sci.
+ﬁnancin the COSPAR 2008 res ective WRMISS 2008 44’ 2150—2160, 1997-
+t. . gt. f K G t f p Webber, W.R., Soutoul, A., Kish, J.C., et a1. Measurement of charge
+p at 101p 8' 1011 O ' us 8' SSOII. changing and isotropic cross sections at N600 MeV/nucleon from
+interactions of ~30 separate beams of relativistic nuclei from 10B to
+References 55M11 in liquid hydrogen target. Phys. Rev. C 58 (6), 3539—3552,
+1998.
+Agostinelli, S., Allison, J., Amako, K., et a1. GEANT4: a simulation Wilson, J . W., BadaVi, F.F., Cucinotta, F., et a1. HZETRN: description of
+toolkit. Nucl. Instrum. Meth. A 506(3), 250403, 2003. a free-space ion and nucleon transport and shielding computer
+Allison, J ., Amako, K., Apostolakis, J ., et a1. GEANT4: developments program, Technical Report T133495 NASA: 1995-
+and applications. IEEE Trans. Nucl. Sci. 53 (1), 270—278, 2006.
+
+"
+"7","1272 K. Gustafsson et a1. /Advances in Space Research 46 {2010) 1266—1272
+
+Zeitlin, C., Heilbronn, L., Miller, J ., et 211. Heavy fragment production Zeitlin, C., Fukumura, A., Guetersloh, S.B., et a1. Fragmentation cross
+cross sections from 1.05 GeV/nucleon 56Fe in C, Al, Cu, Pb, and CH2 sections of 288i at beam energies from 290A t0 1200A MeV. Nucl.
+targets. Phys. Rev. 56, 388—397, 1997. Phys. A 784, 341—376, 2007.
+
+Zeitlin, C., Fukumura, A., Heilbronn, L., et a1. Fragmentation cross
+sections of 600 MeV/nucleon 20N6: 011 elemental targets. Phys. Rev. C
+64, 1—16, 2001.
+
+"

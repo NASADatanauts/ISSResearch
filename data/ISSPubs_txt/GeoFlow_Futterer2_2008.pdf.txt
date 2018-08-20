@@ -1,0 +1,239 @@
+"","x"
+"1","I u u I
+IOPSCIGnce IUDSCIEI'ICEJﬂpﬂfg
+Home Search Collections Journals About Contact us My IOPscience
+GeoFIow: 3D numerical simulation of supercritical thermal convective states
+This article has been downloaded from IOPscience. Please scroll down to see the full text article.
+2008 J. Phys.: Conf. Ser. 137 012026
+(http://iopscience.iop.org/1742-6596/137/1/012026)
+View the table of contents for this issue, or go to the journal homepage for more
+Download details:
+IP Address: 128.157.160.13
+The article was downloaded on 10/11/2011 at 17:17
+Please note that terms and conditions apply.
+
+"
+"2","15th International Couette—Taylor Workshop IOP Publishing
+Journal of Physics: Conference Series 137 (2008) 012026 doi:10.1088/1742—6596/137/1/012026
+GeoFlow: 3D numerical simulation of supercritical
+thermal convective states
+B Futtererl, R HollerbachQ, C Egbei's1
+1 Department Of Aerodynamics and Fluid Mechanics, Brandenburg University of Technology
+Cottbus, Siemens—Halske—Ring 14, 03046 Cottbus, Germany
+2 Department Of Applied Mathematics, University Of Leeds, Woodhouse Lane, Leeds, LS2
+9JT, United Kingdom
+E—mail: futterer©tu-cottbus . de
+Abstract. ’GeOFIOW’ is a thermal convection experiment in rotating spherical shell geometry,
+Which is going to take place in microgravity environment of International Space Station. We
+present numerical preliminary studies of the spherical Rayleigh—Bénard problem under an
+artiﬁcial central force ﬁeld. Numerical simulation is done With a pseudospectral method. Special
+focus here is the simulation of ﬂow states at selected parameter points of Rayleigh and Taylor
+number of a deﬁned plan for experimental runs on 188. One loop will contain thermal convection
+Without rotation, i.e. rising temperature gradient between inner and outer sphere. Another 100p
+investigates convection superimposed by rotation, i.e. ﬁxing temperature gradient and then
+rising rotation rate. In such cases different transitions are expected to be Observed. Just rising
+Rayleigh number shows different stable states depending on initial conditions. Fixing Rayleigh
+number and then rising up Taylor number leads to traverse of different convective states showing
+rich dynamics of the system.
+1. Introduction
+Thermal convection in spherical shells is a fundamental model in geophysical ﬂuid dynamics.
+Instabilities provide details for understanding large scale geophysical motions as convective
+transport phenomena in the Earth’s liquid outer core. We face this hydrodynamical problem
+With the ’GeOFIOW’ experiment on thermal convection in rotating spherical shells inﬂuenced by
+a central force ﬁeld [1H2]. The experiment Will take place at International Space Station in
+European Columbus Modul inside Fluid Science Laboratory. Set up of central force is done by
+establishing a high voltage potential between inner and outer sphere using the dielectrophoretie
+effect. Resulting acceleration due to radial buoyancy force achieves geiro % 10—1 m / 32 at outer
+shell. Compared to acceleration due to gravity with g s 10 m/32, one can see that natural
+gravity would always be dominant if experiments are done in a laboratory. Hence microgravity
+conditions are necessary to perform the ’GeOFIOW’ experiment succesfully.
+
+Running ’GeOFIOW’ in Fluid Science Laboratory environment requires automation of the
+experiment. For this purpose an experiment ﬂow plan has been set up. Main parts of parameter
+variation include set—up of temperature gradient between inner and outer sphere (corresponding
+to Rayleigh number variation) and rotation of spherical system (corresp. to Taylor number
+variation). Work schedule is splitted into two parts, a non—rotating (loop 1) and a rotating ease
+(loop 2). During ﬁrst 100p rotation rate Will be set to zero While temperature difference Will be
+© 2008 IOP Publishing Ltd 1
+
+"
+"3","15th International Couette—Taylor Workshop IOP Publishing
+Journal of Physics: Conference Series 137 (2008) 012026 doi:10.1088/1742—6596/137/1/012026
+Table 1. Range of parameter values of GeOFIOW experiment. Relevant properties of
+experimental ﬂuid Baysilone silicone oil are described to be thermal diffusivity K3 : 7.735 -
+10—8m/32, relative permittivity 67. : 2.7 , thermal coefﬁcient of expansion for relative
+permittivity 7 = 1.065 - 10—31/K, density p : 920kg/m3.
+gap Width r0 — nfmm] 13.5 —> 77 0.5
+Viscosity u[m/32] 610—6 —> Pr 64.64
+high voltage WmSW] 10 5
+< . -
+temperature gradient AT[K] g 10 Racentr — 1 4 10
+rotation rate R[HZ] g 2 —> Ta 3 1.3- 107
+Ra g 9.37 - 106
+increased stepwise. During second 100p temperature difference Will be set to preferred values,
+which Will be kept ﬁxed, While rotation rate Will be increased to maximum, though passing
+different rotational regimes gradually from zero to high rotation. This experiment scenario is
+supported by numerical simulation, presented in the following.
+2. Equations
+For governing equations of spherical Rayleigh—Bénard problem under a central dielectropheretie
+force in microgravity environment we scale length by outer sphere radius r0, time by thermal
+diffusive timescale 7th : 740/63 and temperature by imposed temperature difference AT : T0 —TZ-.
+Then equations in their non—dimensional Boussinesq approximation become
+V - U : 0, (1)
+3U Ra T N
+Pr—l — + (U - V)U : —vp+ V2U+ C—Wé + \/Ta.éz x U + RaTrsinHée, (2)
+3t 3275’ q
+8T
+—+U-VT:V2T, (3)
+(315
+With no—slip boundary conditions for velocity U(n) : U(1) : 0 and temperature ﬁxed by
+T(n) : 1,T(1) : O. Arising parameters considering different experimental aspects are radius
+ratio of inner and outer shell 77 : 73/740 (considering geometry, With aspect ratio 3 : 1/77 — 1)
+and Prandtl number Pr : V/K; (considering physical properties of ﬂuid such as Viscosity and
+thermal diffusivity). Temperature difference determines Rayleigh number, i.e. buoyancy to
+central gravity With
+2606 V 2
+Racentr : —pV/:; VrmS AT. (4)
+Rotation rate gives Taylor number
+297“2 2
+T a : <—O> . (5)
+V
+Iii/ﬂuenee 0f centrifugal force is considered by an additional Rayleigh number deﬁned by
+Ra : (a/4)(AT T a P7“). Speciﬁcation for ﬁrst ﬂight campaign of microgravity experiment
+GeOFIOW gives parameter ranges described in table 1.
+
+Numerical simulations are done With spectral code [3], in Which U and T are expanded in
+terms of Chebyshev polynomials in 7“ and Legendre polynomials in 6 and gb. Here resolution as
+large as 30X60X20 for U and T is used.
+
+2
+
+"
+"4","15th International Couette—Taylor Workshop IOP Publishing
+Journal of Physics: Conference Series 137 (2008) 012026 doi:10.1088/1742—6596/137/1/012026
+411 42,1 41 4.3.1 42,1
+Ra=2~103 5-103 1-104 2-104 5-104
+basic state <— steady state —> irregular
+Figure 1. Expected convective ﬂows analog automatic experiment run during loop 1, i.e.
+increasing Rayleigh number, setting Taylor number to zero. Transition from basic Via steady to
+time—dependent ﬂow is observed. Temperature ﬁeld is Visualized over hemispherical shell, sphere
+is out in azimuthal direction. Bright color denotes outward ﬂow of hot ﬂuid. Random isosurfaoe
+is highlighted.
+3. Numerical Results
+3.]. Non-rotatmg case
+Increasing Rayleigh number corresponds to strength thermal impulse of the system. Transition
+from basic state to steady and further to irregular time—dependent convective states are found
+for simulation of selected parameter values for Ra (Fig.1).
+
+While our direct numerical simulation shows aXisyInmetriC solutions, [4] showed that m 7E 0
+is the stable state. These convective states can be calculated by longterm simulations or by
+starting from zero (see section rotating ease below), but can also be found by use of path
+following methods, presented by [5]. Here we realized numerical simulation lasting several
+multiples of thermal diffusive time 7th : dZ/KL. During experiment runs scientiﬁc wait—up time
+for stable states is set to one thermal diffusive time 7th. For prediction of experiment scenario
+that means, that just increasing temperature difference and waiting only one 7th as a minimum
+requirement for expecting stable states, during this loop 1 only aXisyInmetriC state is expected
+to be investigated.
+
+3.2. Rotating case
+
+Second loop of experimental run starts With setting Rayleigh number, Taylor number is set to
+zero at the beginning. Solutions for this show, that starting With zero start solution (corresp.
+to increasing Rayleigh number from zero to Chosen value), m 7E 0 mode is the stable state
+immediatly (Fig. 2). Thermal impulse seems to be more effective than the small perturbations
+by increasing Ra With small step size as in loop 1. So during loop 2 convective states as described
+in [4] are observable.
+
+Regarding stability curves for Ra : f (Ta), already shown also in [6], superposition of rotation
+corresponds to special traverse of these curves from irregular to steady convective states (Fig. 3,
+from left to right). Simulation in low and medium region of rotation conﬁrm this behaviour
+(Fig. 4).
+
+4. Conclusion
+
+We presented numerical preliminary studies for microgravity experiment ’GeoFlow’ on thermal
+convection in rotating spherical shells. Analog to an automatic experimental run simulations
+are done for non—rotating and rotating ease. Rich dynamics of this spherical Rayleigh—Be’nard
+problem under a central dielectrophoretio force in microgravity environment can be investigated.
+
+During loop 1 (non—rotating ease) transition from basic Via steady to irregular ﬂow is shown.
+Onset of time—dependenoe still has to be resolved With much more dense steps in Rayleigh
+
+3
+
+"
+"5","15th International Couette—Taylor Workshop IOP Publishing
+Journal of Physics: Conference Series 137 (2008) 012026 doi:10.1088/1742—6596/137/1/012026
+05.!‘ .l . , o5... ! .' o5... - .'
+Ra=5~103 1-104 2-104
+Figure 2. Convective states for Taylor number Ta : 0. Upper row ShOWS axisymmetrie results
+from reaching Rayleigh number analog to loop 1, thus increasing it stepwise. Lower row ShOWS
+results With m 7E 0 for parameter set—up analog to loop 2, Where Rd is set, starting from zero.
+Temperature ﬁeld Visualized over Sphere cut in radial direction, View from side. Bright color
+denotes outward ﬂow of hot ﬂuid.
+number Ra. AS well time—dependenee has to be investigated With non—linear methods.
+
+During loop 2 (rotating ease) inﬂuence of initial conditions ShOWS different stable states for
+Taylor number Ta : 0 as starting point of superposition of rotation. Traverse from irregular to
+regular ﬂow can be Visualized for increasing Ta.
+
+Further parameter Simulations has to be done to track also transition to turbulence.
+Acknowledgment
+This work was supported by the German Federal Ministry Of Education and Research, through
+the German Aerospace Center e.V. (DLR), grant number 50 WM0122.
+
+References
+
+[1] LM. Yavorskaya, N.I. Fomina, and Y.N. Belyaev. A simulation of central—symmetry convection in microgravity
+conditions. Acta Astronautica, 11(3—4):179—183, 1984.
+
+[2] P. Beltrame, V. Travnikov, M. Gellert, and C. Egbers. Geoﬁow: Simulation of convection in a spherical gap
+under central force ﬁeld. Nonlin. Processes Geophys., 13:413—423, 2006.
+
+[3] R. Hollerbach. A spectral solution of the magneto—convection equations in spherical geometry. Int. J . Numer.
+Meth. Fluids, 32:773—797, 2000.
+
+[4] F.H. Busse and N. Riahi. Patterns of convection in spherical shells. part 2. J. F luid Mach, 123:283—301,
+1982.
+
+[5] K. Bergemann, L. Tuckerman, M. Gellert, and F. Feudel. Symmetry—breaking birfurcations of thermal
+convection in spherical shells. T apical T eam Geophysical F lows Simulation’, Science Team Meeting 23—
+24 April 2007, Astrium, Friedrichshafen.
+
+[6] M. Gellert, P. Beltrame, and C. Egbers. The geoﬁow experiment — spherical rayleigh—benard convection under
+inﬂuence of an artiﬁcial central force ﬁeld. J. Phys.: Conf. Sen, 14:157—161, 2005.
+
+4
+
+"
+"6","15th International Couette—Taylor Workshop IOP Publishing
+Journal of Physics: Conference Series 137 (2008) 012026 doi:10.1088/1742—6596/137/1/012026
+12000 1 36’ r ’ ’11,,
+10000 ' ’,""”::« «:3
+:22: ,1 ; f1
+:5
+7000 * .+ ’ l , r iii: :1)
+E 6000 as , , 9: ’ , ’ : rig.
+E ‘ ’ ' é’ ’ {ﬁizs
+g) 5000 X ‘ . ‘1‘; ' ’ '13:? C? C3 C3 0
+3000 “‘3‘ ° ° ° -—Iinelarstability
+. II; 7777; n ‘1; .7 1. i
+"" "" C quasifperiodic“
+2000 . O . + chaotlcstate
+10000 20000 Taylor numeZEEOO 80000 100000 150000
+Figure 3. Overview of convective states in Spherical Shell of aspect ratio 77 : 0.5 for P7“ : 64.64:
+Visualized is Ra versus Ta. Besides types of numerical solution diagram ShOW linear stability
+(solid) and critical line (dashed), Where time—dependent solution gets irregular. Additionally
+region of most stable mode m is marked.
+0.;Q¥ g“ 0.;45 0.;45 0:45
+N 0 ’7 N 0 N 0 N 0 N 0
+""’g? ""’L? ‘1 ‘ 'ng ‘ L 'ng ‘1 'ng ’
+2-104 4-104 6-104 8-104 1-105
+irregular ﬂow periodic ﬂow <— steady ﬂow —>
+Figure 4. Convective states for Taylor number Ta 74 0 for slightly supercritical Rayleigh
+number Ra : 5 - 103. Top row ShOWS temperature ﬁeld Visualized over Sphere cut in radial
+direction, View from Side. Bright color denotes outward ﬂow of hot ﬂuid. Bottom row ShOWS
+temperature ﬁeld in equatorial plane.
+5
+
+"

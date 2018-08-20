@@ -1,0 +1,443 @@
+"","x"
+"1","The Avatar-EXPLORE Experiments: Results and Lessons Learned
+Erick Dupuis, Pierre Langlois, Jean-Luc Bedwani, David Gingras, Marc Gendron,
+Alessio Salerno, Pierre Allard, Sébastien Gemme, Regent L'Archeveque, Tom Lamarche
+Canadian Space Agency, Canada
+e-mail: {firstnamelastname}@asc-csa.gc.ca
+Abstract operations team is located on Earth, or even with novel
+concepts such as highlighted in the Augustine Committee
+The Avatar technical demonstration is a series of final report [7], where the operator might be located in
+robotics experiments that use off-line concepts of orbit around the target planet or on a nearby moon.
+operations to control a robot with little bandwidth and
+intermittent communication channels. To do this, a lot of During Expedition 2001, launched on May 27th,
+autonomy tht be transferred Oh the robot, and the 2009, Canadian astronaut Dr. Robert Thirsk conducted
+operator becomes more of a manager, as the robot is the Avatar-EXPLORE experiments, during which he
+controlled at higher level, specifying goals and letting the controlled a planetary rover test-bed located in the CSA‘s
+FOhOt accomplish the task. This paper contains an Mars emulation terrain (MET) in order to locate thermal
+overview 0f the unfolding 0f the Avatar technical anomalies. The rover was CSA‘s Mobile Robotics Test-
+demonstration that took place at the Canadian Space bed (MRT), see Figure 1. In addition to its usual sensor
+Agency (GSA) Mars Emulation Terrain (MET), where suite consisting of a Light Detection And Ranging
+the Mobile Robotics Test—bed (MRT)_ rover was (LIDAR) range sensor, an inertial measurement unit and
+controlled by Canadian astronaut Robert Thirsk from the odometry sensors, the MRT was equipped with an
+International Space Station (188) during expedition 21. It infrared camera that allowed the operator to obtain
+3150 includes a hSt 0t lessons learned. thermal panoramas 0f the robot's surroundings [8]. The
+objective of each mission was to navigate the rover 0n
+1 Introduction the terrain, identify hot spots, and navigate to within a
+distance of 1 meter to the heat source.
+Over the last few years, the Canadian Space Agency _ . _ -_ _ .‘._ - .1
+has been executing a series of space experiments to : ._ _.'.;:.-._ '._.7_1_'3;'-""""""="".
+validate operations concepts for the remote operation of .. t _, ?:‘1: E t3? 't '.
+robotic equipment under varying levels of supervision. ' 1“""; “""711“ I
+The experiment series, named Avatar, have made use of -_ - '-'* P -
+the International Space Station to test the concepts using . _.ﬂ '71.:3' - ._--_ .__' .
+a reverse ground-control principle: the robotic test-beds -r""""‘t:: _ﬂj- gig}. I
+being located in the CSA‘s laboratories on Earth and the “tut""""l-
+operator being located on the 188. This configuration has ﬁg?
+allowed the team to test the software under the same I a {7ft
+communications and operations constraints as space - - -
+robotic operations, but at a fraction of the cost and _ _ ""
+complexity. r -'--._ |-
+Similar experiments in autonomous Operations Of Figure 1 _ CSA MRT rover used in support of the
+planetary robotics have been conducted in analogue sites Avatar Explore Mission
+[1], [2], [3], [4]. Similarly, the Mars Exploration Rovers
+have been controlled from Earth using semi-autonomous
+operations [5]. However, no such analogue mission had Given the busy schedule of astronauts 0n the ISS and
+ever been executed by an operator located in space. the communication constraints imposed by the selected
+channel, the operations were conducted completely off-
+During the summer of 2009, the Canadian Space line. The astronaut would receive telemetry files at most
+Agency has conducted the Avatar-EXPLORE once per day, analyze the data, generate a command
+experiments to validate operations concepts for sequence and prepare the command file for downlink.
+autonomous navigation of a planetary rover under The execution of the command file was executed
+infrequent supervision of an operator [6]. Such a concept automatically on the rover with no live supervision from
+is consistent with traditional operations where the the on-orbit operator. At the end of the execution of the
+i-SAIRAS 2010
+August 29-September 1, 2010, Sapporo, Japan 54
+
+"
+"2","command file, the rover would prepare and compress the windows when the 188 was in View of the CSA‘s ground
+next telemetry file for upload to the 188. based station.
+
+Given the fact that the operator had no live The Russian team that was working on settling the
+interaction with the rover, there was no need to present problems with the HAM radio gave up on trying
+minute robotic details to him. The user interface was repairing the radio approximately two months before the
+information—centric and completing abstracting the robot launch of Robert Thirsk and the delivery of the operator
+from the planning process. The operator was presentEd station to the 188. This left the Avatar team with very
+With a rough map Of the terrain With the actual location few options for manifesting the experiment, certifying
+0f the rover and ge0-referenced telemetry data in the the software and implementing a mechanism to transfer
+form of medium—resolution 3D terrain scans and thermal command and data files.
+panoramas. Graphical interface panes allowed him to
+consult the catalogue of data available on the rover, order The Avatar—EXPLORE Graphical User Interface
+new data for upload or generate command sequences to (GUI) was trimmed down so it could be uplinked to the
+generate new data sets. The operator was thus allowed to 188. This meant giving up the 3D Views, and other
+concentrate on the analysis of the telemetry and science features of a Java—based GUI, and settle for a simple
+data, thus planning sets of measurements instead of HyperText Markup Language (HTML)—based user
+having to deal with the tedium of planning detailed interface, that provided all the functionality required to
+FObOtiC operations. exercise the core functionality of Avatar—Explore [10],
+
+[11], [12].
+
+This paper presents the architecture of the Avatar—
+
+EXPLORE experiments, provides experimental results This HTML GUI could support the core
+and discusses the lessons learned from the experiment demonstration objective: controlling safely a planetary
+series. rover from the 188, using a small bandwidth and an
+offline protocol. It was developed in collaboration with a
+
+. . . . panel of Graphical User interface experts from the
+
+2 MISSIOH Descrlptlon Johnson Space Center, and is compliant with the ISS
+
+, , , Desi n and Gra hics Standards (IDAGS). It is enerated
+
+2'1 Evolutlon 0f the Avatar Mlssmn Concept fromgthe origineﬁ Java GUI, as a special output {Tormat to
+
+The Avatar mission is part of a series of technical be used by the astronaut OhIY- Each GUI was certified,
+demonstrations that aim at the validation of operations uploaded to the 155, and a command file was sent back
+concepts and software for the remote operation of robots to CSA, read into the Java GUI» and executed by the
+with varying degrees of autonomy. The robot can MRT FOVEF. At the end Of each run, a new GUI W85
+perform actions on behalf of the astronaut, to become his generated hhth the hhSStOh was completed.
+representative, his avatar.
+
+The communication was implemented using the 188
+
+The first of these technical demonstrations, Avatar— file server, going through secure web based file transfer
+RESCUE, targeted the remote control, by an astronaut on software (HMS) This allowed decoupling 0f the work
+the 188, of a laboratory—based dual arm manipulator aboard the 155 and Oh the ground. It allowed more
+emulating a satellite capture [9] This experiment was ﬂElelllty fOF the astronaut t0 WOFk OD Avatar, and kept
+run mostly as a risk—mitigation measure to retire many people at CSA from spending nights awake
+technical risks in View of the Avatar—EXPLORE manning the HAM radio.
+experiment. It used a test—bed and software that hati been 22 Avatar-EXPLORE O p e r at 0 r S t ati 0 n
+proven on numerous occasmns 1n the past. The main risk
+to alleviate was the use of the ISS Hobbyist Amateur Figure 2 represents the interface. The yellow lines
+(HAM) Radio as the means of communication between were added by the authors to emphasize the separation in
+the astronaut and the robot. four sections: Header, World View, Sidebar and Panes.
+
+Several of the risks that had been identified with the Below there is a description of each of them along with
+HAM radio did materialize and the Avatar—RESCUE their role in controlling the MRT Rover.
+experiment was never successfully run. The main Header (1): This section of the GUI provides the user
+problems associated with the usage of the HAM radio with basic utilities such as opening a file, saving a file,
+have been related to configuration management and quitting the application, accessing the on—line help, etc...
+equipment failures: the laptop computer connected to the World View (2): The World View contains most of the
+HAM radio failed and had to be replaced; the serial cable Visual information available to the user. From here the
+connecting the radio to the laptop was lost aboard the operator can: i) observe the MET in 4 perspective (each
+188; finally, the software configuration of the radio was corner of the World View); ii) browse History of
+changed halfway through our tests and the radio was locations given to the MRT Rover and their status; iii)
+never again able to communicate in packet mode. In see the current location of the MRT Rover; iv) select a
+addition, usage of the HAM radio would have required new destination for the rover to perform an IT panorama.
+synchronization of the experiments with communication To View the MET in one of the four perspectives
+
+55
+
+"
+"3","available the operator has to select one of the inward There are several ways to book time for astronauts.
+pointing arrow present in each corner of the World View In decreasing order of priority, an activity can be hard-
+(Z). This will activate the “Perspective” scheduled, proposed as voluntary science, or task listed.
+The task list was preferred because of the flexibility it
+allowed, and the little overhead required. Unfortunately,
+S w ' ' "" Exam 4H__ the astronauts were very busy during increment 21 and
+::§;l:l the crew requested we present Avatar Mission as
+voluntary science, to increase its Visibility and priority.
+In the end, Avatar was proposed both as Voluntary
+a 13—: Science and Task Listed, although it was only performed
+‘ as part of the task list.
+E
+c |__ 3 Experimental Results
+at d
+f 1:: I 3 A _ Over the entire Avatar-EXPLORE mission, three
+series of experiments were conducted in increasing
+ﬂ complexity. Figure 3 shows the paths followed by the
+; rover during the three experiments. For reference, the
+. . length of the terrain is 60 meters and its width is 30
+Flgure 2 ' Example 0f the HTML Graphlcal User meters. All experiments required two command cycles to
+Interface complete. The path of the rover during the first
+Sidebar (3)3 Meet 0f the commands are entered experiment is depicted by the blue and cyan lines. The
+through the Sidebar. The sidebar lS CllVlClECl ll] four: second experiment is depicted by the red and magenta
+History, Rover Destination, IR Images Request and lines and the last by the green and yellow lines.
+Generate Command File. In each case, the rover start location is depicted by a
+History: The HtStOFY contains every command along Circle and the target destination (location of the thermal
+with their current status already given to the MRT Rover. anomaly) is depicted by an ""X"",
+Selecting an element in this list will highlight the
+corresponding location in the World View. "" ‘ v 0 ca. ‘ \
+Rover Destination: from here the operator can: i) add 0 ) _ Q‘ ‘
+new destination; ii) rename an element in the Rover '
+Destination list; iii) remove Destination Request. \/ Q o ° , t l
+IR Images Request: from here the operator can: i) - 3
+request IR Images for a particular location; ii) cancel an (/‘) ‘ C/
+IR Images recluest. ( / (“\‘l a “‘
+Generate Command File: Click on this command . 3‘ E o a:
+button when the work is completed. It will open a new fl I ""
+window and ask to save its content to particular location. ' 0 ° 0
+This should be the last action taken by the operator. Figure 3 _ MET scans the top along with commanded
+Feedback Panes (4): there are three tabs in this paths for each of the executed Avatar missions
+section: Mission, Perspective and Thermal Scans; i)
+MtSStOh3 this pane contains the last message sent by The telemetry sent back to the operator was in the
+CSA- It 3150 allows the operator to send back a reply; it) form of an HTML graphical interface, which contained
+Perspective: This is where the four perspective 0f the an image of the coarse terrain model, a set of instructions
+World View are ShOWh- It Will SthCh automatically sent in a chat window, detailed terrain geometry overlaid
+when clicking Oh the inward arrows in the World View; on top of the terrain model and thermal panoramas. The
+III) Thermal Scans: When available, this pane contains LIDAR data were cropped at a radius of 7m meters and
+the thermal scans Of a particular location. When Clleng the images of the thermal panoramas were hmﬂed to a
+Oh one Of the 12 images it Wth Change the angle OH View resolution of 324 X 240 pixels to take into account
+in the World View. communication bandwidth limitations.
+23 Executed Avatar Missions The average size of the telemetry files was 329 kB
+and the average Size of the command files was 5.8 kB.
+The Avatar Missions were all performed by Robert In each case, the operator succeeded in locating the
+Thirsk, during the second half of his stay on the ISS thermal anomaly and approaching it within two
+(Expedition 21). The Avatar GUI were uploaded to an command cycles (even for cases when the source was not
+155 drive from the Marshall Space Flight Center, in Visible in first panorama).
+Huntsville, Alabama, and the Avatar activity showed up The command files Clearly show the evolution of the
+on Dr. Thirsk’s task list to indicate the GUI is ready for level of confidence of the operator over time. He started
+him to send commands to the rover, at his convenience. with very cautious steps on the order of 5 t0 6 meters
+56
+
+"
+"4","between waypoint commands during the first command
+cycle (which approximately corresponds to the cropping
+radius of the detailed LIDAR scans). Distances between
+waypoints quickly increased to 10 meters on the second
+command cycle and even 28 meters for the third
+command cycle. This shows that the operator was using
+the coarse terrain model to conduct his strategic planning
+and leaving the tactical planning to the rover. The total
+distance traversed by the rover during the Avatar
+EXPLORE experiment was 148m.
+Distances between intermediate waypoints used by
+the rover to plan its trajectories were typically on the
+order of 6 meters, exceptionally up to 10 meters when
+the terrain was favourable. The main limitation for this is
+the fact that the sensor was intentionally mounted low to
+limit the effective sensing horizon. Figure 5 - Thermal sub-scan taken at the final
+The figures below illustrate the outcome of the first destination of first command cycle
+Avatar experiment. This was the easiest experiment to
+execute. The rover started at location X = 6.0m, y = 6.0m ‘
+and the target was located in plain sight at X = 3.5., y =
+0.0m. See Figure 4: the extension cord to the heat source
+is visible on the concrete border at the right of the image. ”if ‘_‘ '_‘_"" ‘ “4’"": ‘ ’ “
+Since this was the very first run executed, the , aggéﬁ‘z‘ﬁ‘ ML??? aggﬁﬁ
+operator had difficulty interpreting the telemetry file that . , 1’"" 9“ f_-m“""'""‘ I; "";,_‘ ~1§§£
+was sent to him. The first set of commands is illustrated A . ~ ‘g‘ﬁfvawm. ._ V 453’ iwwwvfw
+by the blue line on Figure 3. The rover was requested to «‘aﬁgng? 7 fg' '\""‘.g a
+Visit three waypoints during this first command cycle. 3', ,iﬁkgﬁvf‘vxgi"" ,: '
+These waypoints initially moved the rover away from the , a ‘ *ﬂ‘:“"".:3§ug.u;-;;_itif ,7 ‘7 , ,' ‘
+heat source. The thermal images showing the heat source ‘_‘~' #:325égjﬁégﬂ; '1, ‘ t.
+at final the destination of the first command cycle is ':""-jj—"" 333W,;: ,1” ‘41:, 7'
+shown in Figure 5. The latter is the thermal image, ' ;-' “""‘;'i’ ‘_ ~31 f ""'
+extracted from the panorama, showing the heat source. ‘ ”r 15‘1”} ‘3 #5::
+The heat source is the white spot Visible at the left top ' ” t T”
+corner of the image. Notice the thermal scan is mostly , , , ,
+grey, with the thermal source being lighter. This was Figure 6 ' Final Rover P0s1t10n
+done on purpose to help the astronaut identify the heat
+source.
+The path followed by the rover during the second
+command cycle is depicted by the cyan line on Figure 3.
+This shows that the operator quickly horned in on the
+heat source.
+Figure 6 shows the final position of the rover in front
+of the heat source.
+. w...“ , _‘ .
+""2..me --.“ "" ‘3‘“
+b a. - a _ “. tn
+' ‘ , . ~ . . 4w ‘13:
+-' - “- ’ “ . . J‘ . J gm» .1533
+y 4; _.i : 2,: t“ Figure 7 - Thermal scan taken at final position
+'Lx .~. . . ~ ' 4 Lessons Learned
+' t ‘ This section reports the main lessons that were learned
+‘ throughout the execution of the Avatar Mission. The
+reader is referred to [13] for further details of the other
+Figure 4 — Initial position of rover lessons learned.
+57
+
+"
+"5","4.2.2 Train with the flight version of the GUI
+4.1 Operations Concept Lesssons Robert Thirsk was trained in Russia using the Java
+version of the GUI that was eXpected to fly on the 188.
+4.1.1 Data—centric operation concept worked The training took 2 hours, and was composed of a
+
+The outcomes of the limited set of experiments that presentation and some hands—on GUI practice.
+were conducted during the Avatar—EXPLORE mission Given the quick thth around we had to make when
+show that the proposed concept of operation works. The we learned the Russians could not launch our software,
+operator was able to concentrate on specifying the we had to modify the GUI extensively, keeping the same
+strategic aspects of the mission (i.e. interpreting sensor overlying principles as we trained. However, Dh Thirsk
+data to localize the heat source and conducting high level had no PtthOhS experience Oh the HTML version 0f the
+planning in the coarse terrain model) and to delegate the GUT, and this caused about a month 0t delay to the
+tactical planning to the rover. The evolution of the prOJect.
+distance between waypoints over the command cycles This was due to the fact that he could not see the
+indicates that the operator developed thrust in the rover's infrared images correctly because the GUI had to be
+capabilities and did not require all the detailed terrain displayed th thh screen, which was written th the help
+data to make tactical decisions in the rover's stead. section 0f the GUI, WhiCh was unfortunately only
+
+available when the GUI was in full screen. Had Robert
+412 Some rover—centric data is useful Thirsk known/trained with the HTML GUI, he would
+
+The current Avatar GUI does not inform the user have seen that from the start, but not knowing what to
+whether a destination is reachable or not, or which path 61:13 ect, hlel EUZZIEd over the lack 10f {IEEdhaCkf It toil? E
+was taken to reach the current position. p one ca hl ml? space to untang e t e srtuation, W 1C
+
+Both the space—borne operator and a group of ran smoot y a terwar 5°
+ground—based operators (used for pilot testing) have
+requested more rover—centric information. For example, 4.3 Rover Software Lessons
+operators want to know the path that the rover actually
+took over the preVious command cycles, although this 4,3,1 Need more states for the rover
+information is not strictly required to plan the operations. S ome situations were not included in the
+
+In addition, operators indicated that it would be hthezihsminidthfirthe rosxtelthsvzhichsumcehde Zierat‘ltsetttifgge
+useful to have an idea of which part of the terrain are not ‘REQUTRES ASSISTANCE’, ‘P AUSED’, could allow
+reachable by.the rover based. on the knowledge Of the more troubleshooting during real—time operations. These
+coarse terrain model. It 1.5 understood that thtS states should be made available to the operator through
+information could be wrong Since it is based on coarse telemetry.
+data. However, operators preferred potentially erroneous
+knowledge to no knowledge. 4.3.2 Navigation is not only reaching your
+
+destination
+4.2 Operator Interface Lessons Navigating is not only going from point A to point B,
+it is acquiring geographical information, building a map,
+4.2.1 Follow graphical user interface standards and using it during the course of the traverse.
+
+The astronauts on the 188 have to deal with hundreds CSA has developed a framework to. handleoatlases Of
+of systems and experiments, each having their own maps that getupdated as new information is discovered.
+GUIs. Over the total of increment 21, Robert Thirsk However, thtS framework was not used during the
+spent less than 3 hour on Avatar. The crew can not learn Avatar—EXPLORE mis51on. The rover stored LIDAR
+new GUI paradigms for each system they encounter, and scans for future reference, but did not use them to
+care must be taken to have the User Interface speak the enhance the mal? Of the area. Each time the rover moved,
+same language that the User has learned. A lot of effort whether It was he ‘khOWh’ territory or not, It never used
+was put into the Avatar HTML interface to make it easy hIStehe‘h .data. . . .
+for the crew to understand, and even so, an estimated Additionally, the concept of data reliability should be
+month was lost because the GUI did not seem to work included in the navigation map, which could be hhht
+correctly: The Help window clearly indicated the first from a low fidelitynlodel .(tehehthty : low) plus the
+thing to do was to press F11, or selecting View/Full LIDAR scans (tehehthty : h1gh)‘
+
+Screen to resize the display, but the Help button calling
+the Help window was not accessible because of the
+initial size of the GUI on the 188 laptop. This caused the 43-3 RObOtiCS researchers are “Qt FOVEF operators
+Infrared Images to appear much too small to be of any While it is easy to send a rover command, in a space
+use, and probably some frustration on the part of the mission, much thought is put into the operators’ mind as
+astronaut. All this despite the efforts put into testing and to which command, and when, and why. This gives rise
+certification of the product. to different requirements than the ones a robotics
+58
+
+"
+"6","researcher might suggest, and may help put some space, it could be argued that it did not absolutely require
+problems in perspective. Rover operators must be the usage of the 188. These tasks do not require
+included in the development process of the rover microgravity, or any resources from the International
+hardware, software, communication architecture, and Space Station. Some of the same benefits could have
+userinterface. been obtained using an operator subject to the same
+. communication constraints. However, the benefits from
+4'4 ProJECt Management Lessons operating under the set of severe ISS constraints could
+not have been simulated.
+. . 4'4'1 DO not have uncontrolled resources on your Given that Robert Thirsk spent an estimated total of
+critical path 3 hours on Avatar Mission over his 6—month increment,
+The fiFSt Avatar mission (Avatar RESCUE) was it is considered a reasonable success and a good starting
+designed to control a CSA—based manipulator from the point to continue this kind of research.
+155, using a HAM radio link. This quickly showed However, the cost of operating on the 188 should not
+unreliable and difficult to implement, as there iS be under—estimated. The resources dedicated by the
+insufficient configuration management of the hardware project to deal with the ISS—specific processes are not
+and software on the ISS HAM radio. The main issue that used to conduct development work.
+made this problem intractable was the fact that the radio
+belonged to the ARISS community and was managed by 443 High risk projects require up—front
+a facility curator located in Russia. acceptance of the level of risk
+When. configuratioh management p roblems With the The Avatar—EXPLORE project was run with a high
+HAM radio arose, this iterh was on the critical path and level of risk. The project was executed by a very lean
+CSA had no leverage on either Of these parties to force team, using informal connections in different space
+any action. In the end, the HAM radio 5011mm} had to be agencies to secure resources to be used on the project.
+abandoned, ,Wthh forced a complete re—de51gn Of the For example, the laptop that was used for the operator
+operator station ahcl required a complete. start—bver ofothe station was going to be a laptop on the Russian 5 e gment
+manifest and certification process Within an 1mp0551ble from a previous project with CS A involvement; the
+schedtile. . . . HAM radio usage was negotiated directly with the
+Given the pressmg deadline tor .United States On— curator of the facility in Russia.
+Orbit Segment (USQS) certification, the SEIECtEd Much of the project was run below the radar with
+approach was t9 g0 Wllh a proven mechanism for data just enough visibility to reduce the level of unease from
+exchange, , Wthh still allowed. the technology all stakeholders just below the rejection threshold.
+tlemonstration 0f the Avatar naVIgation system and user Although this le d to success in re C 0rd time and with a
+interface. , , very small team, the project was often at risk of being
+.The proyect was yery lacky that It was EXECUtéd cancelled since it did not have the strong support that it
+during the first expedition flight With. a full crew of SIX might have garnered from the community had it gone
+astronalits. When the increment sc1entist was appreached through the official pr 0 c e s s.
+to inanifest Avatar two months before launch, it was Despite the set—back encountered with the H AM
+bEITEVEd by all that crew WOUld have p lenty Of Idle time radio just months before launch, the team refused to
+during ,thls period. Hence, the mameSt process was admit defeat. Developers put in long hours and an extra
+streamlined to allow Avatar to be available to occupy the effort t 0 implement an alternative solution that was
+crew. finally successful. Furthermore, circumstances and the
+. presence of a few key individuals on the team allowed
+4'4'2 ISS framework 15 a heavy burden Avatar to be manifested in a streamlined fashion and t0
+Conducting scientific experiments using the be executed during Robert Thirsk 's expedition flight.
+International Space Station involves an important Despite all the hard work of the team, Avatar could
+overhead of process in order to manifest and certify have failed to make it to the 155 under different
+experiments. Even more challenging iS the process to circumstances. Such a possibility has to be faced by the
+reserve astronaut time and to schedule experiments in the team at the very start and must be acknowledged as a
+crew's daily schedules. plausible outcome. The difficulty for the project manager
+The value added of having Avatar 0n the 155 was to in such a context is to maintain the team's commitment
+study the capacity of ISS astronauts to take decisions throughout the project While being able to pull the plug
+based on the provided GUI, to provide destinations for when the project is doomed.
+the rover, and select datasets to be downloaded for better
+situational awareness. It allowed successful testing of .
+asynchronous human—rover interaction over a narrow 5 condusmns
+bandwidth. As a side benefit, it also gave the research . .
+team the challenge to work in an operational Thls paper documented the experiments and the
+environment where Cheats are not possible. lessons learned of the Avatar—Explore MISSIOD.
+While Avatar is an interesting experiment, and has
+allowed the first ever control of a terrestrial rover from By the end 0f Expedition 20/ 21, three Avatar—EXPLORE
+59
+
+"
+"7","missions had been successfully conducted. The Intelligent Mechatronics, Montreal, Canada, July
+experiments were conducted in order of increasing 2010.
+complexity. By the end 0f the experiment series, Dr. [9] E. Martin, R. L'Archevéque, S. Gemme, I. Rekleitis
+Thirsk was able to navigate the rover to identify and and E. Dupuis, “The Avatar Project”, IEEE Robotics
+locate a thermal source that was beyond the Visible and Automation Magazine, 15:4, p. 20_27,
+horizon of the robot. These egperiments 'also provided December 2008.
+Slghlflcent expertmental yahdatlon of CSA 5 autonomous [10] “Avatar HTML GUI Software Requirements”,
+naVIgatlon algorlthms, 1nc1ud1ng terraln feature—based . . . .
+localization path planning [14] terrain modeling [15] REVISIOD IR’ Canadlan Space Agency Space Statlon
+’ . ’ Program, CSA—SS—SG—0054.
+and data compressmn.
+[11] “Avatar HTML GUI Test Procedure”, Revision IR,
+The Avatar—EXPLORE experiment proved for the Canadian Space Agency Space Station Program,
+first time ever the control of an exploration rover from CSA'SS'PR'0107-
+space. [12] “Avatar Graphical User Interface and Command
+Files Archives”, Revision IR, Canadian Space
+References Agency Space Station Program, CSA—SS—DP—0047.
+[13]P. Langlois, “Avatar—EXPLORE Final Report”,
+Initial Release upon approval, Canadian Space
+[1] iﬁN' Bakambu, C' Lahgley, G' Pushpahathan, W° 1 Agency Space Station Program, CSA—SS—RPT—0444,
+acLean, R. Mukherjl and E. Dupuls Planetary
+Rover Visual Motion Estimation Improvement for January 2010'
+Autonomous, and Robust Guidance, Navigation and [14]D- Gingras, G- Payre, J- de Lafontaine and E-
+Control”, Proceedigs 0f the 10th 1-5 AIRAS, Sapporo, Dupuis, “Path planning based on fluid mechanics for
+Japan, 2010. mobile robot using unstructured terrain model”,
+[2] G. R. Osinski, T. Barfoot, N. Ghafoor, J, Tripp, R. IEEE Int. Conference on Robotlcs and Automatlon,
+Richards, P. Jasiobedzki, T. Haltigin, N. Banerjee, May 2010'
+M. R. M. Izawa and p. Furgale “Lidar and mSM as [15]D. Gingras, T. Lamarche, E. Dupuis, J.—L. Bedwani,
+Scientific tools for the Geological Mapping of “Rough Terrain Reconstruction for Rover Motion
+Planetary Surfaces”, In Proceedings of the Canadian Planning”, In Proceedings 0f the Seventh Canadian
+Space Exploration Workshop (CSEW), CSEW6003, Conference on Robotics and Computer Vision,
+pages 50—51, Montreal, Canada, December 2008. Ottawa, Canada, May 2010-
+[3] D. R. Thompson, T. Smith and D. Wettergreen,
+“Information—Optimal Selective Data Return for
+Autonomous Rover Traverse Science and Survey”,
+IEEE International Conference on Robotics and
+Automation, May 2008.
+[4] T. Fong, M. Allan, X. Bouyssounouse, M. G.
+Baulat, M. C. Deans, L. Edwards, L. Flﬁckiger, L.
+Keely, S. Y. Lee, D. Lees, V. T0 and H. Utz,
+“Robotic Site Survey at Haughton Crater”,
+Proceedigs 0f the 9th i—SAIRAS, Los Angeles, CA,
+February 2008.
+[5] J. Wright, F. Hartman, B. Cooper, S. Maxwell, J.
+Yen and J. Morrison, “Driving on Mars with
+RSVP”, IEEE Robotics and Automation Magazine,
+13:2, June 2006.
+[6] “AVATAR—EXPLORE Concept of Operation”,
+Revision A, Canadian Space Agency Space Station
+Program, CSA—SS—CD—0028.
+[7] Review of U.S. Human Spaceflight Plans
+Committee, ""Seeking a Human Spaceflight Program
+Worthy of a Great Nation"", Report to White House
+Office of Science and Technology Policy, October
+2009, pp. 15 and 19.
+[8] A. Gauthier, M. Pelletier, A. Salerno, P. Allard, S.
+Gemme, T. Lamarche and E. Dupuis, “CSA
+Redesign of the Mobile Robotics Test—bed (MRT)”,
+2010 IEEE/ASME Int. Conference on Advanced
+60
+
+"

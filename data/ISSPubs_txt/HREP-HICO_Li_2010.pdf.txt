@@ -1,0 +1,216 @@
+"","x"
+"1","CORRECTION OF SECOND ORDER LIGHT FOR THE HICOTM SENSOR
+ONBOARD THE INTERNATIONAL SPACE SATATION
+Rong-Rong Li, Robert Lucke, Mike Carson, Daniel Karwan, and Bo-Cai Gao
+US. Naval Research Laboratory, Washington, DC USA
+ABSTRACT — 1.0 micron with a spatial resolution of approximately 90
+meters and a spectral resolution of 5.7 nanometers. The
+The Hyperspectral Imager for the Coastal Ocean actual spectral ratnge covered by HICO is frOITIi/i 0.35
+(HICOTM) [1] is a new sp a c eb orn e sensor designed micron to 1.08 micron. It is expected that HICO data
+specifically for monitoring the turbid coastal waters and W111 be StUdled for better hnderstandmg Of the global
+large inland lakes and rivers from the International Space coastal waters as well as certain inland lakes [2]'
+Station (ISS). HICOTM is now collecting hyperspectral
+imaging data in the wavelength range of 0.4 — 1.0 micron 2° BACKGROUND
+with a spatial resolution of approximately 90 meters and a
+spectral resolution of 57 nanometers. During the When building the HICOTM instrument, it was not feasible
+construction of the HICOTM instrument, it was not to install a filter in front of the detectors to block the
+possible to place a blocking filter in front Of the CCD second—order light for detectors covering the near—IR
+(Charge—coupled device) array located in the focal plane. spectral region above 0.8 micron. Second order light from
+As a result, the second order light from the shorter Visible the shorter wavelength range ih the ViSihle spectr 31 region
+spectral region falls onto the detectors covering the near— between 0-4 and 0-5 micron falls ih the same spatial pixels
+IR spectral region above 0.8 micron. In order to have as first—order light for the near—IR spectral region between
+accurate radiometric calibrations 0f the near—IR channels, 0-8 and 1-0 micron. AS a result, the near—IR channels
+the second order light effeetS need to be removed. receive both first order light in the 0.8 — 1.0 micron range
+Through analysis Of HICOTM imaging data containing and second order light from the 0.4 — 0.5 micron range.
+features of shallow underwater objects, such as coral reef, 1h order to recover the true near—IR channel radiances
+we have developed a new empirical technique to correct from HICO data, the second order light effect needs to be
+for the second order light effects. HICOTM data acquired removed completely from the total radiances received by
+over Midway Island, Key Largo, Bahamas Bay and these near—IR channels.
+Philippine Sea are used to demonstrate the effectiveness
+of the new technique. After the construction of the HICOTM instrument,
+spatial, spectral, and radiometric calibrations were
+Index Terms— Imaging Spectrometer, HICOTM, performed in the calibration lab at the Naval Research
+Hyperspectral imager, Coastal water, Remote Sensing, Laboratory (NRL)- Calibration coefficients were
+Second order light correction generated from the HICOTM lab data. Applications of
+these laboratory calibration coefficients to HICOTM data
+1. INTRODUCTION measured from ISS did not result in a complete removal of
+the second order light effects.
+The Hyperspectral Imager for the Coastal Ocean
+(HICOTM) sensor is the first spaceborne imaging Figure 1 shows examples Of 155 HICOTM images
+spectrometer designed specifically for remote sensing of acquired over the Bahamas ih the Atlantic Ocean Oh
+the complex coastal environment. The sensor was built at October 22, 2009- Image (a) iS the true 0010f RGB image,
+the Naval Research Laboratory in Washington DC. It was and images (b), (c), (d), (e), (f), (g) and (h) are single band
+launched into space with a Japanese HII—B rocket from images at wavelengths 0t 0502, 0-600, 0-860, 0-903,
+Tanegashima Space Center, Japan on September 11, 2009 0.955, 1.001 and 1.035 micron, respectively. In the RGB
+and docked onto the International Space Station (ISS) on image, the left portions ih green and blue colors are
+September 24, 2009. HICOTM is now collecting useful shallow water regions, the right portions in black color are
+hyperspectral imaging data in the wavelength range of 0.4 deep water areas. A sharp curved line separating the
+US. Government Work Not Protected by US. Copyright 2303 IGARSS 2010
+
+"
+"2","shallow water areas from deep water areas is seen in this the 1-micr0n solar radiation transmitted into water is
+image. The shallow features are also seen in the single totally absorbed by the water. The Observation of spatial
+band image at 7» = 0.502, 0.600 micron (see Fig. 1b and features of shallow water Objects in 1-micr0n channel
+10). Because Of the strong liquid water absorption in the images is an indication of the presence of the second order
+near-IR spectral region, the shallow water features effects.
+disappeared in the 0.86-micr0n image (see Fig. 1d), as We extract a pair of shallow water spectra, SO»), and a
+expected. However these features re-appeared in images at deep water spectrum, DO»), from a HICOTM 188 data set
+longer wavelength Channels, starting from 7» = 0.90 for the development of the empirical method. We use p(?t)
+micron, and becoming stronger at 7» = 0.95 and 1.035 to represent the empirical correction curve for removing
+micron (see Fig. 1e t0 1h), due to the second order light the second order light effects.
+effects. In order to Obtain the true near-IR Channel The basic equation for the derivation of p(?t) is
+radiances, the second-order light effects must be removed. SO») - p(k)*S(k/2) = D00 - p(k)*D(k/2) (1)
+where
+3. METHOD AND SAMPLE RESULTS .
+SO»): Signal from the shallow water area at 7»;
+. . D 7» : si nal from the dee water area at 7»;
+Through analys1s of ISS HICOTM data acquired over water ( ) g . p
+. S(k/2): Signal from the shallow water area at half
+surfaces With underwater features, such as coral reefs, we 1 h M2
+have developed an empirical but very effective method for k wave engt ( ) ’ 1 h
+quantifying the second order light effect. This method is D( /2)' Signal from the deep water area at half wave engt
+based on the fact that, if the second order light effects are (M2)} . . .
+not present, spatial features of coral reefs and other PO”): the empirieal scaling factorior correcting the secend
+Objects in shallow water areas should not be Observed in order hght Th1s tacter 13 the fraction Of the hrSt
+images of narrow Channels near 1 micron. This is because order llght leaking into the near-IR detector.
+(3) , \ , (b) , , (C) . (d) ,
+"" ‘.~ "" ‘~""-.'o.,‘. ~~ ""~""a’m'. ""t; I “.~ ‘ '2
+. “w, ‘ rid: : C! ."" :u‘ﬁ't' 'EA.’ 2 I 7.? ."" 3“:"""" :21. ' z .' anti” ‘ ”a I z
+o: ’ vn- ¢ 1."" ‘1'“ - . t t. .a ?Mf‘ a ~"""" . ‘3. va; 1;” ""h"" ' l . _ .2 ' vu 1 ""t ‘f"" ' , .
+A. ’ 4::e- - . ‘ ""*4.” ""a ' . ""3* Q” ‘12?- ' ,Ll 5"" ~95 ’ '3'? '
+. - ""'1 ’ .I . . ""1.. ""'1 ’4. . ”-4, '3‘.."".n . --. ""I 11"".3
+, : ."", ‘ ""‘.H"". -. 7 \_""J4 I 'Ih', ' .'s.“ I .‘ ' . ’1 .'.._ """", 8:} i . I ."",r “""‘i V
+. t I ;: . t,t't ' ‘ .. _- V «;: ‘ I,"" t t ‘ .. f - ' 4;: ti'; . f t «11“ I,""-
+. - n'; "".I ' . .- n'; "".I ' . .- . . . ~.;V‘I' . - .. 9‘7!""
+r~4~ ~-. . .+-:-~ 9 ._ ..~"":-* xi"" .. ‘ ~
+‘. "" ‘ 'o "" ""Ute... ~, {If t "" -.~- "" t ""' ~'. 7. . * ' t. ‘
+. . ‘ I‘M ""'- . 13 . ‘ f“. ""'5 .. r'~"" .‘f . . ‘ f”. ""'
+.- -- .. .. .. «2. 5.: ~ ”2,: ‘1': -- .. «2.1-5.» :3.- .. «:19 .. -- . .. m;
+k _. g r. ' :0: 1 .f #2. .Q“. , 'J 2 p10: - .5 . » .2 - ‘7‘}; ., - t’lr . ‘- .:ov 49“ 5 n. — :0,- ~ .f‘ m, -;f
+t ""‘ 1a.}iﬂf- ? rt“? 2"";ﬁf- .l? l“ 'Z,d;£:~.f‘.;-e? “ .11.}, f.“
+.- ~.-:; '.....-I. , 3‘.;’*1~‘.k '..... ‘k.: ‘ -‘.""'i ’..... I», ~-.:“ '..... ‘
+(e) ,. p ‘ (f) _ . (g) , . (h) .
+‘ .- -”w'- ‘ “ ""t; ‘5‘: "" ‘ 3'” ’3‘; ' ~""g,_""o.,,"" ‘ 3” ""t; ' .35}... ’ ,‘mp‘ ""3; ""
+i .1"" 1“, slrﬁ... ~‘ ~ . . »‘i ‘t. -;..”f‘: vlﬁi'ﬁn.‘ ~_ ‘ . ‘ ,-. 1. -r“:‘; ‘3...“7; A. , ,‘ ‘ ,m. N, 1:‘:f i ‘3’; -‘
+I x.'.’: ‘29:. .: - *O‘é“ ‘ ""9: u; A ..‘“:. ‘49: or; . _ '0‘; ‘53:)“. 0‘.
+i ' "" ' .. 9'“ ""I t . 4 ‘ "" ' .. “""‘3 t . ’ "" ' .. ”'""'."" "" t t . t ‘ "" ' .. w'
+. ‘_ . 1 I. .. ’ .: o. “6 .:,’.b . ’. --.' k ., ‘ ‘e n 3- “9-;- .’ . ,9 .,'""'.' ..,‘. ..
+I ” ‘ 'o "" ""7,1... "" ‘J, o: _‘ ' 1'1“ J, o "" ' 3:: '7 0:. .h ' 7.
+. . a ’0‘... .8.” ‘ ._~.~ ‘3‘ .,.-a.. ’35... i” ‘ ._-~ _‘ g. d__ ray... 1.. .‘k‘.“. 5,- 7' .'....v£.. r35... .9
+*°' -- 1."": -- ‘9’2-5: ~. ‘1: .. 1.0.153. M ‘1 , .. nut“. 4... / :1, ,, .y
+a .- =-: .-> ‘0 Q.,.., =-»~ . » 07:. . 10:“ .~ ,~‘. l» - -- .-
+,/_ *..,.,k ._ d} 3.41:1 r #24“ .._, ‘49}. £4??? “1....“ #. zﬁkgéé’k. :w‘m
+.‘ .,-.—_..'- ‘ >9f...’.‘ ‘ _u-’._.’-_ ' ‘,{..,-’._
+, ' .‘k’ '.u..-I—.v 5 ' -ah. ' ‘,.‘;. n... 5 ' .‘k ‘..;.;.-|._"" I..‘1"";h . . - ‘..;;.
+Fig. 1. Sample 188 HICOTM images acquired over the Bahamas in the Atlantic Ocean on October 22, 2009. Image (a) is the true color RGB image, and
+images (b), (c), (d), (e), (f), (g) and (h) are single band images at wavelengths of 0.502, 0.600, 0.860, 0.903, 0.955, 1.001 and 1.035 micron, respectively.
+Spatial features of shallow water are clearly seen in the left half images, such as in Fig. 1a, 1b and 10. The black parts in the right half images are the
+deepwater regions. The white spots in the images are clouds. Image from 1e t0 1h show the second order effects of the shallow water in the near IR
+channels.
+2304
+
+"
+"3","The term, p(?u)*S(?t/2), 0n the left side of Eq. (1) is the We have applied the derived empirical curve (see the
+second order signal at the near—IR wavelength k black line in Fig. 2) t0 a number Of HICOTM data sets fOI‘
+contributed by the signal at 70/2 for the shallow water the correction 0f the second order light effects. Very
+spectrum. Similarly, the term, p(?t)*D(?t/2), 0n the right reasonable results have been Obtained.
+side of Eq. (1) is the second order signal for the deep
+water spectrum. Eq. (1) means that, after the corrections Figure 3 ShOWS an example 0f spectral plots for HICOTM
+of second order light effects, the near-IR channel signal data acquired over shallow water and deepwater areas
+over the shallow water area should equal that over the before and after the second-order light removal in digital
+deep water area. counts, or digital numbers. The top and middle curves are
+the shallow water and deepwater spectra without second-
+Solving for P0“), Eq. (1) can be re-written as order light corrections, respectively. Both curves have
+p00 = [300- DOG] / [$sz D(?t/2)]. (2) extra cotmts due to the second order light effects. The
+bottom lines show the second-order light corrected curves
+The empirical correction curve can be calculated from the for both the shallow-water and deepwater spectra. After
+data according t0 equation (2). the correction, both the shallow water and deepwater
+In order t0 generate the empirical factor for the second spectra above 0.8 micron become identical (the red line in
+order light corrections, we selected a number of pairs of the plot).
+shallow water and deepwater spectra from several
+HICOTM 138 data sets, including those acquired over -
+Midway Island, Bahamas Bay, the Philippine Sea, and Shallow Water VS Deep Water
+Key Largo Bay in southern Florida. Figure 2 shows
+. . before(bluck) & 0fter(color) 2ndeorr (shallow or deep water)
+examples of curves as a function of wavelength derived 400
+from pairs of water pixels over Midway Island and
+Bahamas Bay. The results show that the factors are linear ’: - Before 20d order COtreCtion
+functions of wavelength, especially at wavelengths greater : 300
+than 0.9 micron. At the lower end of wavelengths (0.86 < E
+70 < 0.90 .um), the scaling factors have relatively larger €200 W shallo D ep water
+uncertainties mainly due to much smaller second order .3
+light effects, as shown in Fig. 1(e). The black diamonds X
+are the averaged values from all the selected data points. 5 100 g
+A linear fit to the averaged values gives a correlation E ‘1 ' . . M
+coefficient of 0.9985. The black line demonstrates that V ‘ ngﬁ 8 I ""
+approximately 1% to 2.5% Of the first order light in the 0 WM‘”‘ "" -- _._.
+Visible is leaked into the near-IR detectors. 0'7 0'8 0'9 1'0 H
+After 2nd order correction (both water)
+Empirical Water Scale for Second order light correction
+”30 y = 0.0855x _ Fig. 3. Sample spectra for shallow water and deep water areas
+before and after second order light corrections.
+0025 R = 0.9985 , ”3,25%"" ""‘
+—‘ Figure 4 images from e’ through h’ correspond to images
+“’20 r’"" I from e through h in Fig. 1, except that the second order
+3 '- light effects are corrected. The shallow water features
+7; 0'0” ”,‘f/ +midway_12 seen in the Fig. 1 images have disappeared completely in
+the Fig. 4 images. This demonstrates that the second order
+0.010 ‘wfv’r . +midway756 -
+W +Bahamas_12 light effects are removed.
+. . +avgiall
+0.005 —Linear (avgiall)
+0.000
+0.85 0.9 0.95 1 1.05 1.1
+Wavelength (um)
+Fig. 2. Empirical factors as a function of wavelength for second
+order light corrections.
+2305
+
+"
+"4","(e) .- . ‘ (r) .. . <g’) ._ . <h’> . . .
+"" x: . ‘ $4“ . ‘ $4? . iii '15» ‘;-i‘;__ .
+. ‘. . : - 4'53. . . . - .4"". .11 . .. . = ., 3'13. . - _ ~ :15:
+- - ., ’g- ,. _ «'1' ‘- _ ft... _ .1. ; ~"", ""~ , .""r . , ’i’, ‘1 . f1... .. .1. . ’1
+- ~..._.:,.f~.° .. E?"" u -....3,.? .. E? u ~1..,._'.‘,.? .. E?” «s 2...??? ..
+Fig. 4. Images corresponding to the Fig. 1 e to h images, except that the second order light effects are corrected. The shallow water features
+are absent after the corrections.
+the same image as the middle one, except with the second
+Shallow Water gecml proﬁle order light corrections. The shallow water features in this
+5000 ‘_ image are hardly seen, indicating that it was properly
+: removed.
+4000 —- .: . ;.
+§ 3000 '- "" ff"" . “Q .. l. ! ‘9 . _ I
+go: ‘ -', g ‘g : ’ i: i :‘ ""i i.
+1000 _‘ Fig. 6. A RGB image (left) over the Philippine Sea with features
+j under shallow waters, the corresponding single channel image
+: before (middle) and after (right) the second—order light
+0 _ corrections at 1.0—um Channel.
+04 0.5 0.6 woveleoﬁgth(um) 0.8 0.9 1.0
+Fig. 5. Calibrated radiances over a shallow water region before
+and after the second—order light corrections. The black line is the 4' SUMMARY
+spectral plot before the second—order correction and the red line
+is the plot after correction. Through analysis of HICOTM imaging data containing
+features of shallow underwater objects, we have
+The plots in Figure 5 show the spectra of the shallow developed a new empirical and accurate technique to
+water before and after second-order light corrections in correct for the second order light effects. The same
+the radiance unit (Watt/mZ/um/sr). The black line is the technique is, in principle, applicable for the correction of
+spectrum before the second order corrections. The second order effects from hyperspectral data measured
+radiances increased at wavelengths longer than 086 um. with other similar sensors without blocking filters, such as
+This is incorrect since strong liquid water absorptions at the commercially available CASI instruments.
+these wavelength regions will reduce the strength of the
+signals, not increase the signals. The red line in the figure 5. REFERENCES
+5 is the spectral plot at same pixel as the black line after [1] R. L. Lucke, M. Corson, N. R. MCGlothlin, et 311,, The
+second-order light corrections. It shows the second-order Hyperspectral Imager for the Coastal Ocean (HICO): Instrument
+light effects were removed correctly. After correcting the Description and Early Results (in preparation).
+second order effects, the intensities of the water spectrum
+decrease as the wavelength increases. [2] C. 0. Davis, M. Kavanaugh, R. Letelier, W. P. Bissett and
+D. Kohler, “Spatial and spectral resolution considerations for
+. . ' ' t 1 t ”, SPIE V 1. 6680, 66800P: 1—12,2007.
+Figure 6 shows another example of second order light imaging coas a wa ers O
+corrections. The left plot shows a HICOTM RGB image
+acquired over the Philippine Sea, the middle one is the
+1.0-um single channel image. The shallow water features
+are seen near the islands in image. The right one shows
+2306
+
+"

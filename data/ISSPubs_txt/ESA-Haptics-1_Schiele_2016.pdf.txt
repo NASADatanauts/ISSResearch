@@ -1,0 +1,511 @@
+"","x"
+"1","NOTICE: This material may be protected by Copyright Law (TITLE 18 US. Code)
+and is not to be used for any purpose other than private study, scholarship, or research.
+Haptics—l: Preliminary Results from the First
+Stiffness J ND Identiﬁcation Experiment in Space
+Andre Schiele1’3(E), Manuel Aiple1=3, Thomas Krueger3, Frank van der Hulst3,
+Stefan Kimmer1’3, J an Smisek2’3, and Emiel den Exter3
+1 Faculty Of Mechanical, Materials and Maritime Engineering,
+Delft University of Technology, Delft, The Netherlands
+{andre.schiele,manuel.aiple,stefan.kimmer}©esa.int
+2 Faculty Of Aerospace Engineering, Delft University of Technology,
+Delft, The Netherlands
+jan.smisek©esa.int
+3 European Space Agency, Telerobotics 85 Haptics Laboratory,
+Noordwijk, The Netherlands
+{thomas.krueger,frank.van.der.hulst,emiel.den.exter}©esa.int
+Abstract. On July 28th 2014, 23:47 UTC, the European Space Agency
+launched the HaptiCS—l Kit to the International Space Station (188) on
+its last Automated Transfer Vehicle ATV—5. The Kit reached the station
+two weeks later, marking the ﬁrst haptic master device to enter the 188.
+The ﬁrst force—feedback and human perceptual motor performance tests
+started to take place on December 30th 2014, and are the ﬁrst of their
+kind in the history of spaceﬂight. Three astronauts participated in the
+HaptiCS—l experiment until November 2015, allowing the investigation of
+the effects of microgravity on various psyChO—motor performance metrics
+related With the usage of haptic feedback. Experiments are conducted
+following full adaptation to the space environment (after 3 months in
+space). This paper introduces the HaptiCS—l experiment and associated
+hardware. Detailed experimental results are reported from a ﬁrst stiffness
+just noticeable difference (J ND) experimental study in space, carried out
+on the ISS and pre—ﬂight on ground With 3 astronauts. The ﬁrst ﬁndings
+from the experiment show no major alterations in—ﬂight, When compared
+to on—ground data, if the manipulandum is secured in ﬂight against a
+sufﬁciently stiff reference structure.
+Keywords: Micro gravity - Just noticeable difference (JND) - Stiffness
+discrimination - Space - Haptics
+1 Introduction
+To enable further human exploration to neighbouring celestial bodies, telero—
+botic technologies Will have to be used extensively. In a scenario that is gaining
+increasing popularity among the space community, operators Will stay in orbit—
+ing stations (e.g. around Mars) and control robotic systems on the surface Via
+© Springer International Publishing Switzerland 2016
+F. Belle et al. (Eds.): EuroHaptics 2016, Part I, LNCS 9774, pp. 13722, 2016.
+DOI: 10.1007/978—3—319—42321—0_2
+NOTICE: This material may be protected by Copyright Law (TITLE 18 US. Code)
+and is not to be used for any purpose other than private study, scholarship, or research.
+
+"
+"2","NOTICE: This material may be protected by Copyright Law (TITLE 18 US. Code)
+and is not to be used for any purpose other than private study, scholarship, or research.
+
+14 A. Schiele et a1.
+
+haptio teleoperation [1, 5]. This way, they can remotely prepare human outposts
+
+for later human arrival, or conduct ‘remote—in—situ’ geophysical and geosoienoe
+
+research. In order to design haptio teleoperation devices for space, knowledge
+
+about potential Changes to human motor performance in microgravity is impor—
+
+tant. The perception thresholds for torque and stiffness, as well as the capability
+
+to perform hand—eye coordinated position and torque tracking under long expo—
+
+sure to microgravity, need to be better understood.
+
+Previous studies suggest that microgravity deteriorates human perceptual—
+motor performance. In [2] the authors showed a deterioration of human arm
+movement control and stipulate that a decrease in muscle spindle sensitivity in
+zero—G could be the cause. In general, Changes can be related to alterations of
+cutaneous pressure or With different loading of the joints, muscles and associated
+sensors. However, often it is unclear Whether observed Changes are caused by the
+microgravity itself or by other contributing stressors related With spaceﬂight [3].
+This is especially true for tests performed during short exposure to micrograv—
+ity, such as during parabolic ﬂight. While existing perceptive motor—performanoe
+tests on hand—eye coordination and reaching tasks have been performed in par—
+abolic ﬂights and some during SpaoeLab missions With the Space Shuttle, studies
+involving adapted humans (i.e. at least exposed to microgravity for more than
+20 days) to the environment are scarce and limited to the analysis of mental con—
+dition and rudimentary hand—eye coordination tasks [4]. Despite the extensive
+body of literature available on kinaesthetic performance in terrestrial environ—
+ments, hardly any work is available to date that quantiﬁes such performances
+under microgravity. The effects of microgravity on torque and stiffness discrim—
+ination capabilities in spaceﬂight are unknown.
+
+It is the goal of this paper to introduce the Haptios—l experiment of the
+European Space Agency, Which is being conducted on ground (pre—ﬂight) and
+in—ﬂight on the ISS With multiple ESA, NASA and J AXA astronauts. This paper
+introduces the Haptios—l study goals, its hardware Kit consisting of a high reso—
+lution force reﬂective manipulandum (joystick) and its experiment environment
+for automated in—ﬂight data acquisition. Moreover, it is the goal of the paper to
+report ﬁrst results from a stiffness just noticeable difference (J ND) identiﬁcation
+experiment conducted With 3 astronauts on ground and on—board ISS after full
+adaptation (> 3 months) to microgravity.
+
+2 Haptics-l Study Objectives
+
+The Haptios—l experiment consists of seven individual protocols to measure (a)
+
+the mechatronio performance stability of a haptio impedance controlled joystick
+
+in space (system self—test), (b) the variations of human impedance during relax,
+
+comply and resist tasks, (d) the hand—eye tracking performance and bandwidth
+
+for position and force (e) tracking tasks, the just noticeable differences for (f)
+
+force and (g) stiffness discrimination With the upper extremity up to the hand
+
+and, (h) the detection thresholds for a combined stiffness and damping contact
+
+tasks With Virtual environments.
+
+NOTICE: This material may be protected by Copyright Law (TITLE 18 US. Code)
+and is not to be used for any purpose other than private study, scholarship, or research.
+
+"
+"3","NOTICE: This material may be protected by Copyright Law (TITLE 18 U.S. Code)
+and is not to be used for any purpose other than private study, scholarship, or research.
+Haptics—l: Stiffness J ND in Space 15
+
+The JND experiments are all conducted With the upper limb in a position
+Closely matching a typical ‘joystick use case’, such as e.g. during aircraft piloting
+or during robotic operation With a joystick.
+
+All Haptics—l protocols are performed pre—ﬂight, in—flight 0n the ISS and if
+applicable also post—ﬂight, after adaptation to the respective environments. The
+protocols are performed in ‘Wall—mount’ condition and in ‘body—mount’ condi—
+tion. In Fig.1, the haptic device (1DOF joystick) is depicted in ‘Wall—mount’
+conﬁguration on a seat—track interface strip as available also on 188 Columbus
+module experiment racks. During body—grounded condition, the joystick is worn
+on a b0dy—vest directly attached to crew (depicted in the inset Fig.1). The
+body—mount condition has been added to Check Whether creating a Closed—loop
+force—path between joystick and the operator hand in space bears perceptive 0r
+work—load related advantages. In this case, theoretically, external forces from the
+joystick should not need to be counteracted by either gravity on ground, or by
+additional postural control Via foot restraints in space. Therefore, this mounting
+style could be ‘easier’ to use in space. Haptics—l is currently not intended as a
+longitudinal study, mainly due to a limitation of available crew time on—board.
+
+All protocols are trained on ground and conducted in space by the astronauts
+under the help of an automatically guided experiment App on a touCh—screen
+tablet PC (Fig.1). The Principal Investigator (PI) monitors the conduct from
+ground Via real—time Video stream and is enabled to speak on the space—to—ground
+voice loop With crew if needed.
+
+0/""; l- ,» 3/;
+‘ _ .i I: l
+/ \ - - a a ‘
+1% \ _ j ' '1‘“ y,‘ _
+1‘ '; .J ‘jffm
+Fig. 1. The Haptics—l ﬂight model before launch (1DOF haptic joystick and touch—
+screen tablet PC) installed in wall—mount conﬁguration on two seat track strips in a
+clean—room. The inset shows the b0dy—vest With the same seat track interface that is
+used to mount the joystick in a body—grounded manner to crew.
+NOTICE: This material may be protected by Copyright Law (TITLE 18 U.S. Code)
+and is not to be used for any purpose other than private study, scholarship, or research.
+
+"
+"4","NOTICE: This material may be protected by Copyright Law (TITLE 18 US. Code)
+and is not to be used for any purpose other than private study, scholarship, or research.
+
+16 A. Schiele et al.
+
+3 The Apparatus: Haptics-l Kit
+
+The Haptics—l Kit contains the 10 of freedom joystick, the touCh—screen tablet PC
+
+With custom experiment software and all required periphery components (LAN
+
+Cables, power adapters, launch containers, storage devices, the b0dy—vest, etc.)
+
+inside a ﬂame—proof Nomex experiment container.
+
+The joystick receives 28V from a station portable power supply. The tablet
+is connected to the joystick’s real—time computer Via a point to point LAN cable.
+A reserve LAN interface exists on the joystick, allowing connection to the 188
+Joint Station LAN for bilateral control experiments With a ground unit. The
+Haptics—l App 0n the tablet PC is the sole graphical user interface (GUI) for
+crew. It guides the user through all individual experiment steps and allows the
+management (save, discard and retrieve) 0f the experiment data. For re—usability
+0f the Kit, all software is easily exchangeable Via ﬁle up—load through USE. The
+Kit is safety certiﬁed for human—in—the—loop (medical) data acquisition on—board
+the ISS and withstands all environmental loads related to ground transport,
+launch to space and use Within the ISS environment.
+
+3.1 The 1DOF Joystick
+The 1DOF joystick integrates an Intel Atom 1.6 GHZ computer running a Linux
+operating system With a Xenomai real—time patch. This computer runs the
+Haptics—l joystick and experiment control software that interacts With the GUI 0f
+the Tablet. Via an EtherCAT bus, the real—time computer connects to a brushless
+DC motor controller that controls an ILM50X14 RobODrive direct—drive actuator
+Whose torque ripple is compensated to provide a smooth, ripple—free output to the
+handle—bar. On the motor shaft, an absolute position encoder provides a 21 bit
+position signal. The motor is connected Via a capstan reducer to a custom built,
+strain—gauge based, joint—output torque sensor located just before the handle—
+bar. The actively controlled joystick can act as a pure position or torque source,
+or can render an impedance through its integrated Closed—loop joint torque con—
+trol running at a cyclic ZkHz rate. Upstream current inhibitors, thermal fuses
+(for touch temperature monitoring) and joint limit microswitches as well as
+handle—bar dead—man microswitches ensure safe operation of the joystick under
+all Circumstances When human—in—the—loop experiments are performed. The joy—
+stick has a range of motion of $600 around the centre position depicted in
+(Fig.1). The joystick can render a maximum continuous torque of $12.0 Nm.
+The real—time computer running on the joystick encrypts all experiment data
+With 4096—bit encryption to protect the ‘medical rated’ data. Data is automat—
+ically transmitted Via Data Distribution Services (DDS) t0 the tablet PC for
+retrieval Via USB by crew after the experiment.
+3.2 J oint Control Performance
+For the Stiffness J ND protocol, the joystick enters joint impedance control mode.
+The joystick can then render stiffnesses in the range from 0—0.286 kNm/rad and
+NOTICE: This material may be protected by Copyright Law (TITLE 18 US. Code)
+and is not to be used for any purpose other than private study, scholarship, or research.
+
+"
+"5","NOTICE: This material may be protected by Copyright Law (TITLE 18 US. Code)
+and is not to be used for any purpose other than private study, scholarship, or research.
+Haptics—l: Stiffness J ND in Space 17
+Pure Stiffness Plot for k=5Nm/dcg, b=ONrn*s/dcg
+a /
+4 /
+a /
+é 2 f
+3 ,x""’
+E? U x""
+O i'
+e
+s —2 x/
+o .
+2
+—4
+-5 /
+—4 —3 —2 -1 El 1 2 3 4
+Position (dog)
+Fig. 2. Stiffness response of the Haptics—l ﬂight—model joystick during an interaction
+with an operator (simulated spring with constant k : 5 Nm/deg).
+also damping in the range from 0—1.1 Nms/rad. The achievable torque resolution
+in Closed—loop joint torque control is as low as 7mNm and torque ripple is less
+than 6.7 mNm, which is hardly perceivable by an operator. A recording of a
+rendered Virtual spring with stiffness k = 5 Nm/deg 0n the ﬂight—model joystick
+is depicted in Fig. 2, during interaction with a human operator.
+
+Individual step responses of the position and joint torque controllers are
+depicted in Fig. 3. For the recording of the position step response, the joystick
+output was free to move (Fig. 3a). For the torque step response recording it was
+locked down at its output (Fig.3b). The joint position controller is intended
+
+(a) Position controller (b) Torque controller
+i
+30 8 — Commanded
+20 — Measured
+a ' 6
+b0 ﬂ
+, S
+i 10 a 4
+g 0 , i i i y , V (D
+35 —10 . g 2
+CL
+_20 L 0
+_30 — Measured
+i —2
+20 40 60 80 50 60 70 80 90
+Time [s] Time [S]
+Fig. 3. Varying magnitude step responses of the Haptics—l joysticks joint position con—
+troller (a) and joint torque controller (b). During recordings (a) the joystick was free
+to move, whereas the joystick output was clamped mechanically in (b).(C010r ﬁgure
+online)
+NOTICE: This material may be protected by Copyright Law (TITLE 18 US. Code)
+and is not to be used for any purpose other than private study, scholarship, or research.
+
+"
+"6","NOTICE: This material may be protected by Copyright Law (TITLE 18 US. Code)
+and is not to be used for any purpose other than private study, scholarship, or research.
+18 A. Schiele et al.
+mainly for aligning the handle—bar to a reference pose during speciﬁc sequences
+in any of the protocols. This is why it is tuned “soft” to exert appropriately low
+speeds when the bar is handheld. The rise—tirne to 90 % output takes 550 ms. The
+joint torque control is tuned very stiff, in order to allow crisp force feedback to be
+rendered to the operator and also to enable the high bandwidth joint impedance
+control. The rise—tirne to 90 % output for the torque control is less than 180 ms.
+4 Stiffness J ND Identiﬁcation Ground vs. Space
+Multiple stiffness just noticeable difference (J ND) tests have been performed as
+part of the Haptics—l experiment campaign on—boarol the 188 in the time frame
+between J anuary 5th and November 27th 2015. Three astronauts participated in
+baseline data collection (BDC) on ground before ﬂight and in—ﬂight data collec—
+tion on the 188. Two of the astronauts were trained U.S. air force test pilots and
+the third one a medical professional with emergency room experience. All study
+participants have provided signed informed consent Via NASA and integrated
+188 medical boards, and the study was evaluated by the ethics commission of
+Delft University of Technology.
+4.1 Method
+The JND experiment follows a 2—alternative forced Choice (ZAFC) design with
+n = 200 trials in which a stiffness reference level (e.g. Stimulus A) is compared
+with one of four modiﬁed test levels (e.g. Stimulus B) in multiple binary com—
+parison tests. All trials are randomized with respect to A and B distribution as
+well as with respect to the reference level locations within the 200 trials. The
+experiment conduct can be considered olouble—blinoleol, since the experiment is
+harol—oooleol and automated on the Haptics—l Tablet PC and 1DOF joystick.
+
+The stiffness reference level is selected to be 1 Nm/deg., and the randomized
+test levels were at $40 %, $25 %, $15 % and i5 % of the reference stimulus (50
+repetitions each). The 5% test value is the lowest threshold that can still be
+rendered accurately by the Haptics—l 1DOF joystick, which is why this ‘lowest
+possible threshold’ series was Chosen. During each trial, a pair of two stiffness
+samples is presented to the crew member Via the manipulanolurn’s impedance
+controller. The astronaut can select which one of the two stimuli (A or B) to
+probe Via the GUI. Following the probing of both stimuli (they are free to Choose
+back and forth between them), the candidate is asked to select the stiffer one of
+the two (A or B) Via a dedicated selection button on the GUI. After selection, the
+next pair is presented to the astronaut until all 200 repetitions are completed.
+Each crew member conducts two test sessions on two consecutive days, one
+for the wall—rnount and one for the booly—mount data acquisition conﬁgurations
+(Fig. 4). For all trials, the astronauts are instructed to keep their arm parallel to
+a sagittal plane and similar to operating a joystick for robotic controls.
+
+In space, the experiment was only performed after 3 months into the mission
+of each crew member. This way, potential dominant effects related with other
+NOTICE: This material may be protected by Copyright Law (TITLE 18 US. Code)
+
+and is not to be used for any purpose other than private study, scholarship, or research.
+
+"
+"7","NOTICE: This material may be protected by Copyright Law (TITLE 18 U.S. Code)
+and is not to be used for any purpose other than private study, scholarship, or research.
+Haptics—l: Stiffness J ND in Space 19
+‘l , 3- ' ""7' 3W"" V ' W?
+. l {A?éfr' . "" ”Mi; {.4 “‘2? ‘4 Fa, ”Ll
+. :.. R x"" L 2; ‘ .‘.-_-§53ij,1,_3' , y al-
+4|. . .9; -
+:1? * , ’3 y 2/ 7, . ?""3/’ f n“ ‘ V
+F .153 . . ‘4’] T -. wk ﬁfaevﬁ. ‘ ‘
+mm,- m -\ 5 r. ‘5 ‘3‘» ~. .~<\ W H a 6!!
+- ~ .3. - - gs . /
+;\ ‘55 ’4' “1,. “ .r c
+(a) wall—rnount session (b) body—mount session
+Fig. 4. Astronauts on—board the International Space Station (Butch Wilmore, NASA;
+Kimiya Yui, J AXA) perform the Stiffness J ND protocol of Haptios—l. Joystick in wall—
+mount setup in (a) and in body—mount (i.e. body—grounded force—feedback) in (b).
+Experiments done on 188 3 months in ﬂight.
+stressors are minimized. A static design With 200 trials and four levels was cho—
+sen in order to present an overview over a large discrimination threshold range
+(not only a minimum threshold). Moreover, the levels were tailored by ground
+experiments With non—astronauts. The exact number of 200 trials was also a
+trade—off between science return and available oreW—time on—board 188. Every
+participating astronaut received ground training, performed pre—ﬂight BDC and
+received a de—brief on—board prior to in—ﬂight experiment conduct.
+
+For data post—prooessing, the crew ratings for each stimuli level are counted
+and converted into a “percentage correct” for each test level and subject (50
+correctly identiﬁed ‘stronger’ stimuli representing 100 % correct). A test subject
+achieving a percentage of at least 75% correct estimates in one test level is
+considered to ‘notioe the difference’ for the scope of this report. The paper reports
+boxplots for the combined subject data of the 3 astronauts. The test data is
+additionally Checked With 2—way ANOVA and paired t—tests along all dimensions.
+5 Stiffness JND Results
+5.1 Ground, Body vs. Wall Mount Measurements
+The boxplots of Fig. 5 show that the two attachment conditions do not cause
+stiffness JND results to differ on ground (conﬁrmed by paired t—tests on all
+tested levels). The stiffness detection threshold lies between 5—15% for both
+conditions, Which can be seen also Without the ﬁtting of a psychometric function.
+The measurement range is appropriate in both cases to detect the transitioning
+from above to below the 75 % detection threshold. The difference detection of
+the 5 % level is more difﬁcult than the 40 % level detection for the entire group
+(p < 0.02, F : 10.5) in wall—mount condition. In body—mount condition, the
+effect is even stronger (p < 0.001, F = 64.1). While in body—mount condition
+
+NOTICE: This material may be protected by Copyright Law (TITLE 18 U.S. Code)
+and is not to be used for any purpose other than private study, scholarship, or research.
+
+"
+"8","NOTICE: This material may be protected by Copyright Law (TITLE 18 US. Code)
+and is not to be used for any purpose other than private study, scholarship, or research.
+20 A. Schiele et a1.
+(a) Ground, wall—mount (b) Ground, body—mount
+90 ; 90 El
+4.7 T I 4; —
+o 80 80
+§ 75 - - g 75 !
+8 70 - J— : 70
+250 1 5
+60 60 Q I__#
+C C C
+50 l—I 50 Iﬁ—I
+. 1___|_______l
+. C C
+40 40
+5 15 25 40 5 15 25 40
+% of base stimulus level (1 Nm/Deg.) % of base stimulus level (1 Nm/Deg.)
+Fig. 5. Group stiffness J ND results (three astronauts). Comparison of wall—mount (a)
+V8. body—mount (b) conﬁguration on ground, obtained during pre—ﬂight baseline data
+collection (0 :p < 0.02; n :p < 0.01; o o o :p < 0.002). (Color ﬁgure online)
+there are no signiﬁcant performance differences between subjects, in wall—mount,
+one subject performed worse than the other two, Which causes more spread of
+the data.
+5.2 Micro—G, Body VS. Wall Mount Measurements
+The data presented in Fig.6 shows slight variations between wall—mount and
+body—mount J ND thresholds in space. Whereas the detection threshold for the
+wall—mount conﬁguration lies between 5—15 % of the base stimulus, the body—
+mount conﬁguration indicates a worsening towards the 15—25% range for the
+combined subject results. The difference between the detection rates for the
+individual stimuli levels are more profound in space, With all levels different to
+each other in wall—mount conﬁguration (19 < 0.01, F : 12.7) and more strongly
+so in body—mount conﬁguration (19 < 0.002, F : 20.72). Paired t—test performed
+between equal difference levels of the two mounting conditions reveals no differ—
+ence between the mounting conditions.
+5.3 Ground VS. Micro—Gravity
+The only difference detectable between the ground and space data—sets is appar—
+ent in the body—mount conﬁguration, in Which the 15 % difference level becomes
+worse in—ﬂight With respect to ground (19 = 0.039), explaining the apparent wors—
+ening of the overall detection threshold for the group in the boxplot in Fig. 6.
+No overall difference in the combined wall— and body—mount data results can be
+observed between in—ﬂight and ground measurements.
+NOTICE: This material may be protected by Copyright Law (TITLE 18 US. Code)
+and is not to be used for any purpose other than private study, scholarship, or research.
+
+"
+"9","NOTICE: This material may be protected by Copyright Law (TITLE 18 US. Code)
+and is not to be used for any purpose other than private study, scholarship, or research.
+Haptics—l: Stiffness J ND in Space 21
+(a) micrO—G, wall—mount (b) micrO—G, body—mount
+[Ar
+90 E 90 Iil
+g 80 = E 80
+8 75 - g 75 i
+g 70 Q g 70 _
+60 60 i
+I_—|
+50 I 00 50 J_
+00 II—I
+40 40 O O O
+5 15 25 40 5 15 25 40
+% of base stimulus level (1 Nm/Deg.) % 0f base stimulus level (1 Nm/Deg.)
+Fig. 6. Group stiffness J ND results (three astronauts). Comparison Of wall—mount (a)
+vs. body—mount (b) conﬁguration in—ﬂight on board the International Space Station
+(0 :p < 0.02; n :p < 0.01; o o o :p < 0002). (Color ﬁgure online)
+6 Discussion
+It appears from the data above, that humans are very good at adjusting to
+novel environments, With no overall differences Visible in Stiffness discrimination
+between ground and space after their 3 month adaptation to the micro—gravity
+environment. Moreover, the results above show strikingly little variation between
+subjects, considering that the background of test candidates was rather differ—
+ent. This suggests that the protocol automatic conduct, the performance of the
+hardware and the selection of experiment parameters are appropriate for this
+experiment. Human palpation from orbit could potentially be performed With
+the same perceptive capability than on ground, Which could be good news for
+using telerobotics from space (if the teleoperation system itself doesn’t limit the
+perception). Certainly, further analysis With additional subjects is ongoing, how—
+ever, already the small sample of only 3 test subjects shows consistency. A more
+detailed analysis With more subjects and psychometric functions Will allow to
+further detail the threshold ﬁndings.
+
+One observable effect, however, is apparent in the body—mount conﬁguration
+data—set With the vest, Which seems to make detection of small stiffness differ—
+ences in space harder. Two of the subjects, When asked during protocol conduct
+on 188, reported that the b0dy—vest caused some additional compliance (“sway”)
+in the experiment, Which made the stiffness identiﬁcation much harder in space.
+This could be due to a sub—optimal design of the vest brace, not having sufﬁ—
+ciently well located supporting points on the operator torso. Results show that a
+rigid support for this task is better. The wall—mount conduct shows no alteration
+in space compared to ground. The reaction forces imparted to a crew member
+during this task, however, caused some ‘fatigue’ in the lower body as reported
+by one crew member during space—tO—ground communication.
+
+NOTICE: This material may be protected by Copyright Law (TITLE 18 US. Code)
+and is not to be used for any purpose other than private study, scholarship, or research.
+
+"
+"10","NOTICE: This material may be protected by Copyright Law (TITLE 18 US. Code)
+and is not to be used for any purpose other than private study, scholarship, or research.
+22 A. Schiele et a1.
+7 Conclusion
+Stiffness discrimination thresholds in wall—mount conﬁguration show no vari—
+ation between ground and measurement in space, after long exposure to the
+space environment. The detection threshold lies between 5—15 % 0f the 1 Nm/deg.
+base stimulus level, equalling a threshold of approximately 0.1 Nm/deg. or when
+expressed as a linear stiffness, approximately 0.9 N / mm (the grip centre point
+lies 0.113 m from the joint centre). The vest—mount conﬁguration tested in
+this experiment causes a worsening of the stiffness discrimination threshold to
+15—25 % 0f the base stimulus level in space, likely caused by sway in the mechan—
+ical attachment of the body vest. Overall, n0 deterioration of stiffness detection
+thresholds can be observed between space and ground for the combined data, if
+the astronauts are exposed and adjust to 3 months in the microgravity environ—
+ment.
+References
+
+1. Carey, W., Schoonejans, P., Hufenbach, B., Neergard, K., Bosquillon de Fres—
+CheVille, F., Grenouilleau, J ., Schiele, A.: METERON: a mission concept proposal
+for preparation of human—robotic exploration. In: Global Space Exploration Con—
+ference, Washington DC. (2012)
+
+2. Fisk, J ., Lackner, J .R., DiZio, P.: Gravitoinertial force level inﬂuences armmove—
+ment control. J. Neurophysiol. 69(2), 504—511 (1993). http://jn.physiology.org/
+content/69/2/504
+
+3. Fowler, B., Meehan, S., Singhal, A.: Perceptual—motor performance and associated
+kinematics in space. Hum. Factors J. Hum. Factors Ergon. SOC. 50(6), 879—892
+(2008)
+
+4. Manzey, D., Lorenz, B., Poljakov, V.: Mental performance in extreme environ—
+ments: results from a performance monitoring study during a 438—day spaceﬂight.
+Ergonomics 41(4), 537—559 (1998). pMID: 9557591
+
+5. Schiele, A.: METERON — validating orbit—tO—ground telerobotics Operations tech—
+nologies. In: 11th Symposium on Advanced Space Technologies in Robotics and
+Automation (ASTRA) (2011)
+
+NOTICE: This material may be protected by Copyright Law (TITLE 18 US. Code)
+and is not to be used for any purpose other than private study, scholarship, or research.
+
+"

@@ -1,0 +1,499 @@
+"","x"
+"1","2476 IEEE TRANSACTIONS ON GEOSCIENCE AND REMOTE SENSING, VOL. 51, NO. 4, APRIL 2013
+Out—Of—B and Correctlon for
+Mult1 spectral Remote Sensmg
+Wei Chen and Robert Lueke
+
+Abstract—A general method for correcting out-of-band (00B) calibration. These calibration methods adjust the measured
+effects to improve radiometric accuracy in multispectral sensors is radiances to correct for OOB response for ease of comparison to
+Pmposfgd “5ng an 00B correction transform [OBCD developed in Sim measured multispectral radiances. The SeaWiFS cor—
+accordlng t0 llnear systerns thebry. The correctlon for a partlcular r e cti 0 n 8 Ch e m e has been su C C e s sfully ap pli e d t 0 d at a p r 0 du cts
+channel 1s based on the 1ntens1t1es measured by all the channels. . .
+T0 recover the narrowband signals, the measured signals (with retrievedbver case 1 ocean waters [7]' HOWCYCI’ the COUCCUOH
+00B effects) are partitioned by spectral subranges 0f in-bands scheme 15 inherently not useable for SCﬂWlFS data product
+and band-gaps. The OBCT matrix is derived using appropriate corrections over case 2 turbid waters or over land.
+approximations for the band-gap integrals. For an N -channel The ﬁrst Visible Infrared Imager Radiometer Suite (VIIRS)
+multispectral 56115013 0013 EffECtS are 001113th by applying an instrument, Flight Unit 1, now ﬂying on the NPP satellite
+N X N OBCT matrix to the “1635“?“ signals. The OBCT matrix platform, has known performance issues. Seven Channels 10—
+for bands M1—M7 0f the VIIRS, whlch was successfully launched . .
+on Oct. 28, 2011, is presented, along with simulation results using cated between 0'4 and 0'9 am in the ViSNIR focal p lane have
+hyperspectral data from the Airborne Visible InfraRed Imaging problems related to 00B responses, 1'6"" small amounts Of
+Spectrometer and Hyperspectral Imager for the Coastal Ocean radiance far away from the center Of a given Channel that pass
+sensors. through the ﬁlter and reach the detector. The newly launched
+
+Index Terms—Bandpass effects, crosstalk, out-of-band correc- YHRS instrurnent requ1res developinghlghly accurate Opera—
+tion transform (OBCT), out-Of-band (00B), out-Of-band correc- tional calibration procedures and algorithms to process VIIRS
+tion, out-Of-band effects, out-Of-band responses, Visible infrared data.
+imager radiometer suite (VIIRS). A different solution for recovering the in—band multispectral
+
+radiances is proposed to address the issues of the DOB re—
+
+I. INTRODUCTION sponse. For a particular multispectral Channel, other channels
+
+pr0V1de measurements of spectral regions that contribute OOB
+
+ULTISPECTRAL remote sensing images are acquired radiance. This crosstalk between multispectral Channels pro—
+
+M from aircraft and satellites. To quantify ground surface Vides a possibility for correction. The new approach is based
+
+Characteristics, the measured spectral radiances must be con— 0n the decomposition principle to recover the average narrow—
+
+Verted into target reﬂectance. In these applications, accurate band signals from uncorrected signals using ﬁlter transmittance
+and consistent sensor calibration is essential [1]. Out—of—band functions instead of the calibration methods [2], [7].
+
+(00B) response is deﬁned as the ratio of integrated response Using the laboratory—measured ﬁlter transmittance functions
+
+outside the one percent of peak response points of a spectral for all multiband Channels, an OOB correction transform
+
+band to the integrated response inside the one% points. Several (OBCT) matrix for recovering in—band spectral radiances is
+
+multispectral radiometric instruments are known to eXhibit derived. For an N —Channel multispectral sensor, OOB effects
+
+signiﬁcant radiance contribution from OOB spectral response are corrected by applying an N X N OBCT matrix to the
+
+[2]—[6]. measured signals.
+
+The typical scale of OOB spectral response is in the range of This paper is organized as follows: In Section II, an OBCT
+several percent, which can, for example, result in Chlorophyll is derived for removing the DOB effects. Section III, using
+retrievals that are biased high for Clear water by DOE response the VIIRS ﬁlter transmittance functions, the OBCT matrix will
+to short wavelengths (see an example in [7]). A methodol— be numerically computed and demonstrated. In Section IV,
+ogy [2] and improved approach [6], [7] for dealing with the the proposed method and the VIIRS OBCT matrix for the
+DOB response had been suggested and adopted for SeaWiFS OOB correction are tested by simulated image data. Finally,
+
+conclusions are drawn in the last section.
+II. OBCT
+A. Multiband Radiometric Instrument
+
+Manuscript received February 21, 2012; revised May 29, 2012; accepted . . . . .
+
+July 10, 2012. Date of publication August 27, 2012; date of current version VHRS 15 a typical mUItISpeCtral remOte sens1ng mStrument-
+March 21, 2013. This work was partially supported by the US Ofﬁce of Naval Through various laboratory tests of the ﬁrst VHRS instrument,
+Research and the Joint Polar Satellite System of NCAA and NASA. it has been found that the seven Channels located between 0.4
+
+The authors are with the Remote Sensing Division, Naval Research Labora— . .
+tory, Washington, DC 20375 USA (e—mail: wei.chen@nrl.navy.mil). and 0'9 ,urn (M1_M7) 1n the VISNIR focal plane have prOblemS
+
+DigitalObjectIdentiﬁer10.1109/TGRS.2012.2208975 with OOB responses. A set of VIIRS (Version 3) M1—M7
+
+US. Government work not protected by US. copyright.
+
+"
+"2","CHEN AND LUCKE: OUT—OF-BAND CORRECTION FOR MULTISPECTRAL REMOTE SENSING 2477
+Spectral Response OfVHRS (V3) Filters Three Spectral Responses of VIIRS (V3) F ilters
+100 i 100
+{’1‘ — FﬂtEfMMI) I _ M4
+L L — Filtcr2(MZ) I
+L — Fincrsms) I — M5
+L — Filter4(M4) I —l — M6
+10'1 L l a Filtcr5(MS) l 10
+3 | L — Filler6('Mé) I a
+g I L — Fille1'7(M7) I §
+8 ‘ 'i 3 2(4) 2.“)
+3 10-2 f I. f, 10'2 \ f“ 1:33..
+E L L E /
+M L/ L L . g L 7
+_I|L ‘\ .- . _3 1' -‘
+10‘3 L 4 L L l J“ , 10 ' J
+‘ - I ' t . L I ‘W‘ .,
+0L5. 3L LL 4 L LI/ w AMP“ m V L p l )u/ o A
+L‘ i r k ,‘I, L.” l n ' 1” nl ; I p
+“ﬂ J"" IL.“ I A MIME” M : LL ‘
+10-4 r l: ! I I” , l .1' LL 10_4 W L\ {l 5
+400 600 800 1000 400 600 800 1000
+Wavelength (nm) Wavelength (nm)
+Fig. 1. VIIRS version 3 Ml—M7 ﬁlter transmittance curves normalized at the Fig. 2' 111493“? wavelength rarige and kth band minimum and maximurn
+peaks. wavelength p0s1t10ns for normallzed—to—peak VIIRS M4—M6 ﬁlter transmit—
+tance CHIVGS.
+TABLE I , , ,
+VIIRS VrsNIR CHANNEL N AMES, pOSITIONS’ AND indexes) from a sensor With the kth band ﬁlter on a pixel can be
+FULL WIDTHS AT HALF MAXIMUM (FWHMS) expressed by
+Arnax
+VIIRS Channel Mum) FWHM (urn) §k : / hk 003(0) d A (1)
+M1 0.412 0.020 A .
+M2 0.445 0.018 mm
+M3 0488 0020 Where §k and S(A) are a measured (With OOB effects) and orig—
+M4 0.555 0.020 . . .
+M5 0.672 0.020 inal Signals, respectively, and hk()\) are the spectral response
+M6 0.746 0.015 functions of the optical system (ﬁlters) With the wavelength A 6
+M7 0.865 0.039 (Amin, Amax) as a variable, Where (Amin, Amax) is, for VIIRS,
+the entire VisNIR spectral range. The spectral response func—
+. . ' ' h
+ﬁlter transmittance curves (normalized at the peak of the ﬁlter :01? SEE? are $$$$$de between the full range wavelengt
+transmission) [8] is shown in Fig. l. The VIIRS ﬁlter data mm max '
+are available from the public domain website http://WWW.star. Amax
+nesdis.noaa.giov/jpss/indexphp. The M1 and M4 ﬁlter curves / mg) 00‘ : 1, (2)
+peak at wavelengths below 0.6 mm on the left side of the
+. . . . . Armin
+plot, and both have Signiﬁcant transmittances 1n the far distant
+“wing” region above 0.6 ,um. The above superposition integral expresses a relationship be—
+The VIIRS VisNIR channel names, positions, and Widths tween original and measured signals With the optical ﬁlters.
+are listed in Table 1. Many VIIRS Channels (designated as M1 The full range integral in equation (1) between the cutoff
+to M7 in Table I) have heritages t0 the Moderate Resolution wavelengths Amin and Amax can be partitioned by two parts in
+Imaging Spectroradiometer (MODIS) instrument but with mi— which the wavelength ranges cover in—band (narrow bandwidths
+nor differences in center positions and Widths. with nominal band centers M in Table 1) regions and band—gap
+The causes for the DOB response With VIIRS Ml—M7 regions between in—band regions, respectively. If the in—band
+Channels are n0w fully. understood: The main cause f0r the wavelength width AA; : ALanX _ AS301 is deﬁned by a spectral
+OOB response 15 31550013th Wlth high—angle scattering in the response function as shown in Fig. 2, the integral in (1) becomes
+integrated ﬁlter assembly that overlies the VisNIR focal plane
+array. The scattering mechanism causes the DOB effects for a gk : f @0089) d)‘ + / hk()\)3()\) d)‘ (3)
+given Channel to come from a broad spectral range, instead of a
+f . AE{A)\;} A${AX1}
+ew narrow spectral intervals.
+where {AM} : (AA1,A)\2, . . .,A)\N) denotes the in—band
+B Linear 0 tical S stem range of all channels, and N is the number of ﬁlters. The
+' p y bandwidths AA; are not the same bandwidths deﬁned in Table I.
+In general, a multispectral instrument such as VIIRS is The bandwidths AA; are usually selected to be slightly greater
+considered to be a system that accepts an input and produces than bandwidths for Which the response is inside the 1% of peak
+an output. Such a system is linear [2], [7] because the measured response points and depend on Characteristics of the response
+optical single band signal ($1€ : §k (73, j), Where 73 and j are pixel functions of the ﬁlters.
+
+"
+"3","2478 IEEE TRANSACTIONS ON GEOSCIENCE AND REMOTE SENSING, VOL. 51, NO. 4, APRIL 2013
+C. In-Band Partitions than the band—gap responses as shown in Fig. l, e.g.,
+. If the nﬁmber of ﬁlters is equal to N , then the in—band integral hk (A) (A 6 AM) >> hk (A) (A y? ANA)- (8)
+1n (3) is given by
+N All?” The measured signal in the band—gap integral can be interpo—
+/ @008“) dA : Z / hk()\)3()\) dA. (4) lated linearly using the two nearest average bands [9] with
+l_1 nominal band centers Al in Table I
+AE{A>\;} — A(l)
+A A (Al+1— A) A (A — Al)
+sAzsl—+3 —)\§)\<)\ .
+. . (l) ( ) (NH — Al) l+1()\l+1 — Al)( l H1)
+Us1ng an average value of the response function between Amin (9)
+(l) . . .
+andhAmaX to replace the response function hk (A) in the integral, Assuming that the error between the kth band measured and
+WC ave original images is given by
+ASBAA AEAiZAAA 8W = §(A) — 8W
+N —(in) _ —(in) _
+/ hk()\)3()\) d)‘ N hid / 80‘) d)‘ _ hid AAZSZ (5) the band—gap integral in (3) becomes
+A“? A“?
+/ hk()\)s()\) dA : / hk()\) [§(A) + 0(5)] dA
+where AA; : Ag)“ — Agn and the average of the response A${AA1} MEAN}
+functions is given by
+m / hk()\)§()\) dA. (10)
+1 All?” A${AAZ}
+—(in)
+h : — f h A dA
+kl AM (l) k( ) If we deﬁne AS352“ : Amin and AEHJYJD = Amax, and §(A) :
+§<AE§BA><Amin : A : A212) and §<A> = §<AEéE2A><A£ﬁ2A : A :
+Amax), then the band—gap integral (10) using the interpolation
+and the in—band signal (El : §l(7j, j ) where 73 and j are pixel (9) can be formulated by
+indexes) for a particular band that is an average of all signals N
+Within the sub—band AA; is deﬁned by / hk()\)§()\) dA % Z bkl§l (11)
+Au; MEAN} lZl
+1 . .
+El : — / S(A) CM. (6) where bk; is given by
+AA;
+(l) 1 —(0ut)
+(A:AL—Amm
+ASBD—Aggx —(0ut) —(0ut)
+The approximation in (5) holds exactly when a response of a + Ag—Al (A2hk,1 ‘hAkJ ) (l: 1)
+ﬁlter is an ideal pulse function. The error of the approximation Aggnaggy (E(Out) _ A #0110)
+in (5) depends on the shape of a response function and the width bkl : Al—Aélii—ll) (l) k,l—1 l—1 k,l—1
+0f 1n—band partition. . . . . . +Am/{n —_/\/\max (Azﬂﬁggut) _ml(£ut)) (1 < l < N)
+The measured kth 1n—band integrated Signal in (4) 1s a sum— (N) (13:) l
+mation of all average in—band signals that is given by % (E202?! — AN_1E,(:X;)_1)
+N + (Amax _)\£n]\&2<) 520N110 (l I N)
+/ hk()\)s()\) dA m 23:1?)AAZEZ. (7)
+1:1 and
+AE{A>\Z}
+A(ljtl)
+_ (z) (z) . —(0ut) £53m hkOOAd)‘
+The mean values 3; between Amin and Amax are the 1n—band hAkl : ”(lin—m
+signals we want to recover. The uncorrected (measured) signal Amin — Amax
+is a superposition of all in—band and band—gap signals. All AU“)
+coefﬁcient factors and parameters in equation (7) can be de— _(Out) fAEBi“ th) CM
+termined by the response functions that are dependent on the hm : m—(l)
+Characteristics of the ﬁlters for a particular instrument. )‘min _ )‘max
+The linear approximation (9) between two nearest bands may
+D. Band-Gap Partitions cause a large errer 1f real 0r1g1nals1gnals 1n band—gap are far
+away from the linear appr0X1mat10n curve. Fortunately, this
+To deal with the band—gap integral in equation (3), we con— error of signal in band—gap is not our detected in—band signal
+sider that the kth in—band spectral responses are much greater and is convolved by a very low level response function in the
+
+"
+"4","CHEN AND LUCKE: OUT—OF-BAND CORRECTION FOR MULTISPECTRAL REMOTE SENSING 2479
+band—gap domain. The error in the band—gap integral can be OBCT matrix T depend on the response functions of ﬁlters, in—
+ignored comparing With the in—band integral in statistics since band Widths, and nominal band centers of the ﬁlters. Therefore,
+the properties of the responses between in—band and band—gap the OBCT matrix can be fully determined by the Characteristics
+domains in (9) hold for most cases. of the ﬁlters for a particular multispectral radiometric instru—
+Similarly as in the above subsection, all coefﬁcients bk; and ment.
+parameters Agin and )‘gn in (11) can be determined and In the special case in Which all ﬁlters are ideal, the normal—
+selected based on the response functions that are dependent on ized response functions 0f the ﬁlters fOY the total wavelength
+the Characteristics of the ﬁlters for a particular instrument. We range from )‘min t0 )‘max are given by
+can adjust widths of the band—gap from zero to certain values for 1 (l) (0
+different optical instrument. As shown in Fig. l, the widths of th) : _ { 1 Amin S A S Amax
+the band—gaps from M1 to M3 can be Chosen as zero or smaller AN 0 otherwise.
+values, and larger widths of the band—gaps from M4 to M7 can . . .
+improve the performance of the DOB correction for the VIIRS Us1ng the spectral response function Of the ideal ﬁlters, \ye
+spectrometer. found that matrix B : 0, A : I, and the OBCT matrix T is
+an identity matrix. The input and output signals are identical in
+this ideal system.
+E. OBCT
+Two terms of the in—band and band—gap integrals in (3) are 111. VIIRS OBCT M ATRIX
+formulated by (7) and (l 1). Then, (3) can be rewritten as
+Using (14), the recovered in—band signals can be calculated
+N _(in) N by the OBCT matrix and the uncorrected multichannel image
+thl AAl§l : §k — Zbklgl- (12) vector. In this section, we are concerned With a numerical
+l=1 l=1 computation of the OBCT matrix for the VIIRS instrument.
+Our work in this paper is to ﬁnd the average in—band signals E The VHRS instrument is, in many aspects, similar to the
+from (12) In matrix form (12) is l MODIS instruments [10], [11] currently onboard the NASA
+' ’ Terra and Aqua Spacecrafts. Many VIIRS Channels have her—
+N _(in) _ A N A itages t0 the MODIS instrument but With minor differences
+2 hu AAZSZ 31 — Z bllsl in center positions and Widths. Important differences between
+t? _ l? VIIRS and MODIS do exist. For example, VIIRS has ﬁve
+2 BSWAAZQ : g2 — Z b2l§l relatively broad imaging Channels at a high spatial resolution
+l=1 _ _ _ 4:} of about 375 m mainly to satisfy DOD requirements.
+N E(in) AA _ A N b A All seven channel VIIRS ﬁlter transmittance functions shown
+l; N l 181 SN _ l; N l St in Fig. 1 indicate that the ﬁlter bandwidths and positions are
+not uniform. The transmittance functions of the VIIRS ﬁlters in
+or Fig. l are normalized to l at peak points. All response functions
+_ A deﬁned in (l) and (3) must be normalized to an integral value
+AS : (I _ B)S 0f 1, as in (2), using the transmittance functions of the VIIRS
+ﬁlters in Fig. 1 before a computation for the OBCT matrix. The
+where normalized response functions be (A) are given by
+81 81
+§ : E2 é : §2 th) : AmaftkO‘) —
+fxmm Hiawd)
+5N §N
+Where H k()\) are the transmittance functions of the VIIRS
+matrixes A : (E2151) AN) and B : (bid) are N X N, and I is a ﬁlters in Fig. 1 between wavelength range frorn Amin t0 Amax.
+N X N identity matrix. If the OBCT matrix T is deﬁned by The OBCT (7 X 7? matrix T for the VHRS instrument based
+on the wavelength 1n—band and band—gap partitions and the
+T : A_1(I _ B) (13) transmittance functions of the ﬁlters in Fig. l is given by the
+equation shown at the bottom of the next page.
+then the image by the OBCT is given by All main diagonal elements in the OBCT matrix for the
+VIIRS instrument are greater than but Close to one. Moreover,
+§ : Té. (14) all non—diagonal elements of the OBCT matrix are negative
+because the uncorrected signal for a particular band is a su—
+Equation (14) is alinear transform between the uncorrected and perposition of all in—band and 00B signals. The corrected
+corrected multispectral image vectors. signal must be extracted from the superposition signals. The
+It is Clear that the narrow—band multispectral signals can correction amounts are dependent on the Characteristics of the
+be recovered from the measured multispectral signals, Which ﬁlters. The ﬁrst and fourth main diagonal elements with larger
+contain OOB effects. The decomposition operation can be correction amounts (relative errors m 2.9% and m 3.5%) in the
+simply performed by a product between a ﬁxed OBCT matrix OBCT matrix correspond to poor ﬁlters such as band 1 and 4 as
+and a measured multispectral image vector. All elements of the shown in Fig. l.
+
+"
+"5","2480 IEEE TRANSACTIONS ON GEOSCIENCE AND REMOTE SENSING, VOL. 51, NO. 4, APRIL 2013
+A B C D instead of the RT model calculated data, to study the VIIRS
+m~~ . . f. 2,_ ﬂ - . .2 . _. OOB effects.
+{“1 ”f h ;' v3: - The Airborne Visible InfraRed Imaging Spectrometer
+a ‘1""?! L 1‘5}! f. 3"""" , (AVIRIS) [13] is used extensively for Earth Remote Sens—
+E ‘ gfghp’iz‘ﬂ, . ','/ ing. It is a unique optical sensor that delivers calibrated
+'3 _-. Va‘é';2.2“1¢h .7, / images of the upwelling spectral radiance in 224 contigu—
+> ‘ “SE: ”-1fo ' I ous spectral bands With wavelengths from 370 to 2500 nm.
+1'54». The Hyperspeetral Imager for the Coastal Ocean (HICO) sensor
+a ' “ 22;. __ is the ﬁrst hyperspectral imager designed speciﬁcally for remote
+'5‘ 12‘? ‘ “':'f,»~  r“ sensing of the coastal environment [14] from the International
+% M24. x “’x [£11371 «gimme Space Station (188). It has 128 narrow Channels (5.7 mm wide)
+""’ m? M , _ 7‘ V . ~ ' '“ covering the contiguous spectral range between 350—1080 nm
+"" ' ' ' ' ' With a spatial resolution of 100 m. AVIRIS and HICO data were
+A B C D used to simulate VIIRS data, With and Without OOB effects,
+F 3 A AVIRIS _ _ d h K d S C using the VIIRS (V3) ﬁlters in Fig. 1.
+Fig.4.. 1:91 .maggnssgusz‘aua. 21:11:... 613:4: 112521.511: The muluspectral smulauon .mages wnh and Wheat Fhe
+radiance spectral proﬁles and the relative errors at positions marked by charac— 00B. 1‘ esponse are synthes1zed by (1) and the followmg
+ters from A to D are shown in Figs. 4—7. equation:
+. The summation of all elements in a row in the OBCT matrix fAA Hk (A) 80‘) 01A 15
+1s equalto 1,1.e., 3k fAA Hk()\) 01A ( )
+N
+ET“ : 1' Where S(A) is supplied by either AVIRIS 0r HICO hyper—
+lZl spectral image data, and 3k : 3(73, j, k) is the nominal band
+Therefore, the correction coefﬁcients in the OBCT matrix for Slghal on a p 1er Wlth wavelengths as shown In Table I' The
+each band are also normalized. spectral bandw1dth AA 111 the integral for the kth band ﬁlter
+To avoid overﬂow results for the matrix production between fgggﬂzeto the left and ﬁght s1de Of 1% level Of the ﬁlter’s
+E12213?grierilsgithrﬁésaileiehIEIZEEZterﬁll. image vector, a data typ e Of The AVIRIS and HICO hyperspectral images acquired over
+the Kennedy Space Center, Florida, and Freshwater Beach,
+Australia, respectively, are displayed in color in Fig. 3. Four
+IV. SIMULATION TEST typical image points that include deep or shallow water, land,
+. . . and vegetation With different reﬂectance properties are marked
+The proposed method for the DOB correction. is tested us1ng by Characters from A to D for error comparisons.
+the two Simulated multispectral images in Flg' 3’. and the All simulation data in the integral are calculated by a sum—
+correetecl multispectral images are also compared Wlth a data mation approximation With 1 nm resolution (the VIIRS ﬁlter re—
+set Wlth ideal ﬁlters. spouse has 1 nm resolution) from the hyperspectral image data
+using a linear interpolation between two nearest hyperspectral
+A. Simulation ofExperimemal Data bands.
+To examine the effects of spectral response functions of
+individual instrument bands on their tOp—of—the—atmosphere ra— B. Simulation Results
+diances, Barnes and Butler [12] described a radiative transfer R . . . .
+. . . elative error measures on plXCl z, j, and band 10 used for
+(RT) modeling—based technique to Simulate the top—of—the— . . .
+. . . evaluation of the Simulation results are deﬁned by
+atmosphere hyperspectral radiance spectra. Us1ng the Simulated
+data, they evaluated the SeaWiFS OOB effects over different A , , _ , , , ,
+types of surface targets, such as blue ocean waters, desert, and {éijk7 51.3.16} : W (16)
+grassland. We utilize the measured hyperspectral radiance data, 3147/73)
+
+1.0287 —1.70827 X 10—3 —1.09021 X 10—4 —5.55824 X 10—4 —5.29429 X 10—3 —2.75953 X 10—3 —1.82264 X 10—2
+—1.66515>< 10—3 1.00991 —7.51183>< 10—4 —1.41192>< 10—3 —2.18476>< 10—3 —9.52121>< 10—4 —2.93506>< 10—3
+—9.18167 X 10—4 —6.31394 X 10—4 1.01375 —1.41432 X 10—3 —3.21069 X 10—3 —1.78773 X 10—3 —5.77032 X 10—3
+—1.0098>< 10—3 —4.86908>< 10—3 —1.21268>< 10—2 1.03442 —8.3853>< 10—3 —4.17362>< 10—3 —3.85384>< 10—3
+—5.4833 X 10—4 —1.07026 X 10—3 —2.30808 X 10—3 —4.43472 X 10—3 1.01667 —3.45863 X 10—3 —4.84276 X 10—3
+—4.20704x10-4 —4.19931x10-4 —6.07297x10-4 —9.42082x10-4 —3.10139x10-3 1.01041 —4.91217x10-3
+
+2.15101 X 10—4 —1.42594>< 10—4 —1.81492 X 10—4 —1.91647>< 10—4 —3.3216>< 10—4 —1.56788>< 10—4 1.00124
+
+"
+"6","CHEN AND LUCKE: OUT—OF-BAND CORRECTION FOR MULTISPECTRAL REMOTE SENSING 2481
+TAB LE H (a) AVIRJS (Green Vegetation) Spectral Curve and Errors
+AVERAGE RELATIVE ERRORS OF THE CONTAMINATED AND 3 I 3000
+DECONTAMINATED MULTISPECTRAL IMAGES 2
+OF THE VIIRS INSTRUMENT $ 6000 6'
+Spectral Type AVIRIS {| é |3 | 5 |} (%) HICO {| é |, | 5 l} (%) E 0 4000 E
+A11 {0720, 0.0513} {0.965, 0.0568} 3 ""1 _ + ”""°°""‘=°‘°dp""‘“‘ 2000 3‘
+Deep Water {100, 0.0320} {1.42, 0.0300} -2 + “WM“ I
+Shallow Water {0.878, 0.0481} {1.50, 0.0257} 3 - * SPeC'm‘CW 0
+Land 0.431, 0.0635 0.379, 0.0692 '
+Vegetation £0,725, 0.126}} £0,887, 0.0876: 0'4 0'5 wijengmmmym 0'8 0'9
+3 (b) AVIRJS (Land) Spectral Curve and Errors
+Where §k : §k(7j,j), Ek : §k(7j,j), and 3;, : 3k(i,j) are mea— 2 3000
+sured, corrected, and Without OOB effect signals in (1), (6), A
+and (15), respectively. Mean values of the relative errors of the 3;} 1 2500 E
+measured (uncorrected) and corrected image data in (16) for all 4: 0 3:
+pixels and bands are deﬁned by {‘é‘, 151}. 3; _1 2000 g
+The average relative errors of the AVIRIS and HICO image a 5
+data With OOB effects are shown in Table 11. Similarly, the ‘2 1500
+average relative errors of the corrected image data by the _3
+proposed OBCT method for the same test images are also listed 0‘4 0‘5 9‘6 0‘7 0'8 0‘9
+in Table 11. As references, the uncorrected and corrected mean “avalengmpm
+errors (the summatlons g0 9V“ the samp 16d pixels from 72 to Fig. 4. (a) and (b) TWO samples of AVIRIS radiance spectra over vegetation
+53 460 and all bands) for dlfferent surface types, SUCh as deep and land marked by A and B in Fig. 3, and their relative uncorrected and
+or shallow water, land, and vegetation are also listed in Table II. corrected errors.
+The spectral proﬁles and error comparisons between uncor—
+rected and corrected images for the four typical image points
+marked by the Characters from A to D in Fig. 3 are shown in “’AVIRIS‘SM""°“""V“‘°‘)Spectral0m m_— 4000
+Figs. 4—7. Four VIIRS multiband radiance samples over clear 2 + Uncorrected Errors
+deep and turbid waters, land, and green vegetation, as marked A 3000
+in the image of Fig. 3, are shown in these plots. The errors in ‘3: 1 + Spemlc'm'e 3
+the presence of OOB effects and after corrections relative to E 0 2000 <3
+the simulated data Without OOB effects are shown in the same E if
+plots. The errors With the OBCT correction for both types of 3 -1 [000 g
+waters, land, and green vegetation are signiﬁcantly reduced. It 7
+is seen that the maximum relative error before the correction for '"" 0
+the M5 band (centered at 0.672 ,um) for the green vegetation 0.4 0.5 0.6 0.7 0.8 0.9
+pixel is approximately 3.5% in Fig. 6. This band receives large Wavelengthmm)
+OOB contributions from the near—IR spectral region because (”MV’R'SUW W“'°’)51’°°""“‘ Cum“ Em"" 4000
+green vegetation is highly reﬂecting above 0.7 ,um. The relative 2
+errors after the correction are reduced dramatically. A 3000
+The average errors for all surface types are reduced by ratios F; 1 E
+of about 14 and 17 (161 / 161) for both AVIRIS and HICO data. E 0 2000 2
+The mean errors are variable and depend on the radiance surface 3:: E,
+types as shown in Table 11. Highest reductions of the relative 2 -1 1000 '5
+errors are for deep and shallow water, With a maximum ratio of 0
+about 31 for AVIRIS data and 58 for HICO data. ' 0
+The main diagonal elements in the normalized OBCT matrix 0.4 0.5 0.6 0.7 0.8 09
+show error levels of the DOB correction for different bands. wavelmg‘hw‘“)
+However, the relative errors of the DOB corrections for a
+particular band shown form Figs. 4_7 are dependent on mea_ Fig. 5. (a) and (b) TWO samples of AYIRIS radiance spectra over shallow and
+. . . . deep waters marked by C and D in Fig. 3, and their relative uncorrected and
+sured Signal levels. The relative corrected error in (16) 1s a corrected errors.
+ratio of the absolute OOB corrected error divided by an original
+signal. As shown in Figs. 4 and 6, the relative OOB corrections
+for the band M5 that has an absorption peak over land and
+. . V. CONCLUSION
+vegetation are even higher than the band M1 and M4 that have
+higher absolute OOB corrections as shown in the OB CT matrix. Radiometric correction for multispectral remote sensors must
+This result indicates that a lower absolute OOB correction such include OOB effects. In this paper, a general method for dealing
+as band M5 may achieve a higher relative OOB correction for With the DOB effects is proposed using an OBCT developed Via
+some particular spectra With band absorption. linear system theory.
+
+"
+"7","2482 IEEE TRANSACTIONS ON GEOSCIENCE AND REMOTE SENSING, VOL. 51, NO. 4, APRIL 2013
+(a)HICO(Land)SpectralCur\/e and Errors been derived. The processing of the DOB correction can be
+2 _ 3000 performed by a product between the OBCT matrix and a
++ Uncorrected Errors . .
++ Corrected Errors multispectral image vector.
+1 2500 - - -
+g2“ ,._ Spcmmum e; The OBCT matrix for the VIIRS instrument, Wthh was suc—
+‘g g cessfully launched on Oct. 28, 2011, is numerically computed
+1.: 0 2000 :37 and demonstrated. The VIIRS multispectral sensor is used as
+£3 .2 an example of the application of the method. Clearly, it can be
+°‘ -1 1500 applied to other multispectral sensors as well. TWO HICO and
+AVIRIS images are utilized for data simulation. Our proposed
+-2 1000 OBCT reduces the relative OOB errors in the uncorrected
+0'4 0'5 “:gengmmnfj 0'8 0'9 images by a factor of up to seventeen. The proposed method
+(mmcomgetmion)Spectmlclmand Emm can be applied to all multispectral remote sensing instruments
+4 3000 for OOB correction.
+3. 2 A
+:73 2000 3
+g f; REFERENCES
+[:1 g
+2 0 ‘2 [1] J. C. Price, “Calibration of satellite radiometers and the comparison of
+2 1000 f; vegetation indices,” Remote Sens. Environ, V01. 21, n0. 1, pp. 15—27,
+-2 Feb. 1987.
+[2] H. R. Gordon, “Remote sensing of ocean color: A methodology for deal—
+ing With broad spectral bands and signiﬁcant OOB response,” Appl. Opt,
+'4 04 0 5 0 6 0 7 0 8 0 9 0 vol. 34, no. 36, pp. 8363—8374, Dec. 1995.
+' ' waklcngm (11m) ' ' ‘ [3] R. A. Barnes, A. W. Holmes, W. L. Barnes, W. E. Esaias, and T. SVitek,
+“SeaWiFS prelaunch radiometric calibration and spectral characteriza—
+tion,” NASA, Goddard Space Flight Center, Greenbelt, MD, NASA Tech.
+Fig. 6. (a) and (b) TWO samples of HICO radiance spectra over land and Memo. 104566, 1995.
+vegetation marked by A and B in Fig. 3, and their relative uncorrected and [4] F. S. Patt, R. A. Barnes, R. E. Eplee, Jr., B. A. Franz, W. D. Robinson,
+corrected errors. G. C. Feldman, S. W. Bailey, J. Gales, P. J. Werdell, M. Wang, R. Frouin,
+R. P. Stumpf, R. A. Arnone, J. R. W. Gould, P. M. Martinolich,
+. I, _ . _ V. Ransibrahmanakul, J. E. O’Reilly, and J. A. Yoder, “Algorithm
+4 (a) HICO (821110“ “mmsmmalcum and Errors 3000 updates for the fourth seaWiFS data reprocessing,” NASA, Goddard
+Space Flight Center, Greenbelt, MD, NASA Tech. Memo. 206 892,
+2003, V01. 22.
+A 2 A [5] W. L. Barnes, T. S. Pagano, and V. V. Salomonson, “Prelaunch character—
+§ 2000 2.: istics of the Moderate Resolution Imaging Spectroradiometer (MODIS)
+E 0 ‘33. 011 EOS-AM 1,” IEEE Trans. Geosci. Remote Sens, V01. 36, n0. 4,
+L2 5;,"" pp. 1088—1100, Jul. 1998.
+‘3: ., __, . ~ .000 5 [6] M. R. Pandya, R. P. Singh, K. R. Murali, P. N. Babu,
+£3 -2 + unmmcted hm“ _ A. S. Kirankumar, and V. K. Dadhwal, “Bandpass solar exoatmospheric
++ C""""°°‘°d Em“ irradiance and rayleigh optical thickness of sensors onboard indian
++ SpectralCurvc remote sensing satellites—IB, —1C, —1D, and P4,” IEEE Trans. Geosci.
+’4 —_— . 0 Remote Sens, V01. 40, n0. 3, pp. 714—718, Mar. 2002.
+0'4 0'5 0'6 0'7 0'8 0'9 [7] M. Wang, B. A. Franz, R. A. Barnes, and C. R. McClain, “Effects of
+waveleng‘hwm) spectral bandpass 0n SeaWiFS—retrieved near—surface optical properties
+4 wmmoakq’ Wm”) SPcC‘r‘“ cum ““d 15m“ 3000 of the ocean,” Appl. Opt., V01. 40, n0. 3, pp. 343—348, J an. 2001.
+[8] C. Moeller, J. McIntire, T. Schwarting, and D. Moyer, “VIIRS F1 ‘best’
+relative spectral response characterization by the government team,” in
+A 2 A Proc. SPIE, 2011, V01. 8153, pp. 81530K1—1—81530K1—15.
+°§ 2000 3 [9] W. Chen, “Nonlinear inverse model for velocity estimation from an image
+[2 vi sequence,” J. Geophys. Res., vol. 116, no. C6, pp. C06015—1—C06015—14,
+g 0 ; Jun. 2011.
+:3 1000 2 [10] V. V. Salomonson, W. L. Barnes, P. W. Maymon, H. E. Montgomery,
+0‘ _2 — and H. Ostrow, “MODIS: Advanced facility instrument for studies of the
+earth as a system,” IEEE Trans. Geosci. Remote Sens, V01. 27, n0. 2,
+pp. 145—153, Mar. 1989.
+-4 0 [11] M. D. King, W. P. Menzel, Y. J. Kaufman, D. Tanre, B.—C. Gao,
+0-4 0'5 (16 0-7 0-8 0-9 S. Platnick, S. A. Ackerman, L. A. Remer, R. Pincus, and P. A. Hubanks,
+wavelength (1‘ “1) “Cloud and aerosol properties, precipitable water, and proﬁles of temper—
+ature and humidity from MODIS,” IEEE Trans. Geosci. Remote Sens,
+Fig. 7. (a) and (b) TWO samples of HICO radiance spectra over shallow and VOL 41’ n0. 2’ pp. 442—458’ Feb. 2903' , ,
+deep waters marked by C and D in Fig. 3, and their relative uncorrected and [12] R' A' .Banes arid J: J' Butler, Modehng spectral effects in earth—
+corrected errors. observmg satelhte 1nstruments,” 1n Proc. SPIE, 2007, V01. 6744,
+pp. 67441K—1—67441K—21.
+[13] K. A. Monsch, R. 0. Green, M. L. Eastwood, C. M. Sarture, T. G. Chrien,
+. M. Aronsson, B. J. Chi endale, J. A. Faust, B. E. Pavri, C. J. ChOVit,
+The method is based on the fact that other spectral Channels M. S olis, M. R. Olah, 31:11; 0. Williams, “Imaging Spectroscopy and the
+measure some of the light that contributes to OOB response Airborne VisibleInfraredImaging Spectrometer(AVIRIS),”Rem0te Sens.
+in a particular Channel. This crosstalk between multispectral Environ-ﬂoL 65,110- 3,1311 227-248, Se13- 1998-
+radiometers provides a possibility for decomposition. Using [14] R' LPCke’ M' COISOH’ NxMCGIOthhn’ 8' B‘PtCher’ D' WOOd’ D.‘ Korwan’
+. . . R. L1, W. Snyder, C. Dams, and D. Chen, The hyperspectral imager for
+the ﬁlter transmlttance functions for 8.11 multiband sensors, the coastal ocean: Instrument description and ﬁrst images,” Appl. Opt,
+an OBCT matrix for recovering in—band spectral radiance has V01. 50, no. 11, pp. 1501—1516,Apr. 2011.
+
+"
+"8","CHEN AND LUCKE: OUT—OF-BAND CORRECTION FOR MULTISPECTRAL REMOTE SENSING 2483
+Wei Chen received the BS. degree in physics from . ' _ ,, , Robert Lucke received the MS. and Ph.D. de—
+.. . _ Nankai University, Tianjin, China, in 1982, and the '1 , y » grees in physics from the Johns Hopkins University,
+
+Ph.D. degree in physics from Brigham Young Uni— "" gt ‘ g Baltimore, MD, in 1971 and 1975, respectively.
+‘ versity, Provo, UT, in 1991. \ "" ﬂ He has been at the Naval Research Laboratory
+' 29 He held a postdoctoral position at the National ' ‘. since 1982, Where he has ﬂown airborne systems for
+' ‘ _ Institute of Standard and Technology, Gaithersburg, measuring IR signatures of targets and backgrounds
+‘9 MD, and has been a Research Physicist With the Re— and developed computer models and image process—
+_ ' mote Sensing Division, Naval Research Laboratory, :; I 7 ‘ ing techniques to analyze the data they return. He has
+\ / Washington, DC, since 1999. He designed, de— worked extensively in optical modeling, including
+mg ‘A veloped, and implemented independently several the use of aberration theory and of Fourier optics. He
+software packages Which include PlotInﬁnity and has been in the remote sensing division since 1994
+MathInﬁnity (an extended computer algebra system). His areas of research Where he has worked in the areas of sparse—aperture and synthetic aperture
+include geophysics, physics, computer science, computer Vision, computer imaging, optical system design, and recently in hyperspectral imaging from
+graphics, image processing, modeling and simulation, and remote sensing data airborne and spaceborne platforms. He lead the team that built the Hyperspec—
+interpretation and applications in oceanography. tral Imager for the Coastal Ocean, Which is now returning images from the
+
+International Space Station.
+
+"

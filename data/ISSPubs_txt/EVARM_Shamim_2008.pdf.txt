@@ -1,0 +1,353 @@
+"","x"
+"1","IEEE TRANSACTIONS ON CIRCUITS AND SYSTEMS—II: EXPRESS BRIEFS, VOL. 55, NO. 7, JULY 2008 643
+ereless Dosnneter: System—on—Chlp Versus
+System-m—Paekage for Blomedical and
+Space Apphcatlons
+Atif Shamim, Student Member, IEEE, M. Arsalan, L. Roy, M. Shams, and G. Tarr, Member, IEEE
+
+Abstract—A new ﬂoating-gate (FG) MOSFET based wireless not intended for radiotherapy applications. Moreover, it uses
+dOSimEtEI‘ system-in-package (SiP) iS PresentEd- This miniature a separate large transmitter module for wireless transmission
+and completely. integrated wireless dosimeter SiP. comprises a of data. In the non—FG dosimeter Class, [2] demonstrates a
+CMOS FG radiation serfsm‘ and transmitter (TX) “1.3 low-tem- design for a permanent implant. However, it is unable to record
+perature co-ﬁred ceramic (LTCC) package. The des1gn is very . . . . . .
+well suited to wireless transmission of radiation sensor data in real time rafhw‘m dose and has a very low 861181thle and
+radiotherapy and t0 Extra Vehicular Activity Radiation Mon- communication range. An electret—based Wireless d0s1meter
+itoring (EVARM) in space. Two different solutions, namely demonstrated in [3] has a communication range 0f 3—5 cm
+system-on-chip (SOC) and SiP, are demonstrated. In the SOC, and an extremely low sensitivity of 11.45 HZ/rad Which is
+WhiCh iS Size and POWEI‘ EfﬁCienta the TX inCIUdES an OH-Chip 100p unsuitable for practical radiotherapy applications. A similar
+antenna which also acts as the inductor for the VCO i'esonant tank application is the EVA radiation monitor (EVARM) proj ect
+Circuit. The SIP solution has an LTCC antenna w1th Optimized h' h . d i ned to measure radiation doses ab s 0 rb e d b
+impedance t0 conjugate match the TX chip. The radiation sensor W 1C is .es g . . . . y
+demonstrates a measured sensitivity of 5 mV/rad. The SOC module astronauts 1n extr a vehicular act1V1ty 1'6"" spacewalks [4]' The
+size is only 2 mm2 ’ consumes 5.3 mW of power and delivers _0.9 existing system does not allow real time continuous monitoring
+dBm 0f radiated power, sufﬁcient to communicate with a low noise of the radiation experienced by the astronauts. In our proposed
+receiver connected to an Off-chip patch antenna placed 1.38 m solution, the radiation sensor integrated with the TX on the
+away. The SiP dESign PFOVideS a larger communicatim} range 0f spacesuits can convey the absorbed radiation data continuously
+75 m at the cost of additional power consumption and Size. to a receiver lo cated in the spacecraft.
+
+Index Terms—Integrated transmitter, low-temperature co-ﬁred TWO different solutions for the Wireless transmission of
+ceramic (LTCC), OH-Chip antenna, system-in-package (SiP), sensor data are demonstrated here. The ﬁrst solution is a SOC
+SyStem'On'Chip (SOC), Wirdess dOSimEten which is the size and power efﬁcient design. It comprises a
+
+monolithic voltage—Controlled oscillator (VCO) TX with an
+on—chip antenna. This on—Chip antenna is inductive and serves
+1' INTRODUCTION double duty as the inductor in the VCO tank. The second
+MINIATURE system—on—Chip (SOC) 0r system—in— solution is a SiP which has a low—temperature co—ﬁred ceramic
+A package (SiP) is an ideal solution for many short—range (LTCC) antenna designed to impedance match the TX Chip.
+wireless sensor applications. For example, in the treatment The SiP consumes more power because of the isolating buffers
+of cancer patients by means of high energy radiation, precise between the antenna and the VCO, however it provides a much
+knowledge of the dose and location of radiation experienced larger communication range.
+by the body is essential. Typically, this measurement is made The radiation sensor presented in this paper utilizes a pre—
+by a wired sensor to record the high energy radiation dose. charged FG radiation ﬁeld—effect transistor (FGRADFET) to
+These radiation sensors are small enough to be placed on detect the dose of incident radiation [5], [6]. The sensor chip
+any part of the body during a radiotherapy session, helping has been optimized for sensitivity by removing the injector gate
+doctors to target malignant tumors by providing real—time data and associated capacitance. For the ﬁrst time, this design incor—
+on the radiation doses reaching the organs. These radiation porates a reference FGMOSFET identical to the sensor and is
+measurement systems are called dosimeters. While these therefore less prone to environmental and temperature effects
+dosimeters have good sensitivity, the wire that connects to them as compared to the previous reported designs.
+is large and can deﬂect 0r scatter the radiation away from the Inductive on—chip antennas have been presented previously;
+targeted region during the irradiation process. To avoid these however, these antennas either suffer from large physical size
+ill effects and to relieve the patients from a Cluster of wires and low communication range or rely on a high resistivity sub—
+on their bodies, a short—range radio for transmitting the sensor strate to compensate for the low antenna gain and large losses
+data is an ideal solution. To our knowledge, the only existing of silicon [7], [8]. Furthermore, none of these inductors have
+ﬂoating—gate (FG) MOSFET dosimeter [1] is quite large and is been well characterized as antennas, in particular, for their radi—
+ation properties. Our previous work with an on—chip antenna/in—
+
+Manuscript received August 15, 2007; revised November 14, 2007. First pub— ductor demonsuated a measured communication 1‘ ange Of 2 m
+lished April 16, 2008; last published July 16, 2008 (projected). This paper was With a low—noise receiver connected to an off—Chip patch antenna
+recommended by Associate Editor W- A- Sefdijn- _ _ _ [9]. However, the antenna in [9] is surrounded by circuits on the
+655300;$333233:hgsezshzﬁizsszsaﬁsiéifzzwmy’ hhh. edges whhh hhhhhhhhh the hhhhhhh hehhhhhhhe- ghe
+
+Di git a1 Object Identiﬁer 10.1109/TCSII.2008.921573 miniature antenna/inductor presented here occupies 0.5 mm of
+
+1549-7747/$25.00 © 2008 IEEE
+
+"
+"2","644 IEEE TRANSACTIONS ON CIRCUITS AND SYSTEMS—II: EXPRESS BRIEFS, VOL. 55, NO. 7, JULY 2008
+METAL2 SHIELD PRECHARGE DEVICE
+I i Radiation I:\*_—::
+:eonasbrr‘iﬁiage ‘ ‘ ‘ ‘ INJECTOR GATE I WELL
+D Signal : : I , BPSG (POLY2_,_RE_MOVED) H |E.j|
+R;:tl)eon ProceSSing ;E;§¥II:JOGL;AOTXEIDEOL;1 'W l -- I
+c I, I I I TKF—l
+Battery :LaIrIIi’smltter '. -\ \ \ I 0 MFA“! ATE XIDE FIELD OXIDE H g
+. * n50, Signa Processing __ nc_ . .. em._ / SUBSTRATE \
+‘7 ' H."" (a) (b)
+Fig. 2. FGRADFET. (a) Bas1c structure cross—sectlonal Vlew. (b) Modlﬁed
+— structure top View.
+(a) (b)
+Fig. 1. Wireless dosimeter: (a) With battery and (b) With ultracapacitor. ______._.._______.___.______________________________________________________
+%
+S&Eups .. - : h._-‘:=‘|
+chip space, Which is the smallest reported area for an active an— -'l . -3 ;_.I|bl_—_. __. . i
+tenna operating in the 5—GHZ band. The oscillator TX demon— I ""l _i :43! i . i i
+strated here utilizes direct modulation Via the VCO control line. .. ""III“Ij—L' -__L . I __ _ .. .- _ . I
+This strategy has been successfully demonstrated before [10], Fggfsfgﬁgfggg g l
+but Without an integrated on—chip antenna. .____ _ ”Min . ‘+ . II ‘ .. hurl
+In this paper, a new FG MOSFET based Wireless dosimeter
+SiP is presented. The results compare the SOC performance to Flg- 3~ MlcTOPhOtOgraPh 0““ dOSImeter ChlP-
+SiP in terms of power consumption, size and communication
+range to determine suitability for completely integrated, lOW
+cost and short—range biomedical Wireless sensor systems. conventional RADFET where a large gate bias must be applied
+during irradiation to maximize sensitiVity, the FGRADFET’s
+II, WIRELESS DOSIMETER SYSTEM full sensitiVity is achieved Without any bias. This is possible due
+Dosimeters measure the dose absorbed b humans or e ui _ t0 the electric ﬁeld in the oxide layers of the device induced
+. . . . . y . q p by the charge stored on the FG. Zero—bias operation is a major
+ment from inCident high energy radiation. The d0s1meter 1n . . . . . .
+this work utilizes the change in FGRADFET’s currents before advantage in space and biomedical ap p lieations. A small bias
+and after the eX osure to measure the dose 0 f ra diation [11] A must still be applied to the dosimeter after irradiation to read
+. p . . . . . . ' the absorbed dose.
+Signal corresponding to the 1nc1dentradiat10n dose is generated, The absorbed radiation dose can be monitored b measurin
+Which after passing through the necessary signal processing . y . .g
+. . . . I D. However, I D is strongly temperature dependent and it is
+electronics, modulates the free running VCO control line di— difﬁe lt to detect small doses Without an means 0 f tern era
+rectly. The frequency modulated VCO Wirelessly transmits this 11 . . . y . p
+data through an in tegrate d an tenna ture compensation in the readout technique. The modiﬁed de—
+The design requirements for Wireless transmission of sensor Slgl} optimized for sens1t1V1ty 1s shoyvn 1n Flg' 2CD) 1? employs
+data are typically constrained by size and power consumption. 2:81:51? r:?éﬂfiﬁiégFaigﬁggglgﬁc? tgiirgteeg glﬂrlnsi‘gﬁigg
+An additional challenge for radiotherapy applications is that the g ' . ’u
+. . . . . . CMOS process. The PG has a large—area extens10n (100 am by
+system cannot include typical batteries comprismg materials 80 m) over the ﬁeld oxide as shown in Fi 2 The 11 0se
+with high atomic mass numbers that deﬂect 0r scatter the in— ’u . . ’ . . g. ' p rp
+cident radiation A simple design is to keep the battery and TX 0f the extens10n is to capture radiation—generated Charge from
+. . . ' . . the thick ﬁeld oxide. The injector gate has been removed from
+Circuits slightly away from the radiation target area, as shown . . .
+. . . . the FG. This reduces the overall capac1tance 0n the FG and in—
+in Flg' 1(a). However, thls ap p roach does not remove the eres creases the sensor sensitiVit The FG is re char ed b drain
+completely and is likely to pick up more noise because of the ad— . . y. p . g . y
+. . . tunneling from a charging structure placed on a Side, instead of
+ditional cable length. A more compact approach is to replace the . . . .
+. . . . . the injector gate being on top of the FG. P—Channel trans1st0rs
+batteries With thin ﬁlm ultracapaCItors Wthh are transparent to . . . . . .
+the high energy radiation These ultracapacitors are pre—Charged are utilized in this work due to their lower l/f n01se performance
+prior to use and can suppbr t a charge 0 f 1 F /cm2 [12] They can as compared to the equivalent n—Channel transistors. These tran—
+either be mounted on the chip or can be a part 0 f the package sistors have channel lengths and widths of 4 and 20 ,um, respec—
+. . . . . ’ tively. The sensors have been fully shielded using poly, metal 1
+as shown in Fig. 1(b). The radiation sensor does not require any nd m t 1 2 Thi a oids the n anted ariation in the F G 0
+power during the irradiation process and the signal processing a . e a ' S V . 11 W V . . p
+and RF circuits can acquire the necessary power from a minia— tential caused by the bias applied to other deV1ces 0n the chip, as
+ture ultraca acitor reported in [l l]. The complete chip microphotograph is shown
+9 ' in Fig. 3.
+111 D D Temperature and environmental effects cancellation is dis—
+' OSIMETER ESIGN cussed in detail in our previous work [1 1]. This design enhances
+The basic FGRADFET structure is shown in Fig. 2(a) [l l]. the compensation for the variation in I D due to temperature and
+The FG is pre—Charged prior to irradiation through an injector environmental variations by combining the sensor FGRADFET
+gate. The incident radiation creates electron—hole pairs in the With a reference FGMOSFET for the ﬁrst time. The PG refer—
+ﬁeld oxide and raduall dischar es the FG. This weakens the ence is identical in terms of channel len th and Width as that
+g y g g
+p—Channel and, hence reduces the drain current I D. Unlike the 0f the sensor. However, the sensor has the FG extended over the
+
+"
+"3","SHAMIM et al.: WIRELESS DOSIMETER: SoC VERSUS SiP 645
+Floating Gate Potential Variation With Radiation 4—D
+'2'27 —§ensitivity = 5mV/Rad
+t; _2_32 Pomts F Bond
+i=3 Pads
+-2_34 Fig. 5. On—chip antenna/Inductor HFSS model.
+'2'350 2 4 6 s 1.0 12 14 16 d3“; . T t I) Z
+Radiation [Rads] Normlizoe:
+I 0 .. [Theta
+Fig. 4. Measured sensitivity for the sensor chip. ' ' ’
+-6 Y
+ﬁeld oxide thus making it more sensitive to the radiation as com— '43
+pared to the reference FGMOSFET. Since the two are identical _ _ _ _ _
+and behave exactly the same way in response to all the variations Flg' 6' Antenna/mducmr summed radlauon patter”
+other than the radiation absorption, the overall system cancels
+out the ﬁrst—order temperature and environmental effects more , , ,
+. . taken that the antenna remains Close to the Chip edges w1thout
+accurately as compared to our preyious vers1on [l l]. The source , , , , ,
+. . . . . any active Circuits blocklng it.
+of the sensor is connected to the readout Circuit Wthh comprises . . . .
+h' . . . . The antenna is des1gned and implemented in a standard
+1gh prec1s1on integrated op—amps. It incorporates a current to , , , , ,
+. . . 013—,me CMOS process, haying a Si substrate res1st1V1ty of
+voltage converter as the ﬁrst stage followed by a prec1s1on differ— . .
+
+. . . . 13.5 S2 ~Cm. The antenna is realized on the top metal layer only.
+ent1al ampliﬁer. The readoutc1rcu1tcompares the currents from I , d t t' 11 , d t , t d
+the FGRADFET and FGMOSFET to produce a corresponding n.preV1ous emons ra ions, sma in PC ors are JUS use. as
+
+. . . 0011s for near—ﬁeld coupling and not optimized or Characterized
+output voltage. This voltage reﬂects the radiation absorbed by f th . d' t' t' I 13 . d t f bl
+the sensor and is utilized to modulate the control line of the TX or e1r ra 13.1011 p rop er 168' n [ ]’ an Ill uc or O compara e
+
+. . . . Size communicates over only 1 mm With much larger 1nput
+VCO. The measured sens1t1V1ty of the FG sensor 1n an X—ray , , ,
+. . . . . . . power as it has not been optimized as an antenna. It, therefore,
+chamber is shown in Fig. 4. It shows an improved sens1t1V1ty of . . .
+. acts Just as a near—ﬁeld sensor and not an antenna in the Class1cal
+5 mV/rad as compared to the 3 mV/rad from the preyious ver— , , ,
+sion [11] The complete sensor Chip consumes 2 mW of power sense. The loop antenna/1nductor model s1mulated 1n HFSS
+° ° is shown in Fig. 5 (VCO not included in the HFSS model.)
+The simulation model includes the bond pads for testing the
+IV‘ TRANSMITTER DESIGN inductor/antenna. The VCO is placed in the center of the loop
+A S C D , through similar feed lines with microsurgery points. These
+' 0 eszg n bond pads can be removed through a laser trimming technique
+I) On-Chip Antenna/Inductor Design: Since the antenna for normal operation of the VCO connected to the antenna.
+serves as an inductor for the TX VCO, full 3—D electromagnetic On the other hand, independent testing of inductor/antenna is
+simulations using high—frequency structure simulator (HFSS) possible through these bond pads after disconnecting the VCO
+are employed to obtain the required inductance L and quality from the other end of the antenna. The simulated 3—D radiation
+factor Q, while optimizing the radiation efﬁciency. A lumped pattern is shown in Fig. 6. As expected from an electrically
+element model is then derived for the antenna/inductor. This small loop antenna, the maximum radiation is along the plane
+model allows Circuit simulation of the complete antenna/TX of the loop.
+combination. 2) TX VCO Design: The TX here makes use of direct mod—
+In order for the antenna to also serve as an inductor, it must ulation of a VCO with no Closed feedback loop. This method
+be able to retain power at the same time as it radiates power. has the advantage of the data rate not being limited by the loop
+The design is therefore required to yield a reasonably high—Q bandwidth of a phase—locked loop (PLL) Circuit. Moreover, the
+inductor as well as an appropriate antenna radiation pattern and direct modulation of a Closed—loop VCO would cause the modu—
+efﬁciency. The loop antenna is a natural candidate for an an— lated waveform to distort by the negative feedbackloop of aPLL
+tenna/inductor design as it is inherently inductive in nature and [14]. Above all, a PLL Circuit would consume more power than
+eXhibits a broad radiation pattern. Moreover, since it is a dif— a single VCO and would require a reference signal which is an
+ferential antenna, it can be integrated with differential Circuitry off—Chip crystal in most cases. On the other hand, the open loop
+directly without needing a balun. Finally, its geometry allows direct VCO modulation does suffer from the fact that the output
+placement of the active TX Circuitry in the center of the loop, frequency is susceptible to undesired perturbation and noise. For
+thus minimizing the die size. In our previous work [9], some this particular application, the absolute value of the free running
+of the active Circuits were placed outside the loop and were VCO frequency is less important than the variation in the carrier
+very Close to one of the antenna edges. This resulted in deterio— frequency due to modulation. Moreover, dosimeter sensor data
+rated radiation performance. In the present design, care has been modulation will only cause the free running VCO frequency to
+
+"
+"4","646 IEEE TRANSACTIONS ON CIRCUITS AND SYSTEMS—II: EXPRESS BRIEFS, VOL. 55, NO. 7, JULY 2008
+v « .
+. . I&IIIIIEIeI I I
+Transmitted ‘2“? ' , A . ' ‘ ‘ I
+Signal “‘~ "" ""Mr; W"" _; WBTECTION
+|nductor/_nna ”‘ y ‘ ‘13
+Antenna 0 O 0 a . -- i.‘
+Baszpitisrﬁﬁ , LL“
+Fixed Capacitor-- f5: ' . .
+Modulating ii"" I u I
+S'gzi'sgtm ”w. u , IIIII-th”
+I I§II 3'? I I I
+M Fig. 8. TX VCO chip microphotograph.
+Fig. 7. VCO schematic. 1'7 . . 20
+:,.v---~\ : —lnductance (L)
+decrease permanently. Therefore, any frequency drift because 1'6 V __ 15
+of noise or jitter can be easily identiﬁed. 5 5 5
+
+An inductor capacitor (LC) cross—coupled differential VCO E 1_5 ,;__________10 0
+topology has been chosen for this work, as shown in Fig. 7. It -'
+utilizes both pMOS and nMOS transistors, Which generate neg— , 5
+ative resistance to cancel the resonant tank losses. The resonant 1-4 L- 5
+tank consists of the inductor/antenna, three band switching ca— I 5
+pacitors and two tunin g varactors. In order to increase the output
+voltage swing, proper transistor sizing is employed to adjust the 1'30 1 2 3 4 5 6 7 3 9 16)
+bias current instead of using a current source. Frequency (GHZ)
+
+The VCO deslgn 18 based on a Simultaneous trémscondue Fig. 9. On—chip antenna/inductor quality factor and inductance.
+tance “gm” and impedance matching technique. This approach
+reduces the ﬂicker noise and improves output signal power and _20
+VCO phase noise performance [15]. MOS varactors employed
+in this work have the maximum tunability for a biasing range 1; '40
+0f —O.2 to +0.2 V. Since the sensor data modulates the carrier § '60
+frequency through the control line of these varactors, maX— :19; -80
+imum sensitiVity can be achieved by keeping the control signal g -100
+Within the above mentioned biasing range. This is achieved f, 420
+through the signal processing electronics in the sensor chip. @440
+The band switching capacitor bank comprises three metal—in— °' 160
+sulatOI-metal (MIM) capacitOIS- PYOVisiOH has been made to
+disconnect two of these MIM capacitors. This can switch the 48303 L I .....1.04 L L ' W155 ' L 'W1'06 ' ' ”H.157 ' L .....1.08
+operating band from 5 to 5.25 and 5.5 GHZ, respectively. The Relative Frequency (HZ)
+varactors can rOVide a ﬁne tunin of $200 MHZ around an of . .
+these bands. The VCO outputs agie buffered through cascailled Flg 10' TX VCO phase n01se.
+inverters. The three stage buffer on either side of the differential
+VCO ensures minimum loadin 0n the VCO. The buffers are , , , , , ,
+included for measurements only:g and will remain off during the the Q 0fthe OH‘Chlp inductor, Wthh 1f increased W111 turn the
+normal operation of the VCO TX. A separate bias line for the inductorinto apoor radiator. The VCO draws an average current
+buffers ensures that they are turned on only When required. The Of2'8 mA and eonsumes 3'3 mW Of p ower mm a 1'2“] SUP p 1y.
+complete TX chip microphotograph is shown in Fig. 8. The The power d1ss1pat10n can be reduced by us1ng a lower current
+antenna is placed symmetrically in the center With two sides value at the expense Of reduced output p ower and range. The
+Close to the chip edges Without any active circuitry, bond pads, ﬁgure Of merit (FOM)’ based on the formula deﬁned in [16]’ 1s
+or top metal layer in close Vicinity. The VCO is placed in the —187'13 dBC/HZ'
+center of the leop antenna and has a guard ring protection for B. Si P Design
+n01se suppress10n.
+
+The 0n—Chip antenna/inductor demonstrates an inductance of The SiP employs an efﬁcient LTCC antenna in addition
+1.4 nH and a Q of 14 at 5.2 GHZ as shown in Fig. 9. The VCO t0 the same TX and sensor Chips. A larger power source is
+demonstrates a phase noise of —118 dBc/Hz at l—MHZ offset required in this case to operate the buffers. RF circuit inte—
+as shown in Fig. 10. The phase noise is strongly dependent on gration with LTCC passives for SiP has been successfully
+
+"
+"5","SHAMIM et al.: WIRELESS DOSIMETER: SOC VERSUS SiP 647
+- - - ' range is 75 m. Table I summarizes the comparison between the
+.. , 2 _ __, . two cases.
+"" 'avity f0! ""
+ea! iltrachar e Ca citor .
+5i? on thegBackgiZe '. . VI- CONCLUSION
+_lded Dipole ' A new FG wireless dosimeter SiP has been demonstrated for
+‘ ' +1""? - -- ~ radiation sensing applications. The design incorporates highly
+integrated, low—power CMOS VCO TX along With a high—sensi—
+tiVity FG radiation sensor. The radiation sensor has a sensitivity
+""‘ 0f 5 mV/rad. The VCO tank inductor has been optimized to act
+lvrno r as an 0n—Chip antenna thus minimizing chip space. Its 0.5—mm2
+r area is the smallest reported 0n—Chip antenna size for a 5—GHZ
+""m, band. The VCO has a FOM of —187.13 dBC/Hz. The complete
+SOC sized 2 mm2 consumes 5.3 mW of power and can commu—
+Fig. 11. Photograph of LTCC module. nicate with a low—noise receiver connected to a patch antenna
+placed 1.38 m away. The SiP approach, on the other hand, pro—
+TABLEI Vides a transmission range of 75 m at the cost of increased size
+COMPARISON OF SOC AND SIP WIRELESS DOSIMETER DESIGNS , , , , ,
+and power e0nsumpt10n. The results show the feas1b111ty 0f h1gh
+performance fully integrated wireless dosimeter 1n SOC and SiP
+formats.
+REFERENCES
+démonsuated before [17] 11? thls Work’ the LTCC paCkége [1] “Floating gate dosimeter,” Synodys, Atlanta, GA [Online]. Available:
+w1th an antenna 1s des1gned 1n an eight layer (800 ,um) thick http://syn0dys.COIn/portal/
+_ . ' ' h TX [2] C. Scarantino, “An implantable radiation dosimeter for use in external
+FCI‘I‘O A6 S process Thls antenna.mUSt b.e integrated to t e beam radiation therapy,” J. Med. Phys., vol. 31, n0. 9, pp. 2658—2671,
+VCO through the buffers to aV01d loading of the VCO. The Sep. 2004.
+antenna’s input impedance is required to conjugate match the [3] C. Son and B. Ziaie, “A micromachined electret—based transponder for
+TX output impedance. This avoids additional matching circuit 11:11.03;ra8c§20§§6mﬁsgrezrgggn IEEEEleCtm"" Dew“ Lett""V01' 27,110.
+elements. The buffer ampliﬁers eXhibit a differential impedance [4] “EVARM,”Th01ns0n,Nepean,ON,Canada [Online].Availab1e: http://
+0f 32 — j 12 (2, so the antenna is designed for a differential WWW-thomSOH'eleC~00m/Space/6V31Tm-htm _
+. . . Q . h [5] M. N. Martm, D. R. Roth, A. Garnson—Darnn, P. J . McNulty, and A.
+input 1mpedance 0f 32 + .712 at 5-2 GHZ- SlnCC t e antenna G. Andreou, “FGMOS dosimetry: Design and implementation,” IEEE
+1s connected to the TX buffers through coplanar str1p (CPS) Trans. Nucl. Sci., vol. 48, no. 12, pp. 2050—2055, Dec. 2001. _
+lines that are Wire bonded to the chip pads, the simulation [6] N' G' Tar? G' F' MaQKay’ K' Shortt’ and 1' Thomsfn’ A ﬂoatmg'gate
+, , , , MOS d0s1rneter requmng no external blas supply, IEEE Trans. Nucl.
+setup includes the bond W1res. A folded d1p01e antenna 1s Sci.,V01. 45, n0. 6, pp. 1470—1474, Jun. 1998.
+employed tO optimize space, as Shown in Fig. 11. It displays a [7] D.G.Ha11,R.N._Slrn0ns,andF.A.M11anda,“RFte1ernetry system for
+
+. f 1 dB . h b . h d. . Th 1 an 1mp1antab1e bIO-MEMS sensor,” 1n IEEE MTTS Int. Microw. Symp.
+
+ga1n 0 — Wit a ores1g tra 1at10n pattern. e eomp ete Dig.,FortW01th,TX, Jun. 2004,1313. 1 4334 436.
+LTCC package Sized 1.6 cm x 1.6 cm contains caV1t1es With [8] J. A. Von AIX and K. Najaﬁ, “On—Chip coils with integrated cores
+' ' for remote inductive powering of integrated microsysterns,” in Proc.
+ap p I‘Op r1ate grqund and sup p 1y C,O 11116CthIlS fOI‘ bOth th,e 8611801“ Int. Conf. Solid-State Sensors Actuators, Chicago, IL, Jun. 1997, pp.
+and the TX Chips. Both the caV1t1es are ﬁve layers thick. The 9994002
+control signal from the sensor to the TX chip is routed through [9] V. KammPPﬁpplevtvlelLA. Sharrflim,a11}fd C. Pleté, “Ad6_.31GHz BFSK
+- - - - - - tI‘ﬂIlSHllttGI‘ Wlt OIl-C 1p antenna Of SS -pOW€f€ H16 1C3 SGHSOI‘ ap—
+the paekage trans1n1ss10n 11ne, W1re bonded on e1ther s1des. plications,” in Pma IEEE RFIC Symp., Honolulu, HI, Jun. 2007, pp.
+There 1s a large caV1ty 0n the bottom of the package for an ultra 999—1002.
+capacitor to provide power. It is connected to the Chips through [10] N- M- Nelhart and R- R- H3999“, “A_IOW'POWGT FM transmltter 1‘01
+. . use 1n neural recordmg apphcatlons,” 1n Proc. IEEE Eng. Med. Bzol.
+an appmpﬂate V121 and Pad arrangement Conf, San Francisco, CA, Sep. 2004, pp. 2117—2120.
+[11] N. G. Tarr, K. Shortt, W. Yanbin, and 1. Thomson, “A sensitive, temper—
+ature—cornpensated, zero—bias ﬂoating—gate MOSFET dosimeter,” IEEE
+V. SOC VERSUS SiP Trans. Nucl. Sci., V01. 51, n0. 6, pp. 1277—1282, Jun. 2004.
+[12] A. Burke, “Ultracapacitors: Why, how, and Where is the technology,”
+' h in 1‘ J. Power Sources, V01. 91, pp. 37—50, 2000.
+
+For th.e SOC approach, the RF pow.“ rad1ated by.t e dug“) / [13] L. Guo et al., “A small OCA on a 1/sp1tirnes/0.5—rnm/sup 2/ 2.45—GHz
+antenna 13 —O-9 dBm- The TX efﬁCICnCya Wthh 13 the 1‘ 31th 0f RFID tag—design and integration based on a CMOS—compatible manu—
+radiated power to the power consumed, is 23.5%, From Friis facturing technology,” IEEE Electron Device Lett., vol. 27, n0. 2, pp.
+
+' ' ' ' ' 96—98, Feb. 2006.
+equatlfm [181’ Wlth an OQ'Chlp 311911113 gal“ 0f ‘26 (H31 and [14] s. Cho and A. P. Chandrakasan, “A 6.5-GHz energy-efﬁcient BFSK
+Off—Chlp patch antenna galn Of 6.5 (1131, thC TX Call COIIlIIlllIll- modulator for Wireless sensor applications,” IEEE J. Solid-State Cir-
+eate With a low noise receiver placed 1.38 m away. The slightly CW“, VOL 39,110- 5’ PP- 7317739, May 2004- _ _ _ _
+
+d d . . d . db [15] N. Fong, “Low—Voltage radlo frequency cmos 1ntegrated Clrcults 1n
+re uce transmiss10nrangecompa1e to [9113 compenéate y a silicon—on—insulator,” Ph.D. dissertation, Dept. Elect. Eng., Carleton
+54% reduction 1n power consumption, 33% reduction 1n module UniV., Ottawa, ON, Canada, 2002.
+
+- - - - - _ [16] M. Tiebout, “LOW power 10W phase noise differentially tuned quadra—
+SIZC’ ImpFOYed VCO phase “0136 behavmr’ a more “mform an ture VCO designed in standard CMOS,” IEEE J. Solid State Circuits,
+tenna radiation pattern, and the removal of the 0ff—ch1p reference vol. 36, n0. 5, pp. 1018—1024, May 2001.
+crystal. The power consumption for the SiP solution increases [17] C- Lee 6t 611-, “A compaCt LTCC-based Ku-band transmlttef module,”
+1 40 W b fth b ff (11 1h 5 3 W . IEEE Trans. Adv. Pkg, V01. 25, n0. 3, pp. 374—384, Aug. 2002.
+
+0 m ecause 0 e u ers “18 compare 0 C ' m . 111 [18] C. A. Balanis, Antenna Theory Analysis and Design, 2nd ed. New
+SOC; however, the TX efﬁc1ency 1s 19.1% and the transm1ss10n York: Wiley, 1997, pp. 86—87.
+
+"

@@ -1,0 +1,323 @@
+"","x"
+"1","Technical Paper 5)
+J. Astron. Space Sci. 32(4), 419-425 (2015) IA 55 iigrrgrlclagy :35
+http://dx.doi.org/10.5140/JASS.2015.32.4.419 Space Sdences
+Conceptual Design and Demonstration of Space Scale for Measuring
+Mass in Microgravity Environment
+Youn-Kyu Kimi, Ioo-Hee Lee, Gi-Hyuk Choi, Ik—Hyeon Choi
+Convergence Technology Research Head Office, Korea Aerospace Research Institute, Daejeon 34133, Korea
+In this study, a new idea for developing a space scale for measuring mass in a microgravity environment was proposed by
+using the inertial force properties of an object to measure its mass. The space scale detected the momentum Change of
+the specimen and reference masses by using a load—cell sensor as the force transducer based on Newton’s laws of motion.
+In addition, the space scale calculated the specimen mass by comparing the inertial forces of the specimen and reference
+masses in the same acceleration field. By using this concept, a space scale with a capacity of 3 kg based on the law of
+momentum conservation was implemented and demonstrated under microgravity conditions onboard International Space
+Station (188) with an accuracy of :1 g. By the performance analysis on the space scale, it was verified that an instrument
+with a compact size could be implemented and be quickly measured with a reasonable accuracy under microgravity
+conditions.
+Keywords: space scale, space balance, inertial balance, international space station, microgravity
+1 . INTRODUCTION method, the characteristic frequency according to the object
+mass is measured with a high accuracy. However, the Change
+A space scale is a measuring instrument for determining in the frequency is inﬂuenced not only by the mass, but
+the mass of live specimens made of solid, semi—solid, and also by the volume, density, material quality, Vibration field
+liquid materials (in containers) with a mass of less than that is not constant according to the location, and method
+3 kg in a space environment (especially in microgravity of installing the specimens. By using the inertial force type
+environments (or ‘zero—gravity’)) on board the International (Rivetti et al. 1999), the specimen mass is measured by
+Space Station (188). The life science studying a long—term using centrifugal force experienced by the mass caused by
+human stay in space and the material science studying rotating the specimen. This centrifuge system can obtain a
+industrial applications are important research fields on the constant acceleration field through long specimen rotation.
+188. For these research fields, basic instruments for measuring However, it is not easy to estimate the center of mass used
+mass such as space scale are required, especially accurate and in numerical expressions because the center of gravity
+compact instruments to be handled by astronauts because varies according to the volume, density, and shape of the
+general balances based on the gravity effect on ground do not specimen (Fujii 2006). Long measurement duration also can
+work in the microgravity environment. be stressful for living specimens such as lab rats. By using an
+Several studies on the mass measurement under the inertial system using the law of conservation of momentum
+microgravity conditions are reported: a Vibration type (Fujii 2006), the specimen mass is estimated by measuring
+using a Characteristic frequency and an inertial force type the inertial force by means of acceleration. It is possible
+using centrifuging (Rivetti et al. 1999) and the law of the to quickly measure the force with high accuracy based on
+momentum conservation (Fujii 2006). By using the Vibration Newton’s law of motion, F: ma, where m is the mass, F is the
+@This is an Open Access article distributed under the terms of the Received Sep 15, 2015 Revised Nov 16, 2015 Accepted Nov 18, 2015
+Creative Commons Attribution Non-Commercial License (http:// lCorresponding Author
+creat1vecommons.org/l1censes/by-nc/3.0/) wh1ch perm1ts unrestncted
+non-commercial use, distribution, and reproduction in any medium, E-mail: yl<l<im@l<ari.re.l<r, ORCID: 0000'0001'5959'6396
+provided the original work is properly cited. Tel: +82—42-860-2565, FaX: +82'42'860'2269
+Copyright © The Korean Space Science Society 419 http://janss.kr pISSN12093—5587 eISSN: 2093—1409
+
+"
+"2","J. Astron. Space Sci. 32(4), 419—425 (2015)
+inertial force, and a is the acceleration. However, this system respectively, and g is the gravitational acceleration, Which
+requires an accurate acceleration measurement and inertial is approximately 9.8 m/s2 on ground and is approximately
+force and is for measuring objects With masses in the order zero under the microgravity condition on the 188. m1 and m2
+of several kilograms. represent the masses of the reference object and the specimen,
+In this paper, the proposed and implemented instrument respectively. The m0 term representing the mass of the load-cell
+is a low—Capacity inertial balance (between 0 g and 3 kg) plate is also measured by the load-cells because the plates are
+based on the inertial system. It is a compact, reliable, and mounted onto the load-cells, and therefore, the plates interface
+simple system Which can provide fast measurements With With the load-cells and the objects. Via the proportion of the
+a reasonable accuracy. As for the last two applications, the inertial forces, F1 and F2, obtained from the expressions, the
+systems require a stable motion and a uniform acceleration mass of the specimen is obtained by eliminating the acceleration
+to estimate the mass. This system compares the inertial parameter a+g, as shown below.
+forces between the specimen and a reference object on
+the same acceleration plate simultaneously, hence the m2 = £07“ + m0) — m0 (3)
+acceleration term is eliminated in the calculation algorithm.
+The performance test was conducted in the microgravity In expression (3), the reference mass m1, m0, and the load—
+environment onboard the 188 as part of the scientific cell Characteristic constants (klzkz) are known parameters,
+experiments of the Korean astronaut program in April 2008. and F1 and F2 are values measured by the 10ad-cell sensors.
+Therefore, the specimen mass, m2, can be obtained by
+using the given simple expression Without the acceleration
+2. SPACE SCALE DESIGN AND IMPLEMENTATION parameter, Which implied that the specimen mass can be
+estimated under any gravity conditions as well as under
+2.1 Conceptual Measurement Scheme slightly unstable acceleration conditions. To verify this new
+method, the space scale was designed and implemented, as
+In the measurement scheme of the space scale and the described in Section 2.2
+conceptual method demonstrated in Fig. 1, the method
+of the law of momentum conservation (Fujii 2006) is used 2.2 Space Scale Implementation
+by applying mechanical acceleration to some specimens.
+However, this method is simpler and easier than the former The concept, design, and hardware development of
+method using the law of momentum conservation because the space scale is demonstrated in this subsection. Figs. 2
+the mass is calculated by measuring the inertial force of and 3 show the 3D design of the space scale and the real
+the reference object (known value) and the specimen
+(unknown value). First, two 10ad—cells, Which are sensors
+for the load and the force transducer, are mounted onto the _
+same acceleration plate that moves up and down by using a MOtor <: <:
+DC motor. Then the specimen and the reference object are Driver
+placed on each load-cell. The 10ad-cells, the specimen, and
+the reference object are in the same inertial system; hence, CONTROLLER
+they are under the same acceleration conditions. When the Fixing device
+objects undergo accelerated motion, the specimen and the _—— Processor
+reference object measured by the load—cells, based on the 'Ml
+Newton’s laws of motion, in terms of the inertial forces by %y.
+the equations given below. F1 is the measured force of the E m/‘l
+reference object and F2 is that of the specimen. —ﬁ- 1
+F1 = k1{m1(a + g) + mo(a + 9)} (1) II I
+F2 = k2{m2(a + g) + mo(a + 9)} (2) |p:cl
+In expressions (1) and (2), k1 and k2 represent the proportional
+characteristic constants of load-cell #1 and load-cell #2, Fig. 1. Conceptualdesign ofthe space scale.
+http://dx.doi.org/10.5140/JASS.2015.32.4.419 420
+
+"
+"3","Youn-Kyu Kim et al. Space Scale
+~ ‘ Table 1. Speciﬁcations ofthe space scale
+! Volume approximately 26 x 25 x 39 cm3
+I I .. ‘ Mass approximatel 6.0 k
+lillll '- “""9"" ' t lyllA g d28V t ' f b t
+___ l’ : POWBI‘ approx1ma e y an a max1mum ora 011
+: 1 ' 110 msec
+; i ‘ Measurement 0 g ~ 3 kg (maximum range depends on the load
+Range cell capacity)
+i I k I Motion Distance 15 cm
+R A \ Acceleration over 0.4 G
+g D 1 u!
+E m
+. I and rocessin the analo data, main control and ower
+Fig. 2. Space scale 3D design (left: the outer view, right: the inner view). p g . g OP .
+module for controlllng the system and the communlcatlon
+electrically, and user interface module for operating the
+space scale hardware for the outer and the inner Views, system, as shown in the block diagram of Fig. 4.
+respectively. The main specifications of the space scale are As mentioned before, the specimen and the reference
+indicated in Table 1. The longer the length of motion is, the object are mounted onto each load cell plate. The mobility
+more data we can obtain. However, because there are some module has the DC motor as the motion source, ball screw
+constraints on the mass and volume of the apparatus for to change the rotational motion of the motor into linear
+the experiments conducted on the 188, the range of motion motion, and motor controller including an encoder that
+is chosen as approximately 15 cm, which is the minimum controls a velocity of the motor. The mobility module
+length required to obtain sufficient acceleration. generates an inertial force by driving the DC motor and
+The space scale mainly comprises the mobility module accelerates the specimen and the reference object to 0.4
+for the accelerated motion, measurement and data G (gravity, 1 G = 9.8 m/sz). The load cell and acceleration
+processing modules for measuring the inertial forces plates are interfaced with the ball screw and motor and
+F— Reference Object
+°
+a-z-u pm—
+_/ ’
+Plate
+0
+Ao-mapdue Balance a ' m
+! H'I'Ig I 4 .1;
+I t
+Fig. 3. Front & innerview of space scale (Kim et al. 2009).
+User Interface Module Main Control 8!. Power Module
+—oata/comman_ H
+—P°we'
+I
+28 VDC I =— hﬂ=l
+a -4 .l
+®
+Encoder Controller
+Measurement 8!. Data Processing Module Mobility Module
+Fig. 4. Functional blockdiagram of space scale.
+42 ‘| http://janss.kr
+
+"
+"4","J. Astron. Space Sci. 32(4), 419—425 (2015)
+move approximately 15 em up and down along the ball Table 2. Preliminarytestresults
+screw for 0.4 sec. Hence, the specimen and the reference SPBCimen mass RESUHValue (mean) Standard DBViatiOIl
+object mounted onto the plates are in the inertial system H
+under the same acceleration conditions. W
+The measurement and data processing module comprises 200 g 196.9 g 0.2 g
+two load cell sensors and a signal—processing component 500 8 489-88 0-3 8
+for the data measured by the load cells. A highly sensitive Wg—W
+2 kg 1970.1 g 0.5 g
+load cell as the transducer for the conversion of force into —
+an electrical signal measures the resistance Change from
+the force and the load by using an embedded Wheatstone expanded the original formula with the ﬁnal term in expression
+bridge Circuit and generates an analog signal in proportion (4).
+t0 the momentum Change of the specimen and the reference
+masses. In this study, a commercial single point load cell m2 = % (m1 + m0) — m0 z k;—"":(m1 + m0) — m0 + e (4)
+was manufactured only for the space scale and the accuracy
+of the load cell was improved in a measurement range of 3 0c is the approximated term for considering the noise from
+kg, not considering the space and microgravity conditions. the load cell, amplifier, ADC, and all devices related to the
+T0 transfer the corresponding signals to the main control reference object. ﬂ is the approximated term for considering
+module, which calculates the specimen mass , the analog the noise from all devices related to the specimen, and ﬂ
+signals of the specimen and 0f the reference object are is measured Via F2. To calculate the specimen mass, the
+amplified, filtered, and converted into digital signals by noise factor 0c 0r ﬂ inﬂuences the mass measurement in
+each signal processor (amplifier, filter, Analog to Digital expression (4). k1 and k2 are not equal quantities because
+Converter (ADC)), as shown in Fig. 4. the two load cells originally have a nonlinearity error of
+The main control 8: power module manages and controls 0.03%, repeatability error of 0.01%, and other errors of
+all functions of the space scale, such as motor control, signal 0.01%. However, it is not easy to analyze all detailed noise
+processor control, data storage, and calculation of the mass, terms from the two independent subsystems, namely,
+by using the space scale algorithm. The power distribution the specimen and the reference parts. Therefore, we
+unit with a regulator and a DC—to—DC converter supplies the approximated expression (3) into expression (4) with the
+necessary electrical power to all devices in the space scale. new parameters k and 8, assuming the noise terms 0c, ﬂ to
+The space scale is operated by the user interface module be approximately proportional to the measured forces F1
+having all application software by Graphical User Interface and F2. By using this equation, the specimen mass can be
+(GUI) in a laptop. obtained by a linear function as the ratio of F2 to F1.
+We applied the calibration function to the space scale,
+2.3 Preliminary Test and Calibration of Space Scale and the parameters k and s were obtained by the calibration
+function and adapted to the final equation before the mass
+As mentioned above, the main control module monitors measurement of the specimen. The parameters k and
+the present motor state and controls the input acceleration 8 Changed with the mass of the reference object. In this
+motion of the motor. In the profile of the motor motion, system, solid objects of 50 g mass were usually used.
+the motor linearly accelerates for approximately 0.2 The calibration is conducted as follows. The minimum
+sec and achieves an acceleration of greater than 0.4 G mass in the measurement range is used as the specimen,
+(approximately 4 m/sz). and the ratio of F2 to P1 with a fixed reference mass of 50 g is
+By using the proposed profile of the motor motion, measured. Then the maximum mass in the measurement
+preliminary tests were conducted in the space scale. A solid range is used as the specimen, and the ratio of F2 to F1 is
+metal object of 100 g mass is used as the reference object measured. The k and evalues can be calculated with the two
+and solid objects with a mass of 19 g ~ 2 kg are used as the calibration data because the mass measuring algorithm is
+specimens. From the result of several tests demonstrated assumed as a linear function. During every calibration, the
+in Table 2, it was shown that this system had an error of calibration parameters k and a slightly Change because an
+0.46%—6.7%, which is larger than expected, and the system error also occurs in the measurement for the calibration. k is
+of dispersion is more than the design requirements with a approximately 2.01 i 0.005 and the 8 value is approximately
+standard deviation ofeach measurement 0f0.2 ~ 0.6g. from —82.0 to —83.0 for a reference mass of 50 g. The
+To compensate these error terms we approximately test results with the calibration function application are
+http://dx.doi.org/10.5140/JASS.2015.32.4.419 422
+
+"
+"5","Youn-Kyu Kim et al. Space Scale
+demonstrated in Section 3. The X-axis represents the ratio of the measured data F2 to
+the measured data F1 for the specimen. The weight of the
+specimen can be calculated in the whole range because it is
+3. GROUND & MICROGRAVITY EXPERIMENT a linear function of the ratio of the measured data. We could
+demonstrate that the space scale was implemented as the
+To demonstrate the performance and accuracy of the conceptual design.
+space scale, experimental tests were performed on the The test results are summarized in Table 4. As can be
+ground and in space. In the experiments, solid metallic seen from the table, the accuracy is approximately i 1 g and
+objects were used as the specimens and the reference the repeatability of the system is good although the number
+objects to verify the accuracy. In this section, all test results of measurements is not much. Actually, the space scale was
+are applied to the calibration function. implemented for measuring the mass of objects with masses
+of 0 g ~ 3 kg, but solid specimens with masses of 0 g ~ 200
+3.1 Performance Test on Ground g were used because the space scale was initially made
+for monitoring small weights of lab rats (approximately
+The performance tests on the ground were performed 20 g ~ 100 g). Furthermore, in the experiments conducted
+in the vertical and horizontal states of the space scale, from on the 188 there were the weight limit for cargo to carry to
+which we could check the effects of gravity under different the ISS and the time limit for astronauts to conduct these
+conditions, as shown in Fig. 5. Table 3 shows the test results for experiments. However, we verified our theory and, from the
+the experimental test conducted 20 times for each specimen obtained results, we could see the possibility of the space
+on the ground. The accuracy of the space scale on the ground scale as a Viable space balance.
+is approximately 0.05% for a specimen with a mass of 2 kg,
+and the repeatability is good, as seen in Table 3. There are not
+any effects due to the direction of gravity, as expected from the 4. CONCLUSION
+results for the vertical and horizontal states.
+This study focusses on a novel methodology for measuring
+3.2 Performance Test under the Microgravity Condition rnass under microgravity conditions and the implementation
+of the space scale. We proposed new methods to measure
+The performance tests on the 188 were conducted by mass in microgravity conditions using the inertial properties
+Korean astronaut (Fig. 6). The space scale was tested by of objects. Using the law of momentum conservation, we
+using solid metallic samples with masses of 50, 100, 150, designed a space scale as a space balance by comparing
+and 200 g, respectively, and solid samples with masses the inertial forces between the reference object and the
+0f 19 g and 69 g. Fig. 7 shows the ADC value profile of the specimen. We implemented the space scale instrument using
+measurement data from the load cell for specimens with this new idea, and it was tested on the ground and onboard
+masses of 50 g—100 g. The data in the acceleration section the 188 in the microgravity environment.
+(approximately 600—1,600 rnsec) are used for calculating the From the results of the performance tests for the space
+specimen rnass. scale conducted on the ground and on the 188, we found
+Fig. 8 shows that the measured data of the space scale had
+almost linear characteristics with the first order expression.
+“ 7 t ‘ ,
+r . .. . ‘
+’ £ W L‘ J '
+_ ﬂ 7 I Q .. ‘ gig _ .
+Fig. 5. Performance test conducted on the ground (left: vertical test, right: .
+lateral test). Flg. 6. Space scale experiments conducted on the ISS.
+423 http://janss.kr
+
+"
+"6","J. Astron. Space Sci. 32(4), 419—425 (2015)
+Table 3. Ground testresults
+Specimen 50 g 100 g 200 g 1 kg 2 kg
+Vertically Measurement (g) 49.8 4:02 100.4 4:02 200.0 4:02 999.4 4:03 1,999.2 i0.3
+Laterally Measurement (g) 49.7 4:01 100.4 4:01 199.8 4:02 999.3 4:03 1,999.0 4:03
+509-509 Data 509-1009 Data
+A 15000 /h\> A 20000
+a -_ a
+a o _ 3 m—
+E n 500 1000 1500 .10 2-10 % o —_
+‘-’ ‘-’ '—-°‘
+1‘3 _- g \
+° ° —11-
+_I _I
+-15000 -15000 —
+Time(ms) Time(ms)
+509-1509 Data 509-2009 Data
+30000 35000
+8 -_ g _-—
+e - A _ 2
+(B (B
+o / \ o -I__
+8 o __ ~ 8 ”-—
+1 11 500 1000 1500 -uo 2-10 I 0 —»
+z —\I' I 8 '—
+O -5000 , O _5000 \
+‘ —“- ‘ —-
+-10000 1 40000 X
+Time(ms) Time(ms)
+Fig. 7. Measurement data of solid specimens with masses of 50 9 ~ 200 g on the ISS (blue line: the reference, pink line: the specimen).
+Linearity °f the Space sca'e Table 4. Microgravity experiment results (Kim et al. 2009)
+250 —
+Specimen 50g 100g 150g 200g 19g 69g
+200 y=146.58x-102.25) 50.3 100.6 150.8 200.9 18.7 67.9
+R 1 Measurement 50.7 100.9 150.8 201.1 18.7 68.2
+$150 .« under 51.0 101.4 150.7 201.1 18.8 68.8
+E Microgravity(g) 51.1 101.1 151.0 201.6 18.9 68.7
+5:, 10° / 50.8 101.0 151.2 201.7 18.9 68.4
+50 o/
+0
+0 0-5 1 1-5 2 2-5 instrument under the microgravity conditions on board the
+Ratio of Specimen&Reference ISS _ 1
+Fig. 8. Linearity of the space scale. was p ractlca '
+the space scale to be accurate and efficient. The space ACKNOWLEDGMENTS
+scale is accurate up to approximately 1 g based on the tests
+conducted on the ISS and error tolerance of 0.05% for a This research was supported by the research grant
+specimen 0f2 kg mass in the tests conducted on the ground. “Fundamental Study of Manned Space Technology for
+Measurements can be made Within 2 sec. Therefore, we Microgravity Environment Utilization"" funded during 2015
+could demonstrate that a fast, compact, and accurate by the Korea Aerospace Research Institute (KARI).
+http://dx.doi.org/10.5140/JASS.2015.32.4.419 424
+
+"
+"7","Youn-Kyu Kim et al. Space Scale
+REFERENCES
+Fujii Y, Space Balance: Instrument for Measuring Mass
+under Microgravity Conditions, Proceedings of the lst
+International Symposium of Systems and Control in
+Aerospace and Astronautics (ISSCAA), Harbin, China, 19-
+21 Jan 2006.
+Kim YK, Kim KS, Yi S, Lee I, Choi GH, Conceptual Design of
+Small Mass Measuring System in Microgravity Conditions,
+Proceeding of the 60th International Astronautical
+Congress (IAC), Daejeon, Korea, 12—16 Oct 2009.
+Rivetti A, Martini G, Alasia F, Birello, Gatti G, et al., An Inertial,
+Low Capacity Balance Designed to be Accommodated
+On Board the International Space Station, Proceedings
+of the 2nd European Symposium on the Utilization of the
+International Space Station, European Space Agency 433,
+93-98 (1999).
+42 5 http://janss.kr
+
+"

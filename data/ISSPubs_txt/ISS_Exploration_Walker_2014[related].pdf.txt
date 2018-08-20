@@ -1,0 +1,763 @@
+"","x"
+"1","Journal of Power Sources 269 (2014) 486—497
+v2€§x*;§;<g:fg;§“;é Contents lists available at ScienceDirect Jﬂlalllll.”
+swag“ journal of Power Sources 3""“‘5
+ELSEWER journal homepage: www.elsevier.com/|ocate/jpowsour
+—
+Thermo—electrochemlcal analySIS 0f 11th1um 10n batterles for space G) CrossMark
+appllcatlons us1ng Thermal Desktop
+>I< . .
+W. Walker , H. Ardeblll
+Department of Mechanical Engineering, University of Houston, 4800 Calhoun Road, Houston, TX 77004—4006, USA
+H I G H L I G H T S
+. Space environments are too complex for typical battery analysis software packages.
+- Thermal Desktop is shown to be a valid orbital thermal analysis software for LIBs.
+- Thermal Desktop can predict heat generation as a function of any orbital parameter.
+. LIB complexities are combined with Thermal Desktop through FORTRAN programing.
+ARTICLEINFO ABSTRACT
+Affide history: Lithium—ion batteries (LlBs) are replacing the Nickel—l—Iydrogen batteries used on the International Space
+Received 27 February 2014 Station (155). Knowing that LIB efﬁciency and survivability are greatly inﬂuenced by temperature, this
+Secellvgd 1: rev1sed form study focuses on the thermo—electrochemical analysis of LlBs in space orbit. Current ﬁnite element
+AcJEeyteSlg Jul 2014 modeling software allows for advanced simulation of the thermo—electrochemical processes; however
+Available 0mm: 11 July 2014 the heat transfer simulation capabilities of said software suites do not allow for the extreme complexities
+of orbital—space environments like those experienced by the 155. In this study, we have coupled the
+_ existing thermo—electrochemical models representing heat generation in LIBs during discharge cycles
+Keywords. . . . . , .
+Th erm 0_ e1 6 mo ch emi cal modeling w1th spec1allzed orb1tal—therma1 s0ftware,Therma1Desl<t0p(TD). Our model s parameters were 0bta1ned
+Lithium—ion batteries from a previous thermo—electrochemical model of a 185 Amp—Hour (Ah) LIB with 1—3 C (C) discharge
+Space applications cycles for both forced and natural convection environments at 300 K. Our TD model successfully sim—
+Orbital thermal environments ulates the temperature vs. depth—of—discharge (DOD) proﬁles and temperature ranges for all discharge
+and convection variations with minimal deviation through the programming of FORTRAN logic repre—
+senting each variable as a function of relationship to DOD. Multiple parametrics were considered in a
+second and third set of cases whose results display vital data in advancing our understanding of accurate
+thermal modeling of LIBs.
+Published by Elsevier B.V.
+1. Introduction lithium—ion batteries, supercapacitors and hydrogen fuel cells. In
+considering more efﬁcient energy storage we often consider two
+Increasing consumption of nonrenewable fuel and energy primary characteristics ofa storage device; namely, energy density
+sources and the decreasing availability of said resources escalates and power density. Both properties are important for optimal
+the need for renewable energy, high efﬁciency energy consump— storage but difﬁcult to maximize simultaneously as high energy
+tion, transformation from reliance on non—renewable energy to density devices tend to have a lower power density (i.e. batteries
+renewable energy, and the incorporation of advanced energy and fuel cells) while high power density devices have lower energy
+storage technologies. The need to survive in space environments density (i.e. capacitors); this type of data is typically explored by a
+where fuel sources are not readily available also leads to an Ragone plot. Secondary (rechargeable) and primary (non—
+extremely high dependence on advanced energy storage capabil— rechargeable) lithium—ion batteries (LIBS) are increasing in popu—
+ities. The leading advanced energy storage technologies include larity within industry because they prove superior over traditional
+batteries and other devices in energy density, power density, efﬁ—
+ciency, operating and storage temperature ranges, life cycles, and
+* Corresponding author_ Tel.: +1 281 483 0434. shelf life. Studies like that by Cutchen et a1. with Sandia National
+E-mailaddress:william.wall<er@nasa.gov(W.Wa1ker). Laboratories [1] are primary evidence to the abilities Of LIBS; the
+http://dx.doi.org/10.1016/j.jpows0ur.2014.07.020
+0378—7753/Pub1ished by Elsevier B.V.
+
+"
+"2","W. Walker, H. Ardebili /journal of Power Sources 269 (2014) 486—497 487
+Nomenclature KX conductivity x—direction (W m—1 K”)
+Ky conductivity y—direction (W m—1 K4)
+Ah capacity (amp—hours, Ah) K2 conductivity Z—direction (W m—1 K4)
+C Coulombs (C) LC length core section (cm)
+cp speciﬁc heat (J kg‘1 K4) LB length total battery (cm)
+E working voltage (V) ,0 density (kg m_3)
+EOC open circuit potential (V) Q heat load (W)
+e emissivity T temperature (K)
+h convection (W m—2 K—1) TAmbient ambient(surrounding) temperature (K)
+HC height core section (cm) VTotal total volume (cm3)
+HB height total battery (cm) WC width core section (cm)
+I total current (A) WB width total battery (cm)
+study by Cutchen et al. demonstrated the consistent performance introduction of the extreme temperature orbital—space environ—
+of LIBs for an extended period of time (10 years) and wide tem— ments experienced by the 155 as the temperature variations inside
+perature ranges (—40 0C to +70 0C) [1]. a battery can signiﬁcantly inﬂuence its performance, reliability
+The National Aeronautics and Space Administration (NASA) and life [2,3]. When objects in orbit of Earth ﬂy in and out of the
+works towards utilizing this technology for the International sun's view external to a given vehicle every 45 min at 28,100 km
+Space Station (155) by replacing Nickel—Hydrogen batteries with (km) per hour (hr), as shown in Fig. 1, temperatures of said objects
+high performance LIBs in 2016; the primary purpose of the bat— typically ﬂuctuate between cold and hot extremes ranging
+teries is to store excess energy gathered by the station's solar from —150 0C to +200 0C depending on the attitude, surrounding
+panels for use at any given period of time. The batteries are geometries (which create conduction paths, shading, etc...),
+developed by CS Yuasa Lithium Power Incorporated as a part of ISS thermophysical properties, optical properties, insulation meth—
+orbital replacement units (ORUs) that are installed in the extreme odology, active thermal control methods and more [4]. When
+vacuum environment exterior of the 155 where they will experi— radiating directly to deep space, said objects (i.e. batteries) radiate
+ence the large scale temperature and radiation ﬂuctuations of to a —270 0C black body [4]. Understanding these factors and being
+space only controlled throughavariety 0fpassive(e.g.conduction able to accurately simulate their effects in relation to battery
+and radiation) and active thermal techniques (e.g. loop heat charge—discharge cycles is critical to thermally controlling an
+pipes). However, LIBs face numerous challenges with the externally mounted LIB of any spacecraft.
+:7':'_':‘Tf’ “m” y ”r 0.; ‘ ’7
+5* - “4} , k ‘4‘:
+(5‘
+5U“
+Fig. 1. Example orbital sequence of an object ﬂying in and out of the sun's view and the basic factors for orbital—thermal analysis in space orbital thermal analysis software Thermal
+Desktop compared to a NASA taken (public) image of the SpaceX Dragon capsule berthing t0 the 155 via robotic mechanisms in Earth's orbit.
+
+"
+"3","488 W Walker, H. Ardebili /]oumal of Power Sources 269 (2014) 486—497
+3% rapidly changing environments. In addition to the thermal effects of
+figew Ind1v1dual Cell extreme orbital—space environments (e.g. high beta during solar
+%:%f$%¢’ga_ t = 0.0636 cm summer), understanding local heating of a LIB is also critical. Local
+§?%%€§E§?Aafeeﬁz heating 15 generated through three primary sources 1n batteries; (a)
+ffzfg‘zggf, 'f”+9..% interfacial kinetics, (b) species transport, and (c) joule heating
+5“?”~f§y""""’:fw {5235;2. 7- . 43,...” -
+FgTngfwﬂgﬁv 29.» caused by the movement of charged particles [2]. For larger bat—
+i;“f,ﬁ?f%ﬁ?§ié3§f&vi 1.7% teries, the ﬂow of ions from electrode to electrode and the ﬂow of
+%§:,2?»j§2ff”né,£ﬁgjd ‘,_ ~ electrons through the Circuit, 1n addition to various other param—
+V eters (i.e. the heavy dependence on surrounding temperature), all
+Electrolyte contribute to the generation of local heating. Again, these factors
+t = 0.05 cm are easily captured in multi—physics software like COMSOL and CD
+Case Adapco+; however these software types, though they perform
+t=007 cm basic thermal analysis, are not able to completely incorporate
+. orbital—space environments.
+l To ensure the success of orbit bound LIBs, this study focused on
+10 cm developing battery temperature prediction techniques by coupling
+' proven numerical thermo—electrochemical models of battery re—
+actions derived through energy balance equations with orbital—
+space thermal analysis software, Thermal Desktop (TD) & SINDA
+19°08 cm v5.5, to provide an intuitive orbital—space based thermo—
+electrochemical modeling technique. TD is a graphical user inter—
+10 cm face (GUI) incorporated into AutoCAD with tools built in that allow
+the user to provide thermal deﬁnition as the model is built. TD
+F'g- 2- RehilesefntﬁtloLtI‘BOt flhe ”Bbtayghusec‘hblﬁ‘mef‘ Et _al- [131]- The tEd ObJSICtS writes a FORTRAN language code as the model is built which is
+”Present a 0 t 6 ce 5 C91“ me ""mt 6 core . reglon’ t e tranSparent ”6 exported to SINDA v5.5, which solves the code for transient and
+objects represent the electrolytlc layer, and the gray objects represent the case. , , , , , ,
+steady state conditions. Once validated, this combination of space—
+orbital and thermo—electrochemical models would allow the
+Though advanced modeling software for batteries exists (e.g. charge/discharge heat generation rate 0f the battery to be a func—
+COMSOL and CD Adapco Jr), these software packages are unable to tion of temperature for any set of orbital conditions. In that, once
+incorporate the numerous complexities of the orbital—space envi— LIB modeling techniques are net limited to user deﬁned thil‘Oh-
+ronment, which invokes the need for specialized software. The mental conditions and predeﬁned local heat generation rates, but
+problem is that these specialized software packages (e.g. Thermal are coupled With present day computer processing power, the
+Desktop, Siemens NX Space Systems Thermal, Thermal Synthesizer magnitude 0f testable cases (orbital 01‘ non—orbital) becomes
+System, TRASYS, etc...) are not readily able to model the com— countless making thiS coupled modeling technique extremely
+plexities of batteries. Regardless, the growing use of LIBs in space valuable once validated. The heat generation rate of a battery is a
+environments invokes the need to incorporate orbital—space ther— function Of itSElf and the environment, and when considering
+mal analysis software and to overcome the battery related chal— orbital environments, the change in surrounding temperatures and
+lenges faced by said software into the battery design and validation incoming heat ﬂuxes are far too complex to handle via simple
+process overall to accurately capture the thermal effects of these numerical methods WhiCh invokes the need for software driven
+4.2
+4.1 ...’o . oocp
+O
+O
+o . ’ o 03c Workingv
+4.0 O
+. . .
+o o . .
+. O 9 62C WorkmgV
+3.9 Q 9 O
+.0 o. O . . 0 1C Working V
+3.8 o. ’0 . ’ o
+o ’ O 9 o
+O .. O . . . O
+O ‘ o 0 o
+A 3.7 . ’ o . o
+2, .. O . . O o O . . 9
+CD 0 . . . O .
+$33.6 o. .,..oooooo...,,. o. 0
+:5 ‘\””"" .....‘°Ooo:.o
+3.5.. ...oooooooo.....o..:%
+O 9 O O
+o . ‘ ’ O . o o
+3.4 o o .0
+. .Q .. ..
+0 o. \ ”
+3.3 o O o O.
+O O. Q 0
+.090. ’ '2
+O
+3.2 0 3
+O
+O
+3.1 O:
+O
+O
+3.0 ‘
+0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0
+Depth of Discharge
+Fig. 3. Open circuit potential and working voltages vs. depth of discharge proﬁles.
+
+"
+"4","W. Walker, H. Ardebili /]oumal of Power Sources 269 (2014) 486—497 489
+_ e
+a :\
+. d \ ""wv.,~""'..‘~,;v
+\ _ II ""'t
+Fig. 4. Thermal Desktop geometries (1 solid / 12 surfaces) and elements (3825 total) representing the encasement of the LIB with convection/radiation to 300 K; (a) Encasement, (b)
+Electrolyte, (c) Core Region, (cl) Radiation and convection application through Thermal Desktop, (e) 300 K boundary node (sink temperature).
+capability. The desired end result is a LIB model in which the local appropriate amount of phase change materials would need to
+heating rate is a function of the orbital model itself. double showing that improved properties of the composite could
+lead to a reduction in volume and mass (possibly through
+2. Overview of battery thermal modeling techniques impregnating the material with expanded graphite). Bandhauer [2]
+discusses the increase in heat generation at the current collector
+The thermal modeling of batteries can be traced back to the locations in his publication. In 2011 Kim et al. [13] developed
+general energy balance equation developed by Bernardi et al. [5] in methods for modeling LIB thermal behavior during the charging
+1985. Bernardi incorporated the electrochemical reactions that phases through tWO dimensional ﬁnite element method (FEM)
+occur as electrons and Li—ions ﬂow, mixing enthalpies, and phase simulations validated by experimental results. Speciﬁcally, the
+changes of battery systems that will be explained in greater detail study determined the potential and current density diStl‘ibUtiOHS
+in later sections. Rao and Newman [6] calculated the rate of heat on the LIB electrodes as a function 0f the charging time. The
+generation based on the energy balance, enthalpy, and current charging proﬁle consisted 0f constant—current followed by
+density in 1997. Various two and three dimensional modeling constant—voltage charging [13l-ThiS study was extremely useful as
+studies based on these energy balance equations then followed, like it outlined the necessary methods for h0t SPOt identiﬁcation near
+those of Gu and Wang [3] who developed multi—dimensional the current collectors.
+thermal and electrochemical models of LIBs in the late 19905 and Studies in thermal, electrical, and electrochemical analysis for
+early 20005. Chen and Evans [7—9] were also prominent in the late Lithium—ion batteries has grown immensely between 2010 and
+19905 in developing single to multi—dimensional thermo—electro— 2013- Nieto et al. [14] developed a thermal model in 2012 that
+chemical battery models based on Bernardi's equations. represents the heat generation behavior of a large format 10.5 Ah
+Throughout the mid to late 20005, modeling studies emerged LIB that is based on experimental measurements of internal resis—
+which focused on more complex characteristics such as the local tance and entropic heat coefﬁcients. Depending Oh the discharge
+heating clue to mixing (Thomas and Newman, 2003, [10]) and rate, this model predicted to the experimental results within
+microscale phase change passive thermal control methods (Band— 15—21% error. A150 in 2012, Ye et al. [15] developed numerical
+hauer, 2011 [2]). These newer studies not only focused on the models which examined the electro—thermal life cycles ofa LIB for
+overall heating of the battery, but also identiﬁed the location where various charge/discharge rates in relation t0 fading capacity With
+the heat is generated known as “hot spots”. In 2005 Chen et al. [11] time. Understanding the reduction in capacity over time and
+developed a three dimensional convection and radiation (location accurately implementing this into thermal models iS vital to the
+dependent) model; this numerical model was chosen as the focus amount 0f accuracy the model holds. Lee et al. [16] developed a
+of the present study as they too focused on the combined effects of numerical model WhiCh incorporates coupled electrical and elec—
+local heating, convection, and radiation. Chen's model examined trochemical physics for a 20 Ah large format cylindrically WOUhd
+the layered structure of cell stacks, the case of the battery pack, and set 0f LIB cells. The interesting portion Of these results 15 that
+the gaps between the elements. Location dependent convection because all components and materials of the battery were modeled
+and radiation were also applied — factors which are automatically individually, evaluation can OCCUI‘ at a layer t0 layer level WhiCh
+implemented in Thermal Desktop. This study exempliﬁed the allows for the design to OCCtll‘ at multiple levels; number and
+importance of cooling through radiation, the effects Of forced location of tabs, thermal and electrical conﬁguration, performance
+convection vs. natural convection, and the role of the encasement and life, etc.
+as a heat spreader. Studies conducted by Mills and Al—Hallaj [12] in Though this brief overview does h0t state every study that has
+2005 focused not only on thermally analyzing LIB systems, but on been conducted, it does provide insight into the various topics of
+managing the locally generated heat through phase change mate- interest for the thermal analy5i5 Of LIBS and the tEChniques USEd by
+rials as a passive thermal management system. Numerical thermo— the experts in this ﬁeld. More importantly, unlike the work by Kim
+electrochemical models displayed that forapack of six LIBs, for safe et al. [13] most Of these studies are generally numerically and
+operation in extreme conditions, the volume needed for an experimentally driven and have h0t yet been fully incorporated
+
+"
+"5","490 W. Walker, H. Ardebili Houmal of Power Sources 269 (2014) 486—497
+into all aspects of software driven geometric based thermal analysis (kg m‘3). These properties combined with local heating and the
+techniques (FEM) — let alone orbital—space based thermal analysis environment determines how quickly or slowly an object heats up
+software (TD). Clearly this lack of implementation is due to the still or cools down. Speciﬁc heat and density are often not focused on
+growing understanding of battery processes, but without imple— when steady state computations are performed since these two
+menting modern computer processing capability, researchers will dictate the rate of heat up or cool down, but because of the
+not be able to maximize the number and types of cases for analysis completely transient nature of the thermal assessment of a LIB they
+with respect to orbital—space analysis of LIBs. It is also important to are very important. Optical properties focused on are surface
+note that the use of Lithium—ion batteries in the space—aerospace absorptance (oz) and surface emittance (8). These properties dictate
+industries is greatly increasing (NASA's LIB ORU system is a prime how the object emits, absorbs, transmits, and conducts thermal
+example). Private companies such as SpaceX, Boeing, and Sierra energy. Measuring and using the exact optics in an analysis is vital
+Nevada will soon dominate the near Earth orbit aspect of space when considering the impact these properties play when combined
+travel with their manned—vehicles currently in development. Like with solar radiation, albedo, etc. For example, if a given LIB has an
+any space vehicle superior energy storage will be key to success and encasement with an extremely low emittance (e.g. 0.03), the sur—
+LIBs offer the needed characteristics. However, without advanced face temperatures can quickly exceed +200 0C whereas the same
+analysis techniques, such as those proposed here, the design of the battery with a higher emittance (e.g. clear anodized aluminum 0.87
+battery from a thermal perspective cannot be pushed to the fullest. [4]), the surface temperatures may remain around +80 0C. Typically
+The future use of LIBs in space—orbit environments on private ve— radiation is nota major driver of thermal control for a battery, but in
+hicles will require advanced thermal prediction capability to help space where radiation is one of the only primary forms of passive
+design a battery that is resistant to the thermal environment, a thermal control, radiation becomes far more important. Also note
+battery that is safe, and a battery that is reliable. that Chen et al. reports that even on Earth in a convective envi—
+ronment that controlling surface optics of the encasement can
+3. Thermal effects of orbital-space environments attribute to 28—30% of the cooling of a given battery [11].
+For orbital environments, energy gain/loss through convection
+The term “orbital—space environments” is mentioned frequently would be nonexistent unless by conduction to some type of active
+in this paper. To explain what this terminology means and the cooling technique. Conduction will occur through the solids(and/or
+impact it has on LIB temperatures, this brief section is provided. semisolids) of the system in itself and at the mounting locations to
+Essentially, the ISS—orbit bound LIBs discussed in the introduction the primary body in orbit as long as that body is cooler than the
+which inspired this study, like any vehicle, satellite, or body in battery. The rate at which energy is gained/lost at this contact
+Earth's orbit will experience a constantly changing thermal envi— location is dependent on how well the objects are in contact; i.e.
+ronment from launch to the end of their mission. Generally how much thermal resistance exists (conductance).
+speaking the ISS travels at 28,100 km h‘1, which means an orbit is In addition to the attitude and thermophysical properties, the
+completed every 45 min based on altitude and orbit; for every orbit surrounding structures and mounting location of the orbiting ob—
+an object will experience a period of time in view of the sun (hot ject play a major role in understanding the thermal environment as
+period) and aperiod in the Earth's shadow(cold period). LIBs have a these objects provide shading (or no shading) which increase or
+wide range of operating and storage temperatures when consid— decrease the thermal energy experienced by the system. For this
+ering applications on Earth, but typically have a minimum storage reason it is imperative that specialized software like TD are used
+temperature limit of —40 0C and minimum operating limit which take into account the changes in shading at any given point
+of —20 0C which are quickly exceeded in extreme cold space en— in orbit; see Fig. 1.
+vironments which go well below that limit at any given point in Zero gravity and vacuum environments also play a role. Micro—
+orbit (—60 0C or colder in some cases on 155) [4]. Typical LIBs have gravity, often referred to as zero—gravity, and vacuum means that
+upper storage and operating limits between +60 0C and +80 0C, natural convection will not be present to cool the system as stated
+which are quickly exceeded in Earth's orbit alone (without any local previously [4]. It should be noted that the effects of vacuum and 0—G
+heat generation effect) depending on attitude and surrounding could alter the movement of ions, electronics, etc. which would not
+objects; surface temperatures of objects experiencing extreme or— only affect the efﬁciency of the battery, but would also affect the
+bits can reach +200 0C or more. The combination of a hot attitude rate at which local heating occurs. Because so many factors are
+with strong LIB local heating could lead to thermal runaway if the considered during orbital analysis, even with modern computing
+performance of the battery at any point in orbit is not fully capability, the complexity of these models drives up the compu—
+understood. tation time. Therefore, once a baseline model (non—orbital) is
+Several primary factors come into consideration when deter— developed by this study within the orbital—thermal analysis soft—
+mining the thermal performance of a battery in orbital environ— ware and validated, the analysts could then incorporate all factors
+ments; (a) attitude, (b) battery thermophysical and optical of orbital heating as described in this section into the deﬁnition of a
+properties, (c) conduction paths and (d) surrounding structures. battery's local heating and as the deﬁnition of the battery's envi—
+The attitude of any object in orbit is deﬁned by various categories ronment; trouble—shooting would take far too long if doing so on an
+[17]: Yaw, pitch, and roll are the x, y, and z rotation of the orbiting orbital model.
+object, beta angle is the angle between the solar vector and it's
+projection onto the orbit plane, solar ﬂux is the intensity of the 4. Lithium-ion battery charge/discharge heating and heat
+incoming radiation energy from the sun, albedo heating is the solar transfer mechanisms
+energy reﬂected from the planet and its atmosphere, infrared ﬂux is
+the heating in the infrared spectrum from the planet called plan— Lithium—ion batteries mainly comprise of two electrodes (an
+etary outgoing long—wave radiation, and orbital velocity is the ve— anode and a cathode), an electrolytic material and separator be—
+locity that the object orbiting the planetary body in its orbital tween the electrodes, and current collectors on both electrodes. Ion
+vector which will dictate how long the object is in the sun and out and electron movements occur simultaneously as the electro—
+of the sun. chemical reaction progresses between the electrodes when a po—
+Typical thermophysical properties considered are thermal con— tential is applied. Generally speaking, LIBs are highly regarded
+ductivity (W m‘1 K4), speciﬁc heat (J kg‘1 K4) and density among other batteries due to characteristics such as high cell
+
+"
+"6","W. Walker, H. Ardebili /]oumal of Power Sources 269 (2014) 486—497 491
+voltage, ﬂat discharge rate, long shelf life (which is extremely useful cooling/heating device) for heat transfer to occur in the vacuum of
+for long duration space ﬂight applications), cyclability, wide oper— space.
+ating temperature range, high energy density and high power Generally speaking, the local heating rate of a battery is based on
+density. However, despite these impressive energy storage char— a series of energy balance equations over a “representative
+acteristics, LIBs are weighted with major thermal problems, such as elementary volume, REV” developed by Bernardi et al. [5]. The local
+thermal runaway and poor low temperature limits in respect to heating of the REV is represented Equation (4) which Bernardi et al.
+space environments; problems that are compounded with the derived by applying the ﬁrst law of thermodynamics for an isobaric
+addition of complex orbital—space temperatures. As previously battery, thermodynamic properties of the reactions, the potential—
+stated, not only are cell temperatures a function of the surrounding current characteristics of the cell, and the rates of char—
+environment, but also are a function of the movement of ions and ge—discharge to a control volume, or REV (equation includes cur—
+electrons which generate heating as a function of surrounding rent, working voltage, open circuit potential, phase change terms
+temperatures, velocity of the electrons/ions, the total potential, and enthalpy of mixing) [5]:
+battery efﬁciency, solid electrolyte interphase (SE1), dendrite
+growth and the battery material properties [11]. d@ cl — 6 y--
+
+This combination of orbital parameters and local heating rates QLocal =—IV—:I,<T2d—7T.+Zd— / :cinTZ—ln (3—3) dvj
+. . . . . t . 6T y.. g
+can lead to loss in capac1ty, efﬁc1ency, and to thermal runaway in k J vl- l 1]
+worst hot cases. Thermal runaway, the primary thermal concern cl yavg dn- .
+for most LIBs, has caused buses, taxis, other vehicles, and com— +2: [<AHfme_ RTZd—ln < +3; >>_1J]
+puters and other mobile devices to catch ﬁre or explode which jjm i T '1’in dt
+presents strong reasoning for the need to thoroughly understand (4)
+the combined effects of orbital heating and battery local heating
+[‘18] TO prevent these types of failures, engineers incorporate In general the ﬁrst term iS the electrical power from the battery,
+modeling to assist in the design process where a large variety of the SECOHd term iS the sum Of available work and entropic heating,
+environmental, material properties, charge, and discharge pa- the third term iS the heat prOdUCed from mixing, and the last term
+rameters are considered in various combinations. However, due to is the heat associated With material phase changes [111- This
+the extremely complex nature of batteries and the countless var— equation iS 3150 utilized consistently in a simpliﬁed form, Equation
+iables that affect thermal proﬁles, even modeling has its limits. (5), which captures heat clue to Ohmiclosses, charge—transfer at the
+The local temperatures of a battery are affected by convection, interface, and mass transfer limitations [213
+conduction, radiation, and local heating. Convection, conduction, _ 350C
+. . QLocal — I(Eoc — E — T—) (5)
+and radiation are clearly deﬁned modes of heat transfer as 6T
+described by Equations (1)—(3) respectively (note that convection
+is used in this study to replicate Chen's test setup, but will not be where 1 is the total current, Eoc iS the open Cil‘CUit potential, E iS the
+needed when simulating the vacuum environment of space in working voltage, T15 the temperature, and anc/aTiS the change in
+future studies; even if the battery was inside the vehicle where air open Cil‘CUit potential With the change in time. Phase change and
+was present, convection would be minimal as a microgravity mixing EffECtS are negated With the assumption that there is only
+environment prevents natural convection and airﬂow speeds one electrochemical reaction in the battery cell (during normal
+through the vehicle would be low.): operation phase change does not occur in LIBs and only one reac—
+tion occurs) [2]. Chen et al. [11] explains that Equation (5) is efﬁ—
+Qc : h A (T _ T . ) (1) cient enough for overall temperature prediction and does not limit
+on"" surface Enmonment the ability to perform accurate thermal analysis despite its sim—
+, , , _2 _1 pliﬁcations from (4), and further uses (5) to predict 3—D core tem—
+wh2ere h 15 the convection heat transfer coefﬁc1ent (W m K )' A peratures for various discharge processes of a 185 Ah battery. This
+(m )IS the surface area,.TSurface (K) 15 the temperature 0f the surface, form of Bernardi's equation, divided volumetrically, is commonly
+and. TEHVimnment (K) 15 the temperature Of the surrounding used for the thermal analysis of LIBs; examples being the three—
+env1ronment. dimensional battery pack studies by Sun et al. [19] and the
+studies of cylindrical LIB discharge cycles by Jeon ancl Baek [20]. As
+QCOI‘ld : 404% (2) with the provided example studies, correctly incorporating Equa—
+x,y,z tion (5) into orbital—space thermal analysis software for a local
+where k is the thermal conductivity (W m4 K—l), A (m2) is the lsateuacting rate of a REV is the focal p01nt and ultimate goal of this
+surface area, dT (K) is the change in temperature between two y.
+IIigigtz'through the solid, and dxyz is the distance between the two 5. Thermal Desktop model development
+A thermo—electrochemical model of a series of experiments by
+QRad = 50AF(TIA-llot — Tread) (3) Chen et al. [11] for a large scale 185 Amp—Hour (Ah) LIB experi—
+encing a 60 min discharge at 185 A (1 C) in a ﬁrst test, a 30 min
+where e is the surface emissivity, a is Stefan—Boltzmann constant, A discharge at 370 A (2 C) in a second test, and a 20 min discharge at
+(m2) is the surface area, F is the form factor between the radiating 555 A (3 C) in a third test, discharged continuously, for both forced
+surface and the radiation sink, and T (K) is the temperature of the and natural convection environments at 300 K was recreated in
+respective surfaces. Though radiation is not typically considered a ﬁnite element form in TD & SINDA v5.5 as a baseline thermal
+major thermal driver for battery thermal analysis, Chen's study model to determine the compatibility of the orbital—space and
+displayed that radiative heat transfer as a function of encasement radiation based software for thermo—electrochemical analysis.
+surface optical properties attributes to 28—30% of the cooling a This section discusses the development of the geometries, the
+battery [11]. Even if radiation isn't a major thermal driver on Earth, application of local heating to a REV, thermophysical properties
+it is the only passive method (aside from conduction to an active (thermal conductivity, speciﬁc heat, and density), surface optical
+
+"
+"7","492 W Walker, H. Ardebili /]ournal of Power Sources 269 (2014) 486—497
+
+1 E , | D 3 A St t t 4. FORTRAN VarO 5. Thermal Desktop
+
+' Xperlmenta ata ' rray a emen 5 Language Statements SINDA Model
+\
+Open Circuit Potential ocp v,_ 000 Bernardi's Q Equation \\ Geometry Development
+\
+WorkingVoltage WorkingVoltagevs.DoD Convection Definition \\, Themloeﬁnmon
+Convection vs. DOD
+2. Theoretical Data
+Convection Coefficient ‘ 7
+Fig. 5. Process ﬂow diagram describing the process of developing a Thermal Desktop model with LIB local heat generation programed as a function of depth of discharge.
+Experimental data provides the open Circuit potential and work voltages for depth—of—discharge. Theoretical convection data based on vertical and ﬂat plates is determined.
+Experimental and theoretical data deﬁne array statements of value vs. depth—of—discharge which feed into FORTRAN VarO statements (variable statements) for convection and
+Bernardi equation application. These array statements are set as deﬁnitions in TD for the geometry representing the core region.
+properties, the institution of environmental parameters (convec— describes all dimensions and other physical characteristics trans—
+tion and radiation), and the test case matrix. The development of lated from Chen's analysis into the TD model.
+the model as a whole is represented at the end of this section with
+Fig. 5. 5.2. Local heating
+5.1. Geometry development and assigned material properties Each Of the 125 core region nodes are assigned a local volu—
+metric q value based on Equation (5). Bernardi's equation, in its
+
+The model consisted of thee primary sub—models: the metal most basic form, provides a total volumetric heat rate of the core
+encasement that serves as a heat spreader, the core region (rep— region Of a given battery in W cm_3. To apply this heating rate
+resentation of the cells), and the contact layer that represents the correctly TD logic was established to apply individual q values to
+electrolytic layer between the case and the core region. Fig. 2 is a each of the 125 core region nodes based on (5) and then to multiply
+representation of the basic battery layup considered for this anal— this value by 15.3 cm3 (the volume that each node represents). The
+ysis. These geometries were imported into TD v5.5 where nodali— total volume of the core region is 1908 cm3, or approximately 125
+zation and thermal deﬁnition were provided. The battery individual blocks of 15.3 cm3. The voltages of Bernardi's equation
+encasement was represented in Thermal Desktop with 1233 nodes (Eoc and E) were based on experimental data gained from Chen
+and 6 individual solids that were assigned a thickness of 0.07 cm, et al. [11]. The experimentally determined curves for the 185 Ah LIB
+Aluminum thermophysical properties, and an exterior surface for 1 C, 2 C, and 3 C discharge rates are represented in Fig. 3 as a
+emittance of 0.25 for radiative purposes. The electrolytic contact function Of voltage vs. depth Of discharge (DOD). Because TD v5.5
+region is represented with 1233 nodes and 6 solids that were works with power applications as functions of time rather than
+assigned a thickness of 0.05 cm and electrolytic material properties. DOD, arrays of these curves with respect to time were developed
+Asolid block represents the core region that we subdivided into ﬁve representing the following: 1 C : 60 minutes discharge time
+nodes along the length (x—axis) and ﬁve nodes in the y—z axes to (I : 185 A for 60 min discharge time), 2 C : 30 minutes discharge
+yield a total of 125 nodes. Essentially the thermophysical properties time (I = 370 A for 30 min discharge time), and 3 C : 20 minutes
+of the core region in TD is a lump mass of averaged properties discharge time (I : 555 A for 20 min discharge time).
+representing all of the individual cells of Chen's battery combined
+as Chen et al. did with their model [11]; since Bernardi's equations 5.3. Environmental and contact region characteristics
+consider the overall heat generated by the total battery core region
+volumetrically, material properties (i.e. all of the cells combined), The external surfaces were set to radiate to a constant sink
+and voltage, this simpliﬁcation was acceptable. This solid block was temperature of 300 K and were also exposed to boundary node set
+assigned anisotropic thermophysical properties based on the to a constant 300 K via a conductor with convection values ranging
+properties of cell materials (electrodes, foils, the separator, and from 4.25 to 10.55 W m—2 K‘1 depending on location (location
+current collectors). The reader should note that Chen et al. [11] did dependent natural convection values were provided by Chen et al.).
+not include an electrolytic layer between the electrodes of each cell, A representation of the TD version of the convection and radiation
+but instead considered an electrolytic layer that surrounds the network is shown in Fig. 4.
+exterior of all of the packaged cells resulting in a slightly increased Two locations of contact existed in this model; between the
+anisotropic thermal conductivity values; these effects are discussed encasement bottom and the top of the contact region solids and
+in detail later. The completed TD model consisted of 3825 nodes between the bottom of the contact region and the top of the core
+divided between 13 solid elements; a relatively small model for region block. Chen et al. noted that thermal resistance between all
+modern computational resources (see Fig. 4 in Section 5.3). Table1 contacting surfaces should be negligible because the electrolytic
+
+"
+"8","W. Walker, H. Ardebili /]0umal of Power Sources 269 (2014) 486—497 493
+Table 1 . . that Thermal Desktop feeds into) with 16 GB RAM (RAM availability
+Phys‘cal Charaderlsncs °fthe mOdEI- is directly associated with the length of time associated with ra—
+
+Characteristic Value Unit diation calculations) and takes less than 30 s to ﬁnish — a relatively
+
+Totalbattery dimensions 1932 X 1024 X 1024 cm X cm X cm small niodel 101 Thermal Desktop. Results are pr0v1ded 1n the
+
+Thickness 0fthe case (107 cm f0110w1ng sections for Case 1, Case 2 and Case 3. Again, the goal of
+
+Thickness ofthe electrolyticlayer 0.05 cm Case 1 was to replicate the numerical assessment conducted by
+
+Cote r5310“ ?megflons 19-08 X 10 X 10 cm X cm X cm Chen et al. in Thermal Desktop, Case 2 sought to examine possible
+
+CE 5 C011] 1ne - - - -
+
+Individual cell dimensions 0.0636 x 10 x 10 cm x cm x cm improvements to the mOdéhng tEChnlque by programnnng mOdEI
+Thickness Ofthe Al foil 0.002 cm logic to update Qas a function of temperature f0r eve1y1terat10n 0f
+Thickness of the Cu foil 0.0014 cm the model, and Case 3 prov1ded a parametric investigation of the
+Thickness of the cathode 0014 cm effects of different material property combinations.
+
+Thickness of the anode 0.01 16 cm
+
+Theoretical capacity 185 Ah
+
+5910mm temperature 300 K 6.1. Case 1 results (replication study)
+
+In1t1al temperature 300 K
+
+. For Case 1, an exact replication of Chen's study was created in
+SOluthH surrounded the core and was ﬁllEd to all Edges. Of the TD Logic was programmed into TD to update the battery's q value
+encasement. A150 note that 131101“ to testing, the core 1‘e810h W35 constantly throughout TD's solving process based on changes in
+allowed to soak 1n the electrolytic material prior to any testing to open circuit potential and working voltage through depth of
+allow the SOhlthh to ﬁll any 83135 and pores [1112- Ih Thermal discharge. A constant 300 K value was applied to the temperature
+Desktop a conductance value 0t 3000 W m K (hlgh variable of Bernardi's equation and the model convected—radiated
+c0nductance = 10W thern1a11e51stance) was assumed at bOth re— to a 300 K sink temperature. This variation of the model was
+810115 0f C0ht3Ct (an arbitrarily hlgh and typically used value for executed for the three discharge rates and six convection rates as
+negligible thermal 1e51stance 1h Thermal Desktop models when applied in Chen's study; see Fig. 6 for the 1—3 C discharge at natural
+deﬁning contactors between surfaces). Table 2 describes the aver— convection results and Fig. 7 for the 3 C discharge with forced
+aged material properties of the core region, the material properties convection.
+0f the encasement, and the properties 0f the C0ht3Ct region (the The results of our TD simulation for Case 1 (replication of Chen's
+electrolytic material) 35 deﬁned by Chen et. 31- [111- model) follows that of Chen's both in the transient temperature
+
+proﬁles and the end of cycle proﬁles with minimal deviation. The
+5-4- Three C0595 analyzed “hot spot” location for the TD results was found to be the same as
+that described by Chen et al.; towards the middle in the x—axis di—
+lh thlS study, three cases were analyzed: Case1 (replication study), rection and slightly from the top in the y—z directions as a result of
+Case 2 (model improvement), and Case 3 (parametric ofparameters). the high heat capacity and low thermal conductivity of the elec—
+In Case 1, a l‘ePhCatIOH 0f Chen's study was conducted — the same E trolytic solution and the high thermal conductivity of the encase—
+and EOC proﬁles and a constant 300 K 10C31 T value applied to Ber— ment which acts as a heat spreader. The isotherm 0f the core
+nardi's equation forlocal heating. Case 2 sought to improve the model section is displayed in Fig. 8. The results from Case 1 alone,
+provided by Chen et 31- through the implementation 0f the E and EOC compared to Chen et al., successfully demonstrate that TD & SINDA
+arrays and TD logic to update the local temperature value after each
+iteration. With said logic implemented, as the local temperature Table?‘ ,
+. . . Case matrix.
+would update per iteration the overall q value for the node varied as a —
+function of DOD — though the effect was small as expected because T Case ID Case type DiSCharge Total diSCharge Current (A) Convecztionl
+is multiplied against an e—4 variable. Case 3 considered a small rate (C) “me (5) (W m K )
+parametric study to observe the effects of different combinations of C1—3C—NAT Case 1 3 1200 555 Natural
+increased/decreased core region ,0, and core region CD; the inspiration CI'ZC'NAT Case 1 2 1800 370 Natural
+for this examination was because it was noted reviousl that Chen C1‘1C‘NAT case 1 1 3600 185 Natural
+, , p 3,! , c1—3c—20 Case 1 3 1200 555 20 (Forced)
+did not account for the fact that an electrolytic layer typically ex1sts c1_3c_50 Case 1 3 1200 555 50 (Forced)
+between the two electrodes (Chen's calculations did not include the C1—3C—100 Case 1 3 1200 555 100 (Forced)
+electrolyte in the core region material properties calculations). Table 3 030200 Case 1 3 1200 555 200 (Forced)
+
+1‘1 11 n 1 Z ' C1—3C—300 Case 1 3 1200 555 300 (Forced)
+
+desc hes a tESt cases a a y Ed C2—3C—NAT Case 2 3 1200 555 Natural
+. . C2—2C—NAT Case 2 2 1800 370 Natural
+6. Results and dlscussmn C2—1C—NAT Case 2 1 3600 185 Natural
+C2—3C—20 Case 2 3 1200 555 20 (Forced)
+The completed model is executed on a 12—Core workstation 93050 case 2 3 1200 555 50 (FOFCEd)
+t directl decreases calculation time in the SINDA solver C2301“) case 2 3 1200 555 100 (ForCEd)
+(core coun y c2—3c—200 Case 2 3 1200 555 200 (Forced)
+C2—3C—300 Case 2 3 1200 555 300 (Forced)
+Table 2 C3—Cp1 Case 3 3 C discharge, natural convection, 0.85% speciﬁc heat,
+Thermophysical properties of the model [11]. actual density
+Material Density Speciﬁc hea t Thermal conductivity C3—Cp2 Case 3 3 C dlscharge, natural convectlon, 0.90% spec1ﬁc heat,
+(kg m‘3) (J kg‘1 K‘l) (W m‘1 K‘l) actual den51ty
+— C3—Cp3 Case 3 3 C discharge, natural convection, 0.95% speciﬁc heat,
+
+Carbon electrode 1347.3 1437.4 1.04 actual density
+
+LiC002 electrode 2328.5 1269.2 1.58 C3—Cp4 Case 3 3 C discharge, natural convection, 1.05% speciﬁc heat,
+
+Al foil 2702 903 238 actual density
+
+Cu foil 8933 385 398 C3—Cp5 Case 3 3 C discharge, natural convection, 1.10% speciﬁc heat,
+
+PP separator 1008.9 1978.2 0.33 actual density
+
+A1—2024 700 477 14.6 C3—Cp6 Case 3 3 C discharge, natural convection, 1.15% speciﬁc heat,
+
+Electrolyte 1 1 29.9 2055 0.60 actual density
+
+"
+"9","494 W Walker, H. Ardebili /]ournal of Power Sources 269 (2014) 486—497
+400
+0 H20 —H20-WALK
+‘ H50 —HSO—\VALK
+390 I H100 —-H100-WALK
+0 H200 —H200-WALK
+A H300 -—-H300-WALK
+380 . “NAT —HNAT-WALK
+370 (3)
+g 360 E g
+I I
+g (A) : . . ’E
+E 350 E . , 0 ° :
+a . i
+E ----------------- --------------- : 1
+cu :- . I ‘A.
+l— 340 : . I . . o . ‘ ‘ A I A A ‘ A i
+: I ' ‘ '
+: ‘ :A ‘ ‘ ‘ i i
+I .l
+330 i/‘° . IF . I I IE I Il-li
+i . ..-—- - : E
+320 I/90”‘. . ’99 i 1
+414.4 ‘ A ‘ ‘ ‘ A A ‘ h A A A ‘ I i
+_ ______________________-_________.' ‘ A A A . . ‘5
+I I
+310 x J
+300
+0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1
+Depth of Discharge (DoD)
+Fig. 6. TD results for 185.3 Ah LIB Case 1 compared to Chen's results for forced convection. (A) Location of largest error at DOD 0.15 to 0.45 (1.4% based on 4.5 K difference between
+actual and predicted). (B) Accurate transient predictions in general and strong correlation to end of cycle reality.
+v5.5 do have the capability to accurately simulate LIB local heating programmed into TD to update the battery's q value constantly
+through discharge; the observed slight prediction differences are throughout TD's solving process based on changes in open circuit
+clue to software solver type differences and input variation for potential, working voltage, and local temperature (rather than a
+parameters that were not directly speciﬁed — minimal imperfec— constant 300 K) through depth of discharge. This variation of the
+tions are understandable when comparing results from different model was executed for all discharge rates and convection types
+prediction sources. conducted by Chen's numerical analysis for comparison and results
+are displayed in Fig. 9 (forced convection) and Fig. 10 (natural
+6.2. Case 2 results (updated local temperatures in Q calculation) convection).
+The results indicate that for the temperature proﬁle at the end
+Case 2 analyses sought to improve Chen's model, which of cycle transient for all discharge cases were approximately 1 K
+assumed a constant 300 K for T in Bernardi's equation. Logic was lower than the model without the updating T. Based on Bernardi's
+370
+A 3c
+360 I 2C
+0 1c
+A
+350 —3C-WALK ‘
+A
+—2C-WALK ‘
+A A
+E. 340 —1C'WALK
+2 A
++3 A
+9i A ‘ °
+g 330 A ’
+'— A o .
+A O I
+A o '
+320 A .
+A O
+A . ’ I
+A . . '
+310 l I
+Q
+300 9
+0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1
+Depth of Discharge (DOD)
+Fig. 7. TD results for 185.3 Ah LIB Case 1 compared to Chen's results for natural convection. Location of largest error the same as with forced convection results.
+
+"
+"10","W. Walker, H. Ardebili /]oumal of Power Sources 269 (2014) 486—497 495
+NOO'E’ >380. 4
+380. 4 (q
+360. 1
+359. 9
+(B)
+359. 8 /
+359. 3
+359
+358. 8 /
+358. 5
+358. 2
+358
+357. 7
+357. 4
+3'57. 8
+358. 9
+358. 8 /
+358. 3 (A,
+<358.3
+Fig. 8. Isotherm of core section results for Case 1 3 C discharge and natural convection. (A) Effects of lower convection coefﬁcient on the base of the encasement are captured. (B)
+Cooler edges and a warmer center as an effect of a low kx and high kyz. (C) Non—post processed core region nodes.
+Q equation it is observed that this lower temperature proﬁle ap— hot orbit and shading (e.g. +75 beta angle, hot solar environment,
+pears to be highly sensible as it decreases the total voltage that the etc. ..) could drastically alter the transient proﬁle more than just a
+volumetric current is multiplied against. For a general sink tem— degree; the isotherm through DOD could be completely different
+perature analysis, Chen's model assumption would make for a as well. The authors recognize that the updated/iterated temper—
+slightly more conservative assessment. The reader should note that ature is multiplied against an 8—4 value that alone is almost
+this is an effect of the battery radiating—convecting to only a 300 K negligible — this study simply recommends that this parameter not
+sink. The effect of a higher local temperature in non—symmetric be neglected, but considered a combined effect with orbital
+locations through the entirety of DOD as a result of simultaneous heating.
+370
+360 — CASE1-3C-WALK
+, v’ —CASE1-2C-WALK
+’4” — CASEl-lc-WALK
+350 '1v'
+’,¢1 - - - - CASEZ-BC-WALK
+, ' ""A ----CASE2-2C-WALK
+g ‘ ’ ---- CASEZ-lC-WALK
+E 340 ‘ ,-v”
+3 A ——-"""" A 3C—CHEN
+S ‘ o""’
+g ‘ . , ‘V o 2C-CHEN
+E 330 A
+g ‘ . ,. I 1C-CHEN
+‘ . I . l""v’
+‘ . _ -,c—-""
+320 ‘ O
+‘ O
+A . ’
+A . I
+310 A
+300 ""
+0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1
+Depth of Discharge (DoD)
+Fig. 9. TD results for 185.3 Ah LIB Case 2 for natural convection.
+
+"
+"11","496 W Walker, H. Ardebili /]ournal of Power Sources 269 (2014) 486—497
+370 .
+I HNAT-CHEN
+360 ’.
+,’ O HZO-CHEN
+I
+’I
+’ ‘ A HSO-CHEN
+-r’
+350 ’v"", ”” I H100-CHEN
+,x- , - ’ o HZOO-CHEN
+v” '0'""
+7 ,e’ 1,:v:"" A H300—CHEN
+g 340 ' o ’ ’, —CASE1~NAT-WALK
+93 . ° _ —'
+.3 I , , A -;-1’1"""" "" —CASE1-H20—WALK
+ES ' A ‘ —CASE1-H50-WALK
+Q. A A
+g 330 ‘ - —CASE1-H100-WALK
+|— f, I I I . . _ __--‘-o
+"" I I I —CASE1-H200-WALK
+/ . o . , —CASE1-H300-WALK
+32° ,_ ‘ ‘ A AA A A ‘ ‘ O o 90 9 ----CASE2-NAT-WALK
+/'. ‘A
+. ' ‘ ‘ ----CASE2-H20~WALK
+- - - - CASEZ-HSO-WALK
+310 ,
+- - - - CASEZ-HlOO-WALK
+- - - . CASEZ-HZOO-WALK
+300 - - - - CASEZ-H300-WALK
+0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1
+Depth of Discharge (DoD)
+Fig. 10. TD results for 185.3 Ah LIB Case 2 for forced convection.
+6.3. Case 3 results (parametric of material properties combinations) was varied — varying density by the same percentages would yield
+the same transient effects); (a) 15% Cp reduction with actual p, (b)
+Case 3 was inspired when it was noted that Chen's battery did 10% CD reduction with actual p, (c) 5% CD reduction with actual p, (d)
+not directly include an electrolytic layer between the electrodes 5% Cp increase with actual p, (e) 10% Cp increase with actual p, (f)
+which in sensibly was not included for their calculations of x, y, z 15% Cp increase with actual ,0. These cases are summarized in
+core region material properties. This circumstance presented the Table 3.
+question: what is the effect on the transient thermal proﬁle as a As volume averaged properties play a signiﬁcantly important
+result of error related calculations in core section speciﬁc heat and role in this modeling technique, these variations explore the effects
+density? For Case 3, six combinations of core section thermo— that are caused by incorrect calculation/determination of the
+physical properties were considered (note that only speciﬁc heat combined material properties (the effects of user error). These
+370
+[I
+l” I
+-v’ n‘
+360 0.90% 0.95 cp "",- 1,;
+0.85CD \ “,’ “o' ""-
+\ \ ‘ "" ’a"" ..0.. ..
+350 r ”""””'a’ .........O..o...'......'.,-I~‘-“,_.
+i""”""""' I .u..-'°'.....o..-°'........--""'..-.
+””:"""" .E. -.o"".'.....'..00‘K.’.._...-' \
+""‘ ’ o' I
+5 I’ ¢’ \ ‘ 1.10c 1-15Cp
+8 340 ’v::a” ..,.I'.‘.:,..o-""'__...--"" 1.05% p
+3 ” r"".»-"".
+‘5; 1’ ""'...-""...--""'
+a x -'.'--'7.--'
+Q"" I’ .-""..."".T"" I
+g 330 / ..-;i.§ff-~’
+'— 1’ Jr?”-
+1” .-'::.:-I
+i .”._-.l
+320 1’ .;:;'.'""
+3‘""
+\
+310 ‘3
+300 I-
+0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1
+Depth of Discharge (DOD)
+Fig. 11. TD results for 185.3 Ah LIB with core section cp variations implemented (3 C natural convection).
+
+"
+"12","W. Walker, H. Ardebili /]oumal of Power Sources 269 (2014) 486—497 497
+different property combinations were considered for a constant 3 C devastating effect on predictions (e.g. the prediction of tempera—
+discharge rate of the 185.3 Ah LIB with natural convection. The tures lower or higher than what the battery will actually
+results in Fig. 11 exemplify the importance of implementing the experience).
+correct thermophysical properties into the model and the effects of
+even slight properties calculation error could have on the predicted
+results. Overestimating core region cp results in lower predicted Acknowledgments
+temperatures while underestimating results in higher predicted . . .
+temperatures. The authors would llke to glve a spec1al thanks to the support of
+
+the Thermal Design Branch at NASA Johnson Space Center for
+7. Conclusion assistance with Thermal Desktop and SINDA v5.5.
+In this study, we validated the capability of orbital—space ther—
+. . . . References
+mal analy51s software Thermal Desktop w1th belng coupled w1th
+thermo—electrochemical reaction energy balance equations f01‘ a [1] J. Cutchen,A. Baldwin, 5. Levy, J. Power Sources 14 (1985) 167—172.
+combined model. Case 1 results displayed accurate replication of [2] T. Bandhauer, S. Garimella, T. Fuller, J. Electrochem. Soc. 158 (3) (2011).
+the temperature proﬁles provided by Chen et al. for all discharge [3] W- G,“ C- wang'J: Elecm’d‘em- SOC- (2000) ,
+. . . . [4] D. Gllmore, Satelllte Thermal Control Handbook, The Aerospace Corporatlon
+and convectlon comblnatlons wh1ch supports the use of TD & press, El Segundo, CA, 1994
+SINDA V5.5 f01‘ orbital—space thermo—electrochemical analysis Of [5] D. Bernardi, E. Pawlikowski, J. Newman, J. Electrochem. Soc. 132 (4) (1985).
+LIBS. Any deviation from actual values, which as shown previously [5] L- R30, Newman, 1- EIECUOChem- SOC- 144 (1997) 2597-
+. . . 1 1C] .1 b C] b C] C] [7] Y. Chen, J. Evans, J. Electrochem. Soc. 140 (1993).
+‘5 1111n1ma, W0” ea'51y e encompasse y recommen e [8] Y. Chen, J. Evans, J. Electrochem. Soc. 141 (1994) 2947—2955.
+predlcted +11 0C margln for test correlated thermal models rec— [9] Y. Chen, J. Evans, J. Electrochem. Soc. 143 (1996) 2708—2712.
+ommended by the widely used Gilmore Satellite Thermal Control [1?] 15(- ggomistT/ewﬁafévl- EleftIEOChemS- SOC- 1534])2259003131762—010952)111 124
+- - . en, . an, . ang, . OWEl‘ OUI‘CES eptem 61‘ — .
+Handbook ahd 111 the Department of Defense Standard Practlce [12] A Mills, 5. Al_HaHaj’ J_ PowerSOurces 141 (2004) 207_315_
+Product Verlﬁcatlon Requlrements for Launch, Upper Stage, and [13] U.Kim,].Yi,C.B.Shin,T.Han,S.Parl<,].PowerSources196(2011)5115—5121.
+Space Vehicles (MIL_STD_‘]54OD) section for thermal mode] margin [14] N. Nieto, L. Diaz, _]. Gastelurrutia, I. Alava, F. Blanco, _]. Ramos, A. Rivas,
+- - - J. Electrochem. Soc. 160 (2) (November 2012) 212—217.
+for spacecraft hardware [4.21]. Case 2 1clent1ﬁed the 1mpact of [15] YYE’Y Shi’ Amy, J_ Power Sources 217 (June 2012) 509_518_
+UpdatEd local temperature In the Bernardl equatlon on local heat [16] K. Lee, K. Smith, A. Pesaran, C. Kim, J. Power Sources (March 2013).
+generation as an additional function of the model; that for less [17] S. Rickman, Orbital Thermal Environments Training, Thermal Fluids and
+- - Analysis Workshop, Pasedena, CA, 2011.
+EXtreme, 511:1k temperatures and heat, ﬂuxes the Change In ,heat [18] Q. Wang, P. Ping, Z. Xuejuan, C. Guanquan, S. Jinhua, C. Chunhua, J. Power
+generatlon 15 mlnlmal, but that comblnatlon w1th space env1ron— Sources 208 (2012) 210_224_
+ments could greatly affect the transient thermal proﬁle and 150— [19] H. Sun, X. Wang, B. Tossan, R. Dixon, J. Power Sources 206 (2012) 349—356.
+therms. Case 3 results displayed the impact Of varying [20] D.H.]eon, S.M. Baek, Energy Convers. Manag. 52 (2011)2973—2981.
+. . . [21] United States Air Force, Department of Defense Standard Practice: Product
+thermophysmal propertles 0n Fhe overall resu“ ancl exempllfy that Veriﬁcation Requirements for Launch, Upper Stage, and Space Vehicles, AMSC,
+even mlnlmal error 1n core reglon property calculatlon could have a 1999. FSE1810.
+
+"

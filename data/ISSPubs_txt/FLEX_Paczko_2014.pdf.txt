@@ -1,0 +1,902 @@
+"","x"
+"1","Combustion Theory and Modelling, 2014 ® Taylor & Francis
+http://dX.d0i.01‘g/10.1080/136478302014934296 ram'hlranc-mroup
+The role of cool-ﬂame chemistry in quasi—steady combustion
+and extinction of n-heptane droplets
+Guenter Paczkoa, Norbert Petersa, Kalyanasundaram Seshadrib* and Forman
+Arthur Williamsb
+ﬂ. aInstitutfiir Technische Verbrennung, RWT H Aachen, 52056 Aachen, Germany; bDepartment of
+5 Mechanical and Aeraspace Engineering, University of Califarnia at San Diego, La Jolla,
+5:} CA 92093-0411, USA
+CD
+5:) (Received 1 April 2014; accepted 3 June 2014)
+<
+3 Experiments on the combustion of large n-heptane droplets, performed by the National
+m Aeronautics and Space Administration in the International Space Station, revealed a
+3 second stage of continued quasi-steady burning, supported by low-temperature chem-
+o istry, that follows radiative extinction of the ﬁrst stage of burning, which is supported
+45 by normal hot-ﬂame chemistry. The second stage of combustion experienced diffusive
+E extinction, after which a large vapour cloud was observed to form around the droplet.
+*5; In the present work, a 770-step reduced chemical-kinetic mechanism and a new 62-step
+E skeletal chemical-kinetic mechanism, developed as an extension of an earlier 56-step
+8 mechanism, are employed to calculate the droplet burning rates, ﬂame structures, and
+, extinction diameters for this cool-ﬂame regime. The calculations are performed for
+f,» quasi-steady burning with the mixture fraction as the independent variable, which is
+E then related to the physical variables of droplet combustion. The predictions with the
+.0; new mechanism, which agree well with measured autoignition times, reveal that, in
+G decreasing order of abundance, H20, CO, H202, CHZO, and C2H4 are the principal
+D reaction products during the low-temperature stage and that, during this stage, there
+028 is substantial leakage of n-heptane and Oz through the ﬂame, and very little produc-
+< tion of C02 with no soot in the mechanism. The fuel leakage has been suggested to
+E be the source of the observed vapour cloud that forms after ﬂame extinction. While
+53 the new skeletal chemical-kinetic mechanism facilitates understanding of the chemical
+b kinetics and predicts ignition times well, its predicted droplet diameters at extinction
+>» are appreciably larger than observed experimentally, but predictions with the 770-step
+ﬁ reduced chemical-kinetic mechanism are in reasonably good agreement with experi-
+g ment. The computations show how the key ketohydroperoxide compounds control the
+8 diffusion-ﬂame structure and its extinction.
+Q . . . .
+E Keywords: c001 ﬂames; low temperature chemistry; extinction; droplet combustion
+Q
+1. Introduction
+It is well known that alkane autoignition involves different chemical—kinetic mechanisms at
+high and low temperatures and that there is a temperature range in between, the negative—
+temperature—coefﬁcient (NTC) range, over which ignition occurs in two stages and the
+ignition delay time tends to decrease with increasing temperature, contrary to the high—
+temperature and low—temperature behaviours [1,2]. In homogeneous mixtures, transient
+cool—ﬂame phenomena also are observed over this intermediate—temperature range, leading
+to the chemical mechanism being characterised as cool—ﬂame chemistry. Until recently,
+*Corresponding author. E-mail: seshadri@ucsd.edu
+© 2014 Taylor & Francis
+
+"
+"2","2 G. Paczko et al.
+such phenomena have not been associated with diffusion ﬂames, although cool—ﬂame
+Chemistry had been found to be of signiﬁcance in autoignition 0f alkane droplets in heated
+atmospheres [3]. Experiments performed in the International Space Station (188), however,
+revealed instances of two—stage alkane droplet combustion in which a hot—ﬂame stage,
+after extinguishing through a radiant—heat—loss mechanism, was followed by a quasi—steady
+stage of combustion sustained by cool—ﬂame Chemistry [4], as is supported by recent
+computational investigations employing large detailed Chemical—kinetic mechanisms [5,6].
+Because of its possible future practical importance, for example in HCCI engines [7], there
+is interest in improving our understanding of this kind of combustion Chemistry [8].
+The present contribution is a computational investigation addressing this topic. Instead
+ofworking with large detailed chemical—kinetic mechanisms having hundreds of species and
+E thousands of elementary steps, such as [1,2], a short mechanism for cool—ﬂame chemistry
+8 is sought, which, besides agreeing with autoignition experiments, also explains the recent
+E 188 results. While the various large mechanisms differ in many details and continue to
+0:39 be improved [9], their predictions of the quantities to be addressed here do not appear
+<ﬁ . . . .
+v to differ greatly, further motivating our focus on smaller mechanisms. Another reason
+3 that short mechanisms are selected for further study here is that they are more readily
+g amenable to development of thorough understanding. Attention is restricted to n—heptane as
+E a representative alkane of practical interest. We have shown, in particular, how asymptotic
+3 analyses can be applied to a short n—heptane mechanism to explain the NTC behaviour [10].
+a . . .
+3 The short mechanism employed preyiously [10] had 56 elementary steps and is now
+§ known on the basis of more recent developments to posses certain deﬁciencies, indicated
+5 later, even though it provided good agreement with autoignition delay times measured
+- in shock tubes and in rapid—compression machines. Moreover, we found that it did not
+.4; predict the existence of any cool—ﬂame regime in our droplet—burning computations. In the
+3; present work, therefore, the previous mechanism is re—evaluated and revised to produce a
+'E 62—step mechanism. This new mechanism, which is equally amenable to asymptotic analysis
+D (which, however, is not pursued here), does predict a cool—ﬂame droplet—burning mode. Its
+0223 predictions will be compared here with those of the much larger reduced mechanism of
+<3 Seiser et al. [11], which has less than 1000 steps and therefore is smaller than the large
+§ detailed mechanisms referenced above.
+a The general formulation of the quasi—steady droplet—combustion problem is given in
+E the following section. After that, the new chemical—kinetic mechanism is presented and
+3 compared with the previous mechanism, showing autoignition predictions. The computa—
+“3 tional procedure and results for droplet combustion are then presented and compared with
+#2 experimental results for droplet extinction diameters, followed by descriptions of predicted
+E ﬂame structures and discussions and conclusions concerning the implications of the results.
+Q
+2. Formulation
+In quasi—steady spherically symmetrical droplet combustion, the rate of decrease of the
+square of the droplet diameter is the burning—rate constant
+K = 8'O—Dln(1—|— B), (1)
+[01
+where ,0 is the gas density, ,0; is the liquid density, D is the thermal diffusivity of the gas and
+B is the transfer number. Expressions for B and prescriptions for selecting average values
+of the product ,oD are well known [12]. The value of B depends on the overall heat release,
+
+"
+"3","Combustion T heory and Modelling 3
+Which is quite different for hot and cool ﬂames and Which Will depend on the Chemical
+kinetics for the cool ﬂame.
+Steady—state conservation equations in spherical coordinates apply for the mass of
+Chemical species and for energy, pressure 19 being essentially constant so that momentum
+conservation can be ignored. Total mass is conserved, resulting in the density—velocity
+product being ,0v 2 ,0 mK/ 81/2, Where r denotes the radial coordinate, its value at the droplet
+surface being r1. With ,u E ,0 mK/ 8, the differential equations for conservation of Chemical
+species and energy can then be shown from this result to be expressible as
+le- d 2 le- 2
+—=— r Di— +rwi, i=1,...,N 2
+M dr dr ( '0 dr ) ( )
+E
+o
+:1. and
+‘8
+be” dT d dT
+< — = — r2 D— r211) 3
+E udr dr('0dr)+ T, <)
+8
+g Where Yi is the mass fraction of Chemical species 1', Di is its diffusion coefﬁcient, wi denotes
+E; its mass rate of production by Chemical reactions, T is temperature, and WT the rate of heat
+E release by Chemical reactions, divided by the (assumed constant) speciﬁc heat at constant
+”g pressure. To focus on Chemical—kinetic rather than diffusion effects, Di is set equal to D in
+7‘: Equation (2), i.e. all Lewis numbers are taken to be unity.
+CD In addition to Equations (2) and (3), a differential equation is introduced for a mixture
+5 fraction Z, taken to assume the value zero in the ambient atmosphere and unity in the
+E interior of the droplet and to diffuse With the thermal diffusivity D, so that
+0)
+>
+5 dz d dZ
+2
+— = — r D— . 4
+2 M dr dr ( '0 dr ) ( )
+08
+<
+§ It is revealing to View temperature and concentration proﬁles as functions of Z rather than
+g r. The problem therefore is transformed to one involving Z as the independent variable
+: instead of r. This can readily be done by use of Equation (4), Which shows that Z —
+ﬁ (rzpD/M) dZ/dr is a constant, the value of Which is unity according to the conservation
+“é condition at the droplet surface. Integrating from r = 00 Where Z = 0 then gives
+0
+E
+E Z 1 f 00 M d (5)
+= — ex — — r .
+G p r rzpD
+The physical coordinate r can be recovered from the solution in Z by the inverse transform
+Z —1
+D
+r = [f p— dz] . (6)
+0 M (1 — Z)
+When the problem is expressed in terms of Z a signiﬁcant variable becomes
+dZ 2
+dr
+
+"
+"4","4 G. Paczko et al.
+which is a measure of an effective strain rate and conventionally is called the scalar
+dissipation rate (although that turbulence—inspired term is not meaningful in the present
+context). Transforming Equations (2) and (3) to Z as the independent variable results in
+2Y-
+p%%=—wi, i=1,...,N (8)
+and
+2T
+p g % = —wT. (9)
+E
+g The integrations are to be performed subject to the boundary conditions Y;- = 171-900 and
+E T = T 00 in the ambient atmosphere, Z = O, and to conditions in the gas at the droplet
+0:0 surface, Where (rzpD/M) dZ/dr = — (1 — Z), giving Z < 1 in the gas there through fuel
+<3 mass conservation. This same condition applies to the fuel mass fraction YF, for species 1'
+E = F, but With D replaced by DF, While for other species that are not transported through the
+a fuel surface the condition (rzle- /,u) le- /dr 2 Y1- applies there. With the droplet assumed
+g to be isothermal, energy conservation across the droplet surface gives (rZA /,u) dT/dr = L
+3 there, Where A is the thermal conductivity of the gas, and L is the latent heat of vaporisation
+E per unit mass for the fuel. Finally, the gas temperature at the droplet surface is T = T l, the
+E liquid—fuel temperature, Which Will be close to the boiling point but in principle determined
+7‘: more precisely by the Clausius—Clapeyron phase—equilibrium equation involving YF and
+L? providing a value of T1 slightly below the boiling point. Study of these conditions at the
+g,» droplet surface enabled us, With sufﬁcient accuracy for this application, to simply apply
+g boundary conditions at Z = 1, Where there is pure gaseous fuel, and T = T b — L/cp =
+a 188.6 K (Where 010 is the speciﬁc heat of the gas), accounting for the effect of the heat of
+D vaporisation in energy conservation, With the liquid at the normal boiling temperature, T b.
+2 The dependence of X 011 Z is needed in integrating Equations (8) and (9). It is necessary
+3 to account for the fact that X approaches zero as Z approaches zero or unity and achieves a
+g maximum value at an intermediate value of Z. It can be shown from Equations (5) and (7)
+E that, since the properties ,0 21an D both become constant at the boundaries, X approaches
+3 zero in [groportionFto (1 E Z) as Z1 apprfaches unity and in proportion to [In (1 — Z)] as Z
+3 approac es zero. romt e genera resut
+g 2 (1 Z)2 Z D 4
+E XZTU ’O—dz], (10)
+o M ,0 D 0 1 — Z
+G
+the approximation
+X = Xref(1_ Z)2[111(1— Z)]4 (11)
+therefore is introduced for the variation of X, With Xref = ZD/ [r1111 (1 —|— 3)]2 taken to be
+a constant, independent of Z, measuring the magnitude of X. In the computations, Xref is
+employed as the reference value for the X ﬁeld. The functional form in Equation (11),
+strictly valid only if ,0 and D both remain constant, is nevertheless qualitatively realistic
+even With variable properties.
+The integrations 0f Equations (8) and (9) require evaluation of the density ,0, Which
+is obtained from the ideal gas law for the mixture in terms of the mass fractions Yi, the
+
+"
+"5","Combustion T heory and Modelling 5
+molecular weights of the species and the universal gas constant. They also require the
+thermodynamic properties of the species, enabling speciﬁc heats and heats Ofreaction to be
+evaluated, as well as the Chemical—kinetic parameters for determining the reaction rates wi.
+Equation (8) is solved for all species except nitrogen, Whose mass fraction is determined
+from :1]: 1Y,- = 1. For simplicity, in Equation (8) the constant value D = 10‘4 m2/s,
+representative of the thermal diffusivity around 1000 K, is used throughout. The formula
+employed for the droplet diameter is
+
+dl 2(8D/Xref)1/2/ln(1+B)a (12)
+E derivable from the deﬁnition of X ref. In using Equation (12) to calculate extinction diameters,
+g the value of B is obtained from Equation (1), With ,0 = 0.7 kg/m3, ,0; = 610 kg/m3, and
+E D = 6 X 10‘5 m2/s, employing the experimental value of K. The errors associated With
+0:0 neglecting the variable—property effects in these calculations are relatively small because of
+<3 the low ﬂame temperatures, always less than 800 K, and high degrees of accuracy are not
+3 sought in the computations.
+a It is worthwhile to summarise the approximations that have been introduced in this
+3 formulation. First and foremost among them is the artiﬁcial extension of the integration of
+E3 the gas—phase equations, Equations (8) and (9), to Z = 1, the interior of the liquid in this
+E problem. While there is, of course, no physical reality in integrating Equations (8) and (9)
+8 over a range of Z greater than that in the gas phase at the droplet surface, Z above about 0.8
+7‘: (where 188 K < T < 371 K), essentially no chemistry occurs at these low temperatures, s0
+L? that there is very little effect on the predictions, the energetics of the vaporisation having
+:9 properly been taken into account. A notable side beneﬁt of this extension is the added
+g generality of the formulation, Which then can be applied to any non—premixed system, such
+a as gaseous counterﬂow diffusion ﬂames With pre—vaporised fuel, for Which experiments
+D designed to study cool—ﬂame phenomena may be devised. Second, there is some inaccuracy
+2 in the assumed functional form for X in Equation (11). Finally, While optically thin radiant
+3 energy loss can readily be included by adding an appropriate term to Equation (9) (as
+é Will be done later in the computations of hot—ﬂame peak temperatures), the formulation
+é) requires Lewis numbers of unity, precluding multicomponent transport descriptions as well
+: as Soret and Dufour effects, some of Which become signiﬁcant for certain problems but
+ﬁ are negligible for the particular cool—ﬂame experiments to be addressed. The formulation
+é can be extended to include mixture—averaged transport, but that was not employed in the
+2 present work.
+g
+Q
+3. The chemical kinetics
+As indicated in the introduction (Section 1), droplet—combustion computations employing
+large detailed mechanisms [5,6] provided reasonably good agreement With the experimen—
+tal droplet—burning results. The next section Will address extinction—diameter predictions
+obtained When a mechanism of 2540 reversible steps among 556 species, a predecessor
+of the mechanism used in [5], is reduced to 770 reversible steps among 159 species [11].
+Comparable agreements Will be found, Which perhaps is not surprising, since the reduction
+was achieved by simply eliminating species not expected to participate in that chemistry.
+The question to be addressed here, then, is the effect of making a substantial reduction in
+the 770—step mechanism, as is needed for developing a good understanding of the details
+of the chemical kinetics.
+
+"
+"6","6 G. Paczko et al.
+The previous 56—step mechanism [10] resulted in the requisite understanding, but, based
+on newer information, analogous to that available for propane cool—ﬂame chemistry [13],
+that mechanism lacked certain important reactions. Speciﬁcally, the step involving the
+second addition of oxygen molecules was not taken to be reversible, and the decomposition
+to hydroperoxyl and the conjugate alkene 0f the radical produced by the ﬁrst addition of
+an oxygen molecule to a heptyl radical was not included. Because of this, the 56—step
+mechanism was completely re—evaluated in the light of present knowledge, resulting in the
+62—step mechanism listed in Table 1.
+In that table, the step 12 is now reversible, and step 56 provides the missing decompo—
+sition. Because of the decomposition step 57 that follows this last step, the new C3 H5 and
+C3 H4 species, not present in the 56—step mechanism, now enter, and their chemistry must
+3 then be included, resulting in steps 58 through 62. In addition, updated rate parameters
+8 are now used in all of the steps, so that many of the values are somewhat different from
+E what was listed in the 5 6—step mechanism. Finally, it may be noted that many more steps
+b5!) are reversible in the 62—step mechanism than in the 56—step mechanism; if all forward and
+: backward steps are counted separately, then the 56—step mechanism actually had, in that
+; sense, 62 steps, while the 62—step mechanism has 77.
+g The previous general description of the mechanism [10], including the applicable steady
+2 states, still applies. Thus, following the various iscmerisaticns and reactions associated with
+g the two successive additions of oxygen molecules to the heptyl radicals, the decomposition
+3 step 15 0f the species previously [10] denoted as KET (heptyl ketohydroperoxide) initiates
+§ the low—temperature branching chemistry. The key question is whether the heptyl radicals
+5 are consumed mostly by this low—temperature path or by the high—temperature direct—
+- decomposition path, steps 17 and 18. The latter situation occurs in the high—temperature
+.4; regime for which reduced autoignition chemistry is now available [14], and the former
+3; applies in the low—temperature regime, with the NTC regime existing in between. There is
+'E a net production of KET at low temperatures and consumption at high temperatures, which
+D leads ultimately to the NTC behaviour illustrated in Figure 1. That ﬁgure, which compares
+028 the predictions of the 62—step mechanism with those of the 770—step mechanism and with
+< experiment for autoignition times [15], demonstrates the good agreement provided by this
+é updated short mechanism concerning ignition—time predictions.
+E
+>5.
+ﬁ 4. Results and comparison with experiment
+“é: Setting Di 2 D for simplicity, Equations (8) and (9) were integrated numerically by use of
+#2 Equation (1 1) for different values of Xref, and Equation (12) was then employed as described
+5 previously to estimate the corresponding droplet diameter. This was done for three selected
+Q cases, as listed in Table 2. The ﬁrst case, normal air, corresponds to experimental runs 2—4
+of [4, Table 1], the second, air at 1 atm diluted with 15% carbon dioxide, corresponds to
+runs 7—10, and the third, a mixture containing 35% carbon dioxide at 0.7 atm, to run 23.
+There is signiﬁcant scatter in the experimental data, not only in extinction diameters d],
+but also, to a lesser extent, in the burning—rate constant K. The latter variation introduces
+corresponding variations in the predicted value of d; (for any given value of Xref) from
+Equation (12), according to the calculation procedure discussed previously. The maximum
+value of Xref for which cocl—ﬂame solutions could be obtained with the mechanism of Seiser
+et al. [11] is listed in Table 2; these predictions will be discussed later. These maximum
+values deﬁne the extinction diameters through Equation (12), and the predicted diameters
+are listed in Table 2, along with the corresponding experimental values, for run 2 in case 1,
+for runs 7 and 10 in case 2, and for run 23 in case 3. It seems clear from these values that
+
+"
+"7","Combustion T heory and Modelling 7
+Table 1. The skeletal chemical-kinetic mechanism.
+
+Number Reaction An 05,, E,
+1. C7H16 —> C4H9 ‘1‘ C3H7 3.16 X 1016 0.0 81,070.8
+2. C7H16 ‘1‘ 02 —> 1-C7H15 ‘1‘ H02 7.40 X 1013 0.0 52,8203
+3. C7H16 ‘1‘ 02 —> 2-C7H15 ‘1‘ H02 1.00 X 1013 0.0 50,1913
+4. C7H16 ‘1‘ H02 —> 1-C7H15 ‘1‘ H202 1.92 X 1014 0.0 20,435.0
+5. C7H16 + H02 —> 2-C7H15 + H202 1.62 x 1013 0.0 17,6864
+6. C7H16 ‘1‘ OH —> 1-C7H15 ‘1‘ H20 1.40 X 1010 1.0 1589.4
+7. C7H16 ‘1‘ OH —> 2-C7H15 ‘1‘ H20 1.12 X 108 1.6 —34.9
+8f. 1-C7H15 —> 2-C7H15 5.00 x 1010 0.0 18,116.6
+8b. 2-C7H15 —> 1-C7H15 5.00 x 1010 0.0 18,1166
+3 9f.1-C7H15 ‘1‘ 02 —> C7H1502 2.95 X 1012 0.0 0.0
+8 9b. C7H1502 —> 1-C7H15 + 02 2.60 x 1015 0.0 28,0354
+1;; 10f. 2-C7H15 + 02 —> C7H1502 1.25 x 1012 0.0 0.0
+EB 10b. C7H1502 —> 2—C7H15 + 02 1.10 x 1015 0.0 28,035.4
+55‘ 11. C7H1502 —> C7H1402H 1.38 x 1011 0.0 170172
+E 12f. C7H1402H ‘1‘ 02 —> 02C7H1402H 5.60 X 1012 0.0 0.0
+m 12b. 02C7H1402H —> C7H1402H + 02 6.35 x 1023 —2.5 38,4001
+3 13. 02C7H1402H —> H02C7H1302H 5.56 x 1011 0.0 17,0172
+0 14. H02C7H1302H —> OC7H1302H + OH 4.00 x 109 0.0 7504.8
+3 15. OC7H1302H —> OC7H13O + OH 5.06 x 1014 0.0 43,044.9
+E 16. OC7H13O —> CHZO + C5H11+CO 2.00 x 1013 0.0 15,009.6
+E 17. 1-C7H15 —> C5H11 + C2H4 2.50 x 1013 0.0 28,824.1
+Z 18. 2-C7H15 —> C4H9 ‘1‘ C3H6 1.20 X 1013 0.0 28,3222.
+8 19. C5H11 —> C2H4 ‘1‘ C3H7 7.97 X 1017 —1.4 29,875.7
+| 20. C4H9 —> C2H5 ‘1‘ C2H4 2.50 X 1013 0.0 28,824.1
+5:“ 21. C3H7 + 02 —> C3H6 + H02 1.00 x 1012 0.0 4995.2
+g 22. C3H6 + OH —> C2H5 + CHZO 7.90 x 1012 0.0 0.0
+.2 23. C2H5 + 02 —> C2H4 + H02 1.02 x 1010 0.0 —2186.9
+5 24. C2H4 + OH —> C2H3 + H20 2.05 x 1013 0.0 5951.2
+2 25. C2H3 + 02 —> CHZO + HCO 1.70 x 1029 —5.3 6501.0
+68 26. CHZO + OH —> HCO + H20 3.43 x 109 1.2 —454.1
+:2 27. HCO + 02 —> C0 + H02 3.01 x 1012 0.0 0.0
+g 28f. C0 + OH —> C02 + H 4.40 x 106 1.5 —740.9
+g 28b. C02 + H —> C0 + OH 8.80 x 108 1.5 22,944.5
+: 29. 2 H02 —> H202 + 02 1.87 x 1012 0.0 1539.2
+ﬁ 30. H202 (+Ma) —> 2 OH (+Ma) 7:00 3.00 x 1014 0.0 48,494.3
+E kg 1.20 x 1017 0.0 45507.0
+8 31f. 02 + H —> OH + O 9.76 x 1013 0.0 14,8423
+3‘ 31b. OH+O —> 02+H 6.35 ><1012 0.0 —1661.1
+5 32f. H2 + OH —> H20 + H 1.00 x 108 1.6 3298.3
+Q 32b. H20 + H —> H2 + OH 4.70 x 108 1.6 18,570.8
+33f. 2 OH —> H20 + O 1.50 x 109 1.1 100.4
+33b. H20 + O —> 2 OH 1.57 x 1013 1.1 17,327.9
+34f. H + OH + Mb —> H20 + Mb 2.20 x 1022 —2.0 0.0
+34b. H20 + Mb —> H + OH + Mb 3.89 x 1023 —2.0 119,502.9
+35. H+ 02 +Mb —> H02 +Mb 3.54 x1018 —0.8 0.0
+36. H02 + OH —> H20 + 02 2.89 x 1013 0.0 —501.9
+37. CH + C02 —> HCO + CO 1.90 x 1014 0.0 15,798.3
+38. CH + H20 —> 3-CH2 + OH 5.70 x 1012 0.0 —764.8
+39f. CH+H2 —> 3-CH2+H 1.11><108 1.8 —1673.0
+39b. 3-CH2+H —> CH+H2 1.75 ><108 1.8 —1591.8
+(continued)
+
+"
+"8","8 G. Paczko et al.
+Table 1. (Continued).
+Number Reaction An 05,, E,
+40. 3-CH2 + 02 —> C0 + OH + H 1.30 X 1013 0.0 1481.8
+41. 1-CH2 + H2 —> CH3 + H 5.00 X 105 2.0 7241.9
+42. CH3 + O —> CHZO + H 8.43 X 1013 0.0 0.0
+43. CH3 + 02 —> CHZO + OH 3.30 X 1011 0.0 8938.8
+44. CH3 + H02 —> CH3O + OH 1.80 X 1013 0.0 0.0
+45. CH3 + H (+M) —> CH4 (+M) k0, 2.11 x 1014 0.0 0.0
+kg 6.26 X 1023 —1.8 0.0
+46. CH3O + Mb —> CHZO + H + Mb 5.42 X 1013 0.0 13,503.8
+47. CH4 + OH —> H20 + CH3 1.56 X 107 1.8 2772.5
+3 48. HCO + Mb —> C0 + H + Mb 7.10 X 1014 0.0 16,8021
+8 49. HCO + H —> C0 + H2 9.03 X 1013 0.0 0.0
+12’ 50. HCO + OH —> C0 + H20 1.02 X 1014 0.0 0.0
+E}; 51. C2H4 + H —> C2H3 + H2 5.40 x 1014 0.0 14,9140
+55‘ 52. C2H4 + H (+M) —> C2H5 (+M) k0, 3.98 x 109 1.3 1290.6
+<1- kg 4.72 X 1018 0.0 755.26
+3 53. C3H7 —> CH3 + C2H4 9.60 x 1013 0.0 31,0229
+3 54. C7H16 ‘1‘ H —> 1-C7H15‘1‘H2 1.88 X 105 2.8 6285.9
+0 55. C7H16 ‘1‘ H —> 2-C7H15 ‘1‘ H2 2.60 X 106 2.4 4469.4
+E? 56f. C7H1502 —> C7H14 + H02 2.21 x 1038 —8.1 41,5177
+El 561). C7H14 ‘1‘ H02 —> C7H1502 4.07 X 1029 —6.2 20,874.8
+E 57. C7H14 —> C4H9 ‘1‘ C3H5 3.17 X 1021 —1.6 75,380.0
+3 58. C3H4 + OH —> CHZO + C2H3 1.00 X 1012 0.0 0.0
+8 59. C3H4 + OH —> HCO + C2H4 1.00 X 1012 0.0 0.0
+. 60. C3H5 —> C3H4 + H 3.98 X 1013 0.0 70,0526
+,3 61. C3H5 + H —> C3H4 + H2 5.00 x 1012 0.0 0.0
+g 62. C3H5 + 02 —> C3H4 + H02 6.00 X 1011 0.0 10,014.3
+> —
+5 0 With the rate of the elementary step 72, kn = An Ta"" exp [—E,, / (R T)], where R is the universal gas constant.
+0 Units are moles, cubic centimeters, seconds, calories, Kelvin.
+028 0 Third body collision efﬁciencies are
+< o [M]21 = 0.4[N2] + 3.0[n-C7H16] + 0.4[02] + 6.5[H20] -|— 0.75[CO] + 3.0[C2H4].
+U, . [M]b = 0.4[N2] + 3.0[n-C7H16] + 0.4[02] + 6.5[H20] + O.75[CO] + 3.0[C2H4]+1.5[C02].
+“>3 0 Tree centring
+g . Reaction 30: 0.5, 1.0, 1.0 x 107, 1.0 x 107.
+H . Reaction 45: 0.577, 1.0, 2.37 x 103.
+5‘ . Reaction 52: 1.0, 1.0, 4.228 x 102, 73.4.
+'5
+v8
+:3
+E the predicted and measured extinction diameters are in general agreement, the differences
+Q being on the order of a factor of two or less, comparable With the experimental variations,
+Which are greater than the expected errors associated With the approximations underlying
+the computational approach.
+
+In each case, there is a range of Xref over Which both hot—ﬂame and cool—ﬂame solutions
+exist. Figure 2 shows in Z space temperature proﬁles for both ﬂames in one representative
+case. It is clear from this ﬁgure that the cool ﬂame exhibits a much lower peak temperature
+and is located Closer to the fuel surface. A number of hot—ﬂame solutions were obtained in
+the present study, but they Will not be shown here because their general Characteristics are
+just as expected, and the emphasis is on the cool—ﬂame regime. Unlike approaches based
+on the time—dependent equations [5,6], the present approach cannot describe the transition
+from the hot ﬂame to the cool ﬂame, and so there is little motivation to investigate the hot
+ﬂames by the present method.
+
+"
+"9","Combustion T heory and Modelling 9
+¢- = 1-0
+mm ﬂ ,. ""
+4- — '- -. 1
++- _. .ix/
+.f-
+a x"" ' ‘-._ g: ' '
+E. 1 _,-- ;. q “—1:_'-.""'
+P f s f _ _. .. ID _- ﬂ .-
+1” r"" P {bar}
+{.1 I _ 1': r I D '- 3.2
+"" I 13.5
+V {1 n1 0 $.11:
+v—1 - - ' IEEI""
+a I — EE slap
+”:73
+EB
+:13 [1.3 ‘i 1.2 1.4 1.5
+.1
+v mtmrr [H 1
+a Figure 1. Comparison of experimental data (symbols) with predictions (lines) for the ignition delay
+g time, rig, of stoichiometrie n-heptane/air mixtures as a function of the initial temperature of the
+E? mixture for various values of pressure. The experimental data were those of Ciezki and Adomeit [15].
+El The predictions were made using the 770-step mechanism [11] and the 62-step mechanism shown in
+3 Table 1 (colour online).
+8
+>
+76:
+ED
+% Figure 3 shows, in this same Z variable, proﬁles of the fuel and oxygen mass fractions,
+E as well as those of the maj or product, water, and the very minor product, carbon dioxide,
+2 along with the temperature, for a representative cool ﬂame. Carbon dioxide is calculated
+5 to be produced in very small quantities, resulting in its mass fraction being only about
+2 5% that of water, quite different from hot ﬂames but consistent with known cool—ﬂame
+g chemistry. Especially noteworthy in this ﬁgure is the penetration of both heptane and
+g oxygen through the cool ﬂame. The Chemistry fails to consume much of the reactants in
+g; the residence times available. The ﬂame structure and temperature thus are controlled not
+5 by production of equilibrium products but instead by the Chemical kinetics of the NTC
+3‘ region. As a consequence, the ﬂame structure and temperature will vary with the droplet
+E diameter in this regime. As the droplet gets smaller, thereby decreasing the residence time,
+g greater amounts of reactant leakage occur. This results in decreasing ﬂame temperatures
+3 and eventually large amounts of heptane vapour surrounding the droplet at the time of
+o extinction of the cool ﬂame. Condensation 0fth1s vapour upon cooling after extinction is
+Q . . .
+respons1ble for the formation of the vapour Cloud seen experimentally.
+Table 2. Cases considered in the computations.
+Case p Oz C02 Range of Predicted Experimental
+no. (atm) (V01.%) (V01.%) Xref (s_l) d; (mm) d; (mm)
+1 1 21 O 350 1.75 1.30
+2 1 18 15 420 1.63, 1.72 1.88, 1.25
+3a 0.7 19.6 35 280 1.97 2.37
+aThe droplet in this test was held stationary by an 80 mm dia. SiC ﬁbre [4].
+
+"
+"10","10 G. Paczko et a1.
+2011!}
+Tmax
+1Dﬂ0 '
+E h
+o .
+N .
+‘53
+s .3
+co
+5
+<
+E 0 0-2 0-4 0-6 0-3 1
+m 2
+93.
+g Figure 2. Comparison of predicted temperature proﬁles as a function of Z for the ‘hot ﬂame’ and
+*5; for the “cool ﬂame’ for Xref = 250 s‘1 and case 1 (Table 2). The predictions were made using the
+'3 chemical-kinetic mechanism of Seiser et a1. [11] (colour online).
+0
+‘53
+G)
+.2
+8 Figures 4 and 5 show additional aspects of this representative cool—ﬂame structures
+% computed in Z space, the ﬁrst for three major reaction products and the important KET
+'5 species, and the second for two radicals and the product hydrogen peroxide. There are, in
+G: fact, eleven different KET molecules in the mechanism [1 1], and What is shown in the ﬁgure
+'5
+D
+2
+g 1 ——
+g "" "" C?Hm
+53 H 002 x 400
+i. 0-3 H H20 1: 20
+>5
+.9 H 02
+'5
+%
+3 CLE- .. ‘
+Q 1-:
+3 Vi ""
+5
+0.4 .
+1-“
+“-2 j .,
+II: -.—.—-.-'.'..__._. _-I-
+D [1.2 I14 ELIE ELE 1
+Z
+Figure 3. Predicted proﬁles of mass fractions of C7H16, 02 and H20 as a function of Z for the ‘cool
+ﬂame’ for Xref = 250 s‘1 and case 1 (Table 2). The predictions were made using the chemical-kinetic
+mechanism of Seiser et a1. [11] (colour online).
+
+"
+"11","Combustion T heorjy and Modelling 11
+{3.03
+H 111 :u: E K910i
+"" H CHEJZI|
+{102 H CzHa
+ha
+Yi RM;
+0.01
+E ..
+U) I"" .
+5 .L-I'
+g0 _ / '—-... .
+< AH.
+v .
+M D [1.2 [1.4 ELIE [1.3 1
+m Z
+93.
+00
+2 Figure 4. Predicted proﬁles of mass fractions of CO, KET, CH20 and C2H4 as a function of Z
+'2' for the ‘cool ﬂame’ for Xref = 250 s‘1 and case 1 (Table 2). The predictions were made using the
+g chemical-kinetic mechanism of Seiser et a1. [11] (colour online).
+2%
+.2
+«3
+ED is the sum of the mass fractions of all eleven. The non—monotonicity of the KET proﬁle is
+3? especially striking, showing its production in the lower—temperature Wings and consumption
+E in the Vicinity of the peak temperature. This species is well known to be generated at low
+2 temperature and removed at high temperature. The crossover temperature deﬁned previously
+a
+D
+2
+08
+<
+U)
+«3
+53 - '-' m—a H202
+E {1010 - ._. H02 .1 41::
+ﬁ .. H OH x 4 104
+% .:.
+L8 ‘1'.
+g I
+8
+{1-005 '
+.- A._ M. .—__ ._ _ _ '-
+D [1.2 [1.4 0.5 0.3 1
+Z
+Figure 5. Predicted proﬁles of mass fractions of H2 02, H02 and OH as a function of Z for the ‘cool
+ﬂame’ for Xref = 250 s‘1 and case 1 (Table 2). The predictions were made using the chemical-kinetic
+mechanism of Seiser et a1. [11] (colour online).
+
+"
+"12","12 G. Paczko et al.
+BUT.)
+H case1
+D—i‘: case '2
+W5 I e—ﬁ- case 3 |
+Trm ﬂ .
+m} w
+' “Br:-
+?25 - . 333313131311:
+3 W
+8
+‘3 mu
+g0 D 1E”;I EDIE} SUD 413i} EDI]
+<ﬁ Im, [”51
+E
+m Figure 6. Predicted values of peak temperature as a function of Xref for case 1, case 2 and
+3 case 3 (Table 2). The predictions were made using the chemical-kinetic mechanism of Seiser et al.
+2 [l 1] (colour online).
+CG
+3
+§ [10] is the temperature above Which KET is consumed, and so temperatures in parts of the
+5 reaction region in the diffusion ﬂames must be below crossover for the cool ﬂame to exist.
+. The range of average reaction—zone temperatures over Which the cool ﬂame can be found
+g corresponds approximately to the maximum and minimum temperatures at the ends of the
+3; NTC region. From static stability reasoning, the cool diffusion ﬂame is stable in the NTC
+'5 region but unstable outside, as Will be explained further in the later discussion.
+D Figure 6 shows the calculated peak cool—ﬂame temperature as a function of Xref for
+923 all three cases addressed. A rapid Change, With an approach to a vertical slope, can be
+i seen at the smallest strain rates (the largest droplets). These largest diameters, in principle,
+3 may be larger than the largest diameters seen experimentally during the cool—ﬂame stage
+E because radiative extinction of the hot ﬂame may not occur soon enough to capture the
+5‘ entire cool—ﬂame range. On the other hand, at the other limit, Where the temperature is seen
+'8 to decrease more gradually, the small droplet diameter Where the cool ﬂame extinguishes
+g diffusively should be seen in all of the experiments that exhibited a cool—ﬂame mode.
+#2 The computations have shown that hot—ﬂame solutions exist over a much larger range
+5 of strain rates than cool—ﬂame solutions, so that, in particular, hot—ﬂame solutions persist to
+Q much smaller droplet diameters than the cool—ﬂame extinction diameters. This is evident
+from Figure 7, Which shows the maximum temperature in the hot ﬂame, calculated as a
+function of Xref, for all these cases. For these calculations, radiant loss from bands of water
+and of carbon dioxide, based on [16], and from bands of heptane With their emissiVities
+calculated from their reported absorptiVities [17], was included as an additional term in
+Equation (9). Like WT, the algebraic form of this term is quite complicated, now involving
+emissiVities of the Chemical species, rather than reaction rates. The radiant loss is responsible
+for the decrease in temperature With decreasing Xref at the smaller values of Xref. The curves
+end at conditions of quasi—steady radiative extinction on the left and quasi—steady diffusive
+extinction on the right. The droplet diameters corresponding to radiative extinction here
+are much larger than observed experimentally, possibly because radiant loss from soot
+emissions, not included in these computations, is a contributing factor. On the other hand,
+
+"
+"13","Combustion T heory and Modelling 13
+EUUU a—n BEBE 2
+H case 3
+TIT'IﬂI': J I II .
+15m: mm
+3
+a 1ﬂﬂﬂ|
+‘3
+g0 1 1mm 1mm}
+<ﬁ 31ml [115]
+E
+3 Figure 7. Predicted values of peak hot-ﬂarne temperature as a function of Xref for case 1, case 2 and
+g case 3 (Table 2). The predictions were made using the 770-step mechanism (colour online).
+E?
+g the cool ﬂame produces negligible amounts of soot, and inclusion of band—emission radiant
+0; losses in the cool—ﬂame calculations showed that they, too, have negligible inﬂuences in the
+5 cool—ﬂame mode because of the much lower temperatures.
+. Comparison of the two lower curves in Figure 6 indicates that the low—temperature
+g extinction occurs at a smaller strain rate (a larger droplet diameter) in case 3 than in
+3; case 2. This is in agreement with experiment (see Table 2) and is to be expected because of
+'E the much greater degree of dilution with carbon dioxide in case 3. On the other hand, case
+:2) 1 in this ﬁgure appears to experience extinction sooner, at a smaller strain rate than case 2.
+03 This prediction is contrary to expectations, since the oxygen content of the atmosphere is
+i greater in case 1, and it is unlikely to be consistent with accurate experimental measurements
+3 of extinction diameters, although the scatter, an example of which appears in Table 2, is too
+E large to be certain of this.
+5‘ For case 1, the air atmosphere, experimentally the ratio of the droplet diameter at the be—
+rg ginning of the cool—ﬂame stage to that at the end, varied from 2 to 5, while computationally
+g the range shown in the ﬁgure corresponds to a maximum ratio less than 2. It appears from
+g the shapes of the curves in the ﬁgure that solutions for case 1 perhaps should exist beyond
+5 the range shown, particularly at the lower strain rates, where the vertical asymptote is not
+Q seen in this case, but also at the higher strain rates because of the higher oxygen concentra—
+tion. This emphasises the appreciable computational difﬁculties in obtaining solutions with
+steady—state programs; very good starting guesses are needed for the iterations to converge,
+and it may not have been possible to ﬁnd solutions that existed beyond the extremes for
+case 1. This is a drawback that introduces some uncertainty in calculated extinction diam—
+eters, even though the conditions at which the computation were made, indicated by the
+points in Figure 6, were very Close together at the low—temperature limit.
+
+All of the preceding computational results were obtained with the Chemical—kinetic
+mechanism of Seiser et a1. [11]. For the 62—step mechanism it was found that the solutions
+had the same general shape but could be obtained only over a much narrower range of
+Xref than is seen in Figure 6, and at values of Xref about a factor of ten lower than in the
+ﬁgure. Predicted extinction diameters thus are much larger for this 62—step mechanism
+
+"
+"14","14 G. Paczko et al.
+than for the 770—step mechanism, and they are about 3 times the values measured in the
+experiments. This means that, even though this mechanism gives good NTC behaviour,
+it does not give good extinction diameters. In this respect, diffusion—ﬂame extinction is a
+more stringent test of a mechanism than is NTC. This result, along with the absence of
+any cool—ﬂame mode with the earlier 56—step mechanism, also underscores the difﬁculty
+of reducing the chemistry to extents that facilitate understanding; the predictions become
+much more strongly dependent on speciﬁc rate—parameter values that are not well known.
+5. Discussion and conclusion
+The present investigation has focused on quasi—steady droplet combustion in the cool—ﬂame
+E regime from a computational Viewpoint. In contrast to previous computational investi—
+N gations, steady—state conservation equations were employed, rather than time—dependent
+E equations. The fact that solutions were obtained with these steady—state equations demon—
+co . . . .
+:3 strates concluswely that the cool—ﬂame Chemistry can support quas1—steady droplet burning,
+:5 at least for the n—heptane droplets considered, in the oxidising atmospheres addressed. This
+; conclusion agrees with inferences made from previous, fairly recent, experimental and
+g theoretical studies.
+2 The existence of these stable steady—state solutions relies on the overall rate of heat
+% release decreasing with increasing temperature. If a random perturbation momentarily
+g increases the peak temperature in the diffusion ﬂame, then the chemistry responds by
+0; decreasing the rate of heat release, thereby causing the peak temperatures to decrease back
+5 to a stable value. Correspondingly, if the perturbation decreases the peak temperature, then
+. the chemistry increases the rate of heat release so that the peak temperature increases to its
+*3 stable value. This can occur only in the NTC range of the cool—ﬂame chemistry. The ﬂame
+3; therefore is unstable at the higher temperatures where the hot—ﬂame Chemical—kinetics are
+'5 more dominant and also at the lower temperatures where the increasing branching rates with
+:2) increasing temperature, through the decomposition of the species that has been abbreviated
+93 as KET [10], is dominant and decreases the heat—release rate with decreasing temperature.
+<5: The fact that the existence of this cool—ﬂame droplet—combustion mode depends on the
+$3 NTC Chemical—kinetic reaction rates causes the Characteristics of the diffusion ﬂame to
+a differ in a number of ways from the characteristics of ordinary, more familiar, hot diffusion
+E ﬂames. While the ﬂame temperatures of these hot ﬂames are essentially the adiabatic ﬂame
+'8 temperatures of the stoichiometric reactant mixtures, the ﬂame temperatures of the cool
+a ﬂames are determined by the chemical kinetics. Through the thermal diffusivity D, the
+% droplet diameter d; determines a diffusion—ﬂame residence time dlz/D, which decreases
+E with decreasing droplet diameter, and which imposes a time scale over which the Chemical
+Q kinetics must proceed in order to support droplet combustion. In the NTC regime, this time
+scale is too short to allow all of the reactants to be consumed, and therefore fuel and oxygen
+leak through ﬂame, in amounts that increase as the decreasing droplet diameter decreases
+the available residence time in the reaction zone. The classical diffusion—ﬂame parameter B,
+measuring the overall amount of heat release, thus depends on the Chemical—kinetic reaction
+rates and varies with time.
+
+These time—scale considerations explain why the two—stage combustion of n-alkane
+droplets was not discovered prior to the ISS experiments. The smaller droplets that are
+generally investigated in ground—based experiments have time scales too short to fall within
+the NTC range. Although larger droplets can be studied on the ground, buoyancy—induced
+gas motion limits achievable residence times, preventing NTC time scales from being
+reached in non—premixed diffusive conﬁgurations. It would be difﬁcult or impossible to
+
+"
+"15","Combustion T heory and Modelling 15
+reproduce the 188 results on the ground (an observation with clear implications for ﬁre—
+safety considerations in spacecraft).
+
+The cool—ﬂame regime, initially established through radiative extinction of a hot ﬂame,
+evolves through this Chemical—kinetic—controlled mechanism to ever decreasing ﬂame tem—
+peratures as residence times decrease with decreasing droplet size, until the minimum
+temperature of the NTC region is reached at which point the ﬂame becomes unstable
+and extinguishes, leaving behind large quantities of unburnt fuel vapour in the gas, which
+subsequently condenses into a vapour cloud. At the time of cool—ﬂame extinction, the fuel
+droplet is still large enough to support a hot ﬂame, but the thermal energy in the cool ﬂame
+around the droplet is insufﬁcient to ignite this hot ﬂame in this residence—time—limited dif—
+fusive environment; otherwise hot ﬂames would have been seen experimentally following
+
+3 the second—stage extinction. While the initial formation of the cool ﬂame through radiative
+8 extinction of the hot ﬂame has been calculated computationally [5,6], the mechanism by
+E which that occurs is not yet well explained and deserves further investigation. That mecha—
+0:39 nism must in some way depend on a fortuitous relationship between rates of radiant energy
+<ﬁ . . . .
+<r em1ss10n and the cool—ﬂame thermal energy content in the NTC region.
+Q If the radiant energy loss were to extinguish the hot ﬂame so early that the residual cool—
+; ﬂame thermal energy content placed its ﬂame temperature above the maximum temperature
+2 of the NTC region, then the cool ﬂame would be unstable and may experience a transition
+% to a hot ﬂame. Theoretically this would result in oscillatory extinction and re—ignition of the
+3 hot ﬂame, which usually is not seen experimentally, although it has been reported recently
+§ for tests with higher normal alkanes [l8]. Radiative extinctions do often exhibit ﬂame
+5 oscillations, but those oscillations generally are not spherically symmetrical and involve
+- neither complete extinction of the hot ﬂame nor indications of any transient presence of cool
+.4; ﬂames. In the opposite extreme, if the hot—ﬂame extinction by radiant loss occurred too late,
+S; then the residual energy content may be so small that the resulting cool—ﬂame temperature
+'5 would be below the minimum temperature of the NTC zone, and any cool ﬂame would
+D rapidly be extinguished. The temperature proﬁle during radiant extinction, especially at
+028 locations near the fuel surface, where the cool ﬂame will emerge, thus must strike a delicate
+<3 balance for the transition to occur. The necessary balance is not well understood.
+§ Re—ignition events have recently been predicted computationally when hot—ﬂame eX—
+E tinction occurs early enough for the cool—ﬂame temperature to exceed temperatures in the
+E NTC range [18]. Interestingly enough, these computations revealed that, following the hot—
+8 ﬂame extinction, the energy content of the cool ﬂame was insufﬁcient to ignite the hot ﬂame
+g for a second time, but it did re—ignite the same cool ﬂame. That is, an oscillatory ﬂame
+% was established, with large temperature excursions supported by cool—ﬂame chemistry. Two
+5 such cool—ﬂame re—ignitions were found to occur in these computations [18]. A variety of
+Q different oscillatory behaviour thus is possible through the interactions of these Chemical—
+kinetic processes. The present formulation, based on steady—state equations, of course is
+insufﬁcient for addressing such oscillations. Its stability considerations serve only to expose
+under what conditions the phenomena may arise. Further research would be desirable, to
+develop simpliﬁed models for describing oscillatory behaviours driven by these cool—ﬂame
+phenomena.
+
+The two different chemical—kinetic descriptions that have been investigated here help to
+shed light on the kinds of chemical—kinetic approaches that would be appropriate to adopt
+in future investigations of these types of second—stage droplet—combustion phenomena. It is
+Clear from earlier work that full detailed Chemistry, including all cool—ﬂame steps, generally
+provides reasonable agreement with experiment. A drawback of that chemistry is that it is
+computationally taxing. We have shown that, by removing species that do not participate,
+
+"
+"16","16 G. Paczko et al.
+descriptions with less than 200 species and less than 1000 steps work equally well. This is
+similar to ﬁndings in earlier computational work [5]. That degree of reduction, however, is
+still insufﬁcient to provide the simpliﬁcations needed to obtain a thorough understanding
+of the combustion processes. In attempting to develop a skeletal mechanism that is small
+enough for that purpose, we have found that our 62—step mechanism, with less than 40
+species, while qualitatively reproducing the observed behaviours, would provide very poor
+quantitative agreement with experiment concerning second—stage extinction diameters.
+This observation means that more research is desirable for improving the rate parameters
+at this level of reduction. It was especially surprising to encounter this situation with a
+mechanism that predicted the results of autoignition experiments so well. It is well known
+that purely empirical mechanisms with as few as four steps can reproduce reasonably
+E accurate NTC behaviour with suitably adjusted rate parameters. While such empirical
+8 descriptions do contribute to understanding of the phenomena, they are not very helpful in
+‘3 relating the predictions to the underlying detailed chemistry. Since they can, however, be
+on . . . . . .
+is useful in practice, it would be of interest to attempt to derive reductions at such extreme
+v levels from a mechanism such as the present 62—step mechanism, from an improvement
+3 of that mechanism that predicts cool—ﬂame extinction more accurately, or even from the
+g 56—step predecessor of the 62—step mechanism, which has many of the needed attributes
+E of the full chemistry. These droplet—combustion experiments thus appear to provide a new
+% realm that is helpful for testing aspects of mechanisms, beyond what can be tested in
+3 static—reactor, ﬂow—reactor or autoignition experiments.
+CD
+“5
+7::
+ED
+é, Acknowledgements
+E We would like to thank F. L. Dryer, T. I. Farouk, D. L. Dietrich and V. Nayagam for their comments.
+2
+a
+D
+2 Funding
+3 The research at the University of California at San Diego was supported by the National Aeronautics
+g and Space Administration microgravity science program.
+53
+5
+>3
+§ References
+'8 [l] E. Ranzi, P. Gaffuri, T. Faravelli, and P. Dagaut, A wide-range modelling study of n-heptane
+L8 oxidation, Combust.Fla1ne 103 (1995), pp. 91—106.
+g [2] H]. Curran, P. Gaffuri, WJ. Fitz, and CK. Westbrook, A comprehensive modeling study of
+o n-heptane oxidation, Combust. Flame 114 (1998), pp. 149—177.
+D [3] A. Cuooi, M. Mehl, G. Buzzi-Ferraris, T. Faravelli, D. Manoa, and E. Ranzi, Autoignition and
+burning rates offuel droplets under microgravity, Combust. Flame 143 (2005), pp. 211—226.
+[4] V. Nayagam, D.L. Dietrich, P.V. Ferkul, M.C. Hicks, and EA. Williams, Can cool ﬂames support
+quasi-steady alkane droplet burning? Combust. Flame 159 (2012), pp. 3583—3588.
+[5] TI. Farouk and EL. Dryer, Isolated n-heptcme droplet combustion in microgravity cool ﬂames
+two-stage combustion, Combust. Flame 161 (2014), pp. 565—581.
+[6] A. Cuooi, A. Frassoldati, T. Faravelli, and E. Ranzi, Cool ﬂames in droplet combustion, XXXVI
+Meeting of the Italian Section of the Combustion Institute, 2013.
+[7] D. Kolaitis and M. Founti, A tabulated chemistry approach for numerical modeling ofdiesel
+Spray evaporation in a ‘Stabilized cool ﬂame’ environment, Combust. Flame 145 (2006),
+pp. 259—271.
+[8] T. Bieleveld, A. Frassoldati, A. Cuooi, T. Faravelli, E. Ranzi, U. Niemann, and K. Seshadri,
+Experimental and kinetic modeling study Ofcombustion ofgasoline, its surrogates and compo-
+nents in laminar non-premixedﬂows, Proo. Combust. Inst. 32 (2009), pp. 493—500.
+
+"
+"17","Combustion T heory and Modelling 17
+[9] D.M.A. Karwat, S.W. Wagon, M.S. Wooldridge, and CK. Westbrook, Low-temperature speci-
+ation and chemical kinetic studies ofn-heptane, Combust. Flame 160 (2013), pp. 2693—2706.
+[10] N. Peters, G. Paczko, R. Seiser, and K. Seshadri, Temperature cross-over and non-thermal
+runway at two-stage ignition ofn-heptane, Combust. Flame 128 (2002), pp. 38—59.
+[11] R. Seiser, H. Pitsch, K. Seshadri, WJ. Fitz, and H]. Curran, Extinction and autoignition 0f
+n-heptane in counterﬂow conﬁguration, Proc. Combust. Inst. 28 (2000), pp. 2029—2037.
+[12] FA. Williams, Combustion T heory, 2nd ed., Addison-Wesley, Redwood City, CA, 1985.
+[13] J.C. Prince and EA. Williams, Short chemical-kinetic mechanisms for low-temperature ignition
+ofpropane and ethane, Combust. Flame 159 (2012), pp. 2336—2344.
+[14] P. Saxena, N. Peters, and FA. Williams, An analytical approximation for high-temperature
+autoignition times ofhigher alkanes, Combust. Flame 149 (2007), pp. 79—90.
+[15] H.K. Ciezki and G. Adomeit, Shock-tube investigation ofseH-ignition ofn-heptane—air mixtures
+under engine relevant conditions, Combust. Flame 93 (1993), pp. 421—433.
+E [16] Radiation Models, International Workshop on Measuement and Computation of Turbulent
+g Nonpremixed Flames. Available at http://www.ca.sandia.gov/TNF/radiationhtml.
+4; [17] K. Wakatsuki, High temperature radiation absorption offuel molecules and an evaluation of
+ED its inﬂuence on p00] ﬁre modelling, Ph.D. diss., University of Maryland, College Park, MD,
+3:"" 2005. Available at http://drum.1ib.umd.edu/bitstream/ 1903/23 66/ 1/umi-umd-2225.pdf.
+<1. [18] TI. Farouk, M.C. Hicks, and EL. Dryer,Multistage oscillatory ‘cool ﬂame ’behavior for isolated
+; alkane droplet combustion in elevated pressure microgravity condition, Proc. Combust. Inst.
+9 35 (2014), in press.
+00
+o
+E?
+E
+B
+CD
+a)
+>
+T6:
+U
+E.“
+'5
+33‘
+.2
+S
+D
+2
+08
+<
+CD
+cc
+K
+c)
+E
+>x
+,9
+“O
+c)
+'0
+cc
+.2
+Q
+B
+o
+Q
+
+"

@@ -1,0 +1,1128 @@
+"","x"
+"1","éidg‘ Available online at www.sciencedirect.com —
+26% ADVANCES IN
+N SCIenceDIrect SPACE
+E RESEARCH
+ELSEVIER Advances in Space Research 40 (2007) 1593—1610 w
+WWW.elseVier.com/10cate/asr
+Pre-engineering spaceﬂight validation of enVironmental models
+and the 2005 HZETRN Simulation code
+J .E. Nealy a, FA. Cueinotta b, J .W. Wilson C’*, F.F. Badavi 01, Ts.P. DaeheV 6, B.T. Tomov 6,
+. f .
+SA. Walker a, G. De Angehs a” , S.R. Blattnig C, W. Atwell g
+a Old Dominion University, Norfolk, VA 23508, USA
+b NASA Johnson Space Center, Houston, T X 77058, USA
+C NASA Langley Research Center, Hampton, VA 23681, USA
+d Christopher Newport University, Newport News, VA 23606, USA
+6 Bulgarian Academy Of Science, Acad. Georgi Bonchev 51., Block 3, 1113 Soﬁa, Bulgaria
+f Istituto Superiore di Sanitd, Viale Regina Elena 299, [-0016] Rome, Italy
+g T he Boeing Company, Houston, T X 77058, USA
+Received 31 October 2006; received in revised form 18 December 2006; accepted 19 December 2006
+Abstract
+The HZETRN code has been identiﬁed by NASA for engineering design in the next phase of space exploration highlighting a return
+to the Moon in preparation for a Mars mission. In response, a new series of algorithms beginning With 2005 HZETRN, Will be issued by
+correcting some prior limitations and improving control of propagated errors along With established code veriﬁcation processes. Code
+validation processes Will use neW/improved 10W Earth orbit (LEO) environmental models With a recently improved International Space
+Station (188) shield model to validate computational models and procedures using measured data aboard 188. These validated models
+Will provide a basis for ﬂight—testing the designs of future space vehicles and systems of the Constellation program in the LEO
+environment.
+Published by Elsevier Ltd. on behalf of COSPAR.
+Keywards: Space radiation; Shielding; Models; Measurements
+1. Introduction tools With high computational efﬁciency to enable appro-
+priate design methods. Only the HZETRN code has so
+Improved spacecraft shield design requires early entry of far been identiﬁed for this purpose. As a result, Wilson
+radiation constraints into the design process to maximize et a1. (2005) have prepared a review of past HZETRN code
+performance and minimize costs. As a result, we have been development, veriﬁcation, and validation. Although there
+investigating computational procedures to allow shield has been sporadic research to generalize this code over
+analysis starting With preliminary design concepts through the last ten years, evaluation of code status among princi-
+high-ﬁdelity ﬁnal design models (Wilson et a1., 2003). Of pal users demonstrated drift in the various code versions
+particular importance is the need to implement probabilis- and databases. As a result of this renewed interest in
+tic models to account for design uncertainties (Wilson HZETRN for future space systems design, there is now a
+et a1., 2004) in the context of optimal design processes systematic effort to advance, verify, and validate these
+(Qualls et a1., 2003). These requirements need supporting codes in preparation to integrating them into engineering
+design processes. The present paper Will describe the ﬁrst
+several months of this renewed systematic effort.
+* Corresponding author. Tel.: +1 757 864 1414; fax: +1 757 864 8094. .AS NASA38 neWIY deﬁned teghnOIOgy development
+E—mailaddress:john.w.wi1son@nasa.gov(J.W.Wilson). Splrals are now progressmg, there Is a need to Identlfy a
+0273-1177/$30 Published by Elsevier Ltd. on behalf of COSPAR.
+d0i:10.1016/j.asr.2006.12.029
+
+"
+"2","1594 J.E. Nealy et a1. / Advances in Space Research 40 {2007) 1593—1610
+suitable code for the early spiral processes (development of
+a Crew Exploration Vehicle, CEV). We have Chosen the
+1995 HZETRN version for this early spiral development.
+This code has had wide distribution and is largely the code
+used in the prior veriﬁcation and validation processes
+described by Wilson et al. (2005). However, an assessment i7 , - _
+of the 1995 HZETRN code status demands the re-evalua-
+tion of the computational procedures and databases to
+account for software and database drift over the last ten
+years and the inherent limitations of these prior eomputa- '
+tional procedures. In the present paper, we reView the basic
+derivations to identify oversights and improve solution sta-
+bility and accuracy. In prior papers, we used both analyti-
+cal and Monte Carlo benchmarks to identify problems
+among various versions. We will distribute these bench-
+marks with the code package to evaluate future compiler
+and platform dependent problems in addition to future Fig. l. Geometric relations of quantities useful in solving Eq. (1).
+drift for whatever reason. This revised 1995 HZETRN
+code, chronicled as the 2005 HZETRN (Wilson et 31-: tion Q’with energy E’ produceatype j particle in direction
+2006a), is recommended for standard practice and the pres- g with energy E (including decay processes). Note that
+ent paper Will focus 011 11$ng measurements aboard 155 there may be several reactions that produce a particular
+and recently improved models 0f the low Earth orbit product, and the appropriate cross sections for Eq. (1)
+(LEO) environment (Wilson et 31-: 2006b) for code valida- are the inclusive ones. Exclusive processes are functions
+tion. In addition to adding directional dependence and of the particle ﬁelds and may be included once the particle
+30131” modulation t0 the improved trapped proton model ﬁelds are known. Note, we will at times loosely refer to
+APS, we further developed a directional dependent geo- CMXJB, E) as either ﬂux or ﬂuenee and the usage should
+magnetic transmission model. The main effect Of this diree- be clear from the context. The time scale of the processes
+tional dependence 0f geomagnetic transmission is the in Eq. (1) are at most on the order of microseconds while
+penetration of particles below the vertical cutoff transmis- time scales Of boundary conditions are on the order Of min-
+sion model used in the past. Furthermore, we provide for utes or longer leaving the resulting interior ﬁelds in equilib-
+the dynamic behavior of the Earth’s magnetic ﬁeld eover- riuni with the particles at the bounding surface.
+ing the period 1945—2029 The emphasis 0f the present The total cross section aj(E) with the medium for each
+paper is to validate the modulated environmental models particle type is
+and 2005 HZETRN shielding code using detailed measure-
+ments on 188. 01115) = “?(E) + a:l(E) + 0;(E) (2)
+2. 2005 HZETRN where the ﬁrst term refers to collision with atomic elec-
+trons, the second term is for elastic scattering on the nucle-
+The speciﬁcation of the interior environment within a us, and the third term describes nuclear reactions where we
+spacecraft and evaluation of the effects on the astronaut have ignored the minor 111101an inelastic processes (excited
+is at the heart of the space radiation protection problem. single particle states) ?xcept for 19"""" energy neutron 0911“
+The Langley Research Center has been developing such sions. The corresponding diﬁerential cross secgions are s1n1-
+techniques and an in-depth presentation is given in Wilson llal‘ly ordered. Many atomic 00111310113 (”1(3) ) occur in a
+et al. (1991), although considerable progress has been made centimeterbf Ofelhal‘y matter, whereas N10 1111.01an cou-
+since that publication. The relevant transport equations are lomb 6.13““: 0011131093 0(5ch .per centimeter, Whlle 111101an
+the coupled linear Boltzmann equations for a closed con- scattering and reactive 00111310119 are separated by a frac-
+VeX domain (Fig. 1) derived on the basis of conservation “011 to many centimeters depending on energy and particle
+principles for the ﬂux density (particles/cmz-sr-s-A-MeV) type. We include in the a;(E) term the 11.110162“ decay pro-
+gbj(x,{2, E) for particle type as cesses. Solution methods ﬁrst use phys1cal perturbations
+based on the ordering of the cross sections with the fre-
+g . ngJ-(x, {2,E) : Z / 0jk(97 Q’jEjE’kkaC’ Q’,E’)d{2’dE’ quent atomic interactions as the ﬁrst physical perturbation
+k with special methods used for neutrons for which atomic
+_ aj(E)a]-(x, {2,E) (1) cross sections are zero. The ﬁrst physical perturbation to
+be treated is the highly directed atomic collisions with mean
+where aj(E) and ajk(Q,Q/,E,El) are the shield media mac- free paths on the order of micrometers as observed in
+roseopic cross sections. The ajk({2, .Q’,E,E’) represent all nuclear emulsion. The usual approximation is the continu-
+those processes by which type k particles moving in direc— ous slowing down approximation leading to well speciﬁed
+
+"
+"3","J.E. Nealy et al. / Advances in Space Research 40 {2007) 1593—1610 1595
+range-energy relations but neglects the energy straggling [2 - ngj(x,9,E) —A]T18E[SJ(E)¢j(x,Q,E)]
+that Will be discussed later (see also Wilson et al., 2002a).
+The next term is the highly directed multiple coulomb seat- 2 Z / ajk(9, 9’, E , E’)gbk(x, 9’, E’) dQ’ dE’
+tering and is usually neglected in many models but is of
+great importance in understanding the transport of unidi- — aththxa 97E) (6)
+rectional ion beams leading to beam divergence and is . . .
+treated in detail elsewhere (Shavers et al., 1993). The Where tlhe right-hand Side Of Eq (6) exiluldes the atomie/
+remaining nuclear reactive processes have been given main 1111:}?011 at p 150068368 115; ap p earl}? g on t 16 e t, alscahfenergy
+attention in past code developments. We Will now consider S 1 ting operator in a mom to t e usua sp at1a r1. t term.
+- Neutral particles would have null atomic cross sections for
+the formal development of the relevant equations for fur- , , ,
+. . Wthh the stopping term of Eq. (6) does not appear. Appli-
+ther cons1derat10n. . . . .
+cation of CSDA in both laboratory and space shielding has
+. . . . been Wide and the resulting errors are discussed elsewhere
+2.]. C t l d z CSDA . .
+0n muous S owmg own approxzma zon ( ) (Tweed et al., 2005). Eq. (6) can be rewritten as an integral
+The collisions With atomic electrons preserve the identity equation (Wilson, 1977) as
+of the ion and the differential cross sections are given as gbj(x,9,E) : {Sj(Ey)P]-(Ey)gb(1’(9,x),{2,Ey)
+at I I _ at I _ I ' —1 _ I EV
+O-jk(‘(27‘(2 7E7E) _ Zn:O-j,n(E )5(9 9 )5jk5(E +Aj 8” E) +Z/ dElAjPJ-(El)
+E
+(3) 00 // I l I ll
+. . . >< dE d9 ajk(9,9EE )
+Where n refers to the atomic/molecular exalted states With E’ 4n
+excitation energies 8” including the continuum. Note, the fac- >< gbk (x + [R j (E ) — R j (E ’)] {2, Q’,E ”)} / S j (E )Pj (E )
+tor A171 results from the units of E of A MeV (equivalent unit (7)
+of MeV/nucleon). Although the atomiC/molecular cross sec-
+tions 0?;(E’) are large (m10_16 01112), the energy tranSfCI‘S 8n Where F is the point on the boundary connected to x along
+are small (ml—IOO eV) compared to the particle energy. direction _,Q, E : Rj—l [p _ d + Rj], p is the projection of x
+The atomiC/molecular terms of Eq. (1) may be written as onto [2 (Fig. 1), d is the projection of F onto [2, RJ-(E) is the
+at I I I I I I t distance an ion of type j of energy E Will travel before los-
+Z/ajkt-Qa-Q 7E7E )Cbktxag 7E )d-Q dE — 0? (E)¢j(x797E) ing all of its energy to excitation of atomic electrons, and
+P-(E) is the probability a type j ion of energy E Will have
+_ at —1 —1 J
+_ Z 017nm +Aj 8”)¢J (x 7 ‘9 7E TAJ 8”) a nuclear reaction in coming to rest in the media. The usual
+” ran e—ener relation is iven b
+_ O'at(E)§bj-(X,Q,E) g gy g y
+:Z{aj{;(E)¢j(x,9,E)+A;18naE[aat(E)¢j(x,[2,3]} Rj(E) : fAjdEvsjw') (8)
+— g?t(EWj-(xa-Qﬁ) +O(8i) The nuclear attenuation function (Fig. 2) is given by
+:aElSj(E)¢j(x797E)1+O(8i) (4)
+. . . PJ-(E) = exp [— / Ajagua’) dE’/Sj<E’>] <9)
+Where the stopping power Sj(E) is given as the sum of ener-
+gy trans ers and atomic exeitation cross sections as Where the integral domains in Eqs. (8) and (9) extend over
+Sj(E) : 2 8,10?” (E) (5) the full energy range {0,E}.
+Th6 higher 01'de terms Of Eq. (4) glVC I'lSC t0 straggling and 2.2 Straighzahead approximation
+are neglected in the continuous slowing down approxima-
+tion (CSDA) but are discussed elsewhere (Wilson et al., The approach to a practical solution of Eq. (7) is to
+20023; TW€€d 6t 3.11” 2005): Evaluation Of th€ stopping develop a progression of solutions from the simple to the
+power by Eq. (5) IS deceptively simple in that all Of th€ complex allowing early implementation of high-perfor-
+excited states including continuum states of the atomic/mo- mange computational procedures and establishing a con-
+16011131‘ system need 10 be known. Furthermore, the projee- verging sequence of approximations With established
+tile remains a bare ion except at low energies Where th€ accuracy criteria and means of veriﬁcation. The lowest
+projectile ion atomic orbital states begin to resonate With order approximation using the straightahead approxima-
+the electrons of the media leading to electron capture and tion was guided by the nucleon transport studies Of Alsm-
+lowering Of the ion charge. These issues are further diS- iller et al. (1968) using the Monte Carlo methods in Which
+CUSSGd 111 Wilson Ct al. (1991) and T31 Ct al. (1997) in regard the differential cross sections were approximated as
+to the atomic data base. Eq. (1) can be written in the
+CSDA as 0349, 9’,E,E’) % a;k(E,E’)5(9 — 9’) (10)
+
+"
+"4","1596 J.E. Nealy et a1. / Advances in Space Research 40 {2007) 1593—1610
+1‘2 imation for the nearly isotropic space radiation. There are
+H 0?."" great simpliﬁcations using Eqs. (4) and (12) as given below
+0; :-.' 9 - mix. 9.15) —A;laE[SJ-<E>¢j<x, 9.15)]
+0.8 ”‘3. : Zajk(E)¢k(x797E) _0-;(E)¢j(x797E) (13)
+:75 O] which is strictly applicable to the HZE ions (Z > 2). The
+‘& 05 . . . . . . .
+3 light ions and neutrons have additional complications aris-
+°‘5 ing from the broad energy spectra associated with their
+°*‘ production, although the more favorable straightahead
+0-3 approximation is useful as indicated in Eq. (12) and as
+0.2 - found by Alsmiller et a1. (1967, 1968) in their veriﬁcation
+0.1 / process. The corresponding light ion (and neutron) Boltz-
+‘10 «3"" 1o 10 10‘ mann equation is
+""""""""""""’""""'“’ 9 - mix, 9.15) — A;18E[Sj<E)</>j<x, 9.15)]
+Fig. 2. Probability of nuclear reaction as a function of ion type and
+energy. : Z/J;k(E,El)gbk(x,.Q,El) dEl
+. . . . — a<<E>q>-<x.9,E> (14)
+resulting in dose and dose equivalent per unit ﬂuence to be 1 1
+within the statistical uncertainty of the Monte Carlo result where we have made use of the straightahead approxima-
+obtained using the fully angle dependent cross sections. tion as given by Eq. (10). Eqs. (13) and (14) have sufﬁcient
+The relation of angular dependent cross sections to space- simplicity to allow an approach for both space and 1abora-
+craft geometry in space application was further examined tory applications. The main force of the laboratory appli-
+by Wilson and Khandelwal (1974) using asymptotic eXpan- cations allow detailed model testing of the many atomie/
+sions about angular divergence parameters demonstrating molecular and nuclear processes.
+errors in the straightahead approximation to be on the or-
+der of the square of the ratio of distance of divergence to 2.3. Marching procedures
+radius of curvature of the shield (a small error in most
+space systems). The ﬁrst version of the HZETRN code is based on the
+Eqs. (6) and (7) were examined for HZE ions using the solution of Eqs. (13) and (14) as guided by the Monte Carlo
+following form for the projectile fragmentation cross sec— studies of the straightahead approximation by Alsmiller
+tions as et a1. (1968). We again specialize to solution along a ray
+I I I I I 2 2 {2 directed along the x-aXis for which Eq. (14) becomes
+0349297117715) : a;k(E )Nt exp{—[.Q\/E — .9 \/E] /28jk}
+(11) [ax—A;1aESJ-<E>+a§<E>J¢j<x,E>:Z /a;k<E,E’>¢k<x,E’>dE’
+k
+where a;k(E’) is the cross section for producing fragment j (15)
+from ion 1c, N l is the normalization constant for the exponen- where 02.0571?) are ap p 1, oximat e d for nu (:1 e ons by the mul-
+t1a1 function, and ejk is the momentum d1spers1on parameter t' lieitiejs of Ranft (1980) Bertini e t al (1972) and uasi-
+in the reaction. Substituting the interactive form of Eq. (11) 1p . . . ’ . '. ’ q
+. . elastic contribution as described by Wilson et a1. (1991).
+into the integral term (target fragments treated separately, A . d' . .
+. . . 11 1mme 1ate problem is the near Singular nature of the
+Wilson, 1977) of the Boltzmann equation (6) yields d'ff . .
+1 erent1a1 operator, and transformation from energy to
+, , , , , residual ran e coordinates as we did in develo in the
+Z / 01k (9’ 9 ’E’E )¢k(x’ 9 ’E )dQ dE Green’s fungtion greatly relieves this problem p(nglson
+_ r I et a1., 1991). Unlike the Green’s function development,
+— Z 017‘ (E ){¢k(x’ 97E) numerical procedures are simpliﬁed by introducing only a
++ E8E¢k(x7 9 7E)\/ 1812M (277415)] single residual range coordinate for all ions, and the resid-
++ g . 39%“, QI E) 83% /(2m 13)} (12) ual proton range r is used as the common coordinate as
+E
+where the second term on the right hand side of Eq. (12) r : / dE’/S(E’) (16)
+results from corrections in assuming the velocity of the 0
+ion is preserved in the interaction (Curtis and Wilkinson, and residual range of other particle types are related as
+1972; Wilson, 1977) and the third term is error resulting vjrj % r with vj : 212/141 which fails at low energies corre-
+from the straightahead assumption (Alsmiller et a1., 1968; sponding to low residual range due to electron capture into
+Wilson, 1977). The surprising result is that the velocity con- atomic orbita1s characteristic to each ion type. The corre-
+serving assumption is inferior to the straightahead approx— sponding transport equation is
+
+"
+"5","J.E. Nealy et a1. / Advances in Space Research 40 {2007) 1593—1610 1597
+1a. — vja. + WWW) = g / (Uj/vk>sjk<r,rI)l/jk<x,maw 313:3: atggneggﬁggjrgpj 13;: gitffratmg factor related to
+(17) w») = f (w + vjxvdx’ <23)
+Where scaled ﬂux is now (vj for neutral particles such as 0
+neutrons are taken as unity in scaling relations, Wilson and is related to Eq. (9)_ Eq. (22) is a Volterra equation and
+et 31-: 1991) can be solved either as a Neumann series (Wilson and Lam-
+£91067”) : ij(E)gbj(x,E) (18) kin, 1975) or With Inarching proeedtlres (Wilson et a1.,
+1991). Note that the inverse mapping is taken as
+and the scaled differential cross sections are
+¢j<x7E) :Ajwj(x7r)/Sj (24)
+Sjk(r,r’) : S(E)a;k(E,E’) (19)
+. . . to guarantee the equilibrium solution given as Eq. (21) at
+Errors in sealing of proton stopping and range parameters low energies away from the boundaries (note, the proton
+in arriving at the approximate transport Eq. (17) are com- stopping power is used in case of unsealing the neutron
+pensated 111.931”? by solutions Of Eq (17)approaching 310W ﬂux). We assume in this treatment that the equilibrium
+energy equilibrium spectrum for ions given by constant resulting from Eq. (22) and given in Eq. (20) dif-
+ij(E)¢j(x7 E) Z; constant (20) fers little from condition (21) for Which the inverse map-
+ping of Eq. (24) is most accurate. These approximations
+Where the constant is ﬁxed by the higher ion energy. In dis- were tested by Wilson et al. (2006a).
+tinction, the solution to Eq. (15) for ions has the low energy Two tracks are taken in implementing a marching pro-
+equilibrium spectrum cedure for Eq. (22) depending on particle type as demanded
+Aj—l Sth) ¢j<x7 E) :> constant (21) by the character of the nuelear processes. The problem nat-
+urally d1V1des into “light ions” Wthh W111 refer to all 1011s
+also ﬁxed by the higher energy ﬂux for Which the range With atomic mass of four or less including neutrons and
+scaling relation vjrj % II has better validity and the two con- high eharge-energy (HZE) ions having atomic mass greater
+stants are nearly equal so that Eq. (21) has improved accu- than 4. The distinction arises from the energy and angle
+racy over Eq. (20) at lower energies. This fact Will require distributions of the double differential cross sections for
+us to alter the ﬂux unsealing relations as demanded by Which the HZE ions leaving a projectile fragmentation
+Eq. (21) to maintain accuracy at the lower energies. From event have velocity nearly equal to that of the projectile
+Eqs. (20) and (21), we can understand the simplicity of as approximated by Eq. (11). Although the light ions are
+numerically solving Eq. (17) over numerical solution based assumed to travel in the same direction as the projectile
+on Eq. (15). The solution to Eq. (17) approaches a constant (see Eq. (10)), they cover a broad energy distribution that
+at small residual ranges allowing large separations in r grid cannot be ignored. The marching procedure is obtained
+values With smooth extrapolation to zero range Whereas by ﬁrst considering Eq. (22) evaluated at x -|- h Where h is
+solutions of Eq. (15) vary as the nearly singular l/SJ-(E) the step size. Clearly,
+for Which small E grid spacing is required leading to slow
+com utational rocedures. We tested the assumptions in _ _ ' '
+Eq. I()17) and u111)sealing according to relation (21) later in wj (x + hm) — eXp[ C] (27h)]:j(x7 r + 01h)
+a separate report (Wilson et a1., 2006a). _ , I , ,
+The confusion caused by different scaling methods and + :1; /0 [+11ij eXp[ C](r,x )](v]/vk)S]k(r
+associated coordinates for numerical rocedures is justiﬁed , I I _ I I I I
+by the simpliﬁcation of the numericalli‘epresentation of ﬂu— + vjx ,r WAX + h x 7 r )dr dx (25)
+ence of a11 particle types over a common residual range grid Which may be used to develop a marching step from x to
+and simpliﬁcation of the numerical procedures leading to x -|- 11 once a means is found to approximate the ﬁeld func-
+high performance codes. Still a straightforward ﬁnite differ- tion 1,0](x,r) across the subinterval {x, x+h}. If h is sufﬁ-
+eneing of Eq. (17) can introduce unstable roots as had pla- eiently small such that aj(r) 11 << 1 then, following lowest
+gued the thermal transport problem for many years order perturbation theory (Wilson and Lamkin, 1975),
+(Wilson et a1., 1991). We Will use the unconditionally stable one has
+methods of Wilson et a1. (1991 arrived at b inverting the , , , , , ,
+differential operator (Wilson,) 1977, 19893,] 1991Wilson ¢(x+h—x,r):eXp[—Ck(r,h—x)]z,bk[x,r +vk(h—x)]+0(h)
+et a1., 1977, 1989, 1991) of Eq. (7) as (26)
+1,0 ,- (x, r) = €Xp[—C j(l”, 901W j(0, r + 01-36) which may be used to approximate the integral in Eq. (25)
+x 00 I giving results for the ﬁelds O(hz) as required to control the
++ Zk/ / ' , eXp1—Cj(’”ax)1(Uj/Uk)sjk(’” propagated error (Wilson et a1., 1991). Substituting Eq.
+0 NU] x (26) into (25) and evaluating the attenuation factors at
++ ijla VIWkOC — x’, 7”,)d7/dxl (22) the interval midpoint (mean value theorem) results in
+
+"
+"6","1598 J.E. Nealy et a1. / Advances in Space Research 40 {2007) 1593—1610
+gbj(x +h,r) : eXp[—Cj(r,h)]z,bj(x,r+ vjh) intervals. The remaining integrals in these equations are
++ 2 exp[— 5117”, 11/2) approximated by (Wilson et a1., 1991) 1
+k 00 00 rl+
+I 00 A I / K(rn,r’)tpj(x,r’)dr’RZKVMO”;+r1+1)/2]/ lpj(x,r’)dr’
+— cm , hm] / <vj/vk>ij<h, r, 1») rk r1
+r+vj 12/2 (32)
++ :1; exp [—5117, h/Z) where 00 denotes a chosen upper limit tailored to the spe-
+00 ciﬁc boundary condition. Note that the matrix of K-Values
+— Ck(r’,h/2)] / (vj / vk)F 14,6(11, r, r’)z,bk can be evaluated once on the r-grid and stored for subse-
+7+UJ h/Z quent steps providing high computational efﬁciency. Eqs.
+>< (xm’ + Ukh/2)]d7”l + O(hz) (27) (30) and (31) provide the basis for the light ion transport
+. . . . 0f the HZETRN code. The HZE ion projectile (Aj>4)
+Where the 1ntegrand has been s1mp11ﬁed usmg coupling to the light fragments is contained in Eqs. (27)—
+h (31).
+F 14,6(11, r, r’) : / Sjk(r + vjx’, r’) dx’ The HZE fragments are produced With nearly the same
+0 I I velocity as the projectile ion as expressed in Eq. (13) and
+: ij(’” + ”W: 7” ) — ijU”, 7” ) (28) results in the simpliﬁed Boltzmann equation as
+and [a — A;laEsj(E) + a;(E)]q>j(x,E) : Z a;k(E)q5k(x, E)
+k
+g(r)
+ijo», r’) = / a;k(E”,E’) dE” (29) (33)
+0 for Which the scaled equations result in contributions from
+With g(r) the energy associated With proton residual range r, all HZE ions (With Ak > 4) as
+and E’ = g(r’). Note that if j corresponds to a neutral par- _
+ticle such as the neutron (/ = n) then the above expressions 901' (x, 7” ) — “131—510; 7 3011,0110, 7” + 0196)
+are evaluated in the limit as vj approaches zero in the range + / ex _ ' r x’ v- v a: r + v-x’
+sealing relations resulting in the following (Whereas the ﬂux :1; o p[ C]( 7 )1( j/ k) ]k( 1 Wk
+scaling factor for neutrons assumes vn = 1) x (x _ x’ r + v-x’) dx’ (34)
+7 1
+Wm (x + h, 7”) : €Xp[—0‘n (7”)h1Wn (x, 7”) The corresponding marching equation (Wilson et a1., 1991;
++ Z CXp[—0‘n(l”)h/2 — Ck(r’,h/2)]h Shinn et a1., 1992) is given as
+k7£n
+X / (l/vk)Snk(r,r’)Wk(x,r’ + Ukh/2)d1""l '70!“ T h”) : eXp1_CJ(:vh)1Wj(W+ 01h)
++ eXp[—an(r)h/2 + Z / expt—cxnvavJ/vaajk
+k
+_ an(r’)h/2]h / s,m(r, mama, r’) dr’ (30) x (r + vjxwka + h — x’, r + W) dx’ (35)
+and similarly for the 116111131 k term (k = n) When 11161 par- for Which the integrand can be approximated for sufﬁcient-
+tlcle 1s charged 1y small 11 using
+Im(x + 11H”) = 6Xp1-CJO”, h)1%(xa 7” + 0111) M96 + h - x” I” + vjxl) = 6Xp1-Ck0” + 0196311 — X’)1Wk[x, r
++ Z expt—cjo», 11/2) + + W — 26>] + (M (36)
+kin 00 allowing the following simpliﬁcation
+I A I
+_ CW , h/2)]/ (Uj/Uk)ij(h71”7 r WAX + h, r) : exp[_§j(r, hnwx, r + vjh)
++0112 x,r’+ v-+v thr’ h ,
+J / )Wk1 (] k) / 1 —1— 2/ eXp[—Cj(r,x)
++ exp1—Cj(n h/2) k 0
+_ amh/z] foo Wk, r, r, — w + h — x’>]<vj/vk>ajk<r + vjx'm
+r X (x, r + vjx’ + vk(h — x’)]dx’ (37)
++vjh/2>wn<x,r' +vjh/2>dr’ <31)
+where U"" in the ﬂux scaling relation (24) is taken as unity. To evaluate Eq. (37), we use the mean value theorem that
+Eqs. (30) and (31) are solved on an equal-spaced x-grid guarantees linear terms of the ﬁnal integral to be zero.
+Ax = h apart and a logarithmic spaced r-grid on two sub- First, we expand the attenuation factor as
+
+"
+"7","J.E. Nealy et a1. / Advances in Space Research 40 {2007) 1593—1610 1599
+I x’ H H Eq. (37)—(41) with the added factor of vj/vk in the ﬁeld cou-
+510” ,x ) 2 f0 01'0” 1’ ”ix )dx pling terms. The main effects on solution of the Boltzmann
+x/ equation are expected for the light ions of H2, H3, and He3
+m / [aj(r + vjh / 2) with only minor effects on the major light-ion/neutron
+0 components (11, H1, He4). Note the main difference in the
++ @0117” + Ujh/2)Uj(xﬂ — h/2)]dxll (38) original and corrected code is determined by the ratios of
+and similarly for vj/vk of the ﬁeld coupling terms. Current code veriﬁcation
+h , processes are discussed in Wilson et al. (2006a).
+CW” + WC], h _ XI) 2 /0 0k [r + 0106+ Uk<h — x”)] dx” 3. LEO environmental model
+h—x’
+% / [0k(l”+UJ-X’+vkh/2) The LEO environment consists of three main sources.
+0 Galactic cosmic rays (GCR) that penetrate the geomagnet-
++8701” +vjx’+vkh/2)vk(x” —h/2)]dx” ic ﬁeld, albedo neutrons from GCR interaction with the
+(39) Earth’s atmosphere, and particles trapped in the geomag-
+h'l 1 . th 1 th t th . . netic ﬁeld. Three primary limitations in the environmental
+W 1 e ap p ying e mean va ue eorem 9 e remaining models are that the AP8 MIN&MAX are time/direetion
+factors of Eq. (37) and neglecting all but linear eXpans10n . . . .
+terms in the integrand yields independent .and that thevertieal geomagnetic cutoff is
+used to describe the transmitted galactic cosmic rays. These
+gbj(x+h,r) : eXp[—Cj(r,h)]z,bj(x,r+vjh) models have been relatively successful in describing the
+radiation environment aboard the highly maneuverable
++ 23(1)]. / vk)ajk(r+ vjh/2)z,bk[x,r+ (vj Shuttle wherein anisotropies tend to be averaged. Such
+h models will not be adequate for the ISS mainly oriented
++ 0k) 11/2] >< / eXp{— 011’” + vjh/2)x’ in the local horizontal plane along the velocity vector (min-
+0 imum drag) except during battery Charging. In a previous
+— 0141” + (vj + vk)h/2)(h — x’)]}dx’ paper, we developed a dynamiC/anisotropic trapped proton
+environment and general geoma netic cutoff model (Wil-
+: eXp[—Cj(r,h)]z,bj(x,r + Ujh) son et al., 2006b). These models:g are placed in a suitable
++ :01]- / vk)ajk(r + vjh/2)z,bk[x, r + (vj form for evaluation of the incident radiation on the bound-
+k ing surface of the siX-degree of freedom motion of an orbit-
++ Uk)h/2] >< [exp{—0'j(r + vjh/2)h} ing spacecraft for shield evaluation.
+— eXp{—ak[r + (vj + vk)h/2)]h}]/{ak[r 3.1. Albedo neutrons
++ (”j + Uk)h/2)l — 011’” + Ujh/2)}
++ O(hz) (40) Albedo neutrons result from the interaction of cosmic
+rays with the Earth’s atmosphere. As the cosmic ray inten-
+10 136 compared With 1116 original HZETRN algorithm 10 sities are modulated by solar activity so are the atmospher-
+O[(Ur — vk)h] derived by Shinn 61 al. (1992) given as ic neutrons modulated with time. The atmospheric neutron
+N _ ' model is a parametric ﬁt to data gathered by Langley
+wj (x + h, r) N eXp[ Cj (r, 11)]ng (x, r + 01h) Research Center studies of the radiations at SST altitudes
++ Z(vj/vk)0jk(’”)¢k(xar+ Ujh) in the years 1965—1971 covering the rise and decline of
+k solar cycle 20. Sealing of the data with respect to geomag-
+>< {exp[—aj(r)h] netic cutoff, altitude, and modulation of the Deep River
+_ CXp[—0‘k(7‘) 11]} /[0k(l”) _ 0.0)] (41) Neutron Monitor was found to allow mapping of the enVi-
+J ronment to all locations at all times resulting in an empir-
+In earlier versions of BRYNTRN for proton/neutron ieally based model for atmospheric neutrons (Wilson et al.,
+transport, the ﬂux scaling relation was taken correctly as 1991). The leakage ﬂux FL(E) is closely related to the differ-
+$1.0“ r) : S(E) $1.0“ E) (42) ential ﬂux (gb)(E,§2) at the top of the atmosphere as follows:
+but carried over to the ﬁnal BRYNTRN for light-ions/neu— F L (E ) : / ¢(E, (2) cos BdQ (44)
+tron transport in the most recent version of BRYNTRN
+(Cucinotta, 1993). In coupling to HZETRN with scaling where cos6 is the direction cosine of the velocity vector
+given by with the zenith (note, (gb)(E,§2) = 0 for cos6 < 0). There
+are unresolved differences anion various measurements
+$1.0“ r) _ ij<E>€bj<x7E> (43) of the leakage ﬂux that is in pagrt the assumed angular
+there is an inconsistency in ﬂux scaling which must be dependence of the differential ﬂux. The ratio of leakage ﬂux
+accounted for. The appropriate coupling is given in to integrated ﬂux is given by the New York University
+
+"
+"8","1600 J.E. Nealy et a1. / Advances in Space Research 40 {2007) 1593—1610
+Table 1 3.2. T rapped proton environment
+Ratio of leakage ﬂux to integrated ﬂux as a function of energy and
+mm— The trapped proton population is modeled as AP8 for
+PC (GV) Leakage to integrated ﬂux ratio for energy (MeV) of: 1965 solar minimum and 1970 solar maximum (Vette,
+<.001 .001—1 1—10 10—19 19—100 100—2000 1991). These inner zone particles are injected through the
+(1)7 8-3; 8-2: 8-22 8:: 3:: 8-32—33: decay of albedo neutrons as they leak from the Earth’s
+—_ atmosphere into the magnetic bottle deﬁned by the Stormer
+forbidden zones (Wilson, 2000). The inner zone particles
+are lost from the trapping region by interaction with the
+. . tenuous atmosphere and generally have long trapping life-
+(NYU) group (Korff et al., 1979) in Table 1 that we use in times above the fringes of the atmosphere. The inner zone
+the present model. The leakage ﬂux was measured on the .
+OGO 6 t 11. t b th U . . t f N H h' eons1sts of both proton and electron decay products. The
+_ sa e 1 e y . e n1vers1 y 0 GW amps ire average kinetic energy of the inner zone electrons is a few
+(LOCkWOOd’ 1972) during J1me 1969' The leakage ﬂux spee- hundred keV. The electrons are easily removed from the
+trum was measured (Jenkins et al., 1971; Preszler et al., spacecraft interior by the slightest amount of shielding
+1972) and ealeulated (KOFH et al., 1979) by various groups and are mainly of concern to an astronaut in a spacesuit
+01/653336??? Texas 1d u1‘11;19g9$ep tember 1971 and ap p rox1- and materials external to the spacecraft. Within any pres-
+111a e y 1 son e a ' ( ) as sure vessel such as has the Shuttle or 188, the electrons
+F (E) _ 0-065/E fOI‘ E < 10 MGV 45 are easily shielded by the mierometeoroid/debris bumper
+L _ 0.0026 eXp(—0.011E) for E > 10 MeV ( ) and pressure vessel wall. Of the trapped particles, only
+, , , , the protons with energies near or above one hundred
+The total leakage ﬂux is shown in Fig. 3 at various solar MeV are of concern to the interior environment of the
+maxima and minima and in particular with the measure- Shuttle 01, 188
+ments 1011 1the QGO'6 sfatellilte duting June 1.96.9 Wthh The particles trapped in the geomagnetic ﬁeld were mod-
+was a oea max1mum 0 eye e 20 (1'6"" local minimum Of eled from data obtained during two epochs of solar cycle
+lDRNM). The leakage ﬂux at thetop of the atmosphere 20 (solar minimum of 1965 and “solar maximum” of
+1s extrapolated to low Earth orbit a1t1tude according to 1970) and are used with the geomagnetic ﬁelds on which
+Gauss’ law (varies as F2). There are some inconsistencies the B/L maps were prepared (MeCormaek 1988) The
+amongyarious groups on Spe‘?iﬁc,neutr0n ﬁeld related 1965 analysis using the magnetic ﬁeld model of Jensen
+quantities. The present model is b1ased to the Palestine and Cain (1962) resulted in particle population maps
+spectrum 9f September 1971’ the 960—6 latitude depen- AP8 MIN (Sawyer and Vette, 1976). The 1970 analysis
+denee lduringl the local DRNM m1111mu1n Of June 1969’ using the magnetic ﬁeld model GSFC 12/66 (Cain et al.,
+and so at eye e dependence of the hlgh a1t1tude atmospher- 1967) extrapolated to 1970 resulted in the particle popula-
+1e neutron measurements as is Clear from the above discus- ti on maps of AP8 M AX (Sawyer and Vette 1976) These
+s1011 (Wilson et al., 2002b)‘ models are considered the best available global representa-
+tions of the trapped proton environment. This includes the
+known uncertainties in the AP8 models of a factor of 2 in
+LEO applications.
+GCR reutron mug . ﬂu; (or cmgmu maxim one m:nzmo It was believed at one time that better estimates of par-
+“: so: tiele environments could be gained by evaluating the pop-
+. um - J“ ,9” ’m-w~""“""-""""”)ln ulation maps deﬁned on invariant Mellwain coordinates
+'5 ‘-° — mu :M‘ ""9’ I/ over current magnetic ﬁeld conditions. This interpolation
+% :11... Egig ‘ would, for example, contain the westward drift of the
+\ 0.8 = 2 E / South Atlantic Anomaly (SAA) observed in recent years
+g by Badhwar et al. (1996). However, it was recognized by
+7 a_g he; the Shuttle dosimetry group (Atwell et al., 1989) that large
+a ‘I... nus: errors resulted from such a procedure that does not
+3‘“ A 3:: account accurately the altitude shifts with changing mag-
+} .l/ netie ﬁelds. It was concluded that the use of the particle
+Ti 0 / population maps interpolated over the magnetic ﬁeld mod-
+. '2 ' el for which the population map was derived would provide
+‘ the best estimates of the long-term orbital averaged particle
+0'00 2° 40 co .0 100 environments even though the westward drift is not repre-
+W W060 (WM) sented. The westward drift is often introduced as a rotation
+Fig. 3. GCR induced neutron leakage ﬂux for different solar cycle maxima ef geographic coordinates (030/311,) Wlthout regard to mOd'
+and minima compared to measurements by Univ. New Hampshire 1fy111g the magnetic ﬁeld OVCI‘ Wthh the AP8 medels were
+(Lockwood, 1972). derived (Heynderiekx, 1996).
+
+"
+"9","J.E. Nealy er a1. / Advances in Space Research 40 (2007) 1593—1610 1601
+In a prior report (Wilson et al., 2006b), we used the eon- where AI is time after the map epoch. The sunspot numbers
+ventional westward drift of 0.3 degrees with an initial and Deep River neutron monitor variation over solar cycle
+realignment of location such that AP8 MIN and MAX 23 (observed and projected) are used (Wilson et al., 2002b;
+would be centered in 1965 and drift together 0.30 per year Kim et al., 2006).
+into the future with an improved modulation function. A Heekman and Nakano (1963) had studied the angular
+renewed analysis of drifting of ﬁelds will be addressed in distribution of trapped protons with nuclear emulsion on
+a companion paper wherein the spatial distribution of the rockets many years ago and presented a simple model of
+radiation is addressed. The present paper will address the pitch angle distributions about the geomagnetic ﬁeld
+long-term averages in which ﬁeld drift is unimportant lines as related to the lifetimes of particles with guiding een-
+(Atwell et al., 1989) and focus on re-evaluation of the mod- ters on different ﬁeld lines. The protons’ velocity vectors lie
+ulation factor and angular dependence. within 15 degrees of a plane perpendicular to the geomag-
+The proton omni-direetional ﬂux spectrum at any loea- netie ﬁeld line as seen in Fig. 5. Thus, those protons arriv-
+tion and time ﬁ,(r,0,gb,E,t) is then extrapolated using the ing from the east or the west differ in intensity according to
+following functional form of Wilson et al. (1999, 2006b, the atmosphere scale height as related to the difference in
+see also Blanchard and Hess, 1964). population lifetime. The directional intensity is then
+deﬁned for direction of arrival given by the local pitch
+0000’ 6’ ¢’E’ t) : fp,mm(7”, 6’ ¢’E) eXp{_O€PtDRNM angle 0 and azimuth 2 distribution as follows:
+>< F107 DRNM >< F10.7lM1Nl} (46) 1(97 [1) [_(n/2 _ 0f] rg cosleos/l
+. . . — = CeXp —2 exp [—] (49)
+where 129mm”, 0,¢,E) is the proton ﬂux at solar minimum J47r 2% h,
+shifted to time t and 090 is evaluated using the solar maxi-
+mum fp,max(ra 9, 9b, E) related to Apg MIN&MAX models where rg is the particle gyro-radius about the ﬁeld line, I is
+but with the latitude and longitude tentatively shifted after the dip angle, hs iS the atmospheric scale height, 00 iS the
+centering in 1965 and 1970 as discussed by Wilson et al. Width 0f the pitch angle distribution, and C13 a normaliza-
+(2007). In Eq. (46), the quantity (DRNM >< F107) is aver- tion constant as discussed by Kern (1994). It was shown by
+aged over the prior 14 months at solar minimum and 2 Heekrnan and Nakano (1963) that 06 depends 0h atmo-
+months at solar maximum with linear interpolation as spherie scale height, altitude, and dip angle 30 that pitch
+determined by a best ﬁt (Fig. 4) to the limited NOAAPRO angle distributions are nearly independent of particle en-
+model (Huston and Pﬁtzer, 1998). Following the analysis ergy. 1h distinction, the east—west asymmetry depends Ch
+of Wilson et al. (2007), we use the proton ﬂux at solar min- the particle gyro-radius displaying marked energy depen-
+imum with denee. The International Geophysical Reference Field
+(IGRF) is implemented at the current time and the scale
+fp,mjn(1”,6,§0,E): O-SfAP8M1N(’” :9 — 2-4 — 0.07At,gb height is found from the solar modulated ﬁt of Pﬁtzer
++4.1+0.19At,E) (47) (1990) used by Badhwar (1999) to organize the Shuttle
+dosimetry data and given as
+and solar maxnnurn w1th p(r) : p0 eXp{—(h _ 120)/[A(h _ 103)1/2]} (50)
+fp,max(l”, 6’ ¢,E) — 06fAP8MIN<r7 6 4'8 0.07At, ¢ where p0 = 2.7 x 10—11 g/em3, h is altitude in km, and ﬁt-
++ 8 + 0.19At7E) (48) ting parameter A = 0.99 + 0.518 [(F—l— FaV)/110]1/2 with
+a as :
+nut .. 3:575: ll'ri - ‘JJ
+ll. 1.? . '
+f M .
+""v /-\/ ~
+M .
+W
+-mtucmu-mumwnum I
+”N
+Fig. 5. Angular distribution of 82 MeV protons near center of South
+Fig. 4. Trapped proton environment in ISS orbit during June 2001. Atlantic Anomaly.
+
+"
+"10","1602 J.E. Nealy er a1. / Advances in Space Research 40 (2007) 1593—1610
+FaV the average of F given as the F10.7 solar radio output mm 3
+parameter over three prior solar rotations (81 days). The $3“ . . ~ ""J
+trapped protons are encountered by LEO spacecraft in 33;? ' \
+the SAA, and 188 encounters this region from two diree- l 53;; . '
+tions (ﬁrst with ascending node and second with deseend- ‘ '23.?
+ing node) as occurs during orbit precession. In addition,
+the radiation incident on the outer surface of the spacecraft
+is required for shie1d evaluation, and the attitude of the . ..
+spacecraft is never ﬁxed but limit cycles if not under reori-
+entation from required maneuvers. The angular distribu- .
+tion averaged over spacecraft attitude in the region of
+radiation encounter is then to be evaluated. This is aeeom- ’
+plished by relating the orientations in the spacecraft frame 1
+through yaw plus heading, pitch, and roll to the local ver-
+tical reference frame where the radiation environment is Fig. 6. Angular distribution of geomagnetic cutoffs at the equator near
+evaluated. We normally use 970 ray directions to evaluate SAA'
+the boundary conditions for shie1d evaluation and will
+use these same directions for evaluation of the directional on the equator over the Earth near the S AA at 400 km in
+environment. March 1995. The western approaches are seen as the high
+cutoff regions on the sphere. The cosmic ray model is that
+3.3. Geomagnetic transmission factor of Badhwar and O’Neill (1995) extrapolated according to
+neutron monitor count rates (Wilson et a1., 2006b).
+In the past, the geomagnetic transmission factor used
+was based on extrapolation of a world map of vertical cut-
+off rigidities of Smart and Shea (1983). In this model, it was 4, Model validation
+assumed that there is no transmission below the vertical
+cutoff and 100 percent transmission (excepting the Earth’s Model validation has generally used Shuttle measure-
+shadow) above the vertical cutoff. There is, in fact, variable ments with TLD100 to examine the long-term modulation
+transmission dependent on angle Of incidence relative to of the trapped environment with more detailed studies with
+the east direction. The directional dependent cutoff for a 188 in which the angular variations have some importance
+centered dipole ﬁeld is given by Stérmer theory in terms (Hugger et a1,, 2003; Wilson et a1., 2006b). The present step
+of the cutoff rigidity as of model validation will focus on the ISS DOSMAP Exper-
+4 2 3 2 iment (E094, PI: Dr. Giinther Reitz, DLR eonsistin of
+Fe(Q) : MCOS (M/{Oﬂ [1 + (1 _ COS (MCOSQOEH } (51) passive thermo-lumineseent detectors (gLD), pasgsive
+where {2 is the local direction of incidence, M is the dipole nuclear track detector packages (NTDPs), active dosimeter
+moment, 2 the magnetic latitude, eos(coE) is the projection
+of {2 on the eastward direction. In application to the geo- “. W cm...”
+magnetic ﬁeld, one must ﬁrst transform the geoeentrie loea- ,
+tion into eccentric dipole coordinates. It was shown by
+Quenby and Webber (1959) that higher multipole eontribu- 0° rumuaummunm
+tions can be approximated by replacing 2 of Eq. (51) with 08
+, .
+2 given by 07 0:3... :33.-
+1’ = tan_1{[VC + 0.525V]/[2(HC + 0.525H)]} (52)
+. . 05 p u
+where VC and HC are the vertical and horizontal ﬁe1d com- .33!“
+ponents at the location and 5V and 5H ﬁe1d deviations from 05 .
+dipole values. The Quenby/Webber model is of itself rather o ‘ .
+inaccurate (up to 25%) but a renormalization of the trans- V , 1. ”‘23:“
+mission factor (along the vertical eos(coE) = 0) using the 03 . i
+more accurate vertical cutoffs as evaluated by Smart and 02 '
+Shea (1983) allows reasonably accurate anisotropic cutoff
+values (De Angelis et a1., 2003). One result of the new 0‘ ,‘ ‘
+transmission factors will be the admission of lower energy 0 A , .
+cosmic rays than in the currently used vertical cutoff model. 0 5 ‘0 ‘5 3°
+In the present model, we use the IGRF ﬁeld model evalu- Energy Dcpos‘lnd. M'V
+8.th for arbitrary dates from 1945 to 2020- A typical trans‘ Fig. 7. Liulin detector response model for incident 400 A MeV carbon
+mission factor of the model is shown in Fig. 6 at a location beam.
+
+"
+"11","J.E. Nealy er a1. / Advances in Space Research 40 (2007) 1593—1610 1603
+telescopes (DOSTELs), and mobile dosimeter units development stage shown in Fig. 8 with the CAD model
+(MDUs, identiﬁed as Liulin-E094, PI: Dr. T. DaeheV simulation.
+
+2006). The Liulin energy loss spectra have been correlated The CAD model utilizes the I-DEAS® commercial soft-
+to the NTDP derived linear energy transfer (LET) spectra ware package and consists of 512 individual components
+by dividing the MDU energy loss spectra by the Liulin (including detector parts) speciﬁed by their spatial location
+detector thickness of 0.306 mm Si and conversion to equiV- and effective density (mass/volume). The established CAD
+alent water. Unlike the TLD and NTDP data (Benton, model then enables the construction of a directional thick-
+2004), the advantage of the active detectors is their tempo— ness distribution about each target point. Finally, with a
+ral variations used to separate SAA and GCR eontribu— given environment (trapped protons and GCR) and an
+tions. The Liulin energy loss spectral response functions associated shield distribution, the NASA-Langley trans-
+can be accurately modeled as a function of incident angle, port code 2005 HZETRN is utilized to predict particle ﬂux
+particle type, mean energy loss, and energy loss ﬁuetua— and dosimetrie quantities at each target point indicated in
+tions due to straggling (Wilson et a1., 2002a,b). The the ﬁgure using the E094 site designations.
+response for C—12 ions at 400A MeV is given in Fig. 7 Sample records of relevant data (formatted as ASCII
+and compares favorably with the measurements using the values) are given in Table 3 as part of the information relat-
+HIMAC in Chiba (Uehihori et a1., 2002). ing to sequential time points along the orbital track. Note
+The data were recorded aboard ISS 6A during the late that the exposures have been expressed in terms of a dose
+June - early July time frame of 2001 for several locations rate (nGy/hr). The general nature of the high quality and
+in the US Lab Module and Node 1 at 30 s time intervals. consistency of the data is shown in Fig. 9 where the ﬁrst
+The positional trajectory data were supplied along with 2 days of data set 2 are shown as measured dose rate as
+the time sequential measurements. Table 2 denotes perti- a function of time (corresponding to MDU-l located at
+nent information for the data sets analyzed in the present the TLD103 site in Fig. 8).
+work. The repetitive low-level ripple is indicative of the GCR
+The reeently-developed NASA-Langley space radiation exposures, while the sharp “spikes” represent passage
+environment code (GEORAD), described elsewhere through the SAA. In order to extract the SAA trapped pro-
+(Wilson et a1., 2006b, 2007), has been utilized to simulate ton dose from the underlying GCR, an analysis script was
+the environments for the orbiting ISS for the time periods written that effectively ﬁlters the SAA “spikes” and deﬁnes
+and the orbital tracks associated with each data set. During the time interval for SAA passage. A sinusoidal function
+the measurement period, ISS was in its designated 6A has been used to ﬁt the smoothed low-level GCR for the
+time period and subtracted from the measured total to
+obtain the SAA exposure for a single pass. An illustration
+of this procedure is shown in Fig. 10, where the dose rate
+Table 2 data corresponding to an SAA pass (ﬁrst “spike” of
+DescriptiVe Parameters for LIULIN data sets Fig. 9) is plotted over the appropriate time interval. The
+Designation Dates of Measurement MDU Number of ﬁt for underlying GCR iS also shown.
+measurement time 51391101) data records The total mission segment dose is obtained by direct
+SET-l July 6—9, 82.13 2 9856 integration of the dose rate data with respect to time.
+2001 The corresponding integrations of the individual SAA
+SET'2 “$3151 6‘13’ 138'60 1 16633 passes after GCR subtraction render the mission segment
+SET-3 July 6—13, 138.55 3 16625 exposure for trapped protons. Finally, subtraction of the
+2001 trapped contribution from the total segment dose results
+SET-4 June 26—28, 57.46 1 6893 in the GCR dose. A summary of the measured data
+2001 thus analyzed is given in Table 4. Note that each data set
+—
+~J . »
+3 . 2.2., mfg .. a
+I [[9331 _ 1! . .9 ‘ . ~ A -'
+_. $1.9 5.. l! NT 3
+K "" . ._f’:;...::“§ ’ irks??? . - ‘-
+13"" ~- - ~n~ .. ""2
+Fig. 8. ISS photo in 6A conﬁguration and CAD-modeled Lab Module with detector locations.
+
+"
+"12","1604 J.E. Nealy et a1. / Advances in Space Research 40 {2007) 1593—1610
+Table 3
+Sample data records from LIULIN data set
+Elapsed time (h) Dose rate (pGy/h) Latitude (ON) Longitude (OE) Altitude (km) Heading (0)
+T
+* * * * * *
+19.0500 3.41 —43.65 294.01 390.36 65.14
+19.0583 2 92 —42.62 296.15 390.21 63.49
+19.0667 3.77 —41.55 298.22 390.05 61.66
+19.0750 3.99 —40.43 300.21 389.88 59.93
+19.0833 7.92 —39.28 302.14 389.71 58.24
+19.0917 16.62 —38.09 303.99 389.52 56.56
+19.1000 26.74 —36.87 305.79 389.34 55.02
+19.1083 45.20 —35.62 307.52 389.15 53.35
+* * * * * *
+* * * * * *
+4.1. Description of model calculations
+200 MDU-1 Data (6-13 Jun 01) . . . . .
+——l—————— The pos1t10na1 data for each n11ss1on segment (tlme, 1at-
+==E======= itude longitude altitude heading plus yaw pitch roll)
+—_l———--—— ’ . ’ ’ . ’ ’
+E, 150 ==E=E===== were used as 1nput to the GEORAD enV1ronn1ent code to
+<65 =ﬁ=g====== calculate the ﬂuence energy spectra for the .GCR and
+_§ 100 ==E=E====== trapped protons. For the calculatlons pertalnlng to th1s
+E. ==E=H======= work, the cumulative directional ﬂuenee along 970 direc-
+§ ===IE=I1===H==E tions has been evaluated in the vehicle coordinate system
+Q 50 ==1=EEE1===HE==1= in the +XVV orientation: (x-aXis along velocity vector, Z-
+==HE=H===EHEEH= axis toward earth center, y-aXis completing the right-hand
+—-_|II_MIl--—-IIIII_-_1_ .
+0 mmmmmmmmmmmmmmm system). Yaw, plteh and 1011 angles are assumed to be zero
+0 Time from staff; data record, m 48 (neglects the small limit cycle motion), With heading direc-
+t10n spe01ﬁed as angle between dlrectlon of ﬂlght and geo-
+Fig- 9- Sample data from LIULIN detector- graphic north (heading). Directional properties of the SAA
+protons have been accounted for throughout, and orbit-aV-
+f eraged directional transmission factors for GCR have been
+89 I used. With respect to solar cycle conditions, the relevant
+f \ data periods correspond very nearly to solar maximum
+63 I 3 conditions When GCR and trapped proton ﬂuences are
+£ . 1‘ lowest.
+‘3 1% Results of ﬂuenee calculations integrated over all angles
+‘5 4,3 ‘1 are presented in Figs. 11 and 12 for the trapped protons
+2f \ and GCR, respectively. The proton spectra have been plot-
+; / ted as a total ﬂuence for each mission segment, and reﬂect
+O 2.3 the durations thereof. The GCR spectra are plotted in
+terms of a daily ﬂux for several important GCR ions,
+\ 4 and they illustrate the effect of ﬂux reduction at lower ener-
+gl 1 2 _ , ‘ : OWZ?W ‘ 9-4 9.5 gies due to geomagnetic cutoff. The ﬂux spectra are then
+Nission Segment me. u used as input for the 2005 HZETRN transport code to gen-
+Fig. 10. Sample dose rate data for single pass through SAA and eratgdose VS' depth functlons (see ng' .13 a9d 14)‘ .
+associated underlying GCR. It 1s assumed that the ISS structure 1s prlmarlly alumlnum
+alloy (A1 2219), and particle ﬂux transport is calculated for
+traverse through equivalent g/em2 A1 amounts. The resul-
+consists of SAA passes for which the ISS is either ascending tant dose rates are computed for energy deposition in silicon
+(headed northward) or descending. Consistent differences (thGCtOI‘ 1113161131) and ShOWI1 in Figs. 13 and 14- It iS 86611
+for these two modes are observed, and result from the that dose rates for the mission segments are very nearly the
+directional environment as well as location and directional same for given aluminum thiCkHGSS values for GCR With a
+dependent shield distributions. Such differences in dosime- small separation for trapped protons dependent on Speciﬁc
+try Of the ascending and descending trajectories has been SAA crossings. For reference, the predicted free space solar
+previously investigated by DaeheV et 31, (2006) and Hugger maximum GCR dose rates are shown in Fig. 14 to display the
+et a1. (2003). effects of geomagnetic transmission factors.
+
+"
+"13","J.E. Nealy et a1. / Advances in Space Research 40 {2007) 1593—1610 1605
+Table 4
+Summary of results from data set measurements
+Data set 1 Data set 2 Data set 3 Data set 4
+MDU#2 (6—9 July) MDU#1 (6—13 July) MDU#3 (6—13 July) MDU#1 (26—28 June)
+Asc. Desc. Asc. Desc. Asc. Desc. Asc. Desc.
+4.5 2.37 6.21 4.86 4.64 4.48 2.75 9.98
+15.98 8.98 16.56 11.52 15.98 9.88 15.22 1.08
+0.66 2.04 0.91 2.24 0.96 2.18 1.97 3.67
+1.35 6.71 1.96 2.38 1.28 1.79 0.84 10.09
+14.65 5.72 15.15 9.27 14.2 8.94 11.43 3.32
+5.73 3.24 5.74 6.59 6.31 5.56 8.49 1.63
+7.98 8.15 0.5 1.35 8.31 5.94 8.06
+14.05 0.93 9.91 10.25 14.41 8.46 7.75
+2.85 15.4 0.96 2.67 0.97
+16.42 3.94 1.07 16.4 6.63
+17.18 6.78 4.76 6.12
+6.85 7.97 15.96 4.74
+17.57 5.34 0.64 9.12
+0.64 10.71 1.42 1.64
+2.59 1.99 14.47 1.94
+17.75 2.26 5.57 8.88
+5.78 1.9 4.83
+9.4
+6.02
+Sum 84.17 38.14 144.64 102.86 127.98 92.1 40.7 45.58
+Final sum 122.31 247.5 220.08 86.28
+T Oral missian dase
+444.13 693.2 709.14 284.14
+Tatal GCR dase
+321.82 445.7 489.06 198.13
+I“_—__-----——__-----——_ +DS-1 -
+-“‘_------I—_------l—_- I
+““_----III—_----III—_- + DS—2 I
+“\‘1---IIIII_---IIIII_-- +033 I
+Ag!!;!!!!!;!!;!!!!!;!!==_-!
+E —I“h------—_------I—_------I
+E —mL!---III—_----III—_----III
+¢{, _“E‘!:IIII_---IIIII_--.llIII
+< --\h IIII-IIIIIIII-IIIIIIII
+‘E’ 1'E+05 ==EF=§§=====================
+‘7,“ ===BEEE=£E=================E
+C ——_-!s!--_—__-----——__-----
+O —_--‘!-!-I___------I—_-----II
+.... —_----E!E.‘:!_----III—_----III
+g _---IIIIEth=!HII!_--.llIII
+¥!!!!!!!!; ‘Sggé!!!!b_ _!!!!!!!!
+3 ———------———------—“-___-----
+_ —_-------—_-------“‘-_-----Il
+l-L —_----III—_----III—‘;m----III
+_----IIII_---IIIII_L\“1-.llIII
+1-E+03 ===;!!!!!===;!!!!!==;!;!!!!!
+===EEEEEE===EEEEEE==EEEEEEEE
+—_-------—_------l—_m""---II
+—_----III—_----III—_IL“--III
+_----IIII_---IIIII_--BIIIII
+1.5.02 --IIIIIII-IIIIIIII-IIIIIIII
+1 10 100 1000
+Kinetic Energy, MeV
+Fig. 11. Calculated trapped proton ﬂuence for data set simulation.
+
+"
+"14","1606 J.E. Nealy et al. / Advances in Space Research 40 {2007) 1593—1610
+100 ======================================—------
+=EEEEEEEE=EEEEEEEE=EEEEEEEE=EEEEEEEE=E +H
+—---IllII—---IIIII—---IIIII—---IIIII—- +He
+_---IIIII_--IIIIII_---IIIII_---IIIII_-
+--IIIIIII--IIIIIII---III!!Im-,‘-IIIIII-- +0
+-IIIlllll-IIIIIIII-II""'III-I""lllll-I +9”
+10 —————----—————----——r egg!!—__——!!&v 1---—— —e— Fe
+A =======EI======E:I=V2:============ﬂ§===—----u
+>0 —_----III—_----.-I_(A------II—_-----HI—_-----II
+cu —--IIllII—---IIIII""--IIIIII—---Illlh‘_---IIIII
+'9 _-.-IIIII_---III!""5':--:!!!!!I_---IIIII_---IIIII
+> ---IIIIII---IIIEII-F J_unn—L'I-IIIIII.‘--IIIIII
+g .Illlllll-Il'illlll' IIIIIIII-E‘IIIIIIKIIIIIIIII
+9| =EEiiEEii=?AEEFf.iii=EEEEEEEE=EEEL=EEE=EEEEEEEEE
+—_-----II—_-|r .J-III—_-----II—_----_|II—“-----II
+E —---lllll—u—r ..IIIIII——-IIIIII——--In-!I—-q--IIIII
+3 _-.-IIIII-‘I""IIIIII_-!llllll_---IIIIF_-IIIIIII
+E --IIIIIIIy'-L'I-IIIIIiFmiIIIIIIEEIIIIIIII-K‘IIIIII
+!!!!!!!I!ﬂ!!!I!!!aQ!!!I!!!!!!!!!!!!!I_I_!!§!!!!!
+><“ =EEEEEEiiﬁﬁﬁﬁiﬁiE——wﬂ?Eiiiiiﬁ§ﬁi§iiii§§ﬁiiiiii
+3 —---.-I’II—-n-.-IIIw---.IIII—mg-IIH!I—l----IIII
+E _-.-IIII’1_V'A--IIgggw--IIIIII_-k§§§-Iln‘l‘_lnl_-IIIIII
+--IIIIIll-l-IghlI---IIIIII---I§!Ilh_lu-IIIIII
+-IIIIIII|'1IF5IIIII-IIIIIIII-Illliglll‘lﬁllllll
+=======Iibl—ﬂé=========================Pd========
+—_-----I'l—/‘-----III—_----III—-----III-\__---IIII
+_-.-IIIII'----IIIII_--IIIIII_---IIIII-X‘K‘--IIIII
+--IIIIIﬂI{7..-IIIIII-.-IIIIII-IIIIIIII-VxEI‘IIIIIII
+0.001 .IIIIIIIl-IIIIIIII-IIIIIIII-IIIIIIII-kﬂllllll
+1 10 100 1000 10000 100000
+Kinetic Energy, A-MeV
+Fig. 12. Calculated daily GCR ﬂux for data period simulation.
+
+100 ——_------——_------——_------
+——_------——_------——_------
+—_-----Il—_-----Il—_-----II
+—_-----II—_-----II—_- +DS-1 I
+—----IIII—----IIII—-- I
+
++DS-3
+-‘IIIIIII-IIIIIIII-II I
+5k"" ---u‘-.
+A n§§
+'(7) 1O ——_------——_--..§§!-——_------
+v ——_---I-I——_---I__gg——_-----I
+>. ——_-----I——_-----i_—_-----I
+CI) —_------I—_-----II‘\\‘V‘_----III
+2 —---.IIII—----IIII‘;\‘----IIII
+_c_> _--.IIIII_---IIIII—\----IIII
+5. ---IIIIII---IIIIII-k\‘V-IIIIII
+3 ~~*""IIIIII
+g --IIIIIII--IIIIIII--.\\
+w -.IIIIIII-.IIIIIII-ls‘
+(D
+a k
+———-----l———-----l———-Lw---I
+——_---I-I——_-----I——_-.“---I
+—_------I—_-----II—_---k\‘-II
+—-----III—----IIII—----Hﬁll
+_--.IIIII_---IIIII_----II\!I
+0.1 -.IIIIIII-IIIIIIII-IIIIIIII
+0.1 1 10 100
+Aluminum Amount, g/cm""2
+Fig. 13. Transport calculation results (dose rate VS. depth) for simulated data set trapped protons.
+In order to calculate exposure at the speciﬁed target coordinate grid of 970 rays subtending equal solid angles
+locations, directional distributions of shield amounts has been implemented. The cumulative angle averaged
+including the MDU materials are required. A spherical shield thickness distributions based on the CAD-modeled
+
+"
+"15","J.E. Nealy et a1. / Advances in Space Research 40 {2007) 1593—1610 1607
+8 --------------------
+--------------------
+--------------------
+§_----------E_-------
+_-------------‘!----
+6 ---------------—E---
+-----------------__-
+_-----------------—S
+--------------------
+E --------------------
+5 5 --------------------
+(n --------------------
+K --------------------
+C? --------------------
+g --------------------
+_c_> 4 ----Egr_—Eggggg-------
+E --,—4' :ﬁ-_-----_—=Eg!---
+49: -¥a-------------—§§!
+E rg-------------------
+3 3 F:_------------------
+8 --------------------
+--------------------
+--------------------
+2 ---------------- _
+---------------- ‘ DS 1
+---------------- +932
+----------------
+---------------- —A—DS-3
+1 ----------------
+---------------- 96 DS'4
+---------------- + Free Space
+----------------
+--------------------
+O --------------------
+0 50 100 150 200
+Aluminum Amount, g/cm""2
+Fig. 14. GCR transport calculations for simulated data sets.
+188 6A conﬁguration are shown in Fig. 15. Data measure- not used in this study. When the dose VS. depth functions
+ments for the MDU#4 location were not available as of are used in conjunction With the directional thickness dis-
+this writing, and the MDU#4 thickness distribution was tributions, the total mission dose may be predicted. The
+1 vig¢o~v§%v. ~,»~‘-’ """"'”' _
+--IIIIIII---IIIII!PJM”_-llﬁlll
+0.9 ---IIIIII---IIII!lm--l-IIII
+--.-IIIII---III,EIE'.--_-EIIIIII
+08 --IIIIIII---IIEI%I'--'uﬂ-IIIII
+---IIIIII---Il§ﬁII_-Il-IIIIII
+07 --IIIIIII---I&lIIE-I'I-IIIIII
+'3 --I.IIIII----;HIIE!_—i---IIIII
+g 05 --.-IIIII---JI!F_.‘--IIIIII
+g --IIIIIII---!1¥!ﬂIII---IIIIII
+'5 0.5 ---IIIIII--I}:ﬂ_ﬁIIII---IIIIII
+g --IIIIIII--I/;2LIEIIIII---IIIIII
+E 0.4 ---IIIIII-!§EIIIIII---IIIIII
+Lt ---IIIIII-V1mFIIIIIII---IIIIII
+03 --IIIIIII-ﬁliﬁ-IIIIII---IIIIII
+---IIIIIIJIW-IIIIII---IIIIII
+02 --IIIIIIIVmg‘I-IIIIII---IIIIII
+---IIIﬂI-I‘4--IIIIII--I +3333; I
+OJ ---I'§%III-!.l--IIIIII--- ' MDU_3 I
+--!QIIII!Eﬂ--IIIIII--- +1104 I
+___13,_meﬂlﬂﬂku-IIIIIII--I I
+1 10 100 1000
+Aluminum Amount, T, g/cm""2
+Fig. 15. Cumulative angle averaged distributions of shield amounts for the detector locations.
+
+"
+"16","1608 J.E. Nealy et a1. / Advances in Space Research 40 {2007) 1593—1610
+Table 5 high quality and consistency, a ﬁrst reaction is to examine
+Final tOtal miSSiOU segment dose calcmaﬁon “suns WGY) possible weaknesses and uncertainties in the theoretical cal-
+Data set Trapped protons GCR Total culations. The trapped environment models used exhibit
+1 193 206 399 strong sensitivity to magnetic ﬁeld speciﬁcation and alti-
+2 240 368 608 tude (especially in LEO). The GCR component is a rather
+3 104 368 472 strong function of assumed solar cycle modulation between
+4 111 152 263 . . . . .
+— max1mum and minimum values (in essence, also driven by
+geomagnetic ﬁeld transmission factor). The comparison
+results of these end-point calculations are given in Table 5; calculations are also strongly inﬂuenced by the modeled
+direct comparison With measurements is made in the fol- thickness distributions around the target points (detector
+lowing section. Another by-produet Of the 2005 HZETRN locations), particularly With respect to the trapped proton
+code is the calculation of linear energy transfer (LET) at exposures and further reﬁnement of the 188 model may
+the detector location. A commonly used representation of reduce differences. The distribution of shield thickness is
+energy deposition per unit thickness for a given exposure also inherently coupled to the modeled directionality of
+condition is the integral LET spectrum that indicates par- the trapped protons in the SAA. The solar cycle modula-
+tiCle ﬂux resulting in a given energy deposited along the tion, shield amount distributions, and trapped proton
+path through the detector. The combined (GCR + trapped directional ﬂux have all been addressed in the present cal-
+protons) LET spectra for the four data sets are shown in culations with the best information available.
+Fig. 16. Although the DOSMAP data includes information Another factor that could impact the calculations is that
+sufﬁcient to infer LET spectra, at the time of thiS writing of the detectors’ directional response (ﬁeld of View) Which
+the measured data were not readily available and remain has been addressed in the present work as the asymmetrical
+a subject for future analysis. distribution of the instrument mass but not With respect to
+the directional response of the silicon detector (see Fig. 7).
+5. Comparison of results and diSCussion This effect could be of signiﬁcant importance for the less
+penetrating trapped proton component. These consider-
+A summary chart Of the direct comparison Of exposure ations suggest areas for examination in future analysis. It
+data measured With that calculated is given in Fig. 17 in does appear that the GCR contributions of the four datasets
+terms of the average hourly dose rate for each dataset. In as predicted by 1116 models in Fig. 17 are 001133131111be by
+general, agreement is fair to good, but despite all efforts about 15—20% and may 1963 due 10 use Of the older implemen-
+to replicate the experiment, differences occur that suggest tation Badhwar 311d O’Neill (1995) GCR model wherein the
+room for improvement. Since the measured data are Of decades older data of the model are extrapolated using only
+1'E+06 EEE55EiiiEEEEEEEEEEEEEEEEEEEEEEEEEEE
+=§_5EEEEE=EEEEEEEE=EEEEEEEE=E —Set—1 5
+_$Eh!IIII—-----III—----IIII—- —2 I
+1% g;EE;Eggggggggggggggggggﬂgg —3 !
+g =5EiiiiﬁiitaﬁiiiiEEE=EEEEEEEE=E—-nui
+E _--.-IIII“--.IIIII—----IIII—----IIII
+2 1.E+o4 g;ggggggggggggggggggggggggggggggggg
+En =§§§§§§ii=§§§§i§i=§§§§§§§i=§§§§§§§
+1'1 ======iil===EE§EiE—=====iil======iﬂ
+>§ 1.E+03 E;!!!!!!!;;g!!!!!iF!!!!!!!!;;!!!!!!!
+g E5aiiiiiiEEaEiiiiiEﬁsiiiiiiEEﬁiiiii
+.: _--.-IIII—--.IIIII—EhLEIIII—---IIIII
+""é !%éé;Q!E!!é;2;!E!!!;Bieéé!!!éééggé!!
+5 EaEiiiiiiEEEEiiiiiﬁﬁiiﬁﬁiiiﬁﬁiiiiiﬁ
+LI. _--.-IIII—--.-.III—----IIiI-_----IIII
+% 1m g;g!!!!!!gQQE!!!!!!;;!!!!!!E§ggé!!!!!!
+_--.-IIII—--.-.III—----IIII-1L-----IIII
+1m gggﬁ!!!!!;!!!!!!!g;!!!!!!!;§g!!!!!!!
+=5iiiiiiiEEEEiiiiiﬁﬁiﬁiiiiiﬁﬁﬁiﬁiiii
+_--.-IIII_---IIIII_----IIII_“ﬂ-IIIII
+15-01 --IIIIIII-IIIIIIII-IIIIIIII-IIEIIIII
+1 10 100 1000 10000
+XLET (LET), MeV-cmA2/gm
+Fig. 16. Particle ﬂux LET spectra calculated for simulated data set environments and detector locations.
+
+"
+"17","J.E. Nealy er a1. / Advances in Space Research 40 ( 2007 ) 1593—1610 1609
+6
+lTrapped
+IZIGCR
+5
+E
+>.
+S5
+e
+.2 4
+E
+2""
+<5
+I
+cu
+m
+0 3
+D
+E
+cu
+c»
+8
+c 2
+.2
+'17)
+.‘L’
+0 I _ _ — — _ _
+D-1 (m) D-1 (c) D-2 (m) D-2 (c) D-3 (m) D-3 (c) D-4 (m) D-4 (0)
+Data Set Identification
+Fig. 17. Comparison of measured (In) with calculated (e) average dose rates.
+current and historic Sunspot Numbers (Wilson et a1., References
+2002a,b; Kim et a1., 2006), and the use of the new Badhwar
+and O’Neil] GCR model (O’Neill, 2006) is expected to Alsmiller, R.G. High-energy nucleon transport and space vehicle shield-
+improve the modeled result and reduce these differences. m.g- NuCl' SCI' EPg- 27’ 158—189’ 1967' , , ,
+Alsm1ller, R.G., Irvmg, D.C., Moran, H.S. Va11d1ty of the stra1ghtahead
+approximation in space-vehiele shielding studies. Nucl. Sci. Eng. 32,
+56—61, 1968.
+6. Concluding remarks Atwell, W. Beever, E.R., Hardy, A.C., Richmond, R.G., Konradi, A.
+Space radiation shielding analysis and dosimetry for the Space Shuttle
+Consistent differences in the GCR comparison exist in Program, 111: Rester, A.C., Trombka, J .I. (Eds.), High-Energy Radi-
+. . . ation Background in Space, AIP Conference Preeeedings, vol. 186,
+that calculat1ons result 1n lower pred1cted exposures for
+, , , , New York, pp. 289—296, 1989.
+all mISSIOn segments. These exposures are sens1t1ve t0 Badhwar, G.D. Radiation dose rates in Space Shuttle as a function of
+the strength of the solar max1mum cond1t1on. A weaker atmospheric density. Radiat. Meas. 30, 401414, 1999.
+solar maximum than that used in the present calculations Badhwar, GD, O’Neill, PM. An improved model of galactic cosmic
+would increase these predicted exposures. For the radiation for space exploration missions. Nucl. Tracks Radiat. Meas.
+tra ed ex osures differences are not consistent ver 20’ 410421 1995'
+
+p p p f , , ’ y Badhwar, G.D., Patel, J .D., Atwell, W., Cueinotta, F.A., Wilson, J .W. In-
+gOOd aggement IS .mdlcated for data sets 2 and 4: ﬂight radiation measurements on STS-60. Radiat. Meas. 26, 17—34,
+whereas Slgmﬁcant d1fferenees are seen for sets 1 and 3. 1996.
+
+For set 19 greater trapped exposure is predicted while Benton, E.R. Radiation dosimetry at aviation altitudes and in low Earth
+
+for set 3 the trapped exposure is substantially underesti- orbit. Ph.D. dissertation, University College, Belﬁeld, Dublin, May
+
+. . 2004.
+
+Slates? Slnce the, trap p ed p 1‘0th ,SpeCtra are , relatlYely Bertini, H.W., Guthrie, M.P., Culkowski, A.H. Nonelastic Interactions of
+30ft a they ?)Shlblt hlgh senSIthIty t? effectlve Shleld Nueleons and 'rt-Mesons with Complex Nuclei at Energies Below
+
+amounts. Add1t1ona11y, the trapped env1ronment IS mod- 3 GeV. ORNL TM-3148, 1972.
+
+eled With solar cycle modulation and imposed drift of the Blanchard, R.C., Hess, W.N. Solar cycle changes in inner zone protons. J .
+
+aging AP8MIN and AP8MAX static models. Future C ,GC?%YS'HRGZ 591; 3982;, 119464 1 RA H d WV A d
+
+analysis of data such as that provided by the LIULIN am’ ' "" en “95’ ange’ ' "" .11 son’ ' ' pmpose
+
+, , model for the 1nternat10nal geomagnet1c reference ﬁeld-1965. J.
+
+system eou1d we11 .1ead to ap-gradmgthe trapped.enV1- Geomag. Geoelee. 19, 335355, 1967.
+
+ronment Wlth pOSSlb1€ d€ﬁnlt10n 21nd IHCIUSIOH Of 1111161“ Cueinotta, FA. Calculations of cosmic ray helium transport in shielding
+
+ent short-term variability of ﬂux intensities. materials. NASA TP- 3354, 1993.
+
+"
+"18","1610 J.E. Nealy et a1. / Advances in Space Research 40 {2007) 1593—1610
+
+Curtis, S.B., Wilkinson, MC. The heavy particle hazard—What physical Smart, D.F., Shea, M.A. Geomagnetic transmission functions for 400 km
+data are needed? in: Warman, E.A. (Ed.), Proceedings of the National altitude satellite, in: 18th International Cosmic Ray Conference—
+Symposium on Natural and Manmade Radiation in Space, NASA Conference Papers MG Sessions, V01. 3, Tata Inst. of Fundamental
+TM-X2440, pp. 1007—1015, 1972. Research, Colaba, Bombay, pp. 419—422, 1983.
+
+DacheV, T., Atwell, W., Semones, E., Tomov, B., Reddel, B. Observations Tai, H., Bichsel, H., Wilson, J .W., Shinn, J .L., Cucinotta, F.A., BadaVi,
+0f SAA distributions by Liulin E-094 instrument on ISS. AdV. Space F.F. Comparison of Stopping Power and Range Data Bases for
+Res. 37, 1672—1677, 2006. Radiation Transport Study. NASA TP-3644, 1997.
+
+De Angelis, G., Clem, J .M., Goldhagen, P., Wilson, J .W. A new Tweed, J ., Walker, S.A., Wilson, J .W., Cucinotta, F.A., Tripathi, R.K.,
+dynamical Atmospheric Ionizing Radiation (AIR) model for epidemi- Blattnig, S., Mertens, C.J. Computational methods for the HZETRN
+ological studies. AdV. Space Res. 32 (1), 17—26, 2003. code. AdV. Space Res. 35, 194—201, 2005.
+
+Heckman, H.H., Nakano, G.H. East—west asymmetry in the ﬂux of Uchihori, Y., Kitamura, H., Fujitaka, K., DacheV, T.P., Tomov, B.T.,
+mirroring geomagnetic trapped protons. J . Geophys. Res. 68, 2117— Dimitrov, P.G., Matviichuk, Y. Analysis of the calibration results
+2120, 1963. obtained With Liulin-4J spectrometer-dosimeter 0n protons and heavy
+
+Heynderickx, D. Comparison between methods to compensate for the ions. Rad. Meas. 35, 127—134, 2002.
+secular motion of the South Atlantic Anomaly. Radiat. Meas. 26, 369— Vette, J.I. The NASA/National Space Science Data Center Trapped
+373, 1996. Radiation Environmental Model Program (1964—1991). NSSDC/
+
+Hugger, C.P., Nealy, J .E., Clowdsley, M.S., Wilson, J .W., Quails, G.D., WDC—A-R& 91-29, 1991.
+
+Atwell, W., Cucinotta, F.A., Golightly, M.J., Semones, E., Shavers, Wilson, J .W. Analysis of the theory of high-energy ion transport. NASA
+M.R. Preliminary evaluation of an ISS radiation shielding model. TN D-8381, 1977.
+AIAA 2003-6620, 2003. Wilson, J .W. Overview of radiation environments and human exposures.
+
+Huston, S.L. Pﬁtzer, K.A. Space environment effects: low-altitude trapped Health Phys. 79, 470—494, 2000.
+radiation model. NASA/CR-1998-208593, 1998. Wilson, J .W., Khandelwal, G.S. Proton dose approximation in convex
+
+Jenkins, R.W., Ifedili, S.O., Lockwood, J.A., Razdan, H. The energy geometry. Nucl. Tech. 23, 298—305, 1974.
+dependence of the cosmic—ray neutron leakage ﬂux in the range 001— Wilson, J .W., Lamkin, S.L. Perturbation theory for charged-particle
+10 MeV. J . Geophys. Res. 76, 7470—7478, 1971. transport in one dimension. Nuclear Sci. Eng. 57, 292—299, 1975.
+
+Jensen, D.C., Cain, J .C. An interim geomagnetic ﬁeld. J . Geophys. Res. Wilson, J .W., Lamkin, S.L., Farhat, H., Ganapol, Townsend, L.W., A
+67, 3568—3569, 1962. Hierarchy of Transport Approximations for High Energy Heavy Ion
+
+Kern, J .W. A note on vector ﬂux models for radiation dose calculations. (HZE) Transport. NASA TM-4118, 1989.
+
+Radiat. Meas 23, 43—48, 1994. Wilson, J.W., Townsend, L.W., Schimmerling, W., Khandelwal, G.S.,
+
+Kim, M.H., Wilson, J .W., Cucinotta, F.A. A solar cycle statistical model Khan, F., Nealy, J .E., Cucinotta, F.A., Simonsen; L.C., Shinn, J .L.,
+for the projection of space radiation environment. AdV. Space Res. 37, Norbury, J .W. Transport Methods and Interactions for Space Radi-
+1741—1748, 2006. ations. NASA RP-1257, 1991.
+
+Korff, S.A., Mendell, R.B., Merker, M., Light, E.S., Verschell, H.J., Wilson, J.W., Kim, M.-H.Y., Shinn, J.L., Tai, H., Cucinotta, F.A.,
+Sandie, W.S., Atmospheric Neutrons. NASA CR 3126, 1979. Badhwar, G.D., BadaVi, F.F., Atwell, W. Solar Cycle Variation and
+
+Lockwood, J .A. Neutron measurements in space. Space Sc. Rev. 14, 663— Application to the Space Radiation Environment. NASA TP 1999-
+719, 1972. 209369, 1999.
+
+McCormack, P.D. Radiation dose and shielding for the Space Station. Wilson, J .W., Tweed, J ., Tai, H., Tripathi, R.K. A simple model for
+Ada Astronaut. 17, 231—241, 1988. straggling evaluation. Nucl. Inst. Methods B 194, 389—392, 2002a.
+O’Neill,P.M. Badhwar-O’Neillgalactic cosmic ray modelupdate based 011 Wilson, J.W. BadaVi, F.F., Kim, M.H., Clowdsley, M.S., Heinbockel,
+advanced composition explorer (ACE) energy spectra from 1997 to J.H., Cucinotta, F.A., Badhwar, G.D., Atwell, W., Huston, S.L.
+present. AdV. Space Res. 37 (9), 1727—1733, 2006. Natural and induced environment in low Earth orbit. NASA/TM-
+
+Pﬁtzer, K.A. Radiation dose to man and hardware as a function of 2002-211668, 2002b.
+atmospheric density on the 28.50 space station orbit. McDonald Wilson, J.W., Korte, J.J., Sobieski, J., BadaVi, F.F., Chokshi, S.M.,
+Douglas Space Systems Co. Report No. H5387A, Huntington Beach, Martinovic, Z.N., Cerro, J ., Quails, G.D. Radiation shielding, MDO
+CA, 1990. processes, and Single Stage t0 Orbit design. Space 2003 conference,
+
+Preszler, A.M., Simnett, G.M., White, R.S. Earth albedo neutrons from AIAA 2003-6259, 2003.
+
+10—100 MeV. Phys. Rev. Lett. 28, 982—984, 1972. Wilson, J.W., Cucinotta, F.A., Schimmerling, W. Emerging radiation
+
+Qualls, G.D., Wilson, J .W., Cucinotta, F.A., Nealy, J .E., Hugger, C.P., health-risk mitigation technologies. Space Technology Applications &
+Atwell, W., Shavers, M.R. International Space Station Radiation Information Forum, STAIF-2004,AIP Conference Publications, 2004.
+Shield Augmentation Optimization. Space 2003 Conference. AIAA Wilson, J .W., Tripathi, R.K., Mertens, C.J., Blattnig, S.R., Clowdsley,
+2003-6222, 2003. M.S., Cucinotta, F.A., Tweed, J., Heinbockel, J.H., Walker, S.A.,
+
+Quenby, J .J ., Webber, W.R. CosmiC-ray cutoff rigidities and the Earth’s Nealy, J .E. Veriﬁcation and Validation: High Charge and Energy
+magnetic ﬁeld. Phil. Mag. 4, 90, 1959. (HZE) Transport Codes and Future Development. NASA/TP-213784,
+
+Ranft, J . The FLUKA and KASPRO hadronic cascade codes, in: Nelson, 2005.
+
+W.R., Jenkins, T.M. (Eds.), Computer Techniques in Radiation Wilson, J .W., Tripathi, R.K., BadaVi, F.F., Cucinotta, F.A. Standardized
+Transport and Dosimetry. Plenum Press, pp. 339—371, 1980. Radiation Shield Design Method: 2005 HZETRN. 2006 International
+
+Sawyer, D.M., Vette, J .I. AP-8 Trapped Proton Environments for Conference on Environmental Systems, SAE Paper 2006-01-2109,
+Solar Maximum and Solar Minimum. NSSDC/WDC-A-R& S 76-06, 2006a.
+
+1976. Wilson, J .W., Cucinotta, F.A., Golightly, M.J., Nealy, J .E., Quails, G.D.,
+
+Shavers, M.R., Frankel, K., Miller, J., Schimmerling, W., Townsend, BadaVi, F.F., De Angelis, G., Anderson, B.M., Clowdsley, M.S.,
+L.W., Wilson, J.W. The fragmentation of 670A MeV neon-20 as a Luetke, N., Zapp, N., Shavers, M.R., Semones, E., Hunter, A.
+function of depth in water. 111. Analytic multigeneration transport International space station: a testbed for experimental and computa-
+theory. Radiat. Res. 134 (1), 1—14, 1993. tional dosimetry. AdV. Space Res. 37, 1656—1663, 2006b.
+
+Shinn, Judy L., John, Sarah, Tripathi, Ram K., Wilson, John W., Wilson, J.W., Nealy, J.E., DacheV, Ts., Tomov, B.T., Cucinotta, F.A.,
+Townsend, Lawrence W., Norbury, John W. Fully-Energy Dependent BadaVi, F.F., De Angelis, G., Leutke, N. Time serial analysis of the
+HZETRN (A Galactic Cosmic—Ray Transport Code.) NASA TP-3243, induced LEO environment Within the ISS 6A. AdV. Space Res., under
+November 1992. review, 2007.
+
+"

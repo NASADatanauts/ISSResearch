@@ -1,0 +1,488 @@
+"","x"
+"1","Microgravity Sci. Technol.
+DOI 10.1007/s12217-012-9320-y
+ORIGINAL ARTICLE
+
+Protein Experiment: Scientiﬁc Data Processing Platform
+
+for On-Flight Experiment Tuning
+
+Luis David Patiﬁo-Lopez - Klaas Decanniere - J ose Antonio Gavira -
+
+Dominique Maes - Fermin Otalora
+
+Received: 3 August 2011 / Accepted: 10 J uly 2012
+
+© Springer Science+Business Media B.V. 2012
+
+Abstract In 2009, the PROTEIN experiment was run platform and finishing with experiment redesign and
+
+on board of the Columbus module of the International update, is described through several examples.
+
+Space Station to investigate the crystallization of pro-
+
+teins in microgravity using the Protein Crystallization Keywords ISS - Columbus - PCDF - Protein
+
+Diagnostics Facility. This instrument was designed to crystallization - Nucleation
+
+allow almost real time modification of remote-operated
+
+space experiments on request by the Science Team.
+
+The complexity of the experiments and the expected
+
+high volume of raw scientific data required the devel- Introduction
+
+opment of ad-hoc analysis tools in order to provide
+
+scientist with a quick and in-depth picture of experi- The Protein Crystallization Diagnostics Facility
+
+ment progress. The integrated data analysis platform (PCDF) is a multi-diagnostic facility developed by the
+
+presented in this paper allowed early inspection of European Space Agency (ESA),within ESA’s program
+
+running experiment results and provided information Elips, for the investigation of protein crystallization
+
+for impromptu, fine-tuning experimental conditions. in microgravity (Pletser et a1. 1999, 2000, 2001, 2003,
+
+The feedback loop starting with remote data acquisi- 2009a, b; Stapelmann et a1. 2001).
+
+tion, followed by on ground analysis performed by the The instrument was used during the PCDF-
+PROTEIN experiment which took place on the Inter-
+national Space Station’s laboratory Columbus from
+March 15th, 2009 (Discovery shuttle, STS-119/15A)
+to July 31th, 2009 (Endeavour shuttle, STS-127/2JA),
+
+Electronic supplementary material The online version of this investigating the nucleation and growth Of protein
+
+article (dOi:10.1007/812217-012-9320-y) contains crystals in four reactors, EP1 t0 EP4
+
+suppleme.ntary material’WhiChiS available The glucose isomerase protein from Streptomyces
+
+to authorized users. . . .
+
+— rubzgmosus (D-Xylose ketol isomerase, EC 5.3.1.5) has
+
+L- D- PatiﬁO-LOPGZ ('3) °J-.A-GaV/if§l°F-Ot310ra been selected for this study as it is well characterized
+
+%:%¥?gsricécerEégflﬁi(2125121133322: 4’ (Sleutel et al. 2009a, b; Kozak 2005; Van Driessche
+
+18100 Armilla, Granada, Spain et a1. 2009;V1sur1 et a1. 1999; Oberthuer et a1. 2012) and
+
+e-mail: 1uisdavid@lec.csic.es commercially available.
+
+. During such a crystallization experiment, protein
+ISQ Decanmeye ' D' Maes . . molecules are transported from the bulk solution
+tructural Biology Brussels, Flanders Interun1vers1ty , ,
+
+Institute for Biotechnology, Vrije Universtiteit Brussel, towards the growmg crystal. On earth thlS mass trans‘
+
+Brussels, Belgium port is dominated by convection, whereas in micrograv-
+
+K. Decanniere ity diffusion becomes the main transport mechanism.
+
+e-mail:klaas.decanniere@vub.ac.be Therefore, crystal nucleation and growth kinetics is
+
+Published online: 21 July 2012 @ Springer
+
+"
+"2","Microgravity Sci. Technol.
+expected to differ significantly between earth- and equipped With a glass wedge providing an internal
+microgravity-based crystallization experiments. reference for the refractive indeX.
+
+Even for a well-characterized model protein as glu- The PCDF instrument accommodates 4 reactors (see
+cose isomerase, optimal experimental conditions for Table 1). Each reactor can be observed by a range
+microgravity experiments can therefore not be fully of diagnostics. An XYZ motorized stage allows using
+predicted from ground-based experiments. These as- a Dynamic Light Scattering (DLS), a Wide field of
+pects explain the requirement of an interactive setup VieW (WFOV) microscope, and a pseudo-darkfield mi-
+With fast update times. croscopy (MIC) instruments to be moved in the appro-
+
+The PCDF is the first complex microgravity facility priate position for observing one of the reactors. Two
+that allows to follow and to modify a protein crystal- of the reactors allocations (EP2, EP4) have a Phase-
+lization experiment in near real-time based on on-the- shifting Mach-Zehnder interferometer. Acquisition is
+ﬂy analysis of the data. This dynamic control requires restricted by hardware to a “one reactor/one diagnos-
+a continuous coordination between the Science Team ties” at a time.
+and the operators and represented a major challenge Figure 1 provides a schematic VieW of the reactor
+from the operational point of View. The PCDF-to- volume and the planes observed by the different in-
+Ground communication was ensured by a complex struments. The Wide field-of-VieW microscope provides
+communication protocol described by De Smet (Smet a global image (20 x 20 mm View, 0.61 magnification)
+et a1. 2010), and managed by operators in the User Sup- of the central reactor volume, Viewed from the top.
+port and Columbus Control Centres. Science related The microscope allows a closer look (4.09 x 4.09 mm
+data was processed in Granada (LEC-IACT labora- View, x3 magnification), and the entire reactor vol-
+tory) and distributed to members of the science team ume can be covered by performing a volumetric scan
+in Spain and Belgium. of 4 x 3 x 4 images. These images allow identifying
+
+Focused on this last stage of the information loop, and tracking crystals Within the observation volume
+this work provides a detailed description of the auto- (14 x 11 x 10.5 mm3) as well as size determination. The
+matic scientific data processing and information distrib- pseudo-darkfield illumination helps to identify crystal
+ution system developed for the PROTEIN experiment, edges and faces.
+in order to support the decision making process by the The dynamic light scattering instrument is a quasi-
+Science Team. back scattering configuration With a laser diode emit-
+
+The PCDF instrument characteristics and ﬂight ting at 683 nm, and a photomultiplier tube (PMT)
+experiments are described in Section “PCDF Instru— collecting the scattering field at 170 O. This instrument
+mentation and Experiments”. In Section “On-Flight allows the characterization of small particles in solution
+Scientific Data Management” the protocol for scien- and is dedicated to detect and follow nucleation Within
+tific data processing is analysed With examples from the scattering volume (a few cubic microns).
+selected experimental sequences. Finally, in Section The MZI instrument available on two of the four
+“Discussion”, discussion on some events during ﬂight reactors measures small differences in refractive indeX.
+that required experiment modification is given. For crystals growing in the diffusion-limited regime,
+
+a depletion zone (DZ) Will form as the solution sur-
+rounding the crystal is depleted of protein, thus locally
+modifying the refraction indeX (Otalora et a1. 2002;
+PCDF Instrumentation and Experiments McPherson et a1. 1999). The MZI therefore provides
+information about mass transport in the Vicinity of the
+The PCDF instrument has been extensively described growing crystal. The observation plane is perpendicular
+(Pletser et al. 2009a), and therefore, only main charac— to the WFOV/MIC plane, and covers the Whole section
+teristics are summarized. of the reactor (9.9 x 9.9 mm, x1.2 magnification).
+
+A PCDF reactor has a main body made of quartz
+and 3 teﬂon inserts: one stirrer and 2 injectors. Viton
+O-rings guarantee a liquid tight seal. The injectors can
+be moved forward individually, providing the 130551- Tablel PCDF reactors and available experiment diagnosis
+bility to modify the solution conditions in the central Reactor Studies DLS MIC WFOV MZI
+observation volume. The stirrer allows homogenization EP1 Nucleation \/ \/ \/ _
+of the reactor content. Each reactor has an indepen- EP2 Nucleation/depletion zones \/ \/ \/ \/
+dent temperature control circuit. Reactors to be used EP3 NUCIGatiOH \/ \/ \/ —
+With a Phase-shifting Mach-Zehnder interferometer are W
+@ Springer
+
+"
+"3","Microgravity Sci. Technol.
+Fig. 1 WFOV image of a
+PCDF reactor and schematic . ' . _ g:
+View of the instrumentation ' . . MIUWFQV ‘1
+observation planes . ' ' _ . ﬂhﬁﬁr‘r’aﬂﬂn :
+..-. _ ' plane 3
+' _ - _ ' _ (Hy: adjuatahle] Irlﬂ”
+I .L _ _ _ _ _ _ TI""- ___ ._ _ Jr—
+| .- ,... ‘ _ I ' '
+L' 2:
+' I MZI
+'. | f _ _ I - ubscrwaliun
+1' I ' *1” . I v‘: E {ﬁxed}
+‘L_'_____J E‘l'
+n.2- ‘* ' l - I
+. "" _ ‘ j 14 mm
+' - Scattering volume
+' [pnsitiun agar. adjustable]
+
+Two reactors (EPl, EP3) were dedicated exclusively diagnostic facilities were sequentially applied during
+to nucleation studies, whereas EP2 and EP4 were all the process but priority was given to DLS data.
+dedicated both to nucleation and depletion zones The dissolution-nucleation process triggered by cooling
+studies (see Table 1). down or heating up was executed three times at three
+
+For the nucleation studies two main parameters must different cooling rates, as seen in Fig. 2. Once the three
+be controlled i.e. supersaturation and supersaturation temperature ramps were executed for a given reactor
+rate. Therefore experiments were designed such as the conditions, protein and/or precipitant injections could
+glucose isomerase phase diagram was covered by mul- be performed to move through the phase diagram prior
+tiple reactor starting conditions while the supersatu— a new cycle of nucleation studies.
+ration rate was controlled by varying the temperature Depletion zones experimental cycles were similar
+ramp slope. All nucleation experiments were designed to nucleation ones for the dissolution and nucleation
+to have a common path that started with a dissolu— triggering but in this case to fine-tune the nucleation
+tion step at 37 0C (during 5 h) followed by a nucle- density, the final temperature was screened at a fixed
+ation step by decreasing the temperature to 17 0C. All heating rate. Here also all diagnostic facilities were
+
+EP‘I ReacturTemperatun-z-
+
+30.0-
+
+3511 —| 1 ' 3
+
+34 ﬂ _ 1. Injection, dissolution {3W0
+' 2. Nucleation induction ramp
+
+32.0- 3. Dissolution only
+
+30.0-
+
+23.0-
+
+5-7“
+
+20.0—
+
+2 2
+
+24.0-
+
+22.0-
+
+2cm—
+
+13.0-
+
+15.0 -1——.—.—.——.—.——.——.—.——.ﬁ
+15:24 03:24 15:2-11t 03:24 15:24 03:24
+03MB 00;“05 00205 10f05 10105 11;“05
+
+Fig. 2 Typical Temperature Nucleation cycle (EPl reactor)
+@ Springer
+
+"
+"4","Mierogravity Sci. Technol.
+sequentially applied but attention was focused on ob- Extraction of relevant information and considerable
+serving growth and DZs., therefore most of acquired processing power were required in order to present a
+data comes from the M21 instrument. concise picture of running experiments (see Table 2).
+
+While active in Columbus, PCDF transmitted more Among them, crucial treatment includes the back-
+than 35000 images and a similar number of DLS data ground correction and histogram optimization of MIC
+sets, together with various telemetry packages monitor- and WFOV images and processing both autocorrela-
+ing instrument behaviour. tion functions and count-rates to produce an accurate
+
+particle size distribution. For this purpose, an inverse
+method script based on a Non-NegatiVity Least Square
+On-Flight Scientiﬁc Data Management procedure similar to CONTIN was used. Also detec-
+tion and tracking of the formation of protein depletion
+Telemetry Scientific Data zones require a fast processing of the phase shift MZI
+images. Separate data extraction and subsequent re-
+MIC, WFOV and M21 Images were recovered pre- integration of relevant housekeeping data to images
+processed into Portable Network Graphics (PNG) for- were kept in the loop. For a detailed description of the
+mat, from a dropbox at the Belgian User Support and processing mentioned in Table 2 please refer to online
+Operation Centre (BUSOC), through a Virtual Private resource 1-
+Network (VPN) connection. A fall-back option was
+also setup through a Secure Shell (SSH) link between Automated Images Management
+the LEC-Granada and the VUB-Brussels laboratories
+in case of BUSOC-Granada connection failure. The WFOV, MIC and M21 images were processed and
+latter connection worked fine all along the experiment. distributed during the experiment in order to provide
+
+The DLS data were downloaded as telemetry pack- scientist with fresh information. A timed loop scheme,
+ages through the software YAMCS (Yet Another with a waiting time of 2 h was used. This maximum
+Monitoring and Control System), developed by Space delay was considered reasonable enough in case of
+Application Systems (SAS, Zaventem, Belgium), to- needs for experimental modification. A LabView®-
+gether with the instrument status information including based (National instruments, Austin, USA) automated
+reactors temperature and the position of the injectors. timed loop (Fig. 3) executed the same script every 2 h,
+Indeed, experiment related house-keeping data were performing gathering, processing and distribution of
+recovered and processed for each image and DLS data the data. Some of the data processing sub-programs
+set. The position of the injectors was used to pre- were written in Matlab (Mathworks, Natick, USA).
+cisely calculate the composition of the reactor solution. The loop consisted in a folder synchronization
+The injectors position was available in two redundant scheme, between BUSOC (Brussels) dropbox and
+telemetry packets. It was found during ﬂight that the LEC-IACT (Granada) with processing, saving and dis-
+position values were swapped out. Indeed, right/left tribution of new content at each iteration. The proce-
+position values in one telemetry package matched dure is described step-by-step in anneX A1.
+left/right positions in the other package This issue is Figure 4 show snapshots of MIC/MZI unwrapped
+treated later in the discussion as it has been solved by phase pairs on EP4 reactor, for a depletion zone cycle.
+examination of processed data. J ust after the dissolution (left) no crystals are observed,
+Table 2 PCDF scientific data Telemetry data Required processing Expected information
+and process1ng requirements —
+
+MIC Background subtraction, Crystal detection,
+histogram optimization growth observation
+
+WFOV Background subtraction, Crystal detection,
+histogram optimization growth observation
+
+MZI Phase calculation, phase Depletion zone detection
+unwrapping, plane-fitting and tracking
+
+DLS Data inversion (CONTIN Aggregates size
+like, see Annex B) distribution
+
+Injectors Estimate reactor conditions Current position on
+
+position (protein, precipitant, protein phase diagram
+impurities concentration)
+@ Springer
+
+"
+"5","Mierogravity Sci. Technol.
+15 h later (centre), massive nucleation triggered the
+apparition of numerous crystals. Thirty hours later,
+110 more crystals appeared, but pre-eXisting ones
+have grown.
+WMT TILL MEET CSDMF’ﬁ-RE
+SCHEDULED ITERMIDM DRDPED}: ""5 LDEﬁ-L FCJLDER
+DLS Data Management
+® ' As mentioned in Section “
+”, DLS data were crucial for nucleation
+studies. DLS data sets contain autocorrelation func-
+tions (gm) and count rates. DLS data were not
+CHEESE? IWGES processed automatlcally, but 011 request of the Selence
+mmcs Team. Custom telemetry packages were downloaded
+MD;- MEI for a specific period, and a script developed specifically
+for these purposes performed the analysis, report gen-
+rmxjfwmv MEI - - - - - _ -
+
+l-l I F RD E 551w r3 eratloh, and dlstrlbutlon to. em emell hst. DLS reports
+contamed the reactor condltlons (1.e. compounds con-
+centrations), plots of temperature evolution, count rate
+
+”33'3MFW3TIW‘3EE‘ statistics, ACFs and estimated size distributions as a
+function of time.
+Fi ure shows a DLS result as enerated b the
+E-mail TC: SCIENCE TESUVI g . . g . . y
+
+DLS processmg scrlpts, for a nucleatlon kmetlcs study
+lasting 60 h. The goal was to induce nucleation by
+Fig- 3 Images management timed 100p decreasing the temperature at different rates. Indeed,
+three dissolution-nucleation-induction cycles were run
+
+Fig. 4 Series of MIC (bottom) and corresponding MZI (top) images, corresponding to 3 EP4 reactor depletion zone study
+@ Springer
+
+"
+"6","Microgravity Sci. Technol.
+Fig. 5 Top: Size Distribution --1
+as a function of time for a 1mm I I
+Nucleation study (EP1). I I __ 2
+Bottom: Reactor temperature 5 E E
+for the same eriod E E _
+I I a
+5 a ""4 5
+100nm = 5 3.
+I I --5 5
+I I m
+E E 3
+E E ""-5 g
+1 = = :.
+I . I --?' ”i
+g . . = E:
+E . ' ' E 5
+‘1 Burn = I = ""3 E.
+I - ' I 5:
+I ' . l _
+- . . ' - '9
+= -' 'I =
+'1'UCI'LJm E E __1[]
+15:24 02:24 15:24 03:24 15:24 43:24
+00:05 00:05 00:05 10:05 10:05 11:05
+50-0--
+350'
+34.0—
+32-0—
+50-0-
+20-0—
+'0’
+25-0—
+24.0—
+22-0-
+20-0-
+15-0—
+lE""u_l I - I I I I I - I I I I I I I
+15:24 [13:24 15:24. 03:24 15:24 [13:24
+05:05 00:05 00:05 10:05 10:05 11:05
+(Fig. 4 bot). Temperature variation is the same for the signal (LOS), and the cascade of user support and
+three cycles (5 h at 37 0C for dissolution, followed by a control centres are difficulties that were planned for.
+linear ramp from 29 to 17 0C) with increasing the cool— The combination of unexpected events inﬂuencing the
+ing rate for consecutive cycles. In the size distribution instrument behaviour and the inherent trickiness of
+plot (Fig. 5, top), a logarithmic colour map shows how protein crystallization experiments are at the origin
+scattered intensity is distributed as a function of particle of the near-real-time requirements for the on-the—ﬂy
+diameter (y aXis). It provides quantitative information control of the PCDF instrument.
+concerning aggregates populations growing in size as The Daily Operations Report (DOR) kept by
+temperature drops. The elementary population of the the Operators shows that the PCDF instrument was
+protein (a tetramer with a 10 nm hydrodynamic diam- switched into “run mode” 36 times while 011 orbit, in-
+eter) is Visible during the whole period. The forma— eluding all commissioning and science activities. Ten of
+tion and growth of aggregates (in the micron range) is these runs were aborted due to unsatisfactory scientific
+observed for the three cycles. results and/or instrument problems. Two of the runs
+were stopped as the objectives for those experiments
+were obtained sooner than expected.
+Discussion For the aborted runs, quick assessment of data
+obtained so far allowed to update our strategy and
+Due to the remote location on board of the 188 with restart the experiments with minimal delay. For the
+its specific procedures and the decentralized location of stopped cycles, constant monitoring of results allowed
+the Team members across Europe, PCDF-PROTEIN to cut these runs short and t0 re—allocate time to other
+was a “hands—off” experiment. Signal delays, loss of experiments.
+@ Springer
+
+"
+"7","Microgravity Sci. Technol.
+
+One example is the confusion between left and right the interferometer was not affected by this camera-
+injectors. The PCDF House Keeping (HK) data have positioning malfunction. On that basis, the measuring
+re un an en ries or e posi ion 0 e e an rig sc eme cou e a ap e o e new si ua ion wi in
+
+ddt t fth t fthlft Cl ht h ldb dtdt th tt th
+injectors. As injections determine the chemistry of hours, maximizing the use of the different resources
+the experiments with left and right pistons containing available within the instrument and minimizing the
+different solutions, the exact positions of the injectors impact on data completeness.
+are Vital. In the data downloaded from space, one set of
+parameters would show an injection on the left piston
+where the other set of parameters would show the Conclusions
+movement of the right piston. As the processed data
+was available during the discussion of the problem, the An integrated suite has been developed for the process-
+Science Team was able to determine which of the para- ing of MIC WFOV MZI DLS data and science related
+meter sets was correct, based on protein crystallization HK data of the P(EDF instrument It also performed
+beIXWIOEL 1 _ h f 11 f h f' 1 quasi-real time distribution of data to science team
+
+f 110: er Eiimﬁﬁls t e 31 ow-up : tt e 1rstcycc: members located at different laboratories. The scripts
+O reicclwd , ' th is was. e tveTBh 1rs exgeﬁlimen have been used successfully all along the Experiment
+exeeu e t urirtig eletierimer; ' e airln 0 d fellex' and provided a full picture of experiments evolution to
+Perlmen was 0 nuc ea e very ew crys a S an O OW scientists within a reasonable delay. Indeed, during the
+their growth for several days. Figure 6 shows that the PROTEIN experiment more than 1000 e-mails con-
+chosen conditions actually led to massive nucleation. taining around 35000 MalC WFOV and M21 processed
+So although the nucleation data obtained was valid, we images and DLS p df reports were sent The timed 100p
+could not obtained accurate data from their growth. . '
+, worked nominally and only a few restarts were neces-
+Therefore, the experiment was aborted, and restarted sary within the period Such a scheme was mandatory
+with updated conditions that produced better results. for appropriate and rapid experiment modification.
+
+A thud example is the contingency plan devel- The platform developed for this experiment could
+oped after the failure of a stepper motor. This failure be of interest to other experiments, as it federates
+bEOCked the cargerahpositionlforfonle Of the ?ree axecsl diverse analysis tools typically used in crystallization
+O Crlnoverlnenctl. by the time t is. a1 ure wasth laggose and nucleation studies.It is functional for PCDF ground
+an ana ySSH 133,1 te Engmeemlg, 63131121 Cf ts01ence models, but also practical for any crystallization and/or
+eam was S 1 a e O eep acquiring a a s1nce nucleation studies. It could be adapted to other facili-
+
+ties featuring remote operations. Scripts are available
+upon request to corresponding authors.
+_ . References
+_ _ . ' - . _- . _ . . .. Kozak, M.: Glucose isomerase from Streptomyces rubiginosus —
+-' :'_ ‘-Z'-_' .'_- ' - _ ‘ potential molecular weight standard for small-angle X-ray
+-‘ -_ *HL. ._ j; ' .' _ scattering. J . Appl. Crystallogr. 38, 555—558 (2005)
+'7""- ﬂ ' _ McPherson, A., Malkin, A.J., Kuznetsov, Y.G., Koszelak, S.,
+' I' a "" ' ' _ Wells, M., J enkins, G., Howard, J ., Lawson, G.: The effects
+- '_-"": 1‘ 3-.__' f 1. '- - of microgravity on protein crystallization: evidence for
+r '. - concentration gradients around growing crystals. J . Cryst.
+' - ' L ..'_ - Growth 196(2—4), 572—586 (1999)
+* {'9‘ .--r .' 5""; '_ ' '_ .. Oberthuer, D., Melero-Garcia, E., Dierks, K., Meyer, A.,
+
+_. - ‘ '- . '_'_.- _ ""' _' Betzel, C., Garcia-Caballero, A., GaVira, J .A.: Monitoring
+' _ ' ' ' ' - - and scoring counter-diffusion protein crystallization experi-
+' ‘ - ments in capillaries by in situ dynamic light scattering. PLOS
+
+'1 _, One 7(6), e33545 (2012)
+
+'I 1 Otalora, F., Garcia-Ruiz, J .M., Carotenuto, L., Castagnolo, D.,
+._ . /- Novella, M.L., Chernov, A.A.: Lysozyme crystal growth
+' kinetics in microgravity. Acta Crystallogr. Sect. D: Biol.
+‘ F Crystallogr. 58(10 II), 1681—1689 (2002)
+- Pletser, V., Stapelmann, J., Potthast, L., Bosch, R.: The pro-
+tein crystallization diagnostics facility, a new European
+Fig. 6 EP4 Reactor after massive nucleation instrument to investigate biological macromolecular crystal
+@ Springer
+
+"
+"8","Microgravity Sci. Technol.
+growth on board the International Space Station. J . Cryst. Pletser, V., Decanniere, K., Maes, D., Otalora, F., Gavira, J .A.,
+Growth 196(2—4), 638—648 (1999) Patiﬁo, L.D., Evrard, C., Van De Weerdt, C., Mazzoni, S.,
+Pletser, V., Minster, 0., Bosch, R., Potthast, L., Stapelmann, Minster, 0.,P0tthast,L.,Bosch,R.,Lautenschlager,P.:First
+J .: Fundamental research on protein crystallisation 0n the investigations With the protein crystallisation diagnostics fa-
+ISS With ESA’S protein crystallisation diagnostics facility. cility on board the international space station. In: 60th Inter-
+In: European Space Agency, (Special Publication) ESA SP, national Astronautical Congress 2009, IAC 2009, Daejeon.
+Sorrento 2000. 1st International Symposium on Microgravity 60th International Astronautical Congress 2009, IAC 2009,
+Research and Applications in Physical Sciences and Biotech- pp. 790—795 (2009b)
+nology, pp. 1061—1068 Sleutel, M., Willaert, R., Gillespie, C., Evrard, C., Wyns, L., et al.:
+Pletser, V., Minster, 0., Bosch, R., Potthast, L., Stapelmann, Kinetics and thermodynamics of glucose isomerase crystal-
+J .: The protein crystallisation diagnostics facility: status of lization. Cryst. Growth Des. 9, 497—504 (2009a)
+the ESA programme on the fundamentals of protein crystal Sleutel, M., Willaert, R., Wyns, L., Maes, D.: Polyhedral insta-
+growth. J . Cryst. Growth 232(1—4), 439—449 (2001) bility of glucose isomerase crystals. Cryst. Growth Des. 9,
+Pletser, V., Kassel, R., Joannes, L., Bosch, R.: Developing 335—343 (2009b)
+scientific ground models of the Protein Crystallisation Di- Smet, L.D., Klai, S., Decanniere, K., Haumont, E.: Meticu—
+agnostics Facility to prepare for protein crystallisation in- lous preparation and on-the-ﬂy flexibility enable successful
+vestigations on board the International Space Station. In: PCDF PROTEIN Mission On 188 Paper presented at the
+54th International Astronautical Congress of the Interna- SpaceOps 2010 Conference, Huntsville, Alabama
+tional Astronautical Federation (IAF), the International Stapelmann, J.,Smolik, G.,Lautenschlager, P.,L0rk, W.,P1etser,
+Academy of Astronautics and the International Institute V.: Towards protein crystal growth on the International
+of Space Law, Bremen 2003. 54th International Astronau— Space Station (ISS)—Innovative tools, diagnostics and ap-
+tical Congress of the International Astronautical Feder- plications. J . Cryst. Growth 232(1—4),468—472 (2001)
+ation (IAF), the International Academy of Astronautics Van Driessche, A.E.S., Gavira, J .A., Patiﬁo—Lopez, L.D.,
+and the International Institute of Space Law, pp. 4473— Otalora, F.: Precise protein solubility determination by
+4483 Laser confocal differential interference contrast microscopy.
+P1etser,V.,Bosch,R., Potthast, L.,Lautenschlager,P., Kassel, R.: J . Cryst. Growth 311, 3479—3484 (2009)
+The Protein Crystallisation Diagnostics Facility (PCDF) 0n Visuri, K., Pastinen, 0., Wu, X., M’cikinen, K., Leisola, M.: Stabil-
+board ESA Columbus laboratory. Microgravity Sci. Technol. ity of native and cross—linked crystalline glucose isomerase.
+21(3), 269—277 (20093) Biotechnol. Bioeng. 64, 377—380 (1999)
+@ Springer
+
+"

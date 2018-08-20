@@ -1,0 +1,1453 @@
+"","x"
+"1","GIScience & Remote Sensing, 2014 Taylor & Francis
+V01. 51, N0. 2, 175—198, http://dX.d0i.0rg/10.1080/15481603.2014.895581 Taylor&FrancisGroup
+Performance evaluation of normalized difference chlorophyll index in
+northern Gulf of Mexico estuaries using the Hyperspectral Imager for
+the Coastal Ocean
+Deepak R. Mishraa*, Blake A. Schaefferb and Darryl KeithC
+aDepartment 0f Geagraphy, University Of Geargia, Athens, GA 30602, USA; bNatiOnal Expasure
+Research Labaratmjy, Oﬂice OfResearch and Develapment, US Envimnmental Protectian Agency,
+
+3 Durham, NC 2771], USA; CNatiOnal Health and Envimnmental Eﬂects Research Labaratmjy, Oﬂice
+
+a OfResearch and Develapment, US Envimnmental Pratectian Agency, Narragansett, RI 02882, USA
+
+1% (Received 24 September 2013; accepted 2 January 2014)
+
+:s
+
+g The Hyperspectral Imager for the Coastal Ocean (HICO) was used to derive chlor-
+
+N ophyll-a (chl-a) based on the normalized difference chlorophyll index (NDCI) in two
+
+a Gulf of Mexico coastal estuaries. Chl-a data were acquired from discrete in situ water
+
+l5 sample analysis and above-water hyperspectral surface acquisition system (HyperSAS)
+
+E? remote sensing reﬂectance in Pensacola Bay (PB) and Choctawhatchee Bay (CB).
+
+?‘ NDCI algorithm calibrations and validations were completed on HICO data. Linear
+
+8 and best-ﬁt (polynomial) calibrations performed strongly with R2 of 0.90 and 0.96,
+
+{3 respectively. The best validation of NDCI resulted with an R2 of 0.74 and root-mean-
+
+.3“ square error (RMSE) of 1.64 pg/L. A strong spatial correspondence was observed
+
+é between NDCT arid ehl-a, with higher NDCI associated with higher chlfa and these
+
+0) areas were primarily located in the northern PB and eastern CB at the river mouths.
+
+5 NDCI could be effectively used as a qualitative chl-a monitoring tool with a reduced
+
+<5 need for site-speeiﬁc calibration.
+
+ED Keywords: HICO; NDCI; HyperSAS; ehlorophyll-a; remote sensing reﬂectance
+
+5:
+
+>5
+
+§ 1. Introduction
+
+ii: The Gulf of Mexico estuaries and coasts are major ecological and economic resources.
+
+—«2 The 5 coastal states bordering the Gulf of Mexico contribute >$2.2 trillion dollars to the
+
+E nation’s economy, supply >1.2 billion pounds of seafood annually, and support 6 of the
+
+Q top 10 shipping ports in the country (NCAA 2008). As valuable aquatic resources, these
+waters are protected by the Clean Water Act (CWA) through the use of water quality
+standards. Traditional water quality measures typically include measures of chlorophyll-a
+(chl-a), total suspended solids (TSS), light attenuation, and colored dissolved organic
+matter (CDOM), and all are currently derived from satellite ocean color technology. For a
+review of measurable water quality variables from satellite remote sensing, see Muller-
+Karger (1992). Chl-a is used as a proxy for phytoplankton biomass and can be an
+indicator of increased nutrients (Devlin, Bricker, and Painting 2011; Ferreira et a1. 2011;
+Schaeffer et a1. 2012) or a direct measure of potential harmful algal bloom development
+(Stumpf et a1. 2003). Chl-a concentration, a widely used bio—indicator of phytoplankton
+abundance and eutrophication, is a parameter that serves as an overall indicator of
+environmental stress and is used to assess water quality in estuarine systems (Huang,
+>“Corresponding author. Email: dmishra@uga.edu
+© 2014 Taylor & Francis
+
+"
+"2","176 DR. Mishm et al.
+Mukherjee, and Chen 2011; Hu et al. 2004; Wang et al. 2010; Messina 2004). Chl-a is
+also a natural contributor to light attenuation, (Huang, Mukherjee, and Chen 2011) where
+light attenuation is the sum of scattering and light absorption by phytoplankton pigments,
+detritus, and colored dissolved organic matter.
+Recent research trends in the development of remote sensing algorithms for chl—a
+prediction have focused on the use of red and near—infrared (NIR) wavebands instead of
+blue and green wavebands as used in ocean color (OCX) algorithms (O’Reilly et al. 2000).
+The blue—green algorithms have been reported to be inaccurate when applied to shallow
+coastal waters and inland turbid waters and this resulted in the shift to red—NIR-based models.
+Red—NIR-based algorithms can be separated into four maj or groups including empiri-
+cal, two-band, three-band, and four-band models. Empirical models are mainly based on
+regression between satellite-derived reﬂectance measurements and in Situ chl-a concen-
+v tration. For example, Kabbara et al. (2008) used Landsat—7 Enhanced Thematic Mapper +
+§ (ETM+) and Landsat-5 Thematic Mapper (TM) bands to develop an empirical algorithm
+4; for chl—a mapping. Han and Jordan (2005) used band ratios and regression models for
+0:13 estimating chl-a in Pensacola Bay (PB). Wu et al. (2009) used Moderate Resolution
+<t Imaging Spectroradiometer (MODIS) band ratios to demonstrate their capability in chl—a
+ﬂ estimation. The problem with the empirical models is that they need parameterization for
+3 individual waterbodies or waterbody types.
+5 The two-band models (Gitelson et al. 2008; Gons, Auer, and Efﬂer 2008; Moses et al.
+ES 2009; Gitelson et al. 2009; Gilerson et al. 2010; Moses et al. 2012) are based on band ratio, Rrs
+E (x12)/Rrs(/11), where 21 is located near the chl—a absorption peak at ~675 nm, and 22 is typically
+5 located between 700 and 720 nm, which is the spectral region of the chl—a reﬂectance peak.
+2? For MODIS sensor, Gitelson et al. (2008, 2009) and Moses et al. (2009) used bands 13 and
+E 15 centered at 667 and 748 nm, respectively. Moses et al. (2009, 2012) and Gilerson et al.
+g (2010) have also re-parameterized their algorithms for MEdium Resolution Imaging
+<3: Spectrometer (MERIS) bands 7 and 9 centered at 708 and 665 nm, respectively. Gons,
+C3 Auer, and Efﬂer (2008) also used MERIS bands 7 and 9 but added the effect of the apparent
+i)” backscatter coefﬁcient (bb) calculated using MERIS band 12, centered at 778 nm.
+3 The three-band models (Dall’Olmo, Gitelson, and Rundquist 2003; Gitelson et al.
+: 2008, 2009, 2011; Moses et al. 2009, 2012; Le et al. 2009; Gilerson et al. 2010; Chen
+ﬁ et al. 2011) are generally based on normalization of inverse reﬂectance at two bands such
+g as [R801 1)_1 — RrS(/12)_1]Rrs(/l3), where his most sensitive to chl—a absorption (red band),
+3 22 is minimally sensitive to chl-a absorption, and 23 is sensitive to residual backscattering
+E and not sensitive to water constituent absorption. These algorithms have been tested using
+8 in Sim hyperspectral data and MERIS Visible near-infrared (VNIR) bands. The three-band
+models were also tested on the Hyperspectral Imager for the Coastal Ocean (HICO) data
+by Gitelson et al. (2011) and on Hyperion data by Chen et al. (2011).Yang et al. (2011)
+combined work of Gitelson et al. (2008) and Ammenberg et al. (2002) and derived a
+three-band approach based on the regression analysis between the model output and
+constituent concentrations using MERIS bands 7, 9, and 10 such as [RrS(B10) >< Rrs
+(1307) _1] — [Rrs(B10) X Rrs(B09) _1]-
+The four-band model proposed by Le et al. (2009) replaced the term RrS(/l3) in
+Gitelson et al.’s (2008) three-band model with [l’QrS(/l4)_1 — RrS(/l3)_1] _1 to minimize the
+impact of absorption and backscattering from detrital particles at 23. Their assumption that
+CDOM and detrital absorptions at 22 are close to those at 21 and the same is true for x13 and
+x14 and that bb(/l) is approximately equal at all four wavelengths was similar to the three-
+band model. From band tuning and accuracy optimization, they found that the position of
+21, x12, 23, and 24 are 663, 693, 705, and 740 nm, respectively. The model was calibrated
+
+"
+"3","GIScience & Remote Sensing 177
+and validated for Lake Taihu, China, where the chl-a range is 098—8923 ug/ni?’ and T88
+is 8.53—21360 nig/ni3, with a chl-a model calibration r2 of 0.89 and 0.97 for two different
+datasets. The performance of the three- and four- band models was further examined and
+validated for wider geographic extent by adding Lake Chaohu and Three Gorges
+Reservoirs (Le et al. 2011). An improvement was made by classifying the water spectra
+based on the slope of the Rrs in three bands: Rrs (R), Rrs®, and Rrs (NIR). The ﬁnding
+showed that the improvement increased the r2 and decreased the relative errors for the
+classiﬁed datasets. The model may have the potential for application to hyperspectral
+satellite sensors and MERIS which have the channels located at the desired wavelengths.
+
+The main limitation is the use of a band in between 748 and 778 nm in all the three
+algorithms. A band that far in the NIR region is often dominated by water absorption and,
+given the existing atmospheric correction schemes for turbid productive waters, getting
+
+v reliable estimates of Rrs at these wavelengths is a difﬁcult task. The other problem is that
+§ output from these algorithms is not normalized and scaled, i.e., they do not have a ﬁxed
+4;; lower or upper limit; therefore, their application to a new study site often requires
+Eb calibration using in Situ data which is a difﬁcult task for under—sampled locations. To
+<71s address these issues, Mishra and Mishra (2012) developed the normalized difference
+ﬂ chlorophyll index (NDCI) for chl-a estimation in water using the concepts similar to the
+3 Normalized Difference Vegetation Index (NDVI) for vegetation (Tucker 1979). NDVI is
+g based on normalization of the difference between a highly reﬂecting band (NIR) and a
+E? highly absorbing band (red) in vegetation. The normalization procedure makes the indeX
+E scaled with a lower and upper limit of —1 and +1, respectively. NDCI also has the same
+8 theoretical lower and upper limit (Mishra and Mishra 2012).
+
+Z? The basis for the index is to use the 700 nm reﬂectance and 665 nm absorption to
+E maximize chl-a sensitiVity. NDCI was developed by simulating the MERIS bands and
+g formulated as [Rrs(708)—Rrs(665)]/ [Rrs(708) + Rrs(665)]. The conceptual model was then
+<3: calibrated and validated using ﬁeld data and MERIS data from three study sites
+C3 (Chesapeake Bay, Mobile Bay, and Mississippi Delta), and further calibration and valida-
+i)” tion was performed for different ranges of solar zenith angles and solar azimuth angles.
+3 NDCI has three main advantages compared to the aforementioned models: (1) normal-
+: izing by the sum of reﬂectance at the two bands eliminates any uncertainties in the
+ﬁ estimation of Rrs, seasonal solar azimuth differences, and atmospheric contributions at
+g these wavelengths; (2) the range varies between —1 and +1, therefore, qualitative chl-a
+E mapping and bloom detection using satellite data is possible for remote areas where ﬁeld
+E data is limited; and (3) a chl-a range can be quantitatively associated with NDCI value for
+8 any given pixel/location, which makes mapping of chl-a concentration possible.
+
+The objective of this research was to test the above-listed advantages and demonstrate
+the applicability of NDCI on HICO data for the two study sites. HICO was the ﬁrst
+remote sensor designed speciﬁcally to image the coastal ocean, and this was the ﬁrst time
+International Space Station (188) was used as a platform for scientiﬁc earth observations.
+HICO spatial resolution is approximately 90 m with spectral coverage from 380 to 900
+nm with less than 6 nm resolution (Corson et al. 2006). In this study, the performance of
+NDCI was assessed by (1) calibrating and validating using in Situ hyperspectral datasets,
+(2) calibrating and validating using HICO data for different dates and sites, and (3)
+mapping and validating chl-a concentration using the pre-established NDCI and chl-a
+range relationship (hereafter chl-aQual) provided in Mishra and Mishra (2012). In this
+paper, for the ﬁrst time, we demonstrated the applicability of NDCI on a dataset from a
+space-based sensor other than MERIS using which NDCI was calibrated during the initial
+development.
+
+"
+"4","178 DR. Mishm et al.
+2. Study area
+Pensacola Bay (PB) is supplied by three main rivers, and Choctawhatchee Bay (CB) has
+one main river (third largest in the state of Florida) that feeds the top of the estuary
+(Figure 1). Mean annual freshwater discharge of PB is 324 m3s_1(Bianchi, Pennock, and
+Twilley 1999) and of CB is 204 m3s_1(Kenner, Hampton, and Conover 1971). These
+systems also possess large watershed areas, 18,125 km2 and 13,835 km2 for PB and CB,
+respectively. The coastal waters in this region retain a score of “good—fair condition” on
+the Gulf Coast Water Quality Index (EPA 2012). Land use is dominated by forest and
+wetlands, and the residing counties eXhibit population growth rates between 5 % and
+33%, which are some of the highest in the state (US Census Bureau 2007). Northwest
+Florida estuaries are classiﬁed as optically complex, or waters inﬂuenced by chl-a,
+colored dissolved organic matter, suspended solids, and bottom reﬂectance.
+q.
+S
+(\l
+g
+g!) 3. Methods
+: 3.1. Field data collection
+:1, Small boat surveys were conducted in two Florida estuaries, PB and CB, along the
+3 Florida Panhandle (Figure 1). The systems selected represented a range of optical
+2 characteristics, were of sufﬁcient size to be adequately resolved in remote sensing
+? imagery, and were sufﬁciently close to the EPA Gulf Ecology Division (GED) in Gulf
+é Breeze, FL, to make ﬁeld operations during an ISS overpass feasible. Field data
+a collection included discrete water sample and above—water in Situ hyperspectral remote
+E, sensing reﬂectance (Rrs, sr_l).
+(D
+E.
+L...
+O . — — — — —
+(1)
+DD
+2
+3
+2
+>5
+,5
+PD -.
+(D .
+Po - -
+CG . i ‘ -
+g _:p -c_a':::-§my 1‘ n f“: . .. 3:..- r
+o 1. I I I _=;.. 1h— I.- I I
+Q _ﬂ_‘_ _ . ' - '
+|*- i "" ' ﬁulfufML-Iim |
+N
+l} HEM]I 2101] 3301}
+' LI_I_|_I_I_I._I_|_I_I._.I_I_|_I_|_i_I._I
+-1 """" km
+311“ l
+: — 373v; — - — —
+Figure 1. Map of study areas, Pensacola Bay and Choctawhatchee Bay in northern Florida. Black
+circles represent ﬁeld sampling sites.
+
+"
+"5","GISCience & Remote Sensing 179
+3.1.1. Water samples
+Sampling stations were located to characterize water quality and optical properties
+where HICO imagery could be acquired as well as along the major salinity gradients
+of each estuary. Discrete samples were typically processed within 24 hours of collec-
+tion. Discrete water samples were collected 0.5 m below the surface, away from boat
+engines, using a 2 L brown Nalgene bottle for the post cruise analysis of chl-a. Water
+was ﬁltered through Whatman 47 mm GF/F ﬁlters (Sigma-Aldrich Corp., St. Louis,
+MO, USA; nominal pore size = 0.7 am) for chl-a analysis. Filters were extracted in
+methanol and ﬂuorescence was measured with a Turner Designs (TD700) ﬂuorometer
+(Turner Designs Corp., Sunnyvale, CA, USA). Associated pigment interference from
+chlorophyll-b and phaeopigments were minimized through the use of a 436 nm excita-
+tion ﬁlter, 680 nm emission ﬁlter, and two neutral density reference ﬁlters with a blue
+
+3 lamp (Welschmeyer 1994).
+
+3.
+
+E.
+
+:1"" 3.1.2. Hyperspectml surface acquisition system (HyperSAS)
+
+ﬂ Rrs was derived using a hyperspectral surface acquisition system (HyperSAS, Satlantic
+
+3 Inc., Halifax, Nova Scotia). The HyperSAS logged spectral measurements of above-
+
+: water radiance (Lt(/l)), sky radiance (Li(/l)), and downwelling sky irradiance (ES(/l))
+
+E; from 350—800 nm (interpolated at 1 nm intervals). HyperSAS radiance sensors were
+
+E mounted on the port side of the pilot house roof of a 25 ft boat to provide 400 nadir
+
+8 and zenith Viewing angles (Mobley 1999). During data acquisition, the boat was
+
+>‘ positioned so that the radiance sensors were perpendicular to the Sun’s azimuth and
+
+E to avoid boat shadow and wake. The irradiance sensor was mounted above the deck
+
+g canopy for an unobstructed View of the sky. During the same time as the HyperSAS
+
+c: acquisition, an absorption and beam attenuation-spectra (AC-s) (WET—Labs, Philmoth,
+
+C3 OR) quantiﬁed in Situ vertical proﬁles of absorption (a) and beam attenuation (c) from
+
+i)” 400—735 nm interpolated to every 1 nm. Temperature and salinity corrections were
+
+3 applied using corresponding Seabird conductivity, temperature, and depth (CTD) data
+
+: (Sullivan et al. 2006). The AC-s a, c, and derived [9 values were averaged over the
+
+§ surface of the water column to Secchi depth. The above water Rrs spectra were
+
+,8 corrected, following the surface correction algorithm of Gould, Arnone, and Sydor
+
+E (2001), using the average absorption at 412 nm and derived spectral scattering shape
+
+E (Gould, Arnone, and Sydor 2001).
+
+8 HyperSAS Rrs data for each sampling location were analyzed to perform NDCI
+model calibration, validation, and performance evaluation. HyperSAS Rrs data were
+integrated over the NDCI required bandwidth of ﬁve different sensors: HICO,
+Hyperion, MERIS, Multi-spectral Instrument (MSI) on Sentinel-2, and the Ocean and
+Land Color Instrument (OCLI) on Sentinel-3 (Table 1). The other four space-borne
+sensors were chosen because they have the necessary spectral bands available for
+computing NDCI and other chl-a algorithms which allowed inter-sensor NDCI perfor-
+mance comparison. Multiple calibrations were performed: (1) aforementioned sensors
+derived NDVI versus chl-a, (2) comparison calibration between two-band model and
+NDCI for the ﬁve sensors, and (3) linear and polynomial calibration between HyperSAS
+derived NDCI and chl-a. Both quantitative and qualitative validation was performed
+using the coefﬁcients and the NDCI range—concentration association, respectively, as
+proposed in Mishra and Mishra (2012).
+
+"
+"6","180 DR. Mishm et a1.
+8 8
+LB LB
+69 c|> c|>
+>4 §e §e
+[2 Q: Q:
+| +
+E a a
+53 7 7
+<l' <l'
+O 0
+SE SB
+0: Q:
+8 8
+. 00 00
+5 “f “f
+N o o
+g a :2
+<1- CD ”-1 Q: Q:
+_‘ E; E | +
+O '—‘ A A
+S m m
+(\l 0 Z # ﬂ
+4; '73 a [T [T
+C) 00 oo
+5 Ca\ Ca\
+on ""d 82 Se
+:3 g Q: 0:
+< m
+00 H
+N é
+to
+[Q 3
+[\ CD 8 8
+o a $ $
+4.. o
+“‘ 4P E E
+l—I VB VB
+% 8 m o: o:
+O a a I +
+3-1 m LU
+U o 2 @ @
+>» 2 E E
+v—O< LH | |
+E SE SE
+0) a Q: Q:
+5 cu
+H (A
+9—1 cu
+O a
+0&3 E2
+2 8 <3 G
+H <3 8 8
+O “3 ¢ ¢
+8 a: (Z; @2512
+3 m a M M
+< LL] | +
+'8 Q m A A
+“C CD >4 ‘5 ‘5
+CG Q m l\ l\
+>3 | |
+2 m 32 32
+a Se 82
+B 3 o: o:
+0 c6
+Q 3‘
+E
+m
+o
+H 63 63
+B 8 8
+m | |
+5 S S
+q :92 :92
+.2 O Q: Q:
+4—)
+g CE) Al 1-
+oo 8 8
+“a T T
+o S S
+0 5252
+""a Q: 0:
+c6
+m
+‘—: v—4
+H
+2 % U
+.9 o Q
+c6
+H 2 Z
+
+"
+"7","GIScience & Remote Sensing 181
+3.2. HICO image processing
+HICO images dated June, July, and August 2011 from the estuaries were downloaded as
+radiometrically calibrated Level 1B top-of—atmosphere (TOA) at-sensor radiances from
+the Oregon State University (OSU) website (http://hico.coas.oregonstateedu/index.shtml).
+The image was corrected to remove the effects of sun glint using the method described by
+Goodman, Lee, and Ustin (2008). In the Goodman et a1. approach, sun glint was
+eliminated by subtracting radiance at 750 nm from the radiance at each wavelength (Li).
+An offset (A) was applied to prevent negative values in the NIR due to overcorrection, as
+the corrected radiance approaches zero at 750 nm (Kay, Hedley, and Lavender 2009). The
+process to correct for sun glint was expressed as
+L101) : L101) — L(750) + A (1)
+E
+o
+(\l
+5%
+3:3 A : A + B[L(640) — L(750)] (2)
+:ng where, Li = wavelength radiance, L(750) = radiance at 750 nm, L(640) = radiance at 640
+{Q nm, A = offset, and A + B = constants. In this approach, we used the values of Goodman
+‘5 et a1., which are A = 0.000019 and B = 0.1.
+E?
+§
+8; 3.2.1. Atmospheric correction
+E Atmospherically corrected at-surface reﬂectances were retrieved from HICO images using
+2 the offshore (dark) pixel subtraction approach (Hadjimitsis et a1. 2012; Tuﬁllaro, Davis,
+J: and Jones 2011; Chavez 1988) to remove atmospheric effects. In this approach, atmo-
+COD) spheric effects are removed by determining the at-sensor radiance for a pixel in waters
+i)” offshore (LMOffShorQ) This “dark” pixel was characterized by spectra whose radiances
+3 were less “bright” than spectra within the estuary. These radiances are subtracted from the
+: total at-sensor radiance (Lt) for the image, leaving the residual estuary water-1eaVing
+ﬁ radiance (Lw(estuary)) (Chavez 1988; Miller and McKee 2004) as
+0)
+'5
+Li [4(1) : LaOL) ‘1’ T(l) [Lw(offshore)(/1) ‘1’ Lw(estuary) (1)] (3)
+B
+8 where LW (Offshore) is the dark water radiance and LMemary) is the bright water radiance.
+Two basic assumptions with this approach were that (1) the atmospheric radiances (La)
+were homogeneous across the scene such that aerosol size and type did not change over
+the distance from the dark pixel to the estuary pixels and (2) the amount of light in the red
+portion of the spectrum emanating from the surface waters of the offshore pixel was
+negligible. However, previous studies have shown that the second assumption was not
+entirely valid in coastal areas (Palandro 2006; Hadjimitsis et a1. 2012).
+The LMCSmary) values were converted to surface reﬂectance (pw) using (Hu et a1. 2004)
+pW : (71:LW(/1))/Focos6S (4)
+where LW(/1) = water-1eaVing radiance, F0 = mean solar irradiance, and (95 = solar
+zenith angle (degrees). Surface reﬂectance was converted to remote sensing reﬂectance
+Rrs(0 +, 2; sr_l) as follows (Hu et a1. 2004):
+
+"
+"8","182 DR. Mishra et al.
+Rrsm‘l’ﬂl) : pW/(n/to) (5)
+where pW = reﬂectance and t0 = diffuse transmittance from sun to pixel.
+The diffuse transmittance term was derived from (Hu et al. 2004)
+to : CXp[—0.5Tr/COS(9$] (6)
+where Tr = Rayleigh optical thickness (Hansen and TraVis 1974)
+= (0.0088(2)‘4-15+0-21)1 — eXp(—0.1188 >< altitude — 0.011 X altitude2) (7)
+E .
+a 3.2.2. Georeferencmg
+E HICO images were georeferenced using the Exelis Visual Information Solutions (ENVI;
+0:0 Exelis Visual Information Solutions, Inc., Boulder, CO, USA) software package, and
+< geometry information in the rad_geom ﬁle was associated with each image and projected
+ﬂ using geographic (spherical) coordinates (degree units) of longitude and latitude using
+a datum World Geodetic System (WGS) 1984. The Image-to-Map Registration feature of
+S ENVI was used to compare selected landmarks (e.g., bridges, airport runways) on a HICO
+3 image with those Viewed on a referenced ArcMap 10 geographic information systems
+% (GIS) image of the estuary of interest to identify ground control points (GCPs). Each
+{3 image was also warped and rotated in ENVI using ﬁrst degree RST (rotation, scaling, and
+3» translation) with the nearest neighbor resampling method and saved as a shapeﬁle. The
+E geoferenced and warped Rrs images were imported into the ENVI Regions of Interest
+1; (ROIs) features and overlain by GIS shapeﬁles created in ArcMap 10, which were
+<45 representative of study estuaries. Using the ENVI ROI tool, the georeferenced Rrs values
+00)!) at each pixel in the image were extracted (clipped) and the clipped values saved as ACSII
+g ﬁles for import into EXCEL.
+é
+>4
+3; 3.2.3. NDCI Cal/Val
+i‘: Two sets of calibration, linear and polynomial, were performed using HICO derived NDCI
+H2 and in Situ chl-a. Three sets of quantitative validation (hereafter NDCIQuantitative) were
+5 performed for two dates using the (1) HICO polynomial calibration coefﬁcients, (2) HICO
+Q linear coefﬁcients, and (3) polynomial calibration coefﬁcients provided in Mishra and Mishra
+(2012). The accuracy of the NDCI model was assessed by calculating the root-mean-square
+error (RMSE) of the predicted chl—a concentrations from the following equation:
+/ 2
+RMSE(Hg/L) = —(2 Chl ameaxei 1 Chl apredmd) (8)
+Accuracy was also determined from the coefﬁcient of determination, R2, between the
+measured chl—a values and predicted chl-a concentrations using linear regression analysis
+(Laws 1997). A qualitative validation (hereafter NDCIQuahtative) was also performed using
+the NDCI and chl-a range—concentration association developed by Mishra and Mishra
+(2012). Residuals for individual validation were calculated by subtracting estimated chl—a
+from actual chl-a. The most accurate validation was used to prepare the chl-a spatial
+
+"
+"9","GIScience & Remote Sensing 183
+distribution map for the two study sites for the three dates and compared With the
+corresponding NDCI maps.
+
+4. Results and discussion
+4.1. Analysis onyperSAS Rm
+Analysis of in Situ hyperspectral Rrs data collected using HyperSAS for PB 0n 2 June
+2011 revealed higher spectral variability between 600 and 700 nm compared to the blue
+and green wavelengths. The characteristic chl-a absorption at 675 and the algal scattering
+induced reﬂectance around 700 nm were not prominent due to the low chl-a concentra—
+tions in PB waters (max chl-a 0n 2 June: 12.8 Mg/L) (Figure 2). However, reﬂectance at
+675 and 700 nm did not saturate even at very low chl-a concentration, indicating the
+potential of NDCI as a predictive model. In addition, band selection testing was per—
+3 formed by calculating and plotting the standard error (STE) and coefﬁcient of determina—
+8 tion (R2) between reﬂectance at each wavelength (400—735 nm at 1 nm interval) and chl-a
+‘3 concentration (Figure 3). The wavelength range from 610 to 710 nm showed high R2 and
+:50 low RMSE, further establishing the fact that NDCI could be used to predict chl-a
+00 concentration in these waters.
+(\1
+V3
+1.“.
+[\
+f 4.2. NDCI Cal/Val using HyperSAS Rm
+CG
+? NDCI calibration using data simulated for various sensors, including HICO, showed a
+CI) . . . . . . .
+8 strong non—hnear ﬁt W1th measured chl-a values (Frgure 4). The nonhnearrty 1s mamly
+1; because of the minor saturation observed in the model for 10W chl-a ranging from 0—4 ug/L.
+E HyperSAS simulated HICO data showed the highest R2 compared to the other four sensors
+0)
+E 0.012 :—-
+O Rrs spectra using HyperSAS _ PB 02 Rrs
+0000 _ PB 03 Rrs
+é 660—710 nm is sensitive to only chI-a _ PB 04 Rrs
+O 0.01 ' .--- _ Re ion around 650 is con amina ed b Chano,
+B .' I 11. whgich is not a problem intthis ca:e beiause of — PB 05 R“
+>\. _'r _ _ lack of significant Cyano in study area — PB 06 Rrs
+£ . __ _ PB 07 Rrs
+8 pa- _ E....................E _ PB 08 Rrs
+.5 0.008 - \ 1. 5 E _ PB 09R
+C3 """"1 '""w. . ' : I rs
+1% % . 1._ . _ PB 11 Rrs
+.|'-""' I: 1!. . F.- : —
+D II: 0-005 1 .5211? 1' 1. ..,_ E _ PB 14 Rrs
+Eh {1-fllj-I-‘h‘r- l'.lll u.“- _ :- 12. : — PB 15 Rrs
+.. :11?“ 1"" ‘1‘— —_ '1 -. — PB 16 Rrs
+- 1'13! .K _ PB 17 Rrs
+0-004 = 5“? K __.. PB 18R
+_ ‘1'""ti , _ ,_ I 1 rs
+. -- fﬁg/ REE . '. _ PB 19 Rrs
+1/ "" R. ' — PBZORrs
+' _ _., -- ugh“ —-.- .- .11 _- PB 21 Rrs
+0'0” ref _ 1 ”“3- .¥-:."""".:ﬁ_ _ PB 22 Rrs
+. : '5-11-11""_ 11:?- .I PB 23 R
+E he; _- _. PB 24 Rrs
+I VE- PB 25 Rrs
+0 . . . . . . . . . . . . . . . .
+400 420 440 460 480 500 520 400 560 580 500 620 540 660 680 700 720 740 —' P326115
+Wavelength (nm)
+Figure 2. HyperSAS acquired remote sensing reﬂectance obtained from 24 sampling locations in
+Pensacola Bay on 2 June 2011. Color ﬁgures are available in the online version of this article.
+
+"
+"10","184 DR. Mishm et a1.
+Band selecﬁnn using HyperSAS data
+3 ' JuncuuuuuIIIunnu...-uuu...:uuuuuuuu: ' 1
+—5undmermr —— mintﬁdﬂarmmlﬂm
+- 0.3
+3 '
+m?
+g E
+E 1'5 ' - ME
+2 : ﬂ
+5 E E
+5. .. . - - [H
+5
+E I lnrlgarwavelérgﬂ'lhahﬂc'huiéé'fIE-iihiﬁt'f : I I - ""'3
+0 [law STE and hllh 5""] far :uaa-tal and —}§
+N EituaﬁnewatErs
+4—) ' :: E ' "".2
+g n.5- - g i
+g0
+. a E 0.1
+<
+oo E
+(\l a , _ _ _ _ Hr _ I!
+m m 15!} 50E 55E am 55D m 15D
+El}. Waﬂhnlthlnml
+[\
+o
+‘53 Flgure 3. Standard error and coefﬁment 0f determmatlon versus wavelength, showmg approprlate
+E bandwidth for chl-a prediction model.
+0
+3—4
+0
+.2“
+o
+m 14
+G) NDCI calibration
+.51
+4—)
+Jr.
+5 - cho R2=0.9821 X? a
+o a HYPERION R2=O.9786 3, / 12
+‘33 a MERIS R2=0.9144 F” I
+:0 a SENTINEL-Z R2=0.9683 x x f
+U u SENTINEL-3 R2=0.9191 / “ ' 10
+>» , //
+a
+8 :r
+\
+a / 8 5°
+.2 ' ?
+g 4 I l :>
+E 5 3
+O
+Q n I D a 5
+A 1|. El- . ﬂ
+/ 4
+a. l. i *3
+I__I_'_'_,_ 2
+-o.35 —o.3 -o.25 -o.2 —o.15 -o.1 -o.05 o
+NDCI value
+Figure 4. HyperSAS derived NDCI calibration for ﬁve simulated space-borne sensors dataset.
+A strong correlation was observed for all the sensors With HICO showing the highest R2.
+
+"
+"11","GIScience & Remote Sensing 185
+. 14
+Elf.
+I : 12
+Jig : 10
+K
+1:”? A
+51:: i 8 E
+ff ff s:
+Chlorophle-a (ug/L) = 55.976 (NDCI)+ 15.875 ,3 J; o
+R2=0.976 ff ,5“ E 6 §
+.9 6
+3 §
+8 {:5 Chlorophle-a(ug/L)=234.16(NDC|)2+137.96(NDC|)+22.223E 4
+”:73 lg}; R2=0.9821
+{31) 1 -____...--!,»
+:s _ _---- ,5 a 2
+< ,5
+oo .2""
+(\l ,5
+V3 I .
+ll) ' . 0
+l; —o.35 -o.3 -o.25 —o.2 —o.15 -o.1 -o.os o
+E NDClvalue
+CG
+E Figure 5. Performance comparison between linear and best-ﬁt (polynomial) calibrations using
+5 HyperSAS derived NDCI.
+2:
+E during calibration. In addition, the linear model based on simulated HICO data also
+2 performed very well with a R2 of 0.9 (Figure 5). When compared with Gitelson et al.’s
+<3: (2008) two-band model, the calibrations were similar for the simulated data from all sensors
+COD) with NDCI performing slightly better (Figure 6). However, the inherent advantage of using
+i)” NDCI over similarly performing models is its standardized output ranging from —1 to +1,
+3 which eliminates the need for new calibration each time the model is applied to water
+U . . . . . .
+: remote sens1ng data. Similar to NDVI, the range of chl-a concentration ass001ated With the
+ﬁ NDCI range, as proposed in Mishra and Mishra (2012), can be used to assess the chl-a
+,3 concentration for each pixel with known NDCI values. As an example, a qualitative
+E validation using HyperSAS derived NDCI is presented in this study (Table 2a). NDCI
+E was calculated from HyperSAS dataset, simulated for each sensor, and chl-a range for each
+8 sampling location was qualitatively predicted from the corresponding NDCI values
+(NDCIQuahtative). When compared with the measured chl-a, HICO and Hyperion simulated
+NDCI resulted in 100% accurate prediction (13 out of 13), Sentinel-2 simulated NDCI
+showed 92% accurate prediction (12 out of 13), and MERIS and Sentinel-2 simulated NDCI
+resulted in 85% accurate prediction (11 out of 13) (Table 2b). The accurate prediction of
+chl-a using NDCIQuahtaﬁve for remote areas, where ﬁeld data is limited, is a signiﬁcant
+improvement and potential alternative to currently existing, widely used, and fairly accurate
+two-band, three-band, and four—band prediction algorithms.
+
+Quantitative validation was also performed using the non-linear best-ﬁt coefﬁcients
+proposed in Mishra and Mishra (2012) (a0: 13.55, a1: 87.99, and a2: 212.609). The RMSE
+for chl-a prediction for all the simulated sensor data ranged between 2 and 3 ng/L
+(Table 3). This also proves the fact that the coefﬁcients proposed in this study can be
+readily used on NDCI images derived from any of these sensors to accurately predict chl-
+a concentration. This was expected because the NDCI calibration presented in Mishra and
+
+"
+"12","186 DR. Mishm et al.
+a HICO calibration b HYPERION calibration
+14 14
+12 - 12 .
+$0 10 - $1, 10 -
+3 R2 = 0.9821 R2 = 0.979 3 R2 = 0,9735 R2 = 0.977
+9 8 - 9 8 -
+;> -= ;>
+o. 5 ' o. 5 '
+e e
+O O
+E 4 ' E 4
+U ____ U ____
+2 :ﬁz-Band: 4' 2 :u-Z-Band: -
+I l p‘ I
+0 L1N29_I 0 LnNBg-m'
+—1 —0.8 —0.6 —0.4 —0.2 o 0.2 0.4 0.6 0.8 1 —1 —o.8 —o.6 —0.4 —0.2 0 0.2 0.4 0.6 0.8 1
+HICO index value HYPERION index value
+c MERIS calibration d SENTINEL—Z calibration
+v 14 14
+v—4
+8 12 - 12 '
+<5; :7 :7
+5 B 10 - ?o 10 _
+‘30 3— Rz = 03144 Rz = 0-913 3. R2 = 0.9683 R2 = 0.9674
+<5 3 8 . 9 8 .
+00 E 5 ' ﬂ 2
+S. 3 - . 3 6 '
+to E 4 - g 4 -
+l: U .____1 '4- 1:” U ____ i
+O 2 .aZ-Band. ' ﬂ 2 :az-Band: 1'
+E 0 L:N_DC_|_: O LiNDCI :
+E -1 -0.8 -0.6 —0.4 —0.2 0 0.2 0.4 0.6 0.8 1 -1 —o.8 -0.6 -0.4 —0.2 0 0.2 0.4 0.6 0.8 1
+8 MERIS index value SENTINEL—Z index value
+a e SENTINEL-3 calibration
+v3 14
+a .2 .
+a A
+H < 10 -
+<5 3° 32:0.9191 Rz=0.9176
+0) 9 8
+DD =>. ,
+.2 ﬁ 5 . °
+'8 e
+a e 4 -
+U ____ I d""
+E 2 :az-Band: - a.
+v5 'urNDCI :
+o 0 L---—
+""3 —1 —0.8 —0.6 —0.4 —0.2 0 0.2 0.4 0.6 0.8 1
+,2 SENTINEL-3 index value
+a
+B . . .
+o Flgure 6. Performance comparlson between NDCI and G1telson et al.’s (2008) two—band model
+Q using simulated data representing ﬁve space-borne sensors.
+Mishra (2012) included samples from Widely varying geographic area With highly diverse
+water quality parameters.
+4.3. Analysis ofHICO images
+An average of six GCPs were selected for each HICO image and resulted in pixel location
+With RMS errors that ranged from 0.7 to 3.2 In for CB HICO images and from 0.7 to
+2.8 m for PB HICO images.
+HICO images atmospherically corrected using the dark pixel subtraction approach
+ielded matchu s that ra hicall corres ended ve well With the H erSAS R
+1'8
+(Figure 7). This approach does not require sensor speciﬁc information for processing
+
+"
+"13","GIScience & Remote Sensing 187
+Table 221. Relationship between measured chl-a values and NDCI derived from simulated
+HyperSAS data.
+Chl-a HICO Hyperion MERIS Sentine1-2 Sentine1-3
+(measured) NDCI NDCI NDCI NDCI NDCI
+12.8 —0.078 —0.075 —0.125 —0.098 —0.119
+11.22 —0.094 —0.086 —0.141 —0.113 —0.134
+5.5 —0.174 —0.161 —0.224 —0.195 —0.218
+2.95 —0.231 —0.209 —0.277 —0.247 —0.270
+2.99 —0.224 —0.202 —0.272 —0.246 —0.266
+2.88 —0.202 —0.178 —0.238 —0.218 —0.232
+2.993333 —0.216 —0.194 —0.221 —0.214 —0.216
+2.153333 —0.292 —0.250 —0.248 —0.249 —0.243
+6.693333 —0.166 —0.149 —0.220 —0.184 —0.212
+E 5.02 —0.187 —0.170 —0.238 —0.205 —0.231
+g 3.16 —0.222 —0.202 —0.280 —0.246 —0.272
+4; 3.153333 —0.228 —0.207 —0.287 —0.253 —0.280
+an 2.54 —0.230 —0.208 —0.284 —0.254 —0.277
+:15
+ﬂ
+a Table 2b. Qualitative validation of HyperSAS derived NDCI.
+[\ —
+E Chl-a QualChlA QualChlA QualChlA QualChlA QualChlA
+?‘ (measured) HICO Hyperion MERIS Sentine1-2 Sentine1-3
+m —
+5 12.8 75—16 75—16 <7.5 7.5—16 <7.5
+% 11.22 75—16 75—16 <7.5 <7.5 <75
+6 5.5 <7.5 <7.5 <7.5 <7.5 <7.5
+§ 2.95 <7.5 <7.5 <7.5 <7.5 <75
+5, 2.99 <7.5 <7.5 <7.5 <7.5 <75
+‘5 2.88 <7.5 <7.5 <7.5 <7.5 <7.5
+0) 2.993333 <7.5 <7.5 <7.5 <7.5 <75
+3)“ 2.153333 <7.5 <7.5 <7.5 <7.5 <75
+6 6.693333 <7.5 <7.5 <7.5 <7.5 <75
+2 5.02 <7.5 <7.5 <7.5 <7.5 <75
+3» 3.16 <7.5 <7.5 <7.5 <7.5 <75
+'5 3.153333 <7.5 <7.5 <7.5 <7.5 <7.5
+“E: 2.54 <7.5 <7.5 <7.5 <7.5 <75
+0 —
+3 Note: QualChlA: Qualitatively predicted chl-a concentrations based on NDCI range taken from Mishra and
+g Mishra (2012).
+Q
+Table 3. The RMSE for chl-a prediction for the
+simulated sensor data using the non-linear best-ﬁt
+coefﬁcients proposed in Mishra and Mishra (2012)
+(210: 13.55, 211: 87.99, and 212: 212.609).
+Sensor RMSE (pg/L)
+HICO 2.41
+HYPERION 2.18
+MERIS 3.22
+SENTINEL-2 (MSI) 2.67
+SENTINEL—3 (OLCI) 3.09
+
+"
+"14","188 DR. Mishm et a1.
+0.010 — . - 0.000
+.E. 0000 PBM' Escamhla Bay PB 19: Redﬁsh £000
+0 - 0.000
+“0. I ‘ 0
+E 0.000 1. E 0.00?
+C .
+*0“: 0.00? 1 #3 0.005
+EU DUDE I.
+E 1 H103 '0: [1.005 ""
+E 0.005 33* 1
+0.1 0004 g 0.000 I 1..
+E ' f H u’: H
+0 2- 0.005 I 1,,
+3""“ 0.003 .r E g HyperSAS ""'
+“ 0
+g 0.002 _ E 0.000 1
+E ﬂﬂﬂl . I- E ELEIﬂl I""
+E I-
+D-ﬂﬂﬂ I II III II II I I-I I I - I-l III. I I- I- I II D h=TﬂTmanTWTFFITFWHTHTTITH
+Ll'! ""El"" 1""] El [J 0:] P'- LD ﬁr l'ﬂ 1-1 {:1- “'1 ﬁ' H D D W T“- U: ""r m H E
+v Eﬂ‘ﬁﬂﬁﬁﬁﬁﬂﬁﬂﬁ EQEEEEEEEEEE
+§ Wavelength {001} Wavelength {nm}
+4—)
+‘3 0010 0.000
+00 P505: Escambia Ba? 0010: Redfish CDUE
+5 0.000 0.000
+<3 3 ""' 3
+m 0 0.00::' g ’I
+m E 3 0.000 ‘
+l: 0 0.000 HICﬂ 0 0005
+o .
+45 a 0.005 H E ‘1
+? a 0.000 __ a 0.000 I -. a
+W :3- 1. :a—
+8 E 0.003 I I H. E H.093 I.-
+a E [1032 1 E ﬂﬂﬂl “
+'8 33:"" 0-001 1‘ 0 0.001
+m I- \-
+o 0.000 g
+a UHI ﬁ' |""’~I a D 00 l""- '-D ﬁ' 0"": H D ”'1 q- H ﬂ {3. m fa. u: cu- m H [:1
+<3: 300000000000 000000000000
+0 Wavelength {001} Wavelength [001:-
+G)
+00 0.000 . - 0.010
+,2 PB 21' Emmh'a 33“ 0014: Hedﬁsh E000
+'8 3 0-000 3 0.000
+B E 000::' E ”*003 I 1""
+3 H I Him E 0.00:r "" 1
+E 0.005 “0 I""
+“U E 1— i
+g ‘3 0005 ‘ “ﬂ D'ﬂﬂﬁ
+. E
+3 § 1. E 0.005 1
+E a ‘51-‘35“ ‘ ..,_ 0 0.000 -
+3 0.:
+o 3 0.005 I '4- ‘5 0.003 ‘0,
+Q G ,r “I E 1"""" 0..
+5 0.002 ‘- E “-393 """"
+(1.13131 ‘5 ﬂﬂﬂl a
+0.000
+n Ln 1': N CI Cf DD I'H LI: ""AT m H D
+LI"": ""51‘ H C! CI D5 I“- LD 151‘ m 1—l D D “'1 'LD U‘I W 'Rl' PH D ﬂ'l 1-D Eh N
+D h""!- LD 00 H 'ﬂ' I""- D h""!- '-D 00 F4 'EI' ~0- ﬁ' 'El' U1- U1 I.I""1 LE! 'Iﬂ 1D U5 1‘“-
+'|:l' 1': "":I' 1': LII""! LI'""I LII""! LEI LD- LD 1-D l""-
+Wavelength [nm] Wavelength {nm}
+Figure 7. Representative example of the spectral proﬁles processed using the dark pixel subtrac-
+tion approach from Pensacola Bay system retrieved the 2 June 2011 HICO (solid line) image and
+those collected using HyperSAS (dashed line).
+and corrects for mis—calibration and/or noisy data on a scene—by—scene basis. The correc—
+tion occurs because any inherent problems in the deep—water and near—shore spectral sets
+are removed through subtraction, leaving only the difference spectra. Sensor speciﬁc
+
+"
+"15","GIScience & Remote Sensing 189
+information is not required for this type of atmospheric correction because removing the
+contribution of atmospheric backscattering from the at—sensor radiance curve is not
+dependent on the precise location of spectral channels for water vapor and absorption
+features. The dark pixel subtraction approach could create an overcorrection which results
+in negative Rrs values in the blue portion of the spectrum (Moses et al. 2009; Palandro
+2006). To address this issue, an offset (avg. 0.003 sr_l) determined by Rrs values at 450
+nm was applied to the spectra for adjusting the reﬂectance values to yield positive values
+in the blue portion of the spectrum (Hu et al. 2004).
+
+The average atmospherically corrected HICO Rrs data were matched with the average
+HyperSAS Rrs for all sampling locations (Figure 8). The standard deviation of all Rrs data
+for both HICO and corresponding in Sim locations were also plotted on the average
+spectra. The shape of the atmospheric corrected HICO Rrs spectra showed a strong
+v similarity with the HyperSAS Rrs, particularly in the green wavelength (490—600 nm)
+§ portion. The maximum difference was observed in the blue wavelength (400—450 nm),
+4; which could be due to the error in the scattering estimation for short wavelengths. A
+go strong variability was observed in the HICO Rrs for the blue wavelength region, whereas a
+< similar strong variability was observed for the red/NIR portion of the in Sim Rrs. This
+g shows that the atmospheric correction procedure was not able to completely remove the
+a intense Rayleigh scattering generally detected in shorter wavelengths even after the
+‘5 application of the offset. The magnitude of variability that was observed for the red—
+‘6 NIR wavelength in the HyperSAS Rrs data was not manifested in the HICO Rrs data,
+E indicating a reduced sensitivity to in—water optically active constituents, mainly phyto—
+5 plankton, in HICO data (Figure 8).
+2:
+o
+m 0.01
+G)
+5 '- l i -
+D a a 1 1 i i :
+7"" 0.007 “vii 95‘ 11.5. J ‘ ; : g 'T, —AverageinsituRrs
+>» v. ?52111” .5,”
+ﬁ I 17"";
+8 Le J‘s? vi iIEJHT-.-
+: v: ;-.r.r :1
+2 g 1 -:Ti!lf;t'
+a $0005 11""111EiiITh_
+E 9 . *E::=i:‘-’:=i.*t1='h.
+a3 1 Erisiai:ii WW?
+5 l “:-:-:i-:i:..'Hliu
+m0.00355555:5}1:3:555£ Li'l'ii-lw-l"":
+.11
+1,:.5:.::::..:...§._;
+o.cozéiégggiivair JHH:J'-1‘
+0001 ‘iaiﬂ‘:
+0400 430 460 490 520 550 580 610 640 670 700 730
+Wavelength (nm)
+Figure 8. Comparison between atmospherically corrected HICO Rrs and HyperSAS Rrs averaged
+over 24 sampling locations for 2 June 2011. Dashed vertical lines represent the standard deviation of
+respective datasets.
+
+"
+"16","190 DR. Mishra et al.
+I
+12
+EL""
+/ 10
+1::-
+.5?
+E ChlorophyII-a (ug/L) = 99.889 (NDCIHICO)+20.661 ,5?-
+3 R2=0.9052 If E 3
+2 2'"" x“!
+z .4”
+8' I s“
+_3 f 6
+5 . -
+y /
+<r ,x’
+§ ffx/ ChlorophyII—a (ug/L) = 847.38 (NDCIHICO)2+338.86 (NDCIHICO)+36.493 4
+463. _ _:J/ ' R2=O.9641
+a "" r-
+5 f/ 2
+< 3.x
+OO
+(\1
+tn 0
+H“. -o.25 —o.2 —o.15 —o.1 —o.05 o
+[\
+O NDCI
+E?
+3' Figure 9. Performance comparison between linear and best-ﬁt (polynomial) calibrations using
+§ HICO derived NDCI.
+U
+>»
+E 4.4. NDCI Cal/Val using HICO data
+35 Linear and best—ﬁt (polynomial) calibrations were performed using HICO derived NDCI
+<3: on 2 June 2011 and the chl-a values for the corresponding pixels (Figure 9). The two
+C3 calibrations performed strongly with R2 of 0.90 for linear and 0.96 for polynomial.
+i)” Very similar results were also observed during the HyperSAS derived NDCI calibration
+3 (Figure 5). Linear calibration performed poorly compared to the polynomial calibration
+: because of a slight saturation observed for HICO NDCI values at very low chl-a
+ﬁ concentrations. Mishra and Mishra (2012) noted that NDCI values will be positive
+g when chl-a concentration exceeds 16 pg/L. This was evident in the calibration, where
+E NDCI values were all negative because the chl-a range was <16 pg/L at any location for
+E both study sites (Figure 9).
+8 Validations were performed on an independent dataset, i.e., on the HICO image
+acquired on 26 August 2011 (Figure 10). Three types of NDCIQuantitative validations were
+carried out: (1) using the polynomial calibration on 2 June HICO dataset (Figure 10a), (2)
+using the linear calibration on 2 June HICO dataset (Figure 10b), and (3) using the
+polynomial calibration coefﬁcient provided in Mishra and Mishra (2012) (Figure 100).
+Among the three, the validation using the coefﬁcients taken from Mishra and Mishra
+(2012) performed best with an R2 of 0.74, RMSE of 1.64 pg/L, and the highest slope of
+the validation trend line of 0.52. The validations using the polynomial and linear coefﬁ-
+cients derived from 2 June HICO calibration performed relatively poorly with RMSE of
+4.98 and 4.1 pg/L, respectively. The accuracy of these validations suffered from the large
+deviations observed at low chl-a concentrations during calibration. In all cases, the slope of
+the validation trend line was observed to be far off from 1:1 line, particularly for the
+calibrations using the 2 June HICO data. The validation using the previously published
+calibration coefﬁcients from Mishra and Mishra (2012) performed surprisingly well even at
+
+"
+"17","GIScience & Remote Sensing 191
+a b
+20 g, 16 _
+1- ffﬂ ._ 4'""!!!
+318 I 1:1Line fr go 14 1:1 Line If!
+316 . fr”! 3— 12 I _ H___-—.
+E 14 ,5“. _9 - ______}7s*5"""".
+D- __----"" n. x'
+e 10 _ ____:__.---F"" If” e 8 _ Hr""? Linear calibration
+E 8 H I 16""” Polynomialcalibration % .f’f'f y=0.2§98x+8.2522
+; . Ex"" y=0.42228x+7.5379 ; 6 ff“ RMSE==402116177(?1g/L)
+f3 6 Hf: ' RMSg==4(.)éi;158(ig/L) 33 4 4""""
+B 4- 6 .4”
+E 2 - ff! E 2 I__.-""""H-l
+06' '2 4 6 8 1'0 12 14 16' 16 20 06'“ 2 4 '6 6 10 12 14 16
+Measured chlorophyll-a (ug/L) Measured chlorophle-a (ug/L)
+c 16 d 10
+E g”; I .Polynomial calibration (Mishra and Mishra 2012)
+o :14 . 1:1Line ff! 8 : IP.o|ynomi.:;1|calibration
+(\l h ﬁx I I LInear callbratlon
+$73 3—12 f 6 :
+ED .9 ’ J 4 I
+— 10 r"" fr” 2
+<5 s; f..€:,.--e"""" g 2 i“ u
+a E 8 - . '---;:lf‘::__:._-____.a-' (_Uu'l o I I I .-
+m '5 5 133;;- 5 _2 I13 14 I 1 7 6
+[(3, g f’HPo-lynorhial calibration (Mishra and Mishra 2012) 8 I
+l\ g 4 ' y=0.5241x+3.4539 '3 —4 =
+O 2 fr R2=0.7413 I
+‘5 c1 2 f/ RMSE=1.641(ug/L) —6 I
+? 0 g"" —8 i
+8 o 2 4 6 8 1o 12 14 16 _10 '
+6‘ Measured chlorophyII-a (ug/L) Measured chlorophyII-a (ug/L)
+>»
+E Figure 10. Validation of HICO NDCI model (a) using coefﬁcients from polynomial calibration, (b)
+4) using coefﬁcients from linear calibration, (c) using coefﬁcients from polynomial calibration pro-
+8 posed by Mishra and Mishra (2012), and (d) residuals 0f the three calibrations.
+9—4
+0
+G)
+‘33 low chl-a concentrations; however, the slope deviated from 1:1 line because of the relatively
+3 large prediction errors at high chl-a values. The residuals, particularly for the validation
+: using the Mishra and Mishra (2012) calibration coefﬁcients, did not show any signiﬁcant
+ﬁ pattern of over or under estimation (Figure 10d).
+% In addition, another set of NDCIQuantitative validations were performed on both 2 June
+:3 and 26 August HICO data using the linear and polynomial coefﬁcients derived from the
+g HyperSAS calibration, i.e., from HyperSAS Rrs versus chl-a (as given in Figure 5). This
+8 was performed to test whether in Sim NDCI calibration performs better than HICO
+calibrations and whether it can be used to predict chl-a from HICO data. The RMSE
+errors for 2 June image validations were 2.6 ng/L for linear and 1.96 ug/L for polynomial
+model (Figure 11a). The RMSE errors for 26 August image validations were more than
+the 2 June image validations with 3.76 ng/L for linear and 4.22 ug/L for polynomial
+model (Figure 11b). However, in both cases the in Sim calibrations provided better
+predictions for chl-a with slopes of the 2 June validation trend line closer to the 1:1
+1ine compared to the HICO calibrations (HICO linear RMSE: 4.1 ng/L vs. in Sim linear
+RMSE: 3.76 ng/L; and HICO polynomial RMSE: 4.98 ng/L vs. in Sim polynomial
+RMSE: 4.22 pg/L) (Figures 9 and 10). This could be due to two factors: (1) error
+observed in the atmospheric correction algorithm in the red—NIR wavelength and (2)
+reduced sensitivity in HICO data to changing chl-a concentrations in red—NIR wave—
+lengths (Figures 7 and 8). Comparing all the validations, it was clear that the polynomial
+coefﬁcients given in Mishra and Mishra (2012) provided the best predictive accuracy for
+
+"
+"18","192 DR. Mishra et al.
+a 14 E, b 16
+2June 2011 1.1L._,r’-‘ 26August 202:1 HE
+E 12 l '3? E 14 : ine ff
+3 24'9”!” 3 12 a a ' 1:/ a
+3 10 Insitucalibration(linear) /' E '"" E __ '/. u_ f
+E 8 1, y=tzézsgge£$4962 / g 10 Ma""; ' J,
+8- ‘ RMSE=2.605(ug/L) ' ' I I. lnsitu calibration(po|ynomia|) 8- 1': ”I I
+E) : «EMF. y=0.668x+3.2398 :3 8 In situ calibration(|in:ar) 3 - In situ:igiggaztjioigpgiysgomial)
+.5 5 a .3/“1 ,r' n R2=0.9419 g y=0.1456x+ 8.8463 _ n y '2_ X '
+1: l 3, 1,46"" RMSE=1.961(ug/L) .5 5 R2=0.1176 y; n RMS’ng'zlzlffug/L)
+3 4 . 3 RMSE=3.765(ug/L). - _ _ _ ' _
+.2 1 If Polynomial calibration (Mishra and Mishra 2012) .2 4 _.-r/ Polynomlal callliratlon (Mlshra and Mlshra 2012)
+3 Hr"" y=o.2§88x+as3.8408 g If!“ y-0-22233x7ﬁ-34539
+n' 2 / RMSS==1?Agg?iﬁg/L) °' 2 f/ RMSE=1..641(ug/L)
+o / o """"3
+02468101214 0246810121416
+Measured chlorophyII-a (ug/L) Measured chlorophyll-a (ug/L)
+c 10 d 10
+“menu 25 Au us 2011
+v 8 8 g t
+- o nomia cai ra ion is ra an is ra A IPol nomialcalibra ion(Mishra and Mishra 2012)
+‘63 E 4 lineal)"" T"" d“ h ”12’ < 4 :5: 5:: 22:23:32: :11:fome
+EL) 50 2 i ' InSItucaIIbratIon(polynomlal) 3 2 I I
+<5 (20 0 J - IE _ 7‘: o I I Ir II
+00 §_21314l""!s‘e i‘!'§_21314II-III II! I I
+(\l g E2
+to ‘4 ‘4
+V3
+g -6 -6
+4—3 —8 —8
+‘3 —10 —1o
+'3' Measured chlorophyll-a (ug/L) Measured chlorophyll-a (ug/L)
+CI]
+0
+63 Figure 11. Validation of HyperSAS NDCI model: (a) comparison between three calibrations on 2
+23 June data, (b) comparison between three calibrations on 26 August data, (c) residual comparison
+é between three validations on 2 June data, and (d) residuals comparison between three validations on
+o 26 August data.
+4:
+q.)
+<4—4
+0
+Eu
+2 HICO—based chl-a concentration. This demonstrates the robustness of the calibration
+8 coefﬁcients given in Mishra and Mishra (2012) which were derived from a calibration
+: dataset comprising of wide geographic settings and water quality parameters. Once again,
+ﬁ the residuals, particularly for the validation using the Mishra and Mishra (2012) calibra—
+wqé tion coefﬁcients, did not show any pattern of over or under estimation for both dates
+H: (Figure 110 and d).
+B NDCIQualitative validations were also performed on the HICO images for the two dates (2
+o . . .
+Q June and 26 August) (Table 4a and b). HICO NDCI for each sampling location was ass1gned a
+chl-a concentration range based on the NDCI and chl-a relationship provided in Table 6 of
+Mishra and Mishra (2012). Qualitative predictions were then compared with the measured
+chl-a and quantitatively predicted chl-a using the best model. For the 2 June HICO data, only
+one location received wrong estimation with 92% accuracy in chl-a prediction (Table 4a). For
+the 26 August HICO data, three locations received wrong estimation with 77% accuracy in
+chl-a prediction (Table 4b). These ﬁndings were consistent with the quantitative validations
+for the two dates, where 26 August validation produced higher RMSE error compared to the 2
+June validation (as given in Figure 10a and b). The NDCIQuahtative validation consistently
+performed very well during both HyperSAS and HICO validation process revealing the utility
+of NDCI for water quality research and for monitoring waters at locations with limited ﬁeld
+observations. This important outcome provided an alternative toward traditional empirical
+algorithm approaches for water quality monitoring.
+
+"
+"19","GIScience & Remote Sensing 193
+Table 4a. Qualitative validation of NDCI 0n 2 June HICO image.
+2 June 2011
+NDCI Measured chl-a Predicted chl-a (best model) Qualitative prediction of chl-a
+—0.028 12.80 11.22 7.5—16
+—0.030 11.22 11.10 <7.5
+—0.146 5.50 5.23 <7.5
+—0.160 2.95 4.90 <7.5
+—0.159 2.99 4.93 <7.5
+—0.195 2.88 4.48 <7.5
+—0.180 2.99 4.60 <7.5
+—0.211 6.69 5.48 <7.5
+—0.158 5.02 4.96 <75
+3 —0.175 3.16 4.66 <75
+3 —0.185 3.15 4.55 <75
+”:73 —0.178 2.54 4.63 <75
+5 —
+b1)
+:s
+<
+g Table 4b. Qualitative validation of NDCI 0n the 26 August HICO image.
+[A —
+E 26 August 2011
+15 NDCI Measured chl-a Predicted chl-a (best model) Qualitative prediction of chl-a
+m —
+§ —0.045 12.75 10.04 75—16
+O —0.026 14.38 11.43 7.5—16
+7:“ —0.113 6.77 6.32 <7.5
+I —0.095 5.99 7.13 7.5—16
+g —0.128 5.19 5.79 <75
+5: —0.111 5.61 6.40 <75
+0 —0.080 4.82 7.88 75—16
+83 —0.109 5.80 6.49 <7.5
+g —0.063 9.24 8.83 75—16
+8 —0.140 7.19 5.40 <7.5
+: —0.091 6.05 7.31 7.5—16
+9 —0.142 6.05 5.35 <75
+'8 —0.112 5.24 6.36 <75
+'3 —
+2
+E
+8 4.5. NDCI map composites analysis
+Maps of color-coded NDCI and chl-a distribution for PB and CB were prepared for the
+three available HICO images and compared (Figure 12). Although a strong correspon-
+dence in spatial distribution was observed between NDCI and chl-a in all the three cases,
+the same correspondence did not hold true Visually. That is because of the narrow range of
+chl-a concentration (low level) found in the study area. The same was evidenced in the
+NDCI range which was 0.027 to —0.258 for June and —0.009 to —0.221 for August in PB
+data and 0.126 to —0.174 for July in CB data. This low range of NDCI yielded three
+corresponding ranges of chl-a concentration and hence the three color codes in the maps
+(Table 4a and b). Therefore, even with a strong quantitative correspondence between
+NDCI and chl-a values, the Visual correspondence was minimal (Figure 12). Higher
+NDCI resulted in higher chl-a concentration and, these areas were mainly situated in
+the northern PB and eastern CB areas at the river mouths. Chl-a levels were slightly
+
+"
+"20","194 DR. Mishm et a1.
+”“5““: 5'3““! 2M1} "" Pensacola BaHJune 2M1] w ""
+Ham 5 “if"" chlorophynamgm} ""‘2'""
+\ _-:;: a -.
+"" 5
+1»- ..
+. -' NDBI ChI-allugM
+5.52? 15.12
+5 5 15 25 I a 5 15 :55 I
+—=—i:m 41.255 _=—Hm 5,45
+<1- "" ""
+,_4 cu in n tch a J | 21111 5 Ehumwhatchn Bay [July 2D?” H
+g m: w a EEC?“ “y I f EhlnmphyII-alunm ""j“
+‘55
+5
+DD
+00 f ' ""' . 1 . - r
+N . . _. ---'-'.-- .--- - ' --- _ .
+[Q ""-."":'-;_T-I-.: -' ' _ .. : .'[_-"" ' .: -1
+S '“ J - ~ _'E- 4*
+E;
+E
+O Ghl-a u L
+{3 HDGI 5.125 I 921955
+3» 5 5 15 25 I 5 5 m 25 I
+a _Z—hm 4L1“ —=—|Lrn 4.5?
+F' I E A t 1511 "" Fanmcola Ear {huwnt 2M1]: ""
+é: unﬁt“ 335%.qu 1' “if"" cnlumpnyH-atugm Hf“
+5.4 .
+O . - .. -
+2 -r.: .. ._
+B "" VT -.-..
+>5 '...'__-'::_ .-—. . .a ‘._-'-:I . 2.3: r_'-.
+o . -. . .. '
+CG .' :I I . ._ ."" I _ _ _ .-.-' . . _—-_ -.-.""- . r.__ _. __I -. . _.
+2 "" _...._ __ ' * ' ' _
+§ . ..-. "" ' Hum : -..- ' ' ' Ghl-a {""51}
+8 _ . ' - 4.555 12:4
+5 5 15 25 I 5 5 ii] 25 I
+-=—'“'""I 41.121 —=—krn 1.45
+Figure 12. Comparison between NDCI and chl-a distribution maps derived for three dates for the
+two study sites. A strong quantitative correspondence was observed between NDCI and chl-a
+concentration.
+higher in June compared to August for the PB. Chl-a concentration levels from CB in July
+were much higher compared to PB in either June or August. Overall, the chl-a levels for
+both study sites were relatively low compared to most of the estuarine systems in south-
+east United States. Maps of spatial distribution of chl-a using NDCIQualitaﬁve were not
+prepared because the low concentration of chl-a at both sites on the three dates would
+have resulted in only two color-coded classes in the images.
+
+"
+"21","GIScience & Remote Sensing 195
+5. Conclusion
+It is eVident from the above analysis that NDCI can be effectively used as a qualitative
+and quantitative chl-a monitoring tool. In addition, the need for site-speciﬁc validation
+may be reduced when using the NDCI qualitatively. The calibration coefﬁcients and the
+relationship between NDCI and chl-a range proposed in Mishra and Mishra (2012)
+performed well on both HyperSAS and HICO datasets for the two new study sites.
+NDCI-based water quality mapping can be used on various satellite sensors such as
+HICO, Hyperion, MERIS, Sentinel 2, and Sentinel 3 or any other future sensors with
+the necessary bands available. We have successfully tested NDCI on waters with rela-
+tively low to moderate chl-a concentrations (2 to <15 ng/L). Therefore, it can be
+concluded that NDCI is able to map the spatiotemporal variability of phytoplankton
+distribution accurately for a wide variety of waters starting from low chl-a (<7.5 ug/L)
+3 open ocean to moderate chl-a (7.5—25 ug/L) near-costal to high chl-a (25—50 ug/L) inland
+8 water to extremely high chl-a (>50 ug/L) agricultural ponds such as catﬁsh pond waters.
+E This research also shows for the ﬁrst time that HICO is an excellent high spectral
+0;) resolution sensor for periodic mapping of chl-a in coastal waters. Because satellite-based,
+: hyperspectral data have been rarely available for scientiﬁc investigations, HICO has the
+([2 potential to be a valuable monitoring tool due to its high spectral and spatial resolutions
+l0, and corresponding ability to obtain spectral data near the land—water interface, where
+[5 water quality managers continue to focus and humans may have the high probability of
+E interacting with the aquatic environment.
+CD
+8
+63
+7: Acknowledgments
+% We acknowledge Richard Gould from the Naval Research Laboratory for assisting in the collection
+5 0f HICO imagery. George Craven, Jessica Aukamp, Brandon Jarvis, and Diane Yates assisted in
+‘5 sample .collection, elata processing, and data management. Igor Ogashawara and Ike Astuti assisted
+0) 1n the 11terature reV1ew.
+‘33 The Views expressed in this article are those of the authors and do not necessarily reﬂect the
+:0 views or policies of the US Environmental Protection Agency. Mention of trade names or commer-
+B cial products does not constitute endorsement or recommendation for use.
+3‘
+“G
+g
+3 Funding
+E The information in this document has been funded in part by the US Environmental Protection
+8 Agency Ofﬁce of Research and Development and an EPA Pathﬁnder Innovation Project.
+References
+Ammenberg, P., P. Flink, T. Lindell, D. C. Pierson, and N. Strombeck. 2002. “Bio—Optical
+Modelling Combined with Remote Sensing to Assess Water Quality.” International Journal
+OfRemote Sensing 23 (8): 1621—1638. doi:10.1080/01431160110071860.
+Bianchi, T. S., J . R. Pennock, and R. R. Twilley. 1999. Biogeachemistry Oqulfanexica Estuaries.
+New York: John Wiley & Sons.
+Chavez, P. 1988. “An Improved Dark-Object Subtraction Technique for Atmospheric Scattering
+Correction of Multispectral Data.” Remote Sensing of Environment 24 (3): 459—479.
+doi:10.1016/0034-4257(88)90019-3.
+Chen, S., L. Fang, H. Li, W. Chen, and W. Huang. 2011. “Evaluation of a Three-Band Model for
+Estimating Chlorophyll-a Concentration in Tidal Reaches 0f the Pearl River Estuary, China.”
+ISPRS Jaurnal 0f Phatagrammetrjy and Remote Sensing 66 (3): 356—364. doi:10.1016/j.
+isprsjprs.2011.01.004.
+
+"
+"22","196 DR. Mishm et a1.
+Corson, M. R., J. H. Bowles, W. Chen, C. 0. Davis, K. H. Gallelli, D. R. Korwan, P. G. Lucey, T. J .
+Mosher, and R. Holasek. 2004. “The HICO Program — Hyperspectral Imaging of the Coastal
+Ocean from the International Space Station.” Geoscience and Remote Sensing Symposium,
+2004. IGARSS ’04. Praceedings. 2004 IEEE Internatianal 6: 4184—4186. doi:10.1109/
+IGARSS.2004.1370057.
+Dall’OlmO, G., A. Gitelson, and D. C. Rundquist. 2003. “Towards a Uniﬁed Approach for Remote
+Estimation of Chlorophyll-a in Both Terrestrial Vegetation and Turbid Productive Waters.”
+Geaphysical Research Letters 30 (18): 1938—1941. doi:10.1029/2003GL018065.
+Devlin, M., S. Brieker, and S. Painting. 2011. “Comparison of Five Methods for Assessing Impacts
+of Nutrient Enrichment Using Estuarine Case Studies.” Biogeochemistrjy 106: 177—205.
+doi:10.1007/510533-011-9588—9.
+EPA. 2012. National Coastal Candition Report I V. Washington, DC: Ofﬁce of Water. EPA-842-R-
+10-003.
+Ferreira, J. G., J. H. Andersen, A. Borja, S. B. Bricker, J. Camp, M. C. Silva, E. Garcés, et a1. 2011.
+“Overview of Eutrophication Indicators to Assess Environmental Status Within the European
+3 Marine Strategy Framework Directive.” Estuarine, Coastal and Shelf Science 93: 117—131.
+a d0i:10.1016/j.ecss.2011.03.014.
+‘63 Gilerson, A. A., A. A. Gitelson, J. Zhou, D. Gurlin, W. Moses, 1. Ioannou, and S. A. Ahmed. 2010.
+€13 “Algorithms for Remote Estimation of Chlorophyll-a in Coastal and Inland Waters Using Red
+:3 and near Infrared Bands.” Optics Express 18 (23): 24109—24125. doi:10.1364/OE.18.024109.
+oo Gitelson, A. A., G. Dall’Olmo, W. Moses, D. C. Rundquist, T. Barrow, T. R. Fisher, D. Gurlin, and
+(l: J . H012. 2008. “A Simple Semi-Analytical Model for Remote Estimation of Chlorophyll-a in
+[(3. Turbid Waters: Validation.” Remote Sensing of Environment 112: 3582—3593. doi:10.1016/j.
+‘5 rse.2008.04.015.
+E; Gitelson, A. A., B. C. Gao, R. R. Li, S. Berdnikov, and V. Saprygin. 2011. “Estimation of
+E Chlorophyll-a Concentration in Productive Turbid Waters Using a Hyperspectral Imager for
+g the Coastal Ocean—The Azov Sea Case Study.” Environmental Research Letters 6: 024023—
+0 0244029. doi:10.1088/1748-9326/6/2/024023.
+%‘ Gitelson, A. A., D. Gurlin, W. Moses, and T. Barrow. 2009. “A Bio—Optical Algorithm for the
+m Remote Estimation of the Chlorophyll A Concentration in Case 2 Waters.” Environmental
+g Research Letters 4: 045003—045008. doi:10.1088/1748-9326/4/4/045003.
+(j: Gons, H. J ., M. T. Auer, and S. W. Efﬂer. 2008. “Meris Satellite Chlorophyll Mapping of
+O Oligotrophic and Eutrophic Waters in the Laurentian Great Lakes.” Remote Sensing of
+€13 Envimnment 112 (11): 4098—4106. doi:10.1016/j.rse.2007.06.029.
+g Goodman, J. A., Z. Lee, and S. L. Ustin. 2008. “Inﬂuence of Atmospheric and Sea-Surface
+8 Corrections 0n Retrieval of Bottom Depth and Reﬂectance Using a Semi-Analytical Model:
+: A Case Study in Kaneohe Bay, Hawaii.” Applied Optics 47: F1—F11. doi:10.1364/
+£ AO.47.0000F1.
+'8 Gould, R. W., R. A. Amone, and M. Sydor. 2001. “Absorption, Scattering, and Remote Sensing
+Pg Reﬂectance Relationships in Coastal Waters: Testing a New Inversion Algorithm.” Journal of
+% Caastal Research 17 (2): 328—341.
+B Hadjimitsis, D. G., D. J. Hadjimitsis, A. Retalis, and N. Chrysoulakis. 2012. “Development of a
+8 New Image Based Atmospheric Correction Algorithm for Aerosol Optical Thickness Retrieval
+Using the Darkest Pixel Method.” Journal of Applied Remote Sensing 6: 063538—063550.
+doi:10.1117/1.JRS.6.063538.
+Han, L., and K. J. Jordan. 2005. “Estimating and Mapping Chlorophyll-A Concentration in
+Pensacola Bay, Florida Using Landsat ETM+ Data.” International Journal ofRemote Sensing
+26: 5245—5254. doi:10.1080/01431160500219182.
+Hansen, J . E., and L. D. Travis. 1974. “Light Scattering in Planetary Atmospheres.” Space Science
+Reviews 16: 527—610. doi:10.1007/BF00168069.
+Hu, C., Z. Chen, T. D. Clayton, P. Swarzenski, J . C. Brock, and F. Muller—Karger. 2004.
+“Assessment of Estuarine Water-Quality Indicators Using MODIS Medium-Resolution Bands:
+Initial Results from Tampa Bay, FL.” Remote Sensing of Environment 93: 423—441.
+doi:10.1016/j.rse.2004.08.007.
+Huang, W., D. Mukherjee, and S. Chen. 2011. “Assessment of Hurricane Ivan Impact on
+Chlorophyll-a in Pensacola Bay by MODIS 250m Remote Sensing.” Marine Pollution
+Bulletin 62: 490—498. doi:10.1016/j.marp01bu1.2010.12.010.
+
+"
+"23","GIScience & Remote Sensing 197
+Kabbara, N., J . Benkhelil, M. Awad, and V. Barale. 2008. “Monitoring Water Quality in the Coastal
+Area of Tripoli (Lebanon) Using High-Resolution Satellite Data.” ISPRS Journal of
+Photogrammetrjy & Remote Sensing 63: 488—495. doi:10.1016/j.isprsjprs.2008.01.004.
+Kay, 8., J. D. Hedley, and S. Lavender. 2009. “Sun Glint Correction of High and Low Spatial
+Resolution Images of Aquatic Scenes: A Review of Methods for Visible and Near—Infrared
+Wavelengths.” Remote Sensing 1: 697—730. doi:10.3390/r51040697.
+Kenner, W. E., E. R. Hampton, and C. S. Conover. 1971. Average Flow of Major Streams in
+Florida, Map Series Number 34 (updated). US Geological Survey in cooperation with the
+United States Department of the Interior, Washington, DC, and the Florida Department of
+Natural Resources, Bureau of Geology, Tallahassee, FL.
+Laws, E. 1997. Chapter 4- Made] 11 Linear Regressian. Mathematical Methads far
+Oceanographers. New York: John Wiley & Sons.
+Le, C., Y. Li, Y. Zha, D. Sun, C. Huang, and H. Lu. 2009. “A Four-Band Semi-Analytical Model for
+Estimating Chlorophyll A in Highly Turbid Lakes: The Case of Taihu Lake, China.” Remote
+Sensing OfEnvirOnment 113: 1175—1182. doi:10.1016/j.rse.2009.02.005.
+3 Le, C., Y. Li, Y. Zha, D. Sun, C. Huang, and H. Zhang. 2011. “Remote Estimation of Chlorophyll A
+8 in Optically Complex Waters Based on Optical Classification.” Remote Sensing ofEnvimnment
+12’ 115 (2): 725—737. doi:10.1016/j.rse.2010.10.014.
+€13 Messina, J . 2004. “A Complex Systems Approach to the Spatial and Temporal Simulation of Florida
+:3 Bay Algal Communities.” Giscience and Remote Sensing 41 (3): 228—243. doi:10.2747/1548-
+00 1603413228.
+E: Miller, R. L., and B. A. McKee. 2004. “Using MODIS Terra 250 M Imagery to Map Concentrations
+[(3. of Total Suspended Matter in Coastal Waters.” Remote Sensing ofEnvironmem 93: 259—266.
+[5 doi:10.1016/j.rse.2004.07.012.
+E; Mishra, S., and D. R. Mishra. 2012. “Normalized Difference Chlorophyll Index: A Novel Model for
+E Remote Estimation of Chlorophyll-a Concentration in Turbid Productive Waters.” Remote
+8 Sensing OfEnvirOnment 117: 394—406. d0i:10.1016/j.rse.2011.10.016.
+U Mobley, C. D. 1999. “Estimation of the Remote-Sensing Reﬂectance from Above-Surface
+%‘ Measurements.” Applied Optics 38: 7442—7455. doi:10.1364/AO.38.007442.
+m Moses, W., A. A. Gitelson, S. Berdnikov, V. Saprygin, and V. Povazhnyi. 2012. “Operational Meris—
+2 Based Nir-Red Algorithms for Estimating Chlorophyll-a Concentrations in Coastal Waters —
+(j: The Azov Sea Case Study.” Remote Sensing of Environment 121: 118—124. doi:10.1016/j.
+O rse.2012.01.024.
+83 Moses, W. J ., A. A. Gitelson, S. Berdnikov, and V. Povazhnyy. 2009. “Estimation of Chlorophyll-a
+g Concentration in Case 11 Waters Using MODIS and MERIS Data—Successes and Challenges.”
+8 Enviranmental Research Letters 4: 045005—045013. doi:10.1088/1748-9326/4/4/045005.
+: Muller—Karger, F. E. 1992. “Remote Sensing of Marine Pollution: A Challenge for the 19905.”
+Q Marine Pallutian Bulletin 25: 54—60. doi:10.1016/0025-326X(92)90186-A.
+'8 NOAA. 2008. Gulf of Mexico at a Glance. Washington, DC: US Department of Commerce,
+’3 National Oceanic and Atmospheric Administration.
+% O’Reilly, J . E., S. Maritorena, D. Siegel, M. O’Brien, D. Toole, B. Greg Mitchell, and M. Kahru.
+B 2000. “Ocean Color Chlorophyll-a Algorithms for SeaWiFS, 0C2, and 0C4: Version 4.” In
+8 SeaWiFS Past launch Calibratian and Validatian Analyses, Part 3. NASA Tech. Memo. 2000-
+206892, 11, edited by S. B. Hooker and E. R. Firestone, 9—23. Greenbelt, MA: NASA Goddard
+Space Flight Center.
+Palandro, D. A. 2006. “Coral Reef Habitat Change and Water Clarity Assessment (1984— 2002) for
+the Florida Keys National Marine Sanctuary Using Landsat Satellite Data.” PhD diss.,
+University of South Florida.
+Schaeffer, B. A., J. D. Hagy, R. N. Conmy, J. C. Lehrter, and R. Stumpf. 2012. “An Approach to
+Developing Numeric Water Quality Criteria for Coastal Waters Using the Seawifs Satellite Data
+Record.” Environmental Science and Technalogy 46: 916—922. doi:10.1021/es2014105.
+Stumpf, R. P., M. E. Culver, P. A. Tester, M. Tomlinson, G. J . Kirkpatrick, B. A. Pederson, E. Truby,
+V. Ransibrahmanakul, and M. Soracco. 2003. “Monitoring Karenia BreVis Blooms in the Gulf
+of Mexico Using Satellite Ocean Color Imagery and Other Data.” Harmful Algae 2: 147—160.
+doi:10.1016/81568-9883(02)00083-5.
+Sullivan, J . M., M. S. Twardowski, J . R. V. Zaneveld, C. M. Moore, A. H. Barnard, P. L. Donaghay,
+and B. Rhoades. 2006. “The Hyperspectral Temperature and Salt Dependencies 0f Absorption
+
+"
+"24","198 DR. Mishm et 211.
+by Water and Heavy Water in the 400—750 nm Spectral Range.” Applied Optics 45: 5294—5309.
+doi:10.1364/AO.45.005294.
+Tucker, C. J . 1979. “Red and Photographic Infrared Linear Combinations for Monitoring
+Vegetation.” Remote Sensing ofEnvirOnment 8: 127—150. doi:10.1016/0034-4257(79)90013-0.
+Tuﬁllaro, N., C. 0. Davis, and K. B. Jones. 2011. “Indicators of Plume Constituents from HICO.”
+Proceedings of Ocean Optics XX, Anchorage, AK, September 27—October 1.
+US Census Bureau. 2007. 2000 Census. Washington, DC: US Department of Commerce.
+Wang, H., C. M. Hladik, W. Huang, K. Milla, L. Edmiston, M. A. Harwell, and J . F. Schalles. 2010.
+“Detecting the Spatial and Temporal Variability of Chlorophyll-a Concentration and Total
+Suspended Solids in Apalachicola Bay, Florida Using MODIS Imagery.” International
+Jaurnal OfRemOte Sensing 31 (2): 439—453. doi:10.1080/01431160902893485.
+Welschmeyer, N. A. 1994. “Fluorometric Analysis of Chlorophyll a in the Presence of Chlorophyll
+B and Pheopigments.” Limnology and Oceanagraphy 39: 1985—1992. doi:10.4319/
+10.1994.39.8.1985.
+Wu, M., W. Zhang, X. Wang, and D. Luo. 2009. “Application of MODIS Satellite Data in
+3 Monitoring Water Quality Parameters of Chaohu Lake in China.” Environmental Monitaring
+a and Assessment 148: 255—264. doi:10.1007/510661-008-0156-2.
+E Yang, W., B. Matsushita, J . Chen, and T. Fukushima. 2011. “Estimating Constituent Concentrations
+g9 in Case 11 Waters from MERIS Satellite Data by Semi-Analytical Model Optimizing and Look-
+< Up Tables.” Remote Sensing ofEnvironment 115: 1247—1259. d0i:10.1016/j.rse.2011.01.007.
+§
+In
+H“.
+[\
+o
+E?
+?‘
+CD
+0
+3—1
+0
+2:
+o
+E
+c)
+E.
+LH
+O
+c)
+on
+2
+3‘
+B
+>n
+,9
+“U
+c)
+'5
+cc:
+2
+Q
+B
+o
+D
+
+"

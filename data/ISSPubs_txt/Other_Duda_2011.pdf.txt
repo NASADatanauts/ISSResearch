@@ -1,0 +1,598 @@
+"","x"
+"1","The Use 0fArt1ﬁc1alMuscles 1n Space Sult Slmulatlon for
+Partlal GraVIty Experlmentatlon and Tralnlng
+J essica Edmonds Duda Dava J . Newman J effrey Hoffman
+Aurora Flight Sciences Corporation Massachusetts Institute Of Technology Massachusetts Institute Of Technology
+1 Broadway 12th Floor 77 Massachusetts Ave. 33-307 77 Massachusetts Ave. 37-227
+Cambridge, MA 02142 Cambridge, MA 02139 Cambridge, MA 02139
+617-500-0552 617-258-8799 617-452-2353
+jduda@aur0ra.aer0 dnewman@mit. edu jhcffmal @mit. edu
+J ames Peverill Gail P. Perusek
+Aurora Flight Sciences Corporation NASA Glenn Research Center, MS 77-7
+1 Broadway 12th Floor 21000 Brookpark Road
+Cambridge, MA 02142 C1eve1and,OH 44135
+617-500-4808 216-433-8729
+jpeveri11@aur0ra.aer0 gai1.p.perusek@nasa.gcv
+Abstract—The Aurora/MIT project team has developed a metabolic cost of movement when wearing a space suit, it is
+knee joint prototype for a space suit simulator that is necessary for suits to be worn during many aspects of
+designed to be lower weight and forIn-factcr than previous astronaut training and land-based research. Using actual
+simulators, while mimicking the resistive properties to space suits outside of underwater neutral buoyancy
+human motion that pressurized space suits necessarily environments is problematic due to the expense, bulk,
+impose. Speciﬁcally, we employed “artiﬁcial muscle” weight, and difﬁculty in donning/dofﬁng. The goal of this
+pneumatic actuators to actively control the joint torques for project is to demonstrate a novel method for simulating
+any given limb angle, in order to closely reproduce the non- space suit joint torques, which are n0n-1inear and vary with
+linear hysteretic relationship and also allow for tuning of the angular position. Previous attempts at space suit torque
+joint to mimic any space suit design. For this initial simulation have used passive resistance (springs, dampers);
+feasibility study, we tested the prototype 0n MIT’s Robotic however, to afford a multitude of design Options without
+Space Suit Tester (RSST) with an example control scheme, requiring additional hardware, we instead utilize actively
+intended to emulate NASA’s Extravehicular Mobility Unit controlled resistance. Our novel method will allow for
+(EMU) space suit. Testing indicated that the t0rque-vs.- development of a full space suit simulator for land-based
+angle relationship of the prototype knee mimics that Of the applications, which mimics the joint torques and resulting
+EMU knee with 15%, ranging from -12 to 25 Nm (the EMU reduced mobility to a high level of ﬁdelity, while offering
+torque range is -8 to 29 Nm). Results from this preliminary characteristics of lighter weight, lower proﬁle, and
+design and the associated testing suggest that a full-bcdy portability.
+actively-ccntrclled space suit simulator may accurately
+emulate the properties of multiple space suitsﬁ2 Aurora Fllght SCiCDCCS, together Wlth the MIT Man-Vehicle
+Laboratory, have developed a new concept for a wearable
+extravehicular actiVity space suit simulator (EVA S3) that
+TABLE OF CONTENTS imitates the mechanical properties of various space suits and
+can be used in microgravity or partial gravity extravehicular
+1.INTRODUCTION.................................................................1 EVA) 6X erimentaticn and trainin Currentl we have
+2. KNEE PROTOTYPE DEVELOPMENT 3 ( p . g. . y
+3. CONCLUSIONS 8 developed a hlgh'leyel con.ceptual deSIgn for the full bOdy
+EVA S3, and a detailed des1gn and prototype of the EVA S3
+knee JOlnt.
+BIOGRAPHIES 9
+ACKNOWLEDGEMENTS......................................................10 The concept for the EV A S3 consists of adjustable
+excskeletcn components, sized to ﬁt various
+anthropometries, which overlay the relevant joints (upper
+1- INTRODUCTION body: elbow, shoulder, trunk; lower body: hip, knee, ankle).
+P - - - - - - This concept does not include a design for the hand.
+ressurized space suits impose high JOlnt torques 0n the . .
+wearer, reducing mobility for upper and lower body M0untec1t0theex0ske1et0n components at each 0ftheJc1nts
+- - - - we pr0V1de high-ﬁdehty emulation of the space suit JOlnt
+motions. Because Of the highly altered mobility and , , , ,
+torques, which account for most of the distinguishable
+mechanical properties of the space suit and are thus the most
+1 important element of a space suit simulator in terms of
+978-1-4244-7351-9/11/$26.00 ©2011 IEEE . . .
+2IEEEACpapei#1283,Version1,UpdatedOct0be1r26,2010 res1stance to human motion (as well as metabolic cost).
+1
+
+"
+"2","McKibben actuators [1] (also known as artiﬁcial pneumatic allows the subject to be loaded to varying levels of
+muscles) are used to actively control joint resistance simulated microgravity) and the Active Response Gravity
+torques. They are cylindrical pneumatic actuators, Ofﬂoad System (ARGOS — a suspension system With a
+constructed of ﬂexible rubber With an inextensible weave, harness supporting part of the subject’s weight); see Figure
+that contract longitudinally When pressurized. As the 2. It may also be used in ﬁeld simulation activities or
+actuator is pressurized, joint torque is increased. The desired potentially underwater in neutral buoyancy simulations.
+relationship between joint torque and angle is determined
+from experimental data obtained in previous Extravehicular
+Mobility Unit (EMU) suit tests at MIT (see Previous work .
+and requirements, below) and is captured in the control / ‘ \
+algorithm. The relationship between joint torque and f O “V
+actuator input pressure was determined experimentally ""‘ I""
+during the course of this work. An integrated pneumatic ) .ﬁ
+and electronic control system is located external to the joint. / - . \
+By actively controlling torque for any given joint angle the .V‘
+design closely mimics the torque vs. angle curves of any ‘IVAV‘V
+given space suit. Active control also facilitates adapting the i ‘-
+EVA S3 system to mimic multiple (and future) space suit . I H
+characteristics very effectively and efﬁciently, requiring ‘ _ i _
+only a simple software modiﬁcation. A conceptual drawing I ' a
+of our proposed space suit simulator, EVA S3, is shown in l v .. /
+Figure l. - - g'i'ai ' f; .1'
+We expect that the EVA S3 Will be used in ground-based Figure 1, Conceptual drawing of the EVA S3 full body
+simulation activities, including the enhanced Zero-graVity space suit simulator with McKibben actuators shown in
+Locomotion Simulator (GZLS — a vertical treadmill that blue, and photo of various sizes of McKibben actuators,
+.{ {ix ’ ' L“ I n
+"" 55, . ~s— .' f1
+\\\ l A , Uw/I
+l a a ‘1 - ‘ ,2 g ,» ‘ J_—
+\ \w ""ape I; a
+4'"" 1‘32” 3 ‘ w
+‘. 1-,. ii???” iii 7: ' f5 : .
+._i.-i';.jf'_,w"" “ﬁﬁﬁiwﬁ . ' :1 I"" ' - .
+'I [Q 12;}; 9.1:"" i: . . ' 'ﬁi} “ .n. 1"""" _ , .
+. . .. . “Q ‘ a_ﬁiﬁ‘} - :I. r . . .. _. _ ;
+m” a . ~ - - n1.
+., . l- ' ‘ ﬂ .3 I ﬁn.
+eZLS vertical treadmill ' 7- -
+ARGOS hlp glmbal f, 5
+suspension system 1 5 ‘
+Figure 2. Upper left: Lunar Task Simulation on the enhanced Zero-g Locomotion Simulator (eZLS); lower right:
+Active Response Gravity Ofﬂoad System (ARGOS) partial gravity simulation system. NASA photos.
+As a proof of concept, we developed a prototype knee joint knee joint and testing of the associated prototype, and high-
+and tested in on MIT’s Robotic Space Suit Tester (RSST), a level conceptual design for a multi-aXis space suit simulator
+full-size anthropometric robot With instrumented joints for the entire body. This program was performed under
+capable of measuring torque and angle. In this document, funding from a NASA Small Business Innovation Research
+we Will discuss previous work to characterize joint torque (SBIR) Phase 1 contract.
+properties of the EMU space suit, selection of a joint torque
+simulation device, design of a single-aXis simulator for the
+2
+
+"
+"3","2. KNEE PROTOTYPE DEVELOPMENT cylinder actuators were examined, but in general tend to be
+. . quite heavy and bulky for the amount of force required for
+PVQWOMS WOVk and requzrements this application. Additionally, the linear expansion of the
+The ﬁrst required task was to obtain relevant space suit joint cylinder means that the torque applied to the joint is quite
+torques, in order to properly simulate them using the EVA low when the limb is straight. Electrical actuators were also
+S3. We obtained a data set from Professor Newrnan’s examined, such as servo motors. The amount 0f torque
+studies which were previously performed at MIT using an needed WOUid require the use Of a gearbox for this
+EMU space suit pressurized to 30 kPa (4.3 psi), tested on application. Again, this WOUid result in a very bulky and
+the RSST, to quantify speciﬁc joint torques [2,3,4]. MIT’s heavy design, and the packaging WOUid be quite difﬁCUit- A
+data has been processed to remove torque due to the weight gearbox driven mechanism is also undesirable since the
+Of the robot. mechanism would be fairly inefﬁcient when back driving.
+This would mean that the motor would need to be very
+Selection of the appropriate joint torque hardware for our accurately controlled to not impose a great deal of additional
+proposed EVA S3 required that we determine major joint resistance t0 motion 011 the user.
+Characteristics: the presence of hysteresis, the minimum and
+maximum torques and angles, whether or not negative After examining numerous types 0f actuators, a unique
+torque values were present at certain angles, and the general solution was selected for incorporation into the joint designs
+shape Of the torque vs. angle curves. These general based on weight, form factor and versatility. The MeKibben
+characteristics, and in particular the rninirnurn/rnaxirnurn actuator (Figure 1) is a type 0f pneumatic actuator which
+torques and angles (range Of motion) f0r each Of the joints, consists of rubber tubing that contracts longitudinally under
+were extracted from the MIT data. We gathered and air pressure. It is also known as an “artiﬁcial pneumatic
+processed data for the shoulder, elbow, trunk, hip, knee, and muscle”. The air pressure expands the tubing radially,
+ankle, though we used only the knee data for comparison in which is wrapped With a braided ﬁber-reinforeernent
+our development of the knee prototype. See Figure 3. This covering. The geometry Of this reinforcement causes the
+data provides the limits of joint angle (3 to 103 degrees) and tubing to contract in length as it expands radially. The force
+joint torque (-8 to 29 Nm) required f0r our initial space suit output is very constant throughout the travel of the actuator.
+knee joint simulator design. The curve shows torque These actuators have a number of unique advantages for this
+responses for various ranges of motion (interrnediate traces application. They are available in any desired length, and
+between top and bottom curves), exemplifying the are ﬂexible so they can conform around irregular surfaces.
+hysteresis in the system. They are very lightweight, and can be easily backdriven
+since they essentially behave as a variable rate spring.
+Knee Flexion
+30’ 7' W t"" ,7“ The MeKibben actuators are driven through high-speed
+25 // J ‘ solenoids, capable of inﬁnitely varying the pressure to the
+g 20 , jx’j actuators over the travel of the limb. This provides the
+7g 15 _, -""'""J , /_/ a capability to mimic Virtually any torque vs. angle
+E M »/""'i:/‘/ relationship. We used miniature solenoids and associated
+,5 10 .. "" /. //4jééﬁ5” ‘ pneumatic control products for this purpose; an encoder
+“:3 5 _ ' ///‘%f¢ ‘ senses the position of the limb and a control system sets the
+:2, 0 f“ H 1 pressure and resultant reaction torque of the actuator.
+is H , . A ' . . . ' , ' , ""\M 4, In deciding to use actively controlled resistance devices, we
+400 20 4o 60 80 100' 120 acknowledged the requirement for power, a controller, and
+Knee F'eXion Ang'e (deg) (in the ease of these pneumatic actuators) an air supply. For
+Figure 3° EMU Knee ﬂexion torque vs. angle curve, MIT eZLS and ARGOS simulation activities, we believe the test
+data [51- Inset: knee ﬂexion (ki) convention — arrow set-up is conducive to these peripherals. For ﬁeld testing,
+indicates positive angle and positive torque. we believe that all required components (with the possible
+exception of the air supply) can be miniaturized such that
+Torque Simulation methodology the test subject can wear them in a backpack. Air can be
+prov1ded either by tanks worn on the subject’s back, or a
+Several tprS Of dCVlCCS were investigated fOI' USC in the larger tank 01' air compressor carried by a trolley.
+knee joint simulator design. Originally we proposed the use
+of magnetorheologieal (MR) ﬂuids, which, like MeKibben Assuming conservative efﬁciency, we ﬁnd that a suit
+actuators, are actively controlled. This methodology was simulator requiring 24 pneumatic actuators could be
+discarded primarily due to concerns about the simulation powered for approximately 17 rnin given 30 cycles per
+ﬁdelity: MR ﬂuids simulate darnper-like properties very minute (equivalent to a slow walk), with the subject wearing
+well, but are not as appropriate to simulate spring-like
+qualities, which is the dominant Characteristic of current
+gas-pressurized space suit joints. Pneumatic piston type
+3
+
+"
+"4","three lightweight composite air tanks3. Our calculations
+assume a conservative cycle efﬁciency (20%). We believe
+the efﬁciency may be higher, since (1) the system only uses
+air during changes in angular velocity, and (2) the materials
+used for the McKibben actuators, rubber, is inherently
+efﬁcient. Efﬁciency is a multiplicative factor, so increasing
+efﬁciency to 40% would double the operating time. Given
+these conservative preliminary calculations and the many
+commercially available types of air tanks, we think it likely
+that the stored air can be carried by the subject for ﬁeld
+simulation activities.
+Preliminary design McKihben actuator McKibben aetuator
+to resnst extensnon to resust ﬂeXIOl'I
+A conceptual layout of the knee joint with the McKibben
+actuators is shown in Figure 4. The loads provided by the . . . .
+actuators are accommodated by a close-ﬁtting rigid Flgure 4‘ Conceptual layout of knee Jomt. McKlbben
+exoskeleton (in this case a COTS knee brace). As shown, actuators are shown 1n red and blue.
+both actuators — one to resist ﬂeXion, and the other to resist
+extension — are located on the outside, or lateral side of the As described previously, the characteristic of the EV A
+knee. Because the actuator only operates in one direction, S3 design that signiﬁcantly improves simulation ﬁdelity
+the use of two actuators and a directional guide (spool) are compared to other space suit simulator designs is the use
+required. In addition to the desired force produeed in the of active control. Previous space suit simulator designs
+direction Of bending, the asymmetry Of this des1gn have utilized passive resistance (e.g., linear or rotational
+introduces a potentially harmful lateral torque on the knee. springs). These passive devices require the addition of a
+Placing the actuators mediolaterally (one on either side of damper to appropriately mimic the hysteresis in the
+the knee) would balance the forces and resolve this issue, space suit torque vs. angle relationship and are imperfect
+however, the actuator would not ﬁt comfortably on the for simulating the generally non-linear trend. By
+inside of the knee without interfering with the other leg. designing EV A S3 joints with controlled actuation, we
+Testing was performed in order to address concerns about are able to achieve higher ﬁdelity simulation with no
+lateral knee torques resulting from this and is discussed mass penalty. By actively controlling the torque for any
+below under Joim‘ characterization test results. given joint angle, we can more Closely mimic the torque
+vs. angle curves of any given space suit and adjust the
+joint torques for multiple space suits.
+3 Assuming 1 cm diameter, 30 cm length, the volume of the actuator is: Kneejoim‘ Simulator pVOtOtj/pe design and development
+Vacmm : 7r(radius)2 (length) =2.4><10_2L The ﬁnal inechanical design of the EVA S3 knee joint
+Simulator is shown in Figure 5. As described preyiously,
+We assume Popemng = 414 kPa (60 psi), and Pmmge = 30,000 kPa (4350 we utilize two McKibben actuators for ﬂeXion and
+psi), where Popemn-ng is the operating pressure of the actuators, and Pmyage is extension Of the knee. The SpOOl acts as a lever arm to
+the tank Storage pressure' convert the tensile force of the actuators into a torque on
+We also assume 30 cycles per minute (e.g. 30 steps per minute for the legs, the joint. The actuators are connected to the brace by a
+30 arm swings per minute for the arms). The rate of air consumed is then: SWiVCl mount, tO eliminate stress on the rubber/Inetal
+_ V ><[M] interface within the actuator. The guide maintains the
+Vcommeweal = “CW: mm = 9.7><10_3 L/min placement of the actuators on the spools. Due to the long
+i T: lead time in obtaining the McKibben actuators, we
+Divide the rate of air consumed by 0.2 to account for a 20% cycle ordered them before we had the d1mens1ons Of the knee
+efﬁciency: brace; therefore we had to add extenders to lengthen the
+_ sides of the knee brace to ﬁt the actuators. (This will not
+K0nsumed,corrected =4-9><10_2 L/min be needed in the next iteration of the design.) Two
+Multiply by 24, assuming that the suit simulator includes 24 actuators: alummum. braCketS WCI‘C des1gned t0 eXtend the brace
+and prov1de attachment p01nts for the actuators. The
+Vconsumemmz :12 L/min brackets are constructed of 0.125"" (0.32 cm) 6061
+aluminum sheet metal cut and bent to the contour of the
+Assuming .a three tanks With VOlume Of mege Z 6'7 L’ the time Of leg brace, and are secured to the brace with rivets. The
+Simulation 1s: . . . . .
+knee brace JOlnt was modiﬁed w1th custom machined
+tsimulation : . I/storage ><3 tanks =17.21nin components to incorporate the spool, which is machined
+I/consumedJotaZ
+4
+
+"
+"5","from Delrin plastic. The design also incorporates a ﬂexion and extension actuators. This is important
+potentiometer to sense knee angle. because the actuator contraction force is a function
+of both internal air pressure and current actuator
+length. The desired torque value is used as an input
+(*5; i!“ to a function that returns the necessary contraction
+4! l! force each actuator must apply that Will result in
+the correct torque on the knee joint. The contractile
+force of the actuators is converted to this torque by
+‘ . the geometry of their mounting locations and the
+‘ shape of the spool.
+p Extenders
+"" x1; Knee brace
+i» ll 5 1“ "" .
+t. . pun _ .
+Figure 5. EVA S3 knee design. 1 ﬂ _
+The EVA S3 prototype is shown in Figure 6. - 1-.
+The weight of the knee joint prototype is 2.4 kg, including -. J
+the knee brace, actuators, spool, and all the brackets, nuts, ‘. j
+and bolts that connect them. This does not include the ' _ ' .
+weight of valves or air hoses/ﬁttings, but these components a I ‘- . SIS ﬂEmm-l
+are secured externally. ' ' . . I
+_‘ - . _ ‘. F: Resists extension
+Space suit Simulator controller design and development I J; T‘ . - 15-;- |.-'1 ”J I! -
+The controller design and prototype are shown Figure 7. iii}; . . ~‘:‘"" '-
+The system is composed of pneumatically controlled
+resistive actuators coupled to solenoid valves and a digital Figure 6. Prototype knee joint simulator
+control circuit to achieve variable, repeatable, and accurate
+simulation of a Wide range of potential suit properties. The
+actuators use the input 0f angle (provided by the installed The microcontroller outputs this desired state into a PID
+potentiometer) and pressure measurements to determine the (proportional integral differential) control loop that
+appropriate pressurization. continuously monitors actuator pressure sensors and outputs
+short pulses to the actuator solenoid ﬁll and exhaust valves
+The knee joint simulator controls torque applied to the knee to obtain the correct pressure.
+in the following manner. First, the microcontroller takes
+input from the potentiometer to determine knee joint angle. Figure 8 diagrams how the controller uses the look—up table
+The knee joint angle is used to compute two pieces of to control input pressures. For example, as the knee ﬂexes
+information: the controller initiates pressurization 0f the ﬂexion
+resistance actuator and depressurization 0f the extension
+0 Desired torque at current angle iS interpolated from resistance actuator. For initial testing, we did not program
+a table of data (“look—up table”) speciﬁc to the the controller to emulate the hysteretic property of the knee
+desired suit characteristics. (Future controller joint; rather, the look—up table provided one torque for any
+designs Will be able to store multiple suit data given angle.
+proﬁles, allowing any number of suit torque
+response characteristics to be simulated.)
+o A simple geometric model of the knee brace and
+McKibben actuator endpoint mounting locations is
+used to compute the current lengths of both the
+5
+
+"
+"6","ATMEGA 640
+Microcontroller . E“°T=f.’f’3£fé”a‘°'
+‘ Desired Pressure
+/ 222322;:“533 —-> 1—»
+Knee Brace 355.1“- Extension Actuate!
+Knee Angle Sensor Geometry Emaus‘ va‘ve
+(potentiometer) i
+g DesiretiTorque (2:5):52 25535;?) . Flegﬁlnvzwéator
+50 ’. . a .
+I 3 ::r\ -7 IV : Flexuon Actuator
+kc ~ _. ,2?“ ExhauslVaIve
+. E (""7;
+_§ 5 032
+E E 0- ‘y
+s ' 5“-
+; $€ Flexion Actuator J
+”W A"" 7 v ‘M I
+Figure 7. Controller design for the actuated space suit simulator knee. Controller prototype is shown as framed
+subset in lower left.
+2.: rotation of the knee) of the EVA S3 knee joint meets the
+,1 a“ lateral side of the RSST. This position was chosen because
+a 93"" w, it is the point of highest load: all the reaction forces from
+. ‘ A . . o
+2 “.f “low“ 1“: any lateral torque pass through th1s pomt. Durlng the test,
+‘8' 90%“ y the actuators were pressurized to 414 kPa (60 psi), which is
+' _J‘ , . .
+E. ~: “5:?” “f-rl .H“ WM“ 70% of then rated maX1mum. The test was conducted at a
+g .. a [LM/“es WW fully extended position to represent the worst loading
+* ; x . .
+[-I — *1 Eagles” :1 scenario for p0ss1ble lateral torque.
+: _ __ 'c-
+..; a i 3m 40 w Wig“? 1qu
+..: ‘ . RSST control
+Angle (deg) ‘9/5"", f”? computer
+5:5""? —:.:=...~ -
+Figure 8. Controller actuation representation for the ‘- a v, ‘ Angle
+knee joint simulator (FR=ﬂeXi0n resistance actuator grigﬁiﬁ on! m EVA S3 lmee
+located anterior to the knee, ER=extensi0n resistance ""1“ Kg- / JOIDtCOIl’IfOllef
+actuator located posterior to the knee). §
+Joint characterization test description ~. - )2; $\ Pneumatic controls
+. _ _ _ _ ' Po‘tcntiomctcf 'v-u (avalveslpressure sensors)
+The EVA S3 knee JOlnt s1mulat0r characterlzation test set up A
+is shown in Figure 9. In addition to the controller, the knee f . _ _ ‘ J Jflim”?
+joint required its own pneumatic components. For the 4 , \1‘ -. :35”
+prototype, we used pressure sensors with external readouts - . 7 I \\ M C . H d ,
+for troubleshooting, though this will not be required in the ,yorto ‘ 0111:1515)?“ ‘m
+ﬁnal version. We used an air compressor for the source air tesista‘eglgtiensioil ' L ' i ' “
+for the actuators. The RSST measures both angle and ' “TH"" ’
+tor ue, so it allows us to directl com are the results of our . ,
+q . . y . p . . Flgure 9. Test Setup at MIT Man-Vehlcle laboratory,
+measurements w1th prev10usly obtalned JOlnt (knee) torque , , , , ,
+. . . . Including the knee JOlIlt s1mulat0r mounted on the
+data. In1t1al testlng was performed to valldate that the lateral ,
+RSST, the pneumatlc board, and the controller.
+knee torques were acceptable. To measure the forces
+involved, a paper-thin pressure sensor sheet was inserted at Joint characterization test results
+the oint where the lateral hin e located at the axis of . . . .
+p g ( The lateral torque test results 1ndlcated that the knee JOlnt
+6
+
+"
+"7","simulator transmitted 11.2 Nm of torque to the robot’s knee Controlled resistance test results are shown in Figure 11.
+joint. In comparison, lateral knee loads when riding a The controlled resistance data was collected with the ﬂexion
+bicycle can reach 30 Nm [6], which places the EVA S3 knee and extension actuators controlled by the software to
+torque well within an acceptable range. This test showed provide resistance when required, as n0ti0na11y described
+that the lateral torque in our knee joint simulator was not a above in Figure 8. Two plots, including the raw data and the
+signiﬁcant issue. Under human use conditions, where the data with the robot weight removed are shown.
+stiffness of human tissue is much lower than the plastic shell
+of the RSST, it may decrease further. The knee joint simulator test results are compared to MIT’s
+EMU knee ﬂexion torque vs. angle curves in Figure 12.
+For knee joint simulator testing, we ﬁrst collected baseline
+data for two separate conditions (Figure 10). Initially, we
+collected baseline torque data for a simple sinusoidal knee (a)
+motion from the robot alone, not wearing the EVA S3 knee 50 Controlled Resistance
+simulator — in this case, torque is due to gravity. Next we
+attached the knee brace t0 the robot and collected baseline 40 Controlled knee ._’”
+data with the robot wearing the brace with unpressurized ”1:265:12?” \ 1p}; 1
+actuators. The addition of the brace alone provided both 30 ’1/ ll . ..
+torque and hysteresis as shown (Figure 10a). Next we tested E 20 I, --’ "" . x’f-NA‘
+knee motion against statically pressurized actuators to f g 11.1,? V’T’V‘"" ' "" W”
+observe the properties of the actuators when not controlled 3 10 i; '_ :3 '."" «V
+(Figure 10b). 0 ”,3, ' ‘
+.3: .ﬁwru/P‘
+l' i: . / RSST only; no brace
+(a) .10 £11""
+Unpressurized brace ‘
+50
+.200 20 40 60 80 100 120
+40 Knee Flexmn Angle (degrees)
+30 . ” W 5 (b)
+Unpressurized brace 7“: f ‘ a Controlledresistance,robotweightsubtracted
+,_. ‘ .‘J. . J; ‘ , ‘1‘? ~*- _ 50
+3 {I ' = 1. - 40
+E 10 . ~ -'»’~.'.:._'
+“ "" aw
+owﬁwkin em
+I' 1E? ‘ ' ’ RSST only; no brace ‘73”
+40 E 20
+i E 10
+.20 LL
+0 20 40 60 80 100 120 g
+Knee FlexionAngle(degrees) i D
+(b)
+Statically pressurized brace '10
+50
+I200 20 40 60 8C] 100 120
+40 _ Knee Flexion Angle (deg)
+139 kPa (20 pSI)
+30 276 kPa (40 psi) ,,
+A [.447 yr, 1] Figure 11. EVA S3 Knee joint simulator knee ﬂexion
+.5. 20 [9,71 ,-,- - V . , "" torque vs. angle curves a) raw data (in red; robot weight
+g 10 /f/ i f . Unpressurized shown in orange) b) With robot weight removed.
+(“I ‘4
+U ‘n' ”M , . . . .
+Ir; II"" Jomt characterzzatzon dzscusszon
+An i We note the fortuitous result that the unpressurized EVA S3
+.20 knee joint (Figure 10a) nearly results in the desired EMU
+U 20 40 60 80 100 120 . . .
+KneeFlexionAnglewegrees) t0rque-vs.-ang1e curve, and that pressur1z1ng and actively
+controlling the joint (Figure 11a) makes very little
+Figure 10. Baseline torque vs. angle data. (21) Orange = difference in this case (the primary effect is an increase in
+RSST robot only, blue = RSST wearing knee brace with the torque at high angles). The fact that hysteresis is present
+unpressurized actuators. (b) Knee motion with in all cases in which the robot was wearing the brace is due
+resistance provided by statically pressurized actuators. t9 hrace shppage over the knee S surface, Pr9ducmg a very
+No software control is used in either of these cases. snn11ar effect to the fabric Of a space suit, Wthh also
+produces hysteresis. The fact that the width of the
+7
+
+"
+"8","hysteresis closely matches that of the EMU hysteresis 0 There was some mechanical interference in the
+(approximately 5-10 Nrn — Figure 12) iS coincidental; active brace itself, Speciﬁcally9 during testing we
+control allows us to increase or decrease this effect. One observed that during high angles of ﬂeXion, the
+should realize that (a) for other joints (e.g. elbow, ankle, spool on the knee brace folded in towards the
+hip) we are unlikely to observe the same fortuitous posterior of the knee.
+occurrence» and ('3) f9” other space W5 (e-g- Mark 111) the The issues listed above will be addressed in future work by
+torque-vs.-angle relationships are dlfferent than the EMU? optimizing the controller and its software, and re-designing
+and .the unpressurlzed curve seen 1n. Flgure 103 W111 the knee joint such that the McKibben actuators are in line
+certairily not match that 9f other space su1ts. The advantage with the hinge. This will also reduce the lateral torque on
+of actively controlled Jomts torques is that they allow each the knee.
+Jomt to be tuned to match any given space suit, including
+both angle and torque range, as well as the extent of the Top level Space suit Simulator design
+hysteresis - in the case of the EMU knee joint, the EVA S3 _ _ _
+joint simply did not require a great amount of tuning. The conceptual des1gn for a full—body EVA S3 is shown in
+Figure 1. Based on the prototype knee Jomt des1gn and top-
+Knee Flexion level weight estimates for the other joints, the weight of the
+30 a EVA S3 suit is estimated to be only 25% of the weight of
+/ "" the EMU Class III space suit. A conservative weight
+25 Actual EMU data Kt estimate for the EVA S3 is 28 kg (61 lbs — Table 1) as
+g 20 \ 7/2/13 compared to 113 kg (250 lbs) [7,8] of the EMU Class III
+e. V 1 T ' space suit. This total system weight includes the pressure
+§- 15 f _ , “”’ l , control system and three air cylinders worn as a backpack.
+£1 / // This represents a signiﬁcant improvement in portability,
+1° , ’2 / ..;’:;;¢ii«~’ usability, and logistics during simulation activities. Note
+3 5 ‘ 5/]? 23%;? that if portability were not a priority (e.g. in laboratory
+u. ,V _ training/sirnulation), the subject could use a long tether to a
+g 0 I” ‘ larger air tank or air compressor if desired, and not be
+' ' required to carry it. This would reduce the estimated weight
+'5 . EVA 83 km"" data ofthe EVA s3 (as worn by the subject) to 20 kg (44 lbs).
+100 2° Kn‘g Flexio‘goAngle (329) 10° 120 Table 1: Estimated* total system weight of the EVA S3.
+@E--m
+Figure 12. Comparison Of EVA S3 test results With lJppe'Body
+MIT’s EMU knee ﬂexion torque vs. angle curve; our
+EVA S3 data (red) overlays MIT’s EMU data (blue). -----
+S'mu ato' .‘Irol'ol'ype
+weight
+A‘Ikle 1.? kg 1.? kg 7.4 kg 5.3 Ins assu‘ned 1;""?
+Thus, we observe that the EVA S3 knee data follows the -----
+baseline (MIT EMU) data well, with several notes: '------
+Lower nndy fatal: 11 kg (74 ha}
+
+0 Vertical offset is likely due to an error in software :hlmsrylmfn"":(1:10:91 Z: 3177':
+programming; speciﬁcally, we had t0 tune the
+relationship between actuator pressure and torque
+generated. Even if the look—up table COI‘I‘CCtly *All weights are conservative estimates. Values are based on the weight of
+listed the torque fOI‘ every given angle, the pressure our initial prototype of the EVA S3 knee joint, and the weight of the
+. . . prototype pneumatzc control board. The azr tank wezght represents a
+input may not have correctly resulted in the des1red sample vendor.
+torque.
+
+o The “chatter” in the EVA S3 data is likely due to 3, CONCLUSIONS
+several factors. First, the controller software was _ _
+not optimized. Second, there was some time lag in we developed a des1gn and part1al prototype Of a novel
+the pressure sensor. That is, the pressure sensor space su1t simulator (EVA. S3), us1ng active. control to
+read the actuator pressure and corrected it, but the accurately s1rnulate space .su1t Jomt torques, which are non-
+response time for this correction (in both the liriear and .Vary w1th pos1tion: The primary oontributlon of
+pressure sensor and the solenoid actuators) resulted this work is the use of McKibben actuators 1n Jomt torque
+in noisy pressure output. This can be improved by generatlon.
+iliaelvelsewlgiha aﬁzlglsmgﬁ?ytu:3:tgglteheﬂgrés:3: This program resultecl in a c1etailed desigri and prototype of
+
+’ the EVA S3 knee Jomt, us1ng two McKibben actuators to
+control system.
+8
+
+"
+"9","provide resistance to extension and ﬂexion. We designed [3] Dava Newman. ""Quantifying Astronaut Tasks: Robotic
+the prototype to emulate the joint torques obtained from Technology and Future Space Suit Development,"" Final
+MIT testing of the NASA EMU space suit. In designing the Report under NASA Grant NAG9—1089, 2003.
+knee joint, maintaining light weight and low forIn-factor
+were considered high priority. [4] Patricia Schmidt, Dava Newman, and Edward Hodgson,
+""Modeling Space Suit Mobility: Applications to Design and
+We tested the knee prototype 0n MIT’s Robotic Space Suit Operations,"" AIAA and SAE International Conference on
+Tester (RSST) t0 (1) identify the potentially dangerous Environmental Systems §ICES 2001 1, Orlando, FL, July
+lateral torques imposed on the knee, and (2) verify the 2001.
+simulator’s ﬁdelity to the EMU joint torques. We measured
+the lateral joint torques to be at low, safe levels of 11.2 Nm. [5] Patricia Schmidt. WWW
+Full testing of the actively controlled EVA S3 knee joint MMWHID Thesis,
+resulted in a t0rque-vs.—angle proﬁle that is qualitatively MIT Department ofAeronautics and Astronautics, 2001-
+similar to the EMU knee joint t0rque-vs.—angle previously _ _ _ _
+measured. The EVA S3 knee torques were approximately [6] M- EUCSOD- W-
+5_10 Nm lower than the EMU knee torques, and the data Scandinavian Journal of Rehabilitation and Medicine
+was somewhat noisy. We believe the torque offset is due to Supplement, V-16 p.1—43, 1986-
+an error in the software programing, and the “chatter” in , ,
+the data is due to the software having not been optimized, [7], ILC Dover, Inc. Space Suit Evolution: From Custom
+and perhaps mechanical interference as well. These issues Tailored to Off—The-Rack, 1994'
+hNill be addressed in the next iteration of the EVA S3 joint [8] Richard Wilde. EMU _ A Human Spacecraft.
+es1gn. Proceedings of the 14th International Symposium on Space
+Some limitations to the prototype developed in this initial Technology and Sezenee. Tokyo, Japan. pp. 1565'76' 1984'
+study must be noted. Hysteresis was not built into the
+control scheme (though it is seen to some effect, due to BIOGRAPHIES
+friction between the joint anti the RSST.): .As stated above, Jessica Duda is a senior research
+the controller was not optimized — for initial testing, it was S e 1' en tiS t at Aurora Fligh t Seienees’
+tuned in real-tnnetto best mimic the EMU. J0111t properties. R es e ar eh and D ev el 0pm ent C ent er
+F1nally, the ﬁrst-lteratlon mechanical des1gn .Of the knee in Cambridge, M A. Sh e is currently
+resulted 1n undes1rable moveinent 0f the JOIIIt over the serving asprinez'palinvestigatorfor
+surface of the RSST. These limitations Will be addressed in thr e e N A S A SBIR ,S, and is a etiv e in
+longer—term, more comprehensive. follow—on work. other programs r an gin g from the
+However, we nete that there are Signiﬁcant advantages to N A S A N + 3 subsonic ﬁxed win g
+rapidly prototyping a novel concept. In this case, McKibben aircraft program t 0 A W or a ,S small
+actuators had not preV10usly been tested in this applicatlon; U A S d ev e Z 0pm ent, as w e [I as
+our worl< not only proved the Ieas1b1hty Of these actuators company business development activities. She received her
+for application as a space suit s1mulat01j, bet also. proved the BA. and BS. fr 0 m Northw e st em University, and M S. and
+feas1b111ty of active control for space suit Simulation. PhD. from the Massachusetts Institute Of Technology in
+Follow—on work will focus on development of a full EVA 2008’. where She studzed artzﬁezal gravzty mm“, mm
+. . . . . . . exerezse as a countermeasure t0 Spaceﬂzght-related
+S3 for partial graV1ty Simulation and testing. Spe01ﬁcally, it h . Z . Z d d't' .
+will be designed for use in the eZLS and ARGOS test p ”‘0 Ogle“ 660"" ”Omng'
+facilities, and for ﬁeld testing. In addition, we will simulate
+other space suits, to prove the use of active control when the “x Dava Newman is the Margaret
+joint characteristics eXhibit greater non-linearity and "" MaeViear Faculty Fellow
+hysteresis than the EMU. ‘ . Professor of Aeronautics and
+""' i Astronautics and Engineering
+1..., Systems at MIT and the Director of
+REFERENCES ‘ ’ MIT’s T eehnology and Policy
+[l] Chou, C. and Hannaford, B. “Measurement and \ \ Program. She received her BS.
+Modeling of McKibben Pneumatic Artiﬁcal Muscles,” IEEE ,t . - \‘_ degreefmm the University ofNotre
+Transactions on Robotics and Automation, v.12, no.5, pp. \ l \ Dame, two SM degreesfmm MIT,
+90-102, 1996. and her PhD. in Aerospace
+Biomedical Engineering from MIT. Her current research
+[2] Dava Newman, Patricia Schmidt, and Edward efforts include: advanced Space suit design, dynamics and
+HOngOD- ""A Model Of Space SUit Joint Mobility With control of astronaut motion, mission analysis, and
+Applications to EVA Operations"", NASA Bioastronautics engineering systems design and policy analysis, She also
+Investigators' Workshop, Galveston, TX, January 2001.
+9
+
+"
+"10","has ongoing efforts in assistive technologies to augment during treadmill exercise, for improved mechanical loading
+human locomotion here on Earth. and musculoskeletal health in space.
+??WV’: -. .f ‘. 3; Jeffrey Hoffman is Professar 0f the ACKNOWLEDGEMENTS
+‘3"" 9 I '1"": ‘ Practice Of Aerospace Engineerihg The authors Wish to acknowledge funding Via NASA Small
+0 t m the D ep ar tment 0f Aeronaatics Business Innovation Research (SBIR) Phase 1 contract
+if} 13' .' and Astronautics at MIT' He IS a (NNXlOCD23P). The authors also Wish to acknowledge
+‘ - former NASA astranaut who has Mr. Andre DeVitt and Mr. Michael Price (Aurora Flight
+“Ex ‘ L _ made ﬁve space ﬂights, becoming Sciences), Mr. Forrest Meyen (University of Missouri), and
+Y"" -‘-‘ , the ﬁ'fSt as t]? onaut t0 [0g 1000 hours Mr. Roedolph Opperman (MIT), Who assisted in the robotic
+(-- J 0f ﬂlght time aboard the Space testing and controller programming for the EVA S3 knee
+, 1 Shuttle. He has performed fOW joint. Finally, the authors would like to thank Mr. David
+“ ‘ spacewalks, _ includihg .the ﬁrst Brown of Brown University, Who developed the prototype
+unplanned, contingency spacewalk in NASA S history (STS drawings, and was responsible for much of the fabrication
+51D; April, 1985) and the initial repair/rescue mission for and assembly.
+the Hubble Space T elescope (ST S 61; December, 1993). In
+August 2001, Dr. Hoffman joined the MITfaculty, where he
+teaches courses on space operations, space systems design,
+and space policy.
+James Peverill is an embedded
+systems engineer and program
+manager atAurora, with expertise in
+mechanical, electrical and software
+engineering disciplines. His primary
+- areas of interest include high
+performance mobile computing
+systems and small UA Vs. James is
+_ 3L. currently the development team lead
+fi'firri-ﬂ - - $_— on Aurora's Skate UAS program.
+Previously, Mr. Peverill was program managerfor Aurora's
+DARPA F6 effort, and was the lead technical engineer for
+the ARES Mars Scout extraction system, on which he led the
+development and testing of an extraction system designed to
+eject the ARES Mars airplane from its reentry aeroshell.
+Gail Perusek is the Project
+Manager for Exercise
+Countermeasures at NASA Glenn
+Research Center in Cleveland, OH.
+She serves as subtopic manager for
+the Small Business Innovative
+Research program in the Crew
+Exercise Systems area, under which
+the E VA suit simulator project was
+funded. She is currently assigned to
+the International Space Station (ISS) and Human Research
+Project Ofﬁce at NASA Glenn which develops spaceﬂight
+payloads for research on the Space Shuttle and the
+International Space Station. She has 21 years of experience
+with NASA, and holds 2 US Patents. She received her 3.5.
+with Distinction in Mechanical Engineering from Ohio
+Northern University in 1989 and MS. in Mechanical and
+Aerospace Engineering from Case Western Reserve
+University in 2000 with a focus on Biomechanics. Ms.
+Perusek is currently Principal Investigator of an on-orbit
+investigation being conducted on the International Space
+Station, to improve crew equipment worn by astronauts
+10
+
+"

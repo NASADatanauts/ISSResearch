@@ -1,0 +1,411 @@
+"","x"
+"1","IEEE TRANSACTIONS ON NUCLEAR SCIENCE, VOL. 58, NO. 4, AUGUST 2011 1921
+Peter Beck, Member, IEEE, Andrea Zechner, Soﬁa Rollet, Thomas Berger, Robert Bergmann,
+Michael Hajek, Christian Hranitzky, Marcin Latocha, Giinther Reitz, Hannes Stadtmann, Norbert Vana, and
+Michael Wind, Memben IEEE
+
+Abstract—The AIT Austrian Institute Of Technology c00r— I. INTRODUCTION
+dinates the project MATSIM (MATROSHKA Simulation) in
+collaboration with the Vienna University Of Technology and the . . . . .
+German Aerospace Center, to perform FLUKA Monte Carlo HE Internatlonal Space Statlon (ISS) PrOVldCS Slgmﬁcant
+simulations of the MATROSHKA numerical phantom irradi- challenges for radiation protection of the crew due to the
+ated under reference radiation ﬁeld conditions as well as for the extended duration of missions, the exceptionally dynamic na—
+radiation envmnlnent at the letematmnhl Space Statmn (ISS). ture of the radiation environment in 188 orbit, and the necessity
+MATSIM is carried out as co-lnvestlgatlon 0f the ESA ELIPS , , , , ,
+projects SORD and R ADIS (commonly known as M ATROSHK A), for nnmerous extravehicular act1V1t1es (EVA) for station con—
+an international collaboration of more than 18 research institutes StTUCUOn and malntenance [1]-
+and space agencies from all over the world, under the science and Although considerable dosimetric data have been accumu—
+PrOJECt lead 0f the German AerospaceACenter. D‘X‘mg MATSIM lated from several spaceﬂight experiments [2]—[14], it is not yet
+a computer tomography. scan 0f “1.6 M T.ROS}.IK p hantom has possible to provide a full quantitative description of all the rel—
+been converted into a high resolution 3-d1mens10nal voxel model. , , . .
+The energy imparted and absorbed dose distribution inside the evant radiation ﬁeld parameters. In order to assess the radiation
+model is determined for various radiation ﬁelds, The major goal load that astronauts are exposed to during intra— and extravehic—
+0f the MATSIM project is the validation of the numerical model ular activities, the MATROSHKA facility has been developed
+under reference radiation conditions and further investigations [15]_[17], [19]. M ATROSHK A is an ES A facility under the sci—
+under the radiation ?“V‘rf’n‘T‘ent at 188' In “118 rep ort we 90ml) are entiﬁc and proj ect lead of DLR. Several thousand TLDs are ap—
+depth dose distributions 1ns1de the phantom measured w1th ther— , , , , , ,
+moluminescence detectors (TLDs) and an ionization chamber with plled t0 Ineasure the depth dese dlstrlbution w1th1n an anthro—
+FLUKA Monte Carlo particle transport simulations due to 60C0 pomorphlc phantom CXPOSCd 111- and OUtSIdC the ISS [18l—[20l-
+photon exposure. Further reference irradiations with neutrons, Besides the TLDs the phantom also houses active and passive
+Pmtons and heavy ions are planned. The fully validated numenfal radiation detectors in speciﬁed organ positions for the determi—
+mOdEI MATSIM W111 p royide a p erfect “’01 to assess the 1321mm“ nation of the organ dose equivalent. The main goals of the MA—
+exposure to humans during current and future space m1ss10ns t0 ,
+
+ISS, Moon, Mars and beyond. TROSHKA experiment are long—term depthdose Ineasurements
+at various locations in and 0uts1de the 188 including the deter—
+
+Index Terms—FLUKA Monte Carlo simulation, MATROSHKA mination of the neutron contribution, organ and skin doses and
+dosimetric phantom, space dosimetry, voxel model. Monte Carlo transport code veriﬁcation for the calculation of
+
+the dose distribution inside the phantom.
+The AIT Austrian Institute of Technology coordinates the
+
+Manuscript received September 13, 2009;reVised April 16, 2010 and May 16, project MATSIM (MATROSHKA Simulation) in collabora—
+2010; accepted May 20, 2010. Date of publication July 05, 2011; date of cur— - - - - -
+rent version August 17, 2011. This work was supported in part by the Austrian t10n Wlth the Vlenna Un1vers1ty Of TeChnOIOgy (ATI) and the
+Ministry of Trafﬁc, Innovation, and Technology through the Austrian Space Ap— German Aerospace Center (DLR) to perform Monte Carlo
+plication Programme (ASAP). simulation of high energy radiation particle transport inside the
+
+P. Beck, S. Rollet, M. Latocha, and M. Wind are with the Austrian Insti—
+tute of Technology, 1220 Vienna, Austria (e—mail: peter.beck@ait.ac.at; soﬁa. MATROSHKA phantom. , ,
+rollet@ait.ac.at; marcin.lat0cha@ait.ac.at; michael.wind@ait.ac.at). The mam 31m 0f the pI‘OJCC‘t MATSIM 15 the deVelOpmeht
+
+A. Zechner is with the Austrian Institute of Technology, 1220 Vienna, Aus— and validation of a numerical simulation model of the MA—
+tria, and also with Graz University of Technology, 8010 Graz, Austria (e—mail: TROSHK A phantom The full validated M ATSIM model Will
+andrea.zechner@ait.ac.at). . .' . y . .
+
+T. Berger and G. Reitz are with the German Aerospace Center, In— pI‘OVIde comprehehswe “Sh assessment 0f 1‘ adlatleh hazard to
+stitute 0f AerOSpace Medicine, D—51147 Cologne, Germany (e-mailz humans in space. MATSIM will provide prediction of tissue and
+thomas.berger@dlr.de; guenther.reitz@dlr.de). - - - - - - _
+
+R. Bergmann, M. Hajek, and N. Vana are with the Institute of Atomic Otgan doses ahd the estimatlon Of radiatlon “SK for human mts
+and Subatomic Physics, Department of Radiation Physics, Vienna Univer— Slehs under leerse exploratory eehdltlehs sueh as thture mls'
+sity of Technology, A—1020 Vienna, Austria (e—mail: bergmann@ati.ac.at; signs to 188, Moon, and Mars, Furthermore, it will provide valu—
+mhajek@ati.ac.at; vana@ati.ac.at). - - - - - - - -
+
+C. Hranitzky and H. Stadtmann are with the Dosimetry Laboratory, able Informatlon,f0r 0pt1m1zat10n Of SpﬂCCCi‘aft Shleldlhg des1gn
+Seibersdorf Labor GmbH, 2444 Seibersdorf, Austria (e—mail: christian.hran— and per 501131 d0s1meter deVelOpmehtS fer mlxed 1‘ adlatleh ﬁelds-
+itzky@seibersdorf—laboratories.at; hannes.stadtmann@seibersdorf—laborato— The innovative part of the MATISM project is the validation
+ﬂes'at)‘ . . . . . 0f the MATSIM model by a tremendous set of measurements
+
+Color vers10ns of one or more of the ﬁgures 1n th1s paper are avallable onhne , , ,
+at http://ieeexplore.ieee.0rg. under well deﬁned reference radiation ﬁelds. In this paper
+
+Digital Object Identiﬁer 10.1109/TNS.2011.2157704 we describe the development of the 3—dimensi0nal voxel
+
+0018—9499/$26.00 © 2011 IEEE
+
+"
+"2","1922 IEEE TRANSACTIONS ON NUCLEAR SCIENCE, VOL. 58, NO. 4, AUGUST 2011
+F” / ' TABLEI
+1 . ...-- DATA OF THE MATROSHKA GROUND TORSO AND GROUND HEAD PHANTOM
+. 4 ‘ ' m..- AND THE MATSIM TORso AND MATSIM HEAD
+I "" é a .
+’1' 1 | \ \.~;r .‘ 4 ’ 1‘ ‘ 1 Torso Head
+‘ .1“; ___ 3 V . 1 height H=85cm h=30cm
+I . .. 1"" f1 ‘ :1 v 1; 1; 1i , maximalwidth wmax=40 cm wmax=25 cm
+.~ "" - maximal depth dmax = 22 cm dmax = 22 cm
+3 g 1‘ -‘ ‘§ Q materials bones, TE plastic bones, TE plastic
+number of slices 33 10
+Fig. 1. Left: Inside View of the MATROSHKA phantom head (slice #3) slice thickness 254 mm 254 mm
+housing active and passive eye detectors. Right: Cut through the head (slice
+#2) with passive TLDs. (Credit DLR). number Of TLDS 840 104
+simulated organs eyes, lung, stomach, eyes
+model based on computer tomography (CT) scans of the kidney, intestine
+MATROSHKA phantom, used for ground based experiments. CT-scan pixel resolution 512 x 512 x 278 360 x 565 x 486
+The numerical modeling and the simulations are done with total number of voxels 73-107 99-107
+the FLUKA Monte Carlo particle transport code. Comparisons voxel size (mm) 0_ 8 X 0_ 8 X 3_1 0.6 X 0.4 X 0.6
+between TLD, ionization chamber measurements and simu— —
+lations of absorbed dose in water inside the phantom due to
+exposure to 60Co photon reference ﬁelds are described. Further
+measurements in well deﬁned neutron ﬁelds are planned and ‘ -
+will be presented in a next paper. The validated numerical -
+model will then be exposed to the simulated radiation ﬁeld in . I
+low—earth orbit and the dose distribution within the torso will be ~11:
+compared with the actual measurements done on board of 188.
+As an example, in this paper a simulation of the energy density
+inside the numerical phantom irradiated with the proton ﬁeld
+expected at 188 position is also described.
+Fig. 2: Left: passive TLDs in the intestine (slice #27) and cut outs for active
+11. M ATRO SHK A PHANTOM and passive organ dose boxes. Right: typical design of an organ dose box used
+for pass1ve detectors. (Cred1t DLR).
+The anthropomorphic phantom used in the MATROSHKA
+experiment is onboard the 188 is a RANDO upper torso made of III. NUMERI C AL M ODELIN G
+a natural human skeleton embedded 1nt1ssue equivalent material
+(polyurethane) simulating soft and muscle tissue [l9]—[2l]. The The numerical modeling and the simulations are done with
+phantom is 40 cm wide, 85 cm high and it is cut into 33 slices the FLUKA Monte Carlo particle transport code. The FLUKA
+with the thickness of 25 .4 mm each. It is attached to a base struc— code simulates the interaction and propagation of particles such
+ture, where the electronics is accommodated [19], [20], [22]. A as photons and electrons in a wide energy range from 1 keV
+picture of the phantom head is shown in Fig. l. A summary data to thousands of TeV, hadrons up to 20 TeV and all the corre—
+of the ground MATROSHKA phantom (similar to the one eX— sponding antiparticles, neutrons down to thermal energies, and
+posed onboard the 188) is given in Table 1. heavy ions [24]. Since the 2006.3 release, FLUKA provides the
+In each slice long horizontal holes (see Fig. 2) are drilled possibility to describe a complex geometry in terms of voxels
+to accommodate up to about 4800 TLDs used to measure the [25]. This functionality of FLUKA was used to transfer the MA—
+absorbed dose distribution inside the phantom. The dosimeters TROSHKA CT—scans into a full geometry description.
+are hold together in polyethylene tubes inserted in the drilled Two CT scans, one of the MATROSHKA ground phantom
+channels. Atotalnumber of 11 different types of TLDs are used torso and one of the head were performed by DLR at the
+to determine the exposure within MATROSHKA. The TLDs “Strahleninstitut Koln” in Cologne, Germany (see Fig. 3 and
+vary in material (CaFg, LiF), in their Lithium enrichment (6Li Fig. 4).
+and 7Li), in their dopants (Mg, Cu, P; Mg, Ti, and Tm) and in The CT scan gives a matrix containing information about the
+their density and also in their shapes: rectangular (3.2 X 3.2 X local electron density distribution in the phantom based on the
+0.6 mm3 or 3.2 x 3.2 x 0.9 mm3) and cylindrical (4.5 mm Hounsﬁeld scale. The phantom’s material assignment was de—
+diameter and 0.6 mm height). termined by grouping these values into classes resulting in the
+For selected organs such as eyes, lungs, stomach, kidney and model geometry to be used as input in the FLUKA Monte Carlo
+intestine, so called organ dose boxes (see Fig. 2) housing ac— code. The detectors were put inside the foreseen cut—outs by a
+tive silicon dosimeters and passive dosimeters are applied. The software code developed at AIT. The material composition of
+active and passive dosimeters were prepared, inserted and, sub— the TLD detectors in the numerical model is Lithium Fluoride
+sequently, read out by different experimental groups. Further (LiF), whereas natural Lithium is used.
+details to MATROSHKA and detectors are given in reference A total number of 7.3 - 107 voxels is used to reconstruct the
+[18]—[23]. scan of the entire MATROSHKA torso and 9.9 - 107 voxels for
+
+"
+"3","BECK et al.: MATSIM: DEVELOPMENT OF A VOXEL MODEL OF THE MATROSHKA ASTRONAUT DOSIMETRIC PHANTOM 1923
+. 2' ; 0°
+"" g; t "" ’ 1 :' ‘2' B1
+- . i‘ltﬂgﬂw H10 G3 I .7 \3 B3 0X0
+Fig. 3: From left to right: MATROSHKA ground phantom head, CT—scan 0f 90° 0 J ‘3: : ‘ 270°
+the same phantom and the phantom’s voxel geometry MATSIM—Head for input >&- G4 a h B4 0 NA .
+in the FLUKA Monte Carlo code. ,
+H K. F10 D10 35. j
+"" 3+"" ""~~.»‘f§'+‘g""-';.’-
+: g; '3; = 11‘
+7 . , Z: he 150° \210°
+~ ‘; (ff “t: 2.3"""" ‘7"". 180°
+, .L/ T 5—; t 7; Flg. 5. Irrad1at10n set—up of the MATROSHKA phantom head and TLD p0s1—
+“ .1 ""1.4;; tion coding in slice #4.
+between 00 and 3300 in 30 degree steps and b) with mono—di—
+’ _ 7 “t”; '_ t ‘ ._ "" rectional beam incidence frontal (0°) (see Fig. 5).
+‘ £1 ‘ The reference irradiation point is in the center of the rod,
+{ within slice#5. The relative dose deviation within a ﬁeld size
+"" “' 'ﬁtetrr’""€; 0f 27 X 27 cm2, that covers the entire MATROSHKA head, is
+_ _ less than 3% compared to the reference values in the center. At a
+$31.13;) ffﬁgrghfnfttoig :Lihihxﬁgﬁgiglig ghggggtﬁyﬁf Aggﬁﬁilﬁistgrﬁ ti distance of 450 cm between the source and the reference p01nt,
+for input in the FLUKA Monte Carlo Code. the reference dose given in air kerma, KA was determined to be
+200 mGy, with an air kerma rate of 574 :I: 11 mGy/h.
+the phantom head, respectively. A data summary of the M A— Simulations were performed with the numerical model of the
+TROSHK A ground phantom and the M ATSIM model is given MATROSHKA head exposed to 60C0 photons. The simulations
+in Table 1. Pictures of the simulation geometries MATSIM head provide energy imparted in LiF at the TLD detector positions.
+and M ATSIM torso are given in Fig. 3 and Fig. 4. By dividing the energy imparted by the detector mass, absorbed
+dose in LiF is obtained. A comparison of simulated kerma and
+IV. MEASUREMENTS AND SIMULATIONS absorbed dose values shows that secondary electron equilibrium
+eX1sts at each detector p0s1t10n. Therefore a convers10n factor
+Measurements under well deﬁned r adiation reference con— of 1.2 can be used to converting absorbed dose in LiF to water.
+ditions With the phantom head, provided by DLR, were car— This factor is obtained by taking the ratio of the mass energy
+ried out in the radiation standard laboratory of the Seibersdorf absorption coefﬁcients of LiF and water for 1.25 MeV photons
+Labor GmbH (a company of the AIT Austrian Institute of Tech— energy [29].
+n010gy),t0 verify the developed numerical model. The phantom The statistical uncertainties 0n the simulation values are
+head was exposed to 60C0 PhOtOhS- Measurements were per— <1%. Further sources of uncertainties are the photon cross
+formed with thermoluminescence dosimeters and an ionization sections used in the simulation code, the conversion factor of
+chamber type 31013 PTW [26} The TLDS as well as the ioniza— absorbed dose in LiF to water, and the photon source descrip—
+tiOh chamber are calibrated in terms 0f absorbed dose in water tion. Additionally to the statistical uncertainty of the simulation
+DW- The TLDS were packed in stacks 0f four (two dosemeter S of 1% the systematic uncertainties are assessed to 7% to get an
+Of 1:pr TLD-600 and TLD-700 [23], TCSpCCtiVCly). Th6 SiZC Of overall uncertainty in the order of 8%
+a TLD stack iS 3-2 >< 3-2 >< 3-6 mm. The detector stacks were In the f0110wing,results 0f TLD and ionization Chamber mea—
+inserted in tubes separated by polyethylene spacers and placed surements and simulations are presented.
+at 26 measurement positions in the foreseen cut—outs 0f slice #4.
+Each measurement position is deﬁned by a code within a hor— V RESULTS AND DISCUSSION
+izontal and vertical grid of 2.5 cm (see Fig. 5). The TLDs are '
+located in the tubes A—H. The results are expressed as the mean In Table II the results for the detector measurements and sim—
+value of the four TLDs per position, each with a measurement ulations in terms of absorbed dose in water are given together
+uncertainty of 7% (10). with their ratio.
+The ionization Chamber was located in the rod center in slice Fig. 6 and Fig. 7 show the TLD and IC measurements of
+#2, and in the eye bOX (slices #3). The phantom head was irra— the absorbed dose DW in the MATROSHKA head due to 60C0
+diated a) with a multi—directional 60C0 photon beam incidence mono— and multi—directional irradiation, respectively.
+
+"
+"4","1924 IEEE TRANSACTIONS ON NUCLEAR SCIENCE, VOL. 58, NO. 4, AUGUST 2011
+TABLE II 300
+TLD AND 1C MEASUREMENTS AND SIMULATIONS OF ABSORBED DOSE IN A 280
+WATER DW DUE TO MONO— AND MULTI—DIRECTIONAL 60Co IRRADIATION. 5‘ 260
+E
+THE RATIO BETWEEN MEASUREMENTS AND SIMULATION VALUES ARE V
+ALSO GIVEN. MEASUREMENT UNCERTAINTY (10) OF TLD: 7%, IC: 3%, E: 240 I
+AND SIMULATIONS 8% g 220 f [p
+c i
+'5 200 1
+— (D I A
+. , g 180 .
+Detector Absorbed dose in water Ratio U 1 60 ¥ 8 g
+Position Dw (m Gy) g 1 i
+g 140 i 5
+2 9 .
+- 100 °
+IC 1590 1661 162.5 170.5 0'98 0'97 Fig. 6. Measurements of absorbed dose in water, DW, due to 60C0 mono—
+fod 51106 #2 directional irradiation (MATROSHKA head slice #4; TLDs within tubes A—H
+and 1C measurements in central rod slice #2 and eye box slice#3).
+1C eye 219.8 - 213.0 - 1.03 -
+220
+TLD 3‘
+slice #4 E 200
+A1 195.7 176.1 196.4 172.4 1.00 1.02 10—)
+A2 194.6 164.5 180.7 170.5 1.08 0.96 g 180
+B1 205.9 169.2 205.2 170.3 1.00 0.99 ~05) i 1 I l 1
+B2 189.8 164.2 187.5 167.0 1.01 0.98 g 160 — - - n? - - '1' - - - - -.'l -- - -
+B3 163.8 159.5 161.7 162.5 1.01 0.98 8 i 1 l I I
+B4 139.2 161.8 151.5 163.7 0.92 0.99 g 140
+(0
+B5 135.1 169.7 129.9 162.6 1.04 1.04 3:3
+B6 116.5 162.0 111.2 169.6 1.05 0.96 120
+C1 221.7 166.6 205.3 166.9 1.08 1.00 '2-5 0 2-5 50‘ t 7-5 10 12-5 15 17-5
+C2 201.3 164.5 203.9 165.8 0.99 0.99 '3 ance X (cm)
+C3 185-2 155-0 175-1 160-6 1-06 0-97 Fig. 7. Measurements of absorbed dose in water, DW, due to 60C0 multi—di—
+D1 140.8 164.4 138.4 160.4 1.02 1.02 rectional irradiation (MATROSHKA head slice #4, TLDs Within tubes A—H and
+D2 119.4 163.4 117.9 164.9 1.01 0.99 1C in central rod in slice #2).
+E1 233.4 161.9 202.6 171.2 1.15 0.95
+E2 204.2 153.1 191.1 159.1 1.07 0.96 :9; 250
+E3 181.8 154.9 163.1 160.8 1.11 0.96 E, '.
+F1 141.7 153.0 116.0 157.9 1.22 0.97 q; 200 _-;§§§:-.
+F2 110.4 160.9 101.0 159.5 1.09 1.01 g 7J7 __
+G1 206.1 160.9 198.6 166.5 1.04 0.97 2 1501:}:-
+G2 176.2 163.0 200.9 161.3 0.88 1.01 g 100 ""I"" ‘
+G3 166.9 156.3 156.8 163.6 1.06 0.96 §
+G4 154.1 160.4 150.0 160.4 1.03 1.00 8 50
+G5 128.1 162.0 131.6 164.4 0.97 0.99 §
+G6 111.9 163.7 114.8 168.5 0.97 0.97 g o _._._._._+_._._._._+_._._._._+_._._.__._._._._._1
+0 50 100 150 200 250
+H1 178.2 159.6 177.1 166.3 1.01 0.96 Simulated Absorbed Dose Dw (mGy)
+H2 149.4 163.5 161.0 167.6 0.93 0.98
+Fig. 8. Correlation between TLD measurement and simulation results of ab—
+sorbed dose in water, DW, due to 60C0 mono—directional irradiation (MA—
+In case of mono—directional beam incidence the absorbed TROSHKA head Shce #4)'
+dose decreases from front to back of the phantom head by
+a factor of 2. For the multi—directional exposure the TLD Fig. 8 shows the correlation between TLD measurements and
+measurements show a constant behavior from the front to the simulation for the mono—directional irradiation. Considering all
+back as well as from left to right side Which is expected for TLDs, the correlation coefﬁcient is 0.92, and the mean ratio of
+a multi—directional irradiation case. The IC measurements are measured and simulated results is 1.03. In the case of multi—di—
+comparable with TLD results in their Vicinity. rectional exposure of the MATROSHKA head to 60C0 photons
+For mono—directional irradiation the IC measurement gives an the simulated value of the IC (170 :I: 3 mGy) agrees Within one
+absorbed dose value of 220 :I: 4 mGy in the eye and 159:1: 3 mGy standard deviation With the measured value (166 :I: 5 mGy).
+in the rod. The simulated absorbed dose values in the same po— Fig. 9 shows the ratio of TLD and ionization Chamber mea—
+sitions are 213.0 :I: 4.3 mGy and 163 :I: 3 mGy, respectively. surements With the simulations for multi—directionalexposure of
+The simulated values agree With the measured ones Within one the MATROSHKA head to 60C0 photons. Considering all TLDs
+standard deviation in each position. the mean ratio of measured and simulated results is 0.98.
+
+"
+"5","BECK et al.: MATSIM: DEVELOPMENT OF A VOXEL MODEL OF THE MATROSHKA ASTRONAUT DOSIMETRIC PHANTOM 1925
+.3 GeV cm‘3 prim'1
+a -8
+‘3 1.3 0 10 x 10
+g
+.0 1.2 _10 9
+E
+0 1.1 i
+1 1 1 l 1 1 .
+'C
+1.0
+e {If 30 7
+E _
+0., 0.9 t t t I t E
+E 0.8 3 .40 6
+g 0.7 '6 . 5
+‘9 -2.5 o 2.5 5 7.5 10 12.5 15 17.5 5 -50
+5 Distance x (cm)
+4
+-60
+Fig. 9. Ratio between measured and simulated values of absorbed dose in
+water, DW, due to 60C0 multi—directional irradiation (MATROSHKA head 3
+slice #4, TLDs within tubes A—H and 1C in central rod in slice #2). -7O
+2
+104 Solar Maximum, at 400 km, outside ISS .80
+2 (Armstrong 1998, CREME 96) 1
+10
+t_A O 10 20 30 40
+'u, 100 depth (cm)
+S 10-2 Fig. 11. Density of the energy imparted in GeV/cm3 inside the MATROSHKA
+‘T> phantom due to irradiation with inward isotropic ISS protons. Cross section
+(D 4 through the body center; thickness of 0.5 cm.
+2 10
+V — Protons -3 - -1
+x -6
+LT:- 10 _ Neutrons GeV cm prlm 8
+— Fe . . 9
+10-10 24 ‘ 1 1' _ "" .. 8
+10'8 10'6 1o4 10'2 1o0 102 104 ’e‘ 3 ~_. , tr. * . 7
+Particle energy/ (MeV per nucleon) 3 1 . ' , _ . 5
+=3 18 ‘ ~ . w, i 5
+Fig. 10. Proton, neutron, helium and iron particle ﬂuence rate spectra outside .8 , f . ‘ ' 4
+the International Space Station (ISS) during solar maximum, at 400 km altitude, 12 ._1 1 “ , 3
+51.60 inclination [27]. 2
+6 1
+VI. SIMULATION OF PROTON EXPOSURE 0 10 20 30 40
+width (cm)
+Protons represent the major contribution of absorbed dose in F' 12 D _ f h _ d' G V/ 3 _ 'd h 1 d
+- - - 1g. . CDSIty O t 6 energy 1mparte 111 6 CHI 11181 Gt 6 ung 116 to
+the human bOdy exposed to the radlatlon enVironment at the I.SS' irradiation with inward isotropic ISS protons. Cross section through the lungs;
+Fig. 10 shows the ﬂuence spectra of protons, neutrons helium integration thickness 0.3 cm.
+and iron ions giving a signiﬁcant contribution to the radiation
+exposure for a pes1t10n 0uts1de the ISS (iurihg IhaXhhum 3:13“ ness is 0.3 cm. It gives the energy imparted density distribution
+act1V1ty at an altitude of 400 km, and an inclinatioh of 51.6 . within the lungs and the TLD detectors. The energy imparted
+The spectral data were taken from the calculations hf Ahh' within the detectors is signiﬁcant larger compared to the
+strong [27] and CREME96 [28]' Scaling factors, published In surrounding tissue material. Fig. 13 shows the density of the
+the same paper [27] were used to convert ﬂuence values from energy imparted in GeV/cm3 inside the lungs, integrated over
+SOOkmto 400 km. Simulations of the spatial energy distribution 0 < y < 40 cm as a function of width (along X axis). The
+ins1de the MATSIM torso inodel due to irradiation by an lhwahd energy imparted within the TLD detectors is about 60% higher
+isotropic proton source With the energy spectrum as shown in than in the surrounding tissue. When comparing absorbed
+F1310 are performed anti shownin the followmg. . . dose values the differences between TLD and the surrounding
+Flg' 1% shows the dens1ty distributioh 0f energy impartedtin tissue is expected to become smaller. In a further publication
+GeV/Chn 1ns1de the phantom due .to inward mediation Whh we will show absorbed dose values for cross sections of the
+isotropic protons, 0uts1de ISS, during solar maXimum condi— M ATROSHK A phantom and through organs.
+tions, at 400 km altitude and 51.60 inclination (see Fig. 10). It
+gives a side View of the cross section through the body center, VII CONCLUSION
+integrated over a thickness of 0.5 cm. '
+For the same radiation environmental conditions Fig. 12 The MATSIM torso and head, two numerical voxel models
+shows a cross section through the lungs. The integrated thick— of the dosimetric astronaut phantom MATROSHKA, were de—
+
+"
+"6","1926 IEEE TRANSACTIONS ON NUCLEAR SCIENCE, VOL. 58, NO. 4, AUGUST 2011
+X1 0'6 . ’ . _ _ _ _ [7] D. O’Sullivan, D. Zhou, E. Semones, W. Heinrich, and E.F100d, “Dose
+equivalent, absorbed dose and charge spectrum investigation in low
+5 Earth 0rbit,”AdV- Space ReS-,V01- 34,1311 142044212004-
+[8] A.B. Akopova,M.M.Manaseryan,A. A.Me1k0nyan, S. S.Tatikyan,
+I and Y. Potapov, “Radiation measurement on the International Space
+4 Station,”Radiat. Meas., V01. 39, pp. 225—228, 2005.
+3 3 [9] G. Reitz, R. Beaujean, E. Benton, S. Burmeister, T. DacheV, S. Deme,
+: M. Luszik—Bhadra, and P. Olko, “Space radiation measurements
+3 .. on—board ISS—The DOSMAP experiment,”Radiat. Prot. Dosim, V01.
+i 116,pp.374—379,2005.
+[10] M. Hajek, T. Berger, M. Fugger, M. Fuerstner, N. Vana, Y. Akatov, V.
+2 Shurshakov, and V. Arkhangelsky, “BRADOS—Dose determination
+in the Russian Segment of the International Space Station,” Adv. Space
+Res., V01. 37, pp. 1664—1667, 2006.
+1 [11] M. Hajek, T. Berger, M. Fugger, M. Fﬁrstner, N. Vana, Y. Akatov, V.
+Shurshakov, and V. Arkhangelsky, “Dose distribution in the Russian
+Segment of the International Space Station,” Radiat. Prot. Dosim, V01.
+0 120, pp. 446—449, 2006.
+0 5 1 0 1 5 2° 25 3° 35 4° [12] G. Reitz, “Past and future application of solid—state detectors in manned
+x(cm) spaceﬂight,” Radiat. Prot. Dosim, V01. 120, pp. 387—396, 2006.
+[13] M. Casolino et al., “The Alteriss project on board the International
+Fig- 13: Density of the energy imparted in GeV/Cm3, integrated over 0 S y 3 Space Station,” Adv. Space Res., v01. 40, pp. 1746—1753, 2007.
+40 cm as a function of width (along X axis), inside the lungs due to irradiation [14] L, Narici et al., “The ALTE/ALTEINO projects: Studying functional
+with inward isotropic ISS protons. effects of microgravity and cosmic radiation,” Adv. Space Res., V01.
+33, pp. 1352—1357, 2004.
+veloped for investigations under reference radiation ﬁeld con— [15] G-ReltzanFlT-Rerger’“TheMATRQSHKAF30111tY—H13F9ryand§C1'
+ditions and the cosmic radiation environment at 188 Reference ence ovemew’ In 36th COSPAR SClemlﬁC Assembly’ Beumg’ Chma’
+' Jul. 16—23, 2006.
+irradiations Of the MATROSHKA ground phantom head were [16] G. Reitz, “European dosimetry activities for the ISS,” Physica Medica,
+carried out With a 60C0 source at the radiation standard labora— VOL XVII, 110- s_ul3_13lemen_t 1’ 2001- _
+. . . . . [17] T. Berger, “Radlatlon dosnnetry onboard the Internatlonal Space Sta—
+tory 1n Selbersdorf, Austrla. Measurements 1n31de the phantom tion 188,” Z Med. Phys., vol. 18, 110. 4,131). 265—275, 2008.
+head were done With TLDS and an ionization chamber. Sim— [18] G. Reitz, T. Berger, P. Bilski, R. Facius, M. Hajek, V. Petrov, M.
+ulations Of the energy imparted due to 60CO irradiation were Puchalska, D. Zhou, J . Bossler, Y. Akatov, V. Shurshakov, P. Olko,
+. . M. Ptaskiewicz, R. Bergmann, M. Fugger, N. Vana, R. Beaujean, S.
+carned out and absorbed doses were calculated Wlth the Monte Burmeister, D. Bartlett, L. Hager, J . Pélfalvi, J . Szabé, D. O’Sullivan,
+Carlo code FLUKA for comparison With the measurements. The H. Kitamura, Y. Uchihori, N. Yasuda, A. Nagamatsu, H. Tawara, E.
+simulation results show an excellent agreement With the IC and Bentt‘t’n’ER-SGaza’ S-ngeeVir’h/ﬁlsawalﬁdg’ :3 YumE/i‘ﬁ} 011-8121};
+. . . . . . cmo a, . emones, . a , . 1 er, an . e mann, u
+TLD measurements In eaCh p031t10n Wlthm the expenmental un' organ doses inferred from {feasurements in a human phantom outside
+certainty (10). A ﬁrst investigation of the simulation of energy the International Space Station,” Radiat. Res., vol. 171, pp. 225—235,
+imparted due to proton irradiation of the MATSIM torso is car— 2009 _ _ _
+
+. . . [19] J . Dettmann, G. Reltz, and G. Glanﬁgho, “MATROSHKA—The ﬁrst
+ﬂed out' It ShOWS eXpeCted hlgh values Of energy Imparted at ESA external payload 0n the International Space Station,”Acta Astro-
+the skin, Within the bones and the TLD detectors. Further refer— nautica, V01. 60, n0. 1, pp. 17—23, Jan. 2007 .
+ence irradiation experiments and simulations are planned With [20] G; R91” and_ T- Berger, “The MATROSHKA faCIhtY—DOSG deter""
+
+. mlnatlon durlng an EVA,” Radzat. Prat. D0s., vol. 120, no. 1—4, pp.
+neutrons, protons and heavy 10ns. 442445, 2006.
+[21] Rando Phantom Lab, [Online]. Available: http://WWW.phan—
+REFERENCES t0mlab.com/rand0.htm1, 2008
+[1] F. A. Cucinotta, M. Shavers, P. B. Saganti, and J . Miller, Eds., Radi— [22] M- Hajek, V- V3113, and M- Fugger, Assessment 0f Radiation
+ation Protection Studies of International Space Station Extravehicular Exposure for Astronaut Crew During Spacewalks (Matroshka Exper—
+Activity Space Suits, NASNTP—2003—212051, 2003. iment)—Austrian Results Univ. of Technology. Vienna, Austria,
+[2] E. R. Benton and E. V. Benton, “Space radiation dosimetry in low— 2006-
+Earth orbit and beyond,” Nucl. Instrum. Methods Phys. Res. Section B, [23] M- Hajek and R- Bergmann, “MATSIM3 Data collection and planning,”
+vol. 184, pp. 255494, 2001. Atomic Inst., Vienna Univ. of Technol., Tech. Rep. MATSIM—WP2,
+[3] G. D. Badhwar, W. Atwell, G. Reitz, R. Beaujean, and W. Heinrich, 2008-
+“Radiation measurements on the MIR Orbital Station,” Radiat. Meas., [24] A- Ferrari, P- R- 5313, A- F3330, and J- Ranft, FLUKA3 A Multi P3119016
+V01. 35, pp. 393422, 2002. Transport Code. Geneva, Switzerland, CERN, INFN, SLAC., 2005.
+[4] M. Hajek, T. Berger, N. Vana, M. Fugger, J. K. Pélfalvi, J. Szabé, [25] V. Andersen et al., “The application of FLUKA t0 dosimetry and radi—
+1. Eérdégh, Y. A. Akatov, V. V. Arkhangelsky, and V. A. Shup ation therapy,”Rad. Prat. Dos., V01. 116, no. 1—4, pp. 113—117,2005.
+shakov, “Convolution 0f TLD and SSNTD measurements during the [26] PTW Freiburg, Physikalisch—Technische Werkst'aitten, Dr. Pychlau
+BRADOSl experiment onboard 188 (2001),” Radiat. Meas., v01. 43, GmbH» Lérracher Strasse 7, 79115- Freiburg, Germany
+pp. 1231—1236, 2008. [27] T. W. Armstrong and B. L. Colborn, “Predictions of secondary neu—
+[5] 1. Apéthy, s. Deme, L. Bodnér, A. Cséke, and 1. Héjja, “An on board tron and proton ﬂuxes induced in the International Space Station by
+TLD system for dose monitoring on the International Space Station,” the space radiation environment,” SAIC Rep. 98042R, 1998-
+Radiat. prof. Dosim, V01. 84, pp. 3214,23, 1999. [28] A. J . Tylka et al., “CREME96: A revision of the cosmic ray effects
+[6] T. Berger, M. Hajek, L. Summerer, N. Vana, Y. Akatov, v. Shurshakov, 0n micro—electronics code,” IEEE Trans. Nucl. Sci., vol. 44, n0. 6, pp.
+and V. Arkhangelsky, “Austrian dose measurements onboard space sta— 2150—2160, Dec. 1997-
+tion Mir and the International Space Station—Overview and compar— [29] NIST X—Ray Attenuation Database, [Online]. Available: httP3//WWW-
+ison,” Adv. Space Res., V01. 34, pp. 14144419, 2004. nist.gOV/physlab/data/Xraycoef/indeX.Cfm [Accessed: March 2010]
+
+"

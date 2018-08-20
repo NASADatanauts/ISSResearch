@@ -1,0 +1,322 @@
+"","x"
+"1","Indicators of plume constituents from HICOTM
+Nicholas Tuﬁllaro and Curtiss 0. Davis
+College Of Oceanic and Atmospheric Science, Oregon State University, USA.
+Katherine B. J ones
+Department Of Chemistry, University Of Otago, New Zealand.
+SUMMARY
+
+Littoral river plumes are complex optical environments. To begin to resolve this complexity we use
+hyperspectral data, and an extension of ‘dark pixel correction’ methods (Chavez 1988), to produce
+radiance maps that allow us to distinguish different constituents in the water column ranging from
+glacial rich sediments (silica’s) t0 muds and algae. We present data from two sites: the Columbia
+River in the Northwest of the United States, and the Otago Shelf fed by the Clutha River on the South
+Island Of New Zealand. For this study the instrument used to collect data was HICO (Corson 2010;
+DaVis et. al. 2010) — the Hyperspectral Imager for the Coastal Ocean — developed by the United
+States Naval Research Lab (NRL) and currently ﬂying on the International Space Station. HICO
+has 90 channels between 400-900 nm and a ground sampling distance of 90 m. These early results
+illustrate how space borne hyperspectral imaging can enhance our View Of the suspended matter in
+river plumes along a coast.
+
+INTRODUCTION
+
+Ideally, accurate physics based atmospheric correction is used to obtain surface remote sensing
+reﬂectance, and estimates of the inherent optical properties (IOP’s) 0f the top of the water column,
+from a space borne at-sensor radiance (Gordon and Wang 1994). The IOP’s, in turn, can be used
+to estimate the constituents of the water column from models and simulations of the scattering and
+absorption properties of the speciﬁc constituents of coastal waters (Lee 2006).
+
+In many applications, however, such as identifying different types and sources of suspended mat-
+ter in the upper water column, understanding qualitative mixing patterns, or providing Operational
+guidance for in ﬁeld sampling, a calibrated radiance image (without atmospheric correction) of a
+scene may sufﬁce. For instance, the Fluorescence Line Height method (FLH), using the 709 MERIS
+channel, is proving to be a good indicator of coastal algal blooms (Gower et. al. 2005; King et. al.
+2010), and is helpful in both their initial detection, and also providing guidance for ﬁeld sampling
+(Tuﬁllaro et. al. 2010). Additionally, Gower and co—workers have advocated working directly from
+the Level 1b (L1) data lacking atmospheric correction in estimating FLH, especially in near coastal
+waters. The FLH maps from L1 data are Often used to indicate a speciﬁc water constituent, and not
+to accurately estimate the concentration. That is, FLH is Often used to ‘indicate’ the presence of high
+concentrations of algae, relative to surrounding waters.
+
+We will use the term ‘indicator map’ to denote a radiance 0r reﬂectance image of a scene, which
+like, the L1 FLH products, are usually computed from the calibrated at-sensor radiance and are meant
+to highlight speciﬁc constituents of the water column, but not necessarily provide a calibrated mea-
+surement or concentration. Because we are simply after indicators, rather than estimates of concen-
+trations, we make more liberal use Of scene based empirical methods to go directly from L1 data to
+an ‘indicator’ for a speciﬁc water constituent.
+
+"
+"2","We View these indicator maps as, in some sense, an extension of line height methods, made pos-
+sible by the use of hyperspectral data which allows us get a ﬁner look at the suspended matter con-
+stituents of coastal waters. In line height methods, adj acent channels are used to develop indicators for
+a product which is relatively insensitive to atmospheric effects because of the proximity in wavelength
+of the channels utilized. In the method described here our intent is the same. That is, we want to de-
+velop indicators that are relatively insensitive to atmospheric effects, but can also make use of spectral
+data over a wider wavelength range, and not just adj acent channels. We emphasize that this approach
+is made possible because of the relatively dense channel sampling provided by hyperspectral data,
+which allows us to identify features in the spectra that can be used as indicators for speciﬁc types of
+suspended matter. In order to facilitate operational use and adaptability to different scenes, our initial
+approach relies on an empirical model for ‘dark water pixels’ that is easily tuned for different regions.
+
+Alternatively, as we move away from Line Height Methods we move toward band-ratio methods.
+So the method described here might also prove useful simple preprocessing procedure for band-ratio
+methods, or point us toward an extension of band-ratio methods that allows us to experiment with
+both the location and spectral widths of the bands in order to create an indicator for a target product.
+
+In either case, as we move from space-borne multispectral to hyperspectral remote sensing data,
+we eXpect that the additional spectral channels will ﬁnd use both in scene based atmospheric correc-
+tion methods (Lee et. al. 2007), as well as developing a more complete collection of indicators of the
+constituents of coastal waters.
+
+DARK PIXEL MODEL
+
+The starting point for atmospheric correction of a sensor above water radiance, LT, is the decom-
+position,
+
+L70») =La<x>+7<x>Lw<u (1)
+where La accounts for atmospheric and sea-surface reﬂection, LW picks up contributions below the
+water surface, and ‘I denotes the transmittance from the water surface to sensor (Gao et. al. 2000).
+
+In developing ‘indicator maps,’ we will consider a slightly different decomposition. Namely, we
+start by imagining, at every pixel, the at sensor radiance we would see if the water was clear, a so-
+called dark water pixel. This is an ‘idealized’ quantity, but the difference between this ideal radiance
+signal, and the observed signal at sensor, provides information about what is in the water, which is
+relatively independent of what is in the atmosphere. Thus it is a good starting point for creating an
+‘indicator’ function for what is in the water.
+
+In our approach a dark water pixel will be deﬁned ‘empirically,’ based on an image, or collection
+of images, of a region of interest, and choosing pixels, or patches of pixels, which determine ‘dark
+water,’ or water free of river plume materials, or other features of interest, for that region. So in
+practice, the dark water pixel could contain some background material in the water column that we
+will consider as ‘clear water,’ or a ‘dark pixel,’ which is typical for the region. We could call this
+type of pixel, which contains some below water signal, a regional dark pixel, but in the following
+discussion we will just call it a dark pixel. It is the background signal from which we start any further
+signal processing.
+
+Mathematically we can write this decomposition as:
+
+MO») = L610») + T (7») (L610) +Lb(7»)), (2)
+
+"
+"3","= LMO"") +L1(7»)7 (3)
+where LM is the modeled spectrum, and L1 is the ‘indicator’ spectrum, it is simply the residual between
+the at sensor radiance minus any modeling we do for the spectrum. If LM is simply chosen as a dark
+pixel in the scene than it is what is normally referred to as ‘dark pixel subtraction’, a very simple
+but often effective scheme for atmospheric correction (Chavez 1988). The terms L610») and L190») are
+called the ‘dark water’ and ‘bright water’ contributions to LWOt) respectively.
+
+The trick to this approach is ﬁnding (a probably empirical) model of dark pixel spectra that allow
+us to create a data based decompositions of LI (7») to identify one or more dynamic water constituents
+of interest. To ﬁnd such a model we start by examining an image from HICOTM of the at-sensor
+radiance (LlB) for a typical dark water scene, in this case the waters around Midway Atoll (Fig. 1).
+
+To create an empirical model to ﬁt the ‘dark water’ pixels shown by the circles in Fig. l we take a
+guess at the following functional form:
+
+me = (a+b(k— M)‘4 (4)
+where a and b are model parameters which are to be estimated from the spectral data — 7t” and Lm (kn)
+— and M is the ﬁrst value of the wavelength in data set being modeled — a constant. In HICO LlB
+data sets, each at-sensor pixel consists 90 radiance values between about 0.4 nm to 0.95 nm. The
+typical swath size covers approximately 42 km by 190 km, and 500 by 2000 pixels. To ‘model’ the
+data we limit our data sets to wavelengths between 0.45 nm to 0.95 nm, so in our data sets M : 0.45
+nm and M; : 0.95 nm.
+
+The choice of window of wavelengths is deliberate for our modeling. First, we want a functional
+form which will ﬁt the data well, but not too well — that is we want to deliberately ‘smooth’ the data
+by imposing a model that has only a few — in this case two — free parameters. This ‘smoothing’
+process will, for instance, average over atmospheric absorption features, but these features can prove
+useful in building indicator functions. For dark pixels, the wavelength window chosen is dominated
+by a decaying trend in both incoming solar irradiance and Rayleigh scattering. In particular, k1 is
+chosen at approximately the maximum of solar irradiance over the wavelengths considered so that —
+on average — the function we are trying to estimate is monotonically decreasing with wavelength.
+Second, we need a window which also covers information useful for both dark pixels (whose shape
+is dominated by Rayleigh scattering between 0.45 nm to 0.7 nm) and bright pixels which can have
+signiﬁcant radiance past 0.7 nm.
+
+The functional form for the model does not eXhibit fourth order scaling per se, rather the use of
+two constants effectively introduces terms in a functional eXpansion that also includes modeling terms
+of order 7F4, 7F3, , k0. So it is more proper to say that the model has a leading term that has an
+inverse fourth order power.
+
+As Figure 1 illustrates, the functional form approximates the dark pixel data well with just two
+parameters in wavelengths considered. The actual functional ﬁt is achieved with a nonlinear least
+squares optimization procedure (Dennis 1977). Critical for any nonlinear optimization is the ‘initial-
+ization’ of the seed values. The empirical dark pixel model presented in Eq. (4) is easy to initialize.
+To ﬁnd the starting values for our nonlinear optimization — (610,190) — we algebraically solve Eq.
+(4) for two different values. Choosing the ﬁrst spectral point in the HICO data set, (X171), we ﬁnd a
+
+"
+"4","13 3:0— $45..
+$_ . '.;. L :3 Iain
+r. ‘ ' 1"": E 20— 31;;
+“ w—(b) “M
+. mmégicﬂwgym
+.‘ffmj’ﬁ’; 50 3:?
+3i? :0 KL-
+‘ib‘ EL 20 5%,}
+:1~ ‘n %%&%Mmg.wwm
+U(c)
+Figure 1: Image OfMidway Atall and selected spectra at indicated paints — (a) HICO RGB image
+fram 25 March 2010. Bright Circles indicate regiOns far the spectra sh0wn in Fig. I (b ). The black,
+blue, and green d0ts indicate regiOns we expect t0 see ‘typieal’ dark pixel spectra — i.e. Clear wa-
+ter Spectrum’s. The magenta d0t indicates an example Of a (very) bright spectrum. The image is
+60mp0sedfr0m at-sensar radianees, LI B data is supplied by NRL’s HI C OTMteam [C0rs0n 2010]. (b )
+At-sensar radianeefar blaekpixel in F ig. I (a). The raw data is indicated by Circles. The initializatian
+far the n0nlinear ﬁt is sh0wn by the dashed line. The ﬁnal n0nlinear ﬁt t0 the dark pixel empirical
+made] is sh0wn by the salid line. (C) At-sensar radiance far blue pixel in Fig. I (a). The lawer line
+sh0ws the diﬁ‘erenee with the black pixel in Fig. I ( b ).
+
+"
+"5","seed value for a as do = L1—4, and this in turn can be used to compute [90 at any other spectral value. In
+our case we chose the end point, Mr : 0.95 nm, with [90 : (LR,4 — a0) / (7W — M). The speciﬁc values
+for the data shown in Fig. 2 are (610,190) : (036,071), and after optimization (61,19) : (036,079).
+Computing Optimized values for (a, [9) across different ‘dark water pixels’ in a scene provides a mea-
+sure of the variation of the model and data. As Figure 3 illustrates, they do not change much in the
+Midway scene, typically the values for (a, b) vary by less than 5%.
+
+EXMAPLES: OTAGO SHELF AND COLUMBIA RIVER
+
+Moving to more complex waters we consider coastal ﬂow along the Otago shelf 0n the South
+Island New Zealand. The ﬂow along the Otago shelf is steered Northward by the Southland current.
+75 km south of Dunedin, Broadbay, and the biologically productive Otago Peninsula, is the Clutha
+River. A major source of freshwater input, the Clutha is glacier fed from thr Southern Alps and is
+rich in silicates, which produces very bright coastal waters (Pfannkuche 2002). The Clutha is the
+highest volume river in New Zealand, discharging a mean ﬂow of 614 m3 /s The Taieri River, about
+30 km south of Broadbay, is more sediment rich, and both rivers provide many of the nutrients 0f the
+biologically rich Otago shelf coastal waters. A HICO image of the waters along the Otago Shelf is
+shown in Fig. 2.
+
+The spectra at the points indicated in Figure 2(a) is shown in Figure 2(0). Pixel 1, black, is meant
+to sample dark waters. Indeed, the dark pixel model works well for this spectral data with optimization
+values of (a, b) : (0.4, 0.84). The blue pixel is taken near the mouth of the Taieri, and the magenta
+pixel near the mouth of the Clutha. The silca rich waters of the Clutha appear to increase the water
+brightness between 0.6nm and 0.75 nm relative to the the Taieri.
+
+It would be interesting to distinguish the (silica rich) Clutha and (sediment rich) Taieri waters
+based on remote remote sensing data. To attempt this we decompose the L1B spectrum by applying
+the dark pixel model 011 pixel by pixel basis. We then present the ‘residual’ spectrum, the L1B ra-
+diance spectra, minus the estimated LM. An image based on the L1, indicator spectrum, is shown in
+Figure 2(b). In this case our ‘indicator function’ is simply a choice of RGB channels which highlights
+the spectra between 0.6 nm and 0.7 nm, making the Clutha waters bright blue relative to the green-
+ish Taieri waters in Figure 2(b). In-situ data from bi-monthly cruises are currently being collected
+eastward from Broadbay. Some initial match-ups are shown in Figure 2(d).
+
+As a second example we take a look at the mouth of the Columbia river in the Northwest of the
+United States. The L1B HICO RGB image from 19 March 2010 is shown in Figure 3(a). After an
+examination of the spectra, we choose a channel at about 540 nm to attempt to highlight sediment in
+these waters. The spectra for L1 for this channel is shown in Figure 3(b). Images from the summer
+(July 8-13), spectra and sediment indicator maps are shown in Fig. 3(c-f). We are currently trying to
+match-up these type of data with in-situ sediment records for the Columbia.
+
+CONCLUSION
+
+We describe a method for separation of hyperspectral L1 data into a ‘dark water pixel,’ and resid-
+ual portion. We suggest that, particularly in cases where atmospheric correction is problematic, the
+construction of indicators based on the residual spectrum can be useful in distinguishing different
+types of class 2 waters. An examination of the residual spectrum, for a few well chosen pixels in a
+
+"
+"6",""" 7: WW,-“‘ “2'."" A: '
+§.'£fé’*!ﬁ- $3; 5.134% 7 , L47 , : ~
+""Fiat —’; 3.57? ‘7‘ ‘1'"": ‘25""- ' r .
+‘wté"" W ' w .,
+*3? ‘3‘: -"" #:97‘4, { ‘i ‘7'
+”Ff; ' ‘ .. z, ""2;: f t e 3%: “‘ , ‘ '. 3’1.
+:‘1‘3.’ urwag '.. . -- 5' v. . .1 ""3:: 4‘ . N
+”‘ﬁ‘f‘ ‘n . ‘f'lwl 3' 1""; »::Q““.‘. 2...“
+. .. q - t. . -. ‘.
+., J. ti: ' . ‘ ' ' 3 .H h: ~..:~. n“...
+1"" .,
+i 1% V' r Y x
+'14:“ ~ 45 _ L , K ..s;.:qtg;£;g;g:::iii;33ii-ﬁ‘»;é*¥-f~
+H t b” l'."" .;t ‘r r r ‘9. L? m 3‘ m w}! n u MK
+91‘»; ~z£!,{_r
+{ ""2,5 .-.‘ ‘-l - ‘ -. 'l :' _
+3;: ,_ / A
+W H"" 1""???» /
+-' |...,:. f . .
+. ‘ -§
+‘ Mﬂ,_n K ~ ' y /_.( .
+~ , ”"" 2 ‘ 1,;
+%‘ .r__‘.nr. _ \.\
+x
+’) we, I X , . e , ‘
+""W“ , _ ""L"" ""1” ' ' L
+Figure 2: Image of Otago Shelfwaters with indicator map, spectra, and examples of in-situ data: (a)
+L] B HICO image of the Clutha t0 Broadbay, New Zealand, 2 May 2010. The bright water covers 70
+km from the mighty Clutha (top, south) to Broadbay (bottom, north). (C) L] B Radiance spectrum of
+pixels on the Otago shelf indicated in Fig. 2(a). Black spectra — dark water, Blue — near the Taieri
+mouth, and Magenta — near the Clutha mouth. ([9) HICO image constructed from L1 spectrum of the
+Otago shelf waters. The Clutha waters (blue) are distinguished from the Taieri waters (green). (d)
+In-situ cruise data for water properties for 5 May 2010 eastward from Talarona Head, transecting the
+Otago shelf coastal waters.
+
+"
+"7","Specta at Sampled Pixels ..
+45 (C)
+40 \\
+. 35 f
+L. J '3‘ 30 \\
+.9
+u .
+g 25 ,
+§ .
+a 20 “5,.
+E
+15 ‘ ,
+3"" ' 10 V.
+a? . , 0.5 0.6 0.7 0.8 0.9 *
+.I ' ﬂ ‘ wavele ngh (nm)
+‘w ( 6'11 r "" . , t
+7+ "" ' 3“:
+Fl. ' 1:)3‘r‘1:vi t, t '
+5 “F3” ., 4"": 2? a - ..‘. - -::-;' t A ""’35; ~
+1..»‘.' i: ,4   ~.‘ f» ~- "": _""f'Vm'."".f«- 1'. ‘ , ‘ '1"" .-'
+X» f~ . -. - ' w; ' 1493?!»
+v 3-). ,_;'.. 1.. .r n} , _:I .1 .7 V I -.
+'5’.V“""~-f""'=: J; ‘—_..“-"""" - -- . . 5. .7. ‘. i . ’ﬁ’
+Figure 3: Images of Columbia River with indicator map highlighting sediments: ( a ) L] B HICO image
+of Columbia River mouth I 9 March 2010. (b) An indicator for sediments in the Columbia River based
+on the the dark pixel spectral separation for the image presented in Fig. 3(a). (e-f) Typical spectra
+and sediment indicator maps for July 2010.
+
+"
+"8","scene, is Often enough to suggest channels that can be useful in building indicator maps to highlight 0r
+reveal the presence of waters with signiﬁcantly different suspended materials. We illustrate the idea
+with silica rich, and sediment rich, bright coastal waters off the Otago shelf, and also present initial
+work on the analysis Of sediment rich waters surrounding the Columbia River mouth.
+ACKNOWLEDGEMENTS
+
+We greatly appreciate the support from our sponsors. We thank the HICOTM team at NRL
+for building the spectrometer and coordinating its operation on the ISS, and providing calibrated
+HICOTMdata for academic research. We also that J asmine Nahomiak at Oregon State University for
+setting up the academic distribution portal for HICOTMdata.
+REFERENCES
+Chavez, P. S. Jr. (1988). An improved dark—object subtraction technique for atmospheric scattering
+correction of multispectral data, Remote Sensing Environ, 24, pp. 459-279.
+Corson, Michael (2010). The hyperspectral imager for the coastal ocean: Littoral environmental
+characterization from the international space station, Ocean Optics XX, Abstract #132.
+Davis, Curtiss, Arnone, Robert, Gould Rick, Corson, Michael, and Lee, Zhong-Ping (2010) , The
+hyperspectral imager for the coastal ocean (HICO) provides a new View Of athe coastal ocean, Ocean
+Optics XX Abstract #193.
+Dennis, J .E. (1977). Nonlinear Least Squares: State Of the Art in Numerical Analysis, ed. D. J acobs,
+Academic Press, pp. 269-312.
+Gao, B. C., M. J . Montes, Z. Ahmad, and C. 0. Davis (2000). Atomospheric correction algorithm for
+hyperspectral remote sensing of ocean color from space, Applied Optics, 36 (6) p. 887-896.
+Gordon, H. R. and M. Wang (1994). Retrieval of water leaving radiances and aersol optical thickness
+over the oceans with SeaWiFS: a preliminary algorithm, Appl. Opt. 33 443-452.
+Gower, J ., S. King, G. Borstad and L. Brown (2005), Detection of intense plankton blooms using the
+709nm band of the MERIS imaging spectrometer, Int. J . of Remote Sensing, 26 (9): 2005-2012.
+King, S. A., Gower J . F. (2010). Satellite remote sensing of the spring bloom in coastal waters of
+British Columbia, 2010 Ocean Sciences Meeting Abstract BO24A-07 (2010).
+Lee, ZhongPing (ed.) (2006). Remote sensing of inherent optical properties: Fundamentals, tests of
+algorithms, and applications, IOCCG Report Number 5, (2006).
+Lee, ZhongPing, B. Casey. R. A. Arone, A. D. Weidemann, M. J . Montes, B-C Gao, W. Geode, C.
+0. Davis, and J . Dye (2007). Water and bottom properties of a coastal environment derived from
+Hyperion dadta measured from teh EO-l spacecraft platform, SPIE DOI: 10.1117/12.791119.
+Pfannkuche, J . (2002) Optical properties of Otago shelf waters: South Island New Zealand, Estuarine,
+Coastal and Shelf Science, 55 (4), 613-627.
+Tuﬁllaro, N., C. 0. Davis, Z-P Lee (2010). Comparison Of MERIS and HICO spectral imaging along
+the Oregon Coast, 2010 Ocean Sciences Meeting Abstract IT31A-07.
+
+"

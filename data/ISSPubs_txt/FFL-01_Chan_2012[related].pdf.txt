@@ -1,0 +1,391 @@
+"","x"
+"1","— METHODS AND TECHNICAL ADVANCES
+Fly 6:4, 205—210; October/November/December 2012; © 2012 Landes Bioscience
+Es ima in e s ee 0 roso i a ocomo ion
+t tgthpde phll t
+usin an au oma e e avior e ec ion
+9 t t d b h d t t
+and anal sis s s em
+y y t
+Kimberly L. Chan,” Omer T. |nan,2'1'* Sharmila Bhattacharya3 and Dana Marcu3'4l*
+1Department of Bioengineering; University of California, Berkeley; Berkeley, CA USA; 2Ames Associates; NASA Ames Research Center; Moffett Field, CA USA;
+3NASA Ames Research Center; Moffett Field, CA USA; 4Carl Sagan Center; SETI Institute; Mountain View, CA USA
+*These authors contributed equally to this work. a)-
+4—:
+Keywords: Drosophila, behavior, locomotor, speed, signal processing :5
+.Q
+'C
+4—:
+A fundamental phenotypic trait in Drosophila melanogaster is the speed of movement. Its quantiﬁcation in response _‘£
+to environmental and experimental factors is highly useful for behavioral and neurological studies. Quantifying this '0
+behavioral characteristic in freely moving ﬂies is difﬁcult, and many current systems are limited to evaluating the speed of _|_,
+movement ofone ﬂy at a time or rely on expensive, time-consuming methods. Here, we present a novel signal processing 0
+method of quantifying the speed of multiple ﬂies using a system with automatic behavior detection and analysis that C
+we previously developed to quantify general activity. By evaluating the shape of the signal wave from recordings of a
+live and simulated single ﬂy, a metric for speed of movement was found. The feasibility of using this metric to estimate 0
+the speed of movement in a population of ﬂies was then conﬁrmed by evaluating recordings taken from populations D
+ofﬂies maintained at two different temperatures. The results were consistent with those reported in the literature. This .
+method provides an automated way of measuring speed of locomotion in a ﬂy population, which will further quantify ﬂy G)
+behavioral responses to the environment. 0
+cc;
+0
+Introduction are based on imaging, tracking and processing of the analog 8
+signal. .—
+Quantifying fruit ﬂy activity can be used to estimate behavior We have previously developed a miniaturized system that m
+Changes due to environmental factors or experimental manipula— can quantify the locomotor activity of a population of ﬂies in U)
+tion. The normal behavior of the ﬂies includes ﬂying, locomo- an automated fashion, based on the change in light intensity 0)
+tion, mating and courtship, escape, negative geotaXis, and rest in the ﬁeld of View of a camera, which is recorded as a digital '0
+associated with Circadian rhythm periodicity. signal.14’15 This system measures the Changes in light intensity C
+Negative geotaXis (for a review see ref. 1) and rapid iterative caused by ﬂies entering or exiting the ﬁeld of View, and records CU
+negative geotaXis (RING) assays2 have been used to determine the processed signal for further analysis. In these previous stud— —l
+the behavioral aging of ﬂies. Metrics of the jump response to ies we demonstrated that this approach can be used to quantify N
+odor,3 of the escape response,4 of locomotor activity?6 of free7 the frequency of locomotor events. In contrast, here we present a ‘—
+and tethered ﬂight8 and of courtship and mating behavior9 have method for quantifying the speed of each of these events, as well 0
+been developed to screen for genes and uncover sensory networks as the overall statistical distribution describing the average speed N
+responsible for these behaviors. of a population. @
+The speed of movement is one important measure that, if
+accurately estimated, can assist in quantifying behavior. The Results
+ﬂight speed in Drosophila has been estimated based on experi—
+mental stimulation and modelinglo’11 using the TrackFly behaV— The speed of locomotion is reﬂected by the rise time of the
+ior system,7 to serve as a procedure to determine behavioral recorded signal. Upon Visual observation of the signal output
+inputs from the CNS. Walking speed is a trait inﬂuenced by for a single live ﬂy moving in and out of the ﬁeld ofView (exam—
+many environmental factors and can be used to assess the role ple of image in Fig. 1A, corresponding signal in Fig. 13), we
+of genes in response to environmental Changes and the evolu— estimated that the corresponding peaks were “sharper” as the
+tion potential of a population.12’13 Many of these techniques ﬂy moved quicker. In order to quantify this “sharpness” and
+*Correspondence to: Omer Inan and Dana Marcu; Email: oeinan@gmail.com and oana.marcu@nasa.gov
+Submitted: 03/22/12; Revised: 05/24/12; Accepted: 06/03/12
+http://d><.doi.org/10.4161/ﬂy20987
+www.landesbioscience.com Fly 205
+
+"
+"2","—
+_ a 0.4
+.. - '5
+7'“. 5
+.33 ‘ 37, 0-2
+>.
+i:
+>
+z: 0
+o
+2 <
+> -
+I E 0.2
+0 1
+.2
+-| -O.4
+.l I
+.’ o 5 1o 15 20 25 CD
+. ‘|—'
+Time (s) 3
+C D .—
+:
+""_;.;_:;:;'__-;;::;1‘;-.:::2;2ﬁ;;;t;'.1 5 A 4
+2 ng2” ~, 2, 0 CD
+_ 2 'W“ . Tu ' —
+‘ 1"".Ejrfgii'3‘33 C I 5
+JET; .. if}. 5%"": U) """"
+:1"". :g: .;-- 125:5: ' :0? O
+_ . vi: '_ 133232222 ,2 0 C
+: ‘22:; 313222 *5
+.'..-.': re; ' .-""..o: ‘g‘tliiti
+1'75. 5%? - ‘- é“ : -o.2 O
+. irg’. -I-I.:..- ‘ fztitiiiii I E D
+”5"""": 8 '
+‘ _-'_'. g?"" "" a '0.4 m
+5 0
+.§
+0: -o.5 C
+o 4 8 12 16 20 CD
+Time (s) '5
+(D
+Figure 1. A simulated ﬂy provides periodic events for accurate signal analysis. A wiId—type ﬂy in a Petri dish illuminated from below (1A) is simulated by . 9
+the black rectangle on an LCD screen (1 B). The live ﬂies move predominantly along the edge of the Petri dish. The virtual simulated ﬂy, used to evalu— m
+ate the effect of controlled speed on signal shape, imitated such behavior (1C and D). U)
+provide accurate information about the speed of the walking was inversely proportional to the speed of movement: the '0
+behavior, we used a Virtual simulation of a ﬂy (Fig. 1C). The slower a ﬂy entered the ﬁeld of View, the longer the rise time; C
+recordings from simulated ﬂies were extremely consistent and the faster the movement, the shorter the rise time. As illus— (U
+repeatable (Fig. 1D) and thus facilitated the tuning of the meth— trated in Figure 2C (a magniﬁed illustration comparing a sin— _I
+ods for quantifying speed. gle event at different speeds), increasing the speed of simulated N
+At steady—state, the signal remains constant at zero volts single ﬂy movement by increments of 0.25 units from 0.5 units \—
+until the ﬁeld of View either lightens or darkens as a result of a to 1.5 units resulted in monotonically decreasing rise times. 0
+perturbation. For example, as a ﬂy (dark body) moves into the Consequently, the rise time can be used to quantify the speed N
+ﬁeld of View (white background), the signal begins to decrease of movement. @
+until the full body of the ﬂy is in the ﬁeld of View. At that point, Speed estimation of single ﬂy events from live ﬂies. In order
+the recovery properties of the circuit relax the signal back to to use the estimate of rise time from simulated ﬂies to quantify
+zero slowly, where it remains until the next event. In the cor— the speed of real live ﬂies, isolated single—ﬂy events (SFEs) were
+responding recorded signals in Figures 1B and D the positive analyzed. SFEs are only a subset of all ﬂy movement events that
+peaks represent a single ﬂy exiting, while the negative peaks the software automatically detects and uses for measuring activ—
+represent a single ﬂy entering the ﬁeld of View. ity (number of events) vs. inactivity (inter—event durations).14’15
+Figure 2A shows an example of recorded traces of the simu— An ideal SFE was a single ﬂy entering or leaving the ﬁeld ofView
+lated ﬂy moving in and out of the ﬁeld of View. We calculated seamlessly without hesitating or hitching, which corresponded
+the time it took for the signal to rise to each peak value, by to a constant speed of entry/eXit. Since the goal of this study
+determining the start and end points of the rising edge (Fig. was to accurately estimate the average speed of the ﬂies while
+2B). The difference between these points was considered the entering or leaving the ﬁeld of View, only SFEs were included
+rise time for the event (see markers in Fig. 2B). The rise time in the analysis.
+206 Fly Volume 6 Issue 4
+
+"
+"3","—
+A 0.4
+D: 0.2
+5
+0
+'U
+3 0
+a
+E
+<
+a -O.2
+c
+2'
+CD
+> I
+E -o.4 CD
+'5
+-O.6 .Q
+0 2 4 6 8 10 12 14 16 18 20 ':
+Time (s) -|-'
+U)
+U
+B 0.4 C 1 , .
+4—:
+C
+A 0.35 A 8
+=2 :§ 0.8
+s 0.3 5 O
+0 0 D
+:3 0.25 g 0.6
+= = Increasing '
+O. O.
+E 0.2 E Speed _.n’ 8
+< <
+73 0.15 73 0.4 C
+.9 .9 CD
+(I) O u) .—
+2 0.1 2 02 0
+LL u. ' (1)
+0.05 O
+o o m
+0 0.4 0.8 1.2 1.6 -0.3 -0.2 -0.1 0
+Time (s) Time (s) 8
+C
+Figure 2. Rise time decreases with increasing speed in a simulated environment. (A) Recorded signal from one simulated ﬂy moving at a slow speed. C
+Each positive peak indicates the ﬂy moving out, and each negative peak is the ﬂy moving into the ﬁeld of view. (B) The ensemble averaged peak show— CU
+ing how rise time is calculated from the ﬂy event peaks. (C) Rising edge portion of normalized ensemble averaged peaks from simulated ﬂies moving _I
+at ﬁve different speeds—as speed increases, the rise time decreases.
+N
+V
+A total number of 25 entering and leaving single—ﬂy events or leaves the ﬁeld of View, this was used to compare the average 0
+(SFES) were evaluated from recording of live ﬂies by counting speed ofmovement of two populations, using the probability dis— N
+the Video frames (seconds) it took for the entire body of the ﬂy tribution of the SFE rise times of the two groups. @
+to enter/eXit the ﬁeld of View. These times provided a manual We made the assumption that no population would have the
+estimation of speed and were compared with the automatically same rise time for every event within a recording, but rather the
+determined rise times (Fig. 3). A line was ﬁtted to the data event rise times are more likely to span a range. In fact, for each
+showed that the correlation between the manually counted time unique population of ﬂies, a probability density function (PDF)
+of entry and the rise time calculated from the signal process— describes the probability that any event will occur at a given rise
+ing method was strong (the coefﬁcient of determination R2 time. Some populations may have the same, or similar PDFs,
+was 0.927). This validated that the automated method of using while others may have very different event rise time PDFs. By
+rise times was appropriate for estimating speed, and conﬁrmed comparing the statistics of the estimated rise times between two
+that the rise times were indeed negatively correlated with ﬂy groups expected to have different speeds, we aimed to quantify
+speed. differences in their behavioral traits.
+Speed estimation of a live ﬂy population. Since the rise time Five recordings of 7 min each in length and eight recordings
+was inversely proportional to the speed with which the ﬂy enters of 35 min each were taken from unique groups of three ﬂies
+www.landesbioscience.com Fly 207
+
+"
+"4","—
+1.2 methods by eliminating the need for Video—based tracking. As
+R2=0-93 described in reference 15,the camera system we used is based
+1 . on automatic behavior detection and analysis. Behavior features
+0 described previously are interevent duration to estimate the
+a 0.8 frequency of locomotor movement and shaking index to quan—
+Z d . tify ﬁne resolution movements such as wing and body shaking
+E 0.6 movements.
+_2 1 Here we show the use of rise time to quantify the speed of
+I: 0.4 movement. While interevent duration and shaking estimates
+"" make use of the signal between events, rise time is a characteris—
+0.2 tic of the events per se. All these features can be evaluated from
+’ signal recordings and used side—by—side to quantify behavior in a '
+0 population. 3
+0 0.2 0.4 0.6 0.8 1 1.2 We note that the speed estimation described here is based :5
+Entry Time(s) on analyzing single events. Some examples of ﬂy movements _Q
+that were not considered single events included: multiple ﬂies I:
+entering or leaving the ﬁeld of View simultaneously; a ﬂy enter— ‘5
+Figure 3. Rise times closely match manually counted entry times in re— ing partially, stopping, then continuing into the ﬁeld OfView; a -—
+cordings of single ﬂy events (SFEs). The scatter plot oftheautomatically ﬂy body Changing its shape by pulling in the wings or angling U
+detected rlse times vs. their corresponding manually counted entry , , -I—J
+times in the video recordings ofone live ﬂy (n = 25), showa strong cor— itself away from the plane Of focus; and a ﬂy movrng on top Of 0
+relation between the two parameters (correlation coefﬁcient R2 = 0.927). another ﬂy; all Of these can be quantiﬁed by Other parameters C
+extracted from the data but are not discussed within the scope
+of this work. Furthermore, the movement of ﬂies within the 0
+from two distinct populations maintained at 23°C and 295°C ﬁeld of View is not detectable by this method since single ﬂy D
+respectively. Each recording provided a vector of SFE rise times. events corresponded only to ﬂies entering or exiting the ﬁeld of -
+Histogram comparison (Fig. 4A) was used to analyze the View. We found that sufﬁcient single events are typically avail— 0)
+data in discrete bins, in order to determine whether signiﬁcant able within a 30 min population recording to allow for an esti— 0
+differences can be found at particular rise time durations. As mation of speed of locomotion. 0:)
+shown in Figure 4A, the ﬂies developing at 23°C had signiﬁ— Moreover, this feature is stringent enough to discriminate -—
+cantly higher number of events with rise time of 0.3—0.4 sec between dynamics of two different populations: quantiﬁca— 0
+(p < 0.01), and the ﬂies developing at 295°C ﬂies had signiﬁ— tion of the rise times from the population experiments after the 8
+cantly higher number of events with rise time of 0.2—0.3 sec removal of extraneous events elucidated a signiﬁcant increase -—
+(p < 0.01). This indicated that the ﬂies maintained at the higher in the speed of movement from the population experiments m
+temperature were moving faster into/out of the ﬁeld of View at 295°C vs. 23°C. This increase in speed match the results (I)
+as would be expected, and that the rise time estimation can found in literature12 and demonstrate the Viability of assessing 0)
+therefore be used to assess the behavior ofa population. the rise time of SFEs to estimate the speed of movement of a '0
+CUP (cumulative distribution function) comparison small population of ﬂies. Future work will focus on extend— C
+(Fig. 4B) was used to determine whether the overall distribution ing the method shown here to large populations. Other appli— (U
+of rise time is signiﬁcantly different between the two groups. cations of this method are behavioral genetics experiments —I
+The K—8 test determined that the two sets of SFE rise times (for a reView see ref. 16) such as quantifying locomotion after N
+differed signiﬁcantly (p < 0.01). Furthermore, the CDF showed genetic manipulation; quantifying the response to stimuli, F
+that the majority of SFE rise times for the ﬂies maintained at drugs, and environmental stress; as well as screening for behaV— 0
+295°C were shorter (faster speed) than the corresponding rise ioral genes. N
+time for the ﬂies maintained at 23°C (slower speed). @
+Materials and Methods
+Discussion
+Animals and media. Two—day old adult females from
+We have identiﬁed rise time as a signal feature that can be used w1118;P{GawB}easalaP and wms; P{GawB}DJ695 (Bloomington
+to estimate the speed of ﬂy movement. This can be done for Drosophila Stock Center, Indiana) were grown at 23°C for a day
+both single ﬂies moving in and out of the ﬁeld of View, as well then either left at that temperature or transferred to 295°C to
+as for estimating the overall speed of a population. The method develop for another day. All strains were grown in a 12—h light/
+is completely automated, absolving the need for an operator dark cycle on standard dextrose medium.
+spending hours manually annotating Video images, and avoid- Simulation. We initially developed our signal processing
+ing subjective bias of measurements. methods based on Visual observations of how the ﬂy activity
+The method described here for quantifying the speed of signal Changed based on the speed of movement of ﬂies enter—
+movement of multiple ﬂies poses many advantages over current ing or exiting the ﬁeld of View. The ﬁrst quantitative test we
+208 Fly Volume 6 Issue 4
+
+"
+"5","—
+designed for the algorithm used a simulated ﬂy moving in and A 45
+out of the image, whose speed we could directly control. We used
+PsychoPy, a program for creating psychology and neuroscience 4O
+stimuli using the Python programming language to generate a 35
+simulated ﬂy in the image.”18 The simulated ﬂies, displayed as a :0
+black rectangle on a white LCD background, mimicked live ﬂies E 30
+in a Petri dish illuminated from below. The simulated ﬂy entered u>J 25
+the image at a 90° angle, stopped for one second and then eXited “5
+the image at a 90° angle to a line tangent to the circular ﬁeld 5 20 I 23 cc
+of View, stopped for one second and then eXited the image at a '2 29-5 0C
+90° angle repeating periodically in a Clockwise fashion. We took g 15
+recordings at ﬂy movement speeds of1.48, 2.12, 2.76, 3.50 and 10 '
+4.11 cm/s, to cover a range of speeds for Drosophila described in E
+the literature,12’19 and monitored Changes in the duration of the 5 :5
+rise time. .0
+Measurement setup. A monochrome CMOS Video camera 0 C
+imaged the live ﬂies in a Petri dish, illuminated from below by 0-1 0-2 0-3 _ 0-4 _ 0-5 0-6 0-7 0-8 ‘5
+a uniform white light source, or the simulated ﬂy on an LCD R'se “me (3) '—
+screen. The output from the Video camera was inputted to an 1...... U
+analog Circuit that band—pass ﬁltered and ampliﬁed the Video B F”... ,......m ‘5
+signal to extract only the low—frequency components related to ’7; yr""; C
+the movement of the ﬂies in the ﬁeld of View. The band-pass ﬁl- :2"" O 8 3;...
+tered camera signal represents the average Changes in light level 2’ I 5"" O
+detected by the camera as a function of time. 2 9%, D
+Speed estimation of single ﬂy events from live ﬂies. Changes 2 O 6 “f: -
+in the rise times found from the simulations were veriﬁed by Z i 35 0)
+taking Video and signal recordings of single ﬂies, and matching .2 ‘3 LC)
+changes in the rise time in the signal trace with the speed of the g 0.4 g G)
+ﬂy in the Video at each event. Estimates of the speed of indi— E :5 -—
+Vidual ﬂies were determined by counting the number of frames 2 0
+(1/30 see each) in the Video it took for the entire head and body :3 0 2 “g 8
+of the ﬂy to enter the ﬁeld of View. These times of entry or g I 3 - 23°C -—
+eXit estimated from the Visual inspection of the Video were then LL g“ 295°C m
+compared with the rise times estimated by the signal processing 0 = U)
+methods and a correlation coefﬁcient was computed. O 0.2 0.4 0.6 0.8 1 0)
+Speed estimation of a live ﬂy population. To evaluate the fea— Rise Time (5) 'C
+sibility of implementing this method in recordings with multiple C
+ﬂies, several recordings. With. separate populations Of three ﬂies Figure 4. The walking speed ofdistinct ﬂy population can be quanti— CU
+°°Ch were taken from ﬂies raised at 23 VS' 29'50C' The difference ﬁed by discrete and overall estimates ofthe rise time. The histogram _l
+in r ise times between the two populations was then evaluated and comparison (A) shows that the differences between ﬂies maintained at N
+quantiﬁed (see signal processing). 23°C and 295°C segregate at particular rise times (0.2—0.3 sec). The cu— F
+Signal processing. The ﬂy signal output from the Circuit mulative distribution function(B)shows overalldifferencesinrise time Q
+was processed to reduce recording noise and isolate single—ﬂy between thetwo populations,bycomparing the fraction ofeventsin N
+. . . each group against the total number of events. 29.5°C ﬂles move faster
+events (SFEs) for speed analys1s. The Signal processrng proce— (shorter rise time) than 23°C ﬂies (longer rise time). @
+dure comprised the following three steps: (1) detection of all
+ﬂy movement events, (2) event sorting to isolate SFEs and (3)
+event rise—time estimation. Below we describe the signal process— An array of ﬂy movement events was then assembled from the
+ing methods used for estimating SFE rise times from a given ﬂy ﬂy movement signal using the peaks by windowing from 1 sec
+signal recording. prior to each peak to 2 sec following each peak.
+Detection ofﬂy movement events. The ﬂy signal was ﬁltered Event sorting to isolate single ﬂy events (SFES). The events
+using a Finite Impulse Response (FIR) digital ﬁlter (n = 1674) denoted by these peaks were sorted using amplitude and ﬁrst—
+with a cutoff frequency of 2 Hz to remove out—of—band noise. derivative based tests to facilitate direct analysis of the wave—
+Fly movement peaks were then detected from this ﬁltered sig— form rise time for SFEs. These tests were developed based on
+nal using a simple peak detection algorithm described in preVi— observations made during real recordings, and on pragmatic
+ous work.14’15 Only peaks with amplitude greater than twice the expectations for how the waveform shape would be different
+measured peak—to—peak voltage noise of the circuit were used. for SFEs and non—SFEs. For example, if a ﬂy movement event
+www.landesbioscience.com Fly 209
+
+"
+"6","—
+corresponded to a ﬂy hesitating on its way out of the ﬁeld ofView, different eight—element vectors. For example, vector 2, element 3
+the amplitude of the event was be much lower than if the whole would correspond to the number of events for the second record-
+ﬂy body entered at once. This is because the ﬂy signal would ing that had a rise time between 0.3 and 0.4 see. For each popu-
+ﬁrst increase to a small peak as the ﬂy partially left the ﬁeld of lation, the number of event rise times occurring at each value
+View; then start recovering back to baseline as the ﬂy paused; was averaged across all recordings, and the standard deviation
+then increase again to another small peak as the rest of the ﬂy (0') was computed. The resulting histograms showing mean (i
+body left. Furthermore, for a smooth peak where the ﬂy either 0') for both populations were Visually compared. The differences
+entered or eXited the ﬁeld of View without hesitation, the ﬁrst between the two populations were also compared quantitatively
+derivative averaged over half a second to both the left and right using Student’s t—test to determine statistical signiﬁcance.
+
+of the peak would be positive, since the trend of the curve would Cumulative distribution function (CDF) comparison for pooled
+remain upward through the peak location. data. The rise time data from multiple recordings was pooled,
+
+Event rise time estimation. After the SFEs were isolated from all independently for each population, to compare the CDF between '
+events, the start and end points of the rising edge were automati— the groups. The CDF for a set of events describes the probability GDII
+cally determined: the end point was the same as the peak value that an event will have occurred at or below a certain value — in :5
+determined as described above; the start point was calculated as this case, the probability at each rise time value that a ﬂy move— _Q
+the time at which the rising edge had passed its maximum inﬂec— ment event will have occurred at or below that rise time value. If C
+tion pornt and crossed a threshold of 30% of the peak value. one population had more events occurring at shorter rise times, (I)
+The difference between these points was considered the rise time the CDF would rise from zero to one earlier than for another L6
+estimate for the event. By considering both an amplitude thresh— population with longer rise times. A Kolmogorov—Smirnov (K—S)
+old and the maximum inﬂection point, the automatic rise time test was used to determine the statistical probability that the data OI
+detection was robust and was conﬁrmed by Visual inspection to came from the same continuous distribution and, thus, reﬂected C
+be accurate. the statistical signiﬁcance of any differences. The K—8 test was
+
+Statistical analysis. Individual recordings taken from the two used here rather than Student’s t—test since the event rise time 0
+populations of ﬂies (described at Speed estimation of a life ﬂy distribution was not necessarily normal. D
+population) were used to estimate the vector of SFE rise. Two -
+methods described below were used to determine discrete points DISClosure 0f POtentlal conﬂlas 0f Intere“ 8
+at which the speed was statistically different between two ﬂy No potential conﬂicts of interest were disclosed. C
+populations (Histogram Comparison), and the overall differ— G)
+ences in speed between the two groups (Cumulative Distribution Acknowledgments - —
+Function). K.L.C. was supported through the Achieving Competence in 8
+
+Histogram comparison for multzple—trzkzl analysis. Rise times Computing, Engineering, and Space Science Program, funded 0
+from recordings of live ﬂy populations were organized into eight by the American Association for the Advancement of Science -—
+bins corresponding to values from 0.1—0.8 sec. Thus, a set of (AAAS). The work was funded by a NASA Fundamental Space m
+ﬁve recordings taken from one population of ﬂies yielded ﬁve Biology grant 09-FSB09PROP—0022 to S.B. and O.M. U)
+
+7. Fry SN, Rohrseitz N, Straw AD, Dickinson MH. 14. Inan OT, Etemadi M, Sanchez ME, Marcu O, G)
+References . . . . . . .
+. . . TrackFly: Virtual reality for a behaV1oral system anal— Bhattacharya S, Kovacs GT. A miniaturized Video C
+1° 103831“ HK> KamlkOUChllA Tm K Methods for quan— ysis in free—ﬂying fruit ﬂies. J Neurosci Methods system for monitoring the locomotor activity of walk— C
+Ufymg 51m?le grayity 5611511181“ Drosophila melanogas- 2008; 171:110-7; PMID:18405978; http://dx.doi. ing Drosophila melanogaster in space and terres— m
+ter. N?“ PIOtOC 2010; 5:20-5; PMID320010724§ httPW org/10.1016/j.jneumeth.2008.02.016. trial settings. IEEE Trans Biomed Eng 2009; 56:522—
+dx.d01.org/10.1038/nprot.2009.196. 8. Reiser MB, Dickinson MH. A modular display system 4; PMID319272912§ http://dx.doi.org/10.1109/ —l
+2. Gargano 1W Martin I, Bhandari P, GrOtCWTCl MS. Rapid for THSCCC behavioral neuroscience. J Neurosci Methods TBMEW20082006018
+iterative negative geotaxis (RING): .31 new method for 2008; 167:127—39; PMID:17854905; http://dX.doi. 15. Inan OT, Marcu O, Sanchez ME, Bhattacharya S, N
+3556551118 age—related locomotor decline in Drosophila. org/10.1016/j.jneumeth.2007.07.019. Kovacs GT. A portable system for monitoring the V
+Exp Gerontol 2005; 401086-95; PMID:15919590; 9. Ejima A, Grifﬁth LC. Measurement of Courtship behavioral activity of Drosophila]NeurosciMethods O
+http://dx.d01.org/10.1016/).exger.2005.02.005. Behavior in Drosophila melanogaster. CSH Protoc 2011; 202:45-52; PMID:21907735; http://dx.doi. N
+3. Sharma P, Keane J, O’Kane C], Asztalos Z. Automated 2007; 2007zt4847; PMIDz21356948. 0rg/10.1016/j.jneumeth.2011.08.039.
+measurement of Drosophila jump reﬂex habituation 10. Fry SN; Rohrseitz N, Straw AD, Dickinson MH. 16. SokolowskiMB. Drosophila: genetics meets behaviour. @
+and “5 use for mutant screening. J Neurosc1 Methods Visual control of ﬂight speed in Drosophila melanogas— Nat RCV Genet 2001; 2387990; PMID311715043§
+2009; 18240-8; PMID:19520114; http=//dx.d01~ ter, J Exp Biol 2009; 212:1120—30; PMID:19329746; http://dx.doi.org/10.1038/35098592.
+org/10.1016l/J.Jneumeth.2009.05.024. . http://dx.doi.org/10.1242/jeb.020768. 17. Peirce JW PsychoPy—Psychophysics software
+4° Card _G’ IDICklnSOIl MH' Visually mediated motor 11. Rohrseitz N, Fry SN. Behaviouralsystemidentiﬁcation in Python. J NCUIOSCi Methods 2007; 162843;
+planning in the escape response Of Drosophila. Curr ofvisual ﬂight speed control in Drosophila melanogas— PMID317254636§ http://dx.doi.org/10.1016/j.jneu—
+13101 .2008; 18:1300—7; PMID:18760606; http:// ter.]RSOC1nterfaC62011;8:171—85;PM1D:20525744; meth.2006.11.017.
+dx.do1.org/10.1010/}.cub.200l8.07.094. _ _ http://dx.doi.org/10.1098/rsiﬁ2010.0225. 18. Peirce JW Generating Stimuli for Neuroscience
+5. Martin I, Grotew1el MS.IDISt1nCt genetic inﬂuences 12. Gibert B Huey RB, Gilchrist GW Locomotor perfor— Using PsychoPy. Front Neuroinform 2008; 2:10;
+on_locomotor senescence in Drosophila revealed by a mance ofDrosophila melanogaster: interactions among PMIDi19198666; httpinXdOLOIg/10.3389/
+series ofmetrical analyses. Exp Gerontol 2006; 41:872— developmental and adult temperatures, age, and geog- neuro.11.010.2008.
+81; PMID:16891076; http://dx.d01.org/10.1016/). raphy. Evolution 2001; 55:205—9; PMID:11263741. 19. Strauss R, Heisenberg M. A higher control center of
+exger.2006.06.052. . . . 13. Roberts SB Marden JH, Feder ME, Dropping like locomotor behavior in the Drosophila brain.]Neurosci
+6' Martin J_R° A portrait Of locomotor behavrour 1n ﬂies: environmentallyinduced impairment and protec- 1993; 13:1852-61;PM1D18478679.
+D rosophila determined by a Video—tracking paradigm. tion of locomotor performance in adult Drosophila
+Behav Processes 2004; 673207'19; PMID:15240058; melanogaster. Physiol Biochem Zool 2003; 76:615—21;
+http://dx.d01.org/10.1016/}.beproc.2004.04.003. PMID:14671709; http://dx.doi.org/10.1086/376922.
+210 Fly Volume6 Issue4
+
+"

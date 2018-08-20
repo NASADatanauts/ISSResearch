@@ -1,0 +1,880 @@
+"","x"
+"1",",wgymiﬁ; Available online at www.sciencedirect.com =
+® ' Acta MATERIALIA
+Em: CrossMaﬂ, ScuenceDIrect
+ELSVIER Acta Materialia 93 (2015) 24—37
+www.elseVier.com/locate/actamat
+Simulation of directional solidiﬁcation of reﬁned Al—7 wt.%Sl
+alloys — Comparison With benchmark micrograVIty experiments
+D.R. Liu,a’* N. Mangelinek—Noel,b’C Ch.—A. Gandin,d’e G. Zimmermann,f L. Sturz,f
+H. Nguyen-Thib’c and B. Billiab’c
+aSchool of Materials Science and Engineering, Harbin University of Science and T echnology, N0. 4 Lin Yuan Road,
+Harbin 150040, China
+bAix-Marseille Université, Campus Saint-Jéréme Case 142, 13397 Marseille Cedex 20, France
+CCNRS, 1M2NP UMR 7334, Campus Saim-Jéréme Case 142, 13397 Marseille Cedex 20, France
+dMINES PariSTech, CS 10207, 06904 Sophia Antipolis Cedex, France
+eCNRS, CEMEF UMR 7635, CS 10207, 06904 Sophia Antipolis Cedex, France
+fACCESS e. V., Imzestra/a’e 5, 52072 Aachen, Germany
+Received 19 December 2014; revised 9 March 2015; accepted 24 March 2015
+Available online 27 April 2015
+Abstract—Formation of grain structure and segregation during solidiﬁcation of reﬁned Al—7 wt.%Si alloys under microgravity is simulated using a
+two-dimensional aXi-symmetrical Cellular Automaton-Finite Element (CAFE) solidiﬁcation model. This fully integrated model resolves a complex
+interplay between heat transfer at the macroscale and grain structure evolution and microsegregation formation at the mesoscale. Direct comparison
+with benchmark experiments performed under microgravity conditions of the International Space Station is carried out. Boundary conditions used in
+the simulations are deduced from the experimental measurements of temperature. Qualitative agreement is achieved concerning CET (columnar-to-
+equiaxed transition) position, CET transition mode (sharp 0r progressive), distributions of grain elongation factor and equivalent diameter, and dis-
+tribution of eutectic fraction. The inﬂuences of pulling velocity and thermal gradient on grain structure and intergranular segregation are correctly
+reﬂected and are discussed. Moreover, we take advantage of the simulation results to study the effect of otherwise inaccessible parameters such as the
+degree of constitutional undercooling and the amplitude of the undercooled region. Another originality of this paper is to conduct quantitative com-
+parisons between experiments and simulations Which allows discussion of the improvements needed in the simulation.
+© 2015 Acta Materialia Inc. Published by Elsevier Ltd. All rights reserved.
+Keywards: Solidiﬁcation; Grain; Al—Si alloys; Microgravity; Cellular Automaton-Finite Element model
+1. Introduction segregation is essential in order to offer guidance in process
+design since at least two types of defect are strongly linked
+Direct modeling of dendritic grain structure as well as to the presence of solute-enriched liquid ﬁlms in intergran-
+segregation is of uppermost importance in order to obtain ular regions: hot tearing and intergranular cracks [3].
+predictive simulations of industrial castings and thus is of Third, the quantitative validation of numerical methods
+interest to research. First, it is mandatory to accurately pre- embodied in commercially available computer codes by
+diet the columnar-to-equiaxed transition (CET) because the comparison with experimental results undoubtedly con-
+as-cast grain structure strongly affects the mechanical prop- tributes to a signiﬁcant potential saving in the time required
+erties of cast components. For example, directionally solid- for prototyping and in the cost associated with defective
+iﬁed turbine blades are manufactured in such a way as to castings [4].
+promote columnar growth, since a columnar structure Several modeling approaches exist to describe both
+along the length of the turbine blade improves the creep structure and segregation. They fall into three categories
+resistance at high service temperatures [1]. For most other according to simulation scales [5]: direct microscopic
+structural materials, however, a fully equiaxed structure is modeling (10—6 m), direct macroscopic modeling (10—3 m),
+required in order to obtain a material with isotropic and indirect macroscopic modeling (100 m). Direct micro-
+mechanical properties [2]. Second, predicting intergranular scopie modeling provides precise descriptions of the den-
+dritie microstructure and of spatial distribution of phases
+and Chemical species by phase ﬁeld [6,7] and level set
+mending author. Tel.: +86 (0451)86 39 25 18; e-mail: models [8’9] Due to the heavy computational resomces
+dong-rong.liu@im2np.fr required, however, a compromise between computational
+http://dx.d0i.0rg/10.1016/j.actamat.2015.03.058
+1359-6462/© 2015 Acta Materialia Inc. Published by Elsevier Ltd. All rights reserved.
+
+"
+"2","D.R. Liu et a1. /Acta Materialia 93 {2015) 24—37 25
+domain size and simulation run time limits the application Mirihanage et a1. [26] adopted a two—dimensional Front
+of the direct microscopic modeling when dealing with the Tracking Volume Averaged (FTVA) model to study CET
+scale of casting. Indirect macroscopic modeling calculates formation in microgravity experiments FM2 and FM3.
+the interaction between grain structure evolution and segre— The FTVA model tracks the advance of the columnar front
+gation formation based on averaging methods with input by employing an analytical model of growth kinetics,
+on length scales typically of microstructure [10,11]. Since together with the evolution of the undercooled zone ahead
+the topological distribution of phases and species is not of the growth front. An algorithm using massless markers
+directly simulated, it is more suitable for the prediction of has been developed to draw the curve joining the tips of
+temperature, macrosegregation, ﬂuid ﬂow, shrinkage caVity the columnar dendrites. Good agreement was achieved
+over ingots 0r large—sized castings. Direct macroscopic between model predictions of the CET position and corre—
+modeling of grain structure and segregation is characterized spending experimental measurements. The FTVA model
+as a coupling of indirect macroscopic modeling with a precisely calculates the temperature ﬁeld by imposing the
+topological tracking of grain envelopes. It is sufﬁciently measured cooling histories as boundary conditions. Both
+advanced to be directly applied to industrial processes [5]. the FTVA model and the CAFE model, in different aspects,
+The Cellular Automaton—Finite Element (CAFE) model is contributed signiﬁcantly to understanding microstructure
+one that stands out in this category. The CAFE model formation during solidiﬁcation. The most signiﬁcant aspect
+was originally developed by Gandin and Rappaz [12] 0f the FTVA model lies in the fact that a wide variety of
+and subsequently improved by Gandin and co—workers CET formations in alloy solidiﬁcation can be simulated
+[5,13—21]. One of the recent breakthroughs enables the with computational efﬁciency [26—29].
+model to predict segregation at the scale of an entire casting The CAFE model opens a wider window to the study of
+accounting for the variations induced by grain structure alloy solidiﬁcation. In the CAFE stochastic model, the dis—
+[5,13] so that investigating the interplay between grain crete and crystallographic aspects of grain growth are
+structure development and intergranular segregation included, and the dynamic nucleation and growth of
+formation is now available. individual grain envelopes are numerically Visualized.
+
+No matter which model, a comparison of simulation Moreover, prediction of intergranular segregation is
+with experiment is essential in order to validate the numer— reached at the scale of the entire casting accounting for
+ica1 implementation of the model and to ultimately ensure the variations induced by grain structure, which is not
+quantitative predictions. common in the literature and is of prime importance for
+
+Advanced experimental techniques, such as X—ray imag— the further forecast of casting defects such as hot tearing
+ing of crystal growth in microgravity, are of interest in pro— and intergranular cracks.
+
+Viding we11—characterized benchmark experiments to In the present contribution, we focus on the comparison
+conduct such validation of the models. Reinhart et a1. between a two—dimensional aXi—symmetrical CAFE simula—
+[20,21] compared CAFE simulations with in Si”! observa— tion of experiments FM1 and FMS with experimental
+tions of A1—3.5 wt.%Ni alloy solidiﬁcation by synchrotron benchmark data provided in Ref. [25]. Interactions of the
+X—ray radiography. Under terrestrial condition, however, solute segregation and heat released upon solidiﬁcation
+it is not feasible to independently study the grain structure with the growing grain structure are accounted for at the
+evolution, convective ﬂow and settling of grains. scale of the entire sample. To ensure meaningful compar—
+Phenomena interact through a complex interplay of isons, thermal boundary conditions for computational
+solidiﬁcation mechanisms. This causes difﬁculties in domains are deﬁned using the experimentally recorded tem—
+unambiguously validating numerical predictions since peratures. Then, ﬁrstly qualitative and secondly quantita—
+models presently cannot incorporate all of these physical tive comparisons between simulations and experiments
+mechanisms. are performed and include: the initial position of the
+
+Besides, microgravity experiments offer a unique oppor— solid—liquid interface where solidiﬁcation in the experiment
+tunity to obtain we11—c0ntr011ed solidiﬁcation conditions for starts, CET positions, grain equivalent diameter, grain
+model validation within the limits of diffusive transport elongation factor, and eutectic distribution.
+
+[22—24]. Since the gravity—induced perturbation, such as
+
+buoyancy—driven convection and sedimentation is elimi—
+
+nated, the solidiﬁcation process can be used to check the 2. Modeling
+soundness of three major model predictions: heat transfer
+
+in the alloy, intergranular segregation and grain structure. 2,], CAFE Simulation
+
+A Material Science Laboratory (MSL) was made avail—
+able by the EurOpean Space Agency (ESA) on board the The calculation domain is divided into a Finite Element
+International Space Station (ISS), which is being used as (FE) mesh using triangles deﬁned by three nodes.
+a microgravity platform for experiments [239241 AS part Conservation equations written for energy and average
+Of an ESA project, 51X experiments were successfully (3011- composition are solved over this FE mesh. The temperature
+ducted in the low gradient furnace (LGF) 0f the MSLI distribution is simulated using an enthalpy—based FE algo—
+Flight Models (FM) 1 to 6. The A1—7 wt.%Si alloy was ch0— rithm. The average enthalpy, <H> : CpT + g IAéHfa is a
+sen as a model alloy for its hypoeutectic nature permitting function of temperature T , liquid fraction g1, latent heat
+with primary dendritic and secondary eutectic solidiﬁca— of fusion per unit mass A: H f, and speciﬁc heat Cp that is
+tions. The elongation factor and equivalent diameter of assumed to be constant for the liquid and solid phases
+the dCIldI‘itiC grains, the eutectic ffElCtiOIl and the CET p081- [30] The temperature dependence of thermal conductivity
+110115 were thoroughly characterized experimentally for is taken into account. The equation for the average conser—
+samples FM1 and FM5 (reﬁned alloys) and have been vation of solute mass is written for a binary alloy with the
+reported in a companion article [251- average composition of the solute as the main unknown. It
+
+"
+"3","26 DR. Liu et 0]. /Acta Materialia 93 {2015) 24—37
+was calculated using a split operator technique [5]. A where (w) is the average cell composition of the solute and
+detailed presentation of the set of equations is given e1se— Q is the dendrite tip supersaturation. Assuming equilibrium
+where [5] and the guidelines for solving these equations at the solid—liquid interface, it is linked to the Ivanov fune—
+by FE method are provided in reference [13]. tion, Iv, 0f the Peelet number, P6 2 (mp Vﬂp) /(2D1):
+A Cellular Automaton (CA) grid, made of a regular net— IS
+work of ﬁne squares named CA cells, is superimposed onto Q = w : [U(Pe) (4)
+the FE mesh to simulate the grain structure and the segre— W150 — k)
+gation distribution. During sirnulation, each ee11is assigned Solution of Eqs. (2)_(4) provide with the dendrite tip
+a state (hqulda mU,ShY, or solid) depending on nucleation velocity for a given cell temperature or interface composi—
+and grewth. The s1gn1ﬁeant' feature 0f the present. CAFE tion and the average cell composition, providing a selection
+model is that an indirect microsegregation model lhlhahy parameter is Chosen. For the binary A1—7 wt.%Si alloy, pre—
+derived for indirect maereseopie modeling [10911] is now Vious careful analyses of measured and simulated cooling
+used to Compute the solidiﬁeation of each CA ee11 locally curves upon directional solidiﬁcation were conducted [30—
+and allows direct macroscopic modeling of the grain enve— 32]. The effect of the dendrite tip undereooling could be
+10136- Solving the mierosegregation model'requires the revealed and good comparison was achieved when using
+primary dendrite ,3th spaeing (PDAS) as input. PDAS the value 0* :1/(411'2) proposed in the literature [33]. It
+deﬁnes the interaction between the mushy zone and the hq' was Checked that a :i:1OO/0 variation of this value does not
+uid for solute mass exchange. It was veriﬁed that'the value signiﬁcantly modify the dendrite tip growth velocity, the
+has no inﬂuence on the results of the present Simulation CET position and the grain size distribution.
+since solute mixing is almost complete in the liquid [5].
+Nucleation is treated as a stochastic process. For that 2.2. Simulation conﬁguration and boundary conditions
+purpose, several random numbers are successively selected.
+The 'p0s1t10n Of a nucleation. Site is 'randomly . aSS1gned Experimental equipment that includes the cartridge and
+Within the volume of the metallic domain by selecting a cell. heatin g apparatus [23] is not directly simulated. Fig. 1
+The critical undereooling at which a nucleation site is aeti— shows the representative geometry of the experimental
+yated ih theeeh’ .ATZWI’ 'is also randomly Chosen consider— device used for the numerical simulations. Two—dimen—
+mg a Gauss1an distribution [13]: sional aXi—symmetry is assumed with respect to the Y—aXis
+dn N t 1 AT 1 _ AT 2] (solidiﬁcation direction). Thus, only half of the sample
+— 2 ﬂex]? — — (U) (1) and crucible assembly is sketched in Fig. 1 and in subse—
+d(ATWd) ATOM 2 AT“ quent simulation results.
+where AT is the mean nucleation undereooling ATU is The simulation conﬁguration falls into ﬁve domains. To
+the standaniedandeviation and N m is the maximum nueleation redhee 90111191113110“ time, the alloy samp 1e is numerieahy
+density. Generally, these threeaxparameters 0f the Gaussian d1V1ded lhte two p arts. One p art that remained m the solid
+distribution are adjusted to reproduce as Closely as possible state‘ thhohghout the”wh01e e Xp erimental p roeedure is set as
+the experimental grain structure. When a nucleation site iiifn issoeﬁeeielgtelcllloThedgihgelinhii): filigltdwgsnheisltlerhteitegilhcci
+2:20:13: sugar??? 3y nliiircihleiogehinglyl :Celﬁgizt: (111:: 32:36, then )s’olidiﬁe'd in the experiment, is referred to as the ‘fA17Si
+<w> mmmmm
+ireetions 0 t e en rite trun s an arms. ‘ . . .
+Growth of the structure in a cell is described by the between .the two p arts. Correspondingly, the erueible 1s
+extension of the square deﬁned by the four vertiees repre— dlgdﬁil lhto two fpztfts“ atléhg (siarﬁe heéght ?‘S 'thelallog
+senting the direction of the dendrite trunks and arms along to ‘ e ottom O t e SO 1 1 e a 0y omain 1s se eete
+the ($10). (ﬁystahiogfiaphie directionstt Ehe ve loeity (iis lea[11c: g1]— 35 tlhe lihfeereeeceeeliiheielhts twelve thermocouples (TC1 t0
+ate w1t a en rite tip growt 1neties me e . . . ’ .
+Neglggug the 0; thehtempmufe on tge E23115;rrfnpsggteelimitgie :11:e:xiifgizniiﬁtizzgitﬁs
+growt 1neties an or t e 0w ve oeity regime, t e . ' . ’
+00>
+crystallographic directions are linked by the relationship: A dgitionally ﬁve input positions (SpCO anigl SC1313—SC16j
+r2. V. 2 Q T (2) are numerically introduced to maintain the evolution of
+“p ""p 0* m1(k — 1)w’S the thermal gradient along the crucible. The input temper—
+. . . . . ature curves are formulated as a function of time by means
+where F is the Gibbs—Thomsen eoeﬂieient, D1 .15 the dlffu' 0f propagating the time evolutions 0f the temperature gra—
+s10n eoefﬁeient 0f the solute 1n the liquid, m1 is the slope dients between neighboring thermocouples ie TC1 and
+0f the liquidus 1ine, k is the segregation coefﬁcient, WIS is TC2 for SCO TC11 and TC12 for SC13 T3C12. and SC13
+the cell composition of solute in the liquid at the solid— for SC14 8613 and SC14 for SC15 5614 and SC15 for
+liquid interface, and 0* is the selection parameter. The total SC16. ’ ’
+undereooling, AT, is given by the. sum of a curvature under— The last domain is the “plug” domain p 0siti0ned 0n the
+cooling plus a s01uta1 undereoohng: top of the “Al7Si alloy” domain. Dirichlet conditions are
+applied at the outer boundaries of the “plug”, “top eru—
+AT 2 2_F + m<w> (1 _ 1 ) (3) Cible” and “bottom crucible” in order to simulate
+rap 1 — (1 — k)Q Bridgman cooling.
+
+"
+"4","D.R. Liu et a1. /Acta Materialia 93 {2015) 24—37 27
+(mm) I proﬁle is reached (Fig. 2(b) and (d)). During homogeniza-
+284 ' SC16 : 281.5 tion, the sample is partly solidiﬁed and the temperature is
+held. The duration and starting temperature of homoge-
+nization in the simulation are equal to those in the experi-
+ments. It was veriﬁed that the effect of TGZM is very
+limited in the simulations and n0 maerosegregation occurs
+245 SC15 I 243 in the liquid ahead of the mushy zone during the holding
+time.
+SC14 3 2225 To achieve this strategy, the cooling curves for the 17
+thermocouples are numerically pushed backward in time
+SC13 , 202 5 tbkw. A function is proposed for calculating the initial tem-
+' ' perature for each of the temperature input positions.
+E TC12: 182.5 Twit”) = Tbth(n) + T X $ka (5)
+TC“ 3 172-5 where n indicates the position, and T M is the beginning
+TC10 : 162.5 temperature of homogenization, extracted from the experi-
+TC9 : 152.5 mental cooling curve. T is the mean cooling rate assumed
+TC8 3 142.5 for which a value 0.01 0C s_1 is prescribed in the present
+TC7 , 132 5 study. $ka is computed with TC1 as a reference position,
+' ' based on the assumption that the temperature of TC1 is
+TC6 : 122.5 slightly higher than the liquidus temperature at the begin-
+TC5 3 112-5 ning of initial cooling. An arbitrary superheat 0f 2 0C was
+TC4 3 102-5 Chosen, leading to:
+“1 $23 2:23: - Plug FOI‘ FM17 tbkw =(T1-l— 2 0C — Tbth(TC1))/O.010C 8—1
+70 TC1 : 72.5 = 3880 5-
+A17Sia110y
+For FMS, tbkw = (T1+ 2 0C — Tbth(TC1))/0.01OC s—1
+- Solidiﬁed alloy = 4295 S-
+Y For FM1 and FM5, Tbth(TC1) is 581.2 0C and 577.05 0C,
+- Top crucible respectively, as read in Fig. 2(a) and (0). Applying this
+strategy in simulation, we add an initial cooling stage
+SCO I 0.0 , before the homogenization. Then, three distinct stages
+0 X - Bottom crumble can be identiﬁed from the modiﬁed cooling curves as illus-
+‘10 jJ_| trated in Fig. 2(b) and (d): the initial cooling stage (linear
+L, decrease of temperature with time at cooling rate equal to
+L635 0.01 0C s_l), homogenization (a plateau) and solidiﬁcation.
+3.9 The homogenization goes from $ka = 3880 s to 4480 s in
+_ _ _ _ _ FM1, and from $ka = 4295 s to 4895 s in FM5, each with
+Fig. 1. Schematlctdrawmg ef alley and ciu01ble cohﬁguratloh used 1n a homogenization period Of 600 8 corresponding to the
+the s1inu1at10ns w1thttw0-td1metns10ha1 aX1-symmetrlcal coerdlnates. Y experiments. Th es e modiﬁed temperature histories are
+dlrectlon 1s the s011d1ﬁcat10n dlrectlon. AXls of symmetry 1s located at 1 d Dirichle t boundal‘ conditions in simulations.
+the left of the ﬁgure. All dimensions are in millimeter. emp Oye . as . . y . . .
+While a linear ﬁt of the original cooling curves in the solid-
+iﬁeation stage is applied to construct the modiﬁed cooling
+curves, a good agreement is noted between the original
+2.3. Initial conditions (superimposed red-dashed lines) and the modiﬁed
+(blaek-solid lines) curves.
+
+The experimental procedure has three stages as shown BOth “solidiﬁed alloy” and “bottom crucible” domains
+on the experimentally-reeorded cooling curves, namely have the same initial temperature of 750 OC, and the other
+heating (melting), homogenization, and solidiﬁcation three domains have the same value of 800 OC. The heat
+(Fig, 2(a) and (e)) The region between thermocouples transfer coefﬁcient at the “Al7Si a110y”/“Top crucible”
+TC1 (72.5 mm) and TC5 (112.5 mm) was partially melted interface is adjusted to spatially and temporally reproduce
+to a mushy state before homogenization. The the experimental thermal histories measured in the crucible
+Temperature Gradient Zone Melting (TGZM) phe- at the position Of the alloy sample.
+nomenon taking place over the time period of the thermal TO initiate the formation Of columnar grains, ﬁve nuclei
+homogenization [3435] could be neglected for the present With randomly Chosen growth orientations are ﬁxed at the
+experiments. In the CAFE model used, it was not possible bottom boundary Of the “Al7Si alloy” domain with a nucle-
+to partially melt a solid region and then to initiate solidiﬁ- ation undercooling 0f 0 0C. In the bulk liquid, nucleation
+cation from it. As a consequence, a strategy was developed parameters N max: ATmean and ATa are adjusted to match
+for reproducing as Closely as possible the initial stage issued the simulated grain structure With the experimental grain
+from the homogenization period. We ﬁrst 0001 from a fully structure in FM1. The values ﬁnally selected are
+melted sample until the homogenization temperature N max = 5 ° 1010 111—3, ATmean = 4 0C and ATa = 0-5 OC- It iS
+
+"
+"5","28 DR. Liu et a1. /Acta Materialia 93 {2015) 24—37
+Original cooling curves Modiﬁed cooling curves
+(3) b
+800 .. FM 800( ) .. FMl
+II ii C001in_ I I Solidiﬁcation
+700 H !! : : g g
+Q 600 :::::::' M'::::::::: @700 i i E}
+:53 500 / :: ii g
+g * :: E: 5600 __ \
+2‘ 400 * Homogenization H1 11111 g : : : i
+Q) s "" "" I I -- V
+F 300 117—711“, #500 . . . IStageIp; \ III
+.. Homogenlzatlong—ﬁaui i ‘\
+200 Heatin_ :: Solidiﬁcation : : ii .
+100 "" 400 ' ' ” x
+0 5000 10000 15000 20000 25000 30000 0 2000 4000 6000 8000 10000
+Time (s) Time (s)
+( ) Original cooling curves ((1) Modiﬁed cooling curves
+C
+800 .. . . FMS 800 : :FMS
+700 ii : E 1 Cooling : E Selidiﬁcatlion
+Q 600 33:33:? W” E'ZZZZZZZZ @700 i i 1 5
+2 500 : : : i 2 \ _ J! _ _ _
+@400 ,, H i i @600 ___________ \\ i__
+Q) :: 1 1 Q) I I i \
+2‘ 300 s’ Homogenizationm1i11i11 g : : i .
+a) 1 "" d) . . . . i i *
+F "" H F 500 Homogenlzatlong—a Stagel 1 II 1 .
+200 Heating ii Solidiﬁcation : : i i
+100 400 ' ' i im
+0 5000 10000 15000 20000 25000 30000 0 2000 4000 6000 8000 10000
+Time (5) Time (s)
+Fig. 2. Experimentally-recorded time evolution of temperature ((a) and (c)) and modiﬁed cooling curve imposed in simulation ((b) and (d)): FMl
+(reﬁned A1—7 wt.%Si alloy, V1 2 0.01 mm s_l, V2 2 0.2 mm s_l); FM5 (reﬁned A1—7 wt.%Si alloy, V1 2 0.01 mm s_l, V2 2 0.01 mm s_l). Liquidus
+(618 OC) and eutectic (577 OC) isotherms are indicated With horizontal dashed lines. Boundaries between different experimental stages are indicated
+With vertical dashed lines. Only thermal histories in thermocouples TCl, TC5, TC6 and TC12 are presented. Experimental time evolutions of
+temperature With forward shift of time are represented by red-dashed lines and superimposed With modiﬁed cooling curves. (For interpretation of the
+references to colour in this ﬁgure legend, the reader is referred to the web version of this article.)
+Table 1. Processing parameters for samples solidiﬁed under microgravity, Where Vn is the furnace pulling velocity and Sn the solidiﬁcation length
+under Vn. All samples are A1—7 wt.%Si alloy. Grain reﬁner : 0.5 wt.% of A1—5 wt.%Ti—1 wt.%Bi.
+Sample (pg) FMl FM2 FM3 FM4 FMS FM6
+Grain reﬁned Yes Yes N0 No Yes Yes
+Homogenization time (s) 600 18,000 18,000 18,000 600 18,000
+Initial gradient (°C mm‘l) 0.9
+Stage I
+Time interval (s) 0—2000
+V1 (mm s_l) 0.01
+S1 (mm) 20
+Stage 11
+Time interval (s) 2000—2250 2000—4000
+V2 (mm s_l) 0.2 0.01
+S2 (mm) 50 20
+Cooling rate (0C s_l) 0.067 0.067
+Stage 111
+V3 (mm s_l) 3
+worth noting that once this adjustment is made, these 3. Results and discussion
+parameters are kept constant for all the other simulations.
+As a result, the difference in grain structure is due to pro— 3.1. Homogenization and initial stage
+eessing parameters only. Experimental parameters for
+FMl and FMS are presented in Table 1 [23]. Physical prop- Fig. 3(a)—(e) illustrates the simulated time sequences of
+erties of the alloy, crucible and plug, and numerical vari- the grain structure, average composition of solute in the liq-
+ables used for the simulations are listed in Table 2. uid <w1>1, and average composition of solute <Wv> during
+
+"
+"6","D.R. Liu et a1. /Acta Materialia 93 {2015) 24—37 29
+Table 2. Properties, numerical parameters and boundary conditions used for CAFE simulations.
+Liquidus temperature (°C) 618
+Eutectic temperature (°C) 577
+Segregation coefﬁcient 0.13
+Liquidus slope (°C wt.%_1) —6.5
+Eutectic composition (wt.%) 13.31
+Diffusion of Si in liquid A1 (m2 s_l) 6.45 x 10—9
+Diffusion of Si in solid A1 (m2 s_l) 10—12
+Gibbs—Thomson coefﬁcient (°C m) 1.96 x 10—7
+Liquid density (kg m_3) 2370
+Solid density (kg m_3) 2535
+Enthalpy of fusion (J m_3) 9.5 x 108
+Heat capacity (J m‘3 OC‘l) 2.57 x 106
+Thermal conductivity (W m‘1 OC‘l) || Temperature (°C) 170 || 300
+165||400
+155||500
+145||550
+139.6 M 577
+61 || 618
+66||800
+Secondary dendrite arm spacing (pm) 78.0 (FM1)
+109 (FMS)
+1000
+Primary dendrite arm spacing (pm)
+Gaussian nucleation law (°C) Mean undercooling deviation saturation 4
+(°C) 0.5
+(111*) 5 x 1010
+FE mesh size (mm) 0.3
+Cell size (mm) 0.04
+Boundary conditions
+Heat transfer at interface sample/crucible (W m—2 OC‘l) 104
+Heat transfer at interface sample/M-shape plug (W m—2 OC‘l) 103
+Heat transfer at interface crucible/M-shape plug (W m—2 OC‘l) 103
+Al7Si alloy domain/solidiﬁed alloy domain Perfect contact
+Top crucible domain/bottom crucible domain Perfect contact
+Crucible (A1203) Density (kg 111*) 3890
+Heat capacity (J m‘3 OC‘l) 3.42 x 106
+Thermal conductivity (W m‘1 OC‘l) 35
+M-shape plug Density (kg m_3) 2900
+Heat capacity (J m‘3 OC‘l) 2.29 x 106
+Thermal conductivity (W m‘1 OC‘l) 90
+homogenization from 3880 s to 4480 s for experiment FM1. 4140 s and no further melting back is observed. In fact,
+As shown in Fig. 3(a), only two grains out of ﬁve initial the present homogenization duration, 600 s, is much
+grains have survived competition during columnar growth, shorter than that required for the growth phase to achieve
+the highest position of the columnar front at 3880 s, 4140 s, a smooth interface through the TGZM mechanism (e.g.
+4360 s and 4480 s being 112 mm, 114 mm, 114 mm and seven hours in Ref. [34]).
+114 mm, respectively. The effect of stabilization due to the Fig. 3(0) shows the average composition map. The solid—
+holding at constant temperature (homogenization period) liquid interface is indicated using the mushy zone volume
+on dendrite growth is seen from instant 4140 s. Columnar fraction gm, with gm Close to zero. Since the diverging devel-
+grains keep growing until the constitutional undereooling opment of columnar grains leads to a V-shape open area at
+ahead of it is consumed. Moreover, the iso-Coneentration the solidiﬁcation front, the solute diffusion during homog-
+lines in the liquid phase present a curved shape at 3880 s enization increases the average composition of the bulk liq-
+(Fig. 3(b)) which is a feature inherited from the continuous uid ahead of the columnar dendrite tips. Such diffusive
+cooling before homogenization. During the subsequent per- transport, however, has no inﬂuence on the solute-rieh
+iod 0f homogenization, the rejected solute within the mushy interdendritie liquid pockets formed during the initial
+zone diffuses into the bulk liquid. The net result is not only cooling stage between the two columnar grains. These
+the progressive ﬂatness of solute proﬁles in the liquid, but irregularly shaped liquid pockets survive the whole solidiﬁ-
+also a moderate remelting 0f the columnar front observed cation process and ﬁnally turn into eutectic pockets in the
+in the simulations. This is in agreement with the in Silu solidiﬁed state, which leads to a serious intergranular
+observations recently performed by Salloum-Abou—Jaoude segregation.
+et al. on the evolution of the mushy zone in a ﬁxed temper- By numerically tracing the highest position of the
+ature gradient [36]. The role of solute diffusion in triggering columnar front (gm : 0.001), the positions of the initial
+remelting is inherent in the CAFE model (Eqs. (2) and (4)). solid—liquid interfaces where homogenization ﬁnishes and
+The heights of columnar grains remain unchanged from solidiﬁcation starts are found to be 114mm (4480 s) for
+
+"
+"7","30 DR. Liu et a1. /Acta Materialia 93 (2015) 24—37
+3880s 4140s 4360s 4480s
+5 130 mm
+i
+i
+i
+i
+i
+i 120 mm
+i
+i
+i
+i
+; I
+i 110 mm <w > — — — — 130 mm
+a s s . '
+5 J ;
+I 7.75 .
+i d J ]
+; ) ) 7.5
+i . . 1 120mm
+1 100 mm 7.25
+I (21) I7
+1 1 ' 130 mm I
+<w> I
+8 i
+i
+7'75 i ' 110mm
+7.5 5 ‘
+I
+7.25 ' 120 mm ‘
+I
+7 i I
+; I
+i ‘_ _ _ _ 100 mm
+; (C)
+E 110 mm
+i
+i
+i
+i
+i
+i 100 mm
+(b)
+Fig. 3. Snapshots of simulated (a) grain structure, (b) average composition of solute in the liquid phase <wl>l, and (c) average composition of solute
+<WV> during homogenization from 3880 s to 4480 s for FM1. In (b), four iso-concentration black lines, 7.25 (top), 7.5, 7.75, 8 (bottom), are
+superimposed. In (c), the mushy zone volume fraction (gm close to zero) marks out the solidiﬁcation front, and is superimposed as black lines. Axis of
+symmetry is located at the left side of the simulation snapshots.
+FM1 and 118 mm (4895 s) for FM5. They are in line with position (CETmaX) is based on the longitudinal proﬁle of
+experimental results of 115 mm (FM1) and 118 mm the averaged elongation factors [25]. CETmaX is the position
+(FM5) estimated using recorded cooling curves by choosing at which the averaged elongation factor drops below the
+liquidus isotherm as a reference [25]. Therefore, the numer- critical value of 2 referring to the work of Hunt [38] and
+ica1 strategy developed in Section 2.3 can effectively repro- does not bounce back after this Y-aXis position. CETmaX
+duce the initial solid—liquid interface which acts as the position indicates the end of the columnar-to-equiaxed-
+initial condition for the onset of solidiﬁcation. transition region or identically, the beginning of the
+equiaxed zone. Between CETmin and CETmaX, an interme-
+3.2. Columnar-to-equiaxed transition (CET) diate region is formed where short elongated and equiaxed
+grains coexist, as experimentally observed in FM5
+Fig. 4 compares grain structures obtained from CAFE (Fig. 4(d)) for which a low pulling velocity is applied in
+simulations (Fig. 4(a) and (c)) and from EBSD measure- stage II. On the other hand, the CET characterized only
+ments (Fig. 4(b) and (d)). The identiﬁcation of CET-incep- by CETmin is termed a sharp transition, as manifested in
+tion position (CETmin) is based on a Visual examination FM1 (Fig. 4(b)). As explained in detail in [25], the nature
+of the grain structure and is deﬁned as the end position of the transition is due to the velocity jump applied during
+0f the highest columnar dendrites coming from the initial the solidiﬁcation of FM1 that allows the copious nucleation
+columnar zone [25,37]. The determination of the CET-end 0f equiaxed grains which soon block the columnar front.
+
+"
+"8","D.R. Liu et a1. /Acta Materialia 93 {2015) 24—37 31
+This will be further discussed in the following with the help at around 80 s, with a maximal constitutional undercooling
+of the simulation results. Due to the accurate simulation of of about 3 OC. The total time period from the ﬁrst appear—
+grain nucleation and growth in the CAFE model, these ance of an equiaxed grain to the complete blocking of the
+essential features (progressive and sharp CET) which columnar front is 52 s (132 s — 80 s : 52 s, Fig. 6(a)
+depend on the processing conditions are qualitatively CETmm). During this time, the columnar front moves by
+reproduced in the simulations (Fig. 4(a) and (c)). 2.5 mm and siX equiaxed grains are formed. In Fig. 7, the
+Thorough experimental analyses of the grain structure undercooled region is deﬁned by two limits corresponding
+characteristics were performed in our previous work [25]. to the liquidus isotherm position (618 OC) and the solidiﬁca—
+For a quantitative comparison with experimental results, tion front. The position of the solidiﬁcation front can be
+the elongation factors and equivalent diameters of the grain deﬁned by the highest dendrite tip during columnar and
+structure were also measured in CAFE simulations (Fig. 5). equiaxed growth regimes. In the simulation, this position
+It ﬁrst appears that the sharp CET in sample FMl is well is tracked with gm 2 0.001.
+predicted by CAFE simulations. Indeed, Fig. 5(a) shows For FM1, from 0 s to 250 s, the thickness of the under—
+that the elongation factor for this experiment drops below cooled zone increases from 1.9 mm to 4.1 mm (Fig. 7,
+the value of 2 and then remains roughly constant, which is FM1). The corresponding size at the instant of CETmin
+a signature of a sharp CET transition. Furthermore, the sim— (132 s, Fig. 6(a)) is 3.1 mm. Since stage III, characterized
+ulated and measured distributions of the elongation factor by both a shut—down of the heaters and a fast movement
+(Fig. 5(a) FMl) and grain diameter (Fig. 5(b) FMl) show of the furnace at velocity 3 mm s_l, closely follows stage
+an excellent agreement. This indicates that not only the gen— II, Fig. 7 shows that the constitutionally undercooled
+era1 trend but also the quantitative characteristics of the region expands to 10.6 mm in 190 s (from 250 s to 440 s)
+grain structure can be retrieved with the CAFE model. during stage III. Under such conditions, intensive nucle—
+For FM5, both experiment (Fig.4(d)) and simulation ation of equiaxed grains takes place, which leads to an
+(Fig. 5(a)) demonstrate a progressive CET.A1thoughthere abrupt transition of grain structure from columnar to
+is Visible discrepancy between the variations of the elonga— equiaxed. After 132 s and during the subsequent solidiﬁca—
+tion factor in experiment and simulation, we still note that tion, both the intensity of the constitutional undercooling
+the size of the intermediate zone is comparable: CETmaX — and the volume of the undercooled region reach sufﬁcient
+CETmin : 165 mm — 140 mm : 25 mm for the simulation values to ensure the nucleation of numerous layers of
+and CETmax — CETmin : 156 mm — 130 mm : 26 mm for equiaxed grains stopping the growth of a1ready—nuc1eated
+the experiment. This is a remarkable result that shows the equiaxed grains in the thermal gradient direction and pro—
+interest of the simulations despite the 2D aXi—symmetrical moting the propagation of the equiaxed region. This can
+approximation. be seen with the sharp increase of the maximal constitu—
+For FM5, the equiaxed grains predicted generally have a tiona1 undercooling in stage II (Fig. 6(a)), and with the
+larger size (Fig. 5(b) FM5) than in the experiment. Those expansion of the undercooled region ahead of the moving
+discrepancies are attributed to the fact that the initiation front (Fig. 7, FM1).
+and development of the grain structure in the two—dimen— For FM5, solidiﬁcation stage II is characterized by a low
+siona1 aXi—symmetrical simulation do not exactly corre— constant pulling velocity at 0.01 mm s‘1 and lasts for
+spond to the real experimental case. This limitation 2000 s. Both Figs. 6(b) and 7 FM5 show that the establish—
+becomes more pronounced for the case where fewer grains ment of an undercooled zone adjacent to the growth front
+are formed during solidiﬁcation. This issue addresses both with a higher degree of undercooling and a larger size is
+experimental and simulation analyses because for both of delayed in comparison with FM1. Compared to the occur—
+them, the measurements are performed on a 2D section rence of the ﬁrst equiaxed grain at 80 s in FMl, the ﬁrst
+of the volume so that grains are cut. Indeed, the simulations equiaxed grain in FM5 nucleates much later (at 300 s) but
+are performed in a 2D aXi—symmetrical conﬁguration which with the same maximal constitutional undercooling 3 OC.
+obviously cannot reproduce the 3D shape of the grains. Then, the ﬁrst equiaxed grain develops together with
+Experimentally, the grain structure along various longitudi— columnar grains. In the present experiment, without the
+na1 sections should be statistically identical whatever sec— pulling—velocity jump and with other processing conditions
+tion is chosen. This is veriﬁed when growth is equiaxed beingidentical, the growth in the thermal gradient direction
+but error due to the 2D section is more important when overwhelms nucleation. The total time from the ﬁrst
+considering columnar or elongated grains. This can explain appearance of an equiaxed grain to the complete blocking
+the better agreement of elongation factor and grain diame— of the columnar front is about 240 s, ﬁve times longer than
+ter between experiments and simulations obtained for the that in FM1. During this period, the columnar front moves
+equiaxed regime compared to the intermediate regime by 7 mm and three equiaxed grains are formed. After the
+(Fig. 5). columnar grains are stopped at 540 s, an intermediate zone
+As mentioned above, the difference in CET transition starts developing from CETmin. According to the predicted
+mode between FMl (sharp) and FM5 (progressive) is due position of CETmaX (Fig. 5(a) FM5), the development of
+to a pulling—velocity jump applied in stage II in FMl that the intermediate region ends at around 950 s. When com—
+modiﬁes the constitutional undercooling ahead of the solid— paring Fig. 6(a) and (b), we can notice that after CETmin,
+iﬁcation front. It is difﬁcult to quantitatively evaluate the the maximal constitutional undercooling is comparable.
+impact of pulling velocity on the evolution of constitutional While the intensity of the maximum constitutional under—
+undercooling based on experimental investigations but this cooling does not differ signiﬁcantly in both experiments,
+phenomenon was explored by means of the numerical the volume over which it is effective differs c1ear1y
+modeling. (Fig. 7). Indeed, during the initial period of stage II from
+For FMl, the second solidiﬁcation stage (II) is charac— 0 s to 250 s, the size of the undercooled zone increases
+terized by a pulling—velocity of 0.2mm s_1 and lasts for slightly from 1.9mm to 2.5mm in FM5 (Fig. 7, FM5)
+250 s. In the simulation, the ﬁrst equiaxed grain appears which is smaller than the corresponding increase in FMl
+
+"
+"9","32 DR. Liu et a1. /Acta Materialia 93 (2015) 24—37
+FMl (a) C AFE Simulation (b) Experiment F M5 (c) CAFE Simulation (d) Experiment
+I 180 mm 180 mm
+. 9 187 mm . .. 87 mm
+1, 1
+’33?“ - 7-77 {J}: ': A7911].
+' :2?!4 _t .7 51f} .' Q! 5:115:11- - f g; ._
+.ua ~ . ., ,- ‘ '7 . 0 '. ”312‘“:- \j' I
+'I, ,7 1r , , :21;
+' . ; ,4 I""
+I ' '.-'~"" -. ’ f ' ‘ ’ 13°C 1;}: , .gk: ""
+- “ 160 mm -. 160 mm 5m x
+| 91 l : ' y‘ j ‘1‘ V‘ 167 mm {:3}. .3. 167 mm
+! 'I i ‘ CETmax ,
+I l.
+1' 150mm , , ,. _ 150mm .- L5 ‘
+lg. \, 43;} 157mm ‘ , 157mm
+I 1, g '—~_ f —- ' 156 mm
+. k :2. :_._ 1"""":1"",.:;‘,H: ] 1, 53):"". ‘ ‘ CETmax
+'& 7.5?"" 51, ‘ ' 7.};
+I “.71: _' 5.1,; a“,‘:.-:,j'.} 1 ~19.
+- s“, f— ‘ ‘ .
+' . I 140 mm s 140 mm .3, '.2.'~~"".‘.':..-
+I . f- ‘ 147 mm 147 mm
+5 . t]
+“.4 ‘~ ‘
+'7‘ ‘1 140 mm
+.Liﬁ l NIX} CETmin 1‘ . .1
+5 15331: I .. .5; 13"" “‘m 137mm ‘* 1, mm
+| “ '-'~-— — 127mm - ' '
+i ‘. 1, - CETmin 2""};
+E ——— 130mm
+L4 I ' , CET“...
+I 120 mm 120 mm . L4 127 mm L4 ' ' '1 127 mm
+Fig. 4. Comparisons of grain structures simulated using CAFE model ((a) and (0)) on sections L4 and L5 With EBSD measurements ((b) and (d)):
+FMl (reﬁned Al—7 wt.%Si alloy, V2 2 0.2 mm s_l); FM5 (reﬁned Al—7 wt.%Si alloy, V2 2 0.01 mm s_l). CET positions in experiments and in
+simulations are marked out with horizontal red and black dashed lines, respectively. Axis of symmetry is located at the left hand side of the
+simulation snapshots. (For interpretation of the references to colour in this ﬁgure legend, the reader is referred to the web version of this article.)
+(from 1.9 mm to 4.1 mm). When the growth front moves corresponding distance [41]. The liquidus velocity (VL) is
+from CETmin t0 CETmaX (Fig. 7, FM5, 540 s and 950 s), computed as the derivative of the time evolution of the
+the undercooled zone enlarges from 3.2mm to 5.6mm. liquidus isotherm position.
+The undercooled region with such a moderate size leads Fig. 8 shows the distributions of grain elongation fac-
+to an oscillating nucleation mode [39]. The repeated nuele- tors, temperature gradient GT and liquidus velocity VL in
+ation events, layer by layer, are the major reason for the CAFE simulations. For FM1, the simulated elongation fac-
+elongated growth of grains in the temperature gradient tor for equiaxed grains has a mean value of 1.58, a mini-
+direction, and postpone the transition from columnar t0 mum value of 1.14 and a maximum value of 3.05
+equiaxed by sandwiehing an intermediate zone. (Fig. 8(a)). About 91% of data points after the position of
+CETmin have an elongation factor value less than 2. The
+3.3. Relationship between grain elongation factor and formation of the equiaxed zone is related to a decrease of
+solidﬁcation parameters GT from 0.97 OCmm_1 to 0.29 0C mm_1, and to an
+increase of VL from 0.075 mm s‘1 to 0.41 mm s_l.
+
+The grain structure obtained (globular 0r elongated), For FM5, the simulated elongation factor in the inter-
+relies sensitively 0n the variations of solidiﬁcation parame- mediate zone and equiaxed zone (Fig. 8(b)) has mean val-
+ters such as thermal gradient (GT) and liquidus velocity ues of 2.3 and 1.54, respectively; minimum values of 1.22
+(VL) [40]. In the present study, the distribution of averaged and 1-18, respectively; and maximum values 0f 3-39 and
+elongation factors for equiaxed grains is calculated with 2.03, respectively. About 32% and 99% of data points have
+respect to the solidiﬁcation parameters. values below two in the intermediate and equiaxed regions,
+
+The temperature gradient (GT) adjacent to the solidiﬁea- respectively. The formation of the intermediate zone
+tion front is calculated as the temperature difference corresponds to a decrease of GT from 0.88 °C mm‘1 to
+between the moving front and the liquidus, divided by the 0.54 0C mm‘l, and to an increase of VL from 0.04 mm s—1
+
+"
+"10","D.R. Liu et a1. /Acta Materialia 93 {2015) 24—37 33
+A 12
+(a) 6 CM _130 .FM1 a FMl 11: 111 —FM1
+! mm— mm — — —E?(per1rnent a 10 ! _ _ _ _ FMS
+4 ! —Simulation 0 g
+! G I
+3 ! 8 8 i
+g !CETmm=l27 mm '3 !
+a 0 8 6 i ’ \
+g) CETmin i iCETmax Pg 4 , \ A / / I /
+.5 4 l40m11|1 :165mm 05. \~,\,,-/’ V
+g A i 0N) 2 ’ ‘ ’ ’ FMS H
+2 ""w WM. 4.. — h-*--- a
+!CET .=l30 mm !CET =156 mm 0
+0 mm max 0 200 400 600 800 1000
+120 130 140 150 . 160 170 180 190 Time (S)
+P0s1t10n (mm)
+Fig. 7. Simulated time evolution of undercooled region size: FMl
+(b) FMl (reﬁned Al—7 wt.%Si alloy, V2 2 0.2 mm s_l); FMS (reﬁned Al—
+5 _ _ -Experiment 7 wt.%Si alloy, V2 2 0.01 mm s_l). Readings from CAFE simulations
+4 —Simulation are made every 20 s. In this ﬁgure, reference time is set to 0 s at the
+E’ 3 W beginning of stage II for clearer comparison.
+Q8) 1 I k‘ r a
+g a 0 i to 0.08 mm 3—1. The formation of the equiaxed zone corre-
+E) E FMS sponds to a further decrease of GT from 0.54 0C mm—1 to
+§ 5 0.4 0C mm_1, and to a basically unchanged VL
+""5 4 L4 L5 —1
+E 3 M (0.08 mm s ).
+2 'I I.» When comparing the distributions of elongation factors
+1 ""W '5: ' 'nm‘ um; W J."" in equiaxed zones between FMl and FMS, it is Clear that
+0 when the temperature gradient is low enough, lower than
+120 130 140 150. . 160 170 180 190 0.54 0C mm—1 in the present study, it becomes a dominant
+POSIUOMmm) factor in controlling the grain morphology, regardless of
+Fig. 5. Comparison of (a) grain elongation factor and (b) grain the hquldu,s VGIOFHW' A shallow temp e ratul‘e gradlent
+equivalent diameter simulated using CAFE model with experimental favors the isotropic development Of equiaxed grains and
+measurements on sections L4 and L5: FMl (reﬁned Al—7 wt.%Si eventually. makes grains less elongﬁted- This phenomenon
+alloy, V2 2 0.2 mm 5—1); FMS (reﬁned A1—7 WLO/Osi alloy, V2 2 was experimentally [42] and analytically as well as numeri-
+0.01mm s_l). Superimposed red and black vertical dash-dotted lines 9a11y[41]'veriﬁed elsewhere. When the temperature gradient
+in (a) correspond to experimentally-measured and predicted CET IS in the intermediate range, hOWCVef, the inﬂuence Of liq-
+positions, respectively. (For interpretation of the references to colour uidus velocity is important. This point is Clearly demon-
+in this ﬁgure legend, the reader is referred to the web version of this strated when comparing FMl and FMS, because the tWO
+artiCIGJ cases have comparable distributions of temperature gradi-
+ents, and totally different variations of liquidus velocity.
+A larger liquidus velocity expands the undercooling zone
+as seen above, leads to a fast repeated nucleation of grains
+A and promotes the equiaxed mode of solidiﬁcation. Other
+08 4 '7 III (a) experimental investigations of Al—Si alloys in gravity condi-
+| . .
+g0 3 P‘ E; tions [42] also reveal the strong dependence of grain mor-
+§ 2 3 Egg: phology 0n liquidus velocity when a moderate thermal
+33’ 1 E i 3 gradient is established in liquid.
+'2 #3 : i Equiaxed
+5 0 0' . . . . .
+Te 0 500 1000 1500 2000 3.4. Eutectzc-fractzon dzstrzbuzzon
+E 4
+*5 11 - (b) . . . . . .
+E 3 a i a Eutectic fraction is used as an indicator of intergranular
+8 2 {f :5? segregation, which is very important for the generation of
+(i; 1 :0 :0 defects as recalled in the introduction. Fig. 9 compares
+a 0 Columnar i Intermediaitei E Equiaxed ; the topological distributions of eutectic fraction on section
+“2“ 0 500 1000 1500 2000 L4 0f the sample obtained from experiments and from sev-
+Time(S) eral simulation cases. With the grid sizes given in Table 2
+. . . . . . . (FE : 0.3 mm and CA : 0.04 mm) and used in all previous
+Flg. 6. Simulated time evolution of mammal constitutional under- . . . . . .
+. . . . . 0 . results shown, the Simulated eutectic distributions in FMl
+cooling during solidiﬁcation: (a) FMl (reﬁned Al—7 wt./oSi alloy, . . .
+
+_ _1 _ 0 . and FMS are presented in Fig. 9(al) and (a2), respectively.
+V2 — 0.2 mm s ), (b) FMS (reﬁned Al—7 wt./oSi alloy, I . h . h h 1 FE _ 0 3 (1
+V2 2 0.01 mm s_l). CET instants derived from the CET positions are t ls WOl‘t noting t at t 63,6 va ues ( _ ' mm an
+marked out using red squares. Boundaries between solidiﬁcation stages CA : 0'04 mm) were selected in order to be able to conduct
+and between grain structures are represented by vertical lines. the Simulation along the WhOIG sample alloy .111 a reasonable
+Readings from CAFE simulations are made every 20 s. In this ﬁgure, tlme- The essential features 0f experimental 'maps
+reference time is set to 0 s at the beginning of stage II for clearer (Flg- 9(ml) and (1112)) are correctly repdeueedI (1) the
+comparison. (For interpretation of the references to colour in this eutectic fraction in the intergl‘anular region is higher, Which
+ﬁgure legend, the reader is referred to the web version of this article.) is in agreement With the pushing effect Of the grain
+
+"
+"11","34 DR. Liu et a1. /Acta Materialia 93 {2015) 24—37
+0.5 0.5
+A 0.4 g E Equiaxed ’D/n—u/E' A 0.4 Columnar E Intermediate E Equiaxed
+E 0.3 g E 3% g 0.3 E E
+‘3 0.2 U E D \1 0.2 ! E
+> 0.1 Egan“? > 0.1 E m_n_mnm_DEmm-ummﬂm
+0.0 0.0 .. .— '
+1.2 1.2
+A 1% ég‘qﬂ'... Equiaxed 4‘ w E
+Lg) 0- LE) 08 : ®%Q)%%®-O-Coow-O-iooo
+2: 0-4 g E \OWNMM E} 0.4 E . E O”°°jO-Q>-<z>-OO-O
+CD 5 i \0 Columnar i Intermedlate i Equlaxed
+A 0.0 A 0.0
+¢ 6 ¢ 6
+g H E Equiaxed FMl § Columnar E Intermediate E Equiaxed FM5
+«s3 4 8 i E 4 i i
+a E i .5 I i
+in - g” 2 MW
+.5 !CE min 2 !CETmm !CETmax
+0 m 0
+120 130 140 150 160 170 180 190 120 130 140 150 160 170 180 190
+Position (mm) Position (mm)
+(a) (b)
+Fig. 8. Predicted distributions of grain elongation factor, temperature gradient GT and liquidus velocity VL: (a) FMl (reﬁned Al—7 wt.%Si alloy,
+V2 2 0.2 mm s_l); (b) FM5 (reﬁned Al—7 wt.%Si alloy, V2 2 0.01 mm s_l). Boundaries between grain structures are represented by vertical lines. For
+GT and VL , readings from CAFE simulations are made every 20 s.
+boundary on the rejected solute; (ii) a direct correlation sensitivity of the predicted eutectic fraction to the dis-
+between grain structure and eutectic distribution is eretization sizes.
+revealed. As shown in the bottom part of the simulated pie- The inﬂuences of varying FE mesh and CA cell on the
+ture, the amount of eutectic increases at the boundary of resulting eutectic distribution are investigated in Fig. 9
+the two columnar grains in agreement with experimental FMl (bl)—(dl), and FM5 (b2)—(d2), with all other physical
+observation Fig. 9(m1). Competitive growth between and numerical parameters kept constant. In Fig. 9(d1) and
+columnar grains leads to impingement of secondary den- (d2), FE mesh size is reduced to 0.09 mm, Close to the typ-
+drite arms on neighboring columnar dendrites that favors ieal secondary dendrite arm spacing measured in the
+the formation of pockets of enriched liquid which later present two microgravity experiments (Table 2). The selec-
+beeome eutectic pockets. Indeed, compared to a ﬁner tion of the CA cell should satisfy the criterion that its size is
+equiaxed grain structure in FMl (Fig. 9(a1)), a mixed grain at least three times smaller than that of the FE mesh so that
+structure in FM5 is accompanied with the formation of lar- the CA mesh must also be modiﬁed. Since calculation over
+ger and irregularly-distributed intergranular eutectic poek- the entire casting with such a high resolution is so far not
+ets and the non-homogeneity in eutectic distribution is reachable as mentioned above, simulations are performed
+reinforced (Fig. 9(a2)). Impingement between randomly- only in section L4 (3.9mm x 30mm), an area located
+oriented short elongated grains and equiaxed grains aeeel- between TC6 (122.5 mm) and TC8 (142.5 mm) positions
+erates solute accumulation at grain boundaries during for FMl, and between TC7 (132.5 mm) and TC9
+solidiﬁcation and ﬁnally contributes to a higher eutectic (152.5 mm) positions for FM5. For each experiment, to
+fraction. guarantee the consistency between the simulated cases
+However, direct quantitative comparison between and to facilitate the direct and quantitative comparison,
+experiments (Fig. 9(ml) and (m2)) and simulations with the same nucleation events are applied (Fig. 9(e1) and
+FE : 0.3 mm and CA : 0.04 mm (Fig. 9(a1) and (a2)) is (e2)). With FE : 0.09 mm and CA : 0.01 mm, Fig. 9(d1)
+not yet possible: the eutectic fraction amplitude revealed and (d2) Clearly reveal the formation of intergranular eutec-
+by the colors is not reproduced in the simulations. The dif— tie pockets as observed in the experiments. The red regions
+ference in the amplitude of the eutectic distribution between correspond to the location of enriched solute (average eon-
+simulations and experiments is attributed to the selected centration Close to the eutectic concentration 13.3 wt.%)
+diseretization size (FE : 0.3 mm). Indeed, the FE size is where almost 100% eutectic is predicted. The maximal
+large compared to the order of magnitude of the spacing eutectic fractions predicted in FMl and FM5 are 0.94
+between secondary branches which is the dimension to be and 0.99, respectively. The respective experimental data
+taken into account for the studies of the intergranular seg- are 0.702 and 0.736. On the one hand, with the same FE
+regation and eutectic fraction. Before proceeding, it is mesh, increasing the CA cell does not noticeably modify
+worth noting that although the FE mesh size needed to the eutectic distribution, when comparing Fig. 9(a1) with
+be reduced to approach a quantitative agreement as regards (b1), Fig. 9(el) with (d1), Fig. 9(a2) with (b2), and
+the eutectic fraction obtained with simulations as discussed Fig. 9(02) with (d2). On the other hand, increasing FE mesh
+below, it was veriﬁed that it does not affect the evolution of size from 0.09 mm to 0.3 mm with the same CA cell size, i.e.
+temperature ﬁeld and of the ﬁnal grain structure. As a eon- 0.02 mm, does impose a remarkable inﬂuence. When com-
+sequenee, the mesh reﬁning was not required for the study paring Fig. 9(b1) with (Cl), and Fig. 9(b2) with (02), the dif-
+of the grain structure Characteristics (Sections 3.2 and 3.3). ference in eutectic fraction between intragranular and
+In the following, we present some results showing the intergranular regions is smoothed.
+
+"
+"12","D.R. Liu et a1. /Acta Materialia 93 ( 2015 ) 24—37 35
+FMl (m1) (a1) (b1) (cl) (d1) (e1)
+I
+Eutectic 150 mm
+fraction
+.5
+I
+.4 ﬂ‘
+.3 I 140 mm
+I12
+Eutectic
+fraction
+130 mm
+0.? ‘
+.5
+.4
+a t
+2 120 mm
+FMS (m2) (a2) (b2) (c2) (d2) I (e2)
+157 mm
+Eutectic
+fraction
+.7
+.5
+.5 b
+.4 ’ »
+_3 147 mm
+I12
+Eutectic
+fraction 137 mm
+0.? ,
+.B
+.5
+.4 0‘
+.3 ’
+2 127 mm
+I
+Fig. 9. Comparison of ﬁnal eutectic distribution in section L4 between experiments and simulations with different FE and CA meshes. (m1) FMl,
+experimental eutectic fraction map; (a1) FMl, FE = 0.3 mm, CA 2 0.04 mm; (b1) FMl, FE = 0.3 mm, CA 2 0.02 mm; (cl) FMl, FE = 0.09 mm,
+CA 2 0.02 mm; (d1) FMl, FE = 0.09 mm, CA 2 0.01 mm; (e1) FMl, simulated grain structure. (m2) FMS, experimental eutectic fraction map; (212)
+FMS, FE = 0.3 mm, CA 2 0.04 mm; (b2) FMS, FE = 0.3 mm, CA 2 0.02 mm; (02) FMS, FE = 0.09 mm, CA 2 0.02 mm; (d2) FMS, FE = 0.09 mm,
+CA 2 0.01mm; (e2) FMS, simulated grain structure. Axis of symmetry is located at the left hand side of the simulated section. The growth
+orientations of the two initial columnar grains (6 °C and —10 °C) are given.
+The above comparison suggests that FE mesh size plays the mesh size is outside the scope of the current study
+a major role in the quantitative modeling of intergranular and requires further investigations.
+segregation. Enlarging the FE mesh reduces the predicted Additionally, the simulations provide useful insight into
+intensity of intergranular segregation. Systematic evalua- the sensitivity of the eutectic distribution to the variations
+tion of the dependencies of the eutectic distribution on in grain structure. Short elongated grains formed with a
+
+"
+"13","36 DR. Liu et a1. /Acta Materialia 93 (2015) 24—37
+low pulling velocity lead to pronounced unevenness in experiments and simulations are still a Challenge and have
+eutectic distribution and the formation of large-sized eutee- to be developed for precise quantitative comparisons.
+tie pockets at grain boundaries.
+Acknowledgments
+4' Conclusmns This research work is supported by the European Space
+Agency (Noordwijk, NL) under the CETSOL project. The authors
+Benchmark experiments on A1—7 Wt-O/OSi alloys have acknowledge Hydro-Aluininium GmbH for providing the alloys
+been conducted in a microgravity environment in the used in this paper. Suzanne Jacomet is greatly acknowledged for
+Low Gradient Furnace available in the Material Science her help in EBSD analyses performed at MINES ParisTeCh
+Laboratory on board the International Space Station. CEMEF- The 2D CAFE mOdel iS dCVeloped in the
+Direct comparisons between CAFE simulations and micro- XRZSOH‘CAFE SOftWﬂre by CEMEF. The ﬁrst author acknowl-
+gravity benchmark experiments were carried out. We focus edges ﬁeamal support from the Natlonal Natural selence
+on samples FM1 and FM5 (reﬁned Al—7 wt.%Si alloys) Eoundatlon Of Chma .(GWH NO' 51101045) and from the
+. . . . . evelopment and Application of Technology PI‘OJCCt for young
+Wlth dlﬁempt p 1111ng velOCItles. , , , researchers of Harbin (Grant No. 2014RFQXJ026).
+The initial conditions before homogenization were Slm-
+ulated thanks to a numerical strategy developed as part
+of this work. The agreement of the initial solid—liquid inter-
+face between the experimental measurements and the References
+numerical predictions is satisfactory. , ,
+The inﬂuence of pulling velocity on grain structure is [1] RC Reed’ SPPWFHOYS‘ Fundamentals and Apphcauons’
+. . . . . . Cambridge Un1vers1ty Press, 2006.
+qualitatively and quantitatively reﬂected in CAFE Simnla- [2] J.A. Spittle, Int. Mater. Rev. 51 (2006) 247.
+tions. The CET tran31t16n Inode, be It sharp or ptogresswe, [3] J . Campbell, Castings, Elsevier, Butterworth-Heinemann,
+is well retrieved. Distributions of grain elongation factor 2003_
+and equivalent diameter are fairly wellreprodueed. The dis- [4] L. Nastac, D.M. Stefanescu, Metall. Mater. Trans. A 27
+erepaneies are attributed to the fact that grain structure (1996) 4075.
+development in the two-dimensional aXi-symmetrieal simu— [5] Ch.-A. Gandin, C. R. Phys. 11 (2010) 216.
+lations does not exactly correspond to that in the experi- [6] A- BadiHO, C- BCCkermann, A0131 Mater; 54 (2006) 2015-
+ments regarding the nucleation positions and growth [7] Y- Chen» A;A- Bogno, N-M- X130» 13- B11113» X-H- Kang» H-
+orientations. Moreover, the distributions of grain size and Nguyen? Thl’ et a1"" Aeta Matgr' 60 (201.2,) 199' . .,
+- - - [8] A. Cr1s010ne, D. Kintea, Z. Tuk0V1c, S. Jakirlic, I.V.
+elongation factor are retrieved but cannot be perfectly iden- R .
+. . . . Oisnian, C. Tropea, Int. J . Heat Mass Transfer 66 (2013)
+tieal to experimental measurements due to the statistical 830.
+nature Of nucleation events. [9] S. Karagadde, S. Sundarraj, P. Dutta, Comput. Mater. Sci. 65
+The size of the undereooled region, rather than the maX- (2012) 383.
+imal constitutional undereooling, is responsible for the dif— [10] C.Y. Wang, C. Beckermann, Metall. Mater. Trans. A 24
+ferent CET transition mode between FM1 and FMS. (1993) 2787.
+Based on the predicted evolution of the grain elongation [11] C-Y- Wang, C- BCCkermann, MCtall- Mater- Trans- A 27
+factor, there is a critical thermal gradient below which, the (1996) 2754- ,
+thermal gradient controls grain morphology. Above it, the [12] Ch""A' .Gandm’ M' Rappaz’ Ada Metall' 42 (1994) 2233'
+liquidus velocity becomes a dominant factor in the control [13] gbogfgggnm’ Ch""A' Gandm’ H' Combeau, 18“ Int' 46
+0f the grain structuie. ' , [14] G. Guillemot, Ch.-A. Gandin, M. Bellet, J . Cryst. Growth
+Concerning the intergranular segregation, the predicted 303 (2007) 58.
+and measured eutectic distributions show qualitative agree- [15] Ch.-A. Gandin, G. Guillemot, B. Appolaire, N.T. Niane,
+ment but quantitative agreement was not achieved. A Mater. Sci. Eng. A 354 (2003) 387.
+possible reason for the difference in the intensity of inter- [16] S. Mosbah, M. Bellet, Ch.-A. Gandin, Metall. Mater. Trans.
+granular segregation is that the coarser FE mesh size at A 41 (2010) 651-
+the scale of several secondary dendrite arm spacings is used. [17] 5- MOSbah» Ch-'A- Gandin» M- Bellet, Mater- 501- Forum 649
+The direct tracking of the eutectic structure which was (2010) 2,37' , ,
+recently included in the CAFE model [32,43,44] will allow [18] 113/1 Perlgfegbgh'ﬁifandm’ G' Lesoult, H' Henem’ ACta
+better prediCtion Of the intergranular segregation It will [19] K.as:Bat Da Cr)uz, N. Mangelinck—No'el, Ch.-A. Gandin, B.
+also contribnte to a better quantitative comparison of grain Billia, IOP Conf. Ser. Mater. Sci. Eng. 27 (2011) 012017.
+3126 and grain elongation. [20] G. Reinhart, Ch.-A. Gandin, N. Mangelinck-No'el, H.
+Our simulation is based on 2D axi-symmetrical. Nguyen Thi, B. Billia, J. Baruchel, IOP Conf. Ser. Mater.
+Simulations in 3D space are needed for further exploration Sci. Eng. 33 (2012) 012077.
+of grain structure Characteristics and intergranular segrega- [21] G- RCinhaFt, Ch--A- Gandin, N- Mangelian-NOéL H-
+tion distribution. As a consequence, the next step is to Nguyen Th1, 13- Billia, BaFUChel J- ACta Mater- 61 (2013)
+perform simulations in a 3D conﬁguration in the future. 4765- ,
+The simulation code has been recently developed to include [22] R' Jansen’ P'R' Sahm, Mater. 8.01: Eng' 65 (198.4) 199' ..
+maero-segregation in 3D [43 44] However if one wants to [23] G. Zimmerrnann, L. Sturz, .B. Billia, N. Mangelinck-Noel, H.
+. . ’ ' . .’. . Nguyen Thi, Ch.-A. Gandin, J. Phys. Conf. Ser. 327 (2011)
+compare 3D Simulations t0 experiments, it is also essential 012003.
+to perform 3D experimental characterizations. Techniques [24] G. Zimmermann, L. Sturz, B. Billia, N. Mangelinck_N0é-,L
+are available as serial sectioning [45] or X-ray tomography D.R. Liu, H. Nguyen-Thi, Mater. Sci. Forum 79()_791 (2014)
+[46]. However, 3D quantitative measurements for both 12.
+
+"
+"14","D.R. Liu et al. /Acta Materialia 93 ( 2015 ) 24—37 37
+[25] DR. Liu, N. Mangelinck—Noél, Ch.-A. Gandin, G. [36] G. Salloum-Abou—Jaoude, G. Reinhart, H. Combeau, M.
+Zimmermann, L. Sturz, H. Nguyen Thi, B. Billia, Acta Zaloznik, T.A. Lafford, H. Nguyen Thi, J . Cryst. Growth 411
+Mater. 64 (2014) 253. (2015) 88.
+[26] W.U. Mirihanage, D.J. Browne, G. Zimmermann, L. Sturz, [37] Ch.-A. Gandin, ISIJ Int. 40 (2000) 971.
+Acta Mater. 60 (2012) 6362. [38] JD. Hunt, Mater. Sci. Eng. 65 (1984) 75.
+[27] W.U. Mirihanage, H. Dai, H. Dong, D.J. Browne, Adv. Eng. [39] I. Steinbach, R. Prieler, Transp. Phenom. Solidiﬁcation
+Mater. 15 (2011) 216. ASME 284 (1994) 69.
+[28] AG. Murphy, G. Reinhart, H. Nguyen-Thi, G. Salloum [40] M. Paliwal, I.H. Jung, Acta Mater. 61 (2013) 4848.
+Abou J aoude, D.J. Browne, J . Alloys Compd. 573 (2013) 170. [41] M. Rappaz, Ch. Charbon, R. Sasikumar, Acta Metall. Mater.
+[29] DJ. Browne, J .D. Hunt, Numer. Heat Transfer B-Fundam. 42 (1994) 2365.
+45 (2004) 395. [42] H. Jung, N. Mangelinck-No'él, H. Nguyen Thi, Billia B. J .
+[30] Ch.-A. Gandin, Acta Mater. 48 (2000) 2483. Alloys Compd. 484 (2009) 739.
+[31] MA. Martorano, C. Beckermann, Ch.-A. Gandin, Metall. [43] T. Carozzani, Ch.-A. Gandin, H. Digonnet, M. Bellet, K.
+Mater. Trans. A 34 (2003) 1657. Zaidat, Y. Fautrelle, Metall. Mater. Trans. A 44 (2013) 873.
+[32] T. Carozzani, H. Digonnet, Ch.-A. Gandin, Model. Simul. [44] T. Carozzani, Ch.-A. Gandin, H. Digonnet, Model. Simul.
+Mater. Sci. 20 (2012) 015010. Mater. Sci. 22 (2014) 015012.
+[33] W. Kurz, B. Giovanola, R. Trivedi, Acta Mater. 34 (1986) [45] J . Alkemper, P.W. Voorhees, J. Microsc. 201 (2001) 388.
+823. [46] D. Bernard, 0. Nielsen, L. Salvo, P. Cloetens, Mater. Sci.
+[34] H. Nguyen Thi, B. Drevet, J.M. Debierre, D. Camel, D.B. Eng. A 392 (2005) 112.
+Yao, B. Billia, J. Cryst. Growth 253 (2003) 539.
+[35] H. Nguyen Thi, G. Reinhart, A. Buffet, T. Schenk, N.
+Mangelinck-Noél, H. Jung, et 211., J . Cryst. Growth 310 (2008)
+2906.
+
+"

@@ -1,0 +1,752 @@
+"","x"
+"1","Development of a low-cost student—built multi—spectral sensor for the
+International Space Station
+Douglas R. Olsen*, H0 J in Kim, J aganathan Ranganathan, Soizik Laguette
+Dept. of Earth System Science and Policy, J ohn D. Odegard School of Aerospace Sciences,
+University of North Dakota, 4149 University Ave, Grand Forks ND 58202-9011
+ABSTRACT
+Built by students and faculty at the University of North Dakota (UND), the International Space Station (188)
+Agricultural Camera (ISSACTM) is a multi-spectral Earth-imaging sensor currently onboard the ISS. Capabilities include
+three spectral bands (green, red, near-infrared), medium (~20m) spatial resolution, and off-nadir pointing (+/—30 degrees)
+for episodic rapid-response imaging. We describe the low-cost electrO-Optical design approach, Which utilizes a student-
+centered design and operations team and relies on modiﬁed commercial components operating Within a passive Vibration
+isolation mounting, installed inside the Window Observational Research Facility, Viewing the Earth through the US
+Laboratory Science Window. Interfaces, safety, and other factors unique to the human-rated operational environment of
+the 188 are outlined. Pre-launch sensor characterization results, including spatial distortion and radiometric
+measurements, indicate Earth remote sensing using such a sensor is a Viable approach for demonstrative operational
+missions. An element of the 188 National Laboratory, ISSAC was launched on HTV-2 t0 the 188 in J anuary 2011. Initial
+operations began in June 2011. Methods of sensor operations are described, using a student staff working Within the ISS
+operational environment. Some initial early imaging results are shown.
+Keywords: International Space Station, multi-spectral remote sensing, student-centered design
+1. INTRODUCTION
+The Earth System Science and Policy (ESSP) department is an academic element of the John D. Odegard School of
+Aerospace Sciences at the University of North Dakota (UND), fulﬁlling the teaching, research, and service missions of
+the University. Offering degrees at the Master’s and Ph.D. levels With environmental policy, management, and
+sustainability emphasis, the department also conducts basic and applied multi-disciplinary and inter-disciplinary research
+across a broad range of related topicsl. One focus of these efforts has been to deliver applied research solutions that
+directly beneﬁt practicing land management general-public end users in the regionz; principally private sector production
+agriculture participants (farmers, ranchers, crop consultants), government agencies (local, state, and federal), and tribal
+0fﬁcials3.
+A central element of these applied research solutions has been the development of custom sensors to address speciﬁc
+needs of end users. In collaboration With the School of Engineering and Mines (SEM) at UND, the Airborne
+Environmental Research Observational Camera (AEROCamTM) was developed Within an experiential learning
+framework“. In operation since 2001, AEROCam utilizes a 3-band Redlake MS-3100 sensor and support equipment,
+ﬂown on a UND Aerospace aircraft in support of requesting end user applied research ﬁeld investigationss.
+Building on the technology base of AEROCani, the International Space Station (188) Agricultural Camera (ISSACTM) is
+a multi-spectral Earth-imaging sensor designed and built to operate on the ISS, and is currently in active operations.
+Capabilities include three spectral bands (green, red, near-infrared), moderate (15-20 m) spatial resolution, and off-nadir
+pointing (+/—30 degrees) for episodic rapid-response imaging. ISSAC has been designed, developed, tested, and operated
+by university graduate and undergraduate students6, With system integrative and niche technical specialties supported by
+UND faculty and staff, and selected subsystem vendors. Adherence to this student-centered approach for development
+and operations yielded original ISSAC ﬂight sponsorship — a necessary prerequisite for 188 research program
+participation — by the NASA Ofﬁce of Education.
+>‘<01sen@aer0.und.edu, phone 1 701 777-3543
+
+"
+"2","Now referred to as ISSAC, the payload was originally known as simply the Agricultural Camera, or AgCam. The name
+was changed to ISSAC in 2010 to resolve a trademark issue; legacy documentation and references of necessity retain the
+original AgCam name. Initial ISSAC components (then called AgCam) were launched to the ISS onboard STS-126
+Endeavour (cargo designation of Utility Logistics Flight (ULF)-2) in November 2009, with additional components ﬂown
+up on the J apanese HTV-2 ELV in J anuary, 2011.
+
+2. INTERNATIONAL SPACE STATION
+The International Space Station (188) is a multi-national human—occupied spacecraft, assembled and operated in low
+Earth orbit. The largest spacecraft ever built at a combined mass of over 360 metric tons, the external dimensions of the
+188 are about 109 by 51 by 20 meters, including deployed solar arrays. Capable of supporting a continuous crew of 6
+inside 837 cubic meters of pressurized volume, the primary research emphasis of the 188 is to take advantage of the
+unique environmental properties of low-Earth orbit, principally to perform research in micro-gravity effects (bio-
+technology, life sciences, materials research), but also in space physics, solar physics, and Earth remote sensing7.
+The 188 is a collaborative effort among four principal partners — the United States (US), Russia, Europe, and Japan —
+with Canada participating in a smaller yet critical role (space robotics, telerobotics). Each partner shares in providing —
+and are allocated access to — onboard and launch/return vehicle resources based in part on their historic and ongoing
+funding levels for the ISS. Within the US allocation, a portion of the available resources is operated and managed by
+NASA as a designated US National Laboratory8; ISSAC is a National Lab payload.
+Construction of the ISS began in 1998, with the ﬁrst permanent crew expedition beginning in October 2000. Station
+completion was ofﬁcially recognized by NASA in May, 2011. In 2010, 188 partners each committed to support funding
+and operations for the 18$ for at least another decade, through 20209. Going forward NASA and its international partners
+intend to emphasize ISS scientiﬁc investigations that are of relevance and broadly beneﬁcial to all of humanity; Earth
+observations, and in particular in support of disaster monitoring, among them. Such Earth observations from the 188 can
+be implemented either as an instrument on an external platform of the 188, or from within the internal volume of the ISS,
+Viewing the Earth through observing windows.10
+2.1 The 188 as an Earth remote sensing platform
+The 188 orbits at 51.6 degrees inclination, nearly circular, at a mean altitude of a little over 350 km; orbital period is thus
+typically about 91 minutes. 188 altitude degrades relatively quickly, necessitating several re-boosts per year. From an
+Earth remote sensing perspective, this varying altitude does cause the achievable spatial resolution of a given system to
+also vary, which needs to be taken into account when analyzing resultant imagery.
+With construction of the 188 now complete, the spacecraft is maintained in a relatively stable earth-oriented attitude.
+Within the local reference frame, the X-aXis is deﬁned to be parallel to the velocity vector and the Z-aXis parallel to
+Earth nadir, with Y-aXis orthogonal to both. Nominal ﬂight orients the positive X-aXis in the direction of the velocity
+vector, referred to as +XVV. To be able to image the Earth, ISSAC requires the 188 to be in this earth- attitude (known
+as Local-Vertical, Local-Horizontal, or LVLH); imaging could potentially occur with any orientation about the Z-aXis,
+though ISSAC ground commanding and telemetry processing software assumes a +XVV orientation vector.
+Since the ISS orbit is not sun-synchronous, it cannot offer a sensor payload the advantages of sun synchronous
+operations — chieﬂy a repeating ground track with overﬂights over any speciﬁc point on the Earth occurring at the same
+local time for each overﬂight passll. For observing the Earth’s surface, such an orbit is typically synchronized with a
+morning pass, to statistically reduce the chance of cloud cover. For example, with the Landsat 7 system, ground track
+repeatability is tightly controlled such that image products are provided in the familiar Worldwide Reference System
+(WRS) Path-Row location matrix; overﬂights occur every 16 days, with each descending node Equator crossing
+occurring at about 10:00 local time”.
+In contrast, the ISS orbit ground track has no ﬁxed repeating pattern, and for a given location on the ground, can occur at
+any 24-hour local time instance. Considering only those overpasses that occur in sunlight (herein referred to as a revisit,
+or access), remote sensing from the ISS produces reVisits which vary both seasonally and with latitude; more frequent
+reVisits occur with greater latitude and the longer days of seasonal summer. A cross-track sensor pointing capability can
+signiﬁcantly shorten times between reVisitsl3. The ISSAC sensor can point up to 30 degrees either side of ground track,
+or about 200 Km at the 188 mean altitude of 350 km.
+
+"
+"3","Figure 1; developed using Satellite Took Kit by Analytical Graphics Inc.“, illustrates ISSAC reVisit characteristics for
+two different ground targets located at 5 ON; 90W; and at the equator for 90W. Shown on the left is the sun angle for each
+access of these targets in 2010. For the northern target; the broad annual cycle of maximum sun angle is as would be
+expected for seasonal mid—latitude locations. Within this; a more rapidly changing cycle is observed; which reﬂects the
+varying local time of overpasses as the ISS orbit precesses relative to the Earth—Sun geometry. On the right; an alternate
+perspective is shown; which indicates days until the next revisit; for any access times with a sun angle of 15 degrees or
+higher. For the northern target; during the growing season (generally; April—October); there are 3—4 periods with of order
+3—4 weeks during which no access times are available. On the other hand there are also 3 periods of 4—5 weeks during
+which there is at least one access every 1—2 days.
+70 —
+40
+60
+35
+' Ill 30
+40 , A . v 3‘,
+)0
+20 ...._. ... . . . . .. ..
+* | | IN ‘°
+.. III 2 ITI 2 ""
+0 III I I I I . I II. II .1 I U
+0» o o o o o o o o o o o x} x,"" x} O '0 Q «5‘ N."" '9' 9' N}
+19° ’9'» ’9'» ’19” ’9'» ’19"" ’9'» ’9'» ""9» $6» ’19» ’9'» (19 \‘9 09 (Lo 00 (19 \‘9 (Lo \‘9 (‘9 00
+00¢ '59) 4L9 9’9) 509 809 6‘9 N9 $09 9(9) ”0(9) 00¢ $9 69 0x9 “\xo «9V0 <o\\'° «(9 $9 9‘9 «9‘9 «9.9
+(a) (b)
+0 so
+80
+7o ‘ ~ :10
+I I I I 30
+SO 7 .- _. - .- -. - 7 v . H
+“0 ‘ ’ ‘ ‘ ‘ 20
+10 . . . . . . . ~
+O.l..I.I.lIII. I III. ()oxxxxxxxxx'x'»
+“96'"" 09 9x0 09 9x5) 6‘9 0x0 6‘0 0.9 0x0 0,9 9‘9 095 09'» 09‘» (195 055» 095 09'» <9"" QQN 05$» 093 09""
+09¢ ”\wa $\me ”£0 £9 0)va b\mxo «0x9 $90, yo ”00$ 93'9“ 009’ ‘9'» “0'9 0’0“» g""? ‘00""; ‘09:) (“.9 $0“; 0506) $9» $9
+(c) (d)
+Figure l: ISS Target Revisit Characteristics, using Satellite Tool Kit (STK). (a) Sun angles during 2010 for location 50N,
+90W; (b) Days to next revisit during 2011, with sun angle > 15 degrees, for location 50N, 90W; . (c) Sun angles during 2010
+for location 0N, 90W; (b) Days to next revisit during 2011, with sun angle > 15 degrees, for location 0N, 90W.
+The same pattern is apparent for all targets at 50N; regardless of longitude. For the southern hemisphere; with the time
+scale centered at J anuary 1 instead of July 1 a similar pattern is observed at 5 OS. For either hemisphere; as latitude values
+decrease; reVisits occur less predictably and frequently; with the minimum annual reVisits occurring at the equator. Even
+at this minimum; on average reVisits occur more frequently than the 16—day repeat cycle of Landsat.
+2.2 Window Observational Research Facility
+Like most habitat modules of the 188, the US Laboratory (US Lab) “Destiny” is cylindrical in shape; built to take
+maximum volumetric advantage of the space shuttle’s cargo bay. Externally 8.5 meters long with a diameter of 4.3
+meters; once fully equipped the internal volume of the US Lab is about 8 m X 2 m X 2 1n. Lining this passageway; on all
+four surfaces — these are designated Deck (Earth side); Overhead; Port; Starboard — are individual experiment racks;
+facilities; and activity stations. Among these are numerous Expedite the Processing of Experiments to the Space Station
+
+"
+"4","(EXPRESS) racks, Which are designed With standardized interfaces to simplify accommodation of individual sub-rack
+payloads from many different researchers and organizations.
+Built into the Deck-side hull is the US Laboratory Science Window, Which was designed to accommodate Earth-Viewing
+experiments from Within the pressurized volumels. Shown in Figure 2a, the Science Window consists of a dual Pressure
+Pane (fused silica, 3.175 cm each), With an external Debris Pane (0.38 inches fused silica) and internal Scratch Pane. The
+Scratch Pane, While transparent in the Visible spectrum, incorporates ultraviolet and infrared ﬁlters for crew protection
+but is removable for operation of experiments that utilize these wavelengths. The Debris Pane, Which protects the
+Science Window from contamination inherent in the external orbital environment (micro-gravity, vacuum, material
+outgassing) 0f the ISS, can be exchanged for a new Debris Pane by the crew. To minimize the need for this, mounted on
+the outside of the hull is the US Laboratory Window Shutter, Which protects the Debris Pane itself When the Science
+Window is not being actively used.
+mm OUTBOARD
+my W¢Pm+>
+11—3/3? 1""‘ Q."" IL 3‘35
+am” — “ __""' “.- - _ .
+r T— 4 - Frnnt - - - -- 'n- + 1 '~
+— F W me W Cﬂggﬁg’lmr : 1"""":""11513 :1
+W """" - ﬂ . m _ -;
+cum momma .""1"" . 1:1: .
+4114 mm . . J-
+%a .u M “mm $5“ Eiump Shield , ' .: Winduw Shutter
+m % e L Slide Handle —* 5‘ - 14.4 i1 ‘ Slide Handle
+arm, mm i; «am» — - - _ .1! _.
+§%—_ mmmmrm 1n"" "" ' —-..1I
+.. .. 1E _.“ mn-Bﬂ $10. 5:11; Lﬁﬁ.2"".""__. 1-£1I1_ UUF‘ F'EISE-H'II’U
+writ Eugw‘nnrgo‘sgknm J_J‘ELh—hh 1.__ '.'r CDHHEETEII’
+INBOARD _- "" 1
+(a) (b)
+Figure 2: (a) US Laboratory Science Window; (b) Window Observational Research Facility (WORF).
+Within the pressurized US Lab, surrounding the Science Window is an EXPRESS rack variant known as the Window
+Observational Research Facility (WORF)16. Shown in Figure 2b, Within its 0.64 cubic meter (approximately 90 X 89 X 63
+cm) internal payload volume the WORF accommodates experiments Via the standard power and data interfaces of
+EXPRESS racks, but also provides a 3.8 cm thick Payload Support Shelf and an improved EXPRESS rack mounting
+design to minimize transmittance of ISS Vibrations to internally mounted sensors. Other WORF services include fan-
+circulated air cooling, ﬁre detection and suppression, and a dark, non-reﬂective internal volume.
+2.3 Crewed Vehicle Impacts
+As a crewed vehicle, the ISS environment necessarily leVies additional complexities 0n payload designs than would be
+need for a free-ﬂying spacecraft. Payload safety is a maj or concern, With a detailed methodology established for deﬁning
+safety hazards, controls to mitigate hazards, and veriﬁcation methods and documentation for the hazard controls”. Other
+human factors that must be considered include physical design accommodation, training simpliﬁcation, and on-orbit
+crew time efﬁciency. Conversely, presence of crew (1) enables post-launch assembly Which simpliﬁes design
+requirements of the launch environment; (2) enables complex on-orbit reconﬁguration for changing operational
+environments; and (3) offers potential for trouble-shooting and repair in the event of anomalous behavior or component
+failure. ISSAC payload design takes advantage of all three.
+Astronaut crew members are typically rotated every siX months, in expeditions of three, With the start of each rotation
+offset from the next such that there is some overlap between expedition increments. Vehicle and payload operations of
+the ISS are organized around these creW-based expeditions, each increment number corresponding to a crew expedition.
+
+"
+"5","For example, the time period in 2011 between early April and early October, during Which ISSAC commenced initial
+operations, is known as Increment 27/28.
+For ﬂight crews, payload tasks requiring onboard crew actions are trained 9 to 12 months in advance of the start of the
+increment. Thus for ISSAC, astronaut Ron Garan, Who performed assembly of ISSAC in orbit, was trained on ISSAC in
+July of 2010.This required development of ISSAC crew training materials, including a medium-high ﬁdelity physical
+model, by May 2010 timeframe. Flight crew time is highly constrained and tightly managed; With less than an hour of
+training time available to ISSAC, of necessity task—based training (performed by NASA personnel in coordination With
+the ISSAC team) emphasized ISSAC-unique features and crew actions. To ensure knowledge continuity onboard, at
+least one crew member during each 6-month planning increment is trained on ISSAC.
+2.4 Command and Telemetry Communications
+Payload operations onboard the 188 are managed by the NASA Marshall Space Flight Center (MSFC), located in
+Huntsville, AL. A cadre of NASA and contractor personnel Within the Payload Operations and Integration Center
+(POIC) control onboard operations of facility class payloads and EXPRESS racks, and integrate operations of a large
+number of both US and IP payloads, allocating onboard resources (crew tinie, power, thermal, communication links,
+among others) to achieve science objectives for the increment.
+NASA operates space-ground communication links to and from the 188, With command uplinks sent Via S-band ground
+transmitters, and telemetry downlinks received over Ku band receivers. Communication links are relayed through the
+NASA Tracking and Data Relay Spacecraft System (TDRSS) operated out of White Sands, NM. From a payload
+developer’s operational perspective these data links are relatively transparent, though communication With the 188 is
+neither instantaneous nor continuous. A variable delay of several seconds is inherent in the many communication paths
+and computational systems involved. More signiﬁcantly, both uplink and downlink paths are subject to frequent
+interruptions (known as Loss of Signal, or LOS), due to hand-off of signal among spacecraft in the TDRSS constellation,
+signal occultation by intervening ISS structural elements, or a myriad other factors. This intermittency requires payloads
+controlled from the ground to operate only Within duration-variable communication Windows (known as Acquisition of
+Signal, or AOS), or else to implement a semi-autonomous time-based or other event-driven operational capability.
+Given the ~7.2 km/s orbital speed of the 188, to image a speciﬁc ground target ISSAC needed to implement the latter.
+For ISSAC, commands to acquire an image, along With other payload conﬁguration and status query commands, are
+time referenced With a 1-second resolution and uplinked to the payload during AOS periods. For ISSAC telemetry,
+payload H&S is generated and transmitted continuously Whenever the payload is powered and operating nominally.
+ISSAC Science data transmitted is initiated only in response to a ground command. Any telemetry generated by ISSAC
+during 21 L08 period is temporarily stored in the ISS High-Capacity Onboard Recorder (HCOR), and received later
+during HCOR playbacks.
+
+3. ISSAC PAYLOAD DESIGN
+Primary ISSAC system ﬂight components include an ISSAC Sensor Assembly (ISA), a Base Mounting Assembly
+(BMA), a Slide/Pointing Assembly (SPA), 21 Power/Data Controller (PDC), associated cabling and support items, and a
+NASA-supplied T61p Laptop, including power supply, and interconnecting power and data cables. The Base Mounting
+Assembly provides a solid mounting to the internal WORF payload support shelf. The Slide/Pointing Assembly has a
+slide mechanism to facilitate crew setup and activation Within the WORF, and incorporates an integral gearbox and
+controller to point the lens assembly up to 30 degrees cross-track. The Power/Data Controller individually powers on the
+gearbox/controller and the ISA. Within the ISSAC Sensor Assembly, a Vibration isolation and absorption system helps
+prevent excessive jitter in the ISSAC images. A single 150 mm lens and optical beam splitter supply light to three digital
+framing cameras, each With its own bandpass ﬁlter.
+3.1 Electro-Optical Sensor
+The electro-optical sensor of ISSAC, designed and built by Fluxdata Corp. of Rochester NY, consists of a modiﬁed
+Commercial Off—The-Shelf (COTS) lens (Sigma f/2.8 APO EX-DG Macro HSM) mounted (Via Nikon f—mount) on to
+the ISSAC Sensor Assembly (ISA), Whose components include the Sensor Optics, Sensor Backplate (With internal
+Firewire hub), and interconnecting Firewire and Trigger cables. The ISA, in its on-orbit conﬁguration — mated to the
+ISSAC Lens, mounted into the Vibration isolating Sensor Frame, and With attached Sensor Cables (USB, Firewire, and
+Sensor Power) is shown in Figure 3a.
+
+"
+"6","The ISSAC primary lens is a Sigma f/2.8 APO EX—DG Macro HSM, modiﬁed to ﬁx the aperture at f/4.0, to permanently
+set focus at inﬁnity, and to incorporate a lens cap that would contain glass fragments should shattering occur during
+launch. A backup ﬂight lens retains variable focus, but is otherwise identical.
+, ’ f
+l 3 "" :x w «
+/ "" ‘ 5, <7: ' I , *
+Ox,“ . , _, ‘ _ ' , , u, \
+\ozg,‘ u : . , 1/ 4- v, _. 1
+’ / i; ‘ "" '5 * ' .. \\
+[1, ,. 3| . . \
+
+i {i 4 j? ' ’$'aiii‘ilﬁ“ '
+\zésgr» a: , - v :7 q - 7__ ~* ,4
+
+Figure 3: (a) Integrated ISSAC Sensor Assembly (ISA), shown mounted inside Vibration-isolation and absorption Sensor
+
+Frame, with ISSAC Lens and Sensor Cables attached; (b) Internal Sensor Optics removed from ISA.
+Light from the ISSAC Lens enters the Sensor Optics and impinges on an internal 3—way glass prism block, which by
+means of cascaded optical ﬁlter coatings on multiple surfaces, splits the light energy into three wavelength bandpasses
+(Green: 515—600 nm; Red: 630—700 nm; Near Infrared 740—910 nm). Bandpasses were speciﬁed to coincide with
+comparable Landsat bandpasses. These bandpasses are directed to three identical Sony CCD chipsets, each connected to
+a COTS Firewire camera (Scout, by Basler), operated in 12—bit quantization mode. Each chipset contains a CCD array of
+1040 X 1392 pixels of 6.45 microns each, oriented with the wider side cross—track to the orbital direction. The Optics
+Assembly design, based on US Patent 6,215,597, is derived from FluXdata’s FD—1665 camera, with ruggedized
+mechanical packaging to meet launch loads.
+Internal components of the Sensor Backplate include a General Purpose Input/Output (GPIO) micro—controller board and
+a modiﬁed COTS Firewire Hub (Point Grey FWB—HUB—5PORT). The GPIO Board draws power for its own operation
+from the ISSAC Laptop Via the USB 2 interface, and draws power for distribution to internal ISA components Via the 12
+VDC power connection to the PDC. The hub connects the incoming IEEE 1394a signals to three separate Firewire
+cameras in the Sensor Optics Via IEEE 1394b connections and cables (Red Cable, Green Cable, Infrared Cable).
+However, for supplying power to the 1394b connections the hub draws power from the GPIO Board, which can thus
+provide individual camera power switching capability. The GPIO board also supplies power to the hub, as the laptop
+connection uses IEEE 1394a. In order for the three cameras in the Sensor Optics to image the same target, their image
+acquisitions must be synchronized. The GPIO Board internal to the Sensor Backplate provides this synchronization Via a
+trigger pulse sent simultaneously to all three cameras. Connection is made from the Sensor Backplate Via the Trigger
+Cable using a Hirose Push/Pull connector.
+In addition to the backup lens, other on—orbit ﬂight spares (Sensor Backplate, internal ISA cabling, as well as selected
+external cables) enable crew reconﬁguration in the event of on—orbit failure of one of these components.
+3.2 Passive Vibration Isolation
+Vibration onboard the International Space Station (188) varies from low to high frequency excitation with variable
+amplitudes depending on the current conﬁguration and activities onboard. The Space Acceleration Measurement System
+(SAMS—II), a distributed system of sensors currently on board the 188, is used to measure Vibrations and transient
+acceleration disturbances resulting from the ISS vehicle activities, 188 systems operations, experiment operations, crew
+
+"
+"7","movements and ISS structure thermal expansion and contractionls. While the WORF Will further isolate disturbances,
+for a conservative approach the SAMS-II measured disturbances were used as the baseline environment to design and
+implement a Sensor Frame (shown in Figure 3a) that uses both isolation and absorption components to effectively
+attenuate the Vibration over a Wide frequency range. The system utilizes Sorbothane, a Viscoelastic element that
+incorporate both stiffness and damping into the system19’20. To evaluate the performance of a Vibration isolation system
+on an optical payload, the jitter — deﬁned as rotation through the instantaneous ﬁeld of View of an ISSAC sensor pixel
+that is residual after attenuation — is calculated about both X and y aXis (Figure 4). J itter levels peak at about 0.7 meters
+(about 5% of ISSAC pixel ground sample distance at nominal altitude — see Section 4.2). With the added WORF
+performance improvement, the peak jitter levels are expected to have negligible effects on overall ISSAC spatial
+resolution.
+
+UH | | ' | | | | ' . .
+
+.Iltter about K—aws
+
+Ur' ‘rﬁt
+E3 .. -' 3 3' ""x.
+E, +. *_ 1*: RH
+
+n3 : :1“;
+
+i—‘ijr ﬁx
+I ~-~--.ﬁ__ _ __ _
+U M I I E 2 Excitation FijquencﬂHz} 3 35 J £6 E
+Figure 4: Ground Translation J itter (m) in Vs Excitation Frequency
+
+3.3 Other ISSAC Components
+Figure 5 illustrates in functional schematic form the remaining ISSAC components integrated together With the WORF.
+The ISA is represented by the Lens, Beamsplitter (BS), three cameras (C1, C2, C3), FireWire hub, and GPIO board.
+The ISA, mounted Within its Sensor Frame, attaches to a mechanical cam interface on the Slide Pointing Assembly
+(SPA). The SPA utilizes a closed loop Pointing Control System (PCS) to orient the ISA up to 30 degrees across track in
+response to ground commands. The PCS, Which is based on COTS (MicroMo Inc.) components (brushless servomotor,
+optical encoder, MVPZOOIAOI controller electronics) 21, can be controlled to one thousandth of a degree. Controller
+parametric speciﬁcations, acceleration proﬁles and duty cycles were selected to minimize both transit and settling time
+in the microgravity environment”.
+The SPA and the ISA are both powered by the ISSAC Power/Data Controller (PDC). Internal to the PDC, a Power
+Control Board (PCB), receives and isolates incoming 28 VDC power from the WORF, and supplies conditioned 28 VDC
+and 12 VDC power to ISSAC subsystems23. A custom Data Acquisition Card (DAQ) acquires temperature, current, and
+logic state values from sensors and supplies resultant data to the ISSAC laptop Via a parallel port interface. Integral fans
+maintain thermal cooling in the micro-gravity environment.
+The ISSAC Flight Software (FSW) is resident on a NASA-supplied space-qualiﬁed IBM t61p laptop computer, installed
+by the crew from a DVD binary image. Running under Windows XP, the FSW receives commands and transmits
+telemetry data over Ethernet communication With the WORF (TCP/IP), and controls and interacts With the ISA using
+USBZ and Firewire (IEEE 1394a), With the SPA using serial port (RS-232) communications, and With the PDC using
+
+"
+"8","parallel port communications. Originally developed to run under Windows 2000 on an IBM A31p Laptop, the FSW is a
+Microsoft Foundation Class (MFC) multi-task threaded application which incorporates separate command queues for
+time-based VS. immediate execution, a supervisory processor for the MicroMo controller in the SPA, and an image queue
+directory for managing acquired imagery, storing ﬁles locally on the laptop hard drive“. The FSW was later revised to
+add Firewire communications and control for the new ISA sensor, to accommodate the new t61p and Windows XP
+environment, and to better optimize operationszs.
+2 2 r----------------------------------------1
+I | um I
+. ' 23m . I
+2 . : I
+LEGEND ' lﬂ‘ﬂlﬂ a :i'm-""z-I E I
+H | 1;” U I
+_;,I, [mm m : W {:1 Tent I
+m ~ - = [1A0 25'?” m - m: i '
+—JI~ m1: é ' 2- It—Iiie : : I
+w ' E '2‘ _ mm : i I
+' In ' :2 ' m : '
+g, ' I3 l : I
+i n I m 25 - i :
+I W E PCS E III! E I
+mm: ., IE-I' Hum :2 I :
+' ‘51? . H Um: : i I
+I (ail; ﬂ ‘1: E :
+L-_____________________________ﬁ::::"":::;l
+RadiaﬁﬂnEﬁ‘ecﬁ Radiance I
+Omital Envirnnment @
+Figure 5: ISSAC Functional System Diagram
+The SPA incorporates a slide/roller mechanism to enable crew deployment close to the US Lab Window during
+operations, and connects to a Base Mount Assembly (BMA) mounting bracket, which in turn mounts to the payload
+support shelf of the WORF26. Prior to launch and installation of the WORF, ISSAC utilized an Alternate Conﬁguration
+(Alt Conﬁg), which enabled mounting directly to the frame of the window”. Remaining ISSAC components include
+interconnecting cables and black cloth (N0mex®) cable connector covers, the latter used to minimize stray light
+reﬂections within the WORF internal volume.
+3.4 ISSAC Payload Veriﬁcation, Test, and Launch
+A11 payloads designed for operation as an EXPRESS sub-rack payload 0n the ISS must conform to detailed NASA-
+speciﬁed requirements, both in terms of interface deﬁnition and interface veriﬁcation. Allowed methods of analysis,
+inspection, demonstration, and/or test are speciﬁed on a per-requirement basis. To fulﬁll these NASA requirements,
+major integrated tests performed on the ISSAC system included Electromagnetic Interference/ Electromagnetic
+Compatibility (EMI/EMC), launch proﬁle random Vibration, acoustic emissions, and software functional performance
+and interface validation. Other tests, demonstrations, and inspections measured microgravity disturbance levels,
+subjected the lens to rapid decompression/recompression, validated physical ﬁt and function with the WORF, and
+veriﬁed conformance with human factor requirements. In total, over 75 individual veriﬁcation reports were generated to
+document ISSAC compliance with safety, interface, and launch environment requirements.
+
+"
+"9","When launched, most payload components are packed in closed mini-cell foam inside soft-sided Crew Transfer Bags
+(CTBs). To minimize launch volume, default foam thickness is 1.25 cm, unless a requirement for additional foam can be
+shown. For ISSAC, additional launch Vibration attenuation was desired given the presence of shatterable material
+components and extensive use of COTS components with unknown Vibration susceptibilities. During preparations for
+Vibration testing, adding foam thickness up to 5 cm was shown to be beneﬁcial, beyond which additional Vibration
+attenuation was minimal”. Having crew capability for on-orbit assembly signiﬁcantly simpliﬁed the design and
+performance of foam packing, and reduced the overall volume required for launch. Packing for ISSAC component
+launch was performed by NASA personnel at KSC, with UND inspection and approval.
+The completed ISSAC payload, integrated onboard the ISS within the WORF internal volume, is shown in Figure 6. ISS
+direction of ﬂight in the photo is towards the bottom of the page. The WORF bumpshield is stowed and the sensor is
+shown extended towards the US Lab Window, in its operational conﬁguration. The window external shutter is closed.
+, n r * ,7 ‘i "" ' I g
+. ' Mg xi ' _
+"" ' an“: ‘9’ i
+/ a . _
+, ' x“ .. . i
+t P 1'] /‘ ““'*‘ ﬁll). c ‘
+r, a // ‘ .‘ t 9
+i532 ‘ inn "" ' 3’ "" , - i 7""”.‘J' '5 3 é 52’!
+gg ’4’ '3' L’J""\‘q : ' Sgi
+E , V ~ 95%"". P _ 1'? 53
+° -- ”q j W“ “7% 7*)! x “’ , f ’ a
+, 1.; p §‘ x‘l ‘ i _ «K
+0 \ ""H ,-”' I ,/
+i 53 ,, “ ""'* / I
+1 _ 8i ' / i
+vmlﬁuv‘ ”.1 I / I
+' ISSOZ7E023675
+Figure 6: ISSAC installed on orbit inside WORF (Photo courtesy NASA, ISSOZ7E023675)
+3.5 Student—Centered Design and Development Process
+ISSAC has principally been designed, developed, tested, and is being operated by university graduate and undergraduate
+students. To date, over 60 individual students have contributed to the project, from eight different departments across
+campus. Though numbering only 13 of these to date, dominantly the technical contributions of students have come in the
+form of Graduate Research assistantships (GRAs). Of these, nine were thesis, four were non-thesis graduate projects.
+Almost half of the students have been compensated in an hourly position; most of these have been undergraduates,
+though a few were graduate students at the time of their employment. Contributions from a number of students came
+through participation in an NSF-funded Research Experiences for Undergraduates (REU) project. A few participated for
+academic credit only, such as undergraduate senior design projects, or graduate level independent research topics.
+GRAs and the resultant thesis research topics have been invaluable to the development and test of ISSAC systems.
+However most have required additional integration, veriﬁcation, and documentation tasks be completed in order to
+
+"
+"10","ﬁnalize the system for ﬂight and operations. Hourly students could fulﬁll part of this role, though in a few cases the
+graduating GRA student was hired as temporary staff for a few months to complete their work and integrate it with that
+of others. In numbers the vast majority of personnel who have worked on ISSAC have been students; nevertheless,
+critical system integrative roles and tasks have been supported by UND faculty and staff, as well as subsystem vendors
+for selective niche technical specialties. Thus, the ISSAC experience has been that while a student-centered engineering
+project has been demonstrated to be a Viable alternative for design and development of a science payload for the 188, the
+extensive interface and veriﬁcation requirements of the ISS environment d0 necessitate dedicated faculty and/or staff to
+integrate among multiple student contributions, especially given the student turnover that occurs over time.
+4. SENSOR CALIBRATION AND CHARACTERIZATION
+4.1 Data Products and Sensor Calibration
+The ISSAC project will deliver three types of Level-l data products: Level-lR, Level-lGO and Level lGT, as is
+illustrated in Figure 7.
+R a w Level-l} Level—l R Level—l G1] Level—l GT
+I} ""rwuliul'ecl 1:; Stﬂﬂiﬂlﬁﬂﬂlld Flat-ﬁelclﬂ: ScaledRadiauce Gemuetric
+L . 1”“ , L tﬁBﬂlldCﬁ' Radimuetric at Sﬂlsm'witll Cfm'rectimldiz
+Rebullcllmw IJN regicztered 1- 1.1}, t' 1 f. 1r 1 l' f. F f 1 . U
+SingleBauds ._ ~- ~ :31 13_ 14.11 Ijergap 11c 1&4. ie Element,
+-— bﬂlld Applled Int] 4311 atta clued Applled { gentlﬂ}
+Figure 7: Schematic ﬂow of ISSAC image data processing and product generation.
+When acquired over a target, ISSAC imagery is collected in overlapping frame sequences. Both frame rate (degree of
+overlap) and frame count can be adjusted, the latter generally in response to uncertainty in along-track target location
+accuracy. Raw imagery data consists of acquired data that has been downlinked Via a packetized telemetry stream and
+rebuilt (de-packetized) into individual single-band (green, red, near-infrared) 16-bit images (albeit retaining the 12-bit
+quantization), in a track—down orientation — direction of ﬂight is at the bottom of the image. The Level-O product is
+rotated to track—up orientation, and band-band co—registered into a single 3-band .tif image.
+The Level-lR product has radiometric calibration coefﬁcients applied to produce scaled at-sensor radiance. Level-lR
+products are also delivered with jpeg format browse images. For pre-ﬂight characterization of the ISSAC sensor, spectral
+and radiometric calibration was conducted in collaboration with the Airborne Sensor Calibration Laboratory (SCL) at the
+NASA Ames Research Center 29. Characterizations performed of all three detectors 0f the new sensor were comparable
+to those performed for the original ISSAC sensor 30, which included (1) bandpass spectral responsivity using a tunable
+narrow-band monochrometer; (2) radiometric responsivity of output digital counts corresponding to known input
+radiance using an integrating sphere; and (3) CCD array variance and lens fall-off characterization using a ﬂat-ﬁeld
+illumination device. Response of each spectral bands was determined at a wavelength interval of 5 nm.
+Custom software written in Interactive Data Language (IDL) was developed in-house to perform image stacking, ﬂat-
+ﬁelding, and radiometric calibration. Flat-ﬁelding which removes both un-even responsivity throughout the ﬁeld and
+artifacts of the detectors was applied prior to radiometric correction. In order to convert DN t0 radiance at the sensor, the
+unit conversion coefﬁcients (radiometric calibration coefﬁcients) and offsets are used (below equation). Calibrated
+spectral radiance at sensor is expressed in unit of Watt/(mZ-sr-ttm) as shown in Equation 1.
+Radiance (at sensor) = [DN >< Calibration gain + Offset]*TW (l)
+TW represents percent transmittance of the US Laboratory window, as measured during pre-ﬂight characterization”. For
+the ISSAC green, red, and NIR bandpasses, window transmittance is about 95.53%, 97.48%, and 93.30%, respectively.
+Level-lGO data have a coarsely-determined center coordinate latitude and longitude information attached, wherein
+center coordinate latitude and longitude were obtained from Satellite Toolkit (STK: Analytical Graphics, Inc, Exton, PA)
+using near-real time 188 ephemeris and attitude provided from NASA.
+Level-lGT correction processing is under development at the time of this paper publication. Level-lGT correction will
+employ parameters of the spacecraft attitude, ephemeris, and sensor Viewing angle to ﬁrst establish geo—location t0
+
+"
+"11","within a few kilometers. To deliver fully geo—corrected imagery with geodetic latitude and longitude coordinates
+embedded in the image, additional factors will be incorporated. These will include both ﬂight-comparable measured lens
+radial distortion and a modeled US Lab Window radial distortion, and will utilize a digital elevation model (DEM) and
+ground control points (GCPs) designated to eXisting georeferenced imagery from other sensors. Leve1-1GT correction
+will be performed on a time-available basis, utilizing reference datasets as may be freely available, such as Digital
+Elevation Model (DEM) or Shuttle Radar Topography Mission (SRTM) for terrain, and other sate11ites or airborne
+imagery data for GCP referencing.
+4.2 Spatial Resolution
+As described in Section 3, the ISSAC sensor incorporates three separate band-dedicated CCD arrays, with pitch of 6.45
+microns, and total array size of 1040 X 1392 elements. Pairing this with the 150 mm Sigma lens at a nominal ISS altitude
+of 350 km yields a Ground Sample Distance (GSD) of 15.05 meters, and a total ﬁeld of View of 15.65 X 20.95
+kilometers. This nominal GSD will vary depending on actual altitude and sensor pointing angle. Table 1 indicates the
+range of GSDs for ISSAC, across the ISS operational altitude range ISSAC pointing angles.
+
+(min) 340 14.63, 14.62, 14.63 14.79, 14.85, 14.93 15.40, 15.56, 15.69 16.60, 16.88, 17.18
+
+15.06,15.05,15.06 15.85,16.02,16.15 17.09,17.38,17.69
+(max) 390 16.78, 16.77, 16.78 16.97, 17.03, 17.13 17.66, 17.85, 18.00 19.05, 19.36, 19.71
+Table 1: ISSAC Ground Sample Distance for Near Edge, Center, and Far Edge Pixels
+For evaluating pre-ﬂight spatial performance of the imaging system, when transitioning a slant-edge boundary between
+dark and light areas on a target, the distance in piXel count between when the pixel value rises from 10% to 90% 0f the
+dynamic range can be used as a simpler method to measure the Modular Transfer Function (MTF) of a system”. The
+performance of the ISSAC sensor in such a test was measured on the slant-edge target during the sensor accepting
+testing conducted at Rochester, NY on July 8, 2010. The slanted edge target was set up on a sidewalk at a distance about
+600 m away from the ISSAC imaging system, to avoid near-ﬁeld effect of the inﬁnity-focused lens. The target was a 40
+X 42 inch rectangular box with half black and half white color printed using infrared Visible ink. Angle of the slant edge
+in the middle of black and white boundary was 5 degrees. The target panel was rotated 90 degrees to measure both
+horizontal and vertical edge response distance. Table 2 shows the results the edge distance in piXel count.
+___-ﬁ-
+Table 2: 10-90% rise distance measured from the slanted edge target in pixel count
+For example, 10-90% distance of green band corresponds to 2.4 piXel distance which means 1 line pair could be
+identiﬁed by 2.4 piXel distance. Applying this approach to the results shown in Table 2 indicates the eXpected ISSAC
+spatial resolution on the ground, with a nadir 100k angle at nominal altitude, to be 18 — 21m.
+5. ISSAC OPERATIONS AND EARLY RESULTS
+
+5.1 ISSAC Science Operations Center
+As described in Section 2.4, 188 payload operations are managed by the FDIC at the NASA MSFC in Huntsville, AL.
+The FDIC facility manages on-orbit ISS payloads and payload support systems in coordination with the Mission Control
+Center in Houston (MCC-H), the International Partner (1P) Payload Control Centers (PCCs), several NASA Telescience
+Support Centers (TSCs), and payload-unique facilities32. For ISSAC, this payload-unique facility is the ISSAC Science
+Operations Center (SOC), located in Clifford Hall on the UND campus.
+The SOC has eight workstation consoles used cooperatively to perform mission planning, send commands, process
+telemetry and images, and implement Video, voice, and data connectivity; all communications with NASA are
+transmitted over Internet 2 secure network links. Two large overhead screens are used to display live 188 Video when
+there is a crew interaction activity. Voice communcation is Via the Internet Voice Distribution system (IVODS), which
+
+"
+"12","NASA uses to coordinate among the payload centers, the FDIC, the MCC—H, and the crew onboard. Command and
+telemetry data communication between the SOC and the ISSAC payload onboard are structured Within the Consultative
+Committee on Space Data Systems (CCSDS) layered packetization format, and transmitted Via Virtual Private Network
+(VPN). Telemetry is organized into separate data streams for payload Health and Status (H&S), and payload Science.
+Custom software running on the workstations uses the NASA—supplied Telescience Resource Kit (TReK) application
+programmer interface to implement the CCSDS packetization, provides graphical user interfaces (GUIs) to enable
+console operators to formulate ISSAC commands and monitor telemetry, and records commands sent and data received
+in a local relational database25’ 33’ 34’ 35. Also installed and operating on the workstations is Satellite Tool Kit (STK),
+software from Analytical Graphics to compute the access time and pointing angle of our targets based on the ISS
+traj ectory information”.
+ISSAC is operated by students, staff, and faculty at UND. At present, ISSAC is staffed by siX student—console operators
+from multiple campus academic departments (Aviation, Business—Entrepreneurship, Computer Science, Physics, and
+Electrical Engineering). Student operators undergo an extensive training regimen, With tailored learning modules
+(Introduction, Mission Planning, Real—time Ops, Post Processing, NASA protocols and systems) given by both UND and
+NASA personnel. In addition to time spent on console to operate ISSAC, students use STK to make daily and weekly
+target acquisition plans, process received telemetry into deliverable data products, and develop and reVise SOC standard
+operating procedures (SOPs) to document and standardize procedural tasks. To date, ISSAC has been operated for 13
+days and collected over 250 target locations worldwide.
+5.2 Initial Results
+Quantitative analysis of spatial peformance 0f the imaging system is currently underway at the time this paper is written,
+and therefore ﬁnal determination of ISSAC on—orbit spatial resolution capability has not yet been ﬁnalized. Figure 8
+offers a qualitative Visual inspection of ISSAC spatial performance.
+KM“ Arizona ""
+California f 1‘
+i \x, L‘##_,£
+°
+i ‘3 , 200m
+hifv»: . ,f’"" ’ .9""? g} #:kMW-J 1:
+i {7(- 1:"" ‘ ’3’ ff 4 i
+\"" '~ _ 5r J *3 i f” 7,1 «.1 '5 .
+.. ' , , 1.123;; f 141’ '~. {{3’
+7.1.7 g!"" _ '1"" , x N‘ A, "" ‘ :‘L’x
+Figure 8. Visual comparison between images from ISSAC and Landsat 5 TM acquired over Imperial Reservoir, AZ
+The ﬁgure shows a subset of an ISSAC image acquired over Imperial Reservoir, near Yuma, AZ, at 13:56 local time on
+July 1, 2011, taken at an off—nadir 100k angle of 16.2 degrees. The reference ﬁne resolution image from Google Earth
+shows a dam and parking lot of the Imperial Reservoir located about 14 miles NE of Yuma. For comparison, the same
+area was subsetted from a Landsat5 TM image acquired at 10:59 AM on June 20, 2011. As can be seen in the ﬁgure,
+
+"
+"13","ISSAC image is able to depict more detail overall. For example, the open area that oriented NE and SW direction
+between water bodies in the middle of the image are apparently occupied more pixels in ISSAC image than that of
+Landsat5 TM. The results in the ﬁgure show the Red band only (the NIR and Green band comparisons show similar
+results). While preliminary and qualitative at best, this indicates that ISSAC can deliver somewhat ﬁner spatial
+resolution than Landsat5 TM.
+Radiometrically, plans are in place to perform Vicarous calibration conﬁrmation of pre-ﬁight sensor characterization.
+Among these include acquisition of ISSAC imagery over known reﬂective surfaces and vegetation, using a calibrated
+hand-held spectro-radiometer for ground validation, as well as performance of same coincident With Landsat
+overpassess. Qualitatively, initial indications are that the ISSAC sensor is providing imagery that is approximately
+comparable to What is expected from pre-ﬁight performance asssessments.
+
+6. ANTICIPATED SCIENCE APPLICATIONS
+For the last 50 years or so, relationships between spectral data and crop and soil properties have been established and
+have been incorporated into numerous expert systems to address agricultural analysis, interpretation, and decision-
+making needs. ISSAC imagery Will be used in scientiﬁc projects related to precision agriculture, crops management and
+monitoring, crop yield estimate, and related fast-response applications”. With spectral bands almost similar to the ones
+of Landsat 5, and spatial resolution ﬁner than Landsat 30 m (see section 5), remotely sensed information extracted from
+ISSAC imagery Will capture vegetation canopy reﬂectance With high spatial ﬁdelity. Among others, science
+investigations Will compare and analyze the opportunity of replacing, or complementing, Landsat imagery by ISSAC
+imagery in precision farming support tools such as ZoneMAP38. Additionally, ISSAC imagery may have applications in
+crop modeling or ecosystem studies, in particular While undergoing rapid vegetative change, such as during green-up or
+senescence, or as a result of disturbances ranging from grazing and harvesting to ﬁres and ﬂoods.
+Because of its off—nadir capability and temporal resolution, ISSAC Will be able to provide multidirectional data, and
+bidirectional effects could be studied. Bidirectional Reﬂectance Distribution Function (BRDF) has applications in
+remote sensing for correction of the sun and Viewing angle effects, for deriving albedo, for land cover classiﬁcation, for
+cloud detection, for atmospheric correction and for other applications.
+Orbits for sun-synchronous imagers are typically established With sunlit overpasses in the niid-niorning, as for most
+regions this is statistically the timeframe With least probability for clouds. However, for some locales, such as tropical
+coastal and/or mountainous regions, this can be the least likely time for cloud-free imagery. ISSAC images, taken at
+alternate times, may be the few available for these niche regions.
+Place-based design projects beneﬁt from an understanding and representation of the local terrain; currently most
+commonly accessible Digital Elevation Models (DEM) data in non-urban areas are at a 30 m range. With its 18 to 20 m
+spatial resolution and multiple look angle potential ISSAC data Will be evaluated to develop local DEM at a regional
+scale, Which has very interesting possibilities for developing scientiﬁc application in hydrology or glaciology.
+ISSAC near-real time data acquisition and delivery capability, and its high-medium spatial resolution, Will favor the
+development of applications to address the need for rapid response to events such as ﬂoods, earthquakes, eruptions,
+forest ﬁres, and other natural emergencies. Scientiﬁc applications developed Will focus on 1) a rapid ﬁrst look and
+estimate of the events that just occurred; 2) monitoring and assessing on a frequent basis the events as they progress; 3)
+helping the event early management and future decision making.
+
+7. CONCLUSIONS
+
+Student-centered engineering projects are a Viable alternative for design and development of science payloads for the
+188, an important consideration given its new designation as a National Laboratory in orbit. Beneﬁts to STEM academic
+improvement can be signiﬁcant, though the extensive interface and veriﬁcation requirements of the ISS environment do
+necessitate dedicated faculty and/or staff to integrate among multiple student contributions over time. Extensive use of
+low-cost COTS components can be accommodated Within this veriﬁcation requirements framework, and can produce
+valid scientiﬁc measurements in Earth remote sensing application areas.
+ISSAC radiometric (Green, Red, NIR) and spatial (estimated 18-20m) resolution requirements were primarily deﬁned to
+deliver images for applications pertaining to vegetation such as applications in precision farming, crop and grassland
+monitoring, grassland ecosystem, or land use land change study. In addition, the sensor off—nadir capability from the ISS
+
+"
+"14","orbit enables ISSAC to deliver multidirectional data at different sun and Viewing angles and at higher temporal
+
+resolution than sun-synchronous imagers; at higher latitudes, even several days in a row, or several times a day. This
+
+provides additional capabilities for scientiﬁc projects that proﬁt from acquiring target reﬂectance as a function of
+illumination geometry and Viewing geometry, such as scientiﬁc applications using BRDF or Digital Elevation Models
+
+(DEMs). ISSAC repetitiveness and targeting capability make it also a sensor adequate and potentially quite useful for
+
+evaluating and/or monitoring hazardous events.
+
+Finally, ISSAC is the ﬁrst science payload to make extensive use of the WORF and the US Laboratory Window onboard
+
+the ISS, and offers the opportunity to perform multi-spectral medium-resolution remote sensing investigations using the
+
+unique characteristics of the 188. Such investigations can be used to acquire a good understanding of the implications of
+look-angle, sun angle, and the ISS orbit and ground track on target access frequency, as well 188 operational constraints
+and weather and atmospheric effects, Which can be applied to any future Earth observation imaging system.
+
+8. REFERENCES
+
+[1] http://www.essp.und.edu/
+
+[2] Laguette, S., Seielstad, G., Seelan, S., Wivell, C., Olsen, D. , Lawrence, R., Nielsen, G., Rattling Leaf, J ., Clay, D.,
+Dalsted, K., Welling, L., “Precision farming management Via information dissemination”, Free. International
+Geoscience and Remote Sensing Symposium in Sydney Aus., 837-839 (2001).
+
+[3] http://www.umac.0rg/
+
+[4] Semke, W., Johnson, A.F., Schultz, R., Won, C., Gullicks, J ., Hulst, N, Olsen, D., Seielstad, G., “The development
+of an airborne remote sensing camera array at the University of North Dakota”, Proc. 64th Annual American
+Society of Engineering Education (ASEE) North Midwest Section Annual Conference in Madison WI, (2002).
+
+[5] Hulst, N., Gullicks, J ., Johnson, J ., Lauinger, G., Larsen, D., Lemcke, S., Johnson, A.F., Schultz, R., Semke, W.,
+Won, C., Giesinger, B., Olsen, D., Osburnsen, P., Seielstad, G., Wivell, C., “The Airborne Environmental Research
+Observational Camera (AEROCam): A multispectral digital photography system for remote sensing”, Proc.
+National Conference on Undergraduate Research in Whitewater WI, (2002).
+
+[6] Hulst, N., Barton, J ., Carpenter, J ., Frey, C., Hammes, J ., Johnson, A.F., Olsen, D., Schultz, R. Scilley, B, Seielstad,
+G., Semke, W., Threinen, S., Ubbi, P., Voeller, R. Wambsganss, W., Webster, A., Won, C., Zeller, A., “AgCam:
+Scientiﬁc Imaging for the 188 Window Observational Research Facility.” Proc. IEEE Aerospace Conference in Big
+Sky MT, (2004).
+
+[7] http://www.nasa.gOV/missi0n_pages/station/main/onthestation/indexhtml
+
+[8] http://WWW.nasa.gOV/mission p_ages/station/research/nlab/
+
+[9] Bolden, C. “Statement by Charlie Bolden, NASA Administrator”, NASA Feb 1St Budget Press Conference, (2010).
+
+[10] Watson, P.M., “Remote sensing from manned 10W Earth orbit spacecraft: implications for the International Space
+Station”, Proc.SPIE 7673, 76730F (2010).
+
+[11]B0ain, R., “A-B-Cs 0f sun-synchronous orbit mission design”, 14th JPL/NASA AAS/AIAA Space Flight
+Mechanics Meeting in Maui HI, (2004).
+
+[12] Goward, S., Masek, J . Williams, D., Irons, J . Thompson, R.J., “The Landsat 7 mission: Terrestrial research and
+applications for the 21st century”, Remote Sensing of Environment, 78 (1-2), 3-12 (2001).
+
+[13] Giesinger, B., “Design of an imaging system for AgCam — the International Space Station based Earth observing
+camera for precision agriculture”, M.S. Thesis in Dept. Elec. Eng. at Univ. of North Dakota, (2002).
+
+[14] http://www.agi.com/
+
+[15] Scott, K., Biggar, S. Eppler, D., Zalewski, E., Brownlow, L., Lulla, K., “International Space Station Destiny Module
+Science Window Optical Characterization”, 30th ISRSE in Honolulu HI, (2003).
+
+[16] Runco, M.; Eppler, D.; Scott, K.P.; Runco, S. ,”Earth science and remote sensing from the international space
+station using the destiny laboratory’s science Window and the Window observational research facility”, 30th ISRSE
+in Honolulu HI, (2003).
+
+[17]Bart0n, J ., “Critical analysis of the NASA payload safety and payload integration processes”, M.S. Independent
+Study in Dept. Space Studies at Univ. of North Dakota, (2004).
+
+[18]Sut1iff, T.J., “Space Acceleration Measurement System-II: microgravity instrumentation for the International Space
+Station research community”, Proc. 16th IEEE Instrumental and Measurement Technology Conference in Venice
+Italy, 1, 254-259 (1999).
+
+[19] Webster, A.; Semke, W.H., “Broad-band Viscoelastic Rotational Vibration Control for Remote Sensing
+Applications”, J ournal 0f Vibration and Control, 1339-1356 (2005).
+
+"
+"15","[20] Webster, A., “Analysis and development of a Vibration isolation system for the agricultural camera (AgCam) remote
+sensing camera system”, M.S. Thesis in Dept. Mech. Eng. at Univ. ofNorth Dakota, (2003).
+
+[21]Ze11er, A., “The analysis and design of a single-axis precision pointing control subsystem for the AgCam remote
+sensing camera system”, M.S. Thesis in Dept. Mech. Eng. at Univ. of North Dakota, (2007).
+
+[22] Hammes, J ., “Substructure coupling for motion proﬁle tuning for the Agricultural Camera (AgCam) remote sensing
+camera system”, M.S. Thesis in Dept. Mech. Eng. at Univ. ofNorth Dakota, (2004).
+
+[23] Wambsganss, W., “Electronics design and test strategies for an International Space Station remote sensing payload”,
+M.S. Thesis in Dept. Elec. Eng. at Univ. ofNorth Dakota, (2005).
+
+[24] Hulst, N., “Near-real-time data processing and operation of an Earth-observing remote sensing payload”, M.S.
+Thesis in Dept. Elec. Eng. at Univ. ofNorth Dakota, (2004).
+
+[25]Chennamaneni, B., “""Application of software engineering principles for mission critical software"", M.S. Thesis
+(expected) in Dept. Comp. Sci. at Univ. of North Dakota, (2011).
+
+[26] Threinen, G. 8., “Analysis and development of a linear positioning system for the Agricultural Camera (AgCam)
+remote sensing camera system”, M.S. Thesis in Dept. Mech. Eng. at Univ. of North Dakota, (2004).
+
+[27] Dunnigan, A., “Design, analysis, and NASA requirements for the alternate Agricultural Camera (AgCam) IMAX
+mounting assembly”, M.S. Thesis in Dept. Mech. Eng. at Univ. ofNorth Dakota, (2007).
+
+[28]V0e11er, R., “Closed cell foam characterization for packaging and testing of the Agricultural Camera (AgCam)
+system, M.S. Thesis in Dept. Mech. Eng. at Univ. ofNorth Dakota, (2005).
+
+[29] Brown, S. W., Johnson, B. C., Biggar, S. F., Zalewski, E. F., Cooper, J ., Hajek, P., Hildum, E., Grant, P., Barnes, R.
+A. & Butler, J . J ., “Radiometric validation of NASA's Ames Research Center's Sensor Calibration Laboratory”,
+Applied Optics 44, 6426-6443 (2005).
+
+[30] Olsen, D., Dou, C., Zhang, X., Hu, L., Kim, H. & Hildum, E., “Radiometric Calibration for AgCam”, Remote
+Sensing 2, 464-477 (2010).
+
+[31] Smith, W., “The Scientist & Engineer’s Guide to Digital Signal Processing”, California Technical Pub., (1997).
+
+[32] Schneider, M.; Lapenta, C.C. “Payload Operations Integration Center Remote Operations Capabilities”, AIAA
+Conference and Exhibit on 188 Utilization in Cape Canaveral FL, (2001).
+
+[33]Sci11ey, B., “A real-time telemetry and commanding interface for an International Space Station imaging payload”,
+M.S. Thesis in Dept. Elec. Eng. at Univ. ofNorth Dakota, (2004).
+
+[34] Watson, E., “Building reliable ground operations”, M.S. Thesis in Dept. Space Studies at Univ. of North Dakota,
+(2006)
+
+[35]Patch0ng, D. F. N., “Evaluating the beneﬁts of software engineering principles in mission critical environments”,
+M.S. Thesis in Dept. Comp. Sci. at Univ. ofNorth Dakota, (2008).
+
+[36] Frey, C., “Mission planning, operation, and simulation for a space imaging system”, M.S. Thesis in Dept. Elec. Eng.
+at Univ. of North Dakota, (2004).
+
+[37]Seie1stad, G., Clay, D., Dalsted, K., Lawrence, R., Olsen, D., Zhang, X., “[Precision Crop Protection — The
+Challenge and Use of Heterogeneity. Chapter Title: Providing Precision Crop and Range Protection in the US
+Northern Great P1ains]”, Springer Science + Business Media, 367-3 83 (2010).
+
+[38]Zhang, X., L. Shi, X. Jia, Helgason, C., Seielstad, G., “Zone mapping application for precision-farming: a decision
+support tool for variable rate application”, Precision Agriculture 11(2), 103-114 (2010).
+
+"

@@ -1,0 +1,501 @@
+"","x"
+"1","Slmulatlons of the MTR—R and MTR Experlments at 188,
+and Shleldlng Propertles us1ng PHITS
+L. Sihver 1’2, T. Sato 3, K. Gustafsson 1, V.A. Shurshakov 4, and G. Reitz5
+1Chalmers University of Technology, Gothenburg, Sweden, 2Roanoke College, Salem, Virginia, USA, 3JAEA, Tokai-mura,
+Ibaraki, J apan, 4 State Research Center of Russia, Institute of Biomedical Problems (IBMP), Moscow, Russia, 5German
+Aerospace Center, Cologne, Germany
+E-mail: sihver@chalmers.se
+Fax: +46 31-772 3079
+Abstract—Concerns about the biological effects of space TABLE OF CONTENTS
+radiation are increasin ra idl due to the ers ective of
+long_duration mannedgmifsiogs both in rgatign t0 the 1. INTRODUCTION 1
+. . ’ 2. MATROSHKA-R (MTR-R) 2
+International Space Station (188) and to manned
+interplanetary missions to the Moon and Mars in the future. 3. MATROSHKA (MTR) 4
+. . . . . . 4. IMAGINARY SPECECRAFT 5
+As a preparation for these long duration space m1ss1ons it is
+. . . 5. CONCLUSIONS 6
+important to ensure an excellent capability to evaluate the
+impact of space radiation on human health in order to secure BIOGRAPHY 8
+the safety of the astronauts/cosmonauts and minimize their
+risks. It is therefore necessary to measure the radiation load
+on the personnel both inside and outside the space vehicles 1- INTRODUCTION
+and certify that organ and tissue equivalent doses can be
+simulated as accurate as possible. In this paper we Will The results Of radiation monitoring in long-term
+present preliminary results from simulations, using the space missions on board MIR and the International Space
+three-dimensional Monte Carlo Particle and Heavy Ions Station (188) demonstrate that crewmember dose can be as
+Transport code System (PHITS), of long term dose high as 0.1 - 0.3 SV after one year of space ﬂight [1]; the
+distribution measurements performed With the joint ESA— mean dose rate being from 0.3 to 0.8 InSV/day [2, 3, 4].
+FSA experiment MATROSHKA—R (MTR—R) led by the Doses in space ﬂights depend on solar cycle phase, the
+Russian Federation Institute of Biomedical Problems spacecraft orbit parameters such as orbit inclination, altitude,
+(IMBP). MTR—R is a spherical phantom located inside the Space weather parameters, mission duration, and the
+crew cabin of 188. We also show some results from PHITS spacecraft compartment shielding, etc. For Low Earth Orbit
+simulations of the ESA supported experiment (LEO) spaceﬂight conditions, the dose distribution inside
+MATROSHKA (MTR), Which consists of an the spacecraft is a result of both primary and secondary
+anthropomorphic phantom containing over 6000 radiation space radiation. The primary radiation comes from Galactic
+detectors, mimicking a human head and torso. The MTR Cosmic Rays (GCR), Solar Particles Events (SPE), and
+experiment, led by the German Aerospace Center (DLR), particles trapped in the Earth’ radiation belts. The secondary
+was launched in January 2004 and has measured the radiation is produced by nuclear interactions of the primary
+absorbed dose from space radiation both inside and outside radiation With the materials in the spacecraft and biological
+the 188. In this paper preliminary comparisons of tissues of the human body. The thicker the shielding of the
+measurements outside the 188 will be presented. For the Space station compartment is, the more neutrons will be
+purpose of examining the applicability of PHITS to the produced. Since the neutrons have high radiobiological
+shielding design, the absorbed doses and dose equivalents in effectiveness, they Will signiﬁcantly contribute to the
+a cylindrical phantom With tissue equivalent material inside equivalent dose. At an 188 type orbit (51.60 inc., ~ 360 km
+an imaginary space vessel on a geostationary orbit at solar altitude) estimates of the neutron contribution to an
+minimum has also been estimated for different shielding astronaut’s total dose equivalent range from 30 % to 60 %
+materials of different thicknesses. All the results indicate [5,6,7]. The ratio Of neutron dose equivalent to the
+that PHITS is a suitable tool When estimating radiation risks astronaut’s total dose equivalent varies depending on the
+for humans on manned space missions and When performing altitude, solar conditions, shielding, etc.
+shielding design studies of spacecraft.12 Estimation of the radiation risks for humans on board
+a spacecraft in a space ﬂight can either be performed using
+measured data of dose and ﬂuX distributions in the
+— spacecraft compartments obtained in real space ﬂight
+1978-1-4244-2622-5/09/$25.00 ©2009 IEEE. conditions, or by computer simulations. Complex
+2IEEEAC paper #1015, Version 6, Updated 2008:1226 composition of space radiation and the dynamical nature of
+1
+
+"
+"2","energy and angular spectra in habitable compartments of the All calculations were performed on a LinuX-based
+space stations do not permit obtaining of accurate enough cluster with 805 HP ProLiant DL140 G3 compute servers
+data on radiation conditions based on only dose calculations. with a combined peak performance 0f 60 Tﬂops. Each
+However, since it is not possible to perform measurements compute server is equipped with two quad-core processors
+inside live human tissue and organs, phantoms must be used of type Intel® Xeon®. The CPU time used for the each
+to deduce the radiation load to the human tissue and organs. calculation presented in this paper were around 10 000
+Previously radiation dosirnetry experiments with phantoms hours for the trapped protons (TP) and around 40 000 for the
+have been carried out on automatic spacecrafts [8, 9]. GCR. For MTR-R around 30 000 000 events were
+Human phantoms were used as ""passengers"" on the calculated for the trapped protons and around 30 000 000
+biosatellite ""K0srn0s-368"" (8 days) and the automatic events for the GCR, and for MTR around 25 000 000 events
+spacecraft ""Zond—7"" (7 days). The phantoms were were calculated for the trapped protons and around
+anthropometrically similar to an ""average man"" and made 60 000 000 events for the GCR. For the imaginary
+from tissue equivalent material. There were Channels inside spacecraft, we calculated around 30 000 000 events for each
+the phantoms, in which TherrnoLurninescent Detectors shielding material.
+(TLD) and Nuclear Photo Emulsions (NPE) were placed at
+different depths. After landing the detectors were taken out 2. M ATROSHMJ} (MTR_R)
+and measured. In later years both spherical and
+anthropomorphic phantoms have been used on board The MTR-R experiment [1] consists of a spherical
+manned spacecrafts [10-161 While the described tissue equivalent phantom (30 kg mass, 35 cm diameter and
+measurements were performed inside the spacecraft, the 10 cm central spherical cave) designed by the State
+European Space Agency (BSA) experiment MATROSHKA Scientiﬁc Center of Russian Federation Institute of
+(MTR) [17]» lead by the German Aerospace Center (DLR) Biomedical Problems. The Russian tissue equivalent
+in Cologne, Germany, has housed the ﬁTSt phantom prepolymer Diafor—TDI was used as a phantom material.
+experiment exposed outside the 1889 thereby simulating an Compared with the anthropomorphic phantom used inside
+astronaut performing ExtraVehicular Activity (EVA) The and outside the 188 during the MTR experiments, the
+exposure conditions during an EVA are markedly different spherical phantom has lower rnass, smaller size, and
+from those inside the spacecraft since the only shielding the requires less crew time for the detector retrieval. In the ﬁrst
+astronauts have against the external radiation environment is phase of the experiment the dose measurements were
+a thin space suit, except the shielding from the spacecraft at performed with only passive detectors (TLD and CR39).
+sorne angles. The result is a very steep decrease in the The detectors are placed inside the phantom along the axes
+exposure from the Skin t0 the deeper organs [181 However, of 20 containers and on the phantom outer surface in 32
+because of variation of the space radiation properties and pockets of the phantom jacket, as can be seen in Figure 1.
+shielding at different locations inside and outside the space
+station, the doses in various critical organs of a human body
+measured in phantoms located in different space station
+compartments can differ signiﬁcantly. w Ki?»
+
+Since it is not possible to perform measurements for % Ag
+all possible projectile-target-energy-geornetry combinations, ti.” X ,I ~, ‘: ""\
+computer simulations using particle and heavy ion transport «a 1M“. /7j§l/E A
+codes are still necessary. The measurements performed H C ,—. — h
+using different phantoms should therefore be used for e75 5 VIL'?‘ ""‘3 3‘?
+benchmarking the computer simulations. RIST, JAEA and g. f '1 ff ;' “E 'p '11 t; :.
+KEK in J apan are together with Chalmers in Sweden 1:, «’5 Qtﬂlt t_‘ 'Iifw 'l |_F 1‘ H1”;
+developing the 3-D general-purpose Monte Carlo Particle M M Ea E“ Sf 5
+and Heavy Ion Transport code system code PHITS [19], i:::H::::ﬁ \ K i t"" E «37/
+which can calculate the transports of all varieties of hadrons .. “‘“ffiliiéejifl:3:3+133-'1“""‘""7 \% \E‘AEIE’ ?/
+and heavy ions with energies up to 200 GeV. For the t/ \y.
+purpose of examining the applicability of PHITS to 61) Lb] l
+radiation shielding design and estimation of dose received
+by astronauts inside and outside a spacecraft we have
+compared preliminary results from simulated doses with Figure 1 _ Naked spherical MTR-R tissue equivalent
+measurements performed in the MTR and MATROSHKA- . . .
+R (MTR-R) experiments at the 188. We have also compared {)lliantom (a) and the phantom 1n the worklng Jacket (b)
+the absorbed dose, equivalent dose and dose equivalent
+received by astronauts behind.different shielding materials During the time period from Jan. 2004 to F eb. 2008
+Of dlfferent thlcknesses in an nnaglnary spacecraft 11.1 deep there were two experimental sessions with the spherical
+space durlng solar rn1nlrnurn on a geosynehronous orbit. The phantom in the crew cabin, and one in the Piers-l Module.
+results from these comparisons Wlll be presented in this
+paper.
+
+2
+
+"
+"3","The phantom locations inside the ISS modules are presented PHITS [19]. Proton up to nickel with energy range from 1
+in Figure 2. MeV/n up to 100 GeV/n were considered as source particles
+of GCR, where those ﬂuxes as functions of energies were
+Servi C e M odule A law cabin A- A calculated with Cosmic Ray Effects on Micro-Electronics
+T . Code 1996 (CREME96) [20].
+,~ - r“ 0350 \
+HE t +1. n
+The spherlcal Y? J Cmopwmm Y? H
+phantom ‘
+I
+IN “’ ¢$ 3
+J _-_- 22, W 13
+I t _ t t l
+Piers-1 I ‘ I f?
+Module E E 13
+Figure 2 - The locations of the spherical MTR-R tissue
+equivalent phantom inside the ISS module [1].
+_ _ _ Figure 3 - Simulated MTR-R phantom. The four
+The results obtained w1th the pass1ve detectors cylinders (3, 8, 13 and 18) containing the detectors,
+returned to the ground after each sess10n show that the dose which results are shown in Figure 4, are schematically
+differ on the phantom surface as much as a factor of 2; the shown inside the phantom.
+highest dose being observed close to the outer wall of the
+space station and the lowest dose being in the part of the The trapped protons used as source in our
+phantom that was farthest away from the outer wall [11 The simulations are based on the orbit data from December 1,
+maximum dose rate measured in the phantom was 0-31 2004 which represent an average altitude of the 188 during
+mGy/day and was most likely due to GCR and particles the measurement period, whereas for the galactic cosmic
+trapped in the Earth’ radiation belt. The measured minimum rays only the solar minimum condition is deﬁned due to the
+dose rate was 0-15 rnGy/day. This was probably mainly use of pre-calculated geomagnetic transmission functions
+caused by the strongly penetrating high energetic GCR for an ISS orbit. The transmission functions in CREME92
+particles and is observed behind more than 5 g/cm2 tissue are calculated with a model based on a combination of
+shielding. Critical organ doses, mean-tissue and effective International Geomagnetic Reference Field [21] and the
+doses of a crew member have also been estimated with the extended Tsyganenko model [22]. Beneﬁts from this model
+spherical phantom. At a radiation quality factor 0f 2-69 the are for example improved ability to consider geomagnetic
+651511118.th CffCCtiVC dOSC rates Of about 0.47 - 0.49 mSV/day disturbances and magnetospheric current systems and
+in the crew quarter, and 0-59 ' 0-62 rnSV/day in the Piers-1 averaging over arrival directions. SO far only two orbits
+Module, are 10 to 15 % lower than the mean—surface dOSC implement these geomagnetic transmission calculations:
+on the phantom surface. This depends on the distance 51.6° at 450 km (Mir and International Space Station) and
+between the crew member’s body and the wall of the 28.5° at 450 km (general orbit for Shuttle missions).
+space station. The closest distance between the surface of the
+Preliminary calculations have been performed for MTR—R and the inner wall of the cylinder was 37.5 cm. The
+some TLD detectors in MTR-R for the time period August wall thickness was assumed to be 12.5 g/cm2 and no other
+11, 2004 to Oct. 10, 2005, when the MTR-R was located in material was assumed to be between the phantom and the
+the crew cabin, in containers located in the center in the walls. Cylinder 13 was located closest to the wall of the
+phantom roughly directed towards and from the wall of the cylinders 3, 8, 13 and 18 studied; second closest to the wall
+188. was cylinder 8. The simulated dose was not corrected for the
+In Figure 3 we can see a schematic View of the measured TLD efﬁciency. Based on dose calculations made
+simulated phantom with the detectors located in cylinder 3, for MTR (see next paragraph), we expect the simulated
+3 and 18. In the simulations, the phantom was located in a doses to decrease with 15-25 % after correction.
+cylindrically shaped spacecraft with an inner length of 700 In Figure 4 some preliminary, not efﬁciency
+cm and an inner diameter of 400 cm, approximating the corrected, calculated absorbed doses are shown in mGy/day
+crew cabin where the phantom was located. The spacecraft together with measured values. We can see that both the
+was surrounded by a spherical radiation source, simulating simulations and the measurements show the highest doses
+the external isotropic radiation environment of MTR-R, and close to the outer wall of the space station. However, the
+radiation transport in the spacecraft was simulated by simulated values are 1.5 — 2 times larger than the
+3
+
+"
+"4","measurements. This is most likely due to an incorrect outside the ISS and lack of detector efﬁciency correction.
+estimation of the shielding thickness of the walls and other This must be studied in more detail before any conclusion
+materials between the phantom and the radiation ﬁeld about the quality of the simulations can be made.
+{1,45
+0,4
+D135 q
+f .
+,3"" 0,25 11...... _. __ ..—Ir.1I=l_-& —:‘x:- -C1.rllnder3
+§- + cylinder 13
+E a 2
+g ’ ____s-""""""""""'—_ +C1Irll'nder3
+1: E——— ‘ ‘ ' ' ' ' _
+3 0,15 —— --I--C1.rllnder 13
+E +C1lrll'nder3e-Ip
+.n
+d: 0.1 _
++Evllnderﬂexp
+D,ﬂ5 + Cylinder 13 exp
+- I - Cylinder 13911;:-
+D
+E 3 1D 12 14 15
+r (cm)
+Figure 4 - Preliminary results of the simulations of TLD detectors located in the spherical MTR-R phantom, as
+schematically shown presented Figure 3, along With measured results.
+3, M ATROSHM (MTR) bone material. In the simulations mass from the different
+detectors, cables, and supporting material is also missing.
+MTR basically consists of a human phantom upper The described gCOmthy was pOSitioned in Vacuum and
+torso9 mounted on a base structllre9 and a carbon ﬁber SUI‘I‘OundCd by a Spherical radiation SOUI‘CC in the same way
+container With a total weight sz 65 kg. The phantom body as in the simulations of the MTR-R experiment, simulating
+is made of commercial phantom parts9 consisting of 33 the CXtCI’nal lSOtI‘OplC radiathn CnVlI‘Onant Of 1\/IFI‘1{9 but
+slices each With a thickness of 25 mm embedded in tissue WithOUt any. shielding. from the 18$: The ineasnrements used
+equivalent plastic of different densities for tissue and lungs. for companng. the snnulatlons Wlthlh 1h thlS study were
+The phantom slices are equipped With channels and cut—outs performed dunng February 269 2004 '. Qotober 18, .2905,
+to allow the accommodation of active and passive dosimeter Whleh corresponds mostly to 50131"" mlnnnum condltlons.
+systems With regular distances covering all the phantom as Durlng that perlod the phantorn was mounted on the outs1de
+well as temperature and pressure sensors, as described in ref 0f the 1889 t9 represent the thh'OhIheht duhhg an EVA-
+[17]. Simulations of absorbed doses were performed with In Figure. 5 we ShOW a schematlc layout _0f the
+PHITS using simpliﬁed geometries, including only the phantom usecl 1h the measurements together Wlth the
+phantom of tissue equivalent polyurethane With a uniform P051t10h 0f shoe 19-_Ih the same ﬁgure. we 3150 ShOW a
+density of l g/cm3, container and foundation [23]. This photo 0f the real shoe Where the P051t10h5 0f the DLR
+means that the simulated phantom has a lower mass treated TLD‘7OO dCtCCtOI‘S can be $6611. The pOSlthn Of the
+compared to the real phantom used for the measurements TLD detectors used in 01h"" comparison, presented in Figure
+since the simulated phantom contains only the low density 5» 15 surrounded by an ellipse.
+material of the lungs, but the real phantom contains also
+4
+
+"
+"5","might give a dose contribution from the trapped protons
+ﬂﬁ‘ roughly in the same order as the contributions from the
+a:a'. GCR, which is in agreement with the measurements. More
+‘Eﬁg' ' t E i i s : exact calculations will be performed when more exact
+gEEEE‘s. , t t t ' '1 t ‘ information about the shielding from the 188 will be
+IEEIh-l "" II I t t available.
+u:==—u ‘3g.""l
+—_ ' ‘ t
+__ Slice 19 4. IMAGINARY SPACECRAFT
+__
+E'. y The simulations were performed with PHITS by
+EE it generating particles on the inside surface of a radiation
+l—I—I . .
+__‘ source sphere w1th a radius of roughly 400 cm. In the
+: x J middle of the sphere, an imaginary spacecraft was located.
+The same spherical radiation source used in the MTR-R and
+MTR simulations were also employed in this calculation,
+assuming that the space vessel was on a geostationary orbit
+Figure 5 _ A schematic layout of the MTR phantom at solar minimum: The spacecraft was simulated as a simple
+together With the position of slice 19 [23]. closed cylinder w1th the inner length of 700 cm and an inner
+radius of 200 cm. The thickness of the walls of the cylinder
+In Figure 6 we show the simulated absorbed doses for the was varied between 0 and 10 g/cm2 both 011 the long and
+described TLD detectors shown in Figure 5 together with short sides. In the middle 0f the imaginary spacecraft a
+the measured values as an example. The simulated dose was cylindrical phantom was placed, simulating a torso, With a
+corrected for the measured TLD efﬁciency as described in length 0f 85 cm and a radius 0f 16 cm. The phantom was
+ref. [23]. Notice that these simulations did not include the ﬁlled with tissug equivalent polyurethane with a uniform
+shielding from the 188 since the exact geometry of the ISS density 0f 1 g/crn - In the simulations the primary ions were
+was not available for us. ﬁrst transported through different shielding materials, then
+into the phantom where the dose in water was calculated.
+The dose absorbed by a target material, e.g. a human body,
+0'50 T when exposed to ionizing charged particles is proportional
+0,45 ~ -0' PHITs—Total / to Zeffz, where Zeff is the effective charge of the traversing
+9 0,40 . .\ :ZZELIWfZLRV /' particle, so if an incoming high energetic particle is slowed
+3‘? 0,35 '1, \ / ' I down without undergoing fragmentation to particles with
+>» '0‘ . .__. . I , . .
+L3 030 . .t ’x lower charges, the energy transfer to the target material w111
+E 025 —‘—""-.t :\ —. ’ ,x' , a be higher and therefore rnight result in a higher biological
+3 ’ . "" - 5:31“:-4-;:‘-'-;- .- -r damage. It is therefore important that the shielding w111
+4.5 0’20 break down the incoming heavy particles in the cosmic
+:3 0’15 ‘ radiation into lighter particles with lower charges, i.e. that
+0,10 —o——°—°—ég°—°~ﬁ the fragmentation of the incoming primary particle will
+0,05 A dominate over the slowing down due to Coulomb
+0,00 . , t . t ‘ interactions in the shielding material. It is well known that
+65 45 ,25 ,5 15 35 55 75 95 light, hydrogenated materials provide the best shielding
+thm) against space radiation and liquid hydrogen would act as a
+good shielding material, but it is associated with practical
+Figure 6 -The calculated absorbed doses for the TLD handling problemshas well as explosion ttSkS-
+detectors shown in Figure 5, located in the MTR . It is also important that the shielding materials
+phantom, along With the measured values. The incorporate other desirable properties such as structural
+error bars are Within the data points strength, corrosion resistance, electrical conductivity, etc.
+that could have speciﬁc applications in the space vehicle.
+Preliminary calculations using a container with MTR Polyethylene (PE), Nextel and Kevlar have been identiﬁed
+mounted on very simple shielding shaped as two cylinders, as promising radiation shielding material against galactic
+one with the length of 400 cm and an inner diameter of 200 cosmic radiation and solar energetic particles due to their
+cm and one with the length of 100 cm and an inner diameter high hydrogen content relative to its weight. We have
+Of 125 cm, as described in greater details in ref. [23], therefore calculated the total absorbed dose, equivalent dose
+indicate that the contribution from the trapped protons will and dose equivalent rates in water inside the phantom after
+decrease to a value of 7 O - 80 % of the value calculated with the transportation 0f the primary ions through different
+no shielding from the 188 included when assuming 12.5 thicknesses 0f polyethylene, Nextel and Kevlar, and
+g/cm2 wall thickness. The decrease will be larger if more compared it With simulations using aluminum which is
+mass is assumed in the shielding. A large shielding rnass normally used in the walls ofa spacecraft.
+5
+
+"
+"6",", Dosee uivalent
+In Figures 7 - 9 we show the calculated absorbed 1,05 —q AI _
+dose, dose equivalent and equivalent dose calculated using +Polyethylene
+the Q(L) relationship deﬁned in ICRP 60 [24]. The 1 . _* Kevlar
+statistical errors are shown as error bars. Where no error WW “mute.
+bars can be seen, the error bars are within the size of the 30.95 ‘33,
+experimental points. 3 ‘ 5; 5 . \“‘ ~-\\
+E 0,9 , \ ‘ (33:. \ \“~~~-\
+2 k ‘ '\. ‘~~~-‘_
+Absorbed dose ‘ ‘ \ \ ‘ \.
+1’04 085 T ‘ x \ ' \ -
+, ~ \ \ ~32
+1,03 ‘ x \
+..—'i ‘I
+,-z"" ms - , i ~ , . .
+1’02 "",-—”’/ / . / ' 4 o 2 4 6 8 1o 12
+q, 1,01 x - ___ _______- --—:—""""“”"" _ 1' I . Thickness(g/cm2)
+§ 1 ”4..“ ___,_,.,,.r—-— — - - - - - - - - ""F
+E 0.99 Figure 9 — Calculated dose equivalent vs shielding
+2° 0,93 +A'“""‘i“""""‘ thicknesses for aluminum, polyethylene, Kevlar and
+-I- Polyethylene N ext 61.
+0,97
+—A- Kevlar
+°’96 ""”“em' 5. CONCLUSIONS
+0,95 l .
+o 2 4 Thicknessfg/cmZ) 8 1° 12 The applicability of PHITS for estimation of space
+radiation risks was examined by comparing calculated
+F' C l l h' l , absorbed doses with doses measured inside and outside the
+lgure 7 _ fa cu ateri absorbed dose VS S 1e dlng 188 with the experiments MATROSHKA-R [l] and
+It‘llllckliesses or alumlnum, polyethylene, KEVIN and MATROSHKA [17]. The calculated preliminary results
+exte ‘ were generally higher than the measurements by a factor 1.5
+— 2. This is most likely due to an underestimation of the
+thicknesses of the shielding materials between the phantoms
+Equivalent dose and the external space radiation environment, i.e, the walls
+1.05 _ of the ISS and the racks etc. located inside the ISS.
++Alumlnum . . . . .
+Cons1der1ng that corrections for the detector efﬁ01en01es
+1 -I- Polyethylene . .
+'c . —. Kevlar were not always performed and only Simpliﬁed geometry
+0,95 ‘\‘ i\ ‘ “mam and shielding design were used in the simulations, the
+g ‘ ;>\“‘\\‘“»- preliminary results presented in this paper are satisfactory.
+E °'9 \kﬁ. k‘T‘T‘~~\~‘ The quality of the external radiation environment and the
+T2035 "" ~T '\\ . \T‘qux geomagnetic transmission functions used in the calculations
+25 ‘ ‘ \' j - \ . \"" are also affecting the results. The agreement between the
+0'8 ‘ ‘ ~ \ \: simulated and measured doses will be improved when more
+075 detailed calculations with more realistic geometry and
+' shielding, etc., will be performed in the future. We have also
+0,7 . studied shielding design of spacecrafts by calculating
+° 2 4 6 8 1° ‘2 absorbed dose, dose equivalents and equivalent dose in a
+Thickness (g/cmZ) . . . . .
+cylindrical phantom placed in an imaginary spacecraft on a
+Figure 8 _ Calculated equivalent dose vs shielding geostationary orbit at solar minimum. In our calculations we
+thicknesses for aluminum, polyethylene, Kevlar and tested different materials of different thicknesses as the
+Nextel. walls of the imaginary spacecraft. Based on the preliminary
+results presented in this paper, we conclude that PHITS can
+The simulated results agree with previously performed be used. f(?l"" estimation 0f racliation IjiSkS during manned
+studies which show that the contribution to risk from higher space 11115510115 and 3150 for des1gn StUdleS 0f spacecrafts.
+energetic charged particles can be reduced by shielding,
+particularly if hydrogenous materials are used, for reasons
+explained in ref. [25—28]. More materials will be tested in REFERENCES
+the near future and presented elsewhere.
+
+[1] Shurshakov V.A. et al., “Study of Dose Distribution
+in a Human Body in Space Station Compartments
+with the Spherical Tissue—Equivalent Phantom”, in
+the proc. of the Fundamental Space Res, Sunny
+Beach, Bulgaria, pp. 234-237, Sept. 21-28, 2008.
+
+6
+
+"
+"7","[2] NCRP, 2000. National Council on Radiation [15] B3dhw3r G.D, Atwell W., B3d3Vi F.F,. Yang T.C,
+Protection and Measurements, “ R3di3ti0n protection Cleghorn T.F., “Space r3di3ti0n absorbed dose
+guidance for activities in 10W-e3rth orbit”, NCRP distribution in 3 human phantom”, R3di3t. Res. 157,
+Report No. 132. Bethesda, MD: NCRP. pp. 76-91, 2002.
+
+[3] Petrov V.M., Sh3ﬁrkin A.V., Shurshakov V.A, [16] K3rtseV I.S., et 31., “Spherical phantom for studying
+“Radiation Risk For Long Term Space Flights: Radiation conditions in outer space. Design-
+Coneeptu31 Approach and Practical Usage”, in the structural special features”, Nuclear Measurement &
+proe. 0f the Int. Workshop 011 Responses to Heavy Information Technologies, 16, pp. 36-45, 2005.
+Particle Radiation, Chiba, July 9-10, p. 33-42, [17] Reitz G., Berger T., “The MATROSHKA Facility —
+1998. Dose determination during an EVA”, R3di3t. Protect.
+
+[4] B3th3r G.D., et 31., “Radiation environment on Dosim. 2006, 120, pp. 442 — 445, 2006.
+the MIR orbital station during solar minimum”, [18] Reitz G., et 31., “Astronaut's organ doses 35 inferred
+Adv. Space Res. V. 22. N0. 4, pp. 501-510, 1998. from measurements in 3 human phantom outside the
+
+[5] E. R. Benton and E. V. Benton, “Space r3di3ti0n ISS”, R3di3t. Res. 2008 (accepted for publication).
+dosimetry in 10W-e3rth orbit and beyond”, Nuel. [19] Iwase H., Niit3 K., and Nakamura T, “Development
+Instrum. Methods Phys. Res. B, 184, pp. 255-294, of 3 general-purpose Particle He3vy10n Transport
+2001. Monte Carlo code”, J . Nucl. Sci. Technol. 39, pp.
+
+[6] J . A. Simpson, “Elemental and isotopic composition 1142-1151, 2002.
+
+Of the galactic cosmic rays”, Ann. Rev. Nue. Part. [20] Ty1k3, A.J., Adams, J .H., Boberg P.R, et 31.,
+Sci. 33, pp. 323-3 82, 1983. CREME96, “A Revision of the Cosmic Ray Effects
+
+[7] T. W. Armstrong, B. L. Colborn, Science on Miero-Eleetronies Code”, IEEE Trans. Nucl. Sci.,
+Applications International Corp. Report No. SAIC- 44 (6), pp. 2150-2160, 1997.
+
+TN-9528, 1998. [21] L3nge1 R., et 31., “International Geomagnetic
+
+[8] Smirennyi L.N., Litvin0V3 E.G, Khortsev A.V., Reference Field 1991 Revision”, J 0urn31 Of
+“Study 0fsp3ti31Distributi0n of Tissue Doses With Geomagnetism 3nd Geoeleetrieity 43 (12) pp 1007-
+the Aid of 3 Ph3nt0m—m3nnequin”, in the proc. 0f the 1012, 1991
+third International Congress of Protection [22] Boberg P.R, et 31., “Geomagnetic transmission of
+
+Association, Sept. 9-14, Washington, New York, 101, solar energetic protons during the geomagnetic
+p. 42, 1973. disturbances of October 1989”, Geophysical
+
+[9] Ak3t0V Yu. A., Krasilnikov G.V, Kuznetsov V.G, Research Letters 22 (9), pp. 1133-1136, 1995.
+et 31., “Dose Calculation Method for cosmic my [23] Gustafsson K., Sihver L., Maneusi D., Sato T., Reitz
+protons”, Issues of atomic science and technique. G. and Berger T., “PHITS simulations of the
+Series: Nuclear physics studies. V. 8 (16), pp. 1- M3troshk3 experiment”, Adv. Space Res. (submitted
+77, 1990. for publication).
+
+[10] Berger T., et 31., “Measurement of Depth [24] International Commission on Radiological Protection,
+Distribution of Average LET 3nd Absorbed Dose 1990 recommendations of the International
+Inside 3 W3ter-Fi11ed Phantom on Board Space Commission on Radiological Protection. ICRP
+Station Mir”. Physiea Mediea, V01. XVII, Publication 60, Ann. ICRP 21(1—3), Pergamon Press,
+Supplement 1, pp. 1-4, 2001. Oxford, 1991.
+
+[11] Y35ud3, H., K0miy3m3, T. And Fujit3k3, K, [25] Sihver, L., “Transport calculations and accelerator
+”Organ/Tissue Absorbed Doses Measured With 3 experiments needed for radiation risk assessment in
+Human Phantom Torso in the 9-th Shuttle-Mir space”, Zeitschrift fﬁr Medizinisehe Physik (in press).
+Mission (STS—91)”, Japanese Journal Of Aerospace [26] Wilson J .W., et 31., “HZETRN: description of 3
+and Environmental Medicine. vol. 36, N0. 3, pp. free-spaee ion and nucleon transport and shielding
+105-113, 1999. computer program”, Technical Report TP-3495
+
+[12] Yasud3 H., B3th3r G.D., K0miy3m3 T., Fujit3k3 NASA, 1995.
+
+K., “Effective Dose Equivalent 0n the Ninth Shuttle [27] Zeitlin C., Guetersloh S.B, Heilbronn L., and Miller
+— Mir Mission (STS — 91)”, R3di3t. Res. 154, pp. 705 J ., “Measurements 0fm3teri315 shielding properties
+— 713, 2000. With 1 GeV/nue 56Fe”, Nucl. Instr. and Meth B 252,
+
+[13] Konradi A., Atwell W., B3th3r G.D, Cast B.L., pp 308-318, 2006.
+
+Hardy K.A, “LOW Earth orbit radiation dose [28] V3n3 N., H3jek, M., Berger T., Fugger M., Hofmann
+distribution in 3 phantom he3d”, Nuel. Tracks. P., “Novel Shielding Material for Space and Air
+R3di3t. Meas. 20, pp 49-54, 1992. Travel”, R3di3t. Prot Dosimetry 120, pp. 405 - 409,
+
+[14] Cueinott3 F.A, Kim M-H. Y, Willingham V., George 2006.
+
+K.A, “Physical and Biological Organ Dosimetry
+Analysis for International Space Station Astronauts”,
+R3di3t. Res. 170, pp. 127—138, 2008.
+
+7
+
+"
+"8","BIOGRAPHY Katarina Gustafsson obtained her MSC in Chemical and
+Physics Engineering at Chalmers University of Technology,
+Sweden in 2006. Today she is a PhD student in Prof.
+Sihver’s Nuclear Science and Engineering Group at Applied
+Physics, Chalmers University of Technology, Sweden.
+
+In 1986 Lembit Sihver received his MSC in Chemical
+
+Engineering at the Royal Institute of Technology (KTH),
+
+Stockholm, Sweden. In 1988 he received his Licentiate of VyacheslaV A. Shurshakov received his Ph.D degree at
+
+Technology in Nuclear Chemistry/Nuclear Physics, Uppsala Moscow Engineering Physics University, Russia, in 1986.
+
+University, Uppsala, Sweden, and in 1990 he became Dr. of Since 1986 he has worked as a researcher at Institute of
+
+Technology (PhD) in Nuclear Chemistry/Nuclear Physics at Biomedical Problems (IBMP) Ministry of Public Health of
+
+Uppsala University. Sihver is a full Professor of Nuclear Soviet Union, Russian Academy of Sciences (IBMP RAS)
+
+Science and Engineering and Head of the Nuclear Science since 2001. Now he is head of lab for radiation safety in
+
+and Engineering Group, Applied Physics, at Chalmers manned space missions at IBMP RAS. His major ﬁelds of
+
+University of Technology, Sweden. He is also an Adjunct activity are radiation monitoring on board the International
+
+Research Professor of Physics, Roanoke College. Sihver’s Space Station and radiation safety of the Russian crew
+
+major research areas are heavy ion physics, particle and members.
+
+heavy ion transport, space radiation shielding and space
+
+dosimetry. ' ' l L I
+
+In 1972 Gﬁnther Reitz received his Diploma in Physics and
+1990 he became Ph.D. in Biophysics. Since 2004, Reitz is
+
+Tatsuhiko Sato received his Ph.D degree at Kyoto the Head of the Radiation Biology Department, Aerospace
+
+University, Japan, in 2001. Since 2001 he has worked as a Medicine, at the German Aerospace Center (DLR) in
+
+researcher at Japan Atomic Energy Agency (JAEA). His Cologne, Germany. His main research interests includes
+
+major research areas are particle and heavy ion transport, dosimetry of the radiation ﬁeld in space and in airﬂight
+
+and radiation protection for high-energy particles. altitudes, development of radiation measurement devices for
+spaceﬂight and airﬂight, radiobiological effects of heavy
+ions in spaceﬂight experiments and ground based
+accelerator experiments. He is also involved in different
+other research projects concerning radiation protection.
+Reitz is a chair man of many commissions and working
+groups and he has received many awards for development of
+measuring devices for measuring radiation in space and for
+his extensive research about radiobiological effects of space
+
+' radiation.
+In. t
+8
+
+"

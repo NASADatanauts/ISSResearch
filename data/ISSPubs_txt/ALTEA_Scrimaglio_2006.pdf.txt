@@ -1,0 +1,417 @@
+"","x"
+"1","Available online at www.sciencedirect.com —
+«1% ADVANCES IN
+§0Ngwwmdo ' S c I E N c E @ D I R E c T ® SPACE
+a - RESEARCH
+ELSEVIER Advances in Space Research 37 (2006) 1770—1776 %
+www.elseVier.com/locate/asr
+Simulation of the ALTEA experiment on the International
+Space Station With the Geant 3 .21 program
+R. Serimaglio a, G. Nurzia a’*, E. Rantueei a, E. Segreto a, N. Finetti a,
+A. Di Gaetano a, A. Tassoni a, P. Pieozza b, L. Nariei b, M. Casolino b,
+L. Di Fino b, A. Rinaldi b, V. Zaeonte b
+a Department Of Physics, University Of L’Aquila, Via Vetoio {Coppito I), 67010 Coppito, L’Aquila, Italy
+b Department Of Physics, University “Tor Vergata” and INFN Sez, R0ma2, Via della Ricerca Scientiﬁca I, 00133 Roma, Italy
+Received 30 September 2004; received in revised form 25 November 2004; accepted 29 November 2004
+Abstract
+The ALTEA (Anomalous Long Term Effects in Astronauts) project is aimed at the study of the transient and long term effects of
+cosmic particles on the astronauts’ cerebral functions. The detector will ﬂy on the International Space Station in 2005. Due to the
+complexity of the detector (12 double silicon detector boxes arranged around the head of the astronaut) it is necessary to have a
+detailed simulation of the apparatus response to cosmic ray nuclei in order to assess the detector response and its observational
+capabilities. The ALTEA detector was therefore simulated by using the Geant 3.21 program, by the astronauts’ head described
+by 64 cubes of water. By using Creme96 program to evaluate the cosmic rays ﬂuxes within the International Space Station we
+obtained the events distribution and the energy lost in the cubes of water, as well as the expected interaction rates. Furthermore,
+we calculated the triggered events number per unit of time in the detector. The simulation was also used to develop a technique
+to recognize the cosmic rays nuclei.
+© 2004 COSPAR. Published by Elsevier Ltd. All rights reserved.
+Keywards: Light ﬂash; Cosmic rays; Biological effects
+1. Introduction of white light with the shape of thin or thick streaks, sin-
+gle or multiple dots, clouds, etc. (Osborne et al., 1975;
+In the next few years the average time stay on the Pinsky et al., 1974, 1975).
+International Space Station of human beings will The experiments hint linking these perceptions to the
+strongly increase. For this reason the safety issue in passage of heavy ionizing nucleithrough the retina. The
+space environment is crucial. There is a need to study speciﬁc mechanism of the interaction, and its site, re-
+the eﬂeets of particles on the human body and partieu— main uncertain. In order to evaluate the LF phenome-
+larly on the functionality of the CNS. non it is necessary the simultaneous determination of
+The Visual system has been Chosen to “probe” the time, nature, energy and trajectory of the particle pass-
+CNS because it is particularly sensitive to space environ- ing through the cosmonaut’s eyes, as well as the cosmo-
+ment. In missions Apollo missions 11 through 17, Sky- naut’s LF perception time. Some previous experiments
+lab 4, Apollo-Soyuz, Mir, Iss, the astronauts, after are described in (Casolino et al., 2002, 2003a,b).
+some minutes of dark adaptation, observed brief ﬂashes The ALTEA project is aimed at the study of the tran-
+sient and long term eﬂeets of cosmic particles on the
+—* Corresponding author. astronants’ cerebral functions. It has been funded by
+E—mail address: giampietro.nurzia@aquila.infn.it (G. Nurzia). the Itahan Space Agency (A81) and by the National
+0273-1177/$30 © 2004 COSPAR. Published by Elsevier Ltd. All rights reserved.
+d0i:10.1016/j.asr.2004.11.029
+
+"
+"2","R. Scrimaglio et a1. / Advances in Space Research 3 7 { 2006 ) 1770—1776 1771
+Institute for Nuclear Physics (INFN) and “Highly rec— arranged perpendicular each other. The distance be-
+ommended” by the European Space Agency (ESA). tween two sensors of each detector is 3.75 cm. Each
+The experiment is an international and multidisciplinary SDU is placed inside an aluminium box 1.3 mm thick.
+collaboration. The set-up of the detector is shown in Fig. 1.
+
+The basic instrumentation is composed by a series of The astronauts Will used two push buttons to mark
+active particles telescopes, an ElectroEneephaloGrapher the perception of a light ﬂash. All information Will be
+(EEG) and a Visual stimulator, arranged in a helmet stored Via an integrated data handling system Which Will
+shaped device. This instrumentation is able to measure also allow the transmission of the data to ground.
+simultaneously the dynamics of the functional status In our simulation particles are generated in random
+of the Visual system, the cortical electrophysiological way and isotropically on a big spherical surface With
+activity, and the passage through the brain of those the ALTEA detector in the centre.
+particles Whose energy is included in a predetermined The energy of a particle is Chosen in random way
+Window. The three basic instruments can be used Within the cosmic ray spectrum obtained by using the
+separately or in any combination, permitting several Creme96 program (Fig. 2), so that events are distributed
+diﬂerent experiments. according to this spectrum.
+
+The direction of a particle is isotropieally generated
+in random way.
+2. Description of the detector system
+
+Due to the complexity of the detector it is necessary 3. Cosmic rays ﬂuxes evaluation
+to have a detailed simulation of its response to cosmic
+rays particles in order to evaluate its observational capa- We used the Creme96 program to evaluate the cosmic
+bilities. The ALTEA detector was therefore simulated rays ﬂuxes Within the International Space Station.
+using the Geant 3.21 program. Creme96 is a suite of programs for creating numerical
+
+The Geant program simulates the passage of elemen- models of the ionizing radiation environment in near
+tary particles through the matter. Originally designed Earth orbits and evaluating the resulting radiation ef-
+for the High Energy Physics experiments, it has today feets on electronic systems in spacecraft and in high alti-
+found applications also outside this domain in areas tude aircraft (Tylka et al., 1996, 1997a,b).
+such as medical and biological sciences, radio-protection We used the Creme96 program in four steps::
+and astronauties.
+
+The principal applications of Geant in HEP are: (1) Because the International Space Station is inside
+
+of geosynehronous orbit, we used a ﬁrst routine
+
+(1) the transport of particles through an experimental in order to evaluated the geomagnetic shielding
+
+setup for the simulation of detector response; eﬂeet of Earth on some particles found in inter-
+
+(2) the graphical representation of the setup and of the planetary space. This routine averages the geo-
+
+partiele trajectories. magnetic transmission function over the entire
+orbit of 188: an orbit-generator routine is used to
+
+The two functions are combined in the interactive step along the speciﬁed orbit, Which is tracked
+version of Geant. This in very useful, since the direct for seven days. Geomagnetic access is evaluated
+observation of What happens to a particle inside the at each point on the orbit, and the results are aver-
+deteetor makes the debugging easier and may reveal aged. The calculation is averaged over all direc-
+possible weakness of the setup. tions, Without any preferred ISS orientation or
+
+The Geant system can be obtained from CERN lookout direction (due to thin shielding, for exam-
+(http://Cernlib.Web.Cern.eh/eernlib/versionhtml) and the ple) from the 188. The calculation does take into
+program runs everywhere the CERN Program Library account, however, that some lookout directions
+has been installed. are blocked by the solid Earth. Flux calculations
+
+The detector system consists of an helmet holding 12 using Creme96 assume that the incoming primary
+active silicon telescopes (Narici et al., 2001a,b,e, 2003), source ﬂux is isotropic. (Anisotropies in the incom-
+assembled in six independent units named Silicon Detee- ing primary energetic particle ﬂuxes are generally
+tor Unit or SDU. small, except in the very early stages of solar par-
+
+Each detector is made of three silicon strip sensors. tiele events). The orbit-averaged ﬂux calculation
+The basic sensor is obtained by assembling back to back further assumes that the incoming primary ﬂux
+two Chips each With 32 ion implanted resistive strips, varies slowly compared With the orbital period.
+With a sensitive area of 2 x (8 x 8) cm2 and a thickness (2) A routine of the Creme96 program evaluates the
+of 380 um. In order to allow both x and y coordinates geomagnetically trapped proton ﬂuxes. The calcu-
+measurement the strips of the two detectors are lation is orbit-averaged. The program provides
+
+"
+"3","1772 R. Scrimaglio et a1. / Advances in Space Research 3 7 { 2006 ) 1770—1776
+.::£:£=ii=5=i=‘:=é=i ,wsaaﬁ/ M r « s. a ~5'j'i;'z-‘j‘§':*:?;fi'a:EEE‘EEEIEEEi'l?§;'§:iiiiiilﬁliliEEEEFEEQEEéiiigiii
+V'gyﬁ'giai'lk.. a j. :3 ‘1 ,2 esl
+‘I'Qlli.'ls
+
+.mtsa'eaiaéaisé 11‘s. .74» 12w \.
+
+.ul!!':=i=iiiiii:i=iiiiﬁi'I;35?25:?3?:111<3e1:261ii322;?‘éizés‘céiiiawHaiku”25295525525ieiiﬁﬁﬁtél’] N!"" ,A‘EiiiiﬁiE‘EF‘EIi‘iEEEESETEEESF‘iii55.1%iiiéiiiiiiiii§¥i}i'-15:E:E2:E‘E‘i5535353313:5153=i3iii‘:=:”:‘:‘:§-‘.‘E‘EE‘E‘EEEiiiiiiiiiiiii \
+..Iuéieiiéi'si‘eé'siéiieéiiéieiéallﬁiiiv32:96;""3i éﬂr‘I-lﬁwls4.4|'~~\safa'aiiaséiésaiéi‘yiﬁ~\ '
+""§iéi25,':3EEE’:§2§E'§':5§§E£E§§§?E£T§”‘3, 2:222: f2;:515331215.35:Eiiiquii‘i'fj eat;:15:i2:123s‘gsiazagaéaiaiaiagé4""y‘!§‘!'4§,V.y,4~‘\.|III
+iaiiieégis‘éiééiaéézgéén:ééteé::i‘ i‘,,;:i:§%a!‘lzae éé""2==eé‘azi5ééésééaé=iéisééizééaéé|'yAMI"" \Aﬂﬁl.!'q‘\l|
+1'5???iii'e'ié'iiiéiéééiéi3'21???iii?iii:""iLétiiE'éiii115$??iils'si‘iﬁ‘iii‘i‘zéa / ‘¢.||I§!P’j§‘ 44%|.IV/I>\\ 1/ ‘I
+“/@!'/‘I7,¢,zi§i§§!7{4illgw\' /‘ ‘Ill/
+a VI '44 y,4§§=a§,.//,¢ /|/
+E=E='rh':ii=‘:52523344iIléiiﬁEiiiiﬁiiihiiiiiﬁ:5‘5f;IEt312:3151i=ii=3=i=i=i=ivéi/ nl'éﬂﬁil IQ“. !I'i~,~;£zé£ ,;:g:z:=,:=,;ggzg.,:;:;:.,;;gy:;gv.:,. ,.v,:=_;:;:;:i:z:i:;1g:g;g ,._;:3;;:3;;;2:;|'
+/xiiessieéeieéa'saézéz'eaaéi'sééiéit’ ’ ,4?"" I25? Ibisr¢¢fﬂi§<\An:‘éiéa'sg‘e:‘széaitggegig‘saéaaéaiii3,42éaézéaiéaéaéa‘saéiae:zgzga..
+/\ miiiéiéiééiiw ﬁﬂ'yld‘ Il'yr‘4‘.|,§§$.2«.gy‘V//gqagége;-ééagsgzagéségiei2‘:‘ﬁiEziejaé52351322533533;€12;252‘;§a§a§i§i€§aazgéaéxséiégi
+‘ / ‘\\/’ “WM“ ""“944 I'/""
+w ‘ i~~\ n
+% ..\'~:A‘.I f3‘I""??“iiiiii3:i:‘h=5i:i:1:‘a’iz‘vi571? ' :‘;;:‘:~’.u1L;:§t.';r:1;1'1' .‘;‘:;:?::r ‘xI""':=:E::G{‘J:i:i135;‘1:2;1;I:?u
+
+‘ EEEEEEEELEEEE=::=-.. /""l'/. ‘V‘: a"" 4""EiiiiEiiiiiEE‘35522252353351‘1""Lé'Ei0:53:211:135:‘E"";4‘;‘=i?’:3""1',:;3i;3'3:i;;?!,‘l'i‘éiiigéiii‘iiizi552335253“‘|""""
+
+assassinaiisasaaa‘:itEEEEEEEEEEEE‘EEEEEEEEEEEE \\ 4’ ‘9' 4/ é3;!55si;zi;£:izii:ii:iia§£333;zzigigi‘eiaiiisiaigiiigiggééigm3.’;:5iiiiiziziiiii‘1355;535:4iiil'”
+
+I -.'--.Ilw..| -‘-..:mu.‘Imm-t-‘hnn --.'I-.'I. I 'Iu‘ne—‘Jm. ‘II lwmuHmuhh.I,p.'.'.'.‘.u'.wu'mu www.un'umu'u' r .-.v ll
+\\I-.'--.-Iw.-m.. mu.‘Imus‘a‘.--‘-‘.'--.‘--.'--:- 'Iu.--..--.:--..!!-.--.~4 ”7’ II' Aunuu'um-m1xmunN.Im'um'ww,In.‘.uImn-m'mw 4”""
+~!"" 4‘II.""4 éiéiiEéiiéi'giéiiiiiiii‘""éiéiiéiiiiiiiéiiiiiéiiéiii1iii1;:iiiiéiiiiiiiiiiiiéiéiiiéé\f'""
+74""."" 4’
+’ uh‘l '
+
+' aw"" ééiitiiiiiﬁ""'
+‘l ”7
+Simulatiom Test Set—Up
+Fig. 1. 3D View of the ALTEA detector.
+102
+10 p
+1
+1o—1
+7 10—2
+Q --———-----"" “x
+0 .-——”"" \x
+3 1o—3
+; -4 (X ____--.__
+Q) 10 . ‘ ’::::::::_—_.-..—.HHHHHF,;.;I;.;-:~ \s‘
+g 10 W/A \‘
+«E 10 5W1.:jffilirfiri’.:‘WMF... \K‘ .‘\\
+V _7N—H'ﬂ‘m'm-i-E;.;.;,$.;;=;l;:;.:Z:..e--'-""""'_.‘_,...u-*“’:::_,-—""/ ""___-—-""""__----“‘~~~\ ' ""1...: \.
+§ 10 __ ‘*~\ "" a
+
+1 0-9 \‘x‘xx‘s‘f‘:
+
+10-10 \\\t
+
+10-11 ‘
+
+10-12
+
+10'1 1 1o 102 103 104 1o5
+Kinetic energy (MeV/nucl)
+
+Fig. 2. Cosmic rays differential ﬂuxes vs. kinetic energy.
+omnidirectional trapped proton ﬂuxes, Which directional does not imply isotropic, that is, having
+means that the ﬂuxes are averaged over the entire the same ﬂux arriving from all directions. In fact,
+range of arrival directions, covering 41: Sr. Omni- the low-altitude trapped proton ﬂux is highly
+
+"
+"4","R. Scrimaglio et a1. / Advances in Space Research 3 7 { 2006 ) 1770—1776 1773
+anisotropic. (The anisotropies may be important of protons and alpha particles With respect to heaVier
+for orientation-stabilized spacecraft and for some nuclei and a great predominance of protons With respect
+applications). We evaluated trapped proton ﬂuxes to alpha particles When kinetic energy is below 1 GeV/
+near solar minimum condition. nuel. The maximum value for protons ﬂux is near 102
+
+(3) The results from previous two routines enter in the MeV/nuel. The remaining particles have maximum val-
+third routine providing a numerical model of the ues near 103 MeV/nuel.
+space ionizing-radiation environment at the sur-
+face of the 188, before transport through shielding.
+We chose the Solar Quiet (“n0 ﬂare”) Model. This 4. Trigger rate
+model represents the ambient environment Which
+prevails in the absence of solar energetic particle We deﬁne “trigger signal” an event Which hits a single
+(“ﬂare”) events. This environment, Which varies strip along y direction of three silicon plane of a SDU
+slowly in intensity over the 22-year solar cycle, is and release in each plane an energy above the detection
+the basic environment in Which all space systems value of 10 mip % 1.09 MeV. In fact, 1 mip in 380 um of
+must operate. The model is appropriate for evalu- silicon is equal to 109 keV.
+ating typical and long-term average particle ﬂuxes. In Fig. 3 the energy spectrum of some particle that
+(4) The last routine of the Creme96 transports the yield trigger signals in any SDU is shown. We can see
+input particle ﬂuxes through a thickness of shield- that the ALTEA detector does not reveal relativistic
+ing. This transport code takes into account both protons and alpha nuclei.
+energy loss and nuclear fragmentation. In We deﬁne “single trigger events” a particle that yield a
+Creme96 the aluminum is the shielding material. trigger signal in one SDU and “double trigger events” a
+We used a greater value for specifying the shield- particle that yield a trigger signal in two SDU. The “dou-
+ing thickness. ble trigger events” are very important because they Will
+permit a better reconstruction of the experimental tracks.
+The next step Will be the use of more sophisticate Remembering that the cosmic particle ﬂux is assumed
+Low Earth Orbit (LEO) particle environmental models isotropic, we calculated the mean number of events per
+in order to obtained more realistic results. second that yield a single or a double trigger in the AL-
+The diﬂerential ﬂuxes, in minimum solar condition, TEA detector With and Without the astronauts’ head.
+are shown in Fig. 2. There is a strong predominance The results are shown in Tables 1 and 2. The results
+Z 6000 ID 1000000 Z ID 1000000
+5000 RMS 24.63 2000 RMS 99.63
+4000 1750
+1500
+5000 1250
+i 1000
+2000 proton 750 alpha
+1000! :2:
+Di ______04.._0 O? b
+50 100 150 200 0 200 400 500 800
+E (MeV/mucl) E (MeV/nucl)
+Z ID 1000000 25000 ID 1000000
+E RMS 3459‘ 4000 E RMS 3524‘
+4000[ f
+I 5000}
+3000! i
+2000 i carbon 2000i oxigen
+I
+1000 1000
+O _—.-___._...._.____ O h—___...._____
+0 5000 10000 15000 20000 0 5000 10000 15000 20000
+E (MeV/mucl) E (MeV/nucl)
+Fig. 3. Energy spectra of ions that yielding trigger signals in any SDU.
+
+"
+"5","1774 R. Scrimaglio et a1. / Advances in Space Research 3 7 { 2006 ) 1770—1776
+Table 1
+Mean number of “single trigger events” per second in the SDU
+p 06 7L13 10B5 12C6 14N7 1608
+20.3 0.0249 1.3 ><10‘3 3 x 10—3 10.6 x 10—3 2.8 ><10‘3 9.4 ><10‘3
+27.5 0.0279 1.3 ><10‘3 3.2 x 10—3 10.8 x 10—3 2.9 ><10‘3 10.2 ><10‘3
+Table 2
+Mean number of “double trigger events” per second in the SDU
+p 06 7L13 10B5 12C6 14N7 1608
+0 0.0023 2 x 10—4 0.9 x 10—3 3.5 x 10—3 0.9 x 10—3 2.6 x 10—3
+2.45 0.0054 3 ><10‘4 1.1><10—3 3.6 ><10‘3 1x10—3 3.4 ><10‘3
+shown in the ﬁrst row are obtained by including the 5. Energy 10st in the astronauts’ head
+astronauts’ head in the computations, Whereas the re-
+sults in the second row do not consider the astronauts’ The astronauts’ head is simulated With 64 cubes of
+head. water (Fig. 1) because the Geant program does not sim-
+From Table 2, we notice that protons cannot yield ulate the human tissues. The approximation is accept-
+events of double trigger When the astronauts’ head is able at this level of calculation. More advanced
+present. In this case, in fact, the protons energy spectra simulation programs (Geant 4) Will permit to obtain
+relative to the ﬁrst and to the second trigger signal have more realistic results. The length of the side of the cubes
+not common parts. However, in (Casolino et al., 2003b) is 4.2 cm.
+are assumed at least two causes of Light Flash, one due In Table 4, the mean energy lost in one cube of water
+to protons and one due to heavy nuclei. during the passage of a particle for different species of
+The number of events triggered per second in the cosmic rays is shown. The ﬁrst row includes all events
+SDU is very important because it can have a relation generated by Geant (W); the second row includes only
+With the experimentally observed frequency of Light the events triggered by any SDU (M). In the second case
+Flashes. there is a smaller energy release, except for alpha and
+Considering that ALTEA does not reveal relativistic lithium. Obviously, the values increase With the atomic
+protons and that protons can not yield events of double number of the ionizing nuclei.
+trigger When the astronauts’ head is present, we can say We calculated the mean energy lost because, When
+that our experiment allows us to study properly only the there is a Light Flash, a cosmic particle loses energy in
+heavy nuclei (see Section 7). a certain zone of the astronauts’ head.
+We Changed the trigger conﬁguration in order to cal-
+culate the mean number of events per second that yield
+signals above the detection energy in the outermost sili- 6. Rate of events occurring in water cubes
+con plane of the SDU. The results are shown in Table 3.
+As before, the results shown in the ﬁrst row are obtained In Table 5, the mean number of interactions occur-
+by including the astronauts’ head in the computations, ring in one cube of water per second for different species
+Whereas the results in the second row do not consider of particles is shown. The ﬁrst row includes all events
+the astronauts’ head. These values are about 10 times generated by Geant (5]); the second row includes only
+greater than those of Table 1. the events triggered by any SDU (th).
+Table 3
+Mean number of triggered events per second in the outermost silicon plane of the SDU
+p 06 7L13 10B5 12C6 14N7 1608
+394.22 1.26 1.12 x 10—2 1.9 x 10—2 6.46 x 10—2 1.72 x 10—2 6.05 x 10—2
+412.63 1.26 1.13><10_2 1.92><10_2 6.47><10_2 1.73><10_2 6.16><10_2
+Table 4
+Mean energy lost in one cube of water during one interaction for different species of particles
+1) oc 7Li3 10B5 12C6 14N7 1608
+W 23.5 i 2.2 28.3 i 2.9 62.5 i 5.9 172.1 i 14.9 249.3 i 22.3 341.1 i 30.0 429.2 i 37.8
+in 21.9 i 1.5 67.1 i 6.1 66.5 i 6.1 170.0 i 13.8 243.1 i 20.1 331.8 i 26.8 422.0 i 34.2
+The values reported in this table are in MeV.
+
+"
+"6","R. Scrimaglio et a1. / Advances in Space Research 3 7 { 2006 7 1770—1776 1775
+Table 5
+Mean number of interactions occurring in one cube of water per second for events which do not trigger the experiment (q) and for those which give a
+trigger ((71)
+p 06 7L13 10B5 12C6 14N7 1608
+Z] 440 2.05 0.0099 0.0153 0.0540 0.0144 0.0476
+at 2.67 0.0119 0.0007 0.0015 0.0057 0.0015 0.0047
+Table 6
+Mean energy lost per second in one cube of water for different species of particles
+p 06 7L13 10B5 12C6 14N7 1608
+E 10340 58.0 0.62 2.63 13.5 4.91 20.4
+E; 58.7 0.80 0.047 0.26 1.39 0.50 1.98
+E/Et 176 72.5 13.2 10.1 9.71 9.7 10.3
+The values reported in this table are in MeV.
+We obtain the mean energy lost per second in one Z n) 1000000
+cube of water multiplying the values reported in Table 600 Entries 3918
+4 times the values reported in Table 5. The results are
+. . . RMS 159.2
+shown in Table 6. Again the ﬁrst row includes all
+events generated by Geant (E); the second row in- 500
+eludes only the events triggered by any SDU (K). At
+last, the third row consist of the ratio between values
+at the ﬁrst row and the second row. The values are 4°°
+high for protons and alpha and nearly constant for
+heavier particles. m
+In Tables 4—6, only the second rows are important be-
+cause the ALTEA detector stores only the quantities
+triggered. The ﬁrst rows are written for confrontation. 200
+Fig. 4 shows the energy lost in the 26th cube of water
+by a carbon nucleus, considering only the events trig-
+gered by any SDU. We can note the presence of a maX- 10°
+imum value.
+In Table 7, the maximum energy that a particle can ___L L4
+lose in one interaction in one cube of water for some 3200 0 200 400 600 800 ""00 1200 _ “400 1600
+particles is shown. The maximum values are calculated AEze (MeV)
+uSing 8' ﬁt With 8' gauSSian shape and a p Olynomial Of de' Fig. 4. Energy lost in the cube of water number 26 from a carbon
+gree 3 Of the diStribution Of the energy in one CUbe 0f nucleus considering only the events triggered by any SDU. The values
+water. of energy are in MeV.
+Table 7
+7. R e C O gniti on Of particles Maximum energy lost in one cube of water
+7Ll3 10B5 12C6 14N7 1608
+The Geant simulation was also used to develop a 68.7 i006 213i0.06 301 i015 411 i021 532i0.27
+technique to identify cosmic particles. We considered W
+only one detector of one SDU and studied different
+kinds of nuclei by a standard statistical analysis. We As shown in Fig. 5, the points relative to different
+simulated the species of nuclei reported in Table 3 except species of particles are arranged in different zones of
+nitrogen. The particles ﬂux was isotropic. the plane AEtot — AEup. It is possible to identify different
+We considered the plot shown in Fig. 5. The abscissa species of particles in an efﬁcient way by apply oppor-
+variable is AEud = AE1 + AE2 — AE5 — AE6, where AEZ- tune cuts on the values of the variables.
+is the energy lost in the ith silicon plane. On the ordinate The confusion matrix shows the percentage of parti-
+aXis AEtot : 216214131» the total energy lost in six silicon Cles of a species present in a ﬁxed plane zone as regards
+planes, is reported. The statistical analysis is divided in the total number of particles of that species. In this way
+two complementary phases: 6 > 11/2 (downward parti- we write 4 confusion matrixes.
+Cles) and 6 < 11/2 (upward particles), where 6 is the zenit In Table 8, the conclusive results obtained combining
+angle. the 4 cases are shown. When the threshold energy of the
+
+"
+"7","1776 R. Scrimaglio et a1. / Advances in Space Research 3 7 { 2006 ) 1770—1776
+90° ID 1000000 about 1 MeV, we can .distinguish partieles With Z 2 5.
+—ENtRIEs 273846 Further developments 1n the detector W1111mpI'OVC 1ts ac-
+} The ALTEA experiment W111 allow to evaluate the
+m b’ .- . ,5 ‘ 0 risk on the Central Nervous System due to cosmic rays
+.5 4' ~ . . - ‘ ﬂuxes in microgravity conditions during long term space
+60° 3 "" _. . ' i ' ' ' missions. It Will provide information to deﬁne the causes
+A . 1 . of the anomalous phosphenes perception of the
+> . ..
+g 50° ..;.g_ _ ' astronauts.
+g j ' ‘ The detector W111 ﬂy on the Internat1011a1 Space
+1...: 400 . - . - . .
+<1 ‘ . Stat1on 1n 2005.
+B I iii : B
+References
+2°° Li . Li
+100 Casolino, M., Bidoli, V., Furano, G., et al. The Sileye-3/Alteino
+0‘ 0‘ experiment on board International Space Station. Nuclear Physics
+p."" ‘p B (Proc. Suppl.) 113, 71—78, 2002.
+0 _200 _100 o 100 200 300 Casol1110, M., B1d011, V., De Grand1s, E.,.et a1. Study of the rad1at10n
+AE M V env1ronment 011 MIR space statlon W1th Slleye-2 experlment. Adv.
+“( e ) Space Res. 31 (1), 135—140, 2003a.
+Fig. 5. Events distribution as a function of AEtot versus AEud- Casohno, M., 131d011, V., Morselh, A., et a1. Dual or1g1ns of 11ght
+ﬂashes seen 1n space. Nature 422, 680, 2003b.
+
+Narici, L., Bidoli, V., Casolino, M., et al. The ALTEA facility 011 the
+Table 8 International Space Station. Phys. Med. 17 (Suppl 1), 255—257,
+Confusion matrix obtained by combined analysis 20013,
+
+p at 7L1 10B 12C 160 Narici, 14., Bidoli, V., Casolino, M., et a1. ALTEA: Visaal perception
+(0/0) (0/0) (0/0) (0/0) (0/0) (0/0) studles 011 astronauts on board the ISS. 1n: Proceedlngs 0f ICRC
+— 2001, Copermcus Gesellschaft, pp. 2322—2323, 2001b.
+p 23'3 10'9 45 20'8 O O Narici, L., Cotronei, V., Picozza, P., et a1. ALTEA: Investigating the
+2‘ _ 13'5 11'7 50'6 18 5 1'1 effect of particles on human brain functions on 188. American
+“£413 8'2 11 60'5 16'2 3'3 0'8 Institute of Aeronautics and Astronautics, Paper 2001-4942, 20010.
+B5 0 O 0'01 58'8 35'7 5'5 Narici, L., Bidoli, V., Casolino, M., et a1. ALTEA: Anomalous long
+12C 0 0 01 0 0 9 84 5 14 6 - - -
+16 6 ' ' ' ' term effects 1n astronauts. A probe 011 the 1nﬂuence 0f cosmlc
+08 O 0'21 0'02 0'01 0'54 99'2 radiation and microgravity 011 the central nervous system during
+long ﬂights. Adv. Space Res. 31 (1), 141—146, 2003.
+
+Osborne, W.Z., Pinsky, L.S., Bailey, J .V. Apollo light ﬂashes
+silicon planes is equal about 1 MCV, we can distinguish investigatiens. I11: Johnston, R.S., Dietlein, L.F., Berry, CA.
+particles With Z 2 5. If board conditions will be favour- (31:218ng Bllggedlcal Results Of APOHO' NASA'STIO’ pp'
+ab1e, the threshold energy could be lowered in future Pinsky LS’ Osborne W Z H oﬂm an R A et a1 Light ﬂashes
+until abOUt 0-5 MCV- observed by astronauts 011 Apollo 11 through Apollo 17. Science
+
+183, 957—959, 1974.
+
+Pinsky, L.S., Osborne, W.Z., Hoffman, R.A., et a1. Light ﬂashes
+8. Conclusion observed by astronauts 011 Skylab 4. Science 183, 928—930, 1975.
+
+Tylka, A.J., D1etr1ch, W.F., Boberg, P.R., et a1. Slngle event upsets
+
+. . . . . . caused by solar energetic heavy ions. IEEE Trans. Nucl. Sci. 43,
+Th1s 1s a prehmmary work. The f0110w111g step W111 2758—2766, 1996.
+consist in a more realistic simulation realized With other Tylka, A.J., Adams Jr., J.H., Boberg, P.R., et a1. CREME96: a
+programs, Which are ab1eto simulate also human tissues revision of the cosmie ray effects on micro-electronics code.
+(Geant 4). However, in the ground of tables contained 111 {EBB Trans. Nucl. $01. 44, 2150—2160, 1997a, and references
+. ereln.
+thlS p ap 61‘, we can COQCIPde that the ALTEA detector Tylka, A.J., Dietrich, W.F., Boberg, P.R. Probability distributions of
+has rates of events stat1st1ca11y s1gn1ﬁcant. Furthermore, highway solar-heayy-ion ﬂuxes from 1Mp_8; 1973—1996. IEEE
+When the threshold energy of the silicon planes is equal Trans. Nucl. Sci. 44, 2140—2149, 1997b.
+
+"

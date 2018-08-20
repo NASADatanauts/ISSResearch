@@ -1,0 +1,487 @@
+"","x"
+"1","40th International Conference on Environmental Systems AIAA 2010-6122
+Characterlzatlon of Unknown Events Observed by the Thlrd
+Generatlon J PL Electronic Nose Us1ng Sensor Response
+Models
+A.V. Shevadel, M.A. Ryan2, M.L. H0mer3, A. K. Kisor4, L. M. LaraS, H. Zh0u6, K. S. Manatt7, and S. Gluck8
+Jet Propulsion Laboratory, California Institute of T echnology, 4800 Oak Grove Drive, Pasadena CA 91109, USA
+and
+William A. Goddard 1119
+N Materials and Process Simulation Center (MSC), California Institute of T echnology, Pasadena CA 91125, USA
+El and
+2 Mario Blanco10
+35 Liox P0wer1nc., 129 N. Hill Ave, Pasadena, CA 91106, USA
+5
+Q
+E
+§ The Third Generation Electronic Nose (ENose) from the J et Propulsion Laboratory
+g operated continuously and autonomously 0n the International Space Station (188) for more
+E; than 6 months during 2008-2009. During this time, the ENose monitored air quality in the
+E US lab and recorded anomalous events. The data gathered and analyzed showed that in
+g addition to detecting several analytes 0n the target list (ethanol, methanol, Freon 218 and
+or: formaldehyde), many events caused by chemical species outside the target list were observed
+g and these were classiﬁed as “unknown."" We report an investigation to identify the chemical
+E nature of the analyte(s) producing “unknown” events. The identiﬁcation is achieved by using
+§ sensor response models based on molecular principles developed using Quantitative
+g Structure—Activity Relationships (QSAR) and First Principles Molecular Dynamics
+3 approaches. Molecular descriptors calculated from the models include dipole, hydrogen
+g bond characteristics, molar refractivity, molar volume, and solubility parameters.
+§ Calculated molecular descriptors were then compared with descriptors of analytes in the
+5% Spacecraft Maximum Allowable Concentration (SMAC) database. The results indicate that
+g a possible identiﬁcation of the unknown response is sulfur hexaﬂuoride (SF6).
+2‘
+E
+B
+E
+L;
+E
+Q
+1Technologist, Electrochemical Technologies Group, J et Propulsion Laboratory , Pasadena, CA 91109.
+2Technologist, Electrochemical Technologies Group, J et Propulsion Laboratory , Pasadena, CA 91109.
+3Technologist, Electrochemical Technologies Group, J et Propulsion Laboratory , Pasadena, CA 91109.
+4Technologist, Electrochemical Technologies Group, J et Propulsion Laboratory , Pasadena, CA 91109.
+5Technologist, Electrochemical Technologies Group, J et Propulsion Laboratory , Pasadena, CA 91109.
+6Technologist, Bio-Inspired Technologies and Systems Group, J et Propulsion Laboratory , Pasadena, CA 91109.
+7Mechanical Engineer, Chemistry and Astrobiology Group, J et Propulsion Laboratory , Pasadena, CA 91109.
+8Software System Engineer, Instrument Software and Data Systems Group, J et Propulsion Laboratory , Pasadena, CA 91109.
+9Professor of Chemistry, Materials Science, and Applied Physics, California Institute of Technology , Pasadena, CA 91125.
+10Chief Scientiﬁc Ofﬁcer, Liox P0wer1nc., Pasadena, CA 91106.
+1
+American Institute of Aeronautics and Astronautics
+Copyright © 2010 by the American Institute of Aeronautics and Astronautics, Inc. The U.S. Government has a royalty—free license to exercise all rights under the copyright claimed herein for Gc
+
+"
+"2","Nomenclature
+
+JPL = J et Propulsion Laboratory
+
+ENose = Electronic Nose
+
+188 = International Space Station
+
+QSAR = Quantitative Structure-Aetivity Relationships
+
+SMAC = Spacecraft Maximum Allowable Concentration
+
+ppm = parts-per-million
+
+ppb = parts-per-billion
+
+GFA = Genetic Function Approximations
+
+SF6 = Sulfur hexaﬂuoride
+
+E10a = energy of polymer-analyte interaction term
+N HBD = number of hydrogen bonding sites
+3 MR = molar refractiVity
+g AR/R = normalized change in sensor resistance
+g 7V5 = activation energy of diffusion
+% VS = molar volume
+2 5i = Hansen solubility (i=1, 2 and 3 refer to electrostatic, dispersion and hydrogen bond components)
+<2 ﬁt and R0 = Exponential coefﬁcients
+E
+3
+i: I. Introduction
+E An electronic nose has been developed at the J et Propulsion Laboratory (JPL). This JPL electronic nose (ENose)
+g was developed to monitor spacecraft cabin air for anomalous events such as leaks and spills of solvents, eoolants or
+m“ other ﬂuids with near-real-time analysis. The JPL ENose is an array—based sensing system which is designed to run
+g continuously and autonomously to monitor for the presence of selected chemical species in the air at parts-per-
+E million (ppm) to parts-per-billion (ppb) concentrations. The ENose recently completed more than 6 months of
+§ continuous operation as a Technology Demonstration in the US Lab Destiny, 0n the International Space Station
+E (188). For this 188 technology demonstration, ENose was designed to detect, identify and quantify eleven chemical
+3 species (analytes), consisting of eight organic compounds as well as ammonia, mercury and sulﬁlr dioxidel’Z. It uses
+£4 an array of 32 semi-seleetive chemical sensors; sensing materials are primarily polymer-earbon composite ﬁlms, but
+§ also include inorganic and carbon nanotube sensors.
+45 During its operation on 188, ENose detected several short lived2, low concentration events of ethanol, methanol,
+g Freon 218 and formaldehyde. In addition, there were several events classiﬁed as “unknown,” events caused by
+E chemical species outside the set of targeted analytes.
+4: The obj eetive of this investigation is to describe the chemical nature of the analyte(s) producing these
+$2 “unknown” events. This is achieved by using sensor response models to calculate analyte molecular descriptors,
+g which in turn enables us to gain a better understanding of the chemical characteristics of the analyte(s) causing the
+3 “unknown” events. These sensor response models for the polymer-earbon sensing ﬁlms used in the ENose are based
+
+on developing a fundamental molecular understanding of the sensing mechanism, followed by correlating sensor
+
+responses to molecular descriptors. The molecular descriptors used in the polymer-earbon sensing ﬁlms include
+
+interactions of analytes with sensing ﬁlms, such as polymer-analyte interactions and solubility parameters, as well as
+
+intrinsic analyte descriptors, such as molar refractivity, molar volume, number of hydrogen bond donor/aeeeptor
+
+sites, and dipole. These sensor response models are discussed in detail in the following section.
+
+2
+American Institute of Aeronautics and Astronautics
+
+"
+"3","11. Chemical Sensor Response Models for Polymer-Carbon Composite Sensors
+
+The JPL ENose polyrner-earbon sensing ﬁlms have been modeled using a multivariate mathematical technique,
+
+Quantitative Structure Activity Relationships (QSAR) and a ﬁrst principles Molecular Dynamics model using
+
+Hansen solubilities. Brief discussion on these techniques is provided below.
+
+A. Quantitative Structure—Activity Relationships (QSAR) Model
+
+QSAR is a multivariate statistical technique aimed at developing correlations between a set of physicochemical
+
+properties (descriptors) and an activity (sensor response in our case). Statistical data analysis and regression analysis
+
+methods are available for QSAR. Data analysis methods include principal component analysis (PCA) and cluster
+
+analysis methods. Regression methods include simple and multiple linear regression methods (MLR), stepwise
+
+multiple linear regression using genetic function approximation (GFA) methods, and partial least-square methods
+
+(PLS). In our sensor response model development, we have used GFA. The advantage of using GPA is that
+N thousands of candidate models are evolved (created and tested). Only the superior models survive, designated parent
+3 models; these models are used for the creation of the next-generation candidate models. GFA can thus select the
+E optimum number of descriptors in linear regression analysis automatically; it also constructs multiple linear
+g regression models with any possible combinations of terms, including linear, higher order polynornials, splines, and
+g3 gaussians. The numerous models produced and subsequently analyzed by GFA are in contrast to most statistical
+2 methods, such as MLR and PLS, that focus on a single “best statistical” model.
+(2 We used an approach based on QSAR to describe the activities of a polyrner-earbon composite chemical vapor
+:0 sensor by using a novel approach in selecting a molecular descriptor set. The QSAR model methodology has been
+E discussed in detail elsewhere3’4. In brief, we combined the default analyte descriptor set commonly used in QSAR
+g studies with descriptors for sensing ﬁlrn-analyte interactions. Table 1 (Appendix) shows the descriptor set used for
+if the development of the QSAR model. The default analyte descriptors are obtained using a combination of empirical
+3:2“ and serni-ernpirioal Quantitative Structure Property Relationships (QSPR) methods; the sensor response descriptors
+E are calculated using molecular simulation tools. In the development of QSAR models, a set of experimental data that
+81 is used to develop the model is commonly referred to as the training set, while a subset of the data which is used to
+2» compare model predictions is called the test set. We have developed a representative equation for each polymer-
+g carbon composite sensor in the ENose sensing array.
+g Experimental data for QSAR studies, used to develop sensor response models for the JPL ENose polymer-
+Eg carbon composite sensors, was obtained by delivering measured analyte concentrations with controlled constant
+8 humidity to the sensors. The experiments were repeated several times, over a range of analyte concentrations in ppm
+g to sub-pprn levels. Sensor response is expressed as a normalized change in sensor resistance and is plotted against
+(2 delivered concentration. Response data for each analyte and each sensor are ﬁt to an equation of the form y=A1X +
+g A2X2 , where X is the analyte concentration and y is the normalized change in resistances. By selecting coefﬁcients
+r: from the sensor response equation as the activity to be used in QSAR studies, we can develop an approach to
+Q calculating response which is concentration independent. Since the quadratic terrn, A2, is generally three orders of
+E, magnitude smaller than the coefﬁcient of the linear terrn, A1, the QSAR approach was used to correlate the only A1
+g with molecular descriptors. Statistically validated QSAR models containing 3 or 4 terms were developed3’4 using 17
+g sets of analyte training data. A statistically signiﬁcant model containing the polyrner-analyte (Epa) interaction energy
+E term was selected to represent the activity of the polyrner-earbon composite sensing ﬁlm. The prediction capability
+Q of this model was tested for 3 test analytes not included in the training set. The QSAR-oaloulated A1 sensor response
+
+showed good predictability. Equations were developed for various polyrner-eornposite sensing ﬁlms in the array.
+
+The functional form of sensor activity correlated to molecular descriptors for one representative polyrner-oarbon
+
+composite sensor, polyethylene oxide-oarbon, is
+
+Sensor activity (A1): 0.15207 13pa + 0.116727 HBD2 + 0.000241 MR2 (1)
+In the above QSAR equation (1), the analyte descriptors that appear along with a term describing the energy of
+
+polyrner-analyte interactions (Epa) are number of hydrogen bond donor sites (HBD) and molar refractiVity (MR). The
+
+E10a term is calculated using atomistic simulations, and the HBD and MR descriptors are calculated using empirical
+
+ﬁlnotional forms. The QSAR equation for each polyrner-oarbon sensor of the array will contain a polyrner-analyte
+
+interaction term (Epa) along with any other combination of molecular descriptors listed in Table l.
+
+3
+American Institute of Aeronautics and Astronautics
+
+"
+"4","B. First Principles Molecular Dynamics Hansen solubility model
+In the ﬁrst principles molecular dynamics Hansen solubility model, the relative change in resistance is assumed
+
+to be directly proportional to the target analyte permeability. The resistive responses of the sensors are correlated
+with the Hansen components of the cohesive energy of the polymer and solvent, as well as the molar volume of the
+solvent6’7. This model elucidates the response of polymer-ﬁlm-based sensors on pure polymer ﬁlms and does not
+take into account the carbon component of the polymer-earbon composites. The normalized sensor response of a
+resistive polymer-carbon composite ﬁlm, AR/R, when exposed to a target analyte is given by
+
+3
+
+AR/ R = R0 eXp(-7VS)eXp[Zﬂi(5l-S - 51-” )] (2)
+
+i=1
+where 7V5 is the activation energy of diffusion of the solute in the polymer, proportional to the molar volume of the
+target molecule, VS. 51-5 (i=l,2,3) are the Hansen solubility components of the target analyte; i=1, 2 and 3 refer to the
+
+g electrostatic, dispersion and hydrogen bond components respectively. 5i]? is the i-th Hansen solubility component of
+
+g the polymer sensing ﬁlm. Exponential coefﬁcients ﬂl are treated as best ﬁt parameters as well as exponential factor V
+
+g and pre-eXponential term R0. A multi-sample molecular dynamics method was used 6’7, providing a feasible tool for
+
+§ estimating Hansen solubility parameters without the need for experimental data. The ENose experimental data for
+
+Z? given polymer-earbon sensing ﬁlms exposed to a known analyte set were used to obtain ﬁt and R0 terms of the
+
+5 model. Hansen solubility parameters for polymers and analytes have been tabulated and researched extensivelyg.
+
+é
+
+E“
+
+g 111. Approach to Identify Analyte Chemical Functionalities for Unknown Events
+
+El Our obj eetive is to identify the chemical parameters of analyte(s) that produced the unknown events recorded by
+
+g the Third Generation JPL ENose, and then to use those parameters to identify the unknown. For this investigation,
+
+§ we used the QSAR sensor response models developed at JPL and the ﬁrst principles molecular dynamics Hansen
+
+2; solubility model approach developed at Caltech. Our approach is to calculate molecular descriptors and then to
+
+g determine whether any chemical identiﬁcation is possible using those descriptors. The approach for calculating
+
+i molecular descriptors from unknown events using both sensor response models is described below.
+
+Q
+
+g A. Quantitative Structure—Activity Relationships (QSAR) model
+
+% The ENose QSAR sensor response model correlates the sensor activity coefﬁcient A1 to molecular descriptors.
+
+é Each sensor material has a unique equation using molecular descriptors; the coefﬁcient A1 is speciﬁc to the sensor
+
+E material, not to an analyte. In order to apply the QSAR model to calculate values for molecular descriptors for
+
+i ""unknown"" events, we made two assumptions First, the sensor response equation will be approximated as y=A1X,
+
+i which assumes the quadratic coefﬁcient (A2) contribution to sensor response to be signiﬁcantly smaller than that of
+
+g the linear coefﬁcient (A1). This assumption is justiﬁed by our experience with target analytes where the quadratic
+
+E coefﬁcient (A2) is several orders of magnitude smaller than the linear coefﬁcient (A1). Second, we assume a
+
+E concentration range, X, of 10-1500 ppm for the unknown event.
+
+5 To start the process of calculating molecular descriptors, the ﬁrst step is to calculate the sensor activity
+coefﬁcient A1 using the measured sensor response and concentrations x=10, 100, 1500 ppm; we denote this
+coefﬁcient as Al(ealculated). Al(calculated) can be considered to be a value calculated with experimental inputs. For
+one such case of Al(ealculated), we run an optimization where we start with presumed values for molecular
+descriptors which appear in the sensor model. These presumed values will provide us with a new predicted value of
+A1, let us call it Al(predicted). The optimization varies the molecular descriptors so that the objective function is
+minimized to approach zero. The objective function deﬁnes error
+
+QSAR model Obj eetive Function =[A1(caleulate d) - A1 (predicted )]2 . (3)
+
+This optimization is run using the solver tool in Microsoft Excel, using the Generalized Reduced Gradient
+(GRGZ) nonlinear optimization code. The descriptors predicted using the QSAR model are the polymer-analyte
+interaction term and other analyte molecular descriptors. The set of molecular descriptors should be unique and
+concentration independent.
+
+4
+American Institute of Aeronautics and Astronautics
+
+"
+"5","B. First Principles Molecular Dynamics Hansen solubility model
+In the case of ﬁrst principles molecular dynamics Hansen solubility model, we follow a procedure similar to
+that for the QSAR model. The assumption of concentration is not needed as the sensor response is directly available
+from data analysis and used by the model.
+. . . AR AR . 2
+Hansen model Objective Function = [F (calculate d) - F (predicted )] , (4)
+AR . . . . . .
+where Y (calculate (1) refers to the normalized res1st1ve response calculated us1ng the data analys1s algorithm
+for the raw sensor data. The optimization is run by varying the descriptors molar volume, electrostatic, dispersion
+and hydrogen bond components of Hansen solubility parameter to minimize this value to approach zero. The values
+§ of the descriptors predicted are then used to search the Chemical identity of the analyte comparing to values in the
+g literature.
+8
+E The QSAR model provides a different set of molecular descriptors than the Hansen solubility model. When
+E analyzing a given unknown event, the results predicted from these two models could be used as a cross Check to see
+ﬁg if they show the same or different analyte predictions.
+Q
+9% IV. Results and Discussion
+:5 During the technology demonstration on ISS, the ENose detected 59 unknown events initially. Further analysis
+4% revealed that a ﬁngerprint pattern could not be extracted from 37 of these, owing to the small sensor array response.
+5 These 37 events were rejected. Of the remaining 22 unknown events, the array response ﬁngerprint patterns were
+8“ analyzed statistically to determine whether they were similar enough to be considered to be caused by a single
+El stimulus. A 90% overlap in ﬁngerprint patterns is considered to be a result of the same stimulus. Of the 22 unknown
+g events, 11 were Clearly caused by the same stimulus, with 90% or greater overlap. Five events were clearly similar
+E to each other and possibly similar to the ﬁrst 11, with 80-90% overlap between these 5 and the ﬁrst 11 events. Five
+jg events were unrelated to each other or other events. For this theoretical study the nine largest magnitude unknown
+8 events caused by a single stimulus were considered.
+g The molecular descriptors for the unknown events reported by the ENose were calculated using sensor response
+(3 models based on QSAR and ﬁrst principles molecular dynamics Hansen solubility parameter approaches.
+é Comparison of the calculated molecular descriptors with the literature chemical database to identify the Chemical
+T: nature of the analyte(s) is a daunting task because of the database size for comparison and numerous possibilities
+Q that may eXist. The ENose target list had organic target analytes consisting of alcohols (methanol, ethanol, 2-
+i propanol), a ketone (acetone), an aldehyde (formaldehyde), an aromatic (toluene); and halogenated compounds
+g (dichlorrnethane, Freon 218), as well as the inorganic analytes ammonia, sulfur dioxide and elemental mercury. We
+3 compared the calculated values of molecular descriptors for the unknown Chemical species with analytes that were
+E Chemically different from our target list. The selected comparators were either listed in the Spacecraft Maximum
+Q Allowable Concentration (SMAC) database or were reported on ISS by the recent European Space Agency’s (ESA)
+ANITA technology demonstration, a Fourier transform infra-red spectrometerg. We considered several analytes as
+possible species that may have caused the unknown events, including sulfur hexaﬂuoride (SF6), a gaseous dielectric
+which is used to calibrate breath-rneasuring equipment, 2-ethoxyethanol, a solvent for many hygienic and industrial
+products/processes, brornotriﬂuorornethane (Halon 1301), the ﬁre extinguishant used on the space shuttle, ethyelene
+glycol, used as a heat transfer ﬂuid, and hexarnethyl cyclotrisiloxane for use in cosmetic and personal care products.
+To investigate the feasibility and applicability of the approach discussed in section III for the QSAR model, we
+ﬁrst calculated the molecular descriptors for a sensor response to a known target analyte. Table 2 shows the
+molecular descriptor results for a sensor response to ethanol. The column titled ""calculated"" contains the values
+obtained running the optimization as discussed in Section III. The ""model"" values are the one used for the QSAR
+model development. We see these values do not match exactly, as we are running an optimization to get a solution
+for a problem that has multiple possibilities. In the optimization, all the descriptors (variables) are allowed to
+Change. Note that the calculated dipole and number of hydrogen bond donor site descriptor values, match reasonably
+well with the model values. The calculated molar refractiVity value does not match. Molar refractiVity is a function
+5
+American Institute of Aeronautics and Astronautics
+
+"
+"6","of three parameters: ana1yte molecular weight, density and refractive index. Hence, small differences between
+calculated and model values for these properties could lead to a large difference in the calculated and model values
+for molar refractiVity. Nevertheless, this exercise provides us with conﬁdence that this approach for calculating the
+molecular descriptors for unknown events wi11yie1d usable information.
+
+Using QSAR sensor response models, the parameters molar refractiVity, hydrogen bond Characteristics, and
+dipole parameters were calculated from the measured sensor response of 9 unknown events. The values for each of
+these parameters is shown in Table 3, along with the values of these parameters for the ﬁve possible species listed
+above. It can be seen that the calculated dipole value and hydrogen bond acceptor sites for the unknown events
+suggest SF6 or hexamethyl cyclotrisiloxane as possible ana1ytes. The calculated molar refractiVity value comes close
+to that of SF6. Similarly, the ﬁrst principles molecular dynamics Hansen solubility sensor response model was used
+to calculate solubility parameter and molecular volume, and compared with known values for a selective list of
+Chemical species. As can be seen from Table 3, the Closest match between the molecular descriptors for the
+unknown events calculated by Hansen solubility model is sulfur hexaﬂuoride (SF6) or Halon 1301. Based on the
+QSAR and Hansen solubility model calculations, the match between calculated descriptors and those of SF6 is not
+
+a exact, but rather represents the best ﬁt among candidate Chemical species.
+3 There are, of course, several Chemical species and possibilities of mixtures that might have parameters similar to
+§ those calculated, and so this identiﬁcation of the unknown as SF6 is not certain. Calculated parameters do not match
+g those of SF6 exactly, although they match SF6 better than any other species considered. As can be seen from Table,
+ii there is a possibility that the unknown species is Halon 1301, and the unknown species may be some other
+E compound or Chemical species not considered. In an earlier technology demonstration of ANITA, signals
+8 corresponding to about 1 ppm SF6 were found several times in ISS air9 and Halon 1301 was detected during a
+g shuttle docking. Thus, SF6 is a good candidate for the Chemical species which caused the unknown signa1 seen
+g during ENose’s seven months of operation.
+g A ground experiment with SF6 on the ENose ﬂight unit after it was returned to JPL showed that the sensing array
+ff: responds to SF6 at concentrations above 1000 ppm and that the array ﬁngerprint matches the unknown ﬁngerprint
+E with an 85% overlap. This degree of overlap indicates that the two ﬁngerprints may come from the same species.
+g Thus, while calculations show that it is possible that the unknown species is SF6, experiment offers only moderate
+3 support to this conclusion. It is possible that the unknown species is another species altogether, or a mixture of SF6
+g with another species. The similarities of calculated values to literature values in Table 3 also gives support to the
+E conclusion that the unknown is SF6, but the differences support the idea that the unknown is a mixture of species.
+§ Further work wi11be necessary to reﬁne the understanding of sensor response.
+E V. Conclusions
+% Sensor response models based on molecular understanding of polymer-carbon sensing ﬁlm response to an
+g ana1yte were used to identify the Chemical nature of the ana1yte(s) causing the unknown events reported by the Third
+E Generation JPL ENose. The predicted molecular descriptors using unknown events show a close but not exact match
+i to the molecular descriptors of sulfur hexaﬂuoride (SF6). The match represents the best ﬁt among candidate
+E Chemical species. There are, of course, several Chemical species and possibilities of mixtures that might have
+ﬁ parameters similar to those calculated, and so this identiﬁcation of the unknown as SF6 is not certain. In order to
+T; reﬁne the understanding of the sensor response, further work wi11be necessary.
+6
+American Institute of Aeronautics and Astronautics
+
+"
+"7","Appendix
+Table 1: QSAR descriptor set for JPL ENose sensor response model development.
+SensorResonse Descritors
+
+> and y could be polymer (p), carbon black (Cb), analyte (a), or wate
+
+(W). EXy represent interactions between various components in the
+N loolymer-carbon sensing ﬁlm, as well With sensing ﬁlm componen
+g interaction With analytes and water.
+2' Exy
+g | or example, interaction energy between the polymer (p) and the
+E arget analyte (a) is denoted by E10a
+g Other interactions include Epa, Epw, Ep_cb, Ecb_a, Ecb_cb, Baa, and EN.
+Q
+ff; Analyte Descriptors Description
+E
+E: Dipole-mag, Dipole moment magnitude and X Y and Z components
+g Dipole-X, Y, Z ’ ’
+E
+CL
+E
+i”: . .
+E PMI-mag . . . . .
+Lg PMI-X, Y, Z Prmmpal moment of mertla magmtude and X, Y, and Z components
+8 | | |
+
+Rotlbonds Number of rotatable bonds
+AlogP Log of the 00tan01/water partition coefﬁcient
+7
+American Institute of Aeronautics and Astronautics
+
+"
+"8","Table 2: Comparison of molecular descriptors of known ethanol using the QSAR model. Model column
+
+refers to the descriptors that was used as in the QSAR sensor response model development. Calculated
+
+column refers to the descriptors back calculated using the optimization procedure described in section 111.
+
+Molecular Model Calculated
+Descriptors
+5
+E
+:3 Table 3: Comparison of molecular descriptors of chemical species and calculated descriptors for unknown
+g events.
+1;: Possible species Dipole M01. M01. H-bond H-bond Molar Solubility
+g weight volume acceptor donor refractivity Parameter
+i (A3) sites sites (cal/cm3 )1/ 2
+: 2-eth0xyethan01 3.836 90.12 96.65 24.05 11.47
+g Bromotriﬂuorome-thane 3.105 148 .91 61.93 4 15.54 4.83
+g (Halon 1301)
+g Ethylene glycol 3579 62.07 61.89 14.55 16.11
+<c . .
+E Hexamethyl cyclotrlslloxane 0.021 222.46 20937 _n 3970 —
+a Unmwm -----_——
+(Hansen sozubm ----———
+8
+American Institute of Aeronautics and Astronautics
+
+"
+"9","Acknowledgments
+This research was funded by the Advanced Environmental Monitoring and Control Program of NASA. This
+work was carried out at the J et Propulsion Laboratory, California Institute of Technology under a contract with the
+National Aeronautics and Space Administration. The authors thank Prof. Anton Hopﬁnger and Dr. David Rogers for
+their very valuable suggestions in the QSAR model development and the Caltech Material and Process Simulation
+center (MSC) for use of computing facilities.
+References
+1Shevade, A. V., Homer, M. L., Zhou, H., Jewell, A. D., Kisor, A. K., Manatt, K.S., Torres, J ., Soler, J ., Yen, S.-P.S., Blanco,
+M., Goddard 111, W. A and Ryan, M. A., ""Development of the Third Generation JPL Electronic Nose for International Space
+Station Technology Demonstration,"" Journal ofAerospace, SAE T ransactions, Chicago, 2007, 2007-01-3149.
+2Ryan, M. A, Manatt, K. S., Gluck, S., Shevade, A. V., Kisor, A. K., Zhou, H., M. Lara L. and Homer, M. L., “Operation of
+the Third Generation JPL Electronic Nose 0n the International Space Station,” Proc. 39th International Conference on
+Environmental Systems, SAE, Savannah, 2009, 2009-01-2522.
+§ 3 Shevade, A.V., Homer, M. L., Taylor, C.J., Zhou, H., Jewell, A.D., Manatt, K.S., Kisor, A.K., Yen, S.P.S.and Ryan, M.A.,
+g “Correlating Polymer-Carbon Composite Sensor Response with Molecular Descriptors,” J. Electrochem. 506., 2006, Vol 153, pp.
+§ H209-H21.
+g 4Shevade, A.V., Ryan, M. A., Homer, M. L. and Zhou H. et a1. “Chemical Sensor Array Response Modeling Using
+2‘ Quantitative Structure-Activity Relationships,” in Computational Methods for Sensor Material Selection (Integrated
+g Microanalytical Systems), MA. Ryan, A.V. Shevade, C.J. Taylor, M.L. Homer, M. Blanco, J.R. Stetter, eds., Springer, New
+5 York, 2009, Chaps 8.
+3 5Zhou, H., Homer, M. L., Shevade A. V., and Ryan, M. A., “Nonlinear Least-Squares Based Method for Identifying and
+95° Quantifying Single and Mixed Contaminants in Air with an Electronic Nose,” Sensors, 2006, 6, pp 1-18.
+g 6Belmares, M., Blanco, M.,Goddard, W. A., et a1., Hildebrand and Hansen solubility parameters from molecular dynamics
+g with applications to electronic nose polymer sensors. Journal ofComputational Chemistry 2004, V01. 25(15), pp. 1814-1826.
+.2 7Blanco, M., Shevade, A. V., and Ryan, M. A.,“Quantum Mechanics and First-Principles Molecular Dynamics Selection of
+E Polymer Sensing Materials,” in Computational Methods for Sensor Material Selection (Integrated Microanalytical Systems),
+2 MA. Ryan, A.V. Shevade, C.J. Taylor, M.L. Homer, M. Blanco, J .R. Stetter, eds., Springer, New York, 2009, Chaps 3.
+8“ 8Hansen, C. M., Hansen Solubility Parameter: A User's Handbook, CRC press. 1999.
+E, 9Honne, A., Schumann-Olsen, H., Kaspersen, K., Limero, T., Macatangay, A. et al., ""Evaluation of ANITA Air Monitoring
+E on the International Space Station"" Proc. 39th InternationalConference on Environmental Systems, SAE, Savannah, 2009, 2009-
+3 01-2520.
+Q
+g 10Panayiotou, C., ""Solubility Parameter Revisited: An Equation-of—State Approach for its Equation"", F luid Phase Equilibria,
+E 1997, V01 131,pp 21-35.
+o
+§
+§
+E
+2
+<:
+m
+<:
+Z
+5‘
+""G
+g
+.35
+Q
+B
+O
+Q
+9
+American Institute of Aeronautics and Astronautics
+
+"

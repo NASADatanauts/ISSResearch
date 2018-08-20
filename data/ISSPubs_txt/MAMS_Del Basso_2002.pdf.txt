@@ -1,0 +1,602 @@
+"","x"
+"1","(0)2002 American Institute of Aeronautics & Astronautics or Published with Permission of Author(s) and/or Author(s)‘ Sponsoring Organization.
+140243922
+ObOb I
+AIAA 2002-1644
+Capitalization of Early 188 Data For
+Assembly Complete Microgravity Performance
+Steve Del Basso, Mike Laible, Ed O’keefe,
+April Steelman, Steven Scheer, and Sreekumar Thampi
+Boeing Space and Communications
+Houston, Texas '
+40th Aerospace Sciences Meeting & Exhibit
+14— 1 7 J anuary 2002
+Reno, Nevada
+Fm mrmissicm Etta may or regubiis‘h mnmm ""the American Institute m Aemnauﬁm arm Astmnamiécs
+1900'! A&ammﬁar aw Drive, Suite 500 Resiom Virginia 201914344
+
+"
+"2","(0)2002 American Institute of Aeronautics & Astronautics or Published with Permission 0f Author(s) and/or Author(s)’ Sponsoring Organization.
+AIAA—2002-7644
+FOR ASSEMBLY COMPLETE MICROGRAVITY PERFORMANCE
+Steve Del Basso, Mike Laible, Ed O’keefe, April Steelman, Steven Scheer, and Sreekumar Thampi
+Boeing Space and Communications
+Houston, Texas
+ABSTRACT most of the science will be planned for and
+accomplished. Thus, the capability to conﬁdently
+The acceleration environment aboard the completed pl‘GdlCt the acceleration environment fOf thGSC pCTiOdS
+International Space Station (188) is a key resource for is paramount to design to requirement COHYCI‘gCTl06,
+scientiﬁc and technological endeavors. Hardware operations support, and future 11113310“ planning.
+veriﬁcation activities and early measurements . . . .
+indicate that the 188 is well on the way of meeting One of the ISS challenges 18 the 1nab111ty to conduct
+these “Assembly Complete” “microgravity” integrated ground test prior to on-orbit assembly.
+pr ovis i ons, however, the simulati on models that This is slmply a consequence of its Size and structural
+. ‘ ﬂex1b111ty. The Assembly Complete 188 has a
+compute these accelerations have, to date, lacked the .
+high degree of empirical validation typical of Wingspan from one end of the central truss structure
+. . to the other of 356 feet, and the photovoltaic arrays
+standard aerospace 1ndustry practices. Assembly . . . .
+. . span some 290 feet from tip to tip. It W111 weigh
+stage, on-orbit measurements are used to address this . 1 l .11. d‘ d .
+h rtcomin and develo hi h conﬁdence simulation approx1mate'y m1 1on poun 5- an contain 301-116
+S 0 g p g . _ , 43,000 cubic feet of pressurized volume Wlth
+models. In the low frequency regime, ngld bédy structural Vibration modes below 0.10 Hz. So even
+models are employed and Stand”? perturbation with component ground tests, the 188 program has
+show modlﬁed su'nulations. to be Withm 5-0/0 0f many classical aerospace programs due to lack of
+measured acceleration magnitudes. In the m1d and system level model validation. However, by .
+hlgh frequency regimes, transfer function capitalizing upon the early assembly stage 188 on-
+comparisons are made as the high modal density and orbit data, this shortcoming can be addressed and
+relative dearth of instrumentation makes classical lead to the development of high conﬁdence,
+structural modal characterizations and parameter Assembly Complete, microgravity simulation '
+estimation not feasible across the entire range. models.
+Model update methods are introduced for both the
+mid frequency ﬁnite element, and high frequency
+statistical energy cases. i ,_ _‘ "" ~ . - .- / __
+3 st “""M
+125243; thit‘iiw‘ ”(,~w ’
+”W -. WW ft
+A primary missmn of the International Space Station ,3 3g“ “1""“ ‘“ 5 E “f
+(188) is the utilization of the “microgravity” f t E! ':,_3—“ g ”:1“... .~
+' - - ~ £3 "" «""1 a; f»:- M --~'-t;¥11~a
+enVIronment for selentlflc endeavor. The 188 has : , a 4’ ”I w $3, 32%; *‘t‘ ‘ 13-- W?
+been deSIgned to 1nsure that extreme, _ low 9; #2 1%“ . ”.75 $3? .13;
+acceleratlon levels inherent in an object in orbit are 0 $1” ”’0 735% 4,
+preserved and exploited.1 The design has been i ‘ H” ' . if); a 5?
+tailored to a set of microgravity requirements that E“ - . ‘ , ""*3 gig
+apply to the ﬁnal vehicle configuration, designated as E I . _- Ctiﬂsl 5' 9%”:
+Assembly Complete (Figure 1). At Assembly mum _ v s
+Complete, the 188 program begins a minimum of 10 .
+years of mature operations during which the vehicle Flgure 13 ISS Assembly Complete
+conﬁguration and its microgravity environment will . . . _
+remain relatively stable. It is during this phase that At thls tlme 1n the assembly: H Of 1H_ .mllestone
+phases has been completed With the addition of the
+Copyright © 2002 by 3. Del Basso. Published by the Quest .Alrlock 11} 'July 2001. On November 2, 2001,
+American Institute of Aeronautics and Astronautics, the thlrd expedltlon ,Of three person crews, neanng
+Inc with permission the completlon of 1ts stay, marked one year of
+1
+American Institute of Aeronautics and Astronautics
+
+"
+"3","(0)2002 American Institute of Aeronautics & Astronautics or Published with Permission of Author(s) and/or Author(s)‘ Sponsoring Organization.
+AIAA-2002-7644
+combined, continuous human presence on the ISS.
+As seen in the imagery obtained by the STS 104 0 L6 pg 0.01t00.10 Hz
+Atlantis crew on July 21, 2001 (Figure 2), 188 o (16*frequency HZ) 118 01010100 HZ
+construction is well underway with primarily the . 1600 pg 100 to 300 Hz
+truss elements and International Partner laboratory
+modules 10 go. The module 0111013 0f the ISS stack in In order to simulate and verify the design prior to
+Figure 2 is the U-S- laboratory module, “Destiny”, launch over this frequency range various analytical
+delivered in April 2001. It is here, within the 28.8 tools and methodologies are needed. Below the
+feet long, 14-6 feet diameter, Destiny, where vehicle structural modes, rigid body analysis methods
+microgravity research Will be focused and 1116 are appropriate and are applied to characterize the
+microgravity requirements apply. accelerations produced by gravity gradients,
+atmospheric drag, attitude control, and very low
+frequency disturbance sources such as long duration
+1 vents. This “quasi~steady” regime employs the
+“Space Station Multi-Rigid Body Simulation”
+, (SSMRBS) tool that has its heritage in the Guidance,
+1 gig) Navigation, and Control (GN&C) arena and .is
+'1‘; maintained by the NASA Johnson Space Center. In
+1 the frequency range, where accelerations are
+1 % principally induced by articulating appendages, crew
+1 1:... 1. 1_ activity, and machinery, ﬁnite element methods are
+1 . 1. applied to account for structural dynamics from 0.01
+1 through 50 Hz. By 50 Hz, computational limitations,
+1 1’ .18 model accuracy, and vibroacoustic coupling concerns
+1 lead to a transition to statistical energy analysis
+Figure 2: 188 Stage 7A __ Phase 11 Complete (SEA) methotis through 300 Hz. 1 SEA addresses
+, both mechamcal and acoustic disturbances and
+This conﬁguration offers a Viable on-orbit platform transmission paths in 8181361113] and temporal average
+for initial system simulation model correlation and sense. h} bOth cases, 1ndustry standard commermal
+potential model update with emphasis on module software 1s used.
+interactions. Obviously, a later version is also _ _ , ,
+needed to exercise the truss elements and their Thhs, there are three dlstihct Simulation models and
+interconnections to complete an Assembly Complete regimesto correlate and, If necessary, update. The
+evaluation. proceeding sections dISCUSS the approach and present
+the available results for each of these: SSMRBS in
+RE;UIREMENTS I the quasi-steady range, MSC/NASTRAN in the
+structural dynamic range, and VSL/AutoSEA in the
+From a microgravity perspective, the quantities for Vibroacoustlc range.
+comparison between the on-orbit data and simulation
+results are those related to the ISS microgravity W
+requirements. The 188 microgravity requirements . .
+limit the acceleration levels at the payload rack mm
+locations within Destiny. These requirements were
+developed in conjunction with the science AS previously mentioned, SSMRBS is used 10
+community and span from 0 to 300 Hz? They are compute ISS quasi-steady aecelerations. SSMRBS
+divided into quasi—steady and Vibratory regimes and numerically integrates equations of motion derived
+reﬂect anticipated research sensitivities to longer for a multi body “gld system by Kane’s method.
+duration, constant direction accelerations. The quasi— Component “gid bOdleS are tleﬁned by mass property
+steady accelerations below 0.01 Hz cannot exceed 1 and projected ﬂat plate area Inputs. These are rigidly
+Hg (0.000386 inches/secondz) peak magnitude, or connected. in the appropriate degrees of freedom and
+have a peak perpendicular component to the orbital enable articulation of appendage bodies,“ as needed, to
+average quasi—steady magnitude vector greater than formulate the system modeh _Upbn th1sfrarnework,
+0.20 Hg. The Vibratory accelerations are limited to the valldated .188 torque equilibrium attitude (TEA)
+the following magnitudes on a 100 second, root— controller IS integgated to actively manage .attltude
+mean—square, 0n e—third octav e b and basi 3: rates and angles. The controller mamtams the
+2
+American Institute of Aeronautics and Astronautics
+
+"
+"4","(0)2002 American Institute of Aeronautics & Astronautics or Published with Permission of Author(s) and/or Author(s)’ Sponsoring Organization.
+AIAA-2002-7644
+commanded quantities by counteracting external (MAMS) that is installed in a US. laboratory rack t
+torques with the actuation of four 3500 ft-lb—sec, dual and managed by the NASA Glenn Research Center
+gimballed control moment gyroscopes. The external (GRC) Principal Investigator Microgravity Services
+torques are due to gravity gradients, atmospheric (PIMS)p1roject.5 The MAMS—OSS data is collected
+drag, and discrete,app1ied, quasi—steady disturbances. at 10 samples per second and low pass ﬁltered at l
+SSMRBS includes a gravitational model that Hz. Solar F10.7 radio ﬂux and geomagnetic index
+accounts for the earth’s oblateness to calculate the recorded values are obtained from the National
+gravity gradient torques, and the Marshall Oceanic and Atmospheric Administration (NOAA)
+Engineering Thermosphere (MET) model to calculate Space Environment Center. (gopher://sec.noaa.gov)
+the atmospheric density for drag considerations. The '
+MET model provides the density as a function of Correlation
+altitude, day of the year, time of day, daily F 10.7
+centimeter solar radio noise ﬂux, l62-day average MAMS-OSS data was acquired over a crew sleep
+F107, and the three-hourly geomagnetic index. period on May 7, 2001 with the [SS in its stage 6A
+Given the density, the drag force is computed from post Soyuz relocation conﬁguration. A nominal
+the propagated velocity, projected area, and a SSMRBS run was executed for this conﬁguration
+coefﬁcient 0f drag that is thPUt into SSMRBS 33 a consistent with operating conditions stipulated in the
+percent 0f“dtfﬁ13e” drag. SSMRBS models drag as 188 Microgravity Control Plan for microgravity
+either specular or diffuse wherein the atmospheric requirement compliance assessments. These include
+particles exchange momentum in either a perfectly rendezvous altitude, zero solar beta angle, and
+elastic, reflected, state or a perfectly plastic, maximum 13 month smoothed mean solar activity
+“sticking”, state, respectively. A 60% diffused estimates. This combination represents a relatively
+parameter is typically used for 135 that correSponds conservative set of drag related conditions.6 Given
+to acoefﬁcient 0t drag 0f2-6-4 the reference mass properties, attitude control
+algorithm, and conﬁguration, SSMRBS then
+Measurement computes the vehicle’s time varying attitude and
+accelerations for correlation with ODRC and
+In addition to'general vehicle status, e.g. appendage MAMS—OSS data, respectively. The nominal
+position, the information used for quasi~steady SSMRBS simulation clearly over predicted the
+correlation is vehicle state, attitude, mass, and vehicle pitch attitude computing a once per orbit
+acceleration data, and solar data. The state, attitude, sinusoidal excursion from approximately —15 degrees
+and mass data is acquired through the 188 to #65 degrees versus ODRC data that varied
+Operational Data Request Center (ODRC) which is between ~9.75 and —6.5 degrees. However, the roll
+the repository for most of the vehicle telemetry. The and yaw attitudes agreed within one-half of a degree.
+state data includes position and velocity, and is based The quasi-steady acceleration magnitude followed a
+on a daily update from Russian, ground radar, track similar trend with a SSMRBS rootemean-square
+measurements. The measured data iS “uplinked” to response of [.52 pg versus a MAMS—OSS value of
+the ISS and propagated Via an onboard numerical 1.17 Hg-
+simulation from which one second ODRC updates
+are available. US. GPS based avionics will soon be An alternate SSMRBS model was developed to better
+available to supplement the Russian state data. The reﬂect the actual on-orbit conditions rather than
+vehicle attitude is measured twice daily by Russian follow the control plan guidelines. In this case, the
+Segment star sensors and then propagated from Service Module photovoltaic array projected area
+integrated gyro rate measurement data. This is 3150 was reduced by one-half to account for “shadowing”
+available from the ODRC at one second increments. from the FGB photovoltaic arrays. In addition, one
+The mass property and center 0f mass POSttiOh data is of the P6 photovoltaic arrays was locked while the
+net empirically based bUt reﬂects the latest ground other sun tracked as on-orbit during the measurement
+computations. The acceleration data is measured by period. This “real time” SSMRBS simulation also
+the low frequency, self—calibrating, Orbital incorporated real time NOAA solar ﬂux data, solar
+Acceleration Research Experiment (CARE) Sensor beta angle orientation, and ODRC mass properties,
+Subsystem (055) in three orthogonal axes. The 035 and utilized the ODRC state data, position and
+has its design heritage in the Space Shuttle program velocity, for initialization. This resulted in
+where it was used to calculate Orbiter drag, as well signiﬁcantly improved attitude correlation, as shown
+as, to provide quasi—steady accelerations for in Figure 3, with minimal discernable differences
+microgravity research missions. The 085 is part Of between analysis and measurements. The quasi-
+the Microgravity Acceleration Measurement System steady acceleration magnitude also converged. The
+3
+American Institute of Aeronautics and Astronautics
+
+"
+"5","(0)2002 American Institute of Aeronautics & Astronautics or Published with Permission of Author(s) and/or Author(s)’ Sponsoring Organization.
+AIAA~2002-7644
+“real time” SSMRBS root-mean square acceleration While no effort was expended to improve the drag
+was computed to be 1.21 11g, only 3.4% greater than simulation, it is clear that further reﬁnements can be
+the MAMS—OSS value which satisﬁes the 188 made. The drag dominated “x” axis acceleration
+Microgravity Control Plan quasi-steady model correlation showed the most disagreement with root-
+validation success criteria of 10%. Figure 4 contains mean square differences on the order of 25% in the
+the quasi-steady acceleration comparison data. best case. However, due to the relatively low “x”
+acceleration levels (0.3 pg) in comparison to the “z”
+r W LVLH Attltide , 777 V 7 W: (1.1 pg), these differences are obscured in the overall
+1 Z }M magnitude correlation previously discussed. The
+-.NW4€L drag discrepancy 18 also manifested 111 a comparison
+'2 } "" ' ' “ “' “' “ W "":3 1 of vehicle altitude decay from the start to the end of
+"" “ ’ ’W“ W W"" “' 333313337 1 the eight hour simulation period with a 15% greater
+'6 . "" 44.16,."" . - W ' "" K 4;:33'1”; degradation computed by SSMRBS than reported via
+15.? '8 f‘ i‘\ ' {\ ﬁ‘ * _’ 1 the ODRC state data. SSMRBS projected area and
+""° ' ““ W “ W '---“ _ _ _ * drag coefﬁcient updates will be among the
+l 42 ‘W ' 'W ? parameters examined in the next phase of the model
+1 “4 W W W ' ,7 W WW ~ 1 correlation and update process to further improve
+‘ 46 WW WW W-~ W- W W W ‘ simulatorperformance.
+.1 so 0;)“100zoggiooi‘tgonsoo6007i00i8t00 . 0 .
+Time (Hours) from GMT 2001 :127:22:oo:oo.oo _C_ap_1t_al_1g1_t_lﬂ
+Figure 3: Quasi-Steady Attitude Correlation
+The quasi-steady model correlation and update work
+f"" W“ ' ""W ""“""“""“m&:gu'a;;iiud:“ "" W"" ' j to date establishes conﬁdence in the SSMRBS
+1 W . simulation tool and methods for downstream
+1 2.25 Liii-msti- _::, 13739,,” 1 microgravity requirement V611: fica tiOI‘l and operational
+1 2-00 "",7, WW W r~ WW 7’ 7mm“ 1 support. The results indicate that the veriﬁcation
+1.75 , ,7_ 4,, J ‘ mandated operational conditions produce
+‘3 1.50 7 if N , JWJ acceleration magnitudes that are 30% greater than
+g 1‘"" ._ 1, ‘ . 4_ ‘1 measured levels. This substantiates the conservative
+""251 ‘31? 1"" “'5’ g ‘5“ W ‘1 f; 1 intentions of the veriﬁcation prescription and
+‘ 1.001 v. r e 4‘ 11-4“ » 1’ 1 suggests that a reasonable margin is so introduced.
+0.75 ,, a ﬁll""? 1‘ a 1
+0.501 This work will be repeated on additional assembly
+1 2 3 4 5 6 7 8 stages to assure its repeatability and to exercise ‘
+Tlme (Hours)fromGMT2001t127122100200-00 models with 188 truss segments and discrete quasi-
+. "" . ‘ . '. “ stead disturbances, such as ex eriment vacuum
+Flgure 4: QuaSI-Steady Acceleratlon Correlatlon resouifce vents. Emphasis will be glaced in this next
+U date phase on improved SSMRBS drag correlation, and
+_p___ mass propertles identiﬁcation that can not only
+Given the reasonable agreement obtained with the 261322;? mﬁgsiggriggl coamnfjnmggitESIt alsgdhellE/Igs:
+SSMRBS “real time” modela no comprehensive Resources teams. ’
+model update procedures were undertaken. The
+prima areas of uncertaint exist in the dra
+calculgtlions and mass progenies. Additioneﬁ W
+SSMRBS runs were performed by updating the , ,
+location at which the accelerations are computed in w
+one foot increments. This effectively accounts for , , . ,
+variations in the MAMS-OSS sensor position and the ?;?ﬁggngiﬁgIEEiItZtISIZSmZL: Eggfeomgjsgégi
+lfggiuiig (21:33:: 5:112:23: 321:; ﬁgtagijvgieiggﬁ second. order linear tnass-damping-stiffness equations
+delta produced the best acceleration match on an axis Of motion are effectwely formulated and acceleratlon
+by axis basis with little improvement, 0.4%, obtained responses computed 1n. bOth t1me and frequency
+in the overall acceleration magnitude correlation ??%IhlialigrslenctluﬁioctlZIS agglepiovfiﬁlrcacgsbyariie 11121332:
+from the real time case. developers and combined to produce the AC 188
+4
+American Institute of Aeronautics and Astronautics
+
+"
+"6","(0)2002 American Institute of Aeronautics & Astronautics or Published with Permission of Author(s) and/or Author(s)’ Sponsoring Organization.
+AIAA-2002-7644
+model. Super-element sub-structuring techniques are Russian Segment Service Module (Zvezda) and FGB
+employed so that the “residual” model from which (Zarya). There are ten potentially applicable tri—axial
+the 8457 system modes to 50 Hz are synthesized accelerometers at ﬁve different bulkhead locations
+contains a reduced set of approximately 50000 within each of these modules, accounting for a total
+physical and generalized degrees of freedom of 60 data channels. However, the accelerometer set
+representing the multi-million physical component frequency range in the Service Module is limited to
+degrees of freedom.7 10 Hz, and in the FGB to 50 Hz with sensitivities
+from 1000 to 10 ttg.9 These restrictions combined
+Measurement with coordination complexities question the utility
+and availability of this measurement source,
+As in the quasi—steady case, general knowledge of the however, if included there are now 99 channel or
+vehicle is acquired through the ODRC to establish degree of freedom acceleration measurements for
+the speciﬁc conﬁguration conditions. The principal structural dynamic model correlation.
+data for correlation is obtained from available
+accelerometer instrumentation. At this time, there are Correlation
+ﬁve sources. The MAMS unit previously cited also
+includes the HiRAP sensor that is installed in a Since the acceleration response is not onlyafunction
+double middeck locker in EXPRESS rack #1 near the of the simulation model, but is also dependent upon
+forward end of the Destiny module. HiRAP the accuracy of the input disturbance model,
+measures accelerations in three orthogonal axes up to simulation model correlation is best accomplished
+100 Hz. Five tri-axial sensors of the Space when the input disturbance is well deﬁned in both
+Acceleration Measurement System (SAMS) have magnitude and direction. Two current on—orbit
+also been deployed. Three of these are located on activities offer such data. First, there is the ARIS ISS
+secondary structure adjacent to EXPRESS #1 and #2 Characterization Experiment (ICE). The goal of
+racks, with the other two installed onboard these ARIS ICE is to determine the on—orbit isolation
+racks. The SAMS units can measure acceleration capability of the ARIS. Among the many tests
+from 0.01 to 300 Hz and as with MAMS are operated included in its eight month span are hammer tap and
+by the NASA GRC PIMS organization to provide sinusoidal shaker force cases.10 These are conducted
+payloads environmental data. Also onboard to insure that the required isolation levels can be
+EXPRESS rack #2 are the three Active Rack demonstrated by creating sufﬁcient off-board
+Isolation System (ARIS) tri—axial accelerometers that accelerations from approximately 20 to 300 Hz to
+provide the sensor feedback data to its controller. keep the isolated on—board accelerations above the
+ARIS isolates the payload rack from space station noise ﬂoor of the accelerometers. These tests, as
+disturbances by application of control forces to shown in the Figure 5 time history sample, generate
+cancel sensed accelerations.8 accelerations that are well above the background
+levels, which is also a desired condition for
+In addition to these 27 “channels” of data clustered successful correlation.
+about the crucial microgravity payload location, there
+are two alternate measurement sources that provide A second such data source is the Station Detailed
+“far ﬁeld” data. The Loads and Dynamics Team Test Objectives (SDTOS) sponsored by the Loads and
+utilizes the NASA Johnson Space Center (JSC) Dynamics team. These SDTOS are used to acquire
+developed Internal Wireless Instrumentation System data for the ﬁnite element modal correlation work
+(IWIS) in support of its modal analysis model previously cited and tend to focus on modes below
+validation efforts. There are two IWIS tri-axial 1.0 Hz. IWIS data was acquired on July 17, 2001 as
+accelerometers in fore and aft locations within the part of SDTO 261. SDTO 261 prescribed a sequence
+Node 1 “Unity” module, and two tri-axial of ﬁve Shuttle Orbiter Primary Reaction Control
+accelerometers in the fore and aft ends of the Destiny System (PRCS) thruster ﬁrings to excite U.S.
+module, all directed at primary structure. While the Photovoltaic Array bending modes and selected
+IWIS accelerometers have the sensitivity and range to global modes.11 The 870 1b thrusts produce
+cover much of the microgravity frequency bands, signiﬁcant response, as shown in Figure 6, and nicely
+they are typically limited to 25 Hz which is sufﬁcient complement the higher frequency ARIS ICE results.
+for low frequency, load critical modal concerns and
+minimizes on—orbit data storage needs. For all these events, correlation is conducted in both
+the time and frequency domains. Success criteria is
+The remaining measurement source is contributed by given in the ISS Microgravity Control Plan as “the
+RSC—Energia and consists of accelerometers in the simulated one-third octave band, root-mean—square
+5
+American Institute of Aeronautics and Astronautics
+
+"
+"7","(c)2002 American Institute of Aeronautics & Astronautics or Published with Permission of Author(s) and/or Author(s)’ Sponsoring Organization.
+AIAA-2002-7644
+acceleration level shall be within 20 percent of the 2001 Space Station Utilization Advisory
+measured level from 0.01 to 10.0 Hz; within 30 Subcommittee meeting.12 Figure 7 shows the one-
+pereent from 10.0 to 100.0 Hz; and within 40 percent third octave band ﬁnite element results co-plotted
+from 100.0 to 300.0 Hz. Further, the overall with the measured data acquired on June 29, 2001
+simulated root-mean—square level over the entire from a SAMS accelerometer on secondary structure
+frequency range shall be equal to or no greater than: during a crew sleep period.13 As seen in the ﬁgure,
+10 percent of the measured root-mean-square level there is good correlation with the simulation results
+form 0.01 to 10.0 Hz; 15 percent from 10.0 to 100 which are consistently reasonably conservative. Note
+Hz; and 20 percent from 100.0 to 300 Hz.” that this represents a snapshot of time, a single one
+hundred second period. Additional samples need to
+WWW WWWW, 7 ,WWWWW be evaluated before conclusions are inferred. Overall
+aooooo ; environment comparisons, such as this stage 6A
+m ﬂ ,, 7, 7 example, do address the “bottom line” in terms of
+i ' 7 7 7 7 7 ‘7 7 environment performance, but do not facilitate the
+j ‘°°°°° "" "" ’ simulation model correlation and update process
+a 2m ~- = r : , v r r , ~ ,7 unless all the dominant disturbances are well deﬁned.
+‘ g o 3
+; W - j- . - - 3 _mas:z"";rrzizzziﬁgzﬁfnmzszi;2m"":3:233:
+‘ o 2 4 Timeim) a w 12 E W A A A g A A
+_ F igure 5: ARIS ICE Hammer Tap Test § .0; . ; .,
+3,104 7A/STS-104DTO—261,TimeHisbryPlot.RSU1LawadAccel.Y 1m”$z»M/4 : f I .. ”v- : '
+é - '
+-2omm Figure 7: 6A Crew Sleep Environment Correlation
+t, WW97°ée31§53335€9ieWW.,a _
+s, 2mm:
+§1o-vi
+§,o-.om The structural dynamic ﬁnite element model update
+m_noiz‘iiéissiga ”EEEEEEE"";:EEEE ,35355515;33555555:; 20 322.. 325 procedure relies on both engineering insight and
+“W. 7st-1oaoTo-2sfr%§6%stmLabmm..v automated numerical methods. Engineering insight
+g 2 f , M establishes the relevant areas with greatest model
+Ems ‘ » ~ . » , ' ~ uncertainty, and thus the expected parameters to be
+io- updated for improved correlation. These include
+'0 %1 ‘LA 3 A_UWWW 3;; rack-to-module interface stiffness and modal
+° oilsrsabDTo.;:..smc:wfga°§§%§61Samoa” 4 ""5 5 “322 damping. In the case of non-isolated payload racks,
+: _,_.,0 § non-linear gaps designed to accommodate installation
+”2,5 3‘ tolerances and rack rotations introduce signiﬁcant
+310 M“: uncertainty to the linear model. Similarly in the case
+5 if 9
+:. I250; of isolated racks, large deﬂection power cables,
+° 5°° ‘°°° Timefiﬂgonas 2°°° 25°° 3°°° 3 cooling ﬂuid hoses, and other umbilicals stretch the
+model capabilities. These umbilicals replace the
+, _ , , standard mechanical attachments of the non—isolated
+Figure 6: SDTO 261 Orbiter PRCS Thruster Firings racks as the primary transmission/load path between
+the station and the payload rack.
+Correlation results of these selected events are not yet
+available, however, the 6A overall acceleration In order to conﬁrm that these parameters indeed
+environment simulation was independently compared inﬂuence the response and to determine an
+to SAMS measurements and presented at the summer appropriate set 0f updated values, the following steps
+are taken:
+6
+American Institute of Aeronautics and Astronautics
+
+"
+"8","(0)2002 American Institute of Aeronautics & Astronautics or Published with Permission of Author(s) and/or Author(s)‘ Sponsoring Organization.
+AIAA-2002-7644
+start which can be expanded in the future based on
+(1) In each one-third octave band where the model update and program needs.
+conelation results fall short of the validation
+criteria, the peak acceleration response Once established, the 188 program can capitalize
+frequencies and others at which signiﬁcant upon the high conﬁdence microgravity ﬁnite element
+differences exist are noted; models in a number of ways. Conservatism in the
+(2) A modal ordering analysis is performed based on design and veriﬁcation process may be reduced for
+balanced singular value theory to identify those outstanding vehicle elements and payloads, or for
+modes that are most closely coupled to the conﬁguration changes should they occur, enabling
+particular input/output set under scrutiny”; potential cost savings. Root causes of on-orbit
+(3) Given (1) & (2), selected modes within the “ﬁinnies” and/or anomalies can more effectively be
+“neighborhood” of the “noted” frequencies are identiﬁed, and, if necessary, corrected based on a
+examined Via kinetic and strain energy more assured resolution evaluation and selection
+calculations to determine their structural process. Similarly, near and long term operations
+“drivers”; and mission planning can be more efficiently
+(4) From this overall list of suspected localized supported because of the decrease in uncertainty.
+deﬁciencies, e.g. the rack to module interface, a
+set of associated parameters is developed based VIBROACOUSTIC I
+on engineering insight that can correct the error,
+e.g. spring stiffness values used to linearly model Simulation
+gaps, and/or umbilical beam cross section or
+material properties, and/ or modal damping Vibroacoustic simulations are performed with the
+levels; VSL AutoSEA statistical energy analysis code.
+(5) MSC/NASTRAN design sensitivity and AutoSEA involves building and solving linear, power
+optimization algorithms are then exercised to balance equations at each band center frequency over
+minimize the least square error between the the frequency range of interest. Input power is
+measured and simulated acceleration responses related to output energy for each subsystem wave
+by converging on an updated set 0f parameters ﬁeld through a loss factor matrix of coefﬁcients. The
+underaset ofuser speciﬁed constraints.” loss factor matrix is composed of material and
+(6) Cross-orthogonality checks are performed coupling loss factors, and the subsystem wave ﬁelds
+between the updated and original simulation are represented in terms of modal densities for each
+modes to evaluate the extent 0f the impact 0f the distinct wave ﬁeld considered in either structural or
+recommended model changes and assess their acoustic subsystems. A beam subsystem may, for
+credibility. example, consist of four independent wave ﬁelds,
+(7) A ﬁnal updated model is then established based ﬂexural in each of two orthogonal directions,
+on the ICSUItS from the automated routines and extensionalD and torsionalj thus comprising four
+engineering benchmark cases andjudgment. degrees of freedom in the solution set. The modal
+densities are computed from geometric and material
+Capitalization inputs. Acceleration responses are then obtained
+from the output energy results, typically in a power
+Work performed to date by the Loads and Dynamics spectral density format. Key assumptions of the
+Team, indicates that the low frequency ﬁnite element method are its limitation to local modes, i.e. n0
+model correlates well With measured data. Results modal coupling/synthesis between wave ﬁelds 01'
+from an early assembly stage, concluded that the only subsystems, and the equi-partition of energy to all
+proposed model reﬁnement is to increase the modal modes within aband.
+damping of the fundamental U.S. Photovoltaic Array
+modes to 2.0%.16 This is a step toward microgravity Measurement
+ﬁnite element model validation as its low frequency
+content is predominantly drawn from Loads and Vibroacoustic measurements include those
+Dynamics Team supplied component models and accelerations previously discussed in the structural
+connectivity schema. HOWCVCI‘, th6 bulk Of the effort dynamics section with frequency content in the 50 t0
+remains and the implementation Of a successful 300 Hz range. In the future, sound pressure level
+automated parameter update method Will be a measurements from the human factors acoustic
+challenge given the size 0f the ISS ﬁnite element community will be pursued for additional validation
+simulation model and the limitations of the measured potential.
+data. The data acquired to date provides a reasonable
+7
+American Institute of Aeronautics and Astronautics
+
+"
+"9","(0)2002 American Institute of Aeronautics & Astronautics or Published with Permission of Author(s) and/or Author(s)‘ Sponsoring Organization.
+AIAA-2002-7644
+Correlation results fall short of the validation criteria are
+noted;
+The microgravity AutoSEA model has been (2) For each input—output pair, an AutoSEA
+essentially developed in-house because a number of “thermo-gram” and a sensitivity analysis are
+element hardware integrators did not develop performed to help identify the model parameter
+component versions, and, often when available, there set to be updated. The “thermo—gram” is simply
+is a lack of modeling consistency that makes their a color gradient plot of the acceleration response
+integration difﬁcult and questionable. The levels which provides an indication of the
+microgravity AutoSEA model has undergone primary transmission paths and the associated
+extensive U.S. laboratory module ground test subsystems. The sensitivity analysis utilizes loss
+correlation that includes transfer function data factor matrix cofactors to “order” the subsystem
+acquired from calibrated hammer taps in December contributions to the acceleration response of a
+l999.fr0m the US. Destiny laboratory module ﬂight particular subsystem;
+article.” Correlation results, from the evaluation of (3) An overall list of suspected localized
+ﬁve input excitations and twenty—four output deﬁciencies in terms of subsystems is assembled
+acceleration channels, indicate that the simulated from (2), cg. standoff beam subsystems, and a
+values are consistently conservative. In general, the set of associated parameters is deveIOped based
+rack responses exceed the measured values by factors on engineering insight that can correct the error
+of two to ﬁve, and the standoff responses by factors from (1), e.g. modal density and/or material loss
+of ﬁve to ten.18 As shown in the Figure 8 example, factor as functions of frequency;
+these comparisons are made on a one—third octave (4) Steps (1) through (3) are repeated for each
+band root—mean-square basis. input/output pair to converge on a ﬁnal set of
+parameters.
+LAB Test Conelation with SEA Ground Test Model (5) As a ﬁrst pass, simple iteration techniques are
+Input @1 L356 Leﬁ Post (Ch 5) . . . . . . .
+Outpthi,Las6RightPostmssCh's1.2.3) used 1n conjunctlon w1th englneermg Judgement
+106 35’“??? ‘ 77:???“ .fir‘r‘r‘r’f. """"7511? '
+3;; W g :75: t0 determme the updated parameter values to
+V . , A —SEAGMM , t , . t . . . .
+52 5' ‘ ' - "" ' ' meet the valldatlon crlterla;
+:3: 1° ?/ (6) As a second pass, optimization techniques are
+5'?“ 10‘ 7, L * H m k planned to minimize the least square error
+‘5: M between the measured and simulated acceleration
+g 1000; k ; WW responses by converging on an. updated set of
+g f ' ‘ ' parameters underasetofconstramts.
+WT i W
+5° 6° 7° 8° 9°‘°° 20° 30° Capitalization
+Frequency (Hz)
+Flgur e 8: U'S' Lab Module Ground Test Correlatlon The beneﬁts of high confidence vibroacoustic models
+are similar to those attributed to the structural
+Update . . . . .
+dynamtc model mentloned 1n the earher sect1on. In
+. . addition the Vibroacoustic model can be utilized b
+The h1gh acceleratlon responses of the standoff . ’ . . y
+. the n01se commumty to support human factor de51gn
+subsystems relattve to the ground test measurements .
+. . and operatlons.
+pomt to the standoffs as pnmary model update
+candidates. Indeed, their low modal density ‘
+. . CONCLUSIONS
+propertles make them suspect, and suggest e1ther an
+alternate modelin a roach or a model densit . . . . .
+g pp . . y The 188 mlerogravny Slmulatlon model correlatlon
+parameter update to force Improved correlatlon. . . . .
+. . and update effort IS underway. In1t1al quaSI-steady
+However, before proceedlng, on-orblt measurements . . . . .
+. . results 1ndlcate that the AC Slmulatlon model IS
+W111 be evaluated to assure that any model updates . . .
+. partlally valldated based on the early stage on-orblt
+reﬂect the on-orblt rack to module boundary . . .
+. . . . . . measured data. Prehmlnary ﬁnlte element
+condltlons Wthh dlffer Slgnlﬁcantly from ground. . . . ,
+comparlsons reuse conﬁdence 1n the model 3
+Once obtained, the baseline statistical energy model accuracy and suggest that some tunlng IS
+. . approprlate to reduce conservatlsm. Ground test
+update procedure ts outlmed as follows. . . . . . .
+statlstlcal energy compansons pomt to s1m11ar trends.
+. . . ' k t “h ' '
+(1) For each Input-output pan, the one-thlrd octave There IS .mUCh wor 0 go W.“ the ex1st1ng 7A
+. . conﬁguratton data, and another 1terat10n IS needed 1n
+band center frequenmes where the correlatlon . . .
+the stage 13A tlmeframe to Include mtegrated truss
+8
+American Institute of Aeronautics and Astronautics
+
+"
+"10","(0)2002 American Institute of Aeronautics & Astronautics or Published with Permission of Author(s) and/or Author(s)’ Sponsoring Organization.
+AIAA-2002-7644
+
+segment effects. The ISS program will then be able Measurement”, SAIC, Internal Brief, August 22,
+
+to capitalize on these results for its duration. 2001,
+
+13. Steelman, A., “Flight 6A Environment
+w Prediction”, Boeing Space and Communications,
+, AG-J332-STN—M—AMS-2001—0110, August 20,
+
+1. Del Basso, S., “International Space Station 2001'
+
+Microgravity Environment Design and 14. Gregory, C., “Reduction Of Large Flexible
+Veriﬁcation”, Space Technology and Spacecraft Models Using Internal Balancing
+Applications International Forum Conference Theory”, A1 A A Journal of Guidance and
+Proceedings, Albuquerque, New Mexico, C0ntr01,V01ume7,1984,pp.725—732.
+
+January1999. 15. Blakely, K., “Matching Frequency Response
+
+2. NASA International Space Station Program Test Data With MSC/NASTRAN”, 12th
+Ofﬁce, L_.12__________S stem S eciﬁcation For The International Modal Analysis Conference, 1994.
+International Space Station, SSP41000R,NASA l6. Kaouk, M., “Flight 4A Post~F1ight Analysis:
+Johnson Space Center, March 2000- Modal Analysis, Model Validation And
+
+3. NASA Johnson Space Center Code EG, Space Correlation”, Boeing Space and
+Station Multi Rigid Body Simulation User’s Communications, A92—J332—STN-M_MK—2001—
+Guide, Version 2.0, December 20, 1995. 0080, June 2001.
+
+4. Laible, M., “Space Station Multi—Rigid Body 17. Crenwelge, 0, kaeefea 13., and Miller, M.,
+Simulation (SSMRBS) Runs Comparison to On» “US. Lab Microgravity Test” Quick—Look Test
+Orbit MAMS Data”, Boeing Space and and Data Report”, Boeing Space and
+Communications, AG-J332-STN-M-MRL-2001— Communications, SSP-MG00-013, February 28,
+0081, August 27, 2001. 2000.
+
+5- Jules, K., Hrovat, K., and Kelly, B, 18. Sun, W., “Lab SEA Ground Test Model
+“International Space Station Increment-Z Quick Correlation With KSC Lab Test Data”, Boeing
+LOOk Report: May to June 2001”= NASA Glenn Space and Communications, SSP-MG00-033,
+Research Center Principal Investigator April 25, 2000.
+
+Microgravity Services, July 2001.
+
+6. NASA International Space Station Program
+Ofﬁce, Microgravity Control Plan, SSP 50036B,
+
+NASA Johnson Space Center, February 15,
+1999.
+
+7. Thampi, S., “DAC9 Finite Element Model For
+Microgravity Analysis”, Boeing Space and
+Communications, AG-J332-STN—M-SKT-2001-
+
+0142, October 1, 2001.
+
+8. Bushnell, G., Anderson, T., Becraft, M., and
+Jacot, D., “Active Rack Isolation System .
+
+Development For The International Space
+Station”, AIAA 97-1203, January, 1997.
+
+9. Petrov, N., “SM And FGB On—Board
+Acceleration Measurement System”, RSC—
+
+' Energia, F2/017-8123, October 23, 2000.
+
+10. Fialho, 1., “ARIS ISS Characterization
+Experiment ARIS~ICE Test Plan”, Boeing Space
+and Communications, D684—10839-01, January
+26,2000.
+
+11. Bankowicz, T, Haley, S., and Kaouk, M., “DTO
+261 A Flight 7A Orbiter Jet Firing and Target ‘
+
+Mode Selection”, Boeing Space and
+Communications, A92-J332-STN—M_MK—2001-
+0029, February 28, 2001.
+
+12. Schafer, C., “Comparison Of Modeled
+
+Acceleration Environment To On-Orbit
+9
+American Institute of Aeronautics and Astronautics
+
+"

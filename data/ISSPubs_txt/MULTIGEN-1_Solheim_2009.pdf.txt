@@ -1,0 +1,582 @@
+"","x"
+"1","édif Available online at www.sciencedirect.com —
+2% ADVANCES IN
+N SCIenceDI rect SPACE
+ELSEVIER Advances in Space Research 44 (2009) 1382—1391 w
+www.elseVier.com/locate/asr
+3D information from 2D images recorded in the European
+Modular Cultivation System on the ISS
+B.G.B. Solheim
+Department Of Physics, Norwegian University Of Science and T echnology, N—7491 T rondheim, Norway
+Received 3 October 2008; received in revised form 9 July 2009; accepted 10 July 2009
+Abstract
+The European Modular Cultivation System (EMCS) on the ISS allows long—term biological experiments, e.g. on plants. Video cam—
+eras provide near real—time 2D images from these experiments. A method to obtain 3D coordinates and stereoscopic images from these
+2D images has been developed and is described in this paper. The procedure was developed to enhance the data output of the MUL—
+TIGEN—l experiment in 2007. One of the main objectives of the experiment was to study growth movements of the Arabidopsis plants
+and the effect of gravity on these. 3D data were important during parts of the experiment and the paper presents the method developed to
+acquire 3D data, the accuracy of the data, limitations to the technique and ways to improve the accuracy. Sequences of 3D data obtained
+from the MULTIGEN—l experiment are used to illustrate the potential of this newfound capability of the EMCS. In the experiment
+setup, a positional depth accuracy of about :|:0.4 mm for relative object distances and an absolute depth accuracy of about :|:1.4 mm
+for time dependent phenomena was reached. The ability to both View biological specimens in 3D as well as obtaining quantitative
+3D data added greatly to the scientiﬁc output of the MULTIGEN—l experiment. The uses of the technique to other researchers and their
+experiments are discussed.
+© 2009 COSPAR. Published by Elsevier Ltd. All rights reserved.
+Keywords: EMCS; ISS; 3D images; MicrograVity; MULTIGEN—l; Circumnutations
+1. Introduction ecotype Columbia wild type. On Earth, such growth move-
+ments are nearly ubiquitous in plants and manifest them-
+The European Modular Cultivation System (EMCS) selves e.g. in the case of the Arabidopsis as spiral
+was launched in July 2006 and is now installed and opera- movements of the ﬂower stalks around the plumb line.
+tional inside the Columbus module on the International The amplitude can be up to several centimeters in diameter
+Space Station, ISS. The EMCS provides a facility in which and a revolution is often completed in 80—90 min (Someya
+long term experiments on plants, insects or amphibia can et a1., 2006). Although the movement occurs in three
+be performed. The EMCS is a carefully controlled life sup- dimensions, the EMCS, in principle, was only designed to
+port system containing two centrifuges which each can allow the recording of 2D images. However, through the
+hold four experiment containers (ECs) with an internal vol- process of preparing the experiment it was found that cer-
+ume of 60 x 60 x 160 mm (Astrium — EMCS Team, 2001). tain design Characteristics of the EMCS permitted the
+Between August and November 2007 the MULTIGEN- extraction of 3D coordinates and the creation of stereo-
+1 experiment was performed in the EMCS (J ohnsson et a1., scopic pictures.
+2009; Solheim et a1., 2009). One of the main objectives with The EMCS is foreseen to have a long lifetime and be
+this experiment was to study the effect of gravity on rota- used in a number of experiments during the coming decade.
+tional growth movements (termed “Circumnutations” by We believe the technique described in this paper adds to the
+Charles Darwin) in the plant species Arabidopsis thaliana scientiﬁc capabilities of the EMCS and could be of interest
+— to a wider audience.
+E—mail address: ﬁrma@rte.gs
+0273-1177/$36.00 © 2009 COSPAR. Published by Elsevier Ltd. All rights reserved.
+doi:10.1016/j.asr.2009.07.008
+
+"
+"2","B.G.B. Solheim/Advances in Space Research 44 ( 2009 ) 1382—1391 1383
+2. Hardware Hardware modiﬁcations were limited to changes that
+could be implemented within the EC volume available for
+A combination of hardware and software solutions per- the experiment. No modiﬁcations could be done on the
+mitted the extraction of 3D coordinates and the creation of EMCS hardware. Although not required by the calibration
+stereoscopic images from the EMCS. For the extraction of software, certain reference marks and structures were
+3D coordinates the free (non-commercial use) product placed inside the ECs that aided the evaluation of the
+“Camera Calibration Toolbox for Matlab” was used images and the process of creating stereoscopic images. A
+(Bouguet, 2008). black and white reference grid was ﬁtted on the back wall
+of each EC. In addition, a thin reference pin (height
+2.1. EMCS design characteristics that enable 3D extraction 15 mm) was placed close to the centre of the cover lid on
+the growth pot (plant cultivation chamber, FCC), and
+The EMCS contains two compact rotors that can pro- guide marks indicating a front-to-back 1ine perpendicular
+Vide fractional g-levels between 0-g and 2-g. For fuller to the back wall was engraved on the PCC cover 1id.
+description of the EMCS general features see Brinckmann The reference grid was printed on 1abe1s provided by the
+(2005), Fossum et a1. (2005), Iversen et a1. (2002) and Sol- 188 Payload Label Approval Team (IPLAT) fulﬁlling the
+heim et a1. (2006). In the present paper only details con- requirements of the SSP 57000, Appendix C (NASA
+cerning the 3D capabilities are presented. report, 2000). The grid consisted of a pattern with charac-
+Each rotor holds four ECs and two CCD NTSC Video teristics that made it possible to identify the Viewing loca-
+cameras (Sony FCB-IX470). As shown in the schematic tion regardless of zoom level used. When a large amount
+Fig. 1, two ECs share one Video camera; therefore only of zoom is used the depth-of—ﬁeld is severely limited. To
+two ECs on each rotor can be Viewed simultaneously. In preserve the ability to resolve the grid lines in this situation,
+the process of designing a compact system on each rotor, the grid consisted of lines of 1.3 mm width.
+a mirror has been placed in the light path between the Two conﬁgurations of the PCCs were created; with
+ECs and the Video cameras (Fig. 1b). The Video cameras either 3 or 5 seed holes (four ECs each).
+automatically reverse the mirror image caused by Viewing The location of the seed holes on the PCC was chosen so
+the EC Via a mirror, so that it appears as if no mirror that they remained Visible from a11three angles from which
+was in the light path. When the user wishes to observe a images were captured.
+certain part of the EC, this is done by either panning the
+camera (Fig. 1a); the View ti1ts on the radial aXis of the 2.2. Diﬂerem EMCS models
+rotor, or by rotating the mirror (Fig. 1b), which results in
+a perceived panning of the camera (the View of the EC The EMCS consists of a ﬂight model (FM) that is
+shifts on an aXis perpendicular to the radial direction). located on the 188, a ground based identical unit, the engi-
+However, by rotating the mirror one does not only change neering model (EM), and the ground based experiment ref-
+the section of the EC observed, it also results in a small erence model (ERM). The ERM differs in design from the
+change in Viewing angle. It is this system characteristic that EM and FM since ground based testing and experiments
+permits both the extraction of 3D coordinates and the cre- have to work under 1-g conditions. Also, and relevant to
+ation of stereoscopic images. this paper, the cameras in the ERM are pointed directly
+towards the EC (with no mirror in the light path), thus
+the ability to markedly change the Viewing angle as seen
+(a) (b) in the FM and EM does not eXist. The techniques described
+_ _ in this paper can therefore not be used in the ERM.
+Top view of rotor Side View of rotor
+— C39 3. Methods
+ITI 0)
+O ’9
+‘$ Mirror )7?th 3.1. Anaglyphs
+""jigs: EC I I I Camera An anaglyph is a stereoscopic picture which consists of
+t} 0 two images taken from two slightly different angles, layered
+’ a on top of each other with a slight offset, and in two comple-
+O Q mentary (opposite) colours. The method of creating ana-
+$°27 i glyphs is well known, and details presented here will only
+be speciﬁc for the EMCS. In the MULTIGEN-l experi-
+Fig. 1. Schematic top (a) and side View (b) of one of the rotors in the ment images were recorded from angles 1 t0 3’ angle 1
+EMCS. One camera is shared by two ECs (location ofmirrornot shown in d 3 bein se arated b a mirror rotation Of 6.80. This
+(a)). Inset (b) shows the mirror which is located in the light path from the an g . p y . .
+EC to the camera. It is the rotation of the mirror that permits 3D angle separation was used for the eXtraCtlon Of 3 D 6‘00le-
+coordinates to be extracted. The dotted circles indicate the available ”0165- Angle 1 and 2 W33 S€parat€d by a mirror YOtatiOH 0f
+rotation axis. 3.80, and used exclusively for the creation of anaglyphs.
+
+"
+"3","1384 B.G.B. Solheim/Advances in Space Research 44 { 2009 ) 1382—1391
+However, all three positions can be used when creating noting that there exist two sets of X - Y- and Z— coordinates,
+anaglyphs. one set calculated for each camera angle. Both sets describe
+In the EMCS, the rotary drives (type: MM-3M-R, the same scene, but are projected relative to the two camera
+National Aperture, Inc.) which turn the mirrors have a eer- angles respectively.
+tain amount of play. This prevents the mirrors from return- The method employed by the Camera Calibration Tool-
+ing accurately and repeatedly to a certain position when box to map the environment, in our case the EC, is by
+moved (further details in Section 3.2.3). If creating only a recording multiple images of an object with known dimen-
+single anaglyph, the play in the mirrors is of minor impor- sions as it is moved throughout the EC. The Toolbox then
+tanee. However, when dynamic growth processes are inves- relates what has been seen from one ﬁxed Viewing angle to
+tigated and a sequence of anaglyph images should be what is seen from another one. When the relationship
+created and Viewed as a movie, the play or jitter of the rnir- between these Viewing angles are known, it is possible to
+ror makes it difﬁcult to analyze and interpret the sequence. calculate the positions of different parts of the object , as
+Therefore, to improve the image quality, Matlab scripts well as of all other objects seen by the cameras.
+that removed the apparent jitter in the images were created The calibration procedure consisted of recording images
+in the MULTIGEN—l experiment. By identifying an area of a Checkerboard pattern from two different Viewing
+of the image that should appear ﬁxed in 2D coordinate angles (Fig. 2). In the EMCS ease, the two Viewing angles
+space, image correlation methods were used to determine were Chosen in a compromise between obtaining a maxi-
+the necessary horizontal or vertical shift of the whole image mum angle separation and keeping the area of interest in
+to create the illusion of a static background in the images. the EC in View from both angles. In the present paper a
+This method does not remove the actual inaccuracy created zoom level that shows the entire height of the growth vol-
+by the jitter (i.e. the slight Change in Viewing angle which is ume of the EC was used during the calibration.
+the result of not consistently returning to the same rnirror
+position), but it produces an image sequence in which the
+background appears static and therefore the moving :3; ea: 1
+objects in the image are easier to follow. w: _I _ mm
+3.2. Posztzomng m 3D ."". . l .‘.‘. J . l
+l”. . ~ '1!- .
+3.2.]. Extraction of 2D coordinate positions W15 [.31 g .. #5:! L153}: /
+The starting point for any analysis is to extract the 2D Imam: F7"")? ‘ .133wa 1‘""?
+coordinates (i.e. the x and )2 pixel position) for the object '1‘ “H. 1“ ‘ ""’“iqﬂi”;
+that one wishes to track, and this is done from two different ' I ‘
+angles. In the MULTIGEN—l experiment the focus was on
+tracking the position of the inﬂorescence stems of the plant ‘ _ ‘
+species used. When considering the uniqueness of the col- ‘
+leeted image material and the requirements for accuracy, .
+only computer assisted manual extraction of the 2D eoor- ’1‘,- _ -...3‘, f - . n.“
+dinates was determined to give the accuracy required. ,
+3.2.2. Extraction of 3D coordinates — calibration ‘ a
+In order to extract 3D coordinates a calibration of the . ﬂ » : ‘
+camera system has to be performed. The “Camera Calibra- f é' .‘ "" '
+tion Toolbox” for Matlab developed by Bouguet (Bouguet, ‘ ‘ :,..':- y / :-
+2008) was used. The calibration procedure permits the soft- 5/ .. r. 51.5. s
+ware to map the intrinsic and extrinsic Characteristics of the r ’ l 73'
+cameras and hardware setup used, as well as the position of ' ‘ ""~41“ , r
+the right camera with respect to the left camera Via rotation d -
+and translation vectors between the two earnera-positions ‘
+used in the stereo calibration. The result is a model that
+transforms the two coordinate pairs (x- and y-eoordinates
+in pixels from two angles) described in the previous subsec-
+tion, to a set Of 3D coordinates in millimeters (X , Yand Z) Fig. 2. Checkerboard calibrating procedure of camera. The camera was
+where the new Z-Coordinates 110W describes the distance aligned to match the output from the ﬂight images fromttwto angles (top
+from the cameras. “Cameras” are used in plural even if insets) andaeheckterboard calibration pattern was placerl 1ns1de one of the
+. . . ECs. The calibration pattern was moved 30 times 1ns1de the entire EC
+only 0116 camera has taken the images Since the mlrror growth volume and was recorded from the two angles for each new
+YOtatiOH causes the Camera Calibration TOOIbOX to position (top part of ﬁgure). The lower image shows the process of
+perceive the images as taken by two cameras. It is worth adjusting the calibration pattern.
+
+"
+"4","B.G.B. Solheim/Advances in Space Research 44 { 2009 ) 1382—1391 1385
+In Fig. 3 a ﬂow Chart describing the steps of the oalibra- the EM for each angle and for each Checkerboard position.
+tion is shown. The lettering A, B, C, etc. describes the nec- Between each image recorded the mirror was rotated to the
+essary steps in a Chronological order and are used below to maximum angle allowed by the hardware before being
+simplify the understanding of the calibration process. returned, always from the same direction, to the angle used
+In principle, the engineering model (EM) and the ﬂight for recording the calibration image. A total of 30 diﬂerent
+model (FM) of the EMCS should be identical. However, checkerboard positions were recorded from two angles in
+a certain set point angle of the mirror in the FM did not addition to images of a calibration reference unit that
+result in the same Viewing angle in the EM. This diﬂerenoe allows the veriﬁcation of the accuracy of the calibration.
+combined with the play in the mirrors resulted in a calibra- From this pool of images it was possible to match 11 pairs
+tion that had to be performed post-ﬂight, when actual that were to be used for the calibration (Fig. 3C). The
+ﬂight images from the 188 were available (Fig. 3A). Post- Camera Calibration Toolbox software (Fig. 3D) provides
+ﬂight the user has a large number of images, and the mirror a standardized method of calibrating the camera system,
+inaccuracy is most easily observed as a perceived move- and details regarding procedures which are not speciﬁc to
+ment of the reference grid in the back of the EC. A data- the EMCS are therefore not discussed here.
+base of the FM images determining the position of the
+grid in each image was created. Based on the largest statis- 3.2.2.1. Accuracy of calibration. A calibration veriﬁcation
+tioal occurrence of a grid position, an image from the left unit that consisted of structures with known dimensions
+and right Viewing angle in the FM was then selected to and positions was built to provide a target for measuring
+be used as reference images and the basis for the calibration the accuracy of the calibration. This was achieved by a
+procedure in the EM. Using these two images, the camera comparison between calculated distances on the calibration
+and the mirror in the EM have to be manually adjusted so veriﬁcation unit and actually measured distances on this
+that the output images (from the EM) comprise the best reference unit (Fig. 4). One pair of images of the reference
+match possible to the reference images from the FM unit, selected as the best match to the 11 pairs used for the
+(Fig. 3B). calibration procedure, was used as the basis for this test.
+The amount of play in the mirror in the FM was not 2D coordinates of various locations on the pair of reference
+identical to that of the EM; the EM has more jitter. To unit images were obtained (Fig. 3E), and 3D coordinates
+increase the probability of getting a good match between were calculated using the Camera Calibration Toolbox
+the EM and FM image, three images were recorded in software.
+The distances given in Table 1 were measured with
+respect to the millimeter sheet attached to the back wall
+(A) of the calibration reference unit as seen in the perspective
+FM camera View in Fig. 4. In other words, the measured or calculated
+distance was the distance from the millimeter sheet to, e.g.
+D FMimages (F) (_G) one of the pins in the unit. When there was a discrepancy
+a b a..... 0033733. Cfoﬁggi'gﬁfe 0’3th between the distance from the top of a .pin ancI the bottom
+mlrroX X, y, translation X} Y}:.Z of a pin to the back wall, the average distance is presented.
+b Xi y: andscciirgfgt'on XbeIt/(SZ b This was applied to both the calculated and measured val-
+etc. ues. The vertical pins in the calibration reference unit have
+a diameter of 1 mm.
+3_D stereo Calib. unit With the exception of the location 1 anomaly (Table 1),
+rotation and coqrqs._ the calculated distances are consistently shorter than the
+”8:72,:ng for Vignyft'on measured distances with 1.1 mm (disregarding the location
+X’2y’2 1 anomaly). The calculated distances in the Z—direction
+_ etC- have to be corrected (again disregarding the location 1
+Paired . . .
+images: anomaly) With this amount to get the phys1oa11y measured
+0173028- caclfbnpaiirgn Sjrliiftigiig: distances. With this correction, the RMS value for the
+' toolboxin unitin EC accuracy in the Z-direction (1.e. depth) between objects. is
+Matlab inside EM 0.4 mm. In some of the transparent EC covers areas With
+Q fa (C) (D) (E) a slight optical distortion have been observed. This could
+poss1b1y reduce the accuracy locally in some areas of the
+\b”':l:l 1:13'“/ image. The location 1 anomaly could therefore be the result
+3 EM camera EM camera of refraction changes in the EC cover.
+(B) The above results represent the accuracy when one
+Fig. 3. Flow chart describing steps in the calibration procedure. The WISheS to Study Objects relatlve t0 eaCh Oiher’ 1.6. nOt time
+lettering A, B, C, etc. shows the chronological order in which the various dependent p henomenon' Above’ all locatlons are eXtraCted
+steps in the procedure are performed. These various steps are described in from a single set (3 pail“) 0f images. 111 the MULTIGEN'I
+detail in the text. experiment, a time dependent phenomenon was studied,
+
+"
+"5","1386 B.G.B. Solheim/Advances in Space Research 44 ( 2009 ) 1382—1391
+- ”22:235.“ 5:52:
+. ‘ 4i ' ,.
+. ' .i'"" f T 7'
+ll xfizjf ’t 4.
+* .. . 1 t I”
+g
+. *rw ‘
+"" ‘T%%=== . . E
+' ' _. , E 30
+. I £12 20
+* ‘ ' ‘P
+/ "" >' 10 \ ‘
+10 20 30
+‘ Z-axis [mm]
+Fig. 4. Calibration unit used to verify accuracy of the calibration procedure. Calibration unit is shown in the top left photo (the round box in the photo
+just supports the calibration model). The top right image shows the position of the location markers used to check the distance accuracy of the calibration.
+Below right, an outline of the pins in the model has been calculated and the 3D plot of the vectors is presented (horizontally aligned to the side View of the
+model above). Due to low contrast where the pins are attached to the surface, not all pins were measured down to their lowest attachment points.
+Tablel Fig. 5 illustrates the inaccuracies for the encountered
+Calibration of distances. Distances measured for a physical calibration X.’ y. and Z—determinations. Each Of the plotted curves
+EEEEWZLCEEPE? etsobgg::‘:‘:i;:1::ﬁ:g :3] lmeans Of the callbratlon represents a ﬁxed target inside the EC, and the calculated
+A coordinates for each of the curves should therefore be iden-
+(LFOicatélI-Otii ht galculated 2465511er Dlscrepancy tieal in the successive determinations. In other words, the
+w results in Fig. 5 should have been straight, horizontal lines
+; 3: i2? 41)? if no inaccuracies were present due to mechanical play, etc.
+3 19:3 20' —0.7 The Z-axis is deﬁned as the lens axis, i.e. the Viewing
+4 8.3 9.3 _1 direction of the camera and is naturally thought of as the
+5 23.6 25.4 —1.8 “depth-axis” in this paper (thus the Z-aXis is not necessarily
+6 25-2 26-3 —1-1 perpendicular to the reference grid in the back of the EC
+since the Z-aXis is aligned to the direction in which the cam-
+and therefore the coordinates were extracted from a series era is pointing). In the upper part of Fig. 5 the Z-eoordinates
+of sequentially recorded images. In this situation, the play for a ﬁxed position close to the front of the EC and for
+in the mirror will reduce the accuracy further. In addition, another position on the reference grid in the back of the
+the time delay between the recording of each of the two EC, respectively, are plotted successively. The X- and Y-aXis
+angles will have to be compensated. are the horizontal and vertical axis perpendicular to the lens
+axis, respectively, and are plotted in the lower part of Fig. 5.
+3.2.3. Play in mirror From the ﬁgure it is seen different levels of accuracy
+If one assumed that the calibration model was 100% COI- exist for different directions, since the scatter round the
+reet, the jitter in the mirrors in the FM would still intro- average position value is different. For instance, the single
+duee inaccuracies in the positioning of objects inside the largest difference for the 3D coordinates calculated between
+EC. This inaccuracy is difﬁcult to compensate, because a two pairs of adjacent images in the sequence is 0.5 mm for
+change in mirror position also involves a slight Change in the X-axis, 0.09 mm for the Y-axis and 2.83 mm for the Z-
+VieWing angle. This Change in Viewing angle iS not a simple axis. The distribution of calculated values around the ﬁxed
+horizontal or vertical shift. The angles and locations for all target is largest for the Z-axis, The standard deviation is
+positions within the EC Change according to the rules of 0,28, 0,04 and 1,4 mm for the X, Y and Z-eoordinates,
+perspective. Within the time and resources available it respectively (standard errors with n = 47 0.041, 0.006 and
+was not possible to further penetrate this question. With- 0203 mm, respectively). In other words, in order to over-
+out compensation, the jitter results in reduced accuracy come (with aeertain probability) the inaccuracy introduced
+and consequently a larger movements of an object is by the play in the mirror an object has to move longer in
+required to be detected and positioned. the Z-direetion than in the two other directions.
+
+"
+"6","B.G.B. Solheim/Advances in Space Research 44 ( 2009 ) 1382—1391 1387
+Fixed target positional error
+242 a 200 40-5 L
+E .4. A .A. 9 m
+we +¢4AASE 53 9% 93
+E m 240 .4 “A A A. x 2. 4.; 198 g .
+3% 4Hiﬁi 2544119 :4i 8?
+s “T A. A n x <2 g
+3? 238 A MAA.’ Am ‘A‘ 4.4 196 Bo
+E E A” A: X “A 8 LU
+e g x x .2 ‘5
+“q: UJ 236 194 E E
+o u— o o
+c O H: .t
+S x CD (D
+g g 234 192 o E
+D .Q g <5
+2 E E
+232 190 D
+8 _ ooooooooooo- .o oo ,o o o. 00 .000 o
+q. E 000 0* '0' ‘o 000 'o .0 OoO. .- O ‘00 .0 oo
+o E o o o o
+f) I—l
+cu N.
+.0 O
+' C?
+L .E
+g 0
+cv 3
+>_ (D
+x
+E .2
+<5 |—
+X
+0 10 2o 30 4o
+Chronological image sequence
+Fig. 5. Coordinate deviations. Due to the play in the mirrors, the calculation of a ﬁxed target position does not produce identical values when repeated.
+Sequences of images providing the data are from the ﬂight model on the space station. The top plot shows the Z-coordinates (“depth”) for a ﬁxed position
+on the back wall of the EC (A) and for a ﬁxed position close to the front of the EC (I). The bottom plot shows the X - and Y-coordinates (O and 0,
+respectively) for the ﬁxed position on the back wall of the EC.
+
+The Z-Coordinates in Fig. 5 also exempliﬁes the difﬁculties The ﬁxed target errors observed in the determinations of
+with pinpointing a certain position in the images. A factor the front and back position should remain in phase, with
+that directly inﬂuences this is the high JPEG compression the front position having the least error and the back posi-
+used for the images. Because of a combination of the limited tion the largest one. The upper panel of Fig. 5 shows that
+downlink bandwidth available (about 5 kb/s) and the num- the front and back errors remain mostly in sync, but that
+her of images recorded, it becomes anecessity to use strong there exist also out of phase errors, which can only be
+JPEG compression. The reference grid in the back of the attributed to errors made when pinpointing the target
+ECs consists of clear white lines on a black background. location.
+
+However, when the recorded image is displayed, a colour
+
+gradient is seen in the transition from white to black, i.e. it 3.2.4. Compensation of delay between recordings
+
+is not an instantaneous transition from white to black pixels. In the 3D experiment a set of three images was recorded
+The exactlocation of this gradient is furtherinﬂuenced by the every 5 min for the three angles 1—3. The time delay
+high JPEG compression used. The compression adds arte- between recording angle 1 and angle 2 was between 42
+facts which are seen as blocks surrounding contrasting fea- and 61 s and between recording angle 1 and angle 3 from
+tures in the image. The result is that it can be difﬁcult to 85 to 120 s. The variation is due to a range of EMCS sched-
+exactly determine the coordinates for a certain position over ules operating at different times. During an 85—120 s inter-
+a series of images. From Fig. 5 it is seen that the Z-Coordi- val, the ﬂower stalk or side stems that are tracked, could
+nates also are the most sensitive to such inaccuracy, e.g. a move up to a few millimeters. Without compensation, this
+1 pixel position error translates to a larger Z—position change sampling time error would lead to additional uncertainties
+than for the X- and Y-Coordinates. in 3D positioning. Matlab scripts were, therefore, created
+
+"
+"7","1388 B.G.B. Solheim/Advances in Space Research 44 ( 2009 ) 1382—1391
+’ anaglyph images will therefore contain an undeﬁned Visual
+a R r"" inaccuracy in the position of the tracked object. However,
+.\ + | in the present experiment, it was only in one case with a
+.- .‘ .-' .. side stem having extremely Vivid movements that it made
+* s , a noticeable change in the 3D coordinates when corrections
+‘\ were made.
+.) I
+‘ ‘ 4. Results
+\. The MULTIGEN-l experiment resulted in more than
+, 30,000 recorded images of growing plants in space. For
+, 1;.- ‘;'~,.‘ M ”'01 m u. ‘_ N the ﬁrst time nearly the entire life span of Arabidopsis
+"" ‘ was shot in high-frequeney time lapse recordings in space.
+I The vast majority of the recorded images are in 2D. The
+I 3D technique was considered experimental, and was there-
+“ , ‘ 33‘ I fore limited to only a few select sequences where 2D
+1"" - - - "" ' V recordings already had secured images for analysis. Below
+7 \ . ‘ we will concentrate on presenting and discussing results
+N‘ I; i ii i ! utilizing the 3D technique.
+_ l. g 4.1. Anaglyphs
+‘ ~ ~ I "" ‘ In Fig. 6a an anaglyph that includes the early signs of
+Fig. 6. Two anaglyphs of a plant created from experimental, space station the emerging ﬂower Stalk is Shown: the arrow demonStrat'
+data. The left image (a) shows the Arabidopsis plant when the ﬁrst signs of ing its position. Fig. 6b illustrates an anaglyph Of the same
+the emerging ﬂower stalk became Visible under microgravity (indicated by plant 6 days later. The 3D data for the three lowest side
+arrow). The image to the. right (b) shows the same plant under l-g but 6 stems are presented in Fig. 8 below.
+days later (infrared illumination).
+4.1.]. 3D coordinates
+to correct this potential error (Fig. 3F). On the basis of the Fig. 7 shows position data for the 3D movements of the
+2D position in two subsequent images (for one and the tip of one of the side stems (data for the side stem down on
+same angle), the scripts interpolated linearly to the position the right side in Fig. 6b). The tip of the stem was spiralling
+of the object when the other (or ﬁrst) angle was recorded. and the presented Z—ooordinate plotted versus the X-eoor-
+The coordinates were adjusted accordingly. dinate is, therefore, changing in an oscillatory fashion. The
+In the ease of the anaglyph images, see Section 3.1, no left of the two insets presents the originally calculated posi-
+simple method exists to compensate this possible positional tional data, while the right one shows the results after oom-
+inaocuracy. The Viewing of fast moving objects in the pensation of the time delay (85—120 s) between the two
+Movements, uncorrected and corrected for time delay
+25
+20
+E
+E
+E 15
+E 10
+O
+8
+N 5
+0
+X-coordinates [tick spacing 5 mm]
+Fig. 7. Original data (left) and time delay compensated data (right). Tip movement data from the lower right side shoot shown in Fig. 6b. The time delay
+of 85—120 s between two recording angles, necessary for 3D coordinate extraction, creates a positioning error for moving objects. That error can be
+compensated through linear interpolation of the position data for the target.
+
+"
+"8","B.G.B. Solheim/Advances in Space Research 44 ( 2009 ) 1382—1391 1389
+Extracted 3-D coordinates for side stems
+Projected top and perspective view of rotational growth movements
+Original data (time compensated) Moving average (zero phase shift) data Perspective view of left side stem
+40 (a) (b) _ (c)
+E
+~ é a;
+a t . g 4 e -_ -- ,_V_
+“(6 20 ¢ 8 3 -~ .,
+.5 ¢ ‘9 2 .
+'9 i > .
+8 7./ 7% 4
+9 10 ¢ ‘2) 6 2 .
+. “ts s ~
+0 g 996 8 '12
+/ m 10 10
+g 6;; 7 6 8
+3/ 12 2 4 d-mates \mml
+X-coordinates [tick spacing 10 mm] Z'Goor
+Fig. 8. Projected Views of tip movements of a plant shoot. (a) The calculated, time delay compensated positional data for shoots in Fig. 6(b) through a
+230 min image sequence. (b) The same data ﬁltered with a moving average ﬁlter as described in the text. The data are processed ﬁrst in the forward
+direction then in the reverse direction resulting in zero phase shift. (0) A perspective View of one of the side stems (processed with the moving average ﬁlter).
+Arrows indicate movement direction.
+camera angles used in the 3D recordings (Section 3.2.4). 5.]. Camera system calibration
+The plant tip is moving rapidly and the uncorrected inset
+is therefore ridden with errors. The single largest challenge to be overcome, or at least
+In Fig. 8 the tip movements of three of the side stems be quantiﬁed, in the process of exploring the 3D capabil-
+(same plant; acceleration about 1 g) are plotted over a per- ity of the EMCS was the play in the mirrors. To minimize
+iod of 230 min. The insets show projected top down Views the play it was attempted as mentioned above, to always
+and data are time delay compensated. Fig. 8a depicts three move the mirror to its rotation end position before
+tip movements in the correct relative position with respect returning to the set point angle. This was tried out from
+to each other. In (b) the same data are shown with a stan- both the clockwise and counter-clockwise end position,
+dard moving average ﬁlter [14, 1/2, 1Adapplied. The displayed but no improvement in accuracy could be measured as
+data have zero phase shift accomplished by using the “ﬁlt- compared with a single move of the mirror back and
+ﬁlt” command in Matlab that processes the data both in forth between the three angles used in the experiment.
+the forward and then in the reverse direction. To reduce In addition, there was a large difference in the play
+end effects data are extrapolated at the end and the begin- observed in the FM and EM.
+ning of the sequence using a reﬂection method. This pad- The camera calibration is based on an assumption (from
+ding is removed after ﬁltering. the software) that the two cameras are stationary and that
+Of the three side tip movements presented, the top right only objects within the scene are able to move. In the case
+one spirals in a Clockwise direction while the two other side of the EMCS this assumption is no longer valid due to the
+stems display counter-clockwise movements. The available mirror inaccuracy. The reference grid/marks and pins
+3D coordinates allow of course the plots to be Viewed from added to the EC aimed at compensating this inaccuracy.
+any angle, and an example showing the spiral movement The relative position of these objects with respect to the ref-
+for one of these side stems can Clearly be seen in Fig. 80. erence grid in the back was thought to make it possible to
+compensate the play. The reference pin was limited to a
+5. Discussion and recommendations height of 15 mm to avoid interference with the growing
+plants but the height proved to be inadequate since the
+The results show that it is possible to both extract 3D plant presented in this paper blocked the View of the pin.
+coordinates and produce anaglyphs in experiments run in In addition, the View of the engraved line proved difﬁcult
+the EMCS. The technique added great scientiﬁc value to to utilize due to a combination of light reﬂections and
+the MULTIGEN-l experiment (Johnsson et al., 2009; 801- the positions of the leaves. Within the resource constraints
+heim et al., 2009). Through the rapid creation of an ana- of the project, a satisfactory method to completely com-
+glyph image, various plant parts could be separated from pensate the inaccuracy introduced by the play in the mirror
+each other in the experiment, a feature that at one point was not found. However, in the context of the MULTI-
+was critical for the continuation of the experiment by prov- GEN-l experiment, and as seen from Figs. 5 and 8, this
+ing that a ﬂower stalk was emerging, Cf. Fig. 6a. error did not present a major problem to the analysis.
+
+"
+"9","1390 B.G.B. Solheim/Advances in Space Research 44 { 2009 ) 1382—1391
+Improvements for a future experiment could include [14, 1/2, 1Ad-ﬁlter would result in zero output for a sine wave
+several reference pins but possibly higher and positioned with a period of 10 minutes, but for the present results with
+Closer the edges of the EC volume. Another possibility to much slower plant movements this has no consequence.
+be explored would be to include markings on the EC trans-
+parent cover, but the limited depth of ﬁeld when using any 5.4. Accuracy of calibration
+amount of zoom beyond seeing the entire EC, could then
+present a problem. This paper is based on the use of a zoom setting where
+the entire EC growth volume is Visible, i.e. the upper
+5.2. Sampling frequency 117 mm of the EC. The cameras in the EMCS are capable
+of providing higher resolution by zooming Closer to the
+The sampling time is of interest when it comes to the objects. Speciﬁcations show a resolution capability of
+determination of the 3D coordinates of moving objects. 0.1mm at maximum level of zoom in daylight (EMCS
+Using a “set of images” to denote the recording of angle Design Report — CDR, 2001). However, the reported mag-
+1—3 in rapid succession it is clear that a certain Atime must nitude of the mirror inaccuracy is unaffected when Viewing
+exist until a new set of images is sampled. An option to the EC at the maximum zoom level. Viewing the EC with
+increase accuracy would be to minimize Atime. The error high magniﬁcation results in images that show a larger
+seen in Fig. 5 may not be reduced, but the uncertainty in Apixels per “mm grid in the back of the EC” movement
+position of an object within the EC may be reduced in this ratio, i.e. the effect of the mirror jitter is magniﬁed. In
+way. In practise, taking all EMCS operational aspects into the context of the MULTIGEN-l experiment this zoom
+account, Atime could possibly be reduced to around 2 min setting was only used for the creation of anaglyphs, not
+if only one EC was to be observed from two angles, as for the extraction of 3D coordinates. Calibration of this
+opposed to the 5 min sampling interval used for the results setting was therefore not carried through, but as long as
+presented here. Photographing one EC on each rotor the play in the mirror is uncorrected, it is reasonable to
+would require the Atime to be about 4 min (Aanes, G., assume that the accuracy limits seen in Fig. 5 are of the cor-
+pers. comm.). Finally, many phenomena including the rect magnitude. However, due to the larger resolution, the
+growth movements are not random in nature; they contain larger Apixels/mm ratio would reduce the error created by
+a trend. In the case of the Arabidopsis growth movements any inability to accurately place the coordinates on the
+in 1-g there is a movement in a Clockwise or counter-Cloek- tracked target.
+wise direction which becomes Visible over a sequence of
+images due to trend displayed over time, even if the move- 5.5. Near real time 3D data acquisition
+ment between two sets of images is less than the maximum
+error reported. The calibration for the MULTIGEN-l experiment was
+If the sampling frequency is at the maximum allowed by performed post-ﬂight due to the differences between the
+the EMCS, and no method is applied to compensate for the ground-based EM and the space based FM. Such a post-
+mirror inaccuracy, a limitation to the technique would ﬂight calibration would be a limitation if an experiment
+present itself when studying low amplitude random like required 3D-Coordinates to be extracted in near real time.
+movement. In this situation, movements below the error However, as the statistical analysis of the FM jitter in
+limits would not be possible to distinguish from the error Fig. 5 showed, the play appeared rather well behaved with-
+introduced by the mirror play. In the particular case of out major spikes. It should therefore be possible for a
+the MULTIGEN—l experiment this was Close to the situa- future experiment to collect 3D images at the start of the
+tion observed for the O-g movement of the stalk and side experiment in the FM, analyze a set of them to determine
+stems. In O-g, analysis was therefore limited to 2D observa- the probable error limits and perform the calibration in
+tions where only the x- and y-aXis amplitudes of the move- an EM while the experiment is running on the 188, thus
+ment were recorded. obtaining high quality 3D data in near real time.
+5.3. Filtering the data 5.6. Expanding the capabilities of the EMCS
+In Fig. 8b the data are ﬁltered by a moving average ﬁl- The MULTIGEN—l experiment was a long-term exper-
+ter. It could be argued that this presentation lies Closer to iment that in itself stresses any hard- and software. Adding
+the actual movement of the side stems than the original the third dimension to the experiment pushed the hardware
+data (but time delay compensated). By digitally ﬁltering towards its limit. It should be kept in mind that the EMCS
+the data with a moving average ﬁlter of suitable band- was neverintended or designed for the use presented in this
+width, sudden spikes introduced by a jump in mirror posi- paper, but the fact that it could be used in a completely new
+tion would be smoothed out. Arguably, some resolution is way, not planned in the design phase, shows the ﬂexibility
+lost in the process, but when comparing the two versions of the system.
+one observes that both the magnitude and direction of The two 3D outputs discussed in this paper complement
+the motion are well preserved. It is worth noting that a each other. Anaglyphs are useful for Visual inspection,
+
+"
+"10","B.G.B. Solheim/Advances in Space Research 44 { 2009 ) 1382—1391 1391
+either as a single image that can help e.g. the determination The 3D capabilities of the EMCS developed here could
+of the position of leaves or as a movie sequence to deter- become a valuable tool for experiment teams performing
+mine the direction and size of motion. The ability to extract future experiments in the EMCS. This ability to provide
+3D coordinates quantiﬁes what is seen in the anaglyphs and a more ground based lab experience as well as the ability
+could be needed for the end product of the experiment. to quantify what is seen in 3D coordinates should add sci-
+
+Extraction of 3D coordinates is potentially useful in many entiﬁc value to several types of experiments in the EMCS.
+types of experiments. It can be used to obtain inter-object
+distances from the same point in time, or to study an evolving
+phenomenon over time. In the ﬁrst case, higher position Acknowledgments
+accuracy is obtained, and the calibrated position accuracy .
+between objects inside the EC (using a zoom level where The author w1shes to thank the staff at the NfUSQC fer
+the entire growth volume in the EC is Visible) is about the support when developing the method described in this
+0.4 mm in the Z-direction. However, it is quite possible that paper. Ah personnel at N'USOC haye at one time or the
+the accuracy is better since the pins in the calibration veriﬁ- other contributed. towards making It poss1ble to enable
+cation unit had a diameter of 1 mm. When determining the the 3D functionality Of the EMCS-
+
+x- and y-eoordinates for the pins from the two camera angles A1309 the author would. Wish to thank the IOT personnel
+it was found that it could be difﬁcult to exactly pinpoint the at EADS Astrium at Friedrichshafen and espeeially Dr.
+same location due to curvature of the surfaces. A smaller Wolfgang Seheller that helped With initial testing that con-
+diameter would improve accuracy. ﬁrmed the 3D capability of the EMCS. Also ESA, Dr.
+
+In the ease of the time dependent phenomena, the preei- Claude A. Brillouet and Dr. UlI'ICh Kﬁebler are gratefully
+sion is limited by the mirror accuracy. To get an estimate acknowledged.
+of the minimum movements possible to record with a certain Speeial thanks go to my collaborators and doctoral
+probability, repeated imaging with the aetualniirror system superV1sors Prof. Tor-Henning Iversen and Prof. Anders
+is necessary, as discussed in relation to Fig. 5. However, as Johnsson. Gratefully acknowledged is 3.130. Prof. Johns-
+seen, by decreasing the time period between two sets of son’s valuable support and d1scuss1ons Within ﬁelds of his
+images, the effects of the play on position accuracy can be speeiality.
+reduced as is also the case for phenomena which show a slow
+trend (like the plant movements studied in the present paper) References
+with just small average movements from image to image.
+
+During the MULTIGEN'I experimeht the leaves Of the Astrium — EMCS Team, OHB, Verhaert, Ferrari and CCM. EMCS
+Arabidopsis plant was also the subject of the study (Solheim Design Report _ CDR. Doc. No. EMCS—TN-OOO0-031_DOR, Ami-
+et al., 2009). The periodicities of the movements of the um. 19.07.2001.
+leaves were quantiﬁed. These movements are predomi- Bouguet, J.Y. Canaera calibration toolbox.f0r.Matlab. Available from:
+nantly up-down movements and a 3D extraction 0 f COOI‘di- t<http://www.V1s10n.caltech.edu/bouguetJ/calib_doc/>, August 20-08.
+
+, , , , Brinckmann, E. ESA hardware for plant research on the International
+nates was not carried out. The ability to detect high Space Station. Adv. Space Res. 36 (7), 1162—1166, 2005.
+fquUGIle mOV€mCIltS WOUld haVG been 1118.8de by thC mil“ Fossum, K.R., Kittang, A.I., Iversen, T.H., Brinckmann, E., Schiller, P.
+ror inaccuracy, However’ the ability to create anaglyphs Testing the European Modular Cultivation System (EMCS) for ISS
+proved to be very useful. The relatively lOW resolution giarzittmalndzgglsl research. SAE Technical Paper Series. Doc. No. 2005-
+(0'38 Mpixels) 10W contra“ Images ,Often made It dlﬂicult Iversen, T.I,{., Fossum, K.R., Svare, H., Johnsson, A., Schiller, P. Plant
+to separate the leaves and their relative pos1t10n from each growth using EMCS hardware on the ISS. J. Gravit. Physiol. 9 (1),
+other. When Viewing the same images in 3D it often P223—P224, 2002,
+became a simple task to make such distinctions_ Johnsson, A., Solheim, B.G.B., Iversen, T.-H. Gravity ampliﬁes and
+Performing any experiment on the ISS is a complex Eiserl‘t’giamy decreases Cireumntuittéonsetlln31mg??? $311233 333151953
+- - - - 11er111218 aceexerimn. . — .
+undei‘taking atld the methOdS dlﬂer Signiﬁcantly from p C“ NASA report, ISS leressuriIZDed Pjyload I‘hterfhce Requireihent Dociiment,
+forming experiments in a ground based laboratory. In the SSP-57000-Rev E, November 1, 2000.
+08.86 Of thC EMCS, thC 11861” has only 8.00688 to inOl‘matiOn Solheim, B.G.B., Johnsson, A., Iversen, T.-H. Ultradian rhythms in
+that can be conveyed through an analog NTSC video eam- Arabidopsis thaliana leaves in microgravity. New Phytol. 183 (4), 1043—
+era and a range of sensor data. The hands-on feeling is lost. 1952: 2009- _
+It was the experience Of the MULTIGEN-team that the Solheim,.B.G.B., Kittang, A.I., Iversen, T.H., Johnsson, A. Preparatory
+
+, , , , , , experiments for long-term observation of Arabzdapszs Circumnutations
+ability to View the content of the EC in three d1n1ens1ons in microgravity. Acta Astronaut. 59 (1-5), 46—53, 2006.
+helped bridge this gap. The EC could be iHSpected in much Someya, N., Niinuma, K., Kimura, M., Yamaguchi, 1., Hamamoto, H.
+same way as one would inspect the contents of the EC Circumnutation of Arabidopsis thaliana inﬂorescence stems. Biol.
+placed in a ground based laboratory. Plant 50 (2): 287—290: 2006-
+
+"

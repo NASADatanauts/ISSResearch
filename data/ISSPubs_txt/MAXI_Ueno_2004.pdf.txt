@@ -1,0 +1,617 @@
+"","x"
+"1","S. Ueno, et al., “Development status and performance estimation of MAXI”
+in UV and Gamma—Ray Space Telescope Systems, Proc. SPIE 5488, pp. 197-208, 2004.
+Development status and performance estimation of MAXI
+
+Shiro Ueno“, Hiroshi Tomida“, Naoki lsobe“, Haruyoshi Katayama“, Kazuyoshi Kawasaki“,
+
+Takao Yokota“, Naoyuki Kuramata“, Masaru Matsuoka“, Tatehiro Miharab, lkuya Sakuraib,
+
+Motoki Nakajimab, Mitsuhiro Kohamab, Hiroshi Tsuneinic, Emi Miyatac, Nobuyuki Kawaid,
+J un Kataokad, Yuuri Serinod, Yoshihisa Yamamotod, Atsumasa Yoshidae, and Hitoshi Negorof
+
+“Japan Aerospace Exploration Agency, 2—1—1 Sengen, Tsukuba, 305—8505, Japan;
+[The Institute of Physical and Chemical Research, 2—1 Hirosawa, Wako, 351—0198, J apan;
+COsaka University, 1—1 Machikaneyama, Toyonaka, 560—0043, Japan;
+dTokyo Institute of Technology, 2—12—1 Ookayama, Meguro—ku, 152—8551, Japan;
+eryaIna Gakuin University, 5—10—1 Fuchinobe, Sagamihara, 229—8558, J apan;
+fNihon University, 1—8—14 Kanda—Surugadai, Chiyoda—ku, 101—8308, Japan
+ABSTRACT
+Monitor of All—sky X—ray Image (MAXI) is an X—ray all—sky monitor, which will be delivered to the International
+Space Station (188) in 2008, to scan almost the whole sky once every 96 minutes for a mission life of two years.
+The detection sensitivity will be 7 mCrab (50 level) in one scan, and 1 mCrab for one—week accumulation. At
+previous SPIE meetings, we presented the development status of the MAXI payload, in particular its X—ray
+detectors. In this paper, we present the whole picture of the MAXI system, including the downlink path and
+the MAXI ground system. We also examine the MAXI system components other than X—ray detectors from
+the point of View of the overall performance of the mission. The engineering model test of the MAXI X—ray slit
+collimator shows that we can achieve the position determination accuracy of <0.1 degrees, required for the ease
+of follow—up observations. Assessing the downlink paths, we currently estimates that the MAXI ground system
+receive more than 50% of the observational data in “real time” (with time delay of a few to ten seconds), and
+the rest of data with delay of 20 minutes to a few hours from detection, depending on the timing of downlink.
+The data will be processed in easily—utiliseol formats, and made open to public users through the Internet.
+Keywords: X—ray Astronomy, All—sky X—ray Monitor, 188, JEM, Kibo, MAXI
+1. INTRODUCTION
+
+The J apanese Experiment Module (J EM) “KIbo” is a multi—purpose laboratory of the International Space Station
+(188). The Exposed Facility of JEM can be used as a site of space observatories. Considering advanced space
+sciences which can be performed under several limited conditions of the ISS, all—sky monitoring experiments are
+the best solution. Since the ISS always faces the bottom side to the Earth, the sky View from the 188 is rotating
+all the time. Moreover, there will be a small Vibration in attitude. Thus the 188 is not a good base for precise
+pointing observations. Therefore the mission has become an all—sky monitor. The rotating sky enables us to scan
+almost the whole sky in every orbit without having any moving mechanism. The ﬁelds of View are free from the
+Earth occultation, which makes the observation efﬁcient.
+
+The X—ray sky is very variable and is only observable above the atmosphere. MAXI is to perform the
+systematic survey of the X—ray variabilities to study the nature of the active celestial objects. MAXI can detect
+the X—ray transient phenomena and rapidly inform the world about them.
+
+2. MAXI MISSION
+Monitor of All—sky X—ray Image (MAXI) is an all—sky X—ray monitoring mission, which was proposed by the X—ray
+astronomy group of the Institute of Physical and Chemical Research (RIKEN) in 1996, and was selected in 1997
+md to Shim Um)
+Shiro Ueno: E—mail: ueno.shiro@jaxa.jp, Telephone: +81 29 868 3721
+197
+
+"
+"2","on board the ISS Data relay On the ground Eﬁiffay Eon the Internet
+
+satellites data transfer
+
+5 NASA MAXI | MAXI
+
+»\ NASA/TDRS System Operations MAXI
+
+E \ ’ Control X-ray l I MAXI | public
+
+’ ‘ W VIA System nova I nova users
+
+JAXA/DRTS area seamh ale“
+
+: i system
+
+EMAXI payload,§ : :
+
+: : : MAXI ground system, E
+
+: to be 5 5 ;
+
+developed by E E to be developed by
+
+5 the MAXI team: the MAXI team E
+Figure 1. The MAXI system. We have two downlink paths for the MAXI data. The MAXI team is responsible for
+the MAXI payload and its ground system. The MAXI mission, including the rapid distribution of observational results,
+requires us to study the nature of downlink paths between the payload and the ground system in detail. The MAXI data
+Will be transmitted to the Internet through a secure one—way path. The cultivation of public users is also an important
+task of the MAXI team.
+as a ﬁrst—generation payload for the Exposed Facility of the J apanese Experiment Module “Kibo” (J EM “‘Kibo”),
+part of the International Space Station (188). In the development of the MAXI system (Fig. 1), we have already
+ﬁnished the preliminary and critical design reviews of the payload, and partially started the fabrication and the
+calibration of its ﬂight hardware. On the other hand, most components of the MAXI ground system are still
+in the design phase. In our current schedule, MAXI Will be delivered to the 188 by a J apanese H—IIA Transfer
+Vehicle (HTV) launched in 2008. The mission life is at least two years, and might be extended depending on its
+performance, cost, and resource availability on the J EM “Kibo”.
+
+3. MISSION OBJECTIVES
+
+MAXI Will detect thousands of active X—ray emitting sources in the 0.5 to 30 keV band and monitor them
+With twenty times higher sensitivity than previous all—sky X—ray monitors. The 50 detection sensitivity Will be
+7 mCrab for one scan and 1 mCrab for one week. This Will be the highest sensitivity ever achieved for an all—sky
+monitor observation. The mission objectives of MAXI are:
+1) to make a time—resolved catalog of thousands of X—ray sources;
+2) to search for time variability of active galactic nuclei (AGN);
+3) to make complete light curves of X—ray novae;
+4) to ﬁnd and monitor transient objects;
+5) to make a spectral mapping of galactic hot gas With the X—ray CCD camera;
+6) to detect Gamma—ray bursts and their afterglows;
+7) to monitor long—term variation of ﬂaring stars;
+8) to study the distribution of distant AGN.
+
+Objectives 1) through 5) are solid goals With the MAXI sensitivity, Regarding Objective 6), the probability
+of Gamma—ray bursts (GRB) occur in the MAXI ﬁelds of View is rather low (about ﬁve GRB a year), because
+MAXI Views less than 2 % of the Whole sky at any given moment. Yoshida et a1 (1999)1 still estimates that MAXI
+Will detect about 25 GRB aftergrows a year. To reach Objectives 7) and 8) requires the precise calibrations of
+effective areas over the ﬁeld of View, and the accurate determination or reproduction of instrumental background
+levels.
+
+The MAXI ground system Will transmit an alert through the Internet on detecting any signiﬁcant transient
+phenomenon, so that other observatories or satellites can turn their telescopes on the source to make follow—up
+
+198
+
+"
+"3","Grapple ﬁxture for robot arm rBadiator for the X-ray CCDs
+Electronics l
+. 1 , “4 Optical star 4 Q
+,I . $34 sensor t
+J I : I I . “’i i _v
+I' . ’ ‘3 ‘1 I _
+I 4 Solid—state
+v ‘1‘ g: ‘ iJ - Slit Camera (SSC)
+. ~ (X-ray CCDs)
+ng Laser Gyro
+Gas Slit Camera (GSC) . Weight: 490 kg
+(X-ray gas proportional counter) ‘ Size: 185(L) X 80(W) X 77(H) cm
+Figure 2. The Monitor 0f All—sky X—ray Image (MAXI) payload, Which Will be attached to the International Space
+Station in 2008.
+observations. A frequently asked question is how rapidly MAXI Will distribute the observation results, including
+X—ray nova alerts. It depends on Characteristics of the MAXI downlink paths, Which are assessed in Subsection 6.3.
+4. MAXI PAYLOAD AND COMPONENTS
+4.1. The MAXI Payload
+Fig. 2 shows the MAXI payload, Which weighs 490 kg With dimensions of 185 cm (length) X 80 cm (Width) X 77 cm
+(height). It carries simple X—ray eyes, eight combinations of a slit and orthogonally arranged collimator plates,
+Which produce one—dimensional X—ray images along sky great circles on twelve position—sensitive proportional
+counters (Gas Slit Camera; GSC) in the 2—30 keV band and two X—ray CCD units (Solid—state Slit Camera; SSC)
+in the 05—10 keV band. (See Appendix A to ﬁnd What we mean by “sets”, “units”, and “counters” 0f GSC and
+SSC.)
+
+MAXI Will be attached to one of the ten ports of the J EM “Kibo” Exposed facility (Fig. 3). The attachment
+port, called the Equipment Exchange Unit (EEU), has a mechanism to hold a payload, and provides various
+resources such as electricity, communication Channels, and ﬂuid of a single—phase heat pipe. The resource assigned
+to MAXI is electricity power of maximum 400 W (120 VDC), survival power of maximum 100 W (120 VDC),
+data transmission rates of 25 kbps (through the MAXI MIL1553B port) and 200—600 kbps (through the MAXI
+Ethernet port), and coolant Perﬁuorocarbon (FC72) With the ﬂow rate of 155 kg/hr. The CCD camera (SSC)
+is cooled With the Loop Heat Pipe and Radiator System (LHPRS) carried by MAXI itself, and the rest parts of
+MAXI are cooled by the coolant FC72 circulated by the J EM.
+
+4.2. Gas Slit Camera (GSC)
+We have started the fabrication and the calibration of the ﬂight model of GSC counters. We plan the counter—level
+calibration for 2004, and the camera—unit—level calibration, in combination With slit collimators, for 2005.
+
+Table 1 presents the Characteristics of GSC. The GSC has detection thresholds of 2 mCrab for one day and
+0.6 mCrab for 10 days in the 2—30 keV band. The GSC has two ﬁelds of View toward two directions, 84 degrees
+apart from each other: a horizontal and a zenithal ﬁelds of View (see Fig. 3). The directions of the fan—shaped
+ﬁelds of View are ﬁxed on the International Space Station (188). Since the ISS orbits With its bottom side always
+facing the Earth, MAXI automatically scans almost the Whole sky every orbit With a period of about 96 minutes.
+
+199
+
+"
+"4","Table 1. Characteristics of the MAXI X—ray cameras.
+— Gas Slit Camera Solid—state Slit Camera
+Detector Proportional Counter X—ray CCD
+X€+C02 (1%) gas
+Energy Range 2—30 keV 0.5—10 keV
+Detector Area 5350 cm2
+Field of View 1.5 X 160 degrees 1.5 X 90 degrees
+Energy Resolution <150 eV at 5.9 keV
+Position Resolution 0.025 mm (pixel size)
+5—0 detection limit for one scan 20 mCrab
+
+While MAXI is inside high background regions such as the South Atlantic Anomaly, it cannot make no useful
+observations. The sky region missed by either of the horizontal or the zenithal ﬁeld of View due to such high
+background environments Will be covered by the other ﬁeld of View Within one orbit.
+
+Fig. 4 shows one of siX GSC units, and illustrates how to produce one—dimensional position sensitive ﬁeld of
+View With a slit and collimator plates. Each GSC unit consists of two counters and a slit collimator, and has a
+ﬁeld of View of 1.5 degrees X 80 degrees. Three GSC units cover 1.5 degrees X 160 degrees together (Fig. 3). The
+X—ray entrance Window of each GSC counter is made of a 100 micron Be sheet With dimensions of 272>< 190 mm
+(446 cm2). The counter is ﬁlled With Xe and C02 (1%) gas mixture at 1.4 atm (00C). In each counter, siX carbon
+Wires are used as anodes surrounded by ten veto cells. The incident X—ray position is obtained by the Charge
+division method. Each GSC counter carries a radioactive source (Fe55) as an X—ray energy calibrator.
+
+4.3. Solid—state Slit Camera (SSC)
+
+The performance of the SSC electronics, CCD and its readout and drive Circuits, have been veriﬁed using the
+engineering model. We make some modiﬁcation in the thermal design to keep pre—amp temperature Within the
+permitted temperature range in the cold case of the MAXI thermal environment. We Will start the fabrication
+of the ﬂight hardware after the modiﬁcation of thermal design in 2004.
+
+Table 1 presents the characteristics of SSC. The performance of SSC is presented in detail by Katayama et al
+(2005).2 The SSC consists of two units: a horizontal and a zenithal ones. Each unit consists of a slit collimator
+providing a 1.5><90—degree ﬁeld of View, and 16 CCD Chips as a one—dimensional position sensitive detector. Each
+CCD Chip is 1—inch square of a format of 1024 X 1024 pixels With pixel dimensions 24><24 ,urn. Its architecture is
+full frame transfer. To achieve the energy resolution of 143 eV FWHM at 5.9 keV, the CCDs must be operated
+below —600C. To cool CCD Chips, a one—stage Peltier cooler is attached to the backside of each CCD Chip to
+produce a temperature gradient of AT 2 —400C between the Chip and a SSC unit body. Each Peltier cooler
+consumes typically 1 W (in total 32 W for two SSC units). The heat from the Peltier coolers are transported
+by a Loop Heat Pipe (LHP) from the SSC units to two radiators on MAXI (this system is called Loop Heat
+Pipe and Radiator System, LHPRS). The JEM “Kibo” provides an active thermal control system (ATCS), but
+its coolant temperature is 16 to 240C, Which is not suitable to cool the SSC unit bodies. LHPRS has a thermal
+diode function, Which is suitable in the ISS thermal environment Where sky sink temperature for the MAXI
+radiators Changes With a large amplitude and a short period (96 minutes). Each SSC unit carries a radioactive
+source (Fe55) as an X—ray energy calibrator.
+
+4.4. Onboard Data Processor (DP)
+The test of the Data Processor (DP) is ongoing using a prototype and its software. The prototype does not have
+interfaces With the support sensors, such as a star sensor and a ring laser gyro unit.
+
+200
+
+"
+"5","m 'k . 1 ~"" ""” “Mus w:
+.s 1 a I . A v: ’ﬁ‘,
+IJEEigpaeIiiﬁfent /l/ \‘V T JEM'HKibOQL""
+p . _’ ""' a; , r~~~E2gposed
+Module (J EM) ""’T:;‘ F 1
+n ' n 3C1 Ity x
+KIbOQ , a 1} y /
+’ - 40°"" 2'17 wﬁa‘“‘§,~ '2' ‘ L”
+--—~ ~ v / e w, a k _' ,
+(e \\ / ‘:\\€>\‘> . \\
+~ °‘\ﬁ ‘ V
+0 ‘ t.
+. E . \J o .
+D1rect1on 0 +80 V‘
+of ISS motion +40 ' ISS rota ionaxis
+Figure 3. The computer graphic picture of the Japanese Experiment Module(JEM) overlaid With visualised ﬁelds of
+View of the MAXI Gas Slit Camera (GSC). Position angles are shown along the ﬁelds of View. The rotation and the orbit
+motion of the International Space Station are synchronised at the same period of about 96 minutes. Not shown are the
+ﬁelds of View of the other type of camera, the MAXI Solid—state Slit Camera (SSC). The ﬁelds of View of SSC covers a
+smaller position—angle range from —45 deg to +45 deg.
+
+The DP Will have communications With the MAXI ground system and the MAXI components, such as GSC,
+SSC, a star sensor, a ring laser gyro unit, and a GPS receiver. The DP formats the X—ray observation data from
+GSC and SSC into photon event data, in Which a minimum unit is a set of properties of a single photon detection
+(detection position, arrival time, and photon energy). The DP does not perform any scientiﬁc analysis, such as
+X—ray nova search. It downlinks the event data to the MAXI ground system.
+
+There are two communication interfaces on the MAXI DP: a medium—bit—rate interface (lOBase—T Ethernet)
+and a low—bit—rate interface (MIL1553B). In the MAXI mission design, we suppose that the low—bit—rate con—
+nection is more reliable than the medium—bit—rate one in many aspects. Thus we use the low—bit rate Channel
+to downlink essential part of the MAXI data, and use the medium—bit—rate Channel to downlink the full set of
+data. The low—bit data enable the MAXI ground system to perform the X—ray nova search to issue alerts. The
+medium—bit—data enable us to conduct further analyses, including the diagnostics of the MAXI instruments.
+
+The DP is constructed on the VME bus and consists of four CPU modules. When one CPU module fails,
+the other CPU modules can continue the task of the failed CPU With a reduced observation capability. Every
+CPU is a RISC Chip, R3081 (25MIPS). The four CPU modules share a memory module to store the observation
+parameters and the information about the CPU module conﬁguration.
+
+5. MAXI GROUND SYSTEM AND ITS DEVELOPMENT STATUS
+The MAXI ground system Will be made of the following four components (see Fig.1):
+
+1. Database inside the JAXA Operations Control System (OCS) zone, storing time—sorted event data for
+
+quick look and nova search;
+
+2. Nova search system inside the J AXA OCS zone, searching for signiﬁcant X—ray transient events, such as
+
+X—ray novae;
+3. Database on the Internet, providing images, spectra, and light curves in response to the public user access
+using web browsers;
+201
+
+"
+"6",". 1- vi
+.oi‘oxtoé‘\\\\ ’2
+($610990 4/ \
+«\K "" {.11
+or‘ Q05 / *éIII
+é If, /{/éiy Slit for onc-dimcnsional
+...__—_/// our"" #. ,2???"" I 7"" . .
+;._._/""_“— "" Jigr/Jgfﬁ lmaome on the counters
+, U|2;2%::%923‘15I
+Colllmator plates ll ﬂ'ﬁ-ig-grﬁggfjifl
+making the Field ofview ' ”E‘égs’ééﬁh
+- .- ' A -’.. 32' :5-""1I V ‘
+1.3 degrees Wlde (FWHM) I gfggfégg‘i
+. ,-:5 59""!"" '.“
+Oneo-(oiimensional II '- 3§éiéﬁéL ..
+posmon scnsntwc lI §3ﬁa I ' Height 480 mm
+proportional counters i! é3ii§ i
+(two GSC counters) Q‘Jh—ﬁ; ﬁg:
+Width 360 mm
+Figure 4. One of the six Gas Slit Camera units (GSC units). Each GSC unit has a ﬁeld of View of 1.5 deg X 80 deg. A
+set of collimator plates deﬁnes the 1.5—degree width (FWHM) with no imaging capability across it, and a slit produces an
+80—degree long one—dirnensional image of the sky on the counter along its position sensitive direction.
+4. Nova alert system, issuing alerts on detecting signiﬁcant transient events to registered users.
+
+Components 1 and 2 are connected to the Operational Control System network, isolated from the Internet for
+security reasons. To transfer the MAXI data to Components 3 and 4 on the Internet efﬁciently, we are planing
+to use a secure one—way data path. The candidates are a two—port hard disk and a photocoupler. We have tested
+a two—port hard disk, which introduces acceptable time delay of a few seconds in data transfer.
+
+Of the four components listed above, Components 2—4 are still in the conceptional design phase. We have
+already coded Component 1 as software in advance to the other components, so that we can start an interface
+test with the OCS, an external system that the MAXI team is not responsible for. Component 1 has ﬁve tasks:
+
+0 Data reception from the Operating Control System (OCS);
+
+0 First reduction of the raw data, and the storage in a database;
+
+0 Distribution of the ﬁrst reduction data to other computers;
+
+0 Data backup;
+
+0 System diagnosis.
+
+Component 1 takes 0.2 — 0.3 seconds to process one—second data in the 20—kbps data stream, with PC—Linux
+Vine—2.5 (kernel 2.4.20) on a DOS/V machine with a Pentium—4 2.2—GHZ CPU and 512 MB memory.
+
+6. MAXI PERFORMANCE
+6.1. Performance Evaluation Based on Simple Photon Statistics
+By Monte Calro simulation, Mihara et a1 (2002)3 have already evaluated the performance of the MAXI GSC
+observations based on photon number statistics. Fig. 5 shows the simulated all—sky images of GSC. In the
+simulations, all the MAXI structure were assumed to be in the positions as designed in drawings. In other words,
+the simulation has not predicted any systematic errors possibly caused by misalignments of parts, especially
+collimator plates and slit, and by limitations of our ground and in—orbit calibrations.
+
+In the rest of this section, we examine the collimator and its calibration from the point View of the MAXI
+performance. We also mention the MAXI system ability of quick data distribution.
+
+202
+
+"
+"7",". , T .I -. 04““; . i . . ‘ ‘ , * , ....i w~9‘*5‘”-u .
+‘ *-; . 4 2: “""ﬁ’ -‘ e , ' , g'. 1') lifés'j'z. ' sw‘w‘i‘ 1.!)
+.,l 43,.» v,‘,."":._ﬂ'i'.~',’ . W
+
+Figure 5. Simulated images of the MAXI Gas Slit Camera (GSC) plotted in the Galactic coordinates. Panel (a) is for
+90—minute (one—orbit) data accumulation; panel (b) for two—month data accumulation.
+6.2. Estimation of Position and Flux Determination Accuracy
+6.2.1. Collimator
+The MAXI slit collimator (Fig. 4) was thought to be a source of systematic errors against position and ﬂux
+determination accuracy. The 100—,um thin collimator sheets are supported in place using spring coils, Which
+provides tension to keep the sheets ﬁat. Even With the tension, the sheets bend by their own weight if the
+collimator is placed With the sheets parallel to the ground. Thus we have tested the engineering model, With the
+sheets vertical to the ground, in the laboratory using an X—ray beam line.4
+
+Of the 64 collimator sheets over a GSC counter, every pair of adjacent sheets makes a triangular response
+of X—ray transmission With Width of 1.5 degrees (FWHM at position angle of 0 deg). At every position angle
+examined in the ﬁeld of View, the X—ray transmission directions of plate pairs are misaligned With a 30 deviation
+of 0.12 degrees. The directions of the X—ray transmission, averaged for all collimator plates at each position
+angle, should be on a single great circle in the sky. The 30 deviation of the ﬁeld of View from a great Circle is
+measured to be 0.03 degrees for the engineering model. With an estimated attitude determination accuracy of
+0.05 deg (30) for the GSC and SSC units, the collimator quality is good enough to achieve position determination
+accuracy of 0.1 degrees in the scanning direction. On the other hand, the accuracy in the position angle direction
+depends on the quality of the slit and the X—ray counter. We also achieve the accuracy of 0.1 deg in this direction.
+
+Preliminary results of the slit collimator test imply that the ground calibration provides the ratios of effective
+areas, With accuracy of a few percent, for different position angles of a slit collimator. This means that, even
+When MAXI can determine absolute ﬁuX With worse accuracy (for example, 10%), it still has potential to monitor
+the ﬂux variation of a given object With accuracy of a few percent.
+
+6.2.2. In—orbit calibration
+For MAXI, the in—orbit calibration is crucial to achieve a position determination accuracy better than 0.1 degrees
+and a ﬂux determination accuracy better than 10%.
+
+Some astronomical satellites can point to desired calibration sources in the sky. As noted above, however,
+we cannot control the MAXI attitude, hence the direction of the ﬁelds of View. The 188 orbits With the period
+of 96 minutes, the orbit inclination of 51.6 degrees, and the precession period of about two months. Thus every
+celestial source Change its detected position in the MAXI ﬁeld of View cyclically With a period of two months.
+The source is detected in a limited region of a ﬁeld of View, depending on its declination angle in the equatorial
+coordinate system.
+
+Fig. 6 shows the coverage of ﬁeld of View With a given celestial source (Panel a) and the frequency of Crab
+Nebula’s crossing the MAXI ﬁeld of View at a given position angle (Panel b). To calibrate the Whole ﬁeld of View
+of MAXI in orbit, we need more than one celestial source as ﬂux and position calibrators.
+
+203
+
+"
+"8",". . A 60
+80(3) ‘ g E (b) Crab Nebula
+
+1,; Position angle: +73.6 deg .._. C
+
+€060 q; 350
+
+E. 40 ~ g E GSC ﬁeld of View (FOV)
+
+'5 L: \40
+
+° <1) G
+
+E 2° E» g ssc FOV
+
+5 8
+
+§“2° .5: 37320
+
+g ”W‘Pe‘s'i‘t'ibh‘éﬁgléil—296deg O %
+
+E40 5‘ ;
+
+E KExample: E \10 ___ _________________ ____________
+
+3.3 —60 Crab Nebula :5 8
+
+g3 L (a,6)cpochJ2000 § .§
+
+-80 =(83.63, 22.01) L a O
+-80 -60 —4o -20 o 26 4o 60 80 90 60 30 0 ‘30 ‘60 ‘90
+Declination (epoch J2000) of X-ray sources in the sky (degrees) Position angle along the MAXI ﬁeld of View (degrees)
+
+Figure 6. The coverage of the ﬁeld of View With a. given celestial source.
+Panel (a): The declination angle of a. given celestial X—ray source, and its coverage of the MAXI ﬁeld of View (FOV).
+For example, Crab nebulae, a. useful calibration source in X—ray astronomy, moves across the FOV at the position angles
+between —29.6 degrees and +736 degrees.
+Panel (b): Frequency of crossing the ﬁeld of View for Crab Nebula.
+6.3. Quick Distribution of Observation Results
+One of the MAXI objectives is the quick distribution of observation results, including the transmission of X—ray
+nova alerts to the Internet. If we have a real—time connection 24 hours a day from the MAXI payload t0 the
+ground system, the place of data analysis does not matter to realise the quick distribution. It is not the case for
+MAXI.
+
+On average, the 50—70% of the observational data Will be downlinked in real time (With delay of a few to ten
+seconds). The rest of data, stored on the 188 for next downlink, takes 20 minutes to a few hours to arrive the
+MAXI ground system, depending the timing of data transmission. The fastest way to distribute nova alerts is
+to perform nova search onboard the MAXI payload, and downlink the results With priority Whenever a real—rime
+connection is established. Instead, the MAXI team has Chosen to perform an X—ray nova search on the ground
+using more ﬂexible hardware and software environments.
+
+Fig. 7 shows the low—bit—rate downlink path, Which is essential for the MAXI mission. The medium—bit—rate
+path is not shown. The MAXI data are duplicated, and the identical data set is output to both the NASA link
+and the JAXA link. The NASA link provides real—time connection With the ground system for more than 50%
+of a day using a ﬂeet of data relay satellites, and the JAXA link provides it for about 20% of a day With a
+single data relay satellite. The duration of the real—time connection depends on the operation plans of the data
+relay satellites, Which are not dedicated to the 188, but shared With other satellites. When the 188 is out of
+real—time contact, data are stored in the onboard recorders, and then replayed during next contact. Channels 2
+and 3 in Fig. 7 are for real—time data, and Channels 1 and 4 are for the data stored in the onboard recorders
+during communications outage. The MAXI ground system receives the real—time data through Channel 5. The
+stored data in the onboard recorders can be already 0—200 minutes (two orbits) old at the beginning of downlink.
+The NASA—stored data are collected by the MAXI ground system through Channel 6 at a very slow transfer
+rate, one—second observation data per second. The JAXA—stored data is received through Channel 7 from the
+Data Archives and Retrieval System (DARS) Which spends 20 minutes to a few hours preparing data ﬁles for
+the MAXI ground system. To make the data distribution as fast as possible, we are considering the following
+modiﬁcations:
+
+1. We modify the DP software to perform onboard attitude determination using Visual Star Camera (VSC)
+
+and Ring Laser Gyro (RLG). We planed t0 downlink raw data of VSC and RLG, and determine the attitude
+204
+
+"
+"9","International Space Station (188)
+Japanese Experlment Module(JEM) Space
+Inter-orbit Communication System (ICS) -
+MAXI High rate Statlon
+High Rate Communications
+p ayload Outage Recorder
+(HRDR) (HCOR)
+Data Relay 5 JEM/ICS NASA Tracking and Data Data Relay
+Test Satellite : Link Lmk - Relay Satellites Satellites
+(DRTS) @- @ PlaybaCk 9 @ (TDRS) IIIIIIIIIIIIIIIII
+In:-
+DRTS Snace Network) ""I. ""I"", Recorder 5 .- Recorder Ground Facilit
+—— I
+JEM J EM Command E i DasaRAWhiV‘is
+Operations and Control Subsystem §________"": ‘ aSEbsyZigliiva
+Control (JCCS) A—‘ (DARS)
+(JEM/OCS) Ground
+_ @344
+MAXI Ground System inside the J EM/OCS area
+¢ Secure one-way data transfer
+MAXI Ground S stem outside the J EM/OCS area
+Figure 7. The downlink channels of the MAXI low—bit—rate data, Which is primary data used in X—ray nova search. The
+MAXI data are duplicated on board the ISS, and the identical data set is output to both the NASA link and the JAXA
+link (JAXA link is shown as JEM/ICS link). Both links utilise data relay satellites in the geostationary orbit. Channels
+2 and 3 are for real—time downlink data. Channels 1 and 4 are for the data sets stored in on—board recorders during the
+communications outages 0f the ICS and the NASA link, respectively.
+of MAXI 0n the ground. The RLG data are used to extrapolate the VSC absolute attitudes during the
+periods of no VSC Visibility. However, we noticed that this method introduces a delay in nova search,
+because there is a case that the MAXI ground system has received the latest X—ray event data and RLG
+data, but has to wait for the VSC data to determine the sky positions of X—ray events, When the phase of
+no VSC Visibility overlaps the beginning of the real—time downlink;
+2. We consider asking the modiﬁcation of DARS (the data source of Channel 7 in Fig.7) to speed up its ﬁle
+preparation of the J AXA stored data (at present, it takes 20 minutes to a few hours);
+3. We consider a way to obtain the NASA stored data quickly (at present, very slow at one—second observation
+data per second through Channel 6 in Fig.7).
+6.4. Photon Arrival Time Accuracy
+We have evaluated that the accuracy of the GPS time tag on each X—ray photon is 120 as. The breakdown is
+55 ,us from the photon absorption t0 the collection of the ADC signal, 50 ,us for the least signiﬁcant bit of the
+GSC Clock, 0.1 ,us for latching the GSC clock on the GPS PPS signal arrival, and 15 ,us for the GPS PPS signal
+distribution to the GSC data processor.
+The time resolution of SSC is limited by the CCD readout speed, ranging from 2 to 16 seconds depending
+the readout patterns.
+205
+
+"
+"10","1-0 (a) Position angle = 0 deg 1-0 (b) Position angle = 20 deg
+
+0.8 0.8
+
+0.6 0.6
+
+0,4 0,4
+
+0.2 0.2 i
+
+0.95 0.95
+
+7. n‘ , .1 ‘ —-
+Direction 3:5; :1 3;; j.
+of the scan ,1 __,\ ,1 4- «e.
+,1. 5 W e...”
+Position angle Position angle
+Figure 8. Point spread functions (PSF) 0f the MAXI Gas Slit Camera. Panel (a) is for the point source at the position
+angle of 0 degrees along the ﬁeld of View; Panel (b) is for 20 degrees. Along the position angle axis of Panel (b), the PSF
+shows asymmetry caused by slant incidence of photons into the gas cells.
+7. FUTURE PLAN
+
+7.1. Studying Data Analysis Methods
+We need to study the data analysis methods using simulated MAXI data. For example, we have to study how to
+analyse a photon—accumulated image, in which photons are collected from different scans, hence with different
+point spread functions (PSF). Fig.8 shows the PSF 0f GSC at two position angles along the ﬁeld of View. Panel
+b of 8 shows asymmetry caused by slant incident of photons into the gas cells. The shape and the position along
+a GSC anode wire depends on the photon energy. This means that there is no unique correspondence between
+the positions on the anode wire and the sky. We have to determine the correspondence and the ﬁtting method
+at the same time to obtain the best position and ﬂux accuracy.
+
+The SSC does not show the PSF asymmetry caused by slant incident of photons, but we will have to consider
+various PSF for SSC as well. In the nominal ISS attitude, the sky scanning direction and the CCD Charge
+transfer direction are the same. In the permitted ISS attitude range, however, they can be differ by $15 degrees,
+requiring us to constructing appropriate PSF according to the ISS attitude.
+
+7.2. Analysing the MAXI mission scenarios
+From the launch of MAXI to the end of the mission, there are many ISS speciﬁc issues to be assessed from the
+point of View of the MAXI mission success. Some of them are beyond the control of the MAXI team, and what
+we can do are just assessment and preparation for them. One example is the installation of the MAXI payload
+t0 the 188 with a robot arm, during which the MAXI instruments have to survive with no electricity supplied.
+We will make speciﬁc operation scenarios, and will verify that the MAXI mission withstands the worst cases.
+7.3. Preparing for Quick Start—up 0f the MAXI System after the Launch
+Taking account of the two—year mission life and the role as an all—sky monitor, it is essential to establish the
+distribution of reliable and easily—utilised data in the early stage of the MAXI mission. As we noted, the MAXI
+ground system for the scientiﬁc analysis and distribution is still in the conceptional design phase. We need
+to complete the ground system, publish the detailed speciﬁcation of the MAXI system, and cultivate potential
+MAXI users well in advance to the launch of MAXI scheduled for 2008.
+
+206
+
+"
+"11","a GSC ”nit ‘—
+two GSC counters
+The horizontal set OfGSC a GSC unit ‘—
+(Gscm (essencmcr)
+The Gas Slit Camera (GSCH, Left) <—tw0 GSC counters
+(GSC)
+<—
+(Gscz, Right)
+The zenithal set of GSC
+(GSCZ) (GSCZ’Cemer) <—
+a GSC unit . .
+‘GSCZ’ ”f"" <—
+2 GSC sets 6 GSC units 12 GSC counters
+The horizontal unit ofSSC ,
+(m)
+The Solid-state sm
+Camera
+680
+The zenithal unit OfSSC .
+(sscz)
+2 SSC units 32 CCD Chips
+Figure 9. Components trees of the MAXI X—ray instruments.
+8. CONCLUSION
+We presented the overall picture of the MAXI mission system. The design and performance of the X—ray detectors
+0f GSC and SSC are veriﬁed using the engineering models. We have ﬁnished the preliminary and critical review
+of the MAXI payload. The MAXI system components other than the X—ray detectors were examined from
+the point View of the mission performance. We conﬁrmed that the quality of the collimator meets our mission
+requirement. The distribution of the MAXI data might Speed up by modiﬁcations in the data transfer path
+to the MAXI ground system. In the 2004—2005 time frame, our workforce will be gradually Shifted from the
+development of X—ray detectors t0 the calibration of them and the construction of the ground system including
+data analysing software.
+
+APPENDIX A. COMPONENT TREES OF THE MAXI X-RAY INSTRUMENTS
+To make Clear what components we refer to by “sets”, “units”, and “counters” 0f GSC and SSC, we Shows the
+component trees in Fig. 9.
+
+ACKNOWLEDGMENTS
+We thank BC. Rubin and W. Yuan for developing the MAXI Simulation software. We also thank H. Nagai for
+assistance in developing the MAXI loop heat pipe.
+REFERENCES
+1. A. Yoshida, T. Mihara, M. Matsuoka, N. Kawai, T. Kotani, H. Negoro, H. Kubo, Y. Shirasaki, B. C. Rubin,
+
+K. Torii, H. Tsunemi, S. Kitamoto, K. Hayashida, E. Miyata, and M. Yamauchi, “Observations of GRB
+
+afterglows with MAXI 0n JEM/ISS,” Astron. Astrophys. Suppl. 867“. 138, pp. 439—440, 1999.
+
+207
+
+"
+"12","2. H. Katayama, H. Tomida, M. Matsuoka, H. Tsunemi, E. Miyata, D. Kamiyama, and N. Nemes, “Performance
+of the engineering model of the MAXI/SSC,” in High-Enegy Detectors in Astronomy, Proc. SPIE 5501, p. in
+press, 2005.
+
+3. T. Mihara, N. Kawai, A. Yoshida, I. Sakurai, T. Kamae, M. Matsuoka, Y. Shirasaki, M. Sugizaki, W. Yuan,
+and 1. Tanaka, “Performance of the GSC engineering—counter for MAXI/ISS,” in X—Ray and Gamma-Ray
+Instrumentation for Astronomy XII, K. A. Flanagan and O. H. Siegmund, eds., Proc. SPIE 4497, pp. 173—
+186,2002.
+
+4. N. Isobe, M. Matsuoka, S. Ueno, H. Tomida, K. Kawasaki, H. Katayama, T. Mihara, M. Kohama, I. Sakurai,
+M. Nakajima, N. Kawai, J . Kataoka, A. Yoshida, D. Takahashi, M. Uzawa, H. Tsunemi, E. Miyata, and
+1. Tanaka, “Observational response of MAXI onboard 188,” in X—my and Gamma-my Instrumentation for
+Astronomy XIII, K. A. Flanagan and O. H. Siegmund, eds., Proc. SPIE 5165, pp. 354—365, 2004.
+
+208
+
+"

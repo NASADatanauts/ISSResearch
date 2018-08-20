@@ -1,0 +1,575 @@
+"","x"
+"1","42nd AIAA Aerospace Sciences Meeting and Exhibit AIAA 2004-785
+5 - 8 January 2004, Reno, Nevada
+
+Microgravity Environment Predictions and Control
+
+for the Fluids Integrated Rack
+
+L. Moss, M. Just, C. Grodsinsky, J. Heese, B. Humphreys
+
+ZIN Technologies, Inc.
+
+42""ml AIAA Aerospace Sciences Meeting and Exhibit
+Microgravity Science and Space Processing Symposium
+5-8 January 2004/Reno, Nevada
+
+This material is declared a work of the U.S. Government and is not subject to copyright protection in the United States.
+
+"
+"2","American Institute of Aeronautics and Astronautics
+1801 Alexander Bell Drive, Suite 500
+Reston, VA 20191
+MICROGRAVITY ENVIRONMENT PREDICTIONS AND CONTROL FOR THE
+FLUIDS INTEGRATED RACK
+Presented at the 42nd AIAA Aerospace Science Meeting and Exhibit, Reno, NV
+J anuary 7, 2004
+Larry A. Moss ZIN Technologies Brook Park, Ohio, USA 1arry.moss@zin-tech.com
+Marcus L. Just ZIN Technologies Brook Park, Ohio, USA marcus.just@zin-tech.com
+Carlos M. Grodsinsky ZIN Technologies Brook Park, Ohio, USA carlos.grodsinsky@zin-tech.com
+J ohn A. Heese ZIN Technologies Brook Park, Ohio, USA john.heese@zin-tech.com
+Bradley T. Humphreys ZIN Technologies Brook Park, Ohio, USA brad.humphreys@zin-tech.com
+ABSTRACT INTRODUCTION
+A11 microgravity experiment racks onboard the This paper Will focus on the approach used to
+International Space Station (188) are subjected to characterize microgravity disturbances in the Fluids
+quasi—steady, transient, and Vibratory disturbances, Integrated Rack (FIR)[2], currently scheduled for
+Which can adversely affect the scientiﬁc investigation launch to the International Space Station (188) in
+being conducted. Disturbance forces may be 2005 (Fig. 1). Fluids microgravity experiments
+transmitted to the experiment from sources onboard contained Within the FIR are extremely sensitive to
+the rack or from off bolard sources such as other racks Vibratory and transient disturbances originating 0n-
+and 188 equipmentt ] It is necessary for rack board and off-board the rack. Therefore, several
+developers to predict and control the microgravity techniques are implemented to isolate the critical
+environment at their critical science locations in order science locations from external Vibration. A
+to ensure that speciﬁc science and engiheering combined testing and analysis approach is utilized to
+requirements can be achieved. In addltleh to predict the resulting microgravity levels at the critical
+satisfying microgravity science requirements, rack science location. The major topics to be addressed
+developers and science payloads must also meet 188 are: 1) Vibration Isolation Approaches, 2)
+vehicle requirements Which specify maximum loads Microgravity Disturbances, 3) Microgravity
+that may be transmitted to the ISS structure and Predictive Modeling, 4) Microgravity Control, 5) FIR
+neighboring racks. The authors are working in Science Requirements, 6) On-Orbit Disturbance
+conjunction With NASA Glenn Research Center Measurement, 7) 188 Microgravity Requirements,
+(GRC) to develop a fully integrated microgravity and 8) ARIS Requirements.
+control and veriﬁcation process for the Fluids and
+Combustion Facility (FCF). The Fluid Integrated
+Rack (FIR) is one of the ﬁrst rack facilities to fully
+incorporate this process, addressing microgravity _ a _ . 312:2?“ °°""""°' ”n""
+disturbances onboard and off board the rack, While _ “e'r -_. ”iffjj . {zsgjrdmwe5)
+utilizing the Active Rack Isolation System (ARIS) in m; Ewan; ‘ lain.
+order to meet the microgravity science requirements. Hiﬁv'vg‘iiifgﬁ 41 Ht r1}. l‘ Tm ""5 (gmmogﬁlsfswz)
+Starting early in the development cycle, dynamic Diagn‘fsi'ic': T rﬂ-‘E' I ,_ 7""qu m"")
+modeling techniques are used to characterize the IL:- ;:::::__. +53%
+rack’s internal microgravity environment and its 45,..- : . . 11, R ' e: p.-FSAp
+contribution to neighboring racks. Optimized designs t '10:“ t Eﬁjgams) 3:521?
+can then be implemented to minimize these EPCU ”MW“ Assemb'y \
+disturbance levels and the model can be further used
+to develop operational scenarios With least impact to
+microgravity experiments. These techniques and . .
+methods can be applied to any payload trying to meet Flgure 1' Flulds Integrated Rack
+microgravity requirements.
+1
+
+"
+"3","VIBRATION ISOLATION APPROACHES MICROGRAVITY DISTURBANCES
+The FIR is using the Active Rack Isolation System US Lab Environment Offboard Rack
+(ARTS) to isolate the rack frorn offboard rack The principal microgravity disturber for any of the
+disturbancesm. By utilizing this system, FIR is scientiﬁc experiments in the US Lab is the ambient
+connected to the U.S. Lab module structure by 13 space station environment. This Vibratory
+umbilical lines, a laptop cable, two ﬁber optic rack— environment is composed from the net effects of
+t0-rack cables, and eight actuators utilizing pushrods pumps, fans, valves, compressors, disk drives, cold
+(Fig. 2). The umbilical lines provide the rack With plates, exercise equipment, and other mechanical
+various utilities such as power, vacuum resource, Vibrations coupled With the ISS dynamics. Included
+vacuum exhaust waste, cooling water, gaseous Within this Vibratory environment are quasi-steady
+nitrogen, command and data interface, and others. and transient disturbances. However this paper Will
+The laptop cable connects the rack to a laptop concern itself With the steady-state Vibratory
+computer for crew interface and the ﬁber optic cable environment to illustrate the process and response
+connects the FIR to its FCF counterpart, the predictions of the major disturbance contributors
+Combustion Integrated Rack (CIR). The ARIS is such as rotating mechanical components. An ISS
+designed to actively control and attenuate the ambient FEM and SEA model has been simulated by
+188 Vibrations below 2 Hz. The umbilical lines Boeing[4’5]t0 predict the disturbance spectrum in the
+provide the rack with passive isolation above 2 Hz. US Lab and is represented by the Non-Isolated Rack
+Assessment data (NIRA). The NIRA99 spectrum is
+Other rack interface schemes besides the ARIS shown in Fig. 6. Updates to NIRA are currently being
+approach should also be considered. During non— worked by NASA/GRC.
+science operations, ARIS can be commanded either
+“Off” or to “Position Hold” placing the rack in a On-board FIR Disturbers
+“hard mounted” conﬁguration. In these two FIR’s on-board environment and science support
+instances the ARIS actuators are short circuited by equipment such as air circulation fans, water ﬂow,
+locking down the front four—snubber locations with airﬂow, and computer hard drives cause disturbances
+hard connections between the rack and space station. Within the experiment rack. These disturbers along
+Besides the “hard mounted” case, the rack can be With the rack dynamics were characterized to predict
+passively isolated with foam inserts placed Within the Whether the on-orbit Vibration levels during
+front four snubber cup locations. experimentation exceed the speciﬁed science
+microgravity Vibration level requirements. Many FIR
+Since the FIR utilizes ARIS, this paper Will focus on disturbers were tested in the Microgravity Emissions
+the active isolation simulation. Laboratory (MEL) at NASA-GRC [6] Fig. 3
+-- .- summarizes the disturber forces collected at the
+5.3m? __ -- MEL. A description of the rack speciﬁc disturbers
+ﬂ ARISController(C0ntr01.& Ea§% that are. continuously .or potentially operational
+Eggfge‘gégliiﬁggﬁﬁ 215%“ ' 3-139? '- during selence investigations follows.
+igﬁgihieﬂgagiqlhi‘s’ﬁion, 1%? D FIR Package Level Disturber Comparison [v6.0]
+‘ 3 T‘i‘iiﬁati‘Xi‘é:i‘é§$§§é%‘f3é§§£vﬁﬂﬁiS 3 - - .
+ﬂ t
+“H.?.J: . i EL- ..w -_ .: V ﬁzz»; ' g 'E __ ...EPCU
+a - -... :1... .1 . 1 ._~ -' - 10'3 g.--;""-;__='
+STATION UMBILICAL 1U . ,-.--""'-:-:-.--""'""""I
+Figure 2. ARIS Isolation System 10 m 10 Hz 10 m m
+Figure 3. On-Board FIR Disturbers.
+2
+
+"
+"4","Air Thermal Control Unit gATCU} Fluid Science Avionics Package gFSAP}
+The ATCU is part of the Environmental Control The FSAP is a multi-purpose data acquisition and
+System (ECS) located in the top of the rack shown in control system used to effectively interact with all
+Fig. l. The ATCU has two EBM impeller driven ﬂuids experiments. The FSAP provides a standard
+cooling fans that cycle air within the conﬁnes of the set of analog and digital I/O, motion controllers,
+rack. The FIR has a set of airtight doors, which seal analog Video acquisition, data storage, and
+off the rack volume from the US LAB volume. A communication connectivity. It is launched within
+ﬂexible Viton seal connects the fan assemblies to the the rack and stays on-orbit for use by P1 experiments.
+optics bench assembly, which serves to draw warm The FSAP was MEL tested as a package. The
+pressurized airﬂow through the optics bench from disturbance forces are shown in Fig. 3. When
+speciﬁc experiment support packages to be water compared to the ATCU, its disturbance forces are
+cooled within the ATCU at the heat exchanger. As relatively low similar to the EPCU.
+shown in Fig. 3 the ATCU is the main onboard
+source of Vibration. The peak at 30 Hz is the Mass Data Storage Device (MDSD)
+operational frequency 0f the fans (1800 11ml)- The The MDSD contains siX hard drives. This package is
+ATCU will operate continuously at selected speeds currently being designed and has not been MEL
+between 1600 RPM and 2000 RPM dependent upon tested. Disturbance forces were reasonably estimated
+the speciﬁc thermal and heat rejection requirements using the IOP MEL hard drive data. During
+0f the PI Speciﬁc Hardware. operation, only 1 hard drive will be active.
+Electrical Power Control Unit gEPCU) FIR Science Center
+The EPCU performs power distribution, conversion, The science center is simulated with the mass and
+control, management, and fault protection functions inertial properties Of a representative experiment,
+associated with the operation of the FIR rack. It is Light Microscopy Module (LMM). Each basis
+located on the bottom left shelf of the rack directly experiment attached to FIR’s Optics Bench will
+above the umbilicals. The only source 0f disturbance introduce additional disturbances speciﬁc to their
+011 the EPCU is water ﬂOW through its cold plate. science operations and needs. In addition, each basis
+Compared to other disturbers in Fig. 3, its experiment will also introduce structural dynamic
+disturbance is an order of magnitude lower than the modes and interface attachment modes to the FIR
+ATCU- optics bench, which will couple with the
+disturbances. The dynamics and additional
+W disturbances associated with the basis experiments
+The IOP serves as the command, control, data were not included in this analysis.
+acquisition, and data transfer system within the rack
+and for ground operations. The IOP is comprised Of Note: The on-board microgravity disturber test data
+VME electronic boards. The IOP has two internal was available only down to 1 Hz, however
+hard drives used for storing images recorded during microgravity requirements are imposed down to 0.01
+science experiments. One hard drive was tested at the Hz. Therefore disturber Vibration levels were
+MEL during random read/write operations and estimated for low frequencies using scaled AAA fan
+multiplied by a factor of two to account for both hard data. The estimate equation was obtained from
+drive disturbances. Boeing disturber testing.[7] In Fig. 3, the estimated
+data is Visible below 1 Hz as decreasing slope.
+The IOP also has an internal cooling fan. The fan
+dominates disturbances at its operational frequency
+of 61 Hz, as shown in Fig- 3- MICROGRAVITY PREDICTIVE MODELING
+WW Predicting the microgravity environment can be
+The IPSU is essentially an on-board image storage achieved by following severalbasie steps:
+device used for storing digital images during critical
+science operations. Two common IPSU’s will be 1) Development Of on-orbit rack and payload
+located side-by-side on the back of the Optics Bench. ﬁnite element model (FEM);
+The IPSU package was not tested at the time of this 2) Perform normal modes analysis Of the FEM
+analysis, however since the only moving parts are and store the mass-normalized eigenvector
+two hard drives, the IOP hard drive data was used as information f0r analytical points ofinterest;
+a reasonable estimate multiplied by a factor of two. 3) Incorporate the eigenvector information into
+a MATLAB/Simulink dynamic model and
+3
+
+"
+"5","calculate transfer functions from disturber
+locations to critical science location; “Phi_in” represents the mass normalized
+4) Multiply the transfer functions by the eigenvectors (units in l/\/m) 0f the input point, while
+disturber data to obtain the response at the “phi_0ut” represents the mass normalized
+science location. eigenvectors (units in l/\/m) 0f the output point. This
+is the standard representation to simulate structural
+Development of FEM dynamics in Simulink.
+The payload rack model is an International Standard
+Payload Rack (ISPR) supplied by Boeing. The FIR The system level View of ARIS modeled within
+payload FEM is developed and inserted into the ISPR Simulink is shown in Figure 5. The ARIS is
+model by Northrop Grumman Information modeled in Simulink by Boeing[8’9] and serves to
+Technologies (NGIT). The ZIN microgravity analysis attenuate off board loads going into the rack through
+team then ﬁnalizes the integrated model. the umbilicals and pushrods.
+Normal Modes Eigenvector Analysis The ARIS Simulink Model is very complex since it
+A normal modes analysis is conducted on the FIR involves accelerometer and position feedback and
+FEM. The eigenvectors were mass-normalized and active control of the rigid body rack modes. The
+output to a “punch” (*.pch) ﬁle. For the ARIS structural dynamics of the rack and umbilicals using
+analysis, the FIR on-orbit FEM, was analyzed in a the format shown in Fig. 4 are represented in the
+free-free state. For the hardmount case, the rack is “plant” block (the largest block) of the ARIS model.
+simply connected directly to the 188 mass at its front The Simulink Model has separate dynamic loops for
+four snubber locations and a free-free boundary the rack, each umbilical, and the rigid body motion of
+condition is analyzed. the rack due to the integrated umbilical set. This
+separate dynamic 100p approach in the model allows
+MATLAB/Simulink Model the analysts greater ﬂexibility to study a variety of
+The ARIS team at Boeing developed the original rack conﬁgurations and potential umbilical
+concept and method for calculating payload rack modiﬁcations. The ARIS controller is modeled
+microgravity levels aboard the 188 with a around the plant. The model is linearized and
+MATLAB/Simulink Model. For passive structural converted into state-space representation using the
+dynamics, the model can be represented by the “linmod” command in MATLAB. Then transfer
+following governing equation: functions are generated using the “frsp” command in
+MATLAB.
+. 1 A _ 2 .. _ 2 .. 2 ..
+[eq ] (t) Ceonly C0I1 ”y y - I‘ _ .
+Where A is the input acceleration, 28; is the structural
+damping term, con is the natural frequency, and y is ’ ‘4} ’I : 'l a
+the acceleration out. In Simulink, this relationship 4 .i . .-. _ _ .IL.
+(using force “Fin” instead of input acceleration) y'- ' .53 7 'I I ’ ’9
+would be modeled as shown in Fig. 4. :43: V .
+_ Dynamic Lnup Mandel :
+phi_in WWW.” “W
+phi_-:Iut AD“): “""""""“‘-*""'-
+tmzeta Figure 5. FIR ARIS Simulink Model
+mm: Mal ﬁequmies Calculate the Response
+“DIE“mﬂda'damPiWF-ﬁ'UES The transfer functions are converted into one-third
+Figure 4. Dynamic Loop Simulink Representation. octave band fermat. The frequency bins must niatch
+between the disturber data and the transfer functions.
+For steady-state Vibratory analysis, each disturber
+force spectrum may be multiplied by its respective
+4
+
+"
+"6","transfer function to obtain its contributing response at
+the critical science location. The net response is Vibratogy
+obtained by simply adding all the contributing Other Vibratory disturbers such as various crew
+responses together. The response levels are then activities and maintenance are intermittent. Some of
+ready for comparison With requirements. While this these activities are not mission critical and can be
+analysis is conducted in the frequency domain, the scheduled so as not to interfere With science. For
+same model may be used to calculate responses in the example, the crew exercise ergometer causes a
+time domain as well. Instead of calculating transfer Violation of the SRED curves as previously
+functions based on a unit load input, the disturbance demonstrated. However, the ergometer is only
+force time-history ﬁle can be used as input. The functional for several hours a day. If a sensitive
+output response may then be saved as a time history experiment might be affected by the crew exercise,
+and further processed (e.g. conversion to frequency the PI may Wish to request that the science
+spectrum). experiment and exercise be scheduled so as not to
+conﬂict With one another. Other experiments may not
+MICROGRAVITY CONTROL be impacted by the ergometer at all.
+The term “microgravity control” When used in a Disturber screening can be a valuable method for
+NASA 188 program context refers to a broad range of assuring the minimal microgravity levels. Once an
+activities and requirements. These requirements are initial set of disturbers is tested and the forces are
+related to component Vibratory testing, ARIS used as input into the model, the margins between the
+performance analysis, rack to station interface force disturbers and the requirement can be determined.
+limits, and sway space margins. The analysis Once the margin is determined a sub allocation can
+techniques presented herein are directly applicable to be deﬁned for each disturber. Then, as each Orbital
+the NASA microgravity control plan. It is the Replacement Unit (ORU) is tested, its spectrum can
+responsibility of the payload rack developer (FCF) to be veriﬁed against the sub allocation. As long as the
+show NASA that it can comply With the established sub allocations are satisﬁed, the conservatism of the
+program requirements. However, for the project model can be assured. This method would screen for
+scientist, the same elements of the program defective or unusually high dynamic disturbers.
+microgravity control plan can be applied on a
+payload level to control and predict the science Local passive isolation may also be applied at the
+microgravity environment at the location of interest. source of the disturbers. Passive isolation must be
+This can be accomplished by applying the analysis approached With a well thought out design plan.
+techniques previously described to accommodate Every passive isolation system actually provides
+speciﬁc project science requirements. ampliﬁcation at the resonant frequency before
+attenuation occurs. If many components are
+Controlling the Environment individually isolated, the resonant frequencies should
+The microgravity environment at the science location be distributed to avoid the overlap of the resonant
+can be minimized by several methods: location peaks and the operational speeds of the components.
+optimization, event scheduling, disturber screening, In some instances With stringent low frequency
+passive isolation and active isolation. The Vibrations acceleration requirements and more lenient high
+that affect science experiments occur in the quasi- frequency allowable levels, it may be advantageous
+steady (<0.0l Hz), Vibratory (0.01-300 Hz), and to avoid passive isolator elements and simply hard-
+transient (non-oseillatory, forced impulse) regime. mount the device. A rigid interface allows more
+Vibratory energy to stay in the higher frequencies as
+Quasi-Steady opposed to shifting it to the lower end Where science
+Some of the quasi-steady contributors such as requirements are more difﬁcult to meet.
+atmospheric drag are a given and cannot be
+eliminated on the 188. Other affects such as gravity Passive isolation can also be applied on a rack level
+gradient are location dependant and can be to isolate the rack from the Lab ambient Vibratory
+minimized by conducting science close to the ISS environment. The Boeing version of this is the
+CG. The US Lab was positioned close to the CG. by Passive Rack Isolation System (PaRIS).
+design to minimize gravity gradient quasi-steady
+body force levels. Other sources of induced quasi- Transient Events
+steady loads are venting, gyroscope start-up, Non-periodie transient events such as solenoid
+centrifuge start-up, solar array positioning, and switching, crew activity, and console operations
+thermal base loads. should be considered. These events may be scheduled
+5
+
+"
+"7","so as not to interfere With science investigations. to produce the total on board microgravity
+Transient requirements are deﬁned in PIRNl 10H.[10] environment contribution.
+FIR SCIENCE REQUIREMENTS Total Mierogravity Environment
+The red curve in Fig. 8 shows the total resulting
+Science Re uirements accelerations 0f the eombined effects of both
+—q—The Science Requirement Envelope Document [11] NTRA99 (dashed blue 11ne) andall ef the onboard
+de ﬁnes the required microgravity levels for the FCF d1sturbers (dashed black 11ne). V101at10ns 0f the FIR
+project. The FIR SRED was based on the in divi dual SRED occur at 3.5 Hz due to the Off board ergometer
+requirements of 16 representative Fluid Basis Toadsz between 10 HZ and 30 HZ due to local pass1ve
+Experiments. The envelope, green curve(shown in 1s01at10n Of the ATCU fags” and above 30 HZ due to
+Figs. 6-8 )9 is intended to satisfy the vast majority of the d1sturber forces eouphng W1th the racks structural
+those experiments. modes. As preV10usly noted, the new ergometer
+isolation design Will lower the 3.5 Hz Violation and
+Offboard Disturbance Contributions hard .mounting the ATCU fans Will eliminate
+Fig. 6 illustrates the resulting microgravity levels at V101at10ns between 10 HZ and 30 HZ'
+FIR’s science center With respect to Offboard loads
+only. The Offboard disturbance levels were deﬁned W
+by the NIRA99 curve, Which provides a worst-Case , , ,
+spectrum of expected Vibrations at rack interface The predleted m1erograv1ty levels. are comparable
+locations in the ISS assembly complete conﬁguration. W1th actual OH'Orblt Space Acceleratlon Mwsuremept
+Results are plotted in comparison With the 188 System (SAMS) measurements 315500.13th W1th
+microgravity requirement (188 Reg.) [12] and the FIR EXPRESS rack N0. 2 (the ﬁrst ARTS equlpped rack).
+speciﬁc Science Requirement Envelope Document Flgures 9 through 11. show.the.1nler0.graV1ty levels
+curve (FIR SRED).[“] The CIR SRED eurv e is also measured by SAMS 1n conqunetlon W1th the ARIS-
+included for reference. FIR’s need for ARIS is 188 Characterlzatlon Expernnent (ICE) aboard the
+obvious between 0.01 Hz and 30 Hz. In this region, 138. Fig. 9 shows Offboard acceleration levels. These
+the lower frequency rigid body motion of the rack is d1sturbances are much lower than NIRA99 levels, as
+isolated from the Offboard loads, reducing the NIRA99 1epresents the ISS assembly complete
+offboard disturbances below the FIR SRED. conﬁguratlon W1th a crew of seven astronauts durlng
+However, ARIS will signiﬁcantly reduce the crew shift operations. In adtlition the Offboard leveTs
+exercise ergometer loads but not enough to satisfy the shown are durlng the tune When the 18.8 crew 1s
+FIR SRED at 3.5 Hz. Improvements 0n the gett1ng1eady for sleep and the crew d1sturbanee
+ergometer passive isolation design are currently levels s1gn1ﬁeantly drop. Flg' 10 Show the response
+being developed to reduce this peak. levels onboard the ARIS—ICE rack W1th ARTS 1n.an
+“1d1e” mode. Th1s represents a pass1ve 1s01at10n
+Onboard Disturber Contribution system With respect to the 13 EXPRESS Rack
+Welerations at the FIR umbilicals acting as pass1ve iselators. Note how the
+science center due to the 0n—b0ard disturber forces. levelsroll Off after the 1n1t1a1 r1g1d body rack 11.10465'
+The disturbers represented in this plot include: The h1gh frequency peak 1s a result Of the exeltatlon
+ATCU EPCU IOP IPSUs FSAP and MDSD. In of local structural modes from the EXPernnent
+generai the AT’CU leads dorninate the low frequency Physics Of COHOidS in Space (EXPPCS) front 93.1161
+0n-b0ard disturbances While the hard drives and Where the SAMS sensor head 1s mounted. The h1gh
+smaller cooling fans combine to dominate the high frequency data 1s thus. amphtied much “Fm than the
+frequency range. The ATCU peak betw e en 10 Hz and response at the expernnent 1nterface. Flg. T1 shows
+30 Hz is the resonant mode of its passive isolation the ICSEOHSC laevels aboard the ARIS rack.W1t.h ARIS
+system. The ATCU fans are currently being 1n an aet1ve .mode. The levels drop s1gn.1ﬁeant1.y
+evaluated for a hard mounted design such the below the requlrement even at low frequeneles. Th.1s
+disturbance peaks between 10 Hz and 30 Hz Will b e CTosely resembles the precheted ARIS performance 1n
+eliminated. The sharp peaks at 30 Hz and 50 Hz Flg', 6 except for the h1gh frequglcy Where once
+represent the ATCU fans operating speed and IOP agaln local panel modes have amphﬁed the response.
+fans Operating respectively coupling With the racks These carves are not expected to exactly match the
+structural dynamics. The higher frequency peak at FIR prechetlons, 3.5 they reﬂect a totally dlfferent rack
+100 Hz represents the hard drive Operating speeds. W1th, .d1fferent 1nert1a1 mass propertles, fewer
+Each of these individual on board responses is added umblheals (EXPRESS (1qu not use the Vacuum
+Resource Umblheal as 1n the FIR assessment),
+6
+
+"
+"8","different rack dynamics, and with different on board mﬁﬁgﬁmggf-WWI”‘M“‘””‘ A “mﬁﬁﬁ
+. . . mm Nm-l Ms cavity WWW.
+dlsturbance loads. However, thls comparlson can be mew 03-Aur2001a13=25=°°-°°'
+used to build conﬁdence in the analytical approach. .
+5 FlR-ARIS Science Response to Offboard Loads {NIRA99} [v6.0] 1°
+10
+NIRAQQ
+104 10""
+72‘
+103 f;
+E .5
+a 102 g“)
+E a
+g 1|] 10*
+10°
+10'7
+-1
+1D 10""2 10"" 10° 10‘ 102
+0119‘“de Octave Frequency Bands (I'IZ) hi‘“”“‘”“*'}m“mmmmm
+m‘2 Figure 9. US Lab Increment 3 Microgravity Levels
+10'2 10"" 1o” 10‘ 102 103
+Hz
+. . munuu-mummI—mmuum h—:.I*u
+Flgure 6. FIR Selence Response to Off Board Loads Eﬁ“:$n mm hm?
+anamu—nu-mmmamm
+la""
+5 FlR-ARIS Science Response to Onboard Loads [v6.0]
+10
+4 m""
+10
+3 iOP .
+1IJ -- gm""
+g 102 ; § 3 s E
+E : ' ,-
+‘g "" int"" I
+E 10' 5 l
+E P_-
+' -
+1o” ”:4 mi
+10"" “
+m"" H"" 10' m' mt
+'3 mmmmm -n-u-u---W
+1o
+-2 -1 D 1 2 3 . o
+1” 1° 1” Hz 1” 1° 1” Flgure 10. EXPRESS On-Orblt ARIS Idle
+Flgure 7. FIR SCICI’ICC Response to Onboard Loads ﬁﬂﬂﬂ-nm"" “HM ‘mﬁ
+r-t-HI-rmm- ma mumm, mmmmmnmum ""m. ""'
+5 FIR-ARIS Science Response to Onboard and Offboard Loads [v6.0] H ""- mmﬁé—m—mmmm H ""L
+10
+4 NIRAQQ mi
+10
+103 m""
+3
+.5 10‘
+E “'1:
+10” g
+m""
+10""
+10"" m“
+10'2 10"" 10° 10‘ 1D2 103
+H7
+. . -I 0' la?
+Flgure 8. FIR SCICI’ICC Response to All Loads ""’4 "" wmgcmmﬂ-lh} -*---~*r--~*--
+Figure 11. EXPRESS On-Orbit ARIS Active
+7
+
+"
+"9","W point were then Root Mean Squared (RMS)
+averaged. The ISS Program Utilization Change
+My Engineer has deemed this approach acceptable.
+FIR does not have any quasi-steady loads, and [3 Lab Mndule
+therefore a quasi-steady loads analysis was not .
+mm. WWII III
+Vibratory — Hard Mounted Condition "" "" I I I I I ._.—.
+When FIR is in a hard mounted conﬁguration it must
+satisfy the “good neighbor” requirements for a non- I I I I I I
+ARIS rack. Two options are available to demonstrate
+compliance: the interface force method, or the I I I I I I
+acceleration method. FIR will use the acceleration
+method, demonstrating that accelerations at the I ”.__ ......... I ,_,._,._,,,_.___,
+nearest ARIS rack are below speciﬁed limits. To
+implement the acceleration method, it was necessary
+to obtain an updated FEM of the US Lab at Assembly . . .
+Complete (AC). The FIR FEM is integrated into its Figure 12. Rack Locations in US LAB Module at AC
+appropriate rack location within the US Lab at
+LABlS3 SO that transfer functions can be obtained Fug-Harmountto MSRRand ClRAcceleration LimitCheckforPlRN110H[v6.1]
+from each of the FIR’s disturbers to its adjacent 1”
+neighboring ARIS rack, MSRR at LABlO3. The 105
+response at CIR was also calculated for reference.
+The layout shown in Fig. 12 illustrates the locations 104
+of these neighboring racks relative to FIR. A 103
+previous investigation by the Human Research a _
+Facility (HRF)[13] demonstrated that the US Lab FEM g 102 III] I
+constrained at the CBM bolts at Node 1 and 2 will 3 1 '4.
+yield the same transfer functions above 2 Hz as the m Accelummmm ' I
+fully integrated ISS model. Thus, FIR will adopt this 100 I '
+approach as well, taking note that disturbances all Rssmofcmandzp
+dissipate to zero at lower frequencies. Response 1“"" RSSWWSRRLTWZP
+forces were added up at the Light Tray and Z-Panel 10.2 .
+and then Root Sum Squared (RSS). This was done 10'? 1”“ 100 HZ 10‘ 102 103
+for both MSRR and CIR. The RSS accelerations for
+these adjacent racks are shown in Fig. 13 and were
+found to meet the acceleration limit for PIRN 110H Figure 13. FIR “Good Neighbor” Acceleration Check
+with FIR locked down.
+1 FlR-ARIS Onboard Force Limit Check for PIRN110H [v6.0]
+Vibratory — ARIS Condition 1”
+When FIR is in an active ARIS conﬁguration,
+PIRN110H states that it must demonstrate W'deaanwm""
+compliance to a speciﬁc set of on-board interface ‘00 ""armwaanwmﬂ I
+force limits. The blue line in Figure 14 shows the
+onboard free-free interface forces in comparison with a
+the limits. The only Violation is due to the ATCU. If i 10""
+the ATCU speed is increased from 1800 to 2200 rpm, 5
+the peak shifts one one-third octave band to the right
+and comes under the narrow band requirement. 10-2
+The interface forces were calculated by determining Tata'mrfaceForce
+accelerations at the actuator location on a free-free
+rack as per PIRN110H. By multiplying the 10.3
+acceleration at each actuator location by the total 104 1U“ :10: 10‘ ‘02
+mass of the rack, estimated interface reaction forces
+were calculated. The reaction forces for each attach
+Figure 14. FIR On Board to Off Board Force Check
+8
+
+"
+"10","ARIS REQUIREMENTS and prediction as an integral part of the design
+process. Isolator resonant frequencies, disturber
+Accelerometer Saturation forces, operational speeds, and rack and umbilical
+To prevent saturation at the ﬁrst stage gain, the 300 structural modes all dynamically interact with each
+Hz low pass ﬁltered peak accelerations must remain other to affect the response at the critical science
+below 160 rnilli-g’s. To prevent saturation at the location.
+second stage, the ﬁltered peak acceleration at this
+stage should be less than 3.4 rnilli-g’s at each FIR Mierogravity Science Reguirernents
+accelerometer head location and along the The Fluid Facility Scientist has indicated the Fluid
+accelerometer axes. This will be performed for the Science Experiment Mierogravity Requirements are
+ﬁnal veriﬁed microgravity control assessment. most critical between 0.01 Hz and 10 Hz. ARIS will
+more than adequately isolate FIR from the 188 off
+Sway Space board loads within this low frequency range meeting
+A sway space analysis was conducted to ensure that these requirements. The only Violation within this
+the raek’s snubber pins do not approach the 0.25” region is from the ergorneter currently being
+spherical threshold when the ARIS anti-burnp evaluated to reduce its microgravity disturbance
+routines are activated. The relative displacement of contribution to the off board loads. In addition,
+the pins was predicted due to the offboard NIRA99 experiment operational scenarios can be coordinated
+loads. As shown in Figure 15, the sway space stayed to schedule critical science at times when the
+well below the 0.25” anti-burnp threshold limit. Each astronauts are not using the ergorneter.
+curve represents the relative displacement of each of
+the siX-snubber pins. If the snubber pins move more FIR science requirement Violations between 10 Hz
+than 0.25” relative to the snubber cups, ARIS anti- and 30 Hz are due to passively isolating the ATCU
+bump routines attempt to increase the actuator forces fans. Analyses are currently being conducted to
+so that the rack does not bottom out at the snubber eliminate this Violation by hard mounting the ATCU
+assemblies. ARIS microgravity performance is Fans.
+signiﬁcantly degraded when anti-burnp activates. If
+the 0.25” threshold is exceeded, the anti-burnp Science requirements above 30 Hz will be very
+routines would be included in the Sirnulink model difﬁcult to meet. Violations above 30 Hz are due to
+and the effect on overall performance would be the off board and on board disturbances coupling
+measured. with FIR’s structural dynamic modes. Like the
+ergorneter, science operational scenarios can be
+100 F'R'AR'S 3""”bberpi"" Re'aﬁ“ swayRespmseMo] implemented to limit disturbances during times of
+critical science.
+10‘
+188 Mierogravity Reguirernents
+10.2 FIR demonstrates PIRN110H compliance when in a
+hardrnounted condition. This compliance is
+£106 demonstrated through the acceleration method
+.3 * explained in PIRNllOH. Aeoelerations generated at
+_4 the nearest ARIS rack (MSRR) are below the
+m speciﬁed limits.
+‘05 FIR has one Violation of the on-board ARIS rack
+force limits. This occurs at the operating frequency of
+10:02 10.. mg 101 m. m. the ATCU at 1800 RPM (30 Hz). One solution is to
+”2 increase the speed of the ATCU fans in order to
+Figure 15. FIR Snubber Pin Displacement move the peak into the next highest one-third-oetave
+band. Since the Violation only exceeds the narrow
+band requirement and only occurs in one third octave
+band, a anier might be sought.
+CONCLUSION
+When developing a microgravity researeh facility or ARIS Re uirements
+experiment for use on. the 18,89 It .15 extremely With all steady state Vibrational disturbers running,
+important to eons1der rn10rograv1tytest1ng, analys1s, the rack will stay within its 0.4 inch spherical
+9
+
+"
+"11","diameter sway space requirement based on the
+relative deﬂection between each snubber pin 10. SSP 57000, PIRN 110H, “Mierogravity
+mounted on the rack and each snubber cup assembly Requirements Revision”, December 9, 1999.
+mounted to the 188. In addition, it appears that the
+FIR rack Will stay Within its 0.25 inch spherical 11. FCF-DOC-002, “Scientiﬁc Requirements
+diameter such that ARIS’S anti-bump algorithm Will Envelope Document”, March 1999.
+not be activated, Optimizing ARIS’S microgravity
+performance. (Note: ARIS’S microgravity 12. SSP 50036 Rev. A, “Mierogravity Control Plan”,
+performance is signiﬁcantly degraded When the anti- February 29, 1996.
+bump algorithm is activated.)
+13. SSP-MG00-010, “Evaluation of HRF Rack PIRN
+REFERENCES 110H Compliance”, April Steelman, February 9,
+2000.
+1. International Space Station User’s Guide, Rev 2.
+2. FTS—TR-002, “Preliminary Fluids Integrated Rack
+(FIR) Mierogravity Control Report”, Marcus Just
+and Larry Moss, ZIN Technologies, June 2003.
+3. SSP 57006, “ARIS User’s Guide”, International
+Space Station Program.
+4. SSP-MG00-024, “Non-Isolated Rack Assessment
+(NIRA-99) Vibroaeoustie Mierogravity
+Assessment Update for Internal Payloads”, Wei-
+Joe Sun, August 8, 2000.
+5. S. Thampi, “Non-Isolated Rack Rack Assessment
+(NIRA99) Mierogravity Mode”, Presentation to
+the Microgravily A] T , August, 1999. (Available
+at: http://iss—
+WWW.jsenasa.gOV/ss/issapt/payofC/OZ4/mgait_p
+ages/mgaithtml).
+6. A. MeNelis, T. Goodnight, P. Steve, V. Suarez
+“Mierogravity Emissions Lab”, 4th Annual
+M icmgmvily Environment Interpretation
+T utorial, (Available at:
+http://www.1ere.nasa.g0V/WWW/MEL/).
+7. D683-28702—1 Issue B, “MICROGRAVITY
+DISTURBANCE FORCING FUNCTIONS”,
+March 1999.
+8. G. S. Bushnell, T. M. Anderson, M.D. Beaeraft,
+and AD. J aeot, “Active Rack Isolation System
+Development For The International Space
+Station”, AIAA Paper 97-1203, 1997.
+9. I. J . Fialho, S. Thampi, “The Interplay Between
+Hardware and Control System Design In The
+Development Of the Active Rack Isolation
+System”, 41‘“ AIAA Structures, Structural
+Dynamics and Materials Conference, Atlanta,
+2000.
+10
+
+"

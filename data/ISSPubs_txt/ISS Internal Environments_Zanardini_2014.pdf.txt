@@ -1,0 +1,785 @@
+"","x"
+"1","AIAA 2014-1667
+
+SpaceOps Conferences
+
+5-9 May 2014, Pasadena, CA
+
+13th International Conference on Space Operations 2014
+
+Columbus Cabln Heat Exchanger Dryout
+durlng ISS ngh Beta Angle Phase
+Laura Zanardini *INSYEN, Wesslz’ng, 82234 Bavaria, Germany
+and
+Sinje Steffen 1LDLR, Wessling, 82234 Bavaria, Germany
+
+E This paper focuses on the details of a Cabin Heat eXchanger (CHX) Dryout in Colum-
+:1 bus, the European Laboratory part of the International Space Station (188), and the unique
+§ and challenging conditions, which occur during a high beta angle phase. A particular case
+§ happening between DOY154 and DOY163 of the year 2013 will be analyzed. Furthermore
+if the paper illustrates how these difﬁcult conditions can be overcome by the Flight Control
+g Team at the Columbus Control Centre (COL-CC).
+ED A CHX Dryout and some of the challenges, which have been encountered during this
+:0 speciﬁc high beta angle phase, are described below.
+
+3 The CHX Dryout is a regular maintenance activity, which is performed every 6 weeks
+g (+/— 1 week) to change from one CHX core to the other. This activity is done after an
+5’ extended period of time of the active CHX Core being exposed to water, in order to prevent
+3:2“ microbial and fungal growth on the CHX hydrophilic coating. Such fungus growth may
+; cause hardware damage and possible crew health issues, therefore is particularly important
+§ that a Dryout is regularly scheduled. The activity is nominally preceded by a Wet cycle
+‘1’: phase lasting 7 days, in which the set point of the CHX control law is decreases to induce
+‘2“ more condensation in the active core and to ﬂush the core prior to its deactivation. In the
+E particular case described here, the wet cycle has been skipped due to some anomalies in the
+E TCS subsystem, which resulted in the impossibility of changing the CHX inlet temperature
+(53 set point.
+8 At initiation of the CHX Dryout, the alternate Columbus Water Separator Assembly
+E (CWSA) is activated, and the active CHX core, through which water is ﬂowing, is swapped
+2 from one to the other. During the Dryout, both CWSAl & CWSA2 are left active for a
+8 minimum of 16 hours. Having both CWSA on for that long amount of time ensures
+g collection and separation of the condensate from the CHX to be dried out.
+2 At the end of the Dryout, the CWSA corresponding to the dried core is deactivated.
+Q An increase of humidity in the cabin is observed in the ﬁrst few hours of the Dryout,
+E which results in a higher dew point in the cabin. During high beta angle period, the Heater
+3 Control Unit (HCU) temperatures in certain areas, which are constantly shaded, are lower
+3 than usual. To avoid condensation of the Columbus external shell, the difference between
+E the dew point and the lowest temperature on any of the heater strings shall be maintained
+Q at least at 44°C.
+
+While performing the Dryout during a high beta angle period, this requirement can be
+violated and corrective measures have to be taken to activate parts of the redundant HCU,
+supporting the active HCU in heating up the shell and avoid the risk of condensation.
+Another additional challenge in performing a Dryout during an high beta angle phase is
+the fact that, when the redundant HCU is turned on, all its 6 heater strings are enabled, so
+the initial power draw can be quite high and might exceed the power allocated to Columbus
+during such a critical power phase. Only certain strings need to be active, hence all should
+be disabled as soon as possible and, in case additional limitations are in place, different
+strings have to be activated in sequence to guarantee that the power limits are not violated
+and that there is no built up of condensation in Columbus.
+
+*Columbus Flight Controller (STRATOS/SYSTEMS) COL-CC, INSYEN AG, Muenchener Str.20, 82234 Wessling, Ger-
+many/ laura.zanardini@dlr.de
+lColumbus Flight Controller (SYSTEMS), COL-CC, DLR, Muenchener Str.20, 82234 Wessling, Germany/
+sinje.steffen@dlr.de
+1 of 12
+American Institute of Aeronautics and Astronautics
+Copyright © 2014 by Laura Zanardini, Sinje Steffen, German Aerospace Center (DLR). Published by the American Institute of Aeronautics and Astronautics, Inc., With permission.
+
+"
+"2","Nomenclature
+CF A Cabin Fan Assembly
+CH X Cabin Heat eXchanger
+COL — CC Columbus Control Center
+CSA Canadian Space Agency
+CWSA Condensate Water Separator Assembly
+ESA European Space Agency
+H C U Heater Control Unit
+I P International Partner
+I M V Inter Module Ventilation
+I SF A IMV Supply Fan Assembly
+I S S International Space Station
+J AX A J apan Aerospace eXploration Agency
+
+5 LEO Low Earth Orbit
+
+E M CC — H Mission Control Center Houston
+
+3 M LU Module Lighting Unit (in Columbus)
+
+g N ASA National Aeronautics and Space Administration
+
+E PRO Power Resources Ofﬁcer
+
+g T CV Temperature Control Valve
+
+<2 U S OS United States Orbital Segment
+
+E WOOV Water ON/OFF valve
+
+:2; I. Introduction
+
+4:“
+
+% HE International Space Station (188) is a collaboration of ﬁve different International Partners (IPs):
+
+0:: TNational Aeronautics and Space Administration (NASA) from the USA, Roscosmos from Russia, J apan
+
+‘2“ Aerospace Exploration Agency (J AXA) from J apan, European Space Agency (ESA) from Europe and Cana—
+
+E dian Space Agency (CSA) from Canada, Which all have their own control—Centers. The assembly phase started
+
+E in 1998 and was completed in 2011, With the delivery of its last pressurized module.
+
+{53 The International Space Station has been the most advanced human outpost in space for over a decade
+
+8 and during its current exploitation phase is carrying on several experiments to investigate how the human
+
+(32 body reacts to prolonged exposure to microgravity and radiation. It contains several laboratory modules, one
+
+% of Which is the Columbus module, launched in 2008 as the main contribution to the 188 from the European
+
+% Space Agency. Since then it has been controlled by the Columbus Control Center in Oberpfaﬂ'enhofen near
+
+9 Munich, Germany.
+
+(:5: Hardware designed and manufactured for use in such an environment is exposed to the same conditions
+
+i of microgravity and radiation. Some of the difﬁculties caused by this harsh environment for equipment are
+
+g overcome in the design phase of the speciﬁc hardware, through the use of materials certiﬁed for the speciﬁc
+
+3 application ﬁeld. Other problems are solved by adopting real time reactions While operating the equipment
+
+E to guarantee its best performance With the evolution of the boundary conditions.
+
+Q The Columbus module is equipped With a series of subsystems to maintain the air temperature and
+humidity Within an optimal range both for the crew and the electrical equipment. It is crucial that these
+tools are kept operational even With unfavorable environmental conditions, in order to guarantee that the
+critical functions and crew safety are guaranteed at all times.
+
+In addition, the formation of condensation on the shell of the module must always be avoided, since it
+can be the cause of hazard issues, if it gets in contact With electrical equipment.
+
+This happened already once in 2007 When a computer malfunction on the Russian segment left the 188
+without thrusters, oxygen generation, carbon dioxide scrubber, and other environmental control systems.
+The root cause of the issue was condensation inside the electrical connectors, Which led to a short—Circuit
+that triggered the power off command to all three of the redundant processing units.
+
+In order to maintain the full functionality of the air conditioning subsystem in the Columbus module, one
+particular operation has to be performed regularly to avoid health problems for the astronauts and hardware
+damage: the Cabin Heat Exchanger Dryout process. It is critical for both the crew and the vehicle that this
+
+2 of 12
+American Institute of Aeronautics and Astronautics
+
+"
+"3","operation is performed regularly and independently from the external environmental conditions.
+
+In the following chapters it Will be analyzed in more detail how the modiﬁed boundary conditions can
+deeply inﬂuence the execution of the Columbus Cabin Heat Exchanger Dryout and Which real time challenges
+have to be overcome to make sure that this activity is completed successfully.
+
+The ﬁrst part covers a brief introduction of the Columbus subsystems involved in the temperature and
+humidity control and the Dryout process is explained With the support of telemetry analysis.
+
+In the second part a speciﬁc Dryout operation during a high beta angle period is taken as an example and
+compared With a nominal case; the effects of the modiﬁed conditions and the solutions adopted to overcome
+the challenges are analyzed in the last section.
+
+II. ISS Environment and High Beta Angle Overview
+INCE 2000 the ISS has been permanently manned, at ﬁrst With 3 crewmembers. After the addition of
+Sseveral more pressurized laboratories and modules 6 crewmembers are constantly on board since 2009.
+15 Each group of 3 astronauts Who ﬂies up and down together on a dedicated Soyuz vehicle, represents an
+E Expedition and each group lives onboard the ISS for about 6 months.
+§ The ISS is a seIf—sustaining environment Which produces, for example its own power, maintains a constant
+g pressure and air ﬂow and has a complex regenerative system to convert the carbon dioxide into oxygen and
+E“, water. Nevertheless a lot of supplies, such as additional quantities of water, oxygen, nitrogen and propellant
+5 need to be delivered by the frequent Visiting vehicles: the European Automated Transfer Vehicle (ATV),
+8 the J apanese H—II Transfer Vehicle (HTV), the Russian PROGRESS and the recent commercial US vehicles
+g DRAGON and CYGNUS.1
+g The Columbus module has no own resources: nitrogen, air, power and collection of condensate water
+g are provided by the United States Orbital Segment (USOS). Nevertheless, like any other module, Columbus
+:2; provides air Circulation, temperature and humidity control, in order to guarantee the crew a comfortable
+3 environment While they are performing their daily activities, such as maintenance tasks, exercise and science
+é experiments.
+2: While the internal environment can be actively controlled by the systems onboard, the external one is
+(2: heavily inﬂuenced by the orbital parameters of the ISS. The International Space Station is located in Low
+g; Earth Orbit (LEO) at an altitude of about 400 km, its orbit around Earth takes around 90 minutes. The ISS
+a is traveling With an average speed of 27744 km/ h and every day the Station completes 15.7 orbits around
+E3 the Earth.2
+(2) One important parameter Which describes the attitude of the Station With respect to the sun is the beta
+(95 angle. This is the angle between the Sun vector, Which is the vector between the earth and the sun and the
+g ISS orbital plane. In Figure 1. the ISS beta angle and its variation during a one year period are represented.
+5
+(<5 Example variation of solar beta angle fot the ISS (“ten assembly complete) during 1 year
+< (source: RD-IO)
+z
+2* A IIMIIIIIIIIII
+""O m
+3 2g? I MIIIIIMIIIIIIIII
+g Beta 5; IIII’I‘IVIIIIIIIHI'AI‘II
+Anglem IIIIIIIIIIIIIIII
+w lJilmlm-llllm
+«a 13 ILVIIHIMIMIIIIIMI
+%% %«=::=:=:i=i=¥:
+Note (1) Assume the ISS nominal altilﬁfzf 407 km and inclination of SI 6 degrees
+{33 éifiﬂfniﬁfﬂ.Eﬂ‘éiﬂ‘a’ﬁutiil $5,312,131(Ii3§:.‘.ﬁ‘5:u'§5‘°"" °' ° “W °°‘
+Figure 1. Beta Angle of the ISS and its periodical evolution over 1 year.
+As the beta angle increases, the ISS is exposed to more sunlight per orbit, and eventually it Will be in
+3 of 12
+American Institute of Aeronautics and Astronautics
+
+"
+"4","constant sunlight — in other words, there is no passing into the Earth’s shadow for extended periods of time.
+While, on the contrary, When the beta angle is approximately zero, the amount of time Which the ISS spends
+in eclipse is maximized.
+
+During the early stages of the ISS life, While the Space Shuttle was in service the beta angle played a
+very important role in the ﬂight schedule. Every time the beta angle was higher than 60 degrees, the Shuttle
+could not be safely launched to the 188 due to the different thermal constraints of the two vehicles and the
+fact that their desired attitude to mitigate the effects of the beta angle were not compatible.3
+
+There are still certain effects coming from high beta angles on the 188, Which need to be worked from
+the operation teams, With planned actions to minimize its effects on the equipment on board, especially in
+terms of power and thermal requirements:
+
+0 Power limitations might become necessary depending on the angle between the sun and the solar arrays,
+since the shadowing 0n the ISS solar panels reduces the amount of power generated. These limits are
+usually identiﬁed in advance by the Power Resources Ofﬁcer (PRO), a group of ﬂight controllers 0f the
+Mission Control Center in Houston (MCC—H). These limitations are then forwarded to all positions in
+
+E Houston and the IPs and each position is responsible for taking the necessary actions on their hardware
+:‘r in order to meet the power restrictions.
+8
+g o The temperature of the modules is impacted as well by the amount and angle of the sunlight it absorbs.
+g In the case of Columbus, based on its position on the 188, this means a decrease of the shell temperature
+2. in the port area towards Node 2.
+o
+D
+g c There can be communication outages (Ku—Band), because the Ku—Band antenna has to be parked to
+g avoid breaching the Antenna low temperature limits. While most of the system telemetry is transmitted
+g Via the S—Band antenna, Which is not impacted by this, the science data and the onboard Video are
+i: acquired through the Ku—Band antenna, therefore there is a high impact on experiments in such cases.
+E
+VI'
+3 III. Dryout Process in Columbus
+E}
+2
+5 W“
+E3 \: esa IECS Familiarisation I COL‘ECS‘OVR‘W .
+z
+LU
+U . . .
+(L3 “CClumbus Alr condltlon” Condensate HeatExchanger
+< Node2: m Ii w.--“ (m TCV Core1
+a : . 4 . Is . M
+Z Fresh Air; ® ?ofoféfofofé A W00"" 09 M _. .—
+8 Supply; ISSOV LEJ I'EJ'I p 4 CW3“ E""
+E lMVSupply w Core2| I
+2 Com: woown W—Il_ nwcosm
+m - OR
+2 “:23: h” '«r _—_l | nﬁ m
+>‘ :
+g E m T03 T08 '—
+'5 I
+g i 0, 0 1-H 1-H 1-H 1-H
+E Cabin Fan CabinTemperature C a b ’I n L 0 0 P
+Q Assemblies E E ControlUnits Return GridSensorHousing
+
+5 lllllllllllll
+
+: CFA1 CFA2 l-‘ --_-----7----
+
+- ..E mu! E}.
+
+a Il-IJ is“
+
+I ‘
+
+UsedAirE CTS HS TPS PPCS
+Return; I E E 1.5 112 1-4 1!2
+. . ‘ I «8'
+I I er
+{:9A I SLSOV Directorate of Human Spaceflight 16 12-Jul-05
+Figure 2. Schematic of Columbus Air Conditioning System (source: ESA)
+The Columbus air condition system maintains the temperature and humidity levels in Columbus Within
+4 0f 12
+American Institute of Aeronautics and Astronautics
+
+"
+"5","the required range and ﬁlters the air. Fresh air is provided by the station: oxygen is nominally generated by
+the Russian Elektron, nitrogen is introduced by Russian assets and carbon dioxide is removed by the Russian
+Vozdukh. This fresh air is drawn into Columbus by the IMV Supply Fan Assembly (ISFA), supported by
+one Cabin Fan Assembly (CFA). It is combined With N 50% of used air from the Columbus cabin and then
+passes into a ﬁlter to remove particles out of the air. A schematic of the Columbus air conditioning system
+can be found in Figure 2.
+
+The Temperature Control Valve (TCV) (belonging to the Cabin Heat eXchanger) separates the ﬁltered
+air stream into one stream cooled in the active Cabin Heat eXchanger (CHX) core and dehumidiﬁed in
+the Condensate Water Separator Assembly (CWSA). The other air stream ﬂows through the core Which is
+not cooled. The ratio of the two air streams is based on the difference between the temperature set point
+and the actual cabin temperature measured by the Cabin Temperature Sensors. The cool, dry air and the
+bypassed air are combined again and diffused into the cabin. The condensate is forwarded to the USOS Via
+the Condensate Return Line.
+
+After being coated With water for an extended period of time, microbial and fungal growth can occur
+
+5 on the CHX hydrophilio coating, causing damage and possible crew health problems. A periodic Dryout of
+E? the CHX is needed to prevent this fungus growth on either core, therefore this activity is scheduled With a
+E periodic interval of 42 days (+/— 1 week).
+g During the Dryout operation, Which last about 17 hours, the following actions are performed in sequence:
+E 0 During initiation of COL CHX Dryout, the redundant (alternate) CWSA is activated, the cold CHX
+g core is swapped by Closing the related Water On/Oﬁ Valve (WOOV), Which determine the cold and
+E the warm core, and the so called TCV sweep is performed to invert the movement of the Temperature
+§ Control Valve.
+g o For the duration of the Dryout, both Condensate Water Separator Assemblies (CWSA1&2) are left
+EL active for a minimum of 16 hours. Having the CWSA of the CHX that is being dried out active for at
+i least 16 hours ensures that the residual amount of condensate is pushed out of the dried out CHX.
+in o The termination phase of the Dryout deactivates the CWSA corresponding to the dried core.
+>~.
+‘2"" During the activity several parameters deviate from their nominal values; the ones that are meaningful in
+3 this speciﬁc case are the cabin temperature, the cabin air humidity and, as a consequence, the dew point.
+LU
+E
+(E) A. Cabin Temperature
+E A cabin temperature drop
+% ggfiﬂpgﬁgsgésﬁﬂﬁﬂﬁ $332 is expected to occur at the
+% CWSA2_Pw::STAT:WC OFF very béglnnlng Of. a. Dry""
+2 a Illllllllllllllllllll out actlvmy- ms 18 due
+:5 | to the fact that for about
+<2: I If I'll 7 minutes 100% of the air
+ﬁ III. I. .I'Il ﬂow is cooled (both CHX
+g 22 I... 1 cores are active) and for
+g a further 12 minutes 50%
+21 r' (one active core With TCV
+IIIIII'IIIIIIIIIIIIIII at
+2.1""J nal value of the cabin air
+""‘ temperature is typically re—
+covered after 2—4 hours, de—
+‘ pending on the Columbus
+” IIWIIIIIIIIIIIIIIIII thermal conditions (both in—
+ternal loads and external
+environment). A typical
+:::j$::::j::_g—Nm— temperature curve during a
+W Dryout is shown in Figure
+3.
+Figure 3. Columbus Cabin Temperature during a Dryout
+5 of 12
+American Institute of Aeronautics and Astronautics
+
+"
+"6","B. Cabin Air Humidity
+Durin the TCV swee , a
+high iicrease in cabin ail}? hu— 9 HSLAIR‘HWIDITYJMC 41'4652
+. . . h. - agiﬁﬁyrﬂiwm $12.14gw5A2_PWR_STATJ)MC OFF
+mldlty 1s expected. T 1s IS 55 —_—————————————_————
+64 ---ﬂ----------------
+due to the fact that a hu- 55 ---li.'I----------------
+mid CHX core is no longer 52 ---II'I---------------
+55 ---1F£ﬂ---------------
+cooled by the water 100p and 55 ---Il'-l'lil---------------
+- ﬂ h d 'h 1 55 ---ll--.!--------------
+15 us e Wlt a arge amount 55 ---J--I'H--------------
+Of air. Some Of the water con— 55 ---I--Il--------------
+d d d 11 t d . th e ===ﬂ===hﬁ=============
+ense an (:0 e0 e 1n e 55 .
+mummmwmdwme “==ﬂ====e============
+CWS A to be se arated but :: ---l----H1T------------
+t - 1: fth7 e ==El=====ﬁﬁ===========
+a cer am amoun 0 e wa— s: L
+. 55 --lI------E----------
+ter re—evaporates and 15 trans— 55 --II-------!ﬂ---------
+e pmwmmmwmwwR w==a=======eeg=======
+3 air ﬂow, hence increasing the Z: --Il---------mi_-------
+Mb humidity The em 44 gen===========eee=ege
+. ' _ 43 .l —-—' lmr-iﬁlJmJ
+§ tion of air humidit (in er 55 --U!I-------------Hﬂ--
+a y p f .u E!!!!!!!!!!!!!!!!!!!
+g centage) during a Dryout IS CMJKWM: FF_
+5' illustrated in Figure 4. The cmm_mmc5_opp_§—o~—'
+. . . I 06-00 12:00:g.000 18:00
+E orlgmal value of the cabm hu— '
+OD . .
+g midity IS typlcally recovered . . . . . .
+g Within 8_12 hours. Flgure 4. Columbus Cabln Alr Humldlty durlng a Dryout
+E
+i
+E C. Dew Point
+N
+‘2: As the dew point is highly
+é: $333533”? “(3:5 C&EZ?‘PTJPR(:ISN#szM—CDV 80.F8F69 dependent upon temperature
+5;: 5 IIIIIIIIII!!IIII!IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII and relatwe humldltya 1t 18
+e Illlllllli'iiﬁi’""t'ﬂlllll|||||||||||||||||||||||||||||||||||||||||||||||| t1” ”He’d by the “go""
+8 55 ||.l I “mill.“ mg Dryout operatlons, and
+e IIIIIIIIIUIIIIIIII|||||I|llilF""II|||||||||||||||||||||||||||||||||||||||||||| eee eeheeee ee eeeee
+E 11 - .JIﬂ-ﬁl . . .
+m ugiwﬂ'“ II as shown 1n Flgure 5. The
+“I'll“HIIIIIIIIIIIIIIIIIIIIIIIIIIIIJiIillﬂihﬂlllllIIIIIIIIIIIIIlllllllllll Dew Point decreses m the
+e 1 IIIIFIIII|||||||||||||||||||||||||||||||||||||||Ii""”""“""‘”iillllIIIRFIHIM ere minutes of the dry-
+(:3: 9 555,151! Ihllllll bMJLLaLIIiIIIIII out, While the air is cooled
+e lllllllll||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| eeeee the eweee ef the
+E e 4 TCV; then, as soon as the
+5 ||||||1||(IIIIIIIII|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| cabin teemtmmp is back
+Lg r IIIIIIIIIIIIIIIIIII to its nominal range, it fol—
+E II lows the trend of the hu—
+5 II . . . .
+Q IIIIIIHII|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| melee elewt/ eeeeeeee ete
+CMJMWJMC: FF_ nominal values Within a few
+CWSAZJ’KSTATJMC: —C FF—:—-CN— hours .
+Figure 5. Columbus Dewpoint during a Dryout
+The Dew Point 7 is obtained through the Magnus formula:
+_ RH bT RH bT .
+*y —(T,RH)—1n(ﬁexp(C+T))—ln(ﬁ)+ C+T, (1)
+Td : M. (2)
+p b — V(T, RH)’
+6 0f 12
+American Institute of Aeronautics and Astronautics
+
+"
+"7","Where:
+0 T is the Temperature in OC
+0 RH is the relative humidity in percentage
+0 b and C are two constants4 equal to respectively 17.271 and 237.7.
+0 po is the temperature of the dew point in degrees Celsius.
+IV. Columbus Dryout Challenges during High Beta Angle phases
+A high beta angle Changes the environmental conditions of the 188, as already mentioned in Chapter II.
+Especially during an operation such as the Columbus Dryout, Which already heavily inﬂuences the Columbus
+environmental parameters (Chapter III), the contribution of the high beta angle leads to a particularly
+EB Challenging situation. The major items of concern are the possible condensation 0n the Columbus shell and
+3f the limited power availability.
+V.
+8
+g A. Possible Condensation due to Low Shell Temperature
+§ During the high beta angle phase, due to its position With respect to the ISS structure, the Columbus module
+<2 is shadowed by the ISS structure. This conﬁguration impacts the temperature of the shell, especially on
+E the port cone side (the side Which is attached to Node 2). The inﬂuence of the Beta Angle is so signiﬁcant
+g that the Shell Heater temperature cannot be maintained Within the set limits. In fact, during this phase the
+§ temperature on the port cone regularly decreases below the nominal 10W limit of 200C.
+5? To avoid condensation and freezing on the module shell, the Columbus module is equipped With a network
+g of heaters, a total of 156 heaters (78 primary and 78 secondary) grouped in 12 Circuits, also called strings (6
+E: primary and 6 secondary). Figure 6 shows an overview of the distributions of the heater elements and the
+;. HCUs on Columbus. The small, black triangles indicate the heaters.
+>~.
+é Columbus shell
+m
+LU E—'—I'—r ‘1'?"" .'_,-.-—-__.""_-—H
+E I 1% M&Hﬂj -
+U II.-.i..|._..'1""r '...-.a.1. i=1! Paul:
+:4) Culnmhns port cane i ﬁﬁgmiﬁtﬁg“ J ii
+m -.~=""*“"" ""vnrﬁ ?'s'aia- “
+m t - 1"" Hi” I- ‘!
+E 11-m— .gggﬁ ..‘f’a*§_§' u Columbus starboard cane
+m m h 0 313 0""“ ﬂiﬁﬁﬁlIEEEZE-g' -
+E Fmeward H 53‘: (F 3' 331-0] seminal :1 1:31; gig FEEL ' _
+:. ..... :ﬂmhﬁw mm.-
+a i {13¢ iifgﬂ'ﬁﬂyf $1.3m. i
+e F dR .- I1: ; ' - - F"" '-"" F 19-1”? ' Fl ""*'.i}r :. .52: -""-=:e.:-'£'.. ‘- ""
+E REE? {FR} “3%.!- ‘1 :gm nﬁéiﬂﬁﬂlﬁﬁﬂ‘ wiigﬁyﬁﬁ ' .
+8 ' *""""' . _ _ , '“"":*"":'!""'*""“..""':': ""13:1; '-_.d'-' 4 ""H“ 1.3;: -_-""Iu..
+g .. -- j‘r 1— wiwglrggﬁua. 11m. ﬁe -'-'
+o J _. .,-.' EEE? EEEE EE: Eiﬂiif- ‘ ——
+I __ T .rwgnu. . Ed: I: _:-.'-:-.'.-:E'.:-.-;*:*.':i.-'__
+F. dDE-k "" --|_‘:I""'""'.!.
+£3: E En} Mi Black {AD} mi Eli}; HCL“:
+_ . :r -- . u"". 1-— ~— 1- 1 II
+1...... ﬂﬁiﬂgﬁ‘ i
+. : . E ' ;
+I ____ ﬁﬁﬂhﬂéﬂw .
+u I I
+Figure 6. Columbus Shell Heater positions (source: ESA)
+The shell heaters are controlled by the Heater Control Unit (HCU), Which switches the circuits on and
+off, based on the shell temperature upper and lower set—points that are monitored by temperature sensors
+(Thermistors). In order to guarantee that the Columbus shell is not subject to condensation, the readings
+of each thermistor have to be above the dew point plus a temperature error of 4.4OC at any time. The
+7 0f 12
+American Institute of Aeronautics and Astronautics
+
+"
+"8","temperature error considers the uncertainty on the thermistor measurement, the dew point calculation, the
+gradient between the coldest spot on the shell and the sensor location. During the high beta angle phase,
+the temperature of the shell is lower than usual and during the Dryout phase the dew point is higher than
+normal (as pictured in Figure 5). This combination of events causes the reduction of the delta between the
+two values and it can happen that the delta reaches values lower than the margin of 4.4OC. This can be seen
+in Figure 7 as She11_to_DeWPoint_DV graph, Which represents the difference between the lowest shell heater
+temperature and the dew point plus the margin. If this value goes below zero, as in the left example during
+a high beta angle period, the shell is at risk of condensation.
+2331311252333:th 2 : :ﬁgﬁiiziszziaxgw 2
+2 :===============ga : :===.=======================
+1” i=I========ﬁ===5--- m I-III-III-H-Iﬂh-i-I-lh-I-II
+1:? l----------------- Illllllll-llll-III-IIl-IIII
+1‘ I----------------- 16 I...-I-I-I-I-I-I-I-I-I-I-II
+:: |----------------- 15 I...-I-I-I-I-I-I-I-I-I-I-II
+14 I----------------- 14 I...----------------------I
+s n |-------!!;====;!- n III..-III-Illl-III-III-IIII
+8 12 |________sa--------- 12 I-I-I-I-IIEEE==E==E=Esgﬂ!-I
+T n I-----!------------ 11 I-I-I-I-lH-I-I-I-I-I-Iﬂ-Iii
+2% 1° I====Ei============ 1° HEEEEEEEEEEEEEEEEEEEEEEEEEI
+S : I==ﬂ-_------------ : iiiiiﬂiI_!i------------------I
+Q T I---H_------------ F I-I-II‘IHII-I-I-I-I-I-I-I-I-II
+; 5 I---m------------- 5 !!'!!I_,n!!IlIllllIIII-IIl-llll
+(\1 5 IEE‘HESI------------ 5 aﬂh-ﬂ..I-Il-I-I-I-I-I-I-I-I-II
+2 4 I--H-I------------- 4 I...-I-ll-I-I-I-I-I-I-I-I-II
+.. 3 I----E‘------------ 3 I-I-I-Ilﬂ-I-I-I-----------!
+5 2 l----------------- 2 III.-IIIEQIIII!!!-ll-_!Tl=iu
+e 1:=====%===«-.=====a= 1 :EEEEEEEEEEE‘EE‘HEEEEEEEEEEEE
+g0 - !!!!!!!!!!E§!!EE!! -'1!!!!gggggggggggggggggggggl
+E
+E Figure 7. Lowest HCU string temperature in comparison to the dew point and Shell to dew point values
+g during a high beta angle period - left - and a nominal one - right -
+E2?
+2
+3 B. Limited Power Availability
+LU
+E As mentioned above, another impact of the high beta angle on the entire 188 power distribution system is
+C; the fact that, due to the unfavorable position of the Solar Arrays and the additional shadowing caused by
+E the forced parking of some structural elements (for example the Ku—Band antenna), some restrictions on
+(g the power availability have to be applied to the downstream users. As already mentioned, these limitations
+8 are calculated and provided to the users by the responsible Power Resources Ofﬁcer in MCC—H, Who is
+E in charge of analyzing in detail the attitude of the 188, the power generated by the Solar Arrays and the
+(:0: leads requested by each module, equipment or payload, per power Channel at any moment during a critical
+g timeframe. The conﬁguration of the power channels and the amount of power Which can be granted to each
+4: downstream user are then reported to each responsible position in the different Flight Control Teams; for
+s; Columbus, COL—SYSTEMS and STRATOS are responsible for analyzing if the expected power consumption
+“E of the module is below the requirements for the Whole duration of the power—down period on both power
+8 channels feeding the module. In case the power consumption is higher than the limit, non—critical equipment
+or science payloads have to be deactivated, or loads have to be balanced between the two power channels.
+Usual actions in case a power—down that have to be performed are:
+c The deactivation of one string of the Columbus Module Lighting Unit (MLU). These are the Columbus
+lights, Where one string consist of 4 MLUs
+o The disabling of the Heater Control Unit control law or
+o The possible re—planning of payload science runs to a timeframe outside the power—down.
+In addition, reconﬁguration from nominal to redundant units (usually powered by different power Channels)
+can also be performed; but, in this case, it has to be veriﬁed that the Change in the load distribution is not
+Violating the available power on the other channel. This is important as it might have impacts on the entire
+power Chain and would ultimately impact several other equipment/user power allocation.
+8 of 12
+American Institute of Aeronautics and Astronautics
+
+"
+"9","V. Real—Time Solutions
+As explained above the risk of condensation on the Columbus shell is increased during a highdbeta angle
+7 a a a 6
+phase of the ISS. To prevent this hazardous s1tuation, different approaches can be taken, depen mg on
+power conﬁguration.
+A. No Power Limitations in place during a Dryout C O b
+- ° ' ' ssar for the o um us
+In case there is a high beta anglef7 bOliOtOtno pﬁweOIO‘ llﬁltaﬁﬁgzhiﬁfe been deemed T1606 Y
+‘ ' ' ' a 1 iona ea 1ng . O O
+module, there IS the p(?SSlblhty O y ‘ ' i n the shell heater hardware is one failure
+As most of the equipment in Columbus With a critical funot o , O O d d nt unit
+tolerant meaning that, in case of a failure in the Heater Control Unit number 1, there is a re 11H a
+Which Can be activated With a dedicated set of heaters, as already mentioned in Chapter IV. OO
+In nominal conditions it is sufﬁcient that only one HCU controls the temperature of the she .
+- ' decreases to a oint, Where it is Close to the
+If during a Dryout the temperature of one or more strlngs O O O p d HCU
+‘\ limit of condensation (dew point —I— 4.4OC as previously mentioned), it is poss1ble to turn on the seoiIOlO h OO
+g and enable the temperature control of the critical strings to additionally heaththe coldest sOOpOCLts EnmpEerztﬁré
+v . . . . . . e e
+# - ' ' ' h1n minutes it is poss1ble to see t e increase 0
+8 This action is usually very effective and, Wlt . th h 11 is shown
+‘5 - ' ' 1e for using the second HCU for heating e s e
+Q readings of the thermistors. A real time examp . DV . . me diat e1
+7‘ - ° ‘ ' ' t the parameter She11_to_DeWP01nt_ raises 1m y
+N. below in Figure 8, Where is poss1ble to notice tha
+§- above zero, as soon as HCU number 2 is switched ON:
+0
+Q
+g ~><~ she11_to_oewpoint_ov iéy‘gs
+c6 9. HCU1_AR_THR3_TEMP_MVD . ON
+a chz pr_STALDMc 0N HCULPWR_STAT_DMC IIIII
+3 — IIIIIIIIIIIII!IIIIIIIIIIIIIIIIIIIIIII
+g 3 IIIIIIIIIIIIIIIIIIIIIIIIIIIIF!EIIiiiiE!lHIIIIIIIIIIIIIIIIIIIIIII
+§‘ IIIIIIIIIIIIIIIII .a h- ----------------vnnnn
+‘1: 20 - h-I-I I I
+— IIIIIIIIIIIIIIIIIIIIIIIIHJIIIIIIIIIIIIIIIHII IIIIIIIII
+E 1” """"""""""""'""""""""""IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
+O IIIIIHiI-lI-l-Il-Iu___4 IIIIIIIIIIIIIII
+N 13 IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
+®\ 1? IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
+a 16 IIIIIIIIIIIIIIIIIIIIIIIIII.II:IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
+2 15 IIIIIIIIIIIIIIIIIIIIIIIIII. IIIIIIIIIIIIIIIIIIIIIIIIIII
+g IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII IIIIIIIIIIIIIIIIIIIII
+14
+“ IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII II
+m 13 IIIIIIIIIIIIIIIIIIIIII
+F IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII IIIIIII
+Z 12 IIIIIIIIIIIIIIIIIIIIIIIIIIIIII
+m IIIIIIIIIIIIIIIIIIIIIIIIIII IIIIIIIIIIIII
+U 11 IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
+m 1° IIIIIIIIIIIIIIIIIIIIIIIII
+U IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII IIIIIIII
+< 9 IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
+% s """"""""""""""""""' IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
+z 7 IIIIIIIIIIIIIIIIIIIIIIIIIIIIII IIIIIIIIIIIIIIIIIIIIIIII
+8 ' IIIIIIIIIIIIHIIIIIIIIIIIIIIIIIIIIIIIIIII I'.'____FIWFF'""
+6 ' ' IIIIIIIIIIIIIIIIIIIIIIIIIIIIII!!I . ___.a.---m_i
+% 5 “’5""!!""!"""""" IIIIIIIFF""' aIlIIIIIIIIIIIIII
+o IIIIIIIIIIIHIHIIIIIIIIIIIIIIIIIIII '__._-—~- IIIIIIIIIIIIII
+H 4 ‘IIIIIIIIIIIIIIIIIIIIHIIIIIHIIIIIIIII
+< 3 IIIIIIIIIIIIIL IIIIIIFr IIIIIIIIIIIIIII
+m IIIIIIIIIIIIIIIII
+< 2 """"""""""""""""""""""""' ,__: IIIIIIIIIIIIIIIIIIIIIIIIIIIII
+Z IIIIIIIIIIIIIIEIIIIIIIIIIIIIHIIIIII IIIIIIIIIIII
+5‘ 1 IIIIIIIIIIIIIIIiﬂFJIII!ESIIIIIIIIIIIIIIIIIIIIIIIIIII
+3 ; !!!!!!!!!!!!!!!!!!!!!!!l!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+E chzjmﬂATjMC:—‘3FF—i—:
+8 HCUljm_$MT_DHC=—ON O . -00 21.00 22:
+r7ESI7ESK7QSI7ISIIITZEEEEEIIIIZETIEETIZETIIETIEETIIETZI__II_I_IJ
+Figure 8. Shell temperature during Dryout With additional HCU string heating
+B. Power Limitations in place during a Dryout
+- - - ' — te s need to be taken. In order to
+In the event that power limitations are in pOlane E01: (filugnbltlst, pizegoﬁgndiwi or shift power loads from the
+' ' ' ts it is ene 01a 0 rs ry -
+protect ongomg soienoe experimen , O O . . h HCU t m erature
+' tion is usually to disable t e e p
+before turnin off payloads. The most effective reao O O
+system, h' t ingates one of the highest power draws of the entire Columbus system. This stops the
+COHtrOl as t IS errn - ‘ k their readings Within the set limits.
+HCU control law, Which regulates the heating of the thermistors to eep O O f 2000 to 2300 can
+The power draw necessary to keep the shell temperature between the nomina range 0
+9 of 12
+American Institute of Aeronautics and Astronautics
+
+"
+"10","be up to 960W (160W per string). The amount of power needed is in direct correlation to the beta angle
+(higher beta angles correspond to higher power draw to keep the shell temperature constant) and t0 the ISS
+attitude, as it can be seen in Table 1.
+i
+Z:
+%
+a
+g Table 1. Heater power consumption in different ISS attitudes and beta angles
+g In this case, the following actions can be taken:
+a
+E: 1. Enabling Temperature Control Law
+% When the HCU temperature control is disabled the temperature starts to decrease immediately. In
+5 case any of the thermistors shows a temperature Close to the dew point plus the 44°C error during
+5 a Dryout the corresponding string would need to be activated by enabling the temperature control
+2 law for that speciﬁc string. As this Will draw about 160W and could breach the given power limits,
+% the possible use of an additional 160W need to be pre—coordinated and agreed upon With the Power
+Q Resources Ofﬁcer in MCC—H before the power—down would start.
+i 2. Performing a Ere—IIeat before the Power—Dewn .
+g» A second p0ss1b1hty to prevent the s1tuat10n that any temperature on the shell might get too 10W
+:3 is to perform a pre—heat before the power—down. This means that the shell temperature set points
+i; are increased to a range between 250C and 280C for six hours before the power—down. This ensures
+E that the shell temperatures are above thermal limits for at least 7 hours. With a pre—heat the shell
+temperature is higher than usual and When the heaters are turned off for the power—down, a longer
+time is needed for the temperature to decrease to the critical temperature, When condensation could
+occur.
+
+In Figure 9 an example of a pre—heat can be found. The thermistors shown are the ones around the port
+cone, Which is usually the coldest part of the Columbus shell.
+
+In case of a CHX Dryout, it has been seen that the critical phase in terms of temperature and dew point
+values, lasts only a few hours, therefore, pre—heating the Columbus shell is an effective real time solution to
+avoid condensation during a Dryout in high beta angle periods.
+
+10 0f 12
+American Institute of Aeronautics and Astronautics
+
+"
+"11","‘8 KULAD_THR3_TEMP_MVD 20. 3571 '6 HCULALTHR3_TEMP_MVD 18.750
+~>$ HCU1_A0_THR3_TEMP_MVD 19.063 e HCU1_FD_THR3_TEMP_MVD 20.714
+'9 KULFR_THR3_TEMP_MVD 21.429 * HCULFO_THR3_TEMP_MVD 18.438
+NIIIIII""IIIIIIIIIIIIIIII|
+26 Id-
+I' f: 1
+.l
+25 I- I I
+IIIH'H’illmllllllllllllll
+2... ! --| ln'u
+IIHE'l""llﬂHIIIIIIIIIIII|
+23 Ill ‘Jél- v=| I l""
+""TWFFHIIIHH@‘IIIIIIIII""
+EﬂﬁfBIIIIIIﬁHHE'IIIIfIIII
+21 __. _ L _ _ |!_. J -.
+IIFIIIIIIIIHﬁﬁﬂI'E='_=""I'
+E 2.1I I II II III. -EI=-L-I
+i iIIIIIIIIIIIIHEHHHIﬂIFE-I
+8 19 L!-__ __l_ 'I
+i IIIIIIIIIIIIIIi‘H‘HV""""”
+g 15 l‘higﬂll-I
+é IIIIIIIIIIIIIIIIII-dIIIIl
+:0 20:00 00=OD=HNDW %:00 12:00 18:00
+g Figure 9. Pre—Heat of 6 hours and subsequent disabling of the HCU temperature control
+E
+i
+g: VI. Conclusion
+c; A Dryout is an activity Which is important to perform regularly (42 days With a margin of one week)
+8 to avoid microbiological and fungal growth contamination of the wet CHX core. The operational solutions
+E3 described in this paper represent a series of actions Which can be taken to avoid delaying this important
+é maintenance activity due to environmental conditions.
+(L3 As speciﬁed in the previous Chapters, the hazard of condensation during a Dryout in Columbus is a
+E serious issue, especially When this activity is performed during particularly critical timeframes, such as a
+% high beta angle periods.
+% Nevertheless, Columbus Flight Controllers have developed several operational workarounds, Which allow
+(3 this activity to be performed Without any condensation risk to the Columbus module: the Heater Control
+:5 Unit is the key to prevent possible condensation 0n the shell during a Dryout. Especially during the initial
+<2: phase of the Dryout, When the risk of condensing 0n the shell is higher, the redundant control unit can be
+ﬂ activated to assist heating up low temperature areas of the shell.
+3 If the shell temperature decreases towards the critical limit in cases Where power limitations are in place
+E and the tern erature control law of the active HCU has been disabled additional ower can be allocated
+3 p 7 p
+9 after coordination With MCC—H counterparts to be able to activate the individual heater strings. Another
+possibility is to perform a pre—heat 0f the shell in advance to allow a straightforward execution of the Dryout
+With a higher initial temperature of the shell.
+
+To be able to prevent the condensation issue in real time the Flight Controllers constantly monitor the
+dew point and the temperature of the shell and can intervene to recover the situation When needed With the
+solutions described above.
+
+Acknowledgments
+
+The authors would like to thank the Columbus Project Managers, Gerd Soellner and Dieter Sabath, for
+the support in making the realization of this paper possible and the Columbus STRATOS Flight Control
+Team for the technical background and the inspiration in ﬁnding real time solutions to overcome the daily
+challenges in the operation of Columbus. L.Z. author thanks INSYEN AG in the persons of Dave McMahon
+
+11 0f 12
+American Institute of Aeronautics and Astronautics
+
+"
+"12","and Austin Gosling and S.St author thanks DLR in the person of Thomas Kuch for the opportunity to
+present this paper. They also thank Andrew Caldwell for proofreading.
+References
+1Uhlig, T., N. A. and Kehr, J., How Columbus Learnt To Fly, Hansel“ Fachbuch, 2010.
+2NASA, Reference Guide to the International SpaceStatz’on, http://WWW.nasa.gOV/mission_pages/station/neWS/ISS_Reference_Guide.html.
+3NASA, Space Shuttle Mission STS—ZS’S’ Mission Press Kit, http://WWW.nasa.gOV/sites/default/ﬁles/ﬁles/491387main_STS-
+133.pdf.
+4Barenbrug, A. W. T., 1974 Psychmmetry and Psychrometm’c Charts, 3d ed., Physical Description, Published [Johannes-
+burg]: Chamber of Mines of South Africa, 1974.
+[\
+\O
+S
+gr
+§
+3
+E
+33.
+S
+5
+Q
+E
+0.
+§
+“3
+E3
+E
+E
+g
+S
+N“
+E?
+2
+8
+m
+Lu
+E
+Z
+Lu
+U
+Lu
+O
+<
+m
+(A
+Z
+O
+E
+Q
+<
+m
+<
+Z
+5‘
+'0
+g
+L3
+Q
+B
+O
+Q
+12 Of 12
+American Institute of Aeronautics and Astronautics
+
+"

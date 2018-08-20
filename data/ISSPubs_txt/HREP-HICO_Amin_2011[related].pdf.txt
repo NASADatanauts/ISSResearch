@@ -1,0 +1,557 @@
+"","x"
+"1","h .t ‘
+Form Approved
+REPORT DOCUMENTATION PAGE OMB No. 07040188
+The public reporting burden for this collection of information is estimated to evoroge 1 hour per response. including the time for reviewing instructions, scorching existing dot. sources,
+gathering and maintaining the data needed, and completing and reviewing the collection of information. Send comments raguding this burden estimate or any other aspect of this collection of
+information. including suggestion. for reducing the burden, to the Department of Defense, Executive Services and Communications Directorate (0704-0188]. Respondents should be ewore
+thet n?twitlLstending eny othet provision of low, no person shell be subject to my penoltv for failing to eomply with I collection of informetion if it does not dlSpIOY o currently valid OMB
+eontro mm or.
+PLEASE DO NOT RETURN YOUR FORM TO THE ABOVE ORGANIZATION.
+1. REPORT DATE (DD-MM-YYYY) 2. REPORT TYPE 3. DATES COVERED (From - To)
+10-02-2012 Conference Proceeding
+4. TITLE AND SUBTITLE 58. CONTRACT NUMBER
+Automated Detection and Removal of Cloud Shadows on HICO Images
+5b. GRANT NUMBER
+5c. PROGRAM ELEMENT NUMBER
+0602435N
+6. AUTHORlS) 5d. PROJECT NUMBER
+Ruhul Amin, Richard Gould, Weilin Hou, ZhongPing Lee, Robert Amone
+56. TASK NUMBER
+5f. WORK UNIT NUMBER
+73-6287—Al-5
+7. PERFORMING ORGANIZATION NAME(S) AND ADDRESSlES) B. PERFORMINGORGANIZATION
+Naval Research Laboratory REPORT NUMBER
+Stennis Space Center, MS 39529-5004
+9. SPONSORING/MONITORING AGENCY NAME(S) AND ADDRESSlESl 10. SPONSOR/MONITOR'S ACRONYMlSl
+Ofﬁce of Naval Research ONR
+One Liberty Center
+875 North Randolph Street, Suite 1425 11. SPONSOR/MONITOR'S REPORT
+Arlington, VA 22203-1995 _ NUMBERlS’
+12. DISTRIBUTIONIAVAILABILITY STATEMENT
+Approved for public release, distribution is unlimited.
+13. SUPPLEMENTARY NOTES 7 ,
+14. ABSTRACT
+Clouds cause a serious problem for optical satellite sensors. C louds not only conceal the ground, they also cast shadows. which cause either a reduction or total loss of infonnation in an
+image, by reducing the illumination falling on the shadowed pixels. Ocean color bio—optical inversion algorithms rely on measurements of remote sensing reﬂectance ( (A ) rs R l at each
+pixel. If shadows are not removed properly across a scene. erroneous (A ) rs R values will be calculated for the shadowed pixels, leading to incorrect retrievals of ocean color products such
+as chlorophyll. The cloud shadow issue becomes signiﬁcant especially for high‘resolution sensors such as the Hyperspcctral lmager for the Coastal Ocean (‘HlCOt 0n the other hand. the
+contrast of pixels in and outside a shadow provides opportunities to remove atmospheric contributions for ocean color remote sensing. Although identifying cloud is relatively
+straightforward using simple brightness thresholds, identifying their shadows especially over water is quite challenging because the brightness of the shadows is very close to the brightness
+of neighboring sunny regions especially in deep waters. In this study, we present automated procedures for our recently proposed cloud shadow detection technique called the Cloud Shadow
+Algorithm (CSA) and Lee et al. (2007) cloud and shadow atmospheric correction algorithm. We apply both automated procedures to HlCO imagery and show examples of the results.
+15. SUBJECT TERMS
+atmospheric correction, HICO, cloud shadow, optical algorithm, automated, ocean color, remote sensing
+16. SECURITY CLASSIFICATION OF: 17. LIMITATION 0F 18. NUMBER 193. NAME OF RESPONSIBLE PERSON
+a. REPORT b. ABSTRACT 0. THIS PAGE ABSTRACT 3:655 Richard Gould
+. ~ - 19b. TELEPHONE NUMBER (Include area code)
+11 la Iﬁed Unclassuﬁed UnclaSSIﬁed UU
+U ° 55 ‘0 228-688-5587
+Standard Form 298 (Rev. 8/93)
+Prescribed by ANSI Std. 239.18
+
+"
+"2","Automated Detection and Removal of Cloud Shadows on HICO
+Images
+Ruhul Amin’”, Richard Gould“, Weilin Hou"", Zhongping Leeb and Robertz'trnonea
+8Naval Research Laboratory, Code 7333, Stennis Space Center, Mississippi 39529, USA;
+bGRI, Mississippi State University, Stennis Space Center, MS 39529, USA
+ABSTRACT
+Clouds cause a serious problem for optical satellite sensors. Clouds not only conceal the ground, they also cast shadows,
+which cause either a reduction or total loss of information in an image, by reducing the illumination falling on the
+shadowed pixels. Ocean color bio-optical inversion algorithms rely on measurements of remote sensing reﬂectance
+(Rn(/i)) at each pixel. [f shadows are not removed properly across a scene, erroneous Rm (2) values will be
+calculated for the shadowed pixels, leading to incorrect retrievals of ocean color products such as chlorophyll. The cloud
+shadow issue becomes signiﬁcant especially for high-resolution sensors such as the Hyperspectral lmager for the Coastal
+Ocean (HlCO). On the other hand, the contrast of pixels in and outside a shadow provides opportunities to remove
+atmospheric contributions for ocean color remote sensing. Although identifying cloud is relatively straightforward using
+simple brightness thresholds, identifying their shadows especially over water is quite challenging because the brightness
+of the shadows is very close to the brightness of neighboring sunny regions especially in deep waters. In this study, we
+present automated procedures for our reccntly proposed cloud shadow detection technique called the Cloud Shadow
+Algorithm (CSA) and Lee et al. (2007) cloud and shadow atmospheric correction algorithm. We apply both automated
+procedurcs to HICO imagcry and show examples of the results.
+Keywords: atmospheric correction, HICO, cloud shadow, optical algorithm, automatcd, occan color, remote scnsing
+1. INTRODUCTION
+Hyperspcctral information collected by optical satellite sensors can provide important information for various global
+remote sensing applications. However, clouds cause a serious problem for these sensors, especially over humid tropical
+rcgions. Throughout the year about 2/3 of the Earth’s surface is always covered by the clouds (Belward and Valenzuela,
+l99l). The problem for the optical sensor is that clouds not only conceal thc ground but thcy also cast shadows and
+these shadows also occur in the observed images along with the clouds. Unlike airborne imaging where shadows can be
+minimized by ﬂying at certain times during the day, low Earth orbit satellite-based sensors are limited to acquiring
+images at fixed times of the day. If thc solar elevation is low at the time, then the presence of shadow will bc
+unavoidable. The main problem caused by shadows is either a reduction or total loss of information in an image (Dare,
+2005). Since ocean color algorithms are developed for water pixels illuminated by both direct solar irradiance and sky
+light, the radiance values in shadow pixels leads to the corruption of biophysical parameters derived at those pixels.
+Cloud shadow can produce errors of 30-40% in the observed reﬂectance from the affected pixels over lands (Simpson
+and Stitt, I998). Similar errors can be expected over waters as well although such studies have never been conducted.
+Sincc ocean color products are retrieved based on the assumption that the remote scnsing rcﬂectances arc accurate, a
+small inaccuracy in the reﬂectance can lead to signiﬁcant errors in the retrieved products. Particularly, since most of the
+*ruhul.amin@nrlssc.naﬂ.mil; phone 228 688-5000
+Ocean Sensingdznd Monitoring III. edited by Weilin W. Hou. Robert Amone. Proc. of SPIE Vol. 8030.
+803 ° © 2011 SPIE ° CCC code: 0277-786X/11/$18 ° doi: 10.1117/12.887761
+Proc. of SPIE Vol. 8030 803004-1
+D )wn'oadet' {mm SPIE Digital Library on 09 May 2011 10128.160 112121.1'erms of Use: h‘.lp:""spi9dl.0rgtmms
+
+"
+"3","product retrieval algorithms are band ratio algorithms, a small disproportionate alteration in the spectral reﬂectance
+amplitude can changes the band ratios considerably hence the retrieved products (Amin et al., 2009; Amin et al. 2008).
+On the other hand, cloud shadow detection in ocean color scene can be important and beneﬁcial, since cloud shadowed
+pixels in combination with pixels in a neighboring sunny region of similar optical properties can be used to remove
+atmospheric effects from these scenes (Carder et al., 1992; Lee et al., 2007; Reinersman et al., 1998). These neighboring
+sunny pixels can then be used as known reﬂectance targets for validation of the sensor calibration and atmospheric
+corrections (Carder et al., 1992; Reinersman et al., 1998).
+There are numerous algorithms for cloud detection (Khlopenkov and Trishchenko, 2007; Ackerman et al., 1998; Cihlar
+and Howarth, I994; Rossow and Garder, 1993). However, relatively few cloud shadow detection algorithms (Simpson
+and Stitt, 1998; Chen et al., 2002; Wang and Ono, 1999; Simpson et al., 2000) has appeared in the literature even though
+accurate detection of cloud shadow is important for many atmospheric and terrestrial applications. Most of the shadow
+detection algorithms described in the literature deals with shadows over land. Few studies speciﬁcally on shadow
+detection over water have been conducted, while shadow detection over water is becoming signiﬁcant as the spatial
+resolutions of the ocean color sensors are getting ﬁner. This is because the small scale shadow features appear in the
+' acquired images.
+The fundamental measurement in ocean color remote sensing is the water-leaving radiance, the upwelling spectral
+distribution of the radiance from the ocean. Geophysical parameters such as chlorOphyll can be retrieved from this
+water-leaving signal since it contains information about the optically—active components in the water column. However,
+only about 10% of the total signal measured by the ocean color sensors contains information about the waters; the rest
+represents scattering from aerosols and air molecules. The goal of the atmospheric correction over the ocean is to remove
+contributions from the atmosphere and reﬂection from the sea surface.
+Gordon and Wang (1994) developed an atmospheric correction scheme for the open ocean where the aerosol
+contribution is estimated using Top of the Atmosphere (TOA) radiance/reflectance signals obtained from near infrared
+(NlR) bands. This approach assumes that the ocean is optically black in the NIR bands due to the strong water
+absorption. Although this technique works well in thc Open ocean, it breaks down in optically complex coastal waters
+since thc black pixel approximation no longer holds true due to strong reﬂections from organic and inorganic particulatc
+matters. If water-leaving radiancc is not negligible in the NIR bands then the retrieved aerosol loading will be
+overestimated, resulting in underestimated or even negative water-leaving radiances. The NlR-iterative procedure for
+the coastal waters (Stumpf et al., 2003) can be somewhat helpful in such situation reducing number of pixcls with
+negative readings in the coastal waters. More recently, anothcr atmOSpheric correction approach for coastal watcr was
+proposed (Wang and Shi, 2005) which uses short wave infrared (SWIR) bands. This approach is based on the fact that
+ocean water absorbs strongly in this spectral region, and the contributions of the in-water constituents are negligible and
+can safely be considered dark. However, HlCO does not have these SWIR channels. Furthermore, the atmospheric
+reﬂectance itself is signiﬁcantly wcaker in SWIR region and spectral features are particularly difficult to resolve. In such
+situations, the cloud and shadow (C&S) atmospheric corrections (Lee et al., 2007; Reinersman et al., 1998) can be very
+helpful. However, C&S approach is limited to images with cloud and shadow present.
+In this paper we present an automated procedure of our recently preposed cloud shadow detection technique called the
+Cloud Shadow Algorithm (CSA) (Amin et al., 20] l). Furthermore, we present an automated procedure for the C&S
+atmospheric corrcctions (Lee et al., 2007) and test it on HlCO data.
+2. BACKGROUND OF THE CLOUD SHADOW DETECTION ALGORITHM
+It can be easy to identify the cloud regions simply by using brightness thresholds, but it is difficult to identify the shadow
+regions this way bccause their brightness values can be very close to those of their neighbors or some other regions.
+Distinguishing shadows over water bodies based on spectral reﬂectance shape and amplitude information is also very
+difficult or possibly even impossible (Richter and Muller, 2005). Shadows over water pixels do not have any specific
+spectral features while the brightness varies with atmospheric conditions and imaging geometry. Therefore, the
+brightness or the spectral shape alone may not be appropriate for shadow detection. However, brightness values from
+shadow and close by sunny regions over water can provide a great deal of information if a small portion of the image
+Proc. of SPIE Vol. 8030 803004.2
+Down‘oadrc‘ from SPIE Digital Library on 09 May 2011 Io128.160.112.121. Terms of Use: http.“spiedl org'ternm
+
+"
+"4","(where optical prOpenies of water and atmosphere is uniform) is examined at a time. This is because the water—leaving
+radiance over sunny pixels results from both direct and diffuse solar irradiance, while the water-leaving radiance over
+shadow pixels results from only diffuse solar irradianee. The path radiance from the shadow pixel to the sensor is also
+slightly lower depending on how much of the atmospheric path radiance is shadowed. Therefore, the total radiance at
+the TOA measured over the shadow pixels is slightly lower compare to the adjacent sunny pixels. Assuming the optical
+propenies of water and atmosphere is homogeneous around shadow and adjacent sunny regions, examining the radiance
+difference amongst these small uniform regions together enables us to separate the shadow regions.
+Although spectral radiance amplitude of shadow region is slightly lower than the neighboring sunny region, this
+difference is relatively small (Amin et al., 201]). Furthermore, because of different path radiance and water-leaving
+radiance, the measured radiance from some other sunny region may have exact same or sometimes even lower radiance
+than the shadow spectra (Amin et al., 2011 (see Fig. I(c))). Therefore, the spectral shape or amplitude alone is not
+adequate enough to separate the two regions. However, to make them separable, the small differences in the spectral
+amplitudes particularly in blue-grcen regions can be ampliﬁed by integrating the spectra. The ﬁrst part of our cloud
+shadow detection algorithm is to integrate the spectra which we called the Integrated Value (IV) and we deﬁne it as
+600nm
+IV = jumdz. (1)
+400nm
+The lV index allows visual separation of the two regions to an observer. However, 1V itself is not adequate to separate
+based on a threshold. This is because the 1V index from a shadow region can be very close to, or even higher than, the
+1V index of some other sunny regions (Amin et al., 20] 1).
+To separate the shadow and sunny pixels using a constant threshold, we normalize the 1V index of the pixel under
+investigation, by the mean of the 1V indiees within a spatial Adaptive Sliding Box (ASB) centered on this pixel. The
+selection of A83 size is explained aﬂer Eq. 2.
+Based on the optical characteristics of the water and atmosphere in the shadow and neighboring sunny region, our cloud
+shadow detection technique called the Cloud Shadow Algorithm (CSA) is deﬁned as:
+CSA = L, (2)
+<1 VASE)
+where I V c represents the IV index of the pixel (the central pixel of the A83) which needs to be classiﬁed as a shadow or
+sunny pixel. The (IVASB) represents the spatial mean of 1V indiees within the selected ASB of this pixel. This process
+should be repeated for all pixels that need to be classiﬁed as shadow or sunny. Note that before applying the CSA,
+clouds needs to be removed properly or spurious results can be expected. Additionally, the CSA might break down in
+turbid coastal waters since water or even the atmosphere may not be homogeneous within the A88. Thus the CSA is
+mainly for deep waters, where atmOSpheric and marine optical prOperties can be assumed homogeneous within the A88.
+The ASB needs to be selected carefully so that it only contains shadow and sunny pixels or only sunny pixels. If the
+A83 contains only sunny pixels and the pixel under examination is also sunny, the CSA value for this pixel would be
+around one since the mean of the A88 and 1V index would be about the same. While if the A88 contains both shadow
+and sunny pixels and the pixel under examinations is sunny, the CSA value will be greater than one since the mean of
+the A88 will be slightly lower than the 1V index of the pixel under examination. On'the other hand, if the pixel under
+examination happens to be shadowed, the CSA value would be less than one since the 1V index 'of this shadow pixel
+would be smaller than the mean of the A88. Now, if ASB contains only shadowed pixels, it can be problematic since
+the CSA value will be around one, like the case of only sunny pixels. They will be classiﬁed as sunny pixels if the CSA
+threshold is put less than one. That is why it is important to select the A88 in such a way so that it is bigger than the
+shadowed region. This can be achieved by using the cloud size information which is relatively easy to detect, even using
+simplistic brightness thresholds.
+Proe. of SPIE Vol. 8030 803004-3
+annouded flom SPEC Digital Library un 09 May 2911 to 128.160.112.121. Totms Hf Usr“. h!tp;""spmdl oug‘termq
+
+"
+"5","3. AUTOMATION AND RESULTS
+
+3.] Shadow Algorithm
+
+The CSA cloud shadow algorithm is developed for homogeneous water bodies such as open waters. Fig. 1 shows the
+
+processing steps of the automated cloud shadow detection using the CSA approach. The ﬁrst step of the shadow
+
+detection is to remove lands, clouds, and non-homogeneous water pixels from the acquired ocean color imagerics. The
+
+input image should only have sunny and shadow pixels from homogeneous water bodies. The next step is to calculate
+
+the 1V indices of the input pixels. Once the 1V indices are calculated, the A88 is selected for each pixel and the CSA
+
+values are calculated. Then using the proposed CSA threshold (CSA<=0.96) (Amin et al., 2011), the shadowed pixels
+
+are soparated from the sunny pixels. Examples of automated shadow detection using the CSA method (using a constant
+
+128 X I28 ASB) are shown in Fig. 2. Left panel of Fig. 2 shows a HlCO image acquired over Virgin Islands on
+
+December 20, 2009 (image size: 270 X 400 pixels) where Fig. 2(a) is the true color image, Fig. 2(b) is the corresponding
+
+IV image and Fig. 2(e) is the corresponding CSA image. Right panel of Fig. 2 is another HICO image acquired over
+
+Samoa Island on October 2, 2010 (image size: 260 X 260 pixels) where Fig. 2(d) is the true color image, Fig. 2(e) is the
+
+corresponding 1V image, and Fig. 2(1) is the corresponding CSA image. The clouds are shown in white on both CSA
+
+and IV images, while the shadows are shown in red on the CSA images and in slightly eoolcr color compare to the
+
+neighboring sunny region on the 1V images. The sunny regions are shown in blue on the CSA image, and in slightly
+
+wanner color compare to the adjacent shadow regions on the 1V images. The true color, 1V and the CSA images agrees
+' reasonably well on Fig. 2. The cloud shadows are clearly seen in red structures adjacent to the white clouds on the CSA
+
+images. Also the shape of the cloud shadow especially for the isolated cloud closely follows that of the cloud as
+
+expectcd which reconﬁrms the potential of the CSA method.
+
+AUTOMTED CLOUD SHﬁDOXf DETECTION PROCEDURE
+INPUT L\‘1AGE
+(land. cloud. and non—homogeneous water removed)
+Calculate IV indices for each pixels
+Select A53 and calculate the CSA
+values for each pixel
+Use CSA threshold to separate shadow pixels
+from the sunny pixels
+Figure l. Processing steps of automated cloud shadow detection using the CSA method.
+Proc- of SPIE Vol. 8030 803004-4
+anmoadrd flom SPIE Digital Library on 09 May 2011 to 128.160.112121. Terms of Use; http'.""spiedl.mg!terms
+
+"
+"6","70 .o ‘
+‘ lrgln Islands Salnoa
+- ' i- _ III' I‘- ‘ - _ _ '- . -
+'hLﬂ: :1"" .. f...— i ,_ .L-JJL !- '2'. .3. ﬁ- .
+I II- _._ I l. ': ' I“ r .-h-..
+F ""':1 ' i _ *_ _ -.__ q- _ i. r_""‘ .. - :. i h
+I '1 _ .- F.‘ I.- T d '- ‘I P, _ . .
+""..~ :'--~ ' -' * ' ' *. I- - ..
+I ""1* ""I l i - i ' n i - 1- - '—
+. . _ - - - _ -y
+_ in: : ‘.‘ _. hi ' _ ' :- ‘ ,- '_ .
+_- - -1» a x— -' ""- .; ,_ - -"" ' 1
+- hi- _""{‘¥-‘-I"" -1“ r i.-. J I ' .F
+.- g. F ' I .- III.
+‘1‘ ' .1 f-I‘jhuﬁ t I i'5 I. '5-
+‘ i I i..- -' I. :-a I' I. i -
+h . .I -
+1 . ' ‘gh . ' ' _ 4-. ' __
+‘ - 4 ‘ r; , 'h ' :- .' I 1"" i
+a - _ 3 - ' _ - . . - _ d
+.If . . J l. .i - . iv "" . .
+1x“ - .. ,u 5 .. _
+"""" h "" ' -. ' i I. ""
+. i. i I
+""'* .. * i r 1 I 1x - '-
+I‘ I.
+. 4n- ' i ‘
+_ 1 i .l- —
+_ a . . H. l- _ ..
+v+ ‘ -- i. 1"" '
+'l "" . .. - -
+.. , t ‘ t .. "" n
+I ' ""I
+k In. ‘ .1: i .. 1- ' ‘
+'15-. '- P > L- i 1 - l ""
+'1 ‘ i l
+. ' i p . I-
+b — ‘1'- ‘ i. . ‘ ""‘ a I ‘ ' e
+--|. Ir:- 1' q. '* h "" i “ J
+'CSA 1 - . '-‘ *4"" "" '- h :S&; ‘V‘ . 93-. ""5
+- . ""a . 1' -ﬂ- Ir.- II- h in...‘ g‘ .
+l"" . u.- _ I ' q “ I'l- h... FL I. l I'— h; 't i
+--- 2"" *:- L- -.- '-
+‘.-"":"":""-'_'.-u ‘2'. ' ""“a':” i: -L ‘3'33' Sp. *. *‘R'ngt‘ :'
+.';. 'aﬂ' :- E -‘. '9'} ’3"" ‘- ‘I‘H .l' —' T""
+- 4.- 1-:51‘ 1,. ',1 2""""; ___ _._ q . Jﬁ _ ”I ""I . J_‘I :. l.
+. ' -+ “h i ""H _ i -* ' I ' _ _A l I I I
+wank» : .x - 4,-
+. ‘ - 'I 'h .- .. . ‘ I i . _‘ _ ‘
+: t ‘i B r 1...!- ' ' 2"". .- “lul; ' l- ""‘ 1h"" ' I
+- 1' i; t- .- 1.‘ --;“ 3"". _. l. ""|— q: ‘3‘ ""h ‘4:- 1 ""'—
+Ir ' i - _ - _ i i ‘I
+- ‘1'“ II it i a I‘ "" 'ii ‘ h 'I 'h h!-
+-- . ~42 -‘~ -""~-- -
+.. J .- l . . ."" i ‘k l -
+J. . :I_ ._. ""|- . - f‘ . ‘ ‘1' I"" I- 1 ‘- t. '- I
+* L; .— ""-' u I._ .I'l' ', 5:, .‘h t; it + I . i:
+‘ '-' "" H; -' ' "" «- Ir ""' e
+.. .._ 4-x.
+C ﬂ."" '7: . . * ' 1- ‘ J l- f
+F igure 2. Examples of cloud shadow detection using the CSA method. Leﬂ panel: HICO image acquired over
+Virgin Islands on December 20, 2009 (image size: 270 x 400 pixels); (3) true color image, (b) corresponding IV
+image, and (c) corresponding CSA image. Right panel: HICO image acquired over Samoa on October 2, 20l0
+(image size: 260 X 260 pixels); (d) true color image, (e) corresponding IV image and (0 corresponding CSA
+image. The clouds are shown in white on both CSA and IV images, the shadows are shown in red on the CSA
+Proc. of SPIE Vol. 8030 803004-5
+P 1wn na’il 1‘ {mm QPZE Diq-lal Li? far; in ‘33 Hay 2P‘1t?-1231601’21211T9rr'11ﬁfU9r htlp 'spipdi ”JI'T'FI'FTIH
+
+"
+"7","images and in slightly cooler color on the IV image, and the sunny regions are shown in blue on the CSA image
+
+and in warmer color on the IV images. The true color, IV and the CSA images agrees pretty well. The Cloud
+
+shadows are clearly seen in red structures adjacent to the white clouds on the CSA images. The shape of the cloud
+
+shadow especially for the isolated cloud closely follows that of the cloud as expected. A l28 >< l28 ASB was used
+
+to created the CSA images.
+3.2 Atmospheric Correction Algorithm
+The C&S atmospheric correction method (Lee et al., 2007; Reinersman et al., 1998) is appropriate for high-spatial
+resolution sensors such as HICO. This approach uses cloud and shadow pixels along with close by sunny pixels with
+similar optical properties. First, it estimates the atmospheric and sea-surfaee reﬂectance L001) from a pair of adjacent
+pixels that are in and out of a cloud shadow while ignoring the slight (<5%) differences in the remote-sensing reﬂectance
+R,s (xl) under the two regions (Lee et al., 1998; Kirk, 1991; Morel and Gentili, 1993; Lee et al., 2004). Estimation of
+140(1) also requires an estimate of the ratio between the downwelling sky irradiance to total downwelling irradianee
+Eyyot) . . . . . .
+
+E (zl) whleh can be estimated usmg Radtran (Gregg and Carder, 1990) for a given location and time. The
+
+d
+
+Ejbu) . . . . . . . .
+
+value of E (Z) depend on atmosphene conditions such as v151b1hty, ozone depth, etc. However, smee
+d
+
+Eyy(l) zl. ° 1' d h d'ff b Lt (l) l d' d h ° 1 d
+
+Ed( ) lS app 1e on t e 1 erenee etween sny (tota ra ianee measure over t e sunny pixe) an
+Lt.¢dw(’l) (total radiance measured over the shadowed pixel), and this difference is signiﬁcantly smaller than Ltm (A) ,
+
+. 5;”(2) . . . . . .
+errors in E (x1) have only very limited effects on L 0 (x1) estimation (Lee et al., 2007). Since the errors m
+d
+sky sky
+Ed 0% (11) estimation have negligible effects (Lee et al., 2007), Ed 0% (11) were calculated with the default
+d d
+atmospheric parameters in Radtran. In order to calculate Rrs(/l) , the product of atmospheric transmittance and
+downwelling irradianee t(xl)Ed (x1)just above the surface is also needed. For this component the total radiance over
+the cloud Ltdd (x1) is used to make the estimate which requires an estimation of remote-sensing reﬂectance ( p) of
+observed clouds. The value of p was determined as recommended in (Lee et al., 2007) from a clear water pixel by
+assuming R,s (550nm) = 0.0025r_1(Gordon and Clark, 1981). Once the Rm (11) is estimated to account for any
+residual contributions from the sky and sea surface, a spectrally constant value is removed from the calculated Rm (1)
+in order to obtain an average of zero for the spectral range of 810-840 nm, where contributions from water are
+considered null (Mueller et al., 2002).
+The processing steps of the automated C&S atmospheric corrections are shown in Fig. 3. The input image for the
+automated process should have land and non-homogeneous water pixels removed. The next step is to identify cloud,
+cloud shadow, and sunny pixels in the input image. We use a band ratio between the HlCO band 35(548nm) and band
+70(748nm) to separate the cloud pixels. After separating cloud pixels, we use the automated CSA cloud shadow
+detection approach (see Fig. l) to separate the shadow and sunny pixels. Once cloud, cloud shadow, and sunny pixels
+are identiﬁed, we use blob detection to get cloud, could shadow, and sunny blobs. The cloud and cloud shadow blobs
+are narrowed down based on the blob size (keeping only blobs with 30 to 300 pixels). From these keeper blobs, we ﬁnd
+the closest cloud and cloud shadow blobs based on the distance between the central pixels of each blobs. From the
+selected cloud and shadow blobs, we ﬁnd the closest cloud and shadow pixels and take the Ltdd (11) and Ltde(/l.)
+respectively averaged over 3X3 pixels. Then from the selected shadow blob, we ﬁnd the closest sunny pixel and take the
+Proc. of SPIE Vol. 8030 803004-6
+Down'oadod from SPIE Digital Library on 09 May 2011 lo 128.160112.121. Terms of Use; hft::""spiedl org’tnrmR
+
+"
+"8","sky
+Ltmy (/1) averaged over 3X3 pixels. The Ltde(/l) and LtW(/1) along with the E"" (%d (/1) from Radtran are
+used to estimate the La (/1) . The p is estimated using the spectra from sunny pixel (LtW(/1)) assuming the Rm (/1)
+is known (Lee et al., 2007). The R” (/1) is then estimated for all the sunny pixels using the La (/1) , p and Ltcld (/1) .
+AUTOMATED CLOUD-SHkDOW ATOMSPHERIC CORRECTIONS PROCEDURE
+INPUT L\1ACE
+(land and non—homogeneous water removed)
+Identify cloud. shadow. and sunny pixels
+Select Ltd, (2).Lz;,,.().) and Lt”. (2.) using blob detection
+Estimate La(/';)usin5 LIm(/1) and LI“) (/2)
+Estimate Ejb(}.)/E,(}.) from RADTRAN for a
+given location at a given time
+Estimate cloud remote sensing reﬂectance (p)
+Estimate R42.) for the sunny pixels
+Figure 3. Overview of the automated cloud and shadow atmospheric corrections process.
+Fig. 4(a) shows the 1V image calculated from a HICO image acquired over Samoa Island on October 2, 2010 (image
+size: 380 X 380 pixels). The clouds are shown in white while the shadows are shown in slightly cooler color compare to
+the neighboring Sunny regions. Since C&S atmospheric corrections requires spectra from a thick cloud and cloud
+shadow, we use additional conditions (Ltdd (548nm) > 5000(counts) ) and (CSA <= 0.93) to identify the thick
+clouds and thick cloud shadows respectively. The blue contours on Fig. 4(a) shows thick cloudiblobs while the red
+contour shows the thick shadow blobs. The green circle with the arrows labeled with “old“, “sdw“,'and “sny” shows the
+automatically selected cloud, shadow, and sunny blobs respectively. The Ltdd (/1) , Ltsdw (/1) and LtW(/1) (Fig. 4(b)
+solid spectra) are taken from these selected cloud, shadow, and sunny blobs respectively. The dashed spectra in Fig. 4(b)
+are selected manually from another far location (pixel locations: c1d(91, 1622), sdw(99, 1631) and sny(104, 1620))
+outside the portion (shown only 380 X 380 pixels of 512 X 2000 pixels) of the image shown in Fig. 4(a). The results
+( Rrs(/l) ) from the automatically sclccted and manually selected pixels are show in Fig. 4(c) where blue R“ (/1) arc the
+results of automated pixels selection while the red R” (/1) are results of manual pixels selection. These Rm (/1) spectra
+are taken from the selected sunny blob labeled with “sny” in yellow (Fig. 4(a)). The agreement between the manually
+and automatically retrieved Rm (/1) is very reasonable.
+Proc. of SPIE Vol. 8030 803004-7
+ann‘oadad flom SPIE Digital Library on 09 May 2011 to 128.160.1‘2.121. Tetms of Use; http;-'-’spiedl.otg.’term .
+
+"
+"9","‘ _ ‘ ‘ '~ . '
+‘8»? ""“‘- \W.’
+1"" ‘ do‘ V Q - “ .._ z? ‘ ~‘ 3 ..... ‘ ’ ..........?‘.;.. . 2x
+;‘ ..-. g '6‘ . "" ... v’ ‘ 9. 0&0 ...
+' . ‘ . ‘ . ‘_ ' g; - . .'
+... . .. .... . .2. ,. o. ~ M .. 3. .
+o. g. ' ’ ... 6 ‘ z .. ‘u '
+, s: Q q - . ~ g Q. . f ‘ J
+.. 0 . O .. . c ' "" ‘ .
+,“ ‘?‘§. 0"" ‘. Q ....a‘ ‘3 ~ .. ..‘ ‘
+§ 0 ‘ O? T ’ u 01‘ : § ' .‘
+""d~b‘l.‘ Q- .i .‘ '0 "" .
+“~‘ E1“; 35 ‘3‘."" 0:0,-.r.. .‘
+ll) .. ‘7 ' §§‘«‘° ’0‘ 1' . . . t -
+. I c O . I C
+‘ ‘-b~¢orl .‘- ..a.~ ‘ ‘
+’1'-""'..’2“‘ Q '4“ ""’
+‘ .’ . .lo. ...” V ‘ q . f ‘
+_ . . o - a .
+'oo‘vt. ‘1‘ r ‘. ‘ o -
+""""u “<3” - Q ~ "" v
+n. ‘3 O. , ' O - -
+Q C o . . ' .
+C ' O . t
+a .n 05 .3: 0- 5' '
+1m 180 no m 3m 3” 4m
+‘ ‘ ‘ ""- 3 5 5 - -8d—_ 1 E ' = ' 1.
+. crfumw ﬁcdtwmﬁmwndum
+' 3 . g ""Sn.“ Mum""! Blue spejctm {mm amounted selection
+‘1 g ; +CtdAmo ‘ ‘5 .
+i ,5 ? t§§LiEL :. 5 i 3 5 E
+—r . , _ _. 3 ‘ . _ _ 2 ,
+b i 2 ' i C i i § § §
+. vP 1. u c. 'b . -’ a 7a m
+”1-) W-II-ﬂ-C-D
+Figure 4. (a) [V image calculated from the HICO image acquired over Samoa Island on October 2. 2010 (image
+size: 380 X 380 pixels). Clouds are shown in white and the shadows are shown in slightly cooler color compared
+to the surrounding sunny regions. The blue contours show the thick cloud blobs while the red contours show the
+thick shadow blobs. (b) The TOA radiance in raw counts of the selected (manually and automatically) from cloud.
+shadow and sunny pixels (Ltdd (/1) , Ltsdwbt) and Lt“), (/1) ). (c) The results (RHOD) of the
+automatically selected and manually selected pixels taken from the pixels in selected sunny blob.
+4. CONCLUSION
+Our preliminary results show that the automated procedures of the CSA cloud shadow detection algorithm and the C&S
+atmospheric correction algorithm works reasonably well on selected HICO images. However, further testing with more
+images is required to evaluate the overall performance of the automated procedures. The result (remotc-scnsing
+reﬂectance) of the automated and manual C&S atmospheric correction agrees very well suggesting that the automated
+C&S atmospheric corrections procedure is working. Similarly, the agreement between the true color, IV and the CSA
+images suggesting that the shadow detection procedure is also working.
+Proc. of SPIE Vol. 8030 803004-8
+Down'oaded fmm SPIE Digital Library on 09 May 2011 to128.160.112.121. Terms 01 Use: http;.'fspi0d1 orgitetms
+
+"
+"10","ACKNOWLEDGEMENTS
+NRL Program Element PE0602435N Realizing the Naval Scientiﬁc Return of HICO.
+REFERENCES
+
+[1] A. S. Belward and C. R. Valenzuela, “Remote sensing and geographical information system for resource
+management in developing countries,” Kluwer Academic Publishers, Dordrecht/Boston/London, (1991).
+
+[2] P. M. Dare, “Shadow analysis in high-resolution satellite imagery of urban areas,” Photogrammetric Engr. &
+Remote Sens. 71, 169-177 (2005).
+
+[3] J. J. Simpson and J. R. Stitt, “A procedure for the detection and removal of cloud shadow from AVHRR data over
+land,” IEEE Trans. Geosci. Remote Sens. 36, 880-897, (1998).
+
+[4] R. Amin, J. Zhou, A. Gilerson, B. Gross, F. Moshary and S. Ahmed, “Novel optical techniques for detecting and
+classifying toxic dinoﬂagellate Karem'a brevis blooms using satellite imagery,” Opt. Exp. 17, 9126-9144 (2009).
+
+[5] R. Amin, A. Gilerson, J. Zhou, 8. Gross, F. Moshary and S. Ahmed, “Impacts of atmospheric corrections on algal
+bloom detection techniques,” 89th AMS Annual Meeting, Phoenix, Arizona, January 1 1-15, (2008).
+
+[6] K. L. Carder, P. Reinersman, R. F. Chen, “AVlRlS calibration using the cloud-shadow method,"" Summaries 0fthe
+Fourth Annual JPL Airborne Geoscience Workshop, (R. 0. Green, ed.) .1 PL Publication 92-14, 1, 26-28 (1992).
+
+[7] Z. P. Lee, 8. Casey, R. Amone, A. Weidemann, R. Parsons, M. J. Montes, B. Gao, W. Goode, C. 0. Davis, J. Dye,
+“Water and bottom properties of a coastal environment derived from Hyperion data measured from the EO-l
+spacecraﬂ platform,” J . App]. Remote Sens. 1, 01 1502 (2007)
+
+[8] P. Reinersman, K. L. Carder, and F. R. Chen, “Satellite-scnsor calibration veriﬁcation with the cloud-shadow
+method,” Appl. Opt. 37, 5541-5549 (1998).
+
+[9] K. V. Khlopenkov and A. P. Trishchenko,“SPARC: New cloud, snow, and cloud shadow detection scheme for
+historical l-km AVHHR data over Canada,” J . Atmos. Ocean. Tech. 24, 322-343 (2007).
+
+[10] S. A. Ackerman, K. I. Strabala, P. Menzel, R. A. Frey, C. C. Moeller, and L. E. Gumley, “Discriminating clear sky
+from clouds with MODIS,” J. Geophys. Res. 103, 32141-32157 (1998).
+
+[11]]. Cihlar, J. Howarth, “Detcction and removal of cloud contamination from AVHRR images,"" IEEE Trans. Gcos.
+Remote Sens., 32, 583-5 89 (1994).
+
+[l2]W. B. Rossow, L. C. Garder, “Cloud detection using satellite measurements of infrared and visible radiances for
+lSCCP.” J. Clima. 6, 2341-2369 (1993).
+
+[13] P. Y. Chen, R. Srinivasan, G. Fedosejevs, B. Narasimhan, “An automated cloud detection method for daily NOAA-
+14 AVHRR data for Texas, USA.” Int. .1. Remote Sens. 23, 2939-2950 (2002).
+
+[l4]B. Wang, A. Ono, “Automated detection and removal of clouds and their shadows from Landsat TM images,”
+IEICE Trans. Inf. & Syst., E82-D, 453-460, (1999).
+
+[15] J. J . Simpson, Z. Jin, and J. R. Stitt, “Cloud shadow detcction undcr arbitrary viewing and illumination conditions,”
+IEEE Trans. Geosci. Remote Sens. 38, 972-976 (2000).
+
+[l6]H. R. Gordon, and M. Wang, “Retrieval of water-Ieaving radiance and aerosol optical thickness over the oceans
+with SeaWiFS: a preliminary al gorithm,” Appl. Opt. 33, 443-452 (1994)
+
+[17] R. P. Stumpf, R. A. Amone, R. W. Gould, P. M. Martinolich, V. Ransibrahmanakul, “A partially coupled ocean-
+atmosphere model fOr retrieval of water-Ieaving radiance from SeaWiFS in coastal waters,” SeaWiFS postlaunch
+technical report series, Vol. 22, S. B. Hooker and E. R. Firestone, Eds., NASA/TM-2003-206892, (2003)
+
+[18] M. Wang, and W. Shi, “Estimation of ocean contribution at MODIS near infrared wavelengths along the east coast
+of the US: two case studies,” Geophys. Res. Lett. 32, L13606, doi: 10.1029/2005GL022917, (2005)
+
+[19] R. Amin, R. Gould, W. Hou, R. Amone, Z. Lee, “ Optical algorithm for cloud shadow detection over water,"" Appl.
+Opt. (submitted) '
+
+[20] R. Richter and A. Muller, “De-shadowing of satellite/airbome imagery,” Int. .1. Remote Sens., 26, 3137-3148
+(2005).
+
+[21]Z. P. Lee, K. L. Carder, C. D. Mobley, R. G. Steward, and J. S. Patch, “Hypcrspectral remote sensing for shallow
+waters. 1. A scmianalytical model,” Appl. Opt. 37, 6329-6338 (1998)
+
+[22]]. T. 0. Kirk, “Volume scattering function, average cosines, and the underwater light ﬁeld,” Limnol. Oceanogr. 36,
+
+. 455-467 (1991)
+Proc. of SPIE Vol. 8030 803004-9
+Down naded from SPIE DigitaI Lnbmry on 03 May 2011 lo128.160.112.121.Term5 of Use: hftp ""qpindl mgfterms
+
+"
+"11","[23]A. More] and B. Gentili, “Diffuse reﬂectance of oceanic waters (2): Bi-directional aspects,” Appl. Opt. 32, 6864-
+6879 (I 993)
+
+[24] Z. P. Lee, K. L. Carder, and K. P. Du, “Effects of molecular and particle scattering on model parameters for remote-
+sensing reflectance, “Appl. Opt. 43, 4957-4964 (2004) .
+
+[25]W. W. Gregg and K. L. Carder, “A simple spectral solar irradiance model for cloudless maritime atmospheres,”
+Limnol., Oceanogr, 35, 1657-1675 (I 990)
+
+[26] H. R. Gordon and D. K. Clark, “Clear water radiances for atmospheric correction of coastal zone color scanner
+imagery,” Appl. Opt. 20, 4175—4180(1981)
+
+[27] J. L. Mueller, C. Davis, R. Amone, R. Frouin, K. L. Carder, Z. P. Lee, R. G. Steward, S. Hooker, C. D. Mobley, and
+S. McLean, “ Above-water radiance and remote sensing reflectance measurement and analysis protocols,“ in Ocean
+Optics Protocols for Satellite Ocean Color Sensor Validation, Revision 3, J. L. Mueller and G. S. Fargion, Eds.,
+NASA/TM-2002-210004, 171-182 (2002)
+
+Proc. of SPIE Vol. 8030 803004-10
+Dawn oadec; fmm SPIE DigItal Library- on 03 Fay 2011 to 123,160 1‘2121.Terms of Uso‘. thp spiedLorg [emu
+
+"

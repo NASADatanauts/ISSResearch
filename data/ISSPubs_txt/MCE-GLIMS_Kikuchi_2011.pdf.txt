@@ -1,0 +1,395 @@
+"","x"
+"1","J Fh’ﬁTQEﬁhiﬁi A (311915;? ' W34 ° #iﬁglﬁ'ﬂﬁih)
+
+t: [EEJ Transactions on F undamentals and Materials
+
+4 Vol.l3l No.12 pp.989-993 D01: lO.lS4l/ieejfms.l3l.989
+
+' ' Paper ..
+, Development of Selence Data—Handhng Un1t (SHU) for Global nghtnlng
+and Sprlte Measurements (GLIMS) Onboard
+
+J apanese Experlment Module (JEM) of ISS
+
+Masayuk1 Kikuchl Non-member, Mitsuteru Sate? * Nonmember
+
+- ->I< rt: 3% -. . ~
+
+Atsushi Yamazaki N0n~member, Makoto Suzukfk * 4‘ Non-member
+
+Tomoo UShiO$ * * * Senior Member
+
+(Manuscript received Feb. 14, 2011, revised Sep. 1, 2011)
+
+A project to observe lightning and sprites from the International Space Station (ISS), with altitude 0f407 km and inclination of
+51.6°, is planned for 2012. GLIMS (global lightning and sprite measurements) is an instrument designed for this project, and it
+includes a CMOS camera, photomultipliers, a VLF receiver, and a VHF interferometer. This is the ﬁrst project for simultaneous
+measurements of lightning, sprites, and radiowaves from lightning simultaneously. The sensors used for GLIMS were developed
+based on previous satellite projects. However, for this project, the sensors used needed to be synchronized, and controlled through
+
+the Japanese experiment module (IBM) interface. A science data-handling unit (SHU) was newly developed for this purpose; it
+included a function for suppressing data trafﬁc using a highuspeed lossless compression code (HIREW).
+
+Keywords : GLLMS, SHU, HIREW, 1ss, JEM .
+
+, a satellite orbit. A lobal 1i htnin and s rite meas rements
+1. Introduction g g g . .p u .
+(GLIMS) system was developed for thls pl‘OJ ect. The system Wlll
+Sprites are large~scale electrical discharges that occur between be installed on the experiment logistics module-exposed section
+the ionosphere and a thundercloud when triggered by powerful (ELM-ES) 0f the Japanese Experiment Module (IBM) of the ISS.
+lightning“). The ﬁrst observation from satellite altitude has been GLIMS has four types of sensors: a CMOS camera lightning and
+carried out since 2004 by the lmager for Sprites and Upper sprite imager (LSI), photomultipliers (PH), a VLF wave receiver
+Atmospheric Lightning (ISUAL) onboard the FORMOSAT-2 (VLFR), and aVI-TF wave interferometer (VITF).
+
+satellitem. ISUAL consists of a ICCD camera that has a GLIMS is the ﬁrst instrument system to observe lightning,
+six-wavelength interference filter with turret, a siX-wavelength Sprites, and radio waves from lightning at the same time(w). Four
+photometer, and atwo-wavelength photo array. When a'photometer instruments were developed on the basis of previous satellite
+, detects a sudden increase in light, the system judges this a projects. LSI, PH, and VLFR were developed from
+lightning event and accumulates data in the memory of I28 MB. SPRITE-SAT(4)(7), while VITF was developed from the SOHLA-l
+This memory is constructed as a ring buffer and once per day the satellite“).
+
+system transmits the data at 320 Mbyte/s t0 the ground station. A science data—handling unit (SHU) was developed to combine
+The system compresses the data before transmission“). these instruments for the JEM system, which has limitations on
+In 2009, the SPRITE-SAT satellite“) began a long—term data speed and from thermal conditions.
+
+observation from an altitude of 660 km(9). However, it was unable The following limitations are imposed on the bus system for
+to continue the observation because of some trouble. SPRITE—SAT GLIMS: (l) the data speed is only 1.9 kbyte/s, but 24 h
+had a function that detects sprite events from lightning events by communication is possible; and (2) the power supply is out every
+comparing images at two different wavelengths. few dozen minutes, because of thermal conditions. The quantity of
+A project to Observe lightning and sprites from the International data for a sprite event is 4.2 Mbyte with GLIMS, which cannot
+Space Station (ISS), with altitude 407 km and inclination 51.60, is send all data at one time, unlike ISUAL, because of the ﬁrst
+planned for 2012. This is the third project to observe sprites from limitation above.
+
+However, unlike FORMOSAT—Z, the ISS can transmit data
+* National Institute of Polar Research continuously. In addition, the occurrence of the large-scale
+10—3, Midori-cho, Tachikawa—shi, Tokyo 190—85 15, Japan - ' th .‘t - t‘ t -
+
+* * Department of Cosmosciences, Graduate School of Science, llghtnlrig at eausgs Sp“ as Is concen 1a ed over land In a
+Hokkaido University low-lat1tude region Accordingly, GLIMS observes whlle over
+8-2—03,Kita-10,Nishi-8,Kita-ku,SapporoO60-0810,Japan the land and transmits compressed data while over the ocean
+v * * * JAPAN Institute of .Space and Astronautical Science (ISAS) Japan Where there are no lightning events.
+
+Aerospace Exploration Agency (JAXA) T t th' th d . . ff"" . t b ff m
+
+” 3—1—1, Yoshinodai, Chuo-ku, Sagamihara, Kanagawa 252—5210, '0 carry 011 IS me 0 ,'We leqtllre su [Olen t1 er emery,
+Japan and this must be nonvolatile memory, because of the second
+» MN Department Of Aerospace Engineering, Graduate 3011001 0f limitation above. Hence, we use a l GbitNAND ﬂash memory for
+’9 Engineering, Osaka Prefecture University ' . - - . - ' -
+
+1, 1-1, Gakuen-cho, Sakai 5994531, Japan the data buffer. Additionally, 1t IS desnable that data compressmn
+»: © 20l l The Institute of Electrical Engineers of Japan. 989
+
+"
+"2",", Development of SHU for GLIMS Onboard J EM/ISS (Masayuki Kikuchi 9t 3].)
+. ﬁnish within a time span for transmission of a single event, consists of 16 bits. The top 8 bits are for the header, and the
+because we send compressed data continuously. Thus, we adopt remaining 8 bits are for data. The GLIMS command comprises 4
+the fast lossless compression method HIREW that was developed words and the top, middle, or end of a word is determined on the
+V for cloud and star images. basis of a command sequence ﬂag in the top 8 bits.
+HIREW has almost the same compression ratio as JPEGZOOO Data collection on the AP—BUS is carried out every second, and
+
+but has 11—26 times the speed of JPEGZOOO. By using HIREW, the data are each composed of one 8-bit word. Because a data 2
+we can shorten the time lag of the ﬁrst transmission and transmit packet does not have any header information such as that of a :
+compressed images continuously. In the SHU, there is also a command, the system uses a minor frame pulse to determine the
+function to distinguish sprite events from lightning events by timing needed to send out top data. When the MDP receives a
+comparing the different images at two wavelengths. minor frame pulse from the AP-BUS, the MDP transmits a SYNC §
+When we use a ﬂash memory, we must perform complicated command to the LC-BUS. The MDP then prepares for the data, ‘
+operations such as managing bad blocks and waiting for access. which the LC-BUS should send right after it receives the SYNC :
+Moreover, the lone CPU of the SHU must handle telemetry, packet. Afterward, the MDP sends out the data at the rising edge E
+command, image compression, and subsystem control. To solve of the clock.
+this problem, we use a real-time operating system (pItron) for the 2.2 Science Data Handling Unit (SHU) The SHU is
+SHU. the main instrument used for processing the data of GLIMS. It has
+These implementations of HIREW, ﬂash ROM, and tLItron are a mass of 2.1 kg and is surrounded by an aluminum case with a
+unprecedented for an instrument designed to observe lightning and width of 250 mm, depth of 210 mm, and height of 60 mm. The
+sprites from space. In this paper, we report a new control system main parts of this unit (Fig. 3) are the FPGA (Virtex II, ,
+developed for GLIMS onboard the JEM. XQ2V1000-4FG456N, 40 MHZ, conﬁguration ROM 512 kbyte)
+2_1 System Overview A block diagram Of the 3:; 1‘ 1F1ﬂ£l
+JEM/ELM-ES is shown in Fig. 1. Although IMAP (ionosphere, ”ATM H l Packelisgamocmm
+mesosphere, upper atmosphere, and plasmasphere mapping P323] {Lift‘iﬁigrgfgfﬂiie lO:|ast,il:single)
+mission) and GLIMS are independent systems, they are routinely SYNC '
+viewed as one system because they share a common bus interface 3“,: ’méggjg Eff; ﬁg: ﬂ
+device (EBOX). We placed a mission data processor (MDP) a:luTLM_:_HW W 'E—meghew M W
+between the EBOX and TMAP/GLIMS as a translator. The MDP Eff: :__Iu—_;;L;;“/E,|—r 3'33 E—EI—ECEj/b; gm;
+also generates a scheduled command to [MAP and GLIMS. Ear; w m H mm M: m Hum a 0;”
+Three types of bus are used for communication between the ISS '
+- and GLIMS. The ISS uses an MIL-STD-1553B bus (1 word = 16 T j M'b’?
+bits, one unit I 32 words) to communicate with the EBOX, which mﬁﬁgﬁﬁi MNFiilil‘ieﬂfnnéesgiffu)
+uses an original clocked serial bus (herein the AP-BUS) to ___
+communicate with other instruments in the ELM-ES, including the The signal level follows RS422
+MDP of GLIMS. The MDP uses a bus (herein the LC-BUS) that The LOBUS omits the MNF Signal Ofthe APBUS
+removes a frame synchronization signal from the AP—BUS in order The LC—BU S substitutes a SYNC command for the NMF signal _
+' to communicate with any local device of GLIMS, The 16—bit command packet consists of an 8—bit header and an
+Figure 2 shows the timing when one device communicates With 8'19“ data region
+another on the AP-BUS OI‘ LC-BUS. Each AP-BUS command Adownlink data packetconsists of8data bits
+Fig. 2. Protocol ofAP—BUS and LC-BUS - :
+
+IMAP/GUMS ___“ . _
+
+_ | {88 | MIL-ST0155SB l EBOX | AP-BUS i MDP J
+: AP-BUS . ___-“mm LG-BUSI ’
+
+I 133 EB—OX}.-- -----.....{ MEL] ® [SHZIOMIUHRAU l—Rmk—Zj Em1ﬁ427|
+
+__ _ __ [T‘m°""”""] l-IDG4F7145FWﬁO KQFIGDBUOA
+
+téejgég lesiej leaﬂet {Rein} kit's W ’
+{OPEN LJﬁ/Véﬂ —|:smc—|—s:(NC—|LCEHJS——l__ _l ___...W... a
+__ _ MAXI Stanford Uni“ SOHLA-1 SPRITESAT SPRiTE—SAT
+The AP—BUS is a clock synchronization—type bus peculiar to the The LSI and PH are instruments deveioped for SPRITE—SAT,
+J EM/ELM—ES, and the LC—BUS is the bus for removing a minor and the FPGA operates the SHUdirectly
+frame synchronization signal from the AP—BUS ' The GPSR was mounted on MAXI, the VITF was developed for
+The hatched part was designed for SPRITE—SAT and SOHLAjI SOHLA-l, and the VLFR was developed at Stanford University ‘
+Fig. 1. Block diagram OfJEM/ELM~ES Fig. 3. Block diagram ofSHU
+990 IEEJ Trans. FM, Vol.13l, No.12, 2011
+
+"
+"3","5: 5 ~""' ’
+
+/ Development of SHU for GLIMS Onboard J EM/ISS (Masayuki Kikuchi et 31.)
+
+, and the CPU (8H2, HD64F7145FW50, 40 MHz, external RAM 8 hash ROM
+
+1 28Mbyte
+
+"" Mbyte). . . . . :i:1LQjJMEEBKi:1:. Mbyte -'
+
+GLIMS carries a CMOS camera (LSI), photomultiplier tube 4'7““)th EVENTBOX‘ LS“ 2M“
+
+(PH), VLF receiver (VLFR), and VHF interferometer (VITF). The 4.7mm Evemoxz .. _ "" a
+
+5 L81, PH, and VLFR were developed on the basis of SPRITE-SAT. 4.7mm "" EVENTBOX3 ‘ L812 2Mbyte
+The FPG A controls the LSI and PH using its 1/0 pin directly. It _ f:jf;_'._;;_l;.flf‘jjjjj.‘FEji'?i""TT'.'in§j'; GDKbyte
+controls the VLFR, which was deve10ped by Stanford University, %_ 160%532’5;
+through a clocked RS422 serial line. The VITF was developed on Spareb’mki ”WW“
+the basis of SOHLA-l and is connected via the LC-BUS. The 4-7Mbvte EVENT BOX”
+
+2 CPU handles the FPGA as a memory—mapped device, the address {mtg EEBIﬁ%
+of which is between OXOOCOOOOO and OXOOCOOSFF. lﬁﬂttﬁ {3%55—
+
+The FPGA controls most SHU functions, such as A/D ‘Mbyt"" 3.2555ffi_'____.-_.
+conversion for the LSI and PH, event detection based on increases Mbyte ”man—
+in light or pulse counts, and serial—parallel conversion for the - We arranged an area (SHUJNFO) fOI-Storjng the state Ofthe
+LC-BUS. However, the functions of the CPU are restricted to SHU when switched off
+editing downlink data, interpreting commands, and processing LSI Using this area, we can resume a data transmission that was
+images for sprite detection. interrupted because of a power outage
+Figure 2 shows the formats of the command and science data Fig. 4. File system of ﬂash ROM
+packets. The command format of the GLIMS has a ﬁxed length of
+4 bytes. The packet is constructed with a header of 2 bytes and 2 TSK_SYNC TSKﬂLL TSK TRG
+
+bytes ofdata. When the SHU receives a command on the Lc-BUS, ' 3 .
+
+the FPGA 0f the SHU converts serial data into parallel data, which i TX Butter '5 I E‘Efff’F i I ’23:: £22503;
+
+: it stacks in a FIFO. The FPGA detects the end of command HKdataI [ {I 33532 I
+
+sequence ﬂag- At the same time, the FPGA notiﬁes the CPU 0n . ”K i
+
+IRQl regarding the completion of the command received. 3mm 2 - Write pointer
+
+The CPU extracts a command packet from the FIFO and clears 22:0 % I 5 LS! a ﬂit“— LS‘ '
+
+the FIFO for the next reception. The CPU then extracts a 2-byte I I I 3|: I -g
+
+function code and a 2-byte parameter from the 4—w0rd FIFO data I I 1 l viiF I I .
+
+and writes data at the augmented OXOOCOOOOO address in the i _. ""__’ 5 . vfirn comment ' :::::::::i17:11:?- Read Pointer
+
+function code before performing the actual hardware operation. To I I 5
+
+avoid a runaway CPU, we assign OXOOAA to the OFF state and I IN 3
+
+~. 0x0055 to the ON state as the function codes of the switchin g I I I M, f I
+operation. Even if a runaway CPU occurs, the probability Of ' i. "" “ ___ ~‘
+
+accidentally Wl‘itin g a speciﬁc pattern (e.g., 0X0055 01‘ OXOOAA) iS When the FPGA detects a lightning event, it freezes the data
+
+low, on sensor memory in TSKWTRG
+If we want to send a command schedule to the SHU, we send Data compression and sprite detection are carried out on
+the MDP a table that includes pairs of times (4 bytes) and memory il‘TSK-FULL _
+
+' commands (4 bytes). We can send 5818 commands in one Fig. 5. Sequence for lightning eventhandling
+operation. This means that we can store the commands for 22.7
+
+days if we use 16 commands for each revolution (90 min). for recording the FAT number on the ﬂash ROM (I-NODE).
+
+2.3 Processing of Lightning Data and Flash ROM The Figure 5 shows the sequence of event data handling. Each task
+: quantity of data generated by one lightning event is 4.2 Mbyte. is implemented by uItron. Every second TSK_SYNC generates a
+The downlink speed assigned to GLTMS is 1.9 kbyte/s, and each packet that contains HK data. This task is woken by IRQI, and an
+orbit takes 90 min. Thus, during one orbit we can transmit 2.4 IRQl occurs when the FPGA receives a SYNC command.
+5 events, Which is not sufﬁcient. However, the distribution of TSKWSYNC tries to copy data from SI_BUF sequentially if there
+.1 lightning is concentrated over land, especially in trepical zones. are data in the science instruments data buffer (SI_BUF). If
+a We can use the communication band effectively if parts of the SI_BUF is empty, TSKuSYN‘C calls TSK_FILL, which copies the
+5 orbit that have no events, such as those over the ocean, are used next data packet from the ﬂash ROM t0 SI_BUF and increments a
+for storing data. For this reason, we use 128 Mbyte ofNAND-type read pointer. If SI_BUF is not ready, TSK_SYNC pads TX_BUF
+ﬂash ROM for data storage. with zeros.
+
+NAND-type ﬂash ROM has a capacity of several hundred If the FPGA detects a lightning event, it wakens TSKWTRG via
+megabytes. However, a bad block may exist on a device. To avoid IRQ2 after saving all data to the cache RAM, which it manages 0n
+bad blocks, the SHU creates a ﬁle system using a ﬁle allocation its own. At that time, TSK_TRG copies HK data, copies the
+table (FAT) in the ﬂash ROM. Figure 4 shows the logical structure cached RAM data to the ﬂash ROM, and then increments a write
+0f the ﬂash ROM. ' pointer.
+
+Along with spare areas, four types of storage areas are created Information on the read and write pointers exists in the CPU
+
+._ in the ﬂash ROM: an area for storing observation data (EVENT RAM. These pointers form a FIFO stack for 24 events. Before
+
+BOX), an area for saving the state and eventstarting'position of shutting down the SHU, we need to save the pointer through a
+
+the SHU (CPU_STAT), an area with the FAT to avoid bad blocks command in CPU_STAT 0f the ﬂash; ROM, or else the writing
+
+in the ﬂash ROM, and an area that includes indexing information begins again from I—NODE x 0.
+
+991 . IEEJ Trans. FM, Vol.131, No.12, 2011
+
+"
+"4","Development of SHU for GLIMS Onboard J EM/ISS (Masayuki Kikuchi et 3].)
+V ‘ g 4.9 O Hams . 8mm ——|—60W—i__;ese(MDP/Esox Simulator)
+3 4:; ‘ﬂ . mm . FTDI xcaszsoE RS422 ’ ‘ > 3%
+' g 4.5 .L_____—m__w_ ___________ 5v | T
+g M Ma |pfjegEESSM—' ____;LiijZ"";:Liijiiff‘fif""fﬁ:jiﬂflifi‘.'i7f.‘jTii::::::f_____ __._._..____., 3223‘]
+r3 0 30 40 (30319:: ssion Sggeed [ﬁg] 120 140 _
+- F ig. 7. GSE (ground support equipment) for SHU
+Fig. 6. Compression ratios and speeds of various codecs
+(after Takada et. al., 2007) Table 1. Criteria of environmental tests
+2.4 Data Compression The data compression is carried
+out after fetching data from ﬂash ROM to RAM (Fig. 5). If the
+. . . . 500G@l350 Hz
+compressmn speed IS high, we can use telemetry data effectively,
+because the ﬁrst dead time caused by compression is short. 500 G @ 4000 HZ
+Moreover, if we ﬁnish the data compression of the event before
+the data transmission, we can send the data continuously. We use
+the compression code HIREW developed for cloud and space the PC. The FPGA receives 8 sets of 8~bit data and converts these
+images. into 4 sets of 16-bit data. The FPGA then sends the data to the
+HIREW splits an image crudely and predicts the values of inner LC-BUS.
+pixel from those of rim pixels. Then, it performs an adaptive An LC-BUS is electrically compatible with an AP-BUS.
+Golomb-Rice coding of the differences between the predictions Because the GSE generates both the SYNC packet and the MNF
+and values of the pixels. Next, it splits the image more ﬁnely and signal, the GSE can examine both the SHU and the MDP.
+repeats this method hierarchically. HIREW is 11—26 times as fast When we perform a machine environment or heat vacuum
+as JPEG 2000 (Fig. 6) because of improved Golomb-Rice coding examination, we send commands to the SHU before the
+and not using discrete wavelet transforms‘g). examination by the GSE and check the electric currents, voltages,
+2.5 Onboard Detection Detection of a sprite involves and HK response. We also perform the same checks after the
+two processes. The ﬁrst process is to detect lightning. The FPGA examination. We then compare the data from before and after the
+calculates the difference between the previous image and the examination and determine that the function is normal if there is
+image on channel 2 at the wavelength for lightning (?t = 785 nm, no difference.
+FWHM = 90 nm). If the difference in pixels exceeds a threshold, 3.2 Environmental Test We carried out environmental
+. the FPGAinforms of the detected event through an interrupt to the tests of the SHU. During the tests, the SHU was ﬁxed within
+, CPU, which collects all the data as lightning in ﬂash ROM. The GLIMS by 10 bolts with (p = 4 mm. The criteria of acceleration
+,. second process is carried out in RAM as shown in Fig. 5. A sprite and temperature were regulated by a bus system and these
+image on channel 1 (?t = 762 nm, FWHM = 10 nm) has a wave quantities were measured around the interface bolted to GLIMS.
+f structure, whereas a lightning image on channel 2 has a diffuse We list the criteria of the tests in Table l.
+structure because lightning occurs under cloud. Channel 1 has We also carried out a radioactive tolerance test on the printed
+- leaks from channel 2 because of the ﬁlter. We remove the leaks circuit board assembly (PCBA) of the SHU. We irradiated the
+; from channel 2 and then calculate the variance in the image to PCBA with a 15 krad gamma beam. This is a sufﬁcient quantity
+detect a sprite. compared with the total dose of a 2—year mission, which is
+Let A (x, y) and B(x,y) be pixel values on channel 1 (sprite) and estimated at 6.2 krad. Before and after the irradiation, the memmy
+channel 2 (lightning), reSpectively, with l S x, y 5 512, and let k. be cheek program of the SHU functioned normally.
+a coefﬁcient for leaks. We deﬁne a differential image D(x,y) as - 3.3 Data Compression Time and Time Resolution of
+_ Events To evaluate the compression ratio and speed of
+D(x,y) “A(x,y) — kB(x,y). HIREW 0n the SHU, we used an 8H2 simulator and tested with
+Let the average of the x of D(x,y) in over at be B(y) , and the three types of image: a blank image (Fig. 8(a)), an image observed
+variance of the D be by the LSI (Fig. 8(b)), and a random image (Fig. 8(0)). We list the
+__ 2 results in Table 2. Among the three images, we consider that Fig. '
+Q(y) a [2111) (x ,y ) _D (y )} 8(b) most resembles the image of a sprite Fig. 8(b) in a property
+512 among three images. In this case, the compression ratio will be
+In the case that Q(y) exceeds a standard value at any point y, we around 43% and the compression time Will be around 46 8.
+determine that a sprite occurred. Thresholds for Q and k are The minimum compression ratio is 6.3% for a blank image. In
+determined by some data that are observed. in a ﬁrst step, and we this case, it Would take 142 s to transmit the data. The longest
+set these values before the observation sequence. compression time would be 59 s for a random image, but that is
+, . much shorter than 142 s for a transmission. This result demonstrates
+3. Function Tests . . . . . .
+that HIREW can compress a spate Image w1th1n a transmlssmn
+3.1 Ground Support Equipment (GSE) 0f the SHU interval even in the worst case.‘
+Figure 7 shows ground support equipment (GSE) for the SHU. The time between the detection of an event and the end of
+The FPGA in the GSE receives an asynchronous signal from the TSK_TRG in Fig. 5 determines the time resolution of the event. It
+LVTTL level transmitted via a USB using the Virtual COM port of took 8 s to process the task. Assuming that the mean speed of the
+992 IEEJ Trans. FM, Vol.131, No.12, 2011
+
+"
+"5","31‘ Development of SHU for GLIMS Onboard J EM/ISS (Masayuki Kikuchi et 3!.)
+f ?\m’eeswﬂm "":‘ﬁtgarvtévﬁbii (8) J. Takada, S. Senda, H. Hihara, M. Hamai, T. Oshima, and S. Hagino : “A
+I: ' W§¥ﬂﬂgé ah/“g‘ﬁtﬁzg,” fast progressive lossless image compression method for space and satellite _;
+; 263 ’3’?”;""“ images”, Geosciences and Remote Sensing Symposium, [GARSSJEEE
+“”7 mp? r’ev;.:“~=4:Q:f1iﬁ;; (9) Y. Takahashi, K. Yoshida, Y. Snkamoto, and T. Sakanoi : “Sprite—sat: a
+- ” 'ﬂttl“:“,”}e University smatl satellite for observation of high—altitude luminous events,
+1' V, VET. J37,‘;‘;3;‘«;°""§*fv’jg Smalf satellite mission for Earth observation: New developments and
+« “:gf-m‘tétjf:§fwig trends”, R. Sandau, et 01., Ed., pp.l97—206, ISBN-10 3642035000, Springer
+w “Wei” (2010)
+
+j (a) (b) (c) ([0) T. Ushio, et a1. : “The Global Lightning and Sprite Measurement (GLIMS)
+‘7 . . . . Mission of theI t national S a St‘tion”, this i
+
+m (21) IS a blank Image, (b) IS an Image observed by the LSI, and n er p ce .1 ssue
+
+(c) is a random image
+
+1 The FOV of the LSI is a 2&7"" >< 28.7° rectangle
+
+The nominal altitude of the [SS is 400 km and the altitude of
+
+A sprites is 100 km, 30 the image region is 140 km x 140 km Masayuki Kikuchi (Non-member) received a 8.8. degree in science from
+. . . . Yamagata University in 1989, and MS. and PhD.
+A Flg. 8. Test Images for Image compress10n _ _ ,
+
+e {\VM ‘; dc recs from Tohoku UnlverSIt 1n I99[ and I994,
+7ft” : ?\9 5):?“'4?29‘9V:-=:-'-'-4:-'::- g y
+
+0 _j_{§§>’°% respectively. He is currently an assistant professor in
+Table 2' C0mpresston rat“) and compressmn ttme “W 0131' en ineerin at the National Institute of Polar
+— Fig. 8(a) Fig. 80) Fig. 80 Research His wscarch specialty includes dcvc‘oping
+. . .
+/ 133 is 8 km/s, this means a distance of 64 km. The extent Of a Mitsuteru Sato (Non—member) received PhD. degrees in geophysics
+mesoscale thundercloud over Central or South America can be '5 from TOhOku UniVCFSity in 2004‘ He is currently a
+around 1000 km. Consequently, we consider the time resolution . ff ICCWI‘CF With H0kkﬂid0 UniVCFSitY- His research
+/ sufﬁcient to cover one thundercloud. Specialty inCIUdOS Observation 01” lightings 311d Sprites
+«~94 iiiiiiiif‘i'i2iii. . . . .
+
+3; ~ M usmg opt1ca1 and electromagnetm Instruments. .
+GLIMS is constructed with four types of sensors that have been
+
+2 successfully deployed in space. We have developed a controller ,,
+for these sensors that also operate in the JEM. In particular, the
+7‘ ﬂah ora r 1‘ 10th t re in ' H . . . . .
+4: (Si $0M f Yedage t .aff ,f e Fla 3' comp SS 0 .uSlng IREW’ Atsushl Yamazakt (Non-mcmbcr) rcccwcd PhD. degree from Umvcrsrty
+an t e autOh atlc eteetlon :3 Sprlteleve ItS-are unique motlfms of Tokyo m 2001. He IS currently an aSSIstant professor With the Institute of
+5 F01: events t at 000;“ overd and at OW latitufde, these ﬁlnctlons Space and Astronautical Science (ISAS) of the Japan Aerospace Exploration
+aSSISt us to tra smlt am 110 er the cons amt 0 low data speed Agency (J AXA). HIS research specmlty Includes planetary atmosphere physws
+; and plasma physics.
+,0 References
+i . (l) J . L. Chem, R. R. Hsu, H. T. Sn, L. C. Lee, S. B. Mende, H. Fukunishi, and Makoto Suzuki (Non-member) received a BS. and M.S. degree in
+E Y. Takahashi : “Global Survey of Upper AtmOSpheI'ic Transient Luminous engineering from Nagoya University in 1979, 1981, and PhD. degree in Tokyo
+5 Events on the FORMOSAT—Z Satetiite”,J. Atmos. Terr. Physx, V01.65,N0.5, I ft to fT 1 I 'n 1989 t' 1 H . t1 a 8 Hi r r I r
+1% - 1 ' - e . 1 '— - to
+g pp.647«659(2003) ns1u 0 cc 1110 ogy ,tcspcc 1v y c scurtcn y c o escarc
+
+: (2) H. J . Christian, et at. : “Gtobal frequency and distribution of lightning as With the Japan Aerospace Exploratlon Agency (JAXA) H13 “35031911 SPCCIaltICS
+observed from space by the Optical Transient DeteCtOF”, J- Geophys. 1383-, are earth and planetary atmosphere physics, and atmospheric Chemistry.
+
+Vol. 108 (D1), 4005, doi:10.1029/2002JD002347 (2003)
+
+i (3) R. C. Franz, R. J. Nemzek, and J. R. Winckler : “Television image ofa large
+
+g :gvgqgigegggztnc 1| dlscharge "":bove '1 thunders orm system , Science, Vol 249, Tomoo Ushlo (Senior Member) rcccwed the BS, M.S., and PhD.
+(4) K. Yoshida, Y. Takahashi, H. Nakanishi, Y. Shoji, T. Horichi, K. Kimura, degree In electrlcal cngmeermg from Osaka UmVCfS'tY
+X; S. Ueda, T. Hayashi, K. Yokoyama, S. Hosokawa, and Y. Masumoto : ' ' in 1993, 1995, 1998, respectively. He was with the
+2 DevelOpment 0fa 'IO Kg—class MICI‘O Satelhte for the Observatton of Spntes m Global Hydrology and Climate Center, Huntsville AL
+C and Atmospherlc L1 ghtmng Events”, IEICE Technical Report, SAN E2006—9, \,,§«ﬁ
+
+O 1? USA as a Postdoctorate Researcher from [998 to 2000.
+W P174343 (2006) ”a
+
+j (5) S. B. Mende and the [SUAL Team : “Spacecraft based studies of transient ,3?” In 2000, he joined the Department of Aerospace
+i: luminous events”, CORSICA NATO Summer Study Series (2004) ‘ -' “’ _. Engineering, Osaka Prefecture University. After being
+m (6) T. Morimoto, H. Kikuchi, T. Ushio, Z. Kawasaki, H. Hidekazu, and T. . . . .
+‘“ . “ . . . . an aSSIStant professor at Osaka Prefecture Unlvers1ty, 1n
+; Aokl : Broadband VHF observatlon from lightmg Imputses from a small . 0 0
+satellite SOHLAJ (Maido 1)”, gas 7}.a,,s_ AGU, V0190, No.52, pan Meet. 2006, he jOlnCd thc Depattment 0f Electncal, Electromc and Informatmn
+g SUPPL, AbS‘l‘aCtAE43B~0264 (2009) Engineering, Osaka University Japan where he is currently an associate
+42% ' c c . ' ‘ r. ' ' - ' ' ‘ '
+
+‘73; (7) M' Sato, Y‘ qu'lsmﬁ T‘ Sakanm, 8‘ Kondo’ Y‘ qu‘lba’ K‘ Y03h_1da’ Y‘ professor. Hls research spccmltlcs are radar-based remote scnsmg, passwe and
+0% Sakamoto, T. Takashlma, and S. Ueda : “Development of the sprlte and _ . .
+
+3?; li ghtnin g imaging system onboard the SPRITE—SAT"", Eas Trans. AGU, actwe remote scnsmg of atmOSphcrc from space born platforms, and
+ﬁg Vol.88, No.52, Fall Meet. Suppl., AbstractAEZ3A—09l2 (2007) atmospheric electricity.
+3% 993 IEEJ Trans. FM, Vo1.131, No.12, 2011
+
+"

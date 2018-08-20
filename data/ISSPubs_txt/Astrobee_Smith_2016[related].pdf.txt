@@ -1,0 +1,517 @@
+"","x"
+"1","ASTROBEE: A NEW PLATFORM FOR FREE-FLYING ROBOTICS
+ON THE INTERNATIONAL SPACE STATION
+Trey Smithl, J onathan Barlow1’2, Maria Bualatl, Terrence Fongl,
+Christopher Provencherl’z, Hugo Sanchezl, Ernest Smith1’3, and the Astrobee
+Team
+[Intelligent Robotics Group, NASA Ames Research Center, Moﬂett F ield, CA, 94035
+2Stinger—Ghaﬁ’arian T echnologies, Inc.
+3Universities Space Research Association
+E-mails: trey.smith@nasa.g0v, [onathansbarlow@nasa.gov, maria.g.bualat@nasa.g0v,
+terlgy.[0ng@nasa.g0v, chris.gr0vencher@nasa.gov, hug0.sanchez@nasa.g0v, ernest.e.smith@nasa.g0v
+ABSTR A CT substantial astronaut effort for unstowing,‘ setup,
+replacmg consumables, and continuous superV1s1on.
+The Astrobees are next-generation free-ﬂying robots In contrast, the Astrobees have no consumables
+that Will operate in the interior of the International other than rechargeable batteries, they dock, recharge,
+Space Station (188). Their primary purpose is to and undock autonomously, and they perform most
+provide a ﬂexible platform for research on zenyg free_ OpCI‘ElthDS Without astronaut SUpCI‘VlSlOD. AStI‘ObCCS
+ﬂying robotics, with the ability to carry a wide variety can also ﬂy farther and faster, have better sensing and
+of future research payloads and guest science computing, and have new capabilities to support
+software. They will also serve utility functions: as research on manipulation and human-robotinteraction.
+free_ﬂying cameras to record video of astronaut Each AStI‘ObCC I‘ObOt lS shaped as a cube 30.5 CHI on
+activities, and as mobile sensor platforms to conduct a side, With mass N6 kg, and 11868 battery-powered
+surveys ofthe 188. fans for propulsion (Fig. l).
+The Astrobee system includes two robots, a docking
+station, and a ground data system (GDS). It is
+developed by the Human Exploration Telerobotios 2 2 CONCEPT OF OPERATIONS
+(HET-2) Project, Which began in Oct. 2014, and Will Astrobee’s concept of operations (oonops) was
+deliver the Astrobees for launch to 188 in 2017. introduced in an earlier paper [7]. Here, we provide a
+This paper covers selected aspects of the Astrobee brief review to help motivate the system design.
+design, focusing on capabilities relevant to potential Astrobees can move throughout the US. Orbital
+users ofthe platform. Segment (USOS) of the 188. Each sortie begins and
+1 INTRODUCTION elnds .Wlth the Astrobee docked at its charging station;
+ooking and undocking are executed autonomously.
+The Astrobee system draws on AERCam [1] and Operators use a planning tool in the GDS control
+PSA [2] for small space free-ﬂyer inspiration. It is an station software to generate a sortie plan, WhiCh
+upgrade to the SPHERES Research Facility already on contains a mix 0f 6-degree 0f freedom (DOF) motion
+188. The SPHERES satellites are among the most used paths and other commands. The TObOt CXCCUtCS the
+ISS payloads, and have hosted diverse experiments plan autonomously. During execution, an operator on
+ranging from formation ﬂying [3], to satellite the ground monitors progress through the control
+inspection [4], magnetic propulsion [5], and Visual station, Which receives Video and telemetry feeds.
+navigation [6]. However, opportunities to run Most faults cause the robot to stop and wait for
+SPHERES activities are limited, because they require operator assistance.
+There are several alternative ops workﬂows. For
+' ' ’ example, during frequent loss-of—signal periods for the
+, /«5"" F 1,4‘ 7 ,, 1' ISS space-to-ground link, the robot can continue
+. ”:x\ ,7 execution Without operator oversight; signiﬁcant
+<, g5 anomalies Will pause execution until communications
+‘Ixi fl / are restored. Operators can also interactively
+. [\7“ f teleoperate the robot, using the control station to send
+, V interactive motions and commands similar to those
+3’ found in plans. The 188 crew can also run the GDS
+F igure 1: F ree ﬂyer front view control station software on their laptops, if desired.
+Next, we review three of the representative ops
+
+"
+"2","scenarios introduced in [7], with an eye to how they the overhead or “ceiling” of the ISS interior.
+drive the Astrobee system design. Prominent features include: the propulsion modules
+Research Scenario: A guest scientist uses an that occupy the entire left and right faces of the cube,
+Astrobee robot to perform an experiment that requires the touch screen and a variety of sensors on the
+mounting a custom payload and ﬂying within a forward face, the dock adapter and perching arm on
+speciﬁc ISS module. the aft face, and open payload bays at bottom center.
+Minimizing burden on the ISS crew is an important .
+Astrobee goal. Installing and removing a payload 3'1 Propulsmn
+unavoidably requires crew, but crew should not need The Astrobees are designed to operate in the
+to be involved ih other aspects 0f experiment setup pressurized intra-vehicular (IV) environment but not
+and teardown, nor should they need to supervise the the extra-vehieular (EV) environment of the 188. Early
+experiment itself. in the Astrobee concept development process, we
+This scenario motivates these capabilities: (1) studied producing a dual-use robot that could operate
+Autonomously dock and undock from the charging both IV and EV, for example, using cold-gas
+station. (2) Follow a plan to navigate to any location propulsion with autonomous refueling. We rejected
+0h 133 (t0 pre-position the Astrobee ih the module for this option because ensuring EV safety would have
+the experiment). (3) Perch 0h an 133 handrail (to wait greatly increased project costs and imposed design
+for astronaut assistance, reducing power consumption constraints that would have reduced the robots” IV
+and staying out of the way of other crew activities). capability.
+(4) Quick-release payload installation/removal. (5) The selected IV-only propulsion design uses battery-
+Execute guest software (to run the experiment). (6) powered fans. With electricity as the only consumable,
+Improve all aspects 0f mobility performance (max we can support autonomous resupply with relatively
+acceleration, maX velocity, accuracy, etc.) to allow the simple autonomous docking to recharge.
+broadest possible set 0f experiments. Each Astrobee has two propulsion modules that
+Camera Scenario: 155 F light 01987” ations uses occupy the entire left and right sides of the robot. Each
+Astrobee to stream live HD video ofa crew activity. module is built around a plenum; the plenum is
+This scenario motivates these capabilities: (i) pressurized by a single centrifugal impeller, which
+Multiple-hour sortie durations (to record long crew draws in air through a central intake and feeds siX
+activities without interruption). (2) Interactive exhaust nozzles around the edges.
+teleoperation (to support live repositioning when The two propulsion modules are interchangeable.
+needed to improve the VieW)- (3) Repoint camera They are arranged so that their impellers rotate in
+while perehing (capturing useful Video angles With opposite directions and generally at the same speed,
+reduced power consumption). (4) End-to-end canceling unwanted drag torque and gyroscopic
+computing, communications, and GDS capacity to moment disturbances. The impeller speed is adjustable
+compress, transmit, and VieW HD Video Oh the ground. to trade between peak performance vs. reduced power
+Search Scenario: 155 Flight 01987” ations uses a” and noise. Basing each module on a single central
+Astrobee carrying an RFID reader t0 0077177” m the impeller allows us to maximize the impeller diameter,
+location Of a t001 needed f07” cm ”19007711718 076W reducing RPM rate, power, and noise. Conﬁning the
+activity. propulsion system to the left/right sides of the robot,
+This scenario is an example 0f using an Astrobee to with both intakes and nozzles directed outward, also
+perform a sensor survey; ih this case, the RFID reader greatly improves design modularity—the complexities
+is the sensor, and we assume the tool is tagged with an Of the central module and guest payloads that ﬁt
+RFTD- The scenario enVisions starting by scanning the between the propulsion modules are isolated from the
+module where the tool was last seen, then executing a propulsion air ﬂew and can be excluded from
+search algorithm that homes ih Oh the ted by aerodynamic analysis and performance optimization.
+analyzing variations ih the RFID signal strength. With a constant impeller speed, the thrust from each
+This scenario motivates these capabilities: (i) 1311de nozzle has ﬁxed direction and continuously adjustable
+and execute extensive survey plans that include many magnitude, controlled by adjusting the nozzle open
+target positions and commands to take sensor samples. area with a servo that actuates two ﬂappers. The
+(2) Minimize oversight burden 0h operator (survey ﬂappers can adjust from fully open to fully closed in
+activities can be long and monotonous). (3) Execute <100 ms, and ﬂapper motion introduces negligible
+guest software (search algorithm provided by RFID disturbance forces. Through careful design and
+experts). prototype iteration, the nozzles achieve aerodynamic
+discharge coefﬁcient >0.9 (l is perfectly efﬁcient) and
+3 ROBOT DESIGN consistent thrust alignment, even when nearly closed.
+Each Astrobee robot is cube-shaped, ~30.5 cm on a A propulsion system is holonomie ih 6'DOF if it has
+side, weight ~6 kg (Fig. 1). Although Astrobees can the ability to instantaneously apply force ih any
+move in any direction, they have a preferred forward direction and torque about any aXis. This capability is
+motion direction and a top side that nominally faces important for Astrobee as a research platform, because
+
+"
+"3","a holonomic thruster arrangement can simulate the force can draw power from both impellers. Y forces
+thruster arrangement of any other spacecraft of use two nozzles 0n the same module, drawing power
+interest. Holonomic control is provided by the 6 X 2 = from a single impeller, which reduces the maximum
+12 independent thrusters. The nozzle geometry is force available.
+arranged with thrust vectors offset, such that they do An important propulsion design driver was the need
+not pass through the robot’s body frame origin for efﬁciency—producing the required thrust with low
+(geometric center); thus, each nozzle produces a noise and power consumption. Basic rocket physics
+combination of force and torque. We can construct a dictates that with a ﬁxed fraction of reaction mass, the
+pure force on any Cartesian aXis (+/-X, Y, or Z) by achievable Av scales linearly with increasing eXhaust
+applying equal thrust With a matched pair of nozzles velocity ve, but with the downside that ideal thrust
+that have aligned forces and opposing torques. power efﬁciency (W/N) scales inversely with ve.
+Likewise, we can construct a pure torque with a pair Typical spacecraft design, with limited reaction
+0f nozzles that have aligned torques and opposing mass, seeks to maximize Av by increasing ve.
+forces (th fact, each torque 3th can be produced With Astrobees, 0n the other hand, have unlimited reaction
+either 0ftW0 redundant nozzle pairs). mass (air in the pressurized cabin), allowing us to
+focus on power efﬁciency by minimizing ve. Astrobee
+LZ- nozzles operate efﬁciently at low pressure (~0.1 psi)
+LX- +2 AY' and eXhaust velocity (~11 m/s). For comparison, the
+W +X R SPHERES satellites use EV-analog cold gas thrusters
++2 that operate at ~25 psi with eXhaust velocity ~250 m/s.
+FY- A further advantage of low-pressure propulsion is
+R2' 1 that the required pressure can be produced by an
+T \ efﬁcient centrifugal impeller, eliminating any need for
+RX- LX+ a compressor, and precision engineering is not
+R z ¢ required to adequately seal the plenum.
+k FY+ \ LZ+ Astrobee eXhaust velocity is lower bounded by the
+AY+ RX+ need to achieve sufﬁcient thrust while ﬁtting within
+¢ volume constraints. The open area of each nozzle
+RZ+ ranges from ~40-65 cm2 (compare to ~0.005 cm2 for
+' ' . SPHERES), and together they occupy around 10% of
+F lgure 2: Exploded vzew wzth nozzle geometry the t otal r 0b 0t surfa c e are a.
+All moving parts of the propulsion system are
+It is possible to achieve m_DOF holonomic control enclosed, which is important for reliability and safety.
+with as few as n + 1 unidirectional thrusters [8], but by The intake is covered by a screen With N1 mm
+using 12 > 7 thrusters, we improve efﬁciency and openings to avoid drawing in crew hair or drawing in
+make the force allocation problem better conditioned and ejecting particles ﬂoating th the cabin. The nozzle
+and more robust to deviations from the calibrated ﬂappers are covered With a coarser grille to protect
+propulsion model (such as slightly misaligned ﬁngers and keep out objects that could cause jams.
+thrusters). In case of certain types of thruster
+malfunctions, it might be possible to take advantage of 3'2 Structure
+redundancy to continue ﬂying an Astrobee with Modularity was a key design driver. Astrobee’s
+reduced performance [9], but implementing this major modules, such as the propulsion modules,
+capability is not in scope for the current project. forward and aft panels, and payloads, support
+Although Astrobees have holonomic control, their straightforward removal and replacement by crew. In
+maximum acceleration capability is not symmetrical. some cases, spares will be stocked 0n orbit to enable
+When following a typical trajectory, ﬂying forward, repairs. Astrobees use captive fasteners to mitigate the
+most of the required thrust is starting and stopping on risk of loose fasteners in the crew cabin, s0 crew
+the forward/aft (X) aXis; this aXis has the largest maintenance does not require a glove box.
+nozzles that achieve the full maX acceleration Each Astrobee’s core frame is aluminum. The
+requirement (10 cm/sz). Nozzles 0n the right/left (Y) propulsion module plenum is primarily 3D printed
+and bottom/top (Z) axes are mostly used for turning using lightweight Windform XT, and saves mass by
+and for rejecting environmental disturbances; for these making dual-use of exterior impact foam as a
+axes, we reduced the nozzle size, giVing up peak structuralmaterial.
+acceleration to save space and improve control
+precision at lower thrust levels. A further asymmetry 3'3 External Sensors
+comes from load balancing between the tWO Each Astrobee uses a suite of siX commercial off-
+PTOPUISiOh modules. Pure forces are constructed by the-shelf (COTS) external sensors (Fig. 3). First is the
+using a pair 0f nozzles. For X and Z forces, the tWO NavCam, a forward-facing monocular RGB imager
+nozzles are on different propulsion modules, so the with 1300 ﬁeld of View (FOV), ﬁxed focus, and 1.2
+
+"
+"4","megapixel (MP) resolution. NaVCam images feed the stream at ~6 Hz, providing smoother relative updates.
+sparse mapping and optical ﬂow portions of the Fiducial-relative mode provides more accurate and
+general-purpose pose estimator (section 3.4), and are robust position information when artiﬁcial ﬁducials
+also useful for operator situation awareness due to the (or “AR targets”) are in View. It matches ﬁducials
+wide FOV. detected in NaVCam 0r DoekCam images with a prior
+For improved relative pose estimation during ﬁducial map. It will be used in two main scenarios.
+docking and perehing, Astrobees use DockCam and First, for autonomous docking, in order to achieve the
+PerchCam. DoekCam is a clone of NaVCam that faces ~1 em position accuracy needed for successful mating,
+aft, where it can View ﬁducials 0n the Astrobee dock the Astrobee dock will have ﬁducials. Second, in order
+during the docking approach. PerehCam is an aft- to support guest science needs for improved motion
+facing CamBoard Pieo FleXX time-of—ﬂight ﬂash accuracy during experiments, we may outﬁt a
+LIDAR depth sensor with 620 FOV, 224 X 172 designated workspace in the 188 with several ﬁducials
+resolution, and effective range 0.1-4 m. It detects 188 on the surrounding wa11s.
+handrails based on their 3D shape and determines the Pereh-relative mode provides accurate pose
+Astrobee’s relative pose during perehing approach. estimates relative to an ISS handrail, based on 3D
+To detect obstacles, Astrobees use HaZCam, a clone point clouds from the PerehCam depth sensor. It
+0f PerehCam that faces forward. provides the ~2 cm position accuracy required near the
+T0 stream Video of crew activities, Astrobees use end of the perehing approach for successful grasping.
+SciCam, a forward-faeing RGB imager with 54.80 The perch estimator ﬁts a handrail geometric model to
+FOV, 13 MP resolution, and auto-foeus, similar to the a point cloud, recognizing the handrail’s linear shape
+camera module found on the back of many modern and relationship to the planar wall behind it.
+smart phones. Impaired mode is used when inputs required for the
+Finally, to provide a redundant velocity estimate, other modes are not available, for example due to a
+Astrobees use SpeedCam, a top-faeing PiXHawk sensor fault or software fault on the mid-level
+PX4F10w integrated sonar/optieal ﬂow sensor, which processor. Impaired mode uses the 3D velocity
+does its own internal data processing and provides 3D estimate provided by the SpeedCam, which allows the
+velocity estimates directly to Astrobee’s low-level Astrobee to stop and station keep until the fault is
+processor. resolved.
+More detailed papers on the general-purpose and
+V pereh-relative estimators will appear soon.
+’ 3.5 Navigation and Control
+Q ?'I ’33:)"" >4 Astrobee’s navigation stack executes 6-DOF motion
+’ (#1 \ trajectories. These trajectories are generated by the
+r 5% j'ﬂ GDS control station planner or by Astrobee’s ﬂight
+_:x/ L —) software. In either case, the trajectories are
+,‘ L—r ‘3 - ""j FORWARD constructed to ramp velocity smoothly and respect
+Figure 3: Side view with sensor viewing angles. operating limits sueh as max velocity and acceleration
+constraints. A trajectory is represented as a spline
+curve of polynomial chunks parameterized by time.
+The navigation and control pipeline operates as
+3.4 P 0 siti 0 n Estimation follows: (1) Navigator: Stores the overall trajectory,
+monitors progress, and feeds new chunks into the
+Astrobee position estimation has four main modes: pipeline as needed. (2) Command shaper: Taking into
+general-purpose, ﬁducial—relative, perch-relative, and account any deviation from the target trajectory,
+impaired. A11 modes use an augmented-state extended calculates a short-term repair trajectory that smoothly
+Kalman ﬁlter (EKF) for sensor fusion, and all make transitions from the current state (12-DOF
+use of gyroscope and accelerometer readings from p0se+veloeity) t0 rejoining the target trajectory, while
+Astrobee’s inertial measurement unit (IMU). They respecting operating limits. (3) Controller: A PID
+differ in the additional inputs used by the EKF. controller that calculates a foree/torque command
+General-purpose mode is used to estimate position designed to zero the error between the current state
+anywhere in the ISS USOS, with accuracy sufﬁcient and the command shaper’s repair trajectory. (4) Force
+for reliable navigation in free space (20+ cm away allocator: Calculates the nozzle servo positions that
+from walls). In this mode, the EKF has two additional implement the controller’s foree/torque command. (5)
+inputs. First, Visual texture features on the ISS walls Output: The nozzle command from the force allocator
+observed in NaVCam images are matched with a prior is forwarded to the propulsion module controller Via
+sparse map of features, providing an absolute position 12C, where it is translated to PWM outputs for the
+update at ~2 Hz. Second, an optical ﬂow algorithm individual servos.
+matches features across frames in the same image While most of the control approach is
+
+"
+"5","straightforward, there are some particular challenges. ﬁre or leakage in the ISS environment.
+First, it is non-triVial to calibrate the propulsion Each Astrobee has an electricalpower system (EPS)
+physics model needed by the force allocator. The board based on a PIC microcontroller, which manages
+thrust output by any nozzle has a non-linear power consumption by switching components on only
+dependence on both the RPM rate of the impeller when needed, provides the ability to boot and reset the
+(which increases plenum pressure) and the open area main processors, and outputs telemetry on internal
+of every other nozzle (which decreases pressure). temperatures and power system health.
+Second, Astrobee conﬁguration changes, such as . .
+moving the arm and adding or removing payloads 3'8 Communlcatlons
+(which may include integrated thermal fans), Will During sorties, Astrobees communicate commands,
+induce inertial property changes and new disturbance telemetry, and Video through the ISS WiFi network
+forces. Finally, during activities like perching and and Ku—band downlink. After sorties, Astrobees can
+docking, the controller Will need to accommodate transfer large ﬁles through an Ethernet connection
+contact forces. with the dock.
+3.6 Computing and Software Architecture Commands and telemetry use NASA? RObOt API
+Delegate (RAPID) message conventions and are
+An Astrobee has three main processors: (1) The delivered by RTI Data Distribution Service (DDS)
+Low-Level Processor (LLP) controls the propulsion middleware, which offers tunable quality-of—serVice
+system, and reliably runs the high-rate control that can tolerate high-latency networks and dropped
+software, in isolation from the rest of the software. (2) packets. HD Video is H.264 compressed and streamed
+The Mid—Level Processor (MLP) runs most of the to the ground Via the Real-Time Transport Protocol
+software developed by the Astrobee team, including (RTP).
+the compute-intensive machine Vision algorithms, in Because the WiFi and Ku-band networks are subject
+isolation from guest software. (3) The High-Level to frequent dropouts, Astrobees keep onboard logs of
+Processor (HLP) is primarily for guest science use, all streaming data, allowing later downlink of a
+but also hosts less critical functions such as streaming pristine copy.
+HD Video compression and touch screen interaction.
+To achieve a good combination of power, size, and 3'9 Thermal
+performance, we use COTS ARM architecture Engineers are accustomed to relying on passive
+processors provided ih a system-on-module format, gravity-driven thermal convection to provide free
+derived from modern smart phone technology. The cooling; reduced convection in the zero-g ISS
+LLP is a Wandboard Dual With tWO cores that I'llh at environment makes careful thermal design especially
+up to 1 GHz and maX power ~3 W. Both the MLP and important.
+HLP are IFC6501 modules, each with four cores that The Astrobee core module is cooled using a pair Of
+run at up to 2-5 GHZ and max power ”10 W- The three always-on cross-ﬂow thermal fans that draw in air
+main processors ride on two custom carrier boards that from forward intake vents, blow it over a heat sink
+are designed to enable a possible OH-Orbit upgrade by that cools the MLP and HLP, and eXhaust aft. These
+crew later in the project life cycle. Each Astrobee also fans do produce a net disturbance force, but it is
+carries PIC microcontrollers for power management constant and small (<5% ofpropulsion system thrust).
+and distributed control of the propulsion modules and The propulsion module impeller and servo motors
+perehing arm. are the other main heat sources. Since these motors
+The three main processors communicate with each only operate when the propulsion system is active,
+other and with the dock Via Ethernet. Other Astrobee they are naturally cooled by the propulsion air ﬂow.
+avionics components and payloads mostly A variety of anomalies could cause overheating:
+communicate using USB 2-0 or 12C data buses. jammed motors, blocked vents, failed fans, etc. In
+Astrobee ﬂight software uses a service-oriented these situations, over-temperature power cutoffs
+robotic architecture style [10], built on the Robot ensure thermal safety.
+Operating System (ROS) middleware. The LLP and
+MLP run Ubuntu Linux, and the HLP runs Android, 3°10 Perching Arm
+Wthh drives the touch screen display. Each Astrobee carries a perching arm on its aft side
+3.7 Power that allows it to grasp ISS handrails and dwell for
+extended periods, reducing power consumption and
+Astrobees carry rechargeable Li-ion batteries, interference with 188 operations [11-12]. It could also
+specifically Inspired Energy model ND2040HD34. An support future manipulation research.
+Astrobee can operate with as few as two batteries The arm has three degrees Of freedom: two joints
+(reducing mass and improving performance) or as and a gripper. The joints allow the arm to stow
+many as four (increasing battery life). Each battery completely within Astrobee’s protective foam exterior
+outputs 14.4V nominal, stores 49 Wh of energy, and when not in use, and deploy only for grasping.
+incorporates numerous safeguards to avoid the risk of The gripper is an underactuated tendon-driven
+
+"
+"6","design With three ﬁngers. When unpowered, it is mitigate collisions. The simplest is an over-speed
+passively spring-loaded shut; Winding up the tendon cutoff: When an Astrobee detects that it has exceeded
+opens all three ﬁngers. its nominal maximum speed of 0.5 m/s, or loses its
+Once an Astrobee grasps a handrail, it powers down velocity ﬁx, it powers off the propulsion system. This
+its propulsion system, and its arm joints double as a feature limits impact velocity to below 0.5 m/s,
+pan-tilt unit for pointing cameras located on the reducing the equivalent drop height to 1.3 cm.
+opposite (forward) side of the robot (Fig. 4). To further avoid low-speed collisions, we combine
+The arm is designed to be ﬂexible and backdrivable; multiple layers of checks: (1) Astrobee trajectories
+its grip is not strong enough to injure the crew, and a Will generally be speciﬁed by a trained operator, With
+perched Astrobee can be easily removed from a an opportunity to View a 3D simulation of ﬂying the
+handrail if it is in the way in an emergency. The crew trajectory in the ISS environment. Using this feature,
+can also manually backdrive and perch the arm on a operators Will catch and correct some errors prior to
+handrail, as a convenient way to move an Astrobee execution. (2) Astrobees Will store a list of known
+When needed. keepout zones, such as module walls, projecting
+hardware, and areas near exhaust vents that could
+blow them off course. An Astrobee Will refuse to
+execute a trajectory that goes too close to a keepout
+zone. (3) The HazCam can detect unexpected
+obstacles, causing the Astrobee to stop and request
+_ operator assistance.
+, L J i I :4 We note that, despite these measures, like humans in
+a A A crowded ofﬁce environments, Astrobees operating
+3 g f unattended in the complex and dynamic 188
+Figure 4: The perchiiag arm ghasps an [S S environrnent will unavoidably bump into objects froin
+handrail and doubles as apan/tz'lt unit time to time, With minimal consequences. .Astrobee s
+safety features primarily focus on preventing higher-
+speed collisions and effectively controlling the risk of
+3.11 Collisions crew injury or damage.
+. . 3.12 Human-Robot Interaction
+Astrobee robots must not injure crew or damage the
+188. As a free-ﬂying robot in a tightly conﬁned space, The Astrobees are designed to interact With people,
+collisions areapartieular concern. including the ISS crew, ﬂight controllers, and the
+For comparison, the SPHERES satellites handle general public (for example, during crew outreach
+collision safety primarily by assuming the constant Videos). They Will also be used for human-robot
+presence and oversight of crew. The Astrobee conops, interaction research.
+on the other hand, calls for performing most sorties Each Astrobee carries a touch screen, speaker and
+end-to-end Without crew tending, except in case of microphone, signal lights, and a laser pointer. Initially,
+anomalies. the Astrobees Will use these components primarily to
+The Astrobees use a tiered approach to mitigate help crew understand the Astrobee’s state and
+collisions. First, to ensure crew and 188 safety, intentions (for example, providing turn signals).
+Astrobee hardware is designed to be inherently Eventually, they could also provide capabilities like
+collision-safe, regardless of any software anomalies. Video telepresenee for ﬂight controllers, and pointing
+Second, to minimize ops disruptions, Astrobee ﬂight the laser to communicate a precise location to a crew
+software includes several collision mitigation features. member.
+We ensure collision safety by (1) hardware limiting
+the maximum thrust capability of the propulsion 3'13 DOCk
+system to 0-72 N» and (2) enoasing eaoh Astrobee th The Astrobee docking station has two berths, each
+an impaot-absorbing foam shell, similar to a bicycle providing power and Ethernet connectivity to one
+helmet, With rigid hardware recessed behind the shell. Astrobee (Fig. 5).
+The worst-case kinetic energy of a collision is When docking, an Astrobee autonomously
+approximately the PTOPUISiOh force times the longest approaches its berth using Visual servoing relative to
+straight-line path th the ISS interior (~21 m). ﬂduoials mounted to the dock. Once contact is made, a
+Factoring th air resistance, the maximum impact system of oonioal lances (on the berth) and cups (on
+velocity is ~21 m/s, equivalent to a 23 em drop th the robot) guides the ﬁnal mating, accommodating up
+Earth surface gravity. Impacts near the worst-case to ~l cm of alignment error. The berth connector has
+velocity Will crush the foam shell by UP to ~15 em 20 spring-loaded pogo pins that contact matching pads
+depth, absorbing most 0f the impact energy th the on the robot side. Compliance in the pins
+process. accommodates any remaining alignment error.
+Astrobee ﬂight software has several features that When mating is complete, permanent magnets on
+
+"
+"7","the berth attract striker plates on the robot, providing 4 GUEST SCIENCE
+
+passive retention force. To enable undoeking, push
+
+rods extend from the dock and push the Astrobee N3 Astrobee guest science Will build on the successful
+em away, sufﬁcient separation for the propulsion SPHERES Research Facility. Guest scientists Will
+system to easily overcome the reduced magnetic force. pursue their own ﬁnding to develop their experiments,
+
+The dock also includes COTS battery chargers and receive in-kind support from the new Astrobee
+sufﬁcient to simultaneously charge a full set of four Research Facility (integration guidance, ground testing
+stand-alone Astrobee batteries. This function provides facilities, etc.) and the 188 program (launch services,
+spare charged batteries, allowing an Astrobee t0 ete.).
+execute baek-to-back activities When crew are The SPHERES Working Group (SWG) is a
+available to assist with battery swapping. community of researchers interested in using the
+
+SPHERES facility. The Astrobee team is working With
+
+the SWG to develop plans for the transition to
+
+. \ Astrobee, and NASA has already awarded early
+
+7, _ . x. funding to develop Astrobee-relevant payloads,
+
+.. .. .. through the Small Business Innovative Research
+i . ' I \ ‘ (SBIR) and Early Stage Innovation (ESI) programs.
+
+‘ ' Beyond the research areas initiated With SPHERES,
+
+future Astrobee research is likely to include: (1) F ree-
+
+._ _7 a “ ﬂyer manipulation, employing the Astrobee perching
+
+"" ' arm, or adding advanced manipulator payloads [13];
+
+(2) Free-ﬂyer human-robot interaction (HRI) using
+
+the Astrobee touch screen, speaker, microphone, laser
+
+pointer, and signal lights, or adding new hardware
+
+Figure 5: Docking station with two berths. Push [14]°
+
+rods shown extended, ﬁducials not shown. Researchers can modify the Astrobee system in a
+variety of ways. The simplest is to add an onboard
+software node that interacts With the robot using high-
+
+,._.. ’ level APIs deﬁned through the Robot Operating
+~ ._ t . i, System (ROS). Guest software can subscribe to
+73.9}. ~ H h e T telemetry and send commands such as robot motions,
+‘ ' A’ —l arm motions, and HRI interaction, including providing
+‘ ﬁf-f ii i an astronaut user interface through the touch screen.
+i ; , 1‘ ii H t 4 t , i The robot’s Android/ARM high-level processor is set
+‘ t 3 l H ‘ ”'[t }\ s‘mlei aside to host guest software, and isolated from high-
+if"" ‘1’ """"4 “""‘"" i ’ ii ‘ I rate control code.
+‘ 7 ‘ ' , ‘ 3' a ,_ ' If guest software needs functions not provided in the
+i ‘ j '.‘ ‘ high-level API, such as experimental control
+—""’ .. algorithms that need to run at high rates, researchers
+F igur 6 6515071)” version OfGDS 00””01 station can customize the Astrobee core software for their
+planning interface experiment. We plan to open source release the core
+software code base to facilitate community
+contributions. Note that core software changes Will
+3'14 Ground Data System (GDS) need careful review to ensure reliability.
+
+Operators monitor and command Astrobee through Guest scientists can also add hardware payloads to
+control station software. Control stations can be used the robot. Each Astrobee can hOSt up to three
+by 188 ﬂight controllers, research facility staff, or simultaneous payloads, each within a ~15 X 15 X 10
+guest science researchers at their own institutions. em peripheral bay, attached With a quiek-release
+
+The control station user interface is implemented mechanism: two tool-free quarter-turn fasteners Whose
+using the Eclipse Rich Client Platform (RCP) toolkit. Closure also engages the blind-mate connector that
+It provides tools for planning (Fig. 6), execution carries power and USB 2'0 data.
+monitoring, and live teleoperation. As the control The peripheral bays are arranged With one on top
+station receives position telemetry, it renders the (aft) and two on the bottom (forward and aft). The
+robot’s estimated pose within a 3D model of the ISS, bays are recessed behind the foam shell that absorbs
+in combination With Video and status displays. impact energy in a collision. The two bottom bays are
+
+The GDS also includes servers for archiving contiguous, so an Astrobee can accommodate one
+Astrobee data, and a suite of engineering software double-size payload. The top bay is often occupied by
+tools to support ongoing maintenance and upgrades of the Astrobee’s perehing arm, Whleh can be swapped
+the Astrobee robots. With a payload as needed.
+
+Unlike aircraft in 1g environments, an Astrobee’s
+
+"
+"8","maximum payload is not limited by its lifting power. SPHERES Facility (Human Exploration and
+Much larger payloads could attach to an Astrobee’s aft Operations Mission Directorate) provided funding
+dock adapter in a tractor-trailer conﬁguration, or for this work.
+
+multiple Astrobees could cooperate to exert stronger
+
+forces on a payload [15]. Note that if payloads extend References
+
+outside the peripheral bays or exceed ~1 kg mass, [1] Frederickson S, et al. (2003) Mini AERCam:
+further analys1s would be needed to ensure collls1on Development of a free-ﬂying nanosatellite inspection
+safety and update control software. robot. In Proc. SPIE 5088 Space Sys. T ech. Oper.
+
+AS a pllot for demonstrating Astrobee payload and [2] Dorais G A, et al. (2003) The Personal Satellite
+survey eapab111t1es, we are coordinating Wlth the Assistant: An internal spacecraft autonomous mobile
+RFID-Enabled Automated Loglsties Management monitor. In Proc. IEEEAerospace.
+
+(REALM) PmJeCt at Johnson Space Center [16] [3] Ramirez-Riberos J L, et al. (2010) Distributed
+Astrobee w111 serve as a moblle RFID reader platform - - - - _
+_ _ _ _ control of spacecraft formatlons Via eyelle pursuit.
+to search for m1ss1ng 1tems, complementlng ﬂxed Theory and experiments. J. Guid. Control Dynam,
+readers in cabinets and hatches. The REALM 33(5): 1665-1669.
+Astrobee payload will use a bottom payload bay, [4] Twe d dle B E, et al. (2012) The SPHERES
+together with thin ﬂat ﬂexible antennas mounted on VERTIGO Goggles: Vision base d mapping and
+the propuls1on module faces. localization onboard the International Space Station.
+- ’ In Proc. iSAIRAS.
+\ '- \ 5 _o/ ‘ /-.—~—~——- [5] Porter A, et al. (2014) Demonstration of
+electromagnetic formation ﬂight and wireless power
+' ~ \ transfer.” J. Space Rob, 51(6): 1914-1923.
+_ -. [6] Fong T, et al. (2013) Smart SPHERES: A
+a ‘\ telerobotie free-ﬂyer for intravehieular activities in
+- ’ space. In Proc. AIAA Space.
+N "" x [7] Bualat M, et al. (2015) Astrobee: Developing a
+, ’/ .7 v\ free—ﬂying robot for the International Space Station.
+,' ’x'gx” 7’ ’ “a "" I In Proc. AIAA Space Forum.
+m4” [8] Davis C (1954) Theory of positive linear
+dependence. Amer. J. Math. 74:4 (Oct. 1954), 733—
+F igure 7: P4 propulsion moduleﬁt check, prior to 746,
+integration ofimpeller andfoam shell [9] Pong C M, et al. (2011) Autonomous thruster
+failure recovery on underactuated spacecraft using
+model predictive control. In Proc. AAS Guid.
+Control Conf.
+5 PROJECT STATUS [10] Fluckiger L and Utz H (2014) Service oriented
+
+The Astrobee project is currently performing ground robotic architecture for space robotics: Design, testing,
+testing of Prototype 4 (P4), the fourth in a series of and lessons learned. J. Field Rob. 31(1): 176-191.
+integrated risk reduction prototypes. P4 is the ﬁrst [11] YOO J W» Ct 31- (2015) AViODiCS and perehing
+prototype to have ﬂight_1ike size, structure, and systems of free-ﬂying robots for the International
+propulsion (Fig. 7), and include a full docking station. Space Station. In PVOC- IEEE 1’”- Symp. Systems Eng.
+
+Lessons learned from P4 will be merged into the [12] Park I W>_ Ct 31' (2015) Developing a 3'DOF
+ﬁnal design iteration, prior to veriﬁcation of a 00mph?” perchlng arrn for a free-ﬂying robot on the
+e ertiﬂ eati on unit later this year. Internatlonal Space Statlon. In Proc. ICRA. . . .
+
+[13] Estrada M A, et al. (2016) Free-ﬂyer aequ1s1tlon
+6 CONCLUSION of spinning objects with geeko-inspired adhesives. In
+Proc. ICRA.
+
+Astrobee is a ﬂexible platform that will enable the [14] Szaﬂr D, et al. (2015) Communicating
+next generation of zero-g free-ﬂying robotics research. directionality in ﬂying robots. In Proc. HR 1.
+
+15 La illi G, et al. 2015 Results of micro raVit
+ACknOWledgements ilui]d dinamies eaptuied vgith the SPHERESg-Slosh
+
+We would like to thank the ISS Payloads Ofﬁce, experiment. In Proc. 1 A C.
+the JSC Flight Operations Directorate, ISS Avionics [16] Broyan J L, et al. (2014) Logistics reduction
+and Software, the Advanced Exploration Systems technologies for exploration missions. In Proc. AIAA
+program, and the ISS SPHERES team for their Space.
+collaboration. We would especially like to thank
+Jason Crusan, Ryan Stephan, Steve Gaddis, and
+Kevin Kempton for their support. The NASA Game
+Changing Development Program (Space
+Technology Mission Directorate) and ISS
+
+"

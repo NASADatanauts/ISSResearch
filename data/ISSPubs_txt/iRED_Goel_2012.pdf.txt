@@ -1,0 +1,568 @@
+"","x"
+"1","Acta Astronautica 70 (2012) 43—51
+— """" / 2'"",
+* 1:;5:-‘_;:._;:.g Contents llsts avallable at SolenceDIrect '
+
+(1.6339351; ‘1‘"" ' .
+w; 1’? Acta Astronautlca /
+v“; f {I ” /5f’,’:::::‘::§;
+ELSEVIER journal homepage: www.elsevier.com/locate/actaastro {m} l'(
+—
+Modellng the beneﬁts of an art1ﬁc1al grav1ty countermeasure
+O O O 0 %
+coupled w1th exerc1se and v1brat10n
+Rahul Goel 3""“, Justin Kaderka 3, Dava Newmanb
+a Department ofAeronautics and Astronautics, Massachusetts Institute of Technology (MIT), Cambridge, MA 02139, United States
+bAeronautics and Astronautics and Engineering Systems, Massachusetts Institute of Technology (MIT), Cambridge, MA 02139, United States
+ARTICLEINFO ABSTRACT
+Article history: The current, system—speciﬁc countermeasures to space deconditioning have limited
+RecelVEd 14January 2011 success with the musculoskeletal system in long duration missions. Artiﬁcial gravity
+RECEWEd 1“ rEWSEd form (AG) that is produced by short radius centrifugation has been hypothesized as an
+24 11113, 2011 effective countermeasure because it reintroduces an acceleration ﬁeld in space;
+meme“ 251“” 20“ h AG 1 ' ht t b h t' 1' t th 1 1 1 t 1
+Available online 6 August 2011 owever, a one m1g . no e enoug s 1mu1 o preserve e muscu 0s (e e a
+— system. A novel comblnatlon of AG coupled w1th one—legged squats on a Vlbratlng
+Keywords: . platform may preserve muscle and bone in the lower limbs to a greater extent than the
+Artlﬁaal gravlfty current exercise paradigm. The beneﬁts of the proposed countermeasure have been
+Eligﬁaerclliiitrﬁolégein analyzed through the development of a simulation platform. Ground reaction force data
+g and motion data were collected using a motion capture system while performing one—
+legged ancl two—legged squats in 1—G. The motion was modeled in OpenSim, an open—
+source software, and inverse dynamics were applied in order to determine the muscle
+and reaction forces of lower limb joints. Vibration stimulus was modeled by adding a
+20 Hz sinusoidal force of 0.5 body weight to the force plate data. From the numerical
+model in a 1—G acceleration ﬁeld, muscle forces for quadriceps femoris, plantar ﬂexors
+ancl glutei increased substantially for one—legged squats with vibration compared to
+one— or two—legged squats without vibration. Additionally, joint reaction forces for one—
+legged squats with vibration also increased signiﬁcantly compared to two—legged
+squats with or without vibration. Higher muscle forces and joint reaction forces might
+help to stimulate muscle activation and bone modeling and thus might reduce
+musculoskeletal deconditioning. These results indicate that the proposed counter—
+measure might surpass the performance of the current space countermeasures and
+should be further studied as a method of mitigating musculoskeletal deconditioning.
+© 2011 Elsevier Ltd. All rights reserved.
+1. Introduction Current countermeasures 0n the International Space Station
+(155), such as resistive exercise on the interim Resistive
+With NASA preparing for new and novel destinations Exercise Device (iRED) or Advanced Resistive Exercise
+such as near—Earth asteroids, LaGrange points, and beyond, Device (ARED), treadmill running, and cycling, have only
+countermeasures for human deconditioning in space will proven to be partially beneﬁcial despite over four decades of
+play an increasingly important role in human missions. optimization. In particular, astronauts returning from six
+months aboard the International Space Station (155) have
+W t d d , th 61 t IAC, P shown that anti—gravity muscle volume and peak power
+* Corisesﬁprlegirgazlifsren e urmg e S m rague' still decrease signiﬁcantly vs. pre—ﬂight (— 13% and —32%,
+E-mail addresses: rahul.goe120@gmail.com (R. Goel), resPECtiVEIY) [11- Bone mineral denSity (BMD) and Strength
+jkaderka@mit.edu (J. Kaderka), dnewman@mit.edu (D. Newman). lOSSES also persist in the lower extremities With integral hip
+0094—5765/$ — see front matter © 2011 Elsevier Ltd. All rights reserved.
+doi: 1 0.1 01 6/j.actaastro.201 1.07.021
+
+"
+"2","44 R. Goel et al. / Acta Astronautica 70 (2012) 43—51
+BMD being lost at an average of 1.5% per month [2,3]. Such hour/day of 1.5—Gx can signiﬁcantly attenuate muscle
+losses must be blunted to ensure safety of astronauts for atrophy in rats [12].
+extended duration excursions beyond the low—Earth orbit.
+
+Artiﬁcial gravity (AG) has the potential to be an effective 1.2. Enhancing the effect of artiﬁcial gravity with exercise
+countermeasure because it simulates gravity in space,
+which is created by either a rotating spacecraft or a Short Few studies have evaluated the effectiveness of exer—
+Radius Centrifuge (SRC). A rotating spacecraft would be cise coupled with AG to counteract musculoskeletal
+ideal fromacountermeasure standpoint because aconstant deconditioning. In a bed rest study, Akima et al. [13]
+acceleration of 1—G could be provided; however, a rotating showed AG coupled with intensive cycle training main—
+spacecraft would require a signiﬁcant departure from cur— tained thigh muscle size but not strength. Other studies,
+rent spacecraft designs. AG created by an SRC continues to which couple AG with squats or stair steppers, have
+have the potential to be an effective countermeasure for evaluated muscle activation and the feasibility of con—
+microgravity because current concepts are less mass and ducting these exercises in a rotating environment [14,15].
+volume prohibitive than a rotating spacecraft.
+
+AG creates an acceleration that loads the bones and 1.3. Enhancing the effect of artiﬁcial gravity with vibration
+muscles similar to gravitational acceleration on the Earth.
+AG also reintroduces hydrostatic gradients in the body Vibration exercise, in which subjects are pressed
+and causes a ﬂuid shift toward the lower extremities. against a platform vibrating at frequencies of 20—45 Hz
+Aside from being greatly beneﬁcial to the cardiovascular and amplitudes between 1.5 and 6 mm, has also been
+system [4,5], hydrostatic gradients also cause an increase evaluated to counteract muscle and bone atrophy [16].
+in blood ﬂow to muscles of the lower body [6]. In Whole body vibration proved capable of maintaining calf
+addition, the ﬂuid shift is potentially important to bone muscle strength and ﬁber type composition during a
+remodeling. Osteocytes are believed to act as strain 55—day bed rest study [17]. Vibration exercise has also
+receptors by sensing changes in interstitial ﬂuid due to been shown to increase muscle activation by 360.6 i 57.5%
+loading [7]. Decreased interstitial ﬂuid, which occurs in and 151.4i 19.5% for the gastrocnemius and rectus
+the lower limbs in bed rest studies [6], in theory, attenu— femoris, respectively, while subjects performed one— and
+ates the ability of osteocytes to act as strain receptors. two—legged squats [18]. Additionally, vibration exercise
+Artiﬁcial gravity reverses this trend and therefore has the coupled with one— and two—legged squats was shown to
+potential to greatly beneﬁt the skeletal system. In addi— increase knee extensor maximum isometric strength in
+tion, the current exercise countermeasures on the space postmenopausal women by 15% (p < 0.01) and increase
+station utilize elastic straps and harnesses to load the hip bone mineral density (BMD) by 0.93% (p<0.05) in a 6
+body and to restrain the crewmembers. The harnesses month study [19]. Finally, peak acceleration of up to 0.2 g
+create an unnatural and often uncomfortable load on the with a frequency of 20 Hz has been found to be effective in
+shoulders and back, which limits body loading. AG is reducing postmenopausal bone loss [20].
+advantageous because it creates a more natural loading It is theorized that skeletal remodeling is mediated by
+that can easily be increased to levels in excess of 1—G. osteocyte strain receptors in the bone [7]. Additionally,
+
+some evidence has shown that the magnitude of strain is
+1.1. Artiﬁcial gravity as a countermeasure to the pertinent factor, not strain frequency [21], though it is
+musculoskeletal deconditioning still a matter of much debate. Since bone strain is a
+function of applied force and bone geometry, for the same
+
+There are an extremely limited number of AG studies in person an increase in loading will produce higher strains.
+space. Almost all of the studies have been on rats in the Vibration can increase skeletal loading through direct
+Soviet Biosatellite ‘Cosmos’ program [8]. However, there mechanical impact and through increased muscle activa—
+have been a number of ground—based analog studies utiliz— tion and therefore provide a strong stimulus for the
+ing either bed rest or animal models to simulate micro— maintenance of bone strength. Resistive vibration exer—
+gravity. A recent analysis of these ground—based, cise in addition to high—load resistive exercises (including
+deconditioning studies has indicated that AC has performed squats), were found to be effective in reducing muscle
+as effectively as the current types of countermeasures atrophy in the extensors of the knee and ankle [22].
+aboard the 155 for the cardiovascular system [9]. Never— Anovel combination of AG with one—legged squats and
+theless, few of these studies have focused on the efﬁcacy of vibration exercise is proposed to counteract the muscu—
+AG on muscles of the lower limbs and even fewer have loskeletal deconditioning commonly seen in prolonged
+focused on skeletal effects. exposure to microgravity. The authors hypothesize that
+
+Bed rest studies with passive AG (i.e. AG not coupled performing one—legged squats on a vibrating platform
+with exercise) have shown a substantial decrease in while in an AC environment will generate higher muscle
+muscle atrophy (cross—sectional area) in the vastus later— and joint forces than the ISS exercises, thus creating a
+alis and signiﬁcant decrease in muscle atrophy in the greater prophylactic effect.
+soleus [10]; however, results on bone parameters have
+been inconclusive [11]. As there is a paucity of human AG 2. Methods
+studies on the musculoskeletal system, animal hind limb
+suspension models coupled with centrifugation provide The primary goal of the present analysis was to determine
+an analog. Some of these studies have shown that one the biomechanics of one—legged and two—legged squats
+
+"
+"3","R. Goel et al. / Acta Astronautica 70 (2012) 43—51 45
+Muscle forces
+and joint reaction
+, forces
+Ground Reaction Data - Squats
+CMC -
+Motion . . _ Dynamics;
+Processmg Marker Dam- Kinematics Analyze
+Capture Squats
+Marker Data-
+Static Pose Scaled
+Model
+m
+Fig. 1. Work ﬂow to obtain muscle forces from motion capture data of squats.
+performed on a simulated vibrating platform. In order to
+determine the muscle forces and loads on the hip, the squat
+motion was modeled in OpenSim (Stanford, CA) [23]—an
+open-source software system that has well-developed mod- n
+els of musculoskeletal structures and allows users to create 93:?
+dynamic simulations of motion—and inverse dynamics was - git ‘.
+carried out to compute the muscle activity. Fig. 1 shows the g 2;
+work ﬂow to obtain muscle forces from motion capture data. ' ‘
+‘3? .. '
+2.1. Data collection Zia
+All experiments were performed at the Computer \ ‘,
+Science and Artiﬁcial Intelligence Laboratory at MIT using a ‘ E
+the Vicon® (Los Angeles, USA) motion capture system. Four : .
+male subjects (26 i 6 years old) participated in the experi- ' 2 , .
+ment and were of similar stature (718 i 8 N in weight and .
+176i 5 cm tall). Forty—ﬁve markers were placed at the . ‘
+Helen Hayes marker locations [24] on the subject’s body '
+while 16 cameras tracked the movement as the subject
+performed squats. Ground reaction force (GRF) and moment
+data were obtained from two force plates. Two-legged
+squats were performed with each foot placed on the center
+of each force plate while one-legged squats were performed Fig- 2- Mono“ capture exPeriment and mOdEIing-
+with one foot around the center of one force plate. While
+performing one-legged squats, the non-weight bearing leg Vicon® data into acceptable inputs for OpenSim. Before
+was extended to the front as illustrated in Fig. 2. For both performing inverse kinematics in OpenSim, it was ﬁrst
+squats, subjects performed one squat (eccentric and con- necessary to scale the model to the anthropometric
+centric phases) in approximately 3 5. Subjects were dimensions of the subject (Fig. 1). For this purpose,
+instructed to descend into the squat until the femur was marker positions were collected with the subject in a
+approximately parallel to the ﬂoor. Subjects performed a static pose, in which the subject stood still with knees
+series of four squats of each type and the optimal squat for straight and arms extended to the front. The scaling tool
+each type was chosen for subsequent analysis. One-legged in OpenSim used this data to appropriately adjust the
+squats were performed with both right and left legs; lengths of different body segments and then adjust the
+however, results of only the right leg are presented as the model markers (i.e. markers on the simulated skeleton in
+right leg was dominant for all subjects. Analog data from the OpenSim) to be as close as possible to the experimental
+force plate was recorded at 1000 Hz, whereas the video data markers (i.e. markers placed on the subject). After scaling,
+of marker locations was recorded at 120 Hz. inverse kinematics was performed; this replicated the
+motion of the subject in the numerical model.
+2.2. Data analysis The GRF and moments along with the joint angles,
+which were obtained from inverse kinematics, were used
+OpenSim was used to determine muscle forces and to run the Computed Muscle Control (CMC) tool in Open-
+activations. MATLAB scripts were developed to convert Sim. CMC ﬁrst generates the joint torques required to
+
+"
+"4","46 R. Goel et al. / Acta Astronautica 70 (2012) 43—51
+perform the simulated motion. It then uses a static 3. Results
+optimization algorithm to ﬁnd appropriate muscle activa—
+tion levels and forces. In some instances, the optimization 3.1. Ground reaction forces
+determined some muscles reached their maximum
+isometric force; this was solved by increasing the Peak GRFs for one— and two— legged squats were
+maximum isometric force for that muscle. This step was obtained from force plate data. For two—legged squats
+necessary because of subject variability in muscle the peak GRF is the average of the two legs. Average peak
+strength. Unfortunately, it was not possible to modify GRF for two—legged squats for the four subjects was
+gravity in OpenSim to simulate the gradients a subject 453.7 $24.4 N (0.63 $0.03 BW) and was 832.8i35.7 N
+would normally experience while performing squats on a (1.16 i 0.05 BW) for one—legged squats.
+short radius centrifuge.
+2.3. Simulation of a body platform 32. Muscle forces
+In order to model the effect of a vibrating platform at , , , ,
+the feet, the force plate data was modiﬁed to include a F133 shows a representative time history curve Of the
+si nu 5 0i c1 al to 1, c e muscle forces of plantar ﬂexors for one—legged squats
+both with and without vibration (Vib). It is plotted around
+F = BW >< 05511190 >< 2775f) (1) the point of interest, which is the maximum knee ﬂexion
+where BW is the body weight in the Newtons. This force (shown by a dash line). In general, forces tend to peak at
+due to vibration was added to the ground reaction force. the end 0f the tlescent phase 0f the squat during max—
+A frequency of 20 Hz was used because it is a typical 1mum knee ﬂex1on.
+frequency used in vibration studies [16], and the compu— The average maximum knee ﬂexion angle for the four
+tational limitations of OpenSim prevented the use of a subjects for two—legged squats was found to be “4-7 i 40-
+higher frequency. A maximum force of BW X 0.5 that was Similarly, the average maximum knee ﬂexion angle for
+transferred to the feet was used as a proof—of—concept. the four subjects for one—legged squats was found to be
+A comparison of muscle forces generated in quadriceps 100 i 8-80-
+femoris, plantar ﬂexors, and glutei was performed for two— Figs. 4‘6 show box plots 0t computed peak muscle
+legged and one—legged squats both with and without added forces for the three muscle groups across four conditions
+vibration. Table 1 shows the various muscles of interest. (one—legged 0t two—legged squats, either With or WithOUt
+vibration). Peak muscle forces for glutei and quadriceps
+2.4. Analysis of loads applied to bone fenioris were signiﬁcantly higher for one—legged sqnats
+w1thout Vibration compared to two—legged squats With—
+It is believed that strain in bone activates bone ont yibration (p 20'006 for b0th)’ However, this was not
+modeling. Strain is a function of the bone load and the Signiﬁcant for the plantar ﬂexors (p .2041)
+bone geometry, and can be determined through ﬁnite Vibration dld not have 3.“ effect in two—Iegged squats
+element models (FEM) or in vivo strain gauging 0n the for any muscle group (glute1,p 20'43’ quadriceps femoris,
+surface of the bone [25,26]. However, for the same bone p 20'097; .plantar ﬂexors, 132022) However, Vibration
+geometry a higher load will cause a higher strain. There— was effective in one—legged squats .for all muscle groups
+fore, bone loads in the main weight bearing bone (femoral (p < ODS)‘ Finally, muscle forces in one—legged squats
+axial strains) were examined. Joint reaction forces at the
+hip were analyzed using Analyze tool of OpenSim. Forces
+were calculated along the direction of femur. e I
+6000 E :33
+2.5. Statistics 2 z : g:
+3 5000 .. E :
+All data were tested for normality using the ‘6 ‘ 'b 1\ Al
+I(olmogorov—Smirnov test. A T—test for dependent sam— 3 4000 [IX I\ l! \ 1’ h ,r\
+ples was used and signiﬁcance was taken at the p=0.05 § ‘\ II ‘\ 1’ \V/ \J/ i \I’ \\ I’ \
+level. All data 1S presented as the average i SE. 5 3000 \ \’ : ‘J \J,’ \\ 1’ ’\
+E No \‘ib \J
+Q l
+E 2000 :
+Table 1 g |
+Relevant muscle groups and their associated muscles. 5 :
+— E 1000 I
+Quadriceps femoris Plantar ﬂexors Glutei :
+Rectus femoris Soleus Gluteus maximus 02.8 2.85 2.9 2.95 3 3.05 3.1 3.15 3.2
+Vastus lateralis Medial gastrocnemius Gluteus medius Time (s)
+Vastus medialis Gluteus minimus
+Vastus intermedialis Fig. 3. Representative curve of muscle forces of plantar ﬂexors showing
+— comparison for one—legged squat with and without vibration.
+
+"
+"5","R. Goel et al. / Acta Astronautica 70 (2012) 43—51 47
+10,000 8,000
+n=4 $ 11:“ $
+$ 53
+[—I 0
+$ A 6 800
+8,000 [—1 E ’ [—]$
+A $ 8
+a ‘ '6
+‘” ""' 5600
+g 6,000 $ ‘6 '
+u. ' ' K
+8 m
+§
+._ 2 4,400
+3 4,000 .5
+a h
+. a :
+2
+n.
+2,000
+2,000
+0 4&0 4K9 4&0 4&0
+0° 0° 0° 0° 0° 00° 0° 05°""
+\° 0°"" \0 09 0°"" 'V 69 K.
+4‘ .v 4‘ .v .v .v
+60., ‘1o “0.9 N ‘1' '\
+'13"" N""
+Fig. 6. Peak muscle forces for the plantar ﬂexors for the four conditions.
+Fig. 4. Peak muscle forces for the glutei for the four conditions. $:—p <O'O5'
+$2—p<0.05.
+10000 ‘
+4~~~
+/ I \ /\’~\ /’\.
+6,000 Vib l“- [I I \l \/
+n=4 3}; 8°00 ‘_ J’ \\-” i
+0 g \’ i
+E [—155 5 6000 No Vib '
+0 0- |
+2 5,000 [—1 g l
+O -’ I (3-
+: 9 4000 : \
+0 $ 1 : c ’
+o. x .g ._ /
+.g 2000 a: :g
+0 4,000 2 , :2;
+E ' , ~
+Q I
+u.
+m 0
+a. 2.8 2.85 2.9 2.95 3
+8 Time(s)
+':
+g 3’000 Fig. 7. Joint reaction force comparison for one—legged squat with and
+8 without vibration.
+- 3.3. joint reaction forces
+2000 Fig. 7 shows a representative curve of the computed
+04* $0 0&0 4‘0 hip joint reaction forces that are axial to the femur and
+0\ >90"" 0\ Q39 compares one—legged squat with and without vibration.
+>39 q, Q39 Forces are plotted around the point of maximum knee
+q, ﬂexion (shown by a dash line).
+Fig. 5. Peak muscle forces for the quadriceps femoris for the four Fig- 8 ShOWS bOX plOtS Of peak hip jOint reaCtion fOI’CE
+conditions.$:—p<0.05. for the four conditions. Joint reaction forces are not
+signiﬁcantly different between two—legged squats with
+with vibration were signiﬁcantly different than those of or without vibration (1320.787). Contrary to the muscle
+two—legged squats with vibration for all the muscle forces, vibration was also not signiﬁcant between joint
+groups (p<0.05). reaction forces of one—legged squats with or without
+
+"
+"6","48 R. Goel et al. / Acta Astronautica 70 (2012) 43—51
+vibration (p=0.33). Vibration is effective however between or nearly 0.5 BW [27]. In the present study, the GRFs
+two—legged and one—legged squats (p=0.016). produced per leg during a one—legged squat were 144%
+A summary of muscle forces and joint reaction forces higher than from a two—legged squat using iRED. Simi—
+that were examined is shown in Table 2. larly, GRFs from two—legged squats in this study were 33%
+higher than from two—legged squat 0n iRED. The largest
+. . GRF experienced by the subject in this study was 1.2 BW.
+4° Discussmn Peak GRF experienced when walking in 1—G is 1.5 BW
+[28]. When accounting for the maximum 0.5 BW that is
+4.1. Evaluation of physiological effects of combined AG, added to simulate a vibrating platform (peak GRF:
+exercise, and vibration countermeasure 1.7 BW), the GRF of this study exceeds that of 1—G
+walking. In a recent study, average single leg forces for
+In order to assess the effectiveness of the proposed two—legged squat using iRED on the 155 was found to be
+countermeasure, ground reaction forces, muscle forces, 0'59 BW, and that for one—legged squat was found to be
+and joint reaction forces must be compared to iRED and 0.64 BW [29].
+normal 1—G activity. If this proposed countermeasure is To the authors’ knowledge, studies on muscle activa—
+capable of exceeding the leading environment created tion or joint reaction forces while using the ARED or iRED
+when the IRED 15. used 1“ m1CF0$FaVltM then muscle and in microgravity have not been published, which precludes
+bone strength might be n1a1nta1ned to a greater extent direct comparison to the proposed countermeasure. How—
+than currently observed Wlth astrenauts Oh the 155' ever, a comparison to squat biomechanics in 1—G is useful
+The max1mum GRF per leg, Whleh was produced from because that is the condition the proposed countermea—
+two—legged squats 0n iRED in parabolic ﬂight, was 340 N, sure would mimic or exceed.
+Dahlkvist et al. [30] performed two—legged squats and
+14900 recorded average force in several muscle groups of eight
+11:4 $ % K subjects. In the Dahlkvist study, the maximum force of the
+{—1 . quadriceps femoris was 4701 N compared to 3214N in
+$ ‘ the present study during two—legged squats without
+{—1 vibration. Conversely, average muscle force for the gastro—
+A cnemius was 950 N in the Dahlkvist study and 2859 N in
+z .
+z; 10 000 the present study. Finally, average peak force for ham—
+2 ’ .5 strings was 1640 N in the Dahlkvist study while the
+8 ﬂ average force was 2200 N in the present study. Overall,
+*5 .7 ., . there seems to be an agreement between muscle forces in
+§ I these two studies. In an analytical model developed by
+g, Zheng et al. [31], maximum force estimated in quadriceps
+E femoris was 3500 N at maximum knee ﬂexion of 850.
+ﬁ 6,000 Muscle group forces during one—legged squats with
+& vibration were found to be signiﬁcantly higher than the
+~ I 7 other three conditions. However, since no signiﬁcant differ—
+ence was found between two—legged squats with and
+without vibration, the salutary effects of vibration seem to
+.. appear primarily with one—legged squats. Although joint
+reaction forces increased by only 21% during one—legged
+2,000 squats with application of vibration, muscle forces increased
+$0 4‘” $0 4‘0 substantially (glutei, 52%; quadriceps femoris, 37%; plantar
+$0 939 $\0 >39 ﬂexors, 60%). This ﬁnding suggests a strongly enhanced
+>39 ’L >90"" N stimulus to muscle activation.
+q, N Simulated vibration exercise was conﬁrmed to be a
+Fig. 8. Peak axial hip joint reaction forces for the four conditions. highly effective StimUIant for bOth mUSCle and bone, 35
+$:—p<0.05. demonstrated by the considerable increase in muscle
+Table 2
+Average peak forces for gluteal muscles, quadriceps femoris, plantar ﬂexors, and hip joint.
+Gluteal muscles (N) Quadriceps femoris (N) Plantar ﬂexors (N) Hip joint (N)
+2—Leg w/o vibration 2143 (523) 2760 (234) 3339 (223) 6153 (526)
+2—Leg w/vibration 2656 (414) 3413 (307) 3740 (219) 5782 (1016)
+1—Leg w/o vibration 3781 (432)3'b 3982 (201)3 3211 (319) 7293 (1600)
+1—Leg w/vibration 5717 (569)3'b'c 5454 (253)3-b6 5152 (418)3'b'c 8832 (396)3'b'c
+a p < 0.05 vs. one—legged squat without vibration.
+b p < 0.05 vs. one—legged squat with vibration.
+C p < 0.05 vs. two—legged squat without vibration.
+
+"
+"7","R. Goel et al. / Acta Astronautica 70 (2012) 43—51 49
+forces and joint reaction forces. Most strikingly, the force 4.3. Feasibility
+in plantar ﬂexors for one—legged squats is increased by
+60% after the addition of vibration. This large, salutary Artiﬁcial gravity has the potential to be a comprehen—
+effect with the application of vibration is important since sive countermeasure although a human centrifuge has yet
+the plantar ﬂexors are important antigravity muscles that to be implemented in space. This has been based on a
+undergo signiﬁcant deconditioning in space. number of reasons including spacecraft volume con—
+Peak acceleration in human vibration studies reviewed straints and programmatic restraints. Due to power lim—
+by Rittweger [16] was 157 m/s2 or 16 BW (40 Hz, 2.5 mm). itations foreseen in exploration class missions, a
+However, OpenSim is unable to process these high accel— centrifuge in space might be conﬁned to only use human
+erations. Because 0.5 BW was used as a proof—of—concept, power. Cycling has been the only modality proven to be
+the muscle activation resulting from vibration is potentially capable of human—powering a centrifuge (‘The space
+an underestimation of what can be achieved. cycle’ [32]). While this necessitates a cycle ergometer be
+Intermittent AG, both passive and coupled with exer— used on one arm of the centrifuge, a two—arm centrifuge
+cise, have shown some promising results with muscle could utilize the second arm as a vibrating platform for
+parameters such as cross—sectional area and muscle squats and calf presses. Thus crewmembers could utilize
+molecular markers [9,10]. However, complete preserva— AG coupled with cycling for a cardiovascular counter—
+tion of these parameters has not been achieved. In measure and AG coupled with squats and vibration for a
+addition, AG thus far has shown to have a minimal effect musculoskeletal countermeasure. When crewmembers
+on bone properties. Vibration could offer the necessary are sent to points of interest away from the low Earth
+stimulus to further attenuate muscle degradation as well orbit for long duration missions, a more effective counter—
+as preserve bone density. measure system will be required; AG coupled with squats
+and vibration might be such a countermeasure for the
+4.2. Limitations musculoskeletal system.
+Another practical constraint to the proposed design is
+Some limitations were faced in the experimental design additional crew time required to perform one—legged
+mainly due to practical issues,time constraints, and the lack squats as opposed to two—legged squats. It is assumed
+of physiological data from the 155 with which to compare that no additional centrifugation time will be required.
+the results of the present study. Firstly, this experiment did Because one—legged squats are more strenuous, it is likely
+not directly assess the ability of the exercise to prevent that the subject will not be able to perform as many
+deconditioning, as this would have required weeks of bed repetitions as would be possible with two—legged squats.
+rest and many subjects. Instead, conclusions are based on The described countermeasure suggests one—legged
+the relative muscle activation and joint reaction forces squats because the exercise is more demanding and
+produced from the numerical model and compared to those creates higher loads than two—legged squats. Higher
+of iRED studies and ground—based studies. It must be noted muscle activation, which is caused by the body’s weight
+that the physiology of musculoskeletal deconditioning is being lifted by one leg instead of two, will increase bone
+complex and cannot be completely assessed by the magni— loading and thus strain. As a result, one—legged squats
+tude of the stimulus to bone and muscle; however, muscle might prevent bone degradation to a greater extent than
+forces and joint reaction forces are a contributing factor two—legged squats.
+and have been chosen since they are some of the most
+frequently analyzed measurements. 4.4. Recommendations
+In addition, squat experiments were performed in 1—6
+rather than on a rotating centrifuge because the Vicon The work presented herein demonstrates the potential
+motion capture system used had to be conducted in a of AG coupled with exercise and vibration to prevent
+stationary environment. Therefore, the Coriolis forces and musculoskeletal deconditioning in microgravity. Future
+gravity gradients were not present in the modeling of the work will be required to directly assess the ability of this
+kinematics and dynamics. However, Duda [14] deter— proposed countermeasure to curtail muscle atrophy and
+mined that the Coriolis forces and gravity gradients do bone loss. Speciﬁcally, a bed rest study should be per—
+not signiﬁcantly affect two—legged squat biomechanics formed in which subjects are exposed to 90 days of bed
+during centrifugation. Also, it was not possible to simulate rest with or without AG coupled with exercise and
+in OpenSim accelerations greater than 1—6, which is vibration training. It is recommended that artiﬁcial grav—
+common in AC experiments [9], and would produce ity be pursued as a countermeasure because of its poten—
+higher muscle and joint forces and thus improve the tial as a multi—system countermeasure.
+effectiveness of the exercise protocol.
+Finally, because we did not have access to a vibrating 5. Conclusions
+platform, all experiments were performed while standing
+on stationary force plates and vibration was simulated in Musculoskeletal deconditioning in microgravity is a
+OpenSim. The accuracy of this method depends on the potentially serious health risk that astronauts face on long
+assumption that the subject’s kinematics would not have duration missions. In order to mitigate bone loss and muscle
+changed if the exercise was performed with vibration. atrophy, a countermeasure combining AG, exercise, and
+This assumption appears to be valid based on studies that vibration have been proposed that will provide an enhanced
+have indicated the vibration is hardly discernable [20]. stimulus to muscle and bone. The physiological effect of the
+
+"
+"8","50 R. Goel et al. / Acta Astronautica 70 (2012) 43—51
+exercise prescription was simulated through subject motion gravity maintains muscle size during bed rest, Aviation Space and
+capture and kinematics simulation in a numerical model to Eeronmental Mew?“ 75 (2005923‘929- , ,
+. . . . . . [14] K. Duda, Squat Exerc1se Biomechanics During Short—Radius Centri—
+determlne muscle act1vat10n and jOlnt reactlon forces. It was fugation’ MIT AerO_Astm_ PhD Thesis, 2007_
+found that the proposed countermeasure has the potential [15] J. Edmonds, Exercise Protocols During Short—Radius Centrifugation
+to provide higher muscle activation and joint forces than [16] JfOFRQtrtiﬁCial 3??“th MIT Aero-ASW- Ph-g- E1651; 20:8- 1
+- - - . 1 weger, 1 ra 1011 as an exerc1se mo a 1 y: ow 1 may wor <,
+current exerc1se countermeasures. F1nally, the prlmary goal and what its potential might be, European Journal Of Applied
+to develop a simulation platform to determine the biome— Physiology 108 (2010) 877—904.
+chanics 0f one_legged and two-]egged squats performed on [17] D. Blotther, M. Salanova, B. Puttmann, G. Schifﬂ, D. Felsenberg,
+a vibrating platform has been met. A novel numerical B.Buehr1ng,].RittwegenHuman skeletal muscle structure and function
+, , preserved by v1brat10n muscle exerc1se follow1ng 55 days of bed rest,
+mOddlng tEChnlque has been proven that can be USEd to European Journal of Applied Physiology 97 (2006) 261—271.
+test the efﬁcacy of different test protocols in advance of [18] M. Roelants, S.M.P. Verschueren, C. Delecluse, O. Levin, V. Stijnen,
+performing more rigorous experiments such as bed rest WhPIE'dey'Vlbratlo“'mdu?6d Increase 1“ leg mUSde aCF‘VIty
+, during different squat exerc1ses, Journal of Strength and Condition—
+StUdles- ing Research 20 (2006) 124—129.
+[19] S. Verschueren, M. Roelants, C. Delecluse, S. Swinnen,
+D. Vanderschueren, S. Boonen, Effect of 6—month whole body vibration
+training on hip density, muscle strength, and postural control in
+Acknowledgements postmenopausal women: a randomized controlled pilot study, Journal
+of Bone and Mineral Research 19 (2004) 352—359.
+[20] C. Rubin, R. Recker, D. Cullen, J. Ryaby, J. McCabe, K. McLeod,
+The authors would like to thank its four subjects, the Prevention of postmenopausal bone loss bya low—magnitude, high—
+OpenSim support team and lab colleagues (Soﬁa d’Orey, frequency mechanical stimuli: a clinical trial assessmg compliance,
+efﬁcacy, and safety, Journal of Bone and Mineral Research 19
+Roedolph Opperman, Rachel Ellman, Kavya Manyapu, and (2004) 34335]
+Richard Rhodes) for their fruitful discussions and assis— [21] H.M. Frost, Why do marathon runners have less bone than weight
+tance at different stages Of the project. lifters? A vital—biomechanical view and explanation, Bone 20
+(1997) 183—189.
+[22] BL. Belavy, T. Miokovic, G. Armbrecht, J. Rittweger, D. Felsenberg,
+References Resistive vibration exercise reduces lower limb muscle atrophy
+during 56—day bed rest, Journal of Musculoskeletal and Neuronal
+Interactions 9 (2009) 225—235.
+
+[1] 5- Trappe, D- Costill, 13- Gallagher, A- Creer, J-R- Peters, H- Evans, [23] S.L. Delp, F.C. Anderson, A.S. Arnold, P. Loan, A. Habib, C.T. John,
+D.A. Riley, RH. Fitts, Exercise in space: human skeletal muscle after E. Guendelman, D.G. Thelen, OpenSim: open—source software to
+six rhonths aboard the International Space Station, Journal Of create and analyze dynamic simulations of movement, IEEE Trans—
+APPIIEd Physmlogy 105 (2009) 1159-1158- . . actions on Biomedical Engineering 54 (2007) 1940—1950.
+
+[2] ].H. Keyak, AK. Koyama, A. LeBlanc, Y. Lu, T.F. Lang, Reduction 1h [24] RB. Davis, S. Ounpuu, D. Tyburski, ].R. Gage, A gait analysis data
+proximal femoral strength clue to long—duration spaceﬂight, Bone collection and reduction technique, Human Movement Science 10
+44 (2009) 449—453. (1991) 575—587.
+
+[3] T- Lang, A- LeBlanc,.H. Evans, Y- Lu, H- Genant, A- Yu, Gortical and [25] S. Judex, T.S. Gross, R.F. Zernicke, Strain gradients correlate with
+trabesular bonemlneral 1055 from the 5P1“? and hlp 1n long— sites of exercise—induced bone—forming surfaces in the adult
+duration spaceﬂight, Journal Of Bone and Mineral Research 19 skeleton,]ournal of Bone Mineral Research 12 (1997) 1737—1745.
+(2004)1005-1012- [26] BA. Rabkin, ].A. Szivek, ].E. Schonfeld, B.P. Halloran, Long—term
+
+[4] J.Vernikos,D.A.Ludwig,A.C.Ertl,C.E.Wade,L.I(eil,D.O’Hara,Effect measurement Of bone strain in vivo: the rat tibia, Journal Of
+of standing or walking on physiological changes induced by head Biomedical Materials Research 58 (2001) 277—281.
+down bed rest: implications for spaceﬂight, Aviation Space and [27] S.M.C. Lee, K. Cobb, ].A. Loehr, D. Nguyen, S.M. Schneider, Foot—
+Environmental Medicine 57 (1995) 1059-1079- ground reaction force during resistive exercise in parabolic ﬂight,
+
+[5] F. Vil’Vil’yams, E.B. Shul’zhenko, State of cardiovascular function Aviation, Space, and Environmental Medicine 75 (2004) 405_412_
+after imnaersion for three days anc] prophylactic spinning on a [28] J. Nilsson, A. Thorstensson, Ground reaction forces at different
+short—radius centrifuge, Human Physwlogy 5 (1980) 150—154- speeds of human walking and running, Acta Physiologica Scandi—
+
+[6] VJ. Korolkov, I.B. Kozlovskaya, AR. I(otovskaya, V.P. Krotov, I.F. Vil— navica 136 (1989) 217_227_
+
+Viliams, V-I- Lobachik, Efﬁcacy 0f periodic centrifugation 0f pri— [29] KO. Genc, R. Gopalakrishnan, MM. Kuklis, C.C. Maender, A]. Rice,
+mates during 4-W€€k head—down tilt, Acta Astronautica 49 (2001) KB. Bowersox, P.R. Cavanagh, Foot forces during exercise on Inter—
+237‘242- . . national Space Station, Journal of Biomechanics 43 (2010) 3020—3027.
+
+[7] M]. Pead, R. Susw1llo, T.M. Skerry, S. Ved1, L.E. Lanyon, Increased [30] N.]. Dahlkvist, p_ Mayo, B.B. Seedhom, Forces during squatting and
+3H—uridine levels in osteocytes following a single short period of rising from a deep squat, Engineering in Medicine 11 (1982) 69—76.
+dynamic bone loading in vivo, Calciﬁed Tissue International 43 [31] N. Zheng, G.S. Fleisig, R.F. Escamilla, S.W. Barrentine, An analytical
+(1988) 92‘96- model of the knee for estimation of internal forces during exercise,
+
+[8] G. Clement, A.P. Traon, Centrifugation as a countermeasure during Journal Of Biomechanics 31 (1998) 963—967.
+actual and simulated microgravity: a review, European Journal of [32] y_ Yang, A. Kaplan, M. Pierre, G. Adams, p_ Cavanagh, C. Takahashi,
+APPIiEd Physiology 92 (2004) 235—248- A. I(reitenberg, J. Hicks, J. I(eyak, V. Caiozzo, Space cycle: a human—
+
+[9] J. Kaderka, LR. Young, W.H. Paloski, A critical beneﬁt analysis of powered centrifuge that can be used for hypergravity resistance
+artiﬁcial gravity as a microgravity countermeasure, Acta Astronau— training, Aviation, Space, and Environmental Medicine 78 (2007) 2_9_
+tica 67 (2010) 1090—1102.
+
+[10] V. Caiozzo, F. Haddad, S. Lee, M. Baker, W. Paloski, KM. Baldwin,
+Artiﬁcial gravity as a countermeasure to microgravity: a pilot study . ‘ - Rahul Goel received his Masters degree in
+examining the effects on knee extensor and plantar ﬂexor muscle /,,_ '8 ', Aeronautics and Astronautics from MIT. Before
+groups, Journal of Applied Physiology 107 (2009) 39—46. ’ ' that Mr. Goel did his undergraduate from IIT
+[11] S. Schneider, W.E. Amonette, K. Blazine, J. Bentley, S.M.C. Lee, ‘ Bombay in India majoring in Aerospace engi—
+].A. Loehr, A.D. Moore, M. Rapley, E.R. Mulder, S.M. Smith, Training § -’l _ ‘ neering. Mr. Goel is currently working with
+with the International Space Station interim exercise device, _ EADS Astrium in Germany. Mr. Goel is
+Medicine 81 Science in Sports 81 Exercise 35 (2003) 1935—1945. ' . (é interested in space systems engineering, and
+[12] LP. Zhang, B. Sun, X.S. Cao, C. Liu, Z.B. Yu, L.N. Zhang, ].H. Cheng, "" speciﬁcally in the human—related aspects
+Y.H. Wu, X.Y. Wu, Effectiveness of intermittent —Gx gravitation in 3—! of spaceﬂight, like crew performance, space
+preventing deconditioning clue to simulated microgravity, Journal , physiology, and human factors. One of his main
+of Applied Physiology 95 (2003) 207—218. [ ambitions is to ﬂy to space, hopefully on an
+[13] H. Akima, K. I(atayama, K. Sato, K. Ishida, K. Masuda, H. Takada, Indian rocket. In his free time, Mr. Goel enjoys
+Y. Watanabe, S. Iwase, Intensive cycle training with artiﬁcial playing tennis, squash, travelling, or reading.
+
+"
+"9","R. Goel et al. / Acta Astronautica 70 (2012) 43—51 51
+
+Justin Kaderka is currently a Ph.D. candidate Dava Newman is a Professor in the Depart—
+
+at MIT, where he ﬁrst earned a Master of ment of Aeronautics and Astronautics and
+
+Science degree in 2010. Prior to enrolling at Engineering Systems at MIT. Prof. Newman
+
+MIT, Mr. Kaderka worked as 3 Thermal Engi— specializes in investigating human perfor—
+
+neer at Space Systems/Loral. In 2006, Mr. a mance across the spectrum of gravity. Prof.
+
+Kaderka received Bachelor of Science degrees , Newman was Principal Investigator (PI) for
+
+in Mechanical Engineering and Materials p( the Space Shuttle Dynamic Load Sensors (DLS)
+
+5 Science and Engineering from the University experiment that measured astronaut—induced
+
+' i of California at Berkeley. Mr. Kaderka’s main I disturbances of the microgravity environment
+
+r research interests are countermeasures to ‘ on mission STS—62. Prof. Newman is an expert
+
+. ‘ prevent human spaceﬂight deconditioning ‘ in the areas of extravehicular activity (EVA),
+
+.. and human—machine performance predic— 1 human movement, physics—based modeling,
+
+tion. Mr. Kaderka is a member of the Amer— ' biomechanics, energetics and human—robotic
+
+ican Institute of Aeronautics and Astronautics, and the Human Factors cooperation. Prof. Newman was named one of the Best Inventors of 2007
+and Ergonomics Society. for her BioSuitTM system by the Time Magazine.
+
+"

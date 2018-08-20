@@ -1,0 +1,719 @@
+"","x"
+"1","46th AIAA Aerospace Sciences Meeting and Exhibit AIAA 2008-1 130
+7 - 10 January 2008, Reno, Nevada
+Seml-Automated DlagnOSIs, Repalr, and Rework of
+Spacecraft Electronlcs
+Peter M. Struk1
+Richard C. Oeftering2
+NASA Glenn Research Center, Cleveland, OH 44135
+J ohn W. Easton3
+National Centerfor Space Exploration Research, Cleveland, OH 44135
+Eric E. Anderson4
+Arctic Slopes Research Corporation, Cleveland, OH 44135
+
+NASA’s Constellation Program for Exploration of the Moon and Mars places human crews in extreme
+isolation in resource scarce environments. Near Earth, the discontinuation of Space Shuttle ﬂights after 2010
+will alter the up- and down-mass capacity for the International Space Station (188). NASA is considering
+new options for logistics support strategies for future missions. Aerospace systems are often composed of
+replaceable modular blocks that minimize the need for complex service operations in the ﬁeld. Such a
+strategy however, implies a robust and responsive logistics infrastructure with relatively low transportation
+costs. The modular Orbital Replacement Units (ORU) used for 188 requires relatively large blocks of
+replacement hardware even though the actual failed component may really be three orders of magnitude
+smaller.
+
+The ability to perform in-situ repair of electronics circuits at the component level can dramatically reduce
+the scale of spares and related logistics cost. This ability also reduces mission risk, increases crew
+independence and improves the overall “supportability” of the program. The Component-Level Electronics
+Assembly Repair (CLEAR) task under the NASA Supportability program was established to demonstrate the
+practicality of repair by ﬁrst investigating widely used soldering “materials and processes” (M&P) performed
+by modest manual means. The work will result in program guidelines for performing manual repairs along
+with design guidance for circuit reparability.
+
+The next phase of CLEAR recognizes that manual repair has its limitations and some highly integrated
+devices are extremely difﬁcult to handle and demand semi-automated equipment. Further, electronics
+repairs require a broad range of diagnostic capability to isolate the faulty components. Finally repairs must
+pass functional tests to determine that the repairs are successful and the circuit can be returned to service.
+To prevent equipment demands from exceeding spacecraft volume capacity and skill demands from
+exceeding crew time and training limits, the CLEAR project is examining options provided by non-real time
+tele-operations, robotics, and a new generation of diagnostic equipment. This paper outlines a strategy to
+create an effective repair environment where, with the support of ground based engineers, crewmembers can
+diagnose, repair and test ﬂight electronics in-situ. This paper also discusses the implications of successful
+tele-robotic repairs when expanded to rework and reconﬁguration of used ﬂight assets for building
+Constellation infrastructure elements.
+
+I. Introduction
+NASA’S plans for long duration missions to the Moon and, especially, to Mars require a much greater degree of
+self sufﬁciency on the part of the crew than ever before. Such missions will have greatly reduced logistic
+support from Earth, compared to International Space Station (188) operations. Returning to Earth in the event of an
+emergency may not be an option either, as a lunar return ﬂight could require two to three days, and a Martian return
+ﬂight will require much longer.
+
+One area of mission support that NASA must plan for is electronic repairs. Despite the rigorous testing required
+by NASA, electronics faults have already occurred in both Space Shuttle and 188 operations, leading to the use of
+backup systems or loss of capability to some degreel’z. While the electronics and other systems used in a long
+duration space mission will undergo rigorous testing, the crew of such missions will most likely encounter an
+1 Aerospace Engineer, 21000 Brookpark Rd., MS 110-3, AIAA Member
+2 Electrical Engineer, 21000 Brookpark Rd, MS 86-5
+3 Associate Staff Scientist, 21000 Brookpark Rd., MS 110-3, AIAA Member
+4 Electrical Engineer, 21000 Brookpark Rd., MS ASRC
+
+1
+American Institute of Aeronautics and Astronautics
+This material is declared a work of the U.S. Government and is not subject to copyright protection in the United States.
+
+"
+"2","electronics failure at some point in the mission. With the design of the Crew Exploration Vehicle (CEV) already
+beginning and likely inﬂuencing the design of future spacecraft and hardware, it is not too early for NASA to begin
+exploring and designing techniques and tools for crew members conducting electronics repair during long duration
+space mission. These considerations include system design (for accessibility, parts type and sizes, and board
+complexity), repair infrastructure (including diagnostic capabilities, tools, and other needed equipment), and
+logistics constraints. The decisions on how to approach each of these considerations depends on the overall repair
+strategy chosen.
+
+The historical approach to electronics repair on manned spaceﬂight missions (particularly those aboard the
+International Space Station, or 188) has been to replace modular subassemblies called Orbital Replacement Units
+(ORU’s). The astronaut simply replaces the malfunctioning ORU with a spare, and then returns the faulty ORU to
+Earth, where it is diagnosed and repaired, then returned to a pool of spares awaiting re-use in space. This approach
+allows for simplicity in the diagnosis of the problem, as the fault only has to be isolated to a given ORU, rather than
+determining the fault down to the component level. Crew training and experience in performing repairs are
+minimized. Also there is a high degree of conﬁdence in the repair, as the ORU can be tested extensively on the
+ground prior to being re-launched to the ISS.
+
+Conversely, this approach carries with it a severe penalty in terms of the logistics support required (and overall
+cost to the program). Conceptually, it is easy to imagine the penalty in mass and volume that is levied when an
+entire ORU (which may weigh ~25 lbs or more on Earth) is launched to remedy a failure of a single, small
+component such as a resistor, transistor, or other electrical component. While this approach is expensive, it may be
+acceptable for low Earth orbit (LEO) missions if they are re-supplied regularly since large quantities of spares would
+not need to be stored on orbit.
+
+Alternatives to the ORU are lower-level repairs which can include shop—replaceable units (SRU) such as circuit
+board-level swap—outs and / or a cornponent-level repair strategy. This could serve to greatly reduce the planned-
+spare ORU requirements, while providing a capability to handle unforeseen repair contingencies. The need to
+handle such unexpected events has been illustrated by several events in NASA ﬂight history. The successful
+conclusion of the Apollo 13 rnission, after an explosion severely damaged the serVice module, highlights the
+beneﬁts of having the capability to implement on-the-spot repairs. The consequence of failing to allow for off-
+norninal repairs was demonstrated in the tragic loss of the shuttle Columbia; even if the crew had been aware of the
+problems with the leading edge tiles, they were not equipped to make repairs in-ﬂight. Since that incident, NASA
+has made considerable efforts to allow for contingency repairs of problems of that nature3.
+
+The Component-Level Electronics-Assernbly Repair (CLEAR) project under the NASA Supportability program
+was established to develop and demonstrate the technology necessary to allow crew-rnernber to effectively perform
+electronic repair down to the component level. CLEAR involves collaborative efforts between NASA’s Glenn
+Research Center, Langley Research Center, Johnson Space Center, the National Center for Space Exploration
+Research, and the US. Navy. The overall processes involved with repair which are the objectives of the CLEAR
+task are composed of four primary elements:
+
+1. Capability to diagnose an electronics assembly and identify the faulty cornponent(s) with equipment that
+
+ﬁts within the rnass-volurne and power constraints of spacecraft.
+
+2. Capability to repair electronics down to the cornponent-level on-orbit with processes and materials that
+
+are safe and compatible with the space environment which allows the crew to make the necessary repair.
+
+3. Capability to evaluate and determine that the repaired circuit is safe to return to serVice.
+
+4. Capability to augment the ﬂight crew with knowledge and skills to diagnose faults and perform repairs
+
+without expanding crew size.
+
+This rnulti-faceted program utilizes a cross-disciplinary approach to examine pre- and post-repair diagnostics and
+functional test; material and process for repair such as component soldering, conformal coatings removal and
+replacement; and electronics design for supportability. These areas are investigated by a combination of trade
+studies, analysis, ground based testing, reduced gravity aircraft testing, and actual spaceﬂight testing aboard the 188
+in multiple experiments. This paper provides an update to this task since previously reported at this meeting in the
+previous year.4'5
+
+II. CLEAR Task Overview
+A. Manual Electronics Repair
+
+All repair scenarios for the Constellation Program (CXP) will include some manual repair capability in which the
+crew can make electronic repairs. Currently, the 188 has a soldering kit aboard which offers a very basic capability
+and is a logical baseline for future capabilities. The soldering kit and tools available on-orbit are capable of basic
+
+2
+American Institute of Aeronautics and Astronautics
+
+"
+"3","repairs (e.g. wire splicing and some limited component—level repair). However, component—level repair has not been
+actually demonstrated using this equipment aboard 188. The experience of the US Space Program with repairs is
+limited to a very few cases (e.g. ARCTIC—l repair discussed below) and some basic experiments6. Before mission
+planners can expect to have a repair capability, it must be demonstrated in the ﬁeld (i.e. to raise the technology
+readiness level, or TRL, to a level SlX7).
+
+In a series of 2 ﬂight experiments, the CLEAR project will demonstrate manual component—level repair using an
+augmented version of the soldering capability currently on 188. The ﬁrst experiment, called SoRGE, uses the
+soldering kit to investigate the basic materials and processes
+(M&P) involved with soldering in a microgravity environment r; .
+using a through-hole conﬁguration. The second experiment, "" '
+called Component Repair Exp-l, intends to demonstrate all of the ’ I ' x
+physical processes of end-to-end component—level repair of a "" . s_ I \“U;-#
+circuit board. These experiments, which are discussed further - M V
+below, utilize the Space-station Development Test Objective ;. 51
+(SDTO) process to get aboard ISS (ref). {.1 \fu
+1. Soldering in Reduced Gravity Experiment (SoRGE) . "" *‘f i,""
+
+SoRGE is an experiment which is investigating the formation I
+of solder joints in amicrogravity environment.(Figure 1). Results Figure 1: External proﬁle of solder joint
+frorn earlier aircraft testing showed that void rlefects (bubbles (left), and cross section of joint (right)
+/V01ds trapped Within the solder) increased in. Joginzts formed in showing internalvoids.
+reduced grayity as those formed in normal graV1ty . J 01nts were
+formed in various reduced-gravity environments including — ""’
+(nominally) Martian, Lunar, and zero gravity levels*. In these ' .
+tests, the void fraction increased as gravity level was decreased. ’ z. ‘ '
+For joints formed in a nominally zero-gravity environment, the .- .
+void fraction was 3-times higher than those joints formed in ' - . ' i F - 3 “ ' i -
+normal gravity. Changes in joint geometry were also observed, ' ' x; "" ' ‘-'\ 3 '
+with the reduced-gravity joints being more symmetric. I. ‘ .
+
+The 188 experiment SoRGE is examining several techniques x
+which may serve to mitigate the formation of voids in the solder ‘
+joints. This experiment is comprised of a series of small circuit . .
+cards, with small electrical components (resistors) attached to the . '
+surface (Figure 2). The experiment has several kits, each of ”M”
+which is looking at various solder and ﬂux combinations, to Figure 23 An image 0f the tBSt card “59d
+quantify and minimize the amount of void formation in solder during the SORGE experiment.
+joints. Also, this experiment will yield valuable information __ “I; .. .
+regarding the physical process of soldering in low-g with a crew- . 1 "" -' .u-I _
+member who received only limited training. ' 1' f
+
+This experiment was brought to the 188 by the Shuttle I
+Atlantis during STS—llS and soldering was accomplished by _ l - J. ~
+Astronaut Sunita Williams (Figure 3) during February and May ._ -
+of 2007. Half of the available 12 test kits were completed and _-_.,_ - ' ‘fU—ﬂ. ‘
+returned to Earth aboard STS-118 in August 2007. The samples '3' .35. _ _ 1
+were returned to GRC in October 2007 and are currently w ~ ~
+undergoing analysis. The planned analysis consists of a Visual - ' - -' -... -* 1 n. ' -
+examination for solder process quality as well as non-destructive ' V _- '3'. I ‘
+analysis to look at solder joint voiding. The results of this mum
+research will help specify the soldering process used in future in- Figure 3; Astronaut Sunita Williams
+space repairs. conducting the SoRGE experiment during
+
+Expedition 14 aboard the ISS.
+* Brief periods (~25 seconds) of reduced-gravity are experienced aboard these aircraft as they ﬂy parabolic trajectories which are calculated to
+provide the desired relative acceleration levels.
+3
+American Institute of Aeronautics and Astronautics
+
+"
+"4","2. SDTO2: Component Repair Exp-I (CRE—I) 1,; __ II I I I :4 a4 .' —:.
+CRE-l will demonstrate the physicalprocesses of an end- Eli ll ‘ 'F1 1"". III .1"" :IIIEII [:5 ‘ Q
+to-end manual electronics repair in a microgravity 1 1 I 1 I | h 1' [ IHI LI”? I. 'I iIIII‘i;.
+environment. The physicalprocesses include: “Ll 'n! REI up. I I—-| | . '
+---I3-Iﬂ"". “ 1 I' I. [.'II; II II Emﬂtinl
+°C0nf0rmalcoating removal 0' ?.?.T .‘ l-« i II- III | ||--—'I“
+' Component removal ""...""—..'.—- .. .1 II . I.. I I I
+. Board Cleaning III:'II| ILLI-III1I‘IIIJI‘1I II—I1I |I-_'I:'. -;I:'-L'I Ir_I -|I_III P171“ II_|'II'}”_'!_“I1 _II'IIII‘II——""' _ _._
+- Soldering a new component in place I .. L-I-‘IIIli'J _'f'-'.'-_'--' :. ."";'.' Ii; $11-13."" 1—.I;1:L'_']'_I!I""_.],I r;
+- Reapplying conformal coating 1:1! ElrI‘I I'. .I: €551: | 1_.le:_:, I III.III.I.
+-- -' ii .--I 6'“! ""1 3""}. '"" :
+Crew members Will work on functional circuit boards ; Ii .:.: a i I _ ' II I _I___IEI _ H: I_,., H i;
+designed to mimic those already in use. These board designs ' I I II
+use standard circuit components and component spacing. Figure 411111326 0f CRE-l Cil'CUit b03111
+These standard circuit components include through-hole
+parts, standard-pitch surface mount devices (SMD), and ﬁne
+pitch SMDs With typical component spacing (Figure 4). The “I 'III‘. -""I - .. I""‘ -- II\
+circuit boards also have three thicknesses of silicone room- I; h. ”I III II I 1‘2 '
+temperature vulcanizing (RTV) conformal coating: a primed, ‘ ._ ' _ . I
+4-mi1 coating; an unprimed 15-mi1 coating; and n0 coating, ‘- '. TEN :13..- ‘1 _ ‘* _
+allowing for continued operation should the crew encounter 3 I a «I i ' .iI II“ 1 ﬁI *-
+difﬁculties removing conformal coating. The repairs Will be ‘1 ~ .. . ' - .___1 f1; '-
+conducted Within the Maintenance Work Area (MWA) ' 'I 1 . n * £1.17 ' hi *3 I
+aboard the 188 (Figure 5). The experiment will utilize the . _ - . L '11“ *1
+soldering kit available aboard the 188 as well as an augment I? II-f I , .i'
+tool set provided by the CRE-l experiment. The goal of the ‘ -_ ?:1‘1 1 I31"" "" ""
+tests is to evaluate the feasibility of performing component I_ _ .- 1 i _ ﬁwih
+level repair and evaluate processes so recommendations to _H'I-i... - __q - i “JII'rI ""~
+procedures, tool selection, crew training, as well as board __ I_-_i:':_—...L.n I
+design may be made. CRE-l is currently at Kennedy Space 7"""" - '
+Center awaiting a manifest opportunity to ﬂy to the 188. Figure 5: Testing of the CRE—l experiment
+in the MWA mock-up at Johnson Space
+3. Manual Repair Process Recommendation Center. Shown in the image are the
+The primary goal of the manual repair efforts is to auxiliary tools used to conduct manual
+develop a series of recommendations to the NASA CXP for repair of electronics.
+processes, materials, tools, and training for crew members to
+perform manual electronics repairs during space missions. These recommendations Will be built from the results of
+the on-orbit testing, ground based testing on the C—9 reduced gravity aircraft, and work in consultation With the US.
+Navy at the Naval Surface Warfare Center in Crane, IN. Additional work expected to begin in 2008 includes
+examination of possible conformal coating selection, both in manufacture and after a repair, that would help enable
+manual repair. It is anticipated that this recommendation Will include future development areas needed to reﬁne
+manual repair.
+Analysis of Arctic Freezer Samgles . I
+Studying the results of electronics repairs actually he _ I
+...
+performed on orbit Will provide an insight into the actual, _ ' *7 '. L
+current capabilities and constraints of crew members ""—-'."";JI ._ '
+performing these repairs. During Expedition-6, Astronaut . """"Iq'ﬂ—I “71
+Don Pettit attempted the repair of ARCTIC—l (or the Arctic
+Freezer), a module used for the cold storage of experiment I_ —
+samples. This work included some aspects of electronics
+repair, including joining wires and connecting wires to
+component tabs (Figure 6), With the use of the soldering kit
+on the ISS. Nondestructive analysis and Visual inspection of Figure 6: Typical solder joints examined
+these joints, as well as, similar joints formed in normal from the I""3P3” 0f ARCTIC'I freezer
+gravity for comparison, is on-going and will aid in aboard the 155°
+4
+American Institute of Aeronautics and Astronautics
+
+"
+"5","evaluating the effectiveness of soldering in reduced gravity, especially in the mitigation of voids Within solder joints.
+C—9 T est Analysis
+
+In February 2007, a series of solder tests were conducted on the C-9 reduced gravity aircraft Which included the
+examination of various solder and ﬂuX combinations, most focusing on the use of no-clean 0r water—clean ﬂuxes
+With eutectic solders. This work builds on previous aircraft tests8'12, and Will provide insight into general soldering
+and void mitigation techniques for reduced gravity operations. The analysis includes discriminating between
+samples based on the quality of the given in-ﬂight performance (the aircraft parabola) as well as acceptance by a
+NASA ﬂight qualiﬁed technician, based on NASA standards. Acceptable samples are nondestructively analyzed for
+void formation. Results from this analysis of a subset of these tests are presented in a complimentary paper at this
+conference13 . These results Will help develop criteria for selecting solder, ﬂuX, and techniques to be used for in-
+ﬂight repair of electronics.
+
+Crew T raining; Reguirements (with US. Navy)
+
+Crew training prior to a mission is Vital for electronics repair. Crew members are presumed to have little or no
+prior experience in performing repairs, s0 training materials must prepare and reinforce the repair process. The
+team, working With a group at the Naval Surface Warfare Center in Crane, IN, responsible for preparing training
+materials for the US. Navy, Will prepare and test crew training courses of 4, 8, and 16 hours, allowing NASA to
+tailor and choose a course suitable for electronics repairs. These materials are also planned to be available during
+ﬂight as a refresher course and to prepare a crew member immediately prior to performing a repair. The team,
+together the US. Navy, Will propose a tool set tailored to the level of crew training to allow crew members to
+effectively conduct the repairs they have been trained to perform.
+
+B. Semi-Automated Repair
+
+The previous section discussed hand or manually operated repairs used in the soldering and desoldering process.
+Manual repair Will always provide an important repair capability, but it requires training and periodic practice to
+maintain proﬁciency. Manual repair also requires direct crew involvement throughout the repair process. A fully
+automated process such as in manufacturing requires special ﬁxtures and equipment, along With a great deal of
+experimenting or system “tuning.” For single unit repairs a mix of manual and automated operations is more
+practical and is most likely to achieve successful repairs Within the spacecraft weight and volume constraints.
+Certain operations, such as Wiping away process residues, are simple if performed manually but can be very difﬁcult
+to accomplish by robotic means. Heating devices to narrow temperature bands and then quickly and precisely
+placing them demand automated operations. Semi-Automated repairs reduce the demand for high skill While
+increasing productivity.
+
+Rework Stations (Figure 7) that melt or “reﬂow” solder With Hot Gas
+or Infrared heat evolved to handle complex devices. Such systems are
+semi—automated Where manual operations involve alignment With optical
+aids but employ automated heating systems and mechanically guided
+placement. In this way, Semi-Automated rework stations extend repair .- ll. _
+capabilities to circuits not amenable to manual repair. _ _
+
+Figure 8 is a qualitative representation of how semi—automated ||""- - i '
+technology can extend a repair capability. The vertical axis of Figure 8 : ' "" .,
+qualitative represents how increased PCB layering increases board thermal ] ﬂ __
+conductivity. The increased conductivity increases heat transfer away ' Eff]
+from the solder joint(s) and may exceed the manual soldering iron’s . '.————'H w; 1 !
+capacity. More advanced manual techniques (more advanced soldering ;. -
+tools than available on 188) may include custom tips and board heaters to \
+preheat the entire board to temperatures just below the reﬂow solder u /
+temperature. However, the high heat loads and long heating cycles require Ii 'LLH"" “'3‘—
+to solder the conductively cooled circuit boards, common in spacecraft, '1.
+are more likely to be successfully repaired by semi-automatic systems.
+
+The horizontal axis of Figure 8 shows increasing complexity in device Figure 7 : An ATCO AT-707 is
+packaging and lead count. At the extreme right is the Ball Grid Array typical of a commercial rework
+(BGA) Where lead counts may exceed 1000 and are impossible to solder station capable of replacing high
+by hand. Large integrated circuits like BGAs require simultaneous solder density integrated circuits. Photo
+or desolder of many pins or solder balls and are best handled by semi- from http://atc0-us.c0m/.
+
+5
+American Institute of Aeronautics and Astronautics
+
+"
+"6","E'féﬁgh 32%: Mount J-lead. Pm Grid and Ba“ automatic equipment to provide precise parameter
+hple GndArrav control, such as, placement, coordlnated motion,
+
+A r—Ja temperature ramp and soak proﬁles, and critical
+
+timing.
+Thermal It is likely that the ﬁrst operational need for
+SemI-Automatlc ‘ , . . . . . . .
+b """"""'""""""""""""""""'""""""'""E gfanndeua'on repair capabihties 1s dunng long-duration outpost
+2g : stays on the Moon and especially Mars.
+‘12) E However, the 188 is a prime location to evaluate
+§ E such technology and, because of the retirement of
+E l“""-""—""'-""'—. E ,Mumlayer the space-shuttle in 2010, may beneﬁt from a
+E i repair capability to help sustain systems With
+reduced logistical support. While the ISS and
+}’2law outposts share many similarities in terms of the
+ComponentComplexity environment, the prime difference is that there is
+signiﬁcant gravitational force for the outpost
+Figure 8: Graphic showing the increased I""3P3” whereas for 188 there is not. The semi-automated
+capability offered by semi—automated repair technology. system is expected to employ or accommodate a
+variety of functions that include machine set-up,
+optical examination, process monitoring, a variety of mechanical repair operations (including soldering and de-
+soldering), handling and application of a variety of process ﬂuids, and containment of solid debris and volatile
+products Within the tight conﬁnes of a spacecraft or habitat. Before investing in specialized equipment, studies need
+to determine if the processes have any signiﬁcant reduced gravity dependence, outgas, or other space environment
+sensitivity. The CLEAR task is in an early evaluation phase examining the general operation and capability of these
+stations, as well as the beneﬁts and challenges for adapting them for use in space ﬂight.
+C. Diagnostics and Functional Test
+
+While the physical repair of electronics in spacecraft and habitats is challenging, diagnosing faults down to the
+component level represent a bigger challenge. Furthermore, conﬁdence of a successful repair must be accomplished
+Via a functional test of the repaired board and/or subsystem. On the ground, NASA, the military, and industry all
+have practices, technicians, and equipment in place to perform diagnostics and repairs of electronics. Each group
+has adapted standard test equipment as well as customized equipment to perform the diagnostics particular to their
+requirements. None of these cases, though, have the volume, mass, power, and user experience level limitations
+imposed on them as for a long duration space mission.
+
+Currently, 188 diagnostic and test equipment is limited to a portable Fluke Scope Meter®, a laptop logic
+analyzer and a limited output power supply and a special test set up to speciﬁcally test on-orbit multiplexer/de-
+multiplexer units. Such hardware is far from a complete diagnostic instrument set suited to test the array of systems
+including: electrical power, command & data handling, communications & tracking, guidance & navigation, and
+controls & display systems throughout spacecraft. Even if provided detailed information, it is beyond the most
+capable crews to fully understand diagnostic measurements of every spacecraft component. The next sections
+describe the strategy and technology that CLEAR is evaluating for diagnostics and test capability in future manned
+space missions.
+
+Diagnostics
+”7-3-3 ...,.,., ., . Repairs of circuit board assembles requires isolating faults
+3.3""“???35""; V. '}r7*4""i’“':°+ ° 1"" -""~ '7 ' to the component level. There is no single technology
+V. E E E ‘ ; ?éi:1° $.12 1!‘ solution but success lies in focusing on the fundamentals
+' '. ‘2' E E I - l l_ 7,0 w M; ,. of measurements rather than stacks of instruments. The
+a 55""' all."" «u; ' challen ' 1 t' ' t d/ d 1 '
+, 7 A _ a -- _ , i . ,_ ‘ ge 1s se ec 1ng equlpmen an or eve oplng
+
+f"" _ __:__ W‘Q. . . ; ° I hardware that can cover the majority of diagnostic needs
+
+"" ' ""L '7 '. i. . .. - H . (as well as functional test discussed below) Within the
+
+i allowable mass and volume constraints of a spacecraft or
+
+Figure 9: A representative National Instruments habitat. .The _PXI (2C1 CXFCHSionS for instrumentation)
+PXI chassis populated With a variety of baseci su1te of 1nstruments (Flgure 9). may be one potential
+instruments from different manufacturers. solution. The advantage of such deV1ces 1s the space saved
+Photo from http://www.pxisa.org/. by combining many PXI-based 1nstruments 1nto one bus.
+The drawbacks include requirements for 1nstruments to be
+6
+American Institute of Aeronautics and Astronautics
+
+"
+"7","redesign into card format Which is compatible With the bus
+
+architecture. Further, bus architecture often becomes obsolete. For 1., ' ‘1'!
+
+example, the PXI architecture is currently being displaced by the ' _
+
+new PXI Express. - - '- ' .
+
+Another approach would be to use Local Area Network (LAN) h 1%. j
+technology such as LXI (LAN Extension for instrumentation). LXI _ ._-__:-' --
+instruments can be used in a coordinated suite of instruments or _ If '13:"": . '-
+broken out as independent and portable instruments. High speed . ""
+
+LAN based instruments are expected to resist obsolescence much ' __ -
+longer. LXI instruments however, are not as compact as PXI. ....__ . -
+Recent industry trends indicate that a mixed system of LAN and ""
+
+Bus based instruments provide the best solution. I
+
+Diagnostics are often comprised of instruments that are used
+manually or programmed to automatically make measurements in a Figure 10: Huntron® ACCESS unit is
+prescribed sequence. The instruments usually send stimulus signals an automated diagnostic system that
+and capture responses from the target circuit. For automated employs circuit computer aided design
+diagnosis, the same motion control capability used in repair can (CAD) data and imaging to help guide
+provide probing for diagnostics. One promising technology is the the probing process. Photo courtesy of
+Analog Signal Analysis (ASA) technique used by the Huntron® Huntron. Inc.
+
+ACCESS instrument to probe circuit nodes With a very low power
+
+signal that Will not harm the circuit (Figure 10). This signal energizes single nets on the card to determine a
+characteristic waveform. A net is a common connection Where multiple components are connected. This waveform
+is then compared With a known good board signature. If there is signiﬁcant difference between the measured
+waveform and the known good waveform, one or more of the components attached to the net are defective. This
+approach reduces the number of components required to be replaced and minimizes the operator’s skill
+requirements. However, ASA may not always isolate a fault to individual components, particularly, if they are not
+directly accessible. Complex Signature Analysis (CSA), being developed by CLEAR, is an alternative approach
+that relies on characterizing a Circuit’s self resonant and network resonant behaviors. CSA is expected to detect
+faulty devices that are inaccessible to ASA techniques. ASA and CSA both provide the ability to diagnose a circuit
+in a “power OFF” condition. Should ASA/CSA fail to isolate faults using a “known good board” technique,
+ASA/CSA can still capture measurements that could be further examined by knowledgeable ground based
+engineering. ASA/CSA operates on circuits in a “Power Off” condition Which affords extra safety. However, it is
+often necessary to run tests on a circuit in a “Power On” condition to isolate functional problems such as software
+faults.
+
+F unctional T est Equipment
+
+Functional testing is used to determine if a circuit is capable of performing its intended function before it is
+integrated into a system. It is often used to verify software functions that cannot be measured by fundamental
+diagnostic measurements. The actual functions of an ORU electronic circuit may be simple and repetitive. Most
+ORUs are part of a larger system and thus functionality may require interaction through multiple external interfaces.
+Functional test equipment often emulates the external system and operational conditions and includes additional
+“breakout” instrumentation to monitor interactions. Automatic Test Equipment (ATE) is employed When the
+number of channels and execution speed exceeds the capability of human operators. Typically, ATE systems are a
+combination of custom and off—the-shelf test equipment and software, With a software executive that governs the test
+process.
+
+It is not uncommon for a single avionics box to require multiple racks of test equipment. In their terrestrial form,
+the weight and volume required for functional testers prohibits their use aboard spacecraft. However, functional test
+is an important part of any repair process and must be available. The ability to perform functional testing at the
+board level enables the generation of engineering data during the debug process. It also allows for the functional
+testing at the board level to minimize the risk of a circuit card damaging the system. Therefore, strategies for
+functional testing in spacecraft or habitat volumes require signiﬁcant reduction of both mass and volume of
+terrestrial systems or newer technology. One such technology is offered by synthetic instruments.
+
+Synthetic Instruments
+
+Synthetic Instruments (SI) refers to an approach that exploits software and reconﬁgurable hardware to maximize
+
+the ﬂexibility of test systems. Synthetic Instruments are implemented on generic hardware, typically, Field
+7
+American Institute of Aeronautics and Astronautics
+
+"
+"8","Programmable Gate Arrays, (FPGAs). FPGAs are designed to provide a vast array of logic gates that can be
+conﬁgured to provide distinct data and control functions. Unlike software executed by microprocessors, the
+“Synthetic Instrument” programmed into the FPGA executes at extremely high speeds and with high levels of
+parallel processing. The FPGA can be reconﬁgured, on demand, as a completely new Synthetic Instrument. The
+latest generation of FPGAs can provide real-time signal processing which was once the domain of Digital Signal
+Processors. The main advantage of SI is that it allows us synthesize high performance instruments on an “as
+needed” basis.
+
+The Department of Defense regards SI as a major advance in reducing (a) life cycle costs (b) time to develop and
+ﬁeld new or upgraded test equipment, (0) test system logistics footprint, and ((1) test systems physical footprint”.
+The strategy behind SI is to allocate any digitized functions to software. Innately analog functions, such as sensors,
+analog signal devices, and power sources are handled by modules that can be reconﬁgured electronically to provide
+wide operating ranges. In addition, to handle the vast variety of connector conﬁgurations, SI provides an upfront
+analog switching matrix that routes signals from a target test Circuit to a selected analog instrument module. The
+CLEAR project is evaluating SI as part of a strategy to provide both diagnostic and functional test capability for a
+wide range of spacecraft electronics using only a small amount of physical hardware.
+
+Both repair and diagnostics require signiﬁcant skill and knowledge related to the Circuit under test. Therefore, it
+is anticipated that the crewmember will require signiﬁcant ground based support to debug issues. Furthermore,
+many of the process described above can be automatically controlled from the ground in a non-real time fashion. To
+keep the crew workload to a minimum, the semi-automated diagnostic and repair system should be amenable to tele-
+operations. Such operations also will allow data from the Circuit under test to be available to ground personnel.
+
+D. Tele-Operations: Linking the Crew t0 Knowledgeable and Skilled Support
+
+In light of limitations on available teehnieian-level skill and designer knowledge of the electronic systems, the
+key to success is to link the process to knowledgeable and skilled engineering staff though tele-operations. Other
+tele-robotie experiments focus on real-time control and real-time feed back while other robotic efforts focus on
+achieving total robot autonomy. Although crew autonomy is the desired goal, a likely strategy for a semi-automated
+diagnostic and rework station in spacecraft and habitats is to provide timely but not real-tiIne interaction. The
+preferred mode is to avoid real-tiIne “joystick” interaction with the hardware because the current infrastructure is
+prone to interruptions and signal delays.
+
+For Lunar operations, the 4 second round trip transmission and system delays make real-tiIne control awkward
+and even dangerous. The vast range of delay times for Mars makes real-tiIne control impossible. Even the 188 has
+delays but also frequent “loss of signal” events which makes real-tiIne control unreliable. Avoiding real-time
+interaction simpliﬁes the communications and interaction and also provides an opportunity to “validate” commands
+prior to sending them to prevent costly and possible hazardous mistakes. Pre-seripted repair routines for anticipated
+needs will be developed. A potential solution to avoid the cost of a of support staff on standby, repair depots and
+manufacturers could support repairs on an “as needed” basis. The use of such a tele-operations capability is best
+captured by a Semi-Automated Diagnostic and Repair Operations scenario we describe below. This scenario is
+intended to illustrate how a diagnostic and repair tele-operation might proceed with a repair capability as shown in
+Figure 11.
+
+Semi-Automated Diagnostic and Repair Operational Scenario
+
+A vehicle health monitoring system reports a fault in a system ORU package. The faulty ORU is removed and
+replaced with a spare ORU which restores functionality to the system. Subsequently (as crew time permits and
+eritieality requires), the faulty ORU is further diagnosed with a computer connected Via an ORU test port. An
+internal Built-In-Tests (BIT) checks the diagnostic codes on all Circuit boards. Ground support observes the
+diagnostics data Via tele-operations. One Circuit board fails to respond to BIT initiation. The subject board is
+removed from the ORU and interconnections were found to be good. Ground support asks the crew to move the
+board to the Semi-Automated Diagnostic and Repair Station and set up for further diagnostics and possible repair.
+
+The board’s failure to execute the BIT implies that the main processor is non-funetional due to internal fault or
+failed supporting component. The ground support engineers examine high-resolution camera images down-linked
+from workstation but no Visible damage is found. The Circuit is equipped with a J TAG port and supports “boundary
+scan teehniquesS”. The JTAG Boundary Scan Analyzer ﬁnds no problems at the I/O ports but reveals that several
+5 Boundary scan, also known as J TAG 1149, was developed by the Joint Test Action Group to allow board makers
+to Check individual devices while isolating them from the external Circuit15 .
+
+8
+American Institute of Aeronautics and Astronautics
+
+"
+"9","- Apparatus Programming
+- . Image and Data Analysis
+. . . . Instrument S nthesns
+— ~ - . ?. ,. *JLJ . Program Up-Llnk
+Examlnatlon -— Userlnterface t g? "" w; 7“ gg Q»
+E TeIe-ops Llnk l :3 iv; ‘ 23%, ‘
+‘ \
+- Diagnostic Probe k Tele-O-peratlons
+f— I'A E“9'“°'""""“9
+“ -
+— _ ‘ ’
+[3/ . bi‘ ,-
+
+::-:; 575i5i3i:i:iiztttttttié-i-i-i :7 s ‘l‘g._J\
+Environment Enclosure Manual TOOI 59' \ PC
+Diagnostics 8. Semi- \’ I -\
+
+\/
+automated Repalr Statlon Pre-ﬂight 8. in-flight training
+Figure 11. Diagnostic and Repair concept (including both manual and semi—automated processes) being
+evaluated by the CLEAR team.
+registers are irreparably damaged, possibly due to radiation. Having isolated the component, the repair workstation
+is set up to remove and replace the device.
+
+The ground crew determines that no prior repair routine exists so they go “ofﬂine” to create a repair program
+while the crewmember resumes other activity. Assisted with information from the vendor, the ground crew loads
+the Circuit’s Computer Aided Design (CAD) data into a Repair Process Modeling Tool that aids in programing
+robotic operations of the rework station. The Circuit’s registration points and exclusion zones are deﬁned to prevent
+collisions with clamps and some taller board components. The Repair Process Modeling Tool deﬁnes motion paths,
+tool change points, including the component pick & place operations. Reﬂow heater position, heating proﬁle are
+calculated using a reﬂow thermal simulation tool developed as part of the rework station. When the control code
+script is complete, it is run through a veriﬁcation tool that simulates the process and shows a 3D animation of the
+process. Tool collisions discovered in the simulation are corrected and the code is determined to be error free.
+
+On-orbit a “touch-off’ of circuit registration points assures the machine motion is calibrated. The ground crew
+has determined that the conformal coating around the component should be removed manually because jumper wires
+interfered with mechanical methods. The workstation enclosure circulation ﬁlters capture any stray debris as the
+crewmember strips away the coating.
+
+The control is then switched to automatic mode and the process is initiated. After the reﬂow heat cycle, a
+robotic pick & place tool removes the component. A quick manual wipe 0f the site removes any residue and a
+solder paste dispenser applies new solder. Another reﬂow cycle melts the paste while a component pre-heater
+prepares the new device. The robotic suction tools picks up and positions the new device and holds it until the last
+reﬂow heat cycle is complete.
+
+An imaging camera scans the board for completeness and looks for debris. The tool is changed to an Analog
+Signature Analysis Probe and the preprogrammed probing sequence reveals that the board’s signatures are normal.
+Subsequent JTAG boundary scan and register checks are normal. Power up BIT tests also return normal results.
+Finally, the ground team has come up with code to program the SI system available on orbit to do a function test on
+the card. The board is connected Via a cable assembly and the instruments go through a functional checkout 0f the
+circuit board with normal results. The board is then re-integrated into the ORU and BIT tests indicate functionality.
+The ﬁnal assembly is complete and any conﬁguration information is noted. Since the original ORU was replaced
+with a spare, this unit now becomes the next serviceable spare until needed. The ground updates any lessons learned
+and reﬁnes the repair program. After further simulations, the repair script is “canned” as a ready-to-run routine for
+future use.
+
+9
+American Institute of Aeronautics and Astronautics
+
+"
+"10","Impact on the Future of Constellation
+
+Extrapolating a future capability based on Earth based practices is not enough. On Earth, the economy of mass
+markets, low cost labor, low cost transportation, and very high production rates results in Circuits that have short
+service life and are un-repairable “throw-away” electronics. Further, the design, materials, and processing Choices
+are based on meeting economical production needs and often involve waste, aggressive Chemistry and materials that
+are unsuited for space.
+
+Understanding the behavior of basic materials in 10w-g and high vacuum and making the effort to fully exploit
+processes that are innately suited for space will lead to in-situ repairable electronic Circuits. The extremely high cost
+of launching replacement hardware drives us toward electronic designs that provide long service life, but are also
+repairable, and can be reworked and reconﬁgured to serve alternate uses.
+
+The spacecraft constraints imposed on the addition of new equipment are formidable. The development of
+several key capabilities will enable us to repair and rework spacecraft electronics without relying on Earth launched
+logistics. The CLEAR task is considering the strategy of compressing large test systems to small scale because of
+the huge cost of redesigning every known instrument into a small form factor. We are seeking alternate ways of
+diagnosing Circuits by exploiting built in features where possible such as the J TAG Boundary Scan, and by looking
+at potential technology solutions such as Synthetic Instruments. Such concepts can be the ﬁrst steps for a fabrication
+capability to help build infrastructure to support future missions.
+
+The tele-Operations developed for robotic repair can evolve into a fabrication capability as well. The experience
+learned from conducting repairs as well as the underlying materials and processes directly translates to Operations
+for manufacturing with in-situ resources. Another possibility is to build additional infrastructure by reworking spent
+ﬂight hardware for different functional use. This strategy need not wait for Mars — it can be employed and perfected
+in the Lunar Outpost phase. The near term need not be overlooked as the impact on logistics is already being felt as
+Space Shuttle support for 188 begins to draw to a Close. By delivering capabilities starting with the ISS and then
+the Lunar Outpost, we can beneﬁt from cost savings and early return on our development investments as well as
+gain conﬁdence in their capability by the time we send humans to Mars.
+
+Summary
+
+NASA’s historical solution to the problem of in-ﬂight electronics repair has been the replacement of sub-units
+called Orbital Replacement Units. This approach requires signiﬁcant logistical support through regular re-supply
+ﬂights. For long-duration space missions, resupply ﬂights are limited. Therefore, NASA is investigating
+component-level repair of electronics as a potential way to reduce the logistical footprint required to support future
+missions.
+
+The Component-Level Electronics-Assembly Repair (CLEAR) project under the NASA Supportability program
+was established to develop and demonstrate the technology necessary to allow crew-member to effectively perform
+electronic repair down to the component level. CLEAR is looking at ways future exploration crew can, within the
+constraints of a spacecraft 0r habitat, (a) diagnose electronic assemblies and identify the faulty components, (b)
+repair electronics down to the component-level, (C) evaluate the Circuit post repair Via a functional test, and (d)
+augment the ﬂight crew with knowledge and skills to diagnose faults and perform repairs without expanding crew
+size. These areas are investigated by a combination of trade studies, analysis, ground based testing, reduced gravity
+aircraft testing, and actual spaceﬂight testing aboard the 188 in multiple experiments. This paper provides an update
+to this task since previously reported at this meeting in the previous year.
+
+Disclaimer
+
+Certain commercial entities, equipment, or materials may be identiﬁed in this document in order to describe an
+experimental procedure or concept adequately. Such identiﬁcation is not intended to imply recommendation or
+endorsement by the National Aeronautics and Space Administration, nor is it intended to imply that the entities,
+materials, or equipment are necessarily the best available for the purpose.
+
+Acknowledgments
+
+The authors wish to acknowledge Dr. Richard Pettegrew for his valuable technical contribution and leadership in
+the development of the CLEAR task. Also, the authors wish to thank Mr. Due Truong 0f the NASA Glenn Research
+Center for his work and dedication. This work is funded by the Supportability Project in NASA’s Exploration
+Technology Development Program Ofﬁce (Mr. Barmac Taleghani, Program Manager, NASA Langley Research
+Center).
+
+10
+American Institute Of Aeronautics and Astronautics
+
+"
+"11","References
+
+1 Beddingﬁeld, K.L., Leach, RD, and Alexander, M.B. (editor), “Spacecraft System Failures and Anomalies
+Attributed to the Natural Space Environment”, NASA Reference Publication 1390, August, 1996.
+
+2 Rutledge, P.J., Mosleh, A., “Dependent—Failures in Spacecraft: Root Causes, Coupling Factors, Defenses, and
+Design Implications”, Proceedings of the IEEE Annual Reliability and Maintainabilily Symposium, 0149-144X/95,
+(1995), pp. 337-342.
+
+3 Columbia Accident Investigation Board, “Columbia Accident Investigation Board Report” [online report], Vol.
+1, August, 2003 URL: http://eaib.nasa.gOV/neWS/report/Volume1/defau1t.htm1 [cited 26 December 2007].
+
+4 Pettegrew, R.D., Easton, J .W., and Struk, P.M., “Repair of Electronics for Long Duration Spaceﬂight”, 45th
+AIAA Aerospace Sciences Meeting and Exhibit, Reno, NV, J anuary 8-11, 2007, AIAA-2007-1364.
+
+5 Easton, J .W., Pettegrew, RD, and Struk, P.M., “Electronic Repair Concepts for Long-Duration Spaceﬂight”,
+45 ”1 AIAA Aerospace Sciences Meeting and Exhibit, Reno, NV, J anuary 8-11, 2007, AIAA-2007-545.
+
+6 Grugel, R.N., Cotton, L.J., Segre, P.N., Ogle, J .A., Funkhouser, G., Farris, F., Murphy, L., Gillies, D., Hua, F.,
+and Anilkumar, A.V., “The In-Spaee Soldering Investigation (1881): Melting and Solidiﬁeation Experiment Aboard
+the International Space Station”, 44’hAIAA Aerospace Sciences Meeting and Exhibit, Reno, NV, January 8-12, 2006,
+AIAA 2006-521.
+
+7 Mankins, J .C., “Technology Readiness Levels: A White Paper” April 6, 1995, Advanced Concepts Ofﬁce,
+
+Ofﬁce Of Space Access and Technology, URL: http://WWW.hg.nasa.gOV/Ofﬁee/Codeg/trl/trl.p_df [cited 26
+December 2007].
+
+8 Watson, J .K., Struk, P.M., Pettegrew, RD, and Downs, R.S., Experimental Investigation of Solder Joint
+Defect Formation and Mitigation in Reduced-Gravity Environments, AIAA Journal ofSpacecraft and Rockets, V01.
+44, N0. 1 (Jan-Feb 2007), pp. 174-182.
+
+9 Pettegrew, R.D., Struk, P.M., Watson, J .K., Haylett, DR, and Downs, R.S. Gravitational Effects on Solder
+J Oints, Welding Journal, 2003, pp. 44-48.
+
+10 Struk, P.M., Pettegrew R.D., Downs, R.S., and Watson, J .K., The Inﬂuence Of Gravity on Joint Shape for
+Through-Hole Soldering, 43rd AIAA Aerospace Sciences Meeting and Exhibit, Reno, NV, January 10-13, 2005,
+AIAA-2005-0541 and NASA TM-213589, 2005.
+
+11 Struk, P.M., Pettegrew, R.D., Downs, R.S., and Watson, J .K., The Effects of an Unsteady Reduced Gravity
+Environment on the Soldering Process, 42nd AIAA Aerospace Sciences Meeting and Exhibit, Reno, NV, J anuary 5-8,
+2004, AIAA-2004-1311 and NASA-TM 212946, 2004.
+
+12 Pettegrew, R.D., Struk, P.M., Watson, J .K., and Haylett, D.R., Experimental Methods in Reduced Gravity
+Research, NASA TM-211993, 2002.
+
+13 Easton, J .W., Struk, P.M., and Rotella, A., Imaging and Analysis Of Void-Defeets in Solder Joints Formed in
+Reduced Gravity Using High-Resolution Computed Tomography, 46th AIAA Aerospace Sciences Meeting and
+Exhibit, Reno, NV, J anuary 7-10, 2008, AIAA-2007-0824.
+
+14 Humprey, R., Addressing future test Challenges Via synthetic instrumentation, Military Embedded Systems,
+May 2006, URL: http://WWW.mi1-embedded.eom/artieles/authors/humphrey/ [Cited 26 December 2007].
+
+15 Wikipedia contributors, “Joint Test Action Group”, Wikipedia, The Free Encyclopedia, 16 December 2007,
+URL: http://en.wikipedia.org/W/index.php?tit1e=J0int_Test_Aeti0n_Gr0up_&01did=178335316 [Cited 26 December
+2007]
+
+1 1
+American Institute of Aeronautics and Astronautics
+
+"

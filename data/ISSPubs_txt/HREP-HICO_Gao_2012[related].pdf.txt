@@ -1,0 +1,337 @@
+"","x"
+"1","972 IEEE GEOSCIENCE AND REMOTE SENSING LETTERS, VOL. 9, NO. 5, SEPTEMBER 2012
+Bo—Cai Gao and Rong—Rong Li
+Abstract—Thin cirrus clouds frequently contaminate satellite land surface features in the upper right parts of the image are
+images. These clouds are traditionally treated as aerosols in at- also seen through the partially transparent thin Cirrus Clouds.
+mospheric correction processes for satellite remote sensing of In order to obtain water leaving reﬂectances over the areas
+ocean color. Through analysis of spectral imaging data covering . . . . .
+a solar spectral region between approximately 0. 4 and 0.9 Mm contamlnated by th1n Clrrus Clouds, the th1n Clrrus effects need
+and acquired with the Hyperspectral Imager for the Coastal to be removed.
+Ocean (HICO) instrument currently on board the International Thin Cirrus Clouds are referred to as ice Clouds with re—
+Space' Station, W6 have'deyeloped an empirical but Very Effec'tiVe ﬂectance values less than 0.1 in the Visible spectral region in this
+technique to remove thlh Cll‘I‘llS effeets hem HICO, data acquired letter. Thin Cirrus Clouds are traditionally treated as aerosols by
+over falrly clear ocean waters where the water leavmg reﬂectances . . . . .
+above 0.8 Mm are close to zero. The d eve] opment of the technique atmospherlc correctlon algorlthms for ocean color apphcatlons
+is based on this property and on the fact that cirrus reﬂectances (e.g., [6])- AS a result, mlnor errors can be 1ntroduced 1n the
+in the 0.4—1.0-um region are spectrally constant. The empirical derived water leaving reﬂectances in the Visible spectral region
+“301111qu is described, and sample I‘ESUItS are PresentEd- The because of small errors in the estimated spectral dependence
+same technique is applicable to thin cirrus corrections over clear of atmospheric path radiances However signiﬁcant errors can
+water surfaces for other hyperspectral or multichannel imaging . . . ' ’.
+instruments covering similar spectral range. be 1ntroduced 1n the denved aerosol opt1ca1 depth data prod—
+. ' ' ucts [12]. In this letter, we describe an empirical technique
+Degree; 13:"" Zsrgggzgsshelleue eerreeheh’ hyperspectral hhager’ to properly remove thin Cirrus Cloud scattering effects from
+’ g. hyperspectral imaging data for the retrieval of water leaving
+I. INTRODUCTION reﬂectances over Clear ocean waters.
+T HE Hyperspectral Imager for the Coastal Ocean (HICO)
+instrument [1], [2] is currently on board the International 11. METHOD
+Space Station (188). It acquires spectral imaging data from . .
+its operating location on the J apanese Experiment Module— The development of the technlque 1s based on two facts.
+Exposed Facility of the ISS. HICO covers a solar spectral region One fact 1s that .water leaV1ng reﬂectances for Channels above
+between 0.4 and 0.9 Mm with a spectral sampling spacing of 0.8 ,um over falrly Clear ocean waters are Close to zero [6]
+5.7 nm. The size of a typical HICO scene is approximately because of strong absorptlon by water [10] 1n the ocean. The
+42 km cross track and 192 km along track other is that thin Cirrus reﬂectances in the 0.4—1.0—um spectral
+At present, approximately 4600 HICO data cubes (two di— range are nearly constant [5]. We describe the development of
+mensions in the spatial domain plus one dimension in the the Clrrus correctlon technlque throngh examples.
+spectral domain) have been collected over more than 200 In order to fa0111tate the descrlptlons, the satelhte—measured
+preselected surface target areas located in the latitude range rad1ance 1s9’converted .1nto the top—of—atmosphere *apparent
+between approximately _500 S and 500 N. Through Visual reﬂectance. The deﬁn1t10n of apparent reﬂectance p (A) of a
+examinations of true color images of almost all the HICO gwen Channel centered at a wavelength A 1s
+scenes, we have found that more than half of the scenes are * A L A E A 1
+contaminated by Clouds.Many scenes, or portions of the scenes, p ( ) _ 7T ( )/ [M0 0( h ( )
+are covered b thin Cirrus Clouds. F1 . 1 a shows a art of . . .
+a HICO true Zolor ima e (red' O 6 40g m( ) teen 0 54p8 m' where L(A) 1s the measured radlance, M0 the cos1ne of the solar
+blue' 0 462 Mm) acquireg over Nohmea IhlewgCaleeionia neira zenith angle, and E0()\) the extraterrestrial solar irradiance.
+latitlide of 22 10 S and a lon itude of 16h 20 E on December 19 The radiance L(A) contains the effects of variation of incoming
+2010 From the lower 1e ft ti the upper right part of the image, solar ﬂux with wavelengths, whereas the apparent reﬂectance
+. '. . . . ’ *Adoesnotbecaseoftheiiin h' ' 1
+alrcraft—lnduced contrall Clrrus Clouds are obV1ous1y seen. The Eu; i)n the ri ht si de l; f (1) d V S O by t e 1ncom1ng so at
+greenish underwater features near the center of the image and . e. ' . . . . .
+Flg. 1(a) 1s a sample RGB lmage conta1n1ng th1n Clrrus
+Clouds over areas near Noumea, New Caledonia. It was ro—
+Manuscript received September 2, 2011 revised December 28, 2011; d f th ﬂ (1 h. h p
+accepted January 22, 2012. Date of publication March 23, 2012; date of current CCSSC rom e apparent re eetahee atahet’ W 1C wee een—
+version May 29, 2012. This work was supported in part by the US. Ofﬁce of verted from the correspondlng HICO radlance data accordlng
+NaVal ResearCh- to (1). Fig. 1(b) shows the 0.8—t1m Channel apparent reﬂectance
+The authors are with the Remote Sensing Division, Naval Research Labora— . . .
+tory, Washington, DC 20375 USA (e-mail: ga0@nr1.navy.mil). lmage of the same scene. Th1n Clrrus Clouds over water areas
+DigitalObjectIdentiﬁer10.1109/LGRS.2012.2187876 are seen obviously in this image. It is interesting to note that
+US. Government work not protected by US. copyright.
+
+"
+"2","GAO AND LI: REMOVAL OF THIN CIRRUS SCATTERING EFFECTS 973
+(A) (B) , _ ,
+g I: 30.3“” W 7 ”'0‘"" (Cf
+. ‘ 4 C .
+. -- ('5
+\ . i E - —
+. A '2 4 E 0.2 - ’
+. X . 4.. ; '
+e "" 1 . i, ‘ g
+_ , a 0.1 . .
+-< .‘< Q .
+. :- ~. -. 5a ; - a -
+t ‘ q: . .
+' * 0.0 , —
+“ 0.3
+. ‘ 8 0.2
+r C
+-_ m
+D E E
+( ) ( ) g 0.1 N
+0.0
+a 0.3 f ’1'
+- (G) ~
+. v w .
+9 ‘ g _ _
+g 0.2 i' 1
+. 0 Z :
+. , ._ (D
+l: ‘ l:
+.1 (D
+' 05 0.1 . .
+‘ ’, .f; ‘ ' 0.0 gm—ﬂ
+'. 0.4 0.5 0.6 0.7 0.8 0.9
+Wavelength (p m)
+Fig. 1. (a) True color image (red: 0.640 ,um; green: 0.548 ,um; blue: 0.462 ,um) processed from an apparent reﬂectance data set converted from the HICO radiance
+data cube measured over Noumea, New Caledonia, on December 19, 2010. (b) 0.80—,u.m apparent reﬂectance image of the same scene. (0) (Green curve) Apparent
+reﬂectance spectrum of a clear ocean pixel [at the center of the small red square in image (a)] and (red curve) apparent reﬂectance spectrum of a nearby pixel [at
+the center of the small red square in image (b)] contaminated by thin cirrus clouds. ((1) Same as (a) except processed from the HICO data set after the Rayleigh
+correction. (e) True color image processed from the water leaving reﬂectance data set (after the Rayleigh and cirrus corrections). (f) (Blue curve) Reﬂectance
+spectrum over a coral reef pixel [at the center of the small red square in image (d)] after the removal of Rayleigh effects and (green curve) water leaving reﬂectance
+spectrum of the same pixel after additional cirrus corrections. (g) Sample water leaving reﬂectance spectra obtained over blue ocean waters for a (green curve)
+clear pixel and a (red curve) thin cirrus pixel after the Rayleigh and cirrus corrections.
+the shallow underwater features (light blue) in the Fig. 1(a) Following the basic formulation of [6], we decompose the
+image disappear in the Fig. 1(b) image. This is because the satellite—measured apparent reﬂectance p*()\) [see (1)] into
+downward solar radiances above 0.8 ,um transmitted into water three components. Under Clear atmospheric conditions with
+are absorbed by liquid water in the ocean [8]. Fig. 1(C) shows very thin Cirrus coverage, neglecting aerosol scattering effects,
+an apparent reﬂectance spectrum (green curve) of a Clear water and ignoring the multiple interaction terms among molecular
+area at the center of the small red square in the Fig. 1(a) image scattering, Cirrus scattering, and water leaving reﬂectance, the
+and the spectrum (red curve) of a nearby Cirrus—Covered pixel apparent reﬂectance p*()\) in (1) can be decomposed approxi—
+at the center of the small red square in the Fig. 1(b) image. mately into three components, i.e.,
+The apparent reﬂectance values for the Clear water spectrum
+decrease exponentially with increasing wavelength, which is p*()\) % M(A) + pc()\) + t(A)pw()\) (2)
+expected because of Rayleigh scattering. The shape of the
+apparent reﬂectance spectrum for the thin Cirrus contaminated where pr()\) is the reﬂectance which resulted from Rayleigh
+pixel is similar to that for the Clear ocean pixel, but with a nearly scattering, pc()\) is the reﬂectance from Cirrus scattering, pm (A)
+constant vertical offsets. The offset is resulted from the scatter— is the water leaving reﬂectance, and t(A) is the two—way
+ing of solar radiation by ice particles within Cirrus Clouds. The sun—surface—sensor atmospheric transmittance. In order to get
+ice particles in Cirrus often have a variety of sizes and shapes. pw()\), we need to remove pr()\) and pc()\) from p*()\). The
+The “effective” particle sizes (radii of equivalent spheres) are correction of the Rayleigh term, pr()\), is made using an
+typically 5 ,um or larger [1]. Below the wavelength of 1 ,um, the updated version of the ATmosphere REMoval (ATREM) code
+absorption effects by these particles are practically negligible [3], [4]. The transmittance term t(A) is also calculated with
+[5] based on the analysis of hyperspectral imaging data col- the ATREM code assuming a pure Rayleigh atmosphere. For
+lected with the Airborne Visible Infrared Imaging Spectrometer the highly transparent thin Cirrus, we have assumed that the
+[7]. In the 0.4—1.0—,um spectral range, Cirrus reﬂectances are transmittance factor is equal to 1.0.
+nearly constant with wavelength [5], because the ice particles After the correction of Rayleigh scattering effects, an in—
+are signiﬁcantly larger than wavelengths and nonabsorbing. termediary reﬂectance (p’()\)) data cube still containing the
+
+"
+"3","974 IEEE GEOSCIENCE AND REMOTE SENSING LETTERS, VOL. 9, NO. 5, SEPTEMBER 2012
+Cirrus scattering effects is generated according to the following The steps to perform the atmospheric and thin Cirrus correc—
+equation: tions are brieﬂy summarized as follows:
+p’()\) : p*()\) _ MOO : Pc()\) + t(MPwO‘) (3) 1) converting a HICO radiance data set into an apparent
+reﬂectance data set according to (1);
+. . . 2) removing the Rayleigh scattering effects using an atmo—
+Fig. 1(d) shows the 11GB 1rnagepr0eessed from this re— spheric radiative transfer code [see (3)];
+iiectance data cube. The image is quite s1m11art0 the Fig. 1(a) 3) estimating the Cirrus induced vertical offsets from the
+image. . . Rayleigh—corrected reﬂectance spectra near 0.8 mm [see
+In order to remove the Cirrus scattering term pc()\), we (6)]'
+use the facts that Cirrus reﬂectances are nearly constant With 4) subtracting out the spectrally constant vertical offsets
+wavelength in the 0.4—1.0—um spectral range for water pixels and then dividing by the precalculated
+N Rayleigh transmittance curve to obtain the water leaving
+p C(OAM m < A < 1'0 um) N Cons (4) reﬂectance data cube.
+and that the water leaving reﬂectance at 0.8 mm is almost zero
+see Fi . 1 b
+[ g ( H 111. RESULTS
+pr‘ : 0'8 um) % 0' (5) In addition to the case of citrus corrections illustrated in a
+, , , _ series of images and spectral plots in Fig. 1(a)—(g), we have
+Equations (3)_(5) lead to the f0110w1ng equation. made Cirrus corrections to many other HICO data sets acquired
+'fferent e0 ra hical re ions. Results from the a lica—
+0.4 m<)\<1.0 mm ’A:0.8 m. 6 OVerdl g gp g PP
+pc( M M ) p ( M ) ( ) tion of the same technique to the HICO data sets measured over
+In practice, pc()\) is calculated from the mean of the re— areas in northern Bay of Bengal (NBOB), northern Australia,
+ﬂectances for ﬁve narrow HICO Channels centered near the Gulf of Mexico west of the Florida Peninsula, and Maldives
+0.8 mm for a given water pixel. The spectral averaging improves in the Indian Ocean are pr 65611th hereinafter.
+the signal—to—noise ratio. Finally, the water leaving reﬂectance
+at any wavelengths between the 0.4—1.0—um spectral range is
+obtained from the Rayleigh—corrected data set according to the A' N B OB
+following equation: The HICO instrument ac uired one h ers ectral scene cen—
+q YP P
+I I tered approximately at a latitude of 12.40 N and a longitude
+WW 2 [P W — P (0-8 WU] MA)- (7) of 80.00 E over the NBOB on January 11, 2011. Fig. 2(a)
+Fig. 1(e) shows the RGB image after both the Rayleigh and thin shows a p ortion Of the RGB image Of the scene p recessed
+. . . . from the apparent reﬂectance data cube. The spatial patterns
+Cirrus corrections are made according to (7). The Cirrus features . . . .
+. . of water features are blurred by thin Cirrus Clouds. Fig. 2(b) is
+over water surfaces seen in Fig. 1(b) and (d) are mostly removed . . . .
+. . . . . the 0.80—um channel image, Wthh shows thin Cirrus Clouds but
+in the Fig. 1(e) image, demonstrating the success of the Cirrus . . . . .
+. . . . . not the spatial patterns of water surfaces. Fig. 2(C) 1s Similar
+correction technique. The upper curve (blue) in Fig. 1(f) 1s . .
+. . to Fig. 2(a), but processed from the water leaV1ng reﬂectance
+the Rayleigh—C0rrected reﬂectance spectrum for the water pixel . . . .
+. . data set after the Rayleigh and Cirrus corrections. By comparing
+located at the center of the small red square in the Fig. 1(d) . . . . . . .
+. . . . . . . . Fig. 2(c) w1th Fig. 2(a),1t1s seen that, after the Cirrus correction,
+image. This pixel is inﬂuenced by both the thin Cirrus scattering . . . . . .
+. . the spatial distribution patterns of the water surfaces in Fig. 2(C)
+and the reﬂection from the shallow underwater object. Due to . . . . .
+. . . . . are much improved than those in Fig. 2(a). This is another case
+the presence of Cirrus—induced vertical offset, this spectrum is .
+. . of successful Cirrus removals.
+not suitable for use to derive ocean color and bottom surface
+data products with algorithms involving spectral ratios among
+several pairs of Channels in the 0.4—0.7—um spectral range .
+(e.g., [11]). The lower curve (green) in Fig. 1(f) is the water 3' Northern Australia
+leaving reﬂectance spectrum of the same pixel but with both the The HICO instrument made measurement over a scene with
+Rayleigh and citrus corrections. This spectrum is more suited thin Cirrus cover in northern Australia. The scene is centered ap—
+for use to derive ocean color and bottom surface data products. proximately at a latitude of 13.30 S and a longitude of 136.30 E
+Fig. 1(g) shows sample water leaving reﬂectance spectra ob— on May 7, 2011. Fig. 3(a)—(C) are similar to Fig. 2(a)—(C),
+tained over blue ocean waters for a Clear pixel (green curve) respectively, except for the northern Australia scene.
+and a nearby thin Cirrus contaminated pixel (red curve) after Comparing Fig. 3(a) and (C), it is seen that the detailed
+the Rayleigh and citrus corrections. Because the blue waters are spatial patterns of water features in the Cirrus removed image
+spatially uniform, we expect that the water leaving reﬂectance [see Fig. 3(C)] are observed quite well, while those features
+spectra over the two pixels should be approximately the same. in the Fig. 3(a) image are contaminated by Cirrus Clouds. The
+The agreement between the two retrieved spectra is excellent, results demonstrate that the algorithm for removing thin cirrus
+indicating that thin Cirrus effects are properly removed with our scattering effects does work well. This is the third case of
+empirical technique. successful Cirrus corrections.
+
+"
+"4","GAO AND LI: REMOVAL OF THIN CIRRUS SCATTERING EFFECTS 975
+(A) (B) (C) (A) (B) (C)
+. m"" .: ' ,. .‘ i.
+""1 .1”- a ,
+‘L -- ' . b 't .. z; t
+*T t . . . -
+. f. I a O . . I‘ I
+1x , - t . 'i ,
+‘ * . 43a. w 9 ""61% Fig. 4. (a) True color image (red: 0.640 pm; green: 0.548 pm;
+3?}: r” 7- ; blue: 0.462 ,u.m) processed from an apparent reﬂectance data set converted
+‘5: . =7. from the HICO radiance data cube and measured over an area west of the
+Florida Peninsula in the Gulf of Mexico on June 25, 2011. (b) 0.80—,u.m apparent
+Fig. 2. (a) True color image (red: 0. 640 Mm; green: 0. 5 48 Mm; reﬂectance lmage 0f the same scene. (0) Same as (a) except that 1t 1s processed
+, from the HICO data set after the removal of Raylelgh and arms scatterlng
+blue. 0.462 ,u.m) processed from an apparent reﬂectance data set converted ff t
+from the HICO radiance data cube measured over an area in NBOB on e 6C 8'
+January 11, 2011. (b) 0.80—,u.m apparent reﬂectance image of the same scene.
+(0) Same as (a) except that it is processed from the HICO data set after the (A) ’ 1 (B) _ _ . . -
+removal of atmospherlc molecular scatterlng (Raylelgh) and Cirrus scatterlng ' ’ ‘ ’ :—'}9¢“~3§¢t§‘ "" ' ' T"". .""3 ., ttg.§t
+effects. * ‘ xtia .' 3“.th!"" ' . .3: 330...;
+I ft “3. "",‘i' 1,."" 'I .a‘ S"".-‘:-jc:’fﬁ‘ 8?.
+, ‘ ""’?‘;;;::3'=1‘; t. ‘3’ . A 7.2;:‘336... ‘- c.
+(A) (B) (C) / k. . . f}_‘}. _ 7 _. t? .71,
+A .1 .0 3: .» . , Q ..~ _ ,3;
+:Vﬁ‘ .. ' 21%"" » l' r, - .' ' 3?: - *6 _. ~. “g ' ‘
+cs- . , , .w a- z e x , _. _\ . J 5;} _ ._ ' .' _. _r .0 3; {I 5:;
+\ ‘ g ‘ I Q I ' t ‘ - Foil .7,2:“ ‘ 'y -. 5:01 -""'~;f‘:
+- .. 5 ° . - V ' .. t""??? , - ~ ' - "" -' '5‘ t ‘-
+, ‘77“. 3 \- Q 73 . as: wig A t h. .. . («x,nn- ‘ <
+A K“: _7 t, a . g; (C) (D)
+.1 3 ., ’ zl - _ f ' -. ' .- a .;;-t~$.v..' ._-. 0.3
+4;: 9“ "" €11:
+Fig. 3. (a) True color image (red: 0.640 pm; green: 0.548 pm; . g"".?1f;af:;l'- “1?; 8 0.2
+blue: 0.462 ,u.m) processed from an apparent reﬂectance data set converted / ,. ~‘ ‘ . . ’ 1"" .. 5:; - ? é
+from the HICO radiance data cube measured over an area in northern Australia f“ ‘~ » ' 1.1; 7‘ ‘ ‘ s a %
+on May 7, 2011. (b) 0.80—,u.m apparent reﬂectance image of the same scene. . Q : . I’ ,‘ _: ’2 k 0: 0.1 .
+(0) Same as (a) except that it is processed from the HICO data set after the c. ,. ; 7 "" - ""t"".- .
+removal of atmospheric molecular scattering (Rayleigh) and cirrus scattering is. ;‘ . ""f i
+v “' ' L"" 7: 0.0
+effeCtS~ E C . . ' . . a ii 0.4 0.5 0.6 0.7 0.8 0.9
+\0: ‘n'. '> w h,“ , Wavelength (um)
+C. GulfofMexico
+. . . . . . Fig. 5. (a) True color image (red: 0.640 pm; green: 0.548 pm;
+HICO acquired a spectral imaging data set Wlth thln Cirrus b1ue:0.462 pm) processed from an apparent reﬂectance data set converted from
+contaminations west of the Florida Peninsula in the Gulf of thehihcch) 32d??? iitftggge and measured EVef Mal‘hVeS in tfhelthdiah Ocean
+. . . on are , . . —,u.m apparent re ectance Image 0 t e same scene.
+MCXICO on June 25’ 2911' The scene 18 centered near 3' latltUde (0) Same as (a) except that it is processed from the HICO data set after the
+Of 24.60 N and a longltude Of 82.90 W. The Slte has been USCd removal of atmospheric molecular scattering (Rayleigh) and cirrus scattering
+by a research organization for coral reef evaluation and m0h_ effects. (d) (Blue curve) Reﬂectance spectrum over a coral reef pixel after
+'t . F. 4 . .1 t F. 2 t. 1 the removal of Rayleigh effects and (green curve) water leaving reﬂectance
+1 Oflng. 1g. (a)—(C) are 81m1 8.1” 0 1g. (a)—(C), respec 1V6. y’ spectrum of the same pixel obtained through Rayleigh and cirrus corrections.
+except for the Gulf of MeX1CO coral reef scene. By comparing
+Fig- 4(1)) With Fig- 4(a), it is seen that thih Cirrus CIOUdS have coral reef features. A large number of coral features are affected
+covered portions of coral reef areas and made the coral features by thin Cirrus Clouds.
+blurring in Fig. 4(a). After the arms correctlon, the spat1a1 Fig. 5(1)) is the 0.80—,um channel image, where both the
+patterns 0f coral reefs are seen much better 1h the Flg- 4(0) large thin Cirrus Clouds and the smaller but brighter isolated
+image than those 1h F1g.4(a),particu1ar1y for the lower portion cumulus Clouds are seen. The coral features are not seen in
+of the coral reefs. This is the fourth case to demonstrate the this image because of the total absorption of solar radiances
+success 0f the eh'hls correction technique. near 0.80 ,um by liquid water in the ocean. Fig. 5(C) is the
+RGB image after the Rayleigh and citrus corrections. Thin
+. Cirrus effects are almost removed completely in this image,
+D. Maldlves . . . .
+permitting better observations of coral reef features. Fig. 5(d)
+HICO collected one set of hyperspectral imaging data over shows an example of coral reﬂectance spectrum after Rayleigh
+Maldives located in the Indian Ocean on March 25, 2011. The correction only (upper blue curve) and after both the Rayleigh
+center latitude and longitude of the HICO scene are apprOX— and citrus corrections (lower green curve). The lower curve in
+imately 5.10 N and 73.00 E, respectively. Fig. 5(a) shows a the 0.4—0.7—,um spectral region should, in principle, be very
+portion of the HICO RGB image containing many underwater useful for inferring the coral property, such as the health of the
+
+"
+"5","976 IEEE GEOSCIENCE AND REMOTE SENSING LETTERS, VOL. 9, NO. 5, SEPTEMBER 2012
+coral for the pixel under consideration. This is the ﬁfth case to ing of water leaving reﬁectances in the Visible. The technique
+demonstrate the success of the Cirrus correction technique. has been successfully applied to a number of HICO data
+sets acquired from the 188. The results from application to
+ﬁve HICO data sets have been presented. The development
+IV. DISCUSSIONS . . .
+of the technique is based on the facts that the water leaV1ng
+The technique described here is useful for the removal of thin reﬁectances for Channels above 0.8 ,um over fairly Clear ocean
+Cirrus path radiances over Clear water surfaces with zero water waters are Close to zero and that Cirrus reﬁectances in the
+leaving reﬁectances above 0.8 ,um. Over very turbid waters, 0.4—1.0—um region are spectrally ﬂat. The same technique is,
+the water leaving reﬁectances near 0.8 ,um may not be zero. in principle, applicable for thin Cirrus corrections over similar
+The use of the technique will result in an overcorrection of water surfaces from images acquired with other hyperspectral
+the thin Cirrus effects in Visible Channels. The technique is and multichannel instruments covering solar spectral region
+certainly not applicable for thin Cirrus corrections over land between 0.4 and 0.9 pm.
+surfaces because surface features are seen obviously in the
+08—th image over land [see Fig. 1(b)]. Previously, Gao et al.
+. . . . . ACKNOWLEDGMENT
+[5] described a technique for the correction of thin Cirrus Cloud
+effects over both the land and water surfaces. However, the HICO is integrated and ﬂown under the direction of the
+technique requires instruments to have narrow Channels near the Department of Defense Space Test Program. The authors would
+centers of the strong atmospheric water vapor band absorption like to thank P. Zhai of Sciences Systems and Applications, Inc.,
+regions near 1.38 or 1.88 ,um for unambiguous detection of thin NASA Langley Research Center, for useful discussions.
+cirrus Clouds.
+Because the s ectral reﬁectances in the air and water in—
+p , REFERENCES
+terface are Close to constant in the 0.4—0.9—um wavelength
+- - - - - - _ [1] R. L. Lucke, M. Corson, N. R. McGlothlin, S. D. Butcher, D. L. Wood,
+Interval’ the empirical teChmquedeSCﬂbed here IS equally ap D. R. Korwan, R. R. Li, W. A. Snyder, C. 0. Davis, and D. T. Chen, “The
+Pheahle fer the 1‘ emOVal 0f sungllnt effeet fer the deerathh 0f Hyperspectral Imager for the coastal ocean: Instrument description and
+water leaving reﬁectances in the Visible spectral range between ﬁrst images,” Applo OPt-,V01. 50.n0. 11,1313. 1501—1516, 2011.
+- [2] M. R. Corson and C. 0. Davis, “A new View of coastal oceans from the
+approximately 0.4 and 0.7 pm. We do not have lIICO data Spacestaﬁon’” EOS,Vol. 92’n0. 19,1313. 161—168, 2011.
+sets Wlth Shhghht effeets t0 demOhStrate the Shhghht remOVal [3] B.—C. Gao, K. H. Heidebrecht, and A. F. H. Goetz, “Derivation of sealed
+with the present empirical technique since the HICO instru, surface reﬁectances from AVIRIS data,” Remote Sens. Environ, VOl. 44,
+- - _ no. 2/3, pp. 165—178, May/Jun. 1993.
+thent IS programmed to CXCIUde the sunglint zones When mak [4] B.—C. Gao and C. 0. Davis, “Development of a line—by—line—based atmo—
+lhg ObserVaUOhS from space. The reﬂeCtahceS ICSUItIHg from sphere removalalgorithm for airborne and spaceborneimaging spectrom—
+aerosol scattering in the ocean often have approximately a A_1 eters,” in Proc. SPIE, 1997, V_01. 3118,913- 132-141- _ _
+wavelength dependence. Our empirical technique also partially [5] B""C' G210 et al"" qureCtl9n Of thm.C.1rrus path radtances 1“ .the
+. . 0.4—1.0 mm spectral reglon us1ng the sens1t1ve 1.375 mm Clrrus detectlng
+removes the aerosol scattering effects from HICO data acqu1red channel,” J. Geophys. Res” vol. 103,131; 32169—32176, 1998.
+on hazy days by assuming that the aerosol reﬂectances in the [6] H. R. Gordon and M. Wang, “Retrieval of water leaving radiance and
+- _ _ aerosol optical thickness over the oceans with SeaWiFS: A preliminary
+entire 0.4 0.9 ,um spectral range are equal to thereﬁectance at algorithm,” Appl. Opt., vol. 33’ n0. 3,1313. 443452, Jan. 1994.
+0-8 Mm- Thls eah reSUIt 1h 3 sllght undercorrection 0f aeresel [7] R. 0. Green, M. L. Eastwood, C. M. Sarture, T. G. Chrien, M. Aronsson,
+effects in the Visible (0.4—0.7 lam). B. J. Chippendale, J. A. Faust, B. E. Pavri, C. J. Chovit, M. Solis,
+Althou h a uantitative CIT 01, and S ensitiVit anal sis Of the M. R. Olah, and 0. Williams, “Imaging spectroscopy and the Airborne
+. . g . q . y y Visible Infrared Imaging Spectrometer (AVIRIS),” Remote Sens. Environ,
+empirical Cirrus removal technique has not yet been made, the vol. 65, n0. 3,1313. 227—248, Sep. 1998.
+ﬁve examples of cirrus corrections, particularly Fig 1(g), pre_ [8] R. Li, R. Lucke, D. Korwan, and B.—C. Gao, “A technique for removing
+- - - - second—order light effects from hyperspectral imaging data,” IEEE Trans.
+sentecl in this letter have demonstrated Clearly that the empirical Geosci. Remote Sens” vol. 5 0, n0. 3,1313. 82 4—83 0, Mar. 2012.
+technique works ﬁne for thin Cirrus cases when Single scattering [9] R. L. Lucke, M. Gorgon, N. R. McGlothlin, S. D. Butcher, D. L. Wood,
+effects dominates. The technique is not suitable for applications D. R. Korwan, R. R. Li, W. A. Snyder, C. 0. Davis, and D. T. Chen,
+t O C as es of thick Cil‘l‘u S Clouds b e C aus 6 Of C O mpli C ati on from The hyperspectial lmager for the coastal ocean: Instrument descnptlon
+. . . . . . . and ﬁrstlmages, Appl. Opt, vol. 50, no. 11, pp. 1501—1516,Apr. 2011.
+multiple reﬂection and scattering between ice particles in Cirrus [10] D. M. Wieliczka, S—S. Weng, and M. R. Querry, “Wedge shaped C611 for
+Clouds and the Rayleigh atmosphere. highly absorbent liquids: Infrared optical constants of water,” Appl. Opt,
+vol. 28, no. 9, pp. 1714—1719,May 1989.
+[11] Y. L. Pan, D. L. Tang, and D. H. Weng, “Evaluation of the SeaWiFS
+V. SUMMARY and MODIS chlorophyll a algorithms used for the northern South China
+Sea during the summer season,” J. Atmos. Ocean Sci., vol. 21, no. 6,
+We have developed an empirical technique for the removal 1313- 997—1005, 1360- 2910- _
+f h. . 1 d ff . h 1 h [12] J. Zhang and J. S. Re1d, “MODIS aerosol product analys1s for data as—
+O t m Cll‘l‘us C 01} 6. eCtS USIIig 3' natrOW C anne near t e similation: Assessment of over—ocean level 2 aerosol optical thickness
+08—th atmospheric w1ndow region for improved remote sens— retrievals,” J. Geophys. Res., vol. 111, p. D22 207, Nov. 2006.
+
+"

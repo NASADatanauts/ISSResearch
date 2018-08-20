@@ -1,0 +1,662 @@
+"","x"
+"1","JOURNAL OF SPACECRAFT AND ROCKETS
+O O O O O
+Optlmlzatlon 0f Resonant Inductlve Wireless Power Transfer
+0 O O O
+Usmg Multilayer Flat Splral COllS
+Dustin J . Alinger,i Allison K. Porter,i and Raymond J . Sedwicki
+University ofMaryland, College Park, Maryland 20742
+DOI: 10.2514/1.A32901
+A method of using loading capacitors of varying sizes to experimentally determine the alternating current behavior of
+resistance and inductance for a multilayer ﬂat spiral coil is presented. For the presented coil design, the Dowel] method is
+shown to underpredict the alternating current resistance of the coil by as much as a factor of 4 for frequencies up to
+10 kHz. A classical modification to the Dowel] method produces improved results but still underpredicts the alternating
+current resistance by as much as a factor of 2. Curve ﬁts of the form used in Dowell’s method are applied to
+ﬂ experimentally obtained data, allowing for the identiﬁcation of the frequency at Which Wireless power transfer efﬁciency
+g is maximized. In addition, an analytical approach to predicting coil impedance vs the duty cycle of a rectangular wave
+2 applied voltage is presented and is shown to agree well With experimentally obtained results.
+E
+V3
+g Nomenclature Va1p = voltage applied to primary, V
+a a = breadth of a conductor, mm Vbef = back electromotiye foree induced in primary, V
+E b = Winding breadth, mm VP = resulting voltage 1n.pr1mary, .V .
+93:3 C = cap acitan c e added to coil, F Vs : Eoiwtard fe1ectri)motive force induced in secondary, V
+g d = duty cycle of applied voltage é : 6?? ,tO inter 31/1“ gaphmm
+g dsep = aXial separation distance between coils, m Z : C91 0.1“?“ mcip e ance, f f , , ,
+E; f = appli e (1 frequency, Hz min Z — Circuit impe ance at requency 0 minimum 1m-
+E f ZR = frequency of zero reactance, Hz p edanFe’ Q , , ,
+E Gm = mutual in du ctan c e transfer function K = coupling constant frem primary 0011 to secondary 0011
+8“ G p 2 primary coil circuit transfer function '7 = p ower transfer efﬁ01ency , ,
+9 GS = secondary coil circuit transfer function 600 = resonant frequency Of p rimary and secondary 0011
+a h = height of conductor, mm Cireuits; rad/s
+<5 I L 2 current through load, A p = re31st1V1ty, Q ' m
+8 [p = current in primary, A
+g I s 2 current in secondary, A
+E L = coil inductance, H 1- IntI'OdllCtiOH
+a LU = 9011 inter winding inductance, H T HE Resonant Inductive Near-field Generation System (RINGS)
+3:) LZR = inductance at frequency 0f zero reactance, H is a technology demonstrator experiment that was launched to
+% Lac = ac inductance Of 0011, H the International Space Station (ISS) in August of 2013. A hybrid
+% Lmin z = eircuit inductance at frequency 0f minimum design, RINGS is intended to demonstrate two distinct but related
+E impedance, H technologies. The ﬁrst, electromagnetic formation ﬂight (EMFF), in-
+E La) = 0011 leakage inductance, H volves circulating current through wire coils onboard two or more
+2 l T = mean turn length, mm spacecraft and usin g the resulting electromagnetic intervehicle forces
+Q m = number 0f layers and torques for propellantless formation control. Previous work [1]
+E N1 = number 0f turns per layer, mm has shown that the combination of a single magnetic dipole on each
+g P L = power (11331133th 1“ load resistoi, W vehicle, with independent angular momentum storage (such as with
+"":3 Pp = power (11331133th 1“ primary 0011, W reaction Wheels) provides complete, albeit nonholonomic control of
+E Ps = POWet d1ss1patet11n secondary 0011, W the vehicle. The addition of orthogonal coils to allow for dipole
+5 Q = 0011 Clremt quality factor steerability then allows for independent actuation of every relative
+R = 0011 r esistance, 9 degree of freedom Within a cluster of vehicles. Operation onboard the
+RL = load resistance, 9 ISS allows for full siX degree-of—freedom evaluation of a variety of
+Rac = ac resistance Of 0011, 9 formation control algorithms in a hands-on, shirtsleeve microgravity
+Rmin z = circuit r esistance at frequency 0f minimum imped- environment. A computer generated image of a pair of RINGS
+ance, Q assemblies onboard the ISS is shown in Fig. 1. Operational con-
+S = C01111316K frequency fa) 0f applied voltage, r ad/ 3 straints require that the coils be of a compact toroiaal design, allowing
+VL = voltage across load, V for the RINGS assemblies to be mounted as payloads around
+the vehicles of an existing ISS formation control facility called
+Received 6 December 2013; revision received 18 Apri12014; accepted for synchronized position hOId engage and reorient experimental
+publication 25 April 2014; published online 5 August 2014. Copyright © satellites (SPHERES) [2]. The SPHERES facility vehicles Offer a full
+2014 by the American Institute of Aeronautics and Astronautics, Inc. All suite of metrology, communications, computation, and thruster
+fights resel‘Ved- COPieS Of this Peper may he made for Personal or internal use, capabilities in support of formation control algorithm evaluation.
+011 Condition that the 0013ier pay the 5510-00 Pef-COPY fee t0 the COPYI‘ight In addition to EMFF, RINGS also provides the capability for Wireless
+Clearance Center, Inc., 222 Roseweod Drive, Danvers, MA 01923; include power transfer W) between vehicles Via resonant inductive coupling
+the*c(§)d:11533é67C914/14Snd $1000 H} ?nesp onde}: C6.W1th.the glcgcl M . (RIC). It is this technology that is the main focus of the current paper.
+Hall. fa uate m ent’ apartment 0 erOSpace ngmeeﬂng’ mm Nikola Tesla ﬁrst demonstrated RIC around the turn of the 20th century
+tGraduate Student, Department of Aerospace Engineering, 3181 Martin [g]. However, very little further research was conducted on the topic for
+Hall. Student Member A1 A A. nearly 100 years, most likely due to the lack of a pressing need for the
+tAssociate Professor, Department of Aerospace Engineering, 3181 Martin Wireless transfer of power at high efﬁciencies over moderate distances.
+Hall. Associate Fellow AIAA. With the advent of portable electronics, the technology has, in the
+AIAA Early Edition / 1
+
+"
+"2","2 AIAA Early Edition / ALINGER, PORTER, AND SEDWICK
+.ﬁ ’“ ‘ _ 3* ""' J -""'. II‘ individual coil losses. It was found that, due to some unique
+I W \X‘ hf- ‘r_ _. geometrical properties of the coils, a direct application of the Dowell
+/ {y . l - -. method did not produce results that were accurate enough to support
+1' 1 @III 3'; . - I I, II 'I' the design process. A modification to DowelIl’sIapproach is presented
+.1 . , III"" . til} h I .I » i ‘. - that prov1des a much more accurate prediction of res1stanceI and
+.. ' ~ 1%: .1 s I-I ; _ inductance due to the proxmnty effect, parameters that are critical
+.' \ ..., a , x 3‘ ' ' 4 to locating the WPT operational frequency that optimizes system
+. . 95: I ‘ _ iii . :1 .. \ ‘51-. performance.
+, ' ‘ \ ‘ The novelty of the current research is that the close—packed ﬂat spiral
+' _ ' geometry is inherently suboptimal due to the coupling effects dis-
+' '- cussed, and given the option, this geometry would not typically be
+""x I I a . (\I . - selected. However, if packaging constraints take precedence, the results
+I .. I presented can be used to make an informed preliminary des1gn ch01ce.
+., . ,, I I . . III
+. 'Fﬁ, :I ,r’ -If--*I a- II 2 III;
+P ‘ g i: U II. WPT Review
+«8 , t . ' . . . . . .
+S _—"":.,- «.2410:- .7: I I-I .* I I I z I ta We begin by presenting a model used for investigating the per-
+93 I - “'I “t I ’ “ -- ' ‘ ~ .' ‘ ‘ formance of WPT. The block diagram shown in Fig. g reduces the
+Q Flg‘ 1 RINGS vehldes integrated Wlth SPHERES satellites. various elements of the system to their respective transfer functions.
+3 Here, we are assuming that the system is composed of two identical
+is last decade, become one of renewed interest. In 2007, researchers at coils, each having an inductance L and a resistance R- Some amount
+25 Massachusetts Institute of Technology demonstrated, Via resonantly 0f capacitance C is added in series With each 0f the coils. Since C is
+g tuned coils, the wireless transfer of 60 W at 40% efﬁciency over a much larger than the self—capacitance of the coils, it will dominate,
+3 distance of 2 m [g], This system used helical coils made from copper and hence we can model each coil as a series circuit containing a
+g wire with a self—resonant frequency of approximately 10 MHz. A paper resistor, inductor, and capacitor (RLC). An additional component, the
+g by the same team of researchers presented a framework for analyzing load resistor IRL is placed ih series With the secondary . coil. The
+,9 the resonant coupling system performance using coupled-mode theory transfer functions for the primary and secondary 0011 Circuits are
+73 [5]. Their results highlight the advantage of a resonant inductive system, shown as G p and Gs-
+3:: as the analysis indicates that the resonant scheme can transfer a million By Faraday’s law 0f induction, the magnetic ﬂux generated due to
+f times more power than a typical nonresonant setup. In the last siX years, the current ﬂowing in the primary Wiii induce an electromotive for ce
+8 over 1,300 papers have been published on the development of resonant (EF) in the secondary. The magnitude Of this induced EF is pro-
+Sﬂ inductive power transfer. A few of the papers that are considered most portional to the IInutual inductance between the coilsI which is
+a applicable to the current study are provided in @‘Ei- a funetion of coil inductance IL and the coupling coefﬁeient K. The
+Q Because of the operational constraints identified previously, the coupling coefficient K, Whieh is always between 0 and i in valne, is a
+g helical coils used as a demonstrator by Karalis et al. [g] are not ideal geometric parameter that models hOW much 0f the magnetic ﬂux
+55 for intersatellite power transfer. The compact toroidal coils employed generated by the primary coil actually penetrates the secondary coil.
+E by RINGS are also not idea] from a performance standpoint, but as Additionally, the current ﬂowing in the secondary W111 induce an EF
+(T) a demonstrator onboard the ISS, the former constraints took pre- in the primary,known as the back EF- The transfer function for mutual
+(L3 cedence. The design of the RINGS coils was motivated by an analysis inductance is shown as Gm-
+I3; 0f the optimal power coupling performance using such compact Now, we assume that the systemis driven byasinusoidal Ivoltage of
+z toroidal coils as provided by Sedwick [17]. While the impact of frequency 000, where 000 is the resonant frequency 0f the primary and
+8 frequency selection on resistance resultinarom the skin effect was secondary coil circuits, given by
+E incorporated, the impact of the proximity effect between layers of the
+o . . . . 1
+2 0011 was not.I With the proxmnty effect, the ﬂow ofIcurrent through 000 = _ (1)
+(<0: any given Winding induces eddy currents in the neighboring wind- W
+E» 1ngs,tIand -th:hC0m-li,med effect acrgss dalltw1nd11r\1/Igs gives £18611“) where L is the coil inductance and C is the added capacitance.
+B varia 19m in - e 001 S resis ance an in uc ancIe. ore spe01 10a y, At resonance, our coil circuit transfer functions become
+g the res1stance increases w1th frequency, and the inductance decreases
+L; with frequency. Dowell [E] presented an analytical approach to l
+g; predicting the change in these two parameters with frequency given G19 = E (2)
+the cross-sectional dimensions of the coil. This has become known as
+the Dowell method. and
+During the development of the RINGS hardware, the Dowell 1
+method was initially employed to provide guidance in maximizing Gs = m (3)
+the performance of the system by selecting the best operational L
+frequency that would balance the intervehicle coupling with the The peak current per volt applied to the primary is then given by
+Vap Vp ; 1p Vs ; Is
++6. sL+R+L F _SK‘/E I sL+R+L I
+sC sC
+Gm
+Fig. 2 Block diagram for WPT.
+
+"
+"3","AIAA Early Edition / ALINGER, PORTER, AND SEDWICK 3
+L
+[—19 = L = i (4) Q = ﬂ (13)
+Vap 1 — GPGSG; szzwg + R2 + RRL R
+for the primary and Equation (g) becomes
+IS GstGm Law (5) ’7 _ 1+ 2 — 2V QZKZ +1 (14)
+— = — = — o t —
+Vap 1 — GPGSG; Lzzczwg + R2 + RRL p QZK2
+for the secondary. Similarly, the power consumed in each coil per volt quuation (1:14: 3110st that f0? anygiven eoEpling eonstan; K’ “gmfh is a
+squared appli e d to the primary is given by .unetion o t e 001 separation distance, t epower trans er e 1e1eney
+1s maxrnnzed when Q is maxrmized, assuming that the load res1stor is
+P R (R + R )2 set to its optimum size as given by Eq. (E). Because of the proximity
+—p = —L (6) effect, L and R are functions of frequency; coil inductance will be
+v2 2(L2K2w2 + R2 +RR )2 . . . . . .
+ap 0 L reduced as frequency increases, and 0011 res1stanee Will be magnified
+. as frequency increases.
+for the primary and
+g H PS H _ RLszwg (7) III. Experimental Measurement of Proximity Effect
+0 _ _ —
+§ V221p 2(L2K2w8 + R2 + RRL)2 The resonant coil was constructed from a noninsulated 6061-0
+g aluminum wire having a rectangular cross section. Each layer of the
+E for the secondary. The power consumed in the load resistor is coil is a spiral made of 20 turns, with an air gap between each turn
+g given by having the same width as the wire itself. To prevent neighboring
+:- windings from contacting each other, eight polycarbonate combs
+8 P L _ R LLZKng 8 (shown in Fig. 2) per layer were glued to the windings at regularly
+E a _ 2(L2K2w8 + R2 + R R L)2 ( ) spaced intervals in the Circumferential direction. By placing grooves
+g p on both sides of the combs, multiple layers were able to be stacked
+g P ow er transfer efficiency is then given by together yertieally. The comb geometry was also designed to provide
+g a small air gap between layers, Wthh prevents ad] aeent layers from
+g H P /V2 H contacting one another. Five layers were stacked vertically to create
+4: _ L ap - - -
+g 17 _ —2 2 2 the resonant 0011, as shown in Fig. g. The ends of each layer were
+a H1D p/ Vap H + H1D s/ Vap H + H1D L/ Vap H connected to one another in series in such a manner that the current
+2 RL L2K2 60% ﬂowed in the same Circumferential direction in each layer, essentially
+: = — (9) resultin in lOO-t 'l
+m 2 2 2 2 g a urn C01 .
+050 (R + RL)(L K 600 + R + RRL) The resultin coil cross section is shown in Fi . 5, and the
+s g g _
+j T ki th art' 1 d . t' f 'th t t R . dimensions are summarized in Table 1. For simplicity, the dimen-
+Q‘: a ng e p 1a eriva we 0 '7 W1 respee O L gives sions in Table 1 follow the notation used in the Dowell method.
+m H h t D 11 r f r to as la ers have heretofore been
+H 222 222 2 2 owever,wa owe ees y
+g 6—17 2 W (10) referred to as windings, meaning that, by the Dowell method nota-
+m aRL (R + RL) (L K 000 + R + RRL) tion, the number of layers of the coil is 20, with 5 turns per layer.
+3:) It should be noted that the eross-seetional View shown in Fig. g
+95 which reveals an expression for the value of R L that maximizes power is an approximation, since successive layers of the 0011 spiral in
+g transfer efficiency, given by opposite directions. More specifically, layers 1, 3, and 5 are right-
+é handed spirals, and layers 2 and 4 are left—handed spirals. Since the
+Q R = /L2K2w2 + R2 (11) end of one layer is connected to the beginning of the next layer, the
+(<0: LOP‘ 0 alternating spiral design allows the layer-to-layer electrical eon-
+<2: , , , , neetions to be made in a compact manner. If all five layers were to
+3 Substituting Eq. (E) back into Eq. (2) gives spiral in the same direction, the innermost winding of one layer would
+g 2 2 2 2 2 have to connect to the outermost winding of the next layer. This
+3 '7 = 1 + 2R _ 2R V L K 600 + R would require a jumper wire to be routed either above or below the
+E Opt szzwg entire stack, which is undesirable from a packaging standpoint.
+8 2 2 2 2 To measure the effect of increasing frequency on coil resistance
+2 1 + 2 — 2V (L K wo/R ) + 1 (12) and inductance, test capacitors (also called loading capacitors) of
+Lzlczcog/R2 various values were connected in series with the coil. The exper-
+imental test setup is shown in Fig. 9. Two Fluke 87V multimeters
+Defining Q as were used: one connected in series with the load to measure the load
+. T‘ - . . . 1‘ l)
+‘ i 'i ‘ NT ‘ ”ﬂ ' i i . i
+a c. v I.) \I 1"" l . H r t ‘ “
+9, ‘ « n. ‘ , '. - b ‘ ‘
+. ‘ _Y , :- . .. ‘ . .
+\‘E Y i \
+Fig. 3 Polycarbonate comb placed into coil windings.
+
+"
+"4","4 AIAA Early Edition / ALINGER, PORTER, AND SEDWICK
+I
+12: 4"""" ‘~ .,=.1. :,1._ , DMM 1
+""L I ’ - , ( IL) n-nun-.n-u-n-u-nun..-------n------.-------------nu...-u-uugnnups
+__:1,,;21"""",:""i‘i1'.""i7i""""i 5131‘ 12 1 l'- 5. «\tiiiw;_,‘1“,_ , H ‘ g
+M -'
+> ' “ “ “” L -
+g . ' ft} _ a 8P1?“ - Resonant DMM 2
+ti't't‘ilf t mx \ j}, ;£2ii-""“*“' 1 g. p D C0"" ( VL)
+. . hiH u H“ l f] 1""; .il "" g
+tit"";:3‘431‘ti',""""‘§iIFIWﬂﬂ 1 , ,1 mm ili“""‘l“-H —WW , . Ctest :
+Fig. 6 Test setup for measuring proximity effect (DMM, digital
+# multimeter).
+Fig. 4 Exploded and collapsed view of resonant coil and combs.
+E Experimental Data & Dowell Method Predictions
+m
+< 3 ”-1”.
+g u h 10
+i ' ""/ 7r / ' 7/ 77/ 7771/ '/ ”My”
+2 r? ¢ ¢ M M¢W A102
+5' é? 2 6% 622M 9, >5
+a NM 2 1 aéméM/M m2 xxx
+_ V, 7,7/1,/7,,,7,,‘, . 1 ""f
+g) ‘ 3 f 6 / Z 'I 2 g 3 2 g g 3 10 X 3:"", :Measured Value
+«s / I g / ¢ / ¢ ¢ / / ¢ Dowell Method
+3 g 3 % Z 1 ¢ ¢ ¢ % 3 ¢ % x ""Modified Dowell Method
+3 4 4 4 A ‘ 4 14 4 4 A Q 4100---""--__‘
+E 1 7 7 7 7 ‘ 7 7 T 7; 7 7 2 3 4 5
+m g l? ; Z? ??%;Z 10 10 1o 10
+E D 0 ¢ M aw Maw ”“2’
+g 2 2 Z Q A 2 ‘ Z Z Z Z Z 2‘ 2 Fig. 7 Frequency-dependent behavior of coil resistance.
+5 7 7V' /%?7¢'V7&77
+—< ‘ : / . . . .
+E A 1 Z I g .A J g 1 Z g 4 g 3 g Q g assurtne thatfttitile miriintium tilrrfipedance measured was in fact the ac
+“9 1 x 1 z , / - r 7 r , 1, z, r , res1s ance 0 e (:01 a eac requency.
+5 / l/V Q /’////V// . .. . .
+j E 1 j g g g g ‘ g g a g Z g g g Another source 0fp0ss1b1e error in this setup was dielectric losses
+:2 E ‘ Z g g 2 3 g , Z g 5 Z 2 g g Z in the capacitors themselves. However, all loading capacitors used
+Lu ‘ i ‘ o o o o o
+E Fig. 5 Cross-sectional view of resonant coil. were ﬁlm capa01t0rs With a rnetallrzed polypropylene dielectric.
+(L3 Because Of the extremely low d1ss1pat10n factor of this dielectric, the
+(L3 predicted equivalent series resistance for each loading capacitor was
+5 less than 1% 0f the measured load impedance, so these losses were
+(A current I L and the other connected across the load to measure the load neglected.
+a voltage. VL- Thls twe-multimeter arrangement allowed for the The measured ac res1stanee 0f the 0011 at different frequencres is
+E calcalatiorl 0f the load impedance e3 VL /IL- Based on the accuracy shown in Fig. Z.A1s0 shown is the ac resistance as calculated by the
+Q specrﬁcations for the Fluke 87V 1h 1tS ac voltage and ac current Dowell method. It is Clear that the Dowell method signiﬁcantly un-
+in‘ measuring modes, the load impedance measurement was acelirate t0 derpredicts ac resistance for our coil cross section. This could be due to
+E 3%: The leads 0f the multimeter were kept short anct repositioned the fact that our rectangular conductor has a high aspect ratio 61/11
+5‘ during the measurements to ensure that they were hOt impacting the and the Dowell method is better suited for square conductors.
+E natural frequency 0f the system. For each test capacrtor value, the Furthermore, the gap between successive turns u is not insigniﬁcant in
+N ' ' . . .
+L; resonant frequency was determined by locating the frequency ef comparison to the height of the conductor 11 (they are in fact equal),
+(3) mlnlmum load Impedance. It ShOUld be noted that, due to Changes In which could be introducing additionally errorS. AS stated in [L9], one
+Q R and L Wlth frequency, the pomt 0f minimum 103d impedanceis hOt Classical approach to deal with this air gap is to increase the conductor
+guaranteed to be the pomt 0f zero r eactance, and hence the minimum height so that the air gap is eliminated and modify the resistivity such
+load impedance may hOt be purely res1st1ve. However, as W111 be that the dc resistance of the coil remains the same. Making this
+ShOWh later, for the frequency r anges used 1h these tests, a numerical modiﬁcation requires us to double the value of h and double the value of
+analysis shows that the difference between the minimum impedance p. As seen in Fig. 7, the modiﬁed Dowell method is closer to the
+and the impedance at zero reactance iS less than 4% We therefore experimentally measured values but still underpredicts the ac resistance.
+The capacitance of each test capacitor was also measured with a
+Fluke 87V multimeter. With these measurements, it was possible to
+T abl e 1 M aj 01, dimensions of r es (mam coil calculate the cell intluctance at each resonarlt frequerlcy. Based on the
+: accuracy SpCClﬁCElthDS for the Fluke 87V 1n capa01tance measuring
+Dimension Description Value mode, the coil inductance measurement was accurate to 1%. These
+a Breadth of a conductor 6.4 mm ac inductance values are plotted in Fig. §.D0we11’s method also
+19 Winding breadth 36.8 mm provides a prediction for coil inductance vs frequency, which is given
+h Height Of a CehduetOT 1-0 mm as the sum of two components. The first component LU is the con-
+[Lt] Eelgigt 0f Em interlayer gap ;.0 mm tribution from the gap between layers and is frequency independent.
+7] l N113; ber 0 turns p er ayer 0 86 The second component L0) is called the ac leakage inductance and is
+D 1 . . . .
+lT M Gan tum len gth 2000.3 mm tlependent on frequency. Total e011 inductarlce, LU —|— L0), is plotted
+m Number OflayeI-S 20 in Fig. §. We can. see that while the dc inductarice predicted by
+p Resistivity 3,7 ><10-8 Dowell’s method is lower than what was determined experimen-
+— tally, the measured data do follow the predicted trend somewhat
+
+"
+"5","AIAA Early Edition / ALINGER, PORTER, AND SEDWICK 5
+104 Experimental Data & Dowell Method Predictions 4 Resistance Curve Fit
+x 10 —————————————————
+11 x —Dowell Method
+A 10 g 2
+:5 9 x 210
+2 CC
+_I 8
+7
+6 100 .
+2 3 4 5
+1o2 103 104 105 1° 1° 1° 10
+Fig. 8 Frequency-dependent behavior of coil inductance. Flg' 9 Curve ﬁt applled to measured reSIStance data.
+qualitatively. However, the Dowell method did not predict any x 10‘3 Inductance Curve Fit
+significant decrease in inductance until 10 kHz, whereas the mea- 12
+sured values began to show an inductance decrease beginning ’
+8 around 1 kHz.
+§ Since we expect the measured data to follow a Dowell-like trend at i 10
+f. least qualitatively, a Dowell method curve fit was applied to the g
+3 experimental data for resistance and inductance. The two curve fits "" 3 —Dowell Method Based Curve Fit
+8 follow the Dowell method equation forms for resistance and in-
+j ductance given in [E]. The equation for res1stance 1s 6
+8 2 2 2 102 103 1o4 105
+:0 I (m — UD’ mle [T I (m — DD, f(Hz)
+ES RacszcM‘i' — =—M+—
+ﬂ; 3 11 Dbh 3 Fig. 10 Curve ﬁt applied to measured inductance data.
+.2
+g (15)
+S . . .
+E“ where the nominal values of the variables for our coil design are given ang thedfrequency OEi§E§ggca Usmg the curve ﬁts for r 6318? ar11(1:e
+; in Table l and where M ’ and D’ are the real parts of M and D, anl 11D uctlance, a , d f h' (script was written t9 niimerica y
+5 respectively, with M and D given by ca cu ate t e magnitu e 0 t is 1serepancy. e script oops over
+:2 a frequency range of 1 Hz to 8 kHz in 1 Hz increments.
+; M = a h coth a h (16) The procedure for each loop iteration is then as follows. First, given
+0:13 a frequency f, use the inductance curve ﬁt to calculate the ac 1n-
+: and ductance 0f the coil at that frequency. Then, calculate the capacitance
+n: C required to make f the zerO-reactance frequency of the system,
+m .
+F ah given by
+% D = Zah tanh? (17)
+o
+5 c — 1 (20)
+(32 where LZR (ZﬂfZR)2
+%
+(E _ jwptonD (1 8) where we have called the ac inductance result from the curve ﬁt LZR,
+g a _ p as this is the value of the coil’s inductance at the frequency of zero
+g reactance. Next, create an additional frequency sweep vector f sweep
+m . .
+<2: For the resistance curve ﬁt, the free parameters were Rdc, h, and Wh}Ch has arange 0f0.5 * f to 1'5 * f“ Then, use thteinﬁuctance and
+E #0770 /p, and the value of m inside the brackets of Eq. (2) was ﬁxed res1stance curve ﬁts to caleulate LaC and Rac at eac .pomt in f sweep.
+g to m = 20. Now, we can calculate the impedance at each pomt in f sweep by
+g The equation for inductance is
+Q 1
+g .
+= L R — 21
+8 L _ L + L 3M// + (m2 _1)D// Z ‘zjﬂfsweep ac + ac + Zjﬂfsweepci ( )
+ac U (00 mg '61th I
+#0 m2 N12 [T (m _ 1)“ 1 Now, numericalhr locate the frequency in. f sweep at which the
+= T 1 — % impedance is minimum. This value is the minimum impedance of
+the circuit, called ZMin 2- Finally, at the frequency corresponding to
++ M0m3szlTh 3M H + (m2 — DD H (19) ZMinZ, use our inductance and resistance curve fits to calculate the
+319 m2 lazhzl
+where the nominal values of the variables for our coil design are given w
+in Table l and wher e M H and D H are the imaginary parts 0f M and D , Parameter Curve ﬁt value Nominal value Curve fit/nominal value
+respectively. For the inductance fit, the free parameters were L U, LwO , Resistance fit
+h, and prom) /p, and the value of m inside the brackets of Eq. (2) was —R 1 09 1 17 0 93
+ﬁxed to m = 20. th 2'6 1'0 2.6
+Both curve fits, shown in Figs. 2 and ﬂ, match the data well and M0771) / p 11.5 29.3 039
+have an R2 value greater than 0.99. Inductance ﬁt
+The value of the curve ﬁt free '
+. . parameters, as well as. a comparison LU 0.0058 0.0042 1.38
+to their nominal values as calculated usmg the values in Table l, are L 0 0.0060 0.0045 1.33
+summarized in Table g. h 3.4 1.0 3.4
+As mentioned earlier, the dependence of R and L on frequency can #0771) /p 17.5 29.3 0.60
+lead to a discrepancy between the frequency of minimum impedance —
+
+"
+"6","6 AIAA Early Edition / ALINGER, PORTER, AND SEDWICK
+Discrepancy Between Minimum Impedance and WPT Performance vs Separation Distance
+0: AC Resistance due to Proximity Effect E 80 .0 R = 2 Q
+N 1.05 _. , 4 v — ._
+_,E 103 """"LMinzI LZR g ’1' E ‘ L
+as 2 4o l 5
+N o . ,’ - X x
+g 1.02 E ,1 .
+E 1.01 8 2°
+'3 a
+5 1 1 g ‘ : ““~-‘~‘-'=':.:.-.-Mm."" , , ,_ ,_
+N o 1000 2000 3000 4000 5000 6000 7000 8000 a 00 0.5 1 1_5
+fZR (Hz) Axial Separation Distance (m)
+Fig. 11 Comparison Of minimum impedance and zero reactance fOI‘ Fig. 12 Power transfer levels for various load resistances.
+resonant coil circuit.
+inductance at minimum impedance, called LMin Z, and the resistance 0.5 WPT Performance vs Separation Distance
+at minimum impedance, called RMin Z. ‘:~.~,.\ . . . —R,_ = 2 Q
+H The results of the investigation are shown in Fig. l_l. The solid line Q4 \2, - - .RL = 10 Q
+E represents the discrepancy between the value of minimum impedance r ““XE ""'RL = 13 Q
+Q ZMin Z and the ac resistance of the coil RMin Z at the same frequency. Up E 0-3 3‘ _\
+g to 8 kHz, which was the highest measured frequency, the difference is .g
+E» less than 4%, so we conclude that it is sound to assume that the UEJ 0'2
+2 measured values of minimum impedance are equal to the ac coil 0.1
+5 resistance. The dashed line represents the discrepancy between the coil 5 _ .
+E inductance at minimum impedance LMin Z and the coil inductance that o : -‘t‘:‘t“=‘-‘~‘='--M - ,. - 1
+9; cerresponds to zero reactance LZR- At frequencies less than 8 kHz, the 0 Axig'ISSeparation Distance; (m) 1'5
+_§ difference is less than 1.5%, so we also proceed With the assumption F' 13 P t f ﬂ. . f . l d . t
+«s . 1g. ower rans er e 1c1ency 0r vaI‘IOIIS 0a I‘eSlS ances.
+8' that the measured inductance values are accurate.
+i; Using the curve ﬁts for inductance and resistance vs frequency, the
+E frequency at WhtCh Q is maximized for the COtl was 03101113th to be SPHERES satellite inside each RINGS unit, there is a physical limit
+E approximately 460 HZ- T0 achieve this resonant frequency required to how close together the two units can be positioned. This physical
+8., the loading capacitor to have a value 0f 10 #F- limit is approximately 30 cm and is represented by the vertical dashed
+E line in Fig. l_2. For simplicity, each simulation assumes that the
+0% , , , primary is driven with a sinusoidal voltage of 36 V. In reality, the
+<5 IV' Slzmg 0f Load ReSlStor system is driven by a rectangular wave voltage that decreases in
+8 With the Operating frequency for WPT now set at 460 Hz, we magnitude at higher current draws due to internal resistance in the
+E: proceed with sizing a load resistorinto which power will be transferred. batteries, so the predicted levels of transferred power shown here are
+E First, however, we need an approximation for the coupling coefﬁcientK slightly overestimated. However, the sinusoidal assumption still
+C; as a function of coil separation distance. Assuming that the coils are provides valuable insight into the qualitative behavior of the system
+3:) axially aligned with one another, [E] provides a means for predicting K for different values of load resistance R L . We see that larger values of
+95 based on separation distance. A set of 30K values was computed for load resistance produce higher possible levels of power transfer, but
+% separation distances ranging from 0.2 to 2 m. Then, a curve ﬁt was the separation distance at which maximum power transfer occurs is
+(g applied to these values having the form decreasing as the load resistance is increased. Since we are physically
+g limited to separation distances greater than 30 cm, the 2 £2 load
+f: K = (0133fj —|— l)bﬁt (22) resistor is most appealing as it allows for the investigation of system
+L”: performance both above and below the Optimum separation distance.
+E» where dsep is the aXial separation distance between the coils and am Figure E shows the predicted power transfer efficiency 17 for the
+g and bﬁt are curve ﬁt coefﬁcients with values of am = 0,84 and same setup as in Fig. l_2. As with the total amount of power
+""Pg bﬁt = —6.25. By using this form of curve ﬁt equation, the value for K transferred, we see that the efﬁciency of power transfer is higher
+E agreed with the physical expectations that as dsep —> 0, K = l, and as for larger values of load resistance, but only for small separation
+5 dsep —> 00, K = 0. distances. In the region above 30 cm, the 2 £2 load resistor provides
+Now that we have an approximation for K, we can model the the best power transfer efﬁciency. Based on these results, a load
+predicted power transfer performance of the system at different resistor value of 2 S2 was selected.
+separation distances. To do this, we again assume the primary coil is
+driven at resonance so that its transfer function is V. Circuit R esp ons e t 0 R e ctangular Wave Applied
+1 Voltage
+GP 2 E (23) To reduce power dissipation losses in the drive circuitry, a tra-
+ditional H-bridge design was employed. The board itself is a com-
+where R is the c0il’s ac resistance at the WPT frequency of 460 Hz, as mercially available dCViCC made by RObOt Power CﬂllCd the Open
+calculated from the resistance curve ﬁt. The load resistor is connected Source MOtOf Controlleré A schematic 0f the drive circuit iS Shown in
+in series with the secondary coil, so its transfer function is Fig. l_4. Current in the circuit is measured by three ACS709 sensors
+connected in series, which have an internal resistance ijust 1.1 m9
+1 and therefore do not signiﬁcantly impact the behavior of the circuit.
+GS = m (24) By toggling the two relays, the system can be configured into three
+different modes: EMFF, WPT transmit, and WPT receive. In EMFF and
+where R is the c0il’s ac resistance at the WPT frequency of 460 Hz, as WPT transmit modes, the four H-bridge metal-oxide—semiconductor
+calculated from the resistance curve ﬁt, and R L is the value of the load ﬁeld-effect transistors (MOSFETS) are actively switched to apply an ac
+resistor.
+Figure g shows the predicted power transferred to the load for §Data available online at httgﬂwwwmbotgower.com/downloads/
+three different load resistor values. Because Of the presence of the OSMC_Eroject_documentation_V4_25.Edf [retrieved 7 June 2013].
+
+"
+"7","AIAA Early Edition / ALINGER, PORTER, AND SEDWICK 7
+V33“ Note that with this notation convention the duty cycle is given by
+2
+‘E ‘E 012—"", 030131 (30)
+AH' 3*” With the input having the form of Eq. (g), the steady-state response
+Resonant CE Relay 1 0f the output is
+i Coil ;
+t W\ |—/ I (t) — ED |G |cos 2”—nt 4) —|— LG (31)
+L R Current SS — n_1 n n T n n
+' ' ' ‘ ' Sensors _
+CW where the transfer function G” is given by
+Relay 2 RL G _ 1 (32)
+"" jwnL(wn) + R(wn) + (l/jwnC)
+ﬂ 5 , with
+O
+§ ALO BLO 2
+n
+<5, mm = i (33)
+E T
+8 _
+S . . . . . . T . . Note that in Eq. (2) L and R are functions of frequency as a result of
+5 Fag 1: thDﬁVl: cfgcult sehemauc (H0, hlgh Slde 0f the H-Brldge; L0, low the proximity effect. We seek to compute the impedance of the circuit,
+g) S] e 0 e ' n ge)‘ which is given by the ratio of the rms value of the applied voltage to
+5. . . the rms value of the resulting current as
+g voltage to the load. In the WPT receive mode, the H-bndge MOSFETs
+g are disabled, and the 2 £2 load resistor is connected in series with the RMSWUH
+f3 resonant coil. The conﬁgurations for each of the three Operational Z = m (34)
+3:: modes are summarized in Table 5. SS
+g AS a resuit Of. 11.8 mg the H-bridge architecture, the voltage ap p 116d Since the component waveforms of I ss and V are orthogonal, we can
+N to the 0011 Circuit is an ac rectangular wave for Wthh the duty cycle r ri t E (34)
+g“ and frequency are controlled with an onboard microcontroller. CW e q. — as
+‘g Because Of the presence of higher frequency harmonics in the square
+:3” wave, coupled with the fact that the coil’s resistance increases with Z _ RMS(V1)2 -|- RMS(V2)2+ - - - -|-RMS(Vn)2 35
+8 frequency, the impedance of the coil circuit varies with the applied _ RMS (Iss1)2 + RMS(Iss2)2+ . . . +RMS(Issn)2 ( )
+a duty cycle. To investigate this phenomenon analytically, we first
+E begin by modeling the rectangular wave as the sum of two Fourier 0r
+8 series expansions for pulse trains. One 0fthese pulse trains is positive,
+8 and the other is negative, and both have a period Of oscillation T and
+E pulse width 1. The phase difference between the two pulse trains is Z _ D? -|- Dg-l- - - - +13% (36)
+2 180 deg. The resulting sum can then be written as _ (D1IG1I)2 + (D2|G2|)2+ ... +(Dn lg” D2
+o
+m
+E °° 27m . . .
+o V(t) = 2 Dn cos T t — g1)” (25) which can be solved computationally to produce the impedance of the
+2 n=1 circuit at a given duty cycle. The values of L and R at each harmonic
+2;: h are computed Via the resistance and inductance curve fits determined
+5‘ W ere earlier.
+3 2 2 Equation (E) was implemented numerically in a MATLAB®
+33 Dn = V An + B n (26) script that calculates the results for the first 300 harmonics. With this
+E large a number of harmonics, the solution is very well converged to its
+8 and final value; the 300th harmonic only contributes an impedance 0n the
+B order of 10—20. The results for the EMFF Operational mode are shown
+4)” = tan‘1 _” (27) graphically in Fig. 1_5 Also shown in Fig. E are experimental results
+An for EMFF mode for duty cycles ranging from 15 to 85% in 5% in-
+with crements. To Obtain these experimental results, the rms value of the
+applied voltage was measured using a Fluke 87V multimeter. Simul-
+A _ 2 , am am 7m (7 — T) 28 taneously, the rms value of the current was also measured using
+"" _ E s1n T COS T _ COS T ( ) another Fluke 87V multimeter. Based on the accuracy speciﬁcations
+of the Fluke 87V, the impedance calculated from the voltage and
+and current measurements is accurate to 3%.
+2 T In addition, we can determine the resistive component of the
+B” = _ sin ”—7” (sin ”—7” _ sin M) (29) impedance by modifying our transfer function in Eq. (2). Removing
+7m T T T the reactive components, the new transfer function is
+Table 3 Drive circuit operational modes
+Operational mode Relay 1 Relay 2 RLC capacitance Resonant frequency, Hz
+WPT transmit Open Open CW (10 ,uF) 462
+WPT receive Open Closed CW (10 ,uF) 462
+EMFF Closed Open C W + C E (310 ,uF) 83
+
+"
+"8","8 AIAA Early Edition / ALINGER, PORTER, AND SEDWICK
+CHCUItIIEnlJIFliidﬁnZZZgEIl-ltz}; Cycle design employed in [4] exhibited a measured Q value in excess of
+\ 3 7 , ___ 900. The large discrepancy between the Q values of the presented
+8 2 5 multilayer ﬂat spiral design and their one-turn helical design high-
+g ' 2‘ ---Reactance x lights the massive impact that the proximity effect can have on system
+% g 2 “ measure“ 'm'e‘jame performance. Nonetheless, up to the present, the Resonant Inductive
+g 8 1_5 ‘:n._~:§ Near-ﬁeld Generation System has successfully demonstrated the
+E g “1:; , wireless transfer of 28 W at 24% efﬁciency over a distance of half
+2 8 1 a meter, which agrees well with the models presented in Sec. X
+g g 0.5 The capability for higher levels of power transfer is anticipated since
+g. o the primary coil was not driven at its maximum permissible current
+— 0 10 20 30 40 50 60 70 80 90 100 level in this test.
+Duty Cycle (DA) The approach presented for predicting coil impedance vs duty
+Fig' 15 Impedance VS duty cyde for EMFF mOde' cycle when driving the circuit with an H-bridge produces accurate
+predictions, provided that the alternating current behavior of coil
+_ _ resistance and inductance are well characterized.
+Clrcmt Impedance vs Duty Cycle
+WPT Transmit Mode (462 Hz)
+3 4 x‘ ——a — Acknowledgments
+S g ‘1‘ -- Resistance R . .
+‘23 g A 3 3 x The authors gratefully acknowledge the finan01al support of both
+2 3 9}, *‘x‘ "" measured'm‘edance the Defense Advanced Research Projects Agency Tactical Tech-
+E g g 2 x ~51 ' x x nologies Ofﬁce and NASA, which funded the project under NASA
+g E g x x x . . ~ - contract NNHl 1CC33C. The authors also wish to acknowledge
+S g g 1 the technical support and input of the RINGS team members at the
+(2 3 DC Massachusetts Institute of Technology and Aurora Flight Sciences.
+0.
+?o E o
+S 0 10 20 30 40 50 60 70 80 90 100
+g Duty Cycle (%) References
+g Fig. 16 Impedance VS duty cycle for WPT Transmit mode. [1] Kong, E., Kwon, D. W., Schweighart, S. A., Elias, L. M., and Sedwick,
+: R. J., “Electromagnetic Formation Flight for Multisatellite Arrays,”
+g Journal OfSpacecraft and Rockets, Vol. 41, No. 4, 2004, pp. 659—666.
+g l doi:10.2514/1.2172
+§ Gn = m (37) [2] Mohan, S., Saenz—Otero, A., Nolet, S., Miller, D., and Sell, 8.,
+N“ “SPHERES Flight Operations Testing and Execution,” Acta
+2 . . Astronautica, Vol. 65, No. 7, Oct. 2009, . 1121—1132.
+E“ We can then calculate the reactive component of the impedance by doi:10.1016/'.actaastro.2009.03.039 p p . .
+j [3] Tesla, N., United States Patent for “Apparatus for Transmitting
+o X = ‘/ Z2 _ R2 (38) Electrical Energy,” No. 1,119,732, granted Jan. 1902.
+g [4] Kurs, A., Karalis, A., Moffatt, R., Joannopoulos, J. D., Fisher, P., and
+§ The reactance and resistance obtained from this analysis are also EOIJaCIC’ M"",, yireless$c1w§1£$rg1sfe8r3vga ft;%r(1)g7ly Coggle§16Magnet1c
+a plotted in Fig. 1_5. These quantities are useful if one is interested in dcfiS-(igall 1C 227scicefgecel’1 4325 4 ’ 0' ’ u ' ,p p ' _ '
+3:) predicting the power dissipation in the coil at different duty cycles. [5] KarmD., and S olj acic, M., “Efficient Wireless
+?A Both qualitatively and quant1tat1vely,the measured impedance values Non-Radiative Mid—Range Energy Transfer,” Annals of Physics (New
+% match up well to the analytical predictions. We also see that the York), Vol. 323, No. 1, 2007,1313, 34—48.
+% location of minimum impedance in the experimental data, which doi:10.1016/1'.aoE.2007.04.017
+E occurs at approximately 70% duty cycle, is well predicted by the [6] Samp16,A- P-,May€f€,D- A» and Smitth R» “Analysis,EXperin1ental
+an analytical results. Results, and Range Adaptation of Magnetically Coupled Resonators for
+< Figure 16 ShOWS the same results as Fig. 15’ but for the WPT Wireless PowerTransfer, IEEE Transactlons 0n IndustrlalElectromcs,
+E, transmit op—erational mode. The agreement beFNeen predicted im— V0.1' 58’ NO' 2’ MarCh 2010’ p p ' 544—554'
+4: . . . . . . d01:10.1109/TIE.2010.2046002
+é pedance and measured impedance is not quiteas good as 1t1s 1n the [7] Canm S tancil, D. D., and G01 dstein, S. C.,
+E EMFF mode, Wthh is probably due to errors in the curve ﬁts for R “Magnetic Resonant Coupling as a Potential Means for Wireless Power
+E andL. HOWCVerv we again see a Strong qualitatiVe agreement between Transfer to Multiple Small Receivers,” IEEE Transactions on Power
+8 the analytical results and the experimental results. One interesting Electronics, Vol. 24, No. 7, July 2009, pp. 1819—1825.
+difference between the EMFF results and the WPT transmit results is doi:10.1109/TPEL.2009.2017195
+the difference in reactance between the two operational modes. In [8] RamRakhyani, A. K, Mirabbasi, S., and Chiao, M., “Design and
+the EMFF mode, the reactance contributes a significant amount to the Optimization 9f R€S9nanC€-B 386d EfﬁCient Wifeléss POWGT. DeliVéfy
+impedance up to approximately 50% duty cycle. However, in the ?Stelﬂs foggiomedica/l {ngplgntsf 1515113231 “OnsathgSé” Blomedlcal
+WPT transmit mode, the reactance is significantly smaller, and hence d (i : 6%? £139 llegséeZSS ’2 0c; 0 2’07 57 82 Ct' ’ p p ' _ '
+the impedance, even at low duty cycles, is predominantly resistive. [9] Kuimc, M., “Simultaneous Mid—Range
+Power Transfer to Multiple Devices,” Applied Physics Letters, Vol. 96,
+- No. 4, 2010, Pa er 044102.
+VI' Conclusmns doi:10.1063/1.31284651
+The close proximity of the coil windings to each other, as well as [10] Imura, T., and Hori, Y., “Maximizing Air Gap and Efficiency of
+the large number of layers, causes large increases in coil resistance Magnetic Resonant Coupling for Wireless Power Transfer Using
+even at frequencies below 10 kHz. A coil design with fewer layers quﬁValent CiFCUit and Neumann FOI‘IHUIa,” IEEE TransactiOHS 0""
+and more spacing between adjacent turns would most likely have Indusmal Elecrmnics, VOL 58, NO- 10,1:613- 2011,1313- 4746-4752-
+a higher Q value and thus be more efﬁcient at wirelessly transferring donw
+ower. While the com act coil desi n was advanta eous from [11] Cheon, S"" Klm’ Y'H'.’ Seung—Youl, K"" Lee’. M' L"" 1766’ LM"" and
+p . . p . .g g . Taehyoung, Z., “Circuit—Model—Based Analy31s of a Wireless Energy—
+apackaglng standp 01nt, the ﬁght spacmg b?t,""V,een turns ultlmately Transfer System Via Coupled Magnetic Resonances,” IEE Transactions
+hindered the Wireless power transfer capabilities of the apparatus. 0” In dustrial Electronics, Vol. 58, No. 7’ Sept. 2010,1313. 2906—2914.
+Even by properly setting the resonant frequency of the system to the doi:10.1109/TIE.2010.2072893
+point at which the quality factor Q was maximized, only a Q value of [12] Chemh, and Jou, z,-C,, “A Study of Loosely
+approximately 21 was achieved. By comparison, the one-turn helical Coupled Coils for Wireless Power Transfer,” IEEE Transactions on
+
+"
+"9","AIAA Early Edition / ALINGER, PORTER, AND SEDWICK 9
+Circuits and Systems 11: Express Briefs, V01. 57, N0. 7, June 2010, Resonances,” IEEE Transactions on Magnetics, V01. 47, N0. 5,
+pp. 536—540. May 2011, pp. 1478—1481.
+d0i:10.1109/TCSII.2010.2048403 d0i:10.1109/TMAG.2010.2087010
+[13] Kiani, M., JOW, U.—M., and Ghovan100,M., “Design and Optimization [17] Sedwick, R. J., “A Fully Analytic Treatment of Resonant Inductive
+of a 3—C0i11nductive Link for Efficient Wireless Power Transmission,” Coupling in the Far Field,” Annals of Physics (New York), Vol. 327,
+IEEE Transactions on Biomedical Circuits and Systems, Vol. 5, N0. 6, N0. 2, Feb. 2012, pp. 407—420.
+July 2011, pp. 579—591. doi:10. 10164221012201 1.1 1.01 8
+d0i:10.1109/TBCAS.2011.2158431 [18] Dowell, P. L., “Effects of Eddy Currents in Transformer Windings,”
+[14] Lee, J., and Nam, S., “Fundamental Aspects of Near—Field Coupling Proceedings of the IEEE, Vol. 113, N0. 8, Aug. 1966, pp. 1387—1394.
+Small Antennas for Wireless Power Transfer,” IEEE Transactions on doi:10.1049/Eiee.1966.0236
+Antennas and Propagation, V01. 58, N0. 11, Aug. 2010, pp. 3442—3449. [19] Valchev, V. C., and Van den Bossche, A., “Eddy Currents in
+d0i:10.1109/TAP.2010.2071330 Conductors,” Inductors and Transformers for Power Electronics, CRC
+[15] Kiani, M., and Ghovanloo, M., “The Circuit Theory Behind Coupled— Press, Boca Raton, FL, 2005, pp. 173—174.
+Mode Magnetic Resonance—Based Wireless Power Transmission,” [20] Grover, F. W., Inductance Calculations, D. Van Nostrand Company,
+IEEE Transactions on Circuits and Systems 1: Regular Papers, V01. 59, New York, 1946, pp. 177—192.
+No. 9, Jan. 2012, pp. 2065—2074.
+d0i:10.1109/TCSI.2011.2180446 A. Ketsdever
+[16] Zhang, F., Hackworth, S.A., Fu, W., Li, C., Mao, Z., and Sun, M., “Relay Associate Editor
+Effect of Wireless Power Transfer Using Strongly Coupled Magnetic
+8
+O\
+(\l
+m
+<3.
+g
+E
+(x!
+S
+23
+Q
+E
+0.
+g
+“E
+8
+S
+E
+E
+g
+S
+(\l
+S“
+E.
+5
+<
+E
+O
+:4
+Lu
+E
+Z
+m
+U
+m
+O
+<
+m
+(A
+Z
+O
+(A
+Z
+E
+Q
+<
+m
+<
+Z
+>~.
+,9
+""d
+g
+L3
+Q
+B
+O
+Q
+
+"

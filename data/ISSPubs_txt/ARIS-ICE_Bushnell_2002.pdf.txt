@@ -1,0 +1,432 @@
+"","x"
+"1","dm— — —-—
+IAC—OZ-J.5.07
+Ground And On-Orbit Command And Data Handling
+Architectures For The Active Rack Isolation System
+Microgravity Flight Experiment
+Glenn S. Bushnell, The Boeing Company, Seattle WA
+Ian J . Fialho, The Boeing Company, Houston TX
+Tom McDavid, The Boeing Company, Seattle WA
+J ames L. Allen, The Boeing Company, Houston TX
+Naveed Quraishi, NASA J ohnson Space Center, Houston TX
+53rd International Astronautical Congress
+The World Space Congress — 2002
+10-19 October 2002, Houston, Texas
+
+"
+"2","Ground And On—Orbit Command And Data Handling Architectures For
+The Active Rack Isolation System Microgravity Flight Experiment
+*>X< >X< *>X< >X<
+Glenn S. Bushnell , Ian J . Fialho , Tom MeDaVid , James L. Allen and
+Naveed Quraishi§
+*The Boeing Company, Houston TX
+“The Boeing Company, Seattle WA
+§NASA Johnson Space Center, Houston TX
+ABSTRACT sequence example is used to demonstrate the interplay
+between the ground and on -orbit segments.
+
+The Active Rack Isolation System [ARIS] International
+Space Station [188] Characterization Experiment, or INTRODUCTION
+ARIS-ICE for short, is a long duration microgravity
+characterization experiment aboard the 188. The A primary mission of the International Space Station is
+objective of the experiment is to fully characterize to provide a premier microgravity laboratory
+active microgravity performance of the first ARIS rack environment for conducting acceleration-sensitive
+deployed on the ISS. Efficient ground and on-orbit scientific experiments. In order to accomplish this goal,
+command and data handling [C&DH] segments are the disturbances caused by station activities that occur
+crux in achieving the challenging objectives of the during the microgravity mode of operation, must be
+mission. The objective of the paper is to provide an controlled. In addition to source isolation and other
+overview of the C&DH architectures developed for passive isolation methods, the 188 uses active isolation
+ARIS-ICE, with the View that these architectures may at the payload, through the use of an Active Rack
+serve as a model for future 188 microgravity payloads. Isolation System, as part of its overall Vibration isolation
+Both ground and on-orbit segments, and their interaction strategy [1]. The ARIS strategy is to isolate the entire
+with corresponding ISS C&DH systems are presented. payload rack. The rack is detached from the station
+The heart of the on-orbit segment is the ARIS-ICE standoff structure and is held inertially Via an active
+Payload On-orbit Processor, ARIS—ICE POP for short. control system. A typical ARIS payload rack is shown
+The POP manages communication with the ISS C&DH in Figure 1. The control system uses eight pushrods,
+system and other 188 subsystems and payloads, enables driven by rotary voice coil actuators (labeled 5), to
+automation of test/data collection sequences, and perform active Vibration isolation. Inertial acceleration
+provides a wide range of utilities such as efficient file and relative position are sensed by three triaXial
+downlinks/uplinks, data post—processing, data accelerometer heads (labeled 3), and eight position
+compression and data storage. The hardware and sensors housed in the actuator assemblies. Electrical
+software architecture of the POP is presented and it is power, cooling ﬂuid, data and other essential resources
+shown that the built-in functionality helps to are routed to the rack through a set of umbilicals that
+dramatically streamline the efficiency of on-orbit interface with a utility interface panel at the front
+operations. The ground segment has at its heart special bottom section of the rack.
+ARIS-ICE Ground Support Equipment [GSE] software
+developed for the experiment. The software enables Due to gravitational coupling effects, only limited
+efficient command and file uplinks, and reconstruction characterization testing of the isolation system can be
+and display of science telemetry packets. The GSE performed on the ground. Complete characterization of
+software architecture is discussed along with its system performance can only be accomplished in a
+interactions with 188 ground C&DH elements. A test microgravity environment on orbit. With this in mind, a
+
+* Corresponding Author; Email: ian.j.fialho@boeing.com
+
+1
+
+"
+"3","1 ‘ Dual Processor . ARIS-ICE C&DH OVERVIEW
+2‘grigpjrfirmEzizretr::ifloLéniilsters&gains 6E? 5.53. A schematic of the ARIS -ICE command and data
+8‘I16lbit analog'to'digita' converters u: 23% handling architecture is shown in Figure 2. The ARIS-
+3ﬂTruaXIaIAccelerometerHeads . 5 _ . . . .
+. 5f equipped Expedite PRocess1ng of Experiments to Space
+4""Enfisvaiﬁzaﬂiﬂfg$$$$$th ; Z . Station [EXPRESS] rack ER2, located in LABlOl, is
+0°“Sump”°“ wk: the ISS sub-system under characterization. The heart of
+5 "":C?:;:‘::°J:;dvt‘;iiggfg'ergiixeand .3 :__X the ARIS system is the ARIS controller. The controller
+p°we’°°”5”mp“°”' . n5 receives/sends data from/to other ARIS avionics such as
+5‘233323386nsor3: 'megratedwnh 5.551% the Remote Electronics Units [REUs] and the actuator
+6E>Hardstopsumpers 6% - . _ t_ 3 driver, and executes the digital control algorithm that
+.. . . 'i a I - 5:15. -- performs active isolation. The controller interfaces with
+o Vﬂmcatlonpomts MW; the external world over a 1553 bus. Under normal
+STiL/nggé’yRBdgﬁﬁéE operating conditions (the so-called Standard
+Figure 1: ARIS Payload Rack Configuration) the EXPRESS Rack Interface Controlier
+[RIC] acts as the 15 53 bus controller, w1th ARIS serV1ng
+prototype ARIS system was ﬂown on the Space Shuttle as a remote terminal on the bus. C&DH limitations of
+Atlantis [STS-79, 1996] to prove the system concept the EXPRESS RIC necessitated the development of a
+before ﬂight production units were built. ARIS ﬂew in dedicated on-orbit processor for ARIS command and
+the Spacehab double module located in the shuttle bay data collection. During the ARIS-ICE experiment, the
+and was mounted in an adapter frame with Space 1553 bus between ARIS and the RIC is replaced by a
+Station-like interfaces. The primary objective of the dedicated 1553 bus between the ARIS-ICE POP and the
+mission was realized by successful completion of both ARIS controller as shown by the dashed connection in
+nominal and contingency operations, and collection of Figure 2. In POP—configuration the POP acts as the 1553
+performance data taken over an 8-day planned test bus controller, with ARIS as a remote terminal on the
+period [2]. dedicated 1553 bus. The dedicated 1553 allows for
+maximization of real—time data transfer across the
+The eight days of ARIS prototype testing had great interface, a feature that allowed for efficient data
+value, and results showed that further testing in a collection during the mission.
+microgravity environment was needed to resolve
+performance and operational issues, and test design The ARIS accelerometers shown in Figure 2 are used to
+modifications made as a result of the prototype testing. characterize the acceleration environment onboard the
+An ISS Payloads Ofﬁce led partnership of Boeing, ARIS rack. In order to characterize isolation
+Glenn Research Center [GRC], J ohnson Space Center performance and the acceleration environment at other
+[JSC], and Marshall Space Flight Center [MSFC] payload locations within the EXPRESS rack additional
+concluded that the first months of on-orbit operation of instrumentation is needed. For this purpose, the ARIS-
+the first ARIS Space Station ﬂight unit should be ICE experiment had special agreements with the Space
+reserved for characterization testing. The Acceleration Measurement System program [SAMS-H]
+characterization experiment was christened ARIS 188 to use their on-orbit triaXial accelerometer heads. The
+Characterization Experiment [ARIS-ICE] and was ARIS -ICE experiment had command and data collection
+ﬂown to orbit on 188 Flight 6A. The experiment has authority for four SAMS—II heads, one located in the
+been operational on the 188 since then. The large Physics of Colloids in Space [EXPPCS] test section in
+volume of characterization data collected during this ER2 and the other three located on the offboard ISS
+one-year-plus mission has provided tremendous insight structure. Mounting details are shown in Figure 3.
+into ARIS isolation performance, performance
+optimization, ARIS operational issues, and 188 Built-in functionality of the POP allowed for direct on-
+microgravity environment characterization in general. orbit commanding and data collection from the SAMS-
+II accelerometers over the EXPRESS rack and 188
+The purpose of this paper is to present the C&DH Ethernet PEHB and PEHG respectively; see Figure 2.
+architecture adopted for this challenging mission and This capability greatly improved the efficiency of data
+illustrate how the approach greatly improved mission collection, allowing both onboard and offboard data to
+execution efficiency. We begin with a general overview be collected and synchronized Via a single processor on-
+of the overall C&DH structure. This is followed by a orbit.
+more detailed discussion of the on-orbit and ground
+segments. Finally, an example that illustrates the
+interaction between these segments is presented.
+2
+
+"
+"4","ARIS—ICE C&DH CONFIGURATION ; - IS-E XPRESS Rack
+|_________1 __1§I
+I Off-board Hardware I Etherret I
+PDSS = Payload Data Service System
+EHS = Enhanced HOSC System I % I I m
+TReK = Telescience Resource Kit I RS—422 m I I u
+APS = Automated Payload Switch I m I I
+HRFM = High Rate Frame Mux RS—422 E I
+HRM = High Rate Modem I E I
+MCC = Mission Control Center, Houston I I - RS422 I
+POP = Payload On-orbit Processor I I m
+PEHB = Payload Ethernet Hub msee |
+PEHG = Payload Ethernet Hub Gateway I I I a Command and Data
+RIC = Rack Interface Controller I ﬂ I HighSpeed Handlmg Subsystem
+REU = Remote Electronics Unit I R3422 (C&DH)
+POIC = Payloads Operations Integration I I R5232 I
+Center, Huntsville I E I I m
+| | I m
+l———————— J lag
+- RIC
+I""""l-|.._I_ . 1553 Ctlr
+Laptop _ IIII'll}? [I EMU 7
+.___ I.-
+2E; Ethernet \‘
+ire"" ‘II
+I '-"":::I PEHG Ethernet 1553 1553
+Ku-Band (Downlink) Fiber Outic Link
+S-Band (Uplink) Command and Tracking
+Subsystem (C&T)
+Data Downlink Routes F ile Transfer (F T); Low Rate Telemetry (LRT), 100 K/sec
+. V
+Ethernet = Medium Rate Telemetry (MRT); 10 M/sec
+F iber Optic Link = High Rate Telemetry (HRT); 100 M/sec
+‘ ‘ Ground
+Data Commands
+Figure 2 : ARI S—ICE Command and Data Handling Overview
+EXPRESS Rack #1 EXPRESS Rack #2 (ARIS)
+ISPR UghtTray Up —>
+ARIS-ICE
+PCP Zeolite
+Crystal
+MAMS lcfnrﬁﬁe EXPPCS EXPPCS
+Test Avi on ics
+Section Section
+——I —
+sms
+El. WW Elﬁn“
+Figure 3 : SAMS—II avionic 5 used by ARIS-ICE
+
+"
+"5","ARIS-ICE science telemetry is packetized by the POP
+and sent to the ground as either medium or high rate ;1_ a ' - __ "" --.':""__‘_ _-.-r!'El_-.ir __
+telemetry Via the ISS downlink system. This telemetry is '- 3 ' H . 1:!""
+received by the Payload Data Support System [PDSS] at H __ Q fr .'i .. _.
+NASA MSFC and forwarded to two remote ARIS-ICE {EJ111119 - - . ’ 3533'.“ __
+. . . . — - I - ﬂ— --
+Pr1n01pal Investigator Sites at Seattle and Houston. _ : I.” _ —'— -- - I-- __ __I-= _ _ _ 1 _
+Commanding to the POP was achieved by telnet - 'r HIJ'I‘HI girl!"" .- #5131 “J . '.,
+connections to the Enhanced Huntsv1lle Operations E J. _ __ _ ._ . '.
+Support Center [HOSC] System [EHS] commanding | 1;“! e"" -I E
+workstations at NASA MSFC. Ground commands are I I' . 1 I .. -_'- I:
+processed by the EXPRESS RIC and forwarded to the - ﬂ_. . _ ' : -
+POP. The POP interprets these commands and in turn _‘ --—— - - -: -'- --"" I --~_-— . +
+issues commands to ARIS and/or the SAMS—II ‘ ' .- _
+hardware as needed. I I l 1'
+THE ARIS -ICE ON—ORBIT SEGMENT : THE l _. _ _:h' I-'__-3 '3‘: ‘-
+PAYLOAD ON-ORBIT PROCESSOR E :ﬂi .
+. . --'. ""I __}II- ‘ﬂ'i “Alia _ _ _ 1- ._ i-.
+The heart of the ARIS—ICE on-orb1t segment is the 1P. - __ _ jail... ; I
+Payload On-orbit Processor housed in EXPRESS Rack . ' "" p...——*'-— I!- '1"" _-'._ .
+2; see Figure 4. The POP serves as the on-orbit mission j E 3:. _' $56 5 :
+C&DH computer. The POP is a single-processor [486] 1 | _ 3_ r ' l' :1 .--F-="" - - ' _ ]
+STD-32 computer system with 16GB of hard-drive . : ' ' if“: f -
+storage. It runs the QNX (version 4.24) operating .' h-_ _' I -_ l. I II} _ - -..
+system. QNX is a 32-bit, modular, real—time, message- I. . I . I 5 ll! '-
+passing OS based on a pure micro-kernel architecture. .. ..
+It passes messages in a network-transparent way, i 1* ' -'
+complies with POSIX, and offers the benefit of looking ' -1. _ . _ ____——-"""" - [a _ '
+and feeling a lot like Unix. ‘4‘ ' tr 4 . "" 4*”—
+.f .112"" .- M
+POP server processes are programs that govern Figure 4: POP (upper left locker) in ER2
+activities related either to physical hardware and/or one
+particular aspect of POP command and data-handling.
+Most of the server processes, are started automatically downlink: Downlink files to the ground.
+when POP boots and run continuously in the snowball: Sendacommand to aPOP server process.
+background, awaiting commands. Commands are sent icepick: Examine the contents of abinary file.
+to the server processes using the QNX message-passing icepatch: Patch the contents of a binary file.
+facility. All of the server processes redirect standard icepoke: Update the contents of a binary file.
+output (text messages) to the FIFO ""/tmp/iceout"" which s2_r: Extract SAMS—II timestamp and accelerometer data
+is periodically harvested and sent to the ground as from a SAMS—II data-file (strips data from SAMS—II
+telemetry by the status server process. Server processes headers).
+run at various priority levels and perform specific acheck: Check ARIS test-data ﬁle.
+functions. Some of the important server processes and po_st: Filter & decimate ARIS/SAMS test-data ﬁle.
+their functions are listed in Table l. ri_c: Test software to simulate EXPRESS RIC for
+ground-testing POP C&DH.
+POP utilities are programs that usually do one specific
+task and then terminate. Most do their job relatively The downlink utility packetizes data files and sends
+quickly and therefore don't usually need to be run as them to the ground as science telemetry. Packet size and
+background tasks. They are usually executed from the transfer rate were configurable Via ground command.
+icl or korn server processes Via scripts or discrete The utility also allowed for retrieval of missing packets
+commands. Some of the key utilities and their functions and this ﬂexibility enabled efficient transfer of large
+are listed below. data files to the ground.
+4
+
+"
+"6","° Provides interface to 1553 hardware.
+° Provides command and data—handling interface to ARIS for loading/saving conﬁguration & co ntrol ﬁles (C&C), operation
+commands, mode changes, etc.
+
+- Runs ARIS tests.
+status ° Retrieves status from other POP processes and hardware.
+
+° Once per second, sends POP Health & Status to the EXPRESS-RIC.
+korn ° Executes QNX Korn—shell scripts and commands.
+
+° Receives commands from the named—pipe (FIFO) ""/trnp/kornq"".
+
+° ICL stands for ""ICE Command Language"" and is the same as the popular Tool Command Language (TCL, version 7.3) but
+
+with additional commands to support ICE—speciﬁc functions. This server process executes ICL commands (including scripts).
+° Receives commands from the named—pipe (FIFO) ""/trnp/iclq"".
+_
+qterm - Provides interface to POP LCD display.
+Table 1 : Key ICE—POP server processes
+The icepick, icepatch and icepoke utilities are used for command and data collection functions. Commands to
+on-orbit modiﬁcation of binary ﬁles. This prevents the icl process are usually submitted by writing to the
+having to upload new files that in many cases have but a /tmp/iclq FIFO which icl uses as standard input.
+few parameters modiﬁed. The sZr utility converts Standard output and error messages are redirected to the
+SAMS-H data files into individual timestamp and FIFO /tmp/iceout which is read and sent as telemetry to
+acceleration data files. The acheck and post utilities are the ground by the status process.
+used to perform on-orbit checks, filtering and data
+decimation on the collected data files. Filtering and data ICL commands were developed to perform basic
+decimation greatly reduces the size of the files and this functions across the ARIS 1553 interface. These include
+makes the data downlink process significantly quicker. commands to load ARIS parameter files, issue ARIS
+In general, the POP utilities allow data processing operation commands, change ARIS modes, put/get data
+operations, traditionally done on the ground, to be done to/from 1553 subaddresses, and run ARIS data
+on-orbit. Overall, this greatly improves mission collection tests. Commands were also developed to start
+efficiency since the size of downlink data files is SAMS—II sensors at specified rates and to store SAMS-
+dramatically reduced. In addition, standard 11 data to files on the SAMS—II Interim Control Unit
+archive/compression programs such as tar and gzip [ICU]. As an example the structure of the aris test
+were implemented to further reduce downlink ﬁle size. command that was used to collect real—time ARIS data
+File transfer programs such as ftp, rep and remote login across the 1553 is shown below.
+commands such as rsh were also implemented to
+facilitate communication with other 188 payloads such aris test mode parameters data-ﬁlename command-
+as SAMS-H and EXPPCS. ﬁlename
+mode: string-list of transmit and/or receive subaddresses
+The ICE Command Language [ICL] to be retrieved/saved
+parameters: string of test parameters of the form: ""dt,
+The icl server process provides the primary means of samples"" that specifies sample rate and test duration
+running ICE Command Language [ICL] commands and data-ﬁlename: name of the file that the data is saved to.
+scripts. ICL is a modified version of TCL (7.3) [3] with command—ﬁlename: name of the command-file that
+additional commands to support specific ARIS-ICE commands are retrieved from.
+5
+
+"
+"7","TCL Scripting and RLAB workstation and routes H&S packets and science
+telemetry to user—developed GSE display applications.
+All ICL commands had user—modiﬂable parameters. The TReK database application allows the user to
+This allowed basic commands to be issued very configure the database so that the processing application
+efficiently. The built-in ICL commands, along with knows how to interpret data. The user deﬁnes two main
+standard TCL functions, eg. string/list manipulation, data types:
+expressions, file input/output and ﬂow control, were
+used to create ICL scripts. These scripts were used to GSE Packets: All payload H&S data sent to the ground
+completely automate all on-orbit test sequences. Thus, is processed by the HOSC telemetry processing system.
+unless other operational constraints existed, on-orbit The payload user deﬁnes a Ground Support Equipment
+tests could be executed by a single ground command, [GSE] packet using the HOSC telemetry database. GSE
+thereby reducing the dependence on 188 Ku and S band packets may contain payload H&S along with other key
+communications to a bare minimum. An additional station data. The EHS Web GSE ﬁinction is then used to
+novel feature was the development of a TCL script control sending of GSE packet to remote sites.
+timer. The timer allowed ARIS tests to be executed at a Science Telemetﬂ: Payload telemetry is defined in the
+user—defined GMT. This was especially valuable when Payload Data Library and is assigned an Application
+data collection had to be synchronized with crew Process Identification [APID] number. Science
+activities. The timer obviated the necessity of having to telemetry (both real-time and dump modes) is sent by
+schedule crew tests concurrent with Ku/S band PDSS to remote user sites.
+windows. This increased the ﬂexibility in scheduling
+this scarce and expensive 188 resource. As shown in Figure 5, GSE packets and science
+telemetry sent to the remote users workstation by PDSS
+To facilitate on-orbit data scaling, axes transformation, is appropriately routed to the display applications by
+and conversion from time to frequency domain, RLAB TReK. This approach was used by ARIS-ICE with great
+(“our—Lab”) was implemented on the POP. RLAB is a success during the experiment. TReK offers the
+high-level interpreted scientiﬁc programming ﬂexibility to build special purpose displays to which the
+environment intended to provide fast prototyping and TReK telemetry processor simply routes data. Due to
+program development, as well as easy data-Visualization it’s ﬂexibility this was the approach used to develop the
+and processing. It is similar in feel to the MATLABTM ARIS-ICE ground segment.
+environment that was used by the ICE team for data
+processing and interpretation on the ground. In addition ARIS-ICE GS E Software and Displays
+to numerous matrix manipulation functions, RLAB
+includes Fast Fourier Transform [FFT] routines as well. Special ARISJCE ground software was developed to
+This allowed data t0 be transformed inhi the time- route the data from TreK to the appropriate display; see
+domain to the frequency domain and then finally to the Figure 5 . The popgse application extracts POP H&S
+compact 1/3 Octave Band format that is commonly used data from the GSE packet and forwards it to the
+in 188 microgravity analysis. This is essentially a f0iih poph&s display. The icex application works on science
+0f data compression and allowed for evaluation 0f 011- telemetry forwarded by Trek and determines whether
+orbit acceleration CDVlI‘OIlIIlCIltS without the need fOI' the data represents file dOWIlliIlk packets 01' regular
+time-consuming dOWIlllIlk Of large time-domain data ARIS -1CE telemetry_ Flle downlink packets are
+files. in many cases, this allowed quick turnaround in forwarded to dfile, an application that reassembles data
+the test planning process since decisions regarding files from the file packets that are sent down in
+future tCStS COUld be made without having t0 wait until telemetry_ Regular ARISJCE telemetry is forwarded to
+earlier test files were downlinked. popstatus for text display. Active-X tools were used to
+display H&S data. As an example, the display used to
+W Visualize ARIS H&S is shown in Figure 6. The display
+contains all the key H&S information along with
+AS dlSCUSSCd earlier, ARIS—ICE SClCIlCC telemetry is sent exception monitoring ﬂags that indicate when variables
+t0 the ground Via either medium 0i high rate 133 exceed their nominal ranges. The circles and cross-hairs
+telemetry. 111 addition, the EXPRESS RIC SCIldS Rack represent the six bumper cups and bumper pins that
+Health and Status [H&S] to the ground as low rate restrict ARIS motion to 0.5 inches in any direction. The
+telemetry. ARIS'iCE H&S forms a subset 0f the larger display allows for easy Visualization of the movement of
+EXPRESS rack H&S packet. The ARIS'iCE ground the rack in its sway space and served as an invaluable
+segment was based on the Telescience Resource Kit tool to monitor the motion of the rack during on-orbit
+[TreK] telemetry processing application developed at operations. Additional Active-X strip charts were also
+NASA MSFC- TReK is resident on the remote telemetry used for real-time plots of other variables of interest .
+6
+
+"
+"8","Iw-
+Amicinn I'MHF’WJ
+F'Fll'a-Inhu Em'lu'l F'E'F'EFF m:nnﬂhhhdﬂ
+himdxlul'nixmlmh'ﬂliI'WIﬂ-‘u
+F'IIIEIIIJ
+m.
+F'IIIEIII Palm: F'IIIEII'
+'3‘"" mm"" Iaﬁﬂﬁ
+Figure 5 : ARIS—ICE Ground Segment
+F .-.-pl...-:.-Iq |'_|'-I..'.: HL-Jﬂ
+%
+Diu2i3'Fﬂ14303ﬁTE
+FEF'EHT MEM “15“.”
++H-FI-zl-cFI'EH. .—
+E-Hud': rap :
+L ' T '3 El Act Eur“: 1—
+E-JII'III :11 E ll'l|:-Hl ”I'm ﬁla-luEm-rlmlzl Faumlmi- ﬂpﬁm
+Ii .I .I II II II ...... rv—mmm r w
+5m Iﬂahﬁmpﬂﬂ Lﬁlﬂuﬂnj IE'! EIF'_'E-EHEI_EFE IIE Ellflnﬂ
+Ldlﬂurpm- Paul REF""; F-::i Fl'd'lElllzm-
+ﬂurmF'thh ."""" ""1 . ."""". . Bmﬁm
+lam E 'III ....l Fl If]; I ..l.. B |[lm .
+42' |—
+1 l I I E"" I la] '5 . . i' I E
+.-.-I 1|”I."" l-EE 15 IM‘ 5 11""
+3| .. i"" I-qﬂ '3;- l ..h. E
+Enhnﬂurp'r
++"""" Ell'l'Fl-H'FHE'E-DE +'1' -""r'
+*f um um
+E H o I - +:-: E
+Emma.” ”r -'I’ nuTﬂHPnE-apggn
+Hm: ;Hu'1uh'&i:u '_l'-||'.l--|' .
+Figure 6 : ARIS—ICE H&S displays
+
+"
+"9","All commanding to 188 payloads takes place Via POP test script automatically copies SAMS—II data files,
+command Operation applications on the HOSC EHS performs data checks and filters and decimates test data.
+workstations. The user manually fills command update The test script also calls RLAB and sends processed
+ﬁelds prior to uplinking commands. In order to alleviate results (1/3 Octave Band results etc) to the ground as
+the process, a special ARIS-ICE GSE command telemetry which can be Viewed real—time in the
+application called snowball was developed. Snowball pepstatus telemetry display. Upon test completion, the
+automatically converts ARIS-ICE commands int0 EHS filtered and decimated files are downlinked using the
+command format. The converted command is then downlink utility and are routed to the GSE dfile
+simply cut-and-pasted into the EHS command update application where they are reassembled. The data files
+form for easy uplink. As an example the snowball are then ready for further ground processing, typically
+conversion of the simple “pwd; ls —l” command is using the Mathworks MATLABTM product suite.
+shown in Figure 7.
+The ARIS -ICE experiment has been Operational 0n-0rbit
+since 188 Flight 6A and has logged over a year of on-
+[E :6"" “""55”; ""F ”T W 'm U"" H” orbit Operational experience. In all, close to two
+Fﬁ‘ﬂjﬁﬂfﬁw _'-‘=='~ mm, U...h_,.,.r H,” 3 thousand tests have been run to date, ranging from short
+E:ﬁ§£ﬁ§_§ﬁ?§lﬁ£-""ﬂ""""m l-second stability tests to long 5-hour isolation
+characterization tests. The experiment was able to meet
+I' 95% of its extremely ambitious mission Objectives and
+Mr Figure 7 : S n 0wb all c 0 mma 11 di 11 g utility M has provided a comprehensive characterization of ARIS
+performance capability and 188 micrograwty
+environments at the current 188 assembly stage. The
+The snowball application also allows for the conversion great success of the mission and the volume of
+of uplink files into EHS scripts Via a special icefile characterization data collected is in no small part due to
+utility. The raw uplink file is first converted into the great efforts taken to Optimize command and data
+packets. These packets are converted into a sequence of handling capabilities, as discussed in this paper. The
+EHS commands, which are then combined to form an POP is expected to stay 0n-0rbit at least until 188 Flight
+EHS script. Using the EHS scripting Option these scripts ULF-l and will continue to be a valuable resource for
+are validated and then uplinked t0 the 188. On the 0n- ARIS and microgravity operations on the space station.
+orbit end the icefile server process (see Table l)
+reverses the process and converts the incoming CONCLUSION
+sequence of EHS commands into the original uplink
+ﬁle. This approach reduces file uplinks to a sequence of The paper has presented the ground and 0n-0rbit C&DH
+commands, thereby eliminating any dependence on architecture adopted for the ARIS ISS Characterization
+standard 188 protocols for file uplinks t0 the 0n-0rbit Experiment. It has been shown that the architecture,
+payload. along with special utilities and applications greatly
+streamlines Operational efficiency. A typical test ﬂow
+INTERACTION BETWEEN GROUND AND ON- example was presented to illustrate the interaction
+ORBIT SEGMENTS between the ground and on -0rbit segments.
+In order to illustrate the interaction between the ground
+and 0n-0rbit C&DH segments we now present a typical REFERENCES
+ARIS-ICE test ﬂow. In general, the ARIS system is
+uniquely configured for each test. The configuration is 1. G.S..Bushnell, TM. Anderson, M.D. Becraft, and AD. Jacot,
+defined. Via three binary parameter files that.must be Iégggiioillgiacfglgigh”,ZTEanapEreggl—(iggﬁnlg 91;?” The
+loaded into the ARIS controller over the 1553 interface. 2. GS. Bushnell and MD. Becraft, “Microgravity Performance
+These files are either uplinked from the ground using Flight Characterization OfAn International Space Station Active
+the snowball icefile utility or are directly modiﬁed using Rack 1801at1011 PfOtOtYPe System”, PVOCeedingS 0f IMTC,
+existing on'Orbit ﬁles Via the icepOke 0r icepatcl‘ POP 3. Eligilgilétgeﬁﬁeut, “TCL and the Tk Toolkit”, Addison—Wesley,
+utilities. The PI then creates the command required to 1994.
+execute the automated ICL script resident on the POP
+using the snowball GSE application. The command is
+uplinked t0 the payload Via EHS and test execution
+begins. Test execution is monitored on the ground by
+the PI Via the popstatus telemetry display, p0ph&s
+display and other strip charts. Upon test completion the
+8
+
+"

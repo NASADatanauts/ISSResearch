@@ -1,0 +1,240 @@
+"","x"
+"1","nema rchltect
+
+Wﬁvmﬁhwmbaﬁm
+
+Attack of the Space Data
+
+Down-to-earth management at 155 EarthKAM
+
+By Michael Hurwicz
+
+New Architect
+
+August 2002
+
+When Dr. Sally Ride and NASA created the ISS EarthKAM program in 1996 as a way to
+help middle school students learn about the Earth, they soon realized that they had also
+created a significant data management challenge. EarthKAM, which is a loose acronym
+for Earth Knowledge Acquired by Middle school students, lets participating students
+remotely control a digital camera mounted on the International Space Station (155).
+The resulting images of the Earth are downloaded from 155 each hour, and are stored
+in the ISS EarthKAM Datasystem—an archive that has grown to contain over five
+thousand cataloged images with corresponding metadata.
+
+For the team behind the project—a group of professors, university students, teachers,
+and NASA officials—managing the archive has been a unique technical challenge,
+complete with lessons in database management, disk allocation, and bandwidth
+optimization.
+
+Dr. Ride, who in 1983 became the first American woman in space, conceived of the
+program as a way to let students share her experience of looking down on the Earth
+from space. Originally clubbed KidSat when the camera was mounted on select Space
+Shuttle missions, ISS EarthKAM has evolved over the past seven years to include more
+schools and more frequent missions now that the camera is permanently mounted on
+the space station.
+
+Students plan the images they want to take by tracking the camera's movement above
+the Earth. After entering coordinates and other related data into the camera control
+form online, they log on to the Datasystem to see how their images turned out. The
+students use the images to complete a variety of classroom ""missions"" in history,
+geography, geology, physics, oceanography, mathematics, and current events.
+Bringing Images Home
+
+"
+"2","EarthKAM images are all taken by a Kodak DCS 460 camera mounted in a window
+onboard the space station. Each photo would normally result in an 18MB file if it were
+stored as a standard TIFF image. However, space is critical in space. The larger each
+file is, the fewer total files the camera can store; and the longer it takes to download
+the images to the data center on Earth. To cope with this difficulty, the camera
+immediately compresses each image into Kodak's proprietary DCR format, which
+incorporates a lossless compression algorithm, reducing each picture to about 6.5MB.
+The resulting files are saved via an SCSI connection to an IBM ThinkPad computer on
+the space station. There, the files are further compressed to approximately 2.6MB using
+gzip compression.
+
+The gzip files are transferred via a Tracking and Data Relay Satellite, capable of 600 to
+800Mbps data transfers, to a ground tracking station at NASA's White Sands Complex in
+New Mexico. From there, the digital pictures are downloaded to NASA's Johnson Space
+Center (JSC) in Houston, TX. Finally, an application at the University of California San
+Diego (UCSD) pulls the data to a RAID array on a Sun Ultra 60 server. At this point, it
+becomes part of the EarthKAM Datasystem, where each image is processed and made
+available online to students and the public at datasystem.earthkam.ucsd.edu. (See a
+screenshot of the Datasystem and an image from the Datasystem of England's coast.)
+Sometimes, all of this happens quickly enough that students can access the Datasystem
+and view or download pictures within as little as five or ten minutes. Typically, though,
+the process takes closer to an hour. The most important variable is the time it takes to
+download images to JSC. Images aren't always immediately downloaded after they're
+taken because data transfers relating to the primary mission of astronauts on 155 take
+precedence over ""hitchhikers"" like EarthKAM.
+
+File Formats and Storage
+
+A DCR file with gzip compression may be efficient for downloading, but it isn't
+convenient for the typical Mac or Windows machine that a middle school student is
+most likely using. Likewise, an 18MB TIFF isn't exactly a Web—friendly format either,
+especially given that middle schools seldom own state—of—the—art computers or have
+high—speed Internet connections. So staff members at NASA's Jet Propulsion Lab (JPL)
+in Pasadena, CA, created a system that converts incoming images to Portable Pixel Map
+(PPM) format at resolutions of 3060 x 2036 pixels and 768 X 512 pixels. The system
+performs these conversions automatically when it detects and downloads new images
+from the JSC server.
+
+Paul Andres, a technical staff member at JPL and the Datasystem lead, optimized the
+application by splitting it into two components. The first program handles the file
+transfer, and the second handles the processing. In this way, both steps can be
+performed at the same time on different images.
+
+"
+"3","After the initial processing, C and Perl scripts create three differently sized JPEG files,
+each composed of 384 x 256 pixel tiles. When a student or teacher requests an image
+in TIFF, PICT, or GIF format, a script creates the file on the fly based on the PPM
+image. TIFFs and PICTs are the most often requested image formats because students
+can examine and modify them in Adobe Photoshop. Some schools also use NIH Image,
+a public domain image processing and analysis program developed for the Macintosh at
+the Research Services Branch of the National Institute of Mental Health.
+
+To help track images, the camera embeds metadata in the header of each file, including
+a unique identifier associated with the photo request. When the images are downloaded
+to the Datasystem servers, they are run through scripts that retrieve the embedded
+data. From the time associated with the photo ID, the script calculates the space
+station's position relative to the surface of the Earth—this is valuable in determining
+what part of the Earth was captured in the photo.
+
+The metadata for each image is stored in an Oracle 8.1.5 database on the Sun Ultra 60
+server located at UCSD's Science and Engineering Research Facility. The system has
+been at the facility for less than a year. Until early 1998, the Datasystem was housed in
+the Digital Image Animation Laboratory at JPL. The system was also located at the San
+Diego Supercomputer Center (SDSC) for a few years beginning in 1998, after the fourth
+EarthKAM mission.
+
+Today, after more than seven years of acquiring images, the Datasystem has come
+within 563 of maxing out a 14063 RAID array. There are more than 5,000 images,
+each in multiple formats. Clearly, more storage is needed. Prior to an upcoming ISS
+mission in the Fall of 2002, the Datasystem will receive a second RAID system, built
+with inexpensive IDE drives and a SCSI host interface. ""We are currently looking at a
+RAID box that will give us about three quarters of a Terabyte of Level 5 RAID storage
+for approximately $5,000,"" says CTO Alann Lopes. ""It's not the fastest RAID in the
+world, but it's a good value.""
+
+Value is certainly an important factor in any NASA—sponsored project. The Ultra 60 is
+one of Sun's most inexpensive duaI—processor workstations (UCSD's is a single—
+processor configuration). And storage has been selected more for value, in cost per
+megabyte, than for speed.
+
+Database Performance
+
+Maintaining satisfactory database performance has been a challenge for Datasystem
+administrators, especially during missions when students log on to see the pictures they
+have requested. As EarthKAM has grown more popular, and its software more stable,
+the missions have grown both in the number of participating schools and the number of
+photos taken. For example, the first few missions averaged 500 images each. But on
+
+"
+"4","the fifth mission, the project recorded over 2,700 images in that single Space Shuttle
+flight.
+
+Mission 5 averaged 200,000 requests per day to the Web site. The system was bogged
+down under the load. Because of the launch and construction of 155, Mission 5 was the
+EarthKAM's last one aboard the space shuttle. Moving the EarthKAM camera to 155 in
+2001 meant reconfiguring the software and testing the new environment with several
+scaled back missions. Dropping back into pilot mode meant that fewer schools could
+benefit from the fewer pictures taken, which temporarily took the pressure off the
+Datasystem. However, Lopes ancl Andres anticipate that in the long run, the move to
+155 will greatly increase demands on the system.
+
+The increased demand will stem from the fact that the camera on 155 is available
+continuously, not just for a few days during space shuttle missions. Although there are
+no plans to have EarthKAM operate continuously, the level of activity will still increase
+significantly. ""Our goal is to have the camera functional once a month for a period of a
+few clays, and to have thousands of middle schools all over the country and the world
+control the camera,"" explains Dr. Karen Flammer, the UCSD researcher who helped Dr.
+Ride create the EarthKAM program. Flammer now oversees the project. Once—a—month
+missions would represent a tenfold increase in site traffic and image retrieval. More
+frequent flights will also result in a much larger archive of images, eventually consisting
+of hundreds of thousands of photos.
+
+In addition to serving as a resource for participating middle schools, the Datasystem
+archive is open to schools that don't take pictures, and in fact to anyone in the world.
+Hits from non—participants will no doubt increase as the system becomes better known.
+That's just fine by EarthKAM organizers. ""We want to tell the world: Look at this
+incredible library of information and images we have, for students everywhere—not just
+middle school students,"" says Flammer.
+
+Given these ambitions, it became clear during Mission 5 that something drastic had to
+be done about server and database performance. The team took steps in this direction
+early this year. First, in conjunction with a move from SDSC to the UCSD Science and
+Engineering Research Facility, team members put both the Datasystem's Web front end
+and the database back end on the same Sun Ultra 60, thus reducing access times. They
+also changed the file access method from a network file system (NFS) to a host—
+attached RAID system. Naturally, moving from networked storage to local storage led
+to substantial performance improvements.
+
+The original Web front end had been designed to generate pages dynamically based on
+user input to HTML forms. To decrease the server load, the team instead created a
+large number of static pages that offered the types of information users most frequently
+requested.
+
+"
+"5","The dynamic system, based on Perl scripts, already had some performance measures in
+place, like a three hour cache of each dynamically created page. That made it possible
+for teachers to ""preview"" pages that they knew their students would be requesting, to
+speed the site up. There were few if any cache misses as long as students requested
+the pages within three hours. After that time, however, performance would drop as the
+system had to access the database and dynamically generate new pages. With the new
+static system, caching is limited by available disk space, not by time. And even if there
+is a cache miss, it doesn't require database access or dynamic page generation—the
+page is pulled from the static repository.
+
+Students may still access the Datasystem when images are initially downloaded from
+the space station, before static pages have been created. Once the static pages are
+there, they don't need database access anymore. Although precise numbers aren't
+available, the new system has significantly improved performance. The trade—off is
+increased disk space requirements and less flexibility in the possible kinds of searches.
+Future Technologies
+
+Currently, the most human—intensive task associated with the EarthKAM Datasystem is
+determining the exact center latitude and longitude for each image. This helps target
+the precise location to which each image corresponds—a task performed by UCSD
+students.
+
+Latitude and longitude can be determined approximately, based on the time at which
+the image was captured. However, that time is known only to the nearest second, clue
+to the delay introduced by software on the ThinkPad. Because the characteristic speed
+of low—Earth orbit is 8 km/second, one second can mean a difference of eight
+kilometers in the image's positioning. Unfortunately, an error of 8 km would greatly
+reduce the accuracy of map matching, a feature on the Datasystem Web site.
+
+Map matching is the overlaying of ISS EarthKAM images on jet navigation charts, digital
+elevation models, and satellite maps. This lets students more easily identify known
+geographical features in the photos like rivers, lakes, and mountains. Because the maps
+are coregistered, they can be used to turn the EarthKAM images into VRML models.
+These models let users interact with the images in their browsers. With the help of a
+VRML plugin, like the Cosmo player, students can manipulate their viewpoint of an
+image in its surrounding area.
+
+To aid in the map matching, the group at UCSD may deploy automatic pattern—
+recognition software. Although the science of pattern recognition is fairly advanced, it's
+only beginning to be applied to satellite imagery. Dr. Flammer predicts that we're years
+away from the day when satellite images will be automatically and routinely matched
+with maps.
+
+"
+"6","As for short term projects, the UCSD group plans to upgrade the camera onboard 155
+to a Kodak DCS 760. The camera will use a 400Mbps FireWire interface to transfer files
+more quickly than the current SCSI interface. However, the notebook on 155 doesn't
+support FireWire yet, and UCSD is still developing its Flight Software package to control
+the DCS 760.
+With these upgrades, the ISS EarthKAM program will be able to provide students with
+an even more efficient method of selecting, retrieving, and researching Earth images.
+The project's parameters and audience have provided creators and maintainers of the
+Datasystem with a fun and interesting technical challenge. Best of all, they know that
+their work on the system is having a direct, positive effect by motivating young
+students to learn about the universe—all with the aid of some awe—inspiring images of
+the Earth.
+Michael is a freelance writer based in East Sound, Washington. Write him at
+michael@hurwicz.com or visit his Web site at www.hurwicz.com.
+Entire contents copyright 1996-2002 CMP Media LLC
+Read our privacy policy at http:[[www.cmp.com[delivery[privacy.html
+
+"

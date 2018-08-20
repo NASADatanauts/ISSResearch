@@ -1,0 +1,822 @@
+"","x"
+"1","_ 2004 IEEE Aerospace Conference Proceedings
+An OverVIew of Formation
+Flying Technology Development for the Terrestrlal Planet
+Flnder M1ss10n
+Mimi Aung, (818) 354-6987, mimiaungﬁﬂj91.nasa.gov, Asif Ahmed, (818) 354-8521, asiﬁahmed@jpl.nasa.gov, Matthew
+Wette, (818) 354-6265, matthew.r.wette(w;:jpl.nasa.gov, Daniel Scharf, (818) 354-4795, daniel.p.scharf@jgi.nasa.g 0v, Jeffrey
+Tien, (818) 393-1642, ieffreyy.tien@jgl.nasa.gov, George Purcell, (818) 354—3395, georgeh.purcell-ir@igl.nasa.g0v,
+Martin Regehr, (818) 354—1693, martin.w.regehr@jp1.nasa.gov
+J et Propulsion Laboratory
+4800 Oak Grove Drive
+Pasadena, California 91 109
+Brett Landin, (303) 939-4475
+Ball Aerospace and Technologies Corporation
+P. O. Box 1062
+Boulder, Colorado 80306
+. blandin@ball.com
+AbstractuThe objective of the Terrestrial Planet Finder developed under the StarLight3 project and the NASA
+(TPF) mission is to find and characterize earth-like planets Distributed Spacecraft Technology (DST) program are
+orbiting other stars. Three architectural options are under being leveraged and expanded to meet the TPF
+consideration for this mission: 3 formation-ﬂying requirements. This paper provides an overview of the
+interferometer (FFI), a structurally-eonnected ongoing precision formation ﬂying technology development
+interferometer, and a coronagraph. One of these options activities.
+will be selected as the TPF baseline design in 2006. This
+paper describes the technology tasks underway to establish
+the viability of precision formation ﬂying for the F FI option. T ABLE OF CONTENTS
+In particular, interferometric science observations require .......
+autonomous precise control and maneuvering of ﬁve ..
+spacecraﬁ to an accuracy 01.2 cm in range and 1 m_minute 1. INTRODUCTION...............................l
+in bearing. This precision must be maintained over inter‘ 2’ PRECISION FORMATION FLYING T0
+spacecraft ranges varying from a few meters to hundreds of ENABLE INTERFEROMETRY............. ....2
+meters. Autonomous operations, ranging ﬁ'om formation 3. TECHNICAL CHALLENGES IN FORMATION
+gochistitionﬂat'ld fgmation ‘ maneugeringt.to high preCi.Si0dIl FLYING. I. O. I. II 0.. O O O O. O O I I 0.. O O. O. O D D. I. O O. 00.5
+nna lOIl ymg urmg selence 0 serva ions, are require .
+Challenges lie in meeting the, demanding performance 4' FORMATION FLYING TECHNOLOGY
+requirements as well as in demonstrating the long-term DEVELOPMENT...............................6
+robustness of the autonomous formation ﬂying system. 5. CONCLUSION.................................9
+T1368? Challenges are Imprecedented for deep Space REFERENCESOOCOOOOCCOI0.0.0.0.0....OIQQQOOOOCOOIIZ
+mlsswns. To address them, research is under way in the
+areas of formation control algorithms, relative sensor
+technologies, system design, end—to—end real-time system
+simulation, and ground-based and micro—g end-to-end 1.0 INTRODUCTION
+system demonstrations. F our interrelated testbeds are under
+development concurrently with the F F 1 system design. The , . . . . .
+testbeds include the Formation Algorithms & Simulation :[he ObJCCthe 0f the T696391“ Pianet Finder (TPF) @8810“
+Testbed (FAST), the Formation Sensor Testbed (F ST), the 15 to ﬁnd and charecterlze earth—hke planets orhitmg'distant
+Formation Control Testbed (PCT) and the Synchronized sters. .ThIee architectural. optiohs uhder con31deration for
+Position Hold Engage Re—orient Experimental Satellites this misswn are: a fonhatlon-ﬁying interferometer (FFD’ a
+(SPHERES) experiment. F ormation ﬂying technologies” structurally-connected interferometer, and a coronagraph.
+3 Starlight was a two~spacccraﬁ formation ﬂying interfcnnomctcr mission,
+I a precursor mission to TPF. As of 2002, it has been cancelled as a ﬂight
+. 0-7803-8155~6/04/$17.00© 2004 IEEE mission and the technology development has bccn continued under TPF.
+2 IEEE paper # 1460. Version 5. Updated December 29, 2003 4
+i
+0-7803-8155-6/04/$17.00 ©2004 1EEE 2667
+
+"
+"2","Each of these candidate architectures is trying to achieve the optics can be removed from the structure tying them
+same goal, namely to resolve a planet that is a million to a together to form a free-ﬂying formation. This is the third
+billion times more faint than its parent star at angular architecture under consideration - a formation ﬂying
+separations on the order of milliarcseconds. The two battles interferometer (F F I.) The F F I allows increased aperture size
+being fought are those of contrast and angular resolution. and longer (variable) baselines, allowing access to more
+The following architecture descriptions can also be found on stars in our stellar neighborhood. The over—arching goal of
+the TPF website at the following fonnation ﬂying technology work is to
+httpzl/planetguest.jpl.nasa.govlTPF/tpf technologyhtml. provide a stable, safe, autonomous platform for these
+F unher information can be obtained from the recently observations. This paper describes the technology
+published TPF Technology Plan [1]. development under way to establish the viability of
+precision formation ﬂying for the FF I option.
+
+At visible wavelengths, the coronagraph has the difﬁcult
+task of blocking the light from a star that is a billion times 2.0 PRECISION FORMATION FLYING T0 ENABLE
+brighter than the elusive planet. This contrast reduction is INTERFEROMETRY
+achieved by blocking the direct and diffracted light,
+allowing observation of the faint planet nearby. Using this To enable the TPF FFI, ﬁve spacecraﬁ are ﬂown in precise
+technique to study the area around a nearby star requires formation and collaboratively operated as a single
+manipulating the diffraction 0f light around the edges ofthe instrument. The target star is observed with the spacecraft
+telescope, Whleh detracts from the potential angular in a linear array conﬁguration as shown in Figure 1. The
+resolution of the image. The diffraction pattern of a simple array baseline, deﬁned as the distance between the two
+rohnd telescope, for example, is e series 9f concentric rings boresights of the furthest Collector spacecraft, is variable
+Wlth a bright central spot. Blocking the hght from a star “1 between 70 In and 150 m. Each spacecraft is approximately
+order to see an erbitingplanet requires suppressing the ﬁrst 15 m wide due to its thermal shield. Wingtip to wingtip
+several bright rings Whhem blocking out the planet. By separation between adjacent spacecraft will vary between 8
+“Sing masks to simulate .a telescope With a different In and 35 m. During observation of a target star, the array is
+effective shape, the difﬁ'actlon pattern can be controlled e0 rotated at a ﬁxed baseline length. It is rotated slowly (e.g.
+that the starlight ’5_ much .dimmer closer to the center m 12 hours per revolution or slower) while maintaining inter-
+some areas, and brighter in others. The telescope can be spacecraft formation control to accuracies of 2 cm in range
+rotated about its line-of-sight so that the planet image passes and 1 arc— minute in hearing. The array can be re-sized to
+in and out Of the regions where the starlight is dim. different baselines and re-conﬁgured to point to new target
+An alternate technique that can be used to decrease contrast stars.
+and achieve extremely high angular resolution is long The four stages ofan FFI are ill ust rat e d in Figure 2 [2][3]
+baseline interferometry. Using interferometers to study The stages are grouped i m 0 two FFI phases: formatiozi
+distant planets allows smaller, widely separated mirrors to ﬂying and interferometry. In the formation ﬂying ph as e
+work together as a giant virtual telescope. The resolution which is c omp ose d of the f0 rmati on acquisition an (i
+ohtained is the same as that garhered from a telescepe‘with a precision formation ﬂying stages, spacecraft relative
+diameter equal to the separation between the 1nd1v1dnal positions are acquired and are used to precisely control the
+telescopes. To collect enough of this mforrnatlon ‘0 huhd spacecraft into the desired formation. The interferometer
+“P a gootl picture. the interferemeter ‘PP‘S‘ rotate around its acquisition stage begins when the spacecraﬁ are in the
+line Of eight to different relative Posmons ah“ repeat the science formation and precisely controlled (to accuracies of
+""exposures."" As well as taking a picture, an interferometer 2 cm in r ang e and 1 arc-minute in head 11g). When these two
+can obtain spectra 0f the targets it is looking at, allowing the conditions are met, the narrow ﬁeld—of—view inter-spacecraﬁ
+same meme!“ to determine the p resence.“ abeence of laser metrology system can achieve lock. Then, using the
+particular bio-markers Contrast reductlon '5 achieved by inter—spacecraﬁ laser metrology, siderostats4 and fast
+us1ng a eeam'comb‘hmg technique known as milling, and steering mirrors, the starlight collected at the Collector
+furthel: Signal to-n015e enhancement can be obtained by spacecraft is relayed to the Combiner spacecraﬁ. Finally, at
+ehoppmg the Signal to retnove spupous background the Combiner spacecraft, this starlight is combined with
+mtererrencel. ,A second architecture bemg eonSIdered by nanometer—level closed—loop precision using optical delay
+TPF IS a mld-infrared, structurally connected mterferometer lines to acquire and lock fringes. Subsequently milling is
+utilizing four apertures mounted on a rigid beam with a performed. ’
+baseline up to 40 meters. Operating in the mid-inﬁared _
+gives the interferometer a thousand-fold advantage over the The above precision requirements derive from two sources:
+ViSible light coronagraph in the contrast realm. Infrared 1) the feasible stroke length of optical delay lines in the
+teleSCOPeS’ however, must be cooled to cryogenic interferometer, and 2) the ﬁelds—of—view of angular
+temperatures. -
+T0 - even further increase the resolution of such an 4 A “Sidcrostat” is a mirror that directs starlight onto a ﬁxed target. The
+interferometer, the four apertures and the beam combining term is also generally used to refer toalow-bandwidth, actuated mirror.
+
+2
+
+2668 .
+
+"
+"3","metrology/interferometer relay optics. Considering the latter delay” that results from the interferometer baseline not
+source, as a result of system-level trades (e.g. the need for being perfectly orthogonal to the target direction. The
+very accurate inter-spacecraﬁ bearing measurements to optical delay line must remove path—length errors of up to
+correctly estimate path-length delay versus a wide ﬁeld-of- four times the range control accuracy. In addition, the
+view for acquisition), 3 ﬁeld—of-view of a few arcminutes optical delay line must remove an external delay of up to
+was selected. To keep these optics “locked” from one approximately b*BR, where b is the maximum baseline and
+spacecraft to another, 1 arcmin relative control is required. BR is the inter-spacecraﬁ bearing requirement. For a 150 m
+. . baseline and a l arcmin bean'ng requirement, the external
+C0n31del’mg the ﬁrSt source for the PTBCISIOD requlrements, delay can be up to 4 cm. Current delay lines have a stroke
+an optical delay hne IS needed to correct path—length length of 10 to 20 cm. A 2 cm inter—Spacecraﬁ range
+dlfferences between tWO arms Of an Interferometer ‘50 the requirement results in a reasonable maximum possible delay
+nanometer—level. Path—length differences stem both from of 12 cm, which maintains a healthy margin given present
+
+inter-spacecraﬁ positioning errors, and the residual “external capabilities.
+
+. t
+F our Collector Starhgh
+Spacecraft
+m .m“
+‘3‘.“ 8'35 m m“
+‘. 1‘3""“
+Combiner Spacecraft 70-150 m .
+Figure 1: A F ormation F lying Interferometer (F F I)
+3
+2669
+
+"
+"4","i: COntEOi -. ~m~ ‘ ' / ~ , , ( ”Him 1 ”I’m“; ‘_ - M? . ~ ;
+Wm WM .3“ TE“ 4w“; “Mm; M '73?"" w, __.VWW :W.¢,,Wim;w'_,m;mm
+_ Aaqumtwn Emwaﬂymg _ Acmmlon ‘ 7
+Formation Flying W—‘j
+Interferometry
+Figure 2: Four Control Stages of F ormation Flying Interferometry
+formation formation
+operation operatlon
+post—launch . .
+deployment - fonnatlon science reconﬁg- solence . . .
+acqulsmon observati on uratlon . observatlon
+W ‘ u n ,. H ,m
+hIS- hrs In — h 05.1 da
+~3-7 da 3 _ S ‘5 ' Y
+y 1 day 0.5 1 day 1 day
+’ Figure 3: Conceptual Operational Sequence of an FFI
+4
+2670
+
+"
+"5","The TPF PM will be Operated in deep space, either in an The enabling technologies associated with these issues are
+earth—trailing orbit or in a Halo orbit about the Earth—Sun L2 described below and summarized in F igure 4. The
+point. Both of these two orbits are out of the reach of the technologies are categorized in formation ﬂying
+Earth-based Global Positioning System (GPS.) Therefore, technologies, and system-level infrastructure technologies
+the formation ﬂying system is a real-time, autonomous
+precision system that provides a stable multipIe-spacecraﬂ .
+platform for an interferometer to operate across the array
+ofspacecmﬁ, 3.1 INITIAL ACQUISITION OF THE FORMATION _
+The nominal operational scenario of formation ﬂying begins Aﬁer launch, separation and stabilization of the spacecraft,
+with the multiple spacecraft launched together in a single the ﬁrst step is to acquire knowledge of the relative position
+stack. After launch, the spacecraft deploy sequentially. The of the other Spacecraft. The key technology to enable this is
+deployment phase is done slowly and meticulously; it is a formation acquisition sensor that provides range and
+currently envisioned to last from a few days to a week. A bearing measurements to accuracies on the order of
+deployed spacecraft will move to a safe distance of a centimeters in range and a few degrees in hearing. The
+kilometer or more before the next spacecraft is deployed. acquisition sensor needs to Operate with a full 41: steradian
+Post—deployment, each spacecraft will establish ﬁeld~of-view coverage about each spacecraft. Also,
+communication with the ground. When all the spacecraft complexities associated with sensor calibration across
+are deployed safely, the autonomous formation ﬂying stage spacecraft need to be minimized. For example, complex
+will begin. The ﬁrst mode is the “formation acquisition” calibration maneuvers need to be eliminated through
+mode in which relative spacecraft communication and advanced techniques.
+position knowledge is acquired. Next, in the “formation
+operation mode,” the spacecraft will be reconﬁgured from
+their Post-deployment' relative positions into a precise 3.2 COLLISION AVOIDANCE
+formahon, ready for selence observation. In the third mode,
+the “science observation” mode, the array is precisely With relative spacecraﬁ position knowledge, the formation
+rotated as the target star is observed by the F F 1- Each can be maneuvered into a desired conﬁguration. In doing
+observation lasts 0n the order of 12 to 24 hours. After so, collisions must be avoided. On-board autonomous
+observation ofatarget is complete, the array is reconﬁgured guidance and control algorithms are critical for enabling
+for the next observation. For illustration purposes only, a collision avoidance maneuvers.
+conceptual time-line is shown in F igure 3.
+3.0 TECHNICAL CHALLENGES IN FORMATION 3-3 P RECISION FORMATION CONTROL
+FLYING . After the spacecraﬁ are conﬁgtxred; the array is precisely
+The fundamental requirement for the precision formation controlled fox: interferometric observation. AH iPter‘
+ﬂying system is to provide a stable platform of multiple spaceeraft P051t10n5.m the away W111 be (fontrolled With a
+spacecraft across which the FFI is to operate. While there prec1sion 0f 2 cm 111 range and'l arc-mlnute in heating.
+are many individual technical challenges, the primary Mtiltipie-spacecraft control architectures and algonthins,
+challenge of formation ﬂying lies in its system complexity, taking mte account the end-to-end system, are key enabling
+as opposed to a single breakthrough technology. The key technologies.
+technical issues are:
+- Initial Acquisition of the F onnation
+3.4 PRECISION FORMATION CONTROL WHILE
+- Collision Avoidance ROTATING THE ARRAY DURING OBSERVATION
+- Precision F ormation Control In the observation mode, the array is rotated with a ﬁxed
+baseline. During the rotation, the inter—spacecraft control
+‘ Observation-on—the-ﬂy precision of 2 cm and 1 arc—minute is maintained. in
+addition, the thruster ﬁrings are synchronized to allow
+‘ Integrated End“t°‘end SyStem maximum stable time for the observation. Precision sensors
+and control architecture design are key enabling
+technologies.
+5
+2671
+
+"
+"6","3.5 ENDeTO-END SYSTEM DESIGN
+It is clear that the area of formation ﬂying for space will
+include many new technologies. To gain real conﬁdence in
+the system without a ﬂight experiment requires end—to-cnd '
+operation in some type of simulated environment, be it a
+software simulation of all the components integrated as a
+complete, high-ﬁdelity system, a ground-based hardware
+testbed or a testbed in a micro-g environment, as on the
+International Space Station. These testbeds will provide
+validation of end-to-end system in varying degrees of -
+functionality and performance. A
+Key Issues in Formation Flying Enabling Technologies E
+- Initial Acquisition of the Formation - F ormation Acquisition Sensor 1
+- Collision Avoidance ' - On-board Autonomous Guidance & Control
+- Precision F ormation Control — Control Architecture & Algorithms E
+- Observation-on-the—ﬂy - Precision F ormation Sensor 1:
+- Integrated End-to—end System - End-to-end System Testbeds E
+‘ E; Infrastructure Technologies
+E - Inter-spacecraﬁ communications
+E —Actuation j
+E —Thermalshields
+Figure 4: Key F ormation Fiying Issues and Enabling Technologies
+3_6 INFRASTRUCTURE TECHNOLOGIES for thermal requirements, requirements derived from the
+interferometer and requirements derived from
+A solid infrastructure is required to support the formation formation tlylng. _F or forrnation ﬂying, ﬂ“? sources 0f
+ﬂying distributed spacecraﬁ interferometer. This thermal shield requirements Include. the requlred ﬁeld-of-
+infrastructure includes: inter—spacecraft communication, View Of 1ntet-spacecraﬁ communlcatlon an tennas and
+actuation and thermal shields. A reliable inter—Spaeecraﬁ sensors, radip-frequency (RF) acqulsmon sensor
+communication .system with- sufﬁcient bandwidth and ' perfqnnance- and 'RF ' mter-Spacecraft communication
+tolerable latency5 is required for closed—Ioop control of the performance.
+spacecraft formation as well as for closed loop control of the
+inter-spacecraft metrology loops for interferometer
+operations. Actuation is required to control the formation. 4'0 FORMATION F LYING TECHNOLOGY
+Considerations for actuator selection include: contamination DEVELOPMEN T
+of the Optics; choice of cold gas versus electric given the
+com (“""4019 envir 0111113111 necessary for infra-red operations; Precision formation ﬂying is enabled by system design and
+fuel-efﬁciency for the long mission lifetime; and ability ‘30 the combination of the technologies above. To establish the
+my thruster impulse to support the control algorithm- viability of the FFI mission architecture for TPF, system
+Thermal Shields are required to protect the interferometer design activities and technology testbeds are currently under
+optics. The design of thermal shields requires consideration development [2], These activities are highly interrelated,
+and contribute together in establishing the feasibility of the
+_ end-to-end formation ﬂying system.
+5 Latency in this context is deﬁned as the length of time between when a The system deSign aetiVitieS inCIUde formulation 0f the end‘
+mcssage is queued for transmit in the control ﬂight software of a sending to-end formation ﬂying system and analysis Of viable
+spacceraﬁ and the time it is available to the control ﬂight software of a inﬁ‘astructure technologies, such as the inter-spacecraft
+rcccwmg Spacccma' communications and thermal shield design.
+6
+2672
+
+"
+"7","The technology testbeds will be used to develop formation demonstrate and validate the end-to-end system as
+ﬂying algorithms, component technologies, and to summarized in Table 1.
+Table 1: Technology Activities for F ormation—F lying System
+
+_—
+|__—
+Simulation Testbed ﬁdelity distributed real-time software range and bearing control, off-nominal scenarios
+testbed to demonstrate end-to-end
+TPF formation-ﬂ in s stem
+Technology demonstration of the formation steradian field-of-view coverage with maximum uncertainty
+acquisition sensor at S-band of 50 cm and I de; ee in ran e and bearin ;
+multiple mobile vehicles equipped l-g environment with near-ﬁlll TPF perfonnance with
+with ﬂight-like avionic hardware and control accuracies of 5 cm in range and 5 arcmin in bearing
+air—bearins on a raised ﬂoor
+Experiments (MIT) on the International Space Station environment, perform TPF-Iike array maneuvers
+with ultrasonic range and bearing
+sensors and _as thrusters
+testin and otical erformance
+Formation Interferometer An optical interferometer distributed Demonstrate optical interferometer fringe acquisition and
+i--_
+representative of a formationiflying velocity
+interferometer
+4.1 FORMATION ALGORITHMS & SIMULATION 4.2 FORMATION SENSOR TESTBED (FST)
+TESTBED (FAST) , , .
+The Formation Sensor Testbed (F ST) [5] Will prov1de a
+The Formation Algorithms & Simulation Testbed (FAST) hardware demonstration of the formation acquisition sensor,
+[4] is a distributed real-time testbed implemented across demonstrating the ability to provide an instantaneous 47‘
+multiple independent computational platforms for end-to- steradian ﬁeld—of-view relative position determination
+end simulation of the TPF fonnation-ﬂying system. among multiple spacecraft. This capability is required for
+Fundamental formation ﬂying algorithms will be developed initial acquisition of the formation and for collision
+_ for the ﬁve-spacecraft TPF mission based in part upon the avoidance. Maximum range and bearing uncertainty Will be
+two-spacecraﬁ algorithms developed for StarLight mission 50 CH1 and 1 degree, respectively, over the full coverage.
+and the NASA Distributed Spacecraft Technology Program. The acquisition sensor is a radio frequency (RF) sensor,
+The algorithms will be demonstrated in a high-ﬁdelity end— which is an augmentation of the StarLight Autonomous
+to—end simulation environment to the full TPF performance Fonnation-Flying (AFF) Sensor [61- The FST Will develop
+ofz cm and 1 arcmjn accuracy in range and bearing control. new sensing algorithms needed for multiple spacecraﬁ
+Realistic mission scenarios will be demonstrated, including operation (With more than two spacecraft), and a 13338“?6
+formation acquisition, formation calibration, formation radar mode for added robustness against collision
+maneuvering, re_c()nﬁgufati0n, and nomjna] observation. avoidance, and to eliminate the need for time—consuming
+The simulation will be further exercised with system fault calibration maneuvers. RF performance With a TPF-like
+scenarios to verify the long-term robustness of fonnation— structural environment and accommodation constraints Will
+ﬂying missions. Fault scenarios will include collision be evaluated. FST Will 3150 provide sensor models to be
+avoidance and system-level failures (e.g. thrusters, sensor). used in the FAST system simulation.
+The FAST simulation results Will be validated in an end-to- 4
+end hardware testbed, the F ormation Control Testbed as
+described below.
+4.3 FORMATION CONTROL TESTBED (FCT)
+The F ormation Control Testbed (FCT) ['7] will demonstrate
+end-to-end autonomous formation-ﬂying in a l-g
+7
+2673
+
+"
+"8","e .
+nvnronment with I I'man m tr m
+r nea -
+ange, and 5 . r full PF erf
+arcmm in attitud P 0 03 Of 5 arm us th m m ar
+I
+e, and one degre ' C 111 COD 1
+e In b ' 0 a
+e g . ccuracy It w'l
+.
+VV mg rec Ob'] 1 } emulate re 1
+:5. 441:; =:w=.A_. I: .: . :2 AA‘: :4 I:.:'4:I -: ..A';:""‘(?.j:yi:js‘;:;‘-!-~iz 21's.; 3:514;-.I.-:-‘:§.;E;::::§x.::}>':'i:-,':;f'I::4-..;315:::I;I'::-:"":3 ';‘;:-:=-- - - ‘ .
+._..,-;4._ l;-;. . A:v4A,- 5:53.22 - -§.-.:-‘.::;. 3--- Ia! i .942 :.‘g'i‘: :izr- ;!:!~-:' ' :;::-'.’;-.'-5""-'- ""-::—""'::i';:','! Ml: 1W2"":- ’9’ F?“ “.:ul‘l‘ﬂflw: Fr... I. 8
+V-VVVVEVVVVVVVVVVV ‘,g’)§""VV :‘”’$’2E§¥;£3£:,\1:3:_V§§A_::;AA.5::g:-:;;.-:nga:‘:;43:52:?EiizinES-gZFEEs-‘aggé-E’?T;:‘§i;;;-E§=Eﬁ:Z;i§2""“‘31='-3$‘:_:1szi_:_:A;-;A;.; .:. . On alf-be '
+Ji~3§~,u§‘.‘§ §2§§3~§V33v¢h&:,$$:;'$vi\°<‘. In S an
+5:35;} :1. =5=:;:-=..;-:.= .; ~;. 14-: :A' :.A: .'c' -. '_-.I .I.:': .4 zifi-""a‘ihfi ;.:;-.'-;-.21:gi':;:-s_;§;=-g::=.-j:=g;-4E;Z:;~'=.:i--;‘;:5_;;_=.4§3I..:;:;2:,-3;;;A'.'§;-;:~'i:::..= A..3:;453:;s._gqtsigaiai;:‘:55::i;;:;5?ﬁ;3-""?ii'Igi-ixf;1:'zs-ﬁ.;i;2225;51:3-5333'2-‘21'Ei:;:;-.:Er_E-;EE'=<;'.IE 1;. 45:: 5-: ..
+;.: .:.; '5 .’Iwai ,I .5. 3:33.3- z.; -. . .4 £33 .ﬁt-- ;.:;-';A' -;! '-:e.::E:‘g:-:’.‘.--.4$3:<.3: ::=;A.-.~':y~.;:. 3;: ;'-E’A;-A:=ﬁ?:::: 4: «1n: rz-sa’: .(A_4-,':'—;!§;‘;5-1-§:315;m’-:-‘{..\ bf: ‘- 4.4:A 44;; ;-::;.-;-:=~_.~.'.: x:;$§$‘ !-:;. .:.::_:.::;---;';: 4‘4. .::-:z:-_a-gp-.A. '5: ;.::;:4-.--
+VVVV'V VV V-VV V-VVVVVVIVV-VV-Vﬁ V: ‘ wVVV—VRVVVIVVVIVE_V._:I3_A..I;:I.;4¢::e'y'i’ii I_.:::.-'.:.\A:.5:'~i’ﬁ""-‘A ..tg;::_::'{::::A-E-..::!¢2:::‘-. 4.. -.5:41:22}::!;.,._~:w!::~; .‘-:.:..-.-:I:;::;4.Is;-;I-:A -:-.I.:1:,::3;—~.-:::::.4.:I:;!;:-:=;:-t:-:.-'-:g:;~' ""~yn§:,
+..:_..I. . . :::::.<::-if£!.—‘£ﬁ5ii:=-Ak 3’; 4°_ 4 4 ,. .. - I3“. ., 3§-_.“""‘=-:3»""1€3=""Z='=""--¢3~‘5-'3¢3‘i' -!;.e~‘:::;3:==55.""-.¢3-,4;ﬁ: -=-:I ‘ﬁuegigﬁ: 33;: -:-:!:=:!-.:;.;53::-i:2}53;-.=:,‘_:;:-:7::I 'j\<:>;'f:' :5:§4::;:=:'.-:;-5: ;--!~.“i:x 'i:.'; -;-:.’-'- ...::'.;$‘~=g:.:.;::5A 51:32:11- '-=:-Q""""~;3"":“I ﬁx: Ifi-tgrk.fhlﬁt$w: :6er WU”:- 4
+:VV:VVVV VV- VV:VV'V¥VVV;VVV6V%‘VV VV V VVVV VV ‘V _VVVVVSVV'VV'VV VVVVEVV-VVVYVV:VVVV-VVVV:VVVVV-VVVVV-VVyVﬂV‘VV-VV-VVVEDVVEVVVVVVVVIVVthV-VViVjV-VV-VVVVjV-VVV:VV-VV_VVVVVVViiVEV?§:EI‘,V’:I_g-.V_:.I;;';;.3:.-;:.-;;.:.:E-:2?!;.¢:.o.-°A;’4-‘-=:::4.§:??;5-5:5 Si3'-i:2:';-:'."";--=.1L1?IE:E:'?=§=!FAA:QREA'Eziﬁ-‘EF-‘i-I:-:~3:Z.I:'4"" :-‘ :~‘-:'; 4A;:;::-.\:'::?.EA:=-';>I:_A:'A.-i':jA-;;.;.;4-_..I.II.I. _
+4; “ .... x. ¥1’°A,¢.4§3;5I“Saihu‘zﬁﬁvyyﬁg‘th ”W? ’4“
+:25; - ;. . -..I' ' :\:-- ...4.:4::...':::::.—gs?5-;ig-I‘=i-:I.24-:..-:~'-§;-5;_-;g-""-'=:=.=E:5;':a;.!_.4;;‘.35:_;;4éz:I;;s-'-a: --.:~‘.si.;:}a.—;E;::.I,;:tri:.=;a.-:.-g!;§:i:;;;§-:-:.:{.;§A.-:;.~;;4;3:51-15:53;:24?5-3::I-I4.;:sSi,-s;:;:5::gsg '3""2""Z:E:=;=:_-"""".1_-I;'s‘4.;.9;9oij.‘7‘3§:-}323:3;g;3§§7§iiiiii:g:;;:fzg§jl¢’:§'1‘-:-35§5:3:‘""""Ei""':4v :sE'33555::'-'3:3"":5‘ZEEE':;-'ﬁ:ﬁ£:iiiMAﬁﬂw
+o"" . .3. 4. . .. A. :5 4 :5: -- .4.. - "" ;~:.-g .,?~¢¢~nuan>,§ it 22;: 3%%.7*W,+ r4:‘9e*¢""'h%»a”
+3:. _ng- : ; : ' : - 1 . : : .4 . A.§:$.x:,4z,:ez::;:§5:¥ '&§£€¥:;2$4gawﬁiﬁi:w::xa:;:‘:=;';A?.;A-'I:‘;.:;:::—:A 5.2::-=-4:*;-A---A.-.~-...;. 1-,- lr35:.331;$E£:I:I§k.4$$=e§:§:""""”’- 2*:""3§»&'3i..:~7-¢3‘wg’~ ..:-§'--1§:1:=E:;=:--.-:!-::=I::2‘L2T5:$n-;-f§§§i§w' .:./aw
+.:-;.. ‘.~.. ,- ~ :4: .:: 4 : ': .. 3: 4 . 44 : . - . A ..-:‘;g.-!=-It.::. _V4_.5::'§:=.:;;.4;’:;.I.2,.;;'-'.-;§-""-‘=;:-;::~:;:;A:;I':;',g.-;,§;-;;:-j.--!.""§::'..:j._;;.§-- “1;;:;.5-_-::;-:-:;-:§:;-’;;_:;.-;A-;.A...._..j:I-.I.II g::~§--'A.<,:;:;:;,-§;--!;i-.:'-:6-=:g::=_:;.g;_j.I4:4I.;';.-;-,.I I. :.E22:3:‘33'1'::':""-'-'=""55-11:Ii;i'._:'-'::;E;-'"":'3. 12;.;.I.4-.~,:I-:.::4.:5-'-""-.;-1»:;i_-E!¢E=313!5""i:tiﬁﬁ"":’5: ._.- “ :S
+VVVVVgV 3?“; VVVVVVVV VV VVV VV VV V V V :V§;§:V3VIVIV‘Q“*1,I‘IN9""I‘é ,...,.;:.4A--:.-;:-:;:::‘=5: '.‘IE123?:2315A::E.-i-3.'55I131;:;::';:;52;;§:‘;fi3}5:7331A753-‘33'12355Zsié-5gs53‘:!:§'§E?§;‘33;. ‘ Qymwgkthrqu’gxﬁ 1% fﬁ
+..5..4:4 $42144 * .._‘.:.AI: -: :z‘ .. :.-'4-1 I-iv».i.i.. 5-2.... '..§<:“-~::~.::-A.A4 .- I: .' - -:;;- -I4 2-. ;-.-.' 4:,A ...:A.:. i;:-;=;- -. .,‘u.'.;‘,-'¢I:-'A2'A;I‘ .;.;'_g::'-;A-.5:-;4-!-.4.4-'-Z-:v ..:_: ?*NJ: I. - M ”:1::ur-z-SI.::mlug-Ih‘hxw- I.:J-‘iu _... File"" .'.-z r 5- ”‘2.” ..:‘IWM-H‘ _..-k. V I ”34:. “4 P H
+371;:{a5r;;:: .:.! 7 .4 , '33: 4;:.;:,-;:i:;-;;=-.:c-ﬁfﬁg-ggeza-zzmgj;.;....,..-'.- 4 .=A, . - ,~‘..,...i-kzvzigyg'A2?s3:~.:;::=:$-‘EI..;-.<.'»':'e.'!-;.-‘.’.$;N&:-.::~::.-=-'!:'-::.-'..;.-..;~A. In «n°‘9 “?\‘f'k‘gh-IFZE; “ﬁt! NV “ - z: 24 I. 'ﬁﬁiﬁjﬁawﬁ 53 h ”M“? w (1::
+*1“? V3 5 VVVKVV VV IV V V V V VV V V‘V;¢:‘.f$§ﬂ”uw «1“? ‘4gI’VE?VV‘VVViyaVVFEEVgtVEV3""; IV_:_.,_._,3g-:- ';_.--:-.5;£..:37;:::E‘54.';.-4;'g!§;:as!;=;-.;.A.:_:.._..:. fzizigg'i-‘E;iti£:;:§;;{;I-IE;‘: ':§5;'A~)¥.a-=“ ,m..-}'§$4§ Naif: ‘4,g§...""~ ' gym“, A?N-(g
+VVﬁVVjVVVV-VVVVVVV VV VVVVV‘VV VV§V VVV V V V V VVV V VVIEIVIV/iguIagszzg; 21.1%?!“ 53-3' EEE::{:.3(§.-§§j :-,-j-'I:~5:§E:I4II.4. :1:A-1!:5:5“£?-=':'=5';551-::E;§;:¥.~:::4‘;9g-4§ ‘, '2,” _' A- AI"""":‘::5=;-;-:.:?I:::>.. 3'..I,&53341-=A:g.;;§g-_.3._;g.-.::_;I-3‘"" 6 33:552.}: .~:2,j'-ﬁ;-!:j<$-:.-..I'.44_VA'3'». f .I "": ;,_:gt;v“.j 0» M :.
+:5?:Es’é£:-Ess::-;R;....4'I_-V.I:: 5-5405:- ; r; .. {z 'g.;2:;5§f:;§-'EI-I;r1‘¢&\,Q>3‘{,3"" '1:.ﬁé‘iﬁfiisﬁwzif(yglﬁégi:I573;' '* 3 I :‘rii'ﬁ': ' -;E',';-.;=' 1.: _5.:.'.;.£:o;:(-:_ s; A Lig,i.:f""4§ w.§,wvnv “""133'E'ﬁg‘ﬁ
+§:2§o‘3§$§34a-A-Jg:- ........:::§:E£-"" 3.2... .:I;: ;§;:';::~.:52.~.¥3-':44:,:;_:3I:'-::§=-,\Y{>;:-:ig'r4 '4 =--;.::qi’I;¢‘,§f 5-: 55:35:53.3.-.‘37~'::5::E:(:_45g '::'--..I A.i:A- A A-4,,...,.. A -- 1v 2 .4~,:;:;5::A:3:..-. :--;‘- (my. --I~_:i:33i§15:V.-;:3;....I_;!.4;~‘12 §1>1=i43‘1-4'9§3:‘2E""m ”.‘.H'T“ :?"":§MW U? \ a '-
+:.;:;‘.:!:-:j.¢:._ ;.' {u g > 3': :95; :-' ;. II . :.:-‘A_ ---,£§-:-..§-:;3I-::3;..§ .'.:fnz-o-s-ik-ﬁgi; =33: . :- _:é’ggz 9; =-'-"" : '- .‘.; -- . ‘35:.(35: ’9. _:::‘fQ-‘LQALﬁ: : 1 n I 19% : ~ a . EEK“ I .‘.-”,3: - I ”II?! I y [S J 4593 H a :J - $23.»:LG k? x I 4”.” Rio)"" Q I Hiczrlcgiii #9, :
+VVVVV—xﬁiﬁ V g? V V H gr 2”? VMV ggﬂzfr.‘ABI.;.I.-,-.4:1'45'!-‘l""""""""""':""!:'“i‘lir-ﬁguhkghl V-.::.' 'I ?.a ""gyI'Z 13"". . ' I -4::-¥A-:;"" 3%."". .4r.?-’:- .:..i::g_=_':::;k4-.;.4:.) - ..-'.:::-- . - Ira I . 3;. :. :‘ 93:44:, 'E 3:33;.53: 5 313 3--':=.v -t‘ -‘—..5v""4 ;,. .. Wang; ?. .SSR f/ .g';\ . {a - ~< >1”.
+35:31:? Wk: > ..-.c:. 3"""". v‘li‘>;::-:_A;f.::;3§;n=.:.::.::A:;E;y.,.:,3:. §:?;;4:s2:&.§:;g-.:- .-:~'.I.Vﬁtvz',555:2;5351:54-.E!::1_3:‘.f:':=3:""‘1:2‘Q‘I .. ..:§::._-4'4 ‘f .:q . ;,.~ . £33} .:;- “3-3.. “_...-I ,» 1; 1"""":‘*V-"" £-.,‘,. 5m.) nun
+:.-3:z:::4«:;::.¢-4-,.....s’ ,erwiﬁ . ML.“ amt,- -:4-;;-;-‘-;'..--.v.::g'4:;.'-\.A’:;.A0.23.35;:-.:-;ﬂ;,;:_""-‘.z:.::,.jA-;*-, --:9.‘45‘r:.‘:,.;;_::;;4.\-g:._'ﬁ:s_:::;:.;!-:A:4A.~..g3- 1! --..s. 4“-=4:«- I. 41.'~'-’:""- . -:.'-:-:.:'Q..""-: >4 :ghﬁ ’5‘” “' - 3‘ H ?j"" I.:? Maia.“ 3% x?
+VVVVVVV VVVV‘ V E41”: V“ g V {V V V l) VVVVV V» V V H leVrVVVHVV‘V $49“: V.— Q IV A‘— .4.4A... I(w.""-""':""-""§""’:“""""'""""""""""""' .- , . .. ..._ 4:1”. - . 5.3 ,--4;.-,-.?4- {)34- “.5 _,- - - I 4A.--A.. $5 -;A-4..\Ag:.-.I . ., ‘ --. .x 4» n+3.- -.0 .- g .AgI _-;--:‘:. °~ 4;.
+V‘VVxVVVVV‘Vrvaﬁf VV V ?;IVthV-ﬁH-w a VI” .‘IQV‘V‘; VVV”VIE:#554!g'-§;i--!-‘~'-=’:’!I (__,,1___.£4.I.I.-.;'.-:.-_.4£'<;. $3.3555-2—iya»:6'-:.:-::-;-(.2::A'tg._4..- ~ 4» I.:- . . I . .:.-. I'43-'-""--.. ‘tvgl': ,I.> - .-IA-- ‘.‘--::_.:-. 1w g .73.»; $9; -. ﬁn»? - o, -.-.z&:-:f’~,-,;. , «9 ‘é .‘
+::-.::-4E:.3;A-‘39'<:}~E:-:;-.§§-:;:- :3 4-,, -- e'WA 5:-¢$;=—j,::.-.‘E=§:§!'4 .V5£3#bﬁt;zge:12:135:34“;:2;:-{3;-:::4E?-§a¢.-’§’A:i95-24;:-:-.: $35.» ??gybiaéf. : _ 2;. . .:-"";A-; ...~- :00- I-.gp!:£--’ N-:.t-'-:I¢-;.-.~Q.g-§- ‘2‘"" '2': I. W :45.“$leaM:ﬁM-‘I wmmru 06%)
+V‘VVV-‘VVVVV‘VVV-VEV:VVVV‘VI-V V V V V V :VVVVHV VV .. _.. ;._.4_.-..:I:‘-:i _.4 _ .. I : .. -:- :3 ;.~. 4.~:..-34 -. ...-i';!A..'.. A:I- i '~ ...:.'g::.-. ...... .4i--::-' .. -:._:A:-:. :..- ;-. _:‘I;I._;. -.-.- . -..-.-_. I.:;.I:_ .I.:'.g:I;_~‘- .:; -.- . -.--;4. . 4 : . 4 .-: .' 3:: :.A'-'-. . ._: ' : D’ .( A _‘-- -...::__'I'-4A ‘ I..A'.-:.:._ -:._' ) 5"" {.3
+:5“:VIVIK..§*A\§.; 33%;“ .’.-.... .-.-? ..:_...“- . s..13???:?g:EAér;ﬁ:>;S:-5é¥‘:‘2-<’EM4§- 381),}. A3 “22%;“:4.523},,-:4-:-§-<-§4‘.A,=2:ﬁ.‘{,¢.3-34 ...-:4“;- -¥;§-..§-'--;._:§_.: WW) 3': alts N \ ..-‘.’- 1,: -4-.(;:.:::.,_. -;. ""‘""iﬁ . ..
+VV-VVVizVVV-VVVZVV-VVZVV-ggﬂVVVVViV’VVuoapVgan-V‘VV VVVVVVlVI-‘IVaVVVM.4_ggﬁ’ié‘ﬁé’s'gﬂ:""Ligﬁﬁsg-aﬁg‘lhﬁﬁw E-.5.-.: 5-2:}::5:i-:23;<':-‘£E:§:i':3;.4 >1{‘,>¢,~.? _.4, 1- ‘.§-':I4:r.g':_‘5; €5.02?” . :33? :izgigigm - 2‘ I..-’-*§£z§;;:;:;_~;g._.g; --'1%1.A;EI_:vi~-9,'4 “2 -~'-::' 1.3} :1; 4,94% .:-‘
+VV‘VSVVV‘VV'VVEVV—VVVEVV-‘zg MVVQVVVVVV‘VVV a/ V-V‘V: V VVViVIE?»V2:VV:$VV-VVV—VV:VVV-EzﬂiVVVVEV—Eéﬁhﬁﬁgﬁii .;I;m$~t'§""“¥°§~ A;E;::I';5.::'. . 353.35] 15:55:"" ‘356v.-:'_:E‘_’LI£;E-535;§:::§5:§E§§'_Jf=§-.;. ' .A.-;~.;:--1*I.14.I;4I;:-I'._::-.:_.::.' W 4355* 4 *3 2.1V.""
+‘33"". asiiéiitrféﬁi ',A :.j. w’i’ﬁci‘i ¢it/K’i’3.%£$ﬁﬂ§""w §§§v$,‘§‘a""’g““""~ ' A ﬁzﬁﬁgﬁﬂﬁ 4;”? :-Z ‘§.*«~'g*;,“'3r‘:§‘§ig. 1:"" W1: >0
+xﬁrg‘? W%V&Vr§xgd‘g.3. t"": .4... gziglg‘iﬁi’ﬁﬁgﬁfskwgy ‘. ﬂaw...” wag;jg£,s;§§§‘§‘§c‘9x,~sgvvg;afgw ‘ §s’“‘
+VV‘VVVVVV‘VVVVVV'VVV-IiﬁigVVVVVVVV-VVVVVVV VVVVVVVﬁVg-VVV: :V3VVVV—VV‘VV‘VVVVVVVVVVﬁEVV-ZEV}V- V ViVV‘VVﬁitVVr V9VV-V>VV‘VVAV;VV VVVV-ZIV’VVWkk‘d‘ .1552? 4- ~12:.'I._.-.. ;.. .. :.gAiitéSiE! .. - 13'1:,;g;.1-..:. «'13:? ._37 """"~'i:5:.:I-E;'_:;;gi 9.31:... ---... -_""-;' .:§;,555;4' M, .:.g=;:=;_=5:3>2~:4:--.-‘4.;‘:2-'e.-:-; Ig-
+VVVVVVVVVVVVVVVVVVVVVEVVVVVVVEV,{Vzm”:95aguy-ge; £?:K§§‘-55:i-_:?€:.’ri-yﬁétz ""6,, «L4, gigiczéw «,»e;\<£:5;«3 “:4: <4). ' « . - 324-:- ;;;.-,:.-:x:.:;=:;;~¢& 4-.-,s§:::'_,;,-4.:,444.: 4-:..;§;- '4-A-§:;: w.%.ﬁ'4.A.,asz:‘4§Ai.-zz
+2.-:EEE-.\-e::'i:.-:E.§E:iéziffz' £?i:‘-i:e:i,(§;j¢I;-.“.IT:;r'“zwﬁﬂ.‘ﬁu):\§.,g I-=S;_’I-E=;'.'Eriz'-'.:_’Iaﬁ;;:!-. ""'1':(%:=:l'g§I-’43¢4t$§2§é;:‘3i:§35=§§1{55:1:10._ﬁjéﬁiﬁﬁﬁ:.-1;‘.3::§.::::::;-~;. '131- ;~=!:-5:""“5’:-""m' h '1‘? muff: Fm: .'Isiykwi $Eia¢é:ffa- 1-3:; - IMMIIZE‘ ...-:I.:HEH‘;
+.z-:..4:-:=,-;--.-'.I:._...A.4 .. '...:;-:-4. ,.:-::' . --‘-... an. ;;-'-..'-s:-'y;'-.-.;:; ;, :..:....4..I1;,.;:; -»;_-!:\.’:-:- -;=-‘I Jam; y‘:.\.5:.~5.53:?;.-.!:!~.-:gg~;§_w-=;.:.'-:§y s:£:I-.‘-x.A:-:A_..ZI3:._:-;A--.c.::_:..4.-:.-.. ""I'm 5- ""N'- , 3’” £0.20? ‘ L b '& I ""'th “:13:- u- } Win"" Fl: 3 u N #55::2‘ $3 , h I. w”
+.4).- 1&3: --’A_4.\.-.: .. 1.2.93! ..*. ~34""! . a: ' - ...». ”3;._-E-§:_A‘I$A-'($iiﬁ-Ha> _--A;-A-.-.-....Ig_.§g 4’- .4 ¢4‘-;-.A. -‘ :g- . ' q‘iﬁ-ép-gﬁaz:-.-.4--;:-!-.¢A:!;..,,-..:-;-:---.4._-..553-:--'-_-:.:.I.-: IQ‘;-A:-'A_.-,: :-.-..;:-- .-:4:.I_A:: -.-. 3-5.9” 1"": N: TM“ 3; 4 ' IR -' ”-_“-=‘- ‘s' I H In In“ ﬁ “ms 16} I,” N I, I I W- ,” o ’43:“; I ESE! W,
+VVEVViVV-lVVgVigi‘V-VV! VVVV IV: 9g.43%;“V‘sqzVI-VVVEVV‘VVVEVVV V5.5:3;:‘55-fﬁzii33-‘535-""? V .""5=‘.i""""':‘<=;- .tgﬁeI. .(£235.::.i'e::?:::é.-.;:E:-;=.:.:::7-4:;§;§:.3:::=:‘-‘4;;"":4'4:4A:;-,iaé:—’;':E%=-:A:ziziz_:;:-.:I».‘-:;.-.’-:::_:j.-:2{Ahugs:;::_-E:;-.-;.;:3.:~_::.‘_..;,.-,,;...._ '4.4:.,-:‘:-‘-~ 9 :ﬁ -.-::'.-:.;- 4%. (gm. .:. -..,‘.ié:'.§.:3 $‘1'15I.€°EA’4.'I 5-,!r4A Aw:._:._\;‘.1;!;::.;:::zw.=_'e¢:-I 53.;
+1:9“ I-:___...4.-:. it.:.::33'-’-'vs:I—;-Mi.=;:aj.\.zg;;’.;=.:sr:=:.;i;::=:T-egér-iga'F I,o:2ng.25327::gzzszastt‘i355i-g..r--:'-.-._=-‘i:'=;:<I-:.:‘~,-5A‘ ""-1222? -; .Q‘§v..;,§u‘:§ Icaiéﬁr-tﬂkﬁgaiﬁzgjﬂ u;s'iﬁaﬁ-ﬁQW : «a ,s j- “:w ”:‘n'igi (""Eiizz-‘tﬂii.gw’iﬁiﬁﬂ
+SE;E§§I,—:gg;-;I;I1I...;.-;4:55%=i-'-'5‘5""3' ﬁggiiaiix§§§¢e§z=5—45,:- ""*‘ME‘Q; ‘1‘;géfégzéigégzizia-‘Sf‘i‘ekw“n.6,)“.,,4 ?&“<w?&;:}‘“:‘-§iﬁ -«-4-.;g::§;:, .5"" kg. :g:.;§:;':Iig:>-=::=I;'--=*;-.E""A-.35;“am
+?,?‘uig‘ég:a:agpz’fg {-31,”#3“;[,1,:~’*§?g~f“(”»,§péﬁ’I“ ?z‘ﬁf“,,§», y}, ‘2- ' 1a. o ----""- x;
+.:3::::E'gafizésiﬁﬂi‘fzfgflizﬁi 3’61, 3':'§5;'17'=i£:'ii‘?;3§5;=eéaé=.35§iI-ff35"" §§-§,’.f}§*g§5§6\g¢\ﬁ‘>,§g;§x’, ?“v*;§i‘ Vu‘égs‘v‘é‘ié‘stg?§ ”Ii 1:4; V & 161 WW“; Ufﬁw: \V:
+VV?VVVVVVVVVV'VVVVVVVVEVVV-Vz‘VVleV'VV VV-VV-EV—VVV—VVVVV""VVVVV-VIVVV-VVVVV‘IV VVVV1:V.VVVV,_VVE_._E_VV_£453.:-ﬁg-Ii _=5:5gzgfzg'Eti‘é'il-i.2535???5"";‘24' \I;.::-.a,-;=-V,,-.=;:!i::.:§. 'I-j _Irgzz.‘ 'A4 A”‘ . ':.‘=:‘_:;‘:j,;'<§:I;."":T:::';E‘::gj' ‘-§'::‘,:f:E-§~';:_-jr;:;~ ;;§-.§;:1""-'-af:_4f:;;;§.'g2:..:. 35$: ':;::E;I.;_A.4-4;;::jI:'-g.4_I:.I:I.-;j :4; 4 .""-';I; . '- 51:2; * . "" 4I.:.::,-'~I..f 3-4. '-:;'
+VVVVVIEEVVVVVVVVVﬁViV‘VV VV VVh’ﬂéVVEVVVEﬁVVVVéV‘VV V; “’3‘,” ;;;:;-:;.=:1215:?=‘3§3""""5""3A""'S"" A--.::-‘.'2"" wigs/yﬂc 4? .-°'4 ..r ..;A:;:::,-.;:Iz'- '--'-:-':.:: “§§J»§:, =-::.:._:5::.4~*4..=_.g=i;A.:.A§:..a--I52.5:i-::::::;§5§§%: 4-4,. ..; :4A...I... .43; ’8 r: s; - -!-.=:-'- 939,“;
+o<""d‘-’q‘ *géﬁ??¢igtmﬁp’g ‘U‘ , ,V’xxsws“ : 1-4. 3:1... .. '- - ' .gs:2;g:723:2;s;z.:;::.-4;g§¢:-.z:;,9‘94;“33“""i”, A:~..>“’§V‘““ ‘7 J g a ﬁggimg-ZF I: :5:
+;;‘”§§Sﬁg+,.“‘3‘.§;»,~,¢¢‘ ‘}‘§=u. .¢<.,:""~>:'l‘, .353 . ‘ ”_‘ﬂﬁg‘é‘g‘38' M““'{‘~ \‘igfvs’
+VVVVVV-VVVVW VV VV-VVV V VV-V-VVV—VHV V’VVV V: 3 ‘V‘VaﬂVVSV‘VVV-VKVﬁVEVV’V‘V’VgVIVWVV? tVV—VVV‘VVV VV-VVVVVliﬁVV-‘VV-VV’ V @444 $1? 34:3(‘53554 '; .-;..-.A;.:._::;¥; .- . .I ;: .. J4 . 0:. ' - . ~ :""4-:._-2;..::::_::v$£:-... 4J4;I:_-,;.:'-<--.;:I:A:.::;:;;';;I-;A ';.;.-.-'::'_:-4 . ..vmj- ‘1vabe .'- ~‘-.;. . A - ~ I . --'-‘.-.i:_._<;',~:; - -- --‘,'.4 5- g} - ->. +£9.13 :< -_
+.::.-::zE?5§’-§=s::#:§:¥2=§9z§%A {Wig¢:~;2-.4:-::;.:.s-;=-_‘.-:-.:;:..:t.:-,-.~;::I:_:: 53:»:::.-:.‘::-::-;§:;.;:-::. .§=¥:A:!2:::§3£g-;E§:I::::§a5=A=-:;-$a4=-_.;.:.Iggy: .4“4..:: An. 5’4 . k6 - '2:"":31-:1'1'3I{31:323313-3'i-ZEJIiztﬁg'I-ﬁk'ﬂ3!.ﬁfﬁﬁﬁf‘ﬂagg- H. ﬁ ‘2‘ ‘ ' I ~ :: .‘I‘zgsﬁilw-{a :W x.
+355.3,.;,55;§;=.;355:3'9:*I:=::A5¥""1-39‘-'3'5' V#333;_V_:£;;5:1.‘-2.4s:§:.:.:3252;2535;554:5314:::.;. .-:;I:EE;:;E:£‘:;I',;3§E;531-igk;..,._.;.-.::-._I_.55?-EII:I.;iigEgE""-§§'~Iv_4;:-I'¥??ggi=§""z§¥;i§i§’;ﬁfAtn;égliI""""‘:-:§_A'.3?4'¥‘-.:.!..;’ ‘ ' -A-:;:. __, ;.4:'A ""' E?§I~j:';""§:-""§,1E '.-:= ::-'::;:.-;.!:§g';;:;-..:_ -;:I::::,:'-.-=4 --=-ii""2'.:::: -;- .2ch; .4 m 4- ' , . .: “24:43.; A; 4;
+8“,:9.“ .333“:§§5§i3=335""§3ﬂ¥"" “/*v):¢:2“<,'<;.""’-x3;3 “,'-‘sg.""¢;r. . A' .. ’2'- -. . ""‘*%*,55 Ja,,*%,:"" 3?.“ -% 2's; gigs; - '. «k 625522,}?Séﬁ§53255ﬁg§.,_¢_§> .:ga»
+VVV-MV Vt'VVVVVI ""M :I.-V: V V“? V .:_-'- VV—VV V n VVVVVV _‘ :VVEVV: .- :5: 'V .I-4g' 242'.'-""?I' A;:-.4!:!I ;.;A-' ;-.=A..-: 257.: """"‘~2-=:; Z:-;v-;.‘;~,:;,’.;.V-.:::-:4‘.:-I._::-:.:‘:A_:::~;!- '..:-:-: ..: :.- . A _ , .4.4A 4- - .. _ - - ~55. -.g: :3. ;- :d; ' . - ,;'-;- -' '- 45;. :5 ..""' _; -...._._~_;: :4:;.- :I- Z 3‘- . , .. _' I .:.-.:.; '1‘:.."".-:5-3~‘-:3. 4:; '-.I ,
+P’r‘ﬁgwgé‘ig:25%?u‘“A :.§s‘?‘i>,,‘;“ 14;. \zi-gm ::4 fﬁrf :' - ~ -' ‘f‘ﬁgm‘g 1’ .r 5.3:; . ,~. .. .... 5 a ‘, $3,»g :4-
+VVVV—VVVVVV‘V‘VSVVVVVVVVVVVVEVV-VVBVSVVV‘EVVVVVVV-VVVfV-VVJV”VVVVViVVSVEVVVVVVVVVVVVVVVEV‘VV‘VV‘VVtVVVVEEVVVV-VV V‘VVVVVVVVjVVVVVVVVVVVVéﬁVVVVVKV-VVVVEVEVVV§VVV‘giw”-‘V‘Vg .- IV“ :--.--- 11.4133: .; .. 4 \ - -:-.;L'§E§'§EE.§'E'<32;-§:‘;E'-Zs;r§:-§g§;.=r;kZ:-§;I.§-' .A.:*;:.§E¥5. :32 ' .'.- 4 ~. _:. . M,§;;§.II;i?s.~§-_::I.‘:.-_'I=ri:;;=!""-'Eei;-;:c;.§-'.
+3*ss‘xijmipi ,,Ag~‘3,<:~”~%”9\ ' W :1“; K . I. 4’ Mégiﬁg‘ﬁgw' 3%: SIM,“ $3 :1 :1” ' I 1 ’ (WM? ""
+ViVVVVVVaVkVVVﬁVVEVVEVtVVV-VV‘V‘VV‘VVVVVVEVVVSVEVV‘VV-V’VV‘V’VVV§VVVVLV$§VVVVVVVVVVVVVkVVEVV-VVVVVBVV'VéV’VQtVVV-E-VVVVVV—VVV 155.335? :E;:‘V§:5.5.4‘.I§g:tszit£5.32:53453::3::-?:f:=:::.i-‘3LE::E;:;.::-.;-.;;ﬁ§iji$;,__- -:‘A::::j§:,;--€;.=,15':;."" 'i""-'=‘~""= 571;. .I 4» i .4: , j _I.-31.3%;yégigizizyzzir-31-35 4. a}: 1g: .4 4-4.»: v.“ 3:I-..-:;:-I-Z ‘1 - 949'. :1... ‘. . 5-5:=-;=,§;""-‘iiis~j~,::‘.;.555-533-3213:“Eff ,b'
+VVVVVSVI-VV;VVV;VV!VVVVVVVV-VV‘VVVV‘VSVVV‘VVVVVVVVVVVVSVVVﬂV-VVVVV‘VV-VVVVVVVVV?VVVV’VV-V-VVVVVV-VV-VV-VVVVVV-VV-VV-VVVVVVVVVVV JV“::;,:.;;-.;.-!i:!!19355:““$553.“:;-‘J.::Ilq.!:\-HZﬁﬁd-zwu.‘.? Ag». . .: “a , . 4._-:4':""----.-!::-::14:5‘-'..-.:: -.' £1 . A;:-A' - 4 . :14:4-,.-.- -;-I.g:.~.4.‘..-;;~;!3-5. ._ -_4.;4;4-:.;.:.
+a’;o§”*,.‘;é£ ’""igﬁ’ """"""~"" Q m; U k I z“? :3“ 4‘: v z ' I ‘ W ?..yhz ix 1’: 5h
+:.::~:-I;E53135557353535"":m 3.23555;133;.55:5,;;:;.\-:,-5§;‘Eié;>i:;2;1:32-5:71;5.23:;giggg;-:=;;::.:g;.g.4zg5:55;;- 5""5-5:-:!-:§:3:.II;I:I‘:;Ii.giggI-Zij':'§,j-""EIZ§:‘3--5V':I-:§€.I;:;§;-f'i-I' .. ,. :-'-"". aim ‘ :' '. . .:.. "":'4A-'-45234;:i5'gfgﬁfffgg'Airfir I.—;:;:.-:5-4=:.;I_; ﬁ:-I::g.:;::=,-;I_-.:I. :; 'it' ’ 4-i,-...:..I;.,.:_...-.:_..._~:g;g:.¢‘:-- -. 'IA.:. :__'-I‘:;'.AE§I:;:_E;.-§i~§-‘a.-I-;.- l.-.!E""-- ._..:-’5':—
+>V““’.‘V‘\¥_~;“df:':,i:‘§:;“-” "" “:‘S’E‘Q‘ Eﬁ Ii't’Sr "".i4,.~I:_--' . 3. 'w “2354‘: ‘K§v{«;— 325° 4 .'.:Zé’r'ﬁlféigi::~E""3""'4-E A.-g.- ~ﬁﬁ°:7‘£ﬁéwia'*‘§i
+VVV ‘.p‘3z33,;'*'(""‘\§“‘\;“;¢~K ""- 1-5 .EEEaﬁgézjq"" 5.,4QP9' -=;.4 =-:i .' Wtfi‘. ""3%Q'i"", .. 3‘"" :PQ'II 4. '..2I.3*4'-'4:=1""A .4 A ,:,~=s<;. \V’ '2
+VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVEVVVVVV-VVVVVVVV-VVVVV—VVVVVVVV‘VVVVVVVV‘EVVVVVVVVVVVVVVVVEVVVV’VVV’VVVVVVVVVVVVVVVVVVVVVVVVVVVVVSEVVVVVVIVVIVVVEGIIEVEIE;.EEIE;3;.-!;:;é'Z;.=EazézA-g;§:€§-‘i-.s:_EEE:£§-.£Vjr:;3;.-;:g;ggV-I;':43w --:3..~...:I _::?"" .:.._.,- -=;.-.:.z'a=-':- g. '3: . A. gt.;;:;._I,<§?’\~g-='_;:-ggr‘-.-Igz. -4 I . - :A (.3? "":I. :;_-:-;._-I;.5;‘,;:-_. ; 34 4:
+?:thVVV‘VV‘LVV’VgéVEV:.:.-i-EVVeragg-V‘VéiV-gV‘V‘VBIV‘VVVé‘lVZVSIV[VIIVVV:“(52.Vi:3::;§:_:;§:§:~f;'\-‘-:'34L4L§TFS§32‘.""52::‘:-Z:;.§§’Efz:f : .:.?! $342, :21 :..z;:-’ :1“? “£4 5' .f}.§3 E1?f.“N}€£$‘wg:5A£.-.E.:‘3-,~:.=.:... . .. - 3}:.;,ww
+VVVVVVVVVVVVVEVVVVVVVVV‘VVVVVVVVVViVVV-VVVVV:VV:VVV:VV?V:VVVVVVVV'VVSVV-VEVVVVVVVSVV—VVVEVV-VVVVVVVVV'VVVVtifVV-VjVVVVV-VVV-VVV—VVVVVVVVVVVVVE—VVVVVVI-VVVVi:VVVEVVVVV-VVV-VVEVVVEEVV:Vii:VV2VV9VVVVV:VV:VV-VVEVV:\VVEVV:VVEVV;VVV:VV;V:VVE—VVVEVEVVVEVSijﬁiggi:A:E-;;II;_j;.j::_;i_'§_;;.-::.-::Ei§EI:E:.§"":E.=i ""-..;- . - ’1 ~41 ‘j-r-gAn ,I '1:- _. ' - i.I;;:'g:i;;:E-.5:AE.¢3'1:'4;=:i;:‘::;I: I.: '.:3:3:15:::=:=-;EIE;‘.§§§'~1:'4;;&E""=53.ﬁi}:;i:§:.:Iz;-‘4;-:j(g;.;i......j;_-4;I4.I.. - 2&3}: ---3132;:‘::""3‘5i3531'5'lﬁzaE'ﬁjE'eaikiig:
+;::~;:~:E:eA4I§i‘~'v*:~{.:IA'4~:‘-::.;:i:;;4’g;;g:‘4:;~.°.;::ss£31.‘e;.:_;-‘.:~:I;.g‘w'ti:4A-3:~'4=.4-.-s.:23§,:::;’:..-;-:.I.z;:;.,'7‘54-4§’-:::.:.::~;:,=A-44-«14 ..._?""""x¥$&,""..t'=ﬁé199.25,: :31. “9""‘1§§3§4§,§.\ﬁ‘“bs""‘1sgyvéﬁﬁ‘ﬂ
+VVVVVVVVVVVVVVVi-‘VVVVVVVVVVVVEVVVVVVV‘VVVVVV’VVVV‘VVEVVVVVngzVVgV‘VVVgVVVﬁVVVVVVVVVV‘VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVSEVEVVVVVVVVVVVVVVVVIVIV?VEI_VIVEIEIEIVEL.3I;.:;;;3;:;;I..¢:zg:-:;s;;s$5231:;;:.._5::-AE.~:.;E.I:;;3-::;:s<;.-2.;. .- .....:_ . s-zw 3'-. "".r. : 3-""..4iﬁ’: «i: 1;: ?,Qmww. 3 ._.-3:53:34 ::g-... a ‘ ‘-=r::r_::ga.¢e' :!:-s5:!-:;-.-ss-§;._;g.gggz-;:s=:..:=-;ggg;
+V3534;--:-:i~-A-13-:""-:':'57""'I'2'I'I2'Et'r'w‘h ...: 3914-3523:.:;\'$:._A:-:.~.-V:‘:.I:-.A:::!3;:...g:: - ,‘,- ::-:--f- F -. .- : ::;A--;.;! .A'.4-.;.I:.;:;~-; ;!_.;:..\:§:g;--;--~-:,:-:-u.::g'.-;:A_:ml~I,A:.:.n: -.:';:-:-_~ ‘ ' :- I : .I-:;-; ‘4-2-..... . 'M : E “'.»;'_.: I :1 - 1- --5A.4:.:,g:;"".I ;!;>.-‘- ; . - . A. ;’-!._.:.'§5.-9""4--A. :-::-:;;;';£ '~;.:.:: e:':;-- - s, gym -,\, :I.: , \S-lss. I ‘ 21:53.» 3 91;? :!;.-:I4_ .
+VVVVVVVEVVfVVVVVVV-VéVVV'ViVVVVVVVVVVygzrVaiVﬁanV:VIVVV_VIVV‘_.._3IV~_A.-~4;=4:~=::4;i:;.';-:.5144;;...;.:I.,_‘::;~~-:=4A=,«4’_:::::I:;:.33:25.75?4 4 :-""-1351E.3:53.gs}IE3‘4E;§5=\IEI§E'-£;_'§5€§’.;-.'1'54. ""M ~v' .a 4. .'.-igafiﬁftﬁ§i:‘§5fi¥::§. .Eﬁfaﬂw “£533‘§:“”""Q33‘52555‘31:§§E§.':’-73w~§~§§’¢‘,‘1§5i:3t
+VVVVVVVVVVV‘VVZVVVVVVVV-VVVVV? VV—VV VV-V:VVVVV‘VVV:VVVVV‘VV-VV VV-IV VV:VV:VV‘VV-VVV\VVIVJVVVVVVVVVV VVVVVVJVVVV V VVV M V. VVVVIVVV 4:.:;,.:.:; 25:22:.i""? 3+:- I!:::V.§V.:.::I;:¢,2::II ;~.:;.::.;:;::;.5.'.:-.; -; .:-;-;.;ﬂ:-.'. :'-:L-':.~:~I r3: 'I.::-’;--¢-'-r-:-:I..:.I:;"":::;A~A:A;-: ' ~.--- , -, - . . -.: {:33 .4 .:LI,’.:4 :' ::.; I - .~:;.I:‘A' 4-,-:-:-_:§~_::-f:'-';:-.- .4_. ' -. '- '. : j':A-‘;- A. i'. ‘.i:‘,::_;5-j. :.-44.:.:::§:';:;:E'5; .I, .I j_ -: -- -,':.A::.: .; I:4:.-:!I-;- 4:;.""_4I_;: ::_-- A::::-_:;.
+VVVVVVVVEVVVVVatiVV‘VVVVVVVVVVVVVEgg;VV‘VVVVVTVVVVVVVtVVV-VVVVVVVVVVVVVV‘VVVVVV—VVV2:VVVVVVVVVVVVVVVQVVVVVVVVVVVVVVVVVVVVVVVVVVVVyVVEVFVV-VVVVVVVVV:VVVVV“:VVVVVVVVVVVVVVVVVVVVVVVV—VVVVV‘VVVV;V:V§V:V_V_VV_V:._I._.\.VE_.:-.5.:,;-,-:,=:;.;:eiz;'4§.;.?;-,;.,.::.-;-:::5;I .‘;;;:;;‘:'4:::3;.:.-;;.~;A;r;:.;:;;;a:Is:;.-I-- ,‘ *° W. _ 35:2:4......g.:‘A»,;;;-.;.~=:~:'-:;;:.-:s;3I‘¢:-:::33;.gm:§m;;;4-;;é::::_z;;; .z¥32§§'25:$321?2553:;2r:=4<:3§e~_;:4;§5‘4 .r.::"";:.‘.5:;4$;:;.:4'r::;ge§3‘§;&:%:93:
+VVVVVVVZVVVVVVVVVVVVVVVVVVVVIVVVVVV‘IVI.V2;3I3:I.A:;§;I.5$5I4=§§¥%z:k.:=-;;-5-5-5:s:;:i::-..‘.-..s;:3..:;3;5z:~.::3.454;:2.'5:'.;;A.‘a:-3:=.;;.A::;;=42-‘:i.35:25:;5142;;.2722;3:324.::i:;;;:;:;3;-§:5-¥=.2;.'.;:.4E:s;:;:-g;;.=:;-.§.;5I42:33:.:.:zi;5:4.;.‘: ‘35:;'5;=a-;!:.:_:;;:'A:i'i>::-‘:s:a...j- - - :- f;.:s.:;g--;-;;-4:""v.¢§ M "" t“‘3y;‘§g.§'w~‘{w}9,;-i:Q‘s(a@zgﬁﬁ32:352555-1??iké'szzr-awr41w >“ﬁnﬁ'3f
+VVZVVVVVVVVVVVVViVVVVVVFVVVVVVVVVVVVVAVVV:VVV‘VV??VVV‘VVEVVVVA-VVVVSVEV‘VVV—VVVEVVVVV‘VVVZVVVVVV:VVVVVVVVVVV—VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV‘VVVVVFVVVEEVViV-VVVVVVVVsV’VViVVVVVVVV—VVVV—VVVVVVVVVV-V‘VVVVVVVVVVVVVVVFVVVVVVVVVV:VVVV§VVVVLVIVV;I_VI:_IEI:IV42.:.E£;V-.=.453.352. V.=§;3:‘;A:;.‘:::;-.i'iE-E4€E5:,A:;‘é'...-4:i~4 , 35;: 4..;4;’3E5;;5;2-.:i;—:;;;..I.._-t.n :3-=:::53:31=35;::51~:;::;=-2=3=;.;E.~':§ h.iii:Iegs'=:§3§=:§EIEIE:A::;E::§¥.42$ifziﬁz:31211229557;.fe‘A:5:.2.'ESI:-;:;;:‘;§?':3331iT3553232-§;‘£%54"" 51;. 3335':E'-.::‘::e3;;i'—;E:::A.:;.':I:::_I:-..-$53:
+VV V_V__ VIVI:I.':I:I__:I,.3;:I:-_:~ -.I».i.-:- f? 1::;_‘.;;;A,.:: '.v_-;.-. . . . .' :- .z.;:‘.; :-;. :-:.:-!.:-,:g': -A-_:-:!;.4..4;4- ;:_:-E; 5:43;; .._-:; -4-::‘.-.;._:-;::';~-:!4: 4 !._A.I:;4;IV:-;;-'-1-::'.Z.gj::-'Z;_‘-‘-:=-_'A:-:4'. 4‘-:‘:I::-'.' .. A.-.;:;:'I:.:.-:I---4‘- A. .. n. . 4. ;:4- 4'J._‘.. ::I:I:--:A:-.- :-_:;:4._ I air. :::4I'::~;i;§-:-::.!-;A' :.I'Iz‘h- A. .4: ""12': >=v_'-:.:.-!I:.I¢5-l-:E-A_. -"".:.;: ‘ieg:11::;;.-; :.A.;...3..-_:I ;;-I:-;-;; ..‘. :‘-:-:! -'A:-‘. :I. - -5-:‘.-.I~1i:i ---.-.I:.4:g-.g;:z-I;v;-I-!-'A:.:.-.I -:.;:;:-- 4:
+,“,,.’:!"";,""\',‘:‘.ii:;‘.’.. .iwﬁ52::5:-:E;';-5’33?:..I;.-::5;E:.~:§-I=;’;f'::-:,-‘45E:,-:§5't;.;:-S::::::'_-;-:‘gité§§gisIzezisi=Ei;=;.=§;I;.-‘ig.;;_4:2E;—EI‘;43'Eff-{gséEE-{Iﬁﬁzizigag:s:'.313!'.5Aﬁlm ' -A :""~..;'... 45:: '1“:g:-:-‘-EEI£S;E:'*;;;E;.-;E-.£i-?Sigsigs:i:."" [Misn(1:33?;’:°‘§3{{:§‘?§1‘“ig“{‘;:{::°:?:z}3“’)@€%
+VVVVVVVEV‘VVIVVVVVVVVVVEVV-‘VEVVEVVV‘VVZVVVVVVVVVVVVVVaﬁVﬁVVVV-VVVVVVVVVVVVVVV—VVVVVVV—VVVVVVVVVVVVVVVVVVVV V V V ....V VVVhV:VVVVVVEVVVVVVVVVVEV_V_VVV:VEVVIVV_?.VIV_£VE§E4:4;-;:.;5;:I;_;I-jg.gf-_3..;A'A;E-.E.:L‘Aii_-:s'E;.-;:_:I‘=gjf==I;522;:szgreggrggig. A.4'i""""'""""3531;232:242;g3!;3§5§}§f§i32:x"";?§. ‘4""§I?I-‘férg:.Eiifﬁk‘ﬁziSiEﬁ3155::31553:fﬁg’ﬁi‘iifis:Eng;4§:E;IA,§E..,~'E.gag?'::.-jj;;;E_'35-55231.?Egiiitfﬁféﬁfsﬁgiﬁ""E;:w:§:.I-‘f:3???.5:E';!§':353Ii'423§a§£35}???:ELi’foﬁﬁéEfEI-EF- .:::A._A!€‘s‘53:
+*““.Sk‘i,( ’ 4W g‘22;:‘::'-.s;4;;‘-.§EI=§;;2§§3:33;;'ss'ei'sfig5:3;'2:..-2::§ﬁ:§s:€£§-§:§i_-is;;.:zlsi3;:gagieéfﬁziisiezis:’ssgsszzzé-égéa.‘. .3 sA. :..‘ig' ‘-:.. :. 'Q.is:EEEEEF;§§i§-':i-.:§:E:-,<;é;§)§:§s§::: ""3"";yzagzrﬁu ""oz’o:»“'§<s«:$r“:3valvi‘w 1'
+“lhé‘:ﬂ{a VV‘VVVVAV VV VVVVVVVVMV VVVVVVVVVVVV‘VVVVVVVVVVVVVVVVV:VVVVVVVVVVIVVVVVIEVIIEVIEVEI_§EIEE.II:EV.;;:§::35352352,;..:A:_':‘:.:i..:5- 3-“1i5 :12 23,-] §§E§§55§=EEEIEI 9’; 13.. ""4'2i;:;:s§:§;§52.::-§;i;i§fs:.1gggzzugzaagg “""ocs‘ y“ 14;“ ' ,5.
+VV V’VVVVV-VVlVV:VV:VVV-VV VV‘VEVV‘VViVVVV: I'VV VVV V>VVV>VV=VVLVVVVVEVV=VV¢ VVVV VVVVV—VVVVV‘MVVV‘VV VV V V V V V VVV V V V V; VVVV VVVVVV:IV-VVT-V-VFVVﬁV-VVZVVEVV-VV‘VV-V’VVV-VV-VV—VVVVV__V::iV_:__V,FI: ..4; M43:A4A:-'~:-.Z:13Z‘i‘$-""1-"" 332;; ;._ .4 .. > - ;.' _ .- -4; 2: ;.::;..:I:: 22:23 --.-: 1--.-.3:II:"". 'v;',--:Z~:::::;::_:§:~I ;--..-!-.-_::. j~‘:r4;,:4..-:A:'-:. : I . '3, A;. -.‘:1:;.3;::.':;'::'-:;.-A.=;I_-::.'Z_'. i:-:»;=;:--4:A:-;1-.:4_:;:-‘:':I:-‘:-.-:.-._.I :-.. .:.4;-;:-
+V VVVVVVVVV—VV—VVVVVV ﬁrV’VV-VVVVVEIV'VgV‘VVEVVVV ‘VVI-VEVVVVV-VVV-VVSVVVVVVVVV—VV‘V . ,. . . . 4 , - ,4 ;~ . :.. . ....:gr.:.;:-;.-:-.-;:-4A_-.-,:5_:f.::-.--;A_;..!-.-;:-:::.:.5:..:;-=;-:—A!-;.:::.;...-;:;:-:%!:.;.--..--..-A: ';;.4: 4; .. r. ~>.=4 :1. -; ...,-.::;._4:~;4; 59;»; 1.-.-..:.;:-:5 ;;:-:~I4:.g.:._-:g-..;:;:-;'-!;..' . 33-513: :_. .. A I 4-..:. .:I:::;!,A-~A.-4,'r;,-? -'-.--:—-.-xI~:-;:_:~;§:!;:,I._:I.-.::;:.I;:=-:-:.!:.;.I; I -;;:--;
+','s4«f"";“'\~ ,éu’vi .940; 4 .; ::2§.§.;-§;-:5;Aﬁﬁsﬁziaﬁzgi$22335;:s.=2:-.;e::§§5§e§:_;z:j'.:;:;-:jagiggz;egl=;-§;§;Z:;:i..::_:;.g'fggf5;: : f::' 25‘; 2; 1552,19: ;:;;:32§=22-.fzf§2:‘4§;.:S:.;-.§:§-§§;3‘-j:?§=52333'. 4‘-~V§‘~°§\ ’ ""‘ ,>3"".~.3%‘(’\,~~t~vs 3‘
+VVVV-VVVVVVVVVVV_VVV_VVVVVVV:VV:VV_V:5V:i:_.5$.44;-:g;:;:j::::::§s;=;:;:i:;:2;:,':::'C<E;-;:.:4-;.:.:.4- :4 .43?“ °/- 4:.:;A~; .. :-.-;.2::;:‘_:g_:;-';‘.;‘E:;:;::::::g‘_5:_-{._:-:32: 231;;~;:::.4:;.;:.::_-:5:,;-I;-;:;-.\g_:;_::35:=_:.‘3.-;::A:':.:=.; 2.1- :: .’4 4“,;4 A A53 ‘-: 34:1;.:3A;I:-.-;:-.....j;;_':s-‘-:.;-4:.,v4A:;:j:;,'-§:=::-.-4 .... -!;:-.:s:;.A:=:2::E:;§£:§-::5(‘g§:<£a 12:53:; 4'4, . .- P~:(ééﬁgzt:::£:;‘~_“-:4:;::5.-:;:::3-;-§:‘-.“;!-m.~::§:‘€:§:4§;.~s:§=’:ta!€;-:ts:
+._..VVEV_I...,.5;.33.;;_;;;;.;3,3;::2:-5235552$?$135égzé‘sggﬁjg'fgEgiig‘l:a ;,;:.2i?:; 4 :,A ..5233:?I._'ji??;‘i;?;TEEFéslé-jﬁi'3i""-555:!gfgiiEiiggigigi'éjfI§§§Zi3i'.é-E:§'§f§:¥3fi§5152;55}_EI:§--}.5E2? :.-.535 I . .4. :} AI;;~ ;r3E:'g-‘i;4;;.'iz-i225:1:tisﬁiéézisizi:zagtgagaij‘iieg=-::. ‘:§t>\,;j,b . 4:24:12 gas. ..S’z‘irwwjgv
+VVVVV-VVVVVVVVV_VVVVEVVVV'VVVVVVVVVVVVVVVVVVVVVVVVVVVQVV—VVjV—VVEVEHT;VVVVVVVV-VVVVVVVVVVVV-VVIVVV VVVVVV V V VVVVVVVVVVVzVVVV‘VVVVVVVVVVVVVVVVVVi:-VV:VVVVVVVVVVV_VVVVVVVVVVV‘VV:VV:VV_VVV_ﬁg:3:.35L:55.:_;5;;:':;::€.Er:5-;E.::.:.=:; -A.~-'A‘A-.-:-- ..; 4.:3' .-.=;= -.5:3;3:133:53»:--:4I;'.;E.5;,‘;5:5§:.4A.;ag-‘;:;;:.;:;'Egi3-1;. ""33-;3;i,:g':§-_g:z:;'{-.:3:§§'::'_;§:j!=_;§:;_'l~j.;i':iiig'""""nI. i . I:ﬂbﬁJ—Eﬁ;t“12:3:5352342LIELEEE;'f'fé'ﬁiﬁgjﬁzy;1335-35) ‘-g’-
+VVVVV‘VVVVVVVVI‘VVVhVV‘ViVV-VVVVVVVVVVVV-VVVVVVVViVjVVVViVVVVVVgVVVVVVVVVVEVVV‘V-VVVVVVVVV V V VVVVVVM VVV VVVVV VVVVVVVVVVVVVVVV:VVVVVVVVVVVVVVV—VV‘VV:VVVVVVVVEV2VVVVV_VVVVVVVVVVVVVVVVVVVEIVILVEIVEif...;r:5-':;:'E::;.;:-:~;~:~4:I::-..-;.:...,.. 'M""""""""’|'""gaiA533???""""-55:71 I;;:-=.~;r:;~.;-':54A:"".:A-.:4;:'-:;_I A-5,;-..\;:g;:;-..i;§§.;-ﬁ;:s::~_:;.;A-;:::;:55:;%:. ""i‘--. r ' -:-:-4;.-5E:sv‘.:;-.:.-=::5&:=:;':iz;;-A;A.;.‘_‘:2:;::~:g;':=.:::--.;.-:-?:i::.333:5 .:.-'5
+;A;:-.I;;2';2;.:...:f.:E:§E§=g‘:§r'i;.;a:_:;.:35;5;;5554:5:2;§;§¥§§§%§;§2€-1-:;-;,5:;§;.=;§;§=3‘ '~IA_;;.:&:“§¥-°‘h ‘.z""';:: {,4,5§i_g§~,2:g;_‘§':513:-'“’,u-""=54'?:.4A:;.:,:Z.:;Z;:jz'-s';';‘..:::';;:5.;;;;::.:: I;._:}??:.:;;3::;393:2;353;;5555:1533:”HEM ~v.«'z§.;,ﬁ 9‘}?- {gym !\;*£%z‘.}3""
+VVVVVVVV VVVIVVVIEIVV.V5;.V,€35;I33;:3;gigs;affEIé-ixiifgg‘ﬁ:5 $51.53. .:gg; ix: :.~>.. . _:g. V_:j¢"":‘-322’3?g:.=;':i.<‘T_-i§.~t=:3:§;'3';515-359:3;:25-:5;§:;2:=;;;5;I5;5;;=;t.r.g.'.. : (“w '.s.~---=-i:.ig:153'3::EA.:333.-:§;zg‘-;:.(:21;5:43-7535:35.3:521.1433;2:525:33:1;:3.:52§§§§;:I-é525=:r.5:;. 15-35;:3::5?§;23:o:§§55:.:;;§§i“21-9 v» : ~ , x ' ‘ '3;:5':£3-??-4112i§i;2~:-.;-’-‘.£=€§§_~§3:§5:2§;:§si?A‘:3353:}?3§3§EE§EEE=ES§§E
+_EA_ngg-Ag53:;i2::r32553355zif:fiiii'gigég'm;égz'éiﬁﬁ33:52:}; ;: A. -_~;;: .3 \-.-:;:'§,{.I1i':5.':ti;..32§.'§§:I333113,..E;‘§Z§§;i§575§:3;;ESE;E§79;.;E;§?.§'IZ§;:§L-‘f ' “15L .... 2‘ «a‘32,;2E14751;4i':=:;§;:;53§537es;s3-§;2355523332: ‘7‘}‘39""? A‘ﬁg,‘v‘mv.z:eiiz‘=s;:
+4,:.:3::.:.-:;-.£-::-.::'::;;;;;;A;;;A:::;~.:i.-2:.:-::;;_:‘;A:;:g::s~a~:::;;;-:4=.g:'::g5;s:;;g.I;.3A;:;..;.::-.4~.-4:I-44A.5§.-4A ..._... -4.z:5:223:33:{-1.5353:53)};.:.-2:2;.g::::€;;-:-A-Ir:':;:;.:;~:2I-4 4kﬁ':..~=z§.14..m .- -'--.I-'~""'"":;-;;;.—;;g-.;:..i:A‘::::A.;s;::::;A.-:::.;. :A:5.eII.:;;';.53.31.; * .- . -=<4tsza':sIs:-g=.;:-.gI-=sI.;.A..:_..L:zfg;:-gE-;A-I..:.:.525.::_'s;4g;:;.--I.A.;-::::E'==-':;EEIA'-""
+':‘;-..::;s::A-.';sE-ji2:532:32:g:$53252;sfggﬁggggggaizgggﬁfg';::::;:;:Eg-zgg ~-.... :. Ig'.;s:s:s§::a§;;,—-;s;g§§:§;a:?:sA.;!.-:;._;'2,-::::23:52:,2;2;:;g4=‘:'-:: . 3; . wig. 3, 1:354"" t; 1;. ...}:A, ~*,} 122:2-a;:‘.'2::2;‘_<::;;='_§=iszr~I-:,... ..._I 5' 3:“~K§V..‘,:""
+VVVVEVVVVVVVVVVVVVVVVVVVVVVVVVVVVEVVVVVVVVVVVVVSSVV‘VVVVV_VVVVVVVVEZVVVVVVVVZEVVVVVVVVVVVVVVVVVVVVVV .VVVVVVVlVVVVVVVVVVVVVVVVVVVVVVVVVV‘VVVVVVVVVVVVVVVVVVVVVjVIVEVVZEEEQI_ﬁgzgggga4;;=:5,e§g;g§¢_;;§g-.A:.f2M . 2‘:sz -..~.=-..A ....=:._ ' ' 'li '«zgg' «2, ouvsr,v., . 0-.u"";
+V‘V VV VV VVVVWV. VVVVVVVVUVVV‘V‘IVV .,:. -.-A I;.-_-z,'1'5'5"""""" .- .....-. .. . 4 ...- I .v.- v-.A:..-.:4:... .2-.- ..I..v_-s_-. _. .~ A,~;.- . . .. .‘- .A-.- .4 m . . - , I ‘4 ,\ ...,.-...I.-4-.4!~ .. A.- '.-. .v‘. yew... _a- _ _...v4;A-.- .. .. .4.-!~~.:.5.., .-.-_-..-.,.A_...<---.-.4:-:.A.I..\,...\-- .- 3...4,_.:‘-.-. .-,- .:.u. -
+VVVVVVVVV—VVVVVV—VVVV VVVVVVVVVVVVVVVVVVVVVVVVVVVVVV'VVVVVVVVVVVVVVVVVVZVVVV'VﬁgéVV—VEVVVVVVVVVVVVVVVVVVV ""ea 4.5}? _,..._...I.V31355::€33:;:;;:.::;§€E§.-§5:§‘::4_::::5.555,2.‘4égag-z.""¢;--_:.:':‘4:>3~Ig'~4._._._fig . . '._:4-'- . .3? ,:':‘3'f§§:§§;§§§i§i§§:‘;rg;§§E_;§{§§I;ij§§;§2;“ Ag,- 4A.~\ “ms,32:51:;:5ﬁe::.iw'553:2}:isg;-§~;{;ﬁﬁigggiagﬁﬁﬁiéé
+VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV‘VVVVVVVVVVV‘VVVVVVVVVVVVVVVVVVV55£35§332.1_$3.55.5535:...... . f5: ir4i:EIEEZiEI;EE;::if§:-§5§l§i§:-,51_V;::.I';§1§;';f:§§1.;55'4§::}§;.;. - -A:._. wk”: Ajg .. . -I-A'""1322?;52:5§§“.f§§;§§5§‘-§5_‘;T§;:Ejg‘QSEE-jéﬁéi‘iﬁ eat? "" #:343‘5‘22VS'
+.""f59:57’3'535'235:55:33.3:9E£3:.‘.-5sitf§i§§§r=f=sztzz2323353715iii??EE'EIIEEIAEEZEE'EE‘A- .:f:.:::§:~;;.: 44.12;; II ...::s-fziggcé;:53::E€555.33;§::;:~3-:;;.5;;3§;-ifr-:'~ii3:;s:;;5EI§'-:AI3;4A :A...-4A...;.,W.-, _._.. ‘ 1i.-...: .' ' - ..gffIA; .. ‘31::~13‘E;§si:§2;15:;;;2:af;5.;35I:Z;?g;i--:.;:-.;f-I.-;..;4.,....II_. “1} ~ “,»4x.>~'3.'::ig:;‘:
+VV.V.V;._VI...._.V.:..EV3.3.:;;-.3;;g'.ggg_::;:E-j;-;‘-53:.23;::::::-_;:""::.-:5-.E:’-::::§g;;354,:‘I:.;3I:;.;:..-_3;:§3'. :- :A; .'. I:--I4-;f:.i::‘:;.""§53A5:--_§,1E=i;;r4§:jE'E:EV;.-§‘4§§E:-:"" 'f-""""4=s:~:;;.giisﬁﬁmzr'I;g-:I..IA;.';.;::gf;‘~.IA:33.4I;_-I4.:.;.':agth.~'s=.;,... -:'::~I.- ' 4 “?'A‘f-“l ‘.'EgE;sr:E;;A,IS;-2:§-:::i;;:-.g‘,¢;9V1:cc'4'-‘-£;A=5;i=:.1;:5..::;;;.;.;;.;4-... ..:g;:;:_ . ee ~go‘.‘;‘/z\..g‘ic.¥§’~'
+.: .;.;..;...::-.:.:4.:::;;:-.::;agar:3335;3:2:5:3:gagg4;::::.ss:;-:--;;_:.=;,;:;:;;;:;4gs::-I e - - ‘ -'- -=z4:4‘:.::.:;,;;_;~.:.-r-2:. . m... ' -4---~--.4:r§;::s-.;-.:;=.g.3:41:42::s.a;;.;;.-I;;Ag' .4. “if, -E5-3335=Z;E;:‘.‘:§3I‘f35?:1.5§=E§3§;:5':E""""""5395"":3'“5W "" Iiii;I55;;3;?-Eﬁﬁﬁgﬁiﬁgﬁﬁ315:;
+VVVVVVVVVVVV‘VVVVVVVVVVVVVVVZVVVVVVVVVVVVVVVVVVViVVZVVVV_VVVVVVVVVVEVIVVEVEVJEE;V55.:..:_-1:...:;-.:_:;;-;; . .:.544: :..4:53:::E:-.as-§4:§:§::32:.;g;:;.Ii;‘_?""da,,,3;;;2-.:.-:Hun... ..'.':‘E;;~-"".;_. .I .._:.:.-EA=I3;:;_;3:5:zﬁggsI-a42323-23:::-...‘AE:5§€:.=;:;'25'= 4- €ak.§,_‘;§5355‘;:~55.::§::3;:5§g;5=,:=i;g:g;‘-:;3;‘A;§;§::E:.g:5::§;53:35!3;:.:r-a:.ziizigzgzggzqiﬁissfsg
+.4_.- -' _.-.-_ 4.4,A.-.-44:. _‘_.-, 4. .,.-4 . I ,.~. 4. ,. . - . .- . 4:.A.-4A...-. .._. - .4'_._,A V. .-..-:.:. .I4-: .-;A_-.,4I, ‘_--<4_\,;:“.-‘~,g. -. ""V:\O4!A_A. --~._......._. -.- -- .-.~.=.._.:~, 4-... ._.I . - -.-4'.4 ..-..;.-!-_~¢Au.>_.:,~.-,~,'A.‘..‘3..w;.~.-;~ m - -.-V- :I.-53.4.1...g.-'-:A""--“A'""-4“???' “-11"" """"""HH'I.-I.I-
+,.:...ggr-4A.»;.~:-_:.:I..f:j§Ej-::_::::::;:I;5E.\'I.I.;;:2;35;}:g-gE:2:;._:E:.=:5;5.I:g:=§::E31:52.;-;é:33=;‘f:‘.=..;;:';5:3=-s;-i:-.;...-I;;;:4. . . '2""::.E:I:;.:;.-;;;;;-.I-'!2:;:'2A.;.3I;Ag;;;.;;.;fj::-:35-g;;3.;_3:.:‘.5:';:;§A;'.1:;.':~3::;4;:,;.§:-1:::‘-'E~;:-43I5-.::-:izzz'is-g'z;51-12—142..:;Ag'_-I 'f‘41“:-5«,o:..v.vn, .. ""‘1:1:21;;5-31;1::::1»:1:357:3A-;-;:A:;'.;:;.:i:;:;;:§.;--4A::§:;::E;E;5:EE;EA-'$3E:15-51""?""*5""“Er:'I'ﬁ'giﬁﬁ-ﬁi._:» .— ' :5ﬁsﬁﬁ:15:ii-iamg-ggjﬂi2E::E-zaiﬁigi$5535?
+. .I «14:1.1""::'-:-:---A!-.~.-:.:-'.-::::4 ---:-:-. ;: .~;II-.-.:.,I:.«:.;:-:-;-: A. .....: .4: . - .-.- -:_:A ‘. 5.:!. {_::-I; -:A-:-=-.!~'-I.:- :;-: - - ~-:~:-:‘A.. -:-.-.-. ::.-:: .-.-. ., IA - .... :3. :; .1 5.4:: 4.-:;.-:.-:..;..‘gr-'*=I-:_ox. ...:4_...-.: -!A.:.;g:g:.4;:--..::gsz;I<-.-..:.;‘4A..:4:;-;4‘.-;:-.-.:§:I..:.;:4:~.-4.5?‘-:551""37'""“;'¢':V4-3-1 ..:_-4» min:V:42;:‘tﬁi-Hibg.:.:ﬁ-‘rﬂw Fin;-IAIE-Ez-hﬂjiFM:-
+..:: .:..:’.-: ~'-:v'-:-:...A..:.-.°.,‘--:- -:.;.A....:._-.;.~ :..M ;.;.-, --.-:‘-:~:-..-A :.4.:.A; ..;.; -I.I._.4.. . -.-:.-:.xI_. ;._:-.I4;-;.-.;.-4;.;._-.I...~ : 4: : -. I. ; .4: -: -.4'.4:.4:~-':-»: -. ~ :-.4;.-5... ;;.-:-;:- - .; .._. ...A; :=:-‘4‘~4'- I. A ...4. . ,. . :4;‘.-- 5:-:-:A..:-. ’3. .. .:-.: r~4.4:._4..:.-_.5;.-;-;..A-I .:.:I.._-:,-;-:..;.-4~.-'.v.-'~‘""'3':""""""‘:""""‘: .._.}..‘.....;-:.~i-:-""““‘-'“E"": ""EM”: :7 E I - ~ .:.-:.‘h-RW: Vii “ﬂ: m.g- ZWIE It3',;lv-ﬂ:ﬂﬁ ”H""
+VV VVVVVVVVVVVV VVVVVVVVVVVVV VVVVVVVVVVV'VVVVVVVVVVVVVVVVViV‘VV-VVEVVVVV‘V‘VViVV‘VVKVVVVVVV’VVVVVVVVV—VVV—VVVVVVéVVV-VVVVVVVV IVIZI...;SI:I;:;;;g;-E;_-zri-ji?3£ VVzVVVVV_:_:;2V55.3.32:,I:=;;.:::.;:E:i;é;=.f;‘.51.:.:5zj:'2;""."";i3;r;;gA4.- 'ié-éA-52'3i;:.-.:§“Ei‘~.333.531.122}; -:E “4:31-14:52; Ii'igj:I'~'§-4;-:I""I:.'I'E'j1I-33-E'i_E.=:':'.;_.; I4_1.I‘:'.'::-:i-.a:'-:=-.gj-.;:Ig=::3::"":5-;\-I-3:I-I .51.:.325..5E-!;:;=:‘55:;'::s:;:':;::.:3;;:3.-5I I:5#5335;5:;;-:§:.‘i;2;;:;5_>.g§.—5. 194$ﬂing3?:;;:25.=:;Z;i.‘:::::-.g:_:553.5;!I:§Z;=:a;5.-3;I-5:1; :2 ;:-.;;:::~':E.:; 544:1: '- :5; 337:: -:.':Ie:i-:E:35r1§?::::::«f.§f;.-§Ej1.1.535:9:E1355=g;:'-i;-:::§I::.4:Eg-Z:E--2I;A‘.:::?§z-gs1.;5
+V V _ 1:.A.:...-.;.'..::.'.&.""A"" V4.-.A.‘....:-::II’1I- .4_...A:52-1312;.:.:.:.:.I:...=;.--::,::;.~;:-:. .‘A:257':;-;:=:!;‘-;:I_:;:g:-;:_A;;-:;4;,.;i:.;g:5.5z:..I.I::.;-.::;;:I.--.::.-.I..:_.::'::--::;-4:-,..-.;;.:: I:';;,:;-;-_-...4-A- . :::I:-~-.;:-:-.:- :-:;;;';-;:-;.:..-::_.:..\-,I.:;.-:..--::I:§:'I;;-;-;.-::4.2.5::--:EA-;:.:g::;g:~:::::-:--;>:..;:;:.:;3~.-:4,;:-:A.:; 93.5- ;,:I}--,;.:::.~::: :;=;=;:A.--:_;._-:g_~'33:-';'¢:4:A::_1‘::1::‘;-.A-;.~:b.;.4:;:: 55%;; ._:Iv=;‘;:-:‘4;:;:4:::-;:.-:3!;:-5,~:;:g:;::~_:4,::‘;>:3,A;:.:::::r.!-Ag!~:4.::'.::,;:;;;-=;.-!-‘-.:z'~
+. . 4.4.3,. - 5. .. -: 1;: :I 1;. ..2;;i.:;.: 2-13-54 1;“; ‘5: .:. ; 3; 1:5 2;’5:-A:-. Qj-Ai'IE'ig :4; 255.5. 133.5. gér‘,:::5=;EI 533?;'g’:g.-.E:.S;:;;;§I:;;§; ;:_.a:' 3:555:55; -35 3E 25?; 335.; 12:"" 523231.533 5.:- 415.33; : gsI :}-;g-===;: 53.1, 33 52.55;. 55:21 -E 4; ;,'},;I;g;é.; : .:E- 55: 1:353:53: :: :5.3:333:5g{55:r;:1:3.if;:17;$33235i:;55_‘E:-'§A'-;€:':=-.§::E;.:32; jgiigigiifsfa3;:-.§:-E;1§;-is'5.:.§_'5§:= *§.-::4‘:-'-=-.I:3;2§.<;: :25:2532-5555?E;:f<_E;:E==5-;=EI§S§:'S;::£:ig-EEEiiziﬁi‘E‘iiiiisrfi =9‘3""?'5PE:.’iE-5"":-'E€335?E:Eggsﬁigigﬁé: E1?:323$;tiiﬁyﬂ :I.-lira""
+. .4: . :.:; 3:... . .3452? j;I-;—ii"";.:s-;§:.-§'5%iii£335:§§§§I§§E§§I§;5f'3.;IEZE'IEE§§2_§2?5555;’3§§E§ffg-{gig-253355;:Ziﬁigfagﬁg‘zi;EEEEE-ijiI'Iii3E2:§5.'§:i51§-§AE§Z:5{iiifi}9.35'5152‘i§§§§§§§I}.;§§i"";:“Ei12335:2:§3Ii§123;§fiI;:§:§§E'§§;I§;'§Eii§;.‘5.’5?‘.g,'32éj'3‘zAIA'55""{‘Eii'};37§§§i¥§§§s5§i§§§fw""‘s‘g~.,§‘,"";“’9’“lgﬂégigii
+. . :A..:.-5'2::E:§!:--=EE..1.E:.2..~;_Ai£:E-;:;'i.i:-.:.=~::;;""15113;:3:23-35:25:II.'i'..;':3.-;;>5-;;.-;3;‘:2:.=;:I:j4=:;_;51}_:é:-g.-:-53;;.;jV;:;i:3:5:s.-g-:E-4-1;4::t.:.:;_:;-:3_§5:345:33:ig.;;-Aj-E-'-2::':';;.:1‘:6""-~,.A1-1;:;:-‘:I--:A.4:...§.j',§vfi;=;~~'4.42.'""j?,_:§‘4'.~3c.E.-.’3;.;;A43w1L::"",f=‘.i';*zé'zzs’;:iiﬂﬁivﬁzzmm:-;f:'£‘:-;ﬂ.-
+.. . 4. . :""3. ;: ;- A.;-5;_- :: :-s;'1g.:32;::;;:.':§:;; A; g; 2-: :35; 1. 'gg-j'fAg:2EzI:.;;.;§=;;-§;I:;:§: ';"".2:5§ 5:522 ;: . 2; 3"""":3 1‘ 53; it; 3 '1:535:12;*isI::'-ij-sf;:53:- 3‘ 2:123:45:f5:32:Izz.:;.;;::-§§:iiiiéifegag’; E;:fviéfég-ziei2;:'25:7:3:5559;-5:52:2;.:§.i£5535:73.5:59?:552%;iii:$5;i=i§t§e§iﬁ1£=25;sf;5:§;‘2333§2.5i2&2'eéizié'iﬁiéi :5gig???53:35:57???55:15:45; ”A E:E:F:ﬂ5%)-;Ziliiﬁijfﬁ; :
+.. . , ;.---: :2 g. .5 -4 :1 :,-e-.3: 2-3: ~ :g,2.:.;g:2.524,;:;.:;.ez;;:g;=;.;:::2:,;;e=‘sz=.2z-::::;:32:i.ate;25255.5;a12:254.':s;~f=izirzzgi:::;:;-.:;:si.;s;34:54:?2::4:::sj«.::25!§‘~;=;..-s;ai=:§s232-2373:g3:332;=’é2'525?ng5‘s:£252.33;-3:335:33""?53""""5'2'""'3""""aé""5"""":lg'1gEgg;Eﬂﬁzﬂ2%3-:gﬁgﬁE:“at
+V VV VVVVV VV V VVV >VVVVVVVVVVV—VV-VVVVEVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV-AgV-VVVVVVVVVVVVVVVVVVVVV‘VVVVVVV—VVVV-VV-VVVVVV:IFVV_V:_E.__V:V:.3.V_:;55.5.5.5,yzzii-257ézrfs:E::;‘:r.~.:.‘ssii;::?:i:§:éé::zx:i$4~a33;:2;;i3iissqgte::3:a:raga:i::::!~_’.:;;.~:,~:§:'-:;‘-:::s:a:~::;;II3::=:~':A‘:~_-.s-3:-3::;.:;:;a§;3:;g
+. . . . :..: .:.;4, ,1: 11:: 1.45;1551:;75;.II:-'E:254:3: :;-I- 15.2:A252-r ':s.4:ig-:Ez-g._3=r2;: :2..:-=.Z 55:51 5;.:2;;-.;;-s::?;=.g;E;ﬁ-j§:55=::§'55::§i,‘§igtI:«§igj-'.€E:E:':I~3:35:55;-E-zi;:;&g32‘s::3:::=E§§;’:2:2~::‘53’.:E;5&332 '22???” ':Et::~...'435:3315§é:-‘ "":22 55.5”?i:;5'§$5Eig‘ggfiaﬁiﬁ; :—‘:':1:-:25555.5'555""""35""5:5
+. . . 4.: . z: 4:... :3; .1; :g: ;- .:. : 4:=::::: A;;.:.I;..:g-:;;:::-: 2;.412- 5:55;. 5;:s::.;;;.=s;s:;;:mass::e§:::::;sz::.==;.~asaazgzpw..§ngg‘zagigaigsgs-e;_.:-._:: 2:33:31 :I.-22:22:22:ea:E5232:i’:;:;a:s:::;=zza4; 3: 2:; 21:25:15"" 3’5""? :‘i':
+. ...I.;-,:;.;= 4;.;:.;::::.~;:3;.4.~::.:~:..;:.-:~.;:g;.;=I.I»2-.::_:,'_;~-.;‘-;A---:;A.A:-.1:_.:~_;;--;_:::i £22552':2:::1'-E-=-4;=-:; :.s:..:;:: -:.: ., ':‘-:--;~§:_45;3::IJZI""§;§E,':.\:Z;-L‘E:-.I51’1513‘::-I;E:!E.§:;.'-Z:‘..: gf-=s~4;;-==-.==:;. ;:::::5.::-.3;5;:-:-’: 35-1343:- 353':
+. V _ _V ___ V V V V VVV ,:5;;;;;;;§4.;E:Agz-.;!,‘:E‘.E§EASi:3535????5'3‘555353'3 _V.I~\‘z,é“‘, 43:21:55-22332355325252:xi”:
+3523;:91: g: .....:_-..4;'E'B:;‘E‘=.;E5;;I-;§=§giéi"":ii3:523:1:-33%;???giIE:E;4_:;,;EEEE-E-'féliﬁ;:'4:§5::f-‘~€‘-355""9""54’4133%5""'I""""""EE'E7§:EE:E?E:ESE?:ﬁgﬁrﬁg3&5:
+.:::.:E:I:AI-- :; 2:42: '-=:5-:‘-1:1“ IA, 4 . F I.I.I.IIv_V..:1:.:zj:§;-E.;:A-'.;.::;_-:jj~-;A-:-.~'-.-:4:11:31?»-»:=.I‘.i::.1.~i""ii"""":3;:""‘5':':'EZM:::ZﬁjffyzrmLiuﬁ‘
+.....;a;::2;‘-€+""""’""’.‘i\2‘,‘~y . lg“ re 0 =44=A'2As:2sf:z.=s;;!s-;:-_;.59:32:;:gggga:29;.2;3315?;22:.:::ggr;;§;gg;;§:2:-4r:s:;-.As-_.:gggzr_;;zg;':§=iaisié
+_VVVVVVVVVV V-VVVitsﬁﬁV VVVVV‘VVV‘VVVVV‘V‘V’VVVVVVV‘VVV-VVSVS’VEVVVVEV:V£¥?¢§,K.. W“ ' 0' In * ..........3.4M;4_~:g:2;-...:::::;::;::§:r.a;=.:s:g;;::4:4~.:.«;;::;:;;.;3~;::-
+ross‘ﬁ'ngo athn ( I
+V VVVVVVVVVV VVVzVVV _VIVVV VV VVVVVVVVIVVVVVVVV‘VVVVVVVVVVVVVVVVVVVVVVVVV-VVVVV;t:VEVEVEVEZ4V§7§£=gggg53.32341;tiélr'jﬁ;$535325};2:55.513:1:92553E'55-1543ﬁ'h;:§;.;.;:-;- _- .: t
+__ _V_ _... VV ; .- ‘2‘”“sﬁuum \ 0H 1'01 65 tb (a)
+d V V V V VV V-VVVV‘V-VVVVLV'V 4. VV .' ..A: .4 :1 .~.:.;.A. 3:_I:_:_ f: ._. .I.-. .t ;A_,4.;-.4!-.:4‘_A:.'Z::-A:'.4:-: :74- ::..;-._: ;*.--I 2- b::4;_.. 5;:“1; --‘-.- .
+..-..I. . .4 .:.-:4 ,- I~j::4V ;::;.~:5_:;--;- -'-:A5:- :--4::;;gI3-2;s'.::-;;.:;—.;=-;.-'-I-‘;3‘43;?F-gﬁgs:5;;;::'-533;?!525:2:a§=§;.3E95?§§§Szgﬁizés§é=5:§5""$5*3~""*’~V""*""'""”"""" e ObOt n .
+:.-. : I .- 4A::.-E'.4"".:EE~.-:::.;'i.‘-:A-,.;2.‘j:-A:..::'~_1A‘€‘ 4 2:5 1'2“;~=:'4~I3-4;:é:=_;;;;f~;=jg_o:}ggg§g;::-'é;§:..j-:;_§;=;;‘f=z§€255:.-:§::55s§=é=4:2-:§'€-=;s:s;-.25A‘§;§:¢igsiz-sigégisgzéia55:1.i54‘§.=1:§:~3=35-'1<5A‘I-¢‘-""'4‘=‘-'=:'=""""""""""""‘ g .
+I4 f I _.:.-~.. '3531?“::‘EIi.""'--,i.5‘21:35-17.513“- . -I.... 5g-VjV'-:.I=..j'='::4j-s--=;;:;.5A'-:'I.‘:g§:‘-A'§ijjjj§I-*:I;g.:;.:si=53=‘ggFgg‘35jizgtEEsijz'?E-ggifgnﬁEE-EsEEI'gwagzIsg?%W“ gh 6: 13:: e‘ﬁjg
+I I. .. . : _ «ngﬁrf’ égwwgzga, once t
+..-;.4:.{ 3:1... .. . : _ _. _. I. :V- :.:I':§ 1 .4 :3"" =I.§2:*.:, -;..2- 1' _E:-§ii.,'23II:‘§_VI-5A3."":§E§§;§I_§42'j§;$j‘:.;2;'3§§-‘3§:.'5'.::‘_I§:Ef;§:_§§35'.A-E 33.1.A:AII‘15‘T'75A‘I‘3'6'""3:e""? H
+.. ’ ~j:f-E..:‘~_V._:,::'I;.-=VI..._._V'V:"".'I‘:_.. "" ' .‘ '1.'I;- _ j V':__4_;.I-‘Ifg ‘ . ' 3"" {-1""31‘5'2i'12‘2""1='f."".’~9$3x‘9’.,§ﬁg¥:é?s‘w§ ”R "" I
+.; ;.-:.. ;-. -- 4 - j -. . . ..:'..;-:-; :I .: 8‘32] ~ -*’a‘~-‘nv;f~""§&‘wvﬂga: “ﬂu“
+:.ﬂ:j:;-;- .. .- - . :..'. ,' 4.; : - . '1. - ‘_ ' ,. j =-t- - ’12' ;4_ . .. 5 ons4 Rue I' (' .1.‘~9“”:5V(;~§‘f43‘A‘3‘.“‘33ﬁ?3r#9%“\\
+.; . :;~.. ::.~ ..:_: 5.; . V t :,-:.; . ~. 4 4 .: ;. A ,, IE] -. A- 5'I'gIgg'31-::-:g-g-‘gi'f-'.‘43:=.:;:'=:’:s:~-s35:5;:‘-;§:‘+.;_(g:5-Eg_433§2§:fé3E£':5=‘-.‘='=¥$575555‘551'éﬁg'i‘E'E'I'ﬁtﬂa6 34533351""b-‘Lﬁﬁiﬁ
+: .'V I .'. . - I _~ . I ~. -: . ...; .;- ;,. . _‘ _. .I ~ 1 Z:~:': . V"" . V ‘~ V .' 1 ‘ ,_ ' .’j . A A g "" j ""-I - "" -. 3 _ . z: 4. 'IV~_;AI.2:.'.'j; ;§;:-I:I ""‘:- ;; -."" . _1 """"I';""'f-: 3:35:42” :25} fﬁ=g-:§;;-E:—:;Ig.‘.§f35:5:g""33.?‘1)‘Ezizzﬁjﬁ'g'géﬁi 52:1:‘quﬂj IV U :“ﬂ
+._ _::;Z-I ‘4. V- . ‘ Seuda SI ' "" ' .""'.;:.- 'f 4 ' g 9:143 ' . 4' _ .. ... ‘ ' V. ' lg 4 } ‘~5:4'5f""I'.1 :I. '1:'§_Ej’:f’1 ~i.'.§.‘:I;;{'VIV' -f_; I..:.‘:’*'_""3“‘i“2""¢‘?
+. .--j._.'...I-.-I -, ' tars m'3= t3""- - ' ' - "" :""""'-.'-4°.., :. -’ A .js.’ ;. '.._ . '53.: _j44;:.;V_:=3_;.;-_;;5:~..I- _-I':::c4-415;1:44~34;E:EV}:;;535:5:gegggEA-Fii
+: :;é;.-4AI:.;:::§gaze; I I . . . . V, . ‘ ' ' I I . . V I I
+. 4_~I4_.IA;’:A4z-i;:;i;iA:r;.-:s~.:;:s:a:-<;.::.-ai‘.5.43;5===“!-' V ‘ I I . V . I. .-
+: . ‘\,II‘;3:_,}335;‘.3£ ‘ I I ' . j V . I .
+_ - - 4 5 ﬂ card “2:34.391: ' ~ ’ I I . .
+. . .. .4: ~.:. : isicr . I I >
+. . ;I 4. A (“-.._ "" I I
+Cf ?Kmkct. :35? °.., 3’60? t I“ ‘ ~ I
+VVV‘VVV'VVVBV:VVVgVVVVV-VVVVVV VV V VV V V A “i; : ;.;:§::E. I . . . V . . . . . .
+iﬁﬁVVV‘VVVVVVVVVSVVVVVVVVVVVVVVVVVVVVV VV ' 941252;: Escnguy” . . . .. . .
+V Qﬁzg‘43-51'53 4-145"" .:.. ': ' 10. . ::;.-. :..I. - V 4 - ~ .
+VV3:V‘VV‘-VV‘V§V‘V:SVVVV_V:VV_VEV.VE-V::'V--* , - .':;: :-.I.:1::-,I--.:..';,..::::..j=4;;:..-.;.§. .,
+:‘Yixi‘ﬁk.i;:é:%;..§.-5;-§Z4.:‘73. 4. 4. 4 '31'5'4A5:;:;;§;.E-E.I31:2:12575133.372-455-235???- I
+5w"" "" ""' ""3:53;:;;L=E:é;'éé;2:::s.r2;:.535%? I
+: :,:-;,.\%\E;fio~A -:<5~...,...._... 45'}: ,. ...;r ' I .
+.II: _J. -4 -.4.~:.-::.‘:.""E'-IIE:;_~.I : ., .0374 ; - § 5%.?“ 'ﬁﬁﬂ‘!‘
+. .""'> 4wy 1. 4- . ._..e :- I ”pf.”
+-_.... A : ,.4 . . . > .""- Arj’wigﬁ I: II:-‘-‘:‘ ‘
+.. -. : 4 . . :~4 .3425;- Aiij :5“ . - ...,._... _.:? “Qy‘r‘ . [I ”'ﬂﬁg
+. .. ~: . \ us""; . A;_'1{4;:I-;.A,~wj. 1‘. '4: ; _' ‘:-.‘i3§:::3;:'sr£§;§:-__"".h..I :: I pi. I
+. .4 i..; {X ;.':\:C ;;gI..'.§:’.§;;.-.~';§'A"" ‘~ I: 431'"" I
+4 ' ’. , AA ,j‘v ‘ ,4 “.I . A ,‘. ¢44.4\. ”'>’.\.""'~-:.‘ .. ~,.f A [1‘ , ' -jI.:,_'. 4 I r:-
+.. ; A4 V4A;'I-4;=. I4 ..Ci; 4‘ , J,“(?;(‘34wnC/“I'(A53'ff‘fi;""\\§:'f\':;‘5‘: I‘ h "" \ t: ""f. i: a I. . I
+_V V VVV VVVVVVV VtVVVVVVVVVV‘VW‘Vw VV Vw”VVVVVVVVVVVVVVVVVVVE;:V,3},.V \ggzxrjg'tﬂ'tg-Inay. A f ,; .'-;:ji? 4:” ‘ 5- .
+j. .V. 4! < 4- .,”4;Q4, j~1§j‘f‘ L;::T""f‘-‘~4‘ZZV:',\ 3""ré§4.“'- 3"" 2U I. IV“? 6' H H I i. j ‘
+\r, .‘~...'1 . j; . A .4.4;~’4 :::l:§- A 57:45:; . ""Ii .4 '4‘:;;.4 .; :;-;' 42' ”VI? 1 H I
+V ‘VVVVV XVV VV VVV‘ V: VVV VVVVVV ‘V ’V V VVVVVEEVVVVV VVVVVziVV VRW. 2-4 ', ,A4 ~ .AIfAI,4 ~454gA,gN-.V
+\’I~. \'.¢z4.1:.::I3 . 4-1:) x. '..4::4 ~ :I,-3l.‘j.: ‘%:“' H I (I H» ‘r n ”:4 ' ‘~ ‘ P404
+._4 ; 4 . : ,4 43.3w . -. .A - 4?’A‘~4;‘4'4 ; ,;>I:I?;:~.A'4:::;:;.'e...- - @5: H H. ~ V “in? 26""”) I: I‘
+1-1.. . -V»,',""I 00' 4;~ IAV..I...:v;j;V'-~'I*: 4-“to;524’.‘"";:’--Z,:4'I71-'--::'-'I)‘ 5‘ Z.“ W» ‘ y 4:
+V VVV VV) VV V w v V VVVVIWVVV—VVVV‘VV‘VVVVVVVVV-VVVVh‘“ 4;? 3...: .' ..\~;; -."" AV .4: . S . : . :.3 "" 'W 4: A4 1 _ .
+VV V VV V VVV » V; _.I_II_I::_.IVI::I.'-:j""'-’:i""""3:'=='h""'52-- A._""I~ 4:4 ,4 A . 4 > . 4 . ~I , IA .A : ' . A4 4 ~4 .4 h. .
+V V \VV V V V “V VVVVVM ‘ A_ VV’VVV‘VVVVVVVV‘EVVEQVVVVVVVVVIVVVVVVIV,‘.. »:. .:.-:9... 4 . ,4 . . : , . _. __49 3; ,~ 4 . . w . 4.,
+4 , V -- . , . .: ,-~ ’6', :Ear’s~:3~‘::§25:5:.:5A‘:i3‘3?-'i=éi41.; 453 . . - :4 A .A. 4 . . A . 4,; .. . .4:
+. 90!!! ' ‘~ 9. 4 ‘ .~>: -.4VA..‘A;::;;4 ‘. ”3338'}; (I j u (I II: g: C“ I I WIZIM- . 72:3: a
+V V .9 V V Ft VVVV VVV JLVV‘V‘WVVVVVVf~VII(.,,.I:'t>IA\- \ . .:.-4 4 .144, ~ ...‘.4 g .. - 4. v . 4 \ ’. 4
+I or V 'VtV ~VVVVVVV1VVVWVVVVVVVVQVVVVVVVN‘V-fVVZVM4If..V 4' , ~. A ‘4"":- 4A; 4- '. 4~4.;.. é? : '- . ..:4' .1. .,. 4,-4 : .
+1 diam ’ '-‘r:_.... _' 4:3:4‘»: :4.""E?I;{j;:§f_\""‘(:}>~jfi‘..:E33V4 ‘4 ' "" v‘ .‘; 4‘, . V-'"" A - 1-- 3'01! 51:1,: 2'3""“ ..:‘, .' '
+V e: V V VVVVVVVVV’VVVVEéVVVvViégggtiin:_:VV;;.'3I‘:§;4C, £354.34 I‘IZ: .:4A__ ~‘: ""I 4 AAA: 4 5- :""AIA\IA""..:..A;VA {.24 _
+er} H ’VVVVVVVVVVVVVVVVgVVVVVVVVVVVVV ...'4;4 VVI . ‘4- 4 A :;VI..:'.; .ﬁhﬁ 1::""4 .4 4 ':~V'{E.’I 4';_V::I ‘ .
+V V VV VVVVV‘VVVVVVVVVV 2:1,,"" “:3 V ~;.,34( :; .A . '.‘l ' 451033;} ~. 4,, -:TV; ‘A .
+V V V V V VVVVVV‘VVVVVV I4‘ Ej'.’ .3332}; A .:.i\ 4. ?:Iif 4_ ;I~
+. . ‘4:I. 4:45, M
+F0”. 0 p e r a ti
+
+"
+"9","equipped with ﬂight—like avionic hardware and inter— knowledge. The FAST develoPS formation ﬂying
+spacecraft communication. The FCT is illustrated in Figure algorithms and provides an end—to—end simulation of the
+5. FCT will also provide validation of the F AST. formation ﬂying system on a distributed, real-time platform,
+thereby demonstrating the full TPF F Fl performance. The
+In ﬁgure 5(a), a 6 degree~of-freedom (DOF) FCT robot is FF system design, inter—spacecraft communications models
+shown with a representative sampling of hardware. Each and thermal shield models from the system design team and
+robot consists of two stages: 1) a 3-DOF lower stage, with the sensor models from the F ST are incorporated in FAST.
+air bearing pads and a movable vertical piston, and 2) an The FCT will validate the FAST algorithms and simulation
+upper stage mounted on a Spherical air hearing, which in a physical ground-based testbed with 6 degree—oﬁ
+provides the remaining 3 degrees of freedom. The spherical freedom robots moving on air-bearings and equipped with
+hearing is mounted at the vertical piston 0f the lower stage. ﬂight-like avionic hardware. The FAST algorithms can be
+reﬁned based upon FCT experiment results. The SPHERES
+Figure 5(b) depicts a three—robot formation reconfiguration experiment will demonstrate functionality of fomiation
+scenario of the FCT. (Note: the graphic uses an earlier lying in a micro-g environment, performing TPF—like
+design of the FCT robots.) The FCT is located in a maneuvers within the [88. The lessons learned ﬁ'om the
+hemispherical room with beacons (i.e., pseudoistars) SPHERES experiment will beneﬁt formation ﬂying system
+mounted on the ceiling. The shaded, white cones depict the design. Thermal shield design and material selection will be
+ﬁelds-of-view of pseudo-star trackers mounted on each taken into account in all the technology activities.
+robot for attitude determination. In addition, relative
+position sensors are mounted on each robot. Interq'obot Through this integrated approach, we expect to establish a
+sensing is illustrated by the doub]e_ended’ block arrows. system design as well as develop critical technologies to
+FCT will also provide validation of the FAST. FCT suPport TPF. The implementation is summarized in Figure
+algorithms and prediction of FCT system performance will 7, and further detailed in [4], [5], [7] and [8] The
+be developed in FAST FCT system performance will be implementation WI“ be incremental across each testbed, and
+compared to the FAST predictions, thus validating FAST closely correlated across other testbeds and system
+modeling capability to predictTPF performance. activities. In the FAST, the algorithms and real-time,
+' distributed simulations will be developed for two spacecraﬁ:
+4.4 SPHERES EXPERIMENT ﬁrst based upon StarLight and NASA DST research, and
+then extended to ﬁve spacecraft. Initially, algorithms for
+The Synchxonized Position Hold Engage Re-orient nominal scenarios will be developed. Subsequently, the
+Experimental Satellites (SPHERES) expen'ment [3], faults scenarios will be acldressed. In the F ST, the multiple
+developed, Operated and managed by the Space System Spacecraft sensing algorithms are ﬁmt implemented on
+Laboratory at the Massachusetts Institute of Technology, table-top testbeds ‘0 CStabliSh, verify and reﬁne the
+will perform TPF-relevant maneuvers with three soccer— algorithms, and then the algorithms are migrated to 311
+ball-sized “Spacecraft” in the International Space Station outdoor end-to-end system test. In the FCT, the ﬁrst robot
+(153). Each SPHERE is self—contained with ultra-sonic will be veriﬁed before adding apoﬂier robot to perform a
+relative sensors, ultrasonic global position sensing, thrusters two-robot formation ﬂylng Validation. - Subsequently, a
+and inter-spacecraft communication. The thIee “Spacecraft” “11 ee—r 0130‘ demonstration W111 be performed. For the
+will be ﬂown in formation in a 6-DOF, near O-g SPHERES experiment, two-SPHERE experiments will be
+environment, in a 3m x 3m x 3m test area onboard lSS. performed ﬁFSt and a thifd Will be added.
+The experiment will demonstrate functional feasibility and
+provide lessons-leamed for formation-ﬂying. 5-0 CONCL USION
+4.5 THERMAL SHIELD TESTBED Through an integrated approach across the design team and
+. testbed activities, the viability of precision formation ﬂying
+The Thermal Shield Testbed will characterize the impact of is being established. The implementation is incremental.
+diﬁ‘erent thermal shield materials on the RF sensor By mid 2006, a complete system deSigﬂ Will be established,
+performance, inter-spacecraﬁ stray-light performance and supported by algorithms, and performance and functional
+thermal performance. validation of the end—to—end system and component .
+technologies. These results will be directly applicable to
+4_6 TECHNOLOGY DEVELOPMENT APPROACH TPF and further applicable to other multiple—spacecraﬁ
+precision formation ﬂying missions such as: MAXIM,
+The testbeds and the design team activities are highly Stellar Imager (SI), SPECS, Constellation-X, SMART'3
+interrelated, and address the ﬁrst two formation ﬂying (BSA), DARWIN Space Infrared Interferometer (BSA),
+stages of FFI as illustrated in Figure 6. The FST will MagnetOSPheric Multiscale (MMS), Global Precipitation
+demonstrate the critical technology required for initial MiSSiOH (505-9), Living With a Star (LWS), 50“ MOiStUIC
+acquisition of the formation by providing instantaneous 47c and Ocean Salinity Observing MiSSiOU (EX—4), Time—
+steradian ﬁeld-of-view relative range and bearing Dependent Gravity Field Mapping MiSSiOR (ENS), 311d
+Vegetation Recovery Mission (EX-6).
+9
+2675
+
+"
+"10","s ' - L .:
+i5 g E- I :
+T ‘ ? 1-“? "" J J .
+,' ‘ ~ ' "" Ei',‘ m
+>9 . O
+, ', . ' . ;' O
+V .. . .' . ; N: ,5.) a '0 CD
+' ‘ J o O E
+’ J ('8‘ a .: '6» ,.t g .E g . 4 C
+‘ ,, x g ‘ a «g ;' 3:21,; 3—: >3 ._ , ~‘ .2
+3 . ,3: , - o q: 3 ~ “ -*::
+i ‘0 ”3 * ‘ o =1 ""U - ‘"" w 5
+3; w s: 5 5 . C"" :— a
+= 1. : 92’; ‘Q m: 7 '~ {—0 ‘1’ ' 9-4 CL
+, 3,:“1'1'9'1' , 2 ‘ 3, ,; *0 U) 4.; o H 2
+E . 2:, . M S 3 o a.) H no.9 g
+:l ’i. “M , : B O.) t... E 1 E ’5 9' Q
+'4’ . ' - ' <19 ‘5 3‘ 3 : . '4: 2:0 Q
+s f ' ‘2 ‘ a = '5 ‘ o -,_. >5
+. v. - : , ; 5s ,' 3 o 3.4 . .. > w
+V _ 9 *5 L7: '5‘ ‘ 0) E c? 0
+5"" gé‘ 2 38 v: g *2??? «s “.2
+E A: €25 :, g | cc 5 cu r—« 5 a 5
+,3 a W , ,f; - w. E o .3, . c5 '5 m G
+. 5' ' s = .‘ "" °: 0 ' m 7’"" ; c.
+‘ ,‘   o . _ A o a = 5 e a <
+. . 1%... .Q ‘ cow :6 U (—1 Q)
+§ ' .5 l ,“f '. f S_ ""a q , .5: LL: 135'; ' g B
+: .. v f c5 — 5 - ' m
+i - ' ~ E: 5 ~ w o 3 ° '5“
+, ,, ~,‘ 'I. .‘x '13 0).? H E ‘99 g Q 2
+, . ‘:\;.L:: ‘ . Q.) L. 1—1 . . _£ - (U (n O ‘ G
+n ,9 5 5 r . - o \ 5
+~ 1 , . g m .0 O 'm 0 4... {n 9.. M NO
+A .. i ,_ 3:“ 8 m “‘ a L“ ” u: «S '5
+3- :g m a a a V 5 a 2 w 5 a :i-f
+‘~ ~ i ‘ gQ 5 8 a.) V 2 e ‘ “g 2.5 H DD
+5»: g 5 .....-—. 5 , A u . > 5: > i
+25 5. =5 ”:0 5. 5 e
+1: ~ 5 5 .o 3:: J; m '5
+4 2 $334 ‘0‘ . a 1:: g 0 E Q) g : 9
+; . 5:: E '5 cs 5 . 5. .2: z . E 5:, gm
+: ""PE . ~ -.—: > : C3 _’_ '>\
+H: ' L“ 3°25 2 7 g 9 E ., ‘3 ‘5 E E
+53 . Hy» _ 2w 505 $5 ~5
+i“ o -— 3: 4 £8 0 .—
+_ z . ; g E E .2 5 ﬁ
+-- .0 ”-1 D ‘ s E c“ - a :6
+o E E
+' LL:. .8 ' a- :1)
+5 5
+2676
+
+"
+"11","g 6
+O 8
+“f q
+H
+5 >3
+3 E
+a) '68
+a 3:3 53
+0) C: '8
+>-«\o 3 2
+_o O I:
+«:0 'U '6.0
+ON :3
+.2 =3 U’ OE
+LL‘ 0 _0 LL 00.)
+5—. . -' LL ' \
+_ :3 ﬂ . mil,“
+«1 . mo °~°
+. += 4: 0:: m
+Ln U406 39 .oo 038
+Ch Luge -, ON 5mm
+tn [—‘ 'O ’7‘. o‘:\
+O w3\ (0V I
+‘ pf mass:
+8
+O
+3.1
+8
+o
+>~ LL :2
+—‘n
+88 m 52
+,MN ""5' go
+cc: °E° 3
+._ mo LL SEQ Q
+Do mA gem “
+""d‘ 3393 “ Hm my 0
+o to CC: I;
+a: “V '- ' '80 E
+3 N3 8'
+O .2
+E“
+8 I—
+>5
+:3 $2 an
+o ”w o
+><r mm 8
+mg .25 E '—
+SN 3%,.“ Q ‘—
+.2 o
+g‘ ogg [:0
+& gaﬁ‘l a
+Hm V o _
+LL CO LL
+LL. 43:: E
+_ ON 0 a
+m {3 3—1\ ‘5 o
+Q G ﬁ'm .—
+."" \u—d' LX-q H
+. co 8 4 “38 E
+3 Go '5   5Q o
+o . 29‘. ' a “Q LL
+  mo :— ON
+0 ‘5
+5-:
+85? '9
+:8 ‘T‘
+s 36
+u)
+’— Q {E.LI-q
+s N 2°”
+u, 5*
+0‘ h
+LL 8 q '53
+CD ‘H
+N EB
+h: C'.
+O 0.5. O ’3‘
+O ""5:0 '5 8 ’3‘
+mw-E Tum m 0
+8-50 >E a 'U
+Fggg 52w
+mogul: 3:530 5 I
+<-T::> Ea“ 5"" me
+m‘toﬁ 094‘“ [-40 :0
+VHO “4V0 UJ< 9-..—
+Duv WE
+N—r'
+2677
+
+"
+"12","ACKNOWLE DGEMENT stellar interferometer, SPLE Astronomical Telescopes and
+Instrumentation, August 22 —28, 2002, Waikoloa, HI.
+The work described in this paper is performed at the Jet .
+Propulsion Laboratory, California Institute of Technology, [4] M.Wette, D.Scharf, E.McMahon, E.Ben0w1tz,
+under a contract with the National Aeronautics and Space “Formation Algorithms and Simulation TeSthd’i"" ”555
+Administration. Aerospace Conﬁzrence, Big Sky, Montana, March 6-13, 2004.
+Ball Aerospace and Technologies in Boulder, Colorado [5] Jeffrey Y- Tien, George H. P ”1'09“: Lawrehce 13- Young,
+contributes in system engineering. and Jeffrey M. Srinivasan ""Formation Acquisition Sensor
+for the Terrestrial Planet F inder Mission"", IEEE Aerospace
+The Synchronized Position Hold Engage Re-orient Conference, Big Sky, Montana, March 6—13, 2004.
+Experimental Satellites (SPHERES) experiment is . ‘
+developed, operated and managed by the Space System [6] MiMi A0118: George H- Purcell, Jemc)’ Y. T1611,
+Laboratory at the Massachusetts Institute of Technology Lawrence E- Young, LUiS R- Amaro, Jeffrey Snnivasan,
+Michael A. Ciminera, Yong J . Chong, “Autonomous
+Formation Flying Sensor for the StarLight Mission,”
+International Symposium on F ormation F lying Missions and
+REFERENCES Technologies, Toulouse, France, October 29—3 1, 2002.
+[1] Technology Plan for the Terrestrial Planet F inder, C. - [7} Martin W Regehr, Ahmet 13' Acikmese, ASif Ahmed,
+Lindensmith ~ Ed., JPL Publication 03-007, Rev A, Richard Ba}ley,Clayt0n Bushnell, Kenneth C-.Clark,
+http://planetguest.ipl.nasa.gov/TPF/TPFrevue/Fianeps/JPL/ Anthony chke, Brent Lytle, Paul MacNeal, Richard E-
+mfmtlaadf Rasmussen, Joe] Shields, Gurkirpal Singh, ""The Formation
+_ Control Testbed,"" IEEE Aerospace Conference, Bi g Sky,
+[2] Gary Blackwood, Curt Henry, Eugene Serabyn, Serge Montana, March 643, 2004. ,
+Dubovitsky, MiMi Aung, Steven M. Gunter, “Technology . .
+and Design of an Infrared Interferometer for the Terrestrial [8] Saenz—Otero, A., Chen, A.» Mlller, 9- W,, Hilstad, M.,
+Planet Finder,”A1AA Conference SPA CE 2003 Long Beach, “SPHERESI Development 9f an 1’53 Laboratory for
+California September 23 _ 25’ 2003. gggatlon Flight and Dockmg Research, ” IEEE Aerospace,
+[3] Gary Blackwood, Oliver Lay, William Deininger, MiMi
+Aung Gudim, Asif Ahmw, Riley Duren, Charley N oecker,
+Brian Barden, “The StarLight mission: a formation-ﬂying
+12
+2678
+
+"
+"13","- _. Martin Regehr is a senior engineer at
+E . MiMi Aung received her 85. and MS. ff‘i‘"" N '1 JPL. He has participated in the
+i ‘. "" in Electrical Engineering from the 3; 1' { construction of several testbcds at JPL,
+Q, J ‘ t, ,0 University of Illinois at Urbana- ' 3 including System Testbed 3, the
+E h 5;: _ i'j' ; Champaign in I988 and 1990, §x "" . “ , Metrology Gauge testbed, and MAM.
+( a 3 ‘~ : respectively. She joined the Jet 1°},m ' He has a BASc from the University of
+‘ I Propulsion Laboratory immediately if .i. 7 ﬂ Toronto and a PhD' from Caltceh.
+Q :, following and continues to work there g"" :3 1
+i g today. She is currently the Formation mi; 33% é Qw ”“2
+1 Flying Technology lead in thc Terrestrial M
+Planet Finder (TPF) project. Before TPF, she worked in the StarLight
+project as the lead for the Autonomous Formation Flying sensor that
+provides relative ranges and bearing angles among multiple spacecraft. : . H s
+Her past experiences include eight years in the Deep Space Network, “ . . '
+spanning across a broad set of activities including algorithm design, ‘ Dr. Matt Wette 1‘""? a Scmor Engmecr
+implementation, development and integration of the Block V Receiver; m at 'fhc Jet Propulswn Laboratory, the
+design and analysis of the Monopulsc‘typc system for precision pointing : thdztncc and COMFPI AnalYSIS Group.
+of the 34-meter beam-waveguide antennas for Ka-band applications; and $13555: :2; H15_ ""110”“? are 1'1 control system
+consolidation of the downlink system under the Network Simpliﬁcation M ”“3113"" (1051811. rcal-tlmc systems, ‘1“d_ dlscrctc
+Project. 3:: event control. Matt has contnbuted to
+’4 several projects in the development of
+[I """"""W real-timc simulation tcstbeds. He is
+WWW currently leading development of the
+v1 ' Jeffrey Tien received his MS. degree in Formation Algorithms and Simulation Testbed for TPF.
+f? 7-1;,_ - Electrical Engineering from USC in
+'r 1993. He joined the GPS systems gI'Oup
+3 at JPL in 1989 where he worked on ""WW George Pureell has been a member of
+s -' 1‘ hardware design of ﬂight GPS receivers i .» air} 7 ‘ the Technical Staff. at the J?‘
+‘ .0 413‘ :1}; _ for various space missions. He has ; ~ E Propulsnon Laboratory smcc1975. HIS
+‘ ' ‘ served as the Instrument Lead Engineer '3’ , .0 rcswch WP“ and “Pm.“
+; mf‘ for the Autonomous F ormation Flying . InCIUd‘f radw tntctfcrgmetry and its
+sensor on the StarLight Mission for the '5» *ﬁ s * 30°40“? apphcattons, . GPS
+last two years. His research interest 1 Q “2... i apphcatlons, expenmcntal deSIgn, and
+includes high speed signal processing and fonnation ﬂying sensor 0 2'” . data finalYSlS- Since 1998 he has been
+technology development. , $3 rt; ‘ ‘; workutg on the development of
+' “h ‘“ >4 * -* ‘ formatlon ﬂymg technology for
+StarLight and TPF.
+A9? Brett Landin is a Senior Engineer at Ball
+1“} Aerospace & Technologies Corp. in
+at Boulder, Colorado. He graduated from
+3”? the University of Colorado with an MS in
+Physical Chemisuy in 1998 and an MS in
+:2 Aerospace Engineering in 2000 while
+z working at BioScrvc Space Technologies
+' 1 developing life sciences hardware for the
+H V I 1 1 Shuttle and 183. He then Spent three
+years at The AerOSpace Corporati0n and
+JPL in the realm of conceptual spacecraft design and has been at Ball for
+the past year working as a Spacecraft systems engineer on various civil
+programs.
+Dan Scharf is a Staff Engineer in the
+_« I ~ g U f ;- ‘ ‘ Guidance and Analysis Control Group at
+, 3 the Jet Propulsion Laboratory. He has a
+5‘»- Q PhD from the Univ. of Michigan in
+aerospace engineering (2001), and his
+dissertation involved adaptive control
+design for the MACE II ﬂight
+15""”? experiment aboard the 188. Dr. Scharf‘s
+‘ 1 1 ' ' research interests include precision
+formation ﬂying guidance and control,
+adaptive control, and astrodynarnics. He is also leading formation
+ﬂying algorithm development as part of the Fonnation and Algorithm
+Simulation Testbed, and has designed controllers for optical delay lines.
+{3
+2679
+
+"

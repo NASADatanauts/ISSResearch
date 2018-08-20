@@ -1,0 +1,702 @@
+"","x"
+"1",".o w.- - - - - =
+,«WiA—Vygﬂqg Available onllne at www.SCIencedIrect.com
+W "" ' ' SPACE
+@311 SCIenceDI rect
+1E RESEARCH
+ELSEVIER Advances in Space Research 47 (2011) 600—610 M
+WWW.elseVier.com/locate/asr
+Statistical validation of HZETRN as a function of vertical cutoff
+r1 gidity us1ng ISS measurements
+. . . b .
+Tony C. Slaba a’*, Steve R. Blattnig a, Franeis F. BadaV1 , Nicholas N. Stofﬂe C,
+d f - f
+Robert D. Rutledge , Kerry T. Lee 6, E. Neal Zapp 6, Tsvetan P. DaeheV , Borislav T. TomOV
+aNASA Langley Research Center, Hampton, VA 23681, USA
+b Christopher Newport University, Newport News, VA 23606, USA
+CLockheed Martin, Houston, T X 77058, USA
+C1N 0AA Space Weather Prediction Center, Boulder, CO 80305, USA
+eNASA Johnson Space Center, Houston, T X 77058, USA
+fBulgariaI/z Academy Of Science, Acad. Georgi Bonchev 81., Block 3, 1113 Soﬁa, Bulgaria
+Received 20 September 2010; received in revised form 26 October 2010; accepted 27 October 2010
+Available online 3 November 2010
+Abstract
+Measurements taken in Low Earth Orbit (LEO) onboard the International Space Station (ISS) and transit vehicles have been exten—
+sively used to validate radiation transport models. Primarily, such comparisons were done by integrating measured data over mission or
+trajectory segments so that individual comparisons to model results could be made. This approach has yielded considerable information
+but is limited in its ability to rigorously quantify and differentiate speciﬁc model errors or uncertainties. Further, as exploration moves
+beyond LEO and measured data become sparse, the uncertainty estimates derived from these validation cases will no longer be appli—
+cable. Recent improvements in the underlying numerical methods used in HZETRN have resulted in signiﬁcant decreases in code run
+time. Therefore, the large number of comparisons required to express error as a function of a physical quantity, like cutoff rigidity, are
+now possible. Validation can be looked at in detail over any portion of a ﬂight trajectory (e.g. minute by minute) such that a statistically
+signiﬁcant number of comparisons can be made. This more rigorous approach to code validation Will allow the errors caused by uncer—
+tainties in the geometry models, environmental models, and nuclear physics models to be differentiated and quantiﬁed. It Will also give
+much better guidance for future model development. More importantly, it Will allow a quantitative means of extrapolating uncertainties
+in LEO to free space. In this work, measured data taken onboard the ISS during solar maximum are compared to results obtained With
+the particle transport code HZETRN. Comparisons are made at a large number (~77,000) of discrete time intervals, allowing error esti—
+mates to be given as a function of cutoff rigidity. It is shown that HZETRN systematically underestimates exposure quantities at high
+cutoff rigidity. The errors are likely associated With increased angular variation in the geomagnetic ﬁeld near the equator, the lack of pion
+production in HZETRN, and errors in high energy nuclear physics models, and Will be the focus of future work.
+Published by Elsevier Ltd. on behalf of COSPAR.
+Keywards: HZETRN; LOW Earth Orbit; Space radiation; International Space Station; Radiation shielding; Transport
+1. Introduction poliey-makers in assessing crew safety and mission planning.
+This increased reliance on model results requires a rigorous
+As exploration moves beyond LOW Earth Orbit (LEO), program of veriﬁcation, validation, and uncertainty quanti-
+and measured data become sparse, computational models ﬁeation. Measurements taken aboard the International
+Will be used to estimate exposure quantities and guide Space Station (ISS) in LEO have been extensively used to
+validate environmental, nuclear physics, and transport
+* Corresponding author. Tel.: +1 757 864 1420; fax: +1 757 864 8094. mOdels (WllSOIl ?t 8.1., 2005’ 20062?” 2007; Nealy CF 8:1""
+E—mail address: T0ny.C.Slaba@nasa.g0V (T.C. Slaba). 2007). However, it has been recognlzed that uncertalntles
+0273-1177/$36.00 Published by Elsevier Ltd. on behalf of COSPAR.
+doi:10.1016/j.asr.2010.10.021
+
+"
+"2","T. C. Slaba et a1. / Advances in Space Research 47 {2011) 600—610 601
+derived from these LEO validation cases cannot be directly and TEPC (Tissue Equivalent Proportional Counter)
+applied to free space conditions, and a means of extrapolat- (Semones et al., 2002) measured data taken aboard ISS
+ing from LEO to free space is necessary. Further, due to the from July 6—13, 2001. The Liulin detectors were located
+computationalcost usually associated with estimating eXpo- in the US Lab and Node 1 (Wilson et al., 2007; Nealy et
+sure levels inside complicated geometries, past validation al., 2007), and the TEPC was near the FRED phantom
+studies (Wilson et al., 2005, 2006a, 2007; Nealy et al., in the US lab (Semones et al., 2002). A description of the
+2007) have relied heavily on integrating mission segments TEPC instrument has been given by (Badhwar et al.,
+so that individual comparisons to cumulative model predic- 1994; 1995), and the Liulin detectors have been described
+tions can be made. Such integrated comparisons may ulti- elsewhere as well (Reitz et al., 2005; Dachev et al., 2006;
+mately provide misleading accuracy assessments (positively Wilson et al., 2007). Further descriptions of the detectors
+or negatively). This approach to model validation is also lim- and locations within the ISS can be found in the references
+ited in its ability to Clearly differentiate and quantify the var- given above.
+ious sources of error in these comparisons (i.e. environment, It should be noted that (Nealy et al., 2007) have already
+physics, transport, geometry, etc.). compared HZETRN to the Liulin measurements from this
+
+Amore rigorous and informative approach to model val- time period, and several other works have also compared
+idation would be to express errors as a function of energy, HZETRN to measured data taken aboard the ISS and
+cutoff rigidity, or some other physical parameter of interest. shuttle in various time periods (Wilson et al., 2005, 2007).
+This approach requires a large number of comparisons to be However, the comparisons were made by integrating over
+made so that the range of the Chosen physical parameter is mission segments, so that individual comparisons could
+covered in a statistically signiﬁcant way. Once this is accom- be made. In the present work, HZETRN results are com-
+plished,errors can be analyzed statistically allowing for more pared to measurements at each of the Liulin and TEPC
+detailed and quantitative assessments to be made. Though detector data points throughout the time period, allowing
+previously infeasible due to computational cost, recent more detailed error analyses and more focused conclusions.
+improvements(Slaba et al.,2010a) in the underlying numer- Four Liulin detector locations were considered. The
+ical methods used in the particle transport code HZETRN Liulin data were recorded at 30 s intervals, resulting in
+(High charge (Z) and Energy TRaNsport) have allowed this 66,752 data points (16,688 time steps 4 detectors). The
+approach to be implemented. TEPC data were recorded at approximately 60 s intervals,
+
+In this work, HZETRN is used to estimate exposure resulting in 10,838 data points. In total, HZETRN was
+quantities on the ISS at 30 s time-steps from July 6—13, used to estimate exposure levels inside a full representation
+2001. Comparisons are made between the calculated results of the ISS geometry at 77,590 detector data points. The
+and measured data taken simultaneously by ﬁve detectors entire computation time for ﬁve detectors inside a detailed
+aboard the ISS in the same time period. In total, approxi- ISS model covering approximately 125 orbits took less
+mately 77,000 comparisons were made. Since the orbital than two days on eight quad core AMD Opteron 8378 pro-
+path of the ISS smoothly passes from regions of low to cessors (32 total cores). It will be shown later that this large
+high cutoff rigidity, errors (HZETRN vs. measurement) number of validation comparisons will provide a clear
+are grouped and expressed as a function of this physical means of extrapolating uncertainties from LEO to free
+parameter. This provides a clear and direct means of space as well as a comprehensive validation metric for
+extrapolating errors from LEO to free space, as well as future code development. It should be noted that the com-
+the ability to investigate the energy dependence in the putational framework behind this validation effort has
+uncertainties. For example, at high cutoff rigidities where been placed under conﬁguration management. This will
+only the highest energy cosmic rays reach LEO, geometry allow the analysis to be easily repeated whenever modiﬁca-
+errors and transport errors are reduced, leaving the errors tions or improvements are made to the numerical methods
+caused by high energy physics models and environmental or physical models used in HZETRN.
+models. Since four of the ﬁve detectors were identical and First, a description of the HZETRN methodology and
+placed in different locations within the ISS, the errors asso- the detectors used in the study is given. Representative
+ciated with geometry modeling can be estimated as well. results as a function of time step and cutoff rigidity are
+The error associated with detector response can also be shown, and systematic trends are discussed. Model errors
+estimated because one of the detectors was different from (HZETRN vs. measurements) are given as a function of
+the other four. It should be noted that the current valida- cutoff rigidity for each of the Liulin and TEPC detectors.
+tion framework will be a useful tool for guiding and assess- It is shown that HZETRN systematically under-predicts
+ing future model development by providing a detailed and measured data at high cutoff rigidities and that the errors
+rigorous method for assessing model accuracy. decrease with decreasing rigidity. The errors at high cutoff
+
+rigidities are attributed to the anisotropies in the geomag-
+2. Analysis description netic ﬁeld, the approximations made to simplify the aniso-
+tropic LEO Galactic Cosmic Ray (GCR) environment, the
+
+In this work, results generated by HZETRN are com- lack of pion production in HZETRN, and simpliﬁed high
+pared to Liulin (Reitz et al., 2005; Dachev et al., 2006) energy nuclear physics models. At low cutoff rigidities,
+
+"
+"3","602 T. C. Slaba et al. /Advances in Space Research 47 {2011) 600—610
+
+some of the error is attributed to geometry modelling. This 8 1 8
+
+work demonstrates that the evaluation of code accuracy [a _A—j a—ESJ(E) + aj<E> ¢j(x’E)
+
+purely based on time-integrated exposure quantities can _
+
+be misleading, and more detailed analyses, like those per- _ 1; UJJ‘(E)¢J‘(X’E)’ (3)
+
+formed here, should be pursued. J
+
+Where the summation over k > j reﬂects the absence of hea-
+vy target fragments. The production cross sections, ajk(E),
+
+3' HZETRN are generated With the nuclear fragmentation model
+
+, , , , NUCFRGZ (Wilson et al., 1995b). Eq. (3) is the heavy
+The deterministic particle transport code HZETRN was i on transport e quati on.
+
+developed by Wilson et al. (1991’ 1995a, 2006b)‘ .Slaba Alternatively, for light particles (neutrons, protons, 2H,
+
+et al. (2010a) have recently pr0V1ded a complete reV1eW of 3H 3He 4He) b oth projectile and target fragments are
+
+the numerical methods used in HZETRN and developed included in the transport procedure. The broad energy dis-
+new inethods that were shown to be more aeeui‘ate and tribution in collision events also indicates that the equal
+
+100 times faster than their predecessors. Total discretiza- velocity assumption cannot be use d. In this case no simpli-
+
+tion errors were also given in aluminum and water targets ﬁeations to Eq. (1) are used and the summatibn is taken
+
+exposed to free space GCR enVirenmehts. HZETRN over all light particles. Hereafter, Eq. (1) Will be referred
+obtains approxunate solutions to the linearized, time-inde- to as the light particle transport e quati on Which includes
+pendent Boltzmann transport equation Within the continu- b 0th neutrons and light i ons
+
+ous slowmg down and straight ahead ap p roxunations given Approximate solutions are obtained for the light particle
+
+by transport equation by sealing the particle ﬂuxes and pro-
+3 1 a duction cross sections as
+
+— — — —S- E - E . E _
+
+[ax A]. a]; J( H “A )1 CW? ) mm) 2 vjs<E7q>j<x,E), <4)
+_ Z foo O'k(E El)§b (X El)dEl (1) Sjk(r7rl) E S(E)0jk(E7E/)7 (5)
+— 7 k 7 7 . . .
+
+k E J Where S(E) is the proton stopping power, and r is the pro-
+ton range. The scaling parameter is
+
+With the boundary condition 1 j : n
+
+17- E 7 . 7 (6)
+
+¢j(0,E) =fJ-(E)- (2) J {v77 J 75 n,
+
+_ 2 . , .
+In Eq (1) gb-(x E) is the ﬂuence of type 'particles at depth where VJ -_ Zj /AJ’ and ZJ is the charge. Of a type] 1011. The
+, h k' ’ ,1 ’ E A , h , j b f light particle transport equation is written in terms of the
+
+x Wlt, métlc energy. ’ j is t e a tonne mass num ere a scaled quantities and inverted using the method of charac-
+
+typ e j p article, SAE) is the stop p 111g p ower Of a typ e 1 1011 teristies to obtain the Volterra integral equation
+
+With kinetic energy E, aj(E) is the total macroscopic cross
+
+section for a type j particle With kinetic energy E, and ng-(JH—hm) = e_/JJ(J’JJ)I,bJ-(x,r+ vjh)
+
+ajk(E, E’) is the macroscopic differential production cross ‘7 h 00 ,
+
+section for interactions in Which a type k particle With ki- + Z 17—] f / e_JJJ(J’J‘)S]-k(r + vjx’, r’)
+
+netic energy E’ produce a type j particle With kinetic energy k k 0 ”ij
+
+E. The summation limits in Eq. (1) depend on the bound- >< WAX + h — XI, 7” [>017 ldxla (7)
+
+ary gipdltlon atnd W111 be discussedkslhorctllyt. T36 b0111{ndary Where h is the step-size in g/em2 and, r’ is the range of a
+
+con 1.1011 spec rum, fjw)’ is 001181 ere 0 e a nown projectile particle With kinetic energy E’. The exponential
+
+function over a broad energy spectrum. inte ratin factor is
+There are two paths taken (for light particles and heavy g g
+
+ions) in developing numerical procedures for Eq. (1). For ﬂ“ x) E / 0(1) + v-t)dt. (8)
+
+heavy ions (Z > 2), it is noted that projectile fragments J J 0 J J
+
+haye energy and direction very near that Of the p rojeetile, Perturbative methods (Wilson et al., 2006b) are used to
+
+Whlle target fragments are p reduced HWIX isotropieally approximate the ﬂux in the integrand of Eq. (7). The source
+
+Wllh low energy an.d travel only a short distance before integrals are decoupled using a ﬁrst order quadrature
+
+Semi abslcirbed (WJISOH 6: al., 11,977; 3986; 199:1; 199,521; scheme, and the remaining integrand terms are simpliﬁed
+
+.006 )' T e appreXImate .ecoup ing 0 target an p rOJeC' using a linear spline approximation. The ﬁnal marching pro-
+
+tile fragments is discussed in detail by Wilson et al. (1977, eedure for light particles is given to O(hz) by Slaba et al.
+
+1991, 1995a) and suggests that target fragments can be (2010a)
+
+neglected in the heavy ion transport procedure (their con-
+
+tribution to dose is approximately accounted for after the Ih-(x + h, r1) = e_aj(JJ)JJl,bj-(X, Vi + th)
+
+transport procedure). The equal velocity assumption for N
+
+heavy ions reduces the transport equation to + Z Z afmwk(x, rm), (9)
+
+k m:1
+
+"
+"4","T. C. Slaba et a1. / Advances in Space Research 47 {2011) 600—610 603
+where the discrete r,- Values are logarithmically distributed (01.9 + k7 r1.) : e—Uj(ri)h¢j(x7 r,- + W)
+from a minimum value, r1, to a maximum value rN. The N
+coefﬁcients, aim, are obtained by interpolating over the pro- + H (J _ j) Z Z ‘1:ka (x, m)
+duction integrals k m:1
+v.
++ Z jaw + vjh/zmoc, 1» + (w- + vah/z)
+. _ rb —0'j(ri)h/2—0'k(r/—vkh/2)h/2_A . /_ , (z) / / k>J* k
+alm(h)— fr 6 F140“ th/thwm (7 )dr 7 e—0j(r+vjh/2)h _ e—ak(r+(vj+vk)h/2)h 15
+x —.
+(10) 0;,(1/ + (vj + vk)h/2) — aj(r + vjh/2) ( )
+WhiCh are pre-coniputed f0? a discrete set 093131341263 111 The index J refers to the heaViest light ion (4He), and H(J — j)
+139- (10), 3,3100” )9 13 the 10194111631” S131111e function is the Heaviside function. The index, f, is the maximum of j
+and J . For heavy ions, the summation term over light parti-
+111(7” / 7” m—1)/ 111(Vm/ rm_1), 7” E 1’” m—1 a 7” m1: eles is canceled by the Heaviside function, and the heavy ion
+13,90) : 1n(rm+1/r)/1n(rm+1/rm), r E [rm,rm+1], (11) transport Eq. (14) is retained. For light particles,the summa-
+07 otherwise. tion term over heavy ion projectiles is included to account for
+the source of light particle prOJectile fragments produced
+The cumulative light particle production cross section term frem heavy 19113- This second 39111111311911 term is the 0911'
+in the integrand is pling Ineehanisni between the light particle and heavy ion
+marching equations.
+_A 17. ’1
+F110”, 7”,; h) E 17—; f0 Sjk(’” + ijlaVlMXI- (12) 4. Measurements description
+. . . . . Four Liulin-E094 (Reitz et a1., 2005; DacheV et a1., 2006)
+The limits of integration, rd and rb, are reaction-dependent . . . . . . . .
+. active dos1n1eters, identiﬁed With a Mobile Dos1n1etry Unit
+and have been discussed elsewhere (Slaba et a1., 2010a). .
+A . t 1 t' b t . d f th h . (MDU) number (1—4), recorded data at 30 s intervals on
+p p rox1n1a e. SO 11 ions are 0 a1ne. or e any ion the 188 between May and August 2001. The data used
+transport equation by sealing the particle ﬂuxes as in Eq. f . . .
+. . . . . or this study covers the time period from July 6—13,
+(4). The heavy 1011 transport equation is written in terms 2001 Th . .
+. . . . . e main purpose of these detectors was to monitor
+of the scaled quantities and inverted us1ng the method of h d . 1 1 f . d d 1 . .
+haracteristics to obtain the Volterra integral equation t e 0868 s1n1u taneous y at 011.1” in epen 61.“ .oeations in
+C the ISS. Ground based calibration of the L1u11n detectors
+has been discussed elsewhere (Uehihori et a1., 2002). A
+WAX + k7 r) : 3—51177h)¢j(x,r + vjh) sample of the data recorded by MDU 1 and MDU 3 on
+12- h , July 6, 2001 between approximately 4 and 9 pm is given
++ Z 12—] / e‘ﬁf(r’x)ajk(r + vjx’) in Fig. 1. The cyclic trends in the data show the repeated
+k>J k 0 orbits of the ISS passing through regions of high cutoff
+>< (bk (x + h — x’, r + vjx’)dx’. (13) rigidity near the equator (lower dose) to regions of low cut-
+off rigidity near the poles (higher dose). Also eVident in
+. . . F'.1' th fth ISSth hth S thAtl t'
+Perturbative methods are used to approx1n1ate the ﬂux in Alg is e p assage 0 e roug $3 on , an IC
+, , , , nomaly (SAA) trapped protons around 7.44 pm, the peak
+the integrand of Eq. (13), and the resulting integral is ana- -
+. . , of the SAA spike reaches ~80 uGy/h. The SAA exposures
+lytieally approx1n1ated. The ﬁnal marching procedure for 'llb d' d h t1 TEPC d t t h ﬂ
+heavy ions is given to O(hz) by Wilson et al (2006b) W1 e 1seusse S or y.. . e ee ors ave own exten-
+' s1ve1y on both shuttle n11ss1ons and the 18$ for some time.
+10 (x + h r.) _ e‘“f(“)hgb (x r. + v-h) The TEPC data used here were recorded on the 188 from
+f ’ l _ j v.” l J July 6—13, 2001 at approximately 60 s intervals. A complete
++2 v—Jajk(ri+vjh/2)¢k(xari+(vj+vk)h/2) description of the TEPC instrument has been given by
+k>f k Badhwar et a1. (1994; 1995). A sample of the TEPC data
+X e_aj(ri+vjh/2)h —e_6k(ri+(vj+vk)h/2)h . (14) between approximately 4 and 9 pm on July 6, 2001 are
+0146+ (V1 +Vk)h/2) — 01(V1+th/2) given in Fig. 2. The same trends are once again eVident,
+as is the passage through the SAA. Comparison of Figs.
+For GCR environments, the heavy ion and light particle 1 and 2 shows that the Liulin and TEPC measurements
+solutions must be coupled and evaluated simultaneously. are well correlated, with the magnitude of the TEPC doses
+The coupling mechanism has existed in HZETRN for some being noticeably larger. This difference is expected since the
+time but was undocumented. This gap in documentation detector volume of the TEPC is tissue equivalent plastic,
+has been recently resolved (Slaba et a1., 2010a). The cou- and the Liulin detector volumes are silicon based. The
+pled light particle and heavy ion marching equation for detectors were also placed in different locations within
+GCR environments is the ISS.
+
+"
+"5","604 T. C. Slaba et a1. /Advances in Space Research 47 {2011) 600—610
+25 5 i with the neighboring ﬁve data points on either side. To be
+11:11ng ; Clear, the measured data are being removed in the SAA
+7 ‘ passages because of the large environmental model uncer-
+c 20 tainties in this region. Future statistical validation work
+E can be performed in the SAA when environmental model
+3 errors are reduced.
+O 15 =
+3 ‘ 2
+§ s i 5. HZETRN methodology
+5 II gi , i 5‘: : §§ 5 To estimate the Liulin and TEPC detector responses
+*1) ‘ 5': z ’ .- .‘i '1 i :3 - - ' '
+g 1.524 g I I'” g : 1 g I I 5 I 1ns1de the 188, the HZETRN methodology for estimating
+Q 5 m"" 11:”: ‘ 5' "":3 531""}; ,II'V'I : . 1* 3’ point responses (dose, dose equivalent, ﬂux, etc.) inside a
+.“Ing .: 3 I ’ ' gI =a'é ;' volume was used. The formulation described here is for
+u I ‘ ' 1 : 2 ,, v, ‘ e ' - . . . .
+1 . .r . : .. dose but is equally applicable for dose equivalent, ﬂux, Lin-
+ear Energy Transfer (LET), etc. Within the straight ahead
+& e <<~ & e e e \s . . . . .
+QQ 9Q QQ QQ QQ 9Q QQ QQ approxnnation, the dose as a function of pos1t10n and angle
+.Q .Q .Q Q .Q .Q .Q .Q . . . .
+3P“ 31>“ I)?“ n?“ 95“ .1)?"" .31?“ 31>“ can be obtained by us1ng ray-tra01ng techniques to deter-
+bv 6;- 5- 10° '\- '\- 00- q- . . . . . .
+mine the mass (or thickness) distribution surrounding a
+Fig. 1. Dose in silicon recorded by the Liulin detectors MDU 1 and MDU given target point, HZETRN is then used to transport
+3 on 188 from July 6, 2001 4:04 pm to July 6, 2001 9:05 pm. The passage the external radiation environment along each ray from
+through the SAA is evident around 7:44 pm. - ,
+the volume boundary to the target p01nt, the relevant expo-
+sure quantity can then be computed. In this context, the
+25 dose at a point inside a volume is given by
+D(r) : / 51(r, Q)dQ, (16)
+A 20 47t
+‘3‘ where r is a three-dimensional position vector and Q is a
+‘3, unit directioNn vector. In Eq. (16), D(r) is the dose at a
+3 15 point, and d(r,Q) is the dose as a function of position
+’5 I and direction within the volume. The dose at a point can
+m | . . . . .
+IE 10 II be approxnnated by cons1der1ng a discrete set of N9 unit
+.5 l direction vectors covering the full 41: steradians
+E 1 N9 ~
+D r m — d 1391' , 17
+5 < > N9 2 < > < >
+where each ray direction, 9,, is assumed to account for the
+® {9 I9 {0 I9 {9 {Q «a same amount of solid angle. The dose at position r in the
+QQQ _QQQ QQQ 'QQQ .QQQ ‘QQQ 'QQQ ,QQQ direction of Q,- is further approximated as
+b‘. b‘. b‘. b‘. u. b‘. b‘. b‘.
+J ' d(r7 9i) m 61(30): (18)
+Fig. 2. Dose in tissue recorded by the TEPC detector on 188 from July 6, . 2 . . . .
+2001 4:04 pm to July 6, 2001 9:05 pm. The passage through the SAA is Where d(xi) IS the dose. at depth xi (g/Cm ) 111 8' sem1_,lnﬁnlte
+evident around 7:44 pm. slab. The ﬁnal express10n for the dose at a p01nt is given by
+1 N9
+There are currently large uncertainties associated with D (1') % N—Q 20109). (19)
+environmental trapped proton models and trapped proton ’:1
+exposure estimates (Armstrong and Colborn, 2000; BadaVi The values, d(xl), are usually obtained by interpolating
+et a1., 2006). Consequently, it is expected that comparisons over a dose vs. depth database generated by HZETRN.
+made in the SAA will lead to errors that are heaVily dorn- The distributions of thicknesses, xi, used for the interpola-
+inated by the environmental model errors. In order to tion are found by ray-tracing the volume from the point r
+avoid these uncertainties in the present analysis, compari- in each of the ray directions, 52,-. Ray-tracing refers to the
+sons will not be made between model results and measured process of determining the number, order, and length of
+data during passage through the SAA. The TEPC SAA materials from a given target point in a given ray direction.
+exposures were ﬁltered by removing 5 min of data on either For complicated geometries, like the ISS, rays originat-
+side of a transient data spike. The Liulin data were ﬁltered ing at a given point will traverse many different material
+by scanning for measured doses larger than 15 nGy/h. Any types. In order to simplify the number and order of these
+dose value found larger than the limit was removed, along different materials, scaling methods are utilized to convert
+
+"
+"6","T. C. Slaba et a1. / Advances in Space Research 47 {2011) 600—610 605
+all materials into one or more equivalent materials. The attenuated GCR found in LEO. This environment can be
+error associated With scaling materials into equivalent alu- described by multiplying the free-space GCR environment
+minum thickness has been studied for slab geometries by a transmission function. The GCR are slowly varying
+(BadaVi et al., 2010), but has yet to be studied in complex over the time scales considered here, so that the average
+geometries. As a side note, due to the recent improvements free-space GCR environment over July 6—13, 2001
+in code efﬁciency, HZETRN can now be evaluated explic- obtained from Badhwar—O’Neill model can be used
+itly along each ray in a thickness distribution With no limit (O’Neill, 2006). The transmission function model has been
+on the number or ordering of material layers. A more accu— described in detail elsewhere (Nealy et al., 2007); for this
+rate neutron transport model With coupled baCk-scattering work, it is sufﬁcient to note that the transmission function
+(Slaba et al., 2010b) can also be included in this approach. is dependent on the geomagnetic location of the vehicle and
+Future work Will include this ray-by-ray approach to vehi- exhibits angular dependence, With the transmission in a
+Cle analysis and Will be able to quantify errors caused by given direction approximated by a unit step-function.
+the material thickness scaling and re-ordering mentioned The rigidity value Where the discontinuity of the step-func—
+previously. In the present work, all materials in a ray are tion occurs is called the cutoff rigidity. The angle-averaged
+scaled to equivalent aluminum thicknesses, and neutron transmission function is obtained by integrating the trans-
+transport is handled Within the straight ahead approxima- mission functions over the full 41: solid angle.
+tion using the HZETRN light particle marching algorithm, The angle-averaged transmission function at four points
+as has been done in the past (Wilson et al., 2005, 2007; along the ISS trajectory is given in Fig. 4. It should be
+Nealy et al., 2007). The cumulative thickness distributions noted that if the effect of the Earth’s shadow is included,
+for equivalent aluminum thicknesses over the 41: solid the transmission function in Fig. 4 Will achieve a maximum
+angle for the Liulin and TEPC detectors are given in transmission of N066, corresponding to ~34% of the 41:
+Fig. 3. The Liulin detectors are more heaVily shielded than solid angle being blocked by the Earth. At the largest lati-
+the TEPC, With a moderate number of rays reaching well tudes that the ISS reaches, the transmission function
+past 100 g/sz. resembles a step-function, indicating very little angular var-
+
+In the past, When comparing to time-integrated mea- iation in transmission. Near the equator, the transmission
+surements Within the 188, a mission or trajectory-averaged function covers ~30 GV on the cutoff spectrum, indicating
+external environment was generated, and HZETRN was signiﬁcant angular variation in transmission. These effects
+used to transport the environment through a slab encom- are shown in Fig. 5, Where the cutoff rigidities as a function
+passing the necessary thicknesses of aluminum. The result- of angle have been mapped onto the unit sphere at 1.37ON
+ing dose vs. depth database is then used in conjunction With and 51.708. The effect of the Earth’s shadow has not been
+a thickness distribution to estimate point dose, as described included in Fig. 5. The spheres have been enlarged relative
+previously. In this study, the external environment at each to the size of the Earth to improve Clarity. The cutoff rigid-
+of the data points along the trajectory Will be used instead ities are nearly constant (N2 GV) as a function of angle at
+of a mission-averaged environment. 51.708, While there is signiﬁcant variation (~10—40 GV) at
+
+Since trapped protons are not being considered in this 1.37ON. The attenuated GCR spectrum at two points along
+study, the external radiation environment is given by the the ISS trajectory is shown in Fig. 6. The effect of the
+
+1 — ,.-- _ I z
+MDU 1 ”7’” 5 , ,
+0.9 ————- MDU2 , 4 0.9 i / ’
+; """"""‘“"" MDU3 . // , i /
+0.8 *7 — MDU4 _ ; ,7 0.8 i /
+“ 07 —'_ TEPC -. ""I/ 07— i //
+:2 - _- ,' // ' - ! /
+3 0.6 ' 'I/ 5 0.6 1 /
+7“ -' 1/ '53 5 /
+g 0.4 , /,/ /l/ E 0.4 7 : [I .
+E 0.3 i // /,/ 0.3 A : I Average altitude: 384 km
+s , ' 7 . 5 I — . o . 0
+0'2 .' // / 0'2 0 : I
+0.1 ' /_,"" 1/: 0.] i , 19°90 S, 106.20E
+i_,.- ,_-,f_;_,./ , i l - - - - - 1.37 N,90.26 E
+i0” 10‘ 102 10‘ O 0 ' 1i) ‘ 20 ‘30 40 i 50
+Aluminum Thickness, T (g/cmz) CutoffRigidity (GV)
+Fig. 3. Cumulative thickness distributions for equivalent aluminum Fig. 4. Transmission functions at four points along the ISS trajectory. The
+thicknesses over the 47E solid angle for Liulin and TEPC detector locations. effect of the Earth’s shadow has been neglected.
+
+"
+"7","606 T. C. Slaba et a1. /Advances in Space Research 47 {2011) 600—610
+Cutoff described previously. The scaled angle averaged transmis-
+Rigidit5' (GV) sion function would then be applied to the free-space GCR
+N [~37’N- W36"" E gig environment, and isotropic incidence would be assumed. A
+36 point dose is then approximated by using Eq. (19) directly.
+51.78. 175.7,, E g: The more complicated, but more accurate, approach would
+S 3% be to include the shadow in the integration over the exposure
+56 quantity, Eq. (19), instead of the transmission function. In
+17""; this case, the angle averaged transmission function (without
+56 scaling) is applied directly to the free-space GCR enViron-
+:2 ment, and semi-isotropic incidence is assumed. The point
+14 dose is approximated by neglecting those values, d(xi), in
+:8 the summation for which the ray-direction, 52,-, would inter-
+' sect the Earth. In this approach, it is assumed that there is no
+Fig. 5. Cutoff rigidity values as a function oi“ angle mapped onto the unit exposure from these shadow directions, and there is is O’tI‘OpiC
+sphere at 1.37ON and 51.708 at an average altitude of 384 km. The effect of
+Earth’s shadow has been neglected. exposure everyWhere else'
+In the ﬁrst approach (referred to as “EnV Shadow” later),
+the Earth’s shadow is effectively included in the external radi-
+Earth’s shadow has hOt been included ih this plot. The ation environment; this approach has been commonly used
+effect 0f the geomagnetic transmission is eVident, as is the due to its simplicity and its ability to include the shadowirre-
+increased transmission at higher latitudes (51-7OS)- spective of the vehicle orientation. In the second approach
+At each 0f the data points along the 155 trajectory for (referred to as “Interp Shadow” later), the Earth’s shadow
+WhiCh LiUlIIl and TEPC measurements are available, thC 13 effectively included 111 the summation 111 Eq (19)’ which
+latitude, longitude, and altitude are khOWh- These parame- is carried out using interpolation methods. Although one
+ters are used to compute the transmission function, which would expect this to be more accurate, the latter method is
+is then applied to the free-spaee GCR environment as not commonly used due to the complications with aligning
+described above. HZETRN is used to propagate the atten- the geographic coordinate system and the coordinate system
+uated GCR environment through 1000 g/ 01112 0f alumi- in which the vehicle was ray-traced. These two approaches
+num, and the interpolation based procedure is used to will be compared shortly.
+estimate the point doses at each of the detector locations.
+The maximum depth of 1000 g/em2 was chosen based on 6. Results and discussion
+the thickness distributions shown in Fig. 3; it covers almost
+990/0 Of th€ LIUllIl and TEPC thiCkIl€SS€S, CﬂCCtIVCly mini- Figs 7 and 8 show results generated by HZETRN and
+mizing extrapolation error. measured data as a function of time from July 6, 2001
+There are two paths that can be taken to account for the 4:04 pm to July 6, 2001 9:05 pm. The Liulin comparisons,
+effect 0f the Earth’s shadow. The simple approach is to in Fig. 7, contain approximately 600 data points, and the
+iHClUdC thC shadow in thC transmission fUIlCtiOIl, WhiCh TEPC QOInparisons9 111 Fig 89 contain approximately 300
+WOilid reduce the maximum transmission to N660/0, as data points. In Fig. 7, “EnV Shadow” means that the effect
+of the Earth’s shadow has been included in the enViron-
+2 , ment by sealing the maximum transmission down to
+5;? 10 7 ~66%, and “Interp Shadow” means that the effect of the
+>' 10' Earth’s shadow has been included in the interpolation pro-
+E cedure, as described previously. This comparison will help
+< 10” show the errors associated with the commonly used “EnV
+: ’ Shadow” approach. For the TEPC, the effect of the Earth’s
+E” '0’ I E , shadow was not included in the interpolation procedure
+33 10-3 because the TEPC thickness distribution used for this study
+{3’ : . n _‘ .. _ E E lacked the necessary angular orientation information. Sur-
+g 10-3 E0“? 3.1.172 781117307 3E, E = prisingly, the difference between the two methods is almost
+E; e Ailigge altitude: 3861111 negligible except at the successive peaks of the data, corre-
+; 10"" r P t 55 5 sponding to the lowest cutoff rigidities or largest absolute
+:2, '05 ﬂ latitudes. In these regions, the “Interp Shadow” results
+{jg _ — 561:6 55 5 are slightly larger than the “EnV Shadow” results; however,
+E [0-0 ‘ r , ii, ' it is unclear from the plots if this represents a more accu-
+10'2 10"" 10” 10' 103 10"" 10* rate solution.
+Energy (AMCV) The HZETRN results are well correlated to the TEPC
+Fig. 6. The GCR spectrum at two points along the ISS trajectory. The and LiUiih data OVei the time periOdS shown. The
+effect of the Earth’s shadow has been neglected. HZETRN results compare well to the Liulin MDU 1 data
+
+"
+"8","T. C. Slaba et al. / Advances in Space Research 47 {2011) 600—610 607
+14 . . both cases were generated by computing dose in the mate-
+_ ﬁuzlgglerDthv Shadow ria1 of the detector volume, Last1y,the geornetry 0f the
+12 — HZETRN- Interp Shadow detectors was not included in the thickness distributions.
+c —: Although the detectors are small compared to the ISS,
+E 10 i é i the TEPC instrument is larger than the Liulin detectors.
+5» I E In order to more Clearly quantify the errors between
+3 8 E: 2.1. HZETRN results and measurements, the large statistical
+g 5 E ﬂuctuations in the TEPC and Liulin data need to be
+33:) 6 ..E:'2:5‘. addressed. These ﬂuctuations are primarily caused by the
+.E “E l: 1 3:5 5.595 €le 10w particle count rates over the pre-deﬁned detector
+'3) 4 3:5; 55:32:51,; 5 E E; EE ""5: El 5“ EE tirne-bins (30s for Liulin and 60s for TEPC). This is
+Q :1"": 5' 55:1 53 E: accomplished by further binning both theoretical and mea-
+2 EEé E2; '51,; E. ET? sured results as a function of time. A bin-width of 8 min
+""""7 EEE’E' '1'“ *M '5 3’5 was Chosen so that statistical ﬂuctuations were minimized
+without distorting the general trends. The binned data
+QQQ<° QQQ‘Q QQQ6' QQQ‘Q QQQ‘Q QQQé‘ QQQ‘Q QQQ‘Q from Fig. 7 are shown inFig. 9. The tendency of HZETRN
+mbi- .le‘ Epi- n’bl‘ Sb? .bpi' n?“ .Qbi‘ to agree well With the L1u11n data for 10w cutoff rigidities,
+b"" 6°. 5' b. «I N T. q. and underestimate everywhere else is still eVident. Binning
+Fig. 7. Comparison of HZETRN results and Liulin MDU 1 data on ISS the TEPC data in this way also maintained the general
+from July 6, 2001 4:04 pm to July 6, 20019z05 pm. The “Env Shadow” and trends in the data as will be seen shortly.
+“Interp Shadow” results are almost identical. Dose is calculated in silicon. The errors between HZETRN and measurements are
+computed as a function of cutoff rigidity as follows. For a
+24 given time bin, ti, there is a measured data value, DmeaS(I,-),
+22 a. c1ata value from HZETRN, DHznTRNUi), and a cutoff
+70 rigidity value, r(t,-). The percent relative error as a function
+G 18 of cutoff rigidity can be computed as
+#3 16 1 E 8140)] E 100 'W, (20)
+:3: 14 'E E5 : DmeasUz’)
+é). 13 W .= E Based on the results from Figs. 6—9, the difference
+3 10 ‘ H 1‘5 5’ E - between the two methods for including the Earth’s shadow
+,5 E: ‘2 ' E: is negligible in these comparisons. Thus, to be consistent
+g 8 ' 525 ,E E IE; ‘ with the approach taken to estimate the TEPC response,
+9 6 EEi 2 ' E E errors will only be given for the cases in which the Earth’s
+"" ' Liulin MDUl
+Q6‘ Q6‘ Qé‘ Qx“ Qé‘ Qé‘ Qé‘ Qx“ —— HZETRN - Env Shadow
+39 $6 39 as 99 55» go ,2; 12 7 —— HZETRN - Interp Shadow
+59> .6’ .015 n?’ .6”? .b?> nP‘ .Qb' A
+V. 6). c). b. l\. I\. gb. q. '5 ‘
+Fig. 8. Comparison ofHZETRN results and TEPC data on ISS from July 5: '0
+6, 2001 4:04 pm to July 6, 2001 9:05 pm. Dose is calculated in tissue. 2 8
+E
+at low cutoff rigidities, and tend to systematically under- § . '
+predict the results everywhere else. Similar results were i3 6 2' ~. g"" g"" ""a '-._
+found when comparing to Liulin MDU 2, MDU 3, and Q E , '-_ : ‘2 '2
+MDU 4. Alternatively, it appears that the HZETRN 5 4 ,2: E a E. :5 E
+results systematically under-prediet TEPC measurements, i
+as shown in Fig. 8. 2 ‘1' i2..."" 3.4"" ' ""2‘,"" '
+There are several explanations for the differing trends. 5
+First, the Liulin detectors are all considerably more <0 6‘ (o @ (ax 6‘ \Q <9
+shielded than the TEPC; therefore, the various errors .QQQ .QQQ .9ng .QQQ .QQQ .QQQ .QQQ .QQQ
+induced by geometry handling (ray tracing, material seal- 59"" 523' 55?? 5'3? «9"" «5?? $3? q-Qb'
+111g, etc.) W111 be CharaCtenStlcauy. d5ﬂerent' Second, 110 Fig. 9. Comparison of binned HZETRN results and Liulin MDU 1 data
+efforts were made to model the L1u11n detector response on ISS from July 6, 2001 4:04 pm to July 6, 2001 9:05 pm. The “Env
+01‘ inelude preViouSIY deVelOped mOdels for the TEPC Shadow” and “Interp Shadow” results are almost identical. Dose is
+response (BadaVi et a1., 2007). The HZETRN results in calculated in silicon.
+
+"
+"9","608 T. C. Slaba et a1. /Advances in Space Research 47 {2011) 600—610
+
+shadow was included in the environment. Results are given 20 .
+in Fig. 10 for the Liulin MDU 1 measurements. The solid 10 — Liulin MDU 1
+line through the data represents the average error taken """"""""‘ LEM!“ MDU2
+over N3 GV cutoff rigidity bins. In other words, the hori- 0 _____ 3313113383
+zontal axis in Fig. 10 has been divided into N3 GV sub- 40 — TEPC
+intervals, and the average of all data points within a sub- '
+
+interval was computed. The solid line in Fig. 10 connects g '20 I\\‘
+
+the averages in each sub-interval. g —30 I\\‘
+
+The error bars represent the 95% conﬁdence interval on E _40 \~\\‘~L\
+those averages, which are used to indicate the statistical C:\i
+spread in the data at that point. Many of the same charac- -50 \~\\§~\.\
+teristics seen in the previous plots are still apparent. The -60 ‘ §§\_
+errors are reduced as the cutoff rigidities decrease; the abso- \:?\\
+lute errors grow larger as cutoff rigidities increase. Similar ‘70 i T 4‘2? “Ii
+results were found for MDU 2, 3, and 4 and the TEPC. The -80 . . .
+average errors for all of the Liulin MDUs and the TEPC 5 10 “ , , 1,5 . 20 25
+
+. . Cutoff ngldlty (GV)
+are shown in Fig. 11.
+
+In Fig. 11,it can be seen that the generalerror trends are the Fig. 11. Average errors between HZETRN and the Liulin and TEPC
+same for all ﬁve detectors_ Errors are largest at high cutoff detectors. The error bars represent the 95% conﬁdence interval on the
+rigidities; errors are reduced as cutoff rigidity dacmases9 indi- sample mean. Dose is calculated in tissue for the TEPC and silicon for the
+
+. . Liulin detectors.
+eating a clear means of extrapolating LEO errors to free space.
+
+At the lowest cutoff rigidity value, the average error of all ﬁve
+detectors is approximately 22%. There are three main factors
+that may be contributing to the monotonic increase in error as space GCR environments can reach nearly 20% (Aghara et
+a function of cutoff rigidity. First, the transmission function al., 2009). However, at high cutoff rigidities, where only the
+used in this study to model the attenuation of the GCR by most energetic particles are present, the pion contribution to
+the geomagnetic ﬁeld exhibits increased angular dependence dose will be larger. Third, the larger errors at high cutoff rigid-
+at high cutoff rigidities. Though integrating over the angular ity would also indicate that the high energy (>3 AGeV) cross
+dependent transmission function, as is commonly done, section models used in HZETRN need to be investigated. The
+allows one to approximate the anisotropies with an isotropic impact of geometry modeling on the errors shown in Fig. 11 is
+environment, this approach may lead to larger errors than expected to decrease with increasing energy. This is primarily
+what was previously thought (Wilson et al., 2006a). Second, because at high cutoffrigidities, the incident ions will have suf-
+at high cutoff rigidities, the LEO GCR environment is com- ﬁcient energy to pass through the shielding of the 188 without
+prised of low intensity, but very energetic Charged particles depositing much energy or suffering a nuclear collision.
+that can produce a signiﬁcant number of secondary pions. It Finally, since the only difference between the Liulin
+has been shown that the pion contribution to dose for free MDUs is their location within the 188, the differences in
+the errors shown in Fig. 11 for these detectors can be used
+20 to estimate geometry errors. The average spread in error
+between the Liulin MDU 1 and MDU 2 error curves is
+10 11%, with a maximum difference of 20% at the lowest cutoff
+0 : . rigidity and a minimum difference of 6% at highest cutoff
+rigidity. This supports the previous statement that geome-
+']0 ‘ . try errors are less prevalent at high cutoff rigidities. At low
+3 -20 __ \ , cutoff rigidities, geometry errors become more of a concern
+E“ 30 _‘ . because more low energy particles are present, thereby
+g ‘ i , ', ‘ . magnifying the effects of scattering, fragmentation, and
+Lu ‘40 .' ‘ . neutron elastic interactions, as well as the errors caused
+_50 ’ 7 ; _;_ j;_-'.--_,_;. f . by converting materials to equivalent thicknesses through
+, __.,,""f.:_ 2 .. ._ .. _. range scaling (BadaVi et al., 2010).
+'60 i .i Despite the errors shown in Fig. 11, it is important to
+-70 . , ‘ 9. "" "" ” point out that the largest errors occur where the dose is
+‘ "" "" ~ ~ ' . ' ‘ smallest. Thus, in previous studies where mission inte-
+'80 5 10 15 20 25 grated quantities were used for validation (Wilson et al.,
+CutoffRigidity (GV) 2005, 2006a, 2007; Nealy et al., 2007), the effect of these
+Fig. 10. Percent difference between Liulin MDU l and HZETRN as a errors would be mmlmlzed' This Is sup p 01‘th m Elg' 12’
+function of cutoff rigidity. Effect of Earth’s shadow has been included in Where the abSOIute differences, mStead Of the relatlve per-
+the transmission function. cent differences, are shown.
+
+"
+"10","T. C. Slaba et a1. / Advances in Space Research 47 {2011) 600—610 609
+4 Acknowledgements
+------------ Liulin MDUl
+A 3'5 B33: 333% This research was sponsored by NASA Research grant
+:3; 3 - — - — ' T151313 MDU 4 NNX09AR20A and the Human Research Program
+é ‘ — (HRP) in the Advanced Capabilities DiVision (ACD) under
+2 2.5 the Exploration Systems Mission Directorate (ESMD) and
+E /-\\ performed by members of the Measurements and Trans-
+§ 2 / ‘\~\‘ port Codes project. The authors would like to thank J ohn
+é: / / /‘ .1: \ \'\~\-\ Nealy for helpful discussions in this work.
+D 1.5 /,” “‘~‘-->.-\.__L::'""“\-\_
+2 I ,--“""""~--- ""“n-n \‘\..
+2 ’ 1’ ‘H-‘N‘“~~_-_ TE.““""*-.t
+E l References
+< I,’
+0-5 ' Aghara, S.K., Blattnig, S.R., Norbury, J.W., Singleterry, R.C. Monte
+Carlo analysis of pion contribution to absorbed dose from galactic
+0 ‘ 5 ‘ 1 0 ‘ l 5 70 ‘ ‘ 7 5 cosmic rays. Nuclear Instruments and Methods in Physics Research B
+‘ “ . . 0‘ . .. 7‘ 267, 1115—1124, 2009.
+Cutoff ngld'ty (GV) Armstrong, T.W., Colborn, B.L. Evaluation of trapped radiation model
+Fig. 12. Absolute difference between HZETRN results and measurements uncertainties for spacecraft des1gn. NASA Contractor Report 2000-
+. . . . . . . 210072, 2000.
+as a function of cutoff rigidity. Dose is calculated in tissue for the TEPC _ _
+and silicon for the Liulin detectors. BadaV1, F.F., West, K.J., Nealy, J.E., Wilson, J.W., Abrahms, B.L.,
+Luetke, N]. A Dynamic/anisotropic Low Earth Orbit (LEO) Ionizing
+radiation model. NASA Technical Paper 2006-214533, 2006.
+7, Conclusions BadaVi, F.F., Stewart-Sloan, C.R., Xapsos, M.A., Shinn, J.L., Wilson,
+J .W., Hunter, A. Description of a generalized analytical model for the
+. . . micro-dosimeter response. NASA Technical Paper 2007-214886, 2007.
+111 thlS p ap er’ HZETRN results were compared to thllln BadaVi, F.F., Adams, DO, Wilson, J .W. On the validity of the aluminum
+and TEPC measurements taken aboard the ISS OVCI‘ the tune equivalent approximation in space radiation shielding applications.
+periods July 6—13, 2001. Instead of comparing to single mis- Advances in Space Research 46, 719—727, 2010.
+sion—averaged quantities’ as has been done in the past’ the Badhwar, G.D., Cucinotta, F.A., Braby, L.A., Konradi, A. Measurements
+comparisons were done at each of the data points along on the Shuttle of the LFfT-spectra of galactic cosmie radiation and
+the entire traj eetory. In total, HZETRN was used to estimate (1331;122:3831; 1W1: 392116 radlatlon tramport mOdel' Radlatlon Reseamh
+doses for the four Liuhh MDUS and the TEPC: leading to Badhwar, G.D.,,Atwell, W., Benton, E.V., Frank, A.L., Keegan, R.P.,
+77,590 comparisons. The resulting data were used to map Dudkin, V.E., Karpov, O.N., Potapov, Y.V., Akopova, A.B., Mag-
+errors as a function of cutoff rigidity and have provided a radze, N.V., Melkumyan, L.V., Rshtuni, S.B. A Study Of the radiation
+clear means for extrapolating LEO errors to free-spaee eon- EVimnmenttnglbgggdzgge1891;? Shmtle ﬂight STS'57' Radiation
+- - - - - easuremen s , — , .
+dltlons' The average error at the loweSt cutOff l‘lgldlty value DacheV, T., Atwell, W., Semones, E., Tomov, B., Reddel, B. Observations
+was approx1n1ately 22%' Results showed that HZETRN Sys' of SAA distributions by Liulin E-094 instrument on 188. Advances in
+tematieally underestimates the Liulin and TEPC measure- Space Research 37, 1672—1677, 2006.
+ments taken aboard the 188 over the time period Nealy, J.E., Cucinotta, F.A., Wilson, J.W., BadaVi, F.F., DacheV, TS.P.,
+considered, With the largest errors coming at high cutoff Tomov,B.T., Walker, 3A., DeAngelis, G., Blattnig, S.R., Atwell, W.
+rigidity values. The errors are likely associated with aniso- Pre'engmeermg Spaceﬂlght .Vahdatlon Of enVlrenmental mOdels and
+, , , , , the 2005 HZETRN Simulation code. Advances in Space Research 40,
+tropies 1n the geomagnetic ﬁeld, the lack of pion production 1593—1610, 2007.
+in HZETRN, and Simpliﬁed high energy 01088 86011011 mOd- O’Neill, P.M. Badhwar—O’Neill, galactic cosmic ray model update based
+els. The error associated with geometry handling was also 011 Advanced Composition EXplorer (ACE) energy Spectra from 1997
+Shown to be a non-negligible component at low cutoff rigid- .to present. Advances in Space Research 37, 1727—1733, 2006.
+ities. Though the high energy physics and geomagnetic ﬁeld Reitz, G., Beaujean, R., Benton, E., Burmeister, S., DacheV, T., Deme, S.,
+, , , , Lus21k-Bhadra, M., Olko, P. Space radiation measurements on-board
+mOdels Should be aneStlgated further: the Importaht p01nt ISS — the DOSMAP experiment. Radiation Protection Dosimetry 116,
+of this work is to also show the usefulness of mapping error 374—379, 2005,
+as afunetion of various physical quantities—something that Semones, E, Gibbons, F» Golightly, M, Weyland, M» Johnson, A,
+can only be accomplished With highly efﬁcient transport Smith, G., Shelfer, T., Zapp, N.. Measurements. of absorbed dose
+models. The computational tools used in this analysis have durlng the phantom torso experlment 0“ the mtemauonal Space
+, station, 1n: 34th COSPAR selentiﬁc assembly, The Second World
+been placed under conﬁguration management so that when Space Congress, held October 1049. Houston, TX, USA, 2002.
+environmental and nuclear physics models are improved, Slaba, T.C., Blattnig, S.R., BadaVi, F.F. Faster and more accurate
+or when pion transport is included in HZETRN9 the impact transport procedures for HZETRN. J ournal of Computational Physics
+of these improvements on overall code accuracy can be 229’ 9397—9417: 20103-
+Clearly quantiﬁed Future work Will include data taken dur- Slaba, T..C., Blattnig, S.R., Aghara, S.K., Townsend, L.W., Handler, T.,
+, , , ' , Gabriel, T.A., Pinsky, L.S., Reddell, B. Coupled neutron transport for
+111g 30131 mmlmum and trapped prOtOh exposures m the HZETRN. Radiation Measurements 45, 173—182, 2010b.
+SAA. More detailed geometry representations and aniso- Uchihori, Y., Kitamura, H., Fujitaka, K., DacheV, T., Tomov, B.T.,
+tropic geomagnetic ﬁeld models Will also be included, Dimitrov, P.G., MatViichuk, Y. Analysis of the calibration results
+
+"
+"11","610 T. C. Slaba et a1. /Advances in Space Research 47 {2011) 600—610
+obtained With Liulin-4J spectrometer-dosimeter 0n protons and heavy Wilson, J .W., Tripathi, R.K., Mertens, C.J., Blattnig, S.R., Clowdsley,
+ions. Radiation Measurements 35, 127—134, 2002. M.S., Cucinotta, F.A., Tweed, J., Heinbockel, J.H., Walker, S.A.,
+Wilson, J.W. Analysis of the theory of heavy ion transport. NASA Nealy, J.E. Veriﬁcation and validation: High Charge and Energy
+Technical Note D-8381, 1977. (HZE) transport codes and future development. NASA Technical
+Wilson, J.W., BadaVi, F.F. Methods of galactic heavy ion transport. Paper 2005-213784, 2005.
+Radiation Research 108, 231—237, 1986. Wilson, J .W., Cucinotta, F.A., Golightly, M.J., Nealy, J .E., Qualls, G.D.,
+Wilson, J .W., Townsend, L.W., Schimmerling, W., Khandelwal, G.S., BadaVi, F.F., Angelis, G.D., Anderson, B.M., Clowdsley, M.S.,
+Khan, F., Nealy, J.E., Cucinotta, F.A., Simonsen, L.C., Shinn, J.L., Luetke, N., Zapp, N., Shavers, M.R., Semones, E., Hunter, A.
+Norbury, J .W. Transport methods and interactions for space radia- International space station: a testbed for experimental and computa-
+tions. NASA Reference Publication, 1257, 1991. tional dosimetry. Advances in Space Research 37, 1656—1663, 2006a.
+Wilson, J .W., BadaVi, F.F., Cucinotta, F.A., Shinn, J .L., Badhwar, G.D, Wilson, J .W., Tripathi, R.K., BadaVi, F.F., Cucinotta, FA. Standardized
+Silberberg, R., Tsao, C.H., Townsend, L.W., Tripathi, R.K.. radiation shield design method: 2005 HZETRN. SAE ICES 2006-18,
+HZETRN: description of a free-space ion and nucleon transport and 2006b.
+shielding computer program. NASA Technical Paper 3495, 1995a. Wilson, J .W., Nealy, J .E., DacheV, Ts.P., Tomov, B.T., Cucinotta, F.A.,
+Wilson, J.W., Tripathi, R.K., Cucinotta, F.A., Shinn, J.L., BadaVi, F.F., BadaVi, F.F., De Angelis, G., Atwell, W., Leutke, N. Time serial
+Chun, S.Y., Norbury, J .W., Zeitlin, C.J., Heilbronn, L., Miller, J . analysis of the induced LEO environment With the 188 6A. Advances
+NUCFRG2: an evaluation of the semiempirical nuclear fragmentation in Space Research 40, 1562—1570, 2007.
+database. NASA Technical Paper 3533, 1995b.
+
+"

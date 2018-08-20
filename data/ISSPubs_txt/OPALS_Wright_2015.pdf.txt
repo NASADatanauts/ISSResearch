@@ -1,0 +1,414 @@
+"","x"
+"1","O O O O O
+Adaptlve optles correctlon Into smgle mode ﬁber
+0 O O
+for a low Earth orbltlng space to ground optleal
+O O O O O
+communleatlon hnk usmg the OPALS downhnk
+Malcolm W. Wright,” J effery F. Morris,2 J oseph M. Kovalik,1 Kenneth S. Andrews,1
+Matthew J . Abrahamson,1 and Abhijit Biswas1
+[Jet Propulsion Laboratory, California Institute of T echnology, Pasadena, CA 91109, USA
+2Boeing C0., El Segundo, CA 90245, USA
+* malcolm.wrighl@jpl.nasa.g0v
+
+Abstract: An adaptive Optics (AO) testbed was integrated to the Optical
+
+PAyload for Lasercornrn Science (OPALS) ground station telescope at the
+
+Optical Communications Telescope Laboratory (OCTL) as part Of the free
+
+space laser communications experiment with the ﬂight system on board the
+
+International Space Station (188). Atmospheric turbulence induced
+
+aberrations 0n the Optical downlink were adaptively corrected during an
+
+overﬂight 0f the 188 so that the transmitted laser signal could be efﬁciently
+
+coupled into a single mode ﬁber continuously. A stable output Strehl ratio
+
+of around 0.6 was demonstrated along with the recovery of a 50 Mbps
+
+encoded high deﬁnition (HD) Video transmission from the 188 at the output
+
+of the single mode ﬁber. This proof of concept demonstration validates
+
+multi-Gbps optical downlinks from fast slewing 10w-Earth orbiting (LEO)
+
+spacecraft to ground assets in a manner that potentially a110ws seamless
+
+space to ground connectivity for future high data-rates network.
+
+© 2015 Optical Society of America
+
+OCIS codes: (060.2605) Free-space optical communications; (010.1080) Active or adaptive
+
+optics.
+
+References and links
+
+1. A. Biswas, B. V. Oaida, K. S. Andrews, J . M. Kovalik, M. J . Abrahamson, and M. W. Wright, “Optical PAyload
+for Lasercomm Science (OPALS) link validation during operations from the ISS,” Proc. SPIE 9354, 93 540F
+(2015).
+
+2. R. A. Fields, D. A. Kozlowski, H. T. Yura, R. L. Wong, J . M. Wicker, C. T. Lunde, B. K. Gregory, B. K.
+Wandernoth, F. F. Heine, and J . J . Luna, “5.625 Gbps Bidirectional laser communications measurements
+between the NFIRE satellite and an optical ground station,” Proc. SPIE 8184, 81840D (2011).
+
+3. D. V. Murphy, “Atmospheric-turbulence compensation experiments using cooperative beacons,” Linc. Lab. J .
+5(1), 25414 (1992).
+
+4. R. Q. Fugate, “The Starﬁre optical range 3.5-m adaptive optical telescope,” Proc. SPIE 4837, 934—943 (2003).
+
+5. D. O. Caplan, “Laser communication transmitter and receiver design,” J . Opt. Fiber Commun. Rep. 4(4-5), 225—
+362 (2007).
+
+6. B. Moision, S. Piazzolla, and J . Hamkins, “Fading losses on the LCRD free-space optical link due to channel
+turbulence,” Proc. SPIE 8610, 86100Z (2013).
+
+7. M. Abrahamson, O. Sindiy, B. Oaida, S. Fregoso, J . Bowles-Martinez, M. Kokorowski, M. W. Wilkerson, and
+A. Konyha, “OPALS: Mission system operations architecture for an optical communications demonstration on
+the ISS,” SpaceOps 2014, Pasadena, CA, May 2014. AIAA-2014—1627.
+
+8. B. V. Oaida, W. Wu, B. L. Erkmen, A. Biswas, K. S. Andrews, M. Kokorowski, and M. Wilkerson, “Optical
+link design and validation testing of the Optical PAyload for Lasercomm Science (OPALS) system,” Proc. SPIE
+8971, 89710U (2014).
+
+9. J . D. Barchers, D. L. Fried, D. J . Link, G. A. Tyler, W. Moretti, T. J . Brennan, and R. Q. Fugate, “The
+performance of wave-front sensors in strong scintillation,” Proc. SPIE 4839, 217 (2003).
+
+#252822 Received 28 Oct 2015; revised 9 Dec 2015; accepted 10 Dec 2015; published 22 Dec 2015
+
+© 2015 OSA 28 Dec 2015 | V01. 23, No. 26 | DOI:10.1364/OE.23.033705 | OPTICS EXPRESS 33705
+
+"
+"2","1. Introduction
+
+The recent Optical PAyload for Lasereomm Science (OPALS) experiment successfully
+demonstrated an optical downlink from the International Space Station (188) to the Optical
+Communications Telescope Laboratory (OCTL) telescope located at Table Mountain near
+Wrightwood, CA [1]. The 50 Mbps Reed-Solomon, encoded, 0n-0ff keyed (OOK) modulated
+1550 nm optical downlink was collected by the 1-In OCTL telescope and the atmospherically
+blurred focused spot was received with a large area (200 um diameter) free space coupled
+avalanche photodiode detector (APD). Future space to ground optical communication systems
+can beneﬁt immensely from much higher date rates in the 10’s to 100-Gbps range that these
+links are capable of supporting. To realize this beneﬁt, much smaller active area detectors,
+typically single mode ﬁber (SMF) coupled receivers with higher bandwidth, will be required
+at the ground station telescope focus. Small telescope apertures can efﬁciently focus light
+onto these detectors but that requires the receive aperture to be smaller than the atmospheric
+cell size [2] which in turn will compromise the collection area or receiver gain and fail to
+support an operational link capability.
+
+A remedy is to use adaptive Optics (AO) correction of the atmospheric turbulence
+perturbed phase of the downlink beam wave-front so that near-diffraction limited focus spot
+sizes are achievable. AO systems have been routinely demonstrated to improve image quality
+in static astronomical observations as well as in imaging LEO Objects for space surveillance
+[3,4] but have not been demonstrated in an operational spaee-to-ground optical link in the
+Open literature.
+
+We report, for the ﬁrst time to our knowledge, the use Of AO correction of an optical
+communication signal from a LEO platform to a satellite tracking ground station. When
+tracking LEO satellites from the ground, the received optical communication signal is
+disrupted by a combination of random atmospheric refractive indeX ﬂuctuations and the
+relatively fast slew rate of the LEO satellite that effectively increases the transverse wind
+speed or rate at which the atmospheric turbulence moves past the ground receiving aperture.
+We demonstrate that fast Closed-loop AO systems can be effective in Closing high-bandwidth,
+LEO-to-ground optical communications links, even in daytime conditions.
+
+The remaining paper is organized as follows. A notional link budget is presented to
+illustrate the critical role AO will play in enabling ultra-high rate spaee-to-ground
+communications from a future LEO spacecraft. The experimental setup is then described with
+an overview of the OPALS ground station and integration of the AO system provided by The
+Boeing Company. The results will then be discussed from an example overﬂight pass on Mar
+4, 2015 followed by a second downlink opportunity on May 19, 2015 that culminated in the
+validation of the optical link as in the original OPALS demonstration.
+
+2. Notional power budget
+
+A 5 cm diameter unobseured transceiver transmitting 500 mW Of 1550 nm laser power over a
+range of 1200 km is presumed for a power budget resulting in an incident irradianee of
+approximately 58 nW/In2 at the ground aperture. A 400 km altitude LEO spacecraft at 75°
+zenith angle relative to the ground station was used. The large zenith angle is Chosen in order
+to increase the link contact time. Reasonable Optical transmission and wave-front error losses
+are assumed at either end of the link. Table 1 shows the net received power as a function of
+the ground aperture diameter in the ﬁrst two columns.
+
+#252822 Received 28 Oct 2015; revised 9 Dec 2015; accepted 10 Dec 2015; published 22 Dec 2015
+© 2015 OSA 28 Dec 2015 | Vol. 23, N0. 26 | DOI:10.1364/OE.23.033705 | OPTICS EXPRESS 33706
+
+"
+"3","Table 1. Aperture dependent received power
+Ground Received AO Split Power
+Receiver Power (dBm) Loss Margin for
+Diam. (cm) (dB) 40 Gb/s (dB)
+
+100 —17.4 —0.05 25.4
+60 —21.8 —0.15 20.9
+30 —27.8 —0.62 14.5
+10 —37.4 - —
+
+The split loss required in order to allocate 220 nW {—36.6 dBm) 0f downlink power for
+A0 correction is shown in the third column and was Chosen to be consistent with the power
+required by the AO system described below. Ground apertures less than 10 em do not collect
+sufﬁcient power. Assuming 10 photons/bit for differential phase shift keying (DPSK)
+modulation reported in the literature [5], —42.9 dBrn optical power will be required for
+downlinking 40 Gb/s. The link margin corresponding to this requirement is shown in the
+fourth column of Table 1B. A portion of margin will be consumed in coupling to single mode
+ﬁber, fading and implementation losses. Conservatively allocating 10 dB for such losses
+would still leave healthy margin for 60-100 cm receiving aperture diameters that can be used
+either to increase data rate or range.
+
+The Fried parameter r0, as low as 4.5 cm for daytime at 1550 11m and 75° zenith angle
+occurs (based on data gathered at Table Mountain, CA), will result in D/r0 values of 7-22 for
+30-100 cm ground aperture diameters [6]. This will result in (D/r0)2 (10’s to 100’s) spatial
+modes spread over ~D/r0 times the diffraction limited spot diameter of ~0.98*(?t/r0) with 9» =
+1550 11m. Without A0 for correcting the atmosphere induced phase errors, single mode ﬁber
+coupling of the required Optical power is not Viable. Since future LEO-to-ground services
+would need to Operate night and day for the 90th percentile Clear sky atmospheric conditions,
+the notional power budget underscores the critical role that AD can play in achieving ultra-
+high rate data services.
+
+3. Experiment
+
+3.] Overview OfOPALS experiment
+
+Details of the OPALS experiment have been published elsewhere [7]. The ﬂight system was
+built by JPL as a low cost technology demonstration and included a two aXis
+azimuth/elevation gimbal, a telecommunications derived ﬁber based master oscillator (DFB
+laser with external modulation) power ampliﬁer laser transmitter, and a silicon Charge
+coupled device (CCD) sensor for tracking. The laser collimator and camera were conﬁgured
+as a bi-statie optical head. The avionics, including the 2.5 W laser transmitter were installed
+in a eonvectively cooled sealed air container to allow the use Of low cost commercial Off-the-
+shelf (COTS) avionics in space. The laser output ﬁber cable was fed through the sealed
+container and routed up the gimbal t0 the optical head. The OPALS ﬂight system was
+delivered Via a SpaeeX launch and installed on an Express Logistics Carrier (ELC) pallet 0n
+the 188 in April, 2014. The output beam has a conservatively large full angle divergence of
+approximately 1.0 mrad to ensure sufﬁcient received power at the ground station. The OCTL
+ground station implemented a rnulti-bearn beacon comprised of four 976 nm laser diodes with
+2.5 W per beam. The downlink signal was received by the APD and stored following Clock
+and data recovery. The stored ﬁles were processed with a software decoder in order to recover
+the transmitted information. File transmissions 0n the Optical link included HD Video ﬁles,
+#252822 Received 28 Oct 2015; revised 9 Dec 2015; accepted 10 Dec 2015; published 22 Dec 2015
+© 2015 OSA 28 Dec 2015 | Vol. 23, N0. 26 | DOI:10.1364/OE.23.033705 | OPTICS EXPRESS 33707
+
+"
+"4","text ﬁles and PN data sequences [8]. Several successful links were performed previously
+during day and night conditions over the typical 2 min pass. The pass duration was
+constrained by the geometry of the ﬂight system placement on the ISS and laser safety
+considerations prohibiting illumination of any 188 structure [1].
+
+3.2 A0 receiver system
+
+The OPALS ground system at the OCTL was modiﬁed with the addition of a compact AO
+system test bed provided by The Boeing Company, El Segundo, CA. This AD system,
+developed by Jeff Barchers and purchased from SAIC in 2007, incorporates a specially
+designed self—referenced interferometer (SR1) wave-front sensor (WFS) and a Boston Micro
+Machines 1000-actuator MEMs deformable mirror (DM) with a direct-drive DM controller.
+The WFS includes a 19 kHz frame-rate FLIR InGaAs array camera which enables high-
+bandwidth AO operation. A polarization controller is incorporated into the AO system which
+adjusts the downlink signal polarization prior to the SR1 in order to maintain the desired
+power splitting in the SR1 during the downlink pass. The advantage of the SR1 WFS over
+other AG systems such as the Shack—Hartrnann based wave-front sensor, is the ability to
+correct high levels of turbulence at fast frame rates since the atmospherically-distorted phase
+is directly measured and applied to the MEMS—DM without need for wave-front
+reconstruction [9]. The optical path to the APD detector was replaced with relay optics
+coupling the OPALS downlink to the AO system as shown in Fig. 1. The telescope pupil was
+imaged on the AO system entrance in a collimated beam. The output is an atmospherically-
+corrected beam that was split between a tracking camera that measured the corrected Strehl
+ratio and SMF-28 ﬁber with 10.4 urn rnode ﬁeld diameter for recording power and
+communications. For the communication link, a commercial low noise ampliﬁer (LNA) was
+spliced onto the output ﬁber along with a two stage temperature tuned narrow band ﬁber
+Bragg grating ﬁlter followed by a SMF 0C1 receiver that consisted of a PIN detector
+integrated with a transirnpedance ampliﬁer (TIA). The 3 GHz Bragg grating ﬁlter was
+inserted to improve detection SNR of the optical communications signal and was required to
+track the center frequency of the Doppler-shifted optical signal from the 188. The ﬁlter was
+manually temperature tuned during the pass to optimize performance and match the ﬂight
+laser wavelength that could potentially drift as there was not enough signal on the ﬁlter
+monitor port for autonomous control.
+
+Initially the AO correction was demonstrated in static ground-to-ground links over a 1.6
+km atmospheric path. A remotely placed laser transmitter allowed beam alignment and tuning
+of the AO system parameters. Only power in ﬁber (PIF) measurements with the SMF output
+for recording power were performed at this stage in order to verify that the minimum OPALS
+downlink power would be adequate to operate the AO system. Approximately 220 nW of
+incident power was coupled into the AO system, 90% of which was utilized by the AO
+system. At this power level, full lock of the AO system was achieved. Several experiments
+were then conducted during 188 overﬂights with the OPALS ﬂight system in order to verify
+AO system performance on the space-to-ground link with the objective of quantifying the
+PIF. This is in turn would determine that sufﬁcient power, on the order of a few nano-Watts,
+could be achieved to close a communication link. After this was successful, the
+communication receiver was added and tested by downlinking a Video ﬁle.
+
+#252822 Received 28 Oct 2015; revised 9 Dec 2015; accepted 10 Dec 2015; published 22 Dec 2015
+© 2015 OSA 28 Dec 2015 | Vol. 23, No. 26 | DOI:10.1364/OE.23.033705 | OPTICS EXPRESS 33708
+
+"
+"5","f—‘THK K's _ .
+(~ «:::;;::~ oz: 72;:WMW
+TelescopeM'l
+RelayOptics
+Track i ng Boei re Adaptive OpticsTest-bed
+\\ Camera Free 1 I
+\ Space
+Test \‘ 7 7 77 3:?ector / \\‘ FSM
+é -
+FSM ,1} DM
+/ {g / PD ' 1’0“” 8 8 Tracking
+Monitor Camera
+Beacori / #k LaserCollimatovs
+DuchrOIc
+Shutter : EM
+-
+v CAP Beam Dump A0 corrected outputto fiber
+Original OPALS gagggﬁgupled
+$eceiwerittaentgvst Transmitters Circ-‘tor m
+ransm r em .- Q
+2-""GHZ
+FBGFiIter
+Data
+-- a e
+FBGFiIter Po‘m
+Detector
+New Receiver
+Fig. 1. Schematic of OPALS ground system showing addition of Boeing provided AO system.
+FSM — fast steering mirror, OAP — off—aXis parabola, MM — multimode, BS — beam-splitter,
+DM — deformable mirror, SR1 —se1f-referencing interferometer, LNA — low noise ampliﬁer,
+FBG — ﬁber Bragg grating, PD - photodiode
+4. Results and discussion
+During operation, the AO system senses and corrects the wave-front distortions present in the
+laser downlink signal. The A0 system was manually enabled by operator when sufﬁcient
+downlink power was received on the wave-front sensor. The A0 system maintained good
+correction as long as there was sufﬁcient signal strength on the WFS camera. Data taken from
+a single pass veriﬁed that with the OPALS downlink signal, the AO system was locked over
+an entire pass duration of 134 seconds. The 188 was tracked from 200 elevation through a
+maximum elevation angle 0f 600 in this case on Mar 4, 2015 at a local time of 2:54 pm with
+clear skies. Typical results of the output far ﬁeld spots on the tracking camera are shown in
+Fig. 2, without and with the AO 100p closed. The A0 system ti1t tracking was switched off
+during open loop measurements although telescope tracking was still operating. The open
+loop far ﬁeld spot image shows the effect of the higher order wave-front distortions 0n the
+down link signal that are corrected by the AO system. The PIF was sampled at 10 Hz for 1
+second at 6 second intervals and is shown in Fig. 3 along with measured Strehl ratios and pass
+elevation angle. The plotted Strehl ratios are computed by the AO system using the residual
+error between the instantaneous residual wave-front measured by the SR1 WFS and a ﬂat-
+wave-front calibration phase value. As indicated in the ﬁgure, observed Strehl ratios during
+closed loop operation averaged ~0.6 over the pass. A Strehl ratio of 1 represents ideal beam
+quality and the value of 0.6 demonstrates good wave-front correction. Without AO correction
+the Strehl ratio was < 0.02. The A0 open loop and A0 closed loop PIF probability
+distribution for the pass is shown in Fig. 4. The improvement in ﬁber coupled power is
+evident in the ﬁgure, with a 16dB improvement in the mean and a narrow distribution of 8dB
+#252822 Received 28 Oct 2015; revised 9 Dec 2015; accepted 10 Dec 2015; published 22 Dec 2015
+© 2015 OSA 28 Dec 2015 | Vol. 23, No. 26 | DOI:10.1364/OE.23.033705 | OPTICS EXPRESS 33709
+
+"
+"6","during closed loop AO operation. A full aperture power measurement system has been added
+for future downlinks that will be used to normalize the power at the AO system and to
+determine the ﬁber coupling efﬁciency both open and closed loop. It was not operational for
+the current data sets. One of the constraints in our experiment was the low mean PIF of 2—3
+nW since most of the received downlink power is used to achieve lock of the AO system. It
+should be noted that the OPALS experiment was not designed to be operated with an A0
+system but was used to demonstrate the feasibility of using AC on an optical downlink from a
+fast slewing LEO satellite. In an operational application, the link would be designed such that
+the higher required powers can be coupled into the ﬁber receiver, by narrowing the beam
+divergence on the transmit beam for instance.
+Fig. 2. Tracking camera output of AO system showing open and closed loop case.
+
+The ﬁnal communication link test was performed by capturing the downlink signal
+through the LNA and narrow band ﬁlter on May 19, 2015 at 9:45 am local time under clear
+sky conditions. The received signal for the pass in which the communication link was tested
+was somewhat weaker than the pass shown in Figs. 3 and 4. The exact reason for the lower
+power incident into the AO system was not identiﬁed though different atmospheric conditions
+or poorer pointing performance by the ﬂight system could easily account for the variation. As
+a result, the data link was more intermittent. The full HD Video was reconstructed in post
+processing and the BER, smoothed with a 1 second moving average, was measured. Because
+a software Reed-Solomon decoder can count the number of bit errors it corrects, it can be
+used to monitor the Bit Error Rate (BER) of the underlying uncoded link. For the two-minute
+OPALS pass, the BER of the uncoded optical channel is shown in Fig. 5. Gaps are evidence
+of the intermittent nature of the link. Points are also given in the graph for the times when
+there was not enough signal on the WFS for the AO system to correct the wave-front. During
+the gaps, link performance was not good enough to establish code-word synchronization, or
+the code-words contained too many errors. During this track, about 27.5% of the recorded
+data was decodable. The intermittency of the communication channel shown by the gaps in
+the BER is not only due to the AO system losing lock due to low received signal power but
+also due to the inadequate temporal tuning of the ﬁber Bragg grating (FBG) ﬁlter required to
+match the narrow ﬁlter band-pass with the Doppler-shifted downlink wavelength and the
+delayed clock and data recovery each time the link has to be re-established. These times
+correspond to lack of detected BER even when there was sufﬁcient signal on the WFS for
+closing the AO loop. Although these contributed to the limited link performance, a full HD
+Video transmission was successfully accomplished during the pass which was the success
+criteria for the original OPALS experiment and validates the feasibility of using AC on a
+LEO-to-ground optical downlink.
+
+#252822 Received 28 Oct 2015; revised 9 Dec 2015; accepted 10 Dec 2015; published 22 Dec 2015
+© 2015 OSA 28 Dec 2015 | Vol. 23, No. 26 | DOI:10.1364/OE.23.033705 | OPTICS EXPRESS 33710
+
+"
+"7","31]
+DJ E E E E E E
+'5 2 2 2 2 2 2
+E AD Lnn‘p closed i i i
+l: . . . . . .
+i 4” ......... ...”: . . . . . . . .:. ...... .....E.... . . . . . .: . . . .........:......... . . . E . . . . . ..
+E : . : : : :
+E 32] .............§ .......:. . . . . . . . . . . g . . . . . ..
+'|-' : : : : : :
+5 2D 2 2 2 2 2 2
+{13 I I I I I I
+I . I .
+u I - I I I I I2 I |
+I I 2. I I 2‘ 2 I I:
+I a a a I a a . I I11
+2 ﬂ 21‘- & ﬂ *5 I:
+...- 2 2 . :5. L1. 2 = Hi I
+m ﬂ.-3 .. : E:- ""g Ecamﬁ E Emg 3 E
+{12 .. .....E .g Qmﬁ .. 9%.. ""E 2% -% ﬂ... :5..."" 2 IE
+3 “5'2 % §_ £1
+{lﬂ ‘2 '7'- - ﬂ
+'1} EC! 41“.} 5-1] 8-1] 111-1] 12-1] 140
+annlink Time, s
+Fig. 3. A0 system performance showing Strehl and PIF during a single OPALS pass along
+with elevation angle. The A0 100p closed after 12 seconds.
+#252822 Received 28 Oct 2015; revised 9 Dec 2015; accepted 10 Dec 2015; published 22 Dec 2015
+© 2015 OSA 28 Dec 2015 | Vol. 23, No. 26 | DOI:10.1364/OE.23.033705 | OPTICS EXPRESS 33711
+
+"
+"8","Power In F iber Probability
+0.99
+a 0-75 ~16dB :
+~8 I
+0.1
+-90 -85 -80 -75 -70 -65 -60 -55 -50
+Power In Fiber (dBm)
+Fig. 4. Open and closed loop power in ﬁber probability distribution of the pass shown in Fig.
+3.
+10‘1
+_2
+D: 10
+m
+m 10‘3
+10‘4
+20 4O 60 80 100
+Elapsed Time, s
+Fig. 5. BER as a function of time through the second pass showing intermittent link closure.
+Upper points reﬂect times when there was not enough signal on the WFS for the AO system to
+correct the wave-front.
+5. Summary
+AO correction was performed on the OPALS downlink signal directly Via a SR1 based AO
+testbed with the corrected signal input to a SMF coupled communication receiver consisting
+of a LNA and temperature tuned narrow bandwidth ﬁlter and PIN photodiode. The
+performance of the system was characterized by the AO loop providing consistently high
+Strehl and reduced PIF signal ﬂuctuations during LEO satellite downlink tests.
+Reconstruction of an HD Video signal as in the original OPALS demonstration was also
+possible and demonstrates the ability to perform a communication link through the AO
+system. This represents the ﬁrst published demonstration of AO correction on a LEO-to-
+ground optical communication signal and paves the way for high rate, multi-Gbps optical
+downlinks with LEO satellites and seamless connection to terrestrial ﬁber networks.
+Acknowledgments
+The authors would like to thank all members of the OPALS operations team for their ongoing
+support of the experiment. The support of Peter Chu at The Boeing Company is gratefully
+acknowledged and the technical assistance of Yuanjian Xu and Jeffrey Barchers. The work
+described was carried out at the Jet Propulsion Laboratory (JPL), California Institute of
+Technology under contract with the National Aeronautics and Space Administration (NASA).
+#252822 Received 28 Oct 2015; revised 9 Dec 2015; accepted 10 Dec 2015; published 22 Dec 2015
+© 2015 OSA 28 Dec 2015 | Vol. 23, No. 26 | DOI:10.1364/OE.23.033705 | OPTICS EXPRESS 33712
+
+"

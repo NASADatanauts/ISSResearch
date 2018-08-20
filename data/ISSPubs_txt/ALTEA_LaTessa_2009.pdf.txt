@@ -1,0 +1,673 @@
+"","x"
+"1","4 g“ t t
+Nuclear Instruments and Methods in Physics Research B 267 (2009) 3549—3557
+ﬁtéweimﬁ . - y . . x . Contents lists available at ScienceDirect: ‘ ~ » 3f“ ‘ W2
+23%. ~ . ' , , ' . » a » ~ . = , ' . . ' -~ - *5 » l -: . 1mm-
+getﬁg’w f g- , -: 4- 1 4 = . 1 . ,- i , _ j .. , _ , ' ‘ ‘i W
+yﬁﬁxﬁﬂ Nuclear Instrumentsand MéthOdS 1n PhYSlCS . ‘ esearch ' t WNW
+H
+Slmulatlon of ALTEA callbratlon data With PHITS, FLUKA and GEANT4 '~
+C. La Tessa 3, L. Di Fino 3, M. Larosa 3, K. Leec, D. Mancusi b, D. Matthié d, L. Naricia”, V. Zacontea
+a Department of Physics, University of Rome Tor Vergata and INFN, Via della Ricerca scientiﬁca 1, 00133 Rome, Italy
+bFundamental Interactions in Physics and Astrophysics, University of Liége, allée du 6 aoﬁt, 17. B-4000 Liege, Belgium
+cSpace Radiation Analysis Group. johnson Space Center, NASA, Houston, Texas, USA '
+d German Aerospace Center, Institute of Aerospace Medicine, Linder Hoehe, 51147 Cologne. Germany
+WW
+ARTICLE INFO ABSTRACT
+Article history: The ALTEA-Space detector has been calibrated by testing its response to several monochromatic beams.
+Received .17 AP?“ 2009 These measurements provided energy—deposition spectra in silicon of mo, 600 and 1000 MeV/nucleon ‘
+Reg”? ‘“ rFV‘SEd form 91”“ 2009 12C and 200 and 600 MeV/nucleon 48Ti. The results have been compared to three Monte Carlo transport
+Availa le onlme 181”“ 2009 codes, namely PHITS, GEANT4 and FLUKA. Median, full width at half maximum (FWHM) and interquartile
+———————————-—-—-—-————-——————-—- range (lQR) have been calculated for all datasets to characterize location. width and asymmetry of the , ﬁ ,. .
+Keyword“ energy-deposition spectra. Particular attention has been devoted to the inﬂuence of 6 rays on the shape ""
+ALTEA of the energy-deposition spectrum. both with the help of analytical calculations and Monte Carlo simu-
+PHITS . . . . . . .
+FLUKA lations. The two approaches proved that. in thlS range of prOJectIle charge. prOJectile energy and detector
+GEANT4 size. the leakage of secondary electrons might introduce a difference between the energy-loss and
+Monte Carlo energy-deposition spectrum. in particular by changing the location, width and symmetry of the distribu-
+Energy spectrum tion. The overall agreement between the Monte Carlo predictions and the measurements is fair and l,
+6 rays makes PHITS, FLUKA and GEANT4 all possible candidates for simulating ALTEA-Space experiment.
+© 2009 Elsevier B.V. All rights reserved.
+1. Introduction . the 155 over a one year period (from July 2006 till August 2007) ' '
+[4,5].
+The increasing presence of humans in space for technical/scien— One of the possible applications for the ALTEA—Space measure—
+tiﬁc operations in the International Space Station (lSS) or for fur- ments is the benchmark of existing Monte Carlo transport codes
+ther exploration (such as a manned journey to Mars) requires an commonly used in radioprotection in space. Experimental data
+accurate investigation of the effects of space radiation on the astro— can in fact provide only a partial knowledge of the radiation ﬁeld
+nauts. The anomalous long term effects on astronauts (ALTEA) pro— composition inside the space station, due to the effects that the
+ject is part of this campaign and focuses on the effects of the space shielding (e.g. the spacecraft components or the astronauts body)
+environment on the central nervous system (CNS) starting from has on the primary cosmic radiation. An assessment of the expo-
+the study of the anomalous perception of phosphenes (”light sure riskrelies on an accurate estimate of the radiation ﬁeld inside
+ﬂashes"". LF) during space ﬂights. The ﬁrst model to decribe the the space station and can be achieved only with three-dimensions
+LF has been recently presented and links this phenomenon to the Monte Carlo codes, which can reproduce complex geometries and .
+passage of ionizing radiation through the nervous tissues [1]. take into account their effect on the incoming flux. - ""
+One of the ﬁrst steps to study the LP is therefore to characterize In this work we present a comparison between some Monte
+the radiation environment to which the astronauts are exposed Carlo simulations and the ALTEA—Space calibration data; the codes
+during the missions. used for the simulation are PHITS, FLUKA and GEANT4.
+A space~based experiment called ALTEA-Space has been in-
+cluded in the ALTEA project to achieve this result. ALTEA—Space 2. Experiment description
+consisted of two phases: the calibration of the device on Earth ,
+and the actual measurement performed inside the 155 (USLab mod— The ALTEA—Space device consists of six identical silicon tele—
+ule). 1“ the former, the dev1ce was exposed t9 monochromatic scopes (silicon detector unit —— SDU) arranged .on a 3d structure. A
+beamsof different energy and charge t0 check 1tS response [23] SDU is composed of three detector pairs, each pair consisting of
+Whlle. 1“ the latter, 1t monitored the radiation env1ronment 1n51de two silicon planes alternately oriented along the X and Ydirections.
+On a single planes there are two 8 x 8 cm2 striped silicon chips
+* Corresponding author. Tel.: +39 05 7259 4519; fax: +39 06 2023507. With a gap 0f 55 mm and each heving a thickness of 380 um. Be—
+A E-mailaddress: livio.narici@roma2.infn.it(L. Narici). tween an X and the corresponding Y plane there are 3.75 mm,
+0168—583X/$ ~ see front matter © 2009 Elsevier B.V. All rights reserved.
+doizl0.1016/j.nimb.2009.06.086 .
+
+"
+"2","6 s
+3550 C. La Tessa et aL/Nuclear Instruments and Methods in Physics Research B 267 (2009) 3549-3557
+y3 rithm [18] supplemented by an optional single scattering method.
+Mi w X3 The treatment of ionization energy loss is based on a statistical ap—
+, 5 Y2 proach [19] alternative to the standard bandau and VaVllOV ones, '
+5. WW] X2 whereas energy straggling 15 described in a “normal"" ﬁrst Born - .
+gt Y1 approximation With incluswn of charge—exchange effects. Nuclear
+i ., x1 interactions are treated with RQMD [201 or DPMJET I211 models. .
+gt; “ ta gamma deexcitation are described by an updated version of . the
+«a 3% WW‘SSROPf“EW‘“g approx“ [221'
+WWW CW” clear Physics, Italy) and CERN (European Organization for Nuclear
+\ Wx‘f'ww Research, Switzerland) that owns its copyright.
+3.75 WW 3.3. GEANT4
+Fig. 1. Simpliﬁed scheme of the detectors contained in a SDU; all distances are , , , , .
+reported in mm. GEANT4 [23] IS a toolkit for Simulating the passage of particles
+thorough matter. The physics processes cover a comprehensive
+range of interactions, particles, materials and elements over a wide
+while between two XY pairs there is a distance 0f 37-5 mm. The Sil- energy range (from keV up to TeV). The reaction cross section for
+icon planes are held in place by a 1.3 mm aluminum box. A simpli- nucleus—nucleus collisions can be estimated with Tripathi‘s [8—
+ﬁEd scheme 0f ALTEA setup iS shown in Fig. 1. 10] formula or Shen’s [11] formula; it uses the jQMD model and
+For the calibration, each SDU has been separately exposed to the [AM model as event generators for nucleus—nucleus reactions
+monochromatic beams produced at the G51 heavy-ion accelerator and hadronic cascades, respectively [24]. Electromagnetic interac-
+in Darmstadt. Germany. The beams chosen for the experiment tions are described by the Standard or LowE (Low Energy Electro—
+are carbon 100, 600 and 1000 MeV/nucleon and titanium 200 magnetic) models [25] depending on the nuclei energy.
+and 600 MeV/nucleon. GEANT4 is currently maintained by CERN (European Organiza-
+tion for Nuclear Research, Switzerland).
+3. Codes description Table 1 summarizes the models implemented in the Monte .
+Carlo codes mentioned in this section. ;
+3.1. PHITS
+4. Simulation of the energy spectra
+Particle and heavy-ion transport code system (PHITS) [6] is a : ii
+three—dimensional Monte Carlo code designed with the purpose PHITS, FLUKA and GEANT4 have been tested against the mea- I
+0f simulating the transport 0f hUCIEi and other particles in compli- surements collected with ALTEA. The geometry used in each simu-
+cated geometries and calculating ﬂuxes, energy~deposition distri— [ation consists of a 1,3 mm aluminum plane followed by a silicon
+butions and many other observables. It is based on the NMTC/ plane of thickness 380 um; the codes provided the energy spec—
+]AM [7] code, utilizes Tripathi’s [8—10] or Shen's [11] model to cal- trum in silicon as output. The results are reported in Fig. 2. ALTEA
+culate the mean free path for nucleus-nucleus reactions, the JQMD raw data are acquired as ADC and have been converted to Mev
+model [12] to simulate the dynamical stage of nucleus-nucleus using PHITS. The calibration has been obtained under the assump—
+reaction and the GEM model [13] to describe the evaporation of tion that there is a linear relation between Mev and ADC:
+the excited residual nuclei. Both SPAR [14] and ATIMA [15,16]
+codes have been implemented in PHITS to calculate stopping AEPH'TS(MEV) : aAEALTEA<ADC) + b' (1‘)
+power and energy straggling; the latter can also be estimated with An estimate of the slope a and intercept b has been obtained by
+Gaussian, Vavilov and Landau theories. measuring the peak position in both ALTEA and PHITS spectra and
+The PHITS code is maintained by a cooperation among RIST performinga linear regression over all the projectiles available. The
+(Research Organization for Information Science and Technology. resulting conversion formula is
+japan), [AEA (Japan Atomic EnergyAgency, japan), KEK (High-En— AEpHrrs(MeV) = 0.069 AEALTEA ( ADC) + 1-04. (2)
+ergy Accelerator Research Organizatlon, Japan) and Chalmers
+University of Technology (Sweden). Moreover, we checked that the conversion MeV—ADC were
+independent of the Monte Carlo chosen. We assumed that the en—
+3.2. FLUKA _ . ergy depositions simulated with two different codes were linked
+by a similar relation as expressed in Eq. (1) and obtained an esti-
+FLUKA [17] is a Monte Carlo code based on microscopic models mate of a and b by performing a linear ﬁt over the peak positions.
+and is able to simulate the interaction and transport of hadrons, The slope and intercept calculated for the PHITS—FLUKA pair are
+heavy ions and electromagnetic particles from a few keV (or ther- 0.989 3; 0.02 and —0.07 :1: 0.07, respectively, while for PHITS—
+mal energy for neutrons) to cosmic ray energies in any solid, gas— GEANT4 are 0.9984 :1: 0.0011 and ——0.099 i 0.03. Both slopes are
+eous or liquid material. The transport of charged particles is consistent with 1 within 1% while both intercepts are consistent
+performed through an original Multiple Coulomb scattering algo— with 0 within the uncertainty, proving that energy depositions
+Table 1
+Summary of the models implemented in PHITS. FLUKA and GEANT4.
+WWW
+Nucleusmucleus reaction cross section . . PHITS , FLUKA ,. . ., . . . y . .1 , ,, {GEANT4 .
+, .— ' . _ ' _ . ’ mmnnsnen . . Ownmodel . ~ a 5 . .. L :Tri‘path.i.-~Shen 5
+Event generata:cmaaenuaeus) . * ”5“} '7' JQM‘u/am ‘ ' ¢- RQMDDPMJET/Weisskoprwmg "": ”‘JQMDIGWEM '
+
+"
+"3","C. La Tessa et aL/Nuclear Instruments and Methods in Physics Research B 267 (2009) 3549—3557 3551
+0.16 0.20
+C 100 MeV/nucle9.l,l._ . O ALTEA 0.18 C 600 MeV/nucleon § § 0 ALTE A
+0.14 ........pHn‘s ---~---PHITS
+0 12 19 -—-——-FLUKA 0‘16 ——--FLUKA
+’ ’ Q ~—-— GEANT4 0,14 ,, —-—— GEANT4
+.' ', .‘ 1‘,
+0.10 = a
+5‘ a g; 0.12
+1: ,- 1:: 1: ,-
+g 0.08 g g 0.10
+5' .: 5"" ;
+E 0.06 c: n E 0.08 §
+V 0.06 \
+0.0 .- :
+4 c a 0.04
+0.02 a ° 0,92 5 '
+._ a c é; _ _
+' 0.00 *""""’ ' . . .1, 0.00 ° ' ~
+19.0 19.5 20.0 20.5 21.0 21.5 22.0 22.5 23.0 23.5 5.0 5.5 6.0 6.5 7.0 7.5 8.0 8.5 9.0
+. Deposited energy (MeV) Deposited energy (MeV)
+0.20 C 1000 MeV/nucleon o ALTEA 0 10 Ti 200 MeV/nucleon o ALTEA
+' DE “-""WPHITS ""-""mPHlTs
+ﬂ ----FLUKA E —---—FLUKA
+‘ 0.08 ' -~—
+0.15 \ GEANT4 . ’g Q GEANT4
+>5 4 >, 6‘ ﬁg:
+2 a g 0.06 .v’
+Q) ."" .‘I'U 2 ll
+3 0.10 .3 a. . ..
+2 j -. . 1. 2 0.04 ‘
+L7H ‘ a L“ j 5 '3.
+0'05 ' 0.02 ""f ’ \ ‘
+.: z: ,. a
+e =°°O
+.' -‘ -. ea ‘ , e ,_ . _
+0.00 4H.» 9.. .. , .. .. 0'00 ' é” ”‘9
+4 5 6 7 8 9 10 158 160 162 164 166 168 170 172 174 176 178
+. . f9
+Dep081ted energy (MeV) Depos1ted energy (MeV)
+0.10 Ti 600 MeV/nucleon ‘9 ALTEA
+-—-——GEANT4
+0.08 2;???
+p, .55 25
+g 0.06 ,
+“5 ' .9
+L: 0.04 ‘E.
+1'... .5.
+0.02 5;.
+n.3,"" .
+0.00 °° °' ,
+78 80 82 84 86 88 90 92 94
+Deposited energy (MeV)
+Fig. 2. Measured (ALTEA) and simuiated (PHITS, FLUKA and GEANT4) energy spectra for carboh 100, 600 and 1000 MeV/nucleon and titanium 200 and 600 MeV/nucleon in
+380 pm of silicon.
+predicted by different codes differ from each other at 1%. The test width at half maximum (FWHM) and interquartile range (IQR)1
+has therefore proved the independence of the MeV~ADC conver— for each dataset and we report them in Tables 2-4, respectively.
+sion from the Monte Carlo choice. We did not choose the usual location and width estimators (namely
+The spectra relative to lOO-MeV/nucleon carbon and 200- and mean value and standard deviation, respectively) because they are
+600—MeV/nucleon titanium show that all Monte Carlo codes pre- not robust against outliers and they cannot be reliably compared if
+dict similar energy-deposition spectra, while the results for 600- the distribution shapes are very different. For example, the standard
+and 1000—MeV/nucleon carbon suggest a peculiar behavior of deviation calculated for 1000—MeV/nucleon carbon is equal to
+PHITS with the respect to the other datasets. For these systems, 0.8 MeV for PHITS distribution, 2 MeV for FLUKA, 2.4 MeV for
+in fact. the PHITS spectra are characterized by an asymmetric tail
+on the right side and by a signiﬁcant deviation of the peak position W H , d ﬁ d m (m b tw m d m
+e In erquar l e range IS e ne as e l erence e een e upper an e
+compared to the (?ther spectra. , , lower quartile, wherea quartile is any of the three values which divide the sorted data
+Further analysxs has been PerformEd t0 CharaCtenze quantlta‘ set into four equal parts 50 that each part represents one fourth of the sampled
+tively the energy-deposition spectra: we estimated median, full population. ‘
+
+"
+"4","3552 C. La Tessa et aL/Nuclear Instruments and Methods in Physics Research 8 267 (2009) 3549—3557
+
+Table 2 0
+
+Median values (MeV) of the experimental (ALTEA) and simulated (PHITS, FLUKA and GEANT4) energy—deposition spectra of 100—. 600~ and 1000—MeV/nucleon carbon and 200-
+and 600~MeVlnucieon titanium in 380 pm of silicon.
+
+FLUKA . 195 , 64 . 5.4 ' , . 1617
+GEANT4 1946.5 . - . 55 "" . . ' , j. , 1,; * 1533 :2; . ., _ ; :: 91,5 ~ u _;
+Table 3
+
+FWHM values (MeV) for the experimental (ALTEA) and simulated (PHITS, FLUKA and GEANT4) energy-deposition spectra of 100—. 600- and 1000—MeV/nucleon carbon and 200-
+and 600—MeV/nucleon titanium in 380 pm of silicon. .
+
+. V ‘ , , :‘Cai‘btin 100MeVInU‘ f; Carbtin 6001MeV/n‘ ‘ . “ Z'I‘Cal'bﬁl‘i'1:000""M€V’l1”""fI,,1-},f‘i TltamumZOGMeVln TitaHiUmSOOMeVIn
+FLUKA ' ‘ ' ' 1*.2‘ ‘ ' ' , “ 1.1 1 ‘ 1.0% . I ' ' ' * ' 4.4 f : ' i
+GEANT4 1.3 _ . .. 1.1 0.9 . 5.2 : 1 I ' , 45 ‘31:
+Simulation without the transport of 5 rays. . ; j 7
+FLUKA . $1.3 ‘ » 1.3 ' 1.1 4.7 4-5' , ""
+GEAN’M . . . 1.3 _ , .1 1.1 0.9 5.0 5.7 ‘
+
+Table 4
+
+iQR values (MeV) for the experimental (ALTEA) and simulated (PHITS. FLUKA and GEANT4) energy-deposition spectra of 100-. 600- and 1000- MeV/nucleon carbon and 200- and
+600-MeV/nucleon titanium in 380 pm of silicon.
+
+?3 ~-. ~.‘CatDOIIsJOO‘MeV/n;~=.,. carbonSOOMeV/n CarbonwOOMewn :Titanium,~200MeV/n ,, , ~ , ::->:.Titanium600 MeVIn
+ALTEA ‘ 085 ' 059 .. ‘ 055 ,1.- 39 i I i 33
+
+PHITS 071 085 090 27 34 5
+FLUKA ? "" . 071 . ‘ 059 055 ' 27
+FLUKA ' 072 -‘ 7 ‘ f 037 -' 091 28
+GEANT4 1 0.7715 g _ 078 . ' ' 030 _, . 3135
+
+» 1..1.-:;7:Z‘;.~--':':=.-..', ,~ x ~~'.-~~:. - ~ a -: rt '. ~ ‘ ,.. .. 1 ., . . ,Ki' ~ 3 v.:1',-‘-.~_ . E ,1 3 v' '- ,, _f .
+GEANT4 and 1.7 for ALTEA. By looking at the spectrum in Fig. 2. we K g 0.01 the spectrum is described by a Landau distribution, for
+can notice that for carbon 1000 MeV/nucleon the width of the distri- . 0.01 s K g 10 has a Vavilov shape and for K > 10 the spectrum is
+butions are pretty similar and around 0.5 MeV. The signiﬁcant dis- Gaussian [26]. In general, for K g 10 the energy-loss spectrum can—
+agreement is due to the presence of the tail, i.e. of the outliers, not be considered symmetric.
+that make the standard deviation an unsuitable parameter for char- We thus estimated the distribution asymmetry with the follow—
+acterizing the width of the energy spectra for the systems ing parameter:
+considered - . .
+
+' . , , , , , U er uartile — Lower uartile 2 -— Median
+The energy-deposmon distributions are not necessarily sym- asym =LB-Li—m———I—Q—R9——-—~)—/——————, (5)
+metric; this is primarily due to the fact that the energy-loss spec—
+
+trum of particles in thin absorbers is not Gaussian. The nature of For a symmetric distribution, asym = 0; for a right-skewed (left—
+the energy-loss spectrum is connected to the parameter K. whose skewed) distribution, asym > 0 (asym < 0). The values for each
+expression is (c = 1): dataset are reported in Table 5. along with the value of K.
+
+K N 2 x2 22 The values of the median reported in Table 2 show that there is
+
+K : ____. z W, (3) good agreement between the codes, their discrepancy being al—
+
+Tmax A134 7’2 ways lower than 10%. This value quantiﬁes the difference between
+where the models implemented in the Monte Carlo to rule the electro-
+2 magnetic interactions and proves that their predictions are in good
+
+- Z Z a reement wi each er.
+
+A: 21tN,qr§mep—1 l x, g th 0t.h ,
+
+AT B The results reported in Tables 3-—5 conﬁrm that PHITS 5 energy—
+
+Tmax z 2meﬁ7‘v2 (4) deposition spectrum is wider and more asymmetric than the oth-
+
+ers, its deviation becoming more signiﬁcant with smaller K value.
+
+NA is the Avogadro number, re the classical electron radius, Zp the as we had already observed by examining Fig. 2. According to this
+projectile charge, p, x, 21 and AT the density, thickness, charge analysis, the largest discrepancy is observed for carbon 600 and
+and mass number 0f the target (silicon in 0111' case), respectively; 1000 MeV/nucleon which are characterized by the smallest K va—
+the quantity 0 and 1) also refer to the incident partigle. Physically. lue. This result indicates that PHITS's deviation is largest when 5-
+K represents the ratio between a typical energy loss A and the max- ray production is most important.
+imum energy transfer allowable in a single collision Tmax and its va— As a matter of fact, PHITS does not include at the moment any
+lue determines the shape of the released-energy spectrum: for model that can simulate the physics of secondary electrons, whose
+
+"
+"5","C. La Tessa et aL/Nuclear Instruments and Methods in Physics Research B 267 (2009) 3549-3557 3553
+Table 5
+Values of the asymmetry parameter (Eq. (5)) and of 1c (Eq. (3)) for the experimental (ALTEA) and simulated (PHlTS, FLUKA and GEANT4) energy—deposition spectra of 100-. 600-
+and lOOO-MeV/nucleon carbon and 200— and 600- MeV/nucleon titanium in 380 um of silicon.
+
+. ' : Carbon 100 IMevm Carbon 6OOIVIeV/n = . carbon“WWW“ TitaniumszeWn . Titanmmro‘WW/In
+kvalue 6 f ‘. . ' _ 02 2' 1‘ , 2' , 01: ' 22 ' 3 ’
+ArreA ' , ~ , { ~0010 0.013 I 002s '- - 50029 ‘ ‘ , ' ~ ‘ . ~0013
+PH‘ITS ~ ' 0.012 , A 0.072 2' "" .-'- ' "" "" 10.099 ' ' «f 0.001 _ . . -' _* . 0.018 x '-
+FLUKA . - 0.012 - , 0.047 ' 0:054 . - ‘ 0.000 ., j . g, , . ._ .
+GEANM . - 0.001 0.018 0.026 _ .- ~0.004 » ‘ ‘: 0.001, r: .
+Simulation without the transport of '6 rays . . j "" L 7 - V ' ,
+FLUKA ‘ , 0.011- ” 0.075 .» .__ . . . ' , 0.009 , ., 30.003, ,_ ,. -_. ’ . »
+
+* GEANT4 30.006 , ‘ 0:3. . 0:002; a . 0.2107 - _ z y , _!;:.7vo;004 (i; , a 0.013 e : 1;
+production is therefore neglected: the energy lost by the projectile invalid if the energy loss is comparable to the kinetic energy
+is all absorbed by the medium. Therefore, the spectrum simulated of the projectile, but the beams considered in this paper are
+with PHlTS represents the energy released by the projectile, while always far from this regime.
+
+ALTEA and the other Monte Carlo codes, which can transport the 6 (3) An escaping electron deposits no energy at all in the detec—
+rays, provide the energy absorbed by the detector. tor. In reality, all electrons have to travel a certain path in
+
+The energy—loss spectrum follows known distributions [26] and the detector before escaping; nevertheless, if the electron
+its shape depends on the value of K as mentioned above. According energy is sufﬁciently large, only a small part of it will be lost
+to the values reported in Table 5, 200—MeV/nucleon titanium in the detector. The approximation can actually be slightly
+should be Gaussian, 600-MeV/nucleon carbon and titanium should relaxed by allowing escaping electrons to deposit a constant
+be essentially Gaussian with a minor asymmetry while 600— and amount of energy To. which can be taken equal to the energy
+lOOO—MeV/nucleon carbon should have a Vavilov shape. The PHlTS of an electron with range equal to the detector thickness;
+spectra in Fig. 2 respect these observations. this reﬁnement, however. does not modify the conclusions
+
+The energy-deposition spectrum is, instead, more complex be- that we will draw.
+cause it depends on several parameters. such as the detector geom- -
+etry. and cannot be described by simple distributions as for the Let us ﬁx charge and kinetic energy of the projectile and let us
+released-energy spectrum. The energy absorbed by the medium indicate with u the average number of escaping 6 rays it produces
+is smaller than or equal to the energy lost by the projectile: sec- when it traverses the detector; of course, 0 is a function of the proé
+ondary electrons can in fact escape from the detector if their range jectile parameters and of the detector thickness. According to i
+is comparable with the detector size, or they can lose their kinetic assumption (2), the probability to produce n electrons is given by
+energy to bremsstrahlung photons. which in turn leave the system the Poisson probability mass function:
+undetected. A high 6-ray energy corresponds to a high probability n
+of energy leakage and therefore a larger deviation between energy— Poissp(n) = e'“ #17.
+loss and energy-deposition spectra. '
+
+Let us call f (T) the kinetic-energy distribution of the escaping
+
+electrons which, according to assumption (2), is the same for all
+
+5. Effect of 6-ray leakage on energy deposition of them; moreover, the joint distribution function for n electrons
+is simply the product 0an single—electron distributions.
+
+We shall now try to understand how the ﬁnite detector thick- NOW we use assumption (3) and we state that the total energy
+ness can introduce differences between energy-loss and energy— leakage is equal to the sum 0f the kinetic energies 0f the escaping 5
+deposition distributions. We have mentioned above that the pri- rays, minus the energy they deposit:
+mary ion can lose part of its energy to 6 rays, which in turn can n
+either escape from the detector or be converted into X—rays by Eleakﬁ = 2T,- — Mg. (6)
+bremsstrahlung; in both cases, most of the energy transferred to i=1 .
+the 6 ray leaves the system 0ndetected..An accurate evaluation of The probability that n electrons will carry away an amount of
+the importance of thlS effect 15 only pesSIble With the help of trans- energy E is then given by ‘
+port codes, but the followmg analytical approach 15 nevertheless
+able to provide a qualitative understanding of the data trends. Pn(E) :- /f(T1)f(T2) . . .f(Tn)5(E _ Eleakm) dTldTZ ... d1"", (7)
+5-7- Model assumptions where we have introduced the Dirac delta function. This distribu-
+
+, tion captures the inﬂuence of (Hay leakage 0n the energy—deposi—
+
+The model we propose is based 0“ three main simpliﬁcations. tion distribution. We will now proceed to study its ﬁrst three
+
+moments to show the effect on position, width and symmetry of
+(1) The probability that a 6 ray escapes from the detector is the energy—deposition distribution. f
+determined solely by its kinetic energy and is independent ’ ,
+of its initial position and direction of motion. This allows 5,2 Characterisation of the energy—leakage distribution ’ ""
+us to reduce the complex three-dimensional transport prob-
+lem to a simple probability balance. The escape probability The mean energy removed by n electronsjs
+can be interpreted as an average value over the detector vol-
+ume and over all escape directions. (Bleak)n = / Epn(E)dE;
+
+(2) 5 rays are generated independently of each other: the num—
+ber of generated 5 rays is governedby Poisson statistics and using Eq. (6) we can integrate out the delta function and we are left
+their energies are independent. This assumption is surely with
+
+"
+"6","3554 C. La Tessa et aL/Nuclear Instruments and Methods in Physics Research B 267 (2009) 3549—3557
+(Eleam = n(T _ T0), energies much larger than the ionisation potential of the medium
+. , and for spin—O particles (like 12C and 48Ti):
+where the bar represents an average over the one—electron dlStI‘lbu- 2 .
+tion f(T)! , ﬂ _ 1 “ ﬂ T/Tmax ‘
+____ ‘ dT — K ﬂZTZ ""° (15)
+60‘) = / Gmmmr. . .
+Here (dN/dT)dT represents the number of 5 electrons With en-
+The mean energy leakage is then ergy (T, T + dT); K is a function of the projectile and of the detector
+H"" thickness, its explicit expression being (6 = 1)
+E) k) = POiSS (""XEi k) = (T —' To)?” n— = (T ~ To)-
+( ea 2; "" ea "" Y4 1“ M K ..-= 21rNAr§m92§png L
+T
+(8) ~
+. . , _ The spectrum extends up to Tmax, the maximum energy trans—
+One can perform a similar talculatlon for the higher moments of ferable in a single collision, Eq. (4)_ _
+the energy-leakage distribution. Usmg Eqs. (6) and (7) one can For simplicity, let us assume that electrons always (never) es- '
+prove that cape if T > To (T < To). By the deﬁnitions given above, we have
+<Ef93k> = nZTf, — 2n2ToT + an + n(n —- UT? rm dN -
+n H 2 / 'a-T dT,
+Thus. To] dN
+. f (T) = —- —.
+<E12eak> = ZPOISSH(n)<Ei2eak>n M dT
+n 2 2 2 _ _2 2_2 Integrations can be carried out explicitly, thanks to the simple
+= (H + H )To "" 2W + Ii )TOT + HT + l1 T . analytic form of Eq. (15), yielding
+and one ﬁnds K 1 1 ﬂz T0
+2 2 2 2 ——‘7 “=7 T—f—+T—lnf—a
+aka = ([Eieak - <E.eak>1 ) = (Em) — (Em) = #(T — To) . <9) 13 0 max max max
+— __ K Tmax 2 Tmax “‘ T0
+Analogously. T —W (“1—776- ﬂ 7;;— ,
+k3..eak = ([Eleak — (Ewan?) = u(T — T0)3c <10) ——2- K 2 r2 _ T3
+T =—2""’ Tmax""TD""'B _£‘2_3;‘___,
+Let us recall now that the energy lost by the projectile Em is gi— ’6 I"" max ,9
+V611 by F : i (Tinx — T3 _ ﬁZ Tiiax - T3)
+2 2 3T '
+Elost =3 Edep + Eleaks B H max
+where Edep is the energy deposition in the detector. If we assume These formulas can be combined to produce explicit (yet cum—
+that ﬂuctuations in Edep and in Eleak are independent, we have: bersome) expressmns for Eqs. (8)! (9). and (”)3 .
+We can anyway use Eq. (15) to derive some Simple properties of
+(Em) : (5105:) __ (Eleak), (11) Eqs. (8), (9) and (1.4).. First, let us observe that f/(T) < 0 for
+2 __ 2 2 12 T < Tmax: thus, the distribution of 6-ray energies has a long tail to-
+qdep ""' 0'0“ ~ 0193'"" ( ) wards high values of T and therefore a positive skewness. The en-
+k3,dep = k3,]ost — k3,!eak~ (13) ergy-loss distribution is always positively skewed, too [28]; thus,
+Thus. the ﬂuctuations in energy leakage can affect the energy- Eq. (13) implies that (S-tay leakage willalways reduce the skewness
+. . . . . . . . . of the energy—loss d15tr1but10n,whlch lS physncally conSIStent Since
+deposntion distribution in three ways. they can shift ltS mean value . . . . . .
+. . . . . the high-energy tail of the energy-loss distribution 15 exactly due
+(Eq. (11)). decrease its Width (Eq. (12)) and modify its third mo— . .
+. . . . to the productlon of energetic 6 rays.
+ment (Eq. (13)), With respect to the energy—loss dIStI‘lbUtlon. The . . . . .
+. . It IS easy to check directly that f (T) 15 independent of Zp and x,
+thlrd moment can be used to construct a scale-mdependent mea- thus for a ﬁxed ro'ectile veloci
+sure of the distribution asymmetry; we introduce the skewness ' p J ty, ~
+2
+k3 (is - (5)?) H (X ZPX 2 (163)
+skew =__3_=.__________3__; (Ema (><sz (16b)
+- a 2 (2
+([5 - (5)] > meak 0c 2M? (16c)
+when skew > 0 (skew < O), the distribution has a tail to the right Skewleak (x __1__ (16d)
+(left). In the case of the energy-leakage distribution, Eqs. (9) and ZPﬁ
+(10) give This explains why the energy—deposition distributions of
+7—777 beams of the same energy per nucleon (e.g. 600 MeV/nucleon
+Skewleak =_____(___:__9.2__3_/2, (14) 12C and 41""11) in the same detector thickness look different. In
+WI” _ Tofl the case of carbon (Zp = 6), 5-ray leakage mainly affects the dis-
+tribution skewness, while in the case of titanium (Zp = 22) it
+changes substantially the mean energy deposition and the width
+5.3. Scaling properties of the distribution.
+Finally. for a ﬁxed projectile charge and detector thickness, Eqs.
+We can now pick a simple model for the 6—ray energy spectrum (8). (9) and (14) are functions of the projectile kinetic energy Tp.
+and evaluate the trends Eqs.(8),(9) and(14) with projectile charge The dependence for 12C is portrayed in Fig. 3. The asymptotic
+and energy. Rossi [27] suggests the following form, valid for kinetic behaviors (for Tp >> mp, where mp is the projectile mass) are
+
+"
+"7","C. La Tessa et aL/Nuclear Instruments and Methods in Physics Research 8 267 (2009) 3549—3557 3555
+4 . , , . , : .. . , , , ‘ 1 , _ , ‘ . _. Whether 6-ray leakage can signiﬁcantly affect the shape of the
+§ 5 E E E i 3% E E 3 E E /-. 10 energy-deposition distribution depends obviously on the distribu-
+§ § 3 E 2 E g §§ § § § g §/ ' tion parameters: if, for example. the mean energy leakage (Eq. (8))
+g 3 E -- <Elcak> E i E i § § I.?E 8. is small compared to the mean energy loss, the energy—deposition
+j i -. mm E E i i E § § I}? § i i a distribution will be centered at the same energy as the energy—loss
+E? 2 g skewness g g § § E if? § § 6. g distribution: similar reasoning applies to width and skewness.
+0.. z i : f t r : : J' 2 : ; ; 2 3 o
+O 2 2 22222323 2 ;.«’322222: 5,
+’L E E E E E E E E 2 E ,4"": E E 1 Z 4- 6. Simulations without the transport of 6 rays
+£12 i ,X’flési'zéé
+v g g “”5 g g g § § § § 2' Both the results showed in Section 4 and the calculations re— 1
+0 § § E i i § § i i i i i E 0 ported in Section 5 have underlined that the secondary electrons
+100 200 500 1000 2000 5000 l X 104 might have a strong inﬂuence on the shape of the energy—deposi—
+Energy (MeV/nucleon) tion spectrum. Combining the considerations discussed in the pre—
+. _ . . vious sections, we want to prove that 6 rays are responsible for the
+Fig. 3. Mean value (left scale), 5ta1idarti dev1atlonn(left scale) and skewhess (nght discrepancy between the energy—loss and energy—deposition spec-
+scale) of the energy~ieakage d15tr1but1on for a C beam. as a funct10n of the t b h . th 1: th forme 'S t nsf d .n the l tte h n
+projectile energy. The shape of the curves are universal when plotted as functions of ra y S owmg, a e r1 ra orme I . a 1‘ W. e
+the energy per nucleon since the projectile charge acts only as a normalisation the energy carned away by the secondary Eleamns ‘3 taken Into
+factor. account. This result has been achieved by reproducing the spectra
+of the same systems taken into account previously(100—, 600- and
+1000—MeV/nucleon carbon and 200— and 600-MeV/nuc1eon tita-
+K nium) with both FLUKA and GEANT4. without transporting the sec—
+1” N 70’ ondary electrons. i.e. simulating the energy-loss spectrum.
+Fi 5.4 and 5 shows the ener -de osition s ectra for 100-, 600-
+TP . .
+(51931.) ~ 2 K 1035;. and 1000-MeV/nucleon carbon obtained w1th FLUKA and GEANT4.
+P . respectively, when secondary electrons are transported or not
+TP
+Uleak ~ \/ meK --. transported.
+mp The comparison between spectra simulated with and without
+Skewleak ~ _2_ /T_n_e_ I}: the transport of secondary electrons shows similar results for FLU—
+3 K mp KA and GEANT4. No signiﬁcant difference can be noticed for 100-
+0.10 _ , g
+FLUKA c 100 MeV/nuclcon -—-—- w Delta rays 0.10 FLUKA C 600 MeV/nucleon — w Delta rays
+0'14 / ----‘- w/o Delta ra s 1;""- w/o Delta ra
+,1 0.14 ,.
+0.12 .' ‘.
+I, 0.12 I, \\
+0.10 ’ >. ‘.
+E g 0.10 ‘.
+Q Q 1‘ ,
+g. 0'08 g. 0.08 ‘.
+. u d)
+h 3-
+m 0.06 F“ 0.06 ,' ‘\
+0.04 0.04
+0.02 0,02 ,‘I \‘4\
+0.00 0.00 ,
+17.5 18.0 18.5 19.0 19.5 20.0 20.5 21.0 21.5 22.0 5.0 5.5 0.0 0.5 7.0 7.5 8.0 8.5 9.0 9.5 10.0 10.5
+Deposited energy (MeV) Deposited energy (MeV)
+0.18 ._,.-._-..._,_.. ,
+FLUKA C 1000 MeV/nucleon FLUKA T1 200 MeV/nucleon W... w Delta ms
+0.10 .
+0.16 w/o Delta ra s w/o Delta ra s
+0.14
+0.08
+0.12
+4.. 0.10 . 5 0.00
+:1 . ='-1
+3 0.08 .' 3
+E ,1' . g 0.04 '
+0.00 ;
+0.04 ."" 0.02
+0.02
+, .. 0.00
+4.0 4.5 5.0 5.5 0.0 0.5 7.0 7.5 8.0 8.5 9.0 9.5 10.0 , 154 150 158 100 102 104 100 168 170
+Deposited energy (MeV) Deposited energy (MeV)
+Fig. 4. Energy spectrum of 100—, 600- and 1000—MeV/nucieon carbon and 200— and 600-MeV/nucleon titanium in 380 pm of silicon simulated with FLUKA. with and without
+6—ray transport.
+
+"
+"8","6 ‘ V R
+3556 C. La Tessa et aL/Nuclear Instruments and Methods in Physics Research 8 267 (2009) 3549—3557
+MeV/nucieon carbon, whose energy—deposition spectrum overlaps symmetry and that the importance of each effect depends on the
+perfectly with the energy—loss spectrum; a minor discrepancy can projectile charge and energy. For example, at a given projectile en—
+be seen for the spectra relative to 200— and 600-MeV/nucleon tita- ergy, the calculation predicts that both the mean shift and the
+nium. where the energy contribution of 6 rays shifts the peak posi- width should increases with increasing projectile charge while
+tion and increases the width of the distributions; the discrepancy the asymmetry should have the opposite trend. A comparison of
+between energy deposition and energyloss becomes more relevant BOO-MeV/nucleon carbon and titanium in Figs. 4 and 5 proves
+for 600— and IOOO—MeV/nucleon carbon. where 6—ray leakage the validity of the calculation predictions.
+reduces the asymmetry of the distribution._The effect of 5 rays In general, the spectra simulated without secondary—electron
+obtained from this test agree qualitatively with the predictions of transport appear much more similar to the spectra simulated with
+' the analytical calculations described in the previous section. In PHITS (Fig. 2). Median, FWHM, IQR and asym have been calculated
+particular, it has been shown that the secondary electrons affect for these spectra and are reported in Tables 2—5. respectively. As al-
+the spectrum shape by changing its location, its width and its ready observed before, the median is not signiﬁcantly affected by
+014 GEANT4 c 100 MeV/nucleon GEANT4 C 600 eV/nucleon
+----- w/o Delta ra s 0’16 ----— w/o Delta ra s
+0.12 , 0.14
+0.10 0.12 [I ‘g
+L?) >5 I “
+U U ,' 1
+5 0.08 ' g 0'10 ' 1'
+5- er 0.08 ,' ‘1‘ 4
+e 0.06 2 \
+i=1 9‘1 0.06 ,1 x
+0.04 .' 4
+. 0.04 ,' x
+0.02 0.02
+0.00 0.00 ”
+18.0 18.5 19.0 19.5 20.0 20.5 21.0 21.5 22.0 22.5 5.0 5.5 6.0 6.5 7.0 7.5 8.0 8.5 9.0 9.5 10.0 .
+Deposited energy (MeV) Deposited energy (MeV)
+‘ 0.10 1,
+0.18 GEANT4 C 1000 MeV/""Udeon GEANT4 T1200 MeV/nucleon m
+. 0 l6 ----- w/o Delta ra 's w/o Delta ra s ,
+' 0.08 ' .
+0.14
+E 0'12 f g» 0.06
+Q) ,' a ‘1‘
+= 0.10 ' w ""9
+8 :’ ' é""
+a 0.08 I, 2 0.04 1
+0.06 Ln
+0.04 g"" \ 0.02
+0.02 ‘
+,’ 0.00
+0.
+4.0 4.5 5.0 5.5 6.0 6.5 7.0 7.5 8.0 8.5 9.0 9.5 10.0 156 158 160 162 164 166 168 170 172 174 ,,
+De osited ener MeV
+p gy ( ) Deposited energy (MeV)
+GEANT4 Ti 600 MeV/nucleon w Delta rays
+0.08
+1: 0.06 1’ 1‘
+O I 1
+5 I \
+=1- / x
+E 0.04 1"". ‘\\
+0.02 l” \‘x
+0.00 . “
+84 86 88 90 92 94 96 98
+Deposited energy (MeV)
+Fig. 5. Energy spectrum of 100-, 600- and 1000— MeV/nucleon carbon and 200- and 600—MeV/nucleon titanium in 380 pm of silicon simulated with GEANT4, with and
+without 6—ray transport.
+
+"
+"9",".1. w ’15 1
+C. La Tessa et aL/Nuclear Instruments and Methods in Physics Research B 26.7 (2009) 3549-3557 3557
+6-ray leakage and the values are similar for all simulations and AL- References
+TEA. However, the other quantities are closer to PHITS' results than
+to ALTEA and the other Monte Carlo. [1] L. Narici, A.D. Martino. A. Rinaldi. W.G. Sannita. M. Paci. Radical excess in the
+
+The qualitative and quantitative analysis of the spectra simu- 17:23:11; 2383?] {$5 “gm names m Space"" Rad‘at' Meas"" 001:10.1016/
+lated without 5-ray transport has proved that these data are more [2] v. Zaconte, F. Beili, v. Bidoii. M. Casoiino. L.D. Fino. L. Narici, P. Picozza. A.
+similar to PHITS' prediction than to the other datasets. This result :inaldi- 'Dé guggierii. S-Ecgrozzo. \CL'E Sannit? :1 Spillgntcini. $1. 121122? E.
+
+. - antucc1. . crimag 10. . egreto. . otronei, . ippi. . iane i, . a per.
+therefore vehdate our hypothesrs that the secondary electrons M. Korotkov. A. Popov, V.P. Petrov. V.P. Sainitskii. S. Avdeev. W. Bonvicini. G.
+are l'eSPOI‘Slble for the dlfferenee between PHITS and the Other Zampa. R. Vittori. C. Fuglesang, D. Schardt. ALTEA: ﬂight model calibration at
+Monte Carlo codes. However, Table 2 shows that, even for the sys- l 651. Adv. Space RfS- 37 (2:06) 1704.
+
+— - ' - - 3] V. Zaconte, F. Be ii, V. Bi oii. M. Casolino. L.D. Fino, L. Narici, P. Picozza. A.
+tems. Where the leakage contr1but10n.m1ght Pe eigniﬁcant, th,e Rinaldi,W.G.Sannita. N. Finetti,G. Nurzia. E. Rantucci. K.Scrimagiio. E. Segreto,
+medlan 15 net greatly affeCtedo for a g1ven prOJectile. Its value ‘5 D. Schardt, ALTEA: the instrument calibration. Adv. Space Res. 266 (2008)
+in fact similar for simulations performed with or without the trans— 2070. ' . . .
+port of 5 rays. This result assures us that PHITS, FLUKA and GEANT4 [4] L. Nar1c1. Heavy rons hghttlashes and brain functions: recent observation at
+
+. - . . . . . accelerators and 1n spaceﬂight. NJPh 10 (2008) 075010.
+Fmgm 3” be su1tab1e ch01cef0r the calibratlon Of ALTEA 1f the mEd"" [5] V. Zaconte. M. Casolino. L.D. Fino, C.L. Tessa, M. Larosa. L. Narici. P. Picozza.
+1an 15 used instead of the mean. High energy radiation ﬂuences in the lSS-USLab: ion discrimination and
+particle abundances, Radiat. Meas.. submitted for publication.
+
+_ [6] H. Iwase. K. Niita. T. Nakamura. Development ofa general—purpose particle and
+
+7- COHCIUSIOHS heavy ion transport Monte Carlo code. J. Nucl. Sci. Technol. 39 (2002) 11.
+[7] K. Niita, H. Takada. S. Meigo. Y. Imeda. High—energy particle transport code
+
+. - - NMTC/JAM. Nucl. Instr. and Meth. B 184 (3) (2001) 406.
+
+m thlS work we Present“! a companson bemeen eXpenmental [8] R.K. Tripathi. F.A. Cucinotta.].w. Wilson. Accurate universal parametrization of
+energy spectra,obta1ned from the calibration Procedure 0f the AL” absorption cross sections 111 — light systems. Nucl. Instr. and Meth. B 155
+TEA-Space device, and data simulated with PHITS, FLUKA and (1999) 349.
+
+GEANT4 Monte Carlo codes The systems considered were carbon [9] R.K. Tripathi. F.A. Cucinotta,].K. Wilson. Accurate universal parametrization of
+‘ d ' . . absorption cross section. Nucl. Instr. and Meth. B 117 (1996) 347.
+
+100' 600 an 1000 Mev/nUCleon and tltanlum 200 and 600 MeV/ [10] R.K.Tripathi. F.A. Cucinotta.].K. Wilson.Accurate universal parametrization of
+
+nucleon. absorption cross section ii — neutron absorption cross sections. Nucl. Instr. and
+
+The experimental data, expressed in ADC, were converted to Mem- 3 ‘29 (1997) ‘1' _
+
+M V h h l' l . b ADC d M V h [11] S.Q. Wen, B. Wang.]. Feng. W.I. Zhan. Y.T. Zhu. E.P. Feng. Total reactlon cross
+e t lng a meet re athh etween an e ' W 958 section for heavy—ion collisions and its relation to the neutron excess degree of
+
+parameters were estimated With the help of PHITS. Conversmn freedom. Nucl. Phys. A491 (1989) 130.
+
+expressions obtained With FLUKA and GEANT4 proved to be equiv— [12] K. Niita. S. Chiba. T. Maruyama. H. Takada. T. Fukahori. Y. Nakahara. A.
+l t t PHITS' . th t th . . d d t f lwamoto. Analysis of the (N,xNI) reactions by quantum molecular dynamics
+
+3 en 0 ' assuring a e conver51on were m epen en 0 plus statistical decay model. Phys. Rev. C 52 (5) (1995) 2620.
+
+the Monte Carlo chosen. [13] S. Furihata, Statistical analysis of light fragment production from medium
+
+For each dataset the median, the FWHM, the [QR and a quantity energy proton-induced reactions. Nucl. lnstr. and Meth. B 171 (2000) 251.
+
+. - . [14] T.W. Armstrong. K.C. Chandler. A fortran program for computing stopping
+callEd asy m were estimated and pFOVEd that PHITS. dev1ations from powers and range for muons. charged pions, protons and heavy ions. Technical ‘5
+both the other Monte Carlo and ALTEA were max1mum for carbon Report, ORNL_4359, Oak Ridge National Laboratory, 1973.
+600 and 1000MeV/nuc1eon, Analytical calculations and further [15] H. Geissel, C. Scheidenberger. Slowing down of relaivistic heavy ions and new
+. - 1 . - - . applications. Nucl. Instr. and Meth. B 136 (1998) 114.
+SImUIatlonS we're PerformEd t0 Shade 3 hght 0“ PHITS peculiarlty. [16] C. Scheidenberger, H. Geissel. Penetration of relativisitc heavy ions through
+both methods indicated that the source of the discrepancy were matter, Nucl' Instr, and Meth. B 135 (1993) 25_
+the secondary electrons, whose production is neglected in PHITS, [17] A. Fassb.A. Ferrari.S. Roesler, P.R.Sala. F. Ballarini.A. Ottolenghi,G. Battistoni.
+
+' - _ _ F. Cerrutti, E. Gadioli. M.V. Garzelli, A. Empl, ]. Ranft. The physics of FLUKA:
+Whlle ALTEA’, FLUKA and GEANT4 pI'OV1 qe the energy lOSS spec status and recent development, in: H. Hiramaya,(Ed.). Proceedings of SARE—3.
+trum, PHITS SlfﬂUlatES the enerw-dePOSIUOH SPECtmm- the differ— May 7~9. 1997, KEK-Tsukuba. KEK Report Proceedings 97—5. 1997. p. 32.
+ence lying in the contribution of 5 electrons. Moreover, the [18] A. Ferrari. P.R. Sala. R. Guaraldi, F. Padoani,An improved scattering model for
+analytical calculations predicted that the leakage of secondary Charged Pamde §ran590'tv NUCL '“Str- and Mem- 3 7‘ (.1992) 4‘2— , .
+
+l ff (1 h h f h b h . [19] A. Fassb. A. Ferrar1.J. Ranft. P.R. Sala, New developmentsm FLUKA modelling of
+eectrons a ecFe t e S ape o t e energy SpeCtrum y C anging hadronic and EM interactions. in: Lisbon.A.K1ing.F.Baréo.M.Nakagawa,L.
+1ts location, Width and symmetry and that the effects depended T'avora. P. Vaz (Eds.), Proceedings of the Monte Carlo 2000 Conference.
+on the projectile energy and charge. These predictions have been [20] gCtSOber 231—26.200%.Shylnger-gggllasgdggrlgn).200131609155. ff t f 1
+
+. . . . . . orge. avor pro uc1on1n e on co |s1ons: e ec o co or
+validated With the comparison between spectra simulated w1th ropes and hadronic rescattering' Phys. Rev. C 52 (1995) 3291.
+and Without the transport of 6 rays. Finally. the median has proved 121] 1. Ranft. Dual Parton Model at cosmic rays energies. Phys. Rev. D 51 (1995) 54.
+to be robust against the leakage contribution and therefore repre- :22} V. WeiSSkOﬁf, StaltistiCS and nuclear li'eactions,lkPhys. Rev. 52 (1937) 295, ,
+
+- - - 23 S. Agostine i at a .. GEANT4 — a simu ation too it. Nucl. Instr. an Meth. A 506
+sent a suitable parameter to be used for calihrating ALTEA data. (2003) 250.
+
+m COHCIUSIOH. the tEStS dlscussed 1“ thlS work Proved that [24] T. Koi, M. Asai. D.H. Wright. K. Niita. Y. Nara, K. Amako. T. Sasaki. Interfacing
+
+PHITS, FLUKA and GEANT4 reproduce ALTEA calibration data with the JQMDfand JAhf/l nuclear reaction codes to geant4. in: Proceedings of the
+
+- - - 2003 Con erence or Computing in High-Energy and Nuclear Physics (CHEF
+
+a good accuracy and m1ght be reasonable candidates to Simulate 03), La Jolla. California. March 24—28. 2003. Physics/0306115. 2001111711005.
+
+ALTEA measurements on the 153- [25] K. Amako. S. Guatelli. V.N. Ivanchenko, M. Michel. B. Masciaiino, K. Murakami,
+
+P. Nieminem, L. Pandola. S. Parlati. M.G. Pia. M. Piergentiii, T. Sasaki. L. Urban.
+
+Acknowled ement Comparison of geant4 electromagnetic physics models against the NIST
+g reference data, IEEE Trans. Nucl. Sci. 52 (4) (2005) 910.
+
+. ' [26] W.R. Leo, Techniques for Nuclear and Particle Physics Experiments, Springer-
+
+The authors acknowledge A. De Simone for the help w1th Verlag. 1994.
+
+GEANT4 simulations and AS] (grant MoMa—ALTEA) for the ﬁnantial [27] B. Rossi. High Energy Particles. Prentice—Hail. inc, Englewood Cliffs, NJ. 1952.
+contribution [28] H. Bichsel. Straggling in silicon detectors. Rev. Mod. Phys. 60 (1988) 663.
+
+"

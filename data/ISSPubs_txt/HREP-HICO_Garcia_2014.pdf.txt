@@ -1,0 +1,1364 @@
+"","x"
+"1","Remote Sensing of Environment 147 (2014) 186—205
+nté‘U‘f Contents lists available at ScienceDirect mcmng
+7 3:3""! Remote Sensmg of Env1ronment
+.1. .' Ash. 1; ‘ ~ 11
+ELSEVIER journalhomepage:www.elsevier.com/Iocate/rse ' 
+—
+Detectlng trend and seasonal Changes 1n bathymetry denved from HICO ® CrossMaa
+lmagery: A case study of Shark Bay, Western Australla
+Rodrigo A. Garcia a’*, Peter R.C.S. Fearns a, Lachlan I.W. McKinna ab
+3 Remote Sensing and Satellite Research Group, Department of Imaging and Applied Physics, Curtin University, GPO Box U 198 7, Perth, Western Australia 6845, Australia
+b Ocean Ecology Laboratory, Code 616, NASA Goddard Space Flight Center, Greenbelt, MD 20771, USA
+ARTICLE INFO ABSTRACT
+Article history! The Hyperspectral Imager for the Coastal Ocean (HICO) aboard the International Space Station has offered for the
+Received 15 November 2013 ﬁrst time a dedicated space—borne hyperspectral sensor speciﬁcally designed for remote sensing of the coastal
+Recewec‘ 1“ rev‘SEd form 5 MarCh 2014 environment. However, several processing steps are required to convert calibrated top—of—atmosphere radiances
+Accépmd 8 Mamh 2014 to the desired geophysical parameter(s). These steps add various amounts of uncertainty that can cumulatively
+Avallable onllne 30 March 2014 . . . . . . . .
+render the geophy51cal parameter 1mprec15e and potentially unusable 1f the objectlve 15 to analyze trends and/or
+WW— seasonal variability. This research presented here has focused on: (1) atmospheric correction of HICO imagery;
+HICO (2) retrieval of bathymetry using an improved implementation of a shallow water inversion algorithm; (3) prop—
+Hyperspectral agation of uncertainty clue to environmental noise through the bathymetry retrieval process; (4) issues relating
+Bathymetry to consistent geo—location of HICO imagery necessary for time series analysis, and; (5) ticle height corrections of
+Change dEtectiOD the retrieved bathymetric dataset. The underlying question of whether a temporal change in depth is detectable
+Time series above uncertainty is also addressed. To this end, nine HICO images spanning November 2011 to August 2012,
+Atmospheric correction over the Shark Bay World Heritage Area, Western Australia, were examined. The results presented indicate
+Tlde C0rrecu°“_ _ that precision of the bathymetric retrievals is dependent on the shallow water inversion algorithm used. Within
+Shallow water 1nver510n model . . . . . .
+Propagating uncertainty this study, an average of 70% of plxels for the ent1re HIQO—derlved bathymetry dataset achieved a relatlve uncer—
+Geolocation accuracy ta1nty of less than :I:ZO%. A per—pixel t—test analy515 between derlved bathymetry images at successwe
+timestamps revealed observable changes in depth to as low as 0.4 m. However, the present geolocation accuracy
+of HICO is relatively poor and needs further improvements before extensive time series analysis can be
+performed.
+© 2014 Elsevier Inc. All rights reserved.
+1.1ntroduction Accurate bathymetry maps can be achieved using active remote
+sensing such as an airborne LiDAR system (Guenther, Cunningham,
+Detecting change in the near—shore coastal marine environment is LaRocque, 82 Reid, 2000; Irish 82 Lillycrop, 1999). However, frequent
+necessary for understanding the mechanisms that drive change in long—term monitoring of large coastal areas can be costly even with
+these dynamic systems. One important challenge for coastal marine airborne systems. Satellite—based passive remote sensing offers an
+managers is detecting change in bathymetry over large areas in a timely even more cost effective means of obtaining bathymetry maps as it
+manner. With such information, informed decisions can be made for ef— can repeatedly sample large areas (hundreds to thousands of square
+ﬁcient and effective management of these fragile ecosystems (Fabbri, kilometers) frequently (Green, Mumby, Edwards, 82 Clark, 1996). The
+1998; Galparsoro et a1., 2010). The bathymetry of the near—shore could temporal resolution and large spatial coverage make satellite remote
+change seasonally or in response to acute disturbances, such as storms sensing ideal for monitoring changes in bathymetry over large areas.
+and extreme weather events (Morton, 2002; Morton 82 Sallenger, One of the ﬁrst quantitative methods of measuring bathymetry from
+2003), or human induced disturbances such as dredging (Cooper et a1., multispectral imagery was proposed by Polcyn, Brown, and Sattinger
+2007). These changes can have ﬂow—on impacts to the marine ﬂora (1970). This method manipulates the ratio of two spectral indices to
+and fauna that the marine resource managers are tasked to protect. As generate a semi—empirical relationship for depth. This algorithm can
+such, accurate bathymetric monitoring techniques that are time and remove the inﬂuence of varying water clarity and bottom reﬂectance
+cost effective are required to assess any residual geological and ecolog— only in very speciﬁc conditions (see Polcyn et a1., 1970) that are rarely
+ical impacts. encountered in the coastal ocean.
+Lyzenga (1978) proposed a linearized multiband bathymetry algo—
+rithm that corrects for bottom type variation. This algorithm however
+Wnding author. requires a depth calibration from in situ depth data and, as such, the
+E-mail address: rodrigo.garcia@postgrad.curtin.edu.au (RA. Garcia). approach iS scene—speciﬁc (Clark, Fay, 82 Walker, 1987; Lyzenga, 1985;
+http://dx.doi.org/10.1016/j.rse.2014.03.010
+0034—4257/© 2014 Elsevier Inc. All rights reserved.
+
+"
+"2","RA. Garcia et (11. /Remote Sensing of Environment 147 (2014) 186—205 187
+
+Paredes 82 Spero, 1983) though it has been shown to give improved The Hyperspectral Imager for the Coastal Ocean (HICO) is the ﬁrst
+results over the band ratio algorithm of Polcyn et a1. (1970) (Clark prototype, low cost sensor onboard the International Space Station de—
+et al., 1987). Practical complications arise when a scene has varying signed with the necessary speciﬁcations for remote sensing of a diverse
+water clarity and undeﬁned depths when the water leaving reﬂectance range of coastal marine environments (Lucke et al., 2011). HICO has a
+of a shallow area is less than that over deep water (Philpot, 1989). Other spatial resolution of 96 x 96 m at nadir with 87 contiguous spectral
+algorithms that use in situ depth data for tuning empirical coefﬁcients bands between 400 and 900 nm. HICO‘s SNRvaries spectrally but is gen—
+include Dierssen, Zimmerman, Leathers, Downes, and Davis (2003) erally greater than 200 between 400 and 600 nm, and ranges from 100
+and Stumpf, Holderied, and Sinclair (2003), both of which use spectral to 200 between 600 and 700 nm (Lucke et al., 2011).These sensor attri—
+band ratios. butes make HICO suitable for analyzing the spectral and spatial com—
+
+Although the algorithms proposed by Lyzenga (1978), Dierssen et al. plexity encountered in many coastal marine environments throughout
+(2003) and Stumpf et al. (2003) can be accurate with imagery that ﬁt the globe.
+their empirical constraints, they still require in situ depth data which To date, there has been limited work reported on the routine
+often is not available, historically or c0n—current1y.Thus for the pur— monitoring of bathymetry using standardized processing of satellite
+poses of transferability between sensors and scenes, it is crucial to hyperspectral imagery. In this paper, the semi—analytical Bottom Reﬂec—
+have bathymetric algorithms that circumvent the need for in situ data. tance Un—mixing Computation of the Environment inversion algorithm
+
+Semi—analytical, physics—based shallow water inversion algorithms (BRUCE: Klonowski et al., 2007) is used to retrieve bathymetry from
+(HOPE in Lee, Carder, Mobley, Steward, 82 Patch, 1998, 1999; BRUCE in multi—temporal HICO imagery of the Shark Bay World Heritage Area,
+Klonowski, Fearns, 82 Lynch, 2007; SAMBUCA in Wettle 82 Brando, Western Australia. We focus on the Faure Si11,a shallow region within
+2006 and Brando et al., 2009) and lookup table (LUT) techniques Shark Bay noted for its unique seascape and ecological features. The
+(CRISTAL in Mobley et al., 2005; ALLUT in Hedley, Roelfsema, 82 Phinn, aims of this research were: (1) to test whether a change in bathymetry
+2009) designed for hyperspectral sensors, appear to be more suitable is measurable above statistical uncertainty through time; (2) to exam—
+for retrieving bathymetry, water column inherent optical properties ine the robustness of the Taﬂ<aa (Gao, Montes, Ahmad, 82 Davis, 2000)
+(IOPs) and for rudimentary benthic classiﬁcation (Dekker et al., 2011). atmospheric model when applied to HICO imagery whose spectral
+An advantage of semi—analytical algorithms is their non—reliance 0n pos— range does not extend beyond 900 nm; (3) to determine the precision
+sibly erroneous assumptions of uniform water IOPs or bottom reﬂec— of a HICO—derived bathymetric dataset using an improved implementa—
+tance, or crude corrections (e.g. the deep water radiance correction). tion of the BRUCE model, speciﬁcally redesigned to allow uncertainty
+Instead, semi—analytical algorithms are derived from radiative transfer propagation; (4) to compare tide correction techniques; and (5) to
+theory making them more analytically exact with lower sources of study the geolocation accuracy of HICO imagery and its implication to
+model error. Consequently, they have been used to retrieve bathymetry routine monitoring.
+with relatively high accuracy from airborne hyperspectral imagery
+captured over optically complex coastal marine environments (Brando 2. Methodology
+et al., 2009; Dekker et al., 2011; Hedley et al., 2009; Klonowski et al.,
+2007; Mobley et al., 2005). 2.1. Study area and HICO imagery
+
+Shallow water semi—analytical inversion algorithms rely on spectral
+matching and/or optimization routines which require image data with Shark Bay is a World Heritage Area located in the northwest of
+enough spectral bands in the visible domain (typically: 400—800 nm) Western Australia (Fig. 1), covering an area of ~14, 000 kmz. This
+to resolve subtle optical signatures. Hyperspectral image data with a shallow coastal bay has two major sub—embayments orientated in a
+modest signal—to—noise ratio (SNR) can achieve this (Philpot et al., NW—SE direction; Freycinet Reach, located to the west of the Peron
+2003). Moreover, the spectral information provided by hyperspectral peninsula, and Hopeless Reach 0n the east. In this case study we limit
+imagery minimizes non—uniquenessissues,resu1tingin10wer conﬁdence our analysis to Hopeless Reach with focus on the Faure Sill; a shallow
+interval limits of the retrieved parameters (Defoin—Platel 82 Chami, 2007; (1—2 m in depth) region ~30 km long and ~15 km wide, containing
+Mobley et al., 2005). The lack of accessible hyperspectral satellite imag— several narrow water channels (5—6 m in depth) extending into
+ery has limited the applicability of the physics—based semi—analytical al— Hamelin P001 and which run parallel to the tidal currents (Burling,
+gorithms to airborne hyperspectral imagery. However, there have been Pattriaratchi,821vey, 2003; Walker, Kendrick, 82 McComb, 1988). Shark
+a few examples in the literature, such as Lee et al. (2007), who used Bay's seascape, ecology and corresponding hydrodynamics are inter—
+HOPE to retrieve the spatial distribution of water absorption, depth and related and unique. Semi—enclosed by three islands, Shark Bay experi—
+bottom reﬂectance from Hyperion imagery of Looe Key, F10rida,USA. ences limited oceanic exchange and mixing, and combined with low
+
+Although the Hyperion sensor has over 200 spectral bands between annual rainfall (low land runoff) results in calm waters (Department
+430 and 2400 nm, it was designed primarily for land—use applications of Environment and Conservation, no date). These are favorable condi—
+and as such has a relatively low SNR that ranges from 50 to 150 tions for seagrasses which cover ~4200 km2 of Shark Bay (Walker
+(Ungar, 2003). Over dark targets, such as water, a low SNR effectively et al., 1988). These extensive seagrass meadows inﬂuence the sedimen—
+creates a ‘noisier’ signal and subtle changes in the reﬂectance spectrum tation processes within Shark Bay and over time have created large sand
+may not be differentiated above the noise inherent to the sensor (Hu banks (e.g. the Faure Sill) that restrict water movement into Hamelin
+et al., 2012). This confounds the remote sensing signal leading to non— Pool, a unique hypersaline region inhabited by stromatolites (Logan 82
+uniqueness and hence higher uncertainty of the retrieved parameter(s). Cebulski, 1970).
+However, as stated by Lee et a1. (2007), many shallow coastal areas are A total of nine HICO images, each with a central image coordinate of
+subject to high water turbidity resulting from suspended sediment run— ~25.9 °S/113.9 °E, were captured over Shark Bay, Western Australia,
+off or where the water—leaving radiance signal has signiﬁcant contribu— from 19 November 2011 to 8 August 2012. Pseudo true color imagery
+tion from a bright bottom substrate, thus in such cases, Hyperion may of the HICO dataset is displayed in Fig. 2. Two different swath orienta—
+have a high enough SNR to afford results with higher conﬁdence. tions of HICO were observed: NW—SE ancl SW—NE, with the Faure Sill
+These represent a limited range of coastal environmental conditions captured within successive swaths. Though each swath had the same
+suitable for Hyperion applications, as these waters may also be subject coverage/footprint, they often appeared to have a slight translational
+to highly absorbing waters (due to phytoplankton and/or colored drift (illustrated in Fig.1).
+dissolved organic matter), dark bottom substrates (such as seagrass A11 HICO image data and geographic lookup tables (GLTs) used
+and a1gae),and1arge bathymetric ranges that requires higher SNR for in this study were accessed through the Oregon State University,
+more accurate assessments. College of Earth, Ocean, and Atmospheric Sciences, HICO web portal
+
+"
+"3","188 RA. Garcia et al. / Remote Sensing of Environment 147 (2014) 186—205
+113.0°E 113.5°E 114,0°E
+I "" ‘U .
+‘/ [I (t; .
+g I ‘ \ ARNARVON . 5K"" g:
+I .-f
+I \ (9,“,
+z \
+z ’ \ . x 2° - ‘ 25.0°S
+I \ w""
+I \ 1‘
+\ \ ‘3':-
+\
+\ Iséo \\ \ "" 30 b t
+\ 6‘; \ . ‘ MM
+\ ‘3‘ \ '. '
+\ ~43, ' \ \""._,<"" _._ ,
+\ ‘ 6‘ . ’ \ O
+70 ' \ ' . 25.5 S
+9 \ '3: /
+a ‘o . \ \
+%\ / \ .
+. ‘1' \ \ . . \ .
+‘3“ \ -- Monkey Mia / \ \
+a a \ x’ \ I .
+(‘9; “’6 \\ Q ”’x
+a /"" 9 ~“““---::::-£9355-:$i” .\
+, . e’” ""‘77: A \ o
+/ 4; , \ 26.0 s
+‘ \ 6}— . / \\
+O41, / ‘ \
+/ 6) \ . ‘ b
+. . '9 HAMELIN \
+/ ’ go . ‘ \ POOL
+. ' 4’ \ / I
+\ \. / I \ I I
+‘ . J . ‘ \ ~ / I
+\ ../ x ,/ 26.5°S
+' . \l
+\ . ' ,
+\ ‘ / '
+Fig. 1. Shark Bay, Western Australia, with the Faure Sill located between the two curved black dotted lines. The solid black and dot—dot—dashed gray rectangles show the different approx—
+imate orientations of the HICO swaths. The dashed black rectangle illustrates the translational drift in the HICO swath position.
+(hic0.c0as.0reg0nstate.edu). Note, the distributed HICO level—1B (L1B) calibrated top—of—atmosphere radiance (level—1B). The standard
+calibrated radiance ﬁles had both spectral and radiometric vicarious MODIS ocean color atmospheric correction algorithm (Ahmad et al.,
+calibrations (Gao et al., 2012) and, second order light effect corrections 2010; Bailey, Franz, 82 Werdell, 2010) implemented in SeaDAS 6.4 was
+applied (Li, Lucke, Korwan, 82 Can, 2012). then used to obtain the three atmospheric properties.
+Simpliﬁed at—nadir viewing geometry was assumed and the Taﬂ<aa
+2.2. Atmospheric correction 6S aerosol and atmospheric model were ﬁxed to “maritime” and
+“mid—latitude summer” respectively for all HICO scenes as these were
+The Second Simulation of the Satellite Signal in the Solar Spectrum deemed the most appropriate for Shark Bay. Hence Taﬂ<aa 65 was not
+(65) implementation of Taﬂ<aa algorithm (Gao et al., 2000) was used used to solve for any atmospheric properties using HlCO‘s NIR bands;
+to atmospherically correct the L1B, calibrated top—of—atmosphere radi— rather it removed the atmospheric radiance signal based on predeﬁned
+ance imagery. The standard Taﬂ<aa 6S algorithm uses several bands inputs. Note: (1) MODIS data were not used to select these Taﬂ<aa 65
+greater than 900 nm to estimate key atmospheric parameters — namely, models; (2) the vertical pressure, temperature and relative humidity
+the aerosol optical thickness, AOT, at 550 nm, the vertical column water proﬁles are described in the atmospheric model; (3) given the atmo—
+vapor, the ozone concentration and the atmospheric and aerosol models spheric model and the atmospheric water vapor, Taﬂ<aa 65 then deter—
+in a per—pixel basis (Gao et al., 2000). However, HICO lacks any SWIR mines the vertical structure of the water vapor (Montes, Can, 82 Davis,
+and IR (> 900 nm) bands and thus limits the application of Taﬂ<aa 65. 2004), and; (4) the aerosols in Taﬂ<aa 65 all assume 70% relative humid—
+Previous research has highlighted the importance of selecting appropri— ity (Montes et al., 2004).
+ate AOT values for Taﬂ<aa when atmospherically correcting HICO scenes The lack of concurrent in situ above—water radiometry/photometry
+(Paterson 82 Lamela, 2011). Therefore, within this study, coincident and AERONET data prevented a quantitative measure of the accuracy
+MODerate resolution Imaging Spectroradiometer (MODIS) Level—2 0f the atmospheric correction. However, a cursory evaluation of the
+data of Shark Bay were used to estimate the ACT at 550 nm, vertical col— atmospheric correction was performed by examining the reﬂectance
+umn water vapor, CLMVAP, and ozone concentration which were then spectra for two locations representing: (i) bright shallow water
+used to parameterize the Taﬂ<aa 6S algorithm. The MODIS imagery of (25.907 °S/113.934 °E), and (ii) quasi—deep water (25.718 °S/113.978 °E),
+Shark Bay was downloaded from the Ocean Biology Processing Group through time. It should be noted that atmospheric correction removes
+data browse website (http://0ceancolor.gsfc.nasa.gov/cgi/browse.pl? approximately 90% 0f the signal that any satellite sensor records. Thus
+sen=am) and processed from raw radiance counts (level 0) to under— or over—corrections and spectral artifacts introduced to Rrs can
+
+"
+"4","RA. Garcia et a1. /Remote Sensing of Environment 147 (2014) 186—205 189
+‘ “. \‘ ‘. _ $\N
+Kw!"" f: ‘ ) ‘ ‘\\\\ ‘
+f7 \ re: ,'. . YC‘ . _> \Z“ v ‘
+, (a) Mk (b) (c) d) \ (e) (f) (g) (h) 01‘
+. \ «wow i k -~ ‘: ‘1 ‘N
+‘. . ‘5?th I. ‘ \ Q ‘r‘\‘ ‘
+‘38 v“ ~.;-. a > 1 ‘ “‘
+\ ‘s _ , . \ \. . \
+‘ x. \ ""5:: u’ ‘ \ ‘ 3‘ §
+‘. '\‘ \‘ - “\ . .
+' ‘ .~‘- 1 MN "" ~ aQ
+‘ "". 3‘ \19 ‘\ A . . 3'5 l‘ 3'
+\ ""‘0‘. ‘) \' ‘3‘) 1""» '1‘ 5 "" * K.‘ K
+\ . ~. \ ‘ v.\ ‘2’ \ ""‘9 . w
+v .2 . r.“ T“ ’ 3""
+ﬁg! \ .. . ‘ 1 . “vii: ‘. . ,. \; v
+-‘ .>- -. 5 ‘. w ‘.. ' i ‘ ’ Ix
+\' \ ‘2‘ -‘. i ‘ ‘ ‘ ~ ‘3'. é ‘ “\Q‘
+\ ’ x ‘ .
+-'~-.§’ \ i . ,.- Q
+,‘g-k ' i .
+3) . \ s ' .\ ﬂ .1
+3‘"" . ‘W‘ « ‘
+§ 8"" '-‘: ,' \ . ‘ ‘\\‘ . \ NE"" a V
+' ‘* “ \ I41 3. g V ff?» \ \, » - *3. y,
+L f‘ I ‘ ’ ! J .- .. . ‘, \ f~ I. \ ‘ ‘.
+k . | ‘ . . ‘ ﬁ . ’ “ ‘.""* ‘ : . u. 0:. . r 1' .
+“ w ‘ K' 'v ‘M' Ya» ‘ ""ﬁ ' '- : .. i x 4. '. T. h “g \ '_
+‘ ' . ' ;*I.Ik' '4“ ' ‘ t I 'V. . ‘K ‘1‘]: : .‘. ' * V 1 ‘ 3 \_
+. - .-, .~ ‘3‘ k . , h .. :g - ‘ a '1. ’ , .""
+' ""Y,“ K“: . "" ‘ r&‘&\ I ‘l‘ '. ‘ i h g .‘ ‘11 r . ""n?‘ A I"" A m ,, 7'..."" 3“ .
+. 5w"" ‘3‘“ I t. ' 1' . - 'l ‘ '~ "" ""-""I. ‘ I‘ ~ ' \“:.'“1 A ‘. ‘ “i 7'
+N t“. \ . "" .‘:\_ f. ""1 - _' Q ‘ ‘ ‘ ;_ . ~ . 1' .
+3“ ‘ { {§1Q“ 4‘”. "" 4 "" i'm. .6 v ‘n M ~ 1 l"" *"" V‘ ' 3?"" a ‘ ‘
+~J- «mm - «mew 4y -~ >4»... k
+Q mam ‘. ,.
+1 ‘ - 3: ‘2‘” t. I v}. ' ' ’ . . ., i ""_ 1
+, '\ “\ ' i 9;
+Fig. 2. Pseudo true color composites of the HICO remote sensing reﬂectance imagery over Shark Bay, WA, on: (a) 19—Nov—201 1; (b) 14—Dec—1 1; (c) 21—Jan—2012; (d) 07—Feb—12; (e) 27—Feb—12;
+(f) 02—Apr—12; (g) 01—Jun—12; (h) 04—Jun—12, and; (i) 08—Aug—12. The apparent illumination variation between these images is due to the different scaling used to generate the pseudo true color
+composites.
+be delineated from changes in the optical properties of the water col— normalized at 550 nm of benthic class i, respectively. The scalars P and
+umn at these positions through time. G are the magnitudes of the absorption coefﬁcients of phytoplankton
+and CDM respectively, while X is the magnitude of the particulate back—
+23. Retrieval of bathymetry using the BRUCE model scattering coefﬁcient. Thus, the shallow water forward model can be
+expressed as:
+According to Lee et a1. (1998, 1999), the hyperspectral sub—surface
+remote sensing reﬂectance signal, Trs()\), of a shallow water pixel can TrsOx) = f (P, C,X, H , B, 9V, 9W). (3)
+be modeled as a function of the total in—water spectral absorption and
+backscattering coefﬁcients, a(A) and bb()\), the spectral benthic albedo, Though the spectral shapes and slopes of the optically active in—
+p()\), the geometric depth (which we are attempting to solve for), H, water constituents and benthic end—members were predeﬁned and
+the sub—surface solar zenith angle, SW, and the sub—surface viewing ﬁxed, their magnitudes (P, G, X, Bi), including the depth, are solved
+angle from nadir, 9V. using the Levenberg—Marquardt algorithm. This non—linear least—
+squares optimization compares sensor—derived with modeled rrs values,
+T300 : f(an), b19097 H7 90‘)? 9w 9w) (1) and once the solution converges, the best ﬁt values ofP, G, X, B,- and H are
+. . . deemed to have been solved. Further comprehensive detail of physics—
+The VIEW and $0131” geometrles can be c.0n51dered as ﬁXEdj or known. based semi—analytical shallow water inversion algorithms can be
+The total absorptlon coefﬁc1ent IS e functlon 0f the absorption of pure found in Dekker et a1. (2011) and references therein.
+water, phytoplankton and coior dlssolved organlc end detrltal matter Within this study we have used the BRUCE model, developed by
+(CDM), wh11e the backscatterlng coefﬁc1ent 15 fund“)? Of the backscat— Klonowski et a1. (2007). This semi—analytical shallow water model is a
+terlng Of pure water and suspended partlculates, as glven by, variant of the Hyperspectral Optimization Process Exemplar model,
+4.0150440) HOPE, proposed by Lee et a1. (1998, 1999). The difference arises in the
+00‘) : awO‘) T P 04>“) + $5 parameterization of the benthic albedo, p(A). Unlike HOPE, which con—
+be‘) : bwa‘) + X(ﬁ) ' siders the net benthic albedo is due to only a single benthic substrate,
+3 A (2) BRUCE assumes the net benthic albedo to be a spectral mixture of
+P(M : i311“) three benthic end—members. In this research, we express the bottom al—
+i=1 1 I bedo as a linear mix of two benthic classes, sand and mixed seagrass
+(50% Posidonia australis and 50% Amphibolis antarctica). These two spe—
+where aw and bbw are the spectral absorption and backscattering coefﬁ— cies of seagrass were previously recorded as the most dominant across
+cients of pure water, respectively. agb is the spectral absorption coefﬁ— Shark Bay (Walker et al., 1988). The irradiance reﬂectance spectra of
+cient of phytoplankton normalized at 440 nm; BI- is the bottom albedo sand, P. australis and A. antarctica were measured using a handheld
+coefﬁcient at 550 nm and p,- is spectral irradiance reﬂectance hyperspectral radiometer during a ﬁeld campaign to Shark Bay.
+
+"
+"5","190 RA. Garcia et a1. / Remote Sensing of Environment 147 (2014) 186—205
+
+Taﬂ<aa 65 outputs Rrs that are not corrected for spectral reﬂection of the Euclidean distance fell below this threshold, or if this repetition
+direct solar and sky radiance from the ocean surface (Montes et al., occurred more than four times. In the latter case, the set of optimized
+2004). Thus before implementing the non—linear least squares optimi— values that generated the lowest Euclidean distance was used as the ini—
+zation, the Rrs spectra were corrected for sunglint contamination using tial guess for inverting the set of noise perturbed spectra. A comparison
+a correction scheme based on Lee et al. (1999) and Goodman, Lee, and between this improved method and the standard approach will be
+Ustin (2008), presented elsewhere.
+
+A simple pixel—by—pixel land masking procedure was also performed
+Rrs()\) : REWOx) —y + A during the inversion process, whereby a pixel is identiﬁed as “land” if its
+A = 1.9 x 10—5 + 0.1 [R;§W(640) —y] (4) R..( 750 nm) > 12.5(400 nm).
+3/ : min(R;§W(640) :R:§W(750))
+2.4. Smoothing techniques
+where y is the lowest REM value between 640 and 750 nm. Note that 3/
+was included to avoid negative reﬂectances if the 12;?” of a wavelength The most noticeable artifact in the retrieved bathymetry and bottom
+shorter than 750 nm was less than that at 750 nm. While there are albedo images W35 the amount ofimpulse (i.e. salt—and—pepper speck—
+Other sun_glint corrections in the literature (see Kay’ Hedley’ & llng) nOise present. [15ng a mEdian ﬁlter WOUld rEdUCE thlS Effect and
+Lavender, 2009), Goodman et al. (2008) used a similar correction to replace the values 0t impulse noise pixels With a reasonable estimate;
+Eq. (4) and obtained quite accurate depth retrievals for shallow waters however it WOUId 3150 cause blurring 0t regions where impulse noise
+of Kaneohe Bay, Hawaii. Sub—surface remote sensing reﬂectances were pixels are absent and thereby cause information 1055- T0 limit the
+then computed using (IOCCG’ 2005; Lee et 611., 1999), blurring of unaffected image regions, we opted for a three step smooth—
+ing approach designed to eliminate impulse noise pixels, reduce the
+r (M : Rrs (5) magnitude of random (systematic) noise as well as preserving image
+3 (0.51—1.5Rrs)' sharpness. This smoothing approach is as follows: (1) an impulse
+noise detection algorithm was applied to the image, generating a binary,
+
+A two—step inversion approach was used to retrieve depth that in— ‘impulse’ — ‘hOt impulse’, image; (2) an adaptive median ﬁlter 011 these
+eluded: (1) a brief search of the parameter space for the optimal initial ‘impulse’ pixels W35 applied, and; (3) a second order binomial average
+guess parameters used in the BRUCE model, and; (2) the uncertainty kernel was applied to 311 pixels in the image. Steps (1) and (2) C0U1C1
+propagation scheme proposed by Hedley, Roelfsema’ and phinn be replaced by a LUM (Hardie 82 Boncelet, 1993) or center weighted me—
+(2010) and Hedley, Roelfsema’ Koetz, and Phinn (2012)_ clian ﬁlters (Ko 82 Lee, 1991), however for the bathymetry image a more
+
+As stated by Hedley et al. (2010), the uncertainty procedure begins manual and ﬂexible deﬁnition of a impulse noise is desired — which can
+with computing the spectral covariance matrix from a homogeneous be changed according to the user's prior knowledge. Additionally, step
+deep water region of the image. The Cholesky decomposition matrix, L, (2) allows the median ﬁlter to change size according to the number 0f
+is then calculated from the covariance matrix. The procedure then iterates other unwanted pixels in the kernel.
+through the re image where, for each pixel, the L matrix is used to com— For the impulse noise detection algorithm, a 3 X 3 square pixel re—
+pute 20 noise—perturbed rrs spectra, rrs + ﬁns. Each spectrally correlated gion W35 created and centered on a given pixel 0f the raw image. The
+noise term, ﬁrm, is generated by product multiplication Of the L matrix absolute differences between the value of the central pixel and the
+by an n—band vector, whose values are normally distributed random num— values 0f the eight surrounding pixels were then computed. The central
+bers (H = 0, 0 = 1)_ The BRUCE model, through non—linear least squares pixel was then classiﬁed as ‘impulse noise’ if the differences are greater
+optimization provided by the Levenberg—Marquardt (L—M) algorithm, than a given threshold for more than four of its surrounding pixels. For
+then retrieves the values Of p, G, X, H, Bsand and Bseagrass for each noise— bathymetry images, this threshold was set to a value of 2.0 m, while for
+perturbed rrs spectrum. The mean and standard deviation are then the bottom aledOS Of sand and seagraSS, thFEShOIdS Of 0.1 and 0.01
+computed for each parameter set, where the former is taken to be the were used respectively. Note that this kernel was not centered on pixels
+actual retrieved parameter value and the latter its uncertainty. that were ﬂagged as land 01‘ CIOUdS-
+
+In the standard implementation of BRUCE, the initial guess parame— Typically, a 3 X 3 median ﬁlter kernel iS used to replace impulse
+ters used to initiate the L—M optimization routine are kept constant for noise pixels, 35 it ﬁnds an estimate from the most immediate surrounds;
+all pixels in an image. However, analysis (results not presented here) however each raw image 3150 contained unwanted land, CIOUd 01‘
+has shown that different initial guess values lead to different local other impulse noise pixels. Such undesired pixels C311 heavily contami—
+minima having different Euclidean distances. Here, the Euclidean nate a 3 X 3 pixel neighborhood, thereby reducing the number 0f pixels
+distance is deﬁned as, from which the median value is calculated. Thus we have opted for an
+
+adaptive approach whereby the kernel size of the median ﬁlter is in—
+N creased if more than 50% of its pixels are undesired (i.e. cloud, land or
+Euclidian distance : Z (rm —f~m. )2 (6) other impulse noise pixels). Within this approach, the maximum kernel
+1' size was set to 15 x 15, whereby the kernel cannot increase past this
+size and the median value calculation is forced even if the condition
+where rm- and fm- are the measured and modeled subsurface remote was not met.
+sensing reﬂectance at waveband i, respectively. To assist the L—M The third step of the smoothing approach involved iterating a sec—
+optimization in locating the best local minimum, an update—repeat 0nd order binomial smoother through all pixels of the image (except
+process was used. This procedure began by inverting the rrs spectrum the edges), whose image kernel is given by Eq. (7) (Jahne, 2005),
+of a given pixel to solve for the in—water optical parameters, depth
+and bottom albedo coefﬁcients. If this initial inversion achieved a 1 1 2 1
+Euclidean distance of s 1.0 x 10—4, the optimal set of model parameters Binomial smoother : E [2 4 2] - (7)
+was then used as initial guesses for inverting the set of noise perturbed 1 2 1
+spectra, rrs + 6r“. If, however, the Euclidean distance of the initial L—M
+ﬁt was greater than this threshold, the procedure entered a ‘repeat’ Applying this kernel to a given pixel replaced its value with a
+stage, where the initial optimal set of model parameters was randomly centrally weighted average of its pixel neighborhood.
+perturbed by 10% of their value and used as the initial guess for the The uncertainty products (5H, 63mm, and ﬁBseagmss) were also modi—
+subsequent inversion attempt. This process was repeated until either ﬁed during the adaptive median ﬁltering and binomial smoothing
+
+"
+"6","RA. Garcia et (11. /Remote Sensing of Environment 147 ( 2014) 186—205 191
+stages. In the former, the uncertainty of a given impulse noise pixel was of pixels P(i, j ) in each bathymetry image, and; (2) HAW} the median
+replaced by that of the selected pixel, while in the latter the kernel of depth of pixels P(i, j) taken across the entire bathymetry time series.
+Eq. (7) was convolved through the resultant uncertainty image. This latter median was used as a reference depth to generate an offset
+
+value, AH(t),
+2.5. Tide height correction of bathymetric products
+. . . . . AH“) = ”(Q—Href . (10)
+Delineating the changes in depth caused by resuspen51on and sedi— If AH(t)> m1n[H(i, j)]; then AH(t) : m1n[H(i, j)]
+mentation from changes in tide heights is an important task in detecting
+trends and seasonal changes in bathymetry.Idea11y, the retrieved bathy— adding AH(tA)/to its respective bathymetry image normalized it with
+metric data are corrected for tidal inﬂuences to a common tidal datum respect to Htef, and in so doing minimized the tidal inﬂuence across
+such as lowest astronomical tide, LAT. However, water level data the dataset. In some instances the value of AH(t) was greater than
+measured by in situ gauges was not available for the Faure Sill. This the minimum depth in the bathymetry image, and to avoid over—
+prevented direct correction of tidal inﬂuences observed in the set of ba— correction issues AH(t) was set to this minimum.
+thymetry images through time (henceforth referred to as bathymetry
+time series). Two approaches to tide correction were investigated, the 2.6. Geo-registration
+ﬁrst consisting of harmonic tidal analysis and the second based on
+image analysis. For the purpose of time series analysis in detecting changes in depth,
+each HICO swath was overlaid on the same raster grid to ensure
+2.5.1. Harmonic tidal analysis geospatial consistency through time. This was performed by ﬁrst geo—
+Water height data, above LAT, at ﬁve minute intervals were obtained referencing each HICO image with the provided geographic lookup
+from the Carnarvon tide station (approximately 120 km NW of Faure tables (GLTs) where an additional rotation was added to orientate
+Sill) from December 2011 to November 2012 — courtesy of the Western north as “up”. This was followed by geo—registration where the geo—
+Australian Department of Transport. In the harmonic analysis, we referenced image was warped by translation/scaling/rotation using at
+followed Burling et al. (2003) and assumed that the tide height is the least thirteen ground control points selected from Google EarthTM imag—
+summation of the M2, 52, K1 and O1 tidal constituents, ery of Shark Bay. In the absence of accurately registered digital maps of
+the area, we have assumed the Google Earth imagery to be an accurate
+. — N reference, noting that a relative, geospatial consistency through time
+he1ght(t) : h + Edi COS(Oit + gi) (8) was sought after, rather than absolute geolocation accuracy.
+
+1— Due to the lack of man—made features in the Shark Bay region,
+where h is the mean sea height and Oi, 0i and g, are the amplitude (cm), distinct and spatially invariant land features were chosen as ground
+frequency (radians/h) and phase (radians) of tidal constituent i, respec— control points (GCPs). The central position of nine different birridas
+tively. The frequencies, 0, of each tidal constituent are known parame— (see Fig. 3) — salty depressions that are either circular, oval or irregularly
+ters and were obtained from Doodson and Warburg (1941 )_ With E shaped (Department of Environment 82 Conservation n. d) — and four
+set as the mean sea height Of the Carnarvon data, ECI- (8) was used to other landscape features formed the 13 common GCPs (Fig. 3) used in
+estimate the water heights at Monkey Mia and Hamelin p001 using: the geo—registration. Additional GCPs that corresponded to roads, dis—
+(a) the modeled amplitudes presented by Burling (1998), and; (b) tinct sections of rivers, dry inland lakes and tips of islands were also
+phases derived from harmonic analysis Of Monkey Mia and Hamelin used. Note that these additional GCPs were different for each HICO
+p001 tide times. 2 h and 2 min were added (+ 02:02 h) to the tide swath due to cloud cover and the changing swath orientation and trans—
+times of the Carnarvon water height data to estimate the Monkey Mia IationaI drift (see Fig. 1)-
+tide times, as recommended by the Australian Bureau of Meteorology.
+
+Thirty—two minutes was subtracted (— 0:32 h) from the tide times of 3- Results and discussion
+the Carnarvon dataset to approximate the Hamelin Pool tide times.
+Harmonic analysis, in this case, simply involved ﬁtting Eq. (8) to the 3-1- Evaluation ofTafkaa-GS atmospheric correction
+approximated tide times using L—M least squares minimization, over
+multiple time series — each being a three day interval with the HICO Fig. 4 shows the reﬂectance spectra Of two separate pixels through
+overpass being the central point. Finally, the average water height time: a quasi—deep water and shallow submerged sand pixel. The left—
+between these two locations (Monkey Mia and Hamelin Pool) was hand 135111615 (Fig. 4a and C) and right—hand panels (Fig. 4b and d) in
+then used to correct for the tide over the Faure Sill. this ﬁgure show the Rts before and after sun—glint correction, respective—
+ly. The reﬂectance spectra of the shallow submerged sand pixel (Fig. 4a)
+252. Image based empirical tidal correction exhibit three spectral artifacts: (1) an upward spectral shift occurring
+In the image based approach, an offset is added to each bathymetry from 400 to 450 nm (e.g. 27 February— and 02 April 2012); (2) negative
+image, that normalizes the bathymetry time series to an arbitrary refer— reﬂectance values from 400 to 420 nm (e.g. 08 August— and 04111119""
+ence depth (tidal datum). This method began by locating those pixels, 2012), and; (3) negative reﬂectance values beyond 600 nm (e.g. 21
+P(ij), in the bathymetry time series, H(ij,t), that consistently had a January— and 27 February—2012).
+depth of less than 3 m through time, The ﬁrst spectral artifact, according to Goodman et al. (2008), can be
+“considered a function of uncorrected sunglint effects” and “attributed
+H (i, j)EP(i, j) if H (i, j , t)<3 m Vt : 0, ..., N (9) to artifact suppression algorithms”. The cause of the second spectral ar—
+tifact is uncertain, however it could arise from an over—estimation of ei—
+where i and j represent the spatial coordinates, t the time and N is the ther the radiance of Rayleigh scattering or from the atmospheric aerosol
+number of bathymetry images in the time series. This constraint effec— model at the blue wavelength region. This second spectral artifact has
+tively excluded any deep water pixel that may have been incorrectly been observed in remote sensing reﬂectance spectra of optically deep
+assigned a depth less than 3 m through the inversion process at one water pixels by other researchers (see Fig. 9c in Gao et al., 2000; and
+or more instances in time. Thus the pixels of the set P(i,j) consisted of Figs. 6b and 7b in Goodman, Montes, 82 Ustin, 2003). This spectral
+onIy shallow water pixels where the signal—to—noise ratio (SNR) was artifact was noted speciﬁcally for HICO by Moses et al. (2014) and was
+highest and where the retrieved depth was expected to be most accu— remedied by assuming very low aerosol loadings when applying
+rate. Two medians were then computed: (1) H (t), the median depth Taﬂ<aa—65. Assuming AOT, CLMVAP, and ozone values derived from
+
+"
+"7","192 RA. Garcia et al. / Remote Sensing of Environment 147 (2014) 186—205
+. L g ‘_ y m. -
+{1; 2 x , _' '
+"" » * 1-
+1 3». a , _ ""‘ L 1“
+». \
+* "" = Q.) “#-
+. "" '7 .1 ‘ ' 4! ~
+‘ 1' ' ‘ , .
+_ I j: ‘ , R ' ‘ , J;
+. 1 .. ‘ h \i- ‘ € . a ‘» ‘ . V f
+.' ' . ' y ‘ .., , . . 12
+i r' "" (:2 v: x A
+, ’ - I‘ J. l , ' ‘ . ‘ I ' ‘2“ L . l 1
+. . ‘, - “‘ -
+4 I k 1
+A #7 N . ‘ / .. c
+I c ' ; J ‘ ""' i
+4' t. u I 1’ ‘\ 'l _ ' I
+. 1‘ . 7 r' ' a
+I” 1 I L‘- E 1 IR
+‘ ' null""; ' "" n. '
+l . s ‘r s ._
+Fig. 3. The 13 common ground control points used in the geo—registering of HICO imagery of Shark Bay, Western Australia, and the four test locations for geospatial consistency. The HICO
+image (19 Nov 2011) displayed has been geo—referenced with the geographic lookup table.
+MODIS were best approximations for Shark Bay, the second spectral ef— not undermine accurate depth retrievals, as the de—glinting procedure
+fect may then be due to the atmospheric and/or aerosol models used effectively normalizes the reﬂectance at 750 to low positive values
+within Taﬂ<aa—6$. It is likely the atmospheric and aerosol models used (see Fig. 4d).
+may be sub—optimal for the semi—arid coastal climate of Shark Bay how— This comparison has shown the addition of three anomalous spectral
+ever, improvements to these models is beyond the scope of this work. artifacts to the remote sensing reﬂectance spectra after Taﬂ<aa—65 atmo—
+Further, Goodman et al. (2008) noted that using full geometry spheric correction. The magnitude of these spectral noises is compara—
+implementations of Taﬂ<aa (i.e. with cross—track pointing information) ble to that of the water—leaving reﬂectance for deep water pixels,
+might reduce the type of spectral effects seen here. The third artifact is which may lead to inaccurate IOP retrievals. However, as the purpose
+more problematic with respect to accurate retrieval of geophysical pa— of this study was to retrieve water column depth, the Taﬂ<aa—derived
+rameters using the BRUCE model. HICO Rrs values over shallow water pixels were deemed suitable in
+When examining Fig. 4a, the reﬂectance spectra of the quasi—deep accordance with Goodman et al. (2008).
+water pixel on both 21 January 2012 and 27 February 2012 appear to
+have similar spectral shapes to those of the other dates, with the main 3.2. Bathymetry retrievals and smoothing techniques
+difference being a vertical offset/shift. This implies an over—correction
+of the atmospheric signal that may be due to an over—estimation of Fig. 5 illustrates the step—wise modiﬁcation of the HlCO—derived
+one or more MODlS—derived atmospheric parameters, which were water column depth product of Shark Bay, 19 November 2011, using
+used as inputs to Taﬂ<aa—6$. Indeed, the vertical column water vapor the proposed smoothing algorithm. Two cross—sectional proﬁles
+and ACT for these two dates were among the highest (see Table 1). are presented, each containing: (a) the raw HlCO—derived depth
+After sun—glint correction, the third spectral artifact is removed but (black curves); (b) the pixels classiﬁed as impulse noise (red triangles);
+accentuates the second spectral artifact (see Fig. 4b). (c) the depth after impulse noise removal (blue curves), and; (cl) the
+Analysis of the reﬂectance spectra of the shallow water pixel depth after subsequent application of the second order binomial spatial
+(Fig. 4c) also shows the occurrence of the three spectral artifacts. How— smoother (pink curves). Fig. 5 also shows the depth uncertainty proﬁle
+ever, the magnitude of the reﬂectance spectra is signiﬁcantly larger than and its subsequent modiﬁcation.
+the magnitude of these spectral artifacts. Moreover these artifacts have The raw depth proﬁles (Fig. 5) demonstrate how impulse noise
+marginal impacts across the water penetrating bands between 450 and pixels introduce unrealistic and abrupt changes in the depth product.
+600 nm, and as such are deemed less likely to dramatically impair depth These pixels were predominantly encountered when the depth of the
+retrievals. Negative reﬂectances at long wavelengths (third spectral immediate neighborhood was greater than 4.0 m. Additionally, their
+artifact) after Taﬂ<aa's atmospheric correction were also observed by uncertainties approached, and at times exceeded 100%, of the actual re—
+Goodman et al. (2008) over bright shallow water (sandy substrate) trieved depth value. Analysis showed that the Rrs spectra of impulse
+pixels. Goodman et al. (2008) illustrated that this spectral feature does noise pixels whose depths have been estimated to over 7.0 m resembled
+
+"
+"8","RA. Garcia et 01. /Remote Sensing of Environment 147 (2014) 186—205 193
++19-Nov-11 +14-Dec-11 +21-Jan-12 X 07-Feb-12 —X— 27-Feb-12 + 02-Apr-12 — 01-Jun-12 —{— 04-Jun-12 ——— 08-Aug-12
+0.015
+0.02
+(a) (b)
+0015 /A""““~v\ 0.01 \\ ﬂiﬁﬁ
+0"" ’ ' M‘+’ ’ -“-A‘—""“. ‘ X
+I t .3. A “I . g‘ ""a h . . -
+#ﬁmf‘ 7.. i ' ,. W 31:0 1*.
+0'01 ""“7 ,7 \C‘\ 3 °-°°5 #5 ‘ wﬁm '\ - \.
+E; 0 I, + — — — — —‘ —"" ‘ “‘7 W, ‘1 “'13""! M
+g ‘, va ... “-75%"". ‘~......;;..M‘ I 0005 2’
+-0.01
+0.01 0 4 0.45 0.5 0.55 0.6 0.65 0.7 0.75
+0.4 0.45 0.5 0.55 0.6 0.65 0.7 0.75 0.8 0.85 0.9 Wavelength (micometers)
+Wavelength (micometers) '0-015
+0.08 0.07
+W 2. (C) (d)
+1""""! “X 0% A
+0.06 /»/”.,-0""‘!‘ ' I f M‘ ‘16.""
+5? 0.05 1’7"". r"" '1'. 0'05 . fWi/‘M J \~.
+*- / x"" e"" m. ‘ \- a . » W +47%»:
+.9. . r . .. x .. - r M ,. . » ,
+a 0.04 /:f .""j, ""' ‘ . “ .X‘ H""- g 0-04 . x ‘ I ’i‘MH ' V l} *f .- .
+0.03 M"" ‘ {1"" -"" - ‘ \. 9 0 03 fwi’iﬁ""f4*§**— ‘ v' ‘ “\
+l/, 4* . £‘vi O: . ¢f ,. f++ I ,. , E:\w 5me
+,a if"" ‘ ~. ‘ - ’ﬁ- . M ‘\ x .
+0.02 J . . . ‘.. \‘F‘fm K 0.02 5+3 6 X ‘ \. .
+001 » ”~J-‘2:\‘ ~. ""”°‘W“’~W§: + ‘ . . I ‘m“\
+‘4 “M” , , “.X'K ~
+0 — — — — — — — — ‘ ' W 1‘ ; __ . 1. ,1 «:3? W °‘ \H 0
+.001 0
+0.4 0.45 0.5 0.55 0.6 0.65 0.7 0.75 0.8 0.85 0.9 0.4 0.45 0.5 0.55 0.6 0.65 0.7 0.75
+Wavelength (micrometers) Wavelength (micometers)
+Fig. 4. The remote sensing reﬂectance spectra of a quasi—deep water pixel (a) (25.718 °S/113.978 °E) and a shallow water pixel with a sandy bottom (C) (25.907 °S/113.934 °E) through
+time. (b) and (d) show the sun—glint corrected Rrs spectra of (a) and (C) respectively. Note that the wavelengths past 750 nm are not used in the inversion procedure and are not displayed
+in (b) and (d).
+that of quasi—optically deep water (e.g. Fig. 4a). In such cases, the bottom then afforded a reasonable spatial uniformity. The smoothed bathyme—
+contribution to the RB is either weak or non—existent where the geomet— try images of Shark Bay from 19—Nov—1 1 to 08—Aug—1 2 are displayed
+ric depth would be large or precluded by highly absorbing waters. The in Fig. 7, and show a high level of consistency in depth between different
+likely cause for the deeper impulse noise pixels is a low SNR (after timestamps. In the uncertaintyinversion approach, proposed by Hedley
+atmospheric and sun—glint correction), and where the BRUCE model et al. (2010), the Cholesky decomposition matrix, L, was used to add
+translates a change in the rm to large changes in depth ( this is explained spectrally correlated noise to the sensor—observed rm spectra. During
+further in the discussion in Fig. 6). The BRUCE model can also compen— per—pixel inversion, the L matrix remained constant with only its magni—
+sate for a shallower depth by either increasing the water column turbid— tude randomly changed. This generated a spectral noise term, 51*“, that
+ity or decreasing the benthic albedo coefﬁcient (darker substrate). is absolute rather than relative to the magnitude of rm, which thus
+This phenomenon creates those impulse noise pixels whose depths formed an inverse relationship between “rm“ and its relative uncertain—
+are unexpectedly shallower than the surrounding pixels. ty. In other words, the relative uncertainty in rm for dark or highly
+As shown in Fig. 5, the proposed impulse noise detection algorithm absorbing water pixels will be larger than for bright shallow water
+and subsequent adaptive median ﬁlter approach successfully identiﬁed pixels. This is illustrated in Fig. 6, which shows the pseudo SNR at
+impulse noise pixels and replaced their depth value with a reasonable 550 nm plotted against the relative uncertainty of the retrieved depth.
+estimate. Application of a second order binomial smoothing kernel Here, the pseudo SNR was: (a) derived from rm spectra, i.e. HICO data
+Table 1
+MODIS—derived vertical column of water vapor (CLMVAP), aerosol optical thickness at 550 nm (ACT) and ozone concentration, with the solar—viewing geometries for each HICO overpass
+of Shark Bay, WA. The time presented is in Australian Western Standard Time (WST; UTC + 8 h). Here 05, 0V and 90 are the viewing solar, viewing zenith and relative azimuth angles
+respectively.
+HICO overpass MODIS overpass CLMVAP (cm) AOT (550 nm) Ozone (atm—crn) 05 (°) 0V (°) 90 (°)
+19—Nov—11, 1632 h 19—Nov,1435 h 1.8 0.08 0.28 60.02 21.4 —214.1
+14—DeC—11, 1539 h 14—Dec, 1425 h 2.0 0.1 0.27 45.25 6.3 — 128.6
+21—Jan—12, 1538 h 21—Jan, 1350 h 2.7 0.15 0.26 42.45 23.2 —41.98
+07—Feb—12,1722 h 07—Feb, 1435 h 3.0 0.15 0.25 66.50 36.6 — 128.96
+27—Feb—12, 0940 h 27—Feb, 1410 h 3.0 0.35 0.25 45.47 13.4 58.35
+02—Apr—12, 1035 h 02—Apr, 1440 h 2.3 0.055 0.26 41.06 20.8 1.12
+01—Jun—12,1038 h 01—Juna, 0005 h 1.7 0.035 0.26 53.99 16.1 16.93
+04—Jun—12, 0932 h 04—Jun, 1355 h 1.0 0.035 0.26 63.31 4.09 2.25
+08—Aug—12,1625 h 08—Aug,1440 h 1.45 0.045 0.27 71.00 16.7 — 165.56
+a MODIS Terra.
+
+"
+"9","194 RA. Garcia et al. / Remote Sensing of Environment 147 (2014) 186—205
+0- -0 Raw Depth — Depth, no impulse noise — Final smoothed Depth
+50
+4o 4
+30 (a) Row 1604 A; I
+,_, 20 I
+.8, 1;
+1
+g 10 .
+g 8
+6 . . . .
+4 . . . I . .
+900 150 200 250 300 350 400
+Column Pixel Position
+3‘3 140
+z} 100 -(b) o- -0 Raw Uncertainty ' 7 . "" .""I -
+.E 50 . . . "" i +
+co Fmal Modified .. .
+g 40 Uncertaintv a ,
+5 30 a
+.3 20 ‘
+E 10 ' ‘ . ‘ - ~
+g I _ “I , =
+900 150 200 250 300 350 400
+Column Pixel Position
+50
+20 ROW 1686 ,‘ +
+14 .
+--- 12 .~ H '
+E 10 ' .
+5 g .
+Q 1
+d) 4 ' "" n
+.0 2 ' ‘ A“
+900 150 200 250 300 350 400
+Column Pixel Position
+32 140
+B: 100 E (d) I I I 1 II o- -0 Raw Uncertainty ]
+-§ 60 I u _, I I . . I _ Final Modiﬁed
+t . . '|' 'I I u. Uncertaintv
+8 40 I I .
+530 77‘: I' '31:?
+g» 20 ‘ + ' I ' I'L'I' ‘
+._ ' - I ‘ ; I |
+H I ‘ f Q . IW ‘ . .
+$10 ‘- «W .
+O: $00 150 200 250 300 350 400
+Column Pixel Position
+Fig. 5. Illustration of the three stage smoothing technique applied to HICO derived depth product of Shark Bay on 19 November 2011. Cross—sectional proﬁles at row number 1604 (top two
+panels) and at 1686 (bottom two panels). (a) and (C) contain the raw depth (black dot—dash); impulse pixels (red triangles); depth product after impulse noise pixel removal (solid blue
+curve), and; the subsequent smoothed depth product (solid pink curves). (b) and (d) are the uncertainty proﬁles of (a) and (C) respectively, and contain the initial uncertainty (black dot—
+dash); pixels identiﬁed as outliers (red triangles), and; the ﬁnal modiﬁed uncertainty product (pink).
+that has undergone atmospheric, sunglint and air—to—water corrections, This behavior can be attributed to the absolute noise term added
+and; (b) computed for each pixel in a HICO scene by dividing the during the inversion; where, as the SNR decreases below 20, the magni—
+average, y. of each set of 20 noise perturbed rm spectra at 550 nm by tude 0f 5r“ starts to become comparable to ||rr5||. Given the exponential
+the standard deviation, 0, at this water penetrating wavelength, relationship between rm and depth in the shallow water model; the
+BRUCE model translates this perturbation of rm to large changes in
+' ' i hin h
+_ H[{Trs(550) + 5Trs(550)}1.:1m20] 11 depth, and hence why the retrieved depth V&lI’lES' so greatly w t t e
+SNR(550nm) — W- ( ) set of 20 n015e perturbed rrs spectra for 10w SNR pixels — e.g. the deeper
+0[{Trs( ) + Trs( )}i=1...20] - - - - - -
+impulse n015e pixels observed in Fig. 5. Conversely, over bright sub—
+strates, where |I5Trs(?\)|| || << rr5()\)||, 51*“ is translated to smaller changes
+Fig. 6 shows a non—linear relationship between the pseudo SNR in depth. These relationships are demonstrated in Fig. 5, where pixels
+and the relative uncertainty of the retrieved depth of four HICO with a modeled depth less than 6 m generally had a relative depth un—
+scenes of Shark Bay. From Fig. 6, we can see that when the SNR is certainty of less than 10%, and where this relative uncertainty would
+above 20, the relative uncertainty of the retrieved depth is less at times increase with depth.
+than 10%. This is an adequate outcome, and analysis of the entire Fig. 6 also shows that when environmental noise is included, arising
+HICO time series for Shark Bay showed that on average 89% of pixels from atmospheric, sun—glint and water—to—air interface corrections, the
+with a retrieved depth less than 5 m had a SNR greater than 20. This SNR of HICO — which was initially estimated at approximately 200 at
+average decreases to 74% for pixels whose depths ranged between 550 nm (see Lucke et al., 2011) — drops to less than 150 for most
+5 and 10 m, and to 49% for pixels with a retrieved depth greater than cases. This corresponds to an increase in the noise component by a
+10 m. Below a SNR of 20, the relative uncertainty in the retrieved factor of 21.3. While this is a modest increase, it does illustrate the
+depth drastically increases, in most cases to greater than 100%. Such importance of accurately removing contaminating signals in a bid to
+high uncertainties mainly occur for pixels with a retrieved depth greater avoid non—uniqueness issues, which lead to higher uncertainties in the
+than 8 m. retrievals of depth.
+
+"
+"10","RA. Garcia et (11. /Remote Sensing of Environment 147 (2014) 186—205 195
+103 . . ,
+N (a) 14-Dec-11 N (b) 02-Apr-12 15-0
+Z 02 (rfjf“""‘) = 1.51 x 10‘5 102 Z 02 (rfﬁf’m') = 4.32 x 10—5
+‘ i=1 ‘=1 13.5
+102 ‘ 'Z“ . . » 1 1‘ f.-
+' 12-0
+.5 ‘,_ _:"".-...973,-;‘iﬁeféigf'ﬁi'ggigyf;£571 ' 22;."" 7?}9ﬂj:_~ §
+13 ‘ -""’?='t53j;‘f.;,v:i'?-’.f‘.'=£=.""‘ "" '. ,‘ ?%e _._ A
+3 ' ‘ x * 9.0 E
+2 100 100 3
+3 0 10 20 30 40 50 60 20 4O 60 80 100 120 7.5 a
+5 102 i i ' ' 04 Jun 12‘ 103 N N ‘ ‘ (d)08-Au -12
+g i N (C) N deglint g —S
+8 _ . Z 02 (rfgf'm‘) = 2.24 x 10-5 2 02 (r...- ) = 3-96 X 10 ‘ 6.0
+5 ».*. 1:1 102 V. ,, i=1
+'5 ‘ ' £135}. 31 _ '* . 4.5
+2 . .191 ‘-=:::""j'i, - 3 :3:- 1‘ _, .
+g 101 ~. 101 , .,"" U‘: ~. V ‘ '
+51;; g. .2- . , ' ‘ ...,-- m
+-¢*. . . ‘ ' 100 ‘ ' ‘V' ‘ -“ [""1 :v; - :.«e._-.;,:,. '-
+1o° ‘ 1
+o 20 4o 60 80 100 120 140 10 0 20 40 60 80 100 120 140
+— pseudo SNR (550 nm) a
+Fig. 6. Relative uncertainty of the retrieved depth vs. pseudo SNR at 550 nm, obtained from HICO images of Shark Bay on (a) 14—Dec—1 1; (b) 02—Apr—12; (c) 04—Jun—12, and; (d) 08—Aug—12.
+Note: (1) Vertical axes are displayed in logarithmic form; (2) 35,000 random data points, with depth >0.3 rn, were presented for each panel, and; (3) the summed spectral variance taken
+from the deep water region of the given HICO rgeg'inted image is also presented.
+3.3. Tide corrections that the Faure Sill diminishes the amplitudes and creates lag in the
+phases of the tidal constituents (Burling et a1., 2003). The net result is
+3.3.1. Harmonic tidal analysis a lower tidal height and range in Hamelin Pool than in Monkey Mia.
+Removing the inﬂuence of tide is an important task in delineating This is observed in the modeled tide data (Table 2), where the tide
+changes caused by resuspension and sedimentation from changes in range at Monkey Mia and Hamelin Pool is 81.14 cm and 64.71 cm re—
+tide heights, particularly since tides can form a signiﬁcant portion of spectively. Additionally,Tab1e 2 suggests little variation in the expected
+the variance observed in raw bathymetry products (Egbert 82 Erofeeva, water level height between successive HICO overpasses; evident by the
+2002). modeled tide ranges of less than 1 m and a standard deviation of tide
+The harmonic tidal analysis begins by extracting the phases of the heights less than 30 cm for Monkey Mia and Hamelin P001. Indeed a
+major tidal constituents from time—adjusted (+ 02:02 h and — 0:32 h) tide height range of approximately 1 m over Shark Bay has been noted
+Carnarvon tide data (Fig. 8a). The correlation coefﬁcients of the curves by Walker et a1. (1988) and modeled by Burling et a1. (2003).
+in Fig. 8a are given in Table 2 and with r2 > 0.96 for all dates, demon— Although the modeled tide heights at Monkey Mia and Hamelin P001
+strate high conﬁdence in the values of the modeled phases. The slight appear reasonable based on evidence from the literature, the estimated
+differences between the observed and modeled tide heights in Fig. 8a tide heights over the Faure Sill can be subject to large errors. These er—
+are likely due to wind induced waves, which do not affect the accuracy rors arise when averaging the tide height between Monkey Mia and
+0f the retrieved phases. Applying these phases with the respective Hamelin Pool, which may over simplify the complexity of the shallow
+amplitudes taken from Burling et a1. (2003) generates modeled tide water tidal harmonics present over the Faure Si11.1n this region, shallow
+curves for Monkey Mia and Hamelin P001 as illustrated in Fig. 8b for water tidal constituents may cause constructive or destructive interfer—
+14 December 2011. ence with the M2, 52, K1, O1 harmonics, increasing or decreasing the tide
+One and a half day intervals about the HICO overpass were used to height respectively (Doodson 82 Warburg, 1941 ). However, with the
+compute the phases of the major tidal constituents as these produced absence of accurate three—dimensional tide modeling (e.g. Burling
+higher correlation coefﬁcients than an expanded time series. The et a1., 2003), adopting the average is the most pragmatic approach.
+modeled tide heights and their uncertainty at the time of each HICO
+overpass for Monkey Mia, Hamelin Pool and Faure Sill are given in 3.3.2.1mage based tide correction
+Table 2. The Faure Si11,being a shallow water region containing several T0 gauge if a tidal signal exists in the HICO derived bathymetry
+narrow water channels (of depths greater than 6 m) exhibits complex dataset, the predicted tide heights at Monkey Mia (taken from
+tidal harmonics (Burling et a1., 2003). Modeling these harmonics are Table 2) were plotted against the median HICO derived depth of the
+beyond the scope of this paper, however previous research has shown shallow water region on the northern side of Faure Island (Fig. 9). This
+
+"
+"11","196 RA. Garcia et al. /Remote Sensing of Environment 147 (2014) 186—205
+0' 1 ~‘ 6‘“ I >
+J 1""! i g"" ’ i’ . \ﬁ ‘ , .I ’1 ‘ 4- ‘\\: 911‘
+. ‘ , \ I“ \Q ,1
+.‘I V '1‘. ‘31:; V . .k’:) ‘r ., V. .
+--) \ ' . \‘ A ‘ ,. £i'x ‘ f, 5"") ~ I, ‘ ‘. t) ‘
+- ‘ \~. ' I ‘ \'_
+, . H ,I; , I . ’ / ‘r . '1 I‘m / I I s 1‘
+I . ‘Q‘. _ ‘ ¥‘ - 1|
+,v \v- "" _ 1 A 4"" ‘ - f’.
+[“4 ’ )3 4, J.’ K f, 13%.
+O .
+19 ,. '."" ¢ 2 1.l ‘Q’ r 0 F “ I"" 2‘. I 04- .1 ‘ '1‘. “,‘
+. . 1' ""4!, u ' ‘.',‘v\, \w ' :51 ?W-
+V .. ,‘ _ j- . ""‘x a \ _ *3 . gs .
+z ' ‘K — 1.."" , .7, ‘ ‘ . I. '. i. ‘7. "". ,'
+‘ ‘ g- , $:\‘;.-,--.. \\ 7* . 4,. . ‘ . ~ \ 7""; m; _ '- ‘
+. y. 5 i < c! ’ Li ‘A r‘ Ar‘
+~ 1 K ‘_‘_ ‘. , «a \ ' ‘ ‘ ﬂ» 1
+\\ ' ‘I ‘ 3? - \~ ‘1'. ‘
+K \ . » ,\ v I '4"" I \ \jh
+. ﬁ ' 3 ‘5. R \ »‘ ‘ 1
+, . \i , :1. - m x:
+x - I ' ,’ .A“ . ' .‘ g1 ‘ ‘1 \-K) _
+- . ' \
+‘ .\ - 1‘ -. /.- \- , J ' '. ~ \\‘~/ 2: , ‘ --
+‘ \ ~ ‘ 3i“: i x e \. .. . '\ \
+, \ '4, . ' t... . ‘ ""_ ' \- -
+4“ g ' ""3“; . , .0 ‘ﬂ ' .5“ ’ i
+. ' 4 - ‘ '. . . 1(- . ‘_ . ' ,
+s . . x , .
+\ ‘ . gs. ‘ ' ... ‘ V ..
+q V ..(*j""- Vi, ?y‘ .
+‘ Q '57 - —— Ix“ ‘1 - 5 I ' ‘ﬂ , ""“ ,
+. i , I I
+""'1' ‘ h’9'! , b "".
+. . f . :i _'. 1. ' . .
+0.0 0.6 1.2 1.8 2.4 3.0 3.6 4.2 4.8 5.4 6.0
+Depth (m)
+Fig. 7. Smoothed bathymetry images (before geo—referencing) derived from HICO imagery of the Shark Bay region, from 19—Nov—11 to 08—Aug—12. Note: For simplicity the bathymetry
+image of 02—Apr—12 is not displayed; black water pixels (e.g. 12—Jan—12 and 27—Feb—12) had Rrs(750) > Rrs(400) and were not processed, and; blue and white represent shallow and deeper
+areas respectively.
+island is approximately in line with Monkey Mia, and as modeled by that the variation in depth between HICO derived bathymetry images
+Burling (1998), experiences very similar tidal harmonics. Fig. 9 shows is related to tide, and not solely due to random offsets.
+a strong positive correlation (r2 = 0.90) between the predicted tide The image based tide correction technique is illustrateclvin
+heights and the HICO derived bathymetry prior to tide correction, that Fig. 10a. This ﬁgure shows the median shallow water depth, H(t),
+is, the bathymetry increases with the tide height. Note that a 1:1 line computed for each HICO image of Shark Bay. The black horizontal
+was not expected because: (a) the predicted tide heights are given line is the reference depth, Href, from which the offset of each ba—
+above LAT; (b) Burling (1998) obtained a normalized RMS of 7% thymetry image is calculated. The reference depth in this case is
+between the predicted and observed tide heights at Monkey Mia with the median water depth computed from all nine HICO scenes. Note
+the modeled tidal amplitudes and phases, and; (c) potential random that if tide data of the region of interest is available, then the mean
+offsets in the bathymetry data caused by sub—optimal atmospheric/ water level height or the lowest astronomical tide may instead be
+sun—glint/air—water interface corrections. Despite this Fig. 9 implies used as the reference depth.
+
+"
+"12","RA. Garcia et al. / Remote Sensing of Environment 147 (2014) 186—205 197
+200 2.0
+(a) 1
+180 7 . E
+160 -°' "" 't ’23 1'8 01-Jun
+I
+E 5 . , ; 5 Predicted Tide = 0.7043(Depth) + 0.6158 77 044%
+:23, 140 - . ,’ 3g 1.6 R = 0.90 ,
+‘6'? 120 .2.
+g 100 ""I ED 1-4 "" ' 14-Dec-11
+2 19-Nov-11 - 051A""?
+80 a, ,.= , ,,
+B 1'2 08"")? +#— 02-Feb
+60 ‘ E 21-Ja.n
+4o - - % 1 o A
+348.0 348.5 349.0 349.5 g 7'“?
+Decimal Days since 01 Jan 2011
+0.8
+180 b 0.3 0.5 0.7 0.9 1.1 1.3 1.5 1.7
+160 ( ) Median Shallow water depth (m)
+A 140 /, ~~.\ , Fig. 9. Predicted tide heights at Monkey Mia against the median depth of the shallow
+E / \ / water pixels surrounding the northern section of Faure Island. The predicted tide heights
+E 120 ,_ \ / A \ “/1,"" \ were taken from Table 2, while the median shallow water depths were taken from HICO
+% t I ' derived bathymetry prior to tide correction. The nine data points represent the nine
+I 100 HICO scenes.
+g _,.-* x
+t"" 80
+harmonic analysis tide correction method did not signiﬁcantly reduce
+60 the variability between the bathymetry images, having also
+overcorrected the depth of the shallow water pixels as noted by the
+40 3480 3485 349.0 349.5 negative a\]/3eragdes diﬁplayed'in Table'3.'These results sgggest that tilde
+Decimal Days since 01 Jan 2011 correction ase 0n armonic ana y51s 15 inaccurate an oes not a 'e—
+quately represent the tidal harmonics encountered over the Faure Sill.
+Fig. 8. Harmonic tidal analysis for a 3 day interval centered on the HICO overpass of In contrast the image baSEd tide correaion approach prOduces 3 ba—
+14 December 2011: (a) time adjusted Carnarvon tide height data for Monkey Mia thymetry times series With an SEM Of12 C111, indicating that the varia—
+(+2302 h _— blaCk d0t5)_and Harrie“? P001 (—0332 h — $133190“) overlaid With tions clue to tide have at least been minimized. Note that the reason
+the respecuve mpddec‘ tlde curYes ”5mg Eq' (3); (b) mow“ “d? curves. for Mon"" the image based tide correction did not generate an SEM of zero is due
+key Mla (black llne) and Hamelln P001 (gray llne). The tr1angles 1n (b) dlsplay the _ _ f h . h f 1 h . .
+modeled water level height at the time of the HICO overpass at Monkey Mia and t0 the 1nc1u510n O t e constraint t at; OI’CES AH( t) t? equa t 6 1111111—
+Hamenn p001, mum depth (see Eq. (10)) — for some images — t0 av01d overcorrection.
+Thus not all bathymetry images were fully normalized to the imposed
+reference depth. Fig. 10b and c shows the histograms of the depth of
+How well the image based and harmonic analysis techniques mini— the shallow water pixels for each bathymetry image, before and after
+mize the tidal inﬂuence across the bathymetry time series was tested empirical tide correction, and illustrates the normalization achieved
+by computing the standard error in the means (SEM). Here, the mean by this method. It should be noted that the corrected depth values 0b—
+represents the average depth of the shallow water pixels, <H(t)>, of tained from this empirical method are relative to an arbitrary reference
+each bathymetry image in the time series. Note that applying a tide cor— depth, rather than an absolute tide datum such as LAT.
+rection technique to the bathymetry dataset would ideally correct water These results suggest that unless the local tidal dynamics of the
+height variations to a reference depth, and hence yield a SEM near zero. region of interest are well characterized, large errors can arise when
+Table 3 shows <H(t)> and the SEM for the uncorrected, image based and using tide data recorded at distant tide stations. The lack of in situ tide
+harmonic analysis corrected bathymetry images. data in close proximity to the region of interest is a constant issue
+As indicated in Table 3, tidal inﬂuences over Shark Bay exhibit a SEM faced for the majority of remote and inaccessible regions for remote
+of 24 cm with a tidal range of 62 cm. The tidal range is consistent to that sensing studies. Although global tide models are in existence (e.g. Finite
+modeled using the harmonic tidal analysis (Table 2). However, the Element Solution 2012, Lyard, Lefevre, Letellier, 82 Francis, 2006; Topex
+Table 2
+Modeled tide heights (cm), above LAT, during each HICO overpass time for Monkey Mia, Hamelin Pool and Faure Sill. Also present are the: standard deviation and range of these tide
+heights, and; correlation coefﬁcients of the tide height curves used to extract the M2, 52, K1, and O1 tide constituent phases from the time adjusted Carnarvon data.
+Date and time (WST) Monkey Mia Hamelin P001 Faure Sill
+r2 Modeled tide height (cm) r2 Modeled tide height (cm) Modeled tide height (cm)
+19—Nov—2011,1632 h 0.983 124.28 :I: 0.01 0.978 114.06 :I: 0.04 119.17 :I: 0.05
+14—DeC—2011, 1539 h 0.991 135.21 :I: 0.22 0.995 120.23 :I: 0.18 127.72 :I: 0.40
+21—]an—2012,1538 h 0.983 112.43 :I: 0.35 0.991 132.98 :I: 0.18 122.70 i 0.54
+07—Feb—2012,1722 h 0.988 115.25 :I: 0.44 0.994 133.82 :I: 0.19 124.54 i 0.63
+27—Feb—2012, 0940 h 0.981 95.19 :I: 0.02 0.991 121.92 i 0.02 108.55 i 0.05
+02—Apr—2012,1035 h 0.966 125.91 :I: 0.18 0.983 128.12 :I: 0.22 127.01 :I: 0.40
+01—Jun—2012,1038 h 0.973 173.39 :I: 0.18 0.990 127.11 :I: 0.07 150.25 :I: 0.25
+04—Jun—2012, 0932 h 0.990 165.61 :I: 0.10 0.994 149.56 :I: 0.06 157.58 i 0.15
+08—Aug—2012,1625 h 0.962 118.60 :I: 0.31 0.988 92.99 :I: 0.22 105.79 i 0.54
+Standard deviation of tide heights (cm) N/A 26.55 N/A 19.30 20.24
+Tide range (cm) N/A 81.14 i 0.20 N/A 64.71 i 0.28 69.04 i 0.69
+
+"
+"13","198 RA. Garcia et al. / Remote Sensing of Environment 147 (2014) 186—205
+2
+(a)
+g 1.8
+3
+S 1.6 9
+é o
+3
+1.4
+E l
+g 1.2
+‘6 T . °
+5 1
+O.
+«‘5’ AW)
+5 0.8 |
+B o
+E 0.6
+0'4 x N, '1 1 '1
+, ’L ’L ’L ’L ,
+$00 0695 90!» 05>” 0&8” 99‘” VOA Won 19>?
+x9; xur 1x, 0"" I 13 r 01]: 9x; 65"" 9%,
+0.6 . _ . 0.6
+Reference Depth (b)
+i
+0.5 : 0.5
+I
+I
+I
+E; i 5‘
+C 0.4 I c 0.4
+01 . 0)
+:1 I :5
+O' C'
+(D ' Q)
+L: 0 3 : t: 0 3 /
+\E. IM
+7° ‘ ‘ 3 rl' ‘
+E0. // \ E l/ \
+z ' \ \ Z I 1 ‘
+\
+W I"" \
+1/ \
+0.1 / ‘i‘ «Q 0-1 /ilt \\
+/ ‘& 4 \\
+I ’ ‘
+0 1 L2\ 0 1% \\
+'80 0.5 1.0 1.5 2.0 2.5 3.0 ‘80 0.5 1.0 1.5 2.0 2.5 3.0
+Depth (m) Tide Corrected Depth (m)
+Fig. 10. (a) Illustration of the empirical tide correction technique applied to the HICO dataset of Shark Bay. The black horizontal line represents the reference depth. Histograms of the depth
+of shallow water pixels (less than 3 m depth) before (b) and after (C) tide correction.
+Poseidon crossover solution 7.2, Egbert 82 Erofeeva, 2002), their spatial 3.4. Geo-registration
+resolutions are coarse (ranging from 1/16° to 1/4° longitude and lati—
+tude) and do not extend to semi—enclosed embayment's such as Shark To test the geo—spatial consistency, the spatial ‘pixel drift’ of four
+Bay. The image based tide correction circumvents the need for a historic test pixels was analyzed between HICO images. Pixels A, B, C and D,
+tide dataset and eliminates errors from tide models. Although this displayed in Fig. 3, correspond to different land and seascape features,
+approach does require at least two bathymetry images of the region of speciﬁcally: A and B are pixels within the birradas (described in
+interest at different times, it is the most pragmatic and easiest to imple— Section 2.3) on the Peron peninsula (25.918 °S/113.737 °E) and Faure
+ment. Future research would be to compare the empirical tide correc— Island (25.838 °S/113.862 °E), respectively; C is an intersection point
+tion results with estimates obtained from a harmonic analysis whose of a distinct and seemingly invariant water channel on the Faure Sill
+tidal constituents are derived from high resolution remote sensing (25.959 °S/113.779 °E) and; D is the southernmost tip of Pelican Island
+imagery, as presented by Mied et al. (2013). (23.854 °S/114.019 °E). A seascape feature (pixel C) was also included
+Table 3
+The mean depth of the shallow water pixels, <H(t)>, for each HICO derived bathymetry image. The standard error in the means (SEM) of the uncorrected, image based and harmonic tide
+correction techniques is also presented.
+Tide method 19—Nov—11 14—DeC—11 21—Jan—12 07—Feb—12 27—Feb—12 02—Apr—12 01—Jun—12 04—Jun—12 08—Aug—12 SEM
+Uncorrected 0.91 0.91 1.13 1.41 0.80 1.02 1.42 1.38 1.34 0.24
+Image based correction 1.26 1.20 1.26 1.56 1.20 1.24 1.13 1.20 1.17 0.12
+Harmonic analysis correction — 0.29 — 0.36 — 0.10 0.16 — 0.28 —0.25 — 0.08 — 0.20 0.28 0.22
+
+"
+"14","RA. Garcia et (11. /Remote Sensing of Environment 147 (2014) 186—205 199
+because the majority of GCPs were on the coastal regions surrounding December 2011, 7 February, 27 February, and 8 August 2012 had a
+the Faure Sill, and solely choosing test points near these GCPs may SW—NE orientation and where the test pixels encountered drifts greater
+bias the result. Additionally, the area surrounding pixel C appeared in than 20 km from their reference positions (Fig. 11a). In contrast, those
+both true color and bathymetry imagery to be invariant through time dates that were imaged with the same swath orientation (21 January,
+as expected by the qausi—stable nature of Shark Bay's geology. 1 June, 4 June 2012) exhibited much lower geospatial inconsistencies
+The Euclidean distance was used to measure the drift of a given test (<17 km). Such large relative geospatial displacements will introduce
+pixel from its reference position, signiﬁcant errors into change detection analysis, where a change in
+the geophysical parameter of a pixel is likely clue to an evaluation at dif—
+_ 2 2 ferent locations rather than a temporal change (Townshend, Justice,
+Distance(degrees)': V (19(Ar)_ﬁ(Ai)) + (90049—90040) (12) Gurney, 82 McManus, 1992). By performing a series of mis—registration
+Distance(l<m) : W >< & simulations on Landsat imagery, Dai ancl Khorram (1998) showed that
+0'0009 1000111133 km a geolocation accuracy of less one ﬁfth (< 0.20) of a pixel is needed to
+detect 90% of real temporal changes. For HICO this equates to achieving
+where 90(Ar) and 0(Ar) are the latitude and longitude coordinates for 20 m geolocation accuracy.
+test pixel A in an arbitrary reference image, and 90(Ai) and 1‘} (A1) are Manual geo—registration using GCPs taken from Google EarthTM im—
+the latitude and longitude coordinates for test pixel A on subsequent agery signiﬁcantly improved the geospatial consistency, where the
+HICO images. We set the HICO image of Shark Bay captured on 19 test pixels were now within 300 m of the reference pixels (Fig. 11b).
+November as the reference image, and as such the Euclidean distances However, this geospatial consistency is still relatively large compared
+from Eq. (12) are relative measures but still illustrate geo—spatial consis— to the 100 x 100 m HICO pixel footprint. Furthermore, this result is
+tency through time. Note that these Euclidean distances were converted poor compared to other operational satellites, such as MODIS and
+t0 kilometers for ease of interpretation, and are presented in Fig. 11. MERIS both of which achieve sub—pixel geolocation accuracies of ~50
+Fig. 11a shows that simply geo—referencing a HICO swath with the m (Wolfe et al., 2002) and 77 m (Bicheron et al., 2011), respectively
+provided GLT can generate geo—spatial inconsistencies greater than and whose ground sampling distance are at least twice as much as
+10 km. The largest geo—spatial inconsistency is encountered when the that of HICO. This highlights the need for an improved HICO geolocation
+scene is imaged with different swath orientations. For example, the algorithm that will increase the geolocation accuracy of the resultant
+reference image had a NW—SE orientation while the images on the 14 GLTs and/or an improved method of using GCPs for subsequent geo—
+registration. The manual geo—registration employed here has proved
+(a) ETest PointA lTestPointB ITestPointC .Testpoint D troublesonae clue t'oz' (a) the slight translational drift of the HICO
+40 swath, which prohibits the use of a con51stent set of GCPs; (b) the
+E 35 SW-NE SW-NE amount of GCPs needed to achieve a geo—spatial consistency of less
+E :3 35; SW-NE SW-NE than 300 m, and; (c) cloud cover, which when present will compromise
+g 30 NW'SE 5:5 the accuracy of the geo—registration.
+1: 3 :5: 96* Fortunately, since the commencement of this research, and as part of
+f § 25 the transition of HICO data to NASA, the Naval Research Laboratory
+8 “E 20 § 77 HNWTSE, , r Nwr’er , (NRL) has improved the geolocation accuracies of the provided GLTs to
+§ 8 15 E _ 75*: _‘ 55* ,_.NW-.SE __NW-.SE_. ‘_ ii 200—300 m. This improved HICO data is now available through NASA's
+% .2 g 5555 Ocean Biology Processing Group's data portal (http://0ceancolor.gsfc.
+g 10 E ° nasa.g0v/cgi/browse.pl?sen=hi).
+3 555 :55? 5555 sis .. 3555 55: 3-5- Change detection
+0 m
+xx"" “'4"" 0:4"" ‘05” ‘05,” ‘9’ 052"" 0:0 £0 The ability to detect change in a geophysical parameter from multi—
+q§° b50"" ¢° «53’ «53’ ,3“ ,3)"" ”>9 Cb}? temporal remotely sensed imagery is a key outcome in ecosystem mon—
+""’ ""’ x Q q’ 0 o 0 Q itoring (Coppin, Jonckheere, Nackaerts, 82 Muys, 2004). However, litera—
+ture 0n detecting change above the uncertainty of multi—temporal
+(b) guest point A I Test Point 3 .Test Point c .Test Point 0 datasets is sparse, with exception of Shi and Ehlers (1996) and Hester,
+A 0-3 Nelson,Cal<ir,Khorram,andCheshire(2010).Thissectionwillassess
+g NW’SE this ability using the HlCO—derived, tide corrected, bathymetry dataset.
+.3 0-25 SWNE To this end, it is assumed that each geo—registered bathymetry image
+a 5 SW-NE has sufﬁcient geolocation accuracy to assess temporal change. A two
+g g 0.2 sample, per—pixel, t—test was used to accept or reject the null hypotheses
+g E, NW-SE NW—SE of equal depth (i.e. no change) between pixels (i, j, t1) and (i, j, t2). As
+g $0.15 3 NWSE described in Section 2.3, the retrieved depth and its uncertainty were
+g g g SW-NE 5 ? SW-NE mwss the average and standard deviation, respectively, calculated from a set
+1; 0.1 E 5 E I: g; = g; I: i; of 20 noise—perturbed spectra. This is analogous to performing a t—test
+g g 5 a on two independent sample means, assuming unequal variance, both
+§ 0.05 E l - § I with a sample size of 20. Here, the upper and lower tails of the Student's
+“ 55 55 55 5 U 55 tcumulative distribution function at the calculated tstatistic and degree
+0 :1 3* 5 5g 5 i5 : *5 5 *5 of freedom are used to compute the p value. The null hypothesis of “no
+9 g» (,1, Q .Q/ «1"" Q .0 '0, change in depth” is rejected for pixels with p < 0.05 (5% signiﬁcance
+6"" z“ 329' 69' éf” Q"" 0"" 0°, 8’5 level).
+7“ s9 9‘ «5‘ «5‘ x” «P v“ cu“ . .. .
+’3’ “I ""’ Q ""' ° ° ° 0 Fig. 12 shows the empirically tide corrected bathymetry proﬁles at
+. _ _ _ _ row number 1686 for each geo—registered bathymetry image. The un—
+Flg. 11. Geo—spat1alc0ns1stency of each HICO 1mage of Shark Bay, relat1ve to 19 November . . . .
+2011, after (a) geo—referencing using the provided GLT ﬁles, and (b) subsequent geo— certamty 0fthe rEtHEVEd dePth IS overlald around the average dePth'
+registration using the ground control points. NW—SE and SW—NE refer to the HICO Thls ﬁgure 111115133135 that for Shallow waters, 0f dePth 1955 than 6 m,
+swath orientation. the inversion routine presented can retrieve consistent depths through
+
+"
+"15","N
+O
+O
+30 19-Nov-11 30 14-Dec-11 30 21- an-12
+' I
+A B
+25 A B 25 25 I_I_I I_I_I
+20 I I I - 20 20 : : I I
+I I
+I I I ' ' I I
+15 I I I ' 15 15 I I I I
+I I I I : I I
+I I
+10 I I I 1° 10 I I I I
+I I I ' ' I I
+S I I I S 5 I I I I
+I I I I I . . 2:
+o A . ~ 0 IIII 0‘ I >-
+900 1000 1100 1200 1300 1400 1500 900 1000 1100 1200 1300 1400 1500 900 1000 1100 1200 1300 1400 1500 CE?
+30 07-Feb-12 30 . I 27-Feb-12 30 02-Aor-12 §-
+I'D
+I I I I I I I I ' ii
+25 I I I I 25 I I I I 25 I I ' ' \
+I I I I I I I I I I ' : «’5
+20 I I I I 20 I I I I 20 I I I I 3
+‘ l I I I | I l I I I I «9+
+E I I I I I I I I I I ' ' a
+15 I I I I 15 I I I I 15 I I I I m
+‘— I I I I I I I I I I I : §-
+§ 10 : : : : Io : : : : 10 : : . . o;
+I I I I I I I I I I I ' :1”
+0 S I I ' ' , S I I I I I 5 . I I I I :s
+. I <
+'3 ""Will“ ' ' ' ' '— ' g
+I I 3
+o _ 0 ° III-II §
+900 1000 1100 1200 1300 1400 1500 900 1000 1100 1200 1300 1400 1500 900 1000 1100 1200 1300 1400 1500 a
+3o 01 an 12 3o 04 un 12 30 08Au 12 E
+‘ \l
+25 I I I ' 25 I I l I 25 I I I I S
+I I I I I I I I I I I I d},
+I I I | I I I I I I I I H
+20 I I I I 20 I I | | 20 I I I I g
+I I I I I I I I I I ' I |
+I I I I 15 I I I I 15 I I ' ' 8
+15 I I I I I I I I I I I I U‘I
+I I I | I I I I I I I I
+10 I I I I 10 I I I I 10 I I I I
+I I I I I I I I I I : :
+I I I I I I I I I I
+5 I I I I S I I I I 5 I I I I
+‘ I I I I
+0 II ° I , , - °
+900 1000 1100 1200 1300 1400 1500 900 1000 1100 1200 1300 1400 1500 900 1000 1100 1200 1300 1400 1500
+—— Column PIxel POSltlon ——>
+Fig. 12. Cross—sectional depth proﬁles of the Faure Sill, at row 1686, taken from geo—registered HICO derived bathymetry images. The solid black line and gray envelope surrounding it represents the retrieved depth and its uncertainty respectively.
+Highlighted are two sets of deep water channels, A and B, located at column positions 950—1050 and 1280—1380 respectively. The depth of these channels shows high temporal variability, the cause of which is discussed in the text.
+
+"
+"16","RA. Garcia et al. /Remote Sensing of Environment 147 (2014) 186—205 201
+time — even in the presence of sub—optimal atmospheric correction. movement 0ftida1 sandbanks across the Faure Sill. Fig. 13 shows the
+However, as the retrieved depth increases, so does its temporalvariabil— changes in the HICO—derived, tide corrected bathymetry across the
+ity, as illustrated by the quasi—deep water pixels of the Faure Sill chan— Faure Sill between the dates of: (a) 14 December 2011 and 21 January
+nels A and B in Fig. 12. This temporal variability is unlikely caused by 2012; (b) 21 January— and 27 February—2012; (c) 27 February— and 04
+natural phenomena, and is more likely the result of variable quality of June—2012 and; (d) 04 June— and 08—August—2012. In this ﬁgure, pixels
+atmospheric correction and shallow water model inversion. As noted that observed a change had: (1) a difference in depth greater than the
+in Section 3.1, the magnitude of spectral noise introduced to Rrs from baseline variability, and; (2) a p value less than 0.05 (5% interval) at
+atmospheric correction becomes comparable to the reﬂectance signal the calculated degree of freedom. Otherwise pixels were classiﬁed as
+as the geometric depth increases. As such, this spectral noise coupled having ‘no change’ and displayed as gray. Here, we deﬁne the baseline
+with sun—glint correction would decrease the accuracy in the retrieved variability as the residual random ﬂuctuations within the tide corrected
+depth over quasi—deep water more than it would for shallow water bathymetry dataset. Recall that the SEM of the image—based tide
+pixels and effectively creates the observed temporal variability in deep corrected bathymetry dataset was 0.12 m (see Table 3). Hence, the
+water pixels. bathymetry varied on average by 12 cm between each successive
+
+Despite the normalization of the bathymetry dataset to a common timestamp. We set the baseline variability to equal three times the
+depth; changes unrelated to tide are expected due to the frequent SEM (i.e. 0.36 m), which would encompass: random offsets in depth
+(a) . ' ‘
+h. j I. a ‘I ‘-\‘\I\ a (.- , \V: ,1. I ' ‘ _.‘-\ \ - ~ ‘ 1 7
+. ‘ .- . . . i ‘ 1. v- 7 ‘1 > . 1 ‘~
+‘ (‘ E‘ 0‘“! 11‘ ’ § ' ‘. 1 ’1'}
+‘ f . “ > ‘ “ﬁ‘ ‘ » _. 1 .o.‘ , -- ’1
+' Hamelin Pool r'
+N 0 . ,
+k h - Deep-water I No Change
+Land '
+.A ,‘ \; hi ,ﬁ )7
+.3 . \ i 0’ _ w.‘ . ‘ -, . ‘ . 7
+: l. x , ‘ \F’lﬂ , . ,I\ ‘
+' . K x Q“ ‘.i. 1. ’ﬁ‘ ’ ""c 0 . V ~ '>‘ ‘
+-2.0 -1.6 —1.2 -0.8 -0.4 0.0 0.4 0.8 1.2 1.6 2.0
+<— Shallower — Depth Change (m) — Deeper —>
+Fig. 13. Change detection analysis of HICO—derived, tide corrected bathymetry of the Faure Sill between the dates of: (a) 14—Dec—2011 and 21—Jan—2012; (b) 21—Jan— and 27—Feb—2012;
+(C) 27—Feb— and 04—Jun—2012 and; (d) 04—Jun— and 08—Aug—2012. Deep—water and land are presented as dark and black pixels respectively. The blue and green Circles in (b) and (C) high—
+light regions of Change discussed in the text. Separate image—based tide corrections were performed for the dashed magenta presented in (a).
+
+"
+"17","202 RA. Garcia et a1. / Remote Sensing of Environment 147 (2014) 186—205
+due to imperfect atmospheric/sun—glint/air—to—water interface correc— The change in depth detected on the southern Faure Sill between 21
+tions, and; imperfect tide normalization. Therefore any changes in January and 27 February 2012 (blue circle in Fig. 13b) and 27 February
+depth greater than the baseline variability of 0.36 m, which are statisti— and 4 June 2012 (Fig. 13c) appears to be due to a plume of turbid
+cally signiﬁcant with regard to the uncertainty, are plausible and not water at this location on the 27 February (see red square in Fig. 14).
+due to random depth ﬂuctuations caused by corrections performed in The true color imagery on 27 February does indicate the formation of
+the processing. new water channels; however the change detection (Fig. 13) shows
+The change detection analysis shown in Fig. 13 does not include the that the bathymetry at this date is approximately 1 m shallower than
+bathymetry images on 7th February and 2nd April 2012, as the bathym— on 21 January — contrary to the formation of new water channels. Addi—
+etry proﬁles of these dates (see Fig. 12) appear inaccurate. This is tionally, Rrs spectra of this regionindicate higher absorption between 400
+evident from the derived depth values of channels A and B when com— and 500 nm than the adjacent areas, suggestive of higher CDM/
+pared to the other proﬁles. Furthermore these two bathymetry images phytoplankton. The retrieved model parameters over the plume on 27
+were included (results not presented here), the change detection February 2012 are: agb(440) = 0.11 In— 1, adg(440) = 0.18 In— 1,
+analysis afforded signiﬁcant, yet unrealistic changes in depth across bbp(550) = 0.12 m”, depth 2 0.50 m, Bsand = 0.115, and Bseagrass =
+the Faure Sill. Additionally, deep—water pixels were ﬂagged in Fig. 13, 0.005. The same region on the 21 January 2012 had lower IOP values,
+due to their temporal variability as noted in Fig. 12. larger depth and a brighter substrate: agb(440) = 0.035 m‘ 1,
+For the purpose of change detection, separate image based tide adg(440) = 0.07 m_1, bbp(550) = 0.035 m_1, depth 2 3.5 m, Bsand =
+corrections were performed for the different regions of Shark Bay, 0.45, and Bseagrass = 0.02. Given the high lOPs, very shallow depth and
+shown by the dashed magenta regions in Fig. 13a. These regions low bottom albedo coefﬁcients imply that the bottom contribution to
+were: (1) the eastern and western shallow areas of Hamelin Pool, and: Rrs is very low or non—existent over this plume, and as such the retrieved
+(2) the Wooramel bank containing water channels orientated perpen— depth is unreliable. In operational satellite processing, such pixels should
+dicular to the coast. These two additional tide corrected subsets were be ﬂagged as deep—water pixels and not used in the change detection
+merged to the tide corrected bathymetry dataset of the Faure Sill analysis.
+(Section 3.3.2) to form a complete tide corrected bathymetry image of The shallow water region with water channels orientated perpen—
+lower Shark Bay for each HICO overpass. This latter dataset was used to dicular (green circle in Fig. 13) appears to have undergone changes in
+assess the temporal changes in depth with the method described above. depth due to resuspension and movement of sediment near the
+Separate tide correction over Hamelin Pool and the Wooramel bank mouth of the Wooramel River. This was observed on the 14 December
+were performed to take into account the differing tidal variations across 2011, where the sediment plume appeared to enter the numerous
+the Shark Bay region. For instance, the tidal regime at Hamelin Pool is channels and ﬂow northward (Fig. 14). It is possible that some sediment
+particularly complex in which the astronomical tide accounts for only would have settled down, given that modeled tidal ﬂow (Burling, 1998)
+15% of the variation in water height (Burne 82 Johnson, 2012). Over is perpendicular to the channels' orientation (i.e. trapping sediment)
+this enclosed embayment, the mean sea—level varies in an irregular with a modeled speed of approximately 0.5 m/s at high and low tide
+manner due to seasonal winds. Speciﬁcally southerly winds, that during (Burling, 1998). Retrieved bbp(550) imagery on 21 January 2012 re—
+summer, when they are more persistent and strongest, act to reduce the vealed that the amount of suspended sediment in the water column
+mean sea level by approximately 50 cm compared to that in winter was considerably less, and where the change detection analysis showed
+when the southerly winds subside (Burne &Johnson, 2012). an increase in depth by approximately 1.2 m (Fig. 13a). In other words,
+The HlCO—derived bathymetry dataset spans both summer and win— on the 14 December the water channels were 1.2 m shallower, presum—
+ter and thus it is likely that the Faure Sill, Hamelin Pool and the ably due to the high sediment deposition that was subsequently eroded
+Wooramel bank have substantially different tide heights. The normali— over 38 days until 21 January 2012. Note the ﬂuctuating depth changes
+zation to a reference depth over the Faure Sill can therefore introduce (shallower, then deeper) for these channels are observed in Fig. 13b and
+large artiﬁcial depth changes at the other regions, and as such, separate c, due to more resuspension and movement of sediment from the
+image—based tide corrections were performed. It should be noted that mouth of the Wooramel River on 27 February 2012.
+separate regional tide correction and subsequent merging to a single The change detection analysis highlights that though some of the
+bathymetric image can only be used to analyze temporal changes; as changes observed are feasible, the extent of change (approximately
+these images would contain steps in the depth between adjacent tide 1 m) is unlikely. The magnitude of detected change depends on the ac—
+corrected regions. Tidal modeling would be necessary to interpolate curacy and precision of the depth retrievals and on the tide correction
+(either linearly or non—linearly) the tide correction offsets for the differ— scheme. Firstly a relatively high precision is needed to detect change
+ent regions to generate a homogeneous tide corrected bathymetry above the uncertainty. Here the low relative uncertainty in the retrieved
+image. However this is beyond the scope of this study. depths of shallow water pixels (< 10%, see Fig. 6) allowed the detection
+The change detection analysis (Fig. 13) indicates constant bathyme— of subtle changes to as low as 40 cm (see Fig. 13). Secondly, high accu—
+try for the majority of the Faure Sill. It is thought that there are three racy in the retrieved depth (prior to tide correction) is required to infer
+regions that experience bathymetric ﬂuctuations between the ﬁve accurate magnitudes of change. This in turn necessitates adequate at—
+successive dates. These regions are predominantly shallow water mospheric correction and a robust optimization scheme that converges
+areas: (i) on the western and eastern sides of Hamelin Pool; (ii) on to the global minimum. Here, the sub—optimal radiometric corrections
+the southern Faure Sill (see blue circle in Fig. 13b), and; (iii) on the have likely reduced the accuracy, particularly over the quasi—deep
+Wooramel bank (green circle in Fig. 13c). water pixels, while the convergence to local minima is the likely cause
+The extent of change observed ranged between approximately of the inaccuracy in some shallow water pixels. Future improvements
+— 1.6 m (shallower) and 1.6 m (deeper); this appears to be an unrealistic to atmospheric and sun—glint corrections and optimization schemes
+depth change in the timeframe of one month. For example on the western will increase the accuracy in change detection analysis, however, this
+shallow regions of Hamelin Pool, the depth decreased by approximately study has shown that even with sub—optimal corrections, it is possible
+1 m from 27 February to 4June 2012. This is unlikely to occur as the ben— to detect change above the uncertainty in the retrievals due to environ—
+thos of this region consists of hard microbial pavement that is not suscep— mental and sensor noise.
+tible to erosion from water movement (Jahnert 82 Collins, 201 1 ). Although
+the deposition of motile sediment and its subsequent removal is possible, 4. Conclusion
+the extent of change observed through the HlCO—derived bathymetry is
+unlikely. However, we are encouraged by the spatial consistency of The accuracy and precision of the HlCO—derived bathymetry dataset
+several features in this region, whose depth ﬂuctuates through time. were dependent on the quality of the atmospheric/sun—glint correction
+
+"
+"18","RA. Garcia et al. / Remote Sensing of Environment 147 (2014) 186—205 203
+. .o 2’ '4 , . . ”""1 0
+(.V‘. O y, . J""! “h )f' ""a
+‘i ,, I. ' J ', ~, 1 -
+. ; ' , \ . . .
+' ‘ ‘1 ‘ .' Q ’. z
+1 . ‘ _ . r '
+. . '. . - _ ,‘J' ‘ A a _,
+‘_ ‘ ‘ ’ , .i . J ._ . ,
+w. J ‘ , .L j ‘ _‘ . ‘ .11 ‘ . ..
+I ""‘7‘ .. I I 3.9 *ii“! i - / 15f;
+I ‘ ’ “W J"" 'h ‘ 4 '- vﬁ'l' .‘l - Lzﬁf’
+9: ‘1. ‘4‘ .. -' v "" ‘K . - a»;
+, ‘ :- .,
+f""; i»: ‘ ‘1 ' - . ' ‘ J
+_.... .39 - , e ""y - _. \
+. : i - 9,15‘ —T min, 35-! .ij .7 i' .
+. 'Wooramel River ;.4_ "" ‘ 1' - 1.9.? ‘35; - _ ' :4
+gm (TV ' a .- . .
+. I ' ‘ \
+rig» . $ ‘ ' \ ' _ , ‘ ' . ‘
+8""“. ‘ . 4“ . ‘ , e. ’ ’ ‘f ' 93 ' ’ J“,
+t ‘ _ . ‘, _ ‘r . .g . ./ \lr’ \.
+,K {3' 1‘ ,’; _o ‘ ‘ 2. ~ “' ,l .‘
+i a , 1
+d ’ ' i ' 5 ‘ i ’ , _ ' .
+1 ' \ ’0 I ‘r t f t I ' ' r z
+' “(f / L"" ' ' / '5? 2."" ii A ' I '
+"" ‘4'? ~ a ' - 4,,
+g o, - ,'/,/ 'r l i
+I ' I :3 I ‘15 . IA . I A I .'
+.' AI ’ ' 1 . , ' . .. ‘t :
+Fig. 14. HICO derived pseudo true color images of: the shallow water region parallel to the coast, north of the Woorarnel River (top panels), and; the Faure Sill (bottom panels). The
+top panels show sediment ﬂowing north from the Woorarnel River, and through the seagrass Channels orientated perpendicular to the coast, indicated by a red Circle. The red square
+on 27—Feb—2012 highlights a plume of turbid water on the southern Faure Sill (bottom panel).
+and on the BRUCE shallow water semi—analytical inversion scheme than 20%. A per—pixel t—test analysis between bathymetry images at
+respectively. For many atmospheric correction algorithms, such as consecutive timestamps revealed the ability to detect changes in
+Taﬂ<aa (Gao et al., 2000),the lack of spectralbands past 900 nminhibits HICO—derived depth to as low as 0.4 m. This reinforces the use of
+the selection of the appropriate atmospheric aerosol model and an esti— satellite—based hyperspectral remote sensing techniques in analyzing
+mation of vertical column water vapor in a per—pixel basis. To overcome time series datasets when uncertainty is taken into account.
+this information gap, coincident MODIS 1eve1—2 products of the Shark HICO‘s ability to detect temporal change is dependent not only on
+Bay region were processed and used to obtain several of the input precision of the bathymetric dataset but also on its geolocation accura—
+parameters that Tafkaa—6S required. This study has shown that the cy. Thorough geo—registration using ground control points taken from
+procedure introduced three spectral artifacts t0 the remote sensing Google EarthTM imagery has increased the relative geolocation accuracy,
+reﬂectance spectra. Unfortunately, the high absorption of light in the from more than 30km using the distributed geographic lookup tables,
+water column throughout Shark Bay causes the magnitude of the to better than 300m (i.e.3 pixels). However, despite this improvement,
+water—leaving reﬂectance to become comparable to that of the spectral analyzing temporal change from remotely sensed imagery requires sub—
+artifacts — particularly over quasi—deep and optically deep water pixels. pixel geolocation accuracy, that is, less than 100 m for HICO. Thus
+This potentially leads to inaccurate depth retrievals over these pixels. enabling time series analysis of HICO data requires further work in
+Conversely, the accuracy of the depth retrievals for shallow water was either creating automated geo—registration algorithms.
+shown to be not greatly affected as the magnitude of Rrs for these pixels Relating changes in bathymetry to factors such as sedimentation/
+was substantially higher relative to the spectral artifacts. erosion necessitates the removal of the tidal contribution to the re—
+Addition of spectral artifacts enhanced the complexity of the param— trieved water column depth. Correcting tide height over the Faure Sill
+eter space with the addition of more local minima. To increase the like— has proved problematic. An empirical tide correction scheme is present—
+lihood of the L—M algorithm localizing to a global minimum, a brief ed that corrects each bathymetry image in the time series to a reference
+search of parameter space was performed to locate the parameter depth. This reference depth is arbitrary and in this case was set to the
+values that corresponds to a local minimum with the lowest Euclidean median depth across the time series. However, this reference depth
+distance. These parameter values were then passed as the initial values can be set to a datum such as lowest astronomical tide or mean water
+to the uncertainty inversion scheme proposed by Hedley et al. (2010). height if these values are known for the region. Even so, with this
+This per—pixel parameter space ‘update—repeat’ search and uncertainty image based normalization of depth, it was shown that detecting chang—
+determination afforded improved retrievals 0f bathymetry, where the es in depth due to sedimentation/deposition of as low as 0.4 m is possi—
+majority of the bathymetry image had a relative uncertainty of less ble. The ﬂuctuating changes in depth (increasing then decreasing) of
+
+"
+"19","204 RA. Garcia et al. / Remote Sensing of Environment 147 (2014) 186—205
+
+several spatially consistent features are particularly encouraging Egbert, G. D., 82 Erofeeva, S. Y. (2002). Efﬁcient inverse modeling of barotropic ocean tides.
+
+Though the extent of change is at present over-estimated, improve- Jqumal OfAmosl’hem and ocean“ TeCh”°l°.gy' 19(22'183‘294' . .
+
+, , , , , Fabbrl, K. P. (1998). A methodology for supporting dec1510n making in integrated coastal
+
+ments to atmospher1c/sun-glint/air-to-water interface corrections zone management Ocean and Coastal Management, 3904), 51_52_
+
+would directly enhance the accuracy of the depth retrievals and hence Galparsoro, 1., Borja, A., Legorburu, 1., Hernandez, C., Chust, G., Liria, P., et al. (2010).
+
+extent Of change. Morphological characteristics of the Basque continental shelf (Bay of Biscay, northern
+
+. . . . Spain); their implications for integrated coastal zone management. Geomorphology,
+The issues faced here in regard to atmospheric and sun-glint correc- 118(3—4). 314_329_
+tions are by no means inherent to HICO, but to all ocean color sensors. Gao, B., Li, R., Lucke, R. L., Davis, C. 0., Bevilacqua, R. M., Korwan, D. R., et al. (2012).
+Though HICO was built as a prototype low cost sensor, itS data can be Vicarious calibrations of HICO data acquired from the International Space Station.
+. . . Applied Optics, 51(14), 2559—2567.
+
+mampmatEd to retrieve prec1se bathymEtry' The development Of fUture Gao, B., Montes, M.J., Ahmad, Z., 82 Davis, C. O. (2000). Atmospheric correction algorithm
+
+sensors that have: (1) higher SNR and SWIR bands in combination for hyperspectral remote sensing of ocean color from space. Applied Optics, 39(6),
+
+with more advanced atmospheric/sunglint correction and in water in- G 387-8915;“ L Z & U t_ s L (2008) 1 ﬂ f t h _ d f
+
+- - - - - 00 man, . ., ee, ., 5 1n, . . . n uence o a mosp eric an sea—sur ace
+
+VEI‘SIOI] algorthms COUld SUbStaptlally improve b‘i‘thymeuy retrievals, corrections on retrieval of bottom depth and reﬂectance using a semi—analytical
+
+3nd; (2) 50ph15t1C3tEd geo'locatlon and -registration algorlthms to 3f‘ model: A case study in Kaneohe Bay, Hawaii. Applied Optics, 47, F1—F11.
+
+ford sub—pixel geolocation accuracies will also lead to the ability in mon- Goodman. l- A. mag: M- J -. 82 Ulstin. 5- L- (290311- Agplyirlg Taﬂfaadforpitmocslpheri;
+
+- - - - correction 0 over cora ecosystems in t e awai'ian is an s. ocee ings o
+
+1tor1ng Changes In the bathymeuy Of key coaStal rEglonS' the 12th AVIRIS/HYPERION Earth Science Workshop (pp. 91—96).
+
+Green, E. P., Mumby, P.J., Edwards, A.]., 82 Clark, C. D. (1996). A review of remote sensing
+for the assessment of tropical coastal resources. Coastal Management, 21(1), 1—40.
+AdmOWIEdglnents Guenther, G. C., Cunningham, A. G., LaRocque, P. E., 82 Reid, D. J. (2000). Meeting the
+accuracy challenge in airborne lidar bathymetry. 20th EARSeL Symposium Workshop
+R. Garcia would like to thank Dr. John Hedley for his assistance with onbLidar Remote SensiGng Of Land and Sea, Bumped” Association Of Remote Sensing
+- - - - La oratories, Dres en, ermany.
+
+the uncertamty InverSIOn SCheme and the Western AUStrahan DeParb Hardie, R. C., 82 Boncelet, C. G. (1993). LUM ﬁlters: A class of rank—order—based ﬁlters
+
+ment 0f TranSPOFt for the Carnarvon tlde hEIght data- An AUStrahan for smoothing and sharpening. IEEE Transactions on Signal Processing, 41(3),
+
+Postgraduate Award administered through Curtin University was used 1061—1076.
+
+to fund this research. The authors also wish to thank the HICO project Hedley,]., Roelfsema, C., I(oetz, B.,.82 Phinn, S. (2012). Cepability oi the Sentinel 2 mission
+
+. . . . . for tropical coral reef mapping and coral bleaching detection. Remote Sensmg of
+
+team at both OSU and NRL for targeting, processmg and distribution Environment, 120,145453
+
+Of HICO LIB data over Shark Bay. All HICOTM data were provided by Hedley,]., Roelfsema, C., 82Phinn, S. R. (2009). Efﬁcient radiative transfer model inversion
+
+the Naval Research Laboratory through the Oregon State University, for remote sensing applications. Remote Sensing ofEm/ironment, 113, 2527—2532.
+
+. . , . Hedley, J., Roelfsema, C., 82 thn, S. (2010). Propagating uncertainty through a shallow
+
+COHEge Of Earth’ Ocean, and AtmOSpherlc Sc1ences HICO WEbSlte water mapping algorithm based on radiative transfer model inversion. Proceedings
+
+(hico.coas.oregonstate.edu). of Ocean Optics XX, Anchorage.
+
+Hester, D. B., Nelson, S. A. C., Cakir, H. 1., Khorram, S., 82 Cheshire, H. (2010). High—
+resolution land cover change detection based on fuzzy uncertainty analysis and
+
+References change reasoning. Intemationaljoumal of Remote Sensing, 31 (2), 455—475.
+
+Hu, C., Feng, L., Lee, Z., Davis, C. 0., Mannino, A., McClain, C. R., et al. (2012). Dynamic
+
+Ahmad, Z., Franz, B. A., McClain, C. R., Kwiatkowska, E. J., Werdell, ]., Shettle, E. P., et al. range and sensitivity requirements of satellite ocean color sensors: Learning from
+(2010). New aerosol models for the retrieval of aerosol optical thickness and normal— the past. Applied Optics, 51 (25), 6045—6062.
+ized water—leaving radiances from the SeaWiFS and MODIS sensors over coastal re— IOCCG (2006). Remote sensing of inherent optical properties: Fundamentals, tests of
+gions and open oceans. Applied Optics, 49(29), 5545—5560. algorithms, and applications. In Z. P. Lee (Ed.), Reports of the International Ocean-
+
+Bailey, S. W., Franz, B. A., 82 Werdell, P.]. (2010). Estimation of near—infrared water—leaving colour Coordinating Group, No. 5, IOCCG, Dartmouth, Canada.
+reﬂectance for satellite ocean color data processing. Optics Express, 18(7), 7521—7527. Irish, J. L., 82 Lillycrop, W. J. (1999). Scanning laser mapping of the coastal zone: The
+
+Bicheron, P., Amberg, V., Bourg, L., Petit, D., Huc, M., Miras, B., et al. (2011). Geolocation SHOALS system. ISPRS]oumal of Photogrammetiy and Remote Sensing, 54, 123—129.
+assessment of MERIS GlobCover orthorectiﬁed products. IEEE Transactions on Jahne, B. (2005). Digital image processing (6th ed.). New York: Springer—Verlag Berlin
+Geoscience and Remote Sensing, 49(8), 2972—2982. Heidelberg.
+
+Brando, V. E., Anstee, J. M., Wettle, M., Dekker, A. G., Phinn, S. R., 82 Roelfsema, C. (2009). A Jahnert, R., 82 Collins, L. B. (2011). Signiﬁcance of subtidal microbial deposits in Shark Bay,
+physics based retrieval and quality assessment of bathymetry from suboptimal Australia. Marine Geology, 286, 106—111.
+hyperspectral data. Remote Sensing of Environment, 113, 755—770. Kay, 5., Hedley, J. D., 82 Lavender, S. (2009). Sun glint correction of high and low spatial
+
+Burling, M. C. (1998). Oceanographic aspects of Shark Bay Western Australia. (M. S. thesis). resolution images of aquatic scenes: A review of methods for visible and near—
+Australia: Centre Water Research, University of Western Australia, Perth, Western infrared wavelengths. Remote Sensing, 1, 697—730.
+
+Australia. Klonowski, W. I(., Fearns, P. R. C. S., 82 Lynch, M. J. (2007). Retrieving key benthic cover
+
+Burling, M. C., Pattriaratchi, C. B., 82 Ivey, G. N. (2003). The tidal regime of Shark Bay, types and bathymetry from hyperspectral imagery. journal of Applied Remote
+Western Australia. Estuarine, Coastal and ShelfScience, 57, 725—735. Sensing, 1, 011505.
+
+Burne, R. V., 82]ohnson, K. (2012). Sea—level variation and the zonation of microbialites in [(0, S. —]., 82 Lee, Y. H. (1991 ). Center weighted median ﬁlters and their applications to
+Hamelin Pool, Shark Bay, Western Australia. Marine and Freshwater Research, 64, image enhancement. IEEE Transactions on Circuits and Systems, 38(9), 984—993.
+994—1004. Lee, Z. P., Carder, K. L., Mobley, C. D., Steward, R. G., 82 Patch, J. S. (1998). Hyperspectral
+
+Clark, R. K., Fay, T. H., 82Wall<er, C. L. (1987). Bathymetry calculations with Landsat4 TM remote sensing for shallow waters. 1. A semianalytical model. Applied Optics,
+imagery under a generalised ratio assumption. Applied Optics, 26(19), 4036—4038. 37(27), 6329—6338.
+
+Cooper, K., Boyd, 5., Eggleton, J., Limpenny, D., Rees, H., 82 Vanstaan, K. (2007). Recovery of Lee, Z. P., Carder, K. L., Mobley, C. D., Steward, R. G., 82 Patch, J. S. (1999). Hyperspectral re—
+the seabed following marine aggregate dredging on the Hastings Shingle Bank off the mote sensing for shallow waters: 2. Deriving bottom depths and water properties by
+southeast coast of England. Estuarine, Coastal and ShelfScience, 75, 547—558. optimization. Applied Optics, 38(18), 3831—3843.
+
+Coppin, P., Jonckheere, 1., Nackaerts, I(., 82 Muys, B. (2004). Digital change detection Lee, Z. P., Casey, B., Arnone, R., Weidemann, A., Parsons, R., Montes, M.]., et al. (2007).
+methods in ecosystem monitoring: A review. International journal of Remote Water and bottom properties of a coastal environment derived from Hyperion data
+Sensing, 25(9), 1565—1595. measured from the EO—1 spacecraft platform. journal of Applied Remote Sensing, 1,
+
+Dai, X., 82 Khorram, S. (1998). The effects of image misregistration on the accuracy of 011502.
+remotely sensed change detection. IEEE Transactions on Geoscience and Remote Li,R.R., Lucl<e,R.,I(orwan, D.,82Gao, B.—C. (2012).Atechnique for removing second—order
+Sensing, 36(5), 1566—1577. light effects from hyperspectral imaging data. IEEE Transactions on Geoscience and
+
+Defoin—Platel, M., 82 Chami, M. (2007). How ambiguous is the inverse problem of ocean Remote Sensing, 50(3), 824—830.
+color in coastal waters. journal of Geophysical Research, 112(C3), C03004. Logan, B. W., 82 Cebulski, D. E. (1970). Sedimentary environments of Shark Bay, Western
+
+Dekker, A. G., Phinn, S. R., Anstee, ]., Bissett, P., Brando, V. E., Casey, B., et al. (2011). Australia. Carbonate sedimentation and environments, Shark Bay, Western Australia
+Intercomparison of shallow water bathymetry, hydro—optics, and benthos mapping (pp. 1—37). Tulsa, Oklahoma: American Association of Petroleum Geologists.
+techniques in Australian and Caribbean coastal environments. Limnology and Lucke, R. L., Corson, M., McGlothin, N. R., Butcher, S. D.,W00d, D. L., Korwan, D. R., et al.
+Oceanography: Methods, 9, 396—425. (2011). Hyperspectral lmager for the Coastal Ocean: Instrument description and
+
+Department of Environment and Conservation, n.d. Birridas. http://www.sharl<bay.org/ ﬁrst images. Applied Optics, 50(11), 1501—1516.
+assets/documents/fact%205heets/birridas%20v2.pdf (accessed February 4, 2013). Lyard, F., Lefevre, F., Letellier, T., 82 Francis, 0. (2006). Modeling the global ocean tides: A
+
+Dierssen, H. M., Zimmerman, R. C., Leathers, R. A., Downes, T. V., 82 Davis, C. O. (2003). modern insight from FE52004. Ocean Dynamics, 56, 394—415. http://dx.doi.org/10.
+Ocean color remote sensing of seagrass and bathymetry in the Bahamas Banks 1007/510236—006—0086—x.
+by high—resolution airborne imagery. Limnology and Oceanography, 48(1 part 2), Lyzenga, D. R. (1978). Passive remote sensing techniques for mapping water depth and
+444—455. bottom features. Applied Optics, 17(3), 379—383.
+
+Doodson, A. T., 82 Warburg, H. D. (1941). Admiralty manual of tides. Admiralty, London: Lyzenga, D. R. (1985). Shallow water bathymetry using combined lidar and passive
+Hydrographic Department. multispectral scanner data. International journal of Remote Sensing, 6(1), 115—125.
+
+"
+"20","RA. Garcia et al. /Remote Sensing of Environment 147 (2014) 186—205 205
+
+Mied, R. P., Snow, C. M., Smith, G. B., Bachmann, C. M., Korwan, D. R., Fusina, R. A., et al. Philpot, W., Davis, C. 0., Bissett, W. P., Mobley, C. D., Kohler, D. D. R., Lee, Z., et al. (2003).
+
+(2013). Tidal constituents from remote sensing image sequences. Estuarine, Coastal Bottom characterisation from hyperspectral image data. Oceanography, 17(2), 76—85.
+
+and Shelf Science, 117, 159—167. Polcyn, F. C., Brown, W. L., 82 Sattinger, 1.]. (1970). The measurement of water depth by remote
+Mobley, C. D., Sundman, L. K., Davis, C. 0., Bowles, J. H., Downes, T. V., Leathers, R. A., et al. sensing techniques. Report 8973-26-13, Willow Run Laboratories, U. Michigan Ann Arbor.
+
+(2005). Interpretation of hyperspectral remote—sensing imagery by spectrum Shi, W. Z., 82 Ehlers, M. (1996). Determining uncertainties and their propagation in dy—
+
+matching and look—up tables. Applied Optics, 44(17), 3576—3592. namic change detection based on classiﬁed remotely—sensed imagery.1ntemational
+Montes, M. J., Gao, B. —C., 82 Davis, C. O. (2004). NRL atmospheric correction algorithms for journal of Remote Sensing, 17(14), 2729—2741.
+
+oceans: Tafkaa user's guide. Washington DC: Naval Research Laboratory. Stumpf, R. P., Holderied, I(., 82 Sinclair, M. (2003). Determination of water depth with high—
+Morton, R. A. (2002). Factors controlling storm impacts on coastal barriers and beaches — resolution satellite imagery over variable bottom types. Limnology and Oceanography,
+
+A preliminary basis for near real—time forecasting. journal of Coastal Research, 18(3), 48(1, part 2), 547—556.
+
+486—501. Townshend, J. R. G., Justice, C. 0., Gurney, C., 82 McManus, J. (1992). The impact of misreg—
+Morton, R. A., 82 Sallenger, A. H. (2003). Morphological impacts of extreme storms 0n istration on change detection. IEEE Transactions on Geoscience and Remote Sensing, 30,
+
+sandy beaches and barriers. journal of Coastal Research, 19(3), 560—573. 1054—1060.
+Moses, W. J., Gitelson, A. A., Berdnikov, S., Bowles, J. H., Povazhnyi, V., Saprygin, V., et al. Ungar, S. G. (2003). Overview of the Earth Observing One (EO—1) mission. IEEE
+
+(2014). HICO—based NIR—red models for estimating chlorophyll—a concentration in Transactions on Geoscience and Remote Sensing, 41(6), 1149—1159.
+
+productive coastal waters. IEEE Geoscience and Remote Sensing Letters, 11(6), Walker, D. 1., Kendrick, G. A., 82 McComb, A. J. (1988). The distribution of seagrass species
+
+1111—1115. http://dx.d0i.0rg/10.1109/LGRS.2013.2287458. in Shark Bay, Western Australia, with notes on their ecology. Aquatic Botany, 30,
+Paredes, J. M., 82 Spero, R. E. (1983). Water depth mapping from passive remote sensing 305—317.
+
+data under a generalised ratio assumption. Applied Optics, 22(8), 1134—1135. Wettle, M., 82 Brando, V. E. (2006). SAMBUCA: Semi—analytical model for bathymetry, un—
+Paterson, K. W., 82 Lamela, G. (2011, May 04). Inﬂuence of aerosol estimation on coastal mixing and concentration assessment. Report 22/06, CSIRO Land and Water (<http://
+
+water products retrieved from HICO images. Proc. SPIE 8030, Ocean Sensing and www.clw.csir0.au/publications/science/ZO06/sr22—O6.pdf>).
+
+Monitoring 111 (pp. 803005). http://dx.doi.0rg/1O.1117/12.883263. Wolfe, R. E., Nishihama, M., Fleig, A. J., Kuyper, J. A., Roy, D. P., Storey, J. C., et al. (2002).
+Philpot, W. D. (1989). Bathymetric mapping with passive multispectral imagery. Applied Achieving sub—pixel geolocation accuracy in support of MODIS land science. Remote
+
+Optics, 28(8), 1569—1578. Sensing of Environment, 83, 31—49.
+
+"

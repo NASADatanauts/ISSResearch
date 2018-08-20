@@ -1,0 +1,753 @@
+"","x"
+"1","Acta Astronautica 122 (2016) 63—75
+Jiéxj”¥§“;§ Contents lists available at ScienceDirect 0/‘ / ‘
+“*éﬁieﬁ .’
+(a t \SL g; 313 ﬂy . ' ‘
+aw Acta Astronautlca
+ELSEVIER journal homepage: www.elsevier.com/|ocate/actaastro ""ff? 3:
+—
+Thermal mathematical model correlation through genetic G) CrossMark
+algorithms of an experiment conducted on board
+the International Space Station
+Iﬁaki Garmendia 3*, Eva Angladab
+a Mechanical Engineering Department, University of the Basque Country UPV/EHU, Polytechnic School of Engineering,
+Plaza de Europa, 1, 13-20018 Donostia-Scm Sebastian, Spain
+b TECNALIA, Industry and Transport Division, Mikeletegi Pasealekua, 2, E—20009 Donostia—Scm Sebastian, Spain
+ARTICLEINFO ABSTRACT
+Article history: Genetic algorithms have been used for matching temperature values generated using
+Received 8 April 2015 thermal mathematical models against actual temperatures measured in thermal testing of
+Recewec‘ 1“ rev1sed form spacecrafts and space instruments. Up to now, results for small models have been very
+26 January 2016 encouraging.
+Accépmd 271mm“, 2016 This work will examine the correlation of a small—medium size model, whose thermal
+Avallable on11ne 1 February 2016 _ _ _ _
+— test results were available, by means of genetic algorithms. The thermal mathematical
+Keywords: . model reviewed herein corresponds to Tribolab, a materials experiment deployed on
+MOdEI corrdatlon . board the International Space Station and subjected to preﬂight thermal testing.
+Thermal Mathematlcal Model - - - - - -
+. This paper Will also discuss in great detail the inﬂuence of both the number of
+Space vehlcle . . .
+Thermal control reference temperatures available and the number of thermal parameters 1nc1uded 1n the
+Genetic algorithm correlation, taking into account the presence of heat sources and the maximum range of
+temperature mismatch.
+Conclusions and recommendations for the thermal test design will be provided, as
+well as some indications for future improvements.
+© 2016 1AA. Published by Elsevier Ltd. All rights reserved.
+1. Introduction the spacecraft might undergo. The logic here is quite Clear:
+very high or very low temperatures may damage some
+The thermal control subsystem 0f any spacecraft plays a components causing their malfunction and, consequently,
+key role in the successful completion of any space mission, can menace the whole mission.
+ensuring the adequate distribution of temperatures at any A spacecraft (or instrument payload) Thermal Mathe—
+given time and in any given component at every phase of a matical Model (TMM)1, along with its Geometrical Math—
+mission. A lot of effort goes into adequately predicting ematical Model (GMM), is used to study the thermal
+every possible thermal scenario that might be expected behaviour of the spacecraft in different situations.
+and the corresponding temperatures and heat ﬂows that The Thermal Lumped Parameter MEthOd (TLPM) COU-
+pled with the hot and cold cases technique has been com—
+monly used to design spacecraft thermal mathematical
+* Corresponding author. Tel.: +34 943 018 627.
+E-mail addresses: inaki.garmendia@ehu.es (I. Garmendia), —
+eva.anglada@tecnalia.com (E. Anglada). 1 See Nomenclature.
+http://dx.doi.org/10.1016/j.actaastro.2016.01.022
+0094—5765/© 2016 1AA. Published by Elsevier Ltd. All rights reserved.
+
+"
+"2","64 I. Garmendia, E. Anglada / Acta Astronautica 122 (2016) 63—75
+
+Nomenclature GMM Geometrical Mathematical Model
+
+GR Radiative conductances
+
+EuTEF European Technology Exposure Facility 155 International Space Station
+
+ESA European Space Agency MC Nodal thermal capacities
+
+FEM Finite Element Method MLI Multilayer insulation
+
+PC Personal computer TLPM Thermal Lumped Parameter Method
+
+GA Genetic algorithm TMM Thermal mathematical model
+
+GL Linear conductances
+models. (See Refs. [1—3] for more information about this thermal scenarios.At the same time, actualthermaltesting
+methodology.) The spacecraft or the instrument being serves to establish the soundness of the computer
+evaluated is divided into nodes. Each node adequately numerical model, or TMM: i.e., the temperatures of dif—
+represents a part of the whole instrument or spacecraft and ferent parts or components are measured by means of
+can be considered isothermal. Linear conductances (GLs) attached thermocouples and the values derived from these
+and radiative conductances (GRs) are next determined to measurements are compared to the sought—after tem—
+estimate conduction and radiation between nodes. For perature values from the TMM. As is to be expected, a
+transient cases, nodal thermal capacities (MCs) are also difference between real measured temperatures and
+taken into account. Careful consideration of the heat ﬂuxes computer generated temperature values will inevitably
+a spacecraft is subjected to (i.e., solar irradiance, albedo and result. In which case, the TMM must then be adjusted or
+infra—red radiation at a Low Earth Orbit) as well as the correlated, in order to have a reliable tool for predicting
+internal power dissipation of components and instruments temperatures and heat ﬂuxes in situations or scenarios
+form an integral part of the model. The resulting TMM is that may not have been tested.
+composed of nodes, conductances, thermal capacities and Different techniques have been used to improve and
+heat sources. The TMM is completed with the thermal correlate the TMM with actual test results. (See Refs. [7—
+boundary conditions, which ordinarily implies the presence 9].) For the most part, manual adjustment is the preferred
+of one or several nodes representing outer space and its solution. (For an example of just such manual adjustment
+temperature. correlation, see Ref. [10].) This preference is due to the
+
+Special care should be taken to correctly deﬁne the thermal engineer's tendency to want to understand and
+TMM, particularly when calculating GLs, GRs and MCs explain the thermal behaviour of the spacecraft in differ—
+values. Auxiliary techniques such as the Finite Element ent situations. However, the same thermal engineers have
+Method (FEM) are sometimes used to obtain accurate expressed the need for automated TMM techniques cap—
+values for GLs (see [4—6]), while values for GRs are usually able of correlating computed results and measured tem—
+calculated in the GMM. This implies accurately establish— peratures. The work presented hereafter will begin to
+ing the view factor between surfaces for the nodes and, address this urgent need by tackling the question of how
+possibly, from other external parts of the spacecraft (e.g., the TMM correlation problem may be resolved by means
+the scientiﬁc instruments located on different external of genetic algorithms, following the promising research
+areas of the International Space Station). As a result, the line studied by BSA in [11—14]. In a previous work (see Ref.
+higher the number of nodes, the higher the number of [9]), the authors present the implementation, study and
+thermal parameters (GLs, GRs and MCs) that must be validation of their in—house developed genetic algorithm
+calculated, and the more time consuming the TMM pre— for the automated correlation of space vehicle TMMs.
+paration work that must be done. It may be noted that However, because the validation of said research and
+designing spacecraft or instrument thermal mathematical ﬁndings was based on a simpliﬁed TMM, important dif—
+models with too many nodes in an effort to obtain a more ferences distinguish it from a real case of spacecraft TMM
+detailed temperature map, however, is not convenient. In correlation. The main differences are a reduced number of
+fact, in that case, it would be very easy to lose the physical nodes and the availability of the reference temperatures
+sense of the different heat ﬂows between nodes and the for every node in the TMM, which is not usual in real cases.
+obtained temperature values. Good engineering judge— The objective of this paper is to validate the ability of
+ment may be compromised and incorrect decisions taken. our in—house genetic algorithm technique to correlate the
+On the opposite extreme, a very crude analytical model real case of a space instrument's small—medium size TMM
+with few nodes may prove also very risky, as important with the real results of its thermal tests campaign.
+information could be lost in the modelling process.
+
+Notwithstanding all of the aforementioned preparatory
+analysis, TMM is subject to the inaccuracies inherent in 2. Description of the experiment, thermal tests and
+any numerical method, not to mention possible human correlation algorithm
+error. As a result, all spacecrafts and instruments which are
+to be launched into outer space must successfully pass an Let us examine our correlation of the TMM for the
+earth pre—ﬂight thermal test campaign to ensure the Tribolab space instrument deployed on an external plat—
+spacecraft’s “as built” thermal “readiness” in the different form on board the International Space Station. For this
+
+"
+"3","I. Garmendia, E. Anglada / Acta Astronautica 122 (2016) 63—75 65
+purpose, a short description of the Tribolab thermal con-
+trol and its TMM is presented below, followed by infor-
+
+” L mation about its thermal tests.
+The algorithm used to automate the TMM correlation
+' ‘— will be our in-house developed genetic algorithm, a brief
+- , . ' '5 description of which will also be included later.
+. - t «L. ‘
+' - ~ ' , 2.1. Tribolab instrument and its thermal control system
+\ ‘ ‘ ‘ Tribolab is a non-pressurised, materials tribology
+. ' ' , s ‘ laboratory for testing new solid lubricants for space
+L . ~ ' f: - - applications. Faced with the impossibility of reproducing
+. '- __ actual conditions in outer space, such as microgravity,
+. | vacuum, atomic oxygen, etc., on the Earth's surface, the
+x 5 ’2 '9/' Tribolab instrument on board the International Space
+;.__‘ ' ’ \ “ﬁi—g"" Station (155), and more precisely 0n the European Tech-
+]!Qf . § | 1' nology Exposure Facility (EuTEF), an external platform
+,..-— ‘ . z , \ \ \ located outside the European Columbus Module, enabled
+.r' 7‘ 1"" \ . . . . . .
+. . __ j ,3 sc1entists to perform tribology experiments in orbit. The
+' / \,\ solid lubricant studied, in this case, was molybdenum
+""' ‘ K // / _' \, ‘ disulphide (M052) alloyed with tungsten carbide (WC).
+.,. \ C 12/ 5? ' The Tribolab instrument (see Fig. 1) can best be
+i, ' described as a 15 kg, boxlike volume, measuring approxi-
+. \ . . . .
+kW"" ,2..- , ,5 mately 300 x 300 x 550 mm. It IS d1v1ded into several
+d ’f ' modules: the lower modules contain the motor and elec-
+* ' ‘ tronic operating systems and the upper modules house the
+‘ tribology experiments themselves. Its thermal control
+Fig. 1. Tribolab experiment. system consists of heaters and thermal blankets (MLI)
+EC-4 85083
+MLIRadupper 85092
+Radu er 85091
+EC-3 85073 . pp
+MLIExp4 85082 . k RadExp4 85081
+MLIExp3 85072 . RadExp3 85071
+MLIExp2 85062 . Rad Exp2 85061
+MLIExp1 85052 . RadEXp1 85051
+Drivers 85045
+FC-cell 85040
+MLIFC-cell 85042 . _ _
+RadFC-Cell 85041
+BBAct 85035 PODAct 85036
+- - - Act—cell 85030
+MLIAct-cell 85032 . RadAct—cell 85031
+It Electronics 85020
+0
+Z
+YT RAM Face
+Fig. 2. Tribolab nodal discretisation.
+
+"
+"4","66 I. Garmendia, E. Anglada / Acta Astronautica 122 (2016) 63—75
+which cover ﬁve of Tribolab's six faces. The sixth face is the obtained by hand calculations for simple geometries and
+radiator and is covered with Teﬂon thermal tape. A more by means of the Finite Element Method (FEM) for more
+detailed description of Tribolab, its thermal control sys— complex geometries, (See [4—6].)
+tem and the solid lubricants studied may be found in Refs. Values for internal radiative conductances (GRs) were
+[15—18]- determined by means of a commercial software applica—
+The dESISH 0f the thermal COHU‘OI W35 dEVEIOPEd f01- tion using ﬁnite differences method (i.e., TMG module
+lowing the aforementioned hot and cold case technique. from Maya HTT Ltd., part Of I—deas software by Siemens).
+Forthesake 0f €13“th 9Y9? though that thermal control While the inﬂuence of radiation inside Tribolab may be
+de51gn Included tW‘? add1t10nal d1mens10n1ng cases used minimal, concern for radiative heat dissipation t0 the
+for transportmg Tr1bolab frorn Earth to. the .155} they ambient, namely radiation through the radiator surface
+remain Dufﬁe the :lcopleclOf thls palper wh1ch Wlh 11m1t1ts and through MLI blankets, justiﬁed the use of GR values
+SCOPE to t e 0t an CO cases on y. provided by the EuTEF platform integrator. Adjusting for
+22 Th 1 h , l d l the position of Tribolab 0n the ISS and the different views
+' ' erma mat ematlca me e S the experiment has of other sections of the International
+Two different TMMs were employed in the develop— Space Station resulted 1h 54 9R5 values.
+. . . . Figs. 2 and 3 represent fa1rly accurate sketches of the
+ment of the Tr1bolab thermal control deSIgn: a pre11m1nary, . . .
+
+. . thermal node d1v1s1on and 0f the layout of the thermal
+Simple, two—node model used in the ﬁrst phases of the cl t' t l t' 1 F th 1 f l 't
+project and a subsequent, more complex, 47—node model. Eon uc me he $0111, recslpec 1ve 31,1 ﬁr l' e sa (edo :l'arl' y,
+This paper will hereafter focus on the latter (i.e., the owever, nota t e no es nora t.e 1near an ra 1at1ve
+detailed 47—node model). conductances are represented therein.
+
+Of the 47 total nodes which make up the Tribolab TMM, Thermal env1r0nmental data from the platform 1nte—
+21 nodes with thermal capacity represent the instrument grator dur1ng pl‘OjECt development phase cons1sted Of the
+itself. The remaining 26 arithmetic nodes (lacking thermal heat ﬂuxes t0.wh1ch Tribolab WOUId be exposed (particu—
+capacity) consist Of 7 MLI nodes and 19 sink nodes. Taking larly solar rad1at10n, reﬂected albedo and 1nfra—red rad1a—
+the different materials and the volumes of each node into HOD) and Slnk radiative temperatures, prov1d1ng values
+account, thermal capacities were arrived at by means of 310118 a complete Ol‘blt, part1cular1sed f01‘ €3Ch node in
+hand calculations which estimated the total thermal the model.
+capacity of Tribolab as equal to 10444.8 J/OC. The only differences observed between the TMMs
+Linear conductances (GL5) between nodes, which are a for hot and cold cases were clue to the environment con—
+function of the geometries and the material properties of ditions and t0 the internal heat dissipations (i.e., the
+the different components, netted a value of 42 GLs, operating mode and available heater scheme in each case).
+85092 85091
+85083 -
+8507 ‘ 85080
+85072 85071
+850. ‘ 85070
+85062 85061
+850 ‘ 85060
+85052 85051
+85050
+85045
+85042 85040 85041
+85035
+85036
+I 85032 85030 85031
+| I Z
+85020
+10000 ’ YT RAM Face
+Fig. 3. Thermal conductive network of the Tribolab's mathematical model.
+
+"
+"5","I. Garmendia, E. Anglada / Acta Astronautica 122 (2016) 63—75 67
+Linear conductances (GLs), radiative conductances (GRs) problem, which means that it tries to minimise the dis—
+and thermal capacities (MCs) are the same in both models. tance between the temperatures predicted by the TMM
+and the values measured during the thermal balance tests.
+2.3. T hermal balance test Furthermore, the TK thermal software evaluates each one
+of these possible solutions and the GA compares the
+The thermal test campaign of a space vehicle is com— resulting temperatures with the reference temperatures
+prised of different thermal tests. For the sake of TMM obtained from the thermal test. In this way, it is possible to
+correlation, in this case, the thermal balance test is key. For evaluate how good or bad the behaviour of a particular
+this reason, the information provided in this paper individual is. The population progresses towards better
+focuses on it. individuals, and better solutions are possible thanks to
+The objective of the thermal balance test is twofold. On successive iterations by the application of genetic opera—
+the one hand, it determines whether the thermal control tors (selection, crossover and mutation operators).
+system is capable of maintaining the temperatures within The algorithm is able to correlate TMMs in both a
+the speciﬁed limits, given the expected thermal conditions steady state and transient analysis. It can likewise perform
+to be encountered during the mission. On the other hand, the simultaneous correlation of several cases (i.e., hot and
+it provides the necessary data for validating or correlating cold cases). It is based on a previous algorithm whose in
+the TMM. depth description and performance can be found in Ref.
+The Tribolab thermal tests were performed inside a [9]. Some of the modiﬁcations clue to the bigger size of the
+cylindrical shaped vacuum Chamber ﬁtted with a shroud TMMs used in this case made to improve that previous
+WhiCh completely lines the inner part Of the chamber for algorithm's efﬁciency included; the use of a weighted ﬁt—
+radiation purposes, as well as a temperature—controlled ness value (mm avoid a low pressure selection in the last
+base plate 0ht0 WhiCh the experiment iS ﬁxed. The lack 0f phases clue to a similar ﬁtness value (fi) for all individuals
+heat ﬂux SOLll‘CES inside the chamber makes it impossible (see Eq, (1)); some changes in the genetic operators
+to reproduce on the Earth the same conditions expected in (selection based on the stochastic sampling without
+orbit. For this reason, the equivalent principles established replacement, a simple arithmetic crossover and variable
+by [2], in other words the translation of the total absorbed mutation range (,1) following Eq. (2); and the generation of
+heating by a radiator in space into a facing Shl‘OUd tem— succeeding new populations based only on the offspring
+perature, have been followed. The idea behind these but completed with the best individual (elitist strategy)
+principles 15 to combine the energy conservation principle and, if needed, one more individual of the initial popula—
+Wlth the condition in Wthh the radiator temperature W111 tion to maintain the population size. Moreover, a better
+be the same in space 35 in the vacuum chamber. The test interface between the GA and TK that avoids intensive disk
+setup can be seen in Fig. 4- writing was implemented.
+Five thermocouples (TCOl —TC05, with a backup ther— ,
+mocouple TCOl BIS, not shown) located at the radiator fi:fi_'6’ (1)
+were attached to the Tribolab (see Fig. 5). The temperature where ﬂ 2 mini E population (fi)
+readings from a thermistor called TRP were also available 9» .
+during the test. The duration of the thermal balance test knew =m (2)
+was approximately 33 h. The correspondence between 1‘1
+measurement points and nodes of the TMM is shown in when miniepopulation (f i) has hOt changed in 135t 20
+Table 1, iterations.
+For the measured temperatures of the transient cases,
+refer to Section 4.2 (Figs. 6 and 7). In both cases, evolution
+of temperatures is quite slow. This is mainly due to the 3. Methodology of the correlation
+high value of the thermal capacitance (thermal inertia) of
+the instrument. The correlation presented herein is limited to transient
+The boundary conditions used during the thermal bal— cases which offer a more interesting vision of instrument
+ance, that is, the shroud and base plate temperatures, were thermal behaviour and also imply a higher difﬁculty level
+likewise registered during the test. for the correlation. Both hot and cold cases were simul—
+taneously employed, in accordance with the results
+2.4. GAC—TM, a genetic algorithm for T MM correlation obtained in Ref. [9].
+Correlation of a thermal model with thermal test results
+GAC—TM is an in—house developed software for the consists of modifying the thermal parameters (GLs, GRs and
+correlation of thermal mathematical models. It combines a MCs) of the Tribolab TMMs until the maximum difference
+genetic algorithm (GA) with a thermal analysis software between measured temperatures and simulated tempera—
+called TK which evaluates the adequacy of the possible tures is lower than the correlation target; in this case, that
+solutions. difference is 0.5 °C in each node at every instant of time for
+A GAC—TM's method of procedure might best be both cold and hot cases. Once this correlation target is
+described as the generation of populations of individuals, reached, convergence has been achieved. (For more details
+or random Clusters of chromosomes, where each Chro— on objective function and constraints, see Ref. [9].)
+mosome represents one possible solution to a problem. Its The proposed approach presents two difﬁculties. On
+approach to TMM correlation is as an optimisation the one hand, the correlation only reconciles six node
+
+"
+"6","68 I. Garmendia, E. Anglada / Acta Astronautica 122 (2016) 63—75
+temperature measurements taken during the test: there is formulation of a new methodology appropriate for this
+no certainty that temperatures predicted by the model in preliminary study:
+the rest of the nodes are correct. On the other hand, how
+many thermal parameters are to be adjusted in order to i- The original Tribolab 47—n0de, hOt and COld TMMS
+obtain convergence must needs be determined: a mini- WOUlCl henceforth function as the reference models.
+mum number, Le. only those parameters that have These models WOUlCl be run With TK. Furthermore,
+uncertainties in their calculation; a medium number of temperatures obtained WOUId be stored 7:15 results for
+parameters which allow some “ﬂexibility” to the GAC—TM future consideration as the reference temperatures.
+algorithm; or even, all the parameters to give total “free— 11- The reference TMMS WOUId be randomly modiﬁed (GL5,
+dom” t0 the algorithm. GRs and MCs) for the purpose of generating two new
+In order to clarify these aspects, a preliminary study models (hOt and COM) WhiCh WOUId become the base
+considered varying the number of thermal parameters to models.
+be modiﬁed and the number Of reference temperatures. iii. These base models would be subjected to correlation,
+Careful review of some initial trial results suggested the taking those temperatures that were PFEWOUSIY StOFEd
+in step i as a reference temperatures.
+Chamber shrouds
+/ An important advantage to this approach is that it
+Tribol—ABradiatorface makes available a “correct” set of temperatures for all
+/ Intermediate plate nodes, thus aiding the investigation. Additionally, base
+_, Temperature controlled Table 1
+‘ base plate Correspondence between Tribolab temperature measurements and
+.. ‘ TMM nodes.
+Measurement TCOl TC02 TC03 TCO4 TCOS TRP
+points
+, , , , , , TMM node 85091 85061 85051 85041 85031 85030
+Fig. 4. Tr1bolab p051t10n Within the thermal vacuum Chamber.
+“““” I ll 1 , II
+I ll II I
+| .I I, I
+I 1| I I, I
+I :l I l: I
+lei 1‘,
+qfl‘l""~~~"" ”""*'--:""“""“$E}: f, Test Modules
+Thermocouple1 _ ﬂ__""_“?ir—j 1:;‘l/lr 1H ’1
+TC01 .. i I' ‘IHI' ‘I >T‘ !
+( ) ‘ ‘i Hth—EEEZ—‘JéL—AJ—é‘:~:~:~:~:-‘—’&_ 35%: ’4
+""-ftwﬁ ﬁ'lrlhlh “Wu 1
+l ‘11 I I: I :1 )1} ave;
+7-: n J gviiii- LLIlJ Piiii# L115.._
+8+: eez—z-xi99:4-—-—-—:8:84
+Thermocouple 2 _.._ f I‘, ,[ II: L_ 1
+lu»_‘ l<l ”ll
+(TC02) :3 t—iéz—EEEEZéE {éiiiiiéﬁ :_:1F
+Thermocouple3 ' ., hr WW hr 41— i
+:3; I 1 I l _
+T003 $eh~ Ldé‘“_:4é ' -
+‘ ) t1 :r“‘».t-=—1’ “I ii
+f3 1H}! :1 ;' : :1 :1:
+HM 1| i M
+I I I
+W,‘— 0.1"" .H'w—“Jc 2:: - MOtOFS
+”i_‘“'."" "".'.TI—__""'— Module
+rl ’
+III! I '
+Thermocouple 4 #5 E
+l [V |
+(T004) ﬂit 1} Electronic
+ll 1
+’ 21.3” ""- _!!. ..‘ 'V'Odu'e
+l .. :5? I
+I / , P \
+\ _ Support Module
+Thermocouple 5 <9 3 I 1
+(T005) 1 ‘
+«13 _Il / 777 ‘1’"" _ “N H _II_, _-1 WW, II-
+Fig. 5. Thermocouple position during thermal tests.
+
+"
+"7","I. Garmendia, E. Anglada / Acta Astronautica 122 (2016) 63—75 69
+Reference model -Cold case
+—85030 TB Test —85031TBTest —85041TBTest —85051TBTest —85061TBTest —85091TBTest
+--- 85030 Sim --- 85031 Sim --- 85041 Sim --- 85051 Sim --- 85061 Sim --- 85091 Sim
+O ------
+-10
+e,
+a, -15
+2
+a a
+E
+as, ‘20 WW?”
+P a— _
+-25 f, A“—_
+‘30 ------
+-35
+o 2 4 5 8 1o 12
+Time (h)
+Fig. 6. Temperatures registered during the thermal balance test vs. initial model results. Cold case.
+Reference model -Hot case
+—85030 TB Test —85031 TB Test —85041 TB Test —85051 TB Test —85061 TB Test —85091 TB Test
+--- 85030 Sim --- 85031 Sim --- 85041 Sim --- 85051 Sim --- 85061 Sim --- 85091 Sim
+45
+4o ----!-
+30 -E’ Z‘_-
+W 25
+(D P'
+(6
+§- 20 ﬂ. _ A-
+,4 ‘wﬂ—VW
+E //
+w ‘—
+15 a-----
+10 ------
+o
+o 1 2 3 4 5 6
+Time (h)
+Fig. 7. Temperatures registered during the thermal balance test vs. initial model results. Hot case.
+model generation randomly changes 80% of the thermal between i 100%. This increased amount of change is
+parameters (GL5, GRs and MCs). For those thermal para— meant to purposefully increase the difﬁculty of con—
+meters changed, the amount of change could be a value vergence. The information and guidance garnered from
+
+"
+"8","70 I. Garmendia, E. Anglada / Acta Astronautica 122 (2016) 63—75
+Table 2 considered in the correlation (2 in this case). T base corre—
+ParamEtervaIUESUSEdin C0rr€1ation5- sponds to the base model calculated temperature and
+H Treference to the reference temperature.
+Population size 90—234 4.1.1. Inﬂuence of the number of reference temperatures
+Crossover probability (Dc) 0.8 available
+MUt?ti°“ propabllity (pm) , 0-8 Because temperature measurements available from the
+Mammy“ varlatlon COEfﬁClem (1)[%] 20 thermal test are usually restricted to several points on the
+Correlation target (°C) 0.5
+Maximum number Ofiterations 2000 tested space instrument, we consider worthwhile the
+— study of the inﬂuence of the number of available reference
+temperatures in the correlation.
+this preliminary study proved useful for the real test TMM
+correlation. 0 Case Study 1: Correlation based on all node temperatures
+The real case correlation, that is, the correlation of the and all thermal parameters
+original TMM with the results measured during the ther— The correlation was attempted taking as reference the
+mal balance test, came after the preliminary study. These temperatures of all the nodes of the model, that is, 28
+results are collected in Section 4.2. nodes. Sink nodes were not considered, as their tem—
+Thus, the total number of modiﬁable parameters is 117 peratures are known. The 117 thermal parameters that
+(21 MCs, 42 GLs and 54 GRs) in a model consisting of 47 complete the model could be modiﬁed during the cor—
+nodes. Nineteen of those correspond to sink nodes where relation.
+the temperature values are known, so the maximum One of the objectives of this ﬁrst case study was to
+number of node errors to be minimised is equal to 28. Due check whether convergence was attainable in models of
+to the approximate and stochastic nature of the genetic moderate size. Such was the case, and convergence in
+algorithms, different executions of the algorithm under the each of the 5 tries was obtained after a number of
+same parameters may provide different solutions. In the iterations somewhere between 712 (minimum) and
+correlation presented here, the algorithm has been exe— 1035 (maximum). So, the difference between tempera—
+cuted several times, obtaining 5 different correlated TMMs. tures of the 28 nodes in the reference cases and in the
+The parameters used for the correlation set—up are base cases after correlation were all less than 0.5 °C in
+collected in Table 2. These parameters were decided upon every instant of time.
+after several initial tries. It may be worth noting that a The number of node errors to be simultaneously mini—
+correlation target value established as a difference less mised in each try was 588, representing the sampling of
+than 0.5 °C in each node at each instant of time represents 28 cold case nodes at 11 instances of time and 28 hot
+a much more stringent requirement than do the typical case nodes at 10 instants of time. The computer time
+values used in space projects where model average dif— logged for each execution was between 12 h(minimum)
+ferences of about i 2 °C are accepted (see [19]). and 15.5 h (maximum) on an Intel)"";> CoreTM i5 CPU, 660@
+3.33 GHz, with 4 Gb RAM and 2 processors.
+While the results for the temperatures proved favour—
+4. Results and discussion able, major differences in thermal parameter values
+achieved in the different tries were observed. The dif—
+4.1. Preliminary study ferences between the obtained values of GLs, GRs and
+MCs and the reference values were as high as 250% for
+This preliminary study is based on the correlation of the some parameters in particular runs, while their mean
+randomly modiﬁed models (base models) against the value ranged at almost 50%. These results show that
+reference temperatures obtained from the reference TMMs. very different TMMs can provide almost the same
+The average error between the base and reference temperature results for a given tolerance (0.5 °C in this
+model temperatures is equal to 3.08 °C, calculated using case). Not a single one of the 5 attempts netted values
+Eqs. (3) and (4). The maximum error in a particular node particularly close to the reference case.
+and instant of time is equal to 11.7 °C. The ﬁve converged solutions share a very similar heat
+ﬂow map between the nodes, both in the cold and in
+node errorJ-Jm = |(Tbase)j,k,n—(Treference)j,k’n| (3) the hot cases. This fact is consistent with the good
+agreement of temperatures. The results in this case
+N study led us to ponder what would happen if the cor—
+2le [Zn =1(’:dee""°rj.k.n)] relation consisted of only six temperatures (those of the
+Z; = 1 f nodes where temperatures are measured in the thermal
+balance test).
+average error = — (4) 0 Case Study 2: Correlation of 117 thermal parameters and
+J 6 temperatures
+In Eqs. (3) and (4), N corresponds to the number of The reference temperatures in this second case study are
+temperature points or nodes (for our purposes here, 28), K those obtained from the reference model as in the pre—
+to the number of instants (21 in this example, of which 11 vious case study, but only for the six nodes of Table 1.
+are cold case and 10 hot case), and j to the number of cases Convergence was achieved in the ﬁve tries, with the
+
+"
+"9","I. Garmendia, E. Anglada / Acta Astronautica 122 (2016) 63—75 71
+Correlated model -Cold case
+—85030 TB Test —85031 TB Test —85041 TB Test —85051 TB Test —85061 TB Test —85091 TB Test
+--- 85030 Try3 --- 85031 Try3 --- 85041 Try3 --- 85051 Try3 --- 85061Try3 --- 85091 Try3
+-10
+
+L
+
+a) -15
+
+2
+
+3
+
+E ""-1-!!-
+
+e '20 'VWEW
+
+'9 ”Q’—
+
+_30 A‘----
+0 2 4 6 8 10 12
+Time (h)
+Fig. 8. Temperatures registered during the thermal balance test vs. correlated model results (worst result). Cold case.
+Correlated model -Hot case
+—85030 TB Test —85031 TB Test —85041 TB Test —85051 TB Test —85061 TB Test —85091 TB Test
+--- 85030 Try3 --- 85031 Try3 --- 85041 Try3 --- 85051 Try3 --- 85061 Try3 --- 85091 Try3
+40 ----I
+- -g-
+35 '7 ' ’7 '
+30 -- ‘ ‘4‘--
+
+e V
+
+8 4/
+
+S 20 ’7‘ A“
+
+‘5 , “—7"" WW
+
+5 1 /“ W,”
+
+a: , ,
+
+l— 15 yr
+
+10 ------
+O
+O 1 2 3 4 5 6
+Time (h)
+
+Fig. 9. Temperatures registered during the thermal balance test vs. correlated model results (worst result). Hot case.
+number of iterations ranging between 185 (minimum) 6 min (maximum). The number of node errors to be
+and 368 (maximum). The CPU time needed for each simultaneously minimised in each try was 126.
+execution was between 1 h 5 min (minimum) and 2 h As expected, for the six nodes being evaluated after
+
+"
+"10","72 I. Garmendia, E. Anglada / Acta Astronautica 122 (2016) 63—75
+Correlated model - Cold case
+I Reference model I Try 1 I Try 2 ITry 3 Try 4 Try 5
+0
+ml
+9‘ iiiiiiiiiiiiiiiiiiiii
+Eiiiiiiiiiiiiiiiiiiiii
+a aiasassssasssssssssss
+SEEEEEEEEEEEEEEEEEEEEE
+'— iiiiiiiiiiiiiiiiiiiii
+-20 :
+'30 850208508085081850858503—0850—40-8504—118504158505078505—1185058—850008506—1—850—681850—70—850118507—3—82308078508185088—85—001 '
+Nodes
+Fig. 10. Temperatures at last instant of time. Cold case.
+temperature results correlation, the differences obtained were available (e.g., the six previously examined nodes
+remained within the range of i 0.5 °C. However, there and nodes 85020 and 85035). This required that thermo—
+were signiﬁcant differences for the other nodes. In some couples should be inserted in the test in places near the
+arithmetic nodes (with no thermal inertia), for instance, heat sources, if physically possible.
+a difference in value as great as 20.8 °C vis—a—vis the 0 Case Study 3: Correlation of 117 thermal parameters and
+reference temperatures was observed (i.e., cold case for 8 temperatures
+the MLI node 85052). This difference is even greater than The signiﬁcant temperature mismatches in Case study
+the maximum difference prior to the correlation (max— 2 for nodes 85020 and 85035 disappeared in the pre—
+imum nodal difference equal to 11-7 00- Nevertheless, sent calculation. Temperature results after correlation
+this discordance is not particularly important, as the for the 8 nodes were in the range of $0.5 0c, as
+nodes in question are not part of the instrument itself. expected.
+1t is noteworthy to report that temperature difference in Convergence was achieved in the ﬁve tries. The number
+two instrument nodes, namely 85020 electronics node Of iterations ranged between 432 (minimum) and 575
+and 85035 ball bearing motor node, W35 35 great 35 (maximum). The CPU time needed for each execution
+4.8 °C and 25.5 °C respectively in the hot case scenario in was between 2 h 21 min (minimum) and 3 h 28 min
+try number 2. All other differences in relation to the (maximum). The number Of node errors to be simulta—
+instrument nodes may be considered negligible (max— neously minimised in each try was 168.
+imum Of 1 09' . In arithmetic nodes without thermal inertia, maximum
+Closer examination of the Case Study 2 model revealed differences sloped upward to 39.5 °C, whereas in the
+tw01mportant facts deemedinﬂuentialin this bad result. nodes representing the instrument itself, maximum
+On the one hand, a heat source is present1n nodes 8502.0 mismatch is only 1.8 0C This proved to be a fairly good
+W 85035 19 the hOt case, Wthh means that poweris result. Likewise, mismatches for the GLs, GRs and MCs
+directly applied at these POdeS- On the other hand, while reached a maximum value of 939% for some thermal
+node 85035 15 a rather isolated node in the model, 1ts
+, , , parameters.
+linear conductance w1th node 85040 can be dramatically
+altered by the GA in its effort to ﬁnd a global optimisa—
+tion. 4.1.2. Inﬂuence of the number of thermal parameters
+From the point of view of differences for GLs, GRs and included
+MCs vis—a—vis the reference case, mismatches could be as Another promising aspect of this line of investigation
+considerable as 1136% for some values. focused on determining the number of thermal parameters
+In consequence, a third case study was designed to which ought to be included in a correlation in order to arrive
+consider what would have happened if results in 8 nodes at convergence.
+
+"
+"11","I. Garmendia, E. Anglada / Acta Astronautica 122 (2016) 63—75 73
+Correlated model - Hot case
+I Reference model lTry 1 lTry 2 lTry 3 Try 4 Try 5
+60
+9|
+LT Eiiiiiiiiiiiiiiiiiiii
+2 : : : : : : : : : : : : : : : : : : : : :
+3- iiiiiiiiiiiiiiiiiiiii
+El
+“20
+ml
+0 l : : : : : : : : : : : : : : : : : : : : :
+QQ\©%Q\@QN%Q\%Q\‘5QN‘5N
+68361, €365 €233be €239“) 639% <b°°gv 9?? €365 €360 €836) 9:906 (23362) 959% 68°62) 63$ <b°°6\ 930$ 606% C8362) C8362) (25’ng
+Nodes
+Fig. 11. Temperatures at last instant of time. Hot case.
+
+It was assumed that uncertainties about the thermal 0 Case Study 5: Proximity level 2. 103 thermal parameters
+parameters were all the same in the whole model; that is to A correlation based on the 6 reference temperatures and
+say that no special reasons should lead us to conclude that 103 thermal parameters converged in the 5 tries after a
+some particular thermal parameter values were of “bad number of iterations between 191 (minimum) and 541
+quality”. A geometrical approach was adopted as a criterion (maximum). The number of node errors to be simulta—
+for choosing modiﬁable parameters during the correlation. neously minimised in each try was 126. Elapsed com—
+Those GLs, GRs and MCs in contact with nodes where refer— puter times were between 1 h 19 min and 3 h 51 min.
+ence temperatures were available would be selected as Maximum mismatch for arithmetic nodes was 19.9 °C in
+“proximity level 1 parameters”. Both, those parameters in a MLI node; maximum instrument node mismatch was
+contact with the level 1 parameters and the level 1 para— 93.4 °C in node 85035. The extremely high temperature
+meters themselves, would then constitute “proximity level prediction effect in the hot case scenarios was again
+2 parameters”, and so on. The logic here being that localised detected in this model because its causes remain the
+thermal parameters next to the measured temperature nodes same: node isolation and the presence of a heat source
+inﬂuence temperature changes more than other parameters in the node.
+far away from the measuring points. Regarding the thermal parameters values, a maximum
+
+For Tribolab experiment, three proximity levels were mismatch of 417% was reached for an internal GR value.
+identiﬁed, with 45, 103 and 117 parameters respectively From these results, apart from some savings by reducing
+taking into account the 6 nodes where reference tem— computer time, there is no special advantage to select—
+peratures were available. The case with 117 parameters is ing a reduced number of parameters for modiﬁcation
+analogous to previously studied Case Study 2. during the correlation.
+
+0 Case Study 4: Proximity level 1. 45 thermal parameters 4.2. Real case: correlation of the initial TMM against thermal
+
+Given a correlation target value equal to 0.5 °C for each test measurements
+of the 5 tries, correlations based on the 6 reference This is the correlation of the real case values. In other
+temperatures and 45 thermal parameters did not con— words, the original TMM values are made to match the
+verge, despite the mean temperature error decrease in results measured during the thermal balance test, i.e., the
+all the tries. The maximum number of iterations (2000) 117—thermal parameter, 6—temperature measurements
+was reached in all cases. This was because convergence with the 5 thermocouples and the thermistor in place,
+would not be reached even when the number of itera— Tribolab TMM.
+
+tions increased substantially. This model proved some— The average error between the predicted and meas—
+
+how “too stiff"" to be correlated. ured temperatures was equal to 2.37 °C, as calculated using
+
+"
+"12","74 I. Garmendia, E. Anglada / Acta Astronautica 122 (2016) 63—75
+
+Eqs. (3) and (4), in which the maximum error in a particular physical signiﬁcance. When using the achieved para—
+node and instant of time equalled 6.43 °C. The differences meters, complete sets of single correlation tries must
+between the predicted and measured temperatures can be be used.
+
+observed in Figs. 6 and 7, where solid lines represent the iv. A value of i 0.5 °C as a maximum mismatch between
+measured temperatures and dotted lines the predicted ones. measured and predicted temperatures proves to be
+
+Convergence was achieved in the ﬁve tries. Differences adequate enough to have good results in nodes with no
+between predicted and measured temperatures for the measured temperatures and, at the same time, the
+6 nodes were in the $0.5 °C range, for all the instants reasonable number of iterations required.
+considered (11 for the cold case and 10 for the hot case). v. During the thermal balance test design, the predicted
+The number of iterations varied between 454 (minimum) temperatures in nodes Where a heat source is present
+and 592 (maximum), and the elapsed computer times may yield considerably dissimilar temperature values
+between 4 h 22 min (minimum) and 4 h 54 min (max— when the correlation is achieved by means of a GA. So,
+imum). The 800d agreement between measured and pre— provisions should be made to attach thermocouples in
+dlCtEd temperatures for the correlated model is shown in nodes where a heat source is present, if physically
+Figs. 8 and 9. The predicted temperatures shown corre— possible.
+spond to the correlation achieved in the third try, which vi. Computer elapsed times are not short. However, dif.
+presents the worst results of the ﬁve tries average error ferent tries can be run on different computers. The
+equal to 0.215 0C). As can be seen here, even the poorest of main improvements to the algorithm might best be
+the ﬁve correlations shows a very good agreement. achieved by parallelising the algorithm.
+
+In this real case scenario, there were no “correct” values
+for the rest of nodes against which to make a comparison.
+
+As a.matter of fact, thermal behaviour of these nodes Acknowledgements
+
+remained con51stent With what was expected. Figs. 10 and
+
+11 collect the temperature values predicted by the initial The ﬁndings presented in this paper are fruit of inde—
+model prior to correlation and temperatures pFEdlétEd by pendent research. No ﬁnancial assistance was received.
+the correlated models (1.e., values at last calculated instant
+
+of time). As can be observed, the global thermal behaviour
+
+was consistent, and no outliers existed. In addition, com—
+
+, . References
+parison between the temperatures in the same node for
+the 5 tries gives a good idea of the variability of the pre— ,
+
+C]. t C] tem eratures This maximum ran 6 Of variabilit [1] DC. Gilmore, Spacecraft Thermal Control Handbook, 2nd ed.
+1C e p - g y American Institute of Aeronautics and Astronautics, Inc., El Segundo,
+
+was of 1.47 °C for all the cold and hot case nodes. The California, USA, 2002.
+
+exceptions here were: electronics node 85020 and ball [2] RD. I(aram, Satellite Thermal Control for Systems Engineers,
+
+bearing motor node 85035, where the hOt case ranges ?ggrican Institute of Aeronautics and Astronaut1cs,V1rg1n1a (USA),
+
+Were 10.85 0C and 7.47 0C FESPECtiVEIY- FOP bOth HOdES, [3] ].F. Redor, Introduction to Spacecraft Thermal Control, ESA Publica—
+
+heat sources were switched on in the hot case. This result [ ] tions Dirision. Noordwijk. getherlands. 1995- d
+
+- - - - - 4 S. Appe, R. Patricio, HP. e I(oning, 0. Pin, Automatic Con uctor
+
+IS COHSIStent Wlth the prev10usly dEtECtEd dlfférencés Generation for Thermal Lumped Parameter Models, SAE Interna—
+
+between reference and base models, already explained in tional, Warrendale, 12A, 2004 2004-01-2397_
+
+previous sections. [5] L.]acques, Thermal Design of the Oufti—l nanosatellite, University of
+
+- - - - Liege, Liege, Belgium, 2009, 142.
+
+Val‘lahlllty for ,the GLS’ GRS and ,MC5 pFEdICtEd Values [6] I. Garmendia, E. Anglada, H. Vallejo, M. Seco, Accurate calculation of
+was 383m very hlgh for the ﬁve tr1es, Wlth a maXImum conductive conductances in complex geometries for spacecrafts
+difference between them for the same thermal parameter thermal models, Adv. Space Res. 57 (2016) 1087—1097.
+
+Of 3230% and a mean value Of 153% [7] T. Akita, R. Takaki, E. Shima, A new adaptive estimation method of
+' ' spacecraft thermal mathematical model with an ensemble Kalman
+ﬁlter, Acta Astronaut. 73 (2012) 144—155.
+[8] T. Beck, A. Bieler, N. Thomas, Numerical thermal mathematical
+5. Conclusions model correlation to thermal balance test using adaptive particle
+swarm optimization (APSO), App. Therm. Eng. 38 (2012) 168—174.
+. . [9] E. Anglada, I. Garmendia, Correlation of thermal mathematical
+
+The follow1ng conclu51ons should be drawn from the models for thermal control of space vehicles by means of genetic
+Work presented in the previous sections: algorithms, Acta Astronaut. 108 (2015) 1—17.
+
+[10] RM. Amundsen, ].A. Dec, L.B.E. George, Aeroheating thermal model
+. correlation for Mars Global Surveyor (MGS) solar array, in: American
+1. GA C311 successfully be haFHESSEC] t0 COFFElate small- Institute of Aeronautics and Astronautics (Ed.), Proceedings of the
+medium size TMMS of space instruments and spacecrafts, 36th AIAA Thermophysics Conference, American Institute Of Aero—
+- - nautics and Astronautics, Orlando, USA, 2003, pp. 1—12.
+
+.. for SImQItaHEOUSly the hOt and cold tran51ent cases' [11] EADS/Astrium, Bibliographical study of optimisation methods with
+11- Very dlfferent TMMS can prov1de almOSt the same focus on GeneticAlgorithm techniques w.r.t post—test thermalmodel
+
+temperature results. So, clue to the stochastic nature of correlation problem. 2006- . .
+GA, different tries will provide different correlated [12] EADS/AStrlum' Te“ 1313.“ & t6“ models for ve.rlﬁcat1°“ 0f.p0.5t't.65t
+, , , thermal model correlatlon by usmg a stochast1c global optlmlzatlon
+
+TMMs. In consequence, it IS adv1sable to perform mul— method, 2006
+
+tiple tries. Five tries were attempted in preparing this [13] EADS/Astrium, Veriﬁcation of feasibility of post—test thermal model
+
+work and seems to be a reasonable number correlation by using Genetic Algorithm: analysis of test plan
+' results, 2007.
+
+111' valués for thermal parameters (GL5, GRS and MCS.) [14] F. Jouffroy, N. Durand, Thermal model correlation using Genetic
+obtained through GA correlations somehow lost their Algorithms, in: Procedings of the let European Workshop on
+
+"
+"13","I. Garmendia, E. Anglada / Acta Astronautica 122 (2016) 63—75 75
+Thermal and ECLS Software, ESTEC Noordwijk, Netherlands, 2007, Station, in: Tecnun — Escuela de Ingenieros de la Universidad de
+pp.1—14. Navarra (Ed.), Proceedings of the 50th Anniversary Conference,
+[15] M. Brizuela, A. Garcia—Luis, ].I. Oﬁate, I. Garmendia, Tribolab: an Engineering: Science and Technology,Servicio de Publicaciones dela
+experiment on space tribology. In orbit data at the 155, in: ESA (Ed.), Universidad de Navarra Donostia—San Sebastian, Spain, 2012.
+Proceedings of the 13th European Space Mechanisms and Tribology [18] I. Garmendia, A. Landaberea, E. Anglada, R. Fernéndez—Sanz, R.
+Symposium, ESMATS 2009, ESA Publications Division, Vienna, Austria, Santiago, F. Herrada, et al., The vacuum tribology model (VTM) of
+2009. Tribolab in: H. R.A. (Ed.), Proceedings of the 10th European Space
+[16] M. Brizuela, ].I. Oﬁate, A. Garcia—Luis, I. Garmendia, R. C. Martinez, Mechanisms and Tribology Symposium, ESA Publications Division,
+Fernéndez—Sanz, In orbit tribological tests of a novel solid lubricating Noordwijk (Netherlands), 2003, pp. 67—70.
+ﬁlm at the International Space Station, in: Proceedings of the [19] ECSS Secretariat, ESA—ESTEC, ECSS—E—ST—31C, Space Engineering,
+International Conference on Metallurgical Coatings and Thin Films, Thermal control general requirements, ESA Requirements and
+ICMCTF—2009, San Diego, USA, 2009. Standards Division, Noordwijk, Netherlands, 2008.
+[17] I. Garmendia, E. Anglada, H. Vallejo, M. Brizuela, N. Insausti, Thermal
+control of tribolab, a materials experiment in the International Space
+
+"

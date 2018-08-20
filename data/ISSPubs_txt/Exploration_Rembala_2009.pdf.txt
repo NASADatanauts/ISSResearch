@@ -1,0 +1,530 @@
+"","x"
+"1","Kw»? Available online at www.sciencedirect.com _____________
+”5‘;
+55‘- ‘.r.‘ S ' D' WM
+tat“ C'ence ""e“ msmmmnttm
+PERGAMON Acta Astronautica 65 (2009) 912—920 ——-——————________
+WWW.elseVier.com/locate/actaastro
+Robotic assembly and maintenance of future space stations based on
+the ISS n11ss10n operations experience
+Richard Remba1a*, Cameron Ower
+MDA—Space Missions, Canada
+Received 5 December 2007; accepted 10 March 2009
+Available online 3 June 2009
+Abstract
+
+MDA has provided 25 years of real-time engineering support to Shuttle (Canadarm) and ISS (CanadarniZ) robotic Operations
+beginning With the second shuttle ﬂight STS-2 in 1981. In this capacity, our engineering support teams have become familiar
+With the evolution of mission planning and ﬂight support practices for robotic assembly and support Operations at mission
+control. This paper presents Observations on eXisting practices and ideas to achieve reduced Operational overhead to present
+programs. It also identiﬁes areas Where robotic assembly and maintenance of future space stations and space-based facilities
+could be accomplished more effectively and efﬁciently.
+
+Speciﬁcally, our experience shows that past and current space Shuttle and ISS assembly and maintenance Operations have used
+the approach of extensive preﬂight mission planning and training to prepare the ﬂight crews for the entire mission. This has been
+driven by the overall communication latency between the earth and remote location Of the space statiorﬂvehicle as well as the
+lack of consistent robotic and interface standards. While the early Shuttle and ISS architectures included robotics, their eventual
+beneﬁts on the overall assembly and maintenance Operations could have been greater through incorporating them as a major
+design driver from the beginning of the system design. Lessons learned from the ISS highlight the potential beneﬁts of real-
+time health monitoring systems, consistent standards for robotic interfaces and procedures and automated script-driven ground
+control in future space station assembly and logistics architectures. In addition, advances in computer Vision systems and remote
+Operation, supervised autonomous command and control systems Offer the potential to adjust the balance between assembly and
+maintenance tasks performed using extra vehicular activity (EVA), extra vehicular robotics (EVR) and EVR controlled from the
+ground, ofﬂoading the EVA astronaut and even the robotic Operator 0n-0rbit of some of the more routine tasks. Overall these
+proposed approaches When used effectively Offer the potential to drive down Operations overhead and allow more efﬁcient and
+productive robotic Operations.
+© 2009 Elsevier Ltd. All rights reserved.
+
+1. Introduction mission operations costs. Further exploration missions
+should plan for the utilization of such systems so as to
+MDA’S experience has shown that the appropriate use increase cost effectiveness by simplifying pre—mission
+of robotic and automated systems, implementing sys— planning and training.
+tern designs with simple, automated, high level control
+functions, and utilizing automated trouble—shooting, re— 2. Minimizing mission-speciﬁc planning through
+covery, and data retrieval systems, can reduce overall standards
+
+* Corresponding author. The Space Statien Remote Manipulator System
+
+E-mail addresses: richard.rembala@mdacorporation.com (SSRMS) and SPCC131 PUYPOSC DeXterous Manlptﬂa'
+(R. Rembala), cameronower@mdacorporation.com. tor (SPDM) robotic systems incorporate very ﬂexible
+0094—5765/$—see front matter © 2009 Elsevier Ltd. All rights reserved.
+doi: 1 0. 1 016/j .actaastr0.2009.03 .064
+
+"
+"2","R. Rembala, C. Ower / Acta Astronautica 65 (2009) 912—920 913
+Table l
+188 berthing mechanisms and functions [1].
+Mechanism Function
+Payload retention system Connects payloads t0 the orbiter cargo bay
+“Common” berthing mechanism (CBM) Connects US modules together on the forward half of ISS
+Lab cradle assembly (LCA) Connects integrated truss to lab module
+Segment—tO—segment attach system (SSAS) Connects integrated truss segments together
+“Common” attach system (CAS) Connects exposed payloads and logistics carriers to the truss
+Androgynous peripheral attach system (APAS) Connects the Russian FGB and PMAl together and docks orbiter to 188
+JEM exposed facility berthing mechanism (JEM—BM) Connects JEM exposed facility to the JEM module
+Payload interface unit (HPIU) Connects external payloads t0 the JEM exposed facility
+Rocketdyne truss attach system (RTAS) Connects integrated truss segments together
+Modiﬁed Rocketdyne truss attach system (MRTAS) Connects integrated truss segments together
+control systems that allow a range of system parameters 2. During the engineering cycle mission support ﬁles
+to be ﬁne for any given payload or operation by optimiz— are based on detailed analysis and are used to gather
+ing performance and simplifying operations. The irony human—in—the—loop feedback.
+of designing a very ﬂexible and capable robotic system 3. The ﬂight cycle is intended as the development of
+is that it tends to complicate mission planning processes the ﬂight version of mission support ﬁles. During
+because the available ﬂexibility does not necessitate the this cycle, products are updated with reﬁned analysis
+implementation of standards. Without standards, indi— and HIL feedback.
+Vidual payload developers are free to re—invent payload 4. The update to ﬂight cycle is a placeholder to up—
+interfaces with each new design, and mission design— date ﬂight cycle products as necessary based on last
+ers and arm operators are free to Change operational minute Changes to the mission.
+techniques based on personal preferences and practices.
+Alon with new robotic and berthin interface desi ns, . . . .
+. .g . g g Developing robotic standards that obtain community
+m1ss10n operations Changes, and operator personal pref— . . .
+. . and program buy—1n from the beginning can help reduce
+erences comes the increased overhead (and ass0C1ated . . . . . .
+. . . . . . . the upfront m1ss10n planning required by permitting
+costs) of m1ss10n—spec1ﬁc robotic analys1s, training, and . . . . . . . .
+. . . . training and operations veriﬁcation through Similarity.
+planning as well as the increased costs ass0C1ated w1th . . . .
+. Robotic standards can also help in deﬁning generic
+development of new hardware and software s1mula—
+. . . control parameters that can be safely used for the vast
+tors for the interfaces. For 188 assembly operations 1n— . . . .
+volVin the Mobile SerViCin S stern (MSS) mission majority of expected payloads and robotic operations.
+.g . g y ’ In the case of the SSRMS (and the original SRMS) a
+planning begins two years before the planned opera— . . “ ,,
+. . . . standard robotic interface—the grapple ﬁxture —was
+tion and involves multiple teams at the Canadian Space . . .
+. . . developed for the robot to mechanically interface w1th.
+Agency (CSA) and NASA. During this planning phase, . . .
+0 erations are simulated and a load s eciﬁc arame With the grapple ﬁxture interface came a standardized
+p . p y . . p p method for the SSRMS to capture and handle payloads
+ters are tuned in order to meet m1ss10n goals and per— . . .
+. . and allowed for generic training methods to be devel—
+formance requirements as well as to obtain operator . .
+. oped, baseline robotic approach rates to be adopted,
+feedback for hurnan—in—the—loop (HIL) performance ad— . .
+. . and ﬁxed control system parameters to be utilized.
+Justments. Furthermore, the need to address off—nominal . . . .
+. . . Unlike the case With other berthing interfaces on the
+scenarios for safety reasons results in unique robot and . .
+. . . . . . . International Space Station, the standard end—effector—
+berthing mechanism interaction for each m1ss10n requir— . . .
+. . . . . to—grapple ﬁxture interface eliminates the need to reana—
+1ng a multitude of Simulations to ensure safe operational . . .
+. . . . . . lyze, retrain, Simulate, and tune each capture operation.
+techniques. In total, this iterative and incremental mis— . . . . .
+. . On space station, each unique r0b0t1C/berth1ng inter—
+s10n planning process undergoes a total of four phases . . . . . . .
+. . . . face requires m1ss10n planning, m1ss10n analys1s, and
+each lasting appr0x1rnately 6 months in duration: . . . .
+operator training to be re—1nvented and re—performed 1n
+1. The draft cycle is intended as the development of order to ensure the operational feasibility of the task
+the initial delivery of mission support ﬁles and is both from a safety (loads) perspective and from a user
+provided for exploring the system functionality in perspective. Table l and Fig. 1 provide examples of the
+the context of a mission. variety of different mechanical interfaces with which the
+
+"
+"3","914 R. Rembala, C. Ower / Acta Astronautica 65 (2009) 912 —920
+CBM CBM
+Passive Halt Active Halt
+Capture latch fitting . ‘-_‘
+__""’”;‘Q\}Q‘ Capture mm (/‘fj>—“ "",2“ {i
+n .5 \ 'QW/ cull"" »' |
+MS | “KN Bola -/ Z’// ’9‘! x""? Controllet
+I"" .3 '/,{l/ ﬂy/I/ panel assembly
+\4 ox g/tgu-v‘ ' §//l/ Alignmentguide
+\ ‘ ""5| (Tu, mt’W
+15-75”
+\ i 48—» ~,\%/
+_. trpctuml -\I""""-=';'...”//""
+AI‘ nt ‘de ' I """"98 .__---/
+Ignme gm _V \ l. ,4-
+' eady to Latch Indcators mu.
+JK .
+Flne alignment cone 5,],
+’9
+_ @ Coarse allgnment cup
+Coons alignment cone >
+Capture latch % .. (“5-31.99 Eﬂ Flne allgnmentcup
+M “-{1/w' ""V
+9 1'”. -' '1’,
+\ﬁii'K-ﬂl“ #11,}, go.i‘~\\\y
+“f., , ht; /,,:l[,—
+Ready-tn—Iatch sensor ‘ﬂ-ﬁ, /§}\/f ”W45“ Ready-to-latch strike:
+\Xlge 435‘“ {1-5. ’ A‘,
+f~ "" ' ~--.“\ ‘ WW r’.
+Active SSAS \ //Fi~§+§ ’ [£233
+3353,29 argixl I Captum bar
+""K‘k: hum sus --
+Alignment Guides
+‘Eiiad/ 5:23: ,ﬂ'ﬁi .
+‘ '77""; ~ ' \ “-
+~!u€r' ~q 1.4.75 ~ .. Q‘Il
+.4 .,, ”~Hﬁlﬁ _ \H“ .1 L”,
+/ ‘5»! . 1‘.‘ L‘A-‘WL'JIH/‘IQ
+K"" wt.‘ .-"" 1' Ir . w"" V ""f""- H
+a ‘1 ~., ~ . J _ ;‘.-‘-. _
+Umbilical 4'“, F .71»)..- :‘4?’ ;
+mating |T\ , ‘ ‘W/ér‘"" ‘. _,
+assembly t Ill, ‘45??? //
+,- .4; -.- 2LT)
+IN"" 121-“ /
+‘1 l’/ Capture latch
+. 1‘ {I '
+K” .....
+_ J '7’
+Ready-tolatch
+. “2 RTL t9 4' r.»
+’5‘ )ga ?*f Allgnmem guldes
+'5‘ (4 111-123” -:E:""~3*""--::ff':4?::~-
+- I \ ' ,-""' J _. .\ 1 “R397 “,—
+1; sﬁpﬁ.‘ ‘wgﬁf'fisf‘tg .463 , 31'
+6:“ It $31“ L231; ‘ «. ngiﬁl’; J ﬁg“.
+'- ‘3 4 Capture latch  ‘-“ : EEVN-t‘9w"". ,r ""#me, _ mg A.
+*3 '""iir-ﬁix‘éﬁ- , Ex. ' ""
+'1‘ "" “ “11- £35 ’r ‘j;._ Suppért brace
+Rlngtrame "" ' 7— u \k‘
+H a .r x_J; : —:\»:"".\
+.-.- .4: r: 5:: °‘ '“ I ‘1\ ongeron
+E n L: z 4&3
+Fig. 1. Examples of different ISS payload attachment mechanisms.
+
+"
+"4","R. Rembala, C. Ower / Acta Astronautica 65 (2009) 912—920 915
+33%..
+4, /‘ roam (’2‘,
+mamm/ ’ ”TM {a‘@‘
+1mm ‘ // .'
+P“ . EVA 1... mm
+I wmo- /¢ @F u""
+@“zuw \/ Mg
+\ moan
+WM-
+umooncu M socmtrggsmu
+, SPDM onu TOOL
+\ ( v5, CHANGEOUT MECHANISM (OTCM)
+mm
+Ii. '3.
+.‘ mm... acmooucauom .n.,‘¢‘
+.h l. wn— c 405“,
+Image“ i ' \ "" (\‘J
+“W"" A Uw- ' \\ ‘ \
+l xf-r; \ ‘\ ‘
+t ""g;- Nﬁ-t \ ll ,
+I “' /[,_‘:‘,:§',\J’) \ ,‘li ,
+\ (' v crxc', . .
+onset too. {{;&.§}>o'/}¥tt ‘ {3.0
+44.6 °_~ ,, i,’
+""(o’szl((O ""’ \
+6W b.9151"" “3
+”WWW gagfg.
+“CMFMUK m
+SPDM Tooling °°""""""""
+Fig. 2. Varying SPDM robotic mechanical interfaces on 188.
+. — . ‘2” , Typically when the SSRMS berths payloads to an ac—
+tive capture mechanism, the SSRMS joints are “limped”
+I Jl \ so as to make the SSRMS compliant to the active cap—
+. _f_, . ture mechanism on the 188 as it pulls in and secures
+the payload. In off—nominal (failure) situations, the SS—
+, V . RMS mechanical parking brakes can inadvertently en—
+1. gage thereby res1st1ng the active capture mechanism on
+A d .1; the 188. The resultant loads that can be induced in these
+”a l . off—nominal scenarios require extensive analysis and 0p—
+' - ‘ erational techniques to satisfy ISS safety requirements.
+If system level integration of the active berthing mech—
+Fig. 3. Varying SPDM alignment targets. anism and the robotics were performed early in the 188
+program, a control architecture could have been imple—
+mented which allows an automated safety monitoring
+pre—mission planning process must contend today on the system to halt the 188 active berthing mechanisms if
+188. While all of these devices accomplish the same ba— the SSRMS mechanical brakes were to engage. While
+sic function—to structurally attach two pieces of hard— this capability was eventually implemented into the ISS
+ware together—their differences in contact geometry, command and control computer systems, this software
+alignment features, operator Visual cues, and fundamen— upgrade was tOO late to effectively address all 188 cap—
+tal operation all result in mission—speeiﬁe training and ture mechanisms. In addition, since this upgrade had to
+analysis requirements. be built around an already existing command and con—
+The lack of end—tO—end integration between the on— trol architecture, the result is a band—aid solution that
+orbit robotic systems and the active capture mecha— cannot react fast enough to completely eliminate the
+nisms throughout the 188 causes additional analysis and need for the analysis and operational WOIk—arounds.
+training overhead when dealing with off—nominal events In the case Of the SPDM, the lack Of mandated
+that manned space—ﬂight safety requirements mandate. robotic interface standards for payloads 0r orbital
+
+"
+"5","916 R. Rembala, C. Ower / Acta Astronautica 65 (2009) 912 —920
+replacement units (ORUs) at the beginning of the ‘ “w , ‘ \ ' , ""
+188 program resulted in developers designing unique ‘ ' ' 1‘ '. .
+Visual alignment targets, unique grasp points which M 1 39%. 7
+require special adapter tools for the SPDM to inter— V“) i _ ’ ""f- , 5%
+face with (see Figs. 2 and 3 for examples), and unique “‘1‘ ' _ ~ \ RPCM
+berthing/alignrnent hardware to secure each payload to t“ $ ‘ . ,4""
+the space station (see Fig. 4 for examples). From an ' l»..-_ Vim ‘ a
+operational standpoint, each of these unique aspects \/\ -“ y.
+to each payload compound to produce an operational u ‘ , - "" ﬂ
+planning overhead even more daunting than that of M f ' ‘ ~
+the SSRMS. This translates into the need for unique
+strategies and techniques for operator training, as well 1,; "" gig???""
+as unique mission planning analysis for each ORU , f ‘
+maintenance operation. On some operations, where the , .
+SPDM is required to use adapter tools before being \ . A
+able to even interface with “robotic” handling points, \4 ‘ , ACU
+these differences have introduced not only operational A ' I --- _'
+complexity to the task, but also large mission time— V “A
+line impacts—adding hours of operational overhead to , 4
+the 0n—0rbit maintenance task such as for swapping 7
+between tools signiﬁcant mission planning efﬁciency ‘
+and cost savings could have been obtained through the @
+institution of robotic standards and practices. - x -‘7 ‘
+Future space exploration missions can beneﬁt from i. _ . .. "" ’4
+the extensive work already performed on the Interna— : g; :_ ' ‘ ‘ L""
+tional Space Station in the area of hardware assembly ""0. {1"" W ” , 1’ ' Battery
+by utilizing a single existing pressurized interface for '
+habitable module attachment (such as the CBM) and Y /
+a single existing unpressurized berthing interface (such I ' /’
+as the CAS) for external structural attachment. Reusing , ?M ~ 1'
+. . . . . W 5"" ‘ ""~
+eX1st1ng, proven berthing interfaces for Wthh opera— ""1 '
+tional techniques have already been developed, trained . ft
+for, and perfected is far more cost—effective than re— ' e}? ’-
+designing yet more unique interfaces. ‘ b , ' h , . -
+A number of these standardized ORU design lessons . fﬁl ‘
+learned have been applied in the Defense Advanced ‘ a ""A ‘ -
+Research Projects Agency (DARPA) Orbital Express ' ""' 7' _ 1;-
+(OE) Demonstration Mission which executed in 2007. : i-
+The OE technology demonstration involved the design, . ~ “ MDM
+development and 0n—0rbit test of a prototype serVic— . i -""' _ ‘ .
+ing satellite (ASTRO) and a surrogate next generation Y . :34. ‘1‘}
+serviceable satellite (NextSat) led by Boeing. The goal a - '
+0f the Orbital Express Space Operations Architec— . - _
+ture program was to validate the technical feasibility '11 211$ - 1K
+of robotic, autonomous 0n—0rbit refueling and recon— ,’ . 1: a 7
+ﬁguration of satellites to support a broad range of
+future US national security and commercial space pro— Fig. 4. Sample of different ORU Interfaces on 188.
+grams [2]. Two critical components of the ASTRO
+and NextSat spacecrafts were battery and computer shows the robotic handle, or Probe Fixture Assembly
+sub—systerns which were designed as ORUs with stan— (PFA) with which the Orbital Express Manipulator
+dardized non—proprietary satellite servicing interfaces System handled both ORUs and the NextSat. It also
+(mechanical, electrical, etc.)deve10ped by MDA. Fig. 5 shows the standard ORU Container Assembly (OCA)
+
+"
+"6","R. Rembala, C. Ower / Acta Astronautica 65 (2009) 912—920 917
+simply to secure the tool to its interface on a pay—
+. ,‘ _;;‘ _ . r A 7 load. Such a basic function would beneﬁt tremendously
+.. ""‘ﬁ; = ' , . . ‘- m _; a from automated command scripts. Adaptive, smarter,
+7“ [‘3 34A C3 5"". 5 and more automated s t d d t h l —
+. a i _, + . . Y? em? ? 9. e P. Par
+.4? ‘_ m’ 5 -,. .. ‘ ‘- tition such system functions into more intuitive higher
+.17-? iimﬁ '; '3 . level sequences. From the operator/user point of View,
+7 Q ~74 ”tﬂ; W I- S} ’. > this will minimize the monotony and error—prone nature
+‘ '~ 3; ’l ‘ _ of executing long routine operations and command se—
+vii“ f , .. L9 ; quences. Such higher level system functions allow the
+' ~ =9» ‘7 a 3 ° user to focus more on what is required to be performed
+‘;\— and less on how to actually perform it. Furthermore, au—
+1 , : _ , _- ‘ tomation of routine and repetitive system tasks allows
+I I 1' ‘ ‘ l _ .- the crew to focus training and proﬁciency in areas of
+. . . h “—r ' J "" f system usage where crew involvement is critical to mis—
+/' ' , - ' g ‘1"" sion safety and/or success. Requiring crew to maintain
+1‘ , -' J t .. i ._ ‘ ‘ proﬁciency in the most basic system functions distracts
+.l , a i. "" / them from training for and maintaining a high level of
+' ’3‘..- 35:3? E '7 r A 1 . ’ competency in the critical aspects of the operation.
+
+‘ ,\ j _. ' 15.11 ‘ ' _- . In the M88, some level of command automation
+. “ _““""~< A: 7 «M; - was achieved through the Operations Control Software
+7' a ' (OCS) for high level control of the SSRMS and SPDM.
+Fig. 5. Standardized OE ORU interfaces: (clockwise from bottom WhilC Simplifying thC 11861” intCIaCtiOn With the 133
+left) ORU container assembly (OCA) with probe ﬁxture assembly robotic systems, the OCS unfortunately had hard_c0ded
+(PFA), ORU interface assembly (01A), 01A to OCA mating inter— logic in the software’s command sequences which
+face' impacted the ability for the system to work—around
+off—nominal or unforeseen events. An automated script
+in which the battery and computer ORUs were housed execution capability would have provided ﬂexibility
+as well as the standardized ORU interface assembly and expandability to cope with issues like these. Not
+(01A) to attach the ORU container to the spacecraft. only can reconﬁgurable high level scripting command
+One of the goals of the mission was to demonstrate interfaces automate tedious routine functions, they
+the effectiveness and efﬁciency gained by using such can also provide cost savings by allowing new com—
+interfaces, thereby facilitating the establishment of an mand sequences to be developed (or ﬁxed when bugs
+industry wide on—orbit servicing standard. Apart from are found) without the need for CSCI redevelopment,
+
+successfully demonstrating autonomous ORU transfers retest, and recertiﬁcation.
+during the mission, another important beneﬁt of these On the M88 program, an automated script driven
+standardized interfaces is that the effort to plan and commanding tool (SAIF) was developed for SSRMS
+verify ORU transfers for this mission was achieved with and SPDM integration testing that provides such a ca—
+an order of magnitude reduction in the effort compared pability. SAIF permits command scripts to be generated
+with past 188 planning and veriﬁcation efforts. with telemetry driven conditional logic to control the
+lower level robotic systems. This capability allows for
+3. Simplifying command interface and automating simple automated testing of the robotic systems on the
+routine functions ground and in the future this concept could be extended
+to provide automated control of the robotic systems on—
+
+In general, the more basic a command level that a orbit.
+
+system adopts, the more tedious routine system opera— While automated sequences and high level system
+tions become from a user perspective. In turn, this often commanding is recommended to simplify system op—
+results in a more error—prone task outcome. A case in erability thereby minimizing system pfOﬁCiCIle iSSUCS,
+point is the Robotic Micro Conical Tool (RMCT) devel— it is recognized that manual override control functions
+oped to allow the SPDM to capture non—standard robotic are still required by on—orbit crew or ground support
+ﬁxtures. Complexities in both the tool and the software teams under off—nominal situations since software or
+design require the user to issue a total of 18 commands rule—based script logic can sometimes get confused by
+through a point and Click graphical user interface, all feedback from sensor hardware that has experienced
+
+"
+"7","918 R. Rembala, C. Ower / Acta Astronautica 65 (2009) 912—920
+a failure. When manual override functions are imple— to support variable autonomy and allow for introduc—
+mented, they must be implemented such that they (10 tion of autonomy enhancements over the life of the sys—
+not impose any software restrictions (apart from safety tern. ROSA can provide astronauts and operators on the
+functions which require safety overrides) which may ground with the ability to choose the level of autonomy
+preclude the ability to perform potential off—nominal with which to instruct the system to perform an oper—
+operations in the future. ation, and to permit the operator to generate operation
+scripts that seamlessly incorporate mixtures of high and
+4. Reducing mission execution overhead—remote low level commands within a single operation. In gen—
+command and control (ground control) eral, it contains a mixture of goals or tasks and low level
+commands that control the operation. The use of goals to
+One Of the ""way—of—doing—business” adjustments that the greatest extent possible simpliﬁes operations plan—
+was needed for SSRMS over the original SRMS prac— ning. In preparation for an operation, the script and ap—
+tices was in the sustaining engineering support func— propriate models are loaded. During execution the crew
+tion. With the SRMS, minor 0n—0rbit anomalies could may View the operation. However, the crew need not
+be investigated in detail after the mission was com— directly control the execution, but maintains the ability
+pleted and the arm returned to earth. For the SSRMS to interfere as required. In its most general form, ROSA
+which remains on—orbit, engineering investigations are consists of (1) sensors to determine the external enVi—
+more challenging. However, contrary to initial eXpecta— ronment and system state, (2) a behavioral executor t0
+tions, the challenge in trouble—shooting SSRMS anoma— guide operations, (3) an inference engine that invokes
+lies was not due to lack of ﬂight data or insight into and terminates behaviors, (4) an intelligent operations
+the arm behaviour, but rather lack of trouble—shooting supervisor that controls operations based on high level
+opportunities. Scarce availability of on—orbit crew time goals, and (5) a planning and cognitive modeling en—
+has resulted in engineering support teams having to wait gine.
+months before even simple trouble—shooting investiga— Early in the mission, the MDA—developed manipula—
+tions could be scheduled and executed. Relying on the tor arm on the ASTRO was used to perform the ﬁrst
+availability of on—orbit crew has been an impractical way autonomous battery ORU transfer from the ASTRO,
+of characterizing and maintaining the health of the 88— where it had been located since launch to the NextSat.
+RMS [3]. The recent implementation of ground—based This transfer marked the ﬁrst time one satellite has au—
+command and control of the SSRMS has provided an in— tonomously transferred a battery to another spacecraft
+valuable tool in supporting more efﬁcient and timely en— using a robotic manipulator arm. All operations went
+gineering trouble—shooting. Future long duration space as planned with no anomalies, with the Operations per—
+missions can eXpect similar engineering support bene— formed at the lowest autonomy level, requiring several
+ﬁts if ground control is implemented. ATPs (“approvals to proceed”) from the ground opera—
+Apart from supporting engineering investigations, tor at speciﬁed decision points in the transfer operation.
+signiﬁcant beneﬁts are also attained by allowing robotic A later mission scenario culminated in a comprehen—
+control from the ground for the execution of routine sive, fully autonomous servicing demonstration which
+operations. Ground control allows for the optimal sepa— included autonomous rendezvous and docking from 7
+ration of on—orbit crew and ground functions and saves km separation, followed by propellant transfer. Later in
+signiﬁcant on—orbit crew time [3]. that mission scenario, the manipulator system on AS—
+Currently, the new ground command capability is rou— TRO transferred its battery to NextSat in the industry’s
+tinely used to relocate the SSRMS in preparation for ﬁrst fully autonomous battery transfer operation, with
+upcoming operations and to perform ISS surveys. With no ATPs required. Incorporating this type of capabil—
+the future launch of the SPDM in 2008, the utilization ity into the present 133 operations or the assembly and
+of ground control is expected to increase dramatically. maintenance of future space stations offers signiﬁcant
+The OE demonstration mission provided an initial beneﬁts.
+glimpse of the extent to which assembly and/or main—
+tenance tasks can be taken using ground control and a 5. Maintaining crew proﬁciency during long
+supervised autonomous command and control strategy. duration space ﬂight
+In order to command and control the OE manipulator
+from the ground during critical ORU transfers, MDA One of the potential issues that can arise during long
+applied the Remote Operation Supervised Autonomy duration human space ﬂight is ensuring that the skills
+(ROSA) [4], a command and control system framework acquired by the crew on the ground before the mission
+
+"
+"8","R. Rembala, C. Ower / Acta Astronautica 65 (2009) 912—920 919
+are retained until they are required to be put to use on— SSRMS with the payload is not reviewed—only the
+orbit. Drawing on points touched—upon elsewhere in this sequence of steps. This form of proﬁciency training
+paper, the following steps can be taken to simplify the can only target speciﬁc knowledge and skill elements
+task of maintaining crew proﬁciency. rather than the full range required for complex MSS
+
+operations [5].
+5.1. Standardize robotic operations and utilizing Future manned robotic missions can take advantage
+common interfaces of high ﬁdelity dynamic simulations to assist the crew
+in maintaining proﬁciency by providing validated dy—
+As mentioned earlier in this paper, one of the Chal— namic simulations with 3D world graphics models and
+lenges in the ISS mission planning process has been contact models and by integrating them with the same
+caused by the lack of robotic standards and commonin— user interface that will be used to control the actual
+terfaces. Non—standard interfaces have resulted in crew robot. Such a system would permit on—orbit crew to uti—
+members needing to perform not only generic training lize a fully representative training platform to simulate
+but also a signiﬁcant amount of mission—speciﬁc train— and practice the full spectrum of robotic operations.
+ing. That is, while all SRMS and SSRMS operators are
+proﬁcient and capable of capturing a standard grapple 6. Automated health monitoring
+ﬁxture, the same cannot be said for berthing payloads
+to the various different types of berthing interfaces. By During non—time—critical mission phases an auto—
+minimizing the number of interfaces to be dealt with, mated health monitoring system on the ground can pro—
+the burden of operator skills retention to interact with Vide efﬁciency beneﬁts to the program by eliminating
+these interfaces is reduced and more generic training the need to staff support personnel for all disciplines
+approach can be adopted. around the clock. MDA has used such an automated
+data archival, retrieval, and analysis tool on both the
+5.2. Implement ground control and higher level Shuttle and the ISS robotic systems for years. This in—
+command and control functions house developed utility, termed “Mass Data”, performs
+automated data retrievals from NASA’s real—time data
+The implementation of both ground control and archive at the J ohnson Space Center and stores the data
+higher level command and control functions through in a locally maintained searchable database. All incom—
+automation can help simplify the task of maintaining ing data from NASA is automatically processed by the
+crew proﬁciency by allowing the crew to focus on system based on pre—programmed (and reconﬁgurable)
+the critical operations. Optimizing the roles and re— rules to automate routine sustaining engineering func—
+sponsibilities of the on—orbit crew, the ground, and the tions. Functions currently automated by MDA’s ﬂight
+automated systems ensures that areas of proﬁciency data processing system include automatic tracking of
+required of the crew are well deﬁned and maintainable. limited life item usage to support logistics and plan—
+ning, post—processing of data, as well as automated de—
+5.2.1. Develop integrated crew training capability into tection and ﬂagging of off—nominal system events. Use
+robotic systems of the system has allowed for very effective near real—
+One of the lessons learned in the 188 program is the time retrieval, analysis, understanding, and resolution
+identiﬁed need for on—orbit training re—familiarization of system anomalies. Implementing similar automated
+for the SSRMS operations and associated assembly data monitoring tools on future systems can provide
+tasks. On several occasions, delays in a shuttle launch a cost effective method of system monitoring. Com—
+and associated assembly mission resulted in signiﬁcant bining this tool with automated personnel notiﬁcation
+durations of time from when the increment (long dura— through e—mail or pagers and providing a remote access
+tion stay) crew members on the 188 were trained, and capability can allow an engineering support team to
+when the task actually took place. To re—familiarize be gathered (or executed decentralized) on an as—need
+themselves with the task, the increment crew performed basis rather than through around—the—Clock monitoring.
+“dry—runs” of the operations several days prior to the Adopting such an automated health monitoring system
+mission using the actual SSRMS. One shortfall of such would reap the cost beneﬁts of reduced support staff
+procedure dry—runs is the obVious inability to practice over the life of the mission. Such efﬁcient mission
+the complex assembly sequence with the payload that support infrastructures have already been successfully
+is to be installed on the upcoming mission. Because employed and demonstrated by today’s satellite indus—
+of this limitation, the performance and response of the try. An example of where this has been done effectively
+
+"
+"9","920 R. Rembala, C. Ower / Acta Astronautica 65 (2009) 912—920
+includes Landsat—7, which has a “lights out” opera— and in long duration space ﬂight. This paper presented
+tions concept. At night, the ground support function observations on existing mission planning and support
+is unmanned but automated health monitoring systems practices and provided the following recommendations
+downlink and review satellite telemetry and automat— on ways in which these practices could be optimized:
+ically notiﬁes the on—call engineers Via text—paging if
+problems are detected. 1. Deﬁning and adopting robotic standards early on in
+As noted the capability above will greatly aid in im— the program is critical to ensure efﬁcient, cost ef—
+proving efﬁciency in non—time—critical mission phases. fective crew training, mission analysis, and mission
+Automated health monitoring of a different nature can planning in the future.
+aid in the more mission—critical phases. More recently 2. Adopting simple high level command interfaces and
+as part of NASA’s Exploration Enterprise [6], an ob— automated script based commanding can simplify
+jective of moving towards more crew—centred opera— system usability and operator proﬁciency retention.
+tions has been identiﬁed, with the goal of having fewer 3. Providing ground control command capability allows
+direct/in—direct operators control more robotic systems. optimal separation of 0n—0rbit and ground crew re—
+As robotic systems are imparted with greater degrees sponsibilities and functions.
+of autonomy as highlighted above, there is by deﬁni— 4. Automated health monitoring systems during non—
+tion less operator interaction and operator control over time critical mission phases can provide an efﬁcient,
+the robot’s actions in real time. This may require in— cost saving alternative to around the clock system
+creased safety awareness as the increased possibility of monitoring by support staff. Automated safety moni—
+failures or program errors can place human safety or toring systems offer the potential to reduce the num—
+equipment at risk. Systems such as the On—orbit Safety ber of staff controlling and monitoring a time critical
+Monitor (OSM) [7] have been developed with this in mission task.
+mind. The objective of systems such as OSM project
+is to provide safety monitoring functions/technologies References
+which will improve the safety of the remote teleopera—
+tion of robots where continuous human monitoring is Ci- [1] International Space Station Familiarization, ISS FAM C 21109,
+ther cost—prohibitive, or not possible. The OSM system Reﬁsmn B’ OCtOber 18’ 2001' _ _
+. . . [2] Orbltal Express Space Operatlons Architecture, DARPA
+18 a bundle Of funCtlonS/teChnOIOgles to help compen— Tactical Technology Ofﬁce (http://www.darpa.mil/tt0/
+sate for the operator’s poor situational awareness and programs/oehtml).
+mitigate the risks that come with remote teleoperation 0f [3] R. Rembala, S. Aziz, Increasing the utilization of the ISS
+robots (e.g. ground—based control of space robotic sys— Mobile Sericing Systém through groynd control, in: IAC-05-
+tems) and/or autonomous operation. OSM’S approach 1J3a4.:r.1042,0(5)gth Internatlonal Astronautlcal Congress, Fukuoka,
+is based on using real_time data from a computer Vi_ [4] R.p Gillett, .M. Greenspan, et al., Remote operation with
+sion system for authenticating the synthetic models used supervised autonomy (ROSA), in: Proceedings Of the 6th
+for collision detection, and its ability to issue warnings International Symposium on Artiﬁcial Intelligence and Robotics
+when it detects that safety is being compromised by & Automation in Space, St-Hubert, Quebec, 2001-
+potential collisions. This could provide systems such [5] L. Evans, E. Greenberg, Innovative solutions for maintaining
+. . . on—orblt crew skllls proﬁc1ency: a key to successful long
+as the MOblle SCI‘VIClng SyStem on 188 01‘ Other fmure duration space missions, in: IAC—OS—B4.4.06, 56th International
+space station assembly robotic systems with much of Astronautical Congress, Fukuoka, Japan, 2005.
+the needed situational awareness capabilities that they [6] NASA Document, The Vision for Space Exploration, February
+currently lack for mission critical operations. 2004-
+[7] G. Yang, M. Bondy, P. Jasiobedzki, M. Greenspan, M. Doyon,
+7. Caucasians 3:123 ?fszszgssnsizzfg 2351,61aﬁsaisaa
+Symposium on Robot Design, Dynamics and Control, Montreal,
+Mission planning and operations will need to evolve Canada, 2004.
+to become more time efﬁcient, and therefore cost—
+effective, for supporting crews on future space stations
+
+"

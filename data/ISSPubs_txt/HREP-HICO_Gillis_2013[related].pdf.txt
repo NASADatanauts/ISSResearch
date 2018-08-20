@@ -1,0 +1,596 @@
+"","x"
+"1","O O O O
+
+Improvmg the retneval of water Inherent optlcal
+
+O O O
+propertles 1n nelsy hyperspectral data through
+0 O O
+statlstleal modehng
+David B. Gillis,” J effrey H. Bowles,1 and Wesley J . Moses1
+[Naval Research Laboratory, Washington, DC. USA
+*David. Gillis@nrl.navy.mil
+Abstract: The use Of the Mahalanobis distance in a lookup table approach
+to retrieval of in-water Inherent Optical Properties (IOPs) led to signiﬁcant
+improvements in the accuracy of the retrieved IOPs, as high as 50% in
+some cases, With an average improvement of 20% over a Wide range of case
+11 waters. Previous studies have shown that inherent noise in hyperspectral
+data can cause signiﬁcant errors in the retrieved IOPs. For LUT-based
+retrievals that rely on spectrum matching, the particular metric used for
+spectral comparisons has a signiﬁcant effect on the accuracy of the results,
+especially in the presence of noise in the data. In this study, we have
+compared the Euclidean distance and the Mahalanobis distance as metrics
+for spectral comparison. In addition to providing justiﬁcation for the
+preference of the Mahalanobis Distance over the Euclidean Distance, we
+have also included a statistical description of noisy hyperspectral data.
+© 2013 Optical Society of America
+OCIS codes: (101.0280) Remote sensing and sensors; (010.4450) Oceanic optics; (110.4280)
+Noise in imaging systems; (000.5490) Probability theory, stochastic processes, and statistics.
+
+References and links
+
+1. A. Morel and L. Prieur, “Analysis of variations in ocean color,” Limnol. Oceanogr. 22(4), 709—722 (1977).
+
+2. R. P. Bukata, J . H. Jerome, K. Y. Kondratyev, and D. V. Pozdnyakov, Optical Properties and Remote Sensing of
+Inland and Coastal Waters (CRC Press, 1995).
+
+3. K. L. Carder, R. G. Steward, G. R. Harvey, and P. B. Ortner, “Marine humic and fulvic acids: their effects on
+remote sensing of ocean chlorophyll,” Limnol. Oceanogr. 34(1), 68—81 (1989).
+
+4. A. Gitelson, “The peak near 700 nm on radiance spectra of algae and water - relationships of its magnitude and
+position with chlorophyll concentration,” Int. J . Remote Sens. 13(17), 3367—3373 (1992).
+
+5. G. Dall’OlmO and A. A. Gitelson, “Effect of bio-optical parameter variability on the remote estimation of
+chlorophyll-a concentration in turbid productive waters: experimental results,” Appl. Opt. 44(3), 4124122
+(2005).
+
+6. Y. Z. Yacobi, W. J . Moses, S. Kaganovsky, B. Sulimani, B. C. Leavitt, and A. A. Gitelson, “NIR-red
+reﬂectance-based algorithms for chlorophyll-a estimation in mesotrophic inland and coastal waters: Lake
+Kinneret case study,” Water Res. 45(7), 2428—2436 (2011).
+
+7. C. Le, Y. Li, Y. Zha, D. Sun, C. Huang, and H. Lu, “A four-band semi-analytical model for estimating
+chlorophyll a in highly turbid lakes: the case of Taihu Lake, China,” Remote Sens. Environ. 113(6), 1175—1182
+(2009).
+
+8. W. Yang, B. Matsushita, J . Chen, T. Fukushima, and R. Ma, “An enhanced three-band index for estimating
+chlorophyll-a in turbid case-H waters: case studies of Lake Kasumigaura, J apan, and Lake Dianchi, China,”
+IEEE Geosci. Remote Sens. Lett. 7(4), 655—659 (2010).
+
+9. C. D. Mobley, L. K. Sundman, C. 0. Davis, J . H. Bowles, T. V. Downes, R. A. Leathers, M. J . Montes, W. P.
+Bissett, D. D. R. Kohler, R. P. Reid, E. M. Louchard, and A. Gleason, “Interpretation of hyperspectral remote-
+sensing imagery by spectrum matching and look-up tables,” Appl. Opt. 44(17), 35 76—35 92 (2005).
+
+10. C. D. Mobley, “A numerical model for the computation of radiance distributions in natural waters with wind
+roughened surfaces,” Limnol. Oceanogr. 34(8), 1473—1483 (1989).
+
+11. C. D. Mobley and L. K. Sundman, Hydrolighl 5 Ecolighl 5 technical documentation, lst Ed., (Sequoia Scientiﬁc
+Inc., 2008).
+
+12. R. L. Lucke, M. Corson, N. R. McGlothlin, S. D. Butcher, D. L. Wood, D. R. Korwan, R. R. Li, W. A. Snyder,
+C. 0. Davis, and D. T. Chen, “Hyperspectral Imager for the Coastal Ocean: instrument description and ﬁrst
+images,” Appl. Opt. 50(11), 1501—1516 (2011).
+
+#191984 - $15.00 USD Received 10 Jun 2013; revised 1 Aug 2013; accepted 7 Aug 2013; published 4 Sep 2013
+
+(C) 2013 OSA 9 September 2013 | Vol. 21, No. 18 | DOI:10.1364/OE.21.021306 | OPTICS EXPRESS 21306
+
+"
+"2","13. W. J . Moses, J . H. Bowles, R. L. Lucke, and M. R. Corson, “Impact of signal-to-noise ratio in a hyperspectral
+
+sensor on the accuracy of biophysical parameter estimation in case 11 waters,” Opt. Express 20(4), 430941330
+
+2012 .
+
+14. 13. C. éao, M. J . Montes, Z. Ahmad, and C. 0. Davis, “Atmospheric correction algorithm for hyperspectral
+
+remote sensing of ocean color from space,” Appl. Opt. 39(6), 887—896 (2000).
+
+15. M. J . Montes, B. C. Gao, and C. 0. Davis, “A new algorithm for atmospheric correction of hyperspectral remote
+
+sensing data,” Proc. SPIE, Geo-Spatial Image and Data Exploitation 11, W. E. Roper (ed.), 4383: 23—30 (2001).
+16. P. C. Mahalanobis, “On the generalized distance in statistics,” Proc. Natl. Inst. Sci. India 2(1), 49—55 (1936).
+
+17. J . Hedley, C. Roelfsema, and S. Phinn, “Efﬁcient radiative transfer model inversion for remote sensing
+
+applications,” Remote Sens. Environ. 113(11), 2527—2532 (2009).
+
+18. K. V. Mardia, J . T. Kent, and J . M. Bibby, Multivariate Analysis (Academic Press, 2003).
+
+19. P. Billingsley, Probability and Measure, T hird Ed. (John Wiley & Sons, 1995).
+
+1. Introduction
+
+Historically, most of ocean color analysis has centered on estimating chl-a concentration (as a
+proxy for algal biomass) from satellite data. While the determination of algal biomass is a key
+aspect of monitoring the ecological status of a water body, several scientiﬁc and military
+purposes require analysis that goes beyond merely estimating chl-a concentration and
+requires the retrieval of other optically active components in water and the Characteristics of
+the substratum. For example, determining the sediment concentration in the surface layer
+helps assess the availability and transmission of light into deeper layers, Which is a crucial
+parameter in deriving energy budgets for primary production studies; Characterizing the
+bottom type and bathyrnetry is important for many purposes, such as maritime navigation,
+underwater geologic studies, global Climate studies, habitat management, seafood safety
+control, coastal erosion control, etc.
+
+Numerous empirically-driven and analytically-driven algorithms have been developed for
+retrieving in-water and under—water characteristics from satellite data, With varying degrees of
+success in the achieved accuracy. Contrary to open-ocean waters, the coastal, estuarine, and
+inland waters are often optically complex due to the relative abundance of other optically
+active components besides phytoplankton, and are conventionally categorized as Case 11
+waters [1]. The optical properties of Case 11 waters are not directly correlated to the
+concentration of phytoplankton alone. Therefore, spectral algorithms for retrieving a
+particular biophysical parameter in such waters are prone to effects due to variations in other
+parameters. For example, blue-green algorithms for estimating chlorophyll-a (chl-a)
+concentration do not perform well in Case 11 waters due to absorption by colored dissolved
+organic matter (CDOM) in the blue spectral region (e.g., [2, 3]). Algorithms relying on
+reﬂectances in the red and near infrared (NIR) regions have been preferred for retrieving ch1-
+a concentration in Case 11 waters because of the diminished effects of absorption by CDOM
+and scattering by Suspended Particulate Matter (SPM) in the red and NIR wavelengths (e.g.,
+[4, 5]). Nevertheless, algorithms based on band ratios in the red and NIR wavelengths still
+assume uniform absorption and scattering by non-algal components at the wavelengths of
+interest. This assumption breaks down in cases of low chl-a and high SPM concentrations,
+causing signiﬁcant errors in the estimated chl-a concentration (e.g., [6]). Modiﬁed NIR-red
+algorithms have been developed to handle the non-uniforrn scattering by SPM in the red and
+NIR regions [7, 8]. Even though such algorithms have been shown to yield accurate results
+for very highly turbid waters from speciﬁc geographic regions, their applicability to waters
+from various geographic regions With varying biophysical Characteristics is yet to be proven.
+
+Comprehensive analysis of coastal, estuarine, and inland ecosystems require the retrieval
+of multiple in-water and under—water Characteristics. Algorithms based on a Look—Up—Table
+(LUT) approach (e.g., [9]) can retrieve multiple parameters simultaneously and, When
+properly designed, are less prone to adverse effects of the dominance of a few parameters
+over the rest. The Naval Research Laboratory in Washington, DC. has developed a LUT-
+based Coastal Water Spectral Toolkit (CWST) for retrieving Inherent Optical Properties
+(IOPs) of water, constituent concentrations, sediment type, bottom type, bottom reﬂectance,
+#191984 - $15.00 USD Received 10 Jun 2013; revised 1 Aug 2013; accepted 7 Aug 2013; published 4 Sep 2013
+(C) 2013 OSA 9 September 2013 | Vol. 21, No. 18 | DOI:10.1364/OE.21.021306 | OPTICS EXPRESS 21307
+
+"
+"3","and bottom depth from remotely sensed data. The CWST essentia11y employs a spectrum-
+matching approach that is based on spectral distances calculated between the input spectrum
+and modeled spectra in a large database. The accuracy and reliability of this approach depend
+signiﬁcantly on the metric used for calculating the spectral distances. In this paper, the use of
+the Euclidean and the Mahalanobis distances are compared as the metric used in Choosing the
+best-Inatehing spectrum, and demonstrate the beneﬁts of using the Mahalanobis distance
+instead of the Euclidean distance.
+
+2. Experimental description and methodology
+
+2.] Look- Up-Table (L UT) based IOP retrieval
+
+In order to implement a LUT-based model, one must generate in advance a large number of
+modeled remote sensing reﬂectance (Rm) spectra, covering a wide range of bio-optieal
+parameters, to ensure that each image spectrum can be matched to a modeled spectrum within
+acceptable limits of accuracy. The CWST contains a very large database of modeled spectra,
+generated using a wide variety of IOP parameters, bottom reﬂectance, depths, sediment types,
+and phase functions. The forward model used for generating the spectra is Ecolight, which is
+a simpliﬁed version of the radiative transfer model Hydrolight [10, 11]. The full set of
+modeled data, currently comprising approximately 20 million unique Rm spectra, is stored in
+a database for warehousing.
+
+To run the IOP retrieval for a given image or set of individual spectra, the database is ﬁrst
+reduced by limiting the ranges of the various input parameters to those appropriate for the
+input spectra (for example, bottom types that are known to not eXist in the region from which
+the input spectra were collected are omitted). This reduction in modeled spectra both
+increases the speed of the analysis and reduces the Chance of incorrect matches that might
+occur due to unusua1 combinations of input parameters that aren’t realistic for this region.
+Each input spectrum is then compared to each of the modeled spectra in the (reduced)
+database, and the spectral distance (according to some metric) is calculated. The modeled
+spectrum that is Closest to the input spectrum is considered the best match, and the (known)
+parameters corresponding to this spectrum are then assigned to the input spectrum.
+
+2.2 Sensor noise modeling
+
+In very general terms, the process of measuring a hyperspeetral spectrum in a CCD array is a
+means of converting incoming light (photons) into ‘digital numbers’; sensor calibration is
+then used to turn the digital numbers into radiance values. The total measured signal is a sum
+of the incoming light and any sensor-generated noise. The latter terms include dark noise,
+read noise, and digitization noise, and are independent of the incoming signal strength;
+accurate Characterization of these terms for a given sensor is possible in the laboratory. The
+incoming light is essentially a count of photons per unit time; this eountwi11vary as a Poisson
+distribution with a standard deviation equal to the mean number of photons received. This
+variation is usually referred to as photon (or ‘shot’) noise. When the incoming light is
+signiﬁcantly large, the photon noise dominates the sensor noise and the data are said to be
+‘ shot-noise limited’.
+
+In this paper, we simulate real-world noisy measurements using the sensor model for
+NRL’s Hyperspeetral Imager for the Coastal Ocean (HICO), which has been operating
+continuously aboard the International Space Station since October 2009. The sensor is a 512 X
+512 CCD array with a spectral range of 350-1080 nm and a spectral Channel width of 5.73
+nm; the ground sampling distance is approximately 90m at nadir. Detailed Characterizations
+of the sensor noise for HICO are available in [12]; a much more detailed description of the
+noise modeling algorithm can be found in [13].
+
+Only simulated data are used in the paper. Ideally, one would prefer to use actually
+measured ﬁeld data. However, there is limited ability to collect a sufﬁcient number of in Situ
+#191984 - $15.00 USD Received 10 Jun 2013; revised 1 Aug 2013; accepted 7 Aug 2013; published 4 Sep 2013
+(C) 2013 OSA 9 September 2013 | Vol. 21, No. 18 | DOI:10.1364/OE.21.021306 | OPTICS EXPRESS 21308
+
+"
+"4","measurements over a Wide range of biophysical conditions to make statistically meaningful
+inferences. Through simulations it is possible to generate large data sets over any number of
+conditions at intervals that are narrow enough to permit investigation of even small
+biophysical Changes in water and still provide a reasonable estimate of how the algorithm will
+perform With ﬁeld data.
+
+To generate noisy samples, the following three-step procedure is used: starting With a
+given Rm spectrum ,0 , an at-sensor radiance spectrum, L , is generated by using a forward
+version of the Taﬂ<aa atmospheric correction algorithm [14, 15]. Next, a ‘noisy’ radiance
+spectrum Ln =L+77 is generated by adding a zero-mean Gaussian noise spectrum 77; the
+variance of the noise is determined by the noise model described in [13] and is independent of
+the wavelengths. Finally, Taﬂ<aa is used to atmospherieally correct the data and produce a
+noisy Rm spectrum ,0”.
+
+Note that, by construction, the noisy radiance spectra form a Gaussian distribution With a
+mean roughly equal to the noise-free spectrum and a covariance matrix ZR ; since the noise is
+uncorrelated among wavelengths, the covariance matrix is diagonal. In general,, the
+atmospheric correction algorithm is, to a very good approximation, an afﬁne mapping (that is,
+,0” 2 AR” + b for some matrix A and vector 19 ), it follows that the distribution of the noisy
+remote sensing reﬂectance ,0” Will also be Gaussian, With a mean equal to the noise-free
+reﬂectance spectrum ,0 and a covariance matrix 2 = AZRAt . If we further assume that the
+matrix A is diagonal — that is, no inelastic terms are included in the atmospheric correction —
+then it follows that that the reﬂectance covariance matrix 2 is also diagonal.
+
+2.3 Distance metrics
+In order to run the CWST IOP retrieval, some metric must be deﬁned in order to calculate the
+distance between the input and the database spectra. The most traditional Choice is the
+standard 1east-squares (or L2 ) distance,
+
+n 2 t
+
+d(x,y)=Z(xi-y,-) =(x-y) ~(x-y) (1)
+
+i=1
+Where x, y are the spectra to be compared, xl,x2,...,xn are the values at the various
+wavelengths, and n is the total number of wavelengths (0r bands) of the spectra.
+
+An alternative metric is the statistical-based Mahalanobis distance (MD) [16], Which
+measures the distance from a vector x to a given (multivariate) distribution (or set of points)
+Y . Formally, if the mean and covariance of Y are ,uand Z , respectively, then the
+Mahalanobis distance a’M (x) of x to Y is given by
+
+t _
+dM<x>=<x—u> -21-<x—u> <2)
+For two vectors x, y , the MD can be generalized as
+t _
+dM(xay)=(x-y) E 1-(x-y) (3)
+If the covariance matrix 2 is diagonal, With diagonal entries 012,...,0': , then the MD
+formula simpliﬁes t0
+dM (w) = Z—m —y,.) (4)
+i=1 0-1“
+#191984 - $15.00 USD Received 10 Jun 2013; revised 1 Aug 2013; accepted 7 Aug 2013; published 4 Sep 2013
+(C) 2013 OSA 9 September 2013 | Vol. 21, N0. 18 | DOI:10.1364/OE.21.021306 | OPTICS EXPRESS 21309
+
+"
+"5","In this case, the Mahalanobis distance is simply a band-weighted version of L2, with weights
+given by the inverse covariance of the band; in particular, ‘noisy’ bands (those with high
+variance) will be weighted less than less-noisy bands.
+
+3. Results
+
+3 .1 [OP retrievals
+
+The general setup of our experiment consists of ﬁrst generating noisy spectra from a given
+Rm input, as described in Sec. 2.2 and running the LUT-based IOP inversion (Sec. 2.1) using
+both the L2 and Mahalanobis distances and comparing the results.
+
+To generate the noisy data, we began with a set of 52 optically-deep Rm spectra generated
+by Ecolight over various levels of chl-a, CDOM, and SPM. All other parameters (phase
+functions, sediment type, wind speed, etc.) were set ﬁxed for all generated spectra; each
+spectrum was generated on a grid of 68 HICO wavelengths within the range 405 — 789 nm.
+Each of the 52 noise-free spectra was then input into the noise model (Sec. 2.2) and for each
+input 1000 noisy Rm samples generated, an example is shown in Fig. 1. In all cases, the
+atmospheric conditions were held constant; a complete description of the atmospheric
+parameters may be found in [13]. We also calculated the associated (sample) covariance
+matrix for each input for use in the Mahalanobis distance calculations.
+
+2
+
+._.c E
+:1 a n
+e n
+5 I:
+‘ l:
+1 .
+i t
+.: I
+i}: 1|}: 5:: .‘T! 3!: H: 1}: 32-: i}: 3
+
+Wavelength (nm)
+Fig. 1. 1000 Noisy variations (left) and covariance matrix (right). The latter is scaled by 108.
+
+Next, we extracted a subset of the existing Rm library spectra from the full database. To
+keep the comparison as simple as possible, we followed the model used to generate the noisy
+data and only used optically deep spectra with varying amounts of chl-a, CDOM, and SPM;
+the sediment type and scattering phase functions for both SPM and chl-a were also varied; all
+other parameters (wind speed, solar zenith angle, etc.) were ﬁxed to the same values as for the
+noisy input. An approximate overview of the various ranges and discretization values used in
+the LUT for CWST is given in Table 1; 261,281 modeled spectra were used in the
+comparison. The database spectra were originally generated on a wavelength grid of 350 -
+790 nm at 5 nm resolution; in order to compare the spectra in the database with the noise-
+modeled data, the former were resampled onto the HICO grid using cubic-spline
+interpolation.
+
+The next step was to run the CWST IOP inversion for each of the 52,000 noisy spectra,
+once under each metric. To run the inversion, we simply ran a brute-force search on each
+input spectrum, calculating the distance between the input and every database spectra, and
+ﬁnding the minimum. The parameters corresponding to the database spectrum with the
+minimum spectral distance from the input spectrum were then assigned to the input spectrum,
+and the retrieved parameters were compared to the original, noise-free parameters. We note
+that no attempt was made to optimize the search, and all calculations were done in the most
+#191984 - $15.00 USD Received 10 Jun 2013; revised 1 Aug 2013; accepted 7 Aug 2013; published 4 Sep 2013
+(C) 2013 OSA 9 September 2013 | Vol. 21, No. 18 | DOI:10.1364/OE.21.021306 | OPTICS EXPRESS 21310
+
+"
+"6","na'1've way possible. Due to the additional matrix-vector product, the time to run to the
+Mahalanobis distance search was approximately twice as long; however, on a modern
+desktop, each version can be done quickly (on average, L2 search ran in approximately 0.15
+seconds per input spectra while MD ran in approximately 0.30 seconds).
+Table 1. Overview of the range / values for the parameters used in the database search.
+Some values have been approximated for brevity.
+chl-a
+CDOM
+SPM
+Sediment
+Phase Function ——n
+The main results are summarized in columns 4 and 5 of Table 2, which shows a simple
+count of how many of each run of 1000 noisy spectra exactly matched the input spectrum —
+that is, the retrieved values of all parameters were the same. As can be seen from the results,
+the Mahalanobis distance outperforms the standard L2 distance for each of the 52 input
+spectra. The improvement ranged from 2 to 50%, with an average improvement of
+approximately 20%. It was noticed, somewhat surprisingly, that whenever the retrieved
+concentrations of chl-a, CDOM (expressed in terms of the absorption coefﬁcient at 440 nm),
+and SPM were correct, the other three free parameters — sediment type and both phase
+functions — were also correct. It follows that the “number correct’ column is the same whether
+we compare only chl-a, CDOM and SPM or all siX parameters.
+The average relative error for the retrieved chl-a, CDOM and SPM values are shown in
+columns 7 -12 of Table 2. The reported values are of the form
+true value — aV . retrieved value
+100>< g— .
+true value
+The reported relative error is the average error for all 1000 samples; negative errors mean that
+the average retrieved value was higher than the actual input. In general, the average of the
+MD-retrieved values was slightly closer to the true value, although in several instances the L2
+values were better.
+#191984 - $15.00 USD Received 10 Jun 2013; revised 1 Aug 2013; accepted 7 Aug 2013; published 4 Sep 2013
+(C) 2013 OSA 9 September 2013 | Vol. 21, No. 18 | DOI:10.1364/OE.21.021306 | OPTICS EXPRESS 21311
+
+"
+"7","Table 2. IOP characterizations and experimental results for the 52 noise-free spectra.
+
+C01s.1-3 are the input IOPs; Cols. 4-6 describe the retrieval results (out of 1000 noisy
+
+realizations); Cols. 7-12 are the avg. retrieved IOP error (see text for deﬁnition). Note
+
+that the number of correct retrievals Will be strongly affected by the discretization of the
+various parameters in the lookup table (Table 1); as a result, a direct comparison among
+various levels is difficult.
+parameters Correct (%)
+mmmmm-
+-——--—----mm
+-——--—---mmm
+———--——---mm
+mm:-
+———--——----m
+-—--—-----nm
+mumm-
+mm:-
+———--—----mm
+-——--—----mm
+mm“
+“mm
+———-——————mm
+-——--—----mm
+-——--—-----m
+_—--_----m
+m-—_--_--“
+-—_--_-M“
+W-
+_—--_----W
+———-—————mmm
+mmmmmmm-
+mmmm-
+-——--—-----m
+———--——----m
+-—--—------u-
+-—_-----M
+———--—m
+——--—-----nm
+_—_--_----“-
+mmmmmm
+mm:-
+———--—mm-----
+———--—----mm
+mm:-
+mmmm
+mm“
+———--——---mm
+_—_--_----“l
+—2-0
+#191984 - $15.00 USD Received 10 Jun 2013; revised 1 Aug 2013; accepted 7 Aug 2013; published 4 Sep 2013
+(C) 2013 OSA 9 September 2013 | Vol. 21, N0. 18 | DOI:10.1364/OE.21.021306 | OPTICS EXPRESS 21312
+
+"
+"8","In each case, it is important to note that the average value will be biased by the discrete
+nature of the LUT; when constructing the database, a ‘step size’ must be chosen for each
+parameter. The correct step size to use is itself a research topic [17]; it is also important to
+remember that since the retrieval is done for all parameters simultaneously, the discretization
+grid of any one parameter will impact the retrieval of the others as well. A more complete
+analysis would include an examination of the distribution of each parameter in each input
+‘bin’, as shown in Fig. 2. In general, the overall pattern was similar for each parameter; the
+majority of the retrieved values exactly matched the true value; the remaining values were
+within one or two step-units on either side (with a few occasional outliers).
+
+.23: rug '3
+
+g 5: M i.
+ail M II
+II: II a
+‘ s :5 :‘s ‘ ' '
+chl-a ,1»; 4x CDOM SPM 4\
+Fig. 2. Distribution of the retrieved chl-a (left), CDOM (center) and SPM (right) values for the
+L2 (blue) and Mahalanobis (red) distances. The true values (indicated by arrow) are 3.0 mg
+m_3, 0.3 m_l, and 2.0 g m‘3, respectively.
+3.2 T hearetical justiﬁcation
+In order to gain an understanding of why the Mahalanobis distance outperforms L2 , an
+examination of how the noisy data and database spectra are distributed under these two
+metrics was performed.
+
+From Sec. 2.2, it is reasonable to expect that the generated noisy spectra
+X = {xl,x2,...,x1000} follow, to a very good approximation, a multivariate Gaussian
+distribution with mean ,u = ,0 equal to the noise-free input, and diagonal covariance matrix
+2 .
+
+To test this, the distribution of the distances d (xi, ,0) between the noise-free and noisy
+spectra, ,0 and xi, was calculated for both the Mahalanobis and L2 metrics, and the
+experimental results were compared with the expected theoretical values.
+
+If the data are assumed Gaussian, then it can be shown [18] that the MD reduces to the
+sum of squared normal variables and therefore has a chi-squared distribution with n degrees
+of freedom, where n is the number of wavelengths.
+
+Similarly, under the same assumptions, the L2 distance Eq. (1) can be rewritten as
+
+n 2 l 2
+d(X,,0)=ZO'i ?(xi_pi) (5)
+i=1 i
+which is a weighted sum of chi-squared variables. By the Lyapunov version of the central
+limit theorem [19], this is approximately Gaussian, with a mean Ltd 2 0'12 + - - - 0': and variance
+0'3 22(014 +---+0:).
+
+An example of the actual and ﬁtted distributions for one of the input spectra is shown in
+Fig. 3 below. We note that each of the other 51 noise-free spectra lead to ﬁts that are
+qualitatively similar to the example shown; although not necessarily conclusive, it appears
+from this that the multivariate Gaussian distribution for the noisy data is reasonable.
+
+#191984 - $15.00 USD Received 10 Jun 2013; revised 1 Aug 2013; accepted 7 Aug 2013; published 4 Sep 2013
+(C) 2013 OSA 9 September 2013 | Vol. 21, No. 18 | DOI:10.1364/OE.21.021306 | OPTICS EXPRESS 21313
+
+"
+"9","m m
+n "" |
+,
+D
+{3: u ' I“- '3 r ll
+0 w
+5: | w
+'5' t: 5""
+Z ' «a 1‘ I.
+:3 g 4' k
+F r
+,. V a ‘1
+I II“ = , llii‘
+..l I..i!!n-I___ _ ‘51-“ .i!n _
+3.! I L! 1 1! ‘2 2.! ¢- ‘1! 153 A1 a a n .3 3 m 'l3 :2
+distance "" '3 distance
+Fig. 3. Distribution of L2 (left) and Mahalanobis (right) distances from the ﬁrst noise-ﬁee
+spectrum to the 1000 noisy realizations. The red bars are the actual data, the line represents the
+ﬁtted normal and chi-squared distributions, respectively.
+
+An alternative, more geometrical View of the two distances can be obtained by examining
+how the data are distributed in the spectral space. In general, the data will have a higher
+‘spread’ along bands that have more noise, as shown in Fig. 4; as a result, the set of noisy data
+tends to be more of an ellipsoid than a perfect sphere. From Eq. (4), for a ﬁxed value the
+Mahalanobis distance deﬁnes an ellipsoid with axial lengths given by the band variances; in
+contrast, for a ﬁxed distance L2 deﬁnes a sphere that is equidistant along each band as shown
+in Fig. 4. Intuitively, the MD distance does a much better job of modeling the true spread of
+the noisy data within the spectral space.
+
+.t - '5‘ “x '1’
+3.4-5.3“.‘I.--‘.’.’:§""J‘ik~.l,l'n.; , ‘1’ f~'-:‘I=.I.~ '¢:'.'_'.' Al‘ul 3:1"" 3.5' ,. ‘:
+- ""?’JL‘M ,3”. ‘~:.- 5.”. -
+' ' :‘ H”:‘;~i§§§3 25.14:?- ""nai-I.
+: --.-?'-.- .. . e '. ' r. 5;,
+E ' 3‘12:- ‘v4 . magi,” ‘. = ,quw; -_='.«’.:-‘.r;c1.‘-_ '1“; lffit-ai-Jﬂ
+: -.I. :11 . nan; -- -. ‘ M 51:15.21;
+W ’ '. iii“- .59 91:3 S: ""1.- u; 5 1 11%: '31.‘1""r{--i‘4:9;~.-' i; f1~
+‘ - ""k ,' 3’5: i” ‘%t‘%— -"" -.""-.'1"" j . E&‘s'fiﬂ’frfi '3‘“ 3%""? ~35? 33‘? ‘3"".- 135.453
+‘< «' 2;; 3*: . .q,-“*_§_...L‘n .-' ‘= 2;;51 gﬂj‘éﬁ-atéiI-feﬁzﬁ 3-13;-
+‘ ”‘5‘: 3:41;; (f?fﬁgggg a -. 3.3;”;-
+1 e 311%? ' 3- ""1r
+-:-: 1-5 : :: :zuu; '1-1-_'-.;222 24 2915!
+1.=422nm --:‘ .>.=422mn x 4""
+Fig. 4. Two-band scattergram 0f the noisy (left) and database (right) spectra. The red curve
+represents the 3-sig1na range of the L2 distance; the black dotted curve is the 3-sig1na range
+for MD. The bands shown are 422 and 571 nm.
+
+With this in mind, it is useful to examine how many of the database spectra lie within the
+same ‘range’ of the noise-free spectrum as the noisy spectra. From above, we know we can
+estimate the distribution of the noisy spectra as a chi-squared (MD) or normal distribution
+(L2 ); from this, we can estimate the range within which a given percentage of the noisy data
+must fall. For example, under the normal distribution, we can estimate that approximately
+85% 0f the data are less than one sigma above the mean, and about 99% 0f the data are less
+than ,u + 2.330' . Similar results for the chi-squared distribution with a given degree of
+freedom can be found Via tables or software-based cumulative distribution functions. In Table
+3, we show the total number of noisy and database spectra that lie within the 85 / 99% ranges
+of the noisy data; an example is shown in Fig. 4 (spectral space) and Fig. 5 (distance). In each
+case, it can be seen that the number of ‘incorrect’ database spectra within the noise range
+drops signiﬁcantly under MD; intuitively, this implies that the noisy data are ‘closer’ to the
+#191984 - $15.00 USD Received 10 Jun 2013; revised 1 Aug 2013; accepted 7 Aug 2013; published 4 Sep 2013
+(C) 2013 OSA 9 September 2013 | Vol. 21, No. 18 | DOI:10.1364/OE.21.021306 | OPTICS EXPRESS 21314
+
+"
+"10","true noise-free spectrum under MD than under L2 and that the likelihood of the noisy data
+being closest to the truth is higher.
+Table 3. Distribution of the noisy and database spectra Within a given range of the noise-
+free input spectrum.
+_——
+Noise-free parameters
+——-—-————nm_
+———-—m—
+——-—-—————n
+——-—-—————n
+“mm
+———-—-————m
+——---——-——n
+——-—-—————n
+_—_-_-____m
+——-—-—————n
+_—_-_-____m
+——-—-—————n
+——-—-—————n
+———-——————m
+——-—-—————n
+——-—-—————n
+——---——-——n
+_—_-_-__M
+_—_-_-__M
+m
+#191984 - $15.00 USD Received 10 Jun 2013; revised 1 Aug 2013; accepted 7 Aug 2013; published 4 Sep 2013
+(C) 2013 OSA 9 September 2013 | Vol. 21, No. 18 | DOI:10.1364/OE.21.021306 | OPTICS EXPRESS 21315
+
+"
+"11","u” '8
+‘33 03
+'5. ll
+*3 1 1 / \
+§ 63 ll / \
+t7“ 5: u / \
+é a a \
+53 ﬂ /
+"" 'I I” I I "" ” \
+'I 'I .
+, __qslll ll _. u... ; __-_ ..__-Il_m'lllI-_nI-IIII|Illllli
+distance - -f distance
+Fig. 5. Distribution of the L2 (left) and Mahalanobis (right) distances in the noise range. The
+dotted line represents the (ﬁtted) distribution of the noisy data; the bars represent the number
+of database spectra at that distance. Note that the number of database spectra within the noise
+range is signiﬁcantly smaller for the Mahalanobis distance.
+Summary and future work
+Noise, including sensor and shot noise, is inescapable in real-world data, and has been shown
+previously [13] to strongly affect the accuracy of retrieved in-water constituents. In this work
+we have shown that statistical modeling, including the use of the Mahalanobis distance to
+compare spectra, can partially offset this effect and lead to improved retrievals.
+
+Realistic sensor models were used to simulate noisy data; in particular, extensive
+simulations were required to derive the (full) covariance matrix needed to use the
+Mahalanobis distance. In order to reduce the computational complexity, a more efﬁcient
+method of estimating the (diagonal) covariance is needed; we have recently begun an
+examination of this problem and expect to present these results in the near future. We also
+note that an accurate description of the noise levels and how they affect retrievals may be
+used to help guide future sensor design.
+
+#191984 - $15.00 USD Received 10 Jun 2013; revised 1 Aug 2013; accepted 7 Aug 2013; published 4 Sep 2013
+(C) 2013 OSA 9 September 2013 | Vol. 21, No. 18 | DOI:10.1364/OE.21.021306 | OPTICS EXPRESS 21316
+
+"

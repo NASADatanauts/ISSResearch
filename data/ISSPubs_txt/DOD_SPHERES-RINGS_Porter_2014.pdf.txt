@@ -1,0 +1,726 @@
+"","x"
+"1","JOURNAL OF SPACECRAFT AND ROCKETS
+O O O O
+Demonstratlon of Electromagnetlc Formatlon thht
+O
+and W lreless Power Transfer
+Allison K. Porter,i Dustin J . Alinger,i and Raymond J . Sedwicki
+University ofMaryland, College Park, Maryland 20742
+J ohn Merki and Roedolph A. Oppermanﬂ
+Aurora F light Sciences, Cambridge, Massachusetts 02142
+Alexander Buck,ﬂ Gregory Eslinger,ﬂ Peter Fisher,ﬂ and David W. MillerE
+Massachusetts Institute of Technology, Cambridge, Massachusetts 02139
+and
+Elisenda Bouﬁ
+O o o o o o
+E Polytechmc Umverszly 0f Cataloma—BarcelonaTech, 08034 Barcelona, Spam
+m
+f. DOI: 10.2514/1.A32940
+§
+§ The Resonant Inductive Near-Field Generation System uses a single set of hardware to perform both
+35 electromagnetic formation ﬂight and Wireless power transfer operations in a siX-degree-of-freedom microgravity
+5 environment. The system serves primarily as a test bed for control algorithms, and operation onboard the
+B International Space Station allows for more complicated and realistic algorithms to be tested. This offers an
+95” advantage compared With the restrictive, dynamic environment of ﬂat ﬂoor facilities on the ground or the limited
+g duration of reduced-gravity ﬂights. The hardware attaches to the formation ﬂight-test facility inside the International
+g Space Station referred to as the Synchronized Position Hold, Engage, Reorient, Experimental Satellites. Design and
+g development of the support hardware and electronics, as well as some test results from ground testing, a parabolic
+f? ﬂight campaign, and preliminary test sessions on the International Space Station are presented. Ground tests and the
+; parabolic ﬂight campaign results include preliminary inertia and thruster characterization of the combined Resonant
+é Inductive Near-ﬁeld Generation System/Synchronized Position Hold, Engage, Reorient, Experimental Satellites
+g” assembly. Preliminary on-orbit test results include data demonstrating Wireless power transfer of approximately 30 %
+F0: and qualitative observations of electromagnetic formation ﬂight With one Resonant Inductive Near-Field Generation
+g System unit restrained and the other unit free ﬂoating.
+é‘
+8
+m N omenclature 600 = resonant frequency, Hz
+Lu
+E L = inductance, H
+c; Plead = power d1331pated by the .load re31stor, W I. I nt 1‘ 0 du cti 0 n
+o PRX coil = power losses in the receiver 0011, W . . .
+2 Q 2 quality factor E netically generated forces and torques to maneuver satellites ma
+8 R = resistance, 9 cluster, rather than expending propellant from thrusters. This 1S
+E R L = load resistance, 9 advantageous for long-term or high-AV missions where the propel-
+Q R L0 t = optimal load resistance, 9 lant supply could liinit the lifetime of the cluster. Energy requireci to
+i ,7 p 2 power transfer efﬁciency generate the magnetic fields can be acquired by solar arrays, making
+E ”Opt = optimal power transfer efﬁciency it a renewable resource. The ﬁrst proof of concept was demonstrated
+ﬂ K = coupling coefﬁcient in 2005 by the Space Systems Laboratory at the Massachusetts
+5;; Institute of Technology (MIT—SSL) us1ng two ground vehicles
+.3; moving on air carriages for a two-dimensional environment and three
+cg: Received 28 January 2014; revision received 18 June 2014; accepted for degrees 0f treedoin [11- QPCH' and Closed-loop COQUOI was 950d to
+Q publication 25 June 2014; published online 25 September 2014, Copyright © direct the dipole interactions between the two vehicles. Additional
+2014 by the American Institute of Aeronautics and Astronautics, Inc. All research has been conducted regarding EMFF, including trade
+rights reserved. Copies of this paper may be made for personal or internal nse, studies of mission applications, dynamics and control of the magnetic
+0h eehdltleh that the eeplef pay the $1000 Pef-COPY fee t0 the COPYI‘lght dipoles, and maturation of the hardware [2—é]. The Resonant
+Chlearacrllce15C3e3nt6e;9ir;i4 22: :1???ng Dere’ Démvers’ hiAthgégé InCIude Induction Near-Field Generation System (RINGS) is the first
+t e CO e _ an ' m COHGSPOH encewlt .t e ' . demonstration of EMFF in siX-degree-of-freedom microgravity
+>tGiraduate Student, Department of Aerospace Engineering, 3181 Martin . .
+Hall. Student Member A1 A A. enVironment and the ﬁrst system that combines .the same set of
+TGraduate Student, Department of Aerospace Engineering, 3181 Martin hardyvare for Wireless power transfer (WPT).Capab111t1es. . .
+Hall. Wireless power transfer usmg resonant inductive coupling IS a
+iAssociate Professor, Department of Aerospace Engineering, 3181 Martin nonradiative means Of more efficiently transferring energy between
+Hall. Associate Fellow AIAA. two coils separated by several meters. The magnetic field generated
+§Lead Electrical Engineer, F0ur Carnbridge Center, 11th F1001 by current circulating in a primary coil passes through a secondary
+lidechamcal Englheeh Feet Cambridge Center, _11th F1001 _ coil, inducing a current. By using a system with inductive and capac-
+M Grﬁduate Etudent, Department Of Aeronautlcs and Asm’nautlcs’ 77 itive properties, the energy storage oscillates between the magnetic
+aﬁsac usetts venue‘ . and electric field, which differs from a nonresonant coupled inductor
+Professor, Department of Phys1cs, 77 Massachusetts Avenue, Room 26— . . . . . .
+505. setuphke that used in trad1t10na1 transformers. .Nikola Tesla first
+“Professor, Department of Aeronautics and Astronautics, 77 Massachu— examined the concept Of resonant 1nduct1ve coupllng 1n the late 19th
+setts Avenue, Room 37—327. Associate Fellow AIAA. century [9]: . . . .
+§§Graduate Student, Electronic Engineering Department, Jordi Girona 3, RINGS IS deSlgHCd to Operate 1n tandem Wlth a small satellite
+Campus Nord. test facility called Synchronized Position Hold, Engage, Reorient,
+AIAA Early Edition / 1
+
+"
+"2","2 AIAA Early Edition / PORTER ET AL.
+Experimental Satellites (SPHERES) which is a collection of identical Dis la Push Drive
+microsatellites operating inside the International Space Station (ISS). Circuit
+SPHERES was developed by the MIT—SSL and three satellite units
+were launched to the ISS in 2006. The satellite Cluster serves as a test LCD 2
+facility for developing algorithms for guidance, navigation, and Temp x
+control for formation ﬂight in a risk—tolerant, microgravity environ-
+ment [Z]. Previous test sessions for SPHERES included collision X8
+avoidance, docking with fixed and tumbling targets, and various for- LowBaﬂel . Capacitor Bank
+mation configurations [§]. The ﬂexible design features of SPHERES Microcontroller &
+allow it to serve as a platform for experiments such as RINGS. For the R e s 0 n ant C 0 i1
+RINGS hardware testing, SPHERES provides metrology regarding LowBamry
+location and attitude within the ISS test space, determines control for Sensor
+desired maneuvers, sends commands to RINGS, and stores data Hall—Effect
+regarding RINGS during testing. - Sensorsx 3
+Push Button SPHERES
+C II. System Overview calmlmsxz
+E The major components of the RINGS system are shown in Fig. l. Flg’ 2 RINGS blOCk dlagram’
+2 The resonant coil is the central component of RINGS because the
+3 current that 0s0111ates 1n the w1nd1ngs generates the magnetic field depicts the basic functionality of RINGS. A 1110 de must be com-
+a necessary for EMFF and WPToperations.The resonant 0011 and most manded t0 RINGS before an current is allowed to ﬂow in the
+S of the electronics are enclosed within a polycarbonate housing shell. . . y
+.H. The area 0 f the housin that extends awa from the coil (toward the resonant 0011. After a mode 1s selected and conﬁgured by the RINGS
+8 . g y . hardware, active commanding 0f the resonant coil current can begin.
+_ center of the t0101d) encloses the electronics boards and 1s referred to . . . .
+co . . . When demonstrating WPT, one RINGS un1t 1s des1gnated as the
+‘5 as the power electronics bOX, as indicated by the shaded oval 0n the . . . . . . .
+.3. right side of Fig. 1. The cuffs, struts, and sleeve provide structural p nmary by actively dr1V1ng current 1n 1ts resenant 9011' The other
+§ support as well as 5 means for the physical connection to SPHERES. RINGS un1t 1s des1g11ated as the seconciary and H p ass1ve1y measuies
+g The structural aspects of RINGS are described in more detail in the current ﬂ0w1ng 1n 1ts resonant 0011’ induced by the 0s0111at1ng
+F: the subsystem sections about the housing and RINGS—SPHERES magnetic ﬁeld 0f the pnmary un1t. ,
+E interface. A single SPHERES vehicle is installed into the center of .Several electronic boards and Targe components are eontained
+8 each RINGS unit by sliding it into an aluminum sleeve. It is held in Wlthlh the RINGS power electronics box, as ShOWh 1h Flg- E The
+3"" place by the friction between the sleeve and SPHERES, and by two liquid crystal display (LCD) 1s shown mounted to the outer surface of
+53 captive thumb screws. For operation in EMFF mode, SPHERES the housing. An identical LCD is mounted to the bottom surface of
+E calculates the current required of RINGS to achieve the force and/or the housing as well toallow Viewing from either side. The Tow-power
+(00% torque for a particular maneuver. For WPT, SPHERES maintains a board and dr1ve Circuit are vertically stacked and secured 1n place by
+8 ﬁxed position by using its own cold gas thrusters and commands a an assembly 0f bolts and standoffs. The low-power board is Oh the
+55 current to observe power transferred from the primary RINGS unit bottom of the stack, and includes the fuses and battery protection
+E (WPT transmitter mode) to the secondary RINGS unit (WPT receiver diotles, all Of the voltage regulators, the microcontroller, and the
+(T) mode). Each RINGS unit is powered by two battery packs connected majonty 0f other penpher 31 components necessary to operate the
+(L3 in series, as explained in the power plant subsection, The batteries RINGS electronics. The drive Circuit is separated from the low-power
+(3; clip into mounts attached to the support struts of RINGS, board using standoffs to ensure Clearance of battery protection diodes
+z The RINGS hardware serves as the primary source of force and that stand up from the board to accommodate heat sinks for convec-
+8 torque during EMFF, while also collecting diagnostic and perfor- tive cooling. The communications board routes the communication
+E mance information about the system. The block diagram in Fig. g lines to the appropriate positions on a standard 50 pin header that
+2
+T: Sleeve
+Z
+5 4 x Struts
+5‘3; Housing Shell .
+3 f ' h ~~
+.. A I “ {$332
+2 x Battery Mounts .4); '1' l/ "" :“\\ / .-_ f,“ i .2.
+""i' ’f. _ \\,§ '
+* '\ ‘9 i ‘- :
+Lr‘ ' 5’ r y . 1 Power
+.—' , W4; 1 - '""T ‘ Electronics Box
+a l \\ . - #5"" V ' ll 5 ,
+2 x Batteries ‘ I \V‘s o’\ ‘1‘ I "" i
+',.. ,; 1‘ / \\‘\\‘\1‘/
+V .1 'I"",,7;;. \ Kt ‘7 I. 7-“
+x"" “,9,‘ C . .
+. ' ""“‘ ea, /' ﬂ] , ommumcatlon
+4 x Housmg Clamps /M ’9, port to SPHERES
+-~ '\ '5'2'?j_,;,.__._;_,_ :51: /. , "" .
+$7 , ' 7 é<= 10 x Coolmg Fans
+Fig. 1 CAD model with labels for the primary RINGS hardware components.
+
+"
+"3","AIAA Early Edition / PORTER ET AL. 3
+' Communication Port . ‘ ﬂ 1’ relaxes the wire into the desired radius of the spiral geometry instead
+l W of retracting into the smaller original radius of curvature of the wire
+14 /'17/‘""‘""""'/ f t ' lTh' h tt t t ' kn t
+2/4, 'i;~""--4M” manu ac uring spoo . is ea .rea meh process is ownas as ress
+\/«. . _ ""J W relief anneal and results in aluminum w1th material properties Similar
+/ b . ' a /x ’ ' to the original 6061-0. An early attempt was made to achieve a more
+/\\‘ o . ,_ .1, d , rigid 6061-T4 anneal with rapid coil quenching, however, this
+, "" \ , o o f .1, 2 > ' ' resulted in undesirable warping of the coils.
+Capacitor Bank \ /_‘ ” Two adjacent layers are shown in Fig. ﬂ. To improve heat dissipa-
+|‘ ; tion and to reduce the dielectric losses associated with insulating
+..*- . l ’ k 9’ 1 . . . material between windings, the wire is uninsulated. To maintain the
+2455‘!!!- ‘/ s Dme C'rcu't , coil geometry and interwire spacing of 0.04 in. (1.02 mm), eight
+i .. ._ i _ 7' / , polycarbonate combs with a width of 0.25 in. (6.35 mm) were equally
+- - - - r . 7 ‘ spaced around the Circumference of the spiral between each pair of
+-- , Low-Power Board , , , ,
+1 NO SPST Relays , layers. Two of these combs are shown in Fig. g. The Wire is bonded to
+V the combs using Permabond 820, a cyanoacrylate with a glass
+transition temperature of 580C. Cyanoacrylate bonds well to plastic
+Fig- 3 CAD Clltaway View Of the eleCtl‘OniCS bOX- and aluminum, and its low Viscosity allows the adhesive to ﬂow into
+i the small space between the Channel walls of the polycarbonate comb
+N . .
+m and the aluminum w1re.
+< o ' o o
+S attaches tolthe SP¥E§?S exp¥Es1on p Oﬁ’ aid prayidets p ower for the Note that, to connect the layers in series, each must alternate
+E 01’3“? 113:9 atgon (t)h tt tCh “1168' e fapaclitor oar.t1s S 03m trartltspar- between spiraling from the outermost to the innermost radius, and
+2 en y in 1g. — SO a e arge rec angu ar capa01 ors un. ernea can Vice versa, because all layers must spiral in the same direction around
+T be Viewed. The two large capa01tors make up the capa01tor bank for . . .
+H . . . . the 0011, but adjacent layers must be connected on the same radial
+8 EMFF operation, bringing the natural resonant frequency of the 0011 side
+— down to 83 Hz. The smaller rectangular capacitor is used for setting ' . . . .
+a0 . The os01llation frequency of the resonant system is dominated by
+O. the resonant frequency of the system for WPT, Wthh operates at . . . . .
+g . . the addition of external capa01tance. The 0011 is permanently con-
+'3 462 Hz. These capa01tors are adhered to the lower portion of the . . . .
+o- . . . . nected in parallel With 10 MF of capa01tance. This alters the natural
+5 hous1n g and prov1de the structural mounting for the electronics board .
+E . . . . . . resonant frequency to about 462 Hz for Wireless power transfer
+'9; that s1ts above it. This board prov1des the electrical connections to the . . .
+3: . . . operation. Normally, a resonant inductive coupled WPT system
+i capa01tors, resonant 0011, and the normally open (NO) smgle-pole, . . .
+v . . would operate in the MHz range, however, for the tightly wound 0011s
+H smgle-throw (SPST) relays. The NO-SPST relays are vertically . . . . .
+O . . used for RINGS, eddy currents are induced in the 0011 Windings due to
+N“ stacked and attached to a mount that is adhered to the hous1ng shell . . . . . . . .
+o . . the current ﬂowmg in neighboring Windings [9]. This is known as the
+03 bottom. Hall-effect sensors to measure 0011 current and spike-and- . . . — . .
+<1) . . . . proxnmty effect. As a result, the electrical res1stance of the 0011
+43 hold Circuits to drive the relays are also located on the capa01- . . . . .
+g tor board increases at higher frequen01es while the inductance decreases. The
+(0% ' electrical resistance also increases at higher frequencies as a result of
+g the skin effect, but this does not become important until much higher
+55 III. Subsystem Description frequencies than RINGS operation. By experimentally Characteriz-
+% The following section describes the major subsystems of RINGS mg. the ac res1st1ve and inductive Characlensucs Of the 0011’ the
+U . . . optimum operating frequency for maX1mizing WPT efficiency was
+m and some of the des1gn rationale that went into them. The resonant . . . . . .
+o . . . . located. Additional details regarding the selection of this frequency
+< 0011 is the central component because the current running through R are covered later in this a er and an extensive treatment of the to ic
+95 generates the oscillating magnetic field. The remaining subsystems b f d , 10 Tlli p ’ 't h 1 th 1 d' 1 f).
+E either support or observe the operation of the resonant coil. can ? oun {n [—]' , e capa01 ors ave a p 0 ye y ene 16 60,1“:
+(A material that is appealing due to its low-loss tangent properties.
+é , Materials with a high-loss tangent introduce more losses to the
+O A. Resonant C011 . . . . .
+2 . . . . . resonant system due to the d1ss1pation of electromagnetic energy in
+(ft T0 913001113? the effectiveness 0f EMFF operation for a given their dielectrics. Energy transferred from the primary RINGS unit to
+a power input, H is advantageous to r educe [?Oth the mass 0f the 0011 as the secondary RINGS unit during a WPT demonstration is dissipated
+ﬂ well as the power it d1ss1pates.Acost function given by the product of in a 29 load resistor, which is selectively engaged using a NO-
+ﬁé system mass and 0011 power consumption d1V1ded by the force SPST relay.
+L; capabilities was used to motivate the selection of the 0011 attribtltes, The preferred frequency for EMFF is driven lower by the desire to
+E saCh as diameter, numberofturhs ancimatenalselectioh.Theopt1mal be able to control the phase of the oscillation to around 1% in each
+S126 Of the 0011s by thls .metric is as large as poss1ble, ancl the vehicle. This is important to maximize the forces and torques that can
+selected Size of 75 cm diameter was Chosen based on operational
+volume constraints and some baseline maneuvers of interest. The
+metric also favors more turns of wire in the coil to increase the field _,
+strength for a given power level. Most interestingly, this metric results -
+in the desire to minimize the product of mass density and resistivity of -‘ ‘ ' __.____.———-——
+the coil material, which resulted in the selection of aluminum over V
+copper, reducing this product by roughly 30%. The wire for coil _-
+construction starts as 6061-0 aluminum alloy with a rectangular 1
+cross section and a 6.25 aspect ratio. This aspect ratio is similar to that _‘
+of commercially available superconducting wire used for previous _ ""_ .
+WPT experiments performed at the University of Maryland Space ‘ ‘3 “‘ ‘ J - ‘ ’ i _ .—~
+Power and Propulsion Laboratory. This Choice was made primarily to ‘ 7 2 1""
+apply heritage manufacturing techniques and traceability to future 37 -_— J.""
+systems that may employ superconducting wire, however, higher ' ‘
+aspect ratios do provide larger surface—to-volume ratios that improve .
+both cooling and skin effect losses.
+The wire is wrapped on the thin edge into a ﬂat spiral of 20 - -
+windings and then ﬁve such spirals are stacked to form a 100 turn coil.
+After each layer is wrapped, thermal heat treatment of the aluminum Fig. 4 Close up of two adjacent layers With polycarbonate spacers.
+
+"
+"4","4 AIAA Early Edition / PORTER ET AL.
+be generated for a given power level. However, the frequency must housing in which the resonant coil is located. Slots at the top and
+still be high enough that the rigid body modes of the vehicles do not bottom of the ﬁns are located near the fans and diffusers to force air to
+respond significantly to the oscillatory force profile. An additional ﬂow through the coil before exiting the housing.
+combined capacitance of 300 MF (two 150 MF polyethylene capac- At maximum power, the system will generate 315 Wofheat, which
+itors connected in parallel with each other) is also connected in is primarily from the coil itself. Each of the 40 X 40 mm fans can
+parallel with the 10 MF WPT capacitor, which lowers the resonant generate an unimpeded airﬂow of 6 ft3 / min, which would require a
+frequency to about 83 Hz and satisfies both requirements. A second minimum of seven fans to maintain the temperature requirements
+NO-SPST relay engages the capacitor bank when the EMFF mode of in steady state. A total of 10 fans were used, eight of which are
+operation is selected. Like the relay that engages the load resistor, it distributed evenly around the outer Circumference of the housing to
+receives commands to Close the contacts through a relay driver that provide uniform cooling to the coil. These eight fans only run when
+boosts the signal from the microcontroller. the coil is active. The remaining two fans are located on the sides of
+the electronics box. These operate constantly regardless of the state of
+B. Housing and Cooling System the coil to cool the low-power electronics.
+The resonant coil, electronic boards, and wiring are enclosed in a
+semitranslucent protective shell. The toroidal shape of the shell is 0 Interface Between RINGS and SPHERES
+primarily dictated by the geometry of the resonant coil. The shell is The structural interface between RINGS and SPHERES includes
+O composed of two halves that overlap at a seam around the inner and an aluminum sleeve that wraps around SPHERES, four aluminum
+E outer Circumference of the structure. An angled box extends from a cuffs around the minor diameter of the RINGS housing shell, and four
+2 portion of the shell to enclose the majority of the electronics boards struts that radially extend from the sleeve to the cuffs like the spokes
+S and the large external capacitors for the resonant system. The shell Of a wheel. ThiS assembly can be seen in Fig. §-
+Ej material is polycarbonate that has been shaped using vacuum The sleeve is a continuous piece that wraps around three sides of
+3 forming, which requires only a single sheet of polycarbonate to be the SPHERES vehicle, because the only IhOUht points are fOUhd
+5 used for each half of the housing, while still allowing for complex around the SPHERES expansion port. ChtOUtS allow transmission
+a) geometry such as the curvature around the cooling fans. Postforming and receipt 0f the SPHERES metrology signals (1th ared and ultra-
+‘5_ cutouts allow for mounting of components such as the LCDs, push sound) and angled holes prevent occlusion 0f the exhaust plume from
+g buttons, light—emitting diodes (LEDs), communication port, power the SPHERES C02 thrusters, which are normally the only means 0f
+g switch, cooling fans, and standoffs for the electronics boards. Four propulsion for SPHERES Even though one Of the main objectives 0f
+2 diffuser ports were also created by drilling a matrix of holes into the RINGS tS implementation 0f EMFF, the C02 thrusters are Stth used
+E housing at four locations on the satellite-facing side of the shell, as for initial positioning 0f the SPHERES vehicles at the start Of a test,
+3 shown in Fig. g. The air from the diffuser ports is directed toward the torque rnanagernent during EMFF, and maintaining POStttOh and
+8“ center Of the toroid so that the ﬂow impinges primarily on the orientation during WPT. The two ends of the C-shaped sleeve are
+% SPHERES vehicle. Early analysis showed that, if the diffusers were connected te the SPHERES expansion port using captive thumb
+""é pointed radially outward, despite being symmetrically arranged, then screws. Captive thumbscrews are used instead 0f noncaptive types as
+g small differences in ﬂow rate among them could generate unwanted a safety precaution to prevent the potential introduction 0f ﬂoating
+g forces on the order Of tens Of millinewtons, which are comparable to debris 1ns1de the ISS where it could be hazardous to the astronauts.
+3 what can be achieved by EMFF and thruster control. Having the ﬂow During the transportation process to the 155 (including launch), a
+E impinge on the SPHERES vehicle allows for momentum cancellation plate connects to the ends 0f the sleeve at the same location. When
+a of the air ﬂow coming out of each diffuser individually. Residual assembled by the crew Oh the 155’ the plate 13 r emoved and then used
+0 disturbance forces were estimated at <l mN and could not be as a cover over the eXpansion port 0f the SPHERES vehicle, holding
+CT) detected in ground experiments. the SPHERES side of the communication cable in place, as shown in
+(3:4 A system Of cooling fans, ﬁn walls, and diffuser ports dictate air Fig. E. The other side of the cable has a small cover plate that screws
+E ﬂow within the housing, as shown in Fig. 9. Eight fans are mounted into and protects the communication port on the side 0f the RINGS
+% around the outer Circumference of the housing to direct ﬂow into the hous1ng (Flg- E); .
+0 housing enclosure. Two additional fans are located on the slanted The only eleetrical eonnection between RINGSancl SPHERES
+(:0: sides of the electronics box to provide cooling to the heat-generating hhlts are the s1gnal hheS required for communication. Optical
+<2: elements on the electrical boards. Fin walls around the exterior and 1solators protect RINGS and SPHERES from potential current spikes
+5» interior Circumference of the coil create an enclosed cavity within the due to any electrical shorts generated between the two units.
+'0
+E 9 X IR sensors D. Drive Circuit
+E , 4- / . , The drive Circuit used to produce alternatin g current in the resonant
+D /?‘x coil is a high-power H—bridge Circuit called the open source motor
+"""" Arr; ' controller, which is made by Robot Power as a commercial-off-the-
+.’ / v\v \' shelf (COTS) product. The product was originally developed for
+' m sh, motor control for robot combat. The unit includes the full H—bridge
+A .~; 4 x Diffuser {3.23.3 . . . . .
+e . 2., ‘\ ports _‘ \A\ power amplifier and key features that'lmprove the safety and reli-
+[I / QQt ’1 {,A \"" ability. The H—bridge driver includes internal logic that prevents a
+I 0* \’ f ' ‘A‘ short from power to ground and a built-in time delay that allows for
+l. v’\ = ‘~ g l \ switching between sides of the drive Circuit. The Circuit board includes
+‘l .. ’ - . t‘ ' t 1’ reverse Schottky diodes in parallel across the source and drain of the
+n“ "" O t “ J."" {l - ,""' metal-oxide—semiconductor ﬁeld-effect transistors (MOSFETs) to
+/ \\ t ,4' . I” prevent transient current spikes, whereas transient voltage suppres-
+_ / \O\ o’ ‘ I sion diodes prevent damage due to voltage spikes. Two electrolytic
+\\ u \ i \N, capacitors ﬁlter the incoming supply voltage. The input commands
+_ \.$‘/ \; 2 O for the H—bridge driver (labeled as “PWM” and “Hi/Lo”) are supplied
+s2; \ I by a microcontroller and support logic on a separate custom low-
+?%A/ . power board as indicated in Fig. §. Because the internal logic in the H-
+. \ » V” bridge driver prevents both A-side or both B-side gates from being
+\\‘ L/ Closed at the same time, only the low-side MOSFETs need input
+. commands from the microcontroller. The overcurrent (labeled “OC”
+Fig. 5 Diffuser port (diamond) and IR sensor (circle) locations. in Fig. §) line is tied to a three-way voting system for the Hall-effect
+
+"
+"5","AIAA Early Edition / PORTER ET AL. 5
+e N
+3. \ ,s 1' -’ , ‘ ~»-‘ ~
+a) b)
+Fig. 6 Representation of a) bottom half of RINGS housing shell With ﬁns and fans installed and b) close up of fin geometry for fan and diffuser port
+locations.
+E sensors. If an overcurrent event is detected by at least two of the three the ﬁrmware that can be bootloaded to the RINGS unit through the
+§ Hall-effect sensors, the line to the inputs for the B low and A low UART by an external source such as a computer or a SPHERES
+S MOSFETs will override the input supplied by the microcontroller. vehicle. This allows for modiﬁcations and upgrades to the RINGS
+g This forces the high-side MOSFETs open and low-side MOSFETs code while the units are on the ISS without the need of an external
+3' closed, allowing current to freewheel in the lower portion of H-bridge programming or debugger device.
+5 circuit while the energy safely dissipates from the system. The H— The ﬁrmware is primarily interrupt driven. Three timer-triggered
+3 bridge driver also has a disable pin that opens all of the MOSFETs, interrupts are tied with the pulse-width modulation for current
+%” thus preventing any current from ﬂowing from the battery into the commanding, analog-to-digital conversion, and polling of digital
+g resonant system. This feature is used to disable the H—bridge when the input sensors. Received communication is handled by the UART
+g RINGS unit is operating as the secondary (receiver) during WPT. interrupt. The LCD push buttons are tied to a single digital input on
+Q The current rating for the MOSFETs is 180 A, which far exceeds the microcontroller that triggers an external interrupt. Similarly, the
+33:“ the operational limit of the RINGS. Heat sinks were added to the digital input detecting infrared (IR) pulses also trigger an external
+; MOSFETs to help with heat dissipation. As a consequence of using an interrupt. This interrupt has the highest priority because time syn-
+§ H—bridge setup for the drive circuit, the voltage that is applied to the chronization of the current commanding in RINGS is critical for
+3“ resonant system is an ac rectangular wave. The frequency and duty phase control. All health- and safety-related interrupts also have a
+3 cycle of this rectangular wave are controlled by the microcontroller. higher relative priority compared with interrupts required for normal
+5 operation.
+(“0% E. Microcontroller
+E RINGS uses a PIC32MX microcontroller made by Microchip. The E Sensors
+E microcontroller has a 32 bit core processor, 80 MHz primary oscillator, There are both analo g and digital sensors used on RINGS, depicted
+% 16 channels of 10 bit analog digital converter channels, and 512 KB of in the sensor block diagram in Fig. g as blocks with arrows directed
+C; ﬂash memory. Using the universal asynchronous receiver/transmitter toward the RINGS microcontroller. Three types 0f analog data are
+3:) (UART) interface, the microcontroller processes incoming commands measured: current in the resonant coil, temperature of the resonant
+(”5 regarding the mode of operation and the desired current amplitude in coil, and temperature of air exiting the RINGS enclosure. Digital
+E the resonant coil through a serial connection to SPHERES, The output sensors include fault detection for the Hall-effect sensors, push
+a comparator module is conﬁgured to translate the SPHERES current buttons for the LCD and microcontroller reset, low-battery indicator,
+9 amplitude commands into pulse—width-modulation inputs for the H- and IR detectors. All analog and digital sensor signals are processed
+(<5 bridge driver. The analog-to-digital converter module reads in analog by the microcontroller. . . .
+<2: signals that are processed and then select portions of the data are sent to Current 1h the r esonant 0011 13 detected us1ng three Hall-effect
+E the SPHERES vehicle for data downloading. The parallel master port sensors in series with the coil. The current is measured multiple times
+E module is used to send character strings to the LCD for communicating per oscillation period to allow for the waveform of the resonant coil
+E operational information to users. Additional digital inputs and outputs current to be resolved. The data are used by the microcontroller for
+E on the microcontroller are used for conﬁguring the RINGS hardware rms calculations. In addition to providing time—resolved data 0f the
+Q and for monitoring health and safety. The ﬂash memory is used to store resonant c011 current, the sensors have a built-in fault detection
+capability configured to detect an overcurrent event. The threshold is
+set to a peak value of 26 A, which corresponds to an rms value of
+' .l' ‘ U 00 18.5 A. In the event of an exceeded current threshold, a digital signal
+ﬂ 1 (13 i 0 00 is sent both to the microcontroller and to a hardware logic voting
+' l I‘,“ "" | j I system. This system requires two of the three Hall-effect sensors to
+‘9 I r i‘ I detect an overcurrent event for RINGS to enter safe mode. The output
+' ’ I of the sensors feeds into an rms to digital circuit converter chip. The
+1 output from this circuit can then be compared with the rms calcu-
+l lation done by the microcontroller on the time-resolved current
+1”” I ’%> measurements for verification pnrposes.
+my 1 - “ ii? l / ' \ Temperature is. measured us1ng a linear temperature-to—voltage
+' 'J “I I \ converter, which is read by the analog channels of the microcon-
+1 J ‘ g ‘ troller. The two primary sources of heat generation are the resonant
+’ v ' ' coil and the diodes in the main power line. These diodes are in place to
+a r prevent the batteries from charging due to the energy oscillations in
+' 9 the resonant coil. The temperature of the resonant coil is of interest
+a) b) because high temperatures reduce the shear and tensile strength of the
+Fig. 7 C AD model of communication port on a) SPHERES side with cyanoacrylate that bonds the aluminum wire to the polycarbonate
+expansion port and b) electronics box on RINGS side. combs. For operational health of the RINGS, the resonant coil
+
+"
+"6","6 AIAA Early Edition / PORTER ET AL.
+temperature is measured to ensure that it never exceeds 750C. The button is located on one of the side faces of the electronics box to
+temperature sensor is located on the middle layer of the resonant coil, make it unlikely that it is inadvertently pressed during operation.
+on the innermost turn, halfway between two diffuser locations to
+measure the warmest accessible point of the resonant coil. The G. power Plant
+diffuser air temperature is nieasured and is limited by the microcon- B ecause the RINGS units are free ﬂyers inside the ISS, an
+“011“,“) 4500 Thls is driven by the maxnnuni allowable human independent power supply is attached to each unit. Each is powered
+access1b1etouch temperature of 490C. The nncrocontroller measures using two 18 V, 36 W _ h lithium-ion rechargeable battery packs,
+each location at a r ate 0f 1 HZ and places the RINGS hardware into a connected in series. The batteries are each composed of 12 cells and
+safe mode that ceases the drive current if either the resonant coil or the have internal circuit protection. These battery packs, manufactured
+diffuser air temperature limits are exceeded. In such an event, power by DeWalt, are normally used for power tools, and so their high-
+to the cooling fans will remain active. A manual reset to continue current capabilities made them an ideal candidate to drive the
+operation after such a fault would be required because it represents an resonant coils in RINGS. A similar spring-loaded clip—in mechanism
+off—norninal and unexpected situation. and electrical interface found in these tools was custom built to
+IR sensors are used for synchronizing the operation 0f RINGS9 connect the batteries to the RINGS units. These batteries were taken
+3110“]ng for a pair 0f RINGS to drive currents either in or 0‘1t 0t through a rigorous testing and safety qualification process to allow
+phase With each other..This capability is key for operating in EMFF them to be used onboard the ISS. Now that they have been certified,
+0 mode where the direction of the fOTCCS and torques generated by the these batteries can be baselined for use with other experiments that
+E magnetic fields are used to control the RINGS around a common might have high-current requirements.
+2 center .Of mass: The IR sensors 0h RINGS are s1n111ar t0 the 1R The low-power board regulates the power distribution for all of the
+g transmitter/reeeivers already m use for SPHERES operations. The electronics, excluding the energy input to the resonant coil. This
+E» transnnss1ons1gna11s gener ated by the lead SPHERES vehicle tluring custom board includes voltage regulators for 12, 3.3, and 5 V. Two
+2' operations. Nine IR sensors are pos1tioned on RINGS to receive the 12 V regulators provide power to the cooling fans. Other compo-
+S SPHERES transmission, as indicated by the diamond shaded regions Dents, such as the relay signals, also receive power from one of the
+E in Fig. i, ensuring that RINGS can detect the signal from any 12V1ines. The 3.3 Vregulator supplies power to the microcontroller
+95” direction. The sensors are connected 113ng logic gates such that and regulates the high-Voltage level on afew digital input 1ines.There
+g detection of the signal on any of the nine sensors results in a digital are two 5 V regulators that supply power for the majority of the
+3 signal to the microcontroller. Testing has confirmed that reﬂections electronics, including the backlights 0f the LCDs, which draw the
+g do not impact the timing of the IR pulses, which occur at a rate most current of 311 the low-power components.
+33:“ 0f 5 HZ. At the maximum allowable operational current of 18 A (rms), the
+g The battery charge level is measured using a comparator to charge in the batteries can be depleted in less than 15 min. Although it
+§ determine a low-V01tage event. Two LEDS serve as Visual indicators is unlikely that the units will be operated at full power for an extended
+3“ for the user, and the comparator also sends a digital signal to the period of time, the system requirements dictated that siX full-power
+f: microcontroller. One LED is located on either side of the electronics demonstrations must be supported during a 2 h test session. For
+g box so that it can be easily seen by users, regardless of the RINGS this reason, 24 battery packs and two dual-battery chargers were also
+3 orientation. The output state of the low-battery comparator is polled included with the RINGS deliverables to the ISS. The battery
+8 by the microcontroller at a rate of 5 Hz, along with the state of chargers are COTS chargers inserted into a custom case for cooling
+33 the Hall-effect voting scheme and the fault detection lines for the and electricalinterfacing with the ISS, as shown in Fig. 2. The battery
+E individual Hall-effect sensors. If an undesired state is read by the chargers will access 28 Vdc from the ISS through an EXPRESS
+(L3 digitalinputs of the microcontroller, the RINGS systemis placedinto (expedite the processing of experiments to the space station) rack.
+8 a safe mode. Because the state of the battery voltage comparator The dual chargers can charge two battery packs each in about 1 h.
+E circuit is periodically polled by the microcontroller, a low-battery
+2 event is latched to ensure that it is always observed by the microcon-
+8 troller. The latched comparator output is reset when the circuit is IV' Performance
+E power cycled. Performance evaluations of both EMFF and WPT have been
+9 Each RINGS unit has three push buttons. Two Of the push buttons conducted with ongoing testing on the ground and during operations
+(:ch are for changing the information shown on the LCD. This is the on the ISS. An analytical approach was used to predict the RINGS
+a primary method for users to View any information or data about the wireless power transfer performance, allowing for selection of the
+g RINGS system in real time. There is one LCD and one push button on operation frequency and load resistor. Models were used to simulate
+5‘3; each of the two ﬂat sides of the electronics box. The information on motion of the system and develop preliminary control algorithms
+% the two screens is identical, and pressing either push button changes for the RINGS during EMFF operation. Experiments to validate
+5 both screens. The third push button is the master clear for the micro- the models before ISS operations were conducted using two-
+Q controller, which triggers a soft reset when pressed. The master clear dimensional (2-D) motion on a ﬂat ﬂoor and three-dimensional
+(‘O'I‘S II-bridgc (‘ircuit
+r--------36\-'------l
+I B Htgil—l—E‘High /__,|/’ t 77 t (.3 N0 Relay
+_ _LO_“ 3036113311,: _ 1 I ”V A : Resonant I—.
+: mm Hi/Lo Disable I ms °“° » - I (mt) ,2
+I BHS v v 1 115
+l '33 ' am am I (‘1
+I -. "" )| BU B Low > , 7» A Low I
+. ALI AL \‘ - N0 WPT Load
+: D >- , l; ; m m: —— a ‘l ., a _» Relay
+--____--_J mo
+I — I
+| 6N0 ON!) I
+Fig. 8 H-bridge drive circuit With inputs and resonant load.
+
+"
+"7","AIAA Early Edition / PORTER ET AL. 7
+‘ _ - - .. 80
+s .W _ .. 7 «i s 4""“ _ _ _ . —RL = 2 Q
+’ -. i '8 :0 l.' 5 ‘3 ‘\ Mlnlmurn Achievable ---R = 10 Q
+.. ’ ‘ 3 60 {v .' E/Separatlon Distance.
+.. . - ~ __ 9 \ ---R,_ = 18 o
+o o ' ‘I _ g 40 "":1""; E \\‘\:“‘
+. - 8 20
+; g .t _ \N g ~...‘.::.::.-......._:: m.
+V ,- a .. 0- 00 0.5 1 1.5
+. , ~ Axial Separation Distance, m
+‘ ‘i' ' "" Fig. 10 Wireless power transfer dependence on separation distance for
+. \. . discrete load resistance [Q].
+~ "" A in Fig. 1_0. The vertical dashed line labeled “Minimum Achievable
+Fig. 9 Dual battery charger developed for the ISS. Separation Distance” is governed by the physical obstruction of the
+0 two SPHERES vehicles that extend aXially beyond the circular plane
+E of the RINGS.
+Q (3-D), full siX-degree-of-freedom motion during a reduced-graVity Even though the power delivered to the load resistor increases with
+3 ﬂight campaign. larger load resistance, the required smaller separation distance makes
+E» the operational condition infeasible. For this reason, the selection
+2' A. Model for WPT Performance Prediction of the load resistance is better determined by the baseline aXial
+(2 The effect of coil geometry and selection of resistor value was separation distance Of 0'5 m.
+:0 examined to predict wireless power transfer efficiency using a
+g modified the Dowell method in Alinger et al. [Q]. As previously 3- Preliminary TeSting
+.3 stated, the RINGS system uses large external capacitor banks to In addition to the two RINGS units that have been launched to
+g reduce the resonant frequency of the coil from the natural fre- the 188, two identical ground units were constructed to allow for
+E quency that would otherwise be solely dictated by the coil geometry. continued testing during transport and between on-orbit test sessions.
+5 By modeling the RINGS resonant coils as a series resistor— Two-dimensional, three-degrees-of—freedom (per vehicle) testing is
+E inductor—capacitor circuit, Alinger et al. [Q] found that the load available using the ﬂat ﬂoor facility at the MIT—SSL. As shown in
+N“ resistor value that maximizes power transfer efﬁciency between the Fig. E, a support structure holds the RINGS so that the circular plane
+a primary and secondary units is given by is orthogonal to the ﬂoor. Pressurized C02 canisters create an
+ﬁg adequately frictionless gas buffer between the ﬂoor and gas pucks. In
+4% RL 2 /L2K2w(% + R2 (1) the setup shown in Fig. E, the RINGS unit is integrated onto the
+(3 OP‘ SPHERES vehicle as it would be during an on-orbit test session. A
+D: Th . . . . . frame can be used to mark out the same phys1cal boundaries and
+E e coupling coefﬁc1ent is the fraction of magnetic. ﬂux that passes provide the same metrology system as the SPHERES facility on-
+a through the secondary 0011 as aresult Of current CHCUIath 1n the orbit. Preliminary testing on the ﬂat ﬂoor helped characterize the
+C; P?Imary- Additionally, the maxrmum power transfer eff1c1ency 1s RINGS magnetic field and provide a baseline of EMFF maneuvers,
+3:) given by such as aXially aligned repulsion or attraction and relative rotational
+95 motion using torque and shear. A baseline of WPT was also estab-
+% _ 1 + 2 — 2V QZK2 + 1 (2) lished to characterize power transferred as a function of aXial separa-
+% ”Opt _ QZKZ tion distance. Power transfer efﬁciency drops due to misalignment
+Q between the vehicles. This was observed but not characterized at this
+(<5 The quality factor is a common dimensionless parameter used
+E: to describe resonant systems based on inductance, resistance, and - -. u
+g» resonant frequency. The coupling coefficient varies with both the W \V
+g separation distance between the coils as well as with their relative W l , ii?"" 1 . ' , a
+g orientation. For the test cases that will be considered, we will impose — . ‘ 9- ~ \\ \ 4;...
+E an aXial alignment and a ﬁxed relative position between the coils. As (1.1. ’ ' ; . _.
+D a result, the coupling coefﬁcient was treated as fixed for the analysis. ‘0 ‘ ' *4? ‘ '
+Therefore, the efficiency is maximized when the quality factor is ‘. ' Q ‘ I - /’ “-
+maximized. Because of the proximity effect, the inductance and resis- . A'_$ - "" '- ‘—
+tance of the coil is frequency dependent. To determine the optimal § .ﬁ; \ ‘
+operational frequency for wireless power transfer, and thus determine ' f ; '
+the desired values of the external capacitance and load resistor, "" ~15 ‘t i ’2 ’
+Alinger et al. [Q] performed an analytical frequency sweep, stepping . x . _ f 1' /
+through a frequency range of l—8 kHz. For each frequency, the \\ \ . T‘ l. a), '
+capacitance required for the system to have zero reactance was ' . x ”-5—“ K?! i""
+chosen. A local frequency sweep close to the frequency in question ’. ’ »\ - ‘ ' ‘ - ‘: , m
+produced curve fits for the inductance and resistance, which were in I » x w.
+turn used to determine the local frequency at which impedance was _ ' ‘ - -""
+minimized [Q]. Using the values of inductance and resistance at ”5“ ‘ \ V .. .
+locations of minimized impedance, the frequency at which Q is ‘ I; . k 1...
+maximized was found to be 460 Hz. This determined the operational ,‘ ' J.
+frequency for wireless power transfer and the value added external t I.‘ \ ‘
+capacitor bank.
+After determining the frequency and capacitance, a curve fit
+describing the coupling coefﬁcient as a function of separation diS- Fig. 11 RINGS ground unit with SPHERES ﬁtted to air carriage for ﬂat
+tance allows for examination of discrete load resistor values, as shown ﬂoor testing.
+
+"
+"8","8 AIAA Early Edition / PORTER ET AL.
+time because all tests to be conducted will have the units aXially ‘ . fl
+aligned. He \\\‘ *
+Before operations on the ISS, the ground units were tested in a . ‘ '~ \ g; ,4' - ""
+simulated zero-graVity environment during four test ﬂights through I, “ ° \ 'Au
+NASA’s Flight Opportunities Program. The primary objectives of the \ \\"" 5»; ‘ , / _‘ f -. , a - .55 ﬁx” :1
+ﬂights were to determine the mass and inertia properties, validate the -g\, - ‘ \ ' ’\‘a t- L 3’ h ‘ '5
+dynamic model of the RlNGS—SPHERES system, and demonstrate - ' * i L l .’ "" I ' . ' ‘
+wireless power transfer. The mass of the integrated RINGS— -\ _, ,/ J , 9? £3 ‘1
+SPHERES unit was determined using the inertial measurement unit \ v1.3 ' .N. '
+(IMU) data generated from the SPHERES metrology sensors while ., r '; y ,
+the satellite’s carbon dioxide thrusters rotated the system, because ’ ’ ﬂ . ”\3‘
+forces due to the thrusters had been thoroughly characterized by ""7 w. ' '
+previous tests of SPHERES on the ISS. Also during the test ﬂight, - , ‘\ e .— . ""
+position data were collected using ultrasonic beacons fixed to the \ ‘.
+corners of the working volume within the aircraft. This position data, . ,v \ \
+in conjunction with the IMU data, were collected to verify the ' . w “
+predicted actuation model of the RINGS units resulting from the ’— ' 1 '1'; .0/ f
+i resonant COhS' Fig. 12 EMFF shear maneuver during reduced-gravity ﬂight test.
+a For thruster characterization, pairs of thrusters were supposed ﬁre
+:- to generate a force along the x, y, and z axes in positive and negative
+g directions. The acceleration recorded by SPHERES for the positive g ~ - . - .. '2"" ~77 ~ ,L
+g and negative x directions was within the noise for the accelerometers ‘ < ‘ ' . - ,_ ' . I ‘ ' i t
+E. [E]. This result was expected because the positive and negative x ' h"" ‘ , t , ‘ ' .
+8 directions align on plane of the coil, pointing from the center of . ‘ « ""‘ .3 {1, ta 4
+E the satellite to the sides with the power box and battery mounts. The f ,‘ . f- ~ 51? g ' 1/:th ‘ j - "" _
+g positive and negative y directions align out of plane of the coil. The ‘ «115‘ 25' 7 ‘7 a ""' .: ‘f $35 __ : é ‘
+g thruster ﬁring tests were only able to run for about 3 s per test. :1 "" ' 1"" ‘ i""! . ‘ ~ § "" ”l a
+g This was because the first several seconds of each test was required 1:: 2’ e h; -. t \ . . J 7.. ' ' ‘ t i ’ ..
+E for the SPHERES metrology estimator to converge before the start '. ’9 . 3‘ ,_ ,l ; .. _ G ,\._-
+a .. . . _ . . |*/'. \ ' ' :7 ;h .‘f‘-\
+_ of thruster ﬁring. Despite the Simulated zero graV1ty time of the v - , _
+E parabolas lasting up to 20 s per parabola, the large size RINGS re- ‘ J I A g r ~ 3 Qt. . ‘i u
+g sulted in the units moving out of the test volume due to the drift of the ‘ . . 1 .’ . ‘ ,t L. “
+3 aircraft. ( y .'—..‘ - - , q ‘ . ’ )3"" .h‘.‘ ,. -
+E The data for the inertia about the x and z axes was collected by v, i g 355' ' f E
+g ﬁring a thruster at an assumed force of 0.089 N and a moment arm of «:1: V: ' __; A ' '-""Y ‘ i \ _
+(g 9.7 cm [E]. The average acceleration during the constant thruster :31 - “ 2 \ ' % \s.
+:2 ﬁring lasting about 3 s was then used to calculate the inertia about a ' .' 7 _ - _ _ a - - ‘ .71 . 1 \
+E particular aXis. The results from the inertia tests are shown in Table 1. Fig. 13 Astronaut Karen Nyberg positioning two RINGS during the
+E However, full validation was not achieved due to Vibrations of the ISS hardware checkout.
+:3 aircraft that were transmitted to the ultrasound metrology beacons.
+E Although the dynamics model could not be completely veriﬁed as
+m lanned, it was determined that rotation of the unit around the aXis ,
+E grthogonal to the plane of the resonant could not be completely WET and EMFF testing. The SPHERES thrusters were not used
+a stabilized. This was due to thruster impingement on the RINGS unit dunhg these.tests. For thls reason, one Of the RINGS units was
+9 itself and was an effect that could not have been seen in the 2-D ﬂat restrained us1ng bungee cords 1h the middle 0f the control volume
+(<0: ﬂoor testing. Although the thrusters are the only means of torque Wlth the plane 0f the RINGS facrng the forward wall 0f the Japanese
+<2: control available to RINGS, the inability to control rotation about this experimental module. The other RINGS uh“ was either free ﬂoating
+3» aXis does not affect the baseline EMFF maneuvers. 0? held by the crew member, roughly axrally aligned as shown 1“
+8 Approximately eight Of the parabolas during the zero-graVity ﬂight Fig. Ehlnitial pos1tion1ng of the RINGS units to a ﬁxed pos1tion and
+3 were used to conduct the wireless power transfer tests. This allowed orientation was not done because thrusters were not used.
+E for the full capabilities of the RINGS as a dual purpose system to be The first test runs were WPT operations at frequencies at and
+8 demonstrated for the first time in a reduced-graVity environment. around the expected resonant frequency. Each WPT test was
+Figure 2 shows RINGS at the start of an EMFF shear maneuver performed at a ﬁxed dUtY cycle, meaning the Width 0f the waveform
+during a test along with astronaut Greg Chamitoff. input for the H—bridge drive circuit remained constant during the
+duration of the test. This does not fix the recirculating current level in
+C. On-Orbit Testing the resonant coil because the coupling coefficient is a function of
+The RINGS units were launched to the ISS on-board the Japanese separation distance and relative orientation. The slow depletion of the
+HTV—4 transfer vehicle on 4 August 2013. The ﬁrst on-orbit test battery charge. also causes the .Voltage ap p 116d across the C011 to
+s essi on was 27 August 2013. F 011 owin g a hardw are ch e ck out and decrease over time. Communication losses caused some of the tests to
+up date of the firmware, the RINGS units underwent preliminary fail to run properly. There was successful power transfer during a test
+run at 454 Hz, which is below the expected resonant frequency. The
+primary (transmitter coil) was driven at a constant 40% duty cycle
+Table 1 Moment inertia results from testing during the reduced- with the secondary (receiver coil) aXially aligned. The data collected
+gravity campaign for both RINGS units are shown in Fig. ﬂ. Data were collected at rate
+— of 5 Hz, but a marker ratio of l 2 10 was applied for clarity. It can be
+Average Angular . . . . .
+angular a C C e1 erati on M oment of M 0m em of noted that the eiut a1rte1nperature is higher than the eoil temperature.
+acceleration, uncertainty, inertia, inertia uncertainty, For tests of this duration and duty cycle, the res1st1ve heating of
+Axis rad/s2 rad/s2 kg . m2 kg . m2 the diodes that prevent the resonant coil current from charging
+x 0.0459 £10014 0.3742 +0.0118/ _ 0.0110 the batteries is greater than the resistive heating of the resonant coil.
+z 0.0308 10.0061 0,5577 +0.1377/ _ 00922 For tests of several minutes or high-duty cycle, the resonant coil
+: temperature will surpass the eXit air temperature.
+
+"
+"9","AIAA Early Edition / PORTER ET AL. 9
+Primary Unit - WPT Test at 454 Hz Secondary Unit - WPT Test at 454 Hz
+40 40
+35 35
+XXXXXXXXXXXXXXXXXXXXXXX
+30 3O
+********** *************5¥ ************** ***** ****
+25 ooooooooooooooooooooooo 0 25ooooooooooooooooooooooo
+20 20
+v Current (RMS), A V Current (HMS), A
+*6 Exit Temperature, C * EX” Temperature, C
+10 10 X Received Power, W
+5 VVVVVVVVVVvvvvvvvvvvvvvvv 5 vvvvvvvvvvvvvvvvvvvvvvv
+0 O
+O 10 20 30 4O 0 1O 20 30 40
+Test Time, 8 Test Time, s
+E a) b)
+3 Fig. 14 WPT test at 454 Hz, 40% duty cycle for a) primary and b) secondary units.
+E
+V3
+g The power losses due to the electrical circuits is negligible positioning or alignment. It was observed by the crew member that
+5 compared with the losses associated with the two resonant coils and the RINGS were able to generate an aXial attraction force. Significant
+Q the power dissipated by the load resistor. The power input to the motion was not observed because the RINGS were restrained.
+g system is, therefore, equal to the sum of the three primary power Follow-on ISS test sessions will involve unrestrained EMFF
+g losses. The power transfer efﬁciency is expressed as the following: testing where motion will be observed and recorded by the SPHERES
+§ metrology system. These future on-orbit sessions will also test open-
+5? _ Plead 3 and closed-loop control algorithms. Table g shows a test matrix for
+g“ It _ PTX coil + PRX coil + 1310:;1 d ( ) EMFF. The first test science was only a hardware checkout to
+; show nominal operation in EMFF mode, and so it was not included
+g The power dissipated by the load is determined using the in the matrix. The initial orientation I'CfCI‘S t0 either aXial 01‘ shear
+g“ recirculating current level in secondary coil and the impedance of the (orthogonal) alignment 0f the coil axes relative to each other. Some
+3 resonant system. A resonant coil impedance of 1.99 was used based tests starting the aXial configuration Will be station-keeping maneu-
+g on the analysis and measurements performed by Alinger et al. for a vers, whereas other tests will involve motion alone aXis of alignment.
+E duty cycle of 40% [E], Given the impedance and recirculating 1mg Additionally, thrusters may be used in some tests to maintain orienta-
+8 current, the power transfer efﬁciency was found to be 30%, which thH in either OITC 01' tWO dimensions bCSldCS the aXlS Of motiorl. The
+33 agrees well with the predicted performance as shown in Fig. l_5. The seeond testsess1or1. W111 he almost entirely open-loop contr 01 Wlth the
+E uncertainty of the rms current is 3% for a current level of 4 A I‘mS. primary unit restrained usmg bungee cords. The third test sess1on Will
+8 However, the error is dominated by the error in the Hall-effect sensor focus on motion With hOth units free ﬂoating in the test volume. Ah
+8 and scales with the current. At the expected maximum current level rotational maneuvers (shear initial orientation) Will be open-loop
+g of 18 A rms, the uncertainty is 30%. The uncertainty in the power tests, whereas all attraction or repulsion maneuvers (axial initial
+(2 transfer for the data shown in Fig. 14b is 4%, a resultant of the orientation) Will use closed-loop control 0f tWO types. One type Will
+8 uncertainty in the rms current and uﬁrtainty in the load resistor use thrusters to maintain the attitude 0f the moving RINGS unit
+E value. The aXial separation was not recorded by the SPHERES relative to the test volume frame of reference, while the other unit
+9 metrology during this test. It was Visually observed that the RINGS remains stationary. The other type 0f closed-loop control Will use
+in: were separated by about 0.5 111 while being ﬁxed in the working thrusters to maintain attitude of the secondary relative to the attitude
+z volume by bungee cords and the crew member. of the primary. Lastly, the fourth test session will use open- and
+g The EMFF tests performed during the ﬁrst test session feeused on closed-loop control based on results from a more reﬁned simulation
+5‘3; the ability to command the RINGS resonant coils to be closely in using data collected in the second and third sessions.
+'3; phase or 180 deg out of phase. Both resonant coils were commanded
+E to have a constant recirculating current value of either 3 or 11 A. This
+differs from the preV1ous WPT tests that used a constant duty cycle to V. Lessons Learned
+dictate the current driven in the primary 0011. Usmg the feedback , , ,
+current measured by the RINGS sensors, the current controller The mostimportantlesson learned Was to start prototyping early in
+maintains a commanded current level in the coil, independent of the development process. The project benefited greatly from
+coupling and battery charge. With the SPHERES thrusters not in use, prototyping Of the bate}? mounts .usmg 3'1.) phhhhg' Thls allowed
+the two RINGS were allowed to attract or repel without precise initial for , an easy interface verification Wlth batteries befor e exp ens1ve p r e-
+crsron machinin g of the aluminum mounts used in the final as sembly.
+The proj ect could have benefited greatly from earlier prototyping of
+0-5 9., g _ R = 2 Q the custom electrical circuits. After major components had been
+0 4 '\.\.¢‘ 3/ Minimum Ach'ievable . . RL = 10 Q Chosen and most of the firmware developed, prototyping would have
+' separate“ D'Stance . RL _ 1 8 Q helped identify where reliability needed to be improved for nominal
+CC? 0.3 ‘1 -. '- _ operation, as well as safety-related fault detection. Reliance on the
+.8 5 Hz infrared pulse generated by the lead SPHERES for syncing the
+E 0.2 RINGS in or 180 deg out of phase required multiple iterations late in
+5 the testing phase due to reliability issues observed. However, the
+0-1 t . t changes were made strictly to the firmware because it was too late in
+0 5 """":""-=-‘-=:.-...-. .. ,- -. , _ testing to adjust the hardware conﬁguration. A more reliable method
+0 0.5 1 1.5 of syncing the two RINGS units during operation may have been
+Axial Separation Distance, m possible if prototype testing was done earlier to bring the short-
+Fig- 15 WPT efﬁeieney fOI‘ Predieted Performance [El comings of the IR detection system to light.
+
+"
+"10","10 AIAA Early Edition / PORTER ET AL.
+Table 2 On-orbit test matrix for EMFF
+Initial orientation Thrusters? Control One unit restrained?
+Session n0. AXial Shear No Yes Open Closed Yes No
+2 X — — X — — X — — X — —
+2 X — — — — X X — — X — —
+2 — — X X — — X — — X — —
+2 — — X — — X X — — X — —
+2 X — — X — — — — X X — —
+2 X — — — — X — — X X — —
+3 — — X — — X X — — — — X
+3 — — X X — — X — — — — X
+3 X — — — — X — — X — — X
+4 X — — X — — — — X X — —
+4 — — X X — — — — X X — —
+4 X — — — — X — — X X — —
+4 X — — X — — X — — X — —
+E
+Q VI. Conclusions [2] Kwon, D. W., “Propellantless Formation Flight Applications Using
+f- , , , Electromagnetic Satellite Formations,” Acta Astronautica, V01. 67,
+3 One ef the primary goals ef the Resonant Inductive Near-Field Nos. 940’ 2010,1313. 1189—1201.
+a Generation System is to pr0V1de the SPHERES satellite formation doi:10.1016/].actaastr0.2010.06.042
+2 ﬂight test bed onboard the ISS with the functionality required for [3] Elias, L. M., Kwon, D. W., Sedwick, R. J., and Miller, D. W.,
+5 actuating the vehicles using electromagnetic ﬁelds. This added “Electromagnetic Formation Flight Dynamics Including Reaction
+3 capability will prove useful in testing control algorithms that cannot Wheel Gyroscopic Stiffening Effects,” Journal Of Guidance, Control,
+95” be fully explored in the 1 g gravitational environment on Earth. Upon and Dynamics, VOL 30, NO- 2, 2007, PP- 499-511-
+g completion of the on-Orbit test sessions, wireless power transfer Via (1013—102514/1'18679 _ “
+8 resonantinductive coupling and electromagnetic formation ﬂight can [4] Ahsun’.U"" M111? I’ D' W"" and Ramrez’ J' L"" COP“? Of Elem“)—
+‘ce . . . magnetic Satellite Formations 1n Near—Earth Orbits, Journal of
+§ arguably be elevated to technical readiness level of Six. The hardware G ‘d C . _
+a , , , m ance, antral, and Dynamlcs, V01. 33, N0. 6, 2010, pp. 1883
+g is the ﬁrst complete system to independently demonstrate Wireless 1891.
+E power transfer and electromagnetic formation ﬂight in a represen- doi:10.2514/1.47637
+8 tative Operational environment. Additionally, it is the ﬁrst system [5] Zhang,Y.W.,Yang,L.P.,Zhu,Y. W.,Ren,X.H., and Huang,H., “Self.
+3“ capable of demonstrating both technologies with a single integrated Docking Capability and Control Strategy of Electromagnetic Docking
+5,? hardware set. Although the time for investigating electromagnetic T&ChHOIOgy,”Acta AstVOWWiCd, VOL 69, NOS- 11-12, 2011,1311 1073—
+5 formation ﬂight control in the siX degree-of—freedom environment of 1031- .
+(«2‘ the ISS is limited, tests involving additional control algorithms can (IOEW . .
+8 still be conducted on the ﬂat ﬂoor facility at the MIT—SSL. The next [6] Tesla, N"" Experiments Wlth Alternate Currents 0f ngh Potential and
+o: . High Frequency, The Electrical World, London Lecture, V01. 38,
+m steps for future research efforts W111 hopefully address some of the N0 19 1892
+E Issues Feahzed by thCRINGS hardware and help Progress 6160““ [7] Saenz—Otero, A., and Miller, D. W., “Initial SPHERES Operations
+0 magnetic formation ﬂlght and Wireless power transfer to full-scale Aboard the International Space Station,” 1AA Small Satellites for Earth
+(2) 0136f ational tCStng- Observation I V, International Academy of Astronautics Paper B6—0701,
+m 2006.
+(g [8] Saenz—Otero, A., Katz, J., Mandy, C., and Miller, D. W., “SPHERES
+8 Acknowledgments Demonstrations of Satellite Formations Aboard the ISS,” 32nd Annual
+E The authors gratefully acknowledge the financial support of both 82135633159118] ?ngoggmml Conference, Amencan AStronauucal SOC'
+g: the DefenseAdvanced Researgh PrOJeCtS Agency Tactlcal Tail— [9] Dowell, P. L., “Effects Of Eddy Currents in Transformer Windings,”
+<C HOIOgleS Ofﬁce and NASA? Wthh funded the prOJCC’t under NASA Proceedings of the Institution OfElectrical Engineers, Vol. 113, N0. 8,
+E, contract NNH1 1CC33C. The tests conducted on the reduced-gravity 1966, pp. 1387—1394.
+ﬂ campaign were made possible by the NASA Flight Opportunities doi:10.1049/Eiee.1966.0236
+'0‘; Program. The authors thank Greg Chamitoff who gave supportive [10] Alinger, D. J., Porter, A. K., and Sedwick, R. J., “Optimization 0f
+‘3; feedback that aided in the writing of International Space Station crew Resonant IHdUCtiVe Wireless Power TranSfef Using Multi—Layer Flat
+5 procedures for the hardware. This publication has been approved for Spiral Coils,” Journal OfSPacecmﬁ and ROCketS (to be PUthhed)-
+Q - - - - - - - d '10 2514/1 A32901
+public release With unlimited distribution. 01:—' ' , , , ,
+[11] Eslinger, G., “Dynamic Programming Applied to Electromagnetic
+Satellite Actuation,” MS. Thesis, Massachusetts Inst. of Technology,
+References 1230?; of Aeronautical and Astronautical Engineering, Cambridge, MA,
+[1] Saenz—Otero, A., Katz, J., Mandy, C., and Miller, D. W., “SPHERES
+Demonstrations of Satellite Formations Aboard the ISS,” 32nd Annual A. Ketsdever
+AAS Guidance and Control Conference, American Astronautical SOC. Associate Editor
+Paper 2009—01 1, 2009.
+
+"

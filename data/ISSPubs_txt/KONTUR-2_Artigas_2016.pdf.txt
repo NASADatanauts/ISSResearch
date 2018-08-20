@@ -1,0 +1,566 @@
+"","x"
+"1","2016 IEEE International Conference on Robotics and Automation (ICRA)
+Stockholm, Sweden, May 16-21, 2016
+KONTUR-2: Foree-feedbaek Teleoperatlon from the
+International Space Station
+J 0rdi Artigas, Ribin Balachandran, Cornelia Riecke, Martin Stelzer, Bernhard Weber,
+Jee—Hwan Ryu*, Alin Albu—Schaeffer
+
+Abstract— This paper presents a new robot controller for r, / “NJ: ‘77 \t _>
+space telerobotics missions specially designed to meet the // _;_~_t~az \\
+requirements of KONTUR-2, a German & Russian telerobotics 1;
+mission that addressed scientiﬁc and technological questions I§SISJ-bl€lrrlll<<1.:01r\ndrl:{U/nicationi WM) (FM)
+for future planetary explorations. In KONTUR-2, Earth and , Dgwnlinkz2516t ibit/S
+ISS have been used as a test-bed to evaluate and demonstrate - ISS overﬂighttime: ~10min
+a new technology for real-time telemanipulation from space.
+
+During the August 2015’ experiments campaign, a cosmonaut
+teleoperated a robot manipulator located in Germany, using DLE;£§?§£{§;E§ W Standard UDP
+
+. . . -——---~ <:> ,,__-\
+a force-feedback Joystick from the Russ1an segment of the V\
+International Space Station (ISS). The focus of the paper ""a i‘ .WL gigow)
+is on the design and performance of the bilateral controller y y. L 2’ 0116mm d f: . i Access (:92
+between ISS joystick and Earth robot. The controller is based f R 523' H ‘t- W
+on a 4-Channels architecture in which stability is guaranteed RWISS (Obgﬁagfeménjﬂ' -..-. ,BJOIQM)
+through passivity and the Time Delay Power Network (TDPN) ' t“"""""" “‘“'""'
+concept. We show how the proposed approach successfully Fig. 1: KONTUR—2 scenarios
+fulﬁlls mission requirements, specially those related to system
+operation through space links and internet channels, involving
+time dela s and data losses of different nature. . . .
+
+y do that, KONTUR—2 W111 pr0V1de answers to the followmg
+1. INTRODUCTION scientiﬁc and technological questions:
+
+Telerobotics is one of the most succesful and versatile ' What are the communication requirements to teleoperate
+space technologies. In the last years there have been impres— av?btot Inlamgulator 1? tr: a1 timte 11111 8113C: in1ss10n; 1' f
+sive space missions that involved the use of robots, showing ' e is 'th leiignb detcoil r0 er (:1 1&1 cap 2:1 e 01
+their effectiveness in ﬁelds as diverse as Mars exploration, coping W1 a encies, a.a osses an 0 .er C anne
+on—orbit servicing 0r meteorite sample and return A common related Characteristics Whlle p r0v1d1ng reliable force—
+
+. . ' 9
+
+attribute of these robots is that they are controlled from Earth iiidtiethh 1 , h , t' h t 1
+
+to perform some sort of manipulation of the environment ' , a is e 088 in uman p rop riocep 1011.“, en con to _
+
+along with some degree of autonomy However robotics ling an Earth robot from the ISS, including the effects
+. . . . . ' ’ . . ' ' ' 9
+
+hasn’t yet shown its potential in m1ss10ns that require high 0ft1me delay and micrograwty effects.
+
+dexterity levels: The ISS is still fully maintained by astro— To answer these questions, a space qualiﬁed 2 degrees
+
+nauts; four manned servicing missions 0n the Hubble Space 0f freedom (DOF) force—feedback Joystick was developed at
+
+Telescope raised the original costs of $2.5B t0 $10B as of the DLR and sent on JUIY 24th to the RUSSMH segment Of
+
+2010 [1]. Robots are undeniably safer and more cost effective the 155- Mr. Oleg Kononenko, cosmonant from Roscornos,
+
+compared to on—site astronautic operations, though arguably, performed a set of experiments that C0n81sted of controlling
+
+much more limited in terms of cognitive and manipulation ROKVISS, a 2 DOF robot manipulator located at the DLR
+
+abilities. (Oberpfaffenhofen, Germany) using the force—feedback joy—
+
+Real—time teleoperation is in these scenarios an appealing Stlek .(see Flg- 1)- The facus 0f the paper is on the ﬁr St two
+technology as it combines robotic capabilities with human questions. We ﬁrst establish general control requirements for
+intelligence and manipulation skills. Furthermore, it is a space telerobotics, based on results from a DLR trajectory
+technology that has been thoroughly investigated for many that begins m 1993 Wlth ROTEX’ the ﬁrst space robotics
+years and ﬁnds itself in a rather mature stage. experiment [2], and goes on With 2015 s KONTUR—2. The
+
+The KONTUR—2 mission aims at achieving the next mile— second block of the article presents a new bilateral control
+stone in planetary exploration missions to allow astronauts architecture that fulﬁlls these requirements related to stability
+to work with robots 0n the ground from an orbital station. To and performance. A IhaJOr Challenge 1“ thls context arises
+
+due to the communication delay and data losses of command
+
+Authors are with the Institute of Robotics and Mechatronics in the signals from the human operator to the robot and the force
+.Gerinan. Aerospace Center (DLR), 82234 Wessling, Germany, email: signals back to the Operator.
+
+Jord1.art1gas@dlr.de. A . . f h . .
+
+*Jee—Hwan Ryu is with the Korean Institute of Technology and Education JOlnt treatment 0 t 686 tWO areas, commumcatlon and
+(KOREATECH), Cheonan, South Korea control, is encouraged due to their strong interaction and
+978-1-4673-8026-3/16l$31.00 ©2016 IEEE 1166
+
+"
+"2","dependencies: On one hand, the control engineer needs to ?30 A100
+understand the properties of the communication Channel such ?ZW ESOW
+as to design the bilateral controller; on the other hand, 5 00 5 10 15 20 25 30 35 40 E 00 10 20 30 40 50
+the communication eXpert should take into account real— $05 €10
+t1me requirements imposed by the bilateral controller. This E: 0w E -
+control—Comrnunication interplay presents interesting trade— E050 s m 15 20 25 30 3s 40 E 00 10 20 30 40 50
+offs between the two areas With interesting repercussions; E 2 E SW
+e.g. 1f the controller is capable of working in low bandwidths E _: E DMWWW
+/ high jitters settings it can potentially loosen requirements 0 5 10 15 T219116 (3)5 30 35 40 0 1° 20Time<s>30 40 5°
+for the communication infrastructure. (a) Comm. Pars. ISS link (b) Comm. Pars. GCTC internet link
+11. OTHER EXISTING SIMILAR METHODS Fig. 2: Space and Internet links parameters
+Stability and transparency in bilateral teleoperation have
+been 1n research s1nce decades. Transp arene y as a trade— the robot from the 188 through a S—band link. The second, is
+off for system stab111ty has been d1scussed 1n [3] and [4]. . . . . . .
+. . , , , a geograph1cally d1str1buted scenar1o for cosmonaut tra1n1ng
+The effects of 1nterna1 t1me delay, samphng and quant1zat1on . .
+. . . . . . purposes (see F1g. 1). S1nce the exact same system needs to
+and the phys1ca1 propert1es 11ke 1nert1a and damp1ng on the . . .
+. . . . , , , , operate 1n both, the requ1rernents for the b11atera1 controller
+stab111ty of a hapt1C deV1ce have been stud1ed 1n [5]. Pass1V1ty . .
+. . . . . are Clearly strengthened as both 11nks are Character1zed by
+as a tool for stab111ty to cope W1th commun1cat1on delay was . . .
+, , , , d1fferent commun1cat1on parameters.
+stud1ed 1n [6] and [7], Where the teleoperat1on system 1s mod— . . .
+, , , , , The cosmonaut tra1n1ng took place at the Gagar1n Research
+elled based on transm1ss1on 11nes equat1ons (aka. scatter1ng . . .
+, and Test Cosmonaut Tra1n1ng Center (GCTC), located 1n
+parameters and wave var1ab1es). [8], [9] have extended these . . . . .
+, , , , , Moscow. Dur1ng the tra1n1ng, the cosmonaut pract1ced W1th
+1deas us1ng port—Harn11ton1ans, an energy based modelhng . . . . . . .
+a Joyst1ck qua11ﬁcat1on model (QM) W1th 1dent1ca1 Character—
+tool that allows more complex control structures. . . .
+. . . . 1st1cs of the ISS ﬂ1ght model (FM), and controlled the robot
+On the other hand, the T1rne Doma1n Pass1V1ty Approach . .
+. . . . located at the DLR, 1n Germany, through the 1nternet.
+(TDPA) analyses system pass1V1ty 1n real—t1rne and bases . .
+. .. F1g. 2(a) and F1g. 2(b) show the performance of ISS
+1ts control on the observab111ty of the system energy and a . . . .
+, , , , , , , and 1nternet UDP 11nks. The nature of these two 11nks 1s
+var1ab1e damp1ng 1nJect1on that acts dur1ng act1ve phases of . . . . ..
+, , , qu1te d1fferent 1n terms of t1me delay, data losses and J1tter.
+operat1on [10]. It was extended to t1me delayed teleoperat1on . . . .
+, The t1me delay for the ISS commun1cat1on var1ed from 20
+based on the T1rne Delay Power Networks (TDPN) repre— . . . .
+, , to 30 ms (correspond1ng to az1rnuth and hor1zon po1nts)
+sentat1on 1n [11] and [12]. The authors of [13] presented a . . . . . .
+, , , W1th mean neg11g1b1e data losses. The 1nternet tra1n1ng setup
+4—Channels arch1tecture that 1s based on two TDPNs carry1ng . . . .
+. , , , , , , 1ntroduced a mean delay of 65 ms and h1gh1y osc111at1ng
+force s1gna1s. However, send1ng eXp11C1t pos1t1on s1gna1s, as .
+, , , , , , , package loss rat1o, from 5% to 7% (due to the UDP protocol).
+W111 be shown 1n Sec. V, 1s beneﬁc1a1 as 1t s1gn1ﬁcant1y . . . . . . .
+. , , , Though more 11m1ted 1n bandw1dth, the ISS 11nk 1s h1gher
+1mproves pos1t1on track1ng performance [14]. . . . .
+1n performance. However, shadow1ng can occur resu1t1ng 1n
+III. 188 AND TRAINING COMMUNICATION signal attenuation and in turn higher package loss ratios
+REQUIREMENTS or even communication blackouts. On the other hand, the
+Table I shows communication parameters registered during 1nternet 11nk measurements conﬁrm a typ1ca1 UDP behaV.1our.
+the main DLR te1erobotics missions. The b11atera1 controller presented. 1n th1s paper 1s a1med
+at generahty: the rna1n control requ1rernents (related to the
+———_—I communication parameters) is to guarantee stability and
+———_l 245Kbps/4Mbps . . f . f h b . d
+———_—l to maXImlze Per ormance 1“ any 0 t e a 0V6 “lemme
+———_—I COHditiOIlS, including those 0f Table 1-
+———_—I
+IV. ENERGY, TIME DELAY AND PASSIVITY
+TABLE 1: Main DLR space telerobotics missions comrnu— One of the major Challenges in designing the bilateral
+n1cat1on parameters (see Append1X for the m1ss1ons descr1p— controller is the treatment of package loss and jitter factors.
+t1ons) Most approaches are capable of handling constant small and
+large time delays. Although there have been remarkable steps
+As it can be seen, time delay varies substantially de— for making these approaches robust againstjitter and package
+pending on the particular communication infrastructure. Geo— losses (see references in Sec. II), the rationale that sustains
+stationary satellite communications (ASTRA, ARTEMIS) them assumes a constant or even previously known time
+average higher than 0.5 seconds [15], [16]. The direct link delay. As already mentioned, the control method presented
+used in ROKVISS on the other hand presents lesser delay. in this paper is based on the Time Domain Passivity Control
+In KONTUR—Z, two scenarios had to be considered in the approach. One of the main beneﬁts of this approach is that
+design of the bilateral controller: 188 and training. The ﬁrst jitter and data losses are naturally handled by the approach
+is the nominal mission case, Where the cosmonaut controls since both factors result in variations of the system energy.
+1167
+
+"
+"3","The well known passivity theory provides a tool to determine 1) Design of the control scheme in an ideal setting, that is,
+a relationship between time delay and energy that is useful neglecting time delays, jitter and package loss, using
+for analyzing the stability of feedback systems. In particular, the conventional ﬂow diagrams.
+2) Representation of the control scheme in the electrical
+°° domain using one—port and two—port networks.
+ur*vrdt+C>O 1 . ’. .
+f0 ( ) t ) _ ’ ( ) 3) Adding time delay source into the above scheme
+establishes that if the time integral of the dual product (through dependent ﬂOW and CffOTt SOUYCCS)-
+
+between two power correlated signals, u and v, is greater 4) Unfoldment 0f the system TDPNS-
+than or equal to zero, the system is passive, meaning that 5) Passivate each TDPN through PCS, creating a TDPN'
+it cannot generate more energy than the stored amount, C . PC systems.
+It has been proved that if there is a phase lag (or delay The above elements and steps are in the following section
+in time units) between one of the above correlated signals described.
+W.r.t. the other, the passivity rule is violated, resulting in
+a non—passive system and in turn potentially unstable. The V. CONTROLLER DESIGN
+use of passivity in control has been a matter of controversy. . . .
+Arguably, forcing a system to be passive to ensure stability In general, the des1gn of a bilateral controller can be split
+is a conservative criterion since passivity is not a necessary lhte two parts: The architecture, Whleh deﬁnes the bilateral
+but rather a sufﬁcient condition for stability. Nevertheless, data exchange and control between master andslave (e.g.
+passivity presents some unique features that are beneﬁcial in pos1tion—force) and the Stablhty .mechanisni, Whleh ensures
+real—tiine telerobotics stable operation under some des1red conditions.
+
+1) Less dependency on plant models: Rather than looking 4—Channels architectures, i.e. exchanging force and posi—
+at the particular internals of the controlled plant such tleh Signals between both master and slave, reach highest
+as to obtain a transfer fun cti on energy can be us e d as performance degrees since they can theoretically reach ideal
+a control variable by Checking the input/output signals transparency. m the non—delayed case [3,]’ [17]' They .are
+of the plant also higher in compleXity and require higher communica—
+
+2) It is d 61 a y f”. e n dl i e r (than other well establish e d meth— tion bandwidths than 2—Channels architectures (e.g. position—
+ods that are based on the analysis of transfer functions) force). In KONTUR'Z’ the S—Band space hhk has a capacity
+since time delay naturally modiﬁes the passivity prop— Of 256 Kbps for the up hhk and 4 Mbps for the doyvnlink
+erty of the system and this can be easily observed. (see Fig. 1). It can be eas11y proved that this bandw1dth is
+
+3) N on— c ontinu ous factors as j itter and data losses can sufﬁcient for a SOOHZ transmission rate, a 2 DoF system With
+be well emb e d d e (1 within the s am e c ontr 01 framework a 4—Channels architecture and a coding of 2 bytes per signal.
+since they all naturally have impact on passivity as Thus, the Chosen architecture is deﬁned by two forward
+well. Channels carrying master position and force signals, and two
+
+Clearly, these are important values in order to satisfy the feedbaek channels, carrying slave computed and measuied
+
+above established mission requirements force Signals (see Fig. 3). The main reason for Choos1ng
+' this architecture instead of the symmetric 4—Channels, with
+B ri eﬂy the TDP A has two main el e m e nts the P as siVity position and force in both directions, is to reduce the spring—
+Observer (PO), which monitors the energy ﬂow of a network like Characteristic caused by the delayed position Closed
+in time domain; and the PassiVity Controller (PC), Which acts loop 3 Whleh can be dIStutbmg,’ speCially for snbstantial. or
+as a variable damper to dissipate the energy introduced by varying delays. Note that in this new conﬁguration, pos1tion
+the network S e e [12] for a review on the TDP A ap p r o a ch tracking can still be achieved since the slave remains linked
+In order to eXpose the underlying ideas of the bilateral m p os1tion t0 the master. . . .
+controller presented in the next section, the following tools on the other hand, the dnality m the force feedback. signal
+and elements will be used' presents interesting properties: The low—pass Characteristic of
+
+. PassiVity Controller (PC) and PassiVity Observer (PO) the computed foree channel, given by the spring—dainper Of
+
+as fundamental stability tool the slave Proportional—Integral (PI) controller, allows to set
+
+. Time Delay Power Network tTDPN) as a two—port net— higher gain values for the measured force Channel (Which is
+
+work that models an energy consistent communication typically more prone to instabilities). This second Channel,
+channel With well deﬁned effort and ﬂow signals in turn, also contains the high frequency information of the
+
+. A passiyated TDPN that is a TDPN With a PC system telemanipulation (only limited by the force sensor capabili—
+
+(i e one PC at one or both sides1 of the TDPN is ties and the slave control cycles). A thorough analysis of the
+reqiiired to make it passive) interplay between these two Channels and how they affect
+' each other in terms of stability and performance is out of the
+
+Then the following steps will lead to the control scheme scope of this article and Will be presented in future works.
+presented in this paper' On the forward path, the combination of a position and
+' a (measured) force Channel presents two main beneﬁts:
+1Depending on the speciﬁc system [11] Convergence to zero of master—slave position error and partial
+
+1168
+
+"
+"4","masking of the slave dynamics thanks to the feedforward B. Representation of the (delayed) control scheme in the
+force term. electrical domain
+The stability mechanism is entirely underpinned 0n the In order to extract the TDPNs 0f the system, the analogous
+TDPN representation. Roughly’ TDPNS p r0V1de an aug— electrical representation is needed. Applying the Classical
+mented network representationtof. the system that allowstto for C e—V olta g e / V e1 0 city— cu tr e nt analogy, the system in Fig. 3
+explain the energy exchange Wlthm the system that contains can be represented in the electrical domain as shown in
+one or more time delays (see. Ap p €11le tor further details). Fig. 4. As it can be seen, the communication Channels are
+The (ies1gn steps tieﬁned 1n the p reV10s SCCUOH are eX_ represented through dependent force and velocity sources
+p lained 1n the f0110w1ng SUbSCCUOHS' (see [11]), leading to four delayed dependent sources: Three
+A. Design of the control scheme: Block diagram for the force signals transmission, and one for the velocity
+Rather than focusing on how to tune the Channels (thor— signal transmission. Note the series interconnection at master
+oughly studied in the mentioned references), a properly tuned and slave sides to produce the for ce commands 2a f m = f m1 +
+system is hereby assumed, that is, the controller gains have fm2 and fs : fsi +fs2- Furthermore, it can be easily 86611 that
+been adjusted so as to ensure stability in the non—delayed the system equations of the block diagram representation (2)
+case and to satisfy some performance goals. The design is hold in the new scheme.
+vs Vs vm —————————————. Vs
+vm Zthai 5923
++ i : +
+fmi = + + fsl =
+2,1,2,” 26 26 zs,ze + + : i + +
+tfm— fmo fsz fs t fh fm: : :_ f5:
+fh ”H: —fh0 fm1+fm2 . Vsd:—Vmi;T) fSl—t—fsz fe Ze
+e 7,: + i i + W”
+Geiger. 0 . fs2 ZC
+fmi _ i E _
+Fig. 3: Block diagram of a 4—Channe1s architecture Fig. 4: Electrical scheme of a 4 Channels architecture
+shown in Fig. 3. The causality on both, master and slave
+systems, is impedance, that is, the commanded signal is a C- Unfoldment 0f the system TDPNS
+force and the output is position (0f velocity, analogously). The unfoldment 0f the TDPNs is carried out by looking at
+Postion tracking is established through the PI controller with the dependent velocity and force sources. The TDPN allows
+transfer function Zc(S) = M- The fOICC commands at to bring the source to its non—delayed location by providing
+both sides are derived by: a medium through Which its signal can propagate.
+fs(l) : thh(t _ T) + de(Vm(t _ T) —Vs(l)) Note that the same dependent source deﬁnes the port vari—
+ables 0f the TDPN. Then, for each time dependent source a
++KPS<xm<t _ T) —xs(t)), TDPN can be unfolded. See Fig. 5: The result is a scheme
+fm(t) : Gsfs2(t — T) + Gefe(t — T) + Kdmvm(t)a (2) with four TDPNs, one for each Channel.
+Where fh, fsg, fe are human measured force, computed and 1) TDPN A3 Conveys measured force (source Ca) fme
+measured forces at the slave side respectively; vm, vs are slave to master
+master and slave velocity signals respectively. Furthermore, 2) TDPN B: Conveys computed force (source Cb) from
+the controller at the slave side is a Proportional—Integral with slave to master
+constants K193 and de and the master has a local damper 3) TDPN C: Conveys measured force (source Cc)fr0m
+with value Kdm. Gh, GS and G6 are scaling factors to match master to slave
+both system dynamics. Forward and backward delays, T, are 4) TDPN D: Conveys velocity (source Cd) from master
+assumed to be equal for the sake of simplicity. The transfer to slave
+function in the Laplace domain 0f the block containing the Note that the TDPNs preserve the original correlated vari—
+human and the master device, H +M, can be modeled as: ables pairs (e.g. fmi and Vm at TDPN A’s left port corre—
+1 sponds to the upper left force dependent source port in Fig. 4)
+(fh (S) _ fm(S)) mmSZ + bms : xm(s), and so the system equations hold). Morevover, it can be noted
+fh(S) : Vm(S)Zh(S)7 (3) a zero delay value, T : 0, leads to the original scheme in
+Where mm and bm are master mass and damping coefﬁcients, Flg' 4 as the TDPNS naturally vanish.
+and Zh is the human impedance. Equations at the Slave Side 2A local damper at the master side of Kdm : 0 is considered in this
+can be obtained in a similar way. representation to simplify the analysis
+1169
+
+"
+"5","2h zm 3, gm zh zm +fpw — (9—D
+. H :
++5 + + i 7”: + PCa +5 + + i
+G 15133) “351“ Gefe o iCa m m TQfN cafe . iCa
++ + e e : E + + i
++ fm : — ; — i + g v _ i
+—fh0 fh fm1+fm2 V—m> MST) E _fh0 fh fm + prb— ""10—3) i
+ii + i _ _ + PCb +; + +5
+— — GséZa: T) T%PN Gsﬁz. ECb ljmz fm—Z T%PN Gsst. ECb
+i vS(t—T) i Vs ZS i vﬁT) + fPCc _ L ZS
++ +i + + m +
+:+ fs1= c 1+ G f TDPN fa f
+Cc: Gf TDPN _ HQ hh 31
+5.11 h C thh:(t T) + + i — C — — + +
+V—m» “W""(I T) 163fo fe V—m’ 21’ LL fs fez
+i + +5 7; Ze i + + e
+: Y2 ' _ _ C 5 fs2 TDPN S _ —
+Fig. 5: 4 Channels architecture augmented with a pair of Fig. 6: Four Channel architecture With the PassiVity Con—
+TDPNs trollers
+TDPN B: The energy of the TDPN B WMb, observed by
+The electrical scheme tells us the conjugate pairs at each the PO, is given by:
+TDPN network ort:
+1” WMb<n> = Egan —D>—E%f<n>+E1¥Cb<n> <4)
+TDPN A' < Gefe(t — T) , vm(t) > at the master Where D represents a discrete communication time delay.
+. < Gefe(t) , vm(t — T)> at the slave Furthermore,
+. Eglbm —D) is the delayed energy entering (subscript in)
+TDPN B : < Gsfs2(t _ T) 7 vm(t) > at the master the TDPN from the slave side (superscript Sb), observed
+< GsstU) 7 Vm(t — T)> at the slave at the master side
+. EMb(n) is the energy exiting (subscript out) the TDPN
+G t t— T t th t 0W , ,
+TDPN C : {< hfh< ) 7 vs( ) > a e mas er at the master s1de (superscript Mb) and
+< thh(t _ T) 7 123(1) > at the slave . Eyé’O/z) is the energy dissipated by the passivity con—
+TDPN D _ < fs2(t — T) , vm(t) > at the master S3011“ OiTDPN B
+' < fs2(t) 7 MC _ T) > at the slave Em and E0“? are computed by adding the power contri—
+bution at the corresponding ports, Plib and P33? and taking
+D. Final scheme: Four Channel , TDPN basedpassive system into account the direction Of the energy ﬂow and TS being
+the sampling time:
+The augmented, TDPN based representation reveals the E5b(n) : E-Sb(n— 1) +T P-Sb(n) (5)
+energy sources caused by the time delay (along With jitter and m m S m
+- EMb(n) : EMb(n — 1) —1— TPMb(n) (6)
+package loss), 1.e., TDPN A to D. These tWO—port networks out out S out
+are indeed non—passive and Will most likely make the system
+unstable, even for small amounts of delay (e.g. 5ms3). / n —v n _ D if / n —v n _ D > O
+Passivation 0f tWO—port networks can be easily achieved by BibW) : { fS2( )( Om( )) els:S2( )( m( ))
+placing one PassiVity Controller at the TDPN port, as shown
+in [181’ [121- Pm _ f;2<n—D><—vm<n>> iff£2(n—D)vm(n) < o
+The scheme With the passivated TDPNs is shown in Fig. 6. 0m (n ) _ 0 else,
+As it can be seen, a PC is connected to each TDPN: .
+PCa PCb FCC and PCd. In the following we show the where fS/2(n) :.GSfS2(n) is the scaled feedback force. Note
+development of PCb, corresponding to TDPN B. The same that all energy Signals are p ?Sitwe deﬁned. .
+rationale is then a lied for the remainin TDPNs The main goal of the pass1V1ty controller is to ensure that
+p p g ' the observed energy Will be equal or greater than zero, that
+is, WMb(n) Z O Vn Z O. The controller is thus deﬁned as:
+3Depending on the particular PI controller parameters, local dampers and
+gain factors fmg (n) : Gsfsg (n — D) — vm(n)ab (n), (7)
+1170
+
+"
+"6","Where the dissipation factor, 0%, is given by: Z s
+1% _..HH_HH.HH.5H_5HHLH___H.HHH_H__HH.V;;;;;;HH_HH.H.H_
+0 if WMb(n) > 0 § -2 , ’ ’ , \ ~
+OM”) : —_WA24b(n) else 2533 :2 ”u""; _ __ ~ J
+Applying (7) ensures that the energy ﬂowing out of the ‘1050 55 40 45 50 55 60 65 70
+TDPN through the left port, Egg, is modiﬁed such that it
+is bounded by the delayed entering energy at the right port, 0_ _ y ‘ .. _ __ __ ..
+Eglbm —D). The modiﬁed energy signal is then given by E .I p ’ ' '
+v —0.05 l‘ 1 / '
+Exam) = Exam) —E£4Cb<n>. <8) ; 01 ,’
+H ‘ E I —Jo stick
+It can be easily proved that this modiﬁed energy satisﬁes the g _015 i 1 1
+passivity condition, WMb(n) Z 0, i.e., the network created by i 30 35 40 45 50 55 60 65 70
+the TDPN plus the PC is a passive one. Furthermore, the Time (S)
+energy dissipated by the PC is given by: Fig. 7: Position and torques With rigid contacts during
+n_1 the mission
+E1? (n) = Ts Z vi<k>ab(k), <9)
+k=1 30 _
+A 20 —J0ystick _ ,5 g ,
+On the other hand, TDPN D is of velocity type (see [18]). g 10 ,
+As such, it has a parallel PC located on the slave side Z 05 a ___ ‘
+port to dissipate energy by modifying the velocity command 2% 1-
+vsd : vm(t — T) to 125610), as shown in Fig. 6. Over—dissipation r53 -20 5‘
+of this controller can occur and potentially lead to position —30 85 90 95 100 105 110 115 120 125 130 135
+drift. This effect is however compensated using the enhanced
+PassiVity Controller proposed in [14]. 0.05
+A —Joystick .
+VI. RESULTS g 3
+. . . . am.) 0 _. WWW. MW“ rw m.,v...-.m .__ 5M...» MW W— TI-WM TM
+As explained in See. I, the experiments were conducted in a 1
+two different setups: The real mission scenario With the direct é
+Earth—ISS S—Band link, and the cosmonaut training scenario, —0.05 i
+, , 85 90 95 100 105 110 115 120 125 130 135
+through standard UDP internet link. In both cases, the pro— Time (S)
+portional control parameter is Chosen to be Kps : 80Nm/rad . . . . .
+and the local damper 0f the master is Kdm : 0.07NmS/rad. Fig: 8: P0s1t1en and torques for free enVironInent motion
+The scaling factors for TDPNs A, B and C have values of during the m1ss10n
+Ge : 0.006, Gs : 0.003 and Gh : 40 respectively, to match
+the dynamics of both systems. Joystick and ROKVISS are A 0 _
+dynamically very different, With maximum torques 0f 0.2Nm g
+and 40Nm respectively. g _5 \______,,_,,.______,_5__.___.___/____________
+The performance of the controller for both scenarios are 2+3
+shown in the following plots. Fig. 7 and Fig. 8 show the :3 _10
+results of an experiment session conducted during August 30 35 40 45 50 55 60 65 70 75 80
+25th 2015 With cosmonaut Mr. Kononenko. These plots show
+the position tracking and the force feedback performance 0.02
+during rigid contact situations and for free environment E 001w
+respectively. The rigid contact and free environment motion 3 0 ‘ _. WWL , ~ 3 5 . ..
+during the cosmonaut training that took place at GCTC «g u‘ . ‘ "" '1
+in Moscow (joystick) and the DLR (ROKVISS robot), are E 001”
+shown in Fig. 9 and Fig. 10. —0.02 .
+Fig. 11 show the observed energies of TDPN C and D. 30 35 40 45 50 _ 55 60 65 70 75 80
+As it can be seen, outgoing energies, E33”, are greater than Tune (S)
+incoming energies, E92”, indicating an active behaviour of Fig. 9: Position and torques With rigid contacts during
+the TDPNs. The modiﬁed energy values, Eff” are however training
+bounded by the incoming energies, showing the passivation
+0f the TDPNs (see analogous energy deﬁnitions for TDPN
+B in Sec. V—D)
+1171
+
+"
+"7","10 _J0ysﬁck A With the teleoperation of a humanoid robot located at the
+é, 5 7 . DLR from the 188, involving higher DDFS and complex
+/ \ \“_ . .
+Z 0 __ ,,_, \ / \ / \\ / telemanipulation tasks.
+0 \ ' \ /
+'g \ \ VIII. APPENDIX
+m —10
+_15 A. Deﬁnitions
+20 22 24 26 28 30 32 34 36 38 40 . .
+I) DLR Space telerobotlcs experlments:
+0.04 o ROKVISS (2005) The ﬁrst teleoperated robot in space
+g 002 With force—feedback from Earth. The same link point—
+3 ‘ to—point as for the KONTUR—2 space mission was used.
+a 0 -~ _ W mm mm — o SFB453—ARTEMIS experiment (2008): An experiment
+‘5 for testin the feasibilit of eostationar communica—
+H 002 g y g y
+"" tions using the ARTEMIS satellite for force—feedback
+20 22 24 26 28 30 32 34 36 38 40 teleoperation [15]
+T1me(s) o FORROST—ASTRA experiment (2014): An experiment
+Fig. 10: Position and torques for free environment mo— for testing the feasibility of geostationary communica—
+tion during training tions using the ASTRA satellite for on—orbit servicing
+[16].
+A 8 2) Time Delay Power Networks: By deﬁnition, a TDPN
+E: 6 , is a two—port (power consistent) network that conveys the
+E .[ energy of one particular signal from one point of the system
+V 4 //——~~94 . . .
+5,0 /”““”/ to another, as for instance a force or a velocny Signal.
+H X 7 EDI . . . .
+g 2 ,_.—————————-/—/""""*'J In a digital world, a force Signal that is sent from one
+[:4 0 . 7 Em computer to another incurs a time delay. This is common
+0 50 100 150 . . .
+even in digital systems, however such an event does not
+2 have a physical correspondence since e. g a force on its own
+Q cannot propagate. In a way, the TDPN provides an energy
+E 1.5 ﬂ,___________ . . . . . .
+E' r___,,/ interpretation to that propagating force Signal. By us1ng this
+3 1 / representation, energy ﬂows that are not Visible in common
+>3 / . .
+2330 05 ,_2____-_-___r—~’“""""’ — EC1 modelling tools (e.g. ﬂow diagrams) become apparent. Once
+‘ ’ - - - E 2 . . . . .
+[E _ E53 the ﬂows are identiﬁed, their carriers, 1.e. the TDPNs, are
+00 50 100 150 found to be the principal cause of instability. PassiVity control
+Time (S) can be then applied on each TDPNs in order to guarantee
+Fig. 11; Energies Of TDPN C and D: EC1 : E52460 _ the stability of the system in the presence of delays, jitters
+T); EC2 : Eggto); EC3 = 13354:); EDI : Ef‘nMU — T); and data 108868 [19]-
+_ Sd . _ ASd
+ED2 — EMU), ED3 — EMU) ACKNOWLEDGMENTS
+The authors would like to thank the project partners
+ROSKOSMOS, RSC ”Energia”, RTC, the cosmonauts Oleg
+VII. CONCLUSIONS .
+Kononenko and Serge] Volkov. Thanks also to the rest of
+The main contribution of this paper is the development of the KONTUR—2 team and DLR colleagues Who made possi—
+a 4—Channels architecture based on the TDPN representation ble and supported the development of the mission: Simon
+to achieve a controller design that is robust against a Wide Schaetzle, Alexander Beyer, Michael Steinmetz, Bernhard
+range of communication parameters, including delays, data Brunner, Peter Birkenkampf, Joerg Vogel, Klaus Johl, Ste—
+losses and jitters. One of the most intersting features of fan Kiihne, Klaus Kunze, Henning Mende and Benedikt
+this approach is that a system tuned for a setting Close to Pleintinger.
+ideal can operate in the conditions described in Sec. III.
+. . . . . . . REFERENCES
+This is poss1ble because the main cause for instability has
+been isolated from the rest Of the System (TDPNS) and [l] J. William F. Ballhaus, James Webb Space Telescope (JWST) Indepen-
+dd (1 . d . f h. P . . C 11 Th dent Comprehensive Review Panel (ICRP) Final Report, ser. NASA
+a 16886 In 3.11 a aptive. as 1011 ( ass1V1ty ontro 61‘). e contractor report. National Aeronautics and Space Administration,
+main novelty is the ﬁnding of the energy ﬂows caused by Scientiﬁc and Technical Information Branch, 2010, no. v. 3.
+the communication Of 4—Channels architectures (TDPNS A [2] G. Hirzinger, “RoteX the ﬁrst space robot technology experiment,”
+. . 1 in Experimental Robotics 111, set. Lecture Notes in Control and
+to D)' Once these ﬂOWS are uncovered, pass1V1ty COHtI‘O Information Sciences, T. Yoshikawa and F. Miyazaki, Eds. Springer
+ensures that these networks remain passive and therefore, Berlin Heidelberg, 1994, vol. 200, pp. 579—598. [Online]. Available:
+the system stable. Future work Will deal With performance httP‘//dX-d01'0rg/ 1‘9'1097/3Fb0027622 _ _ , ”
+1. . . d . t th t 1 h't t [3] D. A. Lawrence, Stablllty and transparency 1n bllateral teleoperatlon,
+lmltatlons 2111 C0111}? 21118011 0 O 61‘ con 1‘0 .aI‘C 1 0C UI‘CS. IEEE Transactions on Robotics and Automation, V01. 9, no. 5, pp. 624—
+The next milestone in the KONTUR—2 m1ss1on Wlll deal 637, 1993.
+1172
+
+"
+"8","[4] Y. Yokokohji and T. Yoshikawa, “Bilateral Control of Master—Slave
+Manipulators for Ideal kinesthetic Coupling — Formulation and EX—
+periment,” IEEE Transactions on Robotics and Automation, V01. 10,
+n0. 5, pp. 605—620, October 1994.
+
+[5] T. Hulin, A. Albu—Schaffer, and G. Hirzinger, “Passivity and stability
+boundaries for haptic systems With time delay,” Control Systems
+Technology, IEEE Transactions on, V01. 22, n0. 4, pp. 1297—1309,
+2014.
+
+[6] R. J. Anderson and M. W. Spong, “Bilateral Control of Teleoperators
+With Time Delay,” IEEE Transactions on Automatic Control, V01. 34,
+n0. 5, pp. 494—501, May 1989.
+
+[7] G. Niemeyer, “Using wave variables in time delayed force reﬂecting
+teleoperation,” Ph.D. dissertation, Massachussetts Institute of Technol—
+ogy, Sep. 1996.
+
+[8] C. Secchi, C. Fantuzzi, and S. Stramigioli, “Transparency in port—
+hamiltonian based telemanipulation,” Control of Interactive Robotic
+Interfaces: A Port-Hamiltonian Approach, pp. 165—199, 2007.
+
+[9] C. SeCChi, S. Stramigioli, and C. Fantuzzi, Control of interactive
+robotic interfaces A port-Hamiltonian approach, ser. Springer Tracks
+in advanced robotics. New York: Springer Verlag, 2007, V01. 29.
+
+[10] J. Ryu, D. Kwon, and B. Hannaford, “Stable Teleoperation With Time
+Domain PassiVity Control,” in IEEE Intl. Conference on Robotics and
+Automation, ICRA, Washington, DC, USA, May 2002, pp. 3260—65.
+
+[11] J. Artigas, J. Ryu, C. Preusche, and G. Hirzinger, “Network repre—
+sentation and passivity of delayed teleoperation systems.” in IROS.
+IEEE, 2011, pp. 177—183.
+
+[12] J. Ryu, J. Artigas, and C. Preusche, “A passive bilateral control scheme
+for a teleoperator With time—varying communication delay,” Elsevier
+Journal of Mechatronics, V01. 20, pp. 812—823, October 2010.
+
+[13] J. Rebelo and A. Schiele, “Time domain passivity controller for 4—
+channel time—delay bilateral teleoperation,” Haptics, IEEE Transac-
+tions on, V01. 8, n0. 1, pp. 79—89, 2015.
+
+[14] J. Artigas, J. Ryu, and C. Preusche, “Position drift compensation
+in time domain passivity based teleoperation,” in IEEE International
+Conference on Robotics and Intelligent Systems, Taipei, Taiwan, April
+2010.
+
+[15] E. Stoll, U. Walter, J. Artigas, C. Preusche, P. Kremer, G. Hirzinger,
+J. Letschnik, and H. Pongrac, “Ground veriﬁcation of the
+feasibility of telepresent on—orbit servicing,” J. Field R0b0t.,
+V01. 26, n0. 3, pp. 287—307, Mar. 2009. [Online]. Available:
+http://dX.d0i.0rg/10.1002/r0b.V26:3
+
+[16] R. Lampariello, N. Oumer, J. Artigas, W. Rackl, G. Panin, R. Purschke,
+J. Harder, U. Walter, J. Frickel, I. Masic, K. Ravandoor, J. Scharnagl,
+K. Schilling, K. Landzettel, and G. Hirzinger, “Forrest: Advances in
+on—orbit robotic technologies,” in Aerospace Conference, 2015 IEEE,
+March 2015, pp. 1—20.
+
+[17] K. Hashtrudi—Zaad and S. Salcudean, “On the Use of Local Force
+Feedback for Transparent Teleoperation,” in Proceedings of the 1999
+IEEE International Conference on Robotics and Automation, Detroit,
+Michigan, USA, May 1999.
+
+[18] J. Artigas, J.—H. Ryu, and C. Preusche, “Time domain passivity control
+for position — position teleoperation architectures,” In MIT Journals
+Presence: Teleoopearators and Virtual Environments, 2010.
+
+[19] J. Artigas, “Time Domain Passivity Control for Delayed Teleopera—
+tion,” Ph.D. dissertation, Universidad Politecnica Madrid — UPM, 2014.
+
+1173
+
+"

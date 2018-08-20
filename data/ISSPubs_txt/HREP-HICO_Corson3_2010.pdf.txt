@@ -1,0 +1,164 @@
+"","x"
+"1","OSA / ORS 2010
+OMA4.pdf
+The Hyperspeetral Imager for the Coastal Ocean (HICO)
+and Environmental Characterlzatlon 0f the Coastal Zone
+from the Internatlonal Space Statlon
+Michael R. Corson
+US. Naval Research Laboratory, remote Sensing Division, 4555 OverlookAve S W, Washington, DC 203 75
+mike.corson@nrl.navy.mil
+Robert L. Lucke
+US. Naval Research Laboratory, remote Sensing Division, 4555 OverlookAve S W, Washington, DC 203 75
+roberl.lucke@nrl.navy.mil
+Curtiss 0. Davis
+College ofOceam'c and Atmospheric Sciences, 104 COAS Admin. Bldg, Oregon State University, Corvallis, OR 97331
+cdavingcoas.oregonslale.edu
+Abstract: The Hyperspectral Imager for the Coastal Ocean (HICO), now operating on the International
+Space Station, is the ﬁrst spaceborne hyperspectral imager optimized for environmental characterization of
+the coastal ocean. HICO image data is being exploited to produce maps of coastal ocean properties including
+bathymetry, in-water suspended and dissolved matter, and bottom characteristics, offering a new remote
+sensing capability for coastal types worldwide.
+OCIS codes: (280.0280) Remote sensing and sensors; 010.4450 (Oceanic optics)
+1. Introduction
+Environmental Characterization of the coastal ocean, including maps of bathymetry, in-water organic and inorganic
+matter, water optical properties, and bottom characteristics, is a Vital component of planning and executing naval
+Operations in these areas. Space platforms offer the possibility of repeat and efﬁcient access to coastal sites
+worldwide, and spaceborne multispectral optical imagers such as SeaWiFS, MODIS and MERIS have demonstrated
+this advantage for Characterization of the Open ocean. The open ocean is relatively simple, with few in-water
+components that tend to CO-Vary on scales of kilometers, so that multispectral image data sampled at 1 t0 4 km is
+sufﬁcient. By comparison the coastal ocean is much more complicated, containing suspended and dissolved organic
+matter, suspended and dissolved inorganic matter, with various bottom types and depths, all Of which can vary
+signiﬁcantly on scales of tens to hundreds of meters. Multispectral data generally does not contain sufﬁcient
+information to quantify and Characterize the coastal environment. Over the past two decades, hyperspectral imaging
+from aircraft platforms has developed as a powerful method of Characterizing the coastal environment. A
+hyperspectral imager records a contiguous spectrum of the light received from each pixel in the scene, and this
+additional spectral information is exploited to produce the desired maps of bathymetry, water constituents, and other
+coastal properties [1,2].
+
+The Hyperspectral Imager for the Coastal Ocean (HICO), built and Operated by the US. Naval Research
+Laboratory (NRL), is the ﬁrst spaceborne hyperspectral designed for coastal ocean environmental Characterization.
+HICO is a natural next step following airborne imaging, providing repeat global access to a variety of coastal types
+worldwide to develop and validate environmental product algorithms. The HICO imager optical system is based on
+the heritage of airborne sensors previously built at NRL. The environmental product algorithms developed at NRL
+and other laboratories to analyze airborne hyperspectral data form the starting point for analyzing HICO spaceborne
+imagery.
+
+HICO was launched from the Tanegashima Space Center on Tanegashima Island, Japan, to the International
+Space Station (188) on September 10, 2009. The HICO RAIDS Experiment Payload (HREP), the payload module
+containing HICO and a second NRL experiment, the Remote Atmospheric and Ionospheric Detection System
+(RAIDS), docked t0 the Exposed Facility 0f the Japanese Kibo Module 0n the Space Station on September 24 and
+was activated shortly thereafter. The module containing HICO 0n the Space Station is shown in Figure 1.
+
+This paper will discuss the HICO imager and its performance, and then show examples of coastal
+environmental products retrieved from HICO imagery and the specialized algorithms used to retrieve those products.
+A companion paper in this volume by Davis et al. discusses HICO data processing and shows example results for
+coastal ocean and river mouth areas.
+
+"
+"2","OSA / ORS 2010
+OMA4.pdf
+' ﬂ; .. Jyoti - . __ﬁ:
+.,f If “Ilwfﬂl h E“ r... 11- gm""-
+- - a‘ .. .1 M -' . "" ':-'2'f"""""":r 3--
+
+._ - .__ «r» -- ,
+
+-____“I- :5}... _ '5 - ““ *1 ‘13.; T__.___ M11. 6 Eff;
+
+""ti"": -‘—_"".-* _ - - ., h "" I ' I , ,..-_'"" I f""
+
+F . 3* . . - ' ""- ' _ / .
+
+._ Payload module contalnlng HICO a / .' . _
+
+..- 't._+_ a.?.j' - - .' -'.a'.
+Fig 1. Left: Payload module containing HICO attached to the J apanese Kibo Module - Exposed Facility on the International Space Station. HICO
+Views the Earth through a slot in the module’s nadir panel. (Photograph courtesy NASA) Right: Flight model HICO imager. (NRL photograph)
+2. HICO design and performance
+The Hyperspectral Imager for the Coastal Ocean was built by the Remote Sensing Division of the U.S. Naval
+Research Laboratory as a proof—of—concept demonstration that coastal ocean environmental products could be
+retrieved from spaceborne hyperspectral imagery. HICO is sponsored by the U.S. Ofﬁce of Naval Research (ONR)
+under ONR’s Innovative Naval Prototype program. The HICO ﬂight imager is shown in Figure 1. HICO is
+optimized for coastal ocean environmental imaging With design and performance requirements based on the heritage
+of two decades of airborne experience at NRL and other laboratories [3]. A primary performance requirement for
+coastal ocean imaging is the requirement of a high signal-to-noise ratio for water scenes. The ocean surface is dark,
+With low albedo, and from an aircraft or from space is Viewed through the atmosphere Which is substantially brighter
+than the underlying scene because of atmospherically-scattered sunlight. This atmospheric signal must be removed
+because it contains no information about the water scene, and this process invariably degrades the signal-to-noise
+ratio in the resulting ocean image. HICO is designed and tested to have a signal-to-noise ratio greater than 200 to 1
+when Viewing a scene With a 5% surface albedo from space. HICO scenes are approximately 42 X 190 km, large
+enough to capture the scale of coastal dynamics. HICO’s ground sample distance, the footprint of a single image
+pixel on the ocean surface, is approximately 83 In cross track and 96 In along track, providing adequate spatial
+resolution for this demonstration. The primary performance characteristics of HICO are summarized in Table 1
+
+Table 1. HICO Performance Parameters
+
+3. Coastal environmental products and product algorithms
+Because of the complicated nature and Wide variety of coastal ocean environments, product retrieval algorithms for
+the coastal ocean often make use of physical information about water optical transmission, or biological and
+physical information about the expected in-water constituents and bottom types, to increase their effectiveness. An
+example of such an algorithm applied to HICO image data is the relative bathymetry map of an area in the Yellow
+Sea off South Korea, shown in Figure 2. The left picture in Figure 2 is a color image of the scene produced using
+three color bands (red, green, and blue) from a HICO hyperspectral image. This color image shows extensive
+shallowly-submerged mud ﬂats and channels cut into them by the tide. The false color relative bathymetry map on
+the right was retrieved from HICO image data using a newly-developed algorithm [4] that makes use of the variation
+in optical absorption of water With wavelength.
+
+"
+"3","OSA / ORS 2010
+OMA4.pdf
+Shallew Water
+. T Approx. 1 meter Depth
+1""};1‘"" I w ._'. I
+f.I-I. IF- :5. - .1 . _‘ . I DEEP Water
+_: jar"" . . :- _ I .-
+315 .'.'--I ﬁ-Ijrﬁ
+Submerged n"" 42:. ‘T- "" .. _
+Mud Flat .. .- _ . . ﬁg};
+Water Channel 14:""! 3 t I .i I : _
+--:-I-_F ..
+.h ”4. it a i
+""iii"" ' 1.31:"":
+1.1:: . 31:. A __-
+e22,
+Fig 2. Left: Color image of the Yellow Sea off the coast of South Korea, showing extensive mud ﬂats and tide-cut channels. Right: False-color
+relative bathymetry map produced using HICO image data. The imaged scene is approximately 42 X 190 km.
+
+Bottom reﬂectance is a confounding factor in retrieving bathymetry from optical remote sensing imagery,
+because When analyzing an image of a coastal ocean scene a dark (10W reﬂectance) bottom at shallow depth tends to
+mimic a bright (high reﬂectance) bottom at greater depth. The algorithm employed to retrieve the bathymetry map
+in Figure 2 uses the remote sensing reﬂectance at the surface, Which is the upwelling radiance leaving the surface
+divided by the solar irradiance, at two wavelengths. The ﬁrst wavelength is 810 nm, at Which there is a local
+minimum in water absorptance, allowing relatively more light scattered from the bottom to well up through the
+surface, thereby increasing the remote sensing reﬂectance at this wavelength. The second wavelength is 720 nm,
+Which is away from the local minimum in water absorptance, so that relatively less light scattered from the bottom
+wells up through the surface, decreasing the remote sensing reﬂectance at this second wavelength. Combining the
+measurements at these two wavelengths for Which the effect of the bottom reﬂectance is different aids signiﬁcantly
+in reducing the potential confusion between bottom reﬂectivity and depth. While this relative bathymetry map is
+preliminary and has not been validated, it does indicate the potential of environmental characterization of the coastal
+ocean using hyperspectral imagery from space.
+
+4. Conclusion
+
+Hyperspectral imaging from space offers the possibility of retrieving detailed environmental information for coastal
+oceans worldwide. The Hyperspectral Imager for the Coastal Ocean, built and operated by the Naval Research
+Laboratory and now on the International Space Station, is the ﬁrst demonstration of this capability.
+
+5. Acknowledgements
+
+HICO is launched and ﬂown under the direction of the DOD Space Test Program.
+
+6. References
+
+[1] Goetz A. F. H., Vane G., Solomon J ., and Rock B. N., “Imaging spectrometry for Earth remote sensing”, Science, 228, 1147—1153, (1985).
+
+[2] C. 0. Davis, K. L. Carder, B.-C. Gao, Z. P. Lee, and W. P. Bissett, “The development of imaging spectrometry of the coastal ocean”, IEEE
+Proceedings of the International Geoscience and Remote Sensing Symposium, 4, 1982-1985, (2006).
+
+[3] C. 0. Davis, M. Kavanaugh, R. Letelier, W. P. Bissett, and D. Kohler, “Spatial and spectral resolution considerations for imaging coastal
+waters,” Coastal Ocean Remote Sensing, edited by R. J . Frouin and Z. P. Lee, Proc. of. SPIE V01. 6680, 66800le-12, (2007).
+
+[4] C. M. Bachmann, et 211., “Very shallow water bathymetry retrieval from hyperspectral imagery at the Virginia Coast Reserve (VCR’07) multi-
+sensor campaign”, Proceedings of the 2008 IEEE International Geoscience & Remote Sensing Symposium, Boston, MA, USA, (2008)
+
+"

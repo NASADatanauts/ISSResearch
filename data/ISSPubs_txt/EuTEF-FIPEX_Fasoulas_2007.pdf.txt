@@ -1,0 +1,1114 @@
+"","x"
+"1","I 179
+
+7
+Astrodynamics and Technological Aspects of Astrobiology
+Missions in Our Solar System
+Stefanos Fasoulas and Tina Schmiel
+
+The Chapter gives an introduction into some basic technological
+
+aspects related to space missions in general and to astrobiology
+
+missions to other planets, asteroids, comets, arid/or moons in
+
+particular. We focus on explaining the payload mass limits and the
+
+speciﬁc constraints given by orbital mechanics.
+7.1
+Introduction
+Space missions are associated with many different applications, e.g., telecommu-
+nication, navigation, Earth observation, planetary exploration, and, very often,
+manned spaceﬂight. In the past few years, another discipline, namely, astrobiol-
+ogy, has become more and more important. Today, many scientiﬁc space missions
+are especially dedicated to tackling astrobiological questions. The opportunities of
+space missions in low Earth orbit (LEO), by using space-based telescopes or by
+exploring in situ the planets (see Chapter 12), moons, and other bodies in our Solar
+System, provide unique possibilities for all scientists seeking a deeper understand-
+ing of the origin and nature of life. Thus, the community of scientists from other
+disciplines that formerly were not necessarily linked to the space sciences is
+continuously increasing.
+
+In the meanwhile, astrobiology missions are much diversiﬁed, using different
+experiments in LEO, space-based telescopes, different landing probes, satellites
+orbiting other planets, and, possibly in the very near future, sample return mis-
+sior1s from different locations in our Solar System. All these missions have their
+speciﬁc constraints, but they also have some common boundary conditions. There-
+fore, this chapter will concentrate on some selected basic boundary conditions for
+space missions, especially for the reader who is not familiar with space engineer-
+ing. One main focus is to understand what space engineers mean when they talk
+about a required velocity Change AV to realize a particular mission, or about payload
+Complete Course in Astrobiology. Edited by Gerda I-Iorneck arid Petra Rettberg
+Copyright © 2007 WILEY-VCH Verlag GmbI—I & Co. KGaA, Weinheim
+ISBN: 978-3-527-40660-9
+
+"
+"2","180 l 7 Astrodynamics and Technological Aspects ofAstrobio/ogy Missions in Our Solar System
+and structure fractions, and why they are always worried about each gram of a
+mission.
+
+Probably everyone has the feeling that the mass budget of a space mission is
+critical, but why is this so? This shall be explained by the basic rocket equation.
+Then some basics of orbital mechanics will be discussed, followed by a brief
+introduction into orbital maneuvers. Finally, in order to illustrate our general
+ﬁndings, missions to Mars will be brieﬂy addressed.
+
+7.2
+The Rocket Equation
+7.2.1
+Single-staged Rockets
+The original derivation of the rocket equation is attributed to Konstantin Tsioll<0V-
+sl<y (1857—1935), a Russian schoolteacher (Fig. 7.1). The Tsioll<ovsl<y rocket equa-
+tion, which is simply the result of the momentum conservation equation for a
+single-staged rocket, states that the Characteristic velocity change AVCh of a rocket is
+proportional to the velocity of the exhaust gases Ce multiplied with the logarithm of
+the initial total mass m0 divided by the ﬁnal, end-of—bum mass mb:
+m
+Avch : Ce ln <—0) (7.1),
+mb
+Where 1T10 : mStructure ‘l’ 1fnPayload ‘l— 1’nFuel (72),
+and 1’nb : mStructure ‘l’ 1’1/1Payload (7H3)
+The structure mass (mSthmre) comprises the mass of all needed subsystems of a
+rocket, e.g. the tanks, thrusters, pumps, pipes, sensors, and other subsystems. The
+payload mass (mpayload) essentially comprises the scientiﬁc instruments of a mis-
+sion plus all equipment supporting these instruments. Now, by deﬁning a struc-
+ture mass ratio 0 and a payload mass ratio pi according to
+m
+0 : Structure (.74),
+m0
+m 1
+and p. : —Pay Gad (7.5),
+m0
+“e *— II-IIB
+Fig. 7.1 Scheme for the derivation of the rocket equation;
+ce = velocity ofthe exhaust gas; wR(t) = velocity ofthe rocket
+depending on time; mR(t) mass ofthe rocket depending on time.
+
+"
+"3","7.2 The Rocket Equation l 181
+Eq. (1) can be rewritten as
+A 1 1 (7 6)
+V : c: n — . .
+Ch e O + M
+Table 7.1 shows that typical values for the structure fractions of chemical rockets
+are below 10%. Based on this relation, Fig. 7.2 shows the resulting payload
+fractions for different structure fractions as a function of AVCh / Ce. Now, in order
+to illustrate the meaning of a structure fraction 0 = 5—10%, let us consider an
+example from biology. What is the structure fraction of an egg, which means, what
+is the shell mass related to the total egg mass?
+Table 7.1 Initial total mass m0, structure fraction 0 for the first
+stage, and launch acceleration ofthree different rocket types
+(g0 = acceleration of gravity).
+Rocket type Total mass mo (kg) Launch acceleration Structure fraction 0
+for the ﬁrst stage
+Scout 18 100 2.53 go 8.9%
+Ariane 202 510 1.22 go 6.6%
+Saturn V 2 850 000 1.19 go 4.8%
+In a non-representative experiment the author performed for a lecture in Dres-
+den, it turned out that the average structure fraction of six free-range eggs was
+about 11 % of the total mass. Certainly, an eggshell is not made of the strongest
+1
+AV 0 In 1
+0’8 5 + H
+1
+5 0,6 ..
+E ; o=5% % E E
+LL.
+E G “ 10 ”/9
+2
+0:20% g g . g
+0 i a '
+0 0,5 1 1,5 2 2,5 3
+Avch/Ce
+Fig. 7.2 Payload fraction as a function of Avch/ ce; see Eq. (6)
+(O = structure fraction; pi = payload fraction).
+
+"
+"4","182 l 7 Astrodynamics and Technological Aspects ofAstrobio/ogy Missions in Our Solar System
+material that could be provided by nature, but, on the other hand, it usually does
+not have to withstand accelerations of up to several g’s, extreme Vibratior1s, high
+internal temperatures and pressures, aggressive and explosive fuel compounds,
+and so forth. This ﬁgurative example of an egg may give an impression of how
+thin and fragile rockets must be, having only about half the structure fraction of
+an egg.
+
+Indeed, some rocket structures are so thin that they would buckle under their
+own weight as soon as they are put upright. How is this done, then? First the fuel is
+put into the tanks under a higher pressure and then the rocket is put upright. The
+tanks serve simultaneously as the skin structure of the rocket, and therefore the
+internal fuel pressure stabilizes the rocket.
+
+As a matter of fact, the results of Eq. (6) as depicted in Fig. 7.2 show that, even for
+a very ambitious structure fraction of about 5 %, the characteristic velocity change
+would be lower than 2.8 times the effective exhaust velocity if some payload, let’s
+say of about 1 % of the total mass, is assumed:
+
+AVCh’maX g 2.8 - Ce for o = 0.05 and u = 0.01 (7.7).
+The situation is of course worse for a higher structure fraction. On the other hand,
+the effective exhaust velocity Ce depends on the total energy in the combustion
+Chamber of a rocket, which is given for chemical rocl<etpropellar1ts mainly by the
+heat of formation AhR, e.g., for liquid hydrogen (LHZ) and liquid oxygen (LOX) as
+propellant, by
+
+LH2 + LOX : H20 + AhR (7.8)
+
+Ce,max,ideal : m (7H9)
+Subsequently, the heat of formation must be chosen as high as possible in order to
+achieve a high exhaust velocity. Some values for chemical compounds with the
+highestl<nowr1 heat of formation are given in Table 7.2. With the exception of the
+compound BN, these compounds are oxides or ﬂuorides of metals, hydrogen, or
+carbon. The burning of metals in a combustion Chamber is technically not an easy
+task, as they often build impermeable oxide layers that could prevent a complete
+burn or could block the nozzle throat. Some of them are extremely toxic and highly
+reactive and thus are very difﬁcult to store. Nevertheless, some metals as powders,
+mainly aluminum, are given as energy-increasing additions to solid rocket propel-
+lar1ts. Thus, practically all chemical propellants used in rocl<etry are based on
+hydrogen and its compounds with carbon and nitrogen. Fluorine has never
+reached an operational status because of its high reactivity. Thus, only oxygen
+and its compounds are used as oxidizers.
+
+"
+"5","7.2 The Rocket Equation l 183
+Table 7.2 Heat of formation and maximum velocity of the
+exhaust gases [ce (max, ideal)] for some chemical compounds.
+Compound Heat offormation Melting point Boiling point ce, max, idea.
+(“'1 kgq) (°C) (°C) (m 5'1)
+B60 29.670 2 550 3 850 6 921
+LiF 23.606 848 1 767 6 869
+Ber 21.495 547 1 170 6 554
+LiZO 19.986 1 427 2 997 6 320
+B203 18.352 450 2217 6056
+A1133 17.766 — 1 279 5 959
+Mng 17.640 1 263 1 357 5 937
+B133 16.676 —129 —101 5 773
+A1203 16.425 2 045 2 700 5 729
+SiF4 15.000 —90 — 5 475
+MgO 14.958 2 642 2 800 5 468
+SiOz 14.623 1 610 2 727 5 406
+HF 14.192 —85 19 5 326
+NaF 13.576 992 1 704 5 209
+H20 13.442 0 100 5 183
+CF4 10.391 —184 —128 4 557
+BN 9.805 — (2 327) 4 427
+C02 8.967 —58 —79[a] 4 233
+a Sublimation point
+Of course, the ideal value for the velocity of the exhaust gases Ce cannot be reached
+because of internal losses in the thrusters. When expanding the propellants
+through a nozzle into a vacuum, for the hydrogen—oxygen combination a value
+of about 4—4.5 km s‘1 can be achieved, corresponding to an efﬁciency of about
+75 %. Additionally, when launching from the ground, Ce is further limited to about
+3—3.4 km s‘l. Thus, one can calculate the AV limit for single-staged rockets to about
+9—10km s‘l. It will be shown later that this is the minimum value needed to get a
+satellite into a low Earth orbit.
+7.2.2
+Multiple-staged Rockets
+The solution to obtaining a higher AV, the staging concept, is based on the idea of
+continuously jettisoning structure mass that is not needed anymore, e.g. thrusters,
+tanks, boosters, and payload fairing. The describing equation is then
+1’1
+Avcmotal 2 C61 111 (E) + Ce21ﬂ(%)+ . . . = Z Ce11ﬂ(%) (7.10),
+mbi mbz i=1 mbi
+where mbi 7'é mo(i+1) (7.11).
+
+"
+"6","184 l 7 Astrodynamics and Technological Aspects of Astrobiology Missions in Our Solar System
+1Dﬂ%
+....:_.-:-'-'.-_-____.___I‘-:II REdEtUnE {31:13.05! Gl=ﬁ3=ﬂ'nﬁ
+o {according to Saturn V)
+“3“” ' f: "" . __ ' ad=n5=uﬁ=uina cet=3 kmfs ‘
+:£—— - — ""J I
+551mm: JUL“ 3&7]? l EscaEe .
+
+- 1‘55 fﬂghtpaﬂi Scout 'TT-Atias Centaur —'—'——
+
+E r ,J"" - Ariane {9 eestationary}
+
+L1; ' ' .--___5__ . = fra ctmn ;, 0.1%
+
+E Explnrer | I
+
+3. H
+
+ﬂﬂEH ""air
+ﬂ.UDU1%
+El 5 1G 1 5 2E] 25 3D 35
+Jun“ [knife]
+
+Fig. 7.3 Payload fraction as a function of Avch for single- and
+multipIe-staged rockets; index in Oi gives the number of stages,
+e.g., 01 for 1-stage rocket, 02 for 2-stage rocket, etc. The names
+give examples ofdifferent rockets launched.
+Thus, the overall AV can be increased as depicted in Fig. 7.3. Indeed, AV could be
+increased almost linearly with increasing number of stages. However, in this case
+the payload fraction is decreased exponentially (notice that the payload fraction is
+depicted on a logarithmic scale in Fig. 7.3). Thus, for multiple-staged rockets AV is
+limited if a payload fraction of at least 0.1 % is assumed.
+7.3
+Orbital Mechanics and Astrodynamics
+7.3.1
+Some Historical Notes
+The description of planetary motion has Challenged scientists for many centuries.
+The early Greeks believed that celestial bodies moved in circles around the Earth.
+At that time this idea was in excellent agreement with observations for all distant
+stars. However, some of the observed bodies had a somewhat strange motion.
+Sometimes they moved backward and forward in the celestial sphere reference.
+Thus, they were called planets, from the Greek word for “wanderer” or “nomad.”
+This geocentric universe model probably reached its peak of reﬁnement around the
+
+"
+"7","7.3 Orbital Mechanics and Astrodynamics l 185
+year 140 with Ptolemaeus (85—165), who calculated the orbits of the planets using
+various combinations of circles known as epicycles.
+
+It took almost 1 500 years before Nicolaus Copernicus (1473—1543) placed the
+Sun at the center of the Solar System, with the Earth rotating on its axis once a day
+while moving around the Sun once a year. However, Copernicus still believed that
+a planetary orbit should be Circular, and his geometry was therefore as complex as
+that of Ptolemaeus. It was Johannes Kepler (1571—1630) who, based on the precise
+observations of Tycho Brahe (1546—1601), discovered and formulated the laws of
+planetary motion that are known today as Kepler’s laws (Fig. 7.4).
+
+Kepler’s First Law: The planets orbit the Sun in elliptical orbits with the Sun at one
+
+focus.
+
+Kepler’s Second Law: The line connecting a planet to the Sim sweeps out equal areas
+
+in equal amounts of time.
+
+Kepler’s Third Law: The time requiredfor a planet to orbit the Sim, called its period, is
+
+proportional to the long axis of the ellipse raised to the 3/2 power.
+The constant of proportionality is the samefor all the planets.
+
+However, Kepler could not explain physically what forces were responsible for
+these laws. This explanation was provided by Isaac Newton (1642—1727). He
+published his three laws of motion and the law of universal gravitation in the
+Principia in 1687, stating the following:
+
+Newton’s First Law of Motion: A body stays at rest or moves with a constant
+velocity on a straight line unless acted upon
+by an external imbalanced force.
+
+Newton’s Second Law of Motion: An applied force is equal to the time rate of
+change of momentum.
+
+Newton’s Third Law of Motion: All forces occur in pairs, and these two forces
+are equal in magnitude and opposite in di-
+rection.
+
+Newton’s Universal Law of Gravitation: The force of gravity between two bodies is
+directly proportional to the product of their
+masses and inversely proportional to the
+square of the distance between them.
+
+Planet Eﬁgﬂimnr
+m1 K m3
+Fucus
+Apaheiinn _ _ . ' Periheliur‘
+
+SEMITTIEJDI"" axis a
+
+{long axis} a e
+ﬁt1=ﬂtg=ﬁt3 ifA1=A2=A3
+Fig. 7.4 Illustration of Kepler’s laws.
+
+"
+"8","186 l 7 Astrodynamics and Technological Aspects of Astrobiology Missions in Our Solar System
+mM
+where F = force of gravity; m and M = mass of the two bodies; r = distance between
+the two bodies; y = gravitation constant.
+11 m3
+= 6.670 - 10— — 7.13 .
+v kgsz ( )
+These laws explain why a satellite, a moon, or a planet stays in orbit around the
+Earth, a planet, or the Sun, respectively. Very often it is argued that the gravitational
+force is counterbalanced by a centrifugal force. This is easy to understand but is
+physically incorrect, because according to Newton’s ﬁrst law of motion the body
+should then maintain a constant velocity on a straight line, which is obviously not
+the case.
+
+The correct answer is that gravity forces the satellite to fall towards the Earth;
+however, because of its velocity it will never touch the Earth’s surface, meaning that
+the satellite is in a continuous free fall “around” the Earth. Today, it is known,
+thanks to Albert Einstein (1879—1955), that even this answer is not the complete
+truth. According to Einstein’s theory of relativity, the answer should be that gravity
+mass causes a curvature in space-time, in which the satellite is caused to move.
+
+By combining Newton’s second law of motion with his universal law of grav-
+itation, an equation is obtained for the satellite’s acceleration vector 17 if it is
+assumed that gravity of only one central point mass is the only force:
+
+;; YM _. -’
+z
+ﬂan...
+“mm""
+Elm?“
+Ellipse ___ .' r
+x ...-""'
+Hyperbnla
+Parabul
+Fig. 7.5 Satellites can orbit a central mass in
+any ofthe four conic sections: circle, ellipse,
+parabola, or hyperbola.
+
+"
+"9","7.3 Orbital Mechanics and Astrodynamics l 187
+2%“.
+Want...
+$$¢£*#., Hi'fw-‘r' #5:».
+m *ﬁﬁﬁgﬁﬂﬂﬂﬂﬁﬂ*-E=:'.-'.-'.-'=:.-_--..
+ﬂﬂiﬁih ”H. i '1 n '"""""""".f-'-T-'*'-’.-'-':':r‘:-?:-""‘?
+ef-ﬁ‘ﬁstﬁaewﬁ‘ﬁh ““ H l‘ """"""""""-r-':-""-*'- 5'
+.. -._._.:_;:-_-__-_._ - .ﬂ'l-i’lﬁ‘“ I III] [I 1' l.g- .f :.--.—_-,-.'r.-
+4 .. ﬁnﬁﬂ llﬂﬂlﬁlfrfgﬂir‘ay-E
+. ‘-_.~___-_ hﬂ"" I Iffkwﬁﬂrﬂféii'éﬁ? r
+. ... Milliﬂlﬂﬂxiaa
+H '- ' :*' ""
+1|}- . ., .J-_1._.i_-J3. .-
+imlillt'ﬂl‘ihm‘a‘ ._.
+n."" 11‘1""""! Fr,
+1.: M: Mr ”2 MIL """"1“!
+1 2 3 Ii1r_.--:-r:~:..-1|) . . . . . .
+'f’f'ﬁ}; Flg. 7.6 Illustration ofcnrcular satellite orbits In
+hEEEUSE '-.-'1 _ i-L'i. Earth’s gravitation potential (note that these are
+._ d' .- . . .
+F1 *2 r2 =: r3 ' - .3"" not orbits In physncal space).
+This equation is called the “two-body equation of motion,” giving the motion of a
+satellite’s position vector 17 in his orbit. A solution to this equation is the polar
+equation of a conic section:
+2
+a 1 — e
+r = ¥ (7.15),
+1 + ecos G
+where a is the semi-major axis, 6 is the eccentricity, and 9 is the so-called true
+anomaly, an angle measured from the closest point of the orbit to the current
+position (see also Fig. 7.4). A conic section is a curve formed by cutting a plane
+through a right circular cone, as illustrated in Fig. 7.5. The angular orientation of
+the cutting plane determines whether the conic section is a circle, ellipse, parabola,
+or hyperbola.
+7.3.2
+The Energy Conservation Equation
+In order to illustrate the physical meaning of the possible orbits, another equation
+that also can be derived from the two-body equation of motion can be used, the so-
+called “Vis-Viva” or “energy conservation equation”:
+1 M M 1
+—v2 — Y— : const. 2 e = —Y— = —VC2>0 (7.16),
+2 r 2a 2
+V W
+kinetic potential
+energy energy
+where e is the total mass-speciﬁc mechanical energy of the satellite and v is the
+magnitude of the velocity. The term for the potential energy deﬁnes the potential
+energy as zero at inﬁnity and negative at any radius less than inﬁnity (Fig. 7.6).
+Using this deﬁnition, the speciﬁc mechanical energy of elliptical and circular orbits
+is always negative, and a velocity at inﬁnite distance to the central body mass
+cannot be deﬁned. As the energy increases and approaches zero, the semi-major
+
+"
+"10","188 l 7 Astrodynamics and Technological Aspects of Astrobiology Missions in Our Solar System
+”Apogee : I""""tmin
+E??iw. rﬁupngee : rmax
+ﬂﬁﬁﬁgﬁ‘n
+fifi- i'a‘iq- IT ‘1"": *:l""ll
+$€¢$$$¢$$$€Eﬂﬂﬁhh
+aggﬁag-I'awﬁﬂéﬂﬂh'ﬂy ..._
+ﬂﬁWﬂﬁfﬁ-ﬁﬂ::::ﬁ'w#h
+ﬁﬁ‘ﬁﬁﬁﬁ‘ﬁnt m. in Ink II .'-'-""-'.-'.-""-'.=.-'..-':"":-':-"".5-':-'.'.-""-"" ‘
+Ha, M1, “4! I III! ,. aha.- .-..-- .
+‘4‘..-':"":.-.-'.-:.==-'. -.""'"".'I l ’ .rIs:_a:,-_'.r_.r{-:::
+a . «..- --i~.¢:mlt liﬂ'ﬁfri-er-===‘--""*-
+‘H- - l. lLi'-hh!.llllvl1""f£ﬂi;aﬁgﬁi
+II R I I I ' ' --: EEEEEEEP- I
+IL: ‘I I 1 12‘ 3R -_.=-_:. .I'
+“W“!!I’m ""
+""'r 'ﬂﬁﬁ'ﬂ"" '
+=31.- gﬁﬁii“
+r -...-. .. 'II
+tJ-L'
+V _ _ V Fig. 7.7 Illustration of an elliptical satellite
+FEHQEE m3: orbit in Earth’s gravitation potential (note that
+rperigee = rmin this is not an orbit in physical space).
+axis of the ellipse gets larger and larger, approaching a parabolic orbit. The velocity
+on a parabolic orbit is thus high enough to escape from the central mass, having at
+inﬁnity a zero velocity relative to this mass. If the energy is further increased to
+positive values, the velocity is then high enough to escape from the central mass,
+having at inﬁnity a ﬁnite velocity relative to this mass, leading to hyperbolic orbits.
+The orbit period P for elliptical orbits also can be derived from the energy
+conservation equation as
+P 2 a3 (7 17)
+2 IE — . .
+yM
+For circular orbits, the semi-major axis a simply equals the orbit radius r. (Recall
+that this is just Kepler’s third law including the constant of proportionality.)
+7.3.3
+Some Typical Velocities
+The velocity of circular orbits is given by the energy conservation equation as
+WM
+Vcircle : (7..18)
+r
+Therefore, the velocity needed to maintain a circular orbit is higher the closer the
+satellite is to the central body. This is illustrated in Fig. 7.6. Notice that the curves
+shown in Fig. 7.6 are not orbits in physical space but only in potential energy.
+The velocity on elliptical, parabolic, or hyperbolic orbits at a certain distance from
+the central mass can be calculated by
+
+"
+"11","7.3 Orbital Mechanics and Astrodynamics l 189
+2 M M
+v: l/Y——Y— (7.19).
+r a
+Thus, the velocity reaches a maximum value for the closest orbit point and a
+minimum for the most distant point of the orbit (Fig. 7.7).
+
+Now, staying on Earth’s surface, what kind of orbits can be achieved and what
+velocities are needed? Assuming a launch location on a big mountain and that the
+Earth is a perfect sphere without an atmosphere, the velocity to which a satellite
+must be accelerated perpendicular to Earth’s gravitational ﬁeld is simply
+
+YME h km
+VLowEarthOrbit : V R—al't % 7-91 — (7H20)
+Earth 5
+This value is known as the ﬁrst cosmic velocity. For slightly lower values, the
+satellite would fall in an elliptical trajectory back to Earth; for higher values it would
+reach an elliptical orbit around the Earth. However, if the velocity is further
+increased, reaching an inﬁnite value for the semi-major axis a, then the satellite
+would be on a parabola. The velocity needed for this at Earth’s surface is called the
+second cosmic velocity and has a value of
+ZYME h km
+VPairabola : “V R—art % 11-2— (7..21)
+Earth 5
+Figure 7.8 depicts these ﬁndings. If losses resulting from atmospheric drag or from
+the fact that satellites cannot be launched directly perpendicular to Earth’s gravita-
+tional ﬁeld are taken into account, about 15—20% must be added in order to
+ﬂat,
+15.? — Hyperbﬂla
+”.54! _
+-* ' Parabo a
+.aﬁ I JI-L.
+”L.
+tr: k
+jEllipse
+\ E; /j
+I'M”
+Circle, LEI:I
+Fig. 7.8 Illustration of velocities needed for
+reaching a LEO and for escaping from the
+gravitational pull, assuming that Earth is a
+perfect sphere without atmosphere (and that
+the pitcher has enough thrust). See text for
+Ellipse more details on the required velocities for the
+different orbits.
+
+"
+"12","190 l 7 Astrodynamics and Technological Aspects ofAstrobio/ogy Missions in Our Solar System
+estimate the necessary AV to get a satellite into orbit. Thus, for low Earth orbits, this
+AV demand is about 9—10km s‘l. Figure 7.8 also illustrates that for establishing
+elliptical orbits other than those going through the launching point, additional
+maneuvers or burns are necessary.
+
+7.4
+Orbital Maneuvers
+7.4.1
+High-thrust Maneuvers
+To Change a satellite’s orbit, its velocity vector in magnitude and / or direction must
+be Changed. Compared to the orbital period, most chemical propulsion systems
+operate for a short time only, so the maneuver can be treated as an impulsive
+Change in velocity while the position is the same. Therefore, any maneuver must
+occur at a point where the old orbit intersects with the new. If there is no
+intersection, then an intermediate orbit must be used, which intersects both.
+Generally, the Change in velocity needed to go from one orbit to another is
+
+Ax? : \7’2 — V} (7.22).
+As a ﬁrst example, an orbit Change from an Earth equatorial orbit to a polar orbit at
+the same altitude is considered. The required velocity change would be
+
+W! = 1V2 — V1! = x/ivl (7.23).
+
+Transfer Drhit: Eilipse a={rl+ r21}?
+
+' 3V1
+
+M2 1
+Drb‘lt 1: Circle, r1, ul
+Urhit 2: Circle, r2, #2
+
+Fig. 7.9 The Hohmann transfer ellipse between two circular
+orbits. Note that the velocity on the final orbit 2 is lower than on
+the initial orbit 1, but the satellite must be accelerated twice for
+the transfer.
+
+"
+"13","7.4 Orbital Maneuvers l 191
+MHDhmann } avmﬂ for Zip 3,3 m
+1
+115
+I ll!”
+2? ”-4 r i ""EGLQLJ V1
+3-:
+«:5
++3.3 - -— —
+43,2 _ M2 65-h _._
+‘L r1. ”1
+ﬂl'l I 'II
+| r2, “2
+- |
+D — ___ __ .
+1 1B 100 1ﬂﬂﬂ iﬂuun 1Dﬂﬂﬂﬂ 1nnﬂunn
+r2! r1
+Fig. 7.10 Required Av for a Hohmann transfer ellipse between
+two circular orbits.
+Performing this maneuver in low Earth orbit would mean that the required AV is
+ﬂvl - 7.91 km s‘1 = 11.2 km s_l. Recall that this is just the value required to
+escape from Earth’s gravitation when launched from the ground! Out-of—orbital-
+plane changes are therefore performed only when absolutely required.
+
+In order to establish an orbit that is higher in altitude (e.g., a geosynchronous orbit
+[GEO]) than the initial one (e.g., a LEO), another typical maneuver is performed. The
+most efﬁcient direct transfer orbit is an ellipse that tangentially intersects both orbits
+(Fig. 7.9). This transfer ellipse is called the Hohmann transfer orbit. The total change
+in velocity required for the transfer is the sum of the velocity changes at the perigee
+and apogee of the transfer ellipse. Because the velocity vectors are collinear, the
+velocity changes are simply the differences in magnitudes of the velocities in each
+orbit, namely, for circular initial and ﬁnal orbits:
+
+AVI-Iohmann : AVl + AVZ : (Vellipse,1 _ Vcircle,1) + (Vcircle,2 _ Vellipse,2) (7..24)
+The result of Eq. (24) is depicted in Fig. 7.10 as a function of different ratios of the
+initial and ﬁnal radii. An important and somewhat surprising result is that the
+required AV for a transfer between two circular orbits around the same central mass
+reaches values above the required AV for escaping from gravitational attraction. This is,
+for example, the case for a transfer between LEO (11130 x 6 600 km) and GEO
+(76130 x 42 000 km). The reason for this is that at the ﬁrst burn the fuel mass needed
+for the second burn has to be accelerated and lifted in the gravitational ﬁeld. Thus,
+from an energetic point of View, it is less expensive to launch a satellite from LEO into
+an interplanetary orbit than to GEO. Finally, in most cases it turns out that the
+required AV for an orbit change is higher the more maneuvers (burns) are performed.
+
+"
+"14","192 l 7 Astrodynamics and Technological Aspects of Astrobiology Missions in Our Solar System
+7.4.2
+Low-thrust Maneuvers
+It is often argued that thrusters such as electrical or ion thrusters can achieve a
+much higher exhaust velocity, and therefore a higher overall velocity change AV,
+than chemical rockets. This is in many cases true, although the structure fraction
+would certainly be increased because of the needed additional power support.
+However, the total thrust achieved is usually not sufﬁcient to allow for an appli-
+cation in the ﬁrst stages of a rocket. Nevertheless, when using electrical thrusters,
+e.g. as a third stage, the total AV can be increased as depicted in Fig. 7.11.
+
+On the other hand, because of the low thrust, the operation time is also
+increased, leading to the situation of having an almost inﬁnite amount of small
+pulses (as approximation for a continuous long-term burn). Considering the
+discussion of the previous chapter, this would lead to an increase of the required
+AV to accomplish the same orbit transfer. As an example, Fig. 7.12 shows the result
+for a transfer between two circular Earth orbits in comparison to the Hohmann
+transfer. Thus, it is important to have not only a high AV capability of a rocket but
+also a low AV requirement according to the orbit maneuvers that are possible with
+the used propulsion systems. An overview of the required AV to accomplish a
+certain mission is given in Table 7.3.
+
+1E+E| I I I
+1‘ “II“EIaae ctlﬂmical g Chemical: 31:0.05, ﬁ2=ﬁ3=ﬂ.ﬂﬁ, ceI=3 kmfs
+H. 1E Electrical: q3=EL2U
+1 15-1 ““3 III -
+5 E a. 3 .3399 chemical E E E E E E
+E E h E 3""” stage cheE'nical E E E E E
+E 1E-2 ---------""E--------""'---E- - -----E-'---'-----E----""-----E""------ 3:” stage electrical --'E--""--------E----""-----
+13' : E E : E E : :
+E E l E ' '*—-—.;—__—___r__.___, -llf“ E : :
+a E E H 4.3:,- a-uu. : I I
+m 5 I 5 : ‘4‘ ; . - ukmfsi
+ﬂ"" 1E5 rfl E T
+E I: ‘i a E i. zzukmrs:
+E E | E E E E E E
+E I E E 5 kaIr; :EF-IE] limI'IS I 15 1(me E E
+E E I E E E E E E
+: I : : : : E : :
+E E | E E E E E E
+E I E E E E E E E
+E E I E E E E E E
+‘1 EB
+D ""ID 20 SD 4|] 53
+M [kmis]
+Fig. 7.11 Payload fraction as function ofAv for multiple staged
+rockets. Different combinations ofchemical and electrical propul-
+sion are compared. Note that electrical thrusters have higher ex-
+haust velocity than chemical thrusters and that generally Ochemical
+< 0electrical and CeIChemical < CeIelectricalr bUt the thru St Felectrical << Fchemical-
+
+"
+"15","7.4 Orbital Maneuvers l 193
+1,u.—[ .— .—.
+Euntinuuus law thrust
+0.. r J_—
+r; .-
+3“ -
+*3 [1.5
+----
+Uni
+:11: .
+:1 -E"";'.-""_' .. Flight path with small,
+0 2 ;'-I rug ', ' .' 1; but mntinunusthmst
+_- "" \t Fiightpath with high thrust
+D
+[II Ell] 40 ED ED ‘1EIE
+r2! r1
+Fig. 7.12 Comparison ofthe Av requirement for a Hohmann
+transfer and a transfer with continuous low thrust.
+Table 7.3 Typical Av requirement and resulting typical payload
+fraction pt for different mission types.
+Mission type Av (km 5‘1) pt
+LEO m9—9.5 0.04
+Escape from Earth’s gravitation $12.5 0.015
+LEO + I-Iohmann transfer to GEO m13 0.01
+Earth—Moon—Earth m18 0.0025
+Grande tour (Earth—Iupiter—Satum—Uranus—Pluto) $23 0.00035
+Earth—Mars—Earth m23 0.00025
+Comet rendezvous $25 0.0002
+Mission out of ecliptic plane (35 °) $26 0.00016
+Earth—Mars—Earth With “soft” landing £34 0.00001
+Crash into Sun $40 0.000005
+LEO = Low Earth orbit
+GEO = Geosynchronous Earth orbit
+7.4.3
+Gravity-assist Maneuvers
+Table 7.3 illustrates that the AV requirements for space missions are very high, and
+therefore — according to the Tsiolkovsky equation — the resulting payload fractions
+are very low. This is especially the case for interplanetary missions to the outer
+planets of our Solar System.
+
+"
+"16","194 l 7 Astrodynamics and Technological Aspects ofAstrobio/ogy Missions in Our Solar System
+Heliumntric nrbit after leaving
+gravityrassistnplanet Vplanﬂ
+”Exilnelimﬁ “Ex“mm “'3'“
+Gravityrassist- _ ' ' -. _
+Helince ntric nrhit after planet ,
+gravity-assist—manueuwe __ Hyperbuiic nrbil
+f'fdf—E' M Planet I I
+.-- """" "" _I_ "" --. -. *—
+/ _ . H “- Sphere of inﬂuence of ”Planer “H [Peri I
+, “Pianet QFanW-assisl-planel Planet pulls ’1 _
+Target} .’ ,.""_ —-._H_H ‘ E - . cm spacecraft _
+- x H. “a ~ -
+/ 'I Eartha; H&Heliuceriltric nrbithefure _ “Flam 1:
+I' -. gravity—assist—manoeuwe _ _ EntW-re'at “3""?""
+II I. . .I i “Entry. helmmntric\\
+I
+K - Sun _ I I Hellonentric nrbit before entering
+\‘t "" I ' ~ .' / Sphere Bf inﬂuence of planet
+\ II "" "" I ﬁVSwing—by “I 1""""r|:riaan|a+t-||'TIIIEIIIIMmﬂ
+/ I""F'uari
+EE_J-P”
+
+Fig. 7.13 Illustration ofgravity-assist maneuvers. Left: in a
+
+heliocentric reference system, right: in a topocentric (planet)
+
+reference system.
+
+Fortunately, there is an alternative that allows for increasing a vehicle’s energy
+(and therefore velocity) relative to the Sun without requiring fuel: the “gravity-
+assist” or “swing-by” maneuver. This maneuver uses a planet’s gravitational ﬁeld
+and orbital velocity to “sling” the satellite, Changing its velocity in magnitude and
+direction (Fig. 7.13). As the satellite enters the gravitational ﬁeld on a hyperbolic
+orbit and passes behind the planet, the planet pulls it in the direction of the planet’s
+motion. Thus, it gains energy with respect to the Sun, altering the satellite’s
+original orbit around the Sun. If the satellite passes in front of a planet, it is pulled
+in the opposite direction, causing a slowdown in velocity relative to the Sun. Of
+course, because of Newton’s laws (action — reaction) the same energy change
+occurs for the planet as well. However, because of the signiﬁcantly smaller mass
+of the satellite, the effect on the satellite can be extreme, whereas for the planet it is
+negligible.
+
+Gravity-assist trajectories often make the difference between possible and im-
+possible missions. For example, the Galileo mission to Jupiter was launched
+towards the inner Solar System, performing ﬁrst one swing-by maneuver at Venus
+followed by two subsequent swing-by maneuvers at Earth. Another example is the
+Ulysses probe, which performed a gravity-assist maneuver at Jupiter that sent it out
+of the ecliptic plane into a polar orbit around the Sun.
+
+Of course, in order to establish such maneuvers, the constellation between the
+Earth, the gravity-assist planet, and the target planet must be in accordance. This
+
+"
+"17","7.5 Example: Missions to Mars | 195
+often determines possible “launch windows,” meaning the time frame in which
+the spacecraft has to be launched.
+Finally, it is important to note that in both cases, either acceleration or deceler-
+ation of the satellite relative to the Sun, it leaves the planet’s sphere of inﬂuence on
+a hyperbolic orbit (relative to the planet!). Thus, in order to establish an orbit
+around a planet, an impulse (thrust), and therefore fuel, is again required.
+7.5
+Example: Missions to Mars
+In the following sections, some of the general ﬁndings from the previous chapters
+will be discussed regarding missions to our neighboring planet Mars. First, in order
+to establish an interplanetary trajectory to Mars, the satellite should be launched
+with a velocity higher than 1 1.2 km s‘1 (the escape velocity from the Earth) relative to
+Earth. Further, it should be launched in the direction of the Earth’s motion around
+the Sun; otherwise, the AV requirement would be increased by the Earth’s own
+velocity around the Sun of about 29.8 km s‘l. For a launch to Mars, often the Earth’s
+own rotational velocity is also used, i.e., a launch towards the east and additionally
+during nighttime is performed (assuming a direct launch from Earth’s surface and
+an injection into a Hohmann transfer). As already discussed, the most energy-
+efﬁcient transfer trajectory is a Hohmann transfer joining Earth and Mars’ orbit
+around the Sun. Ofcourse, as soon as the satellite’s orbit intersects with the Martian
+orbit, the planet should be at this position in order to set up a “rendezvous.” A certain
+initial constellation between the two planets is therefore needed, as seen in Fig. 7.14.
+Mars arrival
+H T ' Mars arrival
+?5.‘i “ ..
+1’
+. ‘ “ Mal‘ﬁ at Eartr-
+Earth at ._ daparture
+Mars
+arrival 1 ""'7‘.""
+1433' ""-I' . 44.3“
+Earth 9W; arrival! laughs” \
+launch Mars at Earth
+departure
+Eecnnd
+Dppurtunitv
+First Dppﬂl‘tﬂﬂit‘f [EbDI-It 7’33 daﬁ
+latEr}
+Fig. 7.14 Launch window for a mission to Mars.
+
+"
+"18","196 l 7 Astrodynamics and Technological Aspects ofAstrobio/ogy Missions in Our Solar System
+All these issues deﬁne the launch window, which opens for just a few days or weeks
+and is additionally restricted in local time. If the window is missed, the next
+opportunity occurs after about 780 days.
+
+Because of the limited payload fraction of the launch vehicle, the amount of fuel
+carried with the probe is limited, too. Thus, only a few minor interplanetary
+correction maneuvers (usually about four or ﬁve) are possible in order to adjust
+the orbit for a typical journey of about 500 000 000 km. The main fuel portion is then
+needed to slow down the spacecraft to a mostly high eccentric orbit around Mars,
+except, of course, if a direct landing without a prior velocity change is planned.
+
+Many of the orbital missions to Mars performed in the last few years make use of
+so-called “aerobraking” maneuvers to establish a ﬁnal orbit. Therefore, the closest
+point (periapsis) to the planet is Chosen so that the spacecraft ﬂies through the
+upper part of the atmosphere, which causes aerodynamic drag and further slows
+down the spacecraft, and subsequently its apoapsis (most distant orbital point). The
+effect on the apoapsis is higher than that on the periapsis, and after performing
+this aerodynamic break over several passages, an orbit with a lower eccentricity is
+achieved. Finally, a small burn at the apoapsis lifts the periapsis out of the
+atmosphere and the ﬁnal orbit is established.
+
+Again, the necessary fuel mass for the braking maneuvers together with the
+required satellite system mass, (e.g., energy, attitude, and orbit control; commu-
+nication; thrusters; tanks), signiﬁcantly limits scientiﬁc instrument mass. The
+situation is similar for entry and landing probes where some of the fuel necessary
+for orbit insertion can be saved, but additional system mass must be introduced,
+e.g., for the heat shield.
+
+Because the scientiﬁc payload for interplanetary missions is so restricted in mass
+(and also in energy demand), an alternative to studying the planets or their surface
+material is to bring material from other celestial bodies, especially from Mars, to
+Earth for further in-depth investigations. Therefore, some basic boundary condi-
+tions and scenarios for a Mars sample return (MSR) mission will be discussed here
+(see Figs. 7.15 to 7.17). A more detailed discussion is provided by D. Boden and S.
+Hoffmann in H uman Spaceflight: Mission Analysis and Design, edited by W. Larson
+and L. Pranke (1999).
+
+The ﬁrst part of an MSR mission, the way to Mars on a minimum energy transfer,
+has already been discussed. Assume that the spacecraft is already in a Mars orbit and
+is supplied with some material from the Mars surface that has been collected by use
+of a landing probe. Similar to the outbound part, it has to wait until the constellation
+between Mars and Earth allows for a return ﬂight trajectory. For low-energy trans-
+fers, the Mars stay-time may reach values of more than one Earth year. Adding the
+transfer times, the total mission duration lasts for more than 2.5 years. The required
+AV for the return injection is lower than for the trans-Mars injection; however, one
+has to recall that with current technologies the necessary fuel mass must be
+imported to Mars. As shown in Fig. 7.15, for the low-energy transfer from a LEO
+to a Mars orbit and a direct ﬂight back to Earth, a AV of about 8.2 km s‘1 is needed.
+The AV needed for a launch from Earth, the AV for a launch from the Mars surface
+(about 4 km S4), and the AV for any rendezvous or trajectory correction maneuvers
+
+"
+"19","7.5 Example: Missions to Mars | 197
+Mission parameter {example} I i
+.w @ Iaunﬂh tram Earth ﬂrb'rt 3.5 kmfs 5 Earth return 2136:5327;
+Dutbﬁund tlme 2‘34 days Earth at Ma”. : a De: 2L'I2D
+.w far Mars urbit insert'mn 2.2 kmfs arrival 5 -
+Stay time 553 days 5 ._
+.w @ Mars launch 2.5 kmfs 5 ""‘ .
+Return tir‘r‘lE 19D days
+Tntal mission time 9415 days .- ._--....- ..-..---...-- .-.-.-.-._-.. '_ .-.--
+Tntal .w 3.2 kmfs
+Assumptions: Em"" ”WC""; .
+- Trans-Mars Injectinn via launch frnm ISS-urhit 11 ME” 20135
+- Mars Drbit Insentinn in EEG km circular orbit :
+- Direct Earthnentry upon return : Earth at Mars
+i departure
+I ' Depart Mars
+: 13 Mav 2020
+Mam at Earth :
+departure
+Fig. 7.15 Typical Iow-energy scenario (Hohmann transfer) for an
+MSR mission.
+must be added to this value. Thus, even assuming a direct landing upon Earth
+return, which is extremely challenging because of the high return velocity, the
+overall AV needed for such a mission is in the best case about 20km s‘l. This
+high overall AV value yields extremely low payload fractions, which could be returned
+to Earth (including the transfer vehicle with heat shield and other items).
+Using fast, high-thrust transfers as depicted in Fig. 7.16 is not really an alter-
+native for reducing the overall mission time, because the waiting time for the
+Mission parameter {example} j
+m: @ launch from Earth Drbit 5.3 kmfs
+Dutbuund time 120 days 5
+m fur Mars whit insertion 6.2 kmfs 5
+13:45:20”:r time 514 days i
+m: {iii Mara launch 3.8 kmfs E “H h
+Return time 12!] days - ETFESESL 5
+Total mission time 854 days - - .
+Tatal Mr 1.5.3 kmfs
+Depart Mars E
+_ 23 Feb 2015 . 5
+ﬁssumptlons: ' :
+. Trans-Mars Injectiﬂn 1“rial launch frurn ISS-ﬂrbit ' _+_ _ _ _ E rth r t r
+- Mars Drhit Insertion in EDD km circular urbit .. Mar5 arrival 5 2; Juneﬁlg
+- Direct Earth-Ial""|tr‘~,uI upnn return 3“ 3"""" 3014 5
+Fig. 7.16 Typical scenario for a short transit time for an MSR
+mission.
+
+"
+"20","198 l 7 Astrodynamics and Technological Aspects ofAstrobio/ogy Missions in Our Solar System
+Mission parameter [example] Mm arm.
+112 Mar 2003 :
+m @ launch frnm Earth nrbit 4.5 kmfs DE rm 5
+Dutbnund time 133 clays HT... 2353 E rm :
+iw fur Mara nrbit insertiﬂn 4.3 kmfs - ataMars I -_- Mama: Eam-
+Eta]? time 4D day'E arrwal i. ~. departure
+M {Q} Mars launch 4.!) kmfs ' E .
+Return time incl. Venus swinging 34:] days "" '
+Earth return
+— — —---~.—-— 1? Mar 20:19 —-— - -—-—
+Total mission time 568 days . _
+Tntal m: 12.9 kn'u‘s Earth 3‘ M i
+' departure ”9“”‘3 : Earth launcrl
+.. .th 5 - 2min; 2m?
+
+Assumptiﬂns: i
+— Trans—Mars Injection via launch from ISS-orbit :
+- Mars Drbit Insemun in SEE I-crn circular orbit i -' ”mat Em.
+- Direct E::—.1rth~er1tr'5.ur Upﬂf‘l return 5 retum
+
+Fig. 7.17 Scenario for an MSR mission using a Venus
+
+gravity-assist maneuver for return.
+
+return launch window is enlarged. Thus, only a small amount of the return ﬂight
+
+time can be saved. However, the required AV is dramatically increased, easily
+
+reaching values above 25 km S4.
+
+What about using gravity-assist maneuvers? This possibility exists, as illustrated
+in Fig. 7.17. The alternative of performing a swing-by maneuver at Venus could
+shorten the overall mission time, while the total AV requirement would be much
+lower than the high-thrust transfer, but nevertheless higher than a double low-
+energy Hohmann transfer (Fig. 7.15). However, the spacecraft would ﬂy Closer to
+the Sun than the orbit of Venus, which subsequently has an impact on the overall
+design, and especially on the thermal control system because of the higher solar
+radiation.
+
+From this brief discussion of potential Mars sample return mission scenarios it
+becomes obVious that orbital mechanics provide a variety of possibilities. However,
+it is also obVious that generally only very small payload fractions can be realized and
+that each scenario has some speciﬁc beneﬁts and drawbacks. In addition, techno-
+logical issues not addressed here in detail must be taken into account, such as
+power supply, data processing, and communication requirements; automated
+guidance; navigation and control; system autonomy; entry, descent, and landing
+technologies; robotics and mechanisms; propulsion, etc. Thus, the payload mass
+used to calculate the payload mass ratio of a rocket (see Section 7.2) includes all
+spacecraft subsystems that are needed for survival and control of the science
+payload. Table 7.4 gives an overview of the subsystems of a spacecraft that are
+required to service the science payload.
+
+Finally, for potential biological payloads, planetary protection requirements, as
+discussed in Chapter 13, must be added, making the situation even more complex
+and challenging, but not unsolvable.
+
+"
+"21","7.5 Example: Missions to Mars | 199
+
+Table 7.4 Overview of typical spacecraft subsystems for
+
+servicing scientiﬁc payloads (e.g., scientiﬁc instruments).
+
+Spacecraft system Subsystems of spacecraft system
+
+Electrical power system (EPS) Electrical power generation
+Conditioning, storage, and supply (e.g., solar
+generators, batteries, fuel cells, radio isotope
+generators, power control units)
+
+Electrical power regulation and distribution
+
+Structure and mechanism system (SMS) Carrying shock and Vibration loads associated With
+acceleration during ground operation, launch,
+in-orbit operations, re-entry and landing
+Holding of payload, electronics, sensors, antennas,
+etc., in stable positions
+Protection against inﬂuences from space environ-
+ment
+
+Thermal control system (TCS) Temperature control for all spacecraft components,
+e.g., batteries, electronics, propellant tanks, sen-
+sors, actuators, solar arrays, structures, etc.
+Passive thermal control systems Via heat conduc-
+tion and radiation, e.g., radiators, coatings, multi-
+layer insulation (MLI), heat sinks, joint ﬁllers, etc.
+Active thermal control systems, e.g., heat switches,
+active radiators, heat pipes, single- and two-phase
+ﬂuid loops, electrical heaters, etc.
+
+Communication system (CS) Transmitters and receivers or transponders
+Antenna systems and antenna pointing
+Signal-to-carrier frequency modulation and multi-
+plexing, signal demodulation, etc.
+
+Command and data handling (C&DI—I) Payload data processing and recording
+Housekeeping and science data encoding and
+telemetry
+Error handling
+Signal decoding and telecommand handling and
+distribution to the appropriate devices
+Software and computer systems
+
+Propulsion system (PS) Thrusters (Chemical, electrical) for launch, in-orbit
+insertion, orbit transfer, orbit and attitude mainte-
+nance, reentry and landing maneuvering, attitude
+control, etc.
+
+Fuel and oxidizer storage and handling
+
+Attitude and orbit control system (AOCS) Orbit determination and control
+Attitude determination and control = spacecraft
+stabilization in desired directions despite the
+disturbance torques, uses sensors and actuators
+(e.g., star trackers, sun sensors, magnetic actuators,
+momentum Wheels, ﬂy Wheels, thrusters, etc.)
+
+"
+"22","200 l 7 Astrodynamics and Technological Aspects ofAstrobio/ogy Missions in Our Solar System
+
+7.6
+
+Further Reading
+
+Anderson, I. D. Introduction to Flight, McGraW- Messerschmid, E., Fasoulas, S. Raumfahrtsys-
+Hill Inc, 1989. teme, Springer, Berlin, 2004.
+
+Buedeler, W. Geschichte der Raumfahrt, Sigloch Oberth, I-I. Die Rakete zu den Planetenrc'iumen,
+Edition, 1982. R. Oldenbourg, Miinchen, 1923, 5th edition
+
+Brown, C. D., Spacecraft Mission Design, AIAA UNI—Verlag Dr. Roth-Oberth, Feucht, 1984.
+Education Series, Washington D. C. 1992. Sellers, 1.]. et a1. Understanding Space — an
+
+Dadieu, A., Damm, R., Schmidt, E. W. Rake- Introduction to Astronautics, McGraW-I-Iill
+tentreibstoﬁ, Springer Verlag, 1998. Education, 2000.
+
+Grifﬁn, M. D., French, I. R. Space Vehicle De- Sutton, G. P. Rocket Propulsion Elements — An
+sign, AIAA Education Series, Washington Introduction to the Engineering of Rockets,
+
+D. C. 1991. John Wiley and Sons, Inc, New York, 1992.
+
+Hammond, W.-.E, Space Transportation: A Sys- Vallado, D. A., McClain, W. D. Fundamentals of
+tems Approach to Analysis and Design, AIAA Astrodynamics and Applications, Kluwer Aca-
+Education Series, Washington D. C. 1999. demic Publishers, 2001.
+
+Humble, R. W., Henry, G. N. and Larson, W. I. Wertz, I. R., Larson, W. I. (Eds) Space Mission
+Space Propulsion Analysis and Design, Space Analysis and Design, 2nd edition, Kluwer
+Technologies Series, McGraW Hill, 1995. Academic Publishers, 1999.
+
+Larsen, W. 1., Pranke, L. K. (Eds) Human
+S paceﬂight: M ission Analysis and Design, Space
+Technology Series, McGraW Hill, 1999.
+
+7.7
+
+Questions for Students
+
+Question 7.1
+Why is the AVCh capability of a single-staged rocket limited?
+
+Question 7.2
+
+What is the basic idea behind the “multi-stage” concept?
+
+Question 7.3
+
+Why is the AV needed for a Hohmann orbit transfer from a low earth orbit to a
+geostationary orbit higher than the AV needed to escape from Earth’s gravitational
+ﬁeld from low earth orbit?
+
+Question 7.4
+
+Why is it practically impossible to use electrical thrusters in the ﬁrst stage of a
+rocket?
+
+Question 7.5
+
+Planetary gravity-assist maneuvers are usually performed in order to increase a
+spacecraft’s velocity (energy) relative to the Sun. (3) Where does this energy come
+from? (b) Do you think that it is also possible to decrease the velocity relative to the
+
+Sun? If yes, how would you perform the maneuver?
+
+Question 7.6
+
+What fuel mass is needed in order to accelerate a mass of 200 kg (payload,
+structure, and motor mass) with a single-stage rocket (in a force-free environment)
+from zero to the triple exhaust velocity (3 Ce)?
+
+"
+"23","7.7 Questions for Students | 201
+
+Question 7.7
+
+Calculate the orbit velocities and orbit periods of circular Earth orbits with the
+following altitudes H above the Earth’s surface:
+
+H = r— R0 = 200 km;, 500 km, 1 000 km, or 10 000 km
+
+What altitude would be needed for a geostationary satellite (note that a sidereal
+day is slightly smaller than 24 h, namely 23 h, 56 min, 4 s)?
+
+Note:
+
+Earth mass ME = 5.974 x 1024 kg
+
+Gravitational parameter: yME = 3.986 x 1014 m3 s‘2
+
+Earth radius R0 = 6.378 x 106 m
+
+Question 7.8
+
+An unmanned spacecraft has been placed in a SOO-km circular orbit around the
+Earth. (a) Calculate the AV budget needed for a Hohmann transfer from this orbit
+to a 600-km circular orbit in which a docking maneuver with a satellite could take
+place. (b) Calculate the necessary relative phase angle between the two spacecraft at
+the time of injection into the Hohmann transfer ellipse so that the docking
+maneuver can take place at the same time as the spacecraft reaches the ﬁnal orbit.
+Notice that the transfer time of the Hohmann transfer is simply half of the orbital
+period for this orbit. (c) How much time will pass between two possible constella-
+tions?
+
+Question 7.9
+
+Discuss some of the requirements coming from a scientiﬁc payload that have
+inﬂuences on the design of the spacecraft subsystems listed in Table 7.4.
+
+Question 7.10
+
+Imagine that a potential scientiﬁc payload needs two times more electrical power
+than a competitive, but not so sophisticated, payload. What inﬂuences will occur to
+the design of the electrical power system (EPS), the thermal control system (TCS),
+the structure and mechanism system (SMS), and the attitude and orbit control
+system (AOCS)?
+
+"
+"24",""

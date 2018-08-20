@@ -1,0 +1,724 @@
+"","x"
+"1","PASJ: Publ. Astron. Soc. Japan , 1—??, 2011 August 25
+© 2011. Astronomical Society of Japan.
+Gas Slit Camera (GSC) onboard MAXI on ISS
+Tatehiro MIHARA, 1 Motoki NAKAJIMA, 3 Mutsumi SUGIZAKI, 1 Motoko SERINO, 1 Masaru MATSUOKA, 1
+Mitsuhiro KOHAMA, 3 Kazuyoshi KAWASAKI, 3 Hiroshi TOMIDA, 3 Shiro UENO, 3 Nobuyuki KAWAI, 4
+Jun KATAOKA, 4 * Mikio MORII, 4 Atsumasa YOSHIDA, 5 Kazutaka YAMAOKA, 5 Satoshi NAKAHIRA, 5
+Hitoshi NEGORO, 5 Naoki ISOBE, 7 Makoto YAMAUCHI, 3 and Ikuya SAKURAI, 1 1
+1MAXI team, RIKEN, 2—1 Himsawa, Wako, Saitama 351—0198
+: ;_'4 -. 2School of Dentistry at Matsudo, Nihon University, 2—8’70—1, Sakaecho—nishi, Matsudo, Chiba 271—8587
+. F4 ' 3155' Science Project Oﬁ‘ice, ISAS, JAXA, 2—1—1 Sengen, Tsukuba, Ibaraki 305—8505
+' O ' 4Department of Physics, Tokyo Institute of Technology, 2—12—1 Ookayama, Megum—ku, Tokyo 152—8551
+: (\1 - 5Department of Physics and Mathematics, Aoyama Gakuin University, 5—10—1 Fuchinobe, Sagamihara, Kanagawa 229—8558
+- $_4 ' 6Department of Physics, Nihon University, 1—8—14, Kanda—Surugadai, Chiyoda—ku, T okyo 101—8308
+: C3 . 7Department of Astronomy, Kyoto University, Oiwake—Cho, Sakyo—ku, Kyoto 606—8502
+- 2 ' 8Department of Applied Physics, University of Miyazaki, Gakuen—Kibanadai—Nishi, Miyazaki, Miyazakz' 889—2192
+: N : { T M ) tmzham@mken jp
+- N : (Received 2011 February 10; accepted 2011 March 22)
+: E. Abstract
+: >—4 The Gas Slit Camera (GSC) is an X—ray instrument on the MAXI (Monitor of All—sky X—ray Image)
+. a - mission on the International Space Station. It is designed to scan the entire sky every 92—minute orbital
+: Qc period in the 2—30 keV band and to achieve the highest sensitivity among the X—ray all—sky monitors
+. I - ever ﬂown so far. The GSC employs large—area position—sensitive proportional counters with the total
+' 8 detector area of 5350 om2. The on—board data processor has functions to format telemetry data as well
+: 4—) . as to control the high voltage of the proportional counters to protect them from the particle irradiation.
+- g The paper describes the instruments, on—board data processing, telemetry data formats, and performance
+: I—I. speciﬁcations expected from the ground calibration tests.
+. F4 - Key words: instrumentation: detectors — X—rays: general
+: <l- - 1. Introduction cameras consisting of one—dimensional coded masks and
+- a proportional counters. These light curves are open to pub—
+: <1. . All—sky monitors (ASM) have been playing an impor— lie through the internet1 and used by X—ray astronomers
+- - ' tant role in the research in X—ray astronomy. Since most world—wide. The long—term data are useful, but the de—
+: m X—ray sources are highly variable, continuous monitoring tection limit is about 50 mCrab (50) per day. Therefore
+. 2 - of large sky ﬁelds and fast acknowledgments of ﬂaring the targets of RXTE/ASM are mainly on Galactic X—ray
+' ,_4 events when they occur are very important for detailed sources.
+: ° ° - studies with follow—up observations. Monitor of All—sky X—ray Image (MAXI) (Matsuoka et
+'2 The ﬁrst dedicated ASM, Ariel—V (Holt et a1. 1976) al. 2009) is a mission onboard Japanese Experimental
+: >< . observed a number of X—ray novae and transients with Module — Exposed Facility (JEM—EF) on the International
+- $_4 ' two one—dimensional scanning pinhole cameras in 1974— Space Station (188). It was designed to achieve the bet—
+'_ 53 : 1980. The Ginga satellite operated in 1987—1991 carried ter sensitivity than any ASM ﬂown so far using large—area
+an ASM that consists of two proportional counters with proportional counters with a low background in order to
+six slat collimators rotated by about 160 each (Tsunemi monitor long—term variability of Active Galactic Nuclei
+et a1. 1989). X—ray novae and transients detected by the (AGN). MAXI carries two kinds of X—ray cameras : Gas
+ASM were sometimes followed by observations with the Slit Camera (GSC) and Solid—state Slit Camera (SSC:
+main Large Area Counter (LAC) (Turner et a1. 1989). Tsunemi et a1. 2010; Tomida et a1. 2011). Both GSC
+The gamma—ray burst monitors such as Vela—5B and SSC employ slit and collimator optics. The payload
+(Conner et a1. 1969), CGRO/BATSE (Fishman et al. was launched by the space shuttle Endevour on July 16,
+1993), and Swift/BAT (Gehrels et a1. 2004) also work as 2009, then mounted on the port No. 1 on JEM—EF on July
+ASMs. Since 1996, RXTE/ASM has monitored X—ray in— 24. After the electric power was turned—on on August 3,
+tensities of hundreds of X—ray sources as well as X—ray MAXI started nominal observation since August 15, 2009.
+novae and transients (Levine et a1. 1996). It has three This paper describes the design of the GSC instrument
+— and the expected performance from the ground tests. The
+* Presént .AddreSS: 51386313311 11181111118 for SCience and in—orbit performance is described in Sugizaki et a1. (2011).
+Englneerlng, Waseda Un1ver81ty, Shanuku, Tokyo, 169-8555
+1 Present Address: Research Center for Synchrotron Radiation, WMJohtml
+Nagoya Un1vers1ty, Nagoya, Alchl, 464-8603
+
+"
+"2","2 Mihara et a1. [VOL ,
+2. Camera DeSIgn Zenith Module .
+The MAXI/GSC employs the slit camera optics. The _\
+slit camera has an advantage of being free from the source MAXI Payload \4 \‘s‘
+contamination over the coded—aperture mask While it has \\
+a disadvantage in the limited slit area. Thus, it is bet—
+ter suited for relatively faint and stable sources such as A ,
+AGNs. To achieve the high sensitivity, large—area pro— \
+portional counters ﬁlled With Xe gas are used for the X— A
+ray detectors. The total detector area of 5350 cm2 using 1
+twelve gas counters is optimized Within the limit of the t0 MDP'A 1 VA‘
+payload size (0.8><1.2><1.8 m3). MDP—B li-IM
+Figure 1 illustrates the schematic drawing of the GSC — V
+camera units on the MAXI payload. The entire GSC sys— MDP—A A Left
+tems are composed of six identical units. Each unit con— \ Center
+sists of a slit and slat collimator and two proportional DP—B \r
+counters With one—dimensional position—sensitivity. The \ Horizon ""UIG
+two counters in each unit are controlled by two individual ‘ .
+data processors (GSC MDP—A/ B in section 5) Via inde— R'ght
+pendent signal paths for the redundancy.
+The six camera units are assembled into two groups
+Whose ﬁeld Of Views (FOVS) are pOinted toward the tan"" Fig. 1. Schematic drawing of GSC cameras 011 the MAXI
+gential direction of the ISS motion along the earth horizon payload, The camera numbers are marked in hexadecimal as
+and the zenith direction_ They are named as horizon and 0...9, A and B. Six cameras are assembled into tWO modules
+zenith modules respectively. Each horizon/zenith module 11:35:11??? gib‘i’fwffjvf ?:?:Sazoiﬁhgagﬁrfgﬁter/ezitiﬁitig
+Cgvers a Wlde reCtangular FQV Of 1600X1'5O (F?HM) t0 the two individual readout systems (MDP-A/B) indepen-
+Wlth an almOSt equal geometrleal area Of 10—20 CH1 COHl— dently for the redundancy. The arrow in each counter indi-
+bining three camera units. Figure 2 shows the cross— cates the X direction (DETX) of carbon anodes. Two RBM
+section View Of each module_ The areas Of 100 from the (Radiation—Belt Monitor) detectors are mounted in the mid-
+FOV edges to both the rotation poles are not covered be— dle 0f the central units of both the horizon and the zenith
+cause these directions are always obstructed by the ISS mOduleS'
+S?E?E; FOVs 0f the horizon and the zenith modules Higher resistive anodes are preferable fer the better posi—
+both scan the almost entire sky in the 92 minutes orbital tion rei’OlTltlon because the thermal DOISG 0n the readout
+period. Any X—ray source is, therefore, observed twice in a signal IS inversely proportional to the anode r esistance.
+orbit. The horizon module precedes the zenith module by A .carbon ﬁber IS bettei: than a nichrome ere in thls
+21.5 minutes in the normal 188 attitude. The FOV 0f the pomt. Altheugh the. traditional earbon—coated quartz has
+horizon unit is tilted up by 6 degree above the direction a larger resistance,. It is. mechanically weak, thus easy i0
+of the ISS motion to avoid the earth atmosphere as an break by launch Vibration. The carbon ﬁber anodes 1n
+allowance for the possible 188 attitude ﬂuctuation. The the GSC were developed at BIKEN and were successfully
+FOV 0f zenith units is set in the plane that includes the useel 1n the HETE/WXM (Shirasaki et a1. 2003)' .
+zenith and is perpendicular to the direction of motion. Figure 3 shows a.picture Of a single GSC proportional
+Both FOVs have no earth occultation and use no moving counter. All the ﬂlght counters were manufactui‘ed by
+mechanics. Metorex (now a part of Oxford Instruments) in Finland.
+In the actual in—orbit operation, observation periods are The front X'ray wmeW has an area (.Df 192 .X 272 mm ' It
+limited on a 10W particle—background area in order to pro— IS sealed Wlth a 100—Mm_t.hmk bei‘ylhum fOﬂ' TO support
+. . . . the pressure on the beryllium fell in vacuum that amounts
+tect the counters from the heavy particle irradiation. It re— 740 k W . th h 1 'd t t 'th 17_
+duces the observation duty cycle down to ~40% (Sugizaki g. in e W 0 e area, gri S rue ures W1 a
+et a1. 2011). The two FOVs are capable of covering the mm height are placed.every.10.6—mm pItCh parallel to the
+Whole sky even if some of the counters have to be sus— anode Wires. The vertical grid is placed only at the eenter
+pended from operation. The sampling period of 92 min— to keep the open area ‘18 large as possible. The max1mum
+utes is suited to the studies of long—term variability (> 1 pressure Of 16.6 atm IS expected at the terriperature Of
+hour) such as AGNs. 5.0 C. Every ﬂight counter was tested .to Withstand 1.5
+times higher than the des1gn pressure, 1.e. 2.5 atm. The
+3. Detector Uni t bodies of the gas counters were made of titanium, Which
+has sufﬁcient strength and a heat expansion coefﬁcient
+3.]. Gas counter close enough to that of beryllium. The beryllium foil is
+The GSC proportional counters employ resistive car— glued on the body Wlth epoxy. . .
+bon ﬁbers With a diameter of 10 Mm for anode Wires. Figure 4 and 5 show the counter cross—section Views.
+
+"
+"3","No. ] MAXI GSC on 188 3
+/3 |=0
+Q =40 I =—4O z
+5/ <1) <15 £0 (1) 30
+$9
+7"" 6-
+g “:91,” s; NW 199‘ .17. “g
+,I'IJ“ \ \ \ \ \ i , ’ , ’ )3.“ \‘M24
+.g/ 1"" H“ ‘X rotat i on ax i s
+
+Fig. 2. Cross-section VieW of each horizon/zenith module. Three camera units are packed in a rectangular space. The incident
+
+angle gb is deﬁned for each camera, While the source—acquisition angle ﬂ is deﬁned for the MAXI payload. The thick outline on the
+
+center camera indicates the shields made of 0.1-mm lead and 0.1-mm tin sheets installed to block external X-ray.
+The gas cell is divided by ground Wires into six carbon— anode Wire against the readout signal Charge. The higher
+anode cells for X—ray detection and ten tungsten—anode gas gain is basically preferred for the better position res—
+cells for particle veto. The carbon—anode layer and olution. However, the high voltage for the best position
+the bottom veto—detector layer have depths of 25 mm resolution is usually in the limited proportionality region
+and 18 mm, respectively. These sizes are determined rather than the proportionality range, Where the spatial
+so that the main X—ray detectors and the veto detec— gain non—uniforrnity is larger due to the space—Charge ef—
+tors have enough efﬁciencies for X—rays in the 2—30 keV feet, Which also degrades the energy resolution. The op—
+band and minimum—ionization particles, respectively. The erating high voltage (HV 2 1650 V and the gas gain of
+minimum—ionization energy in the 18—min thick Xe gas is 7,000) is Chosen to achieve a sufﬁcient position resolution
+30 keV. The carbon anodes and veto anodes are not 10— and still keep an adequate energy resolution.
+cated at the center of each cell in the vertical direction. For the in—orbit calibration, a weak radioactive isotope
+The anode locations, the aspect ratios of these gas cells, of 55Fe is installed in every counter, Which illuminates a
+and the spacings of the ground Wires are determined so small spot of about 1 mm in diameter at the right end of
+that the spatial non—uniformity of gas gain is small Within the C2—anode cell (ﬁgure 4). Each isotope has a radiation
+each cell. of 30 kBq and its count rate by a GSC counter is about
+
+The tension of the carbon—anode Wire is set to 4 gW, 0.2 C s‘1 at the launch time.
+Which is sufﬁciently smaller than the breakage limit, N 25 3 2 Fran t-en d electronics
+gW. A11 anode and ground Wires are ﬁxed Via a spring at ' '
+right end to absorb the difference of the heat expansion Each GSC counter has six position—sensitive anodes
+coefﬁcient and keep the Wires tight and straight. The readout at the both ends (left and right), and two sig—
+Veto anode Wires are made of gold—coated tungsten With nals for connected veto anodes. A total 14 preampliﬁers
+a 18—um diameter, Which is pulled With a tension of 18 are used for the 14 analog signals.
+gW. We chose as thin Wires as possible for veto anodes The front—end electronics boards are built in the back—
+to achieve similarly high gas gain as the carbon anodes side of the proportional counter. It is designed to shield
+since the same high voltage (HV) is applied to both the external noises and also to strengthen the counter frame.
+carbon anodes and the veto anodes. The gas—gain ratio of The electronics boards include the high—voltage power
+carbon anode to the veto anode is 20:1. The ground Wires supply, HK (House—Keeping) electronics and their con—
+are made of gold—coated tungsten With a 50 um diameter. neotors. The HK Circuit monitors temperatures at eight
+The tension is about 50 gW. points in the camera (HV box, preampliﬁers, gas cell,
+
+We tested several kinds of gas mixture and chose a oom— etc.) and HV values. The HV—power supply With a low—
+bination of Xe (99%) —1— C02 (1%) With a pressure of 1.4 power consumption was manufactured by Meisei Electric
+atm at 00C. The amount of C02 is decreased from WXM Co. Ltd. Figure 6 illustrates the conﬁguration of the HV
+PC (3%) (Shirasaki et a1. 2003) in order to reduce the spa— connections in each counter. One HV—power—supply unit
+tial gas—gain non—uniformity (section 8.3), and still keep works on one GSC counter. In total, twelve HV—power—
+the sufﬁcient quenching effect (Mihara et a1. 2002). supplies are used. The coupling capacitors connecting
+
+The position resolution and the energy resolution are the preampliﬁers and the anode Wires are of 2200 pF,
+incompatible requirements. The position resolution is pri— Which have sufﬁciently lower impedance (< 1 k9 for 2,118
+marily determined by the thermal noise on the resistive— shaping out signal of the preampliﬁer) than that of the
+
+"
+"4","4 Mihara et a1. [VOL ,
+_. .. S12»? "".'f' __ _ .. 43 133.25 5.5
+. "" .~ .? ""q ‘ ‘ ' - <—> R 3
+.- -' 3A ' . .— ——-_I—-—VI-—
+. ‘ . 7‘ _ .7 ~-':1u. -° * ° ‘ °-
+' ” - ' 6'- :J [:
+"" [:1 [Z
+i: [:1
+[:1 :1 I
+(b ” :1 [:1
+<9 q§0 . I 6:) :1
+g? ' ' E: i:
+6/»
+Fig. 3. Proportional counter used in GSC and drawing of the window from the top. See ﬁgure 4 and 5 for the cross—section Views.
+1.4 1.4 1.4 1.4 1.4 1.4 1 carbon cell =32x24 mm
+8.95 92‘94‘92 9.2 9.4 9.2
+“pm"" :5: I I I w 4t
+gap2.5 A .. I...” b...{ t
+- M ‘7 w 3
+Kgﬁi§¢ﬁ ?.?AQ’BYSYSYJ‘
+Pg = 512.75 5‘4 o o a 0 Be foil 0 — QV
+‘4-75 El- '9'4 A °l16' '16'° o o 3 h
+’4 ‘ TI ° 0 0 ° 0 °c4 ° °c5 : °ST1 3 24
+9_ 25 all. STO :33 co :1 01 Z 02 0 c3 2’ Z Z a 42
+v . . . :—. . u o o :10 o o o o : T T T J : o o o o o : o o o o o : o o o o o : o o o v
+325 4 44°; 5.3eac O 4
+it‘ll“ . BO i} ., B1 Z 0 Z 0 Z a Z a 3 o I? 18
+9.75 ‘ﬁll 330 6.25 6 32 B3 B4 BS SBI Lﬁ
+‘5‘. “ 1t
+201 3t
+230
+.10 > / ﬁlm '9 "" .14, n. . '5F / '/;_La 7 . //—\ _/\..
+ITKIIQ . , @j I {a @94 >>C/ g 2/ >
+6 ‘-‘ 6 ©0 8 @O 3 ' ﬁg 0 O K? a Q . (@03 so » {Chg} , d
+Fig. 4. Cross—section View of GSC proportional counter on the plane perpendicular to the anode wires. A11 anode/ground—Wire
+locations are shown. The names for anode, C, B, ST and SB, denote Carbon, Bottom, Side Top and Side Bottom, respectively.
+The wires of B0 to B5 are connected together in the counter and read out as a single b0tt0m—vet0 (BV) signal. The same for
+STO, ST1, SEC and 8B1, as a side—veto (SV) signal. All numbers represent the scale in units of mm. Electric potential in the
+counter calculated by Garﬁeld is shown in the below. The “Garﬁeld” is a program to simulate gas counters developed in CERN
+(http: //garﬁe1d.Web.cern.ch/garﬁeld/).
+
+"
+"5","No. ] MAXI GSC on 188 5
+Be window carbon anode GND wire veto anode
+gxmi--§ygi
+§H——-—ﬂ5 _
+left | __—iI . rlght
+:JE—= LE
+il'l—I'l:
+295
+333
+(—— 358 ——>
+Fig. 5. Cross-section VieW of GSC proportional counter along the Wire direction. Numbers are in units of mm.
+carbon anodes (33 k9) and still do not accumulate too mission function was constructed based on the measured
+much Charge for the preampliﬁers. data. Figure 7 right panel shows a comparison between
+Since the Wire hermetic rods come out from both the the measured data and the model. The in—orbit alignment
+anode ends, two front—enol Circuit boards are placed sepa— calibration was carried out using celestial X—ray sources,
+rately at the side ends. We selected a hybrid—IC, Amptek Sco X—l and the Crab nebula, and is described in Morii
+A225, for the preampliﬁer, Which is made With a space—use et al. (2011).
+quality and has a low—power consumption.
+The preampliﬁer gains represented by the ratio of the 4. Radiation Belt Monitor (RBM)
+output pulse height to the input Charge (Volt/Coulomb)
+should be the same between the left and the right of each The GSC is equipped With RBMs to measure the parti—
+carbon anode. We thus measured gains of all A225 Chips ole ﬂux Which causes background for GSC and SSC, and
+under the temperature condition of —20 to 600C, then to protect the instruments from heavy irradiation. Two
+selected pairs Whose gains show a similar temperature ole— RBM detectors are mounted at the central part of both
+pendence. The feedback capacities of veto anodes are left the horizon and the zenith modules (ﬁgure 1).
+as they are 1 pF at the default, While those of carbon Each RBM employs asilioon PIN diode (5X5 mm2, 200—
+anooles are modiﬁed to 4 pF by adding an external 3 pF am depth) made by Hamamatsu Photonics for its detec—
+capacitor in order to obtain closer pulse heights for both tor. The detector Window is covered by a 50—um—thick alu—
+signals from carbon anodes and veto anodes. The ratio minum Whose particle transmission is equivalent to that
+becomes 5:1. of the 100—um—thiok beryllium used for the Window of the
+. . main proportional counters. The FOV is about 800 X 500.
+3'3' $th and Slat Collzmator The opening angle of 800 matches the FOV of the central
+Figure 7 illustrates the schematic View of the GSC slit camera unit. The lower—level discriminator (LD) can be
+and slat collimator. The parallel tungsten rods With 3.7— set at 4 levels, equivalent to the deposited energies of 30,
+mm separation are placed at the top of the slat collimator 50, 200, and 1000 keV. The LD level of 30 keV is sensitive
+constituting the opening slit of the camera. The oolli— to both electron (E > 200 keV) and proton (E > 2 MeV).
+mator slats With a 118.4—mm height, placed at 3.1—mm The LD 50 keV is also sensitive for both electrons and
+pitch, constitute the FOV of 1.50 in FWHM, Which are protons in the same energies, but efﬁciency is about 50 %
+aligned vertically to the slit rods. The slats are made of for minimum—ionization particles. The LD 200 keV and
+phosphor bronze With 0.1 mm thick. The thickness is de— 1000 keV are to detect only protons Whose energies below
+termineol so that X—rays up to 30 keV are stopped and 100 MeV and 30 MeV, respectively. The energy losses of
+the sheets can be ﬂattened When pulled by the tension electrons and high energy (2 minimum—ionization) pro—
+springs. These surfaces are Chemical—etcheol and rough— tons are small and below 200 keV.
+eneol to avoid reﬂection. 64 slats are installed at the front The readout electronics are designed to be fast enough
+of each counter. The “roofs” of the collimator module (as to count up to 105 C s_l, and do not saturate up to 107 C
+shown in a thick outline in Figure 2) and the both ends s_l. The count rate limit is high enough so that the RBM
+of slat collimators are covered by 0.1—mm lead and 0.1— can tolerate the in—orbit rate that is expected to be N 104
+mm tin sheets to shield Cosmic X—ray Background (CXB). o s‘1 in the ISS low—altituole orbit.
+Twice thicker shield made of 0.3—mm lead and 0.1—mm tin The two RBMs, one on horizontal module and the other
+sheets are placed to block the direct path from the space on the zenithal module, are also considered as the redun—
+to the beryllium Window. olaiicy.2
+The collimator transmission was tested in the JAXA 2—H . . .
+beam facility. The setup of ground calibration is described The results Obtamed m (?rblt Show a Shght dlﬁelience betweep
+. .. . . the two RBMs for the amsotropy of trapped partlcles, Wthh 1s
+1n Mom et al' (2006)' The transm1ss1ons are conﬁrmed reported in another paper for in—orbit performance (Sugizaki et
+to be Within i5 % of the design. A model of the trans— al. 2011).
+
+"
+"6","6 Mihara et a1. [VOL ,
+6800pF 6800pF
+W
+6800pF§ {'7 {7 6800pF
+A225 5 5 5.22?
+|____l 2200pF 2200pF . :
+CO L ' : . . : : CO R
+4H . ""IIWI-I t? =9
+C1 L . : . . C1 R
+03 L-‘<]-| '[WI_ W03 R
+C. 4, _I,w.l- e>+ R
+a = -IWI i =
+05 Lﬁe - - 1+[>:—C5 R
+. : 2200IOF 2200pF : :
+i : tungsten anodes : :
+8V L_jﬂi 470pF . , I: [>5 BV
+470pF .____.
+V All resistors are 10MQ.
+Fig. 6. Schematic View Of high—Voltage connections to anode wires on the front—end Circuit board.
+.56 6
+906 A nu nn‘
+50 3.7 ”a
+3 1 ‘0’ 4 . . v
+—_ . (U u"" “
+\\\ collimator 23 L.
+¢!.—_—‘\ \\\\\\ 64 sheets “5 "" a u
+_-2es=E;\""\ g , ..
+V \\\\\\\\ t 2 ‘ . .
+CD , u
+A f 160 ‘8 y A N u
+/--—--——'I a A "" "" u
+r_,-I 0 = = =
+Be window _ 1 O 1
+anode direction
+scan angle (deg)
+Fig. 7. (Left): Geometry of GSC slit and slat collimator. All numbers represent the scales in units of mm. Collimator sheets are
+0.1-mm thick and placed by 3.1-mm pitch. (Right): Effective area of slit and slat collimator for gb : 50, 350. Points represent data
+measured With X-rays at Cu—K line (8.0 keV) in a ground test and solid lines represent the response models constructed for the data.
+5. On—board Data Processing System processing, Which is named HIC—MAXI. One HIC—MAXI
+. . kage contains a gain ampliﬁer a shaping ampliﬁer an
+5.1. M D t P MDP pac . . 7 . 7
+28820” a 0. 7006888070 ( ) LD and a peak hold Circuit for a single analog channel.
+The GSC electronics system, named GSC Mission Data Each analog board carries 14 packages. The gain and LD
+Processor (MDP, hereafter), processes a total of 168— are adjustable by command to 512 levels (><1.0 — 36.0,
+channel analog signals from 12 position—sensitive propor— nominal 5.0) and 4 levels (typically equivalent to the X—
+tional counters. It also have a function to manipulates the ray energies of 0.25, 0.5, 1.0, 2.0 keV, nominal 1.0 keV),
+readout event data and to receive and process commands respectively. The design of the shaping ampliﬁer is opti—
+from the central MAXI data processor (DP). Figure 8 il— mized for the counter position resolution. It consists of
+lustrates the block diagram of the MDP data processing. one—order high—pass ﬁlter with a cutoff at 145 kHz and
+The system consists of two identical modules (MDP—A two—order low—pass ﬁlter at 2.1 MHZ. The peak—hold ca—
+and MDP—B) for the redundancy. Each MDP consists of pacitor of 1000 pF is chosen to sharpen the LD—Cut thresh—
+siX analog boards and one digital board to process signals 0101. Since a MOS FET, SD215, used to discharge the
+of six counters, a half of the entire twelve counters. Each peak—hold capacitor was found to be weak for heavy irra—
+analog board embodies circuits to process signals from one diation, it were replaced by the radiation—tolerant version
+counter. fabricated by Calogics. Furthermore, the HIC package
+We developed a hybrid IC for the GSC analog signal
+
+"
+"7","No. ] MAXI GSC on I88 7
+was shielded with a 2—mm—thick iron. It then accepts the data.
+
+total dose requirement of 2.8 krad (for 2 years, includ— Each event data in the telemetry has a time tag of DP
+ing the safety factor of 3). All other electric parts have Clock counter (DPTC) that is incremented every second.
+a speciﬁcation of the radiation hardness tolerant for 10 The timing of the DPTC and FRCs on GSC MDP—A/ B
+kraol. systems can be calibrated on the ground using data of
+
+Each analog board embodies a 14—bit ADC, AD 7899, an on—board GPS which are also downloaded through the
+whose conversion time is 2,us. While 8—bit precision is sufﬁ— telemetry.
+
+Cient for the energy resolution of the proportional counter,
+
+a 14—bit ADC is required for obtaining a positional value 6. Telemetry Data
+
+with a precision of N 0.1 mm precision along the 333 mm 6.1. D P Event Data Reduction
+anode w1re even for small pulse—height events.
+
+The position along the anode wire is encoded into the The MAXI Data Processor (DP) employs a rnulti—CPU
+ratio of two PHAs (Pulse Height Amplitudes) read out computer system using MIPS R3081. The DP controls
+at the both ends. Fourteen Channels in each counter are all payload instruments including GSC by real—time and
+processed by a single ADC. Each signal is peak—helol, then scheduled commands. It also packages the telemetry data
+is fed to the ADC one by one through a multiplexer. to be downlinkeol to the ground.
+
+The digital processing was programmed on the fuse— The DP receives GSC event data from the GSC MDP—
+type FPGAs operated at 10—MHZ Clock frequency, fabri— A/ B Via RS—422 connection. Each MDP can transfer 2,000
+cated by ACTEL. They are used on both the analog and event data every second at the maximum. The data rate
+digital boards. corresponds to 285 events s‘1 in the diagnostic mode.
+
+5 2 Event-data processing The event data are usually reduced in units of the 64—
+' ' bit format which consists of an camera number (4 bits) an
+
+The front—enol data processing is started when a LD—hit anode ID number (4 bits), two pulse height data (14 bits
+signal is issued at any of 14 signal channels. It triggers the X2) at the both anode ends (Left and Right), value of the
+peak—holols of all the 14 analog outputs in each counter. 20—kHz clock counter at event timing (16 bits), hit pat—
+The coincidence of the 14 LD—hit signals is judged within tern of the 14 gas—counter signals (both ends of six carbon
+the 10—as window. The readout process is activated if the anodes and two sets of veto—Counter signals) (8 bits), and
+coincidence satisﬁes the required combination. The hit— data—reaolout rnoole (observation/oliagnostic) (4 bits). The
+patterns of the readout events can be Changed by com— telemetry formatting occurs every second. In the obser—
+rnanding. In the nominal conﬁguration, only those events vation mode, each single—event data consists of the 64—bit—
+in which the LD—hit signal is found only from a single format units. In the diagnostic mode, each event consists
+carbon anode are processed. of seven 64—bit units; siX for the siX carbon—anodes and
+
+The GSC has two event—reaolout modes: one is the ob— one for the two veto anodes.
+servation mode and the other is diagnostic mode. In the Since the telemetry bandwidth between the ISS and the
+normal observation mode, two PHA data from a carbon ground is limited, there are options to reduce the data
+anode with LD hits are A/ D converted, then processed mass. The DP has a function to ﬁlter event data with
+into the telemetry data. In the diagnostic mode, all the the software LD and UD, which can be set separately for
+14 signals are processed. The A/ D conversion takes 20 the two downlink paths (MIL—1553B and ethernet; see the
+as for two PHA data in the observation mode and 140 as next subsection), in each counter. The telemetry event
+for 14 PHA data in the diagnostic mode. The dead time data also have three reduction modes: 64—bit, 32—bit and
+for the analog processing becomes about 30 as and 150 16—bit to be able to ﬁt the limited data rate. In the 64
+as in observation and diagnostic modes, respectively. The bit mode, the primary 64—bit—forrnat data are transferred
+diagnostic mode are used for the detector health Check. without any reduction. In the 32 bit mode, each 64—bit
+
+The LD—hit count in each anode is always monitored data are reduced to 32 bits which consists of camera num—
+by LD—hit counters. These count data are stored in the ber (3 bits), anode number (3 bits), two PHAs (13 bits
+HK data in the telemetry every second. The counter data X 2). In the 16 bit mode, camera number (3 bits), pre—
+also includes information of multiple hits (the numbers of registered encoded numbers for position (eg. 8 bits) and
+carbon—Carbon or veto—Carbon coincidences). The hard— energy (eg. 5 bits) are returned. The bit assignments in
+ware upper—level discriminator is not equipped on the cir— 16 bit mode are commandable. Table 1 summarizes the
+cuit board. Instead, the rate of events whose pulse height bit assignments of the three telemetry—reoluction modes. 3
+:(trgather end is saturated in A/ D convers1on are moni— 6. 2. Data Downlmk Flows an d Ban dwz’ d th
+5 3 Event Timing MAXI has two data downlink paths to the ground, the
+
+' ' MIL—STD—1553B (MIL—1553B hereafter) and the ethernet,
+
+Each MDP—A / B system is equipped with a 20—kHz free— 3.— . .
+
+run Clock counter (FRC) with a 16—bit length to measure 3113;5055}; ZAAXII. liunCh the nommal data'reducuon @0016 for
+
+, , , , — own 1n was set to the 32—b1t mode, Wthh con—
+eaCh event tlme Wlth a 50118 preCISIOD' When the event"" tinued for the initial operation phase. It was changed to the
+readout process is activated by a LD—hit signal, the num— 64—bit mode on October 30, 2009. The data through the ether-
+ber of the FRC is latched and included into the event net downlink always takes the 64 bit mode-
+
+"
+"8","8 Mihara et al. [Vol ,
+A225 M DP: A System DP
+14 outputs Analog Board 0 Digital
+board 1digit
+A HITCOL COL . . D =15
+W a I S 12's” P
+- Shape amp =— Matrix = ”S T
+COL ; Galn ﬂ C C 15533
+amp Hold ; F RS422
+x1 36 comma“ bItdata
+esoo adjustable Peak mm M C /d I S
+CPR P 14bit _ ”31;; Ethernet 8
+av II—E X I-I ""
+GS_C1 Analo- Board1 D wig“
+I :1
+GSC5 Analoo Board 5 p ”S
+F
+9395 % MDP: B System R
+esCB C
+1 ms
+Fig. 8. Block diagram of event—data readout ﬂows on the GSC Mission Data Processor (MDP).
+Table 1. Bit assignments of event data in three telemetry—reduotion mode
+Reduction Mode GSCID ANODE PHA GSC—FRC HIT—PTRN MODE
+64—bit 4 4 14><2 16 8 4
+32—bit 3 3 13><2 0 0 0
+16—bit 3 0 8* (position) + 5* (energy) 0 0 0
+*z The bit assignment between position and energy data are commandable Within the total 13 bits.
+Whose maximum olata—transfer rates are 51 kbps and 600 four kinds of protections in software using information of
+kbps, respectively. While the ethernet has an advantage RBM counts, location of ISS, location of the sun, and the
+in the speed, the MIL—1553B is superior in the connection LD count rates.
+reliability. GSC usually uses 50 kbps of the ethernet and .
+SSC 200 kbps. SSC mainly uses the ethernet for the event 7'1' On-boaxrd REM Protectzon
+data. A protection function using the RBM count rates is
+GSC can use about 70% of the MIL—1553B bandwidth implemented in the MDP circuit. When either count rate
+assigned to MAXI. If the event rate exceeds the limit, the of the two RBMs exceeds the threshold, HVs of all the
+overﬂow data are stored in the DP buffer. The buffered twelve counters are reduced to 0 V. The threshold of each
+data are transferred later When the data rate becomes RBM can be Changed individually by commanding. The
+lower than the limit. The buffer for each of two readout HV suppression is released When the count becomes less
+systems (A/B) has a volume of 500 kByte and can store than the half of the threshold. These judgments are made
+62,000 events in the 64—bit format. The buffer data should every 10 seconds. 4
+keep the. data for 50 seconds typically, Which corresponds 7. 2. D P Software Protection
+to the single—scan duration of a p01nt source. Since the
+expected event rate for the Crab nebula is 31 events s‘1 The DP software can perform more ﬂexible and ﬁner
+for each system, bright sources With up to 40 Crab ﬂuxes controls of the counter HVs using information collected
+can be observed Without any data loss in the 64bit mode. from all the subsystems. The DP is always monitoring the
+Note that the brightest X—ray source, 800 X—1, is about parameters relevant to the counter protections described
+16 Crab in 2—20 keV. in the following subsections and reduces the HVs of the
+related gas counters to 0 V When any of the parameters
+7. Detector protection reaches the threshold. The HV suppression is released
+automatically When they are recognized to return to the
+The proportional counter must be operated carefully in normal condition. The DP slowly raises the HV not to
+orbit not to suffer from any breakdown. GSC has various 4— . ,
+
+t tion functions in hardware and software to avoid The thresholds for both horlzon and zen1th RBMs are set at 100
+pI‘O BC; . . counts in 10 seconds in the ﬂight operation . The MDP—RBM
+undeSHably hlgh count rates- The MDP equips a hard"" ﬂag is high during about 11 % of the Whole time, and in 3 % of
+ware protection function using RBM counter. The DP has the lOW-lattitude time.
+
+"
+"9","N0. ] MAXI GSC on 188 9
+stress the counters. The nominal rate is an increment anodes stays over the threshold for a given period,
+With a 330—V step every 10 second, Which can be changed the high voltage of the camera is reduced to 0 V.
+3y20?mr%aéiﬁngoi:; 7562:}; 7522;153:161"" These thresholds can be set for each counter individu—
+uThe DP also offers a protection With RBM but in a ally by comnnaneling. In these LD—connt protectien, the
+more sophisticated manner than that by the hardware as HV suppress10n is released after a 5—minute wait time.
+described in section 7.1. The accumulation of the RBM 8 Detector erformance
+counts and its judgement are carried out every second in ° p
+the sliding Window. The threshold level and the accu— 8.1. Energy Band and Eﬁicz’ency
+mulation period (nominal 20 seconds) are commandable. . . . .
+The criteria for the HV reduction and the recovery are the e t Eh e (ngggin? :gvse hlis EEEYEarlggyuii :hlenthagsrifrha—L
+same as the hardware one. When either of the integrated inal ener ran e 01y 2_3% keV In theolower ener end
+counts of the two RBMs exceeds their threshold, the HVs .gy g ' . . gy ’
+of all the 12 counters are reduced to 0 V The HV suppres— the efﬁmency drops due to the absorption in the 100—,um—
+. . . ' thick beryllium Window and varies from 2 t0 5% at 1.5
+s10n is released When both the integrated counts become . . . o 0
+less than the halves of their thresholds keV according to the X—ray ineldent angle of 0 —40 . In
+7 2 2 Radiation-Zone Protection ' the higher energy range, the efﬁciency jumps up at the
+The Radiation—Zone (RZ) protection is designed to :E/eﬂﬁéegvieOSGgeerf; Of 2:131:21: ltha: f3£t0£<0f (14.8.1 x_rféy
+avoid particle irradiation predicted from the geographi— . gy g e —e ge ose _
+cal location such as SAA. DP keeps three RZ—map data line energy 0111.6. t0 the escape O.f ﬂuorescence lines. The
+With 2 50x2 5° mesh for three different altitudes When escape probability Of X6 KJmG IS 66%’ thus It has a 81g—
+188 enters aradiation area deﬁned by the RZ maps the niﬁcant effect on the counter response. We measured the
+HVs of all the 12 counters are reduced to 0 V The 1878 lo— escape fraction and the complex energy response around
+. . . ' . the Xe K—edge energy using GSC ﬂight—spare counter at
+cation are obtained from the ISS anoillary data, Wthh are KEK hoton factor 7
+broadcasted 0n the 188 common network of MIL—1553B. p y '
+7.2.3. Sun Protection 8.2. Energy response
+Since GSC scans the almost entire sky every orbital . .
+cycle, the direction to the sun is also covered by some GSC The GSC gas counter is operated at the noininal HV Of
+camera units. The Sun protection is designed to avoid a 1.650V’ WhiCh is Chosen to achieve a $0001 pesition resolu—
+direct sun illumination 0n the detector, Where unfavorable tion. It IS in the limltéd proportionality region Where the
+high count rates area expected. The direction to the sun energy—T’HA relation is rather distorted. Thus, the detail
+is calculated using the ISS ancillary data. If the sun is calibration 1.8 necessary to construct the energy—PHA re—
+closer to the FOVs of some camera units than the limit sponse matrix: The tests for theenergy response calibra—
+the HVs of these cameras are reduced to 0 V. The limit 0i tion we?” earned out for all the. ﬂlght countei‘s us1ng X—ray
+the separation be tween the sun direction and the camera beams including ﬂuorescence lines from various target el—
+FOV can be Changed by commands 5 ements placed in the X—ray generator. Figure 9 shows the
+7.2.4. LD- Count Protection . obtained typical energy spectra. . .
+Every anode signal of each camera has a LD—hit counter Figui‘e 10.8hOWS the energy—PHA relation .derived from
+(subsection 5.1). The LD—Count protection is designed to the calibration—test data. It has ‘i‘ discontinuity at 4'7
+. . keV for Xe L—edge. The relation is well reproduced by
+aV01d damages by any unexpected high count rates such . .
+as breakdown. TWO kinds of counting methods are im— two expedient ﬁiDCFIOﬂS for those below and above the
+plemented to be sensitive to various break modes on the L—edge. The dev1at10ns between the data and the model
+detector functions are Within 0.6% over the 2—23 keV band.
+' Figure 11 shows the obtained energy resolution against
+1. Integrated High Flag the X—ray energy and that of the theoretical limit. The
+If a breakdown occurs, the count—rate suddenly in— measured energy resolution is 16 % (FWHM) at 6 keV. It
+creases to a high level. Every second, DP calculates is Close to the theoretical limit in the 3—5 keV band. The
+the integrated number of LD—hit counts of all anodes difference is larger at low and high energies. At low ener—
+in a camera during a given period. If it exceeds the gies, a part of the electron Cloud is lost by the ber llium
+3’
+threshold, the high voltage of the counter is reduced Window. At high energies, the spatial gain non—uniforrnity
+t0 0 V. The integration is done by the sliding Win— becomes effective according to the large mean free path.
+dew. —
+. . 6 On April 18, 2010, the ISS auxiliary data was stopped due to
+2' Continuous ngh Flag the ISS computer trouble, and the sun went into the FOV 0f
+Iﬁa mOdérate Spark occurs: the count—rate beconnes a GSC camera. The integrated high ﬂag became 0n and the
+slightly high continuously. In such a case the contin— HV of the camera was shutdown safely. At that time the sun
+uous high ﬂag works_ If a total LD_hit count of all reached one-fourth t0 the center Of FOV. The ﬂux Of the sun
+— was measured 1400 Crab in 2-4 keV.
+5 The limit of the sun angle has been reduced from 300 at the 7 http://WWW.kek.jp/intra—e/research/PF.html
+initial operation to 4° in the nominal Operation to optimize the
+sky coverage.
+
+"
+"10","10 Mihara et a1. [VOL ,
+800 30 , I
+an8.6 keV E
+Sezll keV
+600 Fe:6.4 keV \\\ (p
+Cr:4.5keV Y:15keV g 20 \\\
+. Ii A; l i E 4) C” (D
+E 400 Ti:2.6 keV H ( I i i i g $660,. \ CD (D
+i i i i 34’ i 6’? \ (Dd) 2 (D i
+i i“ \ j >. 5 067,. X a q) 5
+i i ' 3‘30 2 %- X 5 <I> ;
+200 A {ii \f i L5 i ’1 \\\ <l>
+‘ _ . 0* W m... , .
+0 “‘ u... ‘3; ' “.2“ ' '
+0 500 1000 1500 2000 2500 2 5 10 2O 30
+PHA channel Energy (keV)
+Fig. 9. Energy spectra for K—shell emissionlines from Ti (2.4 Fig. 11. Energy resolution (FWHM) against X—ray en—
+keV), Cl"" (4-5 keV), Fe (6-4 kV): Z11 (8-6 keV), Se (11 keV), ergy. Circles With 1—0 error bars represent measured data
+and Y (15 keV). The data were taken for pencil X—ray beams With K—shell emission lines from the elements same as
+irradiated at 311 off—Wire position 0f counter #0 anode CO in those in ﬁgure 10. The theoretical limit is estimated as
+the nominal anode HV Of 1650 V- 2.35{W(F —|— b)/E}1/2, Where the mean ionization energy
+W = 21.5 eV, the Fano—faetor F = 0.2, and dispersion of gas
+gain in electron avalanche b = 0.5 are assumed (Knoll 1989).
+3000 I . I
+E Ag 8. 5’. Gain Spatial Non-uniformity
+Y MO 4 The gain non—uniformity along the anode Wire is mea—
+T) 2000 Se sured With a 2 mm pitch using Cu Ka (8.0 keV) and M0
+g 5 Zn 5 g E Ka (17.5 keV) X—ray beams With a diameter of 0.2 mm.
+a: FeCu : ° 3 The non—uniformity among each anode cell is N 20 % typ—
+E 1000 Sr ieally. The data is used in the PHA—PI conversion carried
+9* C2111,"" E 5 out on the ground data reduction and also to build the
+C16 E energy response matrix in the spectral analysis.
+’ f E The non—uniformity on the vertical plane to the anode
+O I ' ' Wire was measured With slant X—ray beams taking an ad—
+1.0l vantage of the position sensitivity. The method is de—
+.2 1 Q: Q 00 E G scribed in Mihara et a1. (2002). Figure 12 shows the 0b—
+5 ”""'<5'0 ©0900 tained gain non—uniformity around the anode Wire. The
+0.99 gain is the highest in the annulus ofan about 5—mm radius
+' . from the anode. It is lower than the average at the cen—
+0 5 10 15 20 25 . . .
+Energy (keV) tral region around theanede Wire and the outer regioh.
+Compared to the distribution of the electric potential in
+, , , , , ﬁgure 4, the gain has a positive correlation With the ﬁeld
+Fig. 10. Linearity of energy—PHA (Pulse height amplitude) . .
+relation. Circles represent measured data for K—shell emis— Strength 1n the OUter reglon'
+8-4- Pom Response
+shows residuals from a model expressed by expedient fune— Since the GSC employs slit—Camera optics, the detector
+tion’ 9—, beXp<CE)' The discontinuity at the X6 hedge (4'70 position response is important for determining the direc—
+keV) 1s 1mp1emented 1n the model. . . . .
+tion of ineldent X—ray photons With a good accuracy. The
+data of the position response is taken With a 1—mm pitch
+along the carbon anode using X—ray beams of Cu K—line
+in the ground calibration tests.
+The position is encoded in the ratio of the pulse height
+readouts at the both anode ends. We here deﬁne the two
+PHA as the left PHAL and the right PHAR and introduce
+a position—measure parameter, PM ,
+PM : PHAR PHAL (1)
+PHAR -1— PHAL
+The position—measure parameter has an approximately
+
+"
+"11","N0. ] MAXI GSC on 188 11
+0 1 , ‘ :
+E 1 1 ‘ ‘ 1‘: L 3000 \\
+-5| Ti 4 ._.....;:-::::::::ZZ::::‘ 0 ﬂ 2900 \ m\ [100
+g i 53:52:23:{335533:22s;33:§-}i:s:;;-.?E§§ii: 1 i 280° ”5* ‘3‘ D
+E10F? ‘ , £ ‘ 2700 E 310 \\\
+g - IF 1 ‘ T x T 1*: T E E \ ‘m 5 [33‘
+'5‘ I 5 T 1 26°° 3 3 ‘ ‘ 5 OP
+I.IJ ::-.:: ::.-.-.-.-: ‘. \ O ‘0.
+E 1 , ‘ 2400 E E A \ 13 [650p
+'2°' t : L .2 1 “t
+I 1: f \ \A
+-""""""""""'5 -80 -7""""""""""5 s \ .
+DETY (mm) 10 100 1000
+Normalized PHA (channel)
+Fig. 12. Cross section of gas—gain non—uniformity in a single
+carbon—anode cell (C0 cell) 011 the plane perpendicular to the Fig. 14. Relation between position resolution (FWHM) and
+anode Wire. The DETY direction is parallel to the detector signal pulse height normalized by read—out ampliﬁer gain.
+Window and the DETZ represent the depth from the the beryl— Squares, ﬁlled circle, and triangle points are data taken at
+lium-Window Plane The anode Position is (—80: —14-75)- the HV of 1400 V, 1550 V, and 1650 V, respectively. Four
+The data are obtained by the slant—beam method using X—ray data points at each HV are the resolutions for Ti—Ka—l—Kﬁ
+beams of M0 K—line (17.5 keV). TWO black stripes are unmea— (45 keV), Fe—Ka (6.4 keV), Cu—Ka (8.0 keV) and Mo—Ka
+surable region located under the counter—support structure. (175 keV). The dashed line represents an inversely proper—
+The gray scale represents the the pulse heights of the output tional relation.
+signals for the M0 K—line.
+8.5. Position Resolution and High Voltage
+8 The position resolution should be better than the slit
+‘— opening Width of 3.7mm to achieve the optimal angular
+A resolution. It is mostly determined by the ratio of the
+E thermal noise to signal charges, Which are the photoelec—
+E O trons multiplied by the avalanche process in the counter.
+lg Figure 14 shows the relation between the measured p0—
+sition resolution and the signal pulse height normalized by
+8 the readout—ampliﬁer gain, obtained from data taken for
+T X—ray beams of Ti—Ka—i—Kg (4.5 keV), Fe—Ka (6.4 keV),
+E LO . D Cu—Ka (8.0 keV) and Mo—Ka (17.5 keV) in three anode
+é voltages of 1400, 1550 and 1650 V. It is Clear that the
+T; 0 position resolution is inversely proportional to the pulse
+3,3, L? height. It is because the equivalent noise Charge is con—
+9 _0_5 0 0.5 stant in each anode and the position resolution depends
+PM only on the number of the multiplied signal charges. The
+Fig. 13. Relation between the position at Which X—ray is ab— rightmOSt pOint’ measured for MO_KO‘ at 1650 V7 iS Slightly
+sorbed along the anode Wire (DETX) and the position—mea— hlgher than the llne because the mean free path Of the
+sure parameter derived from the PHA ratio (PM : see text). photoelectron (N 0.5 mm for 17.5 keV) iS not negligible
+This is for the GSC camera 6, anode 0 measured at the nom— (Tabata et a]. 1972)_
+inal HV Of 1650 V “Sing peneﬂ X'rey beam Of, C“ K? lihe ' We determined the nominal anode voltage of 1650 V
+The data (square) are ﬁtted Wlth a linear function (solid line) based on the results.
+1n the top panel, and the res1duals are shown 1n the bottom
+panel” 8.6. Anti-coz’ncidence
+linear relation With the event location Where the X—ray Figure 15 shows energy spectra and count—rate dIStrl'
+is absorbed along the anode Wire (ﬁgure 13). However, blitions 0f the 100111 background events. Those With and
+the relation cannot be exactly linear in the real experi— Wltheut ant1—eomc1dence cut are shown. The energy band
+ment. Any analytic function cannot successfully repro— Of 2—30 keV IS used for the plot. The data are obtained
+duce the data obtained in the calibration tests With the as a part Of the ﬁnal ground tests at Kennedy Space cen—
+required position accuracy. We thus decided to use the ter in 2008 November. The background rate at KSC was
+table—lookup method in the response function based on about 90 % Of that in Tsukuba Space Center. The anti—
+the ground calibration t ests. COiﬂCidence cut reduces the event rate down to about 1 / 9.
+The remaining room background rate is 1.0 X 10‘4 C s—1
+cm_2 keV‘1 in 2—30 keV. The room background mainly
+consists of gamma rays such as 40K. The spectrum shape
+
+"
+"12","12 Mihara et 311. [VOL ,
+. , teeter position resolution of 1—4 mm varying With X—ray
+++ _1_ 1+1 m_antl' energy at the nominal HV of 1650 V, and the background
+10 ._..._...._.++______..._....11111111141111...“...... ' tion efﬁcienc b the anti—coincidence techni ue.
+A + E 1 *1 11111114911 r9190 3’ y (1
+E Authors thank Metorex (Oxford Instrument), Meisei
+‘7 + 3 Electric Co. Ltd., and NEC Co. Ltd., in particular
+g ﬁ—1 1 5 . . . . . f b . _
+Tm 1 1 11. antl. t0 Mattl Kalplamen for the development and a 11031
+3 +111 11 1 § 111 1 tlon of the GSC proportlonal counters, 1830 Tanaka,
+g 1 1111111111 Nobuyuki Kidachi, Koji Taguchi for the development
+1° § 1 11 1 1 and production of the collimators and the electronics,
+3 1 and Takahiko Tanaka, Hiroshi Mondo for the develop—
+ment of the DP. This research was partially supported by
+' the Ministry of Education, Culture, Sports, Science and
+2 3 5 10 20 30 Technology (MEXT), Grant—in—Aid for Science Research
+Energﬁkev) 19047001, 20244015, 21340043, 21740140, 22740120 and
+: 5 no—anti. Global— COE from MEXT ”Nanoscience and Quantum
+i 1 5 Physics” and ” The Next Generation of Physics, Spun from
+10 ""111111111111191113111'11111111111:11115131191' Universality and Emergence”.
+TE i References
+3 1 aﬁti. 1 Conner, J. 13., Evans, W. 1)., & Belian, R. D. 1969, ApJL, 157,
+E 3 5 3 L157
+3 11111.1”1.1111111111111111111111111 Fishman, G. J., et 51. 1993, A&AS, 97, 17
+g 1111 1 1 1 1 1111 1: Gehrels, N., et 51. 2004, ApJ,611, 1005
+s 1 1 11111 11 11 Holt, S. 3., et 51. 1976, Ap85SS, 42, 123
+E E Knoll, G. F. 1989, Radiation Detection and Measurement
+Levine, A. M., Bradt, H., Cui, W., Jernigan, J. G., et al. 1996,
+‘100 0 100 ApJ, 469, L33
+DETX (mm) Matsuoka, M. et al. 2009, PASJ, 61, 999
+Mihara, T., et 81., 2002, Proc. SPIE, 4497, 173
+Fig. 15. Energy spectra (top) and position distributions Morii, M., Sugimori, K., 85 Kawai, N. 2011, Physica E: LOW—
+along the anode (DETX) (bottom) of the room background dimensional Systems and Nanostructures, 43, 692
+taken in the ﬁnal ground 1631 at Kennedy Space center in Morii, M., et 31., 2006, in Space Telescope and Instr. 11 ed.
+2008 November. The measurements for counter #0 anode C0 Turner, M. J_ L. & Hasinger, G. 131.00 SPIE, 6266, 6263U.
+taken With and Without anti-coincidence cut, are shown . The Shirasaki, Y., et al. 20037 PASJ, 557 1033
+Zﬂgiigegiftlhgti: :13 ESDDETX dlrecmn ls ‘136 to +136 mm Sugizaki, M., et 51. 2011, PASJ, in print.
+' Tabata, T., et al. 1972, NIMM, 103, 85
+. . . . . Tomida, H., et al. 2011, PASJ, in print.
+does not Change W1th and W1th0ut the ant1—001n01dence. Tsunemi, H., Kitamoto, 3, Manabe, M-, Miyamoto, 3,
+Yamashita, K., 85 Nakagawa, M. 1989, PASJ, 41, 391
+9. Summary Tsunemi, H., Tomida, H., Katayama, H., Kimura, M.,
+Daikyuji, A., Miyaguchi, K., Maeda, K., 85 MAXI Team.
+The GSC is one of the X—ray instruments of the MAXI 2010, PASJ, 62, 1371
+mission on the 188. It is designed to scan the entire sky Turner, M- J- L“: 61 811- 19897 PASJ, 41, 345
+every 92—minute orbital period in the 2—30 keV band and
+to achieve the highest sensitivity among the all—sky X—
+ray monitors built so far. It employs large—area position—
+sensitive proportional counters With a total detector area
+of 5350 cm2 and the slit and slat collimators deﬁning
+two rectangular FOVS of 1.50(FWHM) X 1600 to optimize
+the monitoring of relatively faint sources including AGNS.
+The on—board data processor (DP) has functions to for—
+mat telemetry data for the two download paths different
+in the bandwidth and to protect the gas counters from
+particle irradiation in orbit. The ground calibration tests
+conﬁrmed the effective area in the energy band of 2—30
+keV, the energy resolution of 16% (FWHM) at 6 keV,
+the energy response in the limited proportionality region,
+the spatial non—uniformity of gas gain about 20%, the de—
+
+"

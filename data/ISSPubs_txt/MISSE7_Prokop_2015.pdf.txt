@@ -1,0 +1,476 @@
+"","x"
+"1","® ErossMark
+REVIEW OF SCIENTIFIC INSTRUMENTS 86, 024707 (2015)
+A miniature microcontroller curve tracing circuit for space flight testing
+transisto rs
+N. Prokop,1 L. Greer,1 M. Krasowski,1 J. Flatico,2 and D. Spina3
+1NASA John H. Glenn Research Centen 21000 Brookpark Rd., Cleveland, Ohio 44135, USA
+2Ohio Aerospace Institute, NASA Glenn Research Centen 21000 Brookpark Rd., Cleveland, Ohio 44135, USA
+3Jacobs Technology, NASA Glenn Research Center, 21000 Brookpark Rd., Cleveland, Ohio 44135, USA
+(Received 21 J uly 2014; accepted 2 February 2015; published online 19 February 2015)
+This paper describes a novel miniature microcontroller based curve tracing Circuit, which was
+designed to monitor the environmental effects on Silicon Carbide Junction Field Effect Transistor
+(SiC JFET) device performance, while exposed to the low earth orbit environment onboard the
+International Space Station (188) as a resident experiment on the 7th Materials on the International
+Space Station Experiment (MISSE7). Speciﬁcally, the microcontroller Circuit was designed to operate
+autonomously and was ﬂown on the external structure of the 188 for over a year. This curve tracing
+Circuit is capable of measuring current vs. voltage (I—V) Characteristics of transistors and diodes. The
+Circuit is current limited for low current devices and is speciﬁcally designed to test high temperature,
+high drain—to—source resistance SiC JFETs. The results of each I—V data set are transmitted serially
+to an external telemetered communication interface. This paper discusses the Circuit architecture, its
+design, and presents example results. [http://dX.doi.org/ 10.1063/ 1.4908163]
+I. INTRODUCTION ments with a temperature range of —125 0C to +600 OC. The
+transistors are small signal JFETs used within instrumenta—
+The International Space Station (188) is currently being tion Circuits such as ampliﬁers and digital logic gates.4 These
+used for in-Situ testing of materials and devices in the low transistors have been demonstrated operating for extended
+earth orbit (LEO) environment.1 As a test facility, the ISS periods of time (>10 000 h) at 500 OC and in digital logic
+has many challenging environments effects such as thermal integrated Circuits (ICs) operating for over 3000 h at 500 OC.5
+proﬁles, atomic oxygen presence, vacuum, and radiation. De— The SiC J FETs under test have a large drain to source Channel
+velopers of materials and devices have found great value in resistance greater than 10 KS) when fully on. These JFETs also
+evaluating performance in-Situ using the 188 operating enVi— need a VGs of — 10 V or greater to fully turn off the transistors,
+ronrnent. The current vs. voltage (I—V) curve tracing Circuit in and must maintain a zero to negative gate bias so as not to
+this paper was designed to support an endurance test experi— damage the pn junction of the JFET gate. In addition, VDs
+ment of Silicon Carbide J unction Field Effect Transistors (SiC needs to be near +15 V to reach the saturated drain—to—source
+JFETs) in the ISS environment. The experiment consisted of current (IDSS). As only a +5 VDC power supply was provided
+two SiC J FETs as the devices under test (DUTs); one in eXper— to experimenters, :15 V supplies needed to be designed and
+imental high temperature packaging2 and one in a commercial incorporated into the experiment Circuit to generate the needed
+room temperature package. The measurements performed are VGs and VDs voltages.
+drain—to—source current (IDS) vs. drain—to—source voltage (VDS) The physical layout for the MISSE7 experiment set
+curves at various gate—to—source voltages (VGs)- allotted a footprint area of approximately 10 cm X 20 cm
+The test platform onboard the 188 is a Materials on for the SiC J FET experiment. The experiment Circuit board
+the International Space Station Experiment (MISSE) Passive also supported electronics for two additional experiments: the
+Experiment Container (PEC). This suitcase like container atomic oxygen ﬂuence monitor and a gas sensor. Although
+is shown in Figure 1. Figure 1(a) shows the MISSE7 PEC these experiments will not be discussed in this paper, they
+mounted on an Express Logistics Carrier (ELC) on the ISS. added to the size constraints of the overall design. Since two
+Figure 1(b) shows the many types of experiments mounted transistors were under test, it was decided to construct two
+on the PEC with the SiC JFET experiment outlined. The independent test Circuits to include the :15 V supplies for each
+experiment was contained in a 2 mm thick aluminum box that test Circuit. This allowed redundant J FET testing, since both
+provides some radiation shielding and exposed the electronics Circuits have similar JFETs with different packaging. In the
+to a predicted yearly total ionizing dose of approximately 170 event of a single Circuit failure, some data would be recovered
+rad Si.3 The MISSE7 experiment set provided +5 Volts Direct from the redundant Circuit.
+Current (VDC) power and a serial communications interface The physical size constraints of the experiment necessi—
+for telemetry data. The MISSE7 PEC also has heaters onboard tated a new Circuit design for transistor curve tracing, which
+to maintain the temperature of the electronics to a range of miniaturizes the curve tracing function. This paper will present
+—40 0C to +50 0C for survivability. a novel miniature standalone transistor curve trace Circuit that
+The SiC JFETs were developed at the NASA Glenn Re— operates from a single DC voltage source and includes all
+search Center and are capable of surviving harsh environ— needed support Circuitry. The Circuit uses selected integrated
+0034-6748/2015/86(2)/024707/8/$30.00 86, 024707-1
+
+"
+"2","024707-2 Prokop at al. Rev. Sci. Instrum. 86, 024707 (2015)
+(A) OSLOLOESSLS (B)
+~ z: 4% "" ,,,,z//‘/7 ,//,, r - 7
+7/7/17; ./ Z’ 4/:4/74/714/ ,/* 7 I
+» 1---4' 7’7 ,/ I / /’l A L7 //_,,/.’ _: x V -
+x / [7‘42 1'; ‘17:},‘41‘7 ’7 , / , , /7 r
+[,A/ , A r/lf/l/ / [,fr- ,7 ’/ , ’. — ’ , .. \
+Z, A/I*7v'/""7 m ‘ {7,[1‘ —F’7 /f; .’ 7 A _/ . -. ’ t
+#1:; 2,17 l"". Ag? ""4» “5‘; _\ / azéﬂvv+ / 7 utigtgl' .
+[Z4 {gin 7r . “klx ~, 1’ ‘- J“”§%}§{¥\ ‘1) z— i"" ' j l '6 v.33: ’ ; ‘3‘ l
+1/ 1/ . (‘16:. ’ l""? . ' ‘ \ “‘1 ""[77 , / ‘ 3 .‘ ‘53. 5: x. {V ) \ W l
+./ i, ,. . ,, \‘ _\ \—L// I K 1 Or... .3 .. “4
+7A \ -* i - , ~ 1 .L.,_/ .- .1014“ 9
+L74“ 1 N ” \ V ‘ \‘ \i) ' i‘f‘l/ -‘ 5.‘ T 17'”? .1 2; 1°: '
+7 7/ . :— -. . . \AL/ x
+, fl; 1/ 3 a :54; ‘ / . 1
+s/ , - N! “x -' * I
+' I ‘ ISSOZ1EO31735 '
+FIG. 1. (a) MISSE7 PEC mounted the ELC. The experiment is shown outlined in (b).
+Circuits With a successful ISS ﬂight history and utilizes a these Circuits increase footprint With the number of desired
+novel load conﬁguration to account for the shortcomings of data points. As well as increased size, these Circuits are also not
+these components. Designed to use minimal physical space ﬂexible due to the resistors being ﬁxed values. Active power
+and mass, it is ideal for a space ﬂight test. The Circuit enabled sources or sinks such as the voltage controlled current source
+the ﬁrst space ﬂight test of high temperature SiC JFETs While shown in Figure 2(b) are ﬂexible, but use additional power,
+successfully operating on board the International Space Sta— take up space, and can potentially damage the DUT. The third
+tion from November 2009 to May 2011. option, the MOSFET, is an ideal Choice as a passive load
+that acts as a variable resistor With system capability limiting
+resolution in modulating the DUTs gate voltage shown in
+II. CURVE TRACING CIRCUIT Figure 2(C).
+. . . . . . I—V curve tracing Circuits for in-situ device Characteriza—
+A curve trac1ng Circuit exerc1ses an electronic deV1ce . .
+. . . . . . tion are not new, a number of solar cell I—V curve trac1ng
+through its operational region. This is done by plac1ng a . . .
+. . . . . . Circuits have been demonstrated on ﬂight platforms. Solar cell
+variable electrical load either in series or parallel With the . . . . .
+. . . I—V curve trac1ng Circuits are needed to Characterize deV1ce
+DUT. By varying the electrical load, the DUT 1s swept through . . .
+. . . . . performance degradation in the space enVironment, and have
+varying operating regions. The variable load can cons1st 0f .
+. . . been demonstrated on MISSE5, Wthh represents the state—of—
+a bank of res1st0rs, an active power source or a trans1st0r as . . . 6
+. . . . . the—art in space photovoltaic cell curve trac1ng measurements.
+shown in Figure 2. Res1st0r banks being the Simplest form . . .
+. . . . MISSE5 used a Metal Ox1de Semiconductor Field Effect Tran—
+of implementation are pass1ve loads that pr0V1de ﬁxed data . .
+. . . . s1st0r (MOSFET) as the load With solar cells as the DUT. In
+p01nts of operation, as shown in Figure 2(a). Unfortunately, . . . . .
+addition to the ChOlCC of operating electronic load for the curve
+trace Circuit, the DUT itself may also add complexity to the
+curve trace Circuit. For instance, the nature of tWO—port solar
+(A) (B) (C) cells differs from transistors in that they are two port devices
+as opposed to three port and require the generated power to
+be dissipated, Which is not required for transistors. The third
+port of the transistor complicates the design by adding another
+port of the DUT to control. Transistor I—V curve tracing Circuits
+I have been demonstrated in the laboratory, but these Circuits are
+J large because they often depend on external laboratory power
+supplies and signal generators.7’8
+? ? ? A. Design considerations
+| / | | A number of constraints were taken into consideration
+during the Circuit design. The radiation environment dictated
+most Choices in the design. Component selection was the
+primary method of mitigating radiation effects on the Circuit
+V V V . . .
+coupled With some Simple des1gn rules. The authors had suc—
+FIG. 2. Variable load options for performing a curve trace on the DUT. CCSS Wlth an eXtended ﬂlght .Of SOlar C611 LV CerUItry on
+(a) shows a resistor bank, Where a resistor can be switched in for each MISSE5 and these same CITCUIt components were Chosen for
+point in the curve. (b) shows a voltage controlled current source, Where the the design of this experiment. The central components of this
+number of p01nts 0n the curve is determined by the resolution of the source design were the Sill C011 Laboratories C8051F121 microc0n_
+and controller voltage. (0) shows a MOSFET acting as voltage controlled , , ,
+variable resistor, Where the number of points on the curve is determined by troller and the LT1013/101.4 .operational ampliﬁers. The ml—
+the resolution of the controller voltage. crocontroller has onboard d1 gital—to—analo g converters (DACs)
+
+"
+"3","024707-3 Prokop et al. Rev. Sci. Instrum. 86, 024707 (2015)
+and analog—to—digital converters (ADCs) with multiplexers to DUT will not be tested over the full VDS range of the positive
+provide numerous inputs.9 The LTlOl3 op amp is a precision supply rail or the DUT will not be tested over the full range of
+ampliﬁer based on bipolar technology10 that was shown to VGS. While rail—to—rail operational ampliﬁers are available that
+perform well as a component of the forward technology solar can overcome this output voltage swing limit, an alternative
+cell experiment instrumentation Circuitry during extended, an topology will also work. This is shown in (d) of Figure 3. In
+extended ﬂight on the ISS.“’12 this conﬁguration, the load is in parallel with the DUT and acts
+Together with the Chosen components, two design rules as a shunt. The load MOSFET controls the voltage across the
+were employed in the op amp measurement Circuitry. These DUT by acting as a voltage controlled resistor. One drawback
+rules were used to limit errors that might be introduced from of this conﬁguration is when the load is fully turned on, its
+increasing bias currents due to radiation damage, one of the resistance is in the sz, which can lead to excessive current.
+major concerns for bipolar linear Circuits in a low dose radia— This in turn leads to the need of a current limiting resistor.
+tion environment.13 The rules were as follows. The current limiting resistor will also limit the maximum VDS,
+. . . . . . . . but with small IDss transistors such as the SiC JFETs, the
+l. Minimize res1stance values in the op amp gain Circuits. . . .
+2. Balance Thevenin resistances as looking out of any op amp maxnnum VDS is Closer to the sup p ly fall compared to any Of
+input. the series conﬁgurations. The rnaX1mum span of VDs needs to
+be balanced w1th acceptable supply current.
+Rule 1 will minimize voltage oﬂsets generated by increased A simpliﬁed schematic diagram showing the curve tracing
+bias currents ﬂowing through gain resistors. For instance, if circuit from a systems View is shown in Figure 4. Micro—
+a 1 k9 resistor is used in place a 10 k9 resistor, then for the controller power is provided by a 3.3 V low drop out linear
+same current ﬂowing through those resistors, l / 10th the offset regulator. The microcontroller has two onboard 12—bit DACs
+voltage will be generated with the smaller resistor compared and two onboard ADCs, a 12—bit and 8—bit, respectively. Ad—
+to the larger. Rule 2 will minimize input offset voltage errors ditionally, each ADC has a built in multiplexer, allowing each
+due to increased bias currents. If the resistances are balanced ADC to make measurements at 8 input pins. The microcon—
+at the inputs, then for any increase in bias current at the inputs, troller contains an internal voltage reference of 2.4 V for its
+the offset voltages will shift by equal amounts, assuming the analog components, which deﬁnes the full—scale measurement
+bias current increases equally for both inputs. voltage. The 8—bit ADC uses the +3.3 V supply voltage of the
+The selection of the LT1013/ 1014 op amp did provide microcontroller as its reference, allowing a larger measure—
+one drawback in that its output voltage swing is not rail to rnent range but less resolution. These references give 586 ,uV
+rail (+supply to —supply) but instead as the data sheet lists resolution step for the 12—bit components and 12.9 mV reso—
+Can be as low as i125 V when used with :15 V supplies. lution step for the 8—bit ADC. The 12—bit ADC also has a built
+This becomes an issue When looking at the various Circuit in temperature sensor attached to its multiplexer, so the board
+topologies that may be constructed using a J FET as the DUT temperature can be sampled at the time of a curve.
+and a MOSFET as the load (Figure 3). Various curve tracing The Circuit operates by sweeping two control voltages in
+topologies are illustrated: (a), (b), and (C) are series and (d) is the Circuit. The ﬁrst is the gate voltage of the DUT (VGate)
+a shunt. Figure 3 shows three basic types of Circuit topologies: 0r SiC JFET and is controlled by the digital—to—analog con—
+(a) and (b) show a series load sitting above the DUT and (C) verter zero (DACO) through ampliﬁer (A5). The second is the
+shows a series load sitting under the DUT. Each of these series drain voltage of the DUT (VDrain) and is controlled by varying
+Circuits ((a), (b), and (C)) requires one of the gate voltages, the NMOSFET load (le) Channel resistance. So, VDrain is
+either the Load in (a) and (b) or the DUT in (C) to be driven controlled by the voltage at the gate of the Q1 from DACl
+to the +V supply rail: to fully turn on the load in (a), to fully through ampliﬁer (Al).
+turn off the load in (b), and to fully turn on the DUT in (C). The Circuit is capable of making four voltage measure—
+With the limited output swing of the LTlOl3/ 1014, either the ments with the respective ADC.
+V+ V+ V+ V+
+DUT
+NMOS PMOS RCurrentLimit
+Load Load
+DUT
+DUT
+NMOS
+Load
+NMOS
+Load
+RSense @
+RSense RSense RSense
+(A) (B) (C) (D)
+FIG. 3. Various curve tracing topologies. (a), (b), and (c) are series and (d) is a shunt.
+
+"
+"4","024707-4 Prokop et al. Rev. Sci. Instrum. 86, 024707 (2015)
+DC-DC Step-Up +15V
+Converter
++5 VDC to +15 VDC
+Voltage Inverter for
++5V e
++15 VDC to —15 VDC
+T +3.3V Low Drop Out
+Linear Regulator m A
+MicroController
+'m- ‘E ‘4 II.
+n; 4
+Sensor RSense Load
+Serial Data
+Output for m
+Telemetry m a
+FIG. 4. Diagram of circuit to perform curve tracing of SiC JFET as the DUT.
+1. DUT drain voltage (VDrain in Figure 4), 12—bit ADC. then sampled by the ADC 100 times and averaged to yield
+2. DUT source voltage (Vsource in Figure 4), 12—bit ADC. current value. If current value is greater than the requested
+3. DUT gate voltage (VGate in Figure 4), 8—bit ADC. value, nothing is done, but When the current value is less
+4. The Circuit supply voltage (Vsupply in Figure 4), 8—bit ADC. than the requested value, the value of the current DAC bit is
+. . added to a temporary variable, “Temp” in the ﬂowchart. A11
+. Each Of the measured voltages is ampliﬁed. as shown successive DAC bits, as they are stepped through are added
+in Figure 4. The ampliﬁers preyide a corresponding gain, a
+high impedance load to the Circuit being measured, and a 10W
+Impedance driver into the ADC. .
+The sweep of VGate is controlled by DACO through ampli—
+ﬁer A5. A5 is an inverting ampliﬁer to provide the negative Temp = 0
+gate voltage needed to turn off the DUT. The DACs onboard n=1
+the microcontroller have a maximum output value of +2.4 V
+(limited by the onboard voltage reference). This necessitates 212
+the need for an ampliﬁer to multiply the DACO output voltage DAG = 2—"" + Temp
+by a factor of —6 times to generate a Close to full—scale negative Write DAG
+voltage at the gate of the DUT (—15 VDC) to fully turn off the
+A software control loop is implemented to guarantee VGate Channe' 100 times
+is set correctly. Using closed loop software control of VGate, the
+controller is able to monitor the voltage at the gate and log the
+actual value. This is in contrast to open loop control Where the
+microcontroller would write a value to the DAC from a look—up
+.
+table and have no feedback from the current voltage reading at Is CurrentVa/ue yes 212
+. . . <= = —
+the gate. Monitoring VGate during Closed—loop control allows RequestedVa/ue? Temp 2"" + Temp
+logging and telemetering 0f VGate and can be used to show the
+Circuit is operating correctly. no
+The software feedback loop algorithm used to set the no
+control voltages is shown in the ﬂow Chart of Figure 5. The
+algorithm consists of a binary search Within the DAC output Yes
+range. The search is implemented by stepping through each of End
+th 12 b't f th DAC t t' b 't'n th m t Samp’edva’ue is at
+.e. 1se e srange, saring ywrii g e 0s RequestedVa/ue+1bit
+Signiﬁcant bit of the DAC (or half the full scale). Once the
+DAC value iS written, the controlled value (VDraina VGate) iS FIG. 5. Flow Chart of closed loop control of commanded circuit variables.
+
+"
+"5","024707-5 Prokop et al. Rev. Sci. Instrum. 86, 024707 (2015)
+to this temporary variable, producing the ﬁnal DAC value. boost converter and +15 VDC to —15 VDC voltage inverter,
+After the ﬁnal, or 12th iteration of this loop, the current value and Figure 7 shows the curve tracing load and measurement
+written to the DAC leaves the controlled value within one least Circuits. The boost converter needed to generate +15 VDC is
+signiﬁcant bit (LSB) of the requested value. made up of IC U2 and the surrounding parts in the left side
+A VDrain sweep is performed similar to that of the VGate, of Figure 6: Q2A/Q2B, Q3, L1, D1, R5, R11, R16, R12, and
+but is controlled by current steering through Q1. As the gate R7. The +15 VDC supply is connected to the positive supplies
+voltage on1 is Changed, the Channelresistance onl (RDS,Q1) for operational ampliﬁers U3A and U3B. The +15 VDC to
+Changes, thus the current ﬂowing through Q1 is varied. This —15 VDC voltage inversion Circuit is shown in the right half of
+current ﬂowing through Q1 generates the drain voltage (VDram) Figure 6, made up of Q4A, Q4B, Q5 , Q2B, C 10, C11, D3, D4,
+by varying the resistance divider between RCurrentLimit and the D5, D6, and the surrounding resistors. The Circuit is a common
+parallel combination of RDS,DUT (the resistance of the DUT Charge transfer voltage inversion Circuit, Charging C10 to the
+from drain to source) and RDS,Q1 according to the Eq. (1), +15 VDC supply rail through the diode D5. Then, connecting
+the positive lead of C10 to ground, generating —15 VDC on
+_ RDS,DUT H RDS,Q1 the negative lead of C10, which shows up on the negative
+VDRAIN — VSUPPLY >< — - (1) . .
+RDS,DUT ll RDS,Q1 + RCumle-mit lead of C11 by the current ﬂow1ng through D6. The negative
+This equation is non—linear and RDS DUT is dependent on yoltage across C11 p roV1des the _15 VDC rim to the 0.1) era—
+. ’ tional ampliﬁers U3A and U3B. The voltage inverting Circuit
+the voltage between its gate to source (VGs) and temperature, . . . . . .
+. o . . is driven by two non—overlapping Clocking Signals prov1ded
+Wthh can ﬂuctuate over 50 C. RSense is omitted from Eq. (1) . . .
+. . by programmable counter arrays Within the microcontroller,
+because it is much smaller than Ros DUT, 10 Q compared to . . .
+’ . . named VInV_CLK and not_VinV_CLK, controlling the direc—
+over 10 k9, the voltage across RSense is also omitted for that .
+. . . tion of current through Q4B and D5, then Q4A and D6. Zener
+reason. The compleX1ty of these relationships makes necessary . . . .
+. diodes D3 and D4 prov1de voltage trans1ent protection to the
+the need for Closed loop control of VDram, also us1ng the algo— .
+. . . . . . microcontroller outputs.
+rithm described in Figure 5. VDrain is sampled, while DACl . . . . . . .
+. . Because this curve trac1ng Circuit is duplicated tw1ce on
+writes to the gate of Q1 through ampliﬁer A1. Also to note, . . . . . . . .
+. . the printed Circu1t board, the option to shut down this Circu1t is
+Since the temperature of the enVironInent was only controlled . . . . . .
+. prov1ded by the microcontroller J FET_EN Signal to minimize
+to a survwal range, no attempt was made to compensate for . . .
+tem erature drift instead the tem erature was sam led at the p ower consumption. JFET—EN is connected to the enable p in
+. p ’ p p of U2, disabling the +15 VDC and the gate of MOSFET QlB,
+time of the curve and recorded as part of the curve data set. . . .
+. . . disabling the voltage inverter.
+The drain to source current ﬂow1ng the DUT (IDS) is . .
+. . Figure 7 shows the curve trac1ng load and measurement
+derived from the sense res1stor (RSense) and the source voltage . . . . . .
+(V )using Ohms law Circu1t schematic. Op amp U3A and its assoc1ated res1stor
+source ’ network ampliﬁes the DACO signal with a gain factor of —6
+VSOMrce times to drive the DUT gate. U3B samples the gate voltage
+IDS = Rsense ' (2) and attenuates the DUT gate voltage by a factor of —6 times
+(or provides a gain of —1/6 times) to provide the JFET_gate
+B C' 't d _ t' signal to the 8—bit ADC. U3A and U3B provide the loop to
+' 'rcu' escrlp Ion control the DUT gate voltage. One of the features of the DUT
+A schematic for the complete curve tracing Circuit is gate Circuitry is the path to ground R18 and R23. During power
+shown in Figures 6 and 7. Figure 6 demonstrates the corre— dOWIl, each ofthe DUT terminals should have apath t0 ngllIld,
+sponding power Circuit containing the +5 VDC to +15 VDC allowing any Charge buildup to have a discharge path so the
++SV
++1sv
+Ll H. leuH D6 A 043 MMDTZEE? 049
+R? ‘ >
++ GND C14 c7 R29 R95
+SUQ 4 En FB 4.?uF eaepF 4'99K 15 R96
+NICBBBB R11 1.5
+R32 p16 R34
+w 439K 4.?uF 10"" C“
+03 7 .
+1113!!“ 18K mmm R16 R37 ”K game, m,
+10K D3A
+T T = 0113
+7 IRF7341
+, u
+T 4 4 ,
+T ”6 -15v
+FIG. 6. Schematic of Curve tracing circuit +5 VDC to +15 VDC boost converter and +15VDC to —15VDC voltage inverter.
+
+"
+"6","024707-6 Prokop at al. Rev. Sci. Instrum. 86, 024707 (2015)
+R1 8.25K
+c1 lopF
+‘+SV
++15V 4
+3 R3 1K
+49.9K 1 W
+R 3 13 LT1014
+[:3 10pF R4 10K RstssaK
+R8 60.4K -
+‘+15V 1K 1K
+r 8
+m9 R13 10K 6 7 ameg 6 7 R9 1K mm-
+R1? 1 a ”1913 R1 5 T1014
+10K
+R15 408K
+T '15V ' R14
+470 DUT T c9 lepF
+R35 10K
+’ R36 4.99K T
+I 01 LT1014 15
+R38 470 16
+(:5 10pF f i” R31 3.3K
+R18 _
+R81 20K 49.9K ’ R26 180K 12
+'T1013 I R3 20K R30 cs 10 R24 1K
+4 Rsense 66 100K IOpF 11 m
+m 5 R23 10 10 F LT1014
+3 20K 9 _
+R31 ‘
+12.7K R19 1'47“ R20 100K
+7 t = c4 10pF
+FIG. 7. Schematic of curve tracing circuit.
+DUT Will not be damaged if unbiased. U3A and U3B are the ﬁnal op amp UlD provides a gain of 1.5 times to the DACl
+only 0p amps powered by the :15 VDC supplies, all others use output to drive the gate of the current shunt NMOSFET Q1.
++5 VDC. UlA samples the +15 VDC supply, attenuates by a
+factor of 1/6 times, and provides that voltage (Vsupp1y) t0 the III RE SULT S
+8—bit ADC. UlB samples the DUT drain voltage, attenuates it '
+by a factor of 1/6 times, and provides VDrain t0 the 12—bit ADC. Figure 8 shows an example curve trace of the room
+UlC samples the DUT source voltage generated by the DUT temperature packaged SiC JFET by the miniature circuit in
+drain current (IDS) ﬂowing through a 10 Q R3611se and provides comparison with the laboratory source measurement units,
+a gain 0f 69 times. This voltage labeled VSOurce in the schematic both taken at room temperature. In red are curve traces taken by
+is sampled by the 12—bit ADC and is used to derive IDS. The laboratory source measurement units prior to integration into
+GRC Miniature Flight Curve Tracer (blue) Vs. On Earth Laboratory Source
+0.0007 Measurement Unit (red)
+vGS = 0V
+0.0006
+0.0005 _. --. ﬂ , V55 = -1V
+//f.’f
+0.0004 ‘/ // _>____,_,_,#_—--- VGs=-2V
+///’/ ﬂ . _ ‘
+F. / /
+S510.0003 // wM————' Ves=‘3v
+_':‘ ///:////’/’
+0.0002 //él;l ﬁ——-—-—--""—-‘_ -—- -- VGS=_4V
+’7 - f”
+4gi'/// __-_-—-~--—— — _ VGS='5V
+00001 W— —'-' VGS = '6V
+Z“
+0 _ ____ _ ____ _,_____________ ________ __ sz=-8v
+0 2 4 6 8 10 12 14
+43.0001
+V05 (V)
+FIG. 8. Plot of the miniature curve trace circuit outputs (blue) and laboratory source measurement units performing curve traces (red) on the same room
+temperature packaged SiC JFET transistor. Drain—to—source current (IDS) VS. drain to source voltage (VDS) at varying gate to source voltages (VGS).
+
+"
+"7","024707-7 Prokop et al. Rev. Sci. Instrum. 86, 024707 (2015)
+High TemdeETl . High Temp JFET
+Curve Tracmg CIrCUIt
+; /‘ ' ‘\ r 1"""", 79727:? .: “ze’t‘Lf‘ t m,” (
+. . . .. s ., ~ ,,, 111m
+.5} t. . 3.. ,,/ m5” . o .)
+\ . , / .. T I 69.5mm 44'7 mm
+Room TempJFET Room TempJFETl~<_;______>t ~~~ ‘ H
+Curve Tracing
+Circuit
+FIG. 9. Photograph of ﬂight Circuit board incorporating two JFET transistor curve tracing Circuits. The microcontroller is mounted on the bottom of the printed
+Circuit board and is not shown in the photograph.
+the ﬂight circuit board. The blue traces show the curves taken not discussed. Each curve tracing circuit requires less than
+by the miniaturized ﬂight curve trace circuit during preﬂight 32.3 cm2 board area, allowing for multiple independent cir—
+tests. These curves are from the room temperature packaged cuits to be used on a single small printed circuit board. This
+SiC JFET shown in Figure 9. Included in the curve data set small footprint enables in-situ testing of devices in a variety
+are the gate voltages shown in the legend of Figure 8 and of environments.
+the circuit board temperature with other housekeeping data.
+There is a disagreement between the miniature curve tracer
+and the commercial units of approximately 2% for the max IV' CONCLUSION
+IDs 0f VGs = 0 curve. Ah resistors used in the design have a Anovelminiature microcontroller based curve tracing cir—
+one percent tolerance which Wth introduce some err 01"" into the cuit was designed to enable a ﬂight test of SiC J EFT transistors.
+measurements. This discrepancy may also be attributed to the The circuit was successfully ﬂown and operated on the exterior
+added resistance from the conductive epoxy used to connect 0f the International Space Station for over a year, periodi—
+the transistor leads to the circuit board traces and the epoxy cally characterizing silicon carbide JFETs. There was an issue
+used to fasten the transistor package to the circuit board and with the negative voltage supply circuitry that affected circuit
+encase the transistor leads. performance in temperatures below 16 OC. The cause of this
+N0 performance degradation 0f the JFETS was seen dur— issue was identiﬁed as low bias current in the negative supply
+ing the ﬂight test” Experiment data were sampled hourly Circuit and it is noteworthy to highlight that this neither dam—
+when power was applied and transmitted over a serial hhk to ages the circuit nor the devices under test. The described circuit
+the MISSE7 Communications Interface Board, which handled uses minimal space and mass and it is ideal for recurring space
+all telemetry operations. The circuit successfully operated on ﬂight experiments. Even though this circuit was designed for
+orbit from November 2009 Uhth its return to earth in May characterizing JFETs, the circuit topology is applicable for
+2011. While the circuit operated successfully, one issue was MOSFETs, diodes, and Bipolar Junction Transistors (B JTS)
+identiﬁed during the ﬂight period. The Circuit’s —15 VDC with minor modiﬁcations.
+supply would not operate fully at lower temperatures (temper—
+atures below 16 0C). There was a correlation in the maximum ACKNOWLEDGMENTS
+VGs output voltage and temperature, where the maximum
+voltage would fall with temperature. This was due to the bi— This work was funded by the NASA Aeronautics Research
+polar junction transistors used in the voltage inversion circuit, Mission Directorate th the Fundamental Aeronautics Program
+where the current gain decreases with temperature. This was under the Subsonic Fixed Wing Distributed Engine Control
+veriﬁed post ﬂight and on the ﬂight back up hardware. The Project. The authors would like to thank Philip Neudeck of the
+correction to this problem is to decrease the biasing resistors, NASA Glenn Research Center who provided the SiC JFETs,
+so more current will ﬂow. While this error did not allow Liang—Yu Chen 0f the Ohio Aerospace Institute who packaged
+the circuit to perform all the gate voltage sweeps, the circuit the SiC JFETs, and George Baaklini 0f the NASA Glenn Re—
+always allowed the sweep at ~VGs : 0. search Center for advice and support. The authors are also
+A photograph of the ﬂight circuit board is shown in Fig— grateful to Phillip J enkins of the Naval Research Laboratory
+ure 9. The ﬂight circuit board contains two complete curve for providing the opportunity to ﬂy this circuit on MISSE7, as
+tracing circuits, one to support the high temperature packaged well as the telemetr y data, and his review Of this work.
+JFET and the Other the room temperature packaged :IFET’ both 1P. P. J enkins, R. J . Walters, M. J . Krasowski, J . J . Chapman, P. G. Ballard,
+controlled by a s1ngle microcontroller. The Cll‘Clllt board IS J. A. Vasquez, D. R. Mahony, S. N. LaCava, W. R. Braun, R. Skalitzky, N.
+much larger due to the support of two additional experiments F. Prokop, J . M. Flatico, L. C. Greer, K. B. Gibson, W. H. Kinard, and H.
+
+"
+"8","024707-8 Prokop et al. Rev. Sci. Instrum. 86, 024707 (2015)
+G. Pippin, “MISSE—7: Building a permanent environmental tesbed for the 9Silicon Laboratories “C8051F120/1/2/3/4/5/6/7 datasheet,” 2005.
+international space station,” in Proceedings of the 9th International Space 10Linear Technology Corporation “LT1013/LT1014 dataSheet,” 1990.
+Conference Protection of Materials and Structures Form Space Environ— 11P.P.Jenkins,R.I.Waltelrs,M.Gonzalez,J.H.WalrnelrJ.R.L01rentzen,J.M.
+ment, (ICPMSE—9) MISSE Symposium, Toronto, 2009. Flatico, L. C. Greer, and M. J. Krasowski, “Initial results from the second
+
+2L.—Y. Chen, “Alumina based 500 OC electronic packaging systems and Fu— forward technology solar cell experiment,” in Proceedings of the 35th IEEE
+ture Development,” in Electronics Packaging Symposium, 2012. Photovoltaic Specialists Conference (PVSC), 2010.
+
+3NASA Space Station Program, “Space station ionizing radiation design 12R. Walters, J. C. Garner, S. N. Lam, J. A. Vasquez, W. R. Braun, R. E.
+environment,” TechnicalReport NASA SSP—30512 Revision C, June 1994. Ruth, J. Warner, J. R. Lorentzen, S. Messenger, C. Bruninga, P. Jenkins,
+
+4P. G. Neudeck, M. J. Krasowski, and N. F. Prokop, “Assessment of durable J. Flatico, D. Wilt, M. Piszczor, L. Greer, and M. Krasowski, “Materials
+SiC JFET technology for +600 0C to —125 OC integrated circuit operation,” on the international space station experiment—S, forward technology solar
+ECS Trans. 41, 163—176 (2011). cell experiment: First on—orbit data,” in Conference Record of the 2006
+
+5P. G. Neudeck, S. L. Garverick, D. J. Spry, L.—Y. Chen, G. M. Beheim, IEEE 4th World Conference on Photovoltaic Energy Conversion, 7—12May
+M. J. Krasowski, and M. Mehregany, “Extreme temperature 6H—SiC JFET 2006.
+integrated circuit technology,” Phys. Status Solidi A 206, 2329—2345 (2009). 13R. L. Pease, R. D. Schrimpf, and D. M. Fleetwood, “ELDRS in biploar linear
+
+6M.J.K1rasowski,L.C.G1tee1t,J.M.FlatiCO,P.P.Jenkins,andD.C. Spina,“A Circuits: A review,” in Proceedings of the 2008 European Conference on
+hardware and software perspective of the ﬁfth materials on the international Radiation and Its Eﬂects 0n Components and Systems (RADECS) (IEEE,
+space station experiment (MISSE—5),” NASA/TM—2005—213840, 2005. 2008), pp. 18—32.
+
+7A. Seyhoonzadeh, H. Chang, and K. E. Lonngren, “Inexpensive transistor 14F. G. Neudeck, N. F. Prokop, L. C. Greer III, L.—Y. Chen, and M. J. Kra—
+curve tracer,” Rev. Sci. Instrum. 58, 849 (1987). sowskil, “LOW earth orbit space environment testin g of extreme temperature
+
+8E. Moreno—Garcia, “Curve tracer With a personal computer and lab— 6H—SiC JFETS 0n the international space station,” in Materials Science
+VIEW,” in Proceedings of the 14th International Conference on Electronics, Forum, edited by E. V. Monakhov, T. Homes, and B. G. Svensson (Trans
+Communications and Computers (CONIELECOMP’04), 2004. Tech Publications, Switzerland, 2011), V01. 679—680, pp. 579—5 82.
+
+"

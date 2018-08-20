@@ -1,0 +1,1310 @@
+"","x"
+"1","Dynamic range and senSlthlty requurements of satelllte
+ocean color sensors: learning from the past
+Chuanmin Hu,""* Lian Feng,“2 Zhongping Lee,3 Curtiss 0. Davis,4
+Antonio Mannino,5 Charles R. McClain,5 and Bryan A. Franz5
+1University of South Florida, College of Marine Science, 140 Seventh Avenue, South,
+
+St. Petersburg, Florida 33701, USA
+2Wuhan University, State Key Laboratory of Information Engineering in Surveying,
+Mapping and Remote Sensing, Wuhan 430079, China
+3University of Massachusetts, Boston, Department of Environmental, Earth and Ocean Sciences,
+Boston, Massachusetts 02125, USA
+4College of Earth, Ocean and Atmospheric Sciences, Oregon State University, Corvallis, Oregon 97331, USA
+5NASA Goddard Space Flight Center, Greenbelt, Maryland 20771, USA
+*Corresponding author: hu@marine.usf.edu
+Received 11 April 2012; revised 14 June 2012; accepted 10 July 2012;
+posted 23 July 2012 (Doc. ID 166494); published 24 August 2012
+Sensor design and mission planning for satellite ocean color measurements requires careful consid-
+eration of the signal dynamic range and sensitivity (speciﬁcally here signal-to-noise ratio or SNR) so
+that small changes of ocean properties (e.g., surface chlorophyll-a concentrations or Chl) can be quan-
+tiﬁed while most measurements are not saturated. Past and current sensors used different signal
+levels, formats, and conventions to specify these critical parameters, making it difﬁcult to make
+cross-sensor comparisons or to establish standards for future sensor design. The goal of this study is
+to quantify these parameters under uniform conditions for widely used past and current sensors in
+order to provide a reference for the design of future ocean color radiometers. Using measurements
+from the Moderate Resolution Imaging Spectroradiometer onboard the Aqua satellite (MODISA) un-
+der various solar zenith angles (SZAs), typical (Ltypical) and maximum (Lmax) at-sensor radiances from
+the Visible to the shortwave IR were determined. The Ltypical values at an SZA of 45° were used as
+constraints to calculate SNRs 0f 10 multiband sensors at the same Ltypical radiance input and 2 hy-
+perspectral sensors at a similar radiance input. The calculations were based on clear—water scenes
+with an objective method of selecting pixels with minimal cross-pixel variations to assure target homo-
+geneity. Among the widely used ocean color sensors that have routine global coverage, MODISA ocean
+bands (1 km) showed 2—4 times higher SNRs than the Sea-Viewing Wide Field-of-View Sensor (Sea-
+WiFS) (1 km) and comparable SNRs to the Medium Resolution Imaging Spectrometer (MERIS)-RR
+(reduced resolution, 1.2 km), leading to different levels of precision in the retrieved Chl data product.
+MERIS-FR (full resolution, 300 m) showed SNRs lower than MODISA and MERIS-RR with the gain
+in spatial resolution. SNRs of all MODISA ocean bands and SeaWiFS bands (except the SeaWiFS
+near—IR bands) exceeded those from prelaunch sensor speciﬁcations after adjusting the input radiance
+to Ltypical. The tabulated Ltypical, Lmax, and SNRs 0f the various multiband and hyperspectral sensors
+under the same or similar radiance input provide references to compare sensor performance in pro-
+duct precision and to help design future missions such as the Geostationary Coastal and Air Pollution
+Events (GEO-CAPE) mission and the Pre-Aerosol-Clouds-Ecosystems (PACE) mission currently being
+planned by the US. National Aeronautics and Space Administration (NASA). © 2012 Optical Society
+of America
+OCIS codes: 280.0280, 280.4788, 010.4450.
+1559-128X/12/256045-18$15.00/0
+© 2012 Optical Society of America
+1 September 2012 / Vol. 51, No. 25 / APPLIED OPTICS 6045
+
+"
+"2","1. Introduction Administration (NASA), the European Space Agency
+In the past several decades, satellite ocean color (ESA): and several ether 1nternat10nal .agencnes.
+Coastal Zone Color Scanner (CZCS, 1978—1986) to adal Surveym1ss1ons from NASA,namely(1)Aerosol-
+modern instruments such as the Sea—Viewing Wide C10uds:Ecosystems(ACE),(2)Geostat10nary Coastal
+Field—of—View Sensor (SeaWiFS, 1997—2010) and and AH' Pollutlon Events (GEO'CAPE) [l]: and
+the Moderate Resolution Imaging Spectroradiometer (3? Hyperspectral Infrared Imager. (HYSPIRD, .each
+(MODIS, 1999—present for Terra and 2002—present W1th ocean color capablllty and a umque set 0fs01ence
+for Aqua). Added to this suite of optical measure— goals [2]. Under theauspices 0f the climate initiative,
+ments were the Medium Resolution Imaging Spec— NASA 18 3180 planmng for an 0093.11 ecosystem sensor
+trometer (MERIS, 2002_2012), the Ocean Color as part of the Pre—ACE (PACE) m1ss10n planned for a
+Monitor (OCM—l, 1999—present; OCMQ, 2009_ 20191aunch to ensure global ocean color climate data
+present), and the most recent Geostationary Ocean conttnaity [ﬁ]. . . .
+Color Imager (GOCI, 2010_present). These frequent MISSIOH planmng calls for C&I'Gflll cons1derat10n Of
+and synoptic observations of the global ocean pro- the measurement and instrument requirements in 01'-
+vided unprecedented opportunities to study the der to achieve the mission goals. One of the challenges
+ocean’s biogeochemistry, trace ocean circulation, in the planning phase 18 to 8.1299137 the signal—to—noise
+monitor harmful algal blooms (HABs) and pollutions rat10 (SNR, 011891189? sens1t1v1ty) for. every speetral
+such as oil spills, document coastal water quality band at a. typlcal mput s1gna1 (radlance) recelved
+changes, and help make management decisions on by a sate111te 89118011
+coral reef ecosystems and ﬁsheries. SNR is a critical parameter to determine the pre—
+To continue these observations Without data gaps, cision 0f the derived ocean color data products [4], for
+future satellite ocean color missions are being example, the surface chlorophyll—a . concentration
+planned by the US. National Aeronautics and Space (Chl in mg m‘3). AS an example, Flg. 1(a) ShOWS
+. ‘7 . ’n I . I I
+. ' 0 5' 2' ' .
+. ‘ . I . 1.. .. ' .y : - , .
+‘ 'f . ' a I -
+‘u'.ll'o:.-.'
+, a . ' I i . ' .
+'0 v :3 » - I'i
+mgfm‘B
+- 2.00
+3 1.00
+3 0.50
+— 0.20
+: 0.10
+3 0.05
+Fig. 1. (Color online) Instrument sensitivity to resolve small changes in at-sensor radiance [(a), mW cm‘2 ,um‘1 sr‘l] and surface ocean
+chlorophyll-a concentrations [(b)—(d), mg m‘3] derived from several ocean color instruments. (a) CZCS at-sensor radiance at 443 nm from a
+small region (25° to 27 °N; 85 °W to 83 °W) in the eastern Gulf of Mexico (inset ﬁgure), (b)—(d) chlorophyll-a concentrations derived from
+the same region from MODISA, SeaWiFS, and MERIS—FR on 12 March 2009, respectively, using the same algorithms and soft-
+ware (SeaWiFS Data Analysis System or SeaDAS, version 6.3). The NE—SW linear line on the georeferenced MERIS image is a result
+of push broom striping noise. Note that MERIS—RR data have much higher SNRs than MERIS—FR data and therefore would not lead to the
+image noise shown in (d).
+6046 APPLIED OPTICS / Vol. 51, N0. 25 / 1 September 2012
+
+"
+"3","the at-sensor total radiance measured by CZCS in a Ic- ,':='~
+2° x 2° region in the eastern Gulf of Mexico, where 5?, .. 1,, $3“
+the pixelization noise (i.e., variations from pixel to §;MODI“,""¢.G§ .,.-2 .3
+pixel) due to quantization for this 8 bit sensor is ap— . ‘ 4}; £374.]. "" . -§- 1 ‘, '
+parent. The derived Chl images from the same box on #51?er . ' _.
+12 March 2009 from three ocean color sensors re- .‘le es; 3 . '
+vealed various noise levels [Figs ﬂ—w], with - ’ '"" .. - '
+MODISA showing the lowest noise and MERIS-FR 5415f . ""1
+(full resolution) showing the highest noise [note that "" 2i ' w; A 4 ‘
+MERIS—RR (reduced resolution) data have much 53’ __ 3
+higher SNRs than MERIS-FR data and therefore 1:? "" f7? '
+would nOt lead to the. Image 110188 Shown helje; see Fig. 2. (Color online) (a) MODISA RGB composite image over
+Section E] USlng a s1mple methOd (see Section E): coastal waters off Zhejiang Province of China (25°20’N to 30°
+the RMS 1101898 from adjacent pixels for Various 40’N; 119°20’E to 124°E); (b) the corresponding ﬂuorescence line
+Chl values were quantiﬁed and listed in Table l. height(FLH)image shows an HAB(dark green and yellow colors).
+For low—Ch] waters (0,01 to 02 mg 111—3) the relative Note that although the RGB image derived from the land bands
+pixelization noise decreased With increasing concen- shows minimal cloud cover, a big portion of the ocean area shows
+tration. Such noises would impact the sensitivity to no FLH. data dne to saturation of the corresponding ocean bands.
+resolve small Chl changes. For example, around Whlte hues delmeate coaSﬂmeS'
+0.1 mg m‘3, MERIS-FR cannot resolve a 19.4% rela-
+tive change in Chl (corresponding to 0.019 mg 111—3): “knee” radiance of SeaWiFS in the green—red bands,
+while MODISA may resolve changes 0f >408% but lower than SeaWiFS “knee” radiance in the near-
+(0-0048 mg 111—31 Clearly, different SNRS from IR bands (Table 2). SeaWiFS has four detectors for
+various ocean color sensors would lead to varying each spectral channel; three are set to high gain
+abllltles to resolve small changes in Chl. for ocean imaging and one to 10w gain for land
+In practice, it iS alway S desirable to have high SNR imaging. The “knee” occurs in the combined signal
+or sensitivity to resolve small changes in the ocean. when the three high-gain detectors are saturated.
+This is particularly important for the open ocean and Thus, thick aerosols, fog, moderate sun glint, or
+colored dissolved organic matter (CDOM)-I‘iCh coast- high water turbidity can cause saturation of these
+al ocean where the water—leaving radiance is very MODISA ocean bands, leading to no data in some
+small and the at-sensor signal iS dominated by the important regions. This problem is more profound
+atmosphere in all spectral bands. However, there for the Japanese Global Imager (GL1 [9]; also see
+iS always a trade for high SNR Due to engineering Nakajima et al. [7]), as the 490 nm saturation
+limitations, the dynamic range of a sensor is often radiance is only 6.4 mW cm‘2 ,um‘l sr-l, much lower
+ﬁxed, leading to lower saturation radiance for high- than the corresponding SeaWiFS knee radiance
+sensitivity sensors. Figure 2 shows an example of the (853 mW cm‘2 ,um‘l sr—l, Table 2),
+price Of high sensitivity. While the red—green—blue Thus, it is critical to design a sensor with sufﬁcient
+(RG13) composite image Of MODISA, derived from SNR to resolve small changes in the surface ocean
+the low-sensitiVity land bands, shows a nearly while not saturating the sensor under cloud-free con-
+cloud-free image, a big portion of the ocean area is ditions. To correct bright-target adjacency effects
+masked (black) in the ﬂuorescence line height (FLH) from clouds and land (i.e., the at-sensor radiance
+[5] image derived from several ocean bands. The from the ocean is contaminated by the nearby bright
+high-FLH pixels (dark green and yellow colors) were target), it is also desirable to measure the bright-
+conﬁrmed to contain a HAB, yet due to the saturation target (clouds) radiance for most, if not all, clouds.
+of several ocean hands, it is unknown whether the To do this we must ﬁrst specify the spectral at-
+HAB extended into the masked area. Examination of sensor radiance from typical cloud-free ocean scenes
+the radiance data indicated that the maximum valid (Ltypical) and maximal spectral radiance from clouds
+at-sensor radiance of MODISA is comparable to the (Lmax). To cover the full range of possible conditions
+Table 1. Pixelization Noise in Chl Data Products from Three Ocean Color Instrumentsa
+Chl (mg m‘3) 0.01 0.02 0.03 0.05 0.1 0.2 0.4
+MODISA 16.5% 11.3% 9.3% 7.5% 4.8% 2.8% 2.8%
+SeaWiFS 21.9% 16.7% 15.8% 14.5% 8.5% 6.1% 7.1%
+MERIS-FR 74.2% 51.5% 40.1% 29.5% 19.4% 12.1% 8.2%
+MERIS-RR 21.6% 18.4% 16.4% 12.9% 8.1% 4.3% 4.4%
+“The statistics were derived from at least > 10, 000 pixels for each concentration. Chl data were derived from sensor measurements using
+near identical algorithms and processing steps deﬁned in SeaDAS6.3. Note that MERIS data used here are both full resolution (FR, 300 In)
+and reduced resolution (RR, 1.2 km) as compared with 1.1 km of MODISA and SeaWiFS (both used Local Area Coverage, or LAC, data).
+MERIS data processed using similar algorithms but different software, such as those from the European Space Agency, showed slightly
+different RMS noise than that listed in the table.
+1 September 2012 / Vol. 51, No. 25 / APPLIED OPTICS 6047
+
+"
+"4","Table 2. Maximum Valid Radiance of MODISA and Knee Radiance of SeaWiFS for All Ocean Bands, Determined from Measurements in 20043
+/] (nm) 412 (412)b 443 (443) 488 (490) 531 (510) 547 (555) 667 (670) 678 748 (765) 869 (865)
+MODISA max valid 19.99 15.90 11.56 9.13 6.97 3.50 3.31 2.24 1.31
+MODISA saturationc 26.9 19.0 14.0 11.1 8.8 4.2 4.2 3.5 2.5
+SeaWiFS knee 11.76 10.87 8.53 7.29 5.97 3.37 N/A 2.46 2.09
+0‘Radiances are in units of mW cm‘2 ,um‘l sr‘l. MODISA maximum valid radiance is the radiance above which the linear relationship
+between the sensor—recorded digital number and calibrated radiance no longer holds. As a reference, MODIS saturation radiance refers to
+the radiance preceding sensor saturation [E]. SeaWiFS Knee radiance was derived using a second derivative analysis from the digital
+number (DN) versus radiance relationship.
+bWavelength (nm) in parenthesis is for SeaWiFS.
+CData provided by Franz et al. [E].
+from a geostationary platform from early morning to SNRs were estimated from MODISA and several
+late afternoon, these two quantities, together with other past and current ocean color sensors, including
+the SNR under typical conditions, need to be deﬁned SeaWiFS, MERIS—FR, MERIS—RR, CZCS, OCM, and
+at various solar zenith angles (SZAs) in order to help GOCI. Level-l at-sensor radiance data covering the
+with sensor design and mission planning (e.g., deter— same North America ocean areas were obtained from
+mine integration time). various sources, including NASA GSFC (for Sea-
+Unfortunately, published values for SNR, Ltypical, WiFS LAC data, MERIS-FR, CZCS), the European
+and LmaX in either refereed or gray literature were Space Agency (MERIS—RR), the Earth Scan Lab of
+not deﬁned in a consistent way for previous and eX- Louisiana State University (for OCM-l), and Korea
+isting ocean color sensors, making it difﬁcult to learn Ocean Satellite Center (for GOCI) (Table 3). These
+from the past. Some instruments speciﬁed noise- data were processed in the same manner as with
+equivalent radiances (NEAL) instead of SNRs [8], MODISA to generate at-sensor radiance, surface
+and some deﬁned SNRs from laboratory measure- Chl, and quality ﬂags for each pixel (Level-2).
+ments using input radiance that is not typical for Although high spatial resolution sensors (e.g.,
+the ocean (e.g., MODIS [9]). Even when the solar dif— Landsat TM and ETM—l—, HJ-CCD, EO-l Hyperion)
+fusers on SeaWiFS and MODIS were used to “mea- were designed primarily for land use, there have
+sure” the SNRs on orbit, the input radiances were been demonstrations that they could also be used to
+different [9E], and adjustment of the input radiance study coastal blooms and water quality [12—15].
+to realistic typical radiance over the ocean is neces- More recently, the Hyperspectral Imager 5' ﬁle
+sary to determine the SNRs [E]. To date, for past Coastal Ocean (HICO) was installed on the Japanese
+and existing ocean color sensors there is a lack of con- Experiment Module Exposed Facility (J EM-EF) on
+sistent SNR assessment under the same radiance the International Space Station and has been collect-
+input for typical measurement conditions OVGI‘ the ing data for selected sites in the global coastal zones
+ocean. Such information can serve as an important since September 2009 [E], In addition, the geosta-
+reference to help design future ocean color missions tionary GOES Imager is equipped with a wide band
+such as GEO-CAPE and PACE. (550—7 50 nm centered at 650 nm, GOES I-M Data
+ThUS, given the need for these parameters under Book) that could also be used for coastal ocean stud-
+uniform measurement conditions, this study was ies. At-sensor radiance data from these measure-
+designed to ments have also been obtained to estimate their
+- SNRs over the ocean under the same typical condi-
+(1) determlne spectral Lt ical and Lmax from . .
+MODISA measurements unde? various SZAs, tlons. Specﬁically, Landsat TM and; ETMh+ and
+(2) assess SNRs of commonly used ocean color EO'l Hyperlon data were obta1ned rom t e U 'S'
+Geologmal Survey [17]. HJ-CCD data were obta1ned
+sensors under the same Ltypical, and f h Ch' C — f R S 11. D
+(3) provide tabulated references and recommen- rom t e . 1n.a entre or esources ate 1te. ata
+dations for future 0 ce an color missions. and Appllcatlon (http://www.cresda.com/n16/1ndeX
+.html). HICO data were obtained from the data ar-
+2_ Data Sources chive at Oregon State University [E]. GOES Imager
+Ltypical and Lmax were determined from MODISA iata weﬁe obtAiinedirorn theN%a;::)ngl Oceaﬂlc and
+measurements. MODISA data were obtained from tmosp erlc m1n1stra10n( ) ompre ens1ve
+the NASA Goddard Space Flight Center (GSFC). Large Aniayidata StewardShlp System (CLASS) The
+To assure sufﬁcient coverage under all possible con- oharacterlstlcs Of these are all 11sted 1n Table § (see
+ditions, MODIS data covering all of North America 1nformat10ns sources 1n [ED
+and adjacent oceans (0 °—70 °N and 135 °—45 °W) dur— _
+ing different months of 2004 were selected. A total of 3' LtVPica' and Lmax Determlned from MODISA
+255 Level-O data granules were processed using the Measurements
+software package SeaDAS (version 6.3) to derive the For each MODIS granule and spectral band, Ltypical
+at-sensor radiance (Level-lB), SZAs, surface Chl, was derived from the Level-l at-sensor radiance from
+and quality ﬂags for each pixel (Level-2). cloud-free ocean pixels. These pixels were deﬁned by
+6048 APPLIED OPTICS / Vol. 51, No. 25 / 1 September 2012
+
+"
+"5","s: g A
+O I <
+""—1 H LQ <
+. v—4 0
+55"".) Q OCTN8|§UJZEJ
+Sim CON Dz
+NO V
+E <14
+0 8
+O U) algvo <ﬂm
+O U) O'TCNOI |mo8
+H l—1 oov—n—i D
+E N00 m
+00 Z
+9
+3
+9155 (Dual 03 <gﬂ
+<40 E
+H
+Q o m <1
+«'2 0::
+O namlw 0% 51%
+O OIVH oo-H
+»—'., mama “”5 5E
+Hmb
+m <14 N O
+59 3 w A
+m 02$ '01 >> <<
+2 2 % $$L~gr§oom33
+.2 9g 2m w Dz
+1-! w H \_/
+«s 4 <24
+2
+g [x Lo
+""4 + E} 13 ‘9} :5
+2 rd aloomrdoom<
+U) E 51 mm D
+L W ‘3 H00 3 E
+3 .4 <14
+'5' w
+2 ‘5 $8 ‘éi A
+‘D 8 5 ~qu mfg <ﬂ§§
+g N 42 $$®g oom<
+E O ""a L~<h CT DZ
+.5 Z 3‘” ""‘ V
+'5
+a g
+D r—+ U1 I3 5“ 36
+:2 O 2 moo OBNMU:
+5 O O 8&1wBSHAO
+E <5 o NH H 43M
+2 V” 0""
+“a U)
+E
+N
+é’ \
+= H '7‘ LO Em A
+*3 2' Es“ (3'3 Ngmgg
+m oox
+""’ 03% ea' oﬁﬁase
+('5 O 8 <14 301 V
+9 O
+.o
+E
+N 0
+U) I v—{LQ U} /‘\
+Ln B cm 0?; <1
+-H _q.> moo OFGO<U3
+B 5 IIOOH Hm<
+q: H | V
+U3 0 2‘“ H
+o
+m 4; lg Om wﬂ
+r—4 01 Q.
+Dd ~53 $?mﬁgmgfg
+m5 aw‘éﬁﬁw
+2 La <4 300 Lﬂv
+S
+0 § 3'
+U)
+(D co v—4:>> A Cl
+5‘3 mmsgwaﬁ I;
+0 Cf 8|HONHB< 3
+2 < 01$ 3| E .2
+<14 8H _.
+w
+A ‘5
+>> o
+A 8 ‘0
+?%am g9!) g
+4—7 V ""—1
+g qsgm§3$ E?
+SE .egﬁeﬁ'ﬁb E
+E :2 ﬁgEﬁIIZquE :49
+4-) 4-“ F—IQ) .""d;> .5 g:
+g £5 Sgocﬁmoo 3-4
+P—i 9-. QUIZZDGZO
+1 September 2012 / Vol. 51, No. 25 / APPLIED OPTICS 6049
+
+"
+"6","10 Lmﬁcal, mW cm-2 pm'lsrl under exact atmospheric and oceanic conditions,
+these tabulated values (mean and standard devia-
++10° tions) should be able to serve as references for future
+1 +30° sensors and to estimate SNRs (see Subsection 4._A).
+__ +45° Indeed, for all ocean bands in the Visible, Ltypical at
+E; 0.1 +700 SZA = 45° is signiﬁcantly higher than those listed
+4 by NASA prelaunch sensor speciﬁcations for MODIS
+(Table 4). In contrast, the two near—infrared (NIR)
+0.01 ocean bands (7 48 and 869 nm) and all land bands (eX-
+cept 469 and 555 nm) showed signiﬁcantly lower
+Ltypical than the NASA prelaunch speciﬁcations,
+0'001 0 500 1000 1500 2000 which were based on typical land reﬂectances. Be-
+wﬁelengthmm) cause Ltypical at SZA = 45° was used in this study
+Fig. 3. (Color 0nline)Ltypica10fMODISA determined from the 255 to determlne the SNRS’ such derlved .SNRS. COUId
+MODIS scenes using clear water pixels under a clear sky at var- nOt be cornparecl directly Wlth those IISted 1n the
+ious SZAs. The data are tabulated in Table 4. NASA spec1ficat10ns.
+_ Lmax was derived from cloud pixels. Because all
+MODISA ocean bands (8—16) saturated over clouds,
+the quality control ﬂags in the corresponding Level-2 only land bands “—7) were used. For each MODISA
+data. The ixels were 011 ed b various SZAs gr a nule, the follow1ng steps were used to deter-
+10 3T 10 y
+(10° 1 1°, 30° 1 1°, 45° 1 1°, and 70° 1 1°) in order mme LmaX'
+to determine Ltypical as a function of SZA. For each (1) Cloud pixels were selected using quality con-
+group, the mean radiance from all qualiﬁed pixels trol ﬂags in the MODISA Level-2 data.
+was regarded as Ltypical for that particular granule. (2) Ofthese cloud pixels, for each band, the top 5%
+Then, [,typica1 for the predeﬁned SZA was computed and 1% brightest pixels were selected, respectively.
+as the mean and standard deviation radiances Of The extreme outliers due to detector malfunctioning
+all individual Ltypical values from the 255 granules. were d1scarded 1n thts step. . .
+The results are shown in Fig. 3 and listed in Table 4. (3) The mean rad1ance Of these qual1ﬁed pixels
+Clearly, Ltypical decreases with increasing SZA. In was regarded as LmaX for the selected granule.
+reality, the at-sensor radiance is a function of not Similar to the calculation of Ltypical, Lmax was com-
+only SZA but also sensor angle as well as the variable puted as the mean and standard deviation of all in-
+aerosols and ocean properties. However, because our dividual Lmax values from the 255 granules. These
+purpose was to determine the at-sensor radiance steps were repeated for each predeﬁned SZA (10°,
+under typical measurement conditions rather than 30°, 45° and 70°), Results for the top 5% and 1%
+Table 4. Ltypica. (Units: mW cm‘zpm"" sr"") of MODISA over the Ocean (0 °—70 oN and 135 0—45 0W) Determined from On-Orbit Measurements
+during All Months of 2004a
+SZA = 10° SZA = 30° SZA = 45° SZA = 70°
+Band # /l (nm) Mean STD Mean STD Mean STD Mean STD NASA Specb
+8 412 10.27 0.42 9.47 1.50 8.07 1.46 4.95 1.17 4.49
+9 443 8.75 0.42 8.38 1.38 6.98 1.33 4.50 1.10 4.19
+3° 469° 7.80 0.46 7.43 1.26 6.19 1.19 4.01 1.02 3.63
+10 488 6.52 0.61 6.28 1.10 5.23 1.01 3.49 0.87 3.21
+11 531 4.36 0.55 4.17 0.77 3.55 0.73 2.33 0.59 2.79
+12 547 3.74 0.69 3.67 0.71 3.13 0.66 2.05 0.52 2.10
+4° 555° 3.45 0.42 3.35 0.62 2.85 0.61 1.85 0.47 2.90
+1° 645* 1.72 0.21 1.65 0.33 1.39 0.32 0.96 0.23 2.18
+13 667 1.61 0.21 1.53 0.32 1.27 0.30 0.92 0.22 0.95
+14 678 1.53 0.20 1.43 0.30 1.19 0.29 0.87 0.21 0.87
+15 748 1.04 0.16 0.95 0.22 0.75 0.20 0.56 0.13 1.02
+2° 859° 0.55 0.11 0.50 0.12 0.40 0.11 0.27 0.059 2.47
+16 869 0.56 0.11 0.51 0.13 0.41 0.12 0.29 0.060 0.62
+5° 1240° 0.14 0.042 0.12 0.038 0.086 0.038 0.058 0.016 0.54
+6° 1640° 0.056 0.019 0.045 0.016 0.031 0.016 0.018 0.007 0.73
+7° 2130° 0.015 0.005 0.011 0.004 0.008 0.005 0.004 0.002 0.10
+“The last column lists NASA speciﬁcations [9]. The mean and STD values for SZA = 45° in columns seven and eight were used as the
+typical radiance to determine sensor SNR (i.e._, sensitivity) for 10 heritage instruments.
+1’The NASA prelaunch MODIS speciﬁcations were provided by Xiong et al. [9]. For SeaWiFS, the input radiances for SNR speciﬁcations
+were [9.10, 8.41, 6.56, 5.64, 4.57, 2.46, 1.61, 1.09] for the eight spectral bands at [412, 443, 490, 510, 555, 670, 765, 865 nm] (see [2,ﬂl).
+°These bands were designed for land and atmospheric applications, but they could also be used to study the ocean.
+6050 APPLIED OPTICS / Vol. 51, No. 25/ 1 September 2012
+
+"
+"7","60 70
+(a) Lmax (5%), mW' cm—z Mm'lsrl (b) Lmax (1%), mVV cm‘2 um'lsr1
+50 60
+\ 50
+40 \ +10° +10°
+z ‘\ +30° g 40 +30°
+Ag 30 ' +45° J: +45“
++70° 30 +700
+20 '
+\ 20
+10
+\ 10
+0 7\—* 0
+0 500 1000 1500 2000 0 500 1000 1500 2000
+Wavelength (nm) Wavelength (nm)
+Fig. 4. (Color online) Lmax of MODISA determined from the 255 MODIS scenes using cloud pixels at various SZAs. (a) Lmax from the top
+5% 0f the brightest pixels; (b) Lmax from the top 1% 0f the brightest pixels. The data are tabulated in Tables 5 and 6, respectively.
+brightest pixels are shown in Figs. 4(a) and 4(b), is the quantum efﬁciency of the detector at that
+respectively, with the Lmax values listed in Tables 5 wavelength.
+and 6, respectively. Compared with their correspond- Three noise signals are typically identiﬁed: nphoton
+ing Ltypical values, Lmax values were much higher. or shot noise, ndet 0r detector noise, and nreadout or the
+Further, there was some variability between Lmax noise associated with the readout electronics. These
+from different images, resulting in about 10% stan— noise sources are not correlated, so the total noise is
+dard deviation. For each band, Lmax decreased with
+increasing SZA. This result, together with similar _ 2 2 2
+... . . . n- —srtn +17. +17. . (2)
+characteristics in Ltypical (decreased With increasing “0189 q ( phOton dBt readOUt)
+SZA), may be used to help design future satellite . .
+missions 0n geostationary platforms. Note that if a For moderadeteetorsZ and elecgromcsé nphoton domi-
+sensor has Lmax values as listed in Table 5, measure- nates the 110188 Wlth ”photon >> ndet 1‘ ”readout, because
+ments over turbid atmosphere or moderate sun glint the IDPUt signal even from a dark ocean surface Stlh
+such as in Fig. 2 will not be saturated. overwhelms the total 110189 [E:ﬂl- For the purposes
+_ of this study, we assume that nnoise can be approxi-
+mated by nphoton, which is proportional to the square
+4- SNR at Ltypical root of the signal. SNR is thus a function of the
+detected signal. To properly deﬁne SNR for an ocean
+A. Methods color sensor, we need to use a typical ocean spec-
+For a radiometer, the SNR is deﬁned as the ratio of tral signal for thle calculation. For the praetical
+the signal electrons to the number of unwanted or consideragzion, 1we 1define Signal as the radiance
+noise electrons 0n the detector: (chm‘ ,um‘ ST— ) measured from the target, and
+noise is the associated random variability [g]. This
+SNR(SignaVNOise) = nsig‘nal/nnoise’ is different from some 01"" the definitions in engineer-
+ing or instrument design, where nphoton collected
+nsignal = ((1)/lax) >x< t >x<A >x< 17, (1) from a ﬁnite ﬁeld of View or falling on a detector is
+considered as the signal. In practice, all measured
+where (l) is the power density (W m‘2) falling on signals are digitized, s0 digitization round-off repre-
+the detector, fly is the photon energy (W s), t is the sents another noise source that can cause errors in
+exposure time (s), A is the pixel area (m2), and 17 the derived data products [4]. In SNR evaluations,
+Table 5. Lmax of MODISA Land Bands over Clouds (5% Brightest Pixels) (Units: mW cm'zpm'1 sr“)a
+SZA = 10° SZA = 30° SZA = 45° SZA = 70°
+Wavelength (nm) Mean STD Mean STD Mean STD Mean STD
+469 50.15 6.55 46.99 6.11 40.45 5.61 23.68 4.43
+555 42.21 5.50 40.20 5.18 34.06 4.86 19.64 4.07
+645 37.09 4.80 35.09 4.48 30.27 4.20 18.02 3.76
+859 19.68 1.69 20.18 1.28 18.89 1.63 12.13 2.36
+1240 9.08 0.68 8.97 0.74 7.95 0.82 4.78 0.97
+1640 3.40 0.38 3.36 0.37 3.06 0.35 1.78 0.38
+2130 0.80 0.09 0.78 0.13 0.73 0.11 0.44 0.09
+aNote that MODISA ocean bands all saturate over bright clouds.
+1 September 2012 / Vol. 51, No. 25 / APPLIED OPTICS 6051
+
+"
+"8","Table 6. Same as Table 5, but Lmax was Derived from the 1% Brightest Pixels (Units: mW cm'zpm'1 sr"")a
+SZA = 10° SZA = 30° SZA = 45° SZA = 70°
+Wavelength (nm) Mean STD Mean STD Mean STD Mean STD
+469 58.92 4.28 53.35 6.00 44.91 6.13 27.15 4.45
+555 50.05 3.57 45.59 4.99 38.42 5.40 22.49 4.30
+645 44.21 3.00 39.88 4.36 33.61 4.67 20.88 3.94
+859 21.50 0.35 21.43 0.47 20.48 1.21 14.27 2.36
+1240 9.90 0.41 9.83 0.63 8.67 0.87 5.61 0.90
+1640 3.78 0.24 3.76 0.33 3.35 0.37 1.97 0.32
+2130 0.93 0.07 0.93 0.13 0.81 0.11 0.54 0.09
+°N0te that for SZA = 10°, the listed Lmax values correspond to reﬂectances 0f 91%, 87%, 89%, 71%, 69%, 50, and 30%, respectively.
+this round-off-induced noise is considered together where the at-sensor radiance was equal to MODISA
+with inherent sensor noise without distinguishing Ltypical at SZA = 45° (Table 4, shaded columns). For
+the sources. Obviously, two quantities need to be de- sensors with different spectral bands, the tabulated
+termined to calculate SNR: input signal (i.e., radi- Ltypical values were interpolated.
+ance) and measured noise. Similar to the restrictions on the input signal,
+For a given sensor, input signal affects SNR. Thus, noise can be represented by the standard deviation
+to compare SNRs between different sensors, the in- over a spatially homogeneous target [%,§]. The p0-
+put signal needs to be kept the same. This has been tential problem of this approach, however, is that the
+problematic in the past, because most published standard deviation of the selected target may contain
+SNRs were referenced against different input signals real ocean or atmosphere changes within the target
+in laboratory measurements, and Xiong et al. [9] and in addition to sensor noise. Thus, the target must be
+Eplee et al. [E] used onboard solar diffusers to esti- selected carefully, for example, from oligotrophic
+mate SNRs for SeaWiFS and MODIS 0n orbit, re- oceans where the horizontal gradient is small. This
+spectively, at predeﬁned input signals. However, is not trivial in practice. Wettle et al. [E] demon-
+these predeﬁned signals were different, making a di- strated a method of Automated Local Convergence
+rect SNR comparison between SeaWiFS and MODIS Locator (ALCL) to ﬁnd a sampling size of 33 x 33
+difﬁcult. In addition, many other ocean color in- pixels when the standard deviation approached an
+struments are not equipped with an onboard solar asymptotic value. Gao [g] proposed that the histo-
+diffuser, suggesting that an alternative method is re- gram mode of all standard deviations from prede-
+quired to deﬁne the input signal. Indeed, for remo— ﬁned small windows could represent the noise.
+tely sensed imagery, the signal can be considered However, it is still unknown whether each target
+as the mean of the calibrated radiance (0r gray-level within the small window is homogenous. In this
+count) from a spatially homogenous target [@,§]. study, the Gao [E] approach was adapted with an
+This approach was adapted in the current study to added objective analysis of homogeneity of each
+restrict the SNR calculations to those measurements small window. Brieﬂy, if the maximum/minimum
+2500 7 o
+(a) '0 A) Mean noise: 0004540000028 (b)
+\ —Percentage(l.002)
+2000 16% —Percentage(l.0015)
+9 , --- Normal Fitted line
+v 1500 a \_ E} 12%
+a ""l'\‘\\ 20 scenes é , \‘
+1000 \%\ l E 8% ‘X
+\ _w‘-V_u‘ '_ -q~ \
+500 4%
+0 l
+1 1.002 1.004 1.006 1.008 1.01 0-001 0-003 0-005 0-007
+)Iax’Min RatioThreshold Noise level (m‘V cm'2 iun‘1 Sl'l)
+Fig. 5. (Color online) (a) SNR of the MODISA 412 nm band determined using different thresholds of maximum/minimum ratio within
+small areas (running windows on an image). The SNR values of individual images become stable (i.e., they are similar from image to
+image) when the threshold is 21.002. Below this threshold, many images did not yield any qualiﬁed small windows, and SNRs determined
+from individual images varied substantially. To minimize the potential impact of inhomogeneous water and/or atmosphere on the SNR
+determination, the maX/min threshold ratio in this study was chosen to be 1.002. The same method was applied to all other bands to
+determine the threshold value to assure spatial homogeneity of the target; (b) Noise level distribution of all qualiﬁed small windows from
+a typical image. The distribution is normal (according to the Gaussian ﬁt) when the maX/min threshold equals 1.002, while it is not normal
+when the threshold equals 1.0015.
+6052 APPLIED OPTICS / Vol. 51, No. 25/ 1 September 2012
+
+"
+"9","30’000 \ oligotrophic ocean waters [E]. For all other sensors
+_3X3(0-2097) (OCM, GOCI, TM, ETM—l—, HJ-CCD, GOES, HICO,
+,9 _5X5(0_2152) Hyperion), clear—water pixels that meet the criteria
+é 20,000 of Ltypical :I: 1 STD were selected by Visually examin-
+E 1| —7X7(0'2190) ing the RGB images (to exclude land and clouds) and
+E the corresponding Chl images from concurrent mea-
+ft 10900 surements by MODISA using the same criteria as
+with MODISA. Note that the selection of clear—water
+pixels did not consider the satellite Viewing angle
+0 0 0 1 ' 0 , 0 3 4 0 ; even though the pixel resolution degrades from nadir
+StandardDmmon View to side View. This is because that radiance .(or
+, , , , , , number of collected photons) does not change w1th
+Flg' 6' ©9101"" onhne).DIStr.1bUt19n Of “9188’ deﬁned as the Stan"" Viewing angle for a ﬁxed instantaneous ﬁeld-of-View
+dard dev1at10n of all pixels in a given w1nd0w (either 3 x 3, 5 x 5, . . .
+0r 7 x 7), as a function of window size from a simulated image. The {IFO‘D from a g] ven sensor’ accordlng t0 the radlance
+image was assigned a unit value for all pixels, with added random Invarlance law for Lambertlan surfaces'
+noise from —1.0 to 1.0 with a Gaussian normal distribution. The (2) The quahﬁed pixels were further screened
+different window sizes led to <5% changes in their histogram using the following method.A11qualiﬁed pixels were
+modes (numbers in parenthesis), suggesting that image noise divided into 3 X 3 small windows. TO assure minimal
+(and thus SNR) is not sensitive to the choice of window size. variations within the individual windows SO that the
+variations were due to sensor noise rather than due
+radiance ratio within a small window was smaller to real variations in the ocean 01‘ in the atmosphere, a
+than a certain threshold, the target in the window threshold 0f maximum/minimum ratios from all
+could be considered as homogeneous. The threshold WithWS was used. The WithWS whose maximum]
+was determined through an objective method minimum ratios were above this threshold were dis-
+detailed below. carded in the SNR calculations. STD was determined
+In summary, for every sensor in the study, the from eaCh WlndOW Where all 3 X 3 pixels had valid Ob-
+following steps were used to determine the SNR at seryations, and the histogram mocle Of all standard
+input signal 2 Ltypical for each spectral band. dev1at10ns was regarded as the instrument n01se
+. . for that particular image. SNR was calculated as
+(1) In each image, only clear—water pixels were Ltypical divided by noise. Because the sensor’s SNR
+selected to calculate statistics. For MODISA, only depends on the sensor itself and should not
+SeaWiES, CZCS,.MERIS-FR, and MERIS'RR: after change from image to image for the same Ltypical, by
+discarding all pixels ass0c1ated Wlth the qiiality trial and error the threshold was determined when it
+control. ﬂegsa the pixels Wlth at-sensor radiance yielded a relatively stable SNR from all images and
+(Lt) w1th1n Ltypical i 1 standard deV1at10n (STD) when it yielded a normal-distributed histogram of all
+and Chl < 0.07 mg m‘3 were selected. A Chl value STDs (i.e., noise). Below this threshold, SNRs could
+of 0.07 mg/m3 is the threshold to deﬁne the most not be determined from some of the individual
+5000 - .. ‘ 10
+“*N _ ' erpical
+1000 ‘mg-x ""\1 1 f
+w f
+\ ...
+'V \ 0::
+g 10° \.., . l ‘ ~ , 0.1
+9. ‘ E
++MODIS/1KH (20) +GOCI(6) ‘ ~ \ 72:?
+10 +Momsrnm1 (20) +0C.\I(11) ‘ ‘ ‘ x 1 0.01 5
+)IODIS!QK\I(20) +CZCS(20) ‘ .J
+—I—.\IERIS_FR (9) ETM+ (10) ‘
+)IERIS_RR(9) +TM(8)
++SeaWIFs (18) +HJ(5) 0 GOES(6)
+1 0.001
+400 500 600 700 800 900 1500 2100
+\V’avelength (nm)
+Fig. 7. (Color online) SNRs of all spectral bands from the 10 multiband instruments, determined from their individual measurements at
+near—identical Ltypical (right axis, dashed line). Note that the MODISA bands were divided into three groups: 1 KM (ocean bands between
+413 and 869 nm); HKM (land bands at 469, 555, 1240, 1640, and 2130 nm), and QKM (land bands at 645 and 859 nm). MERIS SNRs were
+determined from both FR and RR data. Because they were determined from multiple images, both mean and standard deviations (vertical
+bars) were plotted. These data are tabulated in Table Z. The numbers in the parentheses represent the number of images used in
+determining the SNRS.
+1 September 2012 / Vol. 51, No. 25 / APPLIED OPTICS 6053
+
+"
+"10","«a
+QOQNQNN'ﬁFiOQ aw Ea.)
+ESKDBVFQNNO 8E4“. ma
+mﬁboooomwmv—i HUDv—i m4»
+v mfg
+@ :3 3'8
+:vaﬁiqmbﬁiw wzv m“
+H<ooHLomm®®L~ Ct$<ﬂ© 15¢,
+Oﬂoowonoomoo gnaw $210
+Ozwbbmwwmm <2 mg
+(5 U3 6;;
+Emmomoomm Q 80 _s...
+QHVHQLQQOOVHQ (5 gm N4.)
+VVHVHVHLQQQBOO van :3:
+c< c< 3%
+Ul-r—I
+mvvﬁtmmwdw. 8:3
+Ewmmowﬁwm F—Iﬁ
+mmmmmmmmm Eﬁdb Cg“
+uﬁ- .
+ac: Agbmmwmomv—i 49%|:
+E H ommwmmooo F—I,\;4—7
+g viﬂboowbwmm ctstgqu
+3 Ezﬁoooommoowco Q‘“®3
+3 O “va—ib $®$cc
+4’ o @mdm's F523;“;
+E Q QVHCN mM§2
+D Emmoomoom O am/QP
+5 Qv—iwmv—immww . 4.1;:
+. vvvwmmwhoo .5 gag“
+C Cﬁ m 4')ng
+O GJIU 4—7
+wags:
+E @1750“)
+0 ""Do AAAAAAAA A H-r-I'Q a
+""5 GQQQT'N‘Q‘Q‘I Emoo ggvm
+vammmwom abww “mm
+3 (Dm—Immm—n—cw vwmw “gag
+: vmmmvmmm ¢< paws
+.g < VVVVVVVV 03 H's G.)
+L gmvbcmmmb ""dg-Pa.
+g mbwvmvmm m G s:
+q) vamwmwﬁdv mmgjag
+D a .gC‘ZSOo
+U) H N rU'F'Q'LL-I'O
+4- ono (N.® wv—i 4"":2:
+c .V"" cm ow - - qcc'l-IIUQ
+a: mEvb'ooobANh 0250 Q):
+E mmv—i VHHQ N01 mgal-gq-p
+: 'F' 00 ' ""-‘i>>
+z a Emiggm-O-S @3261:
+E gzmmdcmwiwco. (DH “M“ gmgsg
+a: U1<<hmmbm<hmoo magma“
+4.- Lﬂooooomomv—ioo A LTJ2215c:
+E Ebbbwmwmv—i 99 201mm;
+a:
+“a 2 m®8$
+1-: Emmoomomm LO OQOQQQOQQ 838 G)
+: Qv—ivmv—imhww gmv—qmmwo-w oo'ISQ
+:2 Q (/12 mmwgo
+= ""C5 U13 .2
+:5 c: g'ﬁm'ﬁm
+E QLQLQCQQQQLQKJCOM Ham “5 $318815
+o m wﬁw cbccc..dqcc.b. .4 4;“qu
+.q:J U) Emmomgﬂ Pemgo
+.. H awwwmwm gwgoh
+""5 mZQNVTﬁLQ‘ﬁFiv—qmoﬁhmom “*LQQOOv—im oﬁgmg
+H<O¢m>wmwodsdmdodod * z‘s .D-a—v
+’E Emammmwmmwmwmmﬁmb ‘0
+o oon—ioowmommwoomooﬁm AWSQ“
+.5 Emmanmv—n—n—i $§a®3
+. 0
+lg &\ (Dg-E—Ic ""
+o VmQQLYCQQV’T'ﬁCQNV’TQv—qQO-m-m. QBNOOLQBVH £3323
+E‘v—JQONv—ibbl—QLQLQ'UD <14 ”‘8 4am.
+EgmmmwmmhmmwNv—iwbgﬁw @mmmwmmm @3304;
+% pawl + “EgreE
+E 2E th 2 g>ﬂalg
+3;, m3 ---°’°.®.""1N.°QVTO.¢®.LQ""!LQ Egmbbmm .SS:.%
+gggmwmmmwwﬁwwbo Lﬂ decddlﬁvgagn
+g EHHHQOOLQLQLQOOCN LQLQQVI"" 413: $$$$qu
+: $ $133524
+(6 O 5—:qu
+d) A ""d A .HEDQ' (D
+E a $31 omPQ 4—»0
+V UDCOOOOOLQHQVI‘NQLQLQO o3 Emmomﬁﬁ ctsoaax
+q meﬁwmwooomwbwooo ,4 quwmwmgggma
+g v VHVHVHLQLQQQQFFFFOOOOQ vwmwooHNPGH—vpg
+z “ “ £0653qu
+0) ""561553321
+. ""0 $AA§AAAAA8A A Q&% q 03
+N 8-QQ-WQQNQAWSQAﬁﬁ ﬁquw
+2 Qaﬁbmcmwmmbm°ml§°- mmop‘:
+.o ml‘w—INm—Imcmmcc—umw"" ._. mucus
+mcwmmvowwcbwngﬁﬁ QHmwm 09(03qu
+<wmvcmmmmﬁwwmubmﬁ 5460th EHUOFG
+waﬂwl‘l‘Nv—Imcm m m 5Qmo¢
+5‘ H 5‘5 32293-5
+<1 G -®®°Qb®®m©®v©vmmmv wam‘gw
+U) Egmwgoomob-Nwmooom-cdm-m gagcﬂj
+E mﬁmmﬁbmw oomwv—ioo g §5®m§3
+o O :gﬁgg
+2 NNMNOQOQv—imqjmﬁmﬁmoo cahoooo OHAQUJ
+ngmv—h—qm‘dmwﬁﬁgw'... ododm'w' “damn“:
+mmm ONO 01w ooao Lﬂ rd<4=
+mmmmﬁﬁowﬁmmmoﬁmm QOHQ q) qﬁq
+2HN®NNN®HHH®HOO EHNNH ﬁgggg
+”lefg
+A DOD A O O
+ENM“00HL\“°L\0000°®OOO Emooo r0942 “9
+aﬁwgwmwggwbvgwﬁﬁm CIVHCNLQB 2‘:ng
+vwvwwmmmwwwhooooﬁgﬁ vwmmw abs“?
+c< N c< ng
+6054 APPLIED OPTICS/Vol. 51,No. 25/1September 2012
+
+"
+"11","images. A Gaussian fit was used to determine showed the highest SNRs, with MERIS-RR SNRs
+whether the noise had a normal distribution. If the reaching 3000 for the blue bands. The most striking
+signiﬁcance level (P value) of the T-test was <0.05, result was that all MODISA ocean bands showed
+the noise distribution was considered to be normal. much higher SNRs than the NASA speciﬁcations
+Figure é shows the concept using the MODISA (bold font in Table Z; see Xiong et al. [Q]), especially
+412 nm band as an example. When the threshold in the blue—green bands. One reason leading to this
+was selected as <1.002, SNRs from different images discrepancy is that the SNRs in the blue—green were
+varied substantially and many images yielded no determined from Ltypical much higher than the NASA
+qualified small Windows to start Wlth. At 1-002: speciﬁed input radiances (last column in Table 4).
+SNRS from all images stabilized, leading to a mean However, even after the input radiance from the
+SNR 0.116512 [Fig Eltogether With a normal dis- NASA speciﬁcations was adjusted to Ltypical (bold
+tribution 1n the STD statistics [Fig @]~ In contrast, font in parentheses in Table 7), MODIS A SNRs in the
+a thresholcl 0f 1'0015 WOUId lead to a non-normal (hs' ocean bands were still signiﬁcantly higher than the
+tribution m the STD StatlStleS' Thus, a mag/hhh speciﬁcations. The same was true for most MODISA
+threshold of 1.002 was selected to screen all pixels, land bands; their SNRs were all signiﬁcantly higher
+and the SNR was determinecl as the mean SNR from than the NASA speciﬁcations (after adjusting the in-
+all examined images for this band. The procediire put radiance t0 Lt ical) except for the 1640 and
+was repeated for each band and for each sensor w1th 2130 b d F yp 1 t 859 th N AS A
+its maX/min threshold ratio derived independently. . nm an S” or examp. e, a . nm, e _
+. . . . specﬁied SNR was 201 w1th an input radiance of
+(3) The sens1t1V1ty 0f SNR calculations to the vary- 2 47 W _2 _1 _1 b . h (1
+ing window size was also studied using simulations. ' m cm ”In sr ’ Ht our estimates .8 owe
+A 500 x 500 artiﬁcial image with a constant pixel va- an SNR Of 1527'4 a: a 11111161“ lower 1nput radiance Of
+lue was assumed, and Gaussian-distributed random 04h mW cm‘ Mm— Sf ' If the input radiance was
+noise, with minimum and maximum values of —1 and adjusted from 2.4.7 130 .0-40 mW em‘Z #111—1 ST—1, the
+1, respectively, was added to the image. For each win- NASA SNR specﬁication for the band WOUId be
+dow size of 3 x 3, 5 x 5, and 7 x 7, the noise of each 80.9, much lower than 157.4 from our calculations.
+small window was determined as the STD. The his- At 555 nm where Ltypical was similar to the NASA
+togram of all STDs is shown in Fig. Q, where the his- speciﬁcations, the SNR was higher than that esti-
+togram mode appears to be insensitive to window mated from the solar diffuser measurements at a si-
+size. Because under natural conditions more pixels milar input radiance (Fig. 4 0f [2]). For similar
+selected in a small window would result in a higher wavelengths, the SNRs 0f the land bands were much
+likelihood of containing natural variability (in either lower than those of the ocean bands. If these higher-
+the ocean or the atmosphere, or both), a 3 x 3 window resolution (250 and 500 m) land bands are aggre-
+should be the best choice and, thus, was chosen to gated t0 the same resolution as the ocean bands
+estimate SNRs for all sensors. (1 km), their SNRs can increase signiﬁcantly (e.g.,
+compare SNRs 0f MERIS-FR and MERIS—RR data
+B. RGSUllS in Table 7)
+Such determined SNRs for all sensors are presented These ITesults from MODISA estimates do not al-
+in Fig.1 and tabulated 111 Table Z. Of all sensors eval- ways agree w1th those reported in Franz et a], [H],
+uated, MODISA ocean bands and MERIS-RR data even though the Ltypical input radiances used in both
+1000 -':=-- 10
+"".mo'e-f-ﬁ... Lt (HICO)
+:... Lt(H}'p€l'iOll)
+"" -- Lt_typical(MODIS) f
+100 '-'-...._::‘ 1 7:
+10 I 0.1 E
+-o—H1co ' -
+-°-Hyperion
+1 0.01
+300 600 900 1200 1500 1800
+Wavelength (nm)
+Fig. 8. (Color online) Similar to Fig. Z, but these SNR values were determined from hyperspectral instruments of H100 (black symbols)
+and Hyperion (brown symbols), respectively. While the input radiance used to determine HICO SNR is similar to Ltypical for MODIS (green;
+the same as Ltypical in Fig. Z), the input radiance used to determine Hyperion SNR is higher than MODIS Ltypical in the green, red, NIR, and
+most shortwave IR wavelengths.
+1 September 2012 / Vol. 51, No. 25 / APPLIED OPTICS 6055
+
+"
+"12","studies are similar. While the SNRs derived here for expected, the proof—of—concept CZCS several decades
+the blue—green ocean bands (412—547 nm) are very ago showed significantly lower SNRs than other
+similar to those of Franz et al. [E], the red (667 ocean color sensors. The land-oriented sensors all
+and 678 nm) and NIR (748 and 869 nm) ocean bands showed SNRs below 100 for all bands for the typical
+showed 20%—40% lower SNRs here. In contrast, all ocean radiances over nonbright targets, suggesting
+the land bands showed higher SNRs than those that special treatment of the data (e.g., spatial bin-
+listed in Franz et al. [E]. We believe that this con- ning) may be required when these instruments are
+trast is because of the different reference targets used for ocean applications.
+used in the two evaluations: this study used mea- One of the most notable results is that although
+sured radiances from homogeneous targets as the the geostationary GOCI is at an altitude far from the
+reference, while Franz et al. [E] used solar—diffuser— Earth’s surface (about 36,000 km versus about
+based measurements as the reference. Because many 700 km for a polar—orbiting satellite) with a higher
+sensors are not equipped with solar diffusers, the ap— spatial resolution (500 m) than SeaWiFS (1 km),
+proach used here should at least provide a consistent SNRs in the Visible bands were similar to those of
+evaluation between different sensors. SeaWiFS, and in the NIR were much higher (more
+Next to MODISA and MERIS—RR SNRs is MERIS- than double) than SeaWiFS, because of the longer
+FR in the blue—green bands, followed by SeaWiFS, dwell times possible from a geosynchronous orbit.
+OCM, and G001. For the Visible bands, SeaWiFS If GOCI data are binned to 1000 m resolution, the
+SNRs all exceeded the prelaunch speciﬁcations SNRs will be significantly higher. It is thus expected
+(Table 7), consistent with the ﬁndings from the solar that GOCI will provide more precise (but not neces-
+diffuser measurements [E]. However, SeaWiFS sarily more accurate) ocean color products than
+SNRs in the NIR bands were lower than the sensor SeaWiFS. This inference has been veriﬁed in a pre-
+speciﬁcations or as found by Barnes et al. [E] and liminary study using only several images [Q] but
+Eplee et al. [E]. They were lower than OCM and will be tested thoroughly once GOCI data become
+GOCI for the same wavelengths. The disproportion- routinely available.
+ally low SNRs in the SeaWiFS NIR bands have sig- SNRs of the hyperspectral instruments of H100
+nificant implications on atmospheric correction and Hyperion were also estimated in the same man-
+[29,30] and ocean color data products, as small noises ner. Because of the limited data availability, the SNR
+in—ﬁse bands would propagate to much higher calculations were restricted to input radiance as
+noises in the blue—green bands through atmospheric close to MODISA Ltypical as possible, but not exactly
+correction, resulting in pixelization in Chl images [g]. the same as with the above calculations. Figure 8
+Compared with MODISA ocean bands and shows the SNRs of H100 and Hyperion at the corre-
+MERIS—RR, MERIS-FR showed considerably lower sponding input radiances. Note that the HICO input
+SNRs for all bands, but most of these FR SNRs agree radiance was very similar to MODISA Ltypical for all
+very W811 With those reported by DGIWEﬂ‘t [ﬂ]. This 18 bands, while the Hyperion was designed for land
+understandable because MERIS-FR at 300 mresolu- imaging and the input radiance was much higher
+tion collected much less photons than the MERIS—RR than MODISA Ltypical for wavelengths >600 nm. For
+data at 1.2 km resolution. The reduced SNRs for wavelengths <600 nm, H100 SNRs were >200 and
+MERIS FR are associated With gains in spatial re- reached >400 at 500 nm for the given input radiance.
+80111131011, important for 00381331 Z0119 studies. AS This result agrees well with the sensor speciﬁcations
+2800 6'0
+(a) (b) ,2
+2400 o ‘5
+A U 3-:
+2000 / / 1000 . ' 0 Av 40%
+m CS
+g 1600 % 3 ' """"I\ . é“
+“ \ ' a
+1200 —O— MODIS Specification l I I 2.0 g
+7; + MODIS Measurement 2
+—E|— SeaWiFS Specification
+800 7 443 T 531 7 748 —I— SeaWiFS Measurement
+—*— MODIS/SeaWiFS Ratio
+400 100 0.0
+0 2 4 6 3 10 400 500 600 700 800 900
+Ltitypical (111W cnr2 um‘l 51'1) 7‘ (nm)
+Fig. 9. (Color online) (a) SNR at different radiance (Lt) inputs (solid curves), modeled from SNR at one Lt input using a square root
+function. Also plotted are the SNR values derived at different (Lt) from direct MODISA measurements (discrete symbols); (b) MODISA
+and SeaWiFS SNRs determined from measurements over the ocean (solid symbols) at input radiance of MODISA Ltypical at SZA = 45°.
+These SNRs are compared with those from the sensor speciﬁcations after adjustment of the input radiance to the same Ltypical (empty
+symbols). Also shown in the ﬁgure are the MODISA/SeaWiFS SNR ratios (stars) for the same Ltypical input radiance.
+6056 APPLIED OPTICS / Vol. 51, No. 25/ 1 September 2012
+
+"
+"13","[1_6] and is signiﬁcantly higher than the Hyperion It has been shown that the performance of the Sea—
+SNR even if the input radiance of Hyperion is much WiFS NIR bands has degraded over the mission span
+higher. The result suggests that while HICO can (1997—2010) [1_0]. However, evaluation of SeaWiFS
+be used for ocean studies at original spectral and spa— SNRs using measurements from 1998, 2004, and
+tial resolutions, spectral and/or spatial binning of 2010 resulted in Virtually the same SNRs, with their
+Hyperion may be required to improve SNRs for the long—term differences smaller than the standard
+dark ocean. deviations. Thus, the SNRs presented in Table Z
+Except for the hyperspectral sensors, SNRs of may represent time—independent values for future
+all sensors were evaluated in this study at near— references.
+identical input radiance (MODISA Ltypical at
+SZ A = 450) so their performance could be compared 5. Impact of SNR on Ocean Color Data Products
+with each other directly. On the other hand, to The sensor sensitivity to detect small changes in
+compare them with published SNRs of other sensors ocean properties is a direct function of the sensor’s
+at different input radiances, some adjustments SNR. Consistent with the decreasing SNR trend
+are necessary, because SNR depends on the input from MODISA to SeaWiFS, the corresponding Chl
+signal. data products showed increasing pixelization noise
+Figureﬂshows an example usingthree MODISA (Fig. 1). While the noise could be Visualized from
+ocean bands at 443, 547, and 678 nm. As expected, all the images in Fig. 1, it was quantiﬁed using a similar
+SNRs increased with increasing input radiance. Re— scheme to that for SNR estimates [Q]. For a number
+sults for other bands were similar. These sensors of images, noise was estimated from all valid pixels
+are designed to be shot—noise limited and therefore (after discarding those associated with various qual—
+the SNR should be proportional to the square root ity control ﬂags) whose Chl values equaled the
+of the input signal. Using this simple model, we can predeﬁned Chl (0.01, 0.02, ..., 0.4 mg m‘3). For each
+predict the SNR at another input radiance using 3 x 3 window surrounding the qualiﬁed pixel, RMS
+the SNR at Ltypical (MODISA, SZA = 45°). Figure ﬂ error was estimated. Then, for all qualifying
+shows how the predicted SNRs (solid curves) agree
+with those determined from measurements (symbols)
+for the three MODISA ocean bands. Comparison of
+the predicted and measured SNRs showed <10% dif—
+ference for most MODISA bands, with better perfor—
+mance in the Visible ocean bands than in the NIR
+ocean bands and the land bands, possibly due to
+the higher SNRs in the former. The result suggests
+that SNR at an arbitrary input radiance, when it is
+within :|:50% of Ltypical, can be predicted from the “9’33”
+known SNR at Ltypical, or Vice versa, with uncertain—
+ties generally <10%. 31""”
+This result is also useful when comparing SNRs 30,50
+obtained in this study with other published SNRs j
+at different input radiances. For example, after the -020
+SNRs of MODISA and SeaWiFS from the sensor
+speciﬁcations were adjusted to force the input radi— 50.10
+ance to change from the speciﬁcations (Table 4) to 20.05
+MODISA Ltypical at SZA = 45° using a square root
+function of radiance [Fig. ﬂ, empty symbols], they
+could be compared directly with those determined
+from MODISA and SeaWiFS measurements at
+Ltypical [Fig. ﬂ, solid symbols]. The NASA SNR spe—
+ciﬁcations after adjustment of the input radiance are
+listed in Table 1 (bold font in parenthesis). For
+MODISA, all ocean bands except 678 nm showed
+signiﬁcantly higher SNRs than the sensor speciﬁca—
+tions (35%—160%), Likewise, all SeaWiFS visible Fig. 10. (Color online) MERIS-FR chlorophyll-a concentrations
+bands (except 555 nm) showed signiﬁcantly higher on 12 March 2009 fromasmall region in the eastern Gulf of Mexico
+SNRS than the sensor speciﬁcations (12%—67%), derived from (a) the default band-ratio 0C3 algorithm and (b) a
+but the NIR bands showed much lower (~30%) SNRS new color index algorithm [Q]: Inputs to both algorithms were
+than the speciﬁcations. Overall under the same the speotral Rrs data derlved us1ng theatmospherlc correctlon ap-
+. . ’ proach 1n SeaDAS6.3. Note that th1s 1s approx1mately the same
+Iftypical input radlance’ MODISA SNR? .are 21—47 region as shown in Fig. 1, but without map projection, so the ver-
+tlmes the SGanFS SNRS for the VISIble bands: tical striping on the right edge is apparent. Note the significant
+and abOUt 4.4 times the SGaWiFS SNRS for the reduction in noise from (a) to (b), where eddy circulation features
+NIR bands. are clearly revealed.
+1 September 2012 / Vol. 51, No. 25 / APPLIED OPTICS 6057
+
+"
+"14","windows, the mean of the RMS errors was regarded to modulate the “effective zero” signal differently
+
+as a result of the pixelization noise. The ratio be- across the spectral bands, which will accentuate
+
+tween the mean RMS error and the predeﬁned Chl along-track modulations during atmospheric correc-
+
+Value was used to represent the relative pixelization tion. However, we compared SNRs and Chl pixeliza-
+
+noise (in percentage). Results are listed in Table 1. tion noise estimated from MERIS—RR data during
+
+For each predeﬁned Chl, relative noise increased 2010 (OCL-ON) and 2005 (OCL-OFF) and found no
+
+from MODISA to SeaWiFS to MERIS—FR. Relative difference. Currently the relatively high pixelization
+
+noises for MERIS—RR Chl were comparable to those noise of MERIS Chl data from such a high-SNR sen-
+
+of MODISA. For each sensor, relative noise decreased sor remains a puzzle to be further investigated.
+
+with increasing Chl and became stable around Because the Chl pixelization noise mainly origi-
+
+0.2—0.4 mg m‘3. nated from Rrs errors due to imperfect atmospheric
+
+Such SNR-related Chl noise has been explained by correction, once an improved atmospheric correction
+
+Hu et al. [é] using both simulations and SeaWiFS ob- algorithm is developed to reduce the Rrs errors or a
+
+servations. Because the atmospheric correction used bio-optical inversion algorithm insensitive to the
+
+the NIR bands to determine aerosol type and thick- Rrs errors is developed, noise in the product may be
+
+ness and then extrapolated to the Visible bands, a significantly reduced. Recently, a band-subtraction
+
+small error in the NIR, induced by sensor noise or color indeX(CI)algorithm was proposed for Chl retrie-
+
+digitization round-off noise, could propagate to the vals over oligotrophic oceans (Chl S 0.25 mg m‘3),
+
+Visible bands and become much larger in the result- and the algorithm was proven to be much more toler-
+
+ing water-leaving radiance (Lw) 01‘ remote sensing ant to Rrs errors induced by the imperfect atmo-
+
+reﬂectance (Rm). The Rrs errors were further propa- spheric correction [ﬂ]. Figure E shows an example
+
+gated in the various products through the bio-optical of the improved MERIS-FR Chl product using such
+
+inversion algorithms. For the blue/green band ratio a band-subtraction algorithm. Note that the Rrs in-
+
+Chl algorithm [E] that was used in SeaDAS as puts to the band-ratio algorithm [Fig 10(a)] and the
+
+the default, relative errors in the blue/green ratio de- new band-subtraction algorithm [Fig 10(b)] were
+
+pend on the magnitude of the ratio. For oligotrophic identical, yet the noise in the default band-ratio
+
+oceans with Chl < 0.1 mg m3, the blue/green ratio
+
+could reach 8.0. Thus, a small error in the denomina- 0.014 ‘ . 100000
+
+tor (green band) would lead to a much larger relative +§gi1HJun ,. J"" "" °~.\ «30101111300
+
+error in the ratio, resulting in larger relative errors 7; 0'0” 2011:D96,” ‘kvz-ZOIIZDec
+
+in the derived Chl. Other data products (e.g., absorp— g 0-01 {i,zﬁ,‘ \ f;
+
+tion and backscattering coefﬁcients, attenuation .: 0.003 ,1’ “*~ \ 7 §-
+
+coefﬁcient) may respond differently to the sensor £20306 ‘ ‘ ~ \ \ 100°” 2
+
+noise, yet the principle is the same, i.e., low sensor 5 ‘~ \ \\ 5
+
+SNR will lead to higher noise in the data products. .3 0'0“ (a) ..I'|II|IIIIII' “\
+
+As demonstrated in the Chl data product for the 5 ”-003 .IIIIIIIIIII
+
+noise-induced errors, most errors originated from 0 1000
+
+the NIR atmospheric correction bands rather than 0 0'05 Cﬁ;‘(mg “1-3) 0'15 0'2
+
+from the blue—green bands that were used in the
+
+bio-optical inversion [g]. This explains why MODISA 0‘01 +10 +50 +100
+
+Chl showed much lower pixelization noise than Sea- :3 0 008 +500 +1000 ~5000 A
+
+WiFS Chl (Table l), as MODISA SNRs in the NIB '5 ' 1""}?
+
+bands (748 and 869 nm) are much higher than Sea- ”g 0.000 .. ”""1/""V
+
+WiFS SNRs in the corresponding NIR bands (765 '55 A A iwf
+
+and 865 nm). However, the same principle cannot ex- 5 0,004 \‘A\ [v.1
+
+plain why MERIS-FR Chl showed much higher piX- ""= (b)
+
+elization noise than SeaWiFS Chl or why MERIS—RR 0.002 0 0.05 0.1 0.15 0.2
+
+Chl showed much higher pixelization noise than Chl(mgm'-‘)
+
+MODISA Chl’ Recalls? MERIS NIR bands at 754 Fig. 11. (Color online) Sensitivity of MODISA normalized FLH
+
+and 865 nm have Slmllar SNRS t0 SGanFS SNRS (nFLH) in detecting Chl changes at low concentrations. Data were
+
+(for MERIS-FR data) and to MODISA SNRS (for extracted froma10°><10° (60 °—50 WV, 30 °—4o °N) region near the
+
+MERIS—RR data), one would expect similar perfor— North Atlantic Gyre. nFLH was derived from normalized water-
+
+mance in the Chl data product derived using the leaving radiance at 667, 678, and 748 nm. (a) nFLH appears
+
+same algorithms, but the results here did not support to monotonously increase with increasing Chl for Chl 2
+
+this expectation. MERIS Chl data obtained from the 038 mg m_3 (Wiﬁier) an; f(?r Chl 2 0'14 (ling 111—3 (8111;111:810: DEL H1
+' ' ' ' ' ' va USS are muc OWGI' ur1n summer ue O DOD 0 OC emica
+
+ESA using SlIilllaI‘ atrnospheric correction and b10- quenching; (b) The sensitivilzy of nFLH to resollzre small Chl
+
+optical 1nvers1on algorlthms bUt dlfferent SOftware chan es is de endent on the number of ixels used in calculatin
+
+(BEAM) showed similar results. It was speculated th g p - p- -g
+, , . e averages. The annotated numbers indicate the number of pi):-
+
+that thlS abnormal behaV1or mlght be related to the els used to calculate the mean nFLH values. It appears that the
+
+push broom design or the offset stability of MERIS. relationship between nFLH and Chl for December 2011 became
+
+MERIS has an active offset compensation loop (OCL) stabilized for N 2 500.
+
+6058 APPLIED OPTICS / Vol. 51, No. 25/ 1 September 2012
+
+"
+"15","Chl has been reduced significantly using the new al- data, as measured by the standard deviation term in
+gorithm. The ﬁgure here used MERIS-FR data to Fig. 11(a) for the December 2011 case, is about
+show the impact of algorithms on product noise for 0003—0004 mW cm‘2 ,um‘1 sr‘l, corresponding to a
+the same input data. For inter-sensor comparison, Chl change of ~0.1 mg rn‘3 [i.e., from 0.1 to
+the same atmospheric approach implemented in Sea— 02 mg rn‘3 in Fig. 11(a)]. Thus, on individual images,
+DAS was used to process all ocean color data. If a current MODIS SNRs cannot resolve nFLH changes
+different approach such as the artificial neural net- corresponding to Chl changes of 0.1 mg rn‘3 when the
+work (ANN) designed for MERIS [ﬂ] or other semi- default FLH algorithm [Q] is used. An alternative al-
+analytical inversion algorithms [ﬁ—Q] were used, gorithm based on radiative transfer theory [g] may
+the resulting noise in the Chl products could be signif— improve such nFLH sensitivity in detecting Chl
+icantly lower. changes.
+
+For sensors with a ﬁnite dynamic signal range, In summary, low sensor SNRs would lead to higher
+there is always a trade between SNR (sensitivity) data product noise. The atmospheric correction
+and saturation radiance. It is typical that the SNR bands in the NIR play a dominant role in propagat-
+for one or two bands drives the sensor design. In the ing sensor noise to the ViSible bands and data pI‘O-
+MODIS case the high SNR required for the FLH ducts through atmOSpheric correction [4,ﬁ], and
+bands drove the MODIS design; the telescope and thus should be emphasized in sensor design. Finally,
+other optical components were scaled to achieve the noise in the current data products can be reduced
+desired SNRs for those bands and, in doing so, all with improved algorithms even when the sensor’s
+other bands had excess SNRs (e.g., significantly SNRS remain the same.
+higher than 1000 for the blue—green bands; see
+Table Z). To maximize the SNR for open ocean scenes, 6- Discussion
+the saturation level was lowered. This often resulted
+in signal saturation in the FLH and atmospheric A. Estimation of SNR from Satellite Measurements
+correction bands over river plumes, intense algal One objective of the SNR assessment in this study
+blooms, 01‘ thick aerosols (e'g'a Fig. 2): providing no was to put all sensors under the same reference input
+usable data for those regions. Even SO, at the current radiance from realistic measurements so they could
+sensor sensitivity MODISA FLH 0011M not resolve be compared directly. The approach used in calculat-
+Chl ﬂuorescence changes at low Chl concentrations ing the SNRs, as detailed in Subsection 4.A, was
+from individual images. adapted from a community—accepted methocﬁut ad-
+
+Ah example is shown in Fig. H for the North justed using an objective method to restrict to ocean
+Atlantic. FOI‘ December 2011, even after averaging targets as homogeneous as possible through the use
+>10, 000 Level—2 1 km pixels, normalized FLH of maX/min ratio thresholds. This is certainly not the
+(nFLH) 0011M 011157 resolve Chl down to 008 mg m‘3. only way to calculate SNR. An alternative approach
+Averaging more pixels, especially after extensive hih‘ could use extrapolation rather than maX/min ratio.
+ning in both space and time SUCh as in Behrenfeld To evaluate whether different approaches could re-
+et al. [ﬂ], may further resolve Chl to about sult in similar results as shown in Table 7, an extra-
+0-05—0006 mg 111—3, yet the large nFLH variance fOI‘ polation—based method was implemented_and tested.
+a given Chl value [STD bars in Fig. 11(3)] indicated In this method, the criteria to select clear—water pix-
+that 011 individual images the ability Of nFLH t0 re- els (Chl < 007 mg 111—3) under Ltypical were identical
+solve 10W Chl variations was significantly degraded. to those used in Subsection 4.A. For each of the 20
+This was conﬁrmed by comparison between indiVi- MODISA images, SNRs for ﬁand were calculated
+dual nFLH and Chl images (not shown here) and for different window sizes ranging between 2 x 2
+by the sensitivity test in Fig. 1100), where the nFLH and 7 x 7. The mean SNR of the 20 images for a win-
+Versus Chl relationship became stabilized only after dow size was regarded as the SNR for that window
+averaging >500 pixels. This ability further decreases size, An extrapolation of the mean, as a function of
+during summer due to nonphotochemical quenching window size, to the window size 1 x 1 was regarded
+0f the ﬂuorescence efﬁciency (black symbols in as the sensor SNR. Such extrapolation—derived
+Fig. 11(3); also see Behrenfeld et al. [@l). The current MODISA SNRs are comparable to those shown in
+MODISA SNRs appeared sufﬁcient to derive nFLH Table Z to within 20%, suggesting that both methods
+for studying phytoplankton physiology in the global could be used to determine sensor SNRs. However,
+ocean at large spatial—temporal scales, because many the standard deviations of the mean SNRs (i.e.,
+data points could be averaged to increase its sensitiV- variability of SNRs across individual images) from
+ity [ﬂ], yet for individual images at original resolu- this alternative approach were significantly higher
+tion (1 km), increasing the SNRs in the FLH bands than the method (Fig. é) used to derive Table Z, in-
+while maintaining a sufﬁcient signal dynamic range dicating that the alternative method depends heavily
+for a variety of water types may be a technical on the selection of the image. Thus, the general con-
+challenge for future ocean color sensors. Such cap— sistency between the two independent methods and
+ability is particularly important for detecting and the significantly lower cross-image variability in the
+quantifying blooms in optically complex waters former method suggest that the results listed in
+[Q]. Indeed, the noise level in the MODIS nFLH Table Z could be used as valid references to compare
+
+1 September 2012 / Vol. 51, No. 25 / APPLIED OPTICS 6059
+
+"
+"16","sensor specifications and performances, and the ance in the red and NIR bands sometimes resulted
+same method could be used for other or future sensor in saturation even over cloud-free ocean scenes.
+evaluations to ensure consistency. (3) Both MODISA and SeaWiFS showed higher
+, SNRs than prelaunch specifications for most spectral
+B. Other Factors Affecting SNRs bands.
+Instrument engineering teams have found various (4) It is critical to have sufﬁcient SNRs in the
+approaches to meeting SNR speciﬁcations, some of atmospheric correction bands. In contrast, the SNR
+which can introduce data artifacts that are not in- requirements on the Visible bands can be relaxed.
+cluded in the SNR evaluations here. For instance, (5) Noise in the current data products is primarily
+MODIS used 10 detectors along the track to ensure due to the algorithmic approach. Improved algo-
+sufﬁcient dwell time to achieve the desired SNRs, rithms can lead to significantly reduced product
+i.e., slow scan rates. This introduced cross-track noise and significantly enhanced product precision.
+striping due to residual calibration errors between GEO-CAPE is a eostationar mission with recom-
+detectors. Similarly, push broom sensors such as d d h gt 1 y 'f’ t'
+MERIS employed multiple detectors across the men e y She 1.8%? {35086183181353 16: iotns 810311};
+track, which resulted in along—track striping errors. {121313) 11:13 0:16 of the a (133111133068 :fS 822133218131,
+In the SNR calculations, these errors were excluded . th . 10.1. t t t t t g h' g th . t y
+by using the maX/min threshold approach (Fig. 5), for :ensei's is en: a d1 tl y O 813% gill; 1eve . e in 851‘:
+otherwise realistic variations in the ocean and/br at- 10.11 1me require 0 tnee 1 feGEO ézcgiilreihen 8'
+mosphere would have been regarded as noise The primary measuremen goa O _ 1s. 0 quan-
+. . . . . ' tify short-term changes in ocean properties from
+strlping n01se represents a s1gn1ﬁcant error source 1 . t 1 t ft h SZ A . <70°
+for many sensors (MODIS, MERIS, Landsat, etc.) Eff y Lmorning 10 a eta ernoonSVEAen 1.1:;1 . '
+that has not been addressed in this paper because T 1:1 3910a va ues a vartious fs, 351358 gAPlllil
+it is primarily a cross-detector calibration problem. a e —’ can serve 53‘s re erences or _ .
+SeaWiFS avoided this problem by using four detec- .SNR specifications. L1kew1se, the Lmax values IISted
+tors in a time-delay-integration scheme but had to in Tables 5 and Q at various SZAs can serve as refer-
+spin the telescope at a faster rate. Its bilinear gain, ences to determine the saturation radiance and sen-
+separated at the knee value, was implemented to sor integration time under .VaI‘IOUS measureinent
+account for both high sensitivity at low radiance scenarios. Although Table 9 is preferred, the differ-
+and high saturation levels for land and atmosphere ence between Lmax for the 5% and 1% brightest pixels
+applications provides a reference for the trade space between sen-
+The assessment did not attempt to differentiate SlthIty and saturation. Note that these Ltypical and
+whether the noise originated from the instrument- LmaX values were determined using MODISA multi-
+inherent noise [qu (l) and (2)] or from digitization band measurements. For hyperspectral sensors,
+round-off noise, with the latter determined by the Ltypical and Lmax at other wavelengths can be dernred
+number Of digitization bits and the maximum from the tables us1ng1nterpolation and extrapolation
+radiance. In practice, to maximize sensor perf0r_ and using the extraterrestrial solar irradiance as a
+mance, one digital number is often set to be equiva- reference. .
+lent to the instrument-inherent noise or NEAL, It is clear that MODISA SNRs are sufficient to re-
+because there is no reason to digitize noise or keep SOIVG very small ChaneS (<10%) even_allt extremely
+the noise way below the digitization round-off error. 10W Chl concentrations (N903 mg m 3 Table 1).
+Thus, the results presented here represent the im- When the P?VV band-subtraction algorithm was used,
+age-based evaluations of the SNRs of many sensors the sens1t1V1ty was even higher to resolve chagnges of
+under similar radiance inputs over relatively homo- €507"" for Chl between 0'01 and 0'4 mg m GE];
+geneous waters without differentiating the noise Flg- El Thus, MODISA SNRS (3.3“ b? used as a tein-
+sources. plate to deﬁne GEO-CAPE specifications. Because it
+is important to be able to detect small changes dur-
+0. Implications for GEO-CAPE, PACE, and Other Future me early mornmg and late afternoon at SZA = 70°,
+Missions SNRs should be deﬁned at this SZA.
+The ultimate goal of this study was to use past and Based OE the M QDISA results shown he?’ and
+current ocean color sensors as references to help based on t e radiative trans er.s1mu ations 0 Wang
+design future ocean color missions including GEO- [EL we believe that th? follow1ng SNRS should 101:0—
+CAPE and PACE From the results and discussions Vide sufﬁcient sens1t1V1ty for the GEO'CAPE mis-
+above, substantial experience and lessons have been ?loné2; 1388:: Angetvie)%n 2%500f int? 72}? im’ :63?
+learned from the past, including the following. or _ ’ a _ 0 e S O an
+frared (SWIR) bands. For all spectral bands, satura-
+(1) MODISA Ltypical values at SZA = 45° are often tion levels should be set to or interpolated from those
+different from previous sensor speciﬁcations. They listed in Tables 5 and Q, which will avoid saturation
+also change with different SZAs. over land and all but the brightest clouds. The
+(2) MODISA is much more sensitive (higher simulations of Wang [Q] considered two cases for
+SNRs) than SeaWiFS, yet the low saturation radi- maritime and tropospheric aerosols with an aerosol
+6060 APPLIED OPTICS / Vol. 51, No. 25/ 1 September 2012
+
+"
+"17","optical thickness at 865 nm of up to 0.2, where the program and inspired by numerous discussions with-
+SNR requirement was estimated to be slightly lower in the GEO-CAPE science definition team. Support of
+than listed above. Note that these recommended L. Fenghas been provided by an education program
+SNRs are much lower in the Visible and slightly low- for Visiting and exchanging students. We thank the
+er in the NIR, but significantly higher in the SWIR various agencies that provided satellite data in this
+when compared with MODISA SNRs determined study, including the NASA Goddard Space Flight
+from Ltypical at SZA = 45° (Table Z). Because most Center, US. Geological Survey, the European Space
+noise in the data products results from the atmo- Agency, the Earth Scan Lab of Louisiana University,
+spheric correction bands in the NIR and SWIR as Oregon State University, and Korea Ocean Research
+opposed to the blue—green bands [ﬁg], the perfor— and Development Institute (KORDI). The authors
+mance of GEO-CAPE in resolving small changes in thank Drs. M. Behrenfeld and T. Westberry (Oregon
+ocean properties should be at least comparable to State University) for their helpful discussions on
+that of MODISA if the same atmospheric and bio- MODIS FLH data products. The manuscript bene-
+optical inversion approaches are used with the ﬁted from substantial comments and suggestions
+NIR bands. If SWIR bands are used for atmospheric provided by three anonymous reviewers, whose
+correction of both MODISA and GEO-CAPE, signiﬁ- contribution is acknowledged.
+cantly improved performance should be achieved
+from GEO-CAPE over MODISA because of the in- References
+creased SNRs in the SWIR bands. 1. J. Fishman, J. Al-Saadi, P., Bontempi, K. Chance, F. Chavez,
+Of particular interest for GEO-CAPE is the ability 1&1 Chi? 1;- goble,JC-HDavis, P-CDiIgriacEInlo, 1%- gldﬁrini, B.
+to derive chan es in chloro h ll-a ﬂuorescence uan- war S) - Des, - erman’ - u, - ram, - aco ’ -
+turn yield withgrepeated digrgal measurementsc.l Can Jordan’ S- R' Kawa’ R' Key’ X' Liu’ 8' LOhrenZ’ AI Ma-nnino’
+, , , V. NatraJ, D. Neil, J. Neu, M. Newchurch, K. Pickering, J.
+GEO'CAPE Wlth Slmllar SNRS t0 MODISA TeSOIVG Salisbury, H. Sosik, A. Subramaniam, M. Tzortziou, J. Wang,
+such changes? Morrison [ﬂ] showed that when the M. Wang, GEO-CAPE Atmospheric Science Working Group,
+surface photosynthetically available radiation (PAR; and GEO'CAPE 009311} 30191109 Working Group» “Fulﬁlling
+M mole photons m—Z S—l) changed from 1000 to 600 the mandate and meeting the challenges of the nation s next
+. o o . generation of atmospheric compos1tion and coastal ecosystem
+(corresponding to SZA = 60 and 70 a respectively), measurements: NASA’s Geostationary Coastal and Air Pollu-
+the ﬂuorescence quantum yield nearly doubled (Fig. 9 tion Events (GEO-CAPE) mission,” Bull. Am. Meterol. Soc.
+of [44]). For waters with Chl = 0.15 mg m‘3, this (to be published).
+quaﬁum yield change would result in nFLH changes 2. National Research Council, Earth Science and Applications
+0 f ~0.004 mW cm_2 m_l sr‘l [Fi . 11(3)] distin- from Space: National Imperatives for the Next Decade and
+. M g. — ’ Beyond. Committee on Earth Solence and Applications from
+gUIShable fI'Om the background 110189 1€V€1 [0.003— SpacezACommunity Assessment and Strategy for the Future
+0.004; see standard deviation in Fig. 11(3)]. This (National Academic Press, 2007) (http://www.nap.edu/catalog/
+estimate is based on individual images. If the Chl 11820-html)- . . . . “ .
+is higher, or if. many pixels averaged 01' these 3- 5.1122113233521533:21205321311213;irafgsriéii
+IOW'Concentratlon waters: smaller Changes In ﬂuor‘ plan for a climate—centric architecture for Earth observations
+escence quantum yield can also be quantiﬁed and applications from space” (NASA, 2010) (http://science
+with the current MODISA SNRs and the default hasa-gOV/earth-Science/)-
+algorithms. 4. C. Hu, K. L. Carder, and F. E. Mnller—Karger, “I-.Iow. precise
+are SeaW1FS ocean color estimates? Implications of
+. digitization-noise errors,” Remote Sens. Environ. 76, 239—249
+7. Conclusmn (2001).
+The trade space between sensor SNR (or sensitivity) 5- ff:- M- Letelierlandﬂlt/I- Rf AEEOtt’ “13D a:lalysisl 0:: ch19r0phy11
+' ' ' UOI'GSCGDCG a OI'l IDS 01' e mo era e reso U. 1011 1ma I1
+End dynamlc range (01‘ saiuratmn radlance).needs t0 spectrometer (f/IODIS),” Remote Sens. Environ. 58, 215E22§
+e determined carefully in order to quantify small (1996).
+changes of ocean prOperties (e.g., Chl) under most 6. http://suzaku.eorc.jaxa.jp/GLI/ov/spec_table.html.
+measurement scenarios. Using measurements of 7. T. Y. Nakajima, T. Nakajima, M. Nakajima, H. Fukushima, M.
+MODISA and other ocean color sensors together with Kuji: A- UChiYama, 39d M- Kishino» “Optimization 0f the Ad'
+a new objective method, typical (Ltypical) and maxi- E31132: ??rgd?:tsi:?11:~gafs&iﬁlhcﬁ£1$12,221,312??? 051;???
+mum (Lmax) at-sensor radiances were determined 3149—3163 (1998).
+under different SZAS, With SNRS determined from 8. International Ocean-Colour Coordinating Group, “Minimum
+uniform ocean targets at the same input radiance requirements for an operational, ocean-colour sensor for the
+as Lt ical' These results make it possible for the first Open ocean”, IOCQG .Report Number 1 (International
+time 3th have direct cross-sensor comparisons of SNRs oceaD'COIOM Coordinating GrouP’ 199$) - -
+
+. . 9. X. Xiong, A. Angal, and X. Xie, “On-orbit n01se characteriza-
+under the same measurement condltlons. The tabu— tion for MODIS reﬂective solar bands,” in Proceedings of the
+lated results also serve as references to compare with IEEE International Geoscience and Remote Sensing Sympo-
+other existing sensors and to help design future sen- 3mm) 2008 (IEEE: 2008)- ,
+sors such as the geostationary GEO-CAPE 01‘ the 10. :‘ISR. E. Eplee, F. S. Patt, R. A. Barnes, and C. R. McClain,
+
+. . eaW1FS long-term solar diffuser reﬂectance and sensor
+
+polar-Ol‘bltmg PACE. noise analyses,” Appl. Opt. 46, 762—773 (2007).
+Thisworkwassuppo.tedbythestat.0fF10ﬁd.,the 1%: §??iﬁi.§af§:id%¥§th32.22? (tgbiérrﬁrrg
+U'S' NASA Ocean Blology and BIOgGOChemlstry for ocean remote sensing applications,” presented at Ocean
+(OBB) program and the Water and Energy Cycle Optics XVIII, Montreal, Canada, 9—13 October 2006, http://
+1 September 2012 / Vol. 51, No. 25 / APPLIED OPTICS 6061
+
+"
+"18","oceancolor.gsfc.nasa.gOV/staff/franz/papers/franz_et_al_2006_ 29. H. R. Gordon, “Atmospheric correction of ocean color imagery
+00.pdf. in the Earth Observing System era,” J. Geophys. Res. 102,
+
+12. C. Giardino, V. E. Brando, A. G. Dekker, N. Strémbeck, and 17081—17106 (1997).
+
+G. Candiani,“Assessmentofwaterqualityin Lake Garda(Italy) 30. H. R. Gordon and M. Wang, “Retrieval of water-leaving
+using Hyperion,” Remote Sens. Environ. 109, 183—195 (2007). radiance and aerosol optical thickness over the oceans With
+
+13. Z. Lee, B. Casey, R. Arnone, A. Weidemann, R. Parsons, M. J. SeaWiFS: a preliminary algorithm,” Appl. Opt. 33, 443—452
+Montes, B.-C. Gao, W. Goode, C. Davis, and J. Dye, “Water and (1994).
+bottom properties of a coastal environment derived from 31. S. Delwart, “MERIS US workshop: instrument char-
+Hyperion data measured from the EO-l spacecraft platform,” acterization overview,” presented at ESA/MERIS Workshop,
+J. Appl. Remote Sens. 1, 011502 (2007). OCEANSUS Ofﬁce, Silver Spring, Md., USA, 14 July 2008
+
+14. R. K. Vincent, X. Qin, R. M. L. McKay, J. Miner, K. Czajkowski, (http://0ceancolor.gsfc.nasa.gov/MEETINGS/ESA_MERIS/
+J. Savino, and T. Bridgeman, “Phycocyanin detection from presentations/InstCharacOverVieW.pdf).
+
+LANDSAT TM data for mapping cyanobacterial blooms in 32. C. Hu, F. Lian, and Z. Lee, “Evaluation of GOCI sensitivity for
+Lake Erie,” Remote Sens. Environ. 89, 381—392 (2004). at-sensor radiance and GDPS-retrieved chlorophyll-a pro-
+
+15. Z. Yu, X. Chen, B. Zhou, L. Tian, X. Yuan, and L. Feng, “As— ducts,” submitted to Ocean Science J..
+sessment of total suspended sediment concentrations in 33. C. Hu, Z. Lee, and B. Franz, “Chlorophyll a algorithms
+Poyang Lake using HJ-lA/lB CCD imagery,”Chin.J. Oceanol. for oligotrophic oceans: a novel approach based on three-
+Limnol. 30, 295—304 (2012). band reﬂectance difference,” J. Geophys. Res. 117, 001011
+
+16. R. L. Lucke, M. Corson, N. R. McGlothlin, S. D. Butcher, D. L. (2012).
+
+Wood, D. R. Korwan, R. R. Li, W. A. Snyder, C. 0. Davis, and 34. J. E. O’Reilly, S. Maritorena, M. O’Brien, D. Siegal, D. Toole, D.
+D. T. Chen, “Hyperspectral Imager for the Coastal Ocean: Menzies, R. Smith, J. Mueller, B. Mitchell, S. Hooker, C.
+instrument description and ﬁrst images,” Appl. Opt. 50, McClain, K. Carder, F. Miiller—Karger, M. Kahru, F. Chavez,
+1501—1516 (2011). P. Strutton, G. Cota, L. Harding, A. Magnuson, D. Phinney,
+
+17. http://glovis.usgs.gov. G. Moore, J. Aiken, K. Arrigo, R. Letelier, and M. Culver, “Sea-
+
+18. http://hico.c0as.0reg0nstate.edu. WiFS Postlaunch Calibration and Validation Analyses, Part
+
+19. Information sources (accessed on 19 January 2012): MODIS: 3,” in NASA Technical Memorandum 2000—206892 Sea-
+http://modis.gsfc.nasa.gOV/about/speciﬁcations.php; MERIS: WiFS Postlaunch Technical Report Series, S. Hooker and E.
+http://enVisat.esa.int/earth/WWW/object/index.cfm?fobjectid= Firestone, eds. (NASA Goddard Space Flight Center, 2000),
+1665&c0ntentid=3744; SeaWiFS: http://0ceancolor.gsfc.nasa Vol. 11.
+
+.gOV/SeaWiFS/SEASTAR/SPACECRAFThtml; OCM: http:// 35. T. Schroeder, I. Behnert, M. Schaale, J. Fischer, and R.
+www.isro.org/satellites/irs-p4_0ceansat.aspx; GOCI: http:// Doerffer, “Atmospheric correction algorithm for MERIS above
+kosc.k0rdi.re.kr/oceansatellite/coms-g0ci/speciﬁcation.kosc; case-2 waters,” Int. J. Remote Sens. 28, 1469—1486 (2007).
+CZCS: http://oceancolor.gsfc.nasa.gov/CZCS/czcs_instrument 36. K. L. Carder, F. R. Chen, Z. P. Lee, S. K. Hawes, and
+.html; Landsat7 ETM+: http://landsat.gsfc.nasa.g0V/about/ D. Kamykowski, “Semianalytic Moderate-Resolution Imaging
+etm+.html; Landsat5 TM: http://landsat.gsfc.nasa.g0V/about/ Spectrometer algorithms for chlorophyll a and absorption
+tm.html; HJ-CCD: http://www.cresda.com/n16/n1130/n1582/ With bio-optical domains based on nitrate-depletion tempera-
+8384.html; GOES/Imager: http://WWW.class.ncdc.noaa.gov/ tures,” J. Geophys. Res. 104, 5403—5421 (1999).
+release/data_available/goes/indexhtm; HICO: http://hico 37. Z. Lee, K. L. Carder, and R. A. Arnone, “Deriving inherent op-
+.coas.0reg0nstate.edu; Hyperion: http://edcsns17.cr.usgs.gov/ tical properties from water color: a multiband quasi-analytical
+e0 1/sensors/hyperion. algorithm for optically deep waters,” Appl. Opt. 41, 5755—5772
+
+20. R. D. Fiete and T. Tantalo, “Comparison of SNR image quality (2002).
+metrics for remote sensing systems,” Opt. Eng. 40, 574—585 38. S. Maritorena, D. A. Siegel, and A. R. Peterson, “Optimization
+(2001). of a semianalytical ocean color model for global-scale applica-
+
+21. W. J. Moses, J. H. Bowles, R. L. Lucke, and M. R. Corson, “Im- tions,” Appl. Opt. 41, 2705—2714 (2002).
+pact of signal-to-noise ratio in a hyperspectral sensor on the 39. S. Sathyendranath, L. Prieur, and A. Morel, “A three compo-
+accuracy of biophysical parameter estimation in case II nent model of ocean colour and its application to remote
+waters,” Opt. Express 20, 4309—4330 (2012). sensing of phytoplankton pigments in coastal waters,” Int.
+
+22. P. J. Curran and J. L. Dungan, “Estimation of signal-to-noise: J. Remote Sens. 10, 1373—1394 (1989).
+
+a new procedure applied to AVIRIS data,” IEEE Trans. 40. M. J. Behrenfeld, T. K. Westberry, E. S. Boss, R. T. O’Malley,
+Geosci. Remote Sens. 27, 620—628 (1989). D. A. Siegel, J. D. Wiggert, B. A. Franz, C. R. McClain, G. C.
+
+23. B.-C. Gao, “An operational method for estimating signal to Feldman, S. C. Doney, J. K. Moore, G. Dall’Olmo, A. J.
+noise ratios from data acquired With imaging spectrometers,” Milligan, I. Lima, and N. Mahowald, “Satellite-detected ﬂuor-
+Remote Sens. Environ. 43, 23—33 (1993). escence reveals global physiology of ocean phytoplankton,”
+
+24. R. 0. Green, B. E. Pavri, and T. G. Chrien, “On-orbit radio- Biogeosci. Discuss. 5, 4235—4270 (2008).
+metric and spectral calibration characteristics of EO-l Hyper— 41. C. Hu, F. E. Muller—Karger, C. Taylor, K. L. Carder, C. Kelble,
+ion derived With an underﬂight 0f AVIRIS and in situ E. Johns, and C. A. Heil, “Red tide detection and tracing
+measurements at Salar de Arizaro, Argentina,” IEEE Trans. using MODIS ﬂuorescence data: a regional example in SW
+Geosci. Remote Sens. 41, 1194—1203 (2003). Florida coastal waters,” Remote Sens. Environ. 97, 311—321
+
+25. F. A. Kruse, J. W. Boardman, and J. F. Huntington, “Compar— (2005).
+ison of airborne hyperspectral data and EO-l Hyperion for 42. Y. Huot, C. A. Brown, and J. J. Cullen, “New algorithms for
+mineral mapping,” IEEE Trans. Geosci. Remote Sens. 41, MODIS sun-induced chlorophyll ﬂuorescence and a compari-
+1388—1400 (2003). son With present data products,” Limnol. Oceanogr.: Methods
+
+26. M. Wettle, V. E. Brando, and A. G. Dekker, “A methodology for 3, 108—130 (2005).
+retrieval of environmental noise equivalent spectra applied to 43. M. Wang, “Remote sensing of the ocean contributions from ul-
+four Hyperion scenes of the same tropical coral reef,” Remote traviolet to near—infrared using the shortwave infrared bands:
+Sens. Environ. 93, 188—197 (2004). simulations,” Appl. Opt. 46, 1535—1547 (2007).
+
+27. C. R. McClain, S. R. Signorini, and J. R. Christian, “Sub- 44. J. R. Morrison, “In situ determination of the quantum yield of
+tropical gyre variability observed by ocean-color satellites,” phytoplankton chlorophyll aﬂuorescence: a simple algorithm,
+Deep Sea Research II: Top. Stud. Oceanog'r. 51, 281—301 observations, and a model,” Limnol. Oceanog'r. 48, 618—631
+(2004). (2003).
+
+28. R. A. Barnes, W. L. Barnes, W. E. Esaias, and C. R. McClain, 45. S. B. Hooker, E. R. Firestone, W. E. Esaias, G. C. Feldman, W.
+“Prelaunch Acceptance report for the SeaWiFS radiometer,” W. Gregg, and C. R. McClain, “An overview of SeaWiFS and
+NASA Technical Memo 104566, S. B. Hooker, E. R. Firestone, ocean color,” NASA Technical Memorandum, S. B. Hooker
+and J. G. Acker, eds. (NASA Goddard Space Flight Center, and E. R. Firestone, eds. (NASA Goddard Space Flight Center,
+1994), V01. 22. 1992).
+
+6062 APPLIED OPTICS / Vol. 51, No. 25 / 1 September 2012
+
+"

@@ -1,0 +1,1130 @@
+"","x"
+"1","47th AIAA Aerospace Sciences Meeting Including The New Horizons Forum and Aerospace Exposition AIAA 2009-614
+5 - 8 January 2009, Orlando, Florida
+The Capillary Flow Experiments aboard ISS
+Ryan M. Jensen? Mark M. Weislogeﬂ and Noel T. TavarﬂE
+Portland State University, Portland, Oregon, 97201, United States
+Charles T. Bunnell§
+Zin Technologies Inc., Cleveland, Ohio, 44130, United States
+
+This paper highlights the experimental, analytical, and numerical results of the Capil-
+lary Flow Experiment (CFE) performed aboard the International Space Station (188). The
+experiments were conducted in space beginning with Increment 9 through Increment 16,
+beginning August, 2004 and ending December, 2007. Both ‘primary’ and ‘extra science’
+experiments were conducted during 19 operations performed by 7 astronauts including:
+M. Fincke, W. McArthur, J. Williams, S. Williams, M. Lopez-Alegria, C. Anderson, and
+P. Whitson. CFE consists of 6 approximately 1 t0 2kg handheld experiment units designed
+to investigate a selection of capillary phenomena of fundamental and applied importance,
+such as large length scale contact line dynamics (CFE-Contact Line), critical wetting in
+discontinuous structures (CFE-Vane Gap), and capillary ﬂows and passive phase separa-
+tions in complex containers (CFE-Interior Corner Flow). Highly quantitative video from
+the simply performed ﬂight experiments provide data helpful in benchmarking numerical
+methods, conﬁrming theoretical models, and guiding new model development. A brief his-
+tory of the experiment is provided before introducing the science investigated. A selection
+of experimental results and comparisons with both analytic and numerical predictions is
+given. Despite the simple nature of the experiments and procedures, many of the experi-
+mental results may be practically employed to enhance the design of spacecraft engineering
+systems involving capillary interface dynamics.
+
+I. Introduction
+
+Following the Space Shuttle Columbia accident, developments in NASA’S shuttle program allowed new
+opportunities for science experiments aboard 188. Since the shuttle was temporarily unable to ferry planned
+science equipment to 188, NASA sought substitute candidate experiments to take advantage of any possible
+available crew time. The design constraints for such experiments are stringent and include: safe operation,
+low mass < 2.5kg, low volume < 2 liters, minimal electrical interfacing, minimal power requirements, minimal
+to no crew training required, short hardware delivery schedule (i.e. months), and low cost. This list is not
+exhaustive, but is certainly restrictive, and stems from NASA’S desire to use in part the Russian Progress
+vehicle to deliver science experiment hardware to ISS—the available cargo weight and volume for science
+hardware aboard Progress being limited. Fortunately, a Class of ﬂuids experiments can be posed that ﬁt this
+description, and the Capillary Flow Experiment (CFE) was proposed to NASA and competed 0n the basis
+of science and strategic research merit. The experiments address questions of both scientiﬁc and engineering
+importance and concern certain capillary phenomena as it relates to large length scale ﬂuid systems that
+commonly arise aboard spacecraft, but not in terrestrial laboratories.
+
+CFE is composed of six vessels including three experiment pairs—Contact Line (CL), Vane Gap (VG),
+and Interior Corner Flow (ICF), performed essentially in this order. All vessels use similar ﬂuid injection
+hardware, have similarly sized test Chambers, and rely solely on Video for quantitative data. The general
+engineering design characteristics common to the CFE vessels include: (1) mass < 2kg, (2) volume < 2.1L,
+
+*MSME, Mechanical 85 Materials Engineering, PO. BOX 751-ME
+TProfessor, Mechanical 85 Materials Engineering, PO. BOX 751-ME, Member
+iMSME Candidate, Mechanical 85 Materials Engineering, PO. BOX 751-ME, Student Member
+§Lead CFE Engineer, Ms. ZINO.
+1 0f 22
+Copyright © 2009 by M.M. Weislogel. Published by the Amerfé‘dﬂefﬂsiﬁ’tﬂelﬂﬂﬂjéﬂéhglﬁhéﬂﬂﬁgﬂhﬁjﬂékqIdtﬂfﬂﬂﬁiapleﬂﬂEsion.
+
+"
+"2","(3) No electrical interfaces or power requirements, (4) experiment operation time < 3hr, (5) brief to no
+crew training needed, (6) low toxicity ﬂuids (i.e. Silicone oils) and (7) double seals against ﬂuid leak. The
+objective of the different CFE vessels are summarized as follows:
+
+0 The Contact Line (CL) experiments are highlighted in Section 111. These experiments required the
+most extensive data reduction effort in CFE and a database was established to catagorize the greater
+than 350 tests performed. The primary objective of the CL experiments is to investigate the effect of
+contact line boundary conditions on dynamic interface response following a variety of perturbations.
+Both pinned— and smooth—wall conditions for both perfect and partial wetting conditions are studied
+in hopes of bracketing all possible responses between the two extremes of ﬁxed and free contact line
+boundary conditions. Experimental and numerical results are presented along With extra science events
+depicting phenomena not part of the primary objectives.
+
+0 The Vane Cap (VG) experiments are reviewed in Section IV and concern gap—wetting in a cylinder
+With elliptic cross—section. When rotated, an asymmetric vane oriented along the axis of the chamber
+achieves a variety of critical geometries leading to nearly discontinuous wetting and de—wetting of
+gaps formed between the vane and the container wall. The critical wetting conditions are compared
+to theoretical and numerical predictions and may be exploited for the purposes of controlling large
+quantities of liquids in reduced gravity environments. Both static and dynamic interfaces are studied.
+
+0 The Interior Corner Flow (ICF) experiments are outlined brieﬂy in Section V and address passive
+capillary—driven corner ﬂows in weakly 3—dimensiona1 geometries. Experiments demonstrating passive
+phase separations are conducted. Comparisons of the heavily geometry—dependent ﬂow With developing
+theoretical models are made.
+
+II. Background and Motivation
+
+As has been stated on numerous occasions by numerous investigators, capillary ﬂows and phenomena
+are critical to myriad ﬂuids management systems in low—g including: fuels/cryogen storage systems, thermal
+control systems (e.g. vapor/liquid separation), life support systems (e.g. water recycling), and materials
+processing in the liquid state. Under microgravity conditions, capillary forces can be exploited to control
+ﬂuid orientation so that such mission—critical systems perform predictably. CFE is a simple fundamental
+scientiﬁc study that can yield quantitative results from a set of safe, handheld ﬂuids experiments. The
+experiments aim to provide results of value to the capillary ﬂow community that cannot be easily achieved
+in ground—based tests. Speciﬂc applications of the results tend to center on ﬂuids challenges concerning
+propellant tanks. However, the knowledge gained may help spacecraft ﬂuid systems designers in general by
+increasing conﬁdence in current design tools to predict such large scale capillary phenomena.
+
+A. Hardware and Setup
+
+The handheld experiments are designed to be operated on the Maintenance Work Area (MWA), a portable
+workbench in the United States Laboratory of the 188 shown in Figure 1. Set up and operation are simple
+and intuitive, requiring minimal preparation. All of the experiments require use of an 188 Video camera and
+a diffuse paper screen employed as a backlight. The camera is a standard rate Sony 720x480 CCD DVCam
+and is mounted to an ISS rail. Astronauts are allowed freedom in Where and how the camera and experiment
+are conﬁgured With the primary requirement that the camera be perpendicular to the test vessel front face.
+The CFE vessels are rigidly mounted to the MWA by a setscrew.
+
+III. Contact Line (CL)
+
+The CFE Contact Line experiment consists of two vessels each containing two right circular cylinders,
+one smooth and the other With a machined groove serving as a pinning edge. Both cylinders are ﬁlled to
+identical levels and since the containers are closely and rigidly connected, any disturbance imparted to the
+vessel is felt by both ﬂuid surfaces. Differences in ﬂuid response is thus expected to be solely a result of
+differences in contact line boundary condition, Which is readily observed in Figure 2. The simple operation of
+CL requires the astronaut to impart a variety of disturbances to the vessel allowing the interface oscillations
+
+2 of 22
+American Institute of Aeronautics and Astronautics
+
+"
+"3","_ ; ___ \: \. ' W. MWA CL
+\ . i . i!“ 1‘ i Camera \ Paper Screen
+‘ , "" ' ‘ | Mounting
+_ _‘— ‘ —>
+/ .314 . ‘ i l Bracket
+""‘ixi ,1. / i 2-1 {F =3 1 f7 ISS
+(a) ISS conﬁguration (b) Schematic rendition
+Figure 1. Astronaut J. Williams operating CLl on ISS and schematic of a typical setup common to all CFE
+vessels.
+Smooth Pinning Smooth Pinning
+' l” u“ ,7 1| Ill Ii ”'3'"" l Pinning Lip
+‘ ‘ H Ill 'AL‘ HE
+“ . 41w?”
+\ ., ""/ ‘ Na” ;
+1&5 w? ‘ gt ’ - ,
+: _ i'"" _,- _ '
+I e“. ‘| > 57‘. ‘
+‘ ‘-—' 1' ‘
+(a) (b)
+Figure 2. Image of CL2 interface: (a) equilibrium states, (b) arbitrary dynamic state.
+to decay naturally in the ﬁeld of View of the camera. Dynamic Bond numbers as low as 10—5 and greater
+than 20 are achieved spanning both Visco— and inertial—capillary ﬂow regimes. Video data is collected from
+Which both the disturbance input and passive liquid response can be digitized. The brevity (5s—30s) of
+each experiment event (disturbance and damped ﬂuid response) permitted a large number of tests to be
+conducted, the reduced data set of Which comprises over 350 primary science events not counting numerous
+other tests referred to as ‘extra science’ tests.
+A. CL Hardware Description
+A photograph of the CLZ ﬂight unit is provided in Figure 3 along With a solid model of the design With
+key components noted. The two units are identical in all respects save wetting properties, ﬂuid volume,
+and pinning lip location. The main body is machined from a single piece of cast acrylic and ﬁtted With
+aluminum pistons and stainless steel piston drive screws. The right Circular cylindrical test Chambers have
+ﬂat bases but elliptical acrylic lids. Each unit is secured to an aluminum base plate With a single slotted hole
+that is used for attachment to the ISS MWA Via a captive fastener allowing for as much as 40mm lateral
+motion or adjustment. Turning a knob connected to a drive screw displaces the piston. The knob diameter
+and screw pitch are selected so that a slow and stable manual ﬂll process is assured. The double O—ring
+sealed reservoirs, Charged at atmospheric pressure (N Patm), contain the silicone oil test liquid and employ
+pistons to dispense the liquid into the respective test sections. Thus, the blind test Chambers are somewhat
+pressurized (N 1.3Patm) When the liquid is fully deployed. The design meets a single level of containment
+requirement for a ‘Zero—hazard’ test liquid enabling the experiments to be performed by any crew member
+in the open ISS laboratories.
+
+The CLl unit tests a partially wetting liquid With a nominal contact angle of N 500 While the CLZ unit
+tests a perfectly wetting (spreading), zero contact angle liquid. The selection of a 38.1mm cylinder diameter
+is constrained by an ISS safety requirement for maximum ﬂuid volume. The cylinder diameter is sized
+to be as large as possible Within this constraint to access uniquely IOW—g inertial—capillary regimes Without
+introducing overbearing depth effects. The liquid volume and height of the pinning lip are selected such that
+the liquid depth from the centerline of the IOW—g menisci t0 the cylinder base is the same for both CL1 and
+
+3 0f 22
+American Institute of Aeronautics and Astronautics
+
+"
+"4","Reservoirs
+$7,; Fm/Dl‘ain Control
+‘ ‘ g "" Pinning -- 7
+- _----‘ i ‘1 Cylinder "" ’ J.
+'9: Smooth ‘ ~_ --H ' ""‘ H
+7‘, l“ l' J K + ‘
+I — ‘. .i 1 ’ 1‘ i h
+7 “g W . Reservoir‘v *
+\ \W . ',. $3; . .
+W 5 ' Smooth Pmnmg
+Cylinder Cylinder
+Figure 3. Photo of CFE CL1 on left and solid model at right showing Smooth and Pinning cylinder from
+camera view.
+CL2 at 31.75mm (depth/radius : 1.67). These and other container speciﬁcs are summarized in Table 1.
+Table 1. CL physical dimensions and properties.
+ML W
+Cylinder Diameter 38.10 i 0.05mm Fluid Type Silicone Oil
+Cylinder Height, H 146.0 i 0.1mm Kinematic Viscosity, V 20st i2%
+Pinning Lip Height 7.6 i 0.1mm Density, p 872 i 5kg/m3
+Pinning Lip Diameter 43.7 i 0.1mm Surface Tension, a 0.0187N/ m i5%
+Acrylic Refractive Index, N D 1.491 Refractive Index, N D 1.390
+CL1 Speciﬁcations CL1 Speciﬁcations
+Base to Pinning Lip, h 36.9 i 0.1mm Receding Angle, (97.66 47.30 i 20
+Maximum Fluid Volume 39.04mL Equilibrium Angle, Heq 48.70 i 20
+CL2 Speciﬁcations Advancing Angle, Bad?) 52.20 i 20
+Base to Pinning Lip, h 50.8 i 0.1mm
+Maximum Fluid Volume 43.44mL
+Certain wetting barriers are applied to the containers to enhance control during the experiment opera—
+tions. The surface coating conditions vary between CL1 and CL2. The entire interior surface of CL1 is rinse
+coated With FC—724, a transparent ﬂuoro—polymer surface coating manufactured by the 3M Corporation.
+CL2 is intended to be a perfectly wetting experiment thus for the Pinning cylinder the interior surfaces
+above the pinning lip are coated, including the groove making up the pinning edge. The discontinuous wet—
+ting boundary established across the pinning lip in CL2 creates a passive means of returning the ﬂuid from
+above the pinning edge to below it Via a favorable wetting discontinuity. The lid of the Smooth cylinder is
+also coated. All other surfaces of CL2 are uncoated and exhibit perfect wetting, (9 = 00 . The equilibrium
+contact angle for the silicone oil on the FC—724 surface is determined by measuring advancing and receding
+contact angles using a tilted FC—724 coated glass capillary tube.1 These values are listed in Table 1. The
+equilibrium angle is computed2 to be 48.7 i 20 but is frequently referred to as 500 in reference to CL1.
+Contact angle values identiﬁed during the ﬂight experiments conﬁrm these values despite the test unit being
+stored for approximately 2 years prior to testing.
+4 of 22
+American Institute of Aeronautics and Astronautics
+
+"
+"5","B. CL Disturbance Types
+A variety of disturbances were imparted by hand to the CL vessels by the astronauts and are brieﬂy described
+here.
+
+0 Tap: This disturbance is a single tap imparted to the rigidly mounted container. The disturbance
+begins with small taps progressing to light knuckle raps. The ﬂuid response is characterized by small
+amplitude high frequency oscillations which can only be marginally resolved.
+
+0 Axial: With the CL vessel rigidly mounted to the MWA, the axial mode disturbance is imparted by
+manually depressing and releasing the MWA in a similar manner as a diver on a diving board. The
+amplitude (acceleration) of the disturbance is controlled by the crew and a wide range is achievable
+from marginally discernable (0.21mm) to well beyond destabilization, and break—up of the interface
+(> 13.60mm).
+
+0 Push: The Push disturbance consists of a single lateral translation of the vessel. The set screw
+mounting the vessel to the MWA is loosened, allowing the astronaut to push the container left or right
+in the ﬁeld of View creating an impulsive slosh—type disturbance. The translation distance begins small
+and increases to up to 33mm (spanning linear and nonlinear regimes until breakup of the interface).
+
+0 Slide/Slosh: This extension of the Push disturbance is called Slide or Slosh, and consists of a full
+period lateral oscillation. The input frequency is approximately that of the natural frequency of the
+interface as identiﬁed by the crew, and is held approximately constant while varying the amplitude.
+
+o Multi—Slide: As the name suggests, the Multi—Slide disturbance is a sequence of Slide/Slosh distur—
+bances imparted without pause and composed of more than one period. The frequency of oscillation
+is held approximately constant while the displacement amplitude is varied.
+
+o Swirl: To impart the Swirl mode disturbances, the CL vessel is moved in a Circular or elliptical pattern
+of approximately 30 to 40 millimeters in diameter in a motion consisting of 1—5 periods on the MWA
+surface. Large amplitude swirls create centrifugal force—dominated vortical ﬂows. Such disturbances
+were only performed for CL2 and the data has not been reduced to date.
+
+C. CL Flight Operations Summary
+CFE CL was performed 6 times aboard 188 by astronauts M. Finoke (2), W. MoArthur (1), J . Williams (2),
+and P. Whitson (1) on Expeditions 9, 12, 13, and 16 between August 28th, 2004 and November 16th, 2007.
+The highlights of each operation are outlined below:
+1. August 28th, 2004 (GMT 2004—241), CL2—1, M. Finoke, Nominal Science Run
+0 Successfully completed all primary science objectives with the Pinning lip ﬂooded in many cases
+0 Introduced the method for imparting Axial mode disturbances.
+0 Extra Science: Droplet ejection, ‘hourglass’ draining phenomena in Smooth cylinder, and droplet—
+wall impact and rebound dynamics.
+
+2. September 19th, 2004 (GMT 2004—262), CL2—2, M. Finoke, Nominal (Extra Science) Run
+
+0 Demonstrated a centrifugal spinning method used to clear the Pinning lip of liquid and reset
+the experiment. The method was only partially successful as the Pinning lip was not completely
+Cleared of liquid
+
+0 Repeat Push, Slide, and Axial mode disturbances
+
+0 Supplemental Science: Depth effect on the Push disturbance type
+
+3. December 20th, 2005 (GMT 2005—354), CL2—3, W. MoArthur, Extra Science
+
+0 Successfully Cleared the Pinning lip of liquid using a reﬁned version of Fincke’s centrifuge method,
+
+resulting in the ability to repeat the experiment indeﬁnitely
+5 of 22
+American Institute of Aeronautics and Astronautics
+
+"
+"6","0 Repeat Push, Slide, and Axial mode disturbances With the camera mounted to the MWA, Which
+resulted in the inability to obtain certain Axial mode disturbances data due to the loss of a
+stationary reference point.
+
+0 Extra Science: Additional droplet—wall impact and rebound dynamics and liquid jetting event due
+to large Axial disturbances
+
+4. April 17th, 2006 (GMT 2006—107), CL2—4, J. Williams, Extra Science
+
+0 Revision and perfection of McArthur’s centrifuge method used to clear the Pinning lip
+
+0 Repeat Push, Slide, Multi—Slide and Axial mode disturbances With the camera correctly mounted
+to the ISS rail
+
+0 Extra Science: Signiﬁcant droplet/jet ejections, and droplet impact & rebound dynamics
+
+5. August 30th, 2006 (GMT 2006—242), CLl—l, J . Williams, Nominal Science Run
+
+0 Improvised method to address wetting anomaly
+
+0 Successful completion of Axial and Push science objectives for Pinning and Smooth cases
+
+0 Supplemental Science: Depth effect on Push disturbance mode
+
+6. November 16th, 2007 (GMT 2007—320), CL1—2, P. Whitson, Voluntary Science (Pinning cylinder, slide
+and depth effects)
+
+0 Large amplitude Axial disturbances With destabilization and droplet ejection
+
+0 Due to increased stability of droplets residing in the Pinning lip (due to the larger contact angle),
+large accelerations were needed to Clear the Pinning lip. Apparently, such high accelerations could
+not be easily generated by hand. During attempts to Clear the Pinning lip, excessive force led to
+damage of the CLl hardware resulting in premature termination of the experiment.
+
+D. CL Primary Science Summary
+
+Over 350 primary and extra science events have been reduced to date, Where signiﬁcant contributions include
+both experimental results and numerical comparisons. Only a small subset of the data is provided here.
+The complete database may be found at http://Cfe.pdx.edu. To date, only damped interface oscillations
+(frequency and decay) as functions of ﬂuid properties, wetting, contact line condition, disturbance type, and
+amplitude have been pursued. Representative results for Axial and lateral mode passive ﬂuid response is
+shown in Figure 4 for CLl (partial wetting) and CL2 (perfect wetting). In each ﬁgure Pinned and Smooth
+contact line boundary conditions are compared. There is a Clear difference in damping rate, frequency, and
+qualitative waveform depending on the contact line condition.
+
+0 The ‘stiﬂ'er’ pinning condition produces higher frequencies for all disturbance modes.
+
+0 Pinning interfaces generally exhibit lower damping rates than their Smooth cylinder counterparts.
+
+0 Larger contact angles produce higher frequencies and lower damping rates. This is immediately obvious
+by comparing CLl and CL2 and gives rise to a CLl natural frequency of approximately 25—fold that
+of CL2.
+
+o The most prominent difference between Pinning and Smooth responses is found in the partially wetting
+CLl lateral mode case in Figure 4(0). The ﬁrst inertial peak of the Smooth response abruptly decays
+between 2 and 4 seconds While its pinned counterpart decays more gradually.
+
+o The damped oscillation proﬁles diverge between Pinning and Smooth cylinders as disturbance ampli—
+tudes increase.
+
+0 For the current CL test conditions, ﬂuid depth has only a slight effect on passive interface response—
+depth to radius ratios down to 0.26.
+
+6 0f 22
+American Institute of Aeronautics and Astronautics
+
+"
+"7","3 5
+2.5 :..‘ + Smooth 3 + Srnooth
+2 + Pinned + Plnned
+1.5 1
+N 1 I; .‘ x
+S 0.5 3h.z.. a E Q '1 { i E i E
+0 ' .""'.a:':.""1i:‘:..'"".i:‘:..""x.'..n: ..‘ .. ..... .. - .. . u .. . . .
+_0.5 gym: 1.3.; "": .. .' : . .'.'.'. .' -3
+—1 . .‘s' "" —5
+-1.5
+-2 —7
+4 6 8 10 12 14 16 2 3 4 5 6 7
+t t
+(a) CLl Axial Mode (b) CL2 Axial Mode
+8 7
+6 ' + smOOth 6 + Smooth
+Ii + Pinned 5 + Pinned
+4 .1 4
+i
+§=L~s Q1
+-2 -1
+- -2
+—4 -3
+2 4 6 8 10 12 14 16 1 3 5 7 9 11
+t t
+(C) CLl Push Mode ((1) CL2 Push Mode
+Figure 4. Comparisons of passive ﬂuid response in Pinned and Smooth cylinders to Axial and Push disturbances
+for CLl (9 = 48.70) and CL2 (9 : 0°), Where D1/4 and D1/2 are in millimeters and t in seconds.
+E. CL Numerical Comparison
+The CL database may be used to benchmark ‘large’ length scale CFD models. As part of such a demonstra—
+tion, and in collaboration with J . Klatte and M. Dreyer (of ZARM and the University of Bremen, Germany),
+blind numerical predictions were made using the open source OpenFOAM CFD package in an effort to model
+the CL experiments. Details of the numerical conﬁguration can be found elsewhere3 with a brief overview
+and summary of results presented here.
+
+The numerical model was conﬁgured without knowledge of the experimental results; i.e. r10 hints were
+given as to run time, required mesh resolution, or any other numerical input parameters. Only physical
+dimensions, ﬂuid properties, wetting conditions, and input accelerations were provided to the numerical
+analyst. [Note that the input disturbance acceleration was computed using the input disturbance position
+data, smoothed using a Loess method before central differences were computed. The smoothing methods were
+varied, but the CFD results were insensitive—coarse and highly smoothed data produced nearly identical
+results] Optical distortions were accounted for in both numerical predictions and experimental data.
+
+Comparisons were made for several Push and Axial mode disturbances possessing smooth and pinning
+boundary conditions. Example comparisons for Axial and Push modes are presented in Figure 5. In general,
+agreement is most favorable for the perfectly wetting condition of CLZ, Figures 5(0) and 5(d). This is in part
+due to the highly damped nature of these ﬂows, which naturally reduces the sensitivity of the ﬂow on the
+particular boundary condition applied at the contact line—Smooth and Pinning cylinders respond similarly.
+Discrepancies arise most noticeably for the partial wetting case of CLl, where despite the poorer agreement
+the Pinning cylinder results (Figure 5(b)) fair better than those of the Smooth cylinder (Figure 5(a)). The
+increased inaccuracy is primarily due to the Choice of contact line boundary condition, and is readily observed
+over the manifold weakly damped oscillations.
+
+Several practical conclusions may be drawn for these oscillation comparisons: (1) The current OpenFOAM
+model does surprisingly well to predict the large length scale capillary phenomena for highly wetting systems
+with a simple ﬁxed contact angle boundary condition at the contact line. (2) The model may be successfully
+tuned Via pre—calculations improving the likelihood of accurate and efﬁcient ‘blind’ computations for design
+
+7 0f 22
+American Institute of Aeronautics and Astronautics
+
+"
+"8","and analysis. (3) The greatest efforts to further improve the general numerical approach should focus on the
+boundary conditions necessary to specify partial wetting systems With contact angle hysteresis. Spacecraft
+ﬂuid systems employing such ﬂuids (i.e. water processing systems) Will likely require parametric studies for
+the various conditions that can arise at the contact line represented in their extremes by perfect slip and
+perfectly pinned conditions.
+12
+8 .
+6 1;) I ~ , ,
+4
+2 2 '1
+x 0 ~\"" .
+Q -2 Q (2) ‘11; {I 9 i y g . .
+-4 v_v' {'x'w'vu'v'
+-6 —2 V, 2h 5: *
+1'.
+-8 '4
+-lO -6
+t 1‘
+(a) CLl Smooth Push (b) CLl Pinned Push
+12 ‘ 12
+10 l 10
+8 ~ ~ ~ 8 ~ ~ ~
+6 ’ 6
+\N 4 4
+N 2 . ~\""
+-2 V l' ‘9’ _2
+—4 ~ —4
+-6 2 1» -6
+-8 -8
+0 1 2 3 4 5 6 0 1 2 3 4 5 6
+l‘ l‘
+(c) CL2 Pinned Axial (d) CL2 Smooth Axial
+Figure 5. Representative numerical comparisons With sample CL experiments: triangles are numeric, circles
+are experiments.
+F. CL Database Description
+The CL database is publicly available at http: //Cfe.pdx.edu With digitized events categorized for subsequent
+data reduction and research. Each CL event is accompanied by an MPEG—1 Video and corresponding
+datasheet describing physical parameters, tracking methods, raw data, and preliminary results. Datasheets
+are designed such that all information is presented in a manner such that one can repeat the data reduction
+exactly if desired. A summary page is also provided Where information about each individual datasheet
+is presented in a single location along With Video and datasheet links. The intent is to provide pertinent
+numerical information spanning all of the data in a single location allowing comparison of various parameters.
+An overview of how the database can be used is shown in Figure 6. The primary components of the database
+are the summary page, MPEG—1 Video, and the individual datasheets corresponding to each Video or event.
+Each datasheet and corresponding Video can be accessed through the summary page. In addition, the
+summary page contains select statistics and results obtained from the individual datasheets. The arrows
+1—F and 5—F indicate this type of ﬂow Where ‘F’ indicates ‘File Open.’ In addition to simply reading the
+data, one can take the original Video, prepare it, and digitize it on ones own terms. This is achieved by
+following the procedure between Z—Read, 3—Convert, and 4—Digitize. The original MPEG—1 Video is read
+into the freeware program VirtualDub4 and saved as an uncompressed AVI, Which completes the conversion
+process. The converted Video can then be digitized using the freeware program Spotlight—S.5 At this point
+the datasheets accompanying the Video can be reconstructed by the user. The complete database along With
+Video, updates, and current information can be found at http://Cfe.pdx.edu. Custom versions of the data
+8 of 22
+American Institute of Aeronautics and Astronautics
+
+"
+"9",", Video Data Summary Datasheet
+¢ Z'R Digitized IndividualDatasheet $54:
+i 3_C r 'r
+l I i4—D ~~-=' ..
+'1 --7' l"" —) A ii =
+Figure 6. CFE CL database structure.
+and Video may be obtained on DVD by contacting the lead author (R.M.J..)
+G. Extra Science
+Numerous ‘extra science’ events were also captured on Video and include liquid jetting, droplet impact and
+satellite rebound dynamics, air entrainment during Axial disturbances, annular ‘hourglass’ ﬁlm draining,
+wetting gradient effects, contact line stability, and more. A selection of these extra events are brieﬂy discussed
+here With the expressed purpose of demonstrating the range of phenomena that may be further mined from
+the CL experiments.
+
+0 J etting: During CL operations the disturbance amplitudes were increased until surface breakup oc—
+curred. If an Axial mode disturbance is large enough, destabilization of the interface occurs resulting in
+droplet ejection. If the disturbance is further increased a liquid jet is formed Which eventually breaks
+up into a stream of drops. Several parameters affect Whether jetting occurs, including disturbance
+amplitude, frequency, and waveform. As amplitudes become large the possibility of ejection increases;
+however, it is found that it must be coupled With a sufﬁciently high frequency and appropriate wave—
+form. This is evident in Figure 7 Where the ‘below’ event produces no ejection, ‘Critical’ produces a
+single stationary droplet, and the ‘above’ event results in jetting. The similarity between disturbances
+
+100
+80 :5“
+\‘.
+4 60 , \-._ ~
+’4"". ft]? 40 7' "".
+2 I E 4
+:ﬁ 5 2° A
+A 0 “ v v —I— ‘7 0 _. ‘ ""' 2 I A‘- A-""_‘
+in “‘f ‘13’-‘tr..-..-..-..-..-..-..-..-..-..-. E“ ' '.
+g _ — Below g '40 '-_“ V""
+9a '4 ---- Critical -60 ‘-_‘\_
+53 -6 3“ -- Above -80 t"":
+:\ l:
+-._\I_: -100
+-8 0 0,5 1 1.5 2
+-10 Time (s)
+Figure 7. CL2 displacement and velocity plot depicting input disturbances that are below, at, and above the
+threshold that causes droplet ejection.
+9 0f 22
+American Institute of Aeronautics and Astronautics
+
+"
+"10","but very different ﬂuid responses indicates that there is a narrow region in which drop ejection and
+jetting occurs. [Note that the critical frequency for CL2 is approximately 2.5GHz or 2.5—fold the nat—
+ural frequency. Note also that the velocity waveform for the ‘Critical’ case is nearly symmetric about
+the t—aXis, while the ‘above’ (jetting) case has a net positive velocity, and the ‘below’ case has a net
+negative velocity]
+
+0 Contact Line Stability: An analogous situation arises when lateral mode disturbances become large
+in the Pinning cylinder. In this case the contact line de—pins from the Pinning lip causing it to ﬂood
+with liquid as shown in Figure 8. Such destabilization occurs repeatedly during the CL experiments
+providing opportunities to establish the critical acceleration environment that leads to depinning of
+the contact line.
+
+‘ ;.' I 1, ' ' I j - \ ' . ‘ - '
+II ,.I III l III III I
+II , LI I‘ I,T /_. II , LII
+1’“ 1"" “r, / If ' /’ ‘3"". ' . II
+I ﬁx ._. ""’1’ 7' .’ ' \5 ,_l""/. ~. ~,— ""’1’ ‘
+“ , 7 x‘“ ’ ‘ . .\ ~‘~ ,- 2’ ~-
+,. ‘ II ~ * >4 .
+Figure 8. An example of a depinning event investigating contact line stability.
+
+0 Droplet Impact and Rebound Dynamics: On numerous occasions following interface breakup,
+the astronauts would subject the vessel to very large aXial mode disturbances before resetting the
+experiment. The intent was to produce jetting and a stream of droplets that would then bounce, slide,
+and roll about the Chamber eventually adhering to dry walls or coalescing with liquid ﬁlms or bulk
+interfaces. Several such images are displayed in Figure 9. It was found that if a droplet is greater than
+a certain size, when impacting and adhering to a dry wall of partial wettability a satellite droplet is
+ejected. The process repeats until the ejected droplet is small to the point Viscous forces prevent further
+ejection. Several such events are provided in the CL database with only a handful being analyzed6 to
+date.
+
+‘ g 1‘ l ‘g‘: ‘L"" l I T5 l I 7?? .~ I
+‘ l: """" ""“ K ' L? . l : I"" } I , .'~_ v.4. ’ l
+1‘ i ‘ l”! h I. l l l""\ l“.
+I 4. ‘ a . ‘ I '
+f l 1- l 1’ ' r l, f‘ '. l I
+.I i l ‘ .' 1
+' _ . I h , -
+. -. \EV ' , ‘. i‘.v , H 5-. . _ A \‘c,.
+Figure 9. Sequence of images following a large amplitude Axial disturbance in CL2 at approximate times 0, 1,
+6, and 115. Coalescence in the Smooth cylinder on the left is retarded due to low eﬂiciency impacts With liquid
+ﬁlms on the cylinder walls. Partial wetting surfaces of the Pinning cylinder result in high eﬂ‘iciency adhesion
+events with dry walls (100%), but eject satellite drops of decreasing size With each successive adhesion. Note:
+hourglass conﬁguration observed in the Smooth cylinder at left.
+
+0 Contact Angle Variation: During the CLl experiments anomalous wetting was observed in the
+Smooth cylinder. Various static interfaces are shown in Figure 10 as a function of ﬂuid depth. The
+local essentially aXial wetting variations, caused either by a poorly applied coating or by a locally crazed
+surface (observed in the ﬂight hardware), led inadvertently to new science since an array of contact
+angles could be tested in a single cylinder by varying liquid depth. Contact angles were backsolved
+using the equilibrium surface curvature.
+
+o Hourglass Formation and Draining: During the ﬁrst Slide tests of CLZ, Astronaut M. Fincke
+quickly observed the gradual development of an ‘hourglass’ conﬁguration following repeated large
+
+10 0f 22
+American Institute of Aeronautics and Astronautics
+
+"
+"11","J ‘""
+r' /, l' (:5 r ' r- ; l— ‘ I} ,: ' ‘1
+I I f I {1-7
+.5 H.
+é L' *l - i—I iiL --—‘
+Figure 10. Various wetting condition in CLl smooth cylinder as a function of ﬂuid depth: 340 at far left, 40
+at far right.
+amplitude disturbances in the perfectly wetting Smooth cylinder only. An example may be observed
+in the ﬁrst frame of Figure 9, Smooth cylinder. The conﬁguration was a nuisance for the primary
+objectives and was frequently erased using the centrifuge methods, but data on the rate of its formation
+to a variety of input disturbances, its dimensions, its passive recovery to the desired equilibrium
+state, and its drainage under noticeable background accelerations was recorded and is available for
+further investigation. Such conﬁgurations are of practical interest because they readily form in highly
+wetting systems subject to various disturbances and time—dependent acceleration ﬁelds not uncommon
+to spacecraft fuel tanks. They are also of interest in that they contribute to axial pumping of the
+ﬂuid in response to lateral excitations, a phenomena of which might be exploited 0r of concern to any
+number of applications. This non—equilibrium conﬁguration is addressed in greater, but still superﬁcial,
+detail elsewhere.6’7
+These extra science examples demonstrate the range of phenomena occurring during the CL operations as a
+byproduct of the primary science investigation. All cases of such ‘extra science’ events were not investigated
+exhaustively, but a number of the events are noted in the database and provide potential science opportunities
+for interested parties. Additional extra science data includes bubble entrainment due to Axial disturbances,
+entrained bubble coalescence, annular ﬁlm draining, droplet—wall coalescence, droplet ﬁlm rebound, swirl
+mode disturbances, and probably others. Original Video can be found at http://Cfe.de.edu.
+IV. Vane Gap (VG)
+It is well known that careful selection of geometry has the potential to control large amounts of ﬂuid in
+a reduced gravity environment. Containers with interior corners are one such Choice as the corner tends to
+act as a capillary conduit driving spontaneous ﬂows along its length. It is essential in such systems that the
+ﬂuid ‘wets’ the corner which can be determined from the Concus—Firm critical corner wetting (:01r1diti01r1.8’9
+Unfortunately, this condition is signiﬁcantly complicated for interior corners that do not actually contact;
+such as in the gap formed by a vane and tank wall of a large propellant storage tank. Intended 0r unintended
+positional Changes of such vanes can have a dramatic impact on the ﬂuid conﬁguration. Two CFE VG test
+vessels are devoted to investigate such phenomenon using a right cylinder with an elliptic cross—section and
+a single and rotatable central vane that does not contact the container walls as shown in Figure 11. Critical
+vane gap wetting, dewetting, and an asymmetric bulk ﬂuid shift occur in such containers as a function of
+vane angle.
+A. Hardware Description
+The two VG vessels are identical in every aspect except wetting characteristics and vane dimensions. VGl
+is perfectly wetting (6’ = 00), while VGZ is partially wetting (6’ 2 480). The major and minor diameters
+of the cylindrical ellipse are 5.08(:m and 3.378(2m, respectively. The internal height of the ﬂuid Chamber is
+12.7cm measured from the base to the lid. A volume of 49.106 of 100s red—dyed Silicone oil is used in both
+vessels where the ﬂuid depth is 3.81cm assuming a ﬂat surface. The central vanes in both VGl and VGZ
+are rectangular with dimensions 3.134cm by 11.430m, and vane thicknesses 0.20(:m and 0.500m, respectively.
+The vane pivot aXis is coaxial with the ellipse but gap dimensions are 0.0838(2m and 0.167cm when the vane
+is aligned with the minor diameter as shown in Figure 11. These gap dimensions represent a 0.95 and 0.90
+dimensionless gap using the minor aXis radius for normalization. Thus two ‘gaps’ can be tested for each vane
+11 0f 22
+American Institute of Aeronautics and Astronautics
+
+"
+"12","ff; ’55 .. 7 I 7""
+‘6‘ v :11}. ': ‘ ‘ I , , I
+i ‘ ‘1"" i!"" ‘
+.1 ~ ,1; . 1:
+H: l 1‘11 : . 1 ‘3 vi \:::~T\ /
+.15.13- Lr <35} Fl"" , ff” 1 ‘31, a
+,2. £7.95 ms“ 5 2 : 1
+Figure 11. VG image, solid model, and a cross—sectional schematic indicating the quadrant number, gap
+distances, vane angle (b, and absolute acute interior angle 04.
+angle, 61 and 62. The vane is able to rotate $3600 With < ilo resolution. After the ﬂuid is deployed, the
+crew rotates the vane at prescribed increments allowing signiﬁcant time (up to 15 minutes) for the ﬂuid to
+equilibrate between each rotation.
+B. VG Flight Operations Summary
+CFE VG was performed 9 times aboard 188 by astronauts J. Williams (1), S. Williams (6), C. Anderson ( 1),
+and P. Whitson (1) during Expeditions 13—16 between September 5th, 2006 and October 22nd, 2007. The
+highlights of each operation are highlighted below:
+1. September 5th, 2006 (GMT 2006—248), VG1—1, J . Williams, Nominal Science Run
+0 Successful completion of all science objectives for ﬁrst half of crew procedures
+0 Performed two complete CW vane rotations
+0 Clearly identiﬁed critical wetting angles to better than anticipated precision
+0 Data suggests third global critical wetting condition (later called bulk shift)
+2. March 3rd, 2007 (GMT 2007—062), VG1—2, S. Williams, Nominal (revised) Science Run
+0 Successful completion of revised science run to determine equilibrium conﬁgurations in Quadrant
+1 (Q1)
+0 Positive identiﬁcation of global asymmetric interface and associated critical vane angle
+0 Identiﬁcation of container asymmetry and impact on interface
+3. March 26th, 2007 (GMT 2007—085), VG1—3, S. Williams, Nominal (revised) Science Run
+0 Successful completion of revised science run to determine equilibrium conﬁgurations in Q4
+0 Positive identiﬁcation of global asymmetric interface and associated critical vane angle
+0 Identiﬁcation of container asymmetry and impact on interface (global Shift requires > 15min.)
+0 Veriﬁcation of critical global Shift angle outside of gap wetting envelope
+4. April 6th, 2007 (GMT 2007—096), VG2—1, S. Williams, Voluntary Science (3600 CW dry and wet tests)
+0 Successful completion of nominal science run for CW vane rotations for dry and wet tests
+0 Positive identiﬁcation of critical wetting and dewetting angles and hysteresis
+0 Global asymmetric wetting not observed
+12 0f 22
+American Institute of Aeronautics and Astronautics
+
+"
+"13","0 Preliminary symmetry of wetting conditions observed
+5. April 23rd, 2007 (GMT 2007—113), VG2—2, S. Williams, Voluntary Science (3600 CCW).
+0 Successful completion of all revised science run operation and objectives
+0 Identiﬁed critical angles With high precision
+o Mapped critical ole/wetting hysteresis
+6. May 11th, 2007 (GMT 2007—131), VG2—3, S. Williams, Voluntary Science (1800 CW and CCW, ﬁne
+increment)
+o De/wetting angles in Q1 and Q2 including hysteresis
+0 Extra Science run relocating ﬂuid to lid, identiﬁed new meta/stable interface conﬁguration for all
+vane angles
+0 Drain procedure reveals unstable ﬁlm on ellipse walls following a rupture event initiated at the
+drain exit port
+7. June 2nd, 2007 (GMT 2007—153), VG2—4, S. Williams, Voluntary Science (Alternate Interface Experi—
+ments)
+0 Demonstration of three new interface conﬁgurations: ﬁlament, asymmetric right (vane at 900),
+asymmetric left (vane at 00)
+0 Interface stability to a variety of input disturbances
+8. July 14th, 2007 (GMT 2007—195), VG1—4, C. Anderson, Voluntary Science (Q2 test)
+0 CCW 1800 to 900, CW 900 to 1800, and 1800 to 900 quick turn
+0 Accurate equilibrium data in Q2
+0 Identiﬁcation of critical vane wetting and bulk asymmetric wetting conditions
+9. October 22nd, 2007 (GMT 2007—295), VG1—5, P. Whitson, Voluntary Science (Q3 test)
+0 CCW 1800 to 2700, CW 2700 to 1800, and 1800 to 2700 quick turn
+0 Accurate equilibrium data in Q3
+0 Identiﬁcation of critical vane wetting and bulk asymmetric wetting conditions
+C. Static Wetting Conﬁgurations
+The vane dial angle is converted to the absolute acute interior angle oz between the vane and the major axis
+of the ellipse as shown in Figure 11. Thus, oz in the various quadrants is determined from the vane angle gb:
+For 0 < gb < 900, oz 2 Q5, for 900 < Q5 < 1800, oz = 1800 — Q5, for 1800 < Q5 < 2700, oz 2 Q5 — 1800, and for
+2700 < gb < 3600, oz = 3600 — gb. The quadrant (Q1 through Q4) Where the particular wetting occurs is also
+of concern and tabulated.
+
+Each vane angle produces sub— anol/or supercritical wetting conditions for the two vane gaps as shown
+in Figures 12 (VGl anol VG2). Supercritical conditions are characterized by spontaneous corner wetting. In
+addition to vane gap wetting and dewetting a third wetting regime is observed Where the ﬂuid shifts from one
+side of the vane to the other (Q5 2 530, Figure 12(a)). A detailed theoretical analysis of this phenomenon has
+been completed and is presented elsewhere.10 Experiment repeatability is high ($10), but static interfaces
+are not always established at angles sufﬁciently Close to the critical angles leading to a range Within Which
+the ‘Critical angle’ is certainly crossed.
+
+Figure 12(a) presents several key interfaces for a 00 to 1800 sweep for VGl. The sequence begins With
+subcritical equilibrium surfaces at 00 and 360. Small—gap wetting (SGW) is observed at 430 and a complete
+bulk shift (BS) at 530 Where the ﬂuid completely migrates to the left side of the vane. Notice that a bulk
+shift occurs before large—gap wetting (LGW) Which takes place at 59.50. Small—gap wetting (SGW) and large
+gap wetting (LGW) along With a complete bulk shift persist at 900. Large gap dewetting (LGD) occurs at
+127.50 followed by a bulk shift reversal (ESE) at 134.50, and small gap dewetting (SGD) at 150.50. The
+original but reﬂected conﬁguration of 00 returns at 1800.
+
+13 of 22
+American Institute of Aeronautics and Astronautics
+
+"
+"14","I I I II I1I1I.‘1""1I1 1II11-Iu“..—I1I l.11.“. 1 5 11 ' i 1 1 | :I 1= 11 Ill I 1’ 1 11 . ""11 I 31.1 “-""I 1 1'“ ,: I
+1 1 1 111 1 1, e 11 ~ «
+1 1 1 1‘IIII1 1‘ 1 ‘1 «I
+'1 a n11 * l   1. 1| . ..,I.
+:3! ,, 3‘ 3131‘; “r 1: 31""}— :11? l: :51: , 7 TI 1:"": ill», ‘1! :——«§:.1 y» ><i£t 5:211:
+‘ . u, 7 II . - ': ""' '7 1' '7, '1 7' ""1 .. '
+-W “5-993 ‘M-ﬂ' l-wl l-Wl 'L-LJ"" ""Iii"" ""*1?” mid [124‘ ‘l‘
+1 1‘1 . .‘ 1f _ ' ,’ .115 .1 .1 I 1I I I ,. 1 I 1 1 1'I‘ .= I1!"" , '1I : z 'I 111‘,];‘I‘ 1"", “‘1! l,
+I ~ lwlil 1 l* '
+-1 1 11 111 11 1 1 1 I , 1,
+1 I 1‘“ . 1 l1] 1 I11 : 1 I 1 I 1 1
+1 I 1 1 J1 11““ ,1‘1 . I I , 1 1 1 _ , [""1 1 iv 11 ii ‘ u"" 1 , IIII
+_ ‘- , ._::'L' 1 ,1 , 1 .' 1 ' 1' '_.:' -. '
+2 a W 3:3,! l»: 5:: _ ."" , ~*V‘i/ 4.3» 44K, «AI»; 1 \ﬁg"":_.'
+(a) Equilibrium interfaces for VGl for vane dial angles: 00, (b) Equilibrium interfaces for VG2 for vane dial angles: 0°,
+36°, 43°, 53°, 59.5°, 90°, 127.5°, 134.5°, 150.5°, 130° (from 45°, 50°, 53°, 72°, 765°, 90°, 120°, 135°, 130° (from top left
+top left to bottom right). to bottom right).
+Figure 12. Equilibrium interfaces for VGl and VG2 for vane angles between 00 and 1800.
+
+VGl critical wetting and dewetting angles oz are reported in Table 2 for the four quadrants. The data
+are arranged in order of occurrence: for increasing oz; small gap wetting, bulk shift, large gap wetting, and
+for decreasing oz; large gap dewetting, bulk shift reversal, and small gap dewetting. When considering all
+uncertainties these trends are common in all quadrants except in Quadrant 4 Where the bulk shift Clearly
+occurs before the small gap wetting. This result signals the certain presence of slight container asymmetries
+Which have been quantiﬁed and Will be published subsequently. This phenomena was uniquely exploited
+providing a third dynamic wetting problem that could be investigated for a potentially crucial critical wetting
+condition. Despite the presence of known vane alignment asymmetries, subsequent numerical computations
+conﬁrm that the bulk shift can occur even for perfectly symmetric containers. These results are perhaps
+surprising and to be addressed in greater detail in a forthcoming article Where both advantages and cautions
+for such strong dependence of ﬂuid position on such slight changes or asymmetries in container geometry
+is addressed. Comparisons of experimental and theoretical interfaces are provided in Figure 13 for VGl.
+Theoretical critical angles are listed in Table 2. Only SGW and LGW are predicted for the ideally symmetric
+conﬁgurations analyzed.
+
+Table 2. Critical wetting conditions for VGl: small gap wetting (SGW), bulk shift (BS), large gap wetting
+(LGW), large gap wetting (LGD), bulk shift reversal (BSR), small gap dewetting (SGD).
+Q1 Q2 Q3 Q4 Theory
+SGW 40.00 i 3.00 43.30 i 2.30 42.50 i 2.00 47.30 i 2.30 42.940
+BS 48.00 i 5.00 46.30 i 0.80 47.50 i 2.50 42.50 i 2.50 —
+LGW 51.80 i 0.80 47.30 i 2.30 56.00 i 3.00 50.80 i 3.80 51.290
+LGD 52.80 i 1.30 48.00 i 2.00 58.30 i 6.80 53.30 i 4.30 51.290
+BSR 43.80 i 7.80 47.00 i 2.00 48.30 i 1.80 42.30 i 2.30 —
+SGD 41.80 i 5.80 41.00 i 0.50 43.00 i 2.00 45.80 i 0.80 42.940
+
+Figure 12(b) provides several key interfaces for a 00 to 1800 sweep for VGZ. Static subcritical interfaces
+at O0 and 450 are shown before stiCk—slip small gap wetting is initiated at 500 and completed by 580. Large
+gap wetting begins at 720 and is complete by 76.50. No bulk shift is observed. Partial large—gap dewetting
+occurs at 1200 and is complete by 1350, Where small—gap dewetting begins. Small gap dewetting is complete
+
+14 0f 22
+American Institute of Aeronautics and Astronautics
+
+"
+"15","by 1800. Table 3 lists the distilled critical wetting angles in the various quadrants for VGZ. Tolerances
+and asymmetries in VGZ are similar to VGl but symmetry and order in wetting and dewetting angles
+are consistent in all quadrants. The hysteresis in wetting behaviors is Clear from the table entries. The
+experimental data is compared With numerical predictions in Figure 14 for VGZ. Theoretically predicted10
+critical angles are listed in Table 3 Where applicable.
+Table 3. Critical wetting conditions for VGZ: small-gap wetting (SGW), large gap wetting (LGW), large gap
+dewetting (LGD), small gap dewetting (SGD).
+Q1 Q2 Q3 Q4 Theory
+SGW 57.80 i 2.80 53.50 i 3.50 57.00 i 4.00 55.00 i 3.00 53.470
+LGW 67.50 i 5.50 67.50 i 5.00 71.30 i 5.30 68.30 i 6.80 62.290
+LGD 53.80 i 8.30 55.00 i 8.00 58.30 i 8.30 60.00 i 10.00 62.290
+SGD 43.00 i 5.00 45.80 i 7.80 45.50 i 5.50 43.80 i 8.30 53.470
+. , ‘ § f . ‘ ; ‘f h .J‘i_ ‘ i “f I ‘5'; .' ‘ j ‘- W
+i -’ ""T5. .' B‘ .‘W I ‘ . i J {J «JR. .‘ .l m i ’, Ii 1 ~ “ I 2 l... .
+i. IJJ, xiii} .J i { : ' i . 1 i ii; 'ﬁ 1; 1 £21..
+9 - - IT J . i 1 ‘1 J I I ‘ . ‘7 «L J*'_.I’-'.-.
+‘ 5""ul'J-Ji _ J i ‘ j 1 I . i 4/ I iii: 1 I 7“. . J r, ‘2‘:
+} ""‘J ""i! i J J I . ""!I ‘ 'H i M r"" J 1. ' '"".
+m_l‘J ."" J ‘ ‘ . ’ 5 w"" , JJJi‘J ’ f y ' l-zv- 1:1 ) J 2 i1
+u-‘g .‘ . ' a ‘ ‘ _. iiiiiiz' j-I‘--""
+‘ T 25er J. J ‘J A i ; JleJ ‘th ‘ur \/KJJI> "" 9-3;“ .'. I-JJ
+' ' J . In Jll
+i l J l '
+‘ ‘ JJIL"" .J -:|L'.
+Figure 13. VGl experiment and computations for vane angles: 00/00, 300/300, 430/450, 59.50/600, 900/900,
+125.50/1250, 1310/1300, 139.50/1400, 150.50/1500, and 1800/180O (Experiment/Surface Evolver).
+V. Interior Corner Flow (ICF)
+
+The CFE Interior Corner Flow (ICF) experiments investigate bubble displacement as a result of secondary
+imbibition in tapered polygonal conduits. The ICFl vessel has a geometric cross—seetion of a 300—750—75O
+isosceles triangle that tapers uniformly (geometrically similar triangles) as shown in Figure 15(a). The height
+of the triangular cross—seetion at the base is 40.0mm and at the top is 26.0mm over a height of 127.0mm—all
+faces tilt at 3.1550. The test ﬂuid is 10ml of 50s Silicone oil. ICFZ is a rectangular cross—seetion that tapers
+on two faces to a line as shown in Figure 15(b). The base rectangle measures 40.0mm Wide by 10.0mm deep.
+The two faces tilt at 8.950 over a height of 127.0mm. The test ﬂuid is 9.02mi of 20s Silicone oil.
+
+The basic operation of the experiment is as follows: the ﬂuid is injected into the tapered test Chamber
+from the reservoir. During injection, the ﬂuid immediately Wicks along the corners toward the vertex. A
+transition in the ﬂow takes place once the liquid reaches the vertex. This secondary imbibition appears like
+a bubble migration Where the ullage or ‘bubble’ migrates toward the base, an example of Which is shown in
+Figure 16 for ICFZ. The leading and trailing menisci are labeled in the ﬁgure as 22 and 21, respectively. The
+
+15 0f 22
+American Institute of Aeronautics and Astronautics
+
+"
+"16","L J "" LL '7’“; {w L 1.... —Lr, LL'L‘L _-L-.i LLLL.__ T V, LL...L — . L L ‘ i: L LL , i; L-VLL LL 1‘ L: i...“
+' ' pLL LLLL LLLL L L LLLLL L LIL L ‘LL . L 3 LL
+«L L' ""L “LL '1. ' L *'
+L ‘. L L L L L L . LL L -L-L'LLL L L L L L L LL L L L L LLLLLL L L L
+. _ L _ JL'L L L1H}: IL L L L W L ”LL L ‘- L
+m L LLL L LLLL L LLLU'L
+L L "" L L ~ LL L LL ~ ‘LLL ~ L. LL L "" N L“
+.5 ""L
+I II il il ii ii ii ii ii II I
+UQ""""‘,-‘ -‘ -""1""—.
+Figure 14. VGl experiment and computations for vane angles: 00/00, 450/450, 500/510, 580/570, 720/720,
+76.50/780, 900/900, 1200/1200, 1350/1350, and 1800/180O (Experiment/Su'r‘face Evolver).
+(a) ICFl (b) ICF2
+Figure 15. Solid model and Wireframe representation of ICFl and ICF2.
+16 Of 22
+American Institute of Aeronautics and Astronautics
+
+"
+"17","”In- ' / \_ ./ AL .I ,LLL / L
+210) ,7 — / p fﬁ / lg“: / M“: / I\ ""‘f
+' x / ’ l * / - 210)
+l )l x
+i 2
+Figure 16. Image sequence of ICF2 bubble migration Where each image is approximately 60 seconds apart.
+bubble migration continues until the leading interface reaches the end of the conduit, the ﬂow ceasing shortly
+thereafter. The experiment may be ‘reset’ to the initial state by manipulating the valves and reservoir piston
+or by using a centrifuge method to return the ﬂuid to the base of the container. Either method permits
+the experiment to be re—run indeﬁnitely. The four variations of the experiment are referred to as Dry, Wet,
+
+Open Loop, and Bubbly tests and deﬁned below:
+
+Dry: These tests are characterized by little to no liquid ﬁlm on the interior surfaces during the ﬂow. This
+situation occurs during the ﬁrst run of the experiment since the interior surfaces are initially completely
+dry. However, during repeat tests, a thin prewetting ﬁlm is present but the ﬂuid behaves essentially
+identically to the initially dry test. Thus, all such tests are Classiﬁed as ‘Dry’. These test conditions
+are achieved When using the valves and reservoir piston to reset the experiment.
+
+Wet: When the ﬂuid is manually returned to the base of the tapered section using a centrifuge method,
+signiﬁcant liquid ﬂlms remain on the interior walls that drain slowly. The presence of these thick ﬁlms
+increases capillary ﬂow rates. Such tests are Classiﬁed as ‘Wet’.
+
+Open Loop: For these tests the valves are opened permitting a parallel counter Clockwise ﬂow between the
+base and vertex through a bypass conduit. The ‘Open Loop’ tests are considered a subset of the Wet
+condition due to the moderately thick ﬁlms established before each test.
+
+Bubbly: The fourth event type is called ‘Bubbly’ ﬂow Which is a repeat of previous tests but With numerous
+bubbles in the ﬂuid. A variety of bubble sizes are created by vigorously shaking the container, resetting
+the ﬂuid to the base, and then allowing the ﬂow to proceed passively. These tests are also a subset of
+the Wet condition due to the presence of thick ﬁlms. The ﬂow With entrained bubbles demonstrates
+the passive phase separation capability of such geometries and is used for theory development.
+
+A. ICF Flight Operations Summary
+
+CFE ICF was performed 4 times aboard 188 by astronauts M. Lopez—Alegria (1) and S. Williams (3) on
+
+Expeditions 14 and 15 between March 10th, 2007 and May 12th, 2007. The highlights of each operation are
+
+outlined below:
+
+1. March 10th, 2007 (GMT 2007—069), ICFl—l, M. Lopez—Alegria, Nominal Science Run
+0 Successful completion of all science objectives for ﬁrst half of crew procedures
+0 Completed dry ﬁll and two wet ﬂll tests
+0 Low liquid volume limiting experiment duration observed
+2. April 7th, 2007 (GMT 2007—097), ICF1—2, S. Williams, Voluntary Science (all nominal operations)
+0 Successful completion of all revised science run operation and objectives
+0 Demonstration of centrifugal method to rapidly redeploy liquid
+0 Provision of critical data for global ﬂuid reorientation
+17 0f 22
+American Institute of Aeronautics and Astronautics
+
+"
+"18","o Demonstration of high Open Loop test ﬂow rates
+0 Demonstration of passive bubble separations
+3. April 29th, 2007 (GMT 2007—119), ICFZ—l, S. Williams, Voluntary Science (Complete nominal opera—
+tions: Dry, Wet, Open Loop and Bubble tests)
+0 Demonstration of centrifugal method to rapidly re—deploy liquid
+0 Variety of large bubble migration/separation tests resulting from lateral excitations
+0 Variety of small bubble migration/separation tests resulting from Vigorous axial excitations
+0 Demonstrated Clear ability of corner ﬂows to ﬁlter, separate, and coalesce bubbly two—phase
+systems passively
+o Coarsening was also observed for most cases involving multiple bubbles and long ﬂow times
+4. May 12th, 2007 (GMT 2007—132), ICFZ—Z, S. Williams, Voluntary Science
+0 Additional Wet and Bubbly tests
+0 Small numbers of large bubble interactions observed (smaller bubbles overtake and merge With
+larger bubbles)
+B. ICFl Results Summary
+In ICFl, a low volume of low Viscosity ﬂuid in the vessel permitted only limited duration data collection
+for the leading interface 232 before it reached the base of the container. Even for the trailing meniscus 271,
+less than 20 seconds of ‘Clean’ data could be obtained for the trailing interface before base effects became
+dominant. This trend is evident in Figure 17(a) Which plots the full duration for the trailing interface 21.
+Figure 17(b) presents the ﬁrst 20s Where nearly linear trends are observed. The Characteristic time scale
+25 16 f
+14 0’. o’zoA‘
+J53? A W 12 9”.“ +4+++ :‘IA‘A
+11466.24” 2” “* -_-¢I3é'$;°‘»2°*“”
+15 *J‘fﬁ‘; 10 : +++ 5'? J“
+ﬂit? §- ” ++ ___.-_-_i§ﬁfz . 0724-0805D 1
+/ ""WK; A 6125-6215 Dry3 n++____—_.:.. x>s< ‘ 6125-6215 Dry3
+10 _ W o 0651-0751Wet4 6 9’4“""l'_:-o' Ax)2< 8 0651-0751Wet4
+_ m - 1442-1612 WetS 3414-W - 1442-1612 WetS
+. - 2” . 2026-2136 Wet6 .~.++.-—.- . 2026-2136 Wet6
+-r¢—>§,~,\ + 3735-3858 Wet7 4 .oﬁFS-W + 3735-3858 Wet7
+5 “ - 4427-4548 Wet 8 0% - 4427-4548 Wet 8
+5.28 - 4800-4910 Wet9 .8-— ' 4800-4910Wet9
+44""? — 5525-5636 Open Loop 10 2 .o’-';' — 5525-5636 Open Loop 10
+i 0 5831-5942 Open Loop 11 .9?"" ’ 5831-5942 Open Loop 11
+0 , >< 8727-8858 Wet13 0 .¢ x 8727-8858 Wet13
+0 5 10 15 20 25 30 35 40 0 2 4 6 8 10 12 14 16 18 20
+t t
+(a) Full Duration (b) Truncated Linear Regime
+Figure 17. Complete data set for the ICFl trailing interface.
+computed from the theoretical model developed during the ﬂight of the ICF experiments is N 680s assuming
+a Virtual vertex,11 Whereas the total experimental ﬂow time is less than 40s. Thus, the data in effect represent
+only a snapshot of the intended idealized ﬂow rather than a long—time Characterization. However, for the
+‘snapshot’ in Figure 17(b), the data is linear and can be thought of as a local derivative of the long—term
+behavior.
+
+From Figure 17(b) it is immediately obvious that the results vary depending on the test type. In
+general, the Open Loop tests produce the highest ﬂow rates followed by Wet and then Dry conditions.
+The ﬂow rates are somewhat sporadic between event types; however, the Open Loop, Wet, and Dry cases
+produce average dimensional trailing meniscus velocities of 1.37, 1.06, and 0.85mm/s, respectively. The
+linear trailing meniscus velocities for the various tests are non—dimensionalized (by way of an asymptotic
+
+18 of 22
+American Institute of Aeronautics and Astronautics
+
+"
+"19","0.82
+I"" /‘
+0.815 ”’9 ‘..¢o“ /
+0.81 ,o ‘W
+.s' + at?“
+0.805 %&$ﬂx
+0.8 ”0 ++ _."" g»
+++++ .— - o “
+0.795 42* :1-
+p 10:: : 0724-0805 Dryl
+N $8 . 2382225238?
+«”.++:-_ . 0651-0751Wet4
+0.785 ,ooﬁ"": I 1442-1612 Wet5
+.; - o 2026-2136Wet6
+0.78 .03 _ + 3735-3858 Wet7
+£34“ ' 13331313 WES
+l - e
+0775 ’5"" — 5525-5636 OpenLoop 10
+/ ’ 0 5831-5942 Open Loop 11
+0.77 x 8727-8858 Wet 13
+— - Analytical
+0.765
+0.225 0.23 0.235 0.24 0.245 0.25 0.255
+T
+Figure 18. Comparison of dimensionless experimental results With theory.
+theoretical athadysis11 to be published in greater detail elsewhere) and listed in Table 4. For the ﬂuid
+properties and geometry of ICFl the analytic dimensionless velocity is 1.52. The Open Loop, Wet, and Dry
+average dimensionless velocities are 2.33, 2.09, and 1.64, respectively. The most favorable agreement With
+the present theory is fortunately With the most applicable Dry tests yielding an average error of 7.3%. A
+complete set of comparisons can be found in Table 4 Which includes dimensional and non—dimensional linear
+ﬁt coefﬁcients as well as statistical R2 values and % error calculations With respect to the dimensionless
+analytic estimate.
+Table 4. Dimensional and dimensionless linear ﬁt coeﬂicient With R2 statistics for ICFl including % error With
+the theoretical dimensionless coefﬁcient of 1.52.
+Data Name Dimensional Slope (mm/s) Dimensionless Slope % Error R2
+0724—0805 Dry 1 0.86 1.66 9.20% 0.9913
+4045—4135 Dry 2 0.89 1.72 13.2% 0.9945
+6125—5215 Dry 3 0.80 1.55 2.00% 0.9825
+0651—0751 Wet 4 1.28 2.47 62.5% 0.9952
+1442—1612 Wet 5 0.91 1.77 16.5% 0.9944
+2026—2136 Wet 6 1.20 2.31 52.0% 0.9964
+3735—3858 Wet 7 1.22 2.37 56.0% 0.9922
+4427—4548 Wet 8 1.05 2.03 33.6% 0.9941
+4800—4910 Wet 9 1.00 2.17 42.8% 0.9844
+5525—5636 Open Loop 10 1.12 1.94 27.6% 0.9954
+5831—5942 Open Loop 11 1.61 3.12 105% 0.9958
+8727—8858 Wet 13 0.79 1.53 0.66% 0.9889
+C. ICF2 Results Summary
+Unlike the under—ﬁlled ICFl vessel, the ICF2 tests produced long—duration ﬂow events lasting up to 7 minutes
+for the trailing 2:1 meniscus and nearly 4 minutes for the leading 82 meniscus. Figure 19 presents both Z1
+and 22 on a Single plot With the conduit drawn at left to scale. AS With ICFl, Dry, Wet, Open Loop, and
+19 0f 22
+American Institute of Aeronautics and Astronautics
+
+"
+"20","1 Z 140
+F 120 “2.4 ""‘4 $\\\\\'\\ .\\“i\\'\\l\<\<\ '\\\\\\'\
+100
+A 80
+E
+E
+N 60
+O 0511-1112 Dry
+1 40 I 1930-2531 Wet
+A 2732-3334 Wet
+20 ’ 0 0107-0500 2mm Bubbles
+I 3531-3901 Open Loop
+‘ 4012-4343 Open Loop
+0
+0 50 100 150 200 250 300 350 400 450
+t(S)
+Figure 19. ICF2 data for Z1 and 7:2 for Dry, Wet, Open Loop, and Bubbly ﬂows With the conduit geometry
+drawn to scale at left.
+Bubbly test are conducted. Approximately three distinct rates are obvious With Wet and Dry test behaving
+similarly, Bubbly tests ﬂowing faster, and the Open Loop tests even faster. The Bubbly ﬁows progress at
+a rate slightly greater than the Wet/Dry rate due to bubble coalescence Which has since been addressed
+theoretically and Will be further documented in a subsequent publication. An expanded scale of the leading
+and trailing interfaces can be found in Figure 20(a) for 231 and Figure 20(b) for 22.
+70 128
+126
+60
+124
+50 122
+120
+ﬁ 40 N 118
+N 30 N 116
+114 ‘
+. 0511—1112 D . _
+20 . 1930—2531117;y 112 . 10953169151311261123?
+. 2732-3334 Wet A 2732—3334 Wet
+10 0 0107-05002mmBubb1es 110 o 0107-05002mmBubb1es
+I 3531-3901 Open Loop 108 I 3531-3901 Open Loop
+0 4012-4343 Open Loop 0 4012-4343 Open Loop
+0 106
+o 50 100 150 200 250 300 350 400 o 50 100 150 200 250 300
+t t
+(a) Trailing Interface Z1 (b) Leading Interface 22
+Figure 20. ICF-2 data representing the Z1 interface under various experimental conditions.
+The initial Dry run produces a curve ﬁt of 231 = 6.32 75040 Whereas Wet ﬁts are 2:1 2 6.2175040 and
+231 = 7.22 75038. The rates are very similar, but if the two Wet rates are averaged they are slightly higher
+than the Dry rate, Which is expected. The single Bubbly ﬁow produces a curve ﬁt of 231 = 5.1875044 and
+a rate Which is always slightly higher than the Dry and Wet rates. During the bubble ﬂows, bubbles are
+forced into the corner With only the smallest bubbles (< 0.7mm diameter) passing Without coalescing. The
+Open Loop power—law curve ﬁts reveal higher rates, 231 = 13.9175030 and 231 = 16.00 75027, than the other test
+types. The leading meniscus 2:2 is shown in Figure 20(b) on an expanded scale. The curves are linear over
+20 0f 22
+American Institute of Aeronautics and Astronautics
+
+"
+"21","the larger time scale, With R2 values very near 1 When ﬁt With linear regressions. Trends for 272 are similar
+to those reported for 2:1, With the hierarchy of migration rates being the same.
+
+In preliminary summary of the CFE ICF experiments, it appears that the geometric impact of ICF—
+like tapered polygonal sectioned containers can be reasonably and explicitly preolicteol.12 This implies that
+systems can be designed to provide desired pumping rates for a variety of applications including low speed
+bubbly ﬂow separations. For such calculations the desired ﬂow rate would be used as an input and the
+container geometry would be ‘derived’. Ground—baseol applications for such a method are also relevant to
+microﬂuidios phenomena.
+
+VI. Conclusion
+
+The fact that such simple experiments can yield enough quantitative data to support fundamental and
+applied numerical and theoretical investigations argues well in support of continued efforts by space entities
+to pursue simple experiments beneﬁtting from crew interest and interaction. Arguably more important,
+intricate, and automated experiments are of higher priority, but such small experiments can ﬁt ﬂexibly into
+time lines and even be conducted during the crew’s free time if desired (up to 50% of CFE was conducted
+in this manner). At least three journal articles are expected from the CFE work and several of the tools
+developed to analyze the ﬂows have been employed in advanced life support systems.13 Several follow—on
+CFE—like experiments have been proposed to and are under development by NASA. The experiments are
+called CFE—2 and consist of refurbished CFE hardware as well as news builds. The experiments themselves
+focus on critical geometric wetting in systems With a Wide disparity in capillary length scales using the CFE
+VG approach, and a family of weakly 3—D capillary conduits capable of passive phase separations relevant
+to liquid processing on spacecraft—akin to CFE ICF. The new hardware exploits design guides developed
+during this investigation.
+
+VII. Acknowledgment
+
+This work is supported in large part through NASA’s Glenn Research Center; contract NNC05—AA29A
+monitored by A. Wilkinson. Some of the analytical work is supported under National Science Foundation
+grant CTS—0521890. We Wish to thank collaborators S. Collicott of Purdue University and Y. Chen of
+Portland State University for Co—Investigator support for CFE VG. We are also grateful for collaborator
+support on CFE CL of J . Klatte and M. Dreyer of ZARM and the University of Bremen, Germany Who
+are in part supported by the Federal Ministry of Economy and Technology (BMWi) through the German
+Aerospace Center (DLR) under grant number 50 WM 0535. We are grateful for the project science and
+management support of R. Green and D. Bohman of NASA CBC, and to all the NASA ISS cadre members
+at GRC, MSFC, and JSC. Our unbounded thanks go to the astronauts Who conducted the experiments
+on 188 on many occasions during their free time: M. Finoke, W. MoArthur, J . Williams, S. Williams, M.
+Lopez—Alegria, C. Anderson, and P. Whitson.
+
+References
+
+1Weislogel, M. M., “Steady spontaneous capillary ﬂow in partially coated tubes,” AIChE Journal, Vol. 43, No. 3, 1997,
+pp. 645 — 654.
+
+2Tadinor, R., “Line energy and the relation between advancing, receding, and Young contact angles,” Langmuir, Vol. 20,
+No. 18, 2004, pp. 7659 — 7664.
+
+3Weislogel, M. M., Jenson, R. M., Klatte, J., and Dreyer, M. E., “The Capillary Flow Experiments aboard 188: Moving
+Contact Line Experiments and Numerical Analysis,” Reno, NV, United States, 2008.
+
+4Lee, A., “VirtualDub 1.8.1,” http://WWW.Virtualdub.org/, 1998-2008.
+
+5Kliinek, R. and Wright, T., “Spotlight—8: Image Analysis and Object Tracking Software,”
+http://exploration.grc.nasa.gov/spotlight/, 2005.
+
+6Weislogel, M. M., Jenson, R., Klatte, J., and Dreyer, M., “Interim results from the capillary ﬂow experiment aboard 188:
+The moving contact line boundary condition,” Vol. 13, Reno, NV, United States, 2007, pp. 9252 — 9259.
+
+7Weislogel, M. M., Bunnell, C. T., Kurta, C. E., Golliher, E. L., Green, R. D., and Mark Hickman, J., “Preliminary
+results from the Capillary Flow Experiment aboard 188: The moving contact line boundary condition,” Reston, VA 20191,
+United States, 2005, pp. 11439 — 11448.
+
+8Concus, P. and Finn, R., “On the Behavior of a Capillary Surface in a Wedge,” Proceedings of the National Academy of
+Sciences of the United States of America, Vol. 63, No. 2, 1969, pp. 292—299.
+
+21 of 22
+American Institute of Aeronautics and Astronautics
+
+"
+"22","9Chen, Y. and Collicott, S. H., “Investigation of the Symmetric Wetting 0f Vane—Wall Gaps in Propellant Tanks,” AIAA
+Journal, Vol. 42, N0. 2, 2004, pp. 305 — 314.
+
+10Chen, Y., Jenson, R, Weislogel, M., and Collicott, S., “Capillary Wetting Analysis of the CFE-Vane Gap Geometry,”
+Reno, NV, United States, 2008.
+
+11Jenson, R. M., Capillary—Driven Corner F low in Weakly 3—Dimensional Conduits and Contact Line Interface Dynamics
+in Reduced Gravity Environments, Master’s thesis, Portland State University, 2008.
+
+12Weislogel, M. M., Jenson, R., and Bolleddula, D. A., “Capillary driven ﬂows in weakly 3-dimensional polygonal contain-
+ers,” V01. 13, Reno, NV, United States, 2007, pp. 9260 — 9272.
+
+13M.M. Weislogel, E.A. Thomas, J. G., “A Novel Device Addressing Design Challenges for Passive Fluid Phase Separations
+Aboard Spacecraft,” J. Microgravity Sci. Technol., 2004.
+
+22 0f 22
+American Institute of Aeronautics and Astronautics
+
+"

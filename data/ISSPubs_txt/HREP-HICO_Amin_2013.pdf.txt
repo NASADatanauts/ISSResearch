@@ -1,0 +1,757 @@
+"","x"
+"1","732 IEEE TRANSACTIONS ON GEOSCIENCE AND REMOTE SENSING, VOL. 51, NO. 2, FEBRUARY 2013
+Ruhul Amin, Richard Gould, Weilin Hou, Robert Arnone, and Zhongping Lee
+Abstract—The application of ocean color product retrieval al- the day, low—Earth—Orbit satellite—based sensors are limited to
+gOFitth fOI‘ Pixels eOntaining eloud ShadOWS leads t0 el‘l‘eneeus acquiring images at ﬁxed times of the day. If the solar elevation
+reSthtS‘ Thus’ Shadows are an important scene type that Shethd is low at the time then the presence of shadow will be unavoid—
+be identiﬁed and excluded from the set of clear-sky pixels. In this bl Th . ’ bl d b h d . 'th (1 t'
+paper, we present an optical cloud shadow-detection technique a e. emaln Pm em eause y.8 a OWS 1s 6.1 er are uc 10h
+called the Cloud Shadow Detection Index (CSDI). This approach is or total 1055 Of Informatlon 1h an Image [21- Slnce ocean color
+for homogeneous water bodies such as deep waters where shadow algorithms are developed for water pixels illuminated by both
+detection is very challenging due to the relatively small differences direct solar irradiance and sky light, the radiance values in
+in the brlghtne'ss values of the shadows and neighboring sunlit or shadow pixels lead to the corruption of biophysical parameters
+some other reglons. The CSDI technlque 1s developed based on the d . d f th . 1 Cl (1 h d d f
+small differences between the total radiances reaching the sensor erlve mth 086 p 1X6 8' ou S a OW can p to uce errors 0
+from the shadowed and neighboring sunlit regions of similar op- 3070—4070 1h the Observed reﬂectance from the affected pIXClS
+tical properties by amplifying the differences through integrating over lands [3]. Similar errors can be expected over waters as
+the Speetl‘a 0f the tWO regions. The Integrated Value.(IV) is then well, although such studies have never been conducted. Since
+herhlahzed by the mean 0t, the IVS VYlthm 5? Spatlal adaptive ocean color products are retrieved based on the assumption that
+slldlng box where atmospheric and marine opt1ca1 propertles are th t . ﬂ t t 11 .
+assumed homogeneous. Assuming that the true color and the . eremo e sens1ng re CC ancesare accura e, asnla Inaccnracy
+IV images represent accurate shadow locations, the results were 1h the reﬂectance can lead to s1gn1ﬁcant errors 1h the retrleved
+visually compared. The CSDI images agree reasonably well with products. In particular, since most of the product retrieval
+the COI‘I‘eSPOHding tl‘ue 00101‘ and the 1V inlages over open ocean. algorithms are band ratio algorithms, a small disproportionate
+Alse’ the Shape Of the cloud shadow particularly for the Iselated alteration in the spectral reﬂectance amplitude can Change the
+cloud closely follows that of the cloud, as expected, reconﬁrmlng b d t' 'd bl d h th t . d d t 4
+the potential of the CSDI technique. an ra 10s cons1 era y an , ence, .e re rieve pro uc s [ ],
+. ' [5]. However, Cloud shadow detectlon 1n ocean color scene can
+, Index Terms—Hyperspectral imagery, ocean color, opt1ca1 algo- be important and beneﬁcial. For example, the Cloud shadowed
+rlthm, remote sens1ng, shadow detectlon. . . . . . . .
+p1xel (p1xel 111um1nated by only skyllght photons s1nce dlrect
+photons are removed by the Cloud) in combination with the
+I. INTRODUCTION neighboring sunlit pixel (pixel illuminated by both direct so—
+. . . . lar and sk li ht hotons of similar 0 tical ro erties can be
+PECTRAL 1nformat10n collected by opt1ca1 satell1te sen— y g p ) . p p p
+. . . . . used to remove atmospherlc effects from these scenes [6]—[8].
+sors can prov1de 1mportant 1nformat10n for varlous global . . . .
+. . . . The nelghborlng sunllt plxel then can be used as known re—
+remote sens1ng applications. However, Clouds cause a serious . . . .
+. . . ﬂectance targets for valldatlon of the sensor callbratlon and
+problem for these sensors, partlcularly over humld troplcal . . . .
+. . , atmospherlc correctlons [6], [8]. Cloud shadow 1s 1mportant for
+reglons. Throughout the year, about two—thlrds of the Earth s
+. many other reasons as well. For example, Cloud shadow can
+surface 1s always covered by Clouds [1]. The problem for the . . . . .
+. . 1mpact mesoscale atmospherlc Clrculatlons that lead to major
+opt1ca1 sensor 1s that Clouds not only conceal the ground but .
+. convectlve storm systems [9], [10]. Furthermore, Cloud shadow
+also cast shadows, and these shadows also occur 1n the observed .
+. . . . . . can also be used to estlmate both Cloud base [11], [12] and
+lmages along w1th the Clouds. Unllke a1rborne 1mag1ng where . . . .
+. . . . . . . Cloud—top helght [13] Wthh are stlll a Challenge to estlmate
+shadows can be mlnlmlzed by ﬂylng at certam t1mes durlng .
+rellably from space [14].
+There are numerous algorithms for Cloud detection
+[14]—[24]. However, relatively few Cloud shadow—detection al—
+gorithms [23]—[30] have appeared in the literature even though
+Manuscript received JUly 1, 2011;1‘6VlSGdJ21I111211‘Y 25, 2012, accepted June 4, accurate detection of cloud shadow is important for many
+2012. Date of publication July 25, 2012; date of current version January 17, tm h I‘i nd t 1‘1” tI‘i 1 lications [3] [9] [10] Most O f
+2013. This work was supported by the US. Naval Research Laboratory Pro— 3' 08p 6 C a .6 es 3' .app . .’ ’ . '
+gram Element PE0602435N “Realizing the Naval Scientiﬁc Return of HICO.” the shadow detectlon techmques described 1n the literature deal
+R. Amln, R. GOUld, W. H011, and R. AIHOHC are Wlth COdC 7333, UHS NaVal with shadows over land [3], [23]_[29] Few attempts have been
+Research Laboratory, Stennis Space Center, MS 39529 USA (e—mail: ruhul. d t d t t h (1 'ﬁ 11 t 16 31 h'l
+amin@nrlssc.navy.mil; gould@nrlssc.navy.mil; wilin.hou@nrlssc.navy.mil; ma 6 0 6 CC .8 3' OWS spec1 Ce yover We eht ]’[ ]’W 1 e
+arnone@nrlssc.navy.mil). shadow detectlon over water 1s becomlng s1gn1ﬁcant as the
+Z. Lee iS Wlth the Department Of EnViI‘OIlmental, Earth and Ocean SCienceS, spatial resolutions of the ocean color sensors are getting ﬁner.
+University of Massachusetts, Boston, MA 02125 USA (e—mail: zhongping. . . .
+lee@umb.edu). Th1s 1s because the small—scale shadow features appear 1n the
+Digital Object Identiﬁer 10.1109/TGRS.2012.2204267 acquired images.
+0196-2892/$31.00 © 2012 IEEE
+
+"
+"2","AMIN et al.: OPTICAL ALGORITHM FOR CLOUD SHADOW DETECTION OVER WATER 733
+The locations of shadows in the image depend on Cloud ele— II. DATA
+vation and the inelclence angle of thesunlight at that time. The The Hyperspectral Imager for the Coastal Ocean (HI C O) has
+Cloud shadow location can be determined by the means of geo— . . .
+. . . . . . been operating aboard the International Space Station (188)
+metrical calculations 1f the spatial location of Cloud, 1.e., cloud— . . .
+
+. . . . s1nce installation on September 24, 2009 [35], [36]. HICO
+top and Cloud—bottom heights, and the sun and satellite pos1tions 'd h ers ectral ima es at lOO—m resolution 0 timized
+are known. However, geometry—based approaches [25], [26] 1f3r0V1 es yp p g . p .
+
+, , , , , or the coastal ocean. It collects radiance at 128 contiguous
+have Challenging issues bes1des requiring too much CPU to run . .
+
+, , , spectral Channels from 350—lO70—nm range. However, it is
+operationally [16]’ I31]: The main 188116. for geometry—based most sensitive in the spectral wavelengths ranging from 400 to
+ap p roach is the estimation Of ,CIOUd vertical height Wthh is 900 nm, which are the most utilized spectral region for ocean
+required to determine the relative shadow location. Normally, C 01 or stu di e s. E a Ch HICO scene is roughly 50 km in width by
+thermal channels can be used to estimate the cloud—top height 200 km in length. The HICO data ﬂow from the 188 provides a
+[15]. However, it is still a Challenge to determine the Cloud— maximum of 15 scenes per day, and the sensor is managed by
+bottom height w1thout Cloud proﬁling measurements [32]. The the U.S. Naval Research Laboratory.
+solar reﬂectiye bands cannot prov1de information. about the Since shadow detection becomes signiﬁcant for high—spatial—
+cloud—top height, and the Cloucl—bottom information cannot resolution images due to the imaging of small—scale shadows,
+be reliably estimated from pass1ve solar—thermal data either we test our technique using the HICO data acquired over
+[33]' TO determine accurate shadow location, bOth heights are various regions around the globe. HICO also has higher spectral
+important particularly for $013th CIOUdS' In any event, many resolution. Thus, the contrast between shadowed and adjacent
+ocean COIOI sensors SUCh as the Sea—Viewing Wide Field—of— sunlit regions would be higher after integrating the spectra,
+View Sensor do not have necessary Channels to estimate Cloud which is advantageous for the shadow detection. The Cloud
+vertical heights. Therefore, in order to identify the shadow Shadow Detection Index (CSDI) technique should also work
+locations from these sensors, we need an algorithm that uses for multispectral data. However, it still needs to be tested using
+Visible Channels since these Channels are always present on the relatively high spatial resolution multispectral data.
+ocean color sensors.
+
+lt can. be easy to identify the elond regions. Simply by 111. BACKGROUND
+us1ng brightness thresholds, but it is difﬁcult to identify the
+shadow regions this way because their brightness values can Let us assume that solar elevation is relatively low and the
+be very Close to those of their neighbors or some other re— sensor is at nadir; a small compact thick Cloud over water
+gions. Distinguishing shadows over water bodies based on prevents direct solar photons from impinging on the sea surface
+spectral reﬂectance shape and amplitude information is also and shadows a region. The water—leaVing radiance from the
+very difﬁcult or possibly even impossible [34]. Shadows over shadowed region LESWQ) that reaches the sensor results from
+water pixels do not have any speciﬁc spectral features while only skylight photons since direct photons are removed by the
+the brightness varies with atmospheric conditions and imaging Cloud. An adj acent patch of water from a sunlit region has iden—
+geometry. Therefore, the brightness or the spectral shape alone tical inherent optical properties to those of the shadowed region.
+may not be appropriate for shadow detection. However, bright— Refer water—leaVing radiance from the neighboring sunlit region
+ness values from shadow and Close—by sunlit regions over water as Lilly (A) which results from the illuminations 0f hOth direct
+can provide a great deal of information if a small portion of 3013f and skylight photons.
+the image (where optical properties of water and atmosphere The atmosphere is 3150 assumed t0 be homogeneous ih
+are uniform) is examined at a time. This is because the water— shadow and neighboring Shhht regions as they are adjacent.
+leaving radiance over sunlit pixels results from both direct and Let La represent the contribution from the atmosphere (path
+diffuse solar irradiance, while the water—leaVing radiance over radiance due to light scattering by air molecules and aerosol
+shadowed pixels results from only diffuse solarirradiance. The particles) and sea—surface reﬂectance [7l- The total radiance
+path radiance from the shadowed pixel to the sensor is also measured at the sensor’s altitude from the sunlit area can be
+slightly lower, depending on how much of the atmospheric path expressed as
+radiance is shadowed. Therefore, the total radiance atthe top of Liny (A) : La (A) + t(MLSDy (A) (1)
+the atmosphere measured over the shadowed pixels is slightly w
+lower compared to the adjacent Shhht pixels. Assuming that the where t(A) represents the diffuse transmittance of the atmo—
+optical properties of water and atmosphere are homogeneous sphere for the watelLleaving radiance.
+around shadowed and adjacent sunlit regions, examining the The total radiance measured at the sensor’s altitude over the
+radiance difference among these small uniform regions together shadowed region can be expressed similarly with some differ-
+enables us to separate the shadowed regions. ences in the path radiance and diffuse transmittance expected.
+
+In this paper, we propose a Cloud shadow—detection technique The path radiance from the shadowed region should be lower,
+for optical imageries acquired over water by satellite/airborne since part of the Viewing path to the shadowed region is also
+sensors. This technique does not require any angular infor— shadowed. Therefore, it should produce less path radiance,
+mation (Viewing or solar) or any estimation of Cloud vertical depending on how much of the atmosphere is shadowed [8].
+heights. It is entirely based on measurements in the optical The apparent path transmittance of the water—leaVing radiance
+Channels. To our knowledge, it is the ﬁrst optical Cloud shadow— from the shadowed region may be slightly higher since the
+detection technique over water. adjacent areas of the scene are generally brighter, so the
+
+"
+"3","734 IEEE TRANSACTIONS ON GEOSCIENCE AND REMOTE SENSING, VOL. 51, NO. 2, FEBRUARY 2013
+apparent transmittance of the Viewing path to the shadow will . a. .f . ‘. -.~;~$ '
+be enhanced by photons reﬂected from the bright portion of the -* ’1 ”$3112 '. j I, ' -.'""._‘ W
+image and scattered into the ﬁeld of View of the sensor [8]. , .l e f?!"" r 1 ‘ .1 .1 "" ""F g,
+The total radiance measured over the shadowed region can ~ 3 . 7 . ,: ~-_ ._j.. , t"" - _. J."" . ,; 'f { -.' ‘1‘. ' 4 '
+be expressed as ,, 1.}: ,2; 3.4,. ~ .I
+de sdw . - t' ' 52%;“ t . ’1‘:-
+Lt (A) =La(A) —ALa(A)+(t(A)+At(A)) Lw (Al (2) 5.; ' .,.--:‘-,; pc ..
+~2‘.“:’{.‘- ’- "" v"" ’ 9 I
+The A term represents the perturbations due to the differences (a) . .F‘” 13*: . .7 1 .5 I.“ y, -. - ‘ . ., . (b)
+in illuminations between the sunlit and shadowed regions. 3000 ' . . ' ‘ . _ '
+The water—leaVing radiance can be expressed as two parts: '.=_
+one part caused by the backscattering of the diffuse skylight and 2500 '. ft“ 5“”51“
+the other part caused by the backscattering of the direct solar ‘ i
+beam. For the sunlit and shadowed regions, the water—leaVing ? 2000 -
+radiance can be expressed astjlyOx) : LifiyOx) + LfﬂrOx) : 1500 t
+and LEEWQ) : L353}; (A), respectively, since Lfﬁiﬁ (A) : 0, Z' t“.
+where Ljiyox) and LildyOx) represent the water—leaVing ra— 1000
+diances caused by diffuse skylight and direct solar beam in the _ ' f .1
+sunlit region, respectively. LilivlfyOx) and LEEQ’MA) represent the 300 t t
+water—leaVing radiances caused by diffuse skylight and direct (C) 3 t 5 5 i 5 t ' ' - .7 i ‘ -
+. . . £00 450 500 550 600’ 650 700 750 800 850 900
+solar beam 1n the shadowed region, respectively. xx avelength [11m]
+The diffuse irradiance incident on the shadow area and that _ _
+incident on the Close—by sunlit areaare unequal because scatter— gilﬁghg 061:; egg:1131;551:1116;frigggitvgﬁegﬂgﬁzeg 3 ifggsgtfevzigﬁrﬂi
+111g frOm CIOUd may 1ncr ease the dlffuse 111"" adlahee meldeht on white and the shadowed regions are shown in slightly cooler color compared to
+the neighboring sunlit region [8] According to [8], Liliy (A) the surrounding sunlit regions. (Bottom) (e) Top—of—the—atmosphere radiance
+be expressed as Lift‘iy w = L231; w + mm m $55533???$1?;riiifloilidtliiriiilévfffﬁ?tiff;afﬁis‘ilfufﬁefiidiﬁﬁii
+Based on the aforementioned analysis, it can be expected that spectra of the shadowed, adjacent sunlit, and far sunlit pixels, respectively, on
+the water—leaVing radiance from the shadowed pixel (LESWO‘D the IV image. The spectrnm. from the shadowed pixel is very similar to the
+. . . . spectrum from the far sunlit pixel. Sometimes, the shadowed spectrum can even
+1‘ eaChlhg the satelhte sensor IS lower than the watehleavmg be higher than the spectrum from some other sunlit regions. This indicates that
+radiance from the neighboring sunlit pixels (Lily (AD H61"" 6, spectral proﬁle alone is not adequate to separate the shadowed regions for an
+we are assuming that the optical properties of the water in the entire image-
+two regions are the same since they are adjacent. Also, the
+path radiance from the shadowed pixel is slightly lower since regions for an entire image. However, the spectral amplitude
+part of the atmosphere is also shadowed. A shadowed portion can help 113 separate the tWO regions if a small portion 0f the
+of the atmosphere must produce less path radiance, depending image is examined at a time. The proposed shadow detection
+on how much Of the atmosphere is shadowed, while we are technique works in two steps. First, it ampliﬁes the contrast
+assuming that the atmosphere is nearly uniform. Thus, the total between the shadowed and neighboring Shhht regions by taking
+radiance measured over the shadowed pixel is lower than that advantage 0f the small differences in the spectral amplitudes,
+measured over the neighboring sunlit pixel. The uncalibrated particularly in the blue—green region 0f the spectra [Fig l(c)].
+raw digital counts of the shadowed pixel will also be lower than T0 amplify the contrast 0f the tWO regions, we introduce an
+those of the neighboring sunlit pixel since they are adj acent and index called the Integrated Value (1V), which is deﬁned as
+the sunlit region is brighter. An example of this is shown in 600 nm
+Fig. l(c), where the red spectra represent Lidw (A) and the green IV _ f L t ( A) d A (3)
+spectra represent the adjacent LinyOx) taken from a HICO _ '
+image acquired over Guam Island on November 11, 2009. It can 400 “m
+be seen Clearly that the adjacent sunlit pixel has higher digital Even though the IV index allows visual separation of the two
+counts (green spectra) than the shadowed pixel (red spectra) due regions to an observer, IV itself is not adequate to separate
+to the differences in illuminations. based on a threshold. This is because the IV index from a
+shadowed region can be very Close to, or even higher than, the
+IV index of some other sunlit region. This can be seen in the IV
+IV. DEVELOPMENT OF THE CSDI . . . . .
+lmage 1n F1g. l(b), where Clouds and lands are shown 1n wh1te
+Although the spectral radiance amplitude of the shadowed while shadows are shown in slightly cooler color compared to
+region is slightly lower than that of the neighboring sunlit re— the neighboring sunlit regions.
+gion, this difference is relatively small. Furthermore, because of To separate the shadowed and sunlit pixels using a constant
+different path radiances and water—leaVing radiances, the mea— threshold, we normalize the IV index of the pixel under inves—
+sured radiance from some other sunlit region may be exactly tigation, by the mean of the IV indices within a spatial adaptive
+the same with or sometimes even lower than the radiance of the sliding box (ASB) centered on this pixel. This is the second step
+shadowed spectra [see Fig. l(c)]. This indicates that the spectral of our technique, where we examine small portion (the ASB)
+shape or amplitude alone is not adequate to separate the two of the image at a time and normalize the image adaptively. The
+
+"
+"4","AMIN et al.: OPTICAL ALGORITHM FOR CLOUD SHADOW DETECTION OVER WATER 735
+adaptive normalization allows us to use a constant threshold for in Lu, by the standard—atmospheric—correction approach even
+the entire image to separate the two regions. The selection of with a perfect atmospheric model [7]. Detecting cloud shadows
+ASB size is explained after (4). from raw digital counts will enable us to correct for the atmo—
+Based on the optical characteristics of the water and atmo— sphere using the cloud shadow atmospheric correction [7] from
+sphere in the shadowed and neighboring sunlit regions, we raw digital counts. Hence, the imperfect radiometric accuracy
+deﬁne a cloud shadow—detection technique called the CSDI as of those sensors can be overcome [7]. Furthermore, the cloud
+IV shadow atmospheric correction can also be automated [37].
+CSDI : IV—C (4) The CSDI images were created using different ASBs (32 X
+< ASB> 32 to 128 X 128) and the raw digital counts of the selected
+where I VC represents the IV indeX of the pixel (the central pixel HICO images. Various thresholds were tested to separate the
+of the ASB) which needs to be classiﬁed as a shadowed or shadowed regions for multiple images. Separated shadowed
+sunlit pixel. The (IVASB> represents the spatial mean of the regions were then Visually compared with the corresponding
+IV indices within the selected ASB of this pixel. This process true color and IV images. We used the true color and the
+should be repeated for all pixels that need to be classiﬁed IV images as the ground truth since shadows can be seen in
+as shadowed or sunlit pixel. Note that, before applying the both Visually and, also, no other optical method is available
+CSDI, cloud needs to be removed properly or spurious results to identify shadows over water. The IV image, however, is
+can be eXpected since homogeneity within the ASB will not superior over the true color image since it integrates the spectra
+hold true. Additionally, the CSDI might break down in turbid from 400 to 600 nm for each pixel. Because Of the integration,
+coastal waters since water or even the atmosphere may not be the small differences in the spectral amplitudes between the
+homogeneous Within the ASB, Thus, the CSDI is mainly for two regions add up, amplifying the contrast signiﬁcantly. For
+deep waters, where atmospheric and marine optical properties example, HICO has 35 channels in this spectral range. Thus, the
+can be assumed homogeneous within the ASB, HICO IV image shows a shadowed region that is much better
+The ASB needs to be selected carefully so that it only than the corresponding true color image which only uses three
+contains shadowed and sunlit pixels or only sunlit pixels. This channels. We compare the CSDI images with the corresponding
+is because the goal here is to make the denominator of CSDI true color and IV images. Our visual iHSpection shows that
+(4) larger than the numerator for the shadowed pixels and Vice CSDI <= 0.95 is too low to detect relatively thin part of
+versa for the sunlit pixels. Since the water and atmosphere are the shadows while CSDI => 0-97 iS a little high and gives
+homogeneous within the ASB, the IV indices ofthe sunlitpixels a false signal (a false signal increases with increasing CSDI
+will be close to each other, and they would be much higher than threshold values). Ah example is shown ih Fig. 2 (September
+the IV indices of the neighboring shadowed pixels. Thus, if the 26, 2010, HICO image acquired over Pagan Island; an image
+selected ASB contains only sunlit pixels and the pixel under size Of 285 X 400 pixels; 128 X 128 A33), where the 1V image
+examination is also a sunlit pixel, the CSDI value for this pixel [Fig. 2(a)] is assumed t0 represent the true shadowed regions. A
+would be around one since the mean of the ASB [denominator false shadowed region is detected [red circle ih Fig. 2(d)l when
+of (4)] and the IV indeX [numerator 0f (4)] would be about the CSDI is set as <2 0.97, with the error rectiﬁed when CSDI
+same. If the ASB contains both shadowed and sunlit pixels and is set as <= 0-96 [Fig. 2(0)] However, it can 3180 be seen in
+the pixel under examination is a sunlit pixel, the CSDI value the black—circled region that the CSDI <= 0-97 detects thih
+will be greater than one since the mean of the ASB will be shadows 0i shadow edge pixels slightly better than CSDI <=
+slightly lower than the IV indeX of the pixel under examination. 0-96- Oh the other hand, CSDI <= 0-95 is too low to detect
+On the other hand, if the pixel under examination happens to relatively thih part Of the shadows. The green circle shows a
+be a shadowed pixel, the CSDI value would be less than one region where CSDI <= 0-95 [Fig. 2(h)l fails t0 detect part Of
+since the IV indeX of this shadowed pixel would be smaller the shadow while CSDI <= 0-96 0i CSDI <= 0-97 detects
+than the mean of the ASB. Now, if the ASB contains only it- our Visual inspection Of a group 0f images shows that the
+shadowed pixels, it can be problematic since the CSDI value overall performance 0f CSDI <= 0-96 is the optimal setting
+will be around one, like the case of only sunlit pixels. They to minimize false signals while maximizing shadow region
+will be classiﬁed as sunlit pixels if the CSDI threshold is put detection on HICO images T he threshold may need to be tuned
+less than one. That is why it is important to select the ASB in for other hyperspectral 0i multispectral sensors.
+such a way that it is bigger than the shadowed region. This can AS mentioned before, the clouds need to be removed before
+be achieved by using the cloud size information since cloud is applying the CSDI- A band ratio between HICO band 35
+generally larger than the shadow and relatively easy to detect, (548 nm) and band 70 (748 nm) was used to ﬂag the clouds.
+even when using simplistic brightness thresholds. Using the proposed threshold (C S DI <2 0.96), an analysis of
+the ASB size was performed on the selected HICO images. The
+V RESULTS AND DISCUSSION result is shown in Fig. 3, where the horizontal aXis represents
+' the ASB sizes (8 represents 8 X 8, 16 represents 16 X 16, 32
+The CSDI technique uses the top—of—atmosphere radiance represents 32 X 32, 64 represents 64 X 64, and 128 represents
+measured in raw digital counts, which does not require con— 128 X 128 pixels) and the vertical aXis represents the total
+verting the data to radiance units. This can be advantageous percentage of the shadowed pixels in each image detected with
+for sensors with low radiometric accuracy. For example, the different ASBs. These data were collected around the Virgin
+Hyperion sensor has a radiometric accuracy of only i5% in the Islands on December 20, 2009, around Samoa on October
+measured Lt. Such uncertainty in the Lt may cause a 50% error 2, 2010, around Guam on November 11, 2009, and around
+
+"
+"5","736 IEEE TRANSACTIONS ON GEOSCIENCE AND REMOTE SENSING, VOL. 51, NO. 2, FEBRUARY 2013
+. 1 , ‘ ~_ Q' , If
+.- .’ﬁ ' . ~- - .. ‘99 . --
+~ ~: ' w. ‘ f * ~: .. ’ ' ‘ ‘- 5' .
+-‘ ‘- '. -. Q ’, .-..‘ ‘~_‘Ov ' -- Q. — ,’,.>>.
+' - ‘ -' 1‘. - , - ' ' - * .-, ,,. ;, "" '3
+“4“,: - H M 7' ‘7 ' q."" 7 tr“: i .i . *’
+. . a -2 -. ‘ 3,»:
+. *‘ ~ . r r '- i - y- . ‘ .' r, > '5 ‘
+‘5 - ' 3... . ‘ A 1n. 3 * $3.. ‘”
+r . ~ ""' r’ . ~ "" ‘
+(a) (b)
+. . '.'. _ . ....
+, : ‘r ' ' r 1 t ’ '5
+. .. ‘ﬂ’t; - . - , ‘1’“ . -'
+t q i. '- .‘ O ‘ 1 r ‘ ~. "" , "" ‘ O . ., b- e
+.- ‘_. '. _. Q ‘9 I: “~ $.’ 4. _. - ...'-""
+._ 2 _ - 5 .v“. _. p. . 913:4” -_ _ - g :“i _. . : _, .. ,-,'."";___.»:E-=v. _
+; ._ . ' .. J, , 2c; . _ . ' - 3 :1, , =‘.-
+. O ‘ ' "" q. . O "" ' ' ﬁ
+*9 Jr. - ”‘3 ‘1, it, 4!: ' '3‘: ‘.
+r . . "" ‘ r . . "" ‘
+(C) (d)
+Fig. 2. HICO image acquired over Pagan Island on September 26, 2010. (a) IV image (an image size of 285 X 400 pixels) Where clouds are shown in White While
+the shadows are shown in slightly cooler color compared to the surrounding sunlit regions. Images (b), (c), and (d) are the corresponding CSDI images (created
+using a constant 128 X 128 ASB) With different CSDI thresholds (CSDI <2 0.95, CSDI <2 0.96, and CSDI <2 0.97, respectively), Where clouds are
+shown in White, sunlit regions are shown in blue, and the shadows are shown in red. The black circle shows a region Where CSDI <2 097 performs a little bit
+better on thin shadow detection While the red circle shows a region Where it gives a false signal. The green circle shows a region Where CSDI <2 0.95 does not
+detect part of the shadow While CSDI <2 0.96 and CSDI <2 0.97 detect it. The overall performance of CSDI <2 0.96 is the optimal setting to minimize
+false signals while maximizing shadow region detection.
+7 . . , . , , . TABLE I
+g g 3 Virgin Islands ..
+g g I ...5amoa g PERCENTAGE OF PIXELS IDENTIFIED AS CLOUD, SHADOW, AND SUNLIT
+a .1 -I-Guam DUE TO DIFFERENT CLOUD MASKINGS FOR THE IMAGE SHOWN IN FIG. 2
+P—‘ﬁv‘—‘ i .Pugan ‘ ’
+w 5 /' Cloud Percentage of Percentage of Percentage of
+E ‘ EM"". masking shadow sunlit pixels cloud pixels
+5 4 pixels
+3 s 2 a s : ;
+. 82.02 12.87
+2 65.36 32.12
+° 7 -' 2 ~‘ N i a v a g g a
+3 2 Mon
+.- X a a X a i z -
+0 a N i a v s i i x
+X :‘s'o: M a a '0 a ; é co - - -
+1 co —~ the smaller shadows (Vlrgln Islands and Samoa), Whlle a larger
+~o; ASB 1s requlred for the larger shadows (Guam and Pagan).
+°o 20 40 “Ass 5' so 100 no 140 Visual inspection of the CSDI images With the corresponding
+I19 . .
+true color and IV lmages shows that the shadowed plxels
+Fig. 3. Size of the ASB versus the total percentage of the shadowed pixels in detected even With smaller ASBS such as 8 X 8 01‘ 16 X 16
+the images shown in Figs. 4 and 5. The (red and magenta) solid lines are for . f t f th t h d d . H 11
+smaller shadows (from Fig. 4), While the (blue and green) dotted lines are for are m ac tom 6 rue S a 0W6 reglons. OWCVCI‘, sma er
+larger shadows (from Fig. 5). A 32 X 32 ASE appears to be adequate for the ASBS only detect smaller portlons 0f the shadows. On the
+smaller shadows, but a larger ASB is required for the larger shadows. A larger other hand, larger ASBS have little impact on smaller shadows,
+ASB has little impact on the smaller shadow detection, as can be seen in the red as can be seen in F1 3 (1‘6 (1 and ma enta lines) Where the
+and magenta lines which Change little from 32 x 32 ASE to 128 x 128 ASB. g. , g. , ’
+percentage of the total shadowed plxels 1n the lmages does not
+Northern Mariana Pagan 011 September 26, 2010. Virgin Islands change signiﬁcantly from ASB size ranging from 32 X 32 t0
+and Samoa have relatively smaller shadows, While Guam and 128 X 128. Therefore, it might be advantageous to employ a
+Pagan have relatively larger shadows. It is obvious in Fig. 2 large constant ASB based on the largest cloud size of an image
+that 8 X 8 and 16 X 16 ASBs are too small to detect most of the and use that constant ASB for the entire image rather than an
+shadowed pixels. A 32 X 32 ASE appears to be reasonable for adaptive one that is based on regions of the image.
+
+"
+"6","AMIN et al.: OPTICAL ALGORITHM FOR CLOUD SHADOW DETECTION OVER WATER 737
+To ,0 1
+‘ lrgln Islands Salnoa
+KGB 9’ .' 4A- .‘V Z‘Kﬁﬁ‘. Q 3' ' O a C’
+5 ' "" ° . ' "" ‘ § . .. z
+'_ g 1. ’ ” ' t D ’- 9. - .T
+I - Z - 0 ’ . ,J. v . o ‘ ‘- .,
+O_‘-""q 2"". 7.. - _~.'.~€. . -9. "" . 0‘. .-
+O ‘ - : ' '-. "" . ‘ - o -
+3""...” 5 °-‘-. 4"" ' a ﬁt ' .5 ‘ .°
+.3 ‘.' Q . . O . ' 0 -
+. ' .. ‘. V - - _. - o 2 . ‘ g - -
+O u . :- ‘3 '0 ‘. - . - ‘
+f . ‘ ‘ ‘I : . “ 0. ~ - ~ ' C; ‘ :
+“5“ 'rﬁ‘f...o‘ -- o- g O ‘O ' . ‘
+Q _ .9 ~ > . . ' 3"" t 5 -
+. . , ~ _ . .
+”$""wa - 3"" ’-’ "" r- ..
+‘ ‘- ‘. . ' g I ‘ ' A. ‘ - 4 '
+l t ’ o ‘. . I - r
+v . "" .‘b- . - ‘ o i .
+a v. 9 i ’g . Q a :j . ‘ \ - .
+J. . : ° : . -. ‘ , ' .
+(a)
+. - , i... , . x f, . , , -. . .
+1V * ~ ' IV“
+. ‘ \ ‘ - ‘ ‘
+‘ r
+‘. ' t‘ 5
+J
+. s ' ’
+. ‘ ‘ ‘ .
+(i: I 2‘ V ‘ . - _
+Rig“ ‘ ,. 7 "" ‘ s ‘
+\ . 3 _ ‘
+r ‘) ’ . . .
+‘ ‘
+. ‘ .
+. ‘x . \ Q ‘ . '
+(b)
+_ ’ Q . - 0 Q -
+£51m - a - — SID;- ~ .... «a
+$ . o "" “._ ‘ . . . ‘ I .
+. a i ‘ 7"" “ - ‘ §"".‘- 2.13%,“ . ‘41 a
+' . 5‘ ' -‘.-‘- - . .9 :Q-.. ‘ '. - .‘_ -:'~ ‘ c '
+Céqcz-g - .f - ‘-;;; '.~ 'f. L ’U’ﬁf‘ . -. ‘?§.\""9~ :'
+.“.. ’v-g .9 3. J‘ 'ff'-a‘2 ; g},.“:. .l ‘- U. 1:;
+; 4'. _‘-'.-.:3§“1. ‘15;- ; ' -.--- -~__ ~ ' ~ . "",9 v‘ a ?. £- ,
+”33:34“ 3"" ' 4' . 5 ‘ ._
+. _ . . -. 3b - ‘ .5‘ - o ‘ d, _ ‘
+: t "" u‘ g “‘9 ~ - 2. __,-.-‘ ' o 3* - Z, -‘
+Q. 4‘_ ,. .Q’- ', r _- 0 ;' $51.. -‘ b .'
+5. ‘9’» ""o"". ‘1 “‘- .3"".
+.o - ‘7 “Q- . c,‘ . ‘ k i ‘ ’ P t-
+.2 ~.-~ -. .\ —v‘«..
+‘ ""' -. ‘ ' _,- ‘3'. ‘. ' ‘- 1345.13;
+.. 3""?"" "" x ‘- \x‘” erutu
+'L'H . "" "" "" o 33 ‘Q: .‘H‘x
+‘ ‘. -‘ .5 — ' ' ‘ o O . -- ‘*- o -
+‘ a —~ ‘. ‘ "". ' - ‘ i ' '. '
+11’ 9‘ . . ' ‘ + 3 "" ‘~
+(C)
+Fig. 4. Examples of relatively smaller Cloud shadow detection using the CSDI technique. (Left panel) HICO image acquired over Virgin Islands on December
+20, 2009 (an image size of 270 X 400 pixels). (a) True color image. (b) Corresponding IV image. (C) Corresponding CSDI image. (Right panel) HICO image
+acquired over Samoa on October 2, 2010 (an image size of 260 X 260 pixels). (d) True color image. (e) Corresponding IV image. (f) Corresponding CSDI image.
+The Clouds are shown in White on both CSDI and IV images, the shadows are shown in red on the CSDI images and in slightly cooler color on the IV image, and
+the sunlit regions are shown in blue on the CSDI images and in warmer color on the IV images. The true color, IV, and CSDI images agree pretty well. The Cloud
+shadows are Clearly seen in red structures adjacent to the White clouds on the CSDI images. The shape of the Cloud shadow particularly for the isolated Cloud
+Closely follows that of the Cloud, as expected.
+
+Proper Cloud masking is necessary for the CSDI approach to is masked properly, the detected shadow and sunlit regions
+perform well. Table I shows the impact of the Cloud masking agree very well With the corresponding red green blue and IV
+on the image shown in Fig. 2. This analysis was performed images. However, When Cloud is undermasked, homogeneity
+using the proposed CSDI threshold (CSDI <2 0.96) and a 128 within the ASB does not hold true around Cloud regions since
+X 128 ASB since these two parameters gave the best results. unmasked Cloud has signiﬁcantly higher radiance than the sunlit
+A band ratio between HICO band 35 (548 nm) and band 70 or shadow pixels. Thus, false results can be expected, as can be
+(748 nm) was used for the Cloud masking Where the ratio less seen in Table I, Where true shadow pixels are 4.38% of the total
+than or equal to 3 masks the Cloud properly While 2.8 and 3.2 pixels but, because of the undermasking 0f the Cloud, 5.11% of
+undermasks and overmasks the Cloud, respectively. When Cloud the pixels are identiﬁed as shadowed pixels. On the other hand,
+
+"
+"7","738 IEEE TRANSACTIONS ON GEOSCIENCE AND REMOTE SENSING, VOL. 51, NO. 2, FEBRUARY 2013
+a ‘
+Pagan (nuanl
+- ,, F - ' ‘ ,~. = r ‘ - Q a
+{{hb 5.. 4... §“ 1 g {S B \ .3 . ‘, : ‘11.
+- - w’ ' . .3 i .9. . .3 n \. -.
+“ ‘_* -_ ‘ “ "" .Q g. .- 1* - . .
+""- § 1' . § 1‘ ‘ 5 ‘ ’ “ . .‘ s
+N g I' . -‘.. . O . i '3 ‘ . o: o ‘ ‘ ~ 0
+; ‘ .9 ' ‘
+Q ' ‘ . \ . ,'
+v- ;- - ' V O ' . 3 ’ ;‘ ~ Q
+. o _ . , “o i. . a
+' - ‘- - : ' ‘ d‘ d? ”""3 ' “
+- - ‘ o , ‘5 '. b. '
+-. - . ... .0
+‘ ""a - i - . s. .~ "" 3
+.- 0* __ ‘é- 'f ‘ - - n’ ‘- -- #3 .
+. _ _- r- ' -. - g"") _ 3°. 0 Q r' - v
+-' é _, u.‘ ' o. . Q -.."" - . ‘§ .
+n. _‘ . - 's . ‘ b’. .i V - ‘b "" , ’ . '
+- -. . 33.3. - ,. -. v;- .. . ,. -.
+(21)
+1V ' i ’3’ .1. Ti“ [,géj71i,” , > 7 ""'7 H ' V . '
+. - i} '_ $5,291 '-| g: 7"",; 4 17““ ,. ‘4 ‘7 x ' . ‘
+-- i ' I (3-; E I: ' ‘ g ‘ ‘. I ‘ . _ _
+' ‘ "" >1*’~'-**‘4‘1‘”*'i‘;.. ~ - '
+f"": 5 """"3”” 2' ,4 1
+r _ i? ‘ 1 .. '14 * ‘ _ ,1? x * ‘ , 7 ,
+t; v. IJ . £4 L. ’ r .
+f . * (f ""
+ﬂu_ . \- ,5“ “‘ _‘ . ‘1 4‘ V
+.‘b 44/. ,,'— ‘ -. > I’ .‘ _ ~11""
+, .. u. ‘L ,: ‘ I: ‘r', ‘ , _ -r“ U
+,, 1- , 7, 7 ., 5 “""1 ""1""” s ' i I
+(b)
+o- ‘ 1—— .” V; - .. .“ I ' -. 3P ' d
+CSDI , - . - 9.0 ~ - - .,_ . ‘ ' i D i, ‘ ‘f‘iarf'o ‘ ‘5? : ‘6 . . Q
+* ..‘ '- ' V. - .‘ ‘9 ""r . 4'. 3‘ S‘; 3. ' 5 OK.- .
+scg. -""""~;.'*~ , v“ , e. , ' ’ .7 .- o , . I . \3 P .
+-C‘ k~. qrt ,\ “ 2""».1""! Q '1 ﬂ.\
+. ' ""(' ‘ 9'- I "" 5. - o. ‘
+x _ ~ ‘ .- 1. ‘ '. t?‘ w -‘s' - £.' 1 I- . .3: u ‘ 3. t
+. 1“. , . :3. a . “ A '1. '- l '.‘ ' ‘ . Q ~?.‘* ."" a
+*. ‘1 2.- - _ “‘7""; t?"" _ ‘-. 3.5 -' ""'9.- 1.’. ~ ° ‘ . ‘3 .
+. -- - ' . 7 . ' ’ Q3 3 3"" .""5 i ,9“
+f‘ - o ' ‘ .- § ‘ 9 -’ 1 z . ﬂ
+; - : ,1.-- ﬂaw“ y -
+""-3. _‘ -- ' h"" .. V‘¢'-' v, ' ’ -
+,‘w “. .-- - 7:. ' \\ ‘h' ,‘s-U ‘é; .‘ - é
+“ ‘a ‘ i J ' ‘ ' ‘
+_V- I T‘0,.~:;-.:. m .: ‘ ’3t‘j""‘é- o. 9 "" '( o"". , ‘
+. ~ . ”-9.... ‘1: - .- é‘v 5.51935 '.' ' .a 9' ﬁ’ "" - ‘ . "" ""
+: =* .~ «‘23:... '1 .wt . ‘ 1.. . .
+._~. .""v“- _ :1; '1 -‘b‘~ ~- _ ‘ f. -a‘ . - a, . ‘0' f :'
+(C)
+Fig. 5. Examples of relatively larger Cloud shadow detection using the CSDI technique. (Left panel) HICO image acquired over Pagan on September 26, 2010
+(an image size of 380 X 635 pixels). (21) True color image. (b) Corresponding IV image. (C) Corresponding CSDI image. (Right panel) HICO image acquired over
+Guam on November 11, 2009 (an image size of 275 X 275 pixels). (d) True color image. (e) Corresponding IV image. (f) Corresponding CSDI image. The Clouds
+are shown in White on both CSDI and IV images, the shadows are shown in red on the CSDI images and in slightly cooler color on the IV images, and the sunny
+regions are shown in blue on the CSDI image and in slightly warmer color on the IV images. The true color, IV, and CSDI images agree pretty well. The Cloud
+shadows are Clearly seen in red structures adjacent to the White clouds on the CSDI images. The shape of the Cloud shadow particularly for the isolated Cloud
+Closely follows that of the Cloud, as expected.
+if Cloudis overmasked, CSDIidentiﬁes only 2.52% of the pixels Examples of shadow detection With the CSDI method are
+as shadowed pixels. This is because the rest of the shadowed shown in Figs. 4 and 5. Since larger ASBs have little impact
+pixels are removed With the Cloud masking. However, those on smaller shadows and works better for larger shadows, a
+2.52% pixels are from the true shadow region. There is no 128 X 128 ASB was Chosen for these images (Figs. 4 and
+false detection With the overmasking 0f the Cloud, unlike the 5). Fig. 4 (left panel) shows the HICO image acquired over
+undermasking, but only portions of the shadows are detected. Virgin Islands on December 20, 2009 (an image size of 270
+This is because homogeneity within the ASB remains true with X 400 pixels), Where Fig. 4(a) shows the true color image,
+overmasking 0f the Cloud. Fig. 4(b) shows the corresponding IV image, and Fig. 4(C)
+
+"
+"8","AMIN et al.: OPTICAL ALGORITHM FOR CLOUD SHADOW DETECTION OVER WATER 739
+shows the corresponding CSDI image. The right panel of Fig. 4 shadow pixels appear slightly dimmer in the IV image than
+is another HICO image acquired over Samoa 011 October 2, the neighboring sunlit pixels, as can be seen in Fig. 4(b) and
+2010 (an image size of 260 X 260 pixels), where Fig. 4(d) (e) and Fig. 5(b) and (e). The CSDI may also give spurious
+shows the true color image, Fig. 4(e) shows the corresponding results in nonhomogeneous turbid or shallow waters, since
+IV image, and Fig. 4(f) shows the corresponding CSDI image. nonhomogeneity Within the ASB may increase or decrease the
+Similarly, Fig. 5 left panel shows a HICO image acquired over mean values [denominator of (4)]. Thus, the CSDI method is
+Pagan on September 26, 2010 (an image size of 380 X 635 not intended for use in nonhomogeneous waters. However, like
+pixels), Where Fig. 5(a) shows the true color image, Fig. 5(b) the edge pixels, the IV image can be used to Visually identify
+shows the corresponding IV image, and Fig. 5(C) shows the the shadow regions in these waters.
+corresponding CSDI image. The right panel of Fig. 5 shows one
+more HICO image acquired over Guam on November 11, 2009
+. . . . VI. CONCLUSION
+
+(an image Size of 275 X 275 pixels), Where Fig. 5(d) shows the
+true color image, Fig. 5 (e) ShOWS the corresponding 1V image, A Cloud shadow—detection technique (CSDI) has been devel—
+and Fig. 5(f) ShOWS the 001T esponding CSDI image. The ClOUdS oped and applied to HICO data collected from various locations
+are shown in white on both CSDI and 1V images, while the to isolate shadowed pixels. The shapes of the Clouds and Cloud
+shadows are ShOWIl in red Oh the CSDI images and in slightly shadows observed in the CSDI images Closely resemble those
+cooler color compared to the neighboring sunlit region on the of Clouds and Cloud shadows in the corresponding true color
+IV images. The SllIllit regions are Shown in blue on the CSDI and IV images, The agreement between the true c0101"", IV, and
+images and in slightly warmer color compared t0 the adjacent CSDI images is very reasonable over open ocean. This suggests
+shadowed regions on the IV images. The true color, IV, and the potential of the Cloud shadow detection using the proposed
+CSDI images agree reasonably well in both Figs. 4 and 5. The technique which only uses the top—of—the—atmosphere optical
+ClOud shadows are Clearly S6611 111 red structures adjacent t0 the readings of the spaceborne 01‘ airborne imagers. Although the
+white CIOUdS Oh the CSDI images. A180, the shape 0f the CIOUd proposed CSDI threshold works reasonably well on the selected
+shadow particularly for the isolated Cloud Closely follows that HICO images, further studies are necessary to ﬁne tune the
+0f the cloud, as eXpected, which reconﬁrms the potential of the threshold and the selection of Optimal ASB size based on image
+CSDI method. scene content for automated processing.
+
+The CSDI method has several advantages over geometry—
+based [25], [26].or reﬂectance—threshold—baseei techniques [16]. REFERENCE S
+It does not require any thermal or short—wave infrared Channels _ _
+
+h. h t 1 t 1 Th CSDI [1] A. S. Belward and C. R. Valenzuela, Remote Sensmg and Geographlcal
+W 1C 31:6 n0 '3' ways pI‘CSCIl .011 ocean CO 01‘ SCHSOI‘S. . 6 Information System for Resource Management in Developing Countries.
+method is entirely based on V1s1b1e Channels, the most important Boston, MA: Kluwer, 1991.
+spectral region for ocean color studies, which always eXist [2] P. M. Dare, “Shadowanalys1s1nh1gh—res01ut10nsatell1te1magery0furban
+
+. . areas,” Photogramm. Eng. Remote Sens., V01. 71, n0. 2, pp. 169—177,
+on ocean color sensors. Although angular (solar and View1ng) 2005.
+information can be acquired from the satellite sensors, it is still [3] J . J . Simpson and J . R. Stitt, “A procedure for the detection and removal of
+a Challenge to estimate Cloud vertical height accurately from cloud shadow from AVHRR data overland,”IEEE Trans. Geoscz. Remote
+ll't S h th M d t R Sens, V01. 36, n0. 3, pp. 880—897, May 1998.
+sat? 1 e 8611.801‘8' ome 86.118018, SllC as . e O era 6 6.80"" [4] R. Amin, J. Zhou, A. Gilerson, B. Gross, F. Moshary, and S. Ahmed,
+1ut10n Imaging Spectroradiometer, can estimate Cloud vertical “Novel Optical techniques for detecting and Classifying toxic dinoﬂagel—
+height; however, they are not very reliable [33]. Nonetheless, late Karema brews blooms us1ng satelhte 1magery,” Opt. Exp., V01. 17,
+1 d t h th b'l' t t t' 110. 11, pp. 9126—9144, May 2009.
+mOSt ocean CO 91‘ SCHS.OI‘S 0 n0 ave e capa 1 1 y 0 CS 1' [5] R. Amin, A. Gilerson, J. Zhou,B.Gross, F. Moshary, and S.Ahmed, “Im—
+mate Cloud VCI‘tlcal helghts. Thus, a geometry—based approach pacts of atmospheric corrections 0n algal bloom detection techniques,” in
+is not appropriate for these sensors. On the other hand, the Proc'89thAMSAmV-Meetmgtphoemx’AZ’Jan'11‘15’2098' _
+CSDI h d d . . . f 1 d . 1 [6] K. L. Carder, P. Re1nersman, and R. F. Chen, “AVIRIS cal1brat10n us—
+. met 0 OBS nOt requn‘eény estltnatlont) C Du vertica ing the cloud shadow method,” in Proc. Summ. 4th Annu. JPL Air-
+heights or even any angular information. It is based on the borne Geosci. Workshop, R. 0. Green, Ed., 1992, V01. 1, pp. 26—28, JPL
+top—of—the—atmosphere readings of the spaceborne or airborne Pllbhcatlon 92'” _
+S. . . b (1 th t t 'th t [7] Z. P. Lee, B. Casey, R. Arnone, A. We1demann, R. Parsons, M. J. Montes,
+863801” S: mce It IS 3'86 on 6 rue méasuremen W1 011 any B. Gao, W. Goode, C. 0. Davis, and J. Dye, “Water and bottom properties
+estimation, the detected shadow locations are more prec1se. of a coastal environment derived from Hyperion data measured from the
+Furthermore, the CSDI is relatively easy to use and should EO-1spacecraft platform,” J. Appl. Remote Se‘I‘QS.,V01. 1,p. 011502, 2007.
+1) f h th t b d h . 't . [8] P. Re1nersman, K. L. Carder, and F. R. Chen, Satelhte—sensor cal1brat10n
+
+e aSter t an. e geome ry' €186 approac Slnce 1 reqmres veriﬁcation With the cloud shadow method,” Appl. Opt, V01. 37, no. 24,
+less computation. Moreover, Since the CSDI method uses the pp. 5541—5549, Aug. 1998.
+top—of—atmosphere radiance measured in raw digital counts, the [9] R' T MCNldery J' A'_ song, and S- Q' Kldder’ “1453111111399“ 0f GOES""
+
+h d .11 {11 k 11 'th th 'th h. h der1ved solar 1ns01at10n 1nt0 a mesoscale model for stud1es of cloud
+met 9 “fl 5} Wf” WC CV69 W1 9 sensors W1 lg shading effects,” Int. J. Remote Sens., v01. 16, no. 12, pp. 2207—2231,
+radiometric calibration errors, unlike the reﬂectance—threshold— 1995.
+based methods [16]. [10] A. Lilptlon, “Clouil shadling retrieval 3n]; assi$ilatilgn in a :atleélite—moilel
+
+. cou e mesosca e ana s1s s s em, on. ea. 612., V0. , n0. ,
+The CSDI Cloud shadow—detection approach has. some draw— pp.13062—3081, 1993. y y
+backs. It cannot detect shadows in the edge pixels of the [11] C. M. Gurney, “The use of contextual information to detect cumulus
+acquired satellite images, since an ASB cannot be selected clouds and cloud shadows 1n Landsat data,” Int. J. Remote Sens., V01. 3,
+d h . 1 H b th IV n0. 1, pp. 51—62, 1982.
+.Centere OIit ese plxe S"" OWCVCI’ an O .SCI‘VCI‘ can.use e [12] T. Berendes, S. K. Sengupta, R. M. Welch, B. A. Wielicki, and M. Navar,
+image to Visually identify the shadows in those pixels, s1nce “Cumulus Cloud base height estimation from high spatial resolution
+
+"
+"9","740 IEEE TRANSACTIONS ON GEOSCIENCE AND REMOTE SENSING, VOL. 51, NO. 2, FEBRUARY 2013
+Landsat data: A Hough transform approach,” IEEE Trans. Geosci. Remote [34] R. Richter and A. Muller, “De—shadowing 0f satellite/airborne imagery,”
+Sens., V01. 30, n0. 3, pp. 430—443, May 1992. Int. J. Remote Sens., V01. 26, no. 15, pp. 3137—3148, 2005.
+
+[13] J. J. Simpson, T. McIntire, Z. Jin, and J. R. Stitt, “Improved cloud [35] M. D.Lewis,R.W. G0uld,R.A. Arnone,P.E. Lyon,P. M.Martin01ich,
+height estimation under arbitrary Viewing and illumination conditions R. Vaughan, A. Lawson, T. Scardino, W. Hou, W. Snyder, R. Lucke,
+using AVHRR data,” Remote Sens. Environ, V01. 72, n0. 1, pp. 95—110, M. Carson, M. Montes, and C. Davis, “The Hyperspectral Imager for the
+Apr. 2000. Coastal Ocean (HICO): Sensor and data processing overview,” in Proc.
+
+[14] J . Cihlar and J . Howarth, “Detection and removal of cloud contamination IEEE Oceans, Biloxi, MS, Oct. 26—29, 2009, pp. 1—9.
+from AVHRR images,” IEEE Trans. Geos. Remote Sens., V01. 32, n0. 3, [36] R. L. Lucke, M. Corson, N. R. McGlothlin, S. D. Butcher, D. L. Wood,
+pp. 583—589, May 1994. D. R. Korwan, R. R. Li, W. A. Snyder, C. 0. Davis, and D. T. Chen,
+
+[15] K. V. Khlopenkov and A. P. Trishchenko, “SPARC: New cloud, snow, “The Hyperspectral Imager for the Coastal Ocean (HICO): Instrument
+cloud shadow detection scheme for historical 1—km AVHHR data over description and ﬁrst images,” Appl. Opt., V01. 50, no. 11, pp. 1501—1516,
+Canada,” J. Atmos. Ocean. Technol., V01. 24, n0. 3, pp. 322—343, Apr. 2011.
+
+Mar. 2007. [37] R. Amin, R. Gould, W. Hou, Z. Lee, and R. Arnone, “Automated detection
+
+[16] S. A. Ackerman, K. I. Strabala, P. Menzel, R. A. Frey, C. C. Moeller, and removal of cloud shadows on HICO images,” in Proc. SPIE Defense,
+and L. E. Gumley, “Discriminating clear sky from clouds with MODIS,” Secur. Sens., Orlando, FL, Apr. 26—27, 2011.
+
+J. Geophys. Res., vol. 103, no. D24, pp. 32141—32157,Dec. 1998.
+
+[17] W. B. Rossow and L. C. Garder, “Cloud detection using satellite measure—
+ments of infrared and Visible radiances for ISCCP,” J. Clim., V01. 6, no. 12,
+pp. 2341—2369, 1993.
+
+[18] S. Platnick, M. D. King, S. A. Ackerman, W. P. Menzel, B. A. Baum,
+
+J . C. Riedi, and R. A. Frey, “The MODIS cloud products: Algorithms and . , 7 Ruhul Amin was born in Sylhet, Bangladesh. He re—
+examples from Terra,” IEEE Trans. Geosci. Remote Sens., V01. 41, n0. 2, ‘ ceived the BE, degree in computer engineering and
+pp. 459—473, Feb. 2003. f the ME. degree in electrical engineering from The
+
+[19] M. Derrien, B. Farki, L. Harang, H. LeGleau, A. Noyalet, D. Pochic, b City College of New York, New York, in 2005 and
+and A. Sairouni, “Automatic cloud detection applied to NOAA—11/ ~ * i ‘ ’ 2008, respectively, and the M.Phil. and Ph.D. degrees
+AVHRR imagery,” Remote Sens. Environ, V01. 46, n0. 3, pp. 246—267, “ , . in electrical engineering from The City University
+Dec. 1993. of New York, New York, both in 2008 and 2009,
+
+[20] J . F. Cayula and P. Cornillon, “Cloud detection from a sequence of SST respectively.
+images,” RemOte Sens. Environ, V01. 55 , n0. 1, pp. 80—88, 1996. Since 2009, he has been a Research Scientist with
+
+[21] R. T. Pinker, X. Li, W. Meng, and E. A. Yegorova, “Toward improved - the US, Naval Research Laboratory, Stennis Space
+satellite estimates of short—wave radiative ﬂuxes—Focus on cloud detec— Center, MS, He has developed optical algorithms to
+tion over SHOW: 2. Results,” J- Geophys. Res» V01. 112,13- D09204, 2007- detect and classify harmful algal blooms from space. His current research
+doi:10.1029/2005JD006699. interests include optical algorithm development, atmospheric corrections, cloud
+
+[22] G. Wind, S. Plantnick, M. D. King, P. A. Hubanks, M. J. PaVOIOIliS, shadows, ﬂuorescence, and harmful algal blooms,
+
+A. K. Heidinger, P. Yang, and B. A. Baum, “Multilayer cloud detection
+with the MODIS near—infrared water vapor absorption band,” J. Appl.
+Meteorol. Clim., V01. 49, no. 11, pp. 2315—2333, NOV. 2010.
+
+[23] P. Y. Chen, R. Srinivasan, G. Fedosejevs, and B. Narasimhan, “An auto—
+
+mated cloud detection method for daily NOAA—14 AVHRR data for Texas,
+” . . . . . . — 2 2. .
+USA’ Int J Remote Seniwol 23’ n0 15’ pp 2939 2950’ 00 ,_ . Richard Gould recelved the B.S. degree (Oceanog—
+
+[24] B. Wang and A. Ono, Automated detect10n and removal of clouds . . . . .
+
+- - ,, ﬁwm raphy, Biological Sect10n) from Honda Instltute of
+and the1r shadows from Landsat TM lmages, IEICE Trans. Inf. Syst., .3.» (j. .
+"" Technology, Melbourne, 1n 1981 and the Ph.D. de—
+vol. E82—D, n0. 2, pp. 453—460, Feb. 1999. 7.1 4 A O h B' 1 . IS t' f T
+[25] J . J . Simpson, Z. Jin, and J . R. Stitt, “Cloud shadow detection under arbi— ‘ . "" gree ( €6.31”? ap y, 10 Ogle? ec 1011) mm exas
+. . . . . . . ,, . ‘ . . A&M Univer31ty, College Stat10n,1n 1987.
+trary View1ng and illuminatlon c0nd1t10ns, IEEE Trans. Geoscz. Remote - . - . .
+- ~ , He has over 25 years of oceanographlc eXperlence
+Sens., V01. 38, n0. 2, pp. 972—976, Mar. 2000. 1"".I,‘11§ . . h t 1 kt 1 / t t' d
+[26] K.D.Hutchison,R.L.Mahoney,E.F.Verm0te,T.J.K0pp,J.M.Jackson, 'f‘g: , in p y 0p an 011.6“) ogy sys ema 1C8 an 0063.“
+- - .. . . ‘ c ‘ - color remote sensmg. He has developed and vali—
+A. Se1, and B. D. Ilsager, A geometry—based approach to 1dent1fy— d t d It t 1 d h t 1 t 1
+ing cloud shadows in the VIIRS cloud mask algorithm for NPOESS,” a e new mu 1.81) 6C ra an yperspeera C038 21
+ocean color algorlthms, and he has tran31t10ned satel—
+J. Atmos. Ocean. Technol., V01. 26, n0. 7, pp. 1388—1397, Jul. 2009. . .
+- - .. - - . 11te products to both the U.S. Navy and Natlonal
+[27] J . L1u, T. Fang, and D. L1, Shadow detect10n 1n remotely sensed lmages . . . . . .
+- - ,, . Aeronautics and Space Admlmstratlon. He 1S currently w1th the U.S. Naval
+based on self—adaptlve feature selectlon, IEEE Trans. Geoscz. Remote . .
+Research Laboratory, Stenms Space Center, MS, where he manages the B10—
+Sens., V01. 49, no. 12, pp. 5092—5103, Dec. 2011. O t' 1/Ph . 1P (1 R t S . S t' H' t h
+[28] A. Makarau, R. Richter, R. Muller, and P. Reinartz, “Adaptive shadow . p 1C3 . ysma rocesses an. emo e ensmg 6C 10n.. IS curren Tessa.“
+- - - ,, . interests include satelhte algonthm development, uncertalnty analyses, optlcal
+detect10n usmg a blackbody radlator model, IEEE Trans. Geoscz. Remote . . . .
+water mass cla331ﬁcat10n, coastal hyp0X1a, surface/subsurface llnkages, and
+Sens., V01. 49, n0. 6, pp. 2049—2059, Jun. 2011. h . 1/b' t' 1 1.
+
+[29] K. Chung, Y. Lin, and Y. Huang, “Efﬁcient shadow detection of color p ysma IO_Op 1C3 coup mg.
+aerial images based on successive thresholding scheme,” IEEE Trans.
+Geosci. Remote Sens., V01. 47, n0. 2, pp. 671—682, Feb. 2009.
+
+[30] V. J . D. Tsai, “A comparative study on shadow compensation of color
+aerial images in invariant color models,” IEEE Trans. Geosci. Remote
+Sens., V01. 44, n0. 6, pp. 1661—1671,Jun. 2006.
+
+[31] S. A. Ackerman, K. I. Strabala, P. Menzel, R. A. Frey, C. C. Moeller, . ﬁx. -7 A . ""T Weilin “Will” Hou received the Ph.D. degree from
+L. E. Gumley, B. Baum, S. W. Seemann, and H. Zhang, Discriminating W v-.-.'-r the University of South Florida, Tampa, in 1997.
+Clear—Sky From Clouds With MODIS Algorithm Theoretical Basis Doc- 1 1 He is currently an Oceanographer with the U.S.
+ument. Madison, WI: Coop. Inst. Meteorol. Satell. Stud., 2006, p. 129, ' _ -' ,‘ Naval Research Laboratory, Stennis Space Center,
+MOD35 verion 5.0. ' h - f - MS, where he manages the Hydro Optics Sensors
+
+[32] G. L. Stephens, D. G. Vane, R. J . Boain, G. G. Mace, K. Sassen, Z. Wang, ’ ' _ and Systems Section. His research interests include
+A. J . Illingworth, E.J . O’Connor, W. B. Rossow, S. L. Durden, SD. Miller, J "" _ ocean optics, underwater imaging, optical turbu—
+R. T. Austin, A. Benedetti, and C. Mitrescu, “The CloudSat mission and ' ‘ ‘. i lence, remote sensing including light detection and
+the A—train: A new dimension of space—based observations of clouds and ,9, ,- i _ ranging, numerical simulation, data management,
+precipitation,” Bull. Amer. Meteorol. Soc, vol. 83, pp. 1771—1790, 2002. t .. '3, ‘ f. -_ _‘ instrumentation, and platforms including unmanned
+
+[33] Y. Luo, A. P. Trishchenko, and K. V. Khlopenkov, “Developing clear— aerial and underwater vehicles.
+sky, cloud and cloud shadow mask for producing clear—sky composites at Dr. Hou is the Editor of the Proceedings of the Society of Photo-Optical
+250—meter spatialresolution for the seven MODIS land bands over Canada Instrumentation Engineers (SPIE) Volumes 8372, 8030, 7678, and 7317. He
+and North America,” Remote Sens. Environ, vol. 112, no. 12, pp. 4167— helps SPIE organize the Ocean Sensing and Monitoring Conference as part of
+4185, 2008. SPIE Defense and Security Symposium.
+
+"
+"10","AMIN et al.: OPTICAL ALGORITHM FOR CLOUD SHADOW DETECTION OVER WATER 741
+Robert Arnone received the B.S. degree in geol— Zhongping Lee received B.S. degree in physics from
+ogy from Kent State University, Kent, in 1971 and Sichuan University, Chengdu, China, in 1984, the
+
+3 ~ the M.S. degree in geophysical sciences from the M.S. degree in physics from the Ocean University
+/ % Georgia Institute of Technology, Atlanta, in 1974. -‘ l of China, Qingdao, China, and the Ph.D. degree
+5? He is currently with the U.S. Naval Research 1- from the University of South F10rida(USF),Tampa,
+' “‘ “ Laboratory (NRL), Stennis Space Center, MS, where in 1994.
+""4 he leads the Ocean Processes Branch of over He stayed in USF as a Postdoctoral Researcher
+h . 40 scientists/technicians and staff of physical, bio— and aResearch Associate after his graduation, joined
+4 logical, and optical and remote sensing ocean per— the U.S Naval Research Laboratory in 2002, and
+sonnel specializing in coupled dynamic processes is currently a professor in the Department of Envi—
+(biophysical modeling), mesoscale and ﬁne—scale ronmental, Earth and Ocean Sciences, University of
+physical processes (marginal seas, wave dynamics, and coastal processes), Massachusetts. He has conducted studies in both basic and applied aspects
+remote sensing and ocean optics (naval electro optical systems, hyperspectral of ocean optics and ocean color remote sensing and published extensively on
+algorithms, and satellite applications), and marine molecular processes. He the fundamentals of ocean optics and algorithm developments for ocean color
+leads research in basic and exploratory research and applied oceanography for remote sensing.
+
+the U.S. Navy and federal agencies of the National Oceanic and Atmospheric
+
+Administration (NCAA) and National Aeronautics and Space Administration
+
+(NASA). He is currently leading the Ocean National Calibration/Validation
+
+efforts for the satellite ocean Joint Polar Satellite System for NASA, NCAA,
+
+and the U.S. Navy. He is coordinating the NRL hyperspectral satellite Hy—
+
+perspectral Imaging of the Coastal Ocean, which was successfully launched
+
+to the International Space Station (in August 2009). He serves on the Sci—
+
+ence Teams for NASA, NOAA, the Environmental Protection Agency, and
+
+the U.S. Navy for developing future satellite systems and for establishing
+
+policy for ocean and coastal research. He has been an Adjunct Faculty
+
+Member with the Marine Science Department, The University of Southern
+
+Mississippi (USM), Hattiesburg, since 1989 and the University of South
+
+Alabama, and serves 011 graduate student committees (USM and Rosenstiel
+
+School of Marine and Atmospheric Sciences). He has developed bio—optical
+
+algorithms for satellites, which are applied to ecological forecasting mod—
+
+els. He has received U.S. Department of Navy patents (1980). He has over
+
+90 scientiﬁc publications and more than 250 presentations. His speciﬁc exper—
+
+tise is in coupling biological, optical, and physical processes using ocean color
+
+satellite and ocean models.
+
+Mr. Arnone was the recipient of awards for naval honors for “science to
+
+operations” transitions and NRL Alan Berman publication awards. He has
+
+received NASA honors for astronaut training programs, U.S. Department of
+
+Navy honors, and NASA honors for Shuttle Astronaut Training program. He
+
+was also the recipient of the Navy Meritorious Civilian Service Award in 2008,
+
+U.S. Navy Employee of the Year in 1998, Navy Royalty Transition Award
+
+for Automated Processing in 2002, Naval Oceanographic and Atmospheric
+
+Research Laboratory Paper Award in 1992, and NRL’s Alan Berman Award
+
+Division award for best paper in 1998, 2002, and 2008.
+
+"

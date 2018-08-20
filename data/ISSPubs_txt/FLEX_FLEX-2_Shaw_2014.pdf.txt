@@ -1,0 +1,641 @@
+"","x"
+"1","Microgravity Sci. Technol.
+DOI 10.1007/s12217—014—9377—X
+ORIGINAL ARTICLE
+ISS Droplet Combustion Experiments - Uncertainties
+in Droplet Sizes and Burning Rates
+Benjamin D. Shaw
+Received: 29 October 2013 / Accepted: 4 June 2014
+© Springer Science+Business Media Dordrecht 2014
+Abstract Methodologies are developed for evaluating G kernel in Eq. (3)
+uncertainties in droplet size measurements and burnin g rates h bandwidth
+for droplet combustion experiments that have been per— H height of the camera field of View
+formed on the International Space Station. Different uncer— k coverage factor
+tainty sources are considered and propagated into the com— K droplet burning rate (2 —dY/dt = — d(d2)/dt)
+bined standard uncertainties Via the Taylor series method. 11 total number of points in a data set
+The local polynomial method is used to provide estimates of N total number of camera pixels
+instantaneous burning rates. Results from analyses of non— N Pi number of pixels comprising a droplet image
+sooting (methanol) 0r lightly sooting (heptane) droplets as p polynomial order
+well as moderately sooting (decane/propylbenzene) droplets Sr type A standard uncertainty for the generic quantity
+are presented. Ninety—five percent expanded uncertain— F
+ties in droplet diameters and burning rates are typically Syl. y]. covariance terms in Eq. (28)
+about 0.1 mm and 0.005 mmZ/s, respectively, for methanol t time
+and heptane droplets and 0.1 mm and 0.02 mmZ/s for ur combined standard uncertainty for the generic
+decane/propylbenzene droplets, though uncertainties can be quantity F
+larger during ignition and extinction events. Up expanded uncertainty for the generic quantity F
+W width of the camera field of View
+Keywords Droplet - Combustion - International space [W] matrix defined after Eq. (6)
+station - Uncertainty [X] matrix defined after Eq. (6)
+Y square of the equivalent droplet diameter
+[Y] column vector defined after Eq. (6)
+[Z] matrix defined by Eq. (6)
+N omenclature ,Bj fitting coefficient in Eq. (3)
+,3 Optimized fitting coefficient
+Ad projected area Of a droplet 6N1)i the number of pixels in a strip of thickness goi that
+Ap area of an individual pixel bounds the droplet edge
+by type B standard uncertainty for the generic quantity gpi the thickness of a strip of pixels that bounds the
+F droplet edge
+inYj covariance terms in Eq. (27)
+(1 equivalent droplet diameter
+E variable defined in Eq. (3) Subscripts
+W— i image ”i” or matrix element
+University of California, Davis, CA 95616 USA gd grayscale discretizatiOIl
+e—mail: bdshaW@quaVis.edu F generic variable
+Published online: 19 June 2014 @ Springer
+
+"
+"2","Microgravity Sci. Technol.
+j summation index or matriX element Other phenomena that depend on the instantaneous droplet
+sd spatial discretization diameter are the ﬂame diameter and the importance of radi—
+ant heat losses from the ﬂame zone (Marchese and Dryer
+1997).
+Introduction Various analytical and computational models have been
+proposed to predict droplet burning rates (Marchese and
+This research is in support of two experiment campaigns Dryer 1997; Williams 1985; Sirignano 2010; Law 2006).
+performed onboard the International Space Station (188), These models may be employed for different purposes,
+the Droplet Flame Extinguishment in Microgravity (FLEX) e.g., for modeling combustion of slowly moving individual
+and the Fundamental Studies in Droplet Combustion and droplets in a spray ﬂame, for evaluation of Chemical kinetic
+Flame Extinguishment in Microgravity (FLEX—2) experi— data to predict ﬂame extinction, or to provide fundamental
+ments. The FLEX and FLEX—2 research efforts use reduced— information on reduced—gravity combustion in the presence
+gravity droplet combustion, with the resulting simplified of ﬂame suppressants. Such models will ideally be assessed
+(nominally spherical) geometry, to investigate ﬂammability by comparison with accurate experimental data such as from
+and extinction under conditions relevant to space eXplo— the FLEX and FLEX—2 experiments or drop tower experi—
+ration as well as fundamental aspects of condensed—phase ments (e.g., Farouk et a1. 2013; Liu et a1. 2013) enabling
+combustion of fuels. These experiments are designed to pro— the models to provide reliable predictions under situations
+Vide high—fidelity results under tightly controlled conditions where accurate experimental data do not eXist. However,
+that can, for example, be used to validate both detailed and uncertainties that are associated with the experimental data
+simplified combustion models. Data of critical importance need to be assessed so that merits of the models can be
+from these experiments include time variations in droplet determined in a rational manner.
+diameters as well as the negative of the rate that the square The focus of the present manuscript is to develop and
+0f the droplet diameter decreases with time (the s0—called present methodologies that can be employed for calculat—
+buming rate). Accurate measurements of the droplet diam— ing uncertainty estimates of droplet sizes and burning rates
+eter can enable comparison with theories that relate the Obtained from the ISS experiments. These methodologies
+moment of ﬂame extinction t0 the instantaneous droplet size are also used here for analyses of representative FLEX and
+(Law 1975; Zhang et a1. 1996; Farouk and Dryer 2012). FLEX—2 data sets. The data that are evaluated here were
+Fig. 1 Schematic of the
+Multi—user Droplet Combustion
+""""ﬁ'—_,_—F¢- -
+Apparatus (MDCA) :‘Q‘L‘x‘F- ——’ﬂ\\<\ ..
+14:15. \ “~ \\-,' ' 0 $50
+,5?” ® \S‘
+[/2 2:;‘1-1‘.‘ ® )ﬁt
+/ 7 7 Fiber Hol der 7 91’
+ﬂ: -- <9) . ,- . @ I- \J
+J. 4/ ’5) (’/\-l I F uel syringe \ ‘3
+/\)::\ o o \’ O O . 7"" ‘ :\:h\\
+K I — n [i [:3 ;- _
+:EII-l— ——I-
+TA! ~- ‘1, 0 Deployment o o
+c ' o v"" needles ° ° °
+|©l oo
+o o o ’00 f . 7 /@
+V Deployment
+L a —‘ ‘ motor I , ,
+o o o ' g _ - ' '
+\Q I gniters ° .-.-.'= 1 \
+\"" \\\‘- © ' -73 -‘xj‘t-Z‘r'
+-\ g .‘t \
+K; ;\ ° /‘:-2~;?
+,p. ,~\_\_ \_ ._\_ “‘qu
+(2° ﬁzﬁw
+@ Springer
+
+"
+"3","Microgravity Sci. Technol.
+Obtained from a previous NASA analysis (Dietrich et a1. ‘
+2013). The data in (Dietrich et a1. 2013) do not include (a)
+detailed estimates of uncertainties.
+
+The work described here will first use the local poly—
+nomial method (Fan and Gubels 1995) to provide curve
+fits for the square of the droplet diameter vs. time. We .
+will then demonstrate how these curve fits can be used for
+evaluation of local (instantaneous) burning rates. We will \k‘
+then evaluate uncertainties for droplet sizes and burning \\
+rates for FLEX and FLEX—2 data sets for droplets com—
+posed of three different fuels, i.e., methanol, n—heptane, and
+a decane/propylbenzene mixture.
+Backlit Droplet Images
+In both the FLEX and FLEX—2 experiments, droplets were (b) V ’ '
+burned within the Multiuser Droplet Combustion Appara— . .
+tus (MDCA) that has been installed on the 188. This facility _ p ' "" , . _ _
+(Fig. 1) (Dietrich et a1. 2013) allows for combustion of either ‘ i '
+free ﬂoating 0r fiber—supported (tethered) droplets inside of ' i
+a pressure Chamber. Initial droplet diameters are generally is
+in the range 2 — 6 mm. The gas composition and pressure ' i ‘ . .
+inside the Chamber are controlled and droplets of differ— ‘ ' .
+ent initial compositions can be burned. The MDCA facility ‘ ' - '.
+allows measurements of droplets and ﬂames Via imaging, . X i .
+soot volume fractions Via laser extinction, radiation emitted ' . .. ‘ -,
+from ﬂames Via radiometers, as well as Chamber temper—
+atures, pressures and compositions. More detailed descrip—
+tions of the experimental apparatus are available (Dietrich
+et a1. 2013). (C)
+
+The images used for droplet sizing are produced by
+collimating the light from a fiber—coupled light emitting
+diode (LED) and then directing this light past a droplet a
+and into a telecentric lens. This lens directs the light into
+a monochrome digital camera (1024 X 1024 pixels). The ’
+collimated light and telecentric lens combination ideally 41¢“!
+produces well—defined shadows of objects on the camera ’. ‘4 ‘3 ""‘A'i
+image sensor array. Similar types of systems are used in ‘$ . .v‘ ?
+machine Vision applications (Webster 1999). '- :w‘i
+
+Representative backlit droplet images are shown in ‘. 5f- ‘—
+Fig. 2. The droplet in Fig. 2a is a fiber—supported (teth— '1""
+ered) methanol droplet while a free (unsupported) hep—
+tane droplet is shown in Fig. 2b. Agglomerated soot
+formed during combustion of this heptane droplet is also
+eVident as the small dark particles located several radii
+from the droplet center. Figure 2C shows an unsupported
+decane/propylbenzene droplet (initially 50% decane by VO1_ Fig. 2 Representative backlit images of burning droplets: a methanol;
+ume). This is a moderately—sooting fuel combination, with b heptane; and c decane/pmpylbenzene
+large soot agglomerates Visible. These agglomerates can
+make it difficult to determine the droplet size, e.g., by methodology for addressing this issue, though we do not
+obscuring the edge, which increases uncertainties in the evaluate uncertainties associated with the approach of Dem—
+measurements. Dembia et a1. (2012) have developed a bia et a1. (2012).
+
+@ Springer
+
+"
+"4","Microgravity Sci. Technol.
+Evaluation of Droplet Sizes and Burning Rates The local polynomial method (Fan and Gubels 1995)
+involves applying least squares theory to Eq. (3) to optimize
+For the purposes of this manuscript, we employ droplet size the ,81 values
+data that were previously obtained by manually specifying A
+grayscale values for the edge pixels during a digital image ,BAO
+analysis (Dietrich et al. 2013). In Dietrich et al. (2013), once ,31
+the droplet edge has been specified, the projected area of [,3] = - (4)
+the droplet, Ad, is determined by summing the areas of all -
+pixels contained within the droplet boundary. The square of A-
+the droplet diameter is calculated using the projected area ,3p
+of the droplet, Ad, which is the blocked region of the col—
+limated beam from the backlight (the ”droplet shadow”). that minimize Eq. (3)’ where‘square brackets denote matri—
+The shadow area is determined as the number of pixels, CBS and ”A” denotes an optimized value. This yields Eq. (5)
+Np, within the droplet shadow multiplied by the area of an A
+individual pixel, AP. The variable AP is determined Via cal— [:8] = [Z] [Y] (5)
+ibration of the imaging system, e.g., by dividing the length where
+and width of the field of View by the number of pixels. _1
+This yields Eq. (1) for the square of the diameter, d, of an [Z] = ([XlT [W] [Xl) [X]T [W] (6)
+equivalent droplet. is a 3 X n matrix with entries Zij. Also, [W] is a diagonal
+d2 = 4N [914 p (1) matrix with entries W11 ; G((t — ti)/h), [X] is a matrix with
+71 the entries Xij 2 (ti — t)J_1, and [Y] 2 [Y1, Y2, Yn]T
+Uncertainties in d2 thus are determined by the uncertain— is a column vector containing the experimental data points.
+ties in Np and Ap- By letting Y1 = (112’ where the subscrip t The estimates for the square of the droplet d1ame2ter and the
+i refers to image i, we can write Eq. (2). The variable Y is instantaneous burning rate K 2 _ dY/dt : _d(d th at the
+employed to simplify later formulae. time t are thus given by Eqs. (7) and (8)'
+n
+YiZ4NPiAP (2) dZZIBOZZZUYj (7)
+7T j=1
+For estimates of burning rates (K) as well as estimates of n
+uncertainties in Y and K, the method of local polynomial K : —,3Al : _ Z 22], Y], (8)
+fitting (Fan and Gubels 1995) was used. The local poly— j=1
+nomial niethod minimizes the objective function shown in The function locpol (Cabrera 2012) in the computer lan—
+Eq. (3.),1.e.,E, whiohrepresents aweighted squared error at guage R (R Core Team 2013), was employed to provide
+a p articular time t’ is minimized. local polynomials for Y as a function of t. Figure 3a shows
+n p 2 t t plots of experimental values of (12 vs. t for a heptane clroplet
+E = Z (Yi _ Z ,Bj (Ii _ 0]) G (17) (3) (Dietrich et al. 2013) as well as the looal polynomial fits
+i=1 j=0 to the data for h = 0.1, 0.5, and 1 s. Differences between
+the local polynomial fits and the data are very small over
+Here, n is the total number of data points, t is the particular the long time scale shown in Fig. 3a. However, when these
+point in time where the fit is being applied, p is the order of same data are Viewed over a smaller time scale, differ—
+the polynomial (we used p = 2, as discussed later), G is the ences between the data and the local polynomial fits become
+kernel, and h is the bandwidth. Equation (3) is minimized by apparent (Fig. 3b). These differences are especially relevant
+finding appropriate (optimized) values for the coefficients when burning rates are estimated from the local polynomial
+,80, ,81, ,82, For these analyses a Gaussian kernel was fits, as described below. The ”dip” in the data in Fig. 3a
+used. The bandwidthh is an adjustable parameter that essen— at about 23 s is because the droplet partially left the field
+tially allows for multiresolution analysis. Small values of h of View (FOV) for a short time, causing d2 to artificially
+will cause the fit to more Closely follow ﬂuctuations in the decrease until the droplet completely returned to the FOV
+data while increasing h will smooth the fit by filtering out at about 28 s, when the droplet size increased. The droplet
+shorter timescale ﬂuctuations in the data. It is noted that partially left the FOV again at about 33—34 s, after which the
+Liu et al. (2013) have used polynomials of various orders data terminate.
+to evaluate burning rates of droplets, they did not evaluate Burning rates (K) are evaluated using Eq. (8). As shown
+uncertainties or employ the local polynomial method. in Fig. 4, burning rate histories show less scatter as h is
+@ Springer
+
+"
+"5","Microgravity Sci. Technol.
+3 (a) g
+‘— ‘9. .. L11.
+0 ‘1‘ M,"" 1‘
+A ‘ X1 1 i
+co oo 1‘"" N
+(E A i 1‘ >1“
+é Nﬂ BFB‘V‘I 11'“ I i 1
+NU Q) E g ’ i 'WH‘ﬁii‘lﬁH I
+g \ ‘
+v ’1 x
+2 VI
+0 5 1o 15 _ 20 25 30 35 O ‘ 'lv‘v‘y‘il""‘v“7’tr
+Time (s) O- \ I
+a \ o 5 10 15 20 25 30 35
+N § 3 Time (s)
+\
+O \ c Fig. 4 Burning rate data for a free heptane droplet calculated using
+3 \ local polynomial curve fits: black line, h = 0.1 s; red line, h = 0.5 s;
+\ green line, h = 1 s
+E \ where SYZ. and byl. are the type A and type B standard
+“E E \ uncertainties for Y1, respectively. Following the Interna—
+""' \ tional Organization of Standardization (ISO) (2008), type A
+\ uncertainties are evaluated using statistical analyses while
+§ \ type B uncertainties are estimated using other methods, i.e.,
+.» °\ by methods other than statistical analysis Of a series of
+8 i \ Observations.
+Based on Eq. (2), byiis evaluated as shown in Eq. (10).
+10.0 10.1 10.2 10.3 10.4 10.5 . . . ,
+Time (5) Equation (10), Wthh estimates Type B standard uncertain—
+Fig. 3 a Droplet size history for a free heptane droplet With local poly— Hes 1n .Yi’ ls Of the standard form that results when the T.ay_
+nomial curve fits; and b same data but over a smaller time scale. The 101‘ series method 13 employed (Internatlonal Organlzatlon
+experimental data are denoted by Circles Of Standardization (ISO) 2008).
+increased. The reason for this is that increasing the band— in = W prl. + 87 bAp + 2 W87
+width smooths the curve fit (Fig. 3b). Figure 4 suggests [9 pl p pl 1:10)
+that h = 0.5 s and h = 1 s appear to provide reasonably NpiAp
+smooth estimates of the burning rate history. The value h 2 Evaluating the derivatives by differentiating Eq. (2) yields
+0.1 s includes short timescale ﬂuctuations in the data, which Eq. (11).
+are likely from noise since rapid ﬂuctuations in K are not b2 [92
+expected in the FLEX and FLEX—2 experiments. [9% : Yiz ( Npi + i + Zpri A12) (11)
+l N 2 A2 N .A
+Pi P Pl P
+Evaluation Of Uncertainties The camera pixel elements are nominally square and the
+average area of an individual pixel is equal to the area of the
+We follow the methodology of the Guide to the Expression camera field Of View (FOV) divided by the total number Of
+of Uncertainty in Measurement (International Organization pixels, N’ 1'6""
+0f Standardization (ISO) 2008) for evaluation of uncertain— WH
+. . . . A p = — (12)
+t1es. The combined standard uncertainty in the square of the N
+droplet diameter fOY an image is given by EQ- (9) where W is the width of the FOV and H is the height of
+2 2 1/2 the FOV. We use the values W = 30.2 :0.1 mm (95%)
+”Yi : (510 + 191(1) (9) and H = 30.3 :0.1 mm (95%) that are from Dietrich et a1.
+@ Springer
+
+"
+"6","Microgravity Sci. Technol.
+(2013). The uncertainties in W and H could arise from pixel This can be reasoned by considering the equivalent radius,
+nonuniformities as well as calibration and Optical errors that R pl"" of a Circle in ”pixel space”, where the pixels are uni—
+lead to apparent pixel nonuniformities. The type B standard formly distributed. If the area of an individual pixel is unity,
+uncertainty for pixel areas is evaluated as shown in Eq. (13). then N Pi = 71R; and 6Npl. % 271Rpi6Rpi. If we set
+1/2
+2 2 6Ri=qb-andn0tethatRi= Ni/JT ,then6Ni%
+b2 — LA” 192 + LA” 192 +2 LA” LA” [9 p i/2 p ( p ) 1/2 p
+Ap _ 8W W 8H H 8W 8H WH 2711/quin1. . We assume that ([7361 + bid) % 6Npi/4,
+(13) leading to Eq. (18).
+After evaluating the derivatives by differentiating Eq. (12), 2 2 ﬂ¢2Np
+b + b R # (18)
+Eq. (13) becomes sd gd 4
+2 A?) 19%; 19% bWH Equation (17) can thus be written as follows.
+[9A =— —+—+2— (14)
+P 4 W2 H 2 WH 2 2
+pri 191419 77 $12
+where we assume that bw = UW/2 = 0.05 mm and N—2 = A—2 + W (19)
+bH = UH/2 = 0.05 mm. The variables UW and UH are Pi p pi
+the expanded uncertainties for W and H, at a 95% confi— Finally we need to evaluate the covariance term
+dence level, respectively. We evaluate the covariance term pri Ap / (Npi AP) in Eq. (11). We assume that this term
+as hWH : hWhH under the assumption that W and H includes only elemental errors that are common between
+share the same elemental error seurce (Coleman and Steele Npi and AP (Coleman and Steele 2009). In the present
+2009), where an elemental error is an error ass001ated w1th context, this involves accounting for inﬂuences of pixel
+a specific (individual) error source such as the linearity of area errors on the number of pixels in the droplet shadow.
+an instrument used for calibrating a length measurement. Because Np.
+Inserting the numerical values for hW’hH’W’ and H into Eq. will scale inversely with AP, we thus model the covariance
+(14) yields the following estimate. term as shown in Eq. (20).
+bA
+—"" = 0.0033 (15) M A bit
+A p —p’ p = _” (20)
+. N p l. A p A2
+The variable N Pi 1”
+will depend on the pixel areas, discretization in spatial coor— Combining Eqs. (11), (17), and (20) yields Eq. (21).
+dinates (i.e., finite pixel sizes) as well as discretization of the 1 2
+light levels sensed by the camera. We thus write Eq. (16), by. bi) 71 $2 /
+l l
+which is based upon typical methods of combining standard 7 = 4A—2 + W (21)
+uncertainties (Coleman and Steele 2009). l p pl
+8 N . 2 The SYZ. terms are evaluated by considering deviations
+bzzvpl. = (87191) 19,241) + bid + bid (16) from the local polynomial curve fit as shown in Eq. (22).
+p The derivation of this equation is available in the literature
+Here, bsd and bgd are the type B standard errors for cam— (Fan and Gubels 1995).
+era spatial and grayscale discretizations, respectively. If we
+assume that the number of pixels scales inversely with the n p . 2
+average pixel area, then Eq. (17) results. Z Y, — Z ,Bj (t,- — 1)] G (ﬁll)
+192 2 2 2 i=1 j=0
+b 2 b S : —
+Npi A b d gd Y i —1
+—N2 = A—zp + #2 + N—2 (17> trace {[W] — [W] [X] ([X]T [W] [X]) [XlT [W]}
+Pi 19 Pi Pi
+We now consider discretization effects, i.e., the effects of (22)
+finite pixel sizes and finite grayscale discretizations. If the The combined standard uncertainty in the burning rate is
+number of pixels comprising the droplet shadow is large, given by Eq. (23).
+then we may consider variations in the variable gpi, which
+we define as the thickness in pixels of a strip that bounds MK : (19% + 51% )1/2 (23)
+the location Of the droplet edge for image i. This variable
+will be inﬂuenced by spatial and grayscale discretizations. The variables SK and bK are the type A and type B standard
+The number 0f pixels, 5Npia 001111413ng a strip 0f thiCk' uncertainties in K, respectively. If we neglect time uncer—
+ness goi at the droplet edge is approximately 2711/ 2051' N 1191/ 2. tainties, i.e., it is assumed that the camera frame rate is
+@ Springer
+
+"
+"7","Microgravity Sci. Technol.
+constant, then these standard uncertainties are evaluated as near the beginning of the droplet history, which is reason—
+follows. able as ignition transients may not have decayed to small
+2 n n 8 K 8 K levels. Uncertainties in Y also.show a small temporary
+[9K 2 Z Z 87 ﬁbyiyj (24) increase near about 16 s, which is when this droplet extin—
+i=1 j=1 ‘ J guished and the burning rate then decreased substantially.
+The uncertainties in K are largest near the beginning of the
+51% = 2n: 2”: 3—K 8—KSYOY (25) droplet history.and also during the extinction period when
+_ _ aYi an ’ J K changes rapidly w1th t1me. Not cons1der1ng the regions
+1:1 J21 where uncertainties are large, i.e., during the ignition and
+The derivatives in Eqs. (24) and (25) are evaluated by extinction periods, representative eXpanded uncertainties for
+differentiating EQ- (8): yielding EQ- (26)- Y and K are UY R 0.2 mm2 and UK R 0.005 mmz/s, for
+a K gm 2 3. Because Y 2 d2, a representative eXpanded uncer—
+8—K- : _Z2i (26) tainty in the droplet diameter d is Ud R 0.1 mm (95%).
+Equations (24) and (25) t hus become as follows It is noted that uncertainties in Y‘are increased by relatiyely
+small amounts during an extinction event. As a result, it is
+reasonable to eXpect that the droplet diameter at extinction
+n n can t icall be determined with an uncertaint of about 0.1
+[9% = Z Z Z2i 221'in Yj (27) mm (3,9135%).y y
+1:1 J :1 The uncertainty in Y increases as the value of goi increases
+n n (Fig. 5c), which is reasonable because increasing goi means
+51% = Z Z Z2i szSYin (28) that the location of .the droplet edge is known With less
+i=1 j=1 certainty. However, 1ncreas1ng goi from 1 to 3 has a min—
+imal effect on burning—rate uncertainties (Fig. 5d), which
+where it is recalled that the summations are over all npoints is reasonable if €01 is held constant, i.e., it does not vary
+in a data set. The covariance terms in Eq. (27) are modeled with time when analyzing an entire data set, as was done
+as [7%in : [716ij where 1716' values are evaluated using Eq. here. It is noted, however, that UK can actually decrease
+(15)- Similarly, covariance terms in EQ- (28) are modeled as slightly as goi is increased. This is a result of including
+S126 Y]. = SYiSYj where SYi values are evaluated 113ng EQ- (22)- covariance terms, which can increase or decrease over—
+An important variable in these analyses iS €01, WhiCh iS all uncertainties, depending on their signs, as has been
+difficult to characterize for the present data set because edge discussed elsewhere (Coleman and Steele, 2009), In the
+intensities were manually specified. A realistic lower limit present analyses it was found that the covariance terms
+iS €01 = 1, 1.6-, it iS unlikely that the droplet edge can be SYin inﬂuenced burning—rate uncertainties by essentially
+determined t0 within better than one—half Of a pixel using negligible amounts. This was determined by repeating the
+manual methods. Estimates suggest that a reasonable prac— calculations both with and without these terms. In contrast,
+tical value iS €01 = 3, 1-6» that the droplet edge can be neglecting the covariance terms inYj increased burning—
+located to within about $1.5 pixels. This is based upon the rate uncertainties by roughly a factor of 2—3, i.e., accounting
+fact that the droplet edge is not sharp in the images but i8 for these particular covariances had an appreciable impact
+somewhat diffuse. The thickness of this diffuse region is on the analysis and in the present case these covariances
+typically about three pixels, yielding gm 2 3 as a practical decreased UK,
+Value. Figures 6 and 7 show analogous data for a heptane
+Figure 5a shows experimental Y data for a methanol droplet and a decane/propylbenzene droplet, respectively.
+droplet (the black line) along with the local polynomial fit The uncertainties in both cases are largest during and shortly
+(the green line). These two lines, which were determined after the ignition period, but after this period the uncertain—
+using h = 0.5 s, are Virtually indistinguishable. Figure 5b ties are about the same as for the methanol droplet. The
+shows the calculated droplet burning rate history and Figs early—time uncertainties in the droplet size are larger for
+5c and 5d show the eXpanded uncertainties, UY and UK, the decane/propylbenzene droplet because of strong soot
+at a 95% confidence level, respectively, where the black obscuration of the droplet edge, which made it difficult to
+lines correspond to gm 2 l and the red lines gm 2 3. determine droplet sizes. The soot levels became smaller as
+The eXpanded uncertainties are calculated by multiplying time progressed, allowing the droplet edge to be imaged
+the combined standard uncertainties by the coverage fac— more clearly. This led to the substantially smaller uncertain—
+tor k = 2 (for a 95 % confidence level), i.e., UY = k uY ties that are eVident in Fig. 7c after about 2 s. Comparison of
+and UK 2 k uK. These uncertainties show some varia— the burning—rate uncertainties in Figs. 5d and 6d shows that
+tions with time. For example, uncertainties in Y are larger after early ignition transients, UK is of the order of 0.005
+@ Springer
+
+"
+"8","Mierogravity Sci. Technol.
+Fig. 5 a Experimental Y data (a) «2
+(black line) and the local 3 O
+polynomial fit (green line); b CD
+burning rate history; 0 95% NA E V.
+uncertainty in Y for goi = 1 E «3 NE 0
+(black line) and 901 = 3 (red line); v E
+and d 95% uncertainty in K for >- ‘r x g
+901 = 1 (black line) and 901 = 3 N
+(red line). All calculations were
+performed with h = 0.5 s for a 0 g
+methanol droplet
+0 5 1 0 1 5 20 25 0 5 1 0 1 5 20 25
+Time (s) Time (s)
+O
+a a
+o' (c) o' (d)
+O
+A 8 a 8
+“E o' c? o'
+E E
+t o \E; 3
+3 O. 3 g \ I
+O
+8 8
+0 c5
+0 5 1 0 1 5 20 25 0 5 1 0 1 5 20 25
+Time (s) Time (s)
+mmZ/s for methanol and n—heptane droplets. The corre— burned can cause the droplet edge to appear somewhat
+spending UK values for a decane/propylbenzene droplet are jagged, as noted by Dembia et a1. (2012), which increases
+significantly larger, being about 0.02 mmZ/s. This increased the noise in the droplet edge measurements.
+uncertainty is likely a result of the higher sooting levels The burning—rate uncertainties in Fig. 5d show small
+evident with decane/propylbenzene. The large soot agglom— oscillations while such oscillations are not evident in
+erates that occur when decane/propylbenzene droplets are Figs. 6d and 7d. This may be a result of the fact that
+Fig. 6 a Experimental Y data
+(black line) and the local g (a) «a. (b)
+polynomial fit (green line); b O
+burning rate history; 0 95 % N"" E v
+uncertainty in Y for goi = 1 E °° NE 0'
+(black line) and 901 = 3 (red line); v «a E
+and d 95% uncertainty in K for >- v x cxg
+901 = 1 (black line) and 901 = 3 0
+(red line). All calculations were N
+performed with h = 0.5 s for a 0 g
+heptane droplet
+0 5 1 0 15 20 25 0 5 1 0 15 20 25
+Time (s) Time (s)
+<l' <l'
+' O
+O (C) 0' (d)
+00
+A 0' k 13
+E o' E g
+> ‘2
+Z) ‘_I D
+O
+O- 8
+O o'
+0 5 1 0 15 20 25 0 5 1 0 15 20 25
+Time (s) Time (s)
+@ Springer
+
+"
+"9","Mierogravity Sci. Technol.
+Fig. 7 a Experimental Y data I\ (a) Q (b)
+(black line) and the local to r‘\ O
+polynomial fit (green line); b LO ~
+burning rate history; 0 95 % NA t E V.
+uncertainty in Y for goi = 1 E V “E 0
+(black line) and 901 = 3 (red V m g
+line); and d 95% uncertainty in >' N x S
+K for 901 = 1 (black line) and ‘_
+901 = 3 (red line). A11 0
+calculations were performed 0 C5
+WltthO-5Sf0ra 0 2 4 6 8 10 0 2 4 6 8 10
+decane/propylbenzene droplet
+Time (s) Time (3)
+oo_ Lo
+0 m (c) O. , (d)
+©- A
+N“ 0 ﬂ 3
+E .0 N 0'
+. E
+g. 3' 9
+LO
+2) N g g
+C)
+O. 8
+0 c5
+0 2 4 6 8 1O 0 2 4 6 8 10
+Time (s) Time (s)
+Fig. 5 is for a tethered droplet while Figs. 6 and 7 show It is noted that the local polynomial method can provide
+data for untethered droplets. The tethered droplet was reasonable estimates of instantaneous burning rates, i.e., the
+observed to oscillate slightly back and forth along the entire burning rate history can be evaluated rather than sim—
+fiber aXis, which likely added noise to the droplet edge ply finding the slopes of straight lines that are fit to subsets
+location measurements, e.g., through small variations in of the data. For example, Fig. 8 shows best—fit straight lines
+droplet shapes. Because K depends upon the time deriva— for two portions of the Y—t history for a burning heptane
+tive of the square of the droplet diameter, and derivatives droplet. This is the same droplet also described by Fig. 6.
+amplify noise, this noise would appear in the burning—rate The best—fit lines give burning—rates of about 0.57 mmZ/s
+uncertainty UK. and 0.43 mmZ/s. The correlation coefficients are very Close
+Fig. 8 Experimental Y data and
+best—fit straight lines for a (\l
+heptane droplet. Black: V
+experimental data. Red: best fit
+with K = 0.564 mmZ/s,
+R2 = 0.99941. Green: best fit 0
+with K = 0.429 mmZ/s, V
+R2 = 0.99901
+NA
+E oo
+:5,
+>_
+«3
+ﬁ
+0 5 1 O 1 5 20
+Time (s)
+@ Springer
+
+"
+"10","Mierogravity Sci. Technol.
+Fig. 9 a Experimental Y data ‘
+(black line) and local 00 (a) :- »'.. ‘ g
+polynomial fits; b burning rate ' V 9‘. ‘1
+histories; c 95% uncertainties in NA o 1,? g i ""
+onr¢i=1;andd95% E c?
+uncertainties in K for 901 = 1. \E/ q- E g 1/
+Polynomial orders are p = 2 (red >- E 1 .
+line), p = 4 (green line), and p N g
+= 8 (blue line). All calculations 1 >5}- . ‘ Q A
+were performed with h = 0.5 s 0 g V ‘ ' :Ii‘i
+for a methanol droplet
+0 5 10 15 20 25 30 35 0 5 10 15 20 25 30 35
+Time (s) Time (s)
+0 <1-
+0“) O
+0' (C) o” (d)
+O A
+N"" c‘! i
+E O N
+E E g
+>- o ‘2 O
+3 O. 3
+O O W
+O. O.
+O O
+0 5 10 15 20 25 30 35 5 10 15 20 25 30
+Time (s) Time (s)
+to unity in both cases, suggesting that the straight—line fits of these two burning rates is 0.58 mmZ/s, which is very Close
+are excellent. However, Fig. 6b shows that the burning rates to the burning rate obtained with a best—fit straight line.
+are never actually constant. For example, the burning rate Finally, it is worth considering the impact of the order
+during the first time period (3—8 s) varies from about 0.52 of the polynomial, p, used in the local polynomial analyses.
+mmZ/s to about 0.63 mmZ/s, i.e., the burning rate increases Figures 9 and 10 show plots that were obtained for a heptane
+by about 21% over this time period. The arithmetic average droplet and a decane/propylbenzene droplet, respectively,
+Fig. 10 a Experimental Y data N
+(black line) and local polynomial (a) ‘—
+fits; b burning rate histories; c Q l
+95% uncertainties in Y for goi = A N ’07 00_ \V’ ‘
+1; and d 95% uncertainties in K NE (\1\ O i”
+for gpi = 1. Polynomial orders 5, O E ‘ /
+arep=2(redline),p=4 >— \_' E g /
+(green line), and p = 8 (blue
+line). All calculations were
+performed with h = 0.5 s for a g g
+decane/propylbenzene droplet
+-0.5 0.5 1.0 1.5 2.0 2.5 3.0 -0.5 0.5 1.0 1.5 2.0 2.5 3.0
+Time (s) Time (s)
+‘1'.
+o (C) Q (d)
+N
+0' 0"".
+NA E O
+E N
+E N
+.E, 2 /\ E o'
+5 o' E
+3 V.
+Q
+g O.
+C5 0
+-0.5 0.5 1.0 1.5 2.0 2.5 3.0 0.0 0.5 1.0 1.5 2.0 2.5
+Time (s) Time (s)
+@ Springer
+
+"
+"11","MicrograVity Sci. Technol.
+for polynomial orders p = 2, 4, and 8. The order Of the to the management, engineering, and operations teams at NASA and
+polynomial has very little inﬂuence on the droplet size fits Zin Technology, Inc. and the ISS astronauts who participated in the
+(Figs 93 and 10a) and the droplet Size uncertainties (Figs experiments. Gratitude is also expressed to A. Austin, H. Daqqa, and
+° . ° R. Wong for their efforts with statistical analysis of the data Via the
+9C and 100). It is also noted that the results for p = 1 and p 2 STA 401 Class at UC DaVis.
+2 were generally similar, so we do not present results for p
+= 1, though it is noted that second—order polynomials were
+better able to model Y data during time periods where burn—
+ing rates were Changing rapidly such as during extinction References
+events than first—order polynomials. Increasing the order of
+the polynomial to p = 4 or 8 leads to greater variations in the Cabrera, J .L.O.: locpol: Kernel local polynomial regression. R pack—
+calculated burning rates (Figs. 9b and 10b) and the burning— ?gglgﬂsmn 06-0 httP3//CRAN-R-Pr0jCCt-Org/PaCkag6=1OCP01
+rate uncertalntles Increase as. p ls mqéased (Flgs. 9d and Coleman, H.W., Steele, W.G.: Experimentation, Validation, and
+10d). H1 gher—Ol‘del‘ polynomlals CXhlb1t more local vaﬂa' Uncertainty Analysis for Engineers. John Wiley, New York (2009)
+tions and increased uncertainty levels because they capture Dembia, C.L., Liu, Y.-C., Avedisian, C.T.: Automated data analysis for
+more of the noise, which is especially evident for the data in ?nslecgéltiSVe inﬁlges grfnll3dr0f11168t(c2%nl1§;18tion experiments- Image
+- - - - - - na. tereo o , 7—
+Fig. 10, Wthh are nois1er than for Fig. 9. It is tor these rea— Dietrich, D.L., FerkuglfPV” Bryg, V.M., Nayagam, V., Hicks, M.C.,
+30113 that the Phlyht’mtal Otdet P = 2 was used 1“ the Present Williams, F.A., Dryer, F.L., Shaw, B.D., Choi, M.Y., Avedisian,
+analyses. C.T.: Detailed Results from the Flame Extinguishment Exper—
+iment (FLEX) — March 2009 to December 2010, NASA/TP—
+2013—216046. NASA John H. Glenn Research Center, Cleveland
+, (2013)
+Conclus10ns Fan, J .—Q., Gubels, I.: Data driven bandwidth selection in local polyno—
+mial fitting: variable bandwidth and spatial adaptation. J . R. Stat.
+Uncertainties in droplet size measurements and burning 500. B 57, 371-394 (1995)
+rates were quantitatively evaluated for droplet combustion Farouk, T.I., Dryer, EL; On theextinction Characteristics of alcohol
+. droplet combustion under micrograV1ty conditions — a numerical
+experiments that have been performed on the Interna— study. C ombust. Flame 159, 3208—3223 (2012)
+tional Space Station. The analyses considered non—sooting Farouk, T.I., Liu, Y.C., Avedisian, C.T., Dryer, F.L.: Sub—millimeter
+methanol 01‘ lightly SOO’ting heptane droplets as well as sized methyl butanoate droplet combustion: MicrograVity exper—
+moderately sooting decane/propylbenzene droplets. Type A 1528?: 21112 (3%??? numeﬂcal mOdehng‘ PrOC‘ Comb. InSt‘ 34’
+and typ e B errors were conSIdered and propagated Into the International Organization of Standardization (ISO): Evaluation of
+uncertainties Via the T337101"" series method. It was fOUHd measurement data — Guide to the expression of uncertainty in
+that soot can contribute significantly to the droplet size and measurement, JCGM 10032008 (2008). http://WWW.bipm.Org/utils/
+burning—rate uncertainties. common/documents/j cgm/JCGM_100_2008_E.pdf
+. . . Law, C.K.: Asymptotic theory for ignition and extinction in droplet
+It is of 1nterest to extend this research so that the uncer— burning. C O mbu st. F1 a m e 24, 89—98 (1975)
+tainties identified here can be reduced- For example, there Law, C.K.: Combustion Physics. Cambridge University Press, New
+may be more optimal image analysis techniques that can be York (2006)
+employed for droplet Sizing. It would also be worthwhile L1u,Y.C.,.Farouk,T.I., Savas,A.J.,Dryer,F.L.,Aved1s1an,C.T.: On the
+. . . . spherically symmetrical combustion of methyl decanoate droplets
+to p erform Slmllar analyses for ﬂame dlameters’ Wthh can and comparisons with detailed numerical modeling. Combust.
+have larger uncertainty levels because of the diffuse nature Flame 160, 641—655 (2013)
+Of the ﬂame. The general procedures used here for droplet Marchese, J ., Dryer, FL: The effect of non—luminous thermal radia—
+Size measurements Should also be applicable to ﬂame and tion in microgravity droplet combustion. Combust. Sci. Technol.
+. . . . 124, 371—402 (1997)
+soot shell measurements. Finally, the uncertainties ass001— R Core Team' R- A lan d . . . _
+. . guage an enVironment for statistical com
+ated With measurements 0f droplet diameters for strongly puting. R Foundation for Statistical Computing, Vienna, Austria
+sooting fuels should be reduced, as large amounts of soot (2013). http://www.R—project.org/
+can lead to Significant background noise by reducing the Sirignano, W.A., 2nd edn Fluicl Dynamics and Transport of Droplets
+overall background light intensity as well as by causing the and Sprays‘ cambndge Un1vers1ty Press’ New York (2010)
+. Webster, J .G.: The Measurement Instrumentation and Sensors Hand—
+droplet edge to appear to be Irregular. book. CRC Press, Boca Raton (1999)
+Williams, F.A.: Combustion Theory — the Fundamental Theory of
+Acknowledgments The financial support of the National Aero- Chemically Reacting Flow Systems, Perseus Books, Reading, MA
+nautics and Space Administration is gratefully acknowledged. The (1985)
+Technical Monitor was Dr. Daniel L. Dietrich. We appreciate discus— Zhang, B.L., Card, J .M., Williams, F.A.: Application of rate—ratio
+sions with V. Berg, D. L. Dietrich, F. L. Dryer, P. Ferkul, M. Hicks, V. asymptotics to the prediction of extinction for methanol droplet
+Nayagam, and F. A. Williams. We also express our sincere gratitude combustion. Combust. Flame 105, 267—290 (1996)
+@ Springer
+
+"

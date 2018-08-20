@@ -1,0 +1,975 @@
+"","x"
+"1","Remote Sensing of Environment 176 (2016) 295—307
+\z‘;‘3?~f’<;’ Contents lists available at ScienceDirect Remgsensmg
+c532)”; W Remote Sensin f E ' t
+'@3“ g o nv1r0nmen ,
+ELSEVIER journalhomepage:www.elsevier.com/|ocate/rse '
+—
+Imperv1ous surface detectlon w1th nlghttlme photography from the ® CrossMark
+Internatlonal Space Statlon
+Andrzej Z. Kotarba *, Sebastian Aleksandrowicz
+Space Research Centre, Polish Academy of Sciences, Bartycka 18A, 00-716 Warsaw, Poland
+ARTICLE INFO ABSTRACT
+Article history: For over two decades nighttime satellite imagery from the Operational Linescan System (OLS) has been used to
+RECEiVEd 5 December 2014 detect impervious surfaces. However, OLS—based maps suffer from the sensor's coarse resolution (2.7 km/pixel),
+Received in rEViSEd form 18 January 2016 overglow, and saturation in urban areas, resulting in inaccurate estimates of the extent and degree of impervious
+2:511; :61: 3533233016 surfaces. In order to provide more reliable estimates of impervious surface extent, we used high resolution
+(~10 m/pixel) nighttime photography from the International Space Station (155). Focusing on the city of Berlin
+W— in Germany, we produced a map of the extent of impervious surfaces. Our classiﬁcation was.85% accutate for
+Imperviousness both user and producer measures. Imperv10us surfaces omltted by [55 photography were mainly tran51t roads
+[55 and airport runways, while green areas and water bodies within the city were falsely identiﬁed. An analysis
+Nighttime light based on 155 imagery classiﬁed 55.7% of the study area as impervious, which is only 3.9% less than ground
+Photography truth (while the OLS—based estimate was 40% higher than ground truth). ISS imagery failed to provide reliable
+0L5 information about the degree of imperviousness for individual pixels (:1: 20% errors); nevertheless it accurately
+estimated the spatially—averaged degree of imperviousness for the whole study area (30.2% vs. the reference
+value of 30.1%). These results show that [55 photography is an important source of nighttime imagery for
+mapping the extent of impervious surfaces, and represents a considerable improvement over OLS capabilities.
+© 2016 Elsevier Inc. All rights reserved.
+1.1ntroduction One of the most effective ways to obtain surface imperviousness
+data (its degree and/or spatial extent) is satellite remote sensing.
+An impervious surface is deﬁned as a surface that prevents or There are many approaches to the detection of impervious surfaces
+impedes the inﬁltration of water into the underlying soil. This implies based on optical and radar imagery at different spatial resolutions. For
+that impervious surfaces play an important role in the hydrological example Mohapatra and Wu (2010) used Landsat—7 and Ikonos data
+regime, which is supported by work such as Arnold and Gibbons in order to detect impervious surfaces with regression tree approach,
+(1996) that showed that if a river drainage basin is covered by ~30% Weng and Hu (2008) focused on Terra/ASTER and Landsat—7 data
+or more of impervious surfaces, a stream can be considered as degraded. analyzed with neural network and spectral mixing techniques, Wu
+Modiﬁcation of hydrological processes through soil sealing can manifest and Murray (2003) investigated Landsat—7 data with spectral mixing
+in, for example, ﬂood dynamics (Jacobson, 2011; Mejia 82 Moglen, 2009; techniques, Deguchi and Sugio (1994) classiﬁed build—up areas with
+Miller et a1., 2014; Ogden, Pradhan, Downer, 82 Zahner, 2011). The Landsat/MSS and SPOT/HRV imagery, and Yang (2006) processed
+transformation of natural or semi—natural surfaces into impervious Landsat—7 observations with multivariate statistical model. See also
+areas (roads, parking lots, buildings, etc.) also has consequences for Parece and Campbell (2013) and Chabaeva, Civco, and Hurd (2009)
+the radiation budget, resulting in an increase in the local surface and for more extensive summaries of studies dedicated to detecting the
+air temperature (Myint, Brazel, Okin, 82 Buyantuyev, 2010; Weng82 Lu, impervious surfaces with satellite imagery. Of special interest are
+2008; Xiao et a1., 2007; Yuan 82 Bauer, 2007). Since soil sealing is a mapping efforts that aim to cover large spatial domains: notably, the
+consequence of human activity, the examination of impervious areas High Resolution Layer — Imperviousness (HRL—I) system developed
+makes it possible to monitor the urbanization process (Liu, He, Zhang, for the European Union (Kuntz, Schmeer, Jochum, 82 Smith, 2014), and
+Huang, 82 Yang, 2012; Ma, Zhoua, Pei, Haynie, 82 Fan, 2012; Sutton, the Percent Developed Impervious surface layer, developed as a part
+2003) as well as its impact on the environment (Imhoff, Lawrence, of the National Land Cover Database (NLCD) in the United States
+Elvidge, et a1., 1997; Milesi, Elvidge, Nemani, 82 Running, 2003). (Homer, Huang, Yang, Wylie, 82 Coan, 2004). Both of these datasets
+report the degree to which the surface (soil) is sealed, ranging from 0
+mnding author_ to 100%, at a spatial resolution of 20 m/pixel (HRL—I) and 30 m/pixel
+E-mail address: al<otarba@cbl<.waw.pl (AZ. I(otarba). (NLCD). The European dataset is based on imagery collected with IRS,
+http://dx.doi.org/10.1016/j.rse.2016.02.009
+0034—4257/© 2016 Elsevier Inc. All rights reserved.
+
+"
+"2","296 AZ. Kotarba, S. Aleksandrowicz / Remote Sensing of Environment 176 (2016) 295 —307
+SPOT ancl RapidEye satellites, while the United States data were pro— impervious surface detection. The study area focuses on the city of
+cluced with Landsat observations. Berlin, Germany. Unlike most satellite data, 155 photography is not the
+An approach that has emerged from mapping impervious surfaces result of radiation registration with a typical push—broom or a whisk—
+with satellites is the use of optical imagery in the visible range of the broom scanning instrument. Instead it is a form of digital photography
+electromagnetic spectrum, collected at night. Nocturnal light emissions that can be taken with an off—the—shelf digital camera, either hand—held
+predominantly originate from artiﬁcial sources (Sullivan, 1989), and or mounted on a tripod. To the best of our knowledge, this is the ﬁrst
+therefore directly inclicate potential impervious areas. Since 1977, time that 155 nighttime photography has been used in a quantitative
+nighttime data has been collected using the OLS installed onboard satel— investigation of impervious surfaces.
+lites belonging to the United States Defense Meteorological Satellite
+Program (DMSP). Although nighttime imagery was ﬁrst recognized as 2. Data and methods
+useful for studies of human activity in the 19705 (Croft, 1978), it was
+not until the late 19905 that digital archives of OLS images were In the study we used two kinds of data: lightintensity, based on 155
+established, enabling quantitative studies of nocturnal light. See photography (Section 2.1) and land use/land cover data for the study
+Huang,Yang, Gao,Yang, and Zhao (2014) foracomprehensive overview area (Section 2.2). HRL—l data served as a baseline for assessing the
+of OLS data applications. lSS—based products, while CORINE Land Cover and Urban Atlas classiﬁ—
+From the perspective of urban mapping, daytime imagery allows the cations allowed us to investigate errors of omission and commission.
+direct observation of impervious surfaces, while at nighttime they are All of our land use/land cover datasets were provided by the European
+only indirectly suggested by artiﬁcial illumination. The number of EnvironmentalAgency via the Land Monitoring Services of the Coperni—
+spectral bands means that daytime imagery can discriminate between cus Program.
+various types of land use/cover, while OLS nighttime imagery only
+provides single—channel observations and information about a light 2.1 . I55 photography
+source's location and relative intensity. The latter requires a more
+sensitive instrument, as well as a wide dynamic range of radiances, in 155 photography of Berlin, Germany was acquired during the space
+order to avoid data saturation. Nighttime imagery is important for station pass over Europe on April 6, 2013, 22:37 UTC and covered an
+urban studies since the signal only originates from artiﬁcial sources, area of 28 km x 40 km (Fig. 1a), which deﬁnes the area of interest in
+while radiances collected during the daytime are a complex mix of spec— this study. Although the photography is slightly oblique, the sub—
+tral responses coming from both artiﬁcial and natural surfaces. In this satellite point lies only 140 km from the center of the image, hence
+case, the spectral signatures overlap, making accurate land use mapping the geometry is comparable with a typical Landsat scene (Fig. 1b).
+complicated. Visual inspection of the photography conﬁrmed no cloud cover over
+OLS—based studies by Imhoff, Lawrence, Stutzer, and Elvidge (1997), the city. The Sun. and the Moon were below the horizon by 31° and
+Sutton (2003), Henderson, Yeh, Gong, Elvidge, ancl Baugh (2003), Lu, 37° respectively.
+Tian, Zhou, and Ge (2008), He et al. (2006), Small, Pozzi, and Elvidge The photography was obtained with a 12.1—megapixel Nikon D35
+(2005), and Elvidge et al. (1997) found a good correlation between digital still camera equipped with a 400—mm AF—I Nikkor lens. Detailed
+the actual extent of urban areas and OLS models. Further analysis of exposure parameters are as follows — shutter speed: 1/30, aperture:
+OLS imagery by Elvidge, Tuttle, et al. (2007) and Sutton, Elvidge, 2.8, ISO equivalent sensitivity: 51 200. The camera's CMOS sensor
+Tuttle, and Ghosh (2009) identiﬁed and explored the relation between produced RGB photography archived as a NEF ﬁle, which is Nikon's pro—
+light intensity and the degree of imperviousness. The above—mentioned prietary lossless compression standard for raw digital imagery. This was
+studies, however, also revealed a limitation of the OLS sensor: the converted into TIFF format (16 bits per channel, as in the original NEF
+extent of the impervious area was found to be overestimated. This was ﬁle).
+clue to a combination of low spatial resolution data (1—2.7 km/pixel, In order to produce a spatially—adjusted TIFF ﬁle, we geo—referenced
+depending on the processing path) and the sensor's high sensitivity, the photography using the UTM spatial reference frame (Zone 33 N)
+which resulted in the spatial overextension of lighted areas, an effect and a third order polynomial ﬁt. The best solution for the model was
+sometimes called “blooming” (Letu, Hara, Tana, 82 Nishio, 2012; Lu based on 99 ground control points, and resulted in a total root mean
+et al., 2008). square error of 16.95 m. The actual geometric spatial resolution of the
+These limitations are partially eliminated by the OLS successor — projected data was found to be 9.6 m/pixel.
+the Visible Infrared Imaging Radiometer Suite (VIIRS) onboard the Pixels were assigned digital numbers (DN) that represented uncali—
+Suomi—NPP satellite. Since late 2012, VIIRS has offered high—quality, brated light intensities in three spectral channels (red, green, blue). We
+radiometric calibrated imagery of nighttime lights ata spatial resolution decided to sum red, green and blue values and synthesize a pseudo—
+of 750 m/pixel (Miller et al., 2013). The global VIIRS mosaics have been panchromatic light intensity, therefore making the ISS photography
+used by Shi et al. (2014) to detect urban areas in China. The authors more similar to 015 data. After summing the three, 16—bit channels the
+found that VIIRS data produced maps that were only 1.2% ( on average) range of possible DN values become wider: from 0 to 3 x (216 — 1) =
+more accurate ( in term of overall accuracy) than maps derived from 196 605.
+015 mosaics. This was partially due to the preliminary nature of VIIRS 155 data was obtained from NASA's “Gateway to Astronaut Photogra—
+global datasets, notably the unassessed quality of mosaics. Neverthe— phy of Earth” database, maintained by the Lyndon B.Johnson Space Cen—
+less, it is important to note that any future VIIRS products will continue ter (NASA image ID: issO35e017202). Further information on 155 Earth
+to be at a moderate resolution (~750 m/pixel). photography — including nighttime imagery — can be found in papers
+The goal of this study is to investigate the accuracy and reliability of by Robinson, Liddle, Evans, and Amsbury (2002), Gebelein and Eppler
+measurements of the degree and extent of impervious surfaces, (2006) and Elvidge, Cinzano, et al. (2007) and references therein.
+estimated from nighttime imagery acquired by a sensor that collects
+unsaturated (not overexposed) data with a spatial resolution that is 2.2. Land use/land cover data
+comparable to that of “daytime” sensors, e.g. Landsat (30 m/pixel).
+The fundamental limitations of the OLS sensor were overcome using 2.2.1. High resolution layer — imperviousness
+high resolution (~10 m/pixel) nighttime photography taken by an HRL—l data reports one type of land cover information: the degree
+astronaut onboard the 155. Such data has already been used in to which the surface is impermeable. This varies from 0 to 100%,
+demographic and socio—economic research (Anderson, Tuttle, Powell, and is considered “continuous” when it exceeds 80% (otherwise it is
+82 Sutton, 2010; Kyba et al., 2015; Levin 82 Duke, 2012), but not for “discontinuous”).
+
+"
+"3","AZ. Kotarba, S. Aleksandrowicz / Remote Sensing of Environment 176 (2016) 295 —307 297
+13°23 13°33 13°43 3“ 13°23 13°31“. w 13°43
+ﬂ 5 j ‘3:- 5' 3/ ‘ _- {1’ Fgﬂu ’J‘ {74- "":43; a Y ‘L -—.‘-‘. )- '7‘4”; ‘
+d . F"" $3.91“.- ‘ .. 7. ""d, . ‘. e ' _. .. ‘ ‘ 3, ‘
+.1 Areaofstu Y ‘ ‘ “‘4‘. . sttﬂ} .‘ j 3“! , , $§% ﬁat):
+w 1 - _~ »= ‘15"" x .c , 2° - . 3f»
+.. - ' . E. :7 ~ 43“.. «3"" “ ‘ﬁgﬁﬁ 3- ; ~ : ~
+. n, .. ﬂ -, °"" 333,-, 3 15.453- -.. -~' . '3 , .~ 1' - -. '-
+‘8 3 ‘ 37*; 3‘ '3 .4. . 3.31% . .3, -‘_ 33¢ _ ma?»
+o — “ - -"" ""’ U! o ‘1-3':_. ﬂ ' -"" 3‘. g ‘ w '3’ ‘ .. ’. :,.’-‘ a ,. :3. - m
+34 3 ' ‘ ' 44 ' 3:5 S4; ‘* ‘ﬁ 33’? 1‘“%‘¢7¥.‘¢$ ""1:445?“ ‘33 E
+‘ - _-' .. Q .‘~' . ‘ "".‘H‘ '3. ‘ {iii}. ""2:- ‘v _‘ . 12.. . M‘VA‘W' _ . . 1.?“ Q
+. - ‘1 - - “g:- ' ' ‘35,: 3 7 -5: 2"" 9- 133 d 3f ‘3’;
+,i ./ 42:"" , 5.37 ' 5:3. 5‘35. 935‘,” , ‘35. 3377‘?
+‘ -.~,‘- 3;» "" FS? . . ‘i x ' , EVE ‘4‘,“ “309%.? f3“ 8 23‘s“ ; -- ‘1. °': ., ""I 7."". .- 7 . fit“- '
+. . . ,3 3 3... 33 .32- .. 33 .
+.._‘ - , g; 0 ; S, '3 .- Q . 1"" 3;? £934 ,3- r‘,'j~_:~~ ‘ ‘3. t, , ; , 3"" .2"" ‘w-ﬂ,‘ ﬂ
+. ‘2‘}, _ ‘3“- 5‘5. 4‘ - 1,: tr"". ‘7 ‘_. T‘: , 31f?“ . - .7. t? j : T 1’"", ‘..,5K{£“ *m’ﬁ ‘ ‘ 3.,“ . ~""‘}§L'-""’~,’¢'«
+‘ i"" 3; . ,xl, . ""3 ”9° .‘ r 52-1: ~ 3 3 3f '
+- ' 4}“ i)? .‘ ‘ .. .~ 3 '1‘. r3” ““‘b"": 3-2., 9‘? “i“ ; ""3};
+. 33-714 - ,X1>.': )1"";l4_‘-‘ J, _ _ {1...}?! 4“ K.__' ~ § 7“ W :3 14:""1“ '.,' lw , ‘ ‘3‘» . , e,‘: > 2,4; 43% ”.3 ‘, _' _ 1? 3.7-.
+5:7"" 33533; _ ‘0 lly‘. . ii"" .1"". {1; l. _ ~31“ _ f; {:32 ‘b- . 7',“ ; {lg} 15.3.. _~. d’ﬁ
+'1‘"" 7“ ~?‘Tv-‘3‘r‘r‘ra'ie-“i‘ r‘ --..{;--1‘-“‘3'7"""" . > . l3? 4%? - .- - "" , “1.13%. - . - 5 -'
+2?»;- ""91;- “‘33 - ‘~ #3213 “ f "" r ‘33 7 - ' 5‘ «‘85: J ‘
+'V’~m V’Wﬂ. :f‘x? ‘- 3.3% ft: :3 ‘ f ,‘ "" -"" 3;, 1.3:???
+Lwik‘ 31?: (T; _ . ‘.""r'-Vt??3‘_r-_"""""" \,7w.:§:7;_‘% k.- . r',""““‘ 1: ﬂay}! 9“ .;_ 5 . 3 -?;;;;< I; .’ “33,“‘13 ::'?. .7: JF?{ 3 ’.}-.‘ ‘ '5}
+:9, «- V. 2' -'§ .43 ‘”),‘f-er; i”. ',..3.i.;3.-._; ‘3'”; 43 _, 7:: kill?! i“, . 2315732? ( . g _ -' ‘ g 1. ,3. 3?: ; $4,351»...
+. — ""-' w 3 4:4 - 4‘ 333. a 3-: ' ~- - "" . 334; ‘9- g
+$ ,1‘Y.’ ' a '7: {3‘1“ fr] ‘»-\f‘-3,.,.’,‘ ‘ ' ~- 13 m;;:,.1 \{3 “3 ' ., _-'9, '7 \ . ‘1.“ ie ~‘ 4, ""~' 5.}.«5 .‘fnl- - 03
+1.3"" '. ., “23.3113 .: ’1» ‘ . 1' Q < -.;°:.-~A air: 3 ,. . ,. 3. -: 3,. f. '3, £3 ?*Q
+4&1). ""n 9:""; ‘52?“ 3“! ‘ ' r ,AE° . _ ﬁt“: g“: ; ‘55“, , '4‘ .3 ‘1, .' f1
+- . -. - _, '. , » ,7 ,3 *3, f ‘- . x »- 1 ‘ /"". :w‘rig- 3:3. .1 ~ ~ ‘ 3
+. 3 . . e .. :33. ~ . . . . .
+“ . , ‘.. ‘ -' .. I , . '- §§J~ V‘ _ 11,-??? .0 ,7 ‘ If. . 1r§‘t.~‘_-‘_ , \ ‘
+7 , ' ' <- - D33: 33°. "" 1°"" "" 3 :32""- E7 ,, "" ﬂ““ ,5:- -5‘ ‘3 - . .
+‘1’ ' . ,. "" ""’- .1"" “.5 ‘ﬁ% 3’37 1"" Q3“ - f - ""-
+. ,3 ‘ ' o 5km ‘, l” 721... ""2,... r . -‘: -5“1€1‘n‘ .r“,
+I I I ..'_;. .Jf’hvlr .452 .1 ,. ‘3 ‘ 3""?"" _‘.« . , .‘ “ - ,. ‘ ‘ I 2
+13°23 13°33 13°43 13°23 13°33 13°43
+Fig. 1. The study area. A — nighttime photography from the International Space Station, converted into the sum of red, green and blue Channels. B — daytime imagery from the Landsat—8
+satellite (for reference). (For interpretation of the references to color in this ﬁgure legend, the reader is referred to the web version of this article.)
+
+The degree of imperviousness was estimated with a classiﬁcation al— Each Level 1 class is then divided into 15, Level 2 subclasses, and 44 Level
+gorithm for built—up areas (a supervised approach) followed by manual 3 subclasses. Classes that were found in the study area (32 out of 44) are
+editing of the results. Calculations were based on SPOT—4/5 (HRVIR) and listed in Fig. 6.
+
+IRS—P6 imagery, ﬁrst collected in 2005—2006 and later updated with The thematic accuracy of CLC data exceeded 85%, while spatial accu—
+2008—2010 acquisitions. The ﬁnal product is referred to as the “2009 racy was estimated to be better than 100 m ( at a minimum mapping
+version”. The data are available online at http://land.copernicus.eu/ unit of 25 ha). In the analysis we used a vector version of CLC data, by
+pan—european. See Kuntz et al. (2014) for a more detailed overview of applying vector boundaries to deﬁne zones when calculating 155 light
+HRL—I, and Section 4 for a discussion of the HRL—l thematic accuracy. intensity statistics for land use classes. CLC data are available online at
+
+HRL—l was developed as a Geoland2 project activity and published at http://lancl.copernicus.eu/pan—european. See Buttner (2014) for more
+two spatial resolutions: 20 m/pixel and 100 m/pixel (spatial aggrega— details.
+tion of 20—meter data). We used the latter variant as it is most similar
+in resolution to 155 photography, given the slight blurring clue to the
+motion of the ISS and the optical quality. Moreover, the georeferencing 223. Urban atlas
+accuracy of ISS_based photography (1695 m) is comparable to the pixel Urban Atlas (UA) serves as a local extension to CLC. It is focused on
+size of the high—resolution version of HRL—I (20 m/pixel), which might so—called European Large Urban Zones, i.e. urban areas with more than
+introduce signiﬁcant errors clue to the misalignment of datasets. These 100 000 inhabitants. The UA 15 an improvement on CLC data 35 there
+kinds of errors are much less probable (and smaller in magnitude), is a 100—fold increase in spatial resolution (the minimal mapping unit
+with the 100 m dataset. Furthermore, it should be noted that iS 0-25 ha).
+
+100 x 100 m/pixel is still 100 times better than the spatial resolution Like CLC, UA introduces 21 land USE classes and organizes them
+of OLS data (.4000 X 1000 m/pixel). hierarchically. However, the UA classiﬁcation provides no details on
+agricultural land, forests, wetlands or water bodies (one class for each
+of these categories), as it focuses on built—up areas. Fig. 7 lists all UA
+2.2.2. CORINE land cover land use classes in the study area.
+
+CORINE (Coordination of Information on the Environment) Land The UA data used in this study was developed based on satellite im—
+Cover (CLC) is a land use map that originates from a manual photointer— agery acquired in 2005—2009. Both optical (ALOS/AVNlR—Z and SPOT—S
+pretation of satellite imagery. We used the CLC dataset from 2006, i.e. the imagers) and microwave (ALOS/PALSAR radar) data were used to
+most recent complete CLC version for the study area. It relies on satellite discriminate between land use types. The overall thematic accuracy of
+imagery acquired with SPOT—4/5 and lRS—P6 satellites in 2005—2007. the UA map of Berlin was estimated to be 87% at the most detailed
+
+CLC uses a hierarchical division of land use classes with three levels level (Level 3) and 95% at the least detailed level (Level 1) (ﬁgures
+ofdetail. Level 1 includes ﬁve classes: 1.Artiﬁcial surfaces, 2. Agricultural were estimated from metadata). See Montero, Van Wolvelaer, and
+areas, 3. Forest and semi—natural areas, 4. Wetlands and 5. Water bodies. Garzon (2014) for more information on UA.
+
+"
+"4","298 AZ. Kotarba, S. Aleksandrowicz / Remote Sensing of Environment 176 (2016) 295 —307
+2.3. Methods used for imperviousness detection and parameterization the correlation between light intensity and imperviousness degree
+decreased by 0.22 to 0.52.
+
+To discriminate between impervious and other surfaces we applied a We were also able to identify a subset of pixels that were both rela—
+threshold—based detection method, which is found in various applica— tively not built—up and characterized by low illumination (approximately
+tions. In the context of nighttime imagery and urban studies, threshold— 10% of all observations). In Fig. 2 these observations are concentrated
+based detection has been applied by Sutton (2003), who classiﬁed OLS along the horizontal axis up to DN z 8000. In this range we observed
+data based on “high” and “low” thresholds to indicate the limits of no correlation between light intensity and imperviousness degree
+urban areas in the United States (“high” and “low” represent the level (Spearman's coefﬁcient equal to 0.18), while for observations with DN
+of nighttime light intensity). The accuracy of the threshold approach greater than 8000, the correlation was only moderate (0.46). When DN
+can be assessed by comparing the classiﬁcation results with reference exceeded ~8000 the imperviousness degree started to increase rapidly,
+data — the most accurate approach will result in the most precise reaching an average value of 40% at DN z 20 000. Therefore
+thematic map (i.e., best agreement with reference data). Our study was DN z 8000 appears to be a threshold value that discriminates impervi—
+not limited to one or two thresholds, but instead investigated all theoret— ous surfaces from 100% pervious.
+ically possible thresholds, with the aim of ﬁnding the most accurate value. Here we focus on detecting impervious surfaces, regardless of the
+HRL—I data provided a reference. In order to avoid uncertainty resulting degree of imperviousness; therefore the above—mentioned threshold
+from sampling the map for reference pixels, we included all HRL—I pixels. value is a key factor for accurate discrimination between sealed and un—
+
+Estimates of the degree of imperviousness based on 155 nighttime sealed surfaces. In order to evaluate the impact of threshold selection on
+photography was investigated using regression models to ﬁnd the the ﬁnal classiﬁcation accuracy, we produced a set of 196 605 maps,
+relation between light intensity and degree of imperiousness. Again, each of which used a different DN value as the threshold. The resulting
+regression models were computed based on all HRL—I pixels, to avoid maps were binary, with only two land cover classes: 1) impervious sur—
+uncertainties related to sampling. faces; and 2) other surfaces. Similar maps were produced with HRL—I
+
+data, based on the assumption that all pixels with an imperviousness
+
+3. Results degree greater than 0% were impervious surfaces.
+Using HRL—I we calculated the user and producer accuracy of the
+3.1. Detection of impervious surfaces impervious surfaces classiﬁcation of 155 maps. Accuracies changed
+with the selected threshold, as shown in Fig. 3a. From a practical point
+
+A comparison of 155 light intensity and the degree of imperviousness of view, the most important consideration was the DN value for which
+showed a clear relation between the two parameters, conﬁrmed by a user and producer accuracy were both as high as possible (i.e. where
+high Spearman's correlation coefﬁcient of 0.74 (p—value < 0.001). As ex— user and producer curves cross in Fig. 3a).
+pected, imperviousness increased with light intensity (Fig. 2). However, The results showed that the highest possible accuracy for the inves—
+there were notable exceptions. tigated area was equal to 85.1% and the corresponding DN value
+
+First, there was a high degree of scattering. The range of DN variation was 7949. These ﬁgures represented the detection of any degree of im—
+for each 1% degree of imperviousness varied from 0 to 50 000—100 000, perviousness at all (> 0%). However, other applications might require
+i.e. up to as much as 50% of the DN scale. That fact negatively impacted mapping of imperviousness with degrees greater than a given value
+the estimation of imperviousness degree, as reported in Section 3.2. (e.g. >10%, >30%, >50%, or >80%). Hence producer and user accuracy
+
+Second, approximately 40% of locations within the study area were scores were also calculated for these scenarios (Fig. 3b—e).
+found to be both pervious (indicated by HRL—I data) and light emitting We observed that highest possible accuracy of image classiﬁcation
+(according to 155 data). These cases are grouped horizontally along depended on the minimum value of imperviousness to be detected.
+HRL—I = 0 in Fig. 2. On the other hand, there was a small group of For imperviousness >10%, the highest possible accuracy was 83.7%,
+locations that although dark (no light emission detected) had been but for imperviousness >30% it decreased to 77.9%, falling to as low as
+classiﬁed as partially built—up by HRL—I. These observations are shown 48.1% for imperviousness >80%. The trend was consistent; increases
+grouped close to DN 2 0 in Fig. 2, but only amount to 0.01% of all in the minimal imperviousness always led to decreases in the highest
+observations. If those two groups of observations are disregarded, possible accuracy (Fig. 4).
+
+6
+E 4
+E
+g 2
+o
+A100 WP“ ‘r
+°\a --.u..n...;!_:.§ .
+98° ,ﬂa
+° - --
+'E 40 7 ‘
+E ‘
+; 2° .
+o ‘ , = . .
+0 50000 100000 150000 200000 0 1 2 3 4 5 6
+ISS: Digital Number Frequency (“10)
+Fig. 2. Relation between 155 DN and HRL—I degree of imperviousness. For clarity the colors on the scatterplot reﬂect the relative frequency of observations, while the actual frequency is
+presented in the histograms. (For interpretation of the references to color in this ﬁgure legend, the reader is referred to the web version of this article.)
+
+"
+"5","AZ. Kotarba, S. Aleksandrowicz / Remote Sensing of Environment 176 (2016) 295 —307 299
+100 5 5 which emit no light, and—as one would expect—fall below the thresh—
+
+3 old. Similarly, green urban areas, and sports and leisure facilities were
+
+g 80 classiﬁed as impervious (the latter are actually a mix of pervious and
+
+ft’ 60 5 impervious surfaces).
+
+5 E Using the UA data, omission errors were related to artiﬁcial surfaces
+
+E 40 (Fig. 7). In this case, isolated structures were mainly classiﬁed incorrect—
+
+§ 20 ly, nearly 90% of which were identiﬁed by 155 as pervious (the opposite
+
+a: 1-100% 10-100% was the case with HRL—I). Similarly affected were the “darkest” pixels
+
+0 I . i representing 10W and very low—density dlSCOHtanOUS urban fabric _
+100 . ~20% of which fell into the pervious class. Some transit roads were in—
+
+5. correctly classiﬁed; ~40% of cases interpreted with 155 photography
+
+g 30 1‘ identiﬁed them as non—artiﬁcial surfaces. Other types of roads were
+
+:3 60 2‘ usually correctly classiﬁed as impervious surfaces.
+
+g IE El The signiﬁcance of these statistics should be weighed against the
+
+E 40 . relative frequency of a given class in the study area. Taking this into
+
+:3: 20 K account, the most important misclassiﬁcations were related to low—
+
+E 30-100% 50-1 00% density urban fabric, transit roads, green urban areas, sports and leisure
+
+0 : : facilities, water bodies, and agricultural and forest areas as a whole.
+100 'u 0 100000 200000
+
+5, 3.3. Estimates of degree of imperviousness
+
+gee
+
+3-1; 60 The extent of the impervious surface is the ﬁrst important character—
+
+3 E — Useraccuracy istic of impervious areas, while the degree of imperviousness is the
+
+g 40 “ . PFOduceraCCLffacy other. As Fig. 2 shows, there was a relation between light intensity
+
+3: — Kappa meme” and degree of imperviousness. Therefore we evaluated whether it was
+
+5 20 80400? possible to estimate the imperviousness degree based on 155 DNs. As
+
+0 o 5 the relation between the DN ancl imperviousness was nonlinear, we
+mom developed a set of polynomial regression models, from ﬁrst (a linear
+Digital Number model), to ninth order. This only took into account 155 pixels with DNs
+greater than the threshold value of 7949 (pixels with lower values
+
+Fig. 3. User and producer accuracy, and Kappa coefﬁcients for impervious surface were classiﬁed as pervious).
+classiﬁcation with 155 nighttime photography. Each plot corresponds to a range of A signiﬁcant scatter of DN values With respect to HRL_] estimates
+imperviousness to be detected (ranges are given in-the lower left of the plot). For resulted in lOW ﬁt, regardless Of the order Of the polynomial (Table 1).
+axampl-e’ (A) Shows the reams for demtmg bmltalp areas 9f any dagree- 0f R2 was always close to 0 3 with residual standard error close to 27%
+1mperv10usness (hence the range 1—100%). (E) shows results usmg ISS nighttime ' ’ '
+photography to detect continuous urbane fabric, i.e. built—up areas with an AlthOUgh the StatiStiCS imprOVEd Slightly as the order Of p01yn0mial
+imperviousness degree greater than 80% (hence the range 80—100%). increased, above ﬁve the polynomial ﬁt did not result in any further
+
+enhancement.
+
+Focusing on any degree of imperviousness (>0%), we classiﬁed 155 Based on the polynomials, we produced a degree of imperviousness
+photography and calculated the area of impervious surfaces (Fig. 5a). map. The average value of imperviousness for the study area decreased
+It was found to be 3.9% less than HRL—I reference data (Fig. 5b) and as the polynomial ﬁt increased. When compared to the reference HRL—I
+amounted to 55.7%. ISS—related values refer to data with minimum dataset (30.1%, Fig. 8b), the best estimate was achieved with a ﬁfth
+post—processing; i.e. only noisy pixels that originated from the photog— order ﬁt (30.2%, Fig. 8a), while the least reliable results corresponded
+raphy were removed. to the linear approximation (40.4%). The linear ﬁt was also the only
+
+one that resulted in an imperviousness degree greater than 100%.
+3.2. Impervious surface misclassiﬁcation A comparison of the modeled versus the actual degree of impervi—
+ousness showed that the high accuracy of the ﬁfth order polynomial
+
+In the best case, impervious surface detection resulted in an accuracy
+of 85.1%. As there was not 100% agreement, we thought it important to 100
+investigate the misclassiﬁed pixels. Visual inspection of the map shown A Fig- 3a _
+in Fig. 5c indicated possible areas of misclassiﬁcation — e.g. roads £53 F’g'ab Fl. 36
+(missed with 155) or locations within the city (considered as impervious E? 80 g. ,
+with 155). For a more quantitative analysis we compared 155 light § 5 F'g'sd
+intensity with two pan—European land use classiﬁcations: CLC and UA. g g 60
+The rationale for using two classiﬁcations is that they have different 5 E Fig. 3e
+(but complementary) thematic content: UA is designed to describe {‘5’ §- 40
+the urban environment in great detail, while CLC can distinguish be— 3 E
+tween a number of non—urban classes (surrounding Berlin and within 2 E
+the study area) — which are over—generalized with UA. Therefore, '5 g 20 3
+basic statistics were calculated for each CLC and UA class, describing E
+the average (median) DN value,and DN variabilitywithinagiven class. 0
+
+Results showed that areas classiﬁed as pervious were primarily .—.—.—.—_.
+pixels ﬂagged as agricultural land, forests, semi—natural areas, wetlands 0 20. . 40 . 60. 80 100
+
+. . . . . MInImum detectable ImperVIousness (%)
+and water bodies (Fig. 6). However, in almost all non—art1ﬁc1al land use
+classes there was a goal) OfplXElS that were mistakenly cla551ﬁed as 1m_ Fig. 4. Producer/user maximum achievable accuracy (solid line) and Kappa coefﬁcient
+pEI'VIOUS (e-g- broad'leaVEd fOFEStSv complex CUltlvatlon patterns 01’ nat— (dotted line) as a function of the minimum detectable degree of imperviousness. For
+ural grasslands). The most notable cases were water courses (rivers), example, the maximum accuracy for impervious areas that are at least 80% sealed is ~48%.
+
+"
+"6","300 AZ. Kotarba, S. Aleksandrowicz / Remote Sensing ofEm/ironment 176 (2016) 295 —307
+A. ISS B. HRL-l C. ISS vs. HRL-l
+Impervious area: 55.7% of the study area 7 I.“ Impervious area: 59.6% of the study area 4 .
+, .v. ..,',.-', thhX‘T-‘I'; '5‘- -L 'h. a _ q . a f .I‘ 1
+_ kg a .«r3v _,1 . e1 . -.
+h“ .' j),- . '\ . . '. 3‘ L . 4 tl. ,' "" .. - ‘ ﬂ . I
+—_ , _—. . . . . .z_ r
+:""' ‘ — df ‘5‘ g . “3 '9. KY s, .in, .fﬂ; I "" .. 3}». II; “T I {if z.- 1'.
+-_ . ,, ., 9 , I . , "" .' ' ?“—~._ ' ""' '- ”v."" ' ' - ""5‘ 3"" ""' 6!: 1..
+f :3; ,t 1.... . ff f '- .r -, s -- ..-. ., f I g; ,.... -
+,_ . cu i‘. ' _,~‘ ' . ,. r- "" \'- .. n - ‘I \. . ‘ J ""j T .‘j-‘W‘ir' _ - ‘- i"" ,'“ d .1 .-
+K' ”:5: . .4- ' .f' r“ T1. ""L .' 1"" *{fl "" "" J’ K ' ILI-I',-_..:' ' I"" .. I r .4 '-""'l
+‘ -.(.‘»- Ii' .1... - '-’ It“ 1 JIE .' : '-'.“""l‘“.""f'_l ._.- _f""- ‘.
+._ .4?- - 1.}. ’19 , V; 1...“. “A ‘V’. r “I _. .r‘. :* Ag; 4% r - fﬁt; w“ y, ,llh.‘ u;; .hir'.
+w ,.. .¢->. -:.. x, ~ .
+:g d r; w, ﬂag . 1M . - ""_-,---*-._v . . .u L '. - 2;- 1,»; T, f"" ,‘
+""__.. ""W . .“ ~- ' ‘ ,, “3‘ s... :-'r.”:"".‘-.'¥'. 4; '-.- ‘ . A ”w?“ ,' . . 4.1-1? 2‘ 'v ‘ .' ..., 3""”
+' ‘ . . o ._ . ‘ c , I -_ . , 7'- ' I'- , i
+1*“ é ‘ .‘ \’ T‘ - t - . . Jaliﬁ‘ I I . 1. Q? E. - ‘. . _ﬁ x“& . ’ _ 1‘ i? F... -. ¢ 43
+ﬂ ., -’ . ..‘ . -.-""‘.-'J' .-...l _l __., ' -. -""""’-’. -'-5 _J“ __,'
+1 , $ em... «.3 , ; - 3:. wt... .-..« . ~ - f!
+‘. - ‘ . >-,-‘, - . 3‘ . :45.” u"".- _5 , ' ‘._ #2..
+. ' n."" ' 1” t . - .1. .-- UN. .2""?- \ ' ' .r'. I -. i I '. '5‘- 'r'-.' I}. -. ' '1 '1'
+-~ ‘~ ' ‘ :‘i. Jﬂv &- ’ 5'. 4 E - .v II. A» h “-6! I. ‘ LI 5. y. ' --\' . "" .I.- 'H ~‘- f- 4-. 4, -. ‘F-d J: -
+.5. I. f: @_ -. .ﬁii '3"" df- _, ':-.' ""Ex"" -.“ﬁ . ‘ .- _. '. 'u i: «.11.. '+. f. . J . r .
+'. 4 ""w? .- 31%“ «3; J, .'.. i. 1‘31 ‘4 '.' i m—J. ' --.-. . __ If g. 1-.1 "" _, ‘d 1:55 ""- a .. -r
+"" ;. .-7 1f"" -. ""W .m‘? --,. v -. --- '- i; '2' ( -,, M - . -. ~ .«- :w .1"" =3W+ "" ' =
+~, ”i ""’ :12: “, .- ""fr 'f-K* "" ' .3“ N115“ '3’}? ‘
+‘LI 0‘; ,' ""_ - 7 m .“r 2:3“ $7 12"" - - '_ ' ' “- 4"" i l'- J :9‘ '1 JP"". -' .m';:’a‘ ' ﬂ -
+.7») ' ‘ 3."" . ‘0‘ I ‘v . 3' '. .' ,1 . .- -> _ .3. x_‘l 1.1."". L. { . _ . I . - _. _ . f. '; ._II + 'h. {
+.‘ ~._- 5., _ ,"" , .‘ {45.0% - _'.,1.If_ . . n _ p 5.! . . 1 ‘r .1, '
+,, .,\’..‘. ‘l’ a - 7"""" A’- {’22: r.“ if f .. '. H-I-I J31 “. ﬂ: - 3""."" 3. __'. - ‘ . .'__ _.- . . ﬁ _
+~ :r I ~ , a x Ahs- . ‘ , .‘ w
+&b i .’ a I: _f 1"" ‘ . ,. ' II“! ..,_.A ._J-|;- _ _Jl'
+D. OLS E. OLS (imperviousness >10%)
+Impervious area: 99.5% of the study area Impervious area: 58.3% of the study area
+I For: C
+- Pervious area detected by ISS and HRL-I
+I h I - Pervious area missclasiﬁed by ISS as impervious
+I. I l l. - Impervious area missed by ISS
+I I. I I "" Impervious area detected by ISS and HRL-I
+I
+I ' '
+I I
+I
+For: A-B, D-E
+- Pervious area
+Impervious area
+I
+I
+l __ J.
+I
+Fig. 5. Extent of impervious surfaces for the city of Berlin, Germany based on: A. ISS estimations (this study, with a DN threshold of 7949), and B. The actual extent (HRL—I reference data).
+The difference between ISS-based and HRL—I classiﬁcations (shown as C, D, and E) are added for reference; this is based on OLS data (E1vidge,Tuttle, et al., 2007). See Section 4 for a
+discussion of this dataset. For A, B and D the threshold between pervious and impervious surfaces was set to soil sealing greater than 0%. The OLS overestimation seen in D is partially
+corrected if the threshold is changed to > 10% (E).
+ﬁt resulted from the mutual cancelation of over— and under—estimates The above estimates ofimperviousness degree with ISS photography
+(Fig. 9b). For an HRL—I imperviousness degree lower than 40%, ISS— were based solely on light intensities. This was intentional, as our aim
+based data overestimated imperviousness by 10—15%, while for HRL—I was to investigate the potential of the high resolution data itself. How—
+imperviousness greater than 40%, the estimates were lower — by as ever, the usual approach to mapping imperviousness degree involves
+much as 50%. Another observation was the great variability in ISS— predictions based on both light intensities and population data (e.g.
+based imperviousness values; for example, for HRL—I imperviousness Elvidge, Tuttle, et al., 2007). In the context of ISS photography, such an
+of 20%, half of the corresponding ISS values were within the 15—50% approach is very challenging clue to the high resolution of the photogra—
+range. Although these statistics refer to a ﬁfth order ﬁt, similar patterns phy, and the unavailability of similarly detailed population data. There—
+were observed for other polynomial orders (Fig. 8a, c). fore we were not able to compute a model that included population data
+
+"
+"7","AZ. Kotarba, S. Aleksandrowicz / Remote Sensing of Environment 176 (2016) 295 —307 301
+1 Artiﬁcial surfaces 57.42 %
+1.1 Urban fabric ' ~ ' ' ~ ' ' ,, ' 42.97 w
+1.1.1 Continuous urban fabric 3.21
+A 100 CLC Level 1 1.1.2 Disoontinuous urban fabric 39.75 g
+1.2 Industrial, commercial and transport units , ~ ~ , , , , 7.93 %
+1.2.1 Industrial or commercial units 5.72 .g
+A 1.2.2 Road and rail networks and associated land 0.86 w
+8 1.2.3 Port areas 0.04 :3
+2 1.2.4 Airports 1.31 g
+x 1.3 Mine, dump and construction sites 0.46 g
+2 1.3.1 Mineral extraction sites 0.16 T:
+Q 1.3.2 Dump sites 0.23 8
+3' 10 1.3.3 Construction sites 0.07 o
+'5 1.4 Artiﬁcial, non-agricultural vegetated areas 6.07 g
+1: 1.4.1 Green urban areas 2.40 n
+.2 1.4.2 Sport and leisure facilities 3.67 E
+._ 0
+E 2 Agricultural areas 22.25 §
+.9 2.1 Arable land , , , , , , , 18.94 8
+"" 2.1.1 Non-irn'gated arable land 18.94 5
+2.1.2 Permanently irrigated land x .5
+2.1.3 Rice ﬁelds x 3
+2.2 Permanent crops , , 0.08 g
+1 “ N °° V ‘0 2.2.1 Vineyards x 5
+CLC land use class 2.2.2 Fruit trees and berry plantations 0.08 “5
+2.2.3 Olive groves x E
+2.3 Pastures 1.86 g
+2.3.1 Pastures 1.86 COLD
+2.4 Heterogeneous agricultural areas 1.37
+2.4.1 Annual crops associated with permanent crops x
+B CLC Level 2 2.4.2 Complex cultivation patterns 0.03
+100 2.4.3 Land principally occupied by agriculture, 1.34
+with signiﬁcant areas of natural vegetation
+2.4.4 Agro-forestry areas x
+g 3 Forest and seminatural areas 18.76
+‘- 3.1 Forests 17.74
+X 3.1.1 Broad-Ieaved forest 4.01
+2 3.1.2 Coniferous forest 12.23
+8 3.1.3 Mixed forest 1.50
+3- 3.2 Scrub andlor herbaceous vegetation associations 1.02
+'5 10 3.2.1 Natural grasslands 0.27
+5 3.2.2 Moors and heathland x
+‘5 3.2.3 Sclerophyllous vegetation x
+:3 3.2.4 Transitional woodland-shrub 0.75
+'5, 3.3 Open spaces with little or no vegetation x
+.5 3.3.1 Beaches, dunes, sands X
+3.3.2 Bare rocks x
+3.3.3 Sparsely vegetated areas x
+X X X 3.3.4 Burnt areas X
+3.3.5 Glaciers and perpetual snow x
+1 IE :3 $3 3 E g 2 § 3 g 2 §- 2 L"",- 3‘5 4 Wetlands 0.06 5 Water bodies 1.52
+4.1 Inland wetlands 0.06 5.1 Inland waters , , 1.52
+CLC land use class 4.1.1 Inland marshes 0.06 5.1.1 Water courses 0.28
+4.1.2 Peat bogs x 5.1.2 Water bodies 1.24
+200 4.2 Maritime wetlands x 5.2 Marine waters x
+C 4.2.1 Salt marshes x 5.2.1 Coastal lagoons x
+CLC LEV61 3 4.2.2 Salines x 5.2.2 Estuaries x
+100 4.2.3 Intertidal ﬂats x 5.2.3 Sea and ocean x
+8 I
+o
+S.’
+X
+2
+Q I .
+tn
+§ 10 I I I ! I I . I
+5: ' I I ' I * '
+'3 I I I III x
+XXX X X X XX XXXXX XXXX‘ XXX
+1 VNWNQYWNQVN wwwwwwwwwww wNQwNQVWNQYn wNWNQ wwwww
+‘T‘f‘Y‘Y‘Y‘Y‘V‘QQVZ‘t ‘T‘f‘T‘Y‘Y‘Y‘Y‘t‘t‘E"": ‘T‘T‘T‘Y‘YN‘YQ‘QWQQ ‘T‘T‘V‘Y‘Y ‘T‘T‘Y‘Y‘Y
+“FFFFFV‘FFFF NNNNNNNNNNN mmmmmmmmmmmm V'V'V'V-V 'OlO‘Olnlo
+CLC land use class
+Fig. 6. Average ISS light intensity (DN value) per land cover/land use classes in the CLC classiﬁcation. Gray boxes range from the 25th to the 75th percentiles, with the median lying in—
+between (black solid line); the whiskers range from the 10th to the 90th percentiles. The red, vertical line indicates the threshold DN value, which discriminates between impervious
+surfaces (above the line) and other surfaces (below the line). (For interpretation of the references to color in this ﬁgure legend, the reader is referred to the web version of this article.)
+at the ISS spatial resolution. Nevertheless we considered it important to reported the population for 1023 regular 560 m x 960 m grid boxes.
+examine a two—parameter regression approach. This was made possible The population count was estimated using census data processed with
+through a tradeoff, namely reducing the 155 data spatial resolution to dasymetric techniques (Azar, Engstrom, Graesser, 82 Comenetz, 2013),
+match the geometry of available population data. in order to reﬂect a more realistic distribution (e.g. parks and water
+Of the available information, two population datasets were found to bodies within census units were assumed to be unpopulated, which is
+be suitable for our purpose: census data, and the LandScanTM database. not accounted for in “raw” census data). LandScanTM data estimated an
+Census data were provided by the Statistical Ofﬁce for Berlin— ‘ambient’ population (Dobson, Bright, Coleman, 82 Bhaduri, 2000),
+Brandenburg, and reported the population count per administrative meaning that the population count was based on the actual presence
+unit for units ranging in size from 0.1 km2 to 13.1 km2 (1.5 km2 on of people, rather than their declared residence (which is not the case
+average, of which only 369 units were completely within the study for census data). As a consequence, LandScanTM data indicated a higher
+area). LandScanTM data were bought from a commercial vendor, and population count in commercial centers or airports.
+
+"
+"8","302 AZ. Kotarba, S. Aleksandrowicz / Remote Sensing ofEm/ironment 176 (2016) 295 —307
+A 200 1 Artiﬁcial surfaces 58.15 %
+’9: 100 1.1 Urban Fabric 27.71 '1
+0 1.1.1 Continuous Urban Fabric (sealing layer > 80%) 3.90 g
+‘; 1.1.2.1 Discontinuous Dense Urban Fabric (s.|. 50% - 80%) 12.72 E
+2 1.1.2.2 Disoontinuous Medium Density Urban Fabric (31. 30% - 50%) 9.71 3
+Q . 1.1.2.3 Discontinuous Low Density Urban Fabric (s.|. 10% - 30%) 1.32 as
+V 1.1.2.4 Discontinuous Very Low Density Urban Fabric (s.|. < 10%) 0.02 5
+,9 . 1.1.3 Isolated Structures 0.05 g
+""I 1 g
+E 10 1.2 Industrial, commercial, public, military, private and transport units w , N 20.06 g
+5 1.2.1 Industrial commercial public military and private units 11.31 g
+E 1.2.2.1 Fast transit roads and associated land 0.49 E
+c» 1.2.2.2 Other roads and associated land 5.49 S
+:1 1 1.2.2.3 Railways and associated land 1.43 5
+‘ 1.2.3 Port areas 0.09 (5
+1.2.4 Airports 1.24 >
+2 .0
+- N or: to -o
+UAland use class 1.3 Mine,dump and construction sites 77 77 77 77 77 77 77 77 77 77 77 77 77 77 0.93 g
+1.3.1 Mineral extraction and dump sites 0.32 6
+B 200 1.3.3 Construction sites 0.45 0
+1.3.4 Land without current use 0.15 g
+A (U
+8 100 1.4 Artiﬁcial non-agricultural vegetated areas w , , ,,, , ,,, , ,,, , w w ,,, , w , , , 9.46 13‘
+2 1.4.1 Green urban areas 4.82 *3
+x 1.4.2 Sports and leisure facilities 4.65 g
+2 31'
+Q, 2 Agricultural areas, semi-natural areas and wetlands 22.24 3
+3. (no sub-classes) 5
+""171 g
+5 3 Forests 17.42 °-
+‘5 10 (no sub-classes)
+'5, 5 Water bodies 2.18
+'3 (no sub-classes)
+“. “E m. V:
+2 F F F F
+UA land use class
+c 200
+8 100 j
+e I I r
+x I
+E I ‘
+.9 III I I I I || :
+2 | ‘
+o I
+.E 10 I ! _ I i i ! ! 3 I
+g, ' I I 3 III
+-' I 1 I I
+2 .
+‘T “5 “'2 V: ‘T N. c'?
+‘T‘Y‘Y‘Y‘Y""? ‘f‘YN‘YQVZ “.9"": “.‘Y
+‘T‘T‘T‘T‘T‘T N‘Y‘Y‘Y‘Y“! °°.°"".°°. Vi“:
+FFFFFF FFFFFF FFF FF leo
+UA land use class
+Fig. 7. Average 155 light intensity (DN value) per land cover/land use classes of UA classiﬁcation. Gray boxes range from the 25th to the 75th percentiles, with the lying median in—between
+(black solid line); the whiskers range from the 10th to the 90th percentiles. The red, vertical line indicates the threshold DN value, which discriminates between impervious surfaces
+(above the line) and other surfaces (below the line). (For interpretation of the references to color in this ﬁgure legend, the reader is referred to the web version of this article.)
+
+HRL—I and 155 data were averaged over the reference unit deﬁned by population and light intensities resulted in an R2 of 0.62 (for census
+the boundaries of census zones and LandScanTM pixels. Despite differ— data) and 0.68 (for LandScanTM data), and a RMSE of respectively 9.7%
+ences in geometry and methodology between the population datasets, and 10.8%. This shows that the imperviousness degree estimation was
+we obtained very similar results. The linear regression model based on improved when census and LandScanTM population data were included.
+
+However it should be noted that simply reducing the spatial resolu—
+tion also improved the model. R2 for the linear ﬁt at full resolution was
+Table 1 0.23, but increased to 0.58 (for census data) and 0.65 (for LandScanTM
+Accuracy of imperviousness degree estimation with different polynomial ﬁts. The HRL—I data) when data were averaged over census units or LandScanTM pixels,
+reference value 15 30.05%. All coefﬁcrents are Signiﬁcant at p < 0.001. Both Of these ﬁgures refer to the regression calculated without popula—
+Polynomial Residual Residual R_5quared Average Diff tion data.1ncluding population data improved the R2 metrics, but only
+order standard median degree of to 0.62 (for census data) and 0.68 (for LandScanTM data). In comparison,
+error value Impemousness Elvidge, Tuttle, et al. (2007) achieved a R2 of 0.59 in their estimates of
+1 27.84 1.949 0.238 40.38 10.33 imperviousness degree with OLS and LandScanTM data in the United
+2 2705 1-947 0280 37-20 7-15 States (at a spatial resolution of 1 km).
+3 26.70 1.424 0.299 34.44 4.39
+4 26.54 1.239 0.307 32.03 1.98 4 D. .
+5 26.49 1.125 0.310 30.24 0.19 - iscussmn
+6 26.48 1.095 0.310 29.09 — 0.96
+7 26.48 1.095 0.310 28.42 — 1.63 In this study, 155 photography was used as a source of information
+3 32:11: :83: 8318 32:3 ‘32: about nighttime light intensity in the city of Berlin, Germany. Based
+'—'_ on the 155 data we derived two products — the extent and degree of
+
+"
+"9","AZ. Kotarba, S. Aleksandrowicz / Remote Sensing of Environment 176 (2016) 295 —307 303
+A. '88 I 3 7‘ ﬁx ' d' 4 B. HRL'I _ 1 i ‘l 2C“- IIl' 1"" -
+i ' .‘. V‘ .s . . N, ‘ f '- _. . _ ""a 3. IE .I .5
+‘ M s s ”4 i . - 4‘ . -- ,z:-- 4.4. . .s .- f""
+; s; a s s { ~ »- , as» s»: . s
+z .- ’{5'1\ :‘4 ’ ‘V ., I 3 ""'r'. ' II: :5! * h ‘ -_J ${- ”QR: l.'_ ' P -
+' . ..'_ V‘l‘e ﬁ‘, r ~. .-‘ V . “ 4“; ' :15}. )4. i V H. . E """" , -:I {I 'I .1} .I' u .-__, ul' -_ (:1
+,.v 4; 2r. :1 . . ’ c; .. r ~ A - ~ f -_..J'_s.' 71,;5 ,, "" 2 ~—- .'- ' -'
+ms "" ' ‘ .::.« s 4 ‘ ""' '4' ' "" ' ‘9‘ V "" 4‘: f =-4 5
+FL: V ‘1‘”, I'f’C-ﬁ I! .37..- .M , ‘9’ . W I . Esta 1:1:‘1. *1 __. xi. 3 {-1 _-r a: - -
+lg? H “ ""’ ‘ 6"" ‘ ' > ' ‘ ‘ 7’37“, ' ’ . I I f‘ﬂg- . "" F21... 1 I'- I't'l -_-'—'-_' i
+. '7,"" “w ,4 “.44,"" f: “>\ .. , , . l {4‘ V1. _ __ ‘2“ I . _ . . 5! .
+1‘. '4?” .. 11.,"" ﬂ ,,..~f;._.7? . 4*}: 4'. 4v rf?’ .34ftfﬂ ' H: Inf 1,. J's;
+‘ 41‘4““‘5‘ - €44"" s s 4 . fats --.-_s:..:-..s rif. .. - 1 1 .: “a
+a . ,. ,- . 4:. .w ._ , . . --. as. _-.s .. -. ..,
+I ’ Ti“ : 5s .' ‘ ‘ {-9 ‘ T. ['3 V .1. _' _ _ 3:- . ._'.""'r""‘q;lg- ‘ 5""-..” . #:h -. - (Ir. ‘25-'13.""- . .1
+; 4‘ «rm ; , g, - ."", _ 4 _. - .4 ..-..- _ ..-: ,. |_ - , ,3
+:3? ‘ ~ 1'5 ""' -4 -' J -, . - .-.s r- .‘4'. 4-4.3. 4445-225- ”’ s . ""is:—
+s .s'w- ' ‘ ‘1 1;;le W’s ' ""Us? - is: 4 71sq3s‘ 1:42
+‘ D, 4 ‘ fﬁi- L)! f .. .r' _“""'_. . 1-:L- - :4 I“ .l... ""'~;.;""-I‘-'IJ"".‘.‘. I..' 3:! - lIs'l'. _ _-‘ l.‘,' 9' M:
+. x “‘4? - 4“ {:43 - £444 W?r
+. - Iv -¥ o_ V"" ‘1, ’ ‘4'"" ‘ I l',” ."" _ «Jig . :‘i 'Q- .1 ""J”: . '5 ‘ ti‘ﬂ- - ' ‘1'};3‘ L"" '7' ""3' 5 .~r'}._ '-
+’-- =3”. , ~: “ “"" 4 ?- s» 4 4 4 s "" “‘3. iiiﬁnﬂsi“ .' “ s; 21—: n-
+.- l‘ 0.1,; ‘ ' ‘ .52.. ”’5 d "".‘x ' I r. 1;.“ I if}? ‘ ll-I '-‘- - '4'!- hi“: ‘-' . -.|"".1‘!';'; I , l. I
+' 3:..."" .ﬁ.‘ -- 3, ’3' J ‘3? 1‘""; ’N 1 ”‘3' 1,, a 4.. ' I‘an't .‘lﬁ‘l-I-xi! ' '.'P; 1:'__ I. 1. . d: 'Ig...j- .. .
+. ‘_ ' X vb}. )1;‘ J%' l"" '9’ '."" 4. ’r 1“er ‘4; i”?! ['2 ' I‘lLI-‘-.l;.‘-L£'ZRIA"" I; -. ' '..‘:';""-._‘_:T I }"",_-.':. I- J. ﬁvm
+.‘.vsa;.‘f""“3‘*4‘5{’;i‘ 7 ""4,25“ 3x. a ""951-: § v “ . s ﬂaiﬁn.» 41' '.‘~:.' Tﬁ‘""%~ :34"" 5"" '
+NWW 2‘ 54H ""'x ’ K -' 4f *"" :1”'14s:'fi‘-'.i'.-..sl:'r-'.-'.' 97-1.» ‘91:; :9” - .
+“f0” .~ 3‘ VM- ,4; """"m"" 4“: , . ' - .'-, -_ 3--.-.'4-—-,,."":,:..' '4 .' .~ 'A‘rM-Ar..~' _< :_.-_ ’
+. “'1‘. ‘ ’ .1 ‘ 'f ”f; o ' 4 ‘1’ r “KN“; 49“ ‘ - J .._ . .25“ ..""V],‘-;- . H-k*m .
+a n , ~.. . ‘ ‘3 134': .2 . - 2a ' -- .f l5!” ' .. writs:-
+’ 3"",}. '5 . ﬁt «:4: 4. ﬂ . “7,,“ 1;»: 3;”; n .5"": I 1.-.: Z‘.'.':"".-_""1‘ ' J :g r_.- '-.."".I 1 _ _|_ :2;-
+« _ ,. I ; -A s .. ss -
+"" - ' ' J“ "" k ._ . “ ”4'1 :32»; 13:” '54""? .I '.+ i“ “@""u'ﬁ --'1_-m.--‘sh
+' -- f i , ' Iiw.‘ ' ‘ 1"" .- a 5“; 33313.52- ‘L
+I . ""4:14;!“ W JI‘L‘"" —_ ‘ *‘1‘ .. ﬂ’ - 1"" .--J
+0- OLS I E:-
+0% >0 . 50 100
+Impemousness degree (%)
+I
+I
+i. t
+Fig. 8. Spatial variability ofdegree 0f imperviousness estimated using: A. ISS-based approach (this study, using a ﬁfth order polynomial), and B. HRL—I reference data. OLS estimates (C) are
+included as a reference — this results from the modeling of imperviousness degree with light intensity (OLS radiance) and population count (Elvidge, Tuttle, et a1., 2007; see Section 4 for a
+discussion of this dataset).
+impervious surfaces. We then used HRL—I data to assess the quality of the validation dataset, while ﬁgures refer to a pan—European dataset.
+ISS—derived parameters. As HRL—I served as a baseline for the analysis, The Country Delivery Report prepared for Germany (including the city
+the quality of the results depended on its accuracy. According to the of Berlin) states that overall, user and producer accuracies exceed 95%
+product speciﬁcation (Maucha, Buttner, 82 Kosztra, 2010) the overall (Jacob 82 Bindrich, 2010), which means that HRL—I offers a highly reliable
+accuracy of HRL—I data was 84.4 i 1.5% or 85.7 :t 1.9% depending on parameterization of impervious surfaces.
+
+"
+"10","304 AZ. Kotarba, S. Aleksandrowicz / Remote Sensing of Environment 176 (2016) 295 —307
+The ﬁrst important ﬁnding of our analysis was that the accuracy structures, transit roads, and airport runways. As these land cover
+of ISS nighttime photography in detecting impervious surfaces was types are not associated with light emissions, they would also be missed
+relatively high (85.1%), and it also correctly classiﬁed areas with a very by any other nighttime light imaging sensor of this resolution. Surpris—
+low (<10%) degree of imperviousness. An investigation of the sources ingly, the OLS data analyzed by Elvidge, Tuttle, et al. (2007) correctly
+of omission errors showed that undetected areas were mainly isolated classiﬁed these objects as impervious (Fig. 5d). However, this was due
+to the “blooming” effect that greatly overestimated the extent of imper—
+1oo . vious surfaces in the study area (99.5% according to OLS, compared to
+A. 2nd order polynomial 59.6% according to HRH). The OLS data can be partially corrected by as—
+suming that impervious surfaces are in fact sealed surfaces in more than
+S 80 1 for example 10%, instead of 0% of cases (Fig. 5e). While reducing local
+§ OLS commission errors, this could lead to a further underestimate of
+5°; ""“1 the extent of impervious surfaces on a national scale — in its present
+a 60 ""Ill” form OLS data underestimates this extent by an average of 31% for
+g ""llll"" most European countries (and by as much as ~60% for Denmark and
+§ .Illllll Hungary) compared to HRL—l (Maucha et al., 2010). Table 2 summarizes
+g 40 - » - 1‘ . the key accuracy parameters for the impervious area extent derived
+g g, from 155 photography and OLS data.
+g "" ISS imagery was not free from the “blooming” effect, as indicated by
+.3 _ mpemenm the sources of commission error. Water bodies, urban green areas,
+3 20 ‘ . — 75th percentile agricultural land and forests adjacent to the city were misclassiﬁed as
+Med'an_ _ 25mpemenm impervious. Blooming was best seen around water courses, i.e. the
+-10thpercenti!e river Spree that passes through the city. The river can be clearly seen
+0 on UA or CLC maps, but it was not detected with 155 data. This water—
+0 20 40 50 60 100 covered area, which was expected to be dark, was found to be bright
+100 ﬁ—'—'—'—‘ clue to the vicinity of built—up areas, the transportation network and
+B 5th or der 0' nomial associated street lighting. Nevertheless, the smaller 155 pixel size
+' p y meant that the impact of blooming was signiﬁcantly lower than for
+g OLS, and limited to tens or hundreds of meters, rather than kilometers.
+E 80 1 The limited number of commission and omission errors, especially
+'5'; when compared to OLS data, allows us to conclude that 155 offers a
+a Aﬂﬂllﬂ ‘ considerable improvement over OLS capabilities in impervious surface
+g 60 . "" detection in urban areas (rural areas were not investigated), at least
+g r on the local/regional scale.
+g ‘ ‘ ISS photography was converted into a sum of DNs for red, green, and
+g 40 ‘ 1 ' ' blue channels. The image was then classiﬁed using a histogram
+é ‘ thresholding method, an approach that was originally applied by
+g Elvidge et al. (1997) for producing OLS “city lights” maps. In this study
+3'; 20 we demonstrated the impact of setting an accurate threshold on the
+— . ﬁnal classiﬁcation accuracy. It is important to note that we found the
+Ullpl"" best possible threshold value through the comparison of all possible
+0 . . . , .. . . , , , . ., , , ,. ,, thresholds with HRL—l baseline values. In the typical map production
+We process, HRL—l data (or equivalent) is absent (it must be created by
+.—.—.—.—.— data processing), and the threshold is established empirically using a
+100 trial and error process, or an automatic method (e.g. Sezgin 82 Sankur,
+C. 9th order polynomial 2004 and references therein). Our results showed that the classiﬁcation
+3 accuracy was above 80% for a wide range of ISS DN. This means that
+2; 30 there is a margin of tolerance for errors in choosing the threshold, so
+“'5’, ”I long as the aim is to detect impervious surfaces with a degree greater
+é: ' "" than 1—20% (for higher values the best possible accuracy quickly
+3 60 . decreases).
+§ ‘ 1 ‘ A notable characteristic of Berlin is its East—West division, the result
+-§ .7 ‘ of its political and economic history. Kyba et al. (2015) noted that the
+8. 40 ‘ division also manifests in the color of nighttime lighting. Lights in the
+5 . 1 West are greenish, while in the East they are yellowish; this is a conse—
+§ quence of using, respectively, mercury and sodium lamps (Elvidge,
+j; 20 . ' Keith, Tuttle, 82 Baugh, 2010). In order to evaluate if this difference
+1’ ‘ affected our results, we compared average DN values for East and
+. "",9 "" West Berlin. Statistics were computed for each channel of ISS photogra—
+0 ||Ii r r r , r r r r 7. , r r , 7. r , , 7 7 phy, as well as for the sum of channels. As expected, the median DN in
+I—I—I——I—I red was 30% higher in the East, while the median DN in blue was 24%
+0 20 40 50 60 100 higher in the West. The differences were statistically signiﬁcant at
+HRL"" lmperviousness Degree W p < 0.001. However, the most important result was the variation in
+Fig. 9. Degree of imperviousness according to HRL—l reference data vs. ISS—based mEdlanS C§1CUIatEd for the sum Of Chapnéls’ Wth.h turHEd. Ollt to .be
+estimation with second (A), ﬁfth (B) and ninth (C) order polynomial ﬁt. Note the 0n1y_1%' Thls prOVEd that there was 1:10 Slgmﬁcant dlfferepce m hght m—
+signiﬁcant variability of ISS—based imperviousness for each of the HRL—l values. See Fig. 8 tenSIty bEtween W951: and E351: Berlin, and thus had “0 ImpaCt 0“ the
+for a map of the degree of imperviousness calculated using the ﬁfth order ﬁt. classiﬁcation.
+
+"
+"11","AZ. Kotarba, S. Aleksandrowicz / Remote Sensing of Environment 176 (2016) 295 —307 305
+Although processing of ISS photography resulted in an accurate correspond to the size of OLS pixels, but do not match the 015 geometry,
+estimate of the extent of the impervious area, the calculation of imper— introducing uncertainties into OLS—population comparisons. As a conse—
+viousness degree was less reliable. Comparing ISS DN with HRL—l values, quence, it may be possible to obtain ISS—based spatially—averaged light
+we found that the relation was not linear and therefore had to be intensities with a more accurate regression model, used with light
+approximated with high—order polynomials. Although the ﬁfth order intensity and population data for imperviousness degree estimations.
+polynomial was able to most accurately reproduce the average impervi— The ﬁnal important issue is the question of how representative ISS
+ousness degree, it should be noted that any of the polynomials with nighttime photography is. From the image processing point of view,
+order greater than two resulted in an estimate of average impervious— key factors are the radiometric or photometric accuracy, and the stabil—
+ness that was i 5% with respect to HRL—I. Therefore if the aim is to gather ity of the sensor. In the case of digital photography these factors are very
+general information on imperviousness (averaged over space) the order difﬁcult to control. A light source of known intensity might produce a
+of the polynomial does not play a signiﬁcant role, as long as it is greater different digital number, depending on exposure parameters (exposure
+than two. Compared to the OLS data analyzed by Elvidge, Tuttle, et al. time, f—number, ISO sensitivity, etc.), optics (focal length of the lens,
+(2007), the lSS—based estimate of the mean degree of imperviousness vignetting), and viewing geometry (off—nadir angle), which can vary
+in the study area appears to be more accurate (24.7% for OLS, vs. 30.2% from image to image.
+for lSS—based, and 30.1% for HRL—l). However, this conclusion might be We are not aware of any survey of ISS photography archives that
+misleading, as the lSS—based estimate was the result of error cancelation. summarizes the quality (or at least the similarity) of nighttime imagery.
+When information is needed about the degree of imperviousness on Such a survey is also beyond the scope of this investigation. A survey by
+a per—pixel basis, ISS photography fails to provide a reliable estimate. Robinson et al. (2002) only looked at pre—ISS astronaut photography,
+This is because surfaces with the same degree of imperviousness are and hence did not include nighttime imagery. Nevertheless, Robinson
+illuminated with differentintensities: e.g. roads within a city are illumi— et al. (2002) suggest that half of the images they looked at could
+nated by street lighting, while roofs are not, although both represent potentially be used for remote sensing. Although this ﬁgure cannot be
+100% sealed surfaces. However, 155 offers a ﬁne spatial resolution extrapolated for nighttime imagery, it suggests that there are poten—
+compared to 015, and therefore discriminates better between different tially a large number of photographs that could be used for impervi—
+land use classes and light sources. Consequently, the relation between ous surface analysis. On the other hand, our results suggest that the
+light intensity and soil sealing becomes weaker, or — more precisely — Berlin photography parameters could be used as optimal measures
+is found to be as weak as it is in reality, which is not the case with low for future observations of imperviousness (at least in Europe, as
+spatial resolution data (where a single pixel represents a mix of light e.g. American or Chinese cities have a different spatial organization,
+sources and land use). Our ﬁnding conﬁrms the results of Anderson and thus possibly a different relationship between light intensity
+et al. (2010), who used 155 imagery to evaluate the relation between and imperviousness).
+light intensity and population density. Anderson et al. (2010) also Currently, 155 nighttime photography is not an operational service,
+concluded that an increase in spatial resolution does not necessarily unlike OLS or VIIRS. The advantage of both OLS and VIIRS is that they
+lead to an increase in the reliability of nighttime, light—based estimates. host onboard meteorological satellites that provide continuous, global
+This is important consideration for efforts to map city night lights with scanning. Therefore 015 and VIIRS are suitable for global—scale applica—
+very high spatial resolution (1 m/pixel or better), using either aerial tions. ISS photography has a relatively narrow ﬁeld of view, and data
+imagery (e.g. Hale et al., 2013; Kuechly et al., 2012) or satellite sensors is only collected occasionally, even in comparison to Landsat or
+(e.g. Levin, Johansen, Hacker, 82 Phinn, 2014). Although this kind of Sentinel—2 daytime imagery that is collected every 8—16 days. This
+data allows for extremely precise mapping of light sources, which is makes the operational use of ISS imagery difﬁcult. However, the
+important for light pollution studies, the very high resolution will not introduction of an automatic support system should make it possible to
+immediately result in more reliable maps of the extent of impervious increase the frequency and standardize nighttime photography. An ex—
+surfaces, or the degree of soil sealing. ample of such a system is the NightPod, which consists of an automated
+Our simulation with the LandScanTM database and Berlin census data tripod that can take repeated photographs of different pre—deﬁned targets
+demonstrated that 155 nighttime photography can serve as a reliable with identical and programmable exposure parameters (Castiglione et al.,
+alternative (or complement) to 015 observations for the estimation of 2012). The NightPod was installed onboard the 155 in 2011, and has al—
+imperviousness degree — but only when light intensities are spatially— ready signiﬁcantly improved the quality of photography in terms of
+averaged. The high spatial resolution of ISS photography is an advantage image sharpness and exposure times. The further exploitation of the
+since it offers unique ﬂexibility: light intensities can be averaged over NightPod's capabilities might lead to semi—operational nighttime data
+small, differently—shaped reference units, something that cannot be acquisition from the ISS.
+achieved with 015 data. In the case of Berlin, 54% of census units were When available in large amounts, nighttime photography from the
+smaller than 1 kmz, and 80% were smaller than 2 kmz. These areas 155 can support operational mapping projects, as OLS imagery was
+used along with Landsat data for mapping the United States (Xian
+et al., 2011), or along with MODIS imagery for charting soil sealing in
+T bl 2 China (Shao 82 Liu, 2014). As we have demonstrated with this study,
+Aicueracy of ISS—based and OlS—based maps of the extent of impervious areas. For 155, two 155—ba56d estimates can be far more useml m applications that have
+datasets are reported. The ﬁrst shows results for a DN threshold of 7949, Le. the DN value already USEd OLS Imagery
+for which both producer accuracy and user accuracy were as high as possible. The second
+set of (reference) parameters corresponds to DN 2 8800 for which the overall accuracy 5, Conclusion
+was the highest. OLS—based estimations result from the map of imperviousness degree
+3:35:811231‘3’5532 E1232?) 335.1:§§2.::$.::{:::1::.:f§;.§.3:322:22:2:: In tms study we evaluated the hypothesls that mghwme, hght Imag-
+others (see text for details)_ ery collected by the astronauts onboard the 155 IS a more reliable source
+— of data for impervious surface detection than the OLS data that is
+L m currently used. Using 155 photography of Berlin, Germany and HRL—I
+DN 2 7949 DN 2 8800 mm 2 0% mm 2 10% data provided under the Copernicus Program as a baseline, we found
+Producer accuracy (%) 85.1 82.9 100.0 86.5 that:
+User accuracy (%) 85.1 86.7 41.7 63.2
+Overall accurécy (%) 82-4 82-5 41-7 73-4 — ISS photography is most accurate in impervious surface detection,
+W reaching 85% user and producer accuracy. This statistic was obtained
+
+"
+"12","306 AZ. Kotarba, S. Aleksandrowicz / Remote Sensing of Environment 176 (2016) 295 —307
+for relatively “raw” resultS, LE. data that had not undergone exten_ DObSOD, J. E., Bl‘lght, E. A., Coleman, P. R., 82 Bhadlll'l, B. L. (2000). LandScan: A global
+
+. . . . . . . populatlon database for estlmatlng populatlons at nsk. In V. Mesev (Ed.), Remotely
+
+Slve post—processmg (1f post—processmg was apphed, the statlstlc sensed cities (1311267481) Londonﬂaylor & Francis_
+may be even higher); Elvidge, C. D., Baugh, K. E., Hobson, V. H., I(ihn, E. A., I(roehl, H. W., Davis, E. R., 82 Cocero, D.
+— ISS photography is suitable for detecting areas with a low degree (19_97_)- Satillite in_‘lgenFOFB/fOf :umiilnbsfttleTEthS “531112;; lngztumalBFaldiatiO;
+- - - em1551ons: contrl utlon or t e g o a too c est. 0 a ange lO ogy, ,
+Of 1mperv1onsness, and as a consequence, pr0v1des mUCh more 387—395. http://dx.d0i.0rg/10.1046/j.1365—2486.1997.00115.x.
+accurate estlmates 0f the extent of Impervmus surfaces than OLS. Elvidge,C. D., Cinzano, P.,Pettit, D. R.,Arvesen,J., Sutton, P., Small, c, Ebener,S. (2007b).
+The histogram thresholding method was found to be an appropriate The Nightsat mission concept. International journal of Remote Sensing, 28, 2645—2670.
+methodology for image classiﬁcation allowing a margin of tolerance hap3//dx'd°i'°rg/l0'1080/01431160600981525“
+_ _ _ _’ Elvidge, C. D., Keith, D. M., Tuttle, B. T., 82 Baugh, K. E. (2010). Spectral identiﬁcation of
+for the Identlﬁcatlon 0f the apprOPHate threShOId; lighting type and Character. Sensors, 10, 3961—3988. http://dx.d0i.0rg/10.3390/
+— ISS estimates of the degree of imperviousness are problematic at the 1 5100403961. 1 h d 1
+- - - - E vi ge, C. D., Tutt e, B. T., Sutton, P. 5., Bang , K. E., Howar ,A. T., Mi esi, C., Nemani, R.
+natlve spatlal resomthn Of the phOtOgraphy' It only agrees W1_th mf— (2007a). Global distribution and density of constructed impervious surfaces. Sensors,
+erence data when spatlally averaged, and under— and over—estlmates 7, 19624979
+dense and low—density areas of the urban fabric respectively. Gebelein, J., 82 Eppler, D. (2006). How earth remote sensing from the International Space
+- - - Station complements current satellite—based sensors. Internationaljoumal of Remote
+Consequently, 155. phOtOgraphy falls to map the EOXtent 0f.1mperv10us Sensing, 27, 2613—2629. http://dx.doi.org/10.1080/01431160600552250.
+surfaces for locatlons that are more than 50—70% seaIEd' Hale,J. D., Davies, (3., Fairbrass, A.J., Matthews, T.J., Rogers, C. D. F., 82 Sadler,J. P. (2013).
+— the spatial resolution Of nighttime imagery iS an important factor Mapping lightscapes: Spatial patterning of artiﬁcial lighting in an Urban Landscape.
+when nighttime illumination and population data are used to esti— P105 O_""e’ 8(5), 651450- httP3//dX-C_10i-0rg/ 10:1371/Journal-P0ne-0061_450- _ _
+
+. . . . . He, C., Sh1, P., L1, J., Chen, J., Pan, Y., L1, J., Ichlnose, T. (2006). Restorlng urbanlzatlon
+mate 1mperv10usness dEgree' estlmates are more rEhable When process in China in the 19905 by using n0n—radiance—calibrated DMSP/OIS nighttime
+the resolution is coarser than (~1 km/pixel), rather than comparable light imagery and statistical data. Chinese Science Bulletin, 51, 1614—1620. http://dx.
+to 155 photography (~10 m/pixel). However, ISS—based photography H SOi-OFg/ﬁlgog/E$4351-00562gl’5fd3- C D & B h K (2003) v rd f f b
+- - - - - en erson, ., e , . ., ong, ., v1 ge, . ., aug , . . a1 alono ur an
+15 more sultable for COITlpélI‘TSOH w1thcensu's data’ and pr0v1des a boundaries derived from global night—tirne satellite imagery. Internationaljoumal of
+ﬂex1ble geometry for matchlng llght 1nten51ty and low resolutlon Remote Sensing, 24, 595—610. http://dx.d0i.0rg/10.1080/01431160304982.
+census data_ Homer, C., Huang, C., Yang, L., Wylie, B., 82 Coan, M. (2004). Development of a 2001
+
+National Land—Cover Database for the United States. Photogrammetric Engineering
+_ _ _ _ _ and Remote Sensing, 70, 829—840. http://dx.d0i.0rg/10.14358/PERS.70.7.829.
+The FESUItS PFOVlde strong support for the nghtsat 1111551011, Wthh - Huang, 0., Yang, x., Gao, 13., Yang, Y., 82 Zhao, Y. (2014). Application of DMSP/OLS
+currently in the concept phase — proposes a remote sensing platform Nighttime light images: A meta—analysis and a systematic literature review. Remote
+- - - - - - Sensing, 6, 6844—6866. http://dx.d0i.0rg/10.3390/rs6086844.
+
+fOI‘ Fhe c01.1ect10n Of mghttlme hght Imagery at 50—100 m/pIXEI Imhoff, M. L., Lawrence, W. T., Elvidge, C. D., Paul, T., Levine, E., Privalsky, M. V., 82 Brown,
+
+(Elv1dge, C1nzan0, 3t £11., 2007)- The 155 phOtOgrath WE used was V. (1997a).Using nighttime DMSP/OLS images of City lights to estimate the impact of
+
+taken at a resolution Of similar order (~10 m/pixel), and therefore urban land use on soil resources in the United States. Remote Sensing of Environment,
+
+suggests that future Nightsat data could be of great importance for im— 59. 105—117- httP3//dX-d°‘-0rg/ 101016/5003_4'4257(96)00110'1- _ _
+
+. . . . . Imhoff, M. L., Lawrence, W. T., Stutzer, D. C., 82 Elv1dge, C. D. (1997b). A technlque for usmg
+perv10us surface mapplng. nghtsat COUld also guarantee radlometrlc composite DMSP/OLS “City lights” satellite data to map urban area. Remote Sensing of
+calibration and stability, a feature that 155 photography lacks, and Environment, 61, 361—370. http://dx.d0i.0rg/10.1016/SOO34—4257(97)00046—1.
+which is a current challenge for its operational or semi_0perati0nal JaCOb, P., 82 Bindl‘iCh, M. (2010). Delivery TepOTt Gemany, veTSiOTl 1.0 dated December 20,
+
+. . . 2010 (P-EL-03_CountryDellveryReporLDE). Avallable at the European Env1r0nmental
+use. Nevertheless, 155 data could be used for systematlc nlghttlme map— Agency
+
+ping 0f the Earth, 35 it is equipped With the “NightPod”, Which could Jacobson, C. R. (2011). Identiﬁcation and quantiﬁcation of the hydrological impacts of im—
+
+form the bridge between current (0L5, VIIRS) and future (Nightsat) perviousness in urban catchments: A review. journal of Environmental Management,
+
+missions 92, 1438—1448. http://dx.d01.0rg/10.1016/JJenvman.2011.01.018.
+' Kuechly, H. U., I(yba, C. C., Ruhtz, T., Lindemann, C., Wolter, C., Fischer, J., 82 Hélker, F.
+(2012). Aerial survey and spatial analysis of sources of light pollution in Berlin,
+Germany. Remote Sensing of Environment, 126, 39—50.
+AdmOWledgments I(untz, S., Schmeer, E., Jochum, M., 82 Smith, G. (2014). Towards an European Land Cover
+Monitoring Service and High—resolution layers. In I. Manakos, 82 M. Braun (Eds.),
+The study was supported by the National Science Center of Poland semi; simﬁngc‘lmd dggitfll imaiett 19(353553182 VOL/ 1131(3535157—853 g‘agdrggg 3H6id61bergv
+. ew or <, on on: pnnger. p: x. 01.0rg . — — — — .
+under the ArtISS researCh pI‘OJECt, contra“ n0. DEC—2012/05 /B/ST1 O/ I(yba, C. C. M., Garz, S., Kuechly, H., de Miguel, A. S., Zamorano,J., Fischer,J., 82 Hblker, F.
+02169. (2015). High—resolution imagery of earth at night: New sources, opportunities and
+Challenges. Remote Sensing, 7, 1—23. http://dx.d0i.0rg/10.3390/rs70100001.
+Letu, H., Hara, M., Tana, G., 82 Nishio, F. (2012). A saturated light correction method for
+References DMSP/OLS nighttime satellite imagery. IEEE Transactions on Geoscience and Remote
+Sensing, 50, 389—396. http://dx.d0i.0rg/10.1109/TGRS.2011.2178031.
+
+Anderson, S.J.,Tuttle, B.T., Powell, R. L., 82Sutt0n, P. C. (2010). Characterizing relation— Levin, N., 82 Duke, Y. (2012). High spatial resolution night—time light images for
+ships between population density and nighttime imagery for Denver, Colorado: demographic and socio—economic studies. Remote Sensing of Environment, 119, 1—10.
+Issues of scale and representation. International journal of Remote Sensing, 31, Levin, N.,Johansen, I(., Hacker, J. M., 82 Phinn, S. (2014). A new source for high spatial
+5733—5746. http://dx.d0i.org/10.1080/01431161.2010.496798. resolution night time images — The EROS—B commercial satellite. Remote Sensing of
+
+Arnold, C. L., 82 Gibbons, C. J. (1996). Impervious surface coverage: the emergence of a key Environment, 149, 1—12. http://dx.d0i.org/10.1016/j.rse.2014.03.019.
+environmental indicator. journal of the American Planning Association, 62, 243—258. Liu, 2., He, C., Zhang, (1., Huang, (1., 82 Yang, Y. (2012). Extracting the dynamics of urban
+http://dx.d0i.0rg/10.1080/01944369608975688. expansion in China using DMSP—OLS nighttime light data from 1992 to 2008.
+
+Azar, D., Engstrom, R., Graesser, J., 82 Comenetz, J. (2013). Generation of ﬁne—scale popu— Landscape and Urban Planning, 106, 62—72. http://dx.d0i.0rg/10.1016/j.1andurbplan.
+lation layers using multi—resolution satellite imagery and geospatial data. Remote 2012.02.013.
+
+Sensing of Environment, 130, 219—232. http://dx.d0i.0rg/10.1016/j.rse.2012.11.022. Lu, D., Tian, H., Zhou, G., 82 Ge, H. (2008). Regional mapping of human settlements in
+
+Buttner, G. (2014). CORINE land cover and Land cover Change products. In I. Manakos, 82 southeastern China with multisensor remotely sensed data. Remote Sensing of
+M. Braun (Eds.), Remote sensing and digital image processing, Vol. 18. (pp. 55—74). Environment, 112, 3668—3679. http://dx.d0i.org/10.1016/j.rse.2008.05.009.
+Dordrecht, Heidelberg, New York, London: Springer. http://dx.d0i.0rg/10.1007/978— Ma, T., Zhoua, C., Pei, T., Haynie, S., 82 Fan, J. (2012). Quantitative estimation of urbaniza—
+94—007—7969—3. tion dynamics using time series of DMSP/OLS nighttime light data: A comparative
+
+Castiglione, L., Conticello, S. S., Esposito, M., Oldenhuis, R., Moon, S. G., Nicolai, A., case study from China's Cities. Remote Sensing of Environment, 124, 99—107. http://
+Dettmann, J. (2012). The NightPod — An orbital motion compensation mechanism dx.d0i.0rg/10.1016/j.rse.2012.04.018.
+for 155 based imaging. Proceedings of the 63rd International Astronautical Congress, Maucha, G., Buttner, G., 82 I(osztra, B. (2010). European validation ofGMES FTS SoilSealing
+Naples, Italy, October 1—5, 2012. Enhancement data. Project raport dated june 29, 2010. Universitat Autonoma de
+
+Chabaeva, A., Civco, D. L., 82 Hurd, J. D. (2009). Assessment of impervious surface estima— Barcelona.
+tion techniques. journal of Hydrologic Engineering, 14, 377—387. http://dx.d0i.0rg/10. Mejia, A. I., 82 Moglen, G. E. (2009). Spatial patterns of urban development from optimiza—
+1061/(ASCE)1084—0699(2009)14:4(377). tion of ﬂood peaks and imperviousness—based measures. journal of Hydrologic
+
+Croft, T. A. (1978). Nighttime images of the earth from space. Scientiﬁc American, 239, Engineering, 14, 416—424. http://dx.d0i.0rg/10.1061/(ASCE)1084—0699(2009)14:
+86—98. http://dx.d0i.0rg/10.1038/scientiﬁcamerican0778—86. 4(416).
+
+Deguchi, C., 82 Sugio, S. (1994). Estimations for percentage of impervious area by the use Milesi, C., Elvidge, C. D., Nemani, R. R., 82 Running, S. W. (2003). Assessing the impact of
+of satellite remote sensing imagery. Water Science and Technology, 29, 135—144. urban land development on net primary productivity in the southeastern United
+
+"
+"13","AZ. Kotarba, S. Aleksandrowicz / Remote Sensing of Environment 176 (2016) 295 —307 307
+States. Remote Sensing of Environment, 86, 401—410. http://dx.d0i.0rg/1 0.1016/SOO34— Small, C., Pozzi, F., 82 Elvidge, C. D. (2005). Spatial analysis of global urban extent from
+4257(03)00081—6. DMSP—OLS night lights. Remote Sensing of Environment, 96, 277—291. http://dx.d0i.
+
+Miller,]. D., Kim, H., Kjeldsen, T. R., Pacl<man,]., Grebby, S., 82 Dearden, R. (2014). Assessing 0rg/10.1016/j.rse.2005.02.002.
+the impact of urbanization on storm runoff in a peri—urban catchment using historical Sullivan, W. T. (1989). A 10 km resolution image of the entire night—time Earth based on
+Change in impervious cover. journal of Hydrology, 515, 59—70. http://dx.d0i.0rg/10. Cloud—free satellite photographs in the 400—1100 nm band. International journal of
+1016/j.jhydrol.2014.04.011. Remote Sensing, 10, 1—5. http://dx.doi.org/10.1080/01431168908903843.
+
+Miller, S. D., Straka, W., Mills, S. P., Elvidge, C. D., Lee, T. F., Solbrig,]., Weiss, S. C. (2013). Sutton, P. C. (2003). A scale—adjusted measure of “Urban sprawl” using nighttime satellite
+Illuminating the capabilities of the suomi national polar—orbiting partnership (NPP) imagery. Remote Sensing of Environment, 86, 353—369. http://dx.d0i.0rg/10.1016/
+visible infrared imaging radiometer suite (VIIRS) day/night band. Remote Sensing, 5, S0034—4257(03)OOO78—6.
+
+6717—6766. http://dx.d0i.org/10.3390/r55126717. Sutton, P. C., Anderson, S. J., Elvidge, C. D., Tuttle, B. T., 82 Ghosh, T. (2009). Paving the
+Mohapatra, R. P., 82 Wu, C. (2010). High resolution impervious surface estimation: An planet: impervious surface as proxy measure of the human ecological footprint.
+integration of Ikonos and Landsat—7 ETM + imagery. Photogrammetric Engineering Progress in Physical, 33, 510—527. http://dx.d0i.org/1O.1177/0309133309346649.
+
+and Remote Sensing, 76, 1329—1341. http://dx.d0i.0rg/10.14358/PERS.76.12.1329. Weng, Q., 82 Hu, X. (2008). Medium spatial resolution satellite imagery for estimating and
+
+Montero, E., Van Wolvelaer, J., 82 Garzon, A. (2014). The European Urban Atlas. In I. mapping urban impervious surfaces using LSMA and ANN. IEEE Transactions on
+Manakos, 82 M. Braun (Eds.), Remote sensing and digital image processing, vol. 18. Geoscience and Remote Sensing, 46, 2397—2406. http://dx.doi.org/10.1109/TGRS.
+(pp. 115—124). Dordrecht, Heidelberg, New York, London: Springer. http://dx.d0i. 2008.917601.
+0rg/10.1007/978—94—007—7969—3. Weng, Q., 82 Lu, D. (2008). A sub—pixel analysis of urbanization effect on land surface
+
+Myint, S. W., Brazel, A.J., Okin, G. S., 82 Buyantuyev, A. (2010). Combined effects of imper— temperature and its interplay with impervious surface and vegetation coverage in
+vious surface and vegetation cover on air temperature variations in a rapidly Indianapolis, United States. Internationaljournal of Applied Earth Observation and
+expanding desert city. GIScience and Remote Sensing, 47, 301 —320. http://dx.d0i.0rg/ Geoinformation, 10, 68—83. http://dx.d0i.org/1O.1016/j.jag.2007.05.002.
+10.2747/1548—1603473301. Wu, C., 82 Murray, A. T. (2003). Estimating impervious surface distribution by spectral
+
+Ogden, F. L., Pradhan, N. J., Downer, C. W., 82 Zahner, J. A. (2011 ). Relative importance of mixture analysis. Remote Sensing of Environment, 84, 493—505. http://dx.d0i.0rg/10.
+impervious area, drainage density, width function, and subsurface storm drainage 1016/S0034—4257(02)00136—O.
+on ﬂood runoff from an urbanized catchment. Water Resources Research, 47, 1—12. Xian, (3., Homer, C., Dewitz, 1., Fry, 1., Hossain, N., 82 Wickham, J. (2011). Change of
+http://dx.d0i.0rg/10.1029/2011WRO10550. impervious surface area between 2001 and 2006 in the Conterminous United
+
+Parece, T. E., 82 Campbell, J. B. (2013). Comparing urban impervious surface identiﬁcation States. Photogmmmetn'c Engineering and Remote Sensing, 77, 758—762.
+using Landsat and high resolution aerial photography. Remote Sensing, 5, 4942—4960. Xiao, R., Ouyang, Z., Zheng, H., Li, W., Schienke, E. W., 82 Wang, X. (2007). Spatial pattern of
+http://dx.d0i.org/10.3390/r55104942. impervious surfaces and their impacts on land surface temperature in Beijing, China.
+
+Robinson]. A., Liddle, D. A., Evans, C. A., 82Amsbury, D. L (2002). Astronaut—acquired orbital journal of Environmental Sciences, 19, 250—256. http://dx.doi.0rg/1O.1016/S1001—
+photographs as digital data for remote sensing: spatial resolution. Intemationaljoumal of 0742(07)60041—2.
+
+Remote Sensing, 23, 4403—4438. http://dx.d0i.0rg/10.1080/01431160412331317775. Yang, X. (2006). Estimating landscape imperviousness index from satellite imagery. IEEE
+
+Sezgin, M., 82 Sankur, B. (2004). Survey over image thresholding techniques and quantita— Geoscience and Remote Sensing Letters, 3, 6—9. http://dx.d0i.0rg/10.1109/LGRS.2005.
+tive performance evaluation.]oumal of Electronic Imaging, 13, 146—165. http://dx.doi. 853929.
+0rg/1O.1117/1.1631315. Yuan, F., 82 Bauer, M. E. (2007). Comparison of impervious surface area and normalized
+
+Shao, Z., 82 Liu, C. (2014).The integrated use of DMSP—OLS nighttime light and MODIS data difference vegetation index as indicators of surface urban heat island effects in
+for monitoring large—scale impervious surface dynamics: A case study in the Yangtze Landsat imagery. Remote Sensing of Environment, 106, 375—386. http: //dx.d0i.0rg/ 10.
+River Delta. Remote Sensing, 6, 9359—9378. http://dx.d0i.org/10.3390/r56109359. 1016/j.rse.2006.09.003.
+
+Shi, I(., Huang, C., Yu, 3., Yin, 3., Huang, Y., 82 Wu,]. (2014). Evaluation of NPP—VIIRS night—
+time light composite data for extracting built—up urban areas. Remote Sensing Letters,
+
+5, 358—366. http://dx.doi.org/10.1080/2150704X.2014.905728.
+
+"

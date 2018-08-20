@@ -1,0 +1,940 @@
+"","x"
+"1","47th AIAA Aerospace Sciences Meeting Including The New Horizons Forum and Aerospace Exposition AIAA 2009-960
+5 - 8 January 2009, Orlando, Florida
+Geoﬂow: Flrst Results from Geophysmal Motlvated
+Experlments mSIde the Fluld Selence Laboratory of
+Columbus
+Lothar Jehring* and Christoph EgbeisJr
+Brandenburg University Of Technology, Cottbus, D-03046, Germany
+Philippe Beltramei Pascal Chessat§
+O
+\O
+E University Of Augsburg, Augsburg, D-86159, Germany University Of Nice, Nice, F—06108, France
+0
+“1 . .
+§ Frederlk Feudel11 Ramer Hollerbach”
+E University Of Potsdam, Potsdam, D-14469, Germany University Of Leeds, Leeds, L52 9JT, UK.
+5 .
+a Innocent Mutabam**
+DD
+3 University Of Le Havre, Le Havre, F 46058, France
+(VS
+'3.
+:5 Laurette S. TuckeirmadnTJr
+E Ecole Supemeure d6 Physzque et de Chzmze Industmelles, Pans, F4523], France
+g
+Na
+(0;) Objective of GeoFlow experiment is to study thermally—driven rotating ﬂuids, in order to
+E investigate the stability, pattern formation, and transition to turbulence of viscous incom-
+; pressible ﬂuids contained between concentric, co-axially rotating spheres. These physical
+E mechanisms are important for a large number of astrophysical and geophysical problems
+é showing ﬂows in spherical geometry driven by rotation and convection: for example, to
+(L3 explain the mantle convection 0f the Earth, or the ﬂow in a planet’s interior.
+E The European microgravity experiment GeoFlow, which is executed in the Fluid Science
+2 Laboratory (FSL) of Columbus module on the International Space Station (ISS), is an
+8 experiment investigating pattern formation and stability of thermal convection in rotating
+E spherical shells under the inﬂuence of an artiﬁcial central symmetric buoyancy ﬁeld and
+TC eliminated gravity.
+E In this paper we present numerical preliminary studies of this spherical Rayleigh-Bnard
+5» problem under a central dielectrophoretic force in microgravity environment and ﬁrst ex-
+§ perimental results from ISS. Numerical simulations are done for a range of parameter
+Q values for Rayleigh and Taylor number. For the experiment ﬂow Visualization is realised
+5 using the Wollaston-shearing method.
+Q
+*Senior Scientist, Dept. Aerodynamics and Fluid Mechanics, Siemens-Halske—Ring 14, Member
+1LHeaJd, Dept. Aerodynamics and Fluid Mechanics, Siemens-Halske-Ring 14
+1Senior Scientist, Theoretical Physics, Universitétsstrasse 1
+§Senior Scientist, Laboratoire Jean Alexandre Dieudonne, 28 avenue Valrose
+11Lecturer, Nonlinear Dynamics Group, Am Neuen Palais 10
+”Senior Scientist, Department Of Applied Mathematics, Woodhouse Lane
+**Head, Laboratoire Mecanique, 53 rue Prony BR 540
+TTSGHiOI‘ Scientist, Dept. Hydrodynamics and Mechanics, 10 rue Vauquelin
+1 0f 15
+Copyright © 2009 by the American Institute of Aeronautics arfg‘IRgtFehzéﬂtiigﬁatheﬁ RérﬁeFéDSIémtaPs and Astronautics
+
+"
+"2","Nomenclature
+00 Variation of refractive index With temperature
+d = r0 — n- Gap Width
+er, éeq, éz Unit vector in radial, meridional and axial direction
+fphase Phase function
+ge Dielectrophoretic force ﬁeld
+n Refractive index
+p Pressure ﬁeld
+P7“ Prandtl number
+7"" Radius
+Ra Central Rayleigh
+Racentml Central Rayleigh number
+Eva Factor in eqn. (9)
+O T Temperature ﬁeld
+§ T a Taylor number
+E U = (u, 11,10) Velocity ﬁeld
+g Wms High voltage
+g Greek:
+5 oz Cubic expansion coefﬁcient
+a) ﬂ = (r0 — n)/n Aspect ratio
+E v Dielectric variability
+g AT Temperature difference
+if 8 Separation angle
+E? 5T Dielectric constant
+5 77 = 73/71) Radius ratio
+a 19 Azimuthal angle
+2;) K3 Thermal diffusivity
+E A Thermal conductivity 01‘ Laser wavelength
+3‘: V Kinematic Viscosity
+g p Density
+5 gb Meridional angle
+(:3 S2 Rotation rate
+D—t
+% Subscript
+m z inner
+E 0 outer
+:3
+‘z‘
+5‘ .
+E I. Introductlon
+E The microgravity experiment GeOFlOW is an European project, integrated in the Fluid Science Laboratory
+Q (FSL) in Columbus module of International Space Station (188). This experiment targets on the investigation
+of stability and pattern formation of thermal convection in a rotating spherical gap With an artiﬁcial central
+dielectrophoretic force ﬁeld by applying an alternating high voltage ﬁeld on the inner spherek3 .
+
+Focusing on main acting forces for example in the inner Earth, that is temperature gradients and rotation,
+and neglecting magnetic effects in order to stress thermal and rotating aspects of the theoretical formulation
+and experimental setup, that corresponds to research on stability and pattern formation of thermal convection
+in a rotating spherical gap. If such phenomena are studied experimentally in an Earth lab, gravity acts axial
+to a spherical model, and not central, like in the Earth’s core. Such a central force ﬁeld can be setup using
+the dielectrophoretic effect by applying a high voltage alternating ﬁeld on the inner sphere Which is than
+acting as a spherical capacitor. Resulting artiﬁcial central acceleration equals approximately 10—2m/32,
+showing that acceleration due to gravity With g 2 10m / 32 Will always be dominant in an Earth laboratory.
+Needed microgravity conditions for research due to thermal experiments especially requiring long—term ones
+are available at the International Space Station (188).
+
+2 0f 15
+American Institute of Aeronautics and Astronautics
+
+"
+"3","A model of a spherical gap ﬁow experiment should help to understand such phenomena as the zonal
+bands of Jupiter, the origin of extremely high winds in the tropics and subtropies of Jupiter, Saturn and
+Neptune, the persistent differential rotation of the Sun, the complex patterns of convection in the slowly-
+rotating mantle of the Earth, and the rapidly rotating ﬂows in the Earth’s outer liquid core. In ﬁgure 1 a
+schematic cross section of the Earth is depicted. The convective motions of the liquid iron alloy in the outer
+core cause the main geomagnetic ﬁeld.
+Because thermal convective ﬂows in spherical
+shells represent an important topic in ﬂuid dynarn— ‘ _ _-_ --'-"""".i-*-'""'#;""_::.::--—. .2-
+ies, astrophysics and geophysics (Busse;5’6 Busse -*-""="";;—:_—__ Tr?""
+and Riahi;7 Cardin and Olsen;8_10 Carrigan and “mﬂtﬁﬁﬁmg' ""I'L- _— ___P'_f"""":=-_—--'..'._.'_:1'_-_'_'-._""I.'-"":'""'2; ﬂﬂiﬂﬂﬁiﬁ
+Busse;11 Cordero and Busse;12 Harder and Chris— L"" _ ..__ ' ' ' --
+tensen;13 Liu et al.;14 Roberts;15 Zhang16) this kind Ih'lamle 12""” '1' _ ' ""'-—_
+of ﬂuid ﬂow has been considered in various research Grusl .___ 2.9m km ‘F
+programs. The observed modes of instability are ”gin'an- -
+0 strongly dependent on parameters like rotation rate, i‘Ju1ermIa ""'1 is.»- i ‘3“
+§ temperature gradient, gap width, material functions . _ . _ --_.11Ju1: Eallﬂ ff
+é and others. Critical Rayleigh numbers were calcu- ' ""Inna?“ - “mm Scale
+E lated by Joseph and Carrni17 Via linear and energy "" ' '
+g stability analysis in the non-rotating ease for diﬁer— Tn 5mm 5.31:9. km
+:. ent central force ﬁelds. Roberts15 calculated the ﬂow
+8 and critical Rayleigh numbers in the limit Of very Figure 1. Schematic cross section of the Earth - Ther-
+g rapid rotation, and found that the critical Rayleigh mal convective phenomena occur in the outer liquid
+g numbers depends on the Taylor number according core, structural Earth’s composition from Kious4
+g to RaC N Ta2/3. Busse5 has also considered this
+E ease and predicted that the ﬂow should take the shape of ”columnar cells”. Hart et al.18 considered this
+g problem, too, using a hemispherical shell model and neglecting the centrifugal force.
+§ In Yavorskaya19 the ﬂuid ﬂow analogy of spheri-
+cﬂ“ cal gap ﬂow model in atmospheric motion and con-
+3 veetion in core regions of gaseous planets was dis- a _.‘ ""
+5 cussed theoretically. Research on convective ﬁow . I .. i
+E3 stability under ,LL-gravity conditions in a spherical I _ ' -'
+é shell system was realised by Hart et al. who per- r . ' ""-""__ .
+5 formed experiments on board of NASA Space Shut— . ‘4.
+a tle in 198518 and in a reﬁight campaign in 1995.20 :r _ .r' _ ' - . .‘l -
+E The experiment consisted of a rotating hemispher— "" ' : _ '- Ii.- :2 . . .'|:
+% ieal shell system with the possibility to apply ra- ' ' If' F I - "" .
+Q dial as well as latitudinal temperature gradient in I- mrl'[_I[-_[‘+ .13“ [-.'.'~.|..1'1'l'|1:'-1--
+<1 . . . . 4:; - g; u, - .
+2 equator-to—pole direction. Grav1ty was s1rnulated .' -_ _ I._--':l- _ .
+E. by an electrical ﬁeld. The observed ﬂow patterns ' 2: 4-11-3191 '
+g were visualised with Schlieren technique and com- I .-'_"" 11:12. -'_---"".-I""._ -
+E pared with 3D non-linear simulations. The use of ;.c""_1 ""-'_ .
+E an artiﬁcial central buoyancy force ﬁeld for sirnulat- '_' ' _. ._ E ”3*"". 3' :
+Q in ravit in eoph sieal analo with respect to _ rﬁii. i111 - '- --.-‘
+th: lgiquid 3outergeore Zf Earth is dgizeussed by Friih21 ' 1. '-_' aﬂjlul—ﬂﬂﬁiﬂﬁﬂ.
+and by Beltrarne,3 who showed that the essential ._ 11”"" ""' I i I I - I
+behavior of the ﬂow is captured even if the power -. .-.-:|'-'_'-_ 1:11- ' f ' __1 ' _
+law of the simulated artiﬁcial gravity for the een- -. '.i':'_._E:-:;':-: ':""""'I l “*l'I-_'_'-'_:'.'_.- _ ._ 5'""
+tral force ﬁeld is not conform with the acceleration - . I I I ' I' 1 .I *:
+caused by gravity on Earth. . ~ ' ""- -""-;_' h-
+For the preparation of the execution of the eX- ' ' .""
+perirnent on ISS a large number of preliminary in- l'-
+VeStigationS were carried OU—t 115ng the Engineering Figure 2. Allocation of the GeoFlow Topical Team,
+Model (EM) from the industry partner and the SCi— industry partners and space agencies
+enee Reference Model (SRM) at BTU Cottbus. In
+addition to the experimental tests, a variety of numerical simulations were performed (Futterer et al.22 and
+3 of 15
+American Institute of Aeronautics and Astronautics
+
+"
+"4","Hollerbaeh23). These numerical studies were used for the preparation of the experimental design and com—
+plementary parameter variations as well as analysis of both — stable and time—dependent — ﬂows that was
+found to eXist in the parameter range of the GeoFlow experiment.
+
+As optical measurement method Wollaston—shearing interferometry is used to determine the temperature
+ﬁelds and corresponding ﬂow pattern.
+
+Here we present numerical preliminary studies which focus on dynamics of non—rotational and rotational
+regimes. For the non—rotational case an approach combining numerical simulations with a spectral time—
+stepping code and path—following techniques allows the computation of both stable and unstable solution
+branches of stationary states. The transition from the stationary t0 the time—dependent regime is described.
+Direct numerical simulation of rotational regimes show bifurcations from basic Via periodic and quasi—periodie
+state into Chaos. In the low rotation regime drift of time—dependent solutions is prograde while in the higher
+rotation regime drift is retrograde with rotation of the sphere.
+
+Finally, we compare numerical predictions of different thermal ﬂow states with ﬁrst experimental data
+from 188 experiment. By comparing numerical and experimental results, it should be possible to determine
+
+0 the dynamics of the observed ﬂow patterns.
+§ The GeoFlow Topical Team consists of science teams from BTU Cottbus (Germany) (PI), Univerity of
+§ Potsdam (Germany), University of Leeds (U.K.), University of LeHavre (France), CIRM Marseille (France)
+E and ESPCI Paris (France). GeoFlow is supported, in technical point of View by EADS Astrium Space Trans—
+5 portation GmbH Friedriehshafen (Germany), MARS Center Naples (Italy) and E—USOC Madrid (Spain).
+2. Financial and organisational support is given by the European Space Agency BSA in Noordwijk (The Nether—
+g lands) and German Aerospace Center DLR (Germany).
+3°
+§ II. The Experiment
+g Since 2002 the overall preparatory research program comprised work packages for the development of
+5 hardware and software as well as preliminary numerical and experimental investigations. Experiments were
+3“ performed in the laboratory at BTU Cottbus using the Science Reference Model (SRM), see ﬁg. 3 (a) and
+§ also in the laboratories of industrial partners who built and veriﬁed the experiment hardware using the
+E Engineering Model (EM).
+53
+Z -— cumin Inn
+(:9 ”I'll- -1'-1r Elli: shells El P
+2 Jﬁ: “f. I \ . research cavltyr
+$5 "" |._ ' I'r .I' -"" lg? reﬂecting m
+E _ n' *‘ _ .. inner sphere gm r
+g .. 1 ""I — ""$3.?"" ' 1 .-_- f— FI‘n-é’ 'é-Fllr
+E» ' G."" r :3 ﬁnwmrﬂuﬂ ii 5:. ﬁﬁﬁh - c:
+E _ _.---I _ "" '. h . r]: ﬁgﬁffﬁmlr""""‘:§%J'ﬁﬁ""ﬂﬂmfﬂ§aﬂ r:-
+8 U ' J’- E “WE -
+-. . _ . f/ mlume . E :E pumps
+.'-:r 4f - Jig!"" Egmggnsatlun J If. E n:n’taryr trayr
+-. 4- -__,._.--"" pelner thermal
+' element sansnrs
+(a) Science reference model (SRM) in the laboratory at BT U (b) Schematic cross section of GeoFlow experiment cell
+Cottbus
+Figure 3. Geoﬂow experiment
+
+Numerical investigations and bifurcation analysis were performed by European research groups from
+United Kingdom, France and Germany all being members of the GeoFlow Topical Team. These studies focus
+on preparation of the experiment design and on the observable parameter space by ﬂow states simulation
+and on linear stability analysis and bifurcation analysis (Futterer;24 Travnikov;25 Gellert26).
+
+4 0f 15
+American Institute of Aeronautics and Astronautics
+
+"
+"5","A. Experimental Setup
+One major part of the European Columbus Orbital Facility 0f the ISS is the Fluid Science Laboratory (FSL).
+The FSL supports ,u—gravity research in the ﬁeld of ﬂuid physics by means of a speciﬁc triggering and the
+observation of phenomena inside of transparent and at the surface of opaque media. It is characterised by a
+high level of modularity on all experiment and facility (sub—)system levels.
+For the scientiﬁc ﬂuid physics research, the FSL provides different _
+measurement methods. While the Wollaston—Shearing Interferome— 31th.... . II I .
+try (WSI) is primarily used for the GeOFlOW experiment, also the "" ' i.gj .._H'"". II- ' "".- ; '.:,.
+measurement methods Schlieren and Shadowgraphy can be applied. I ”’3 ‘3: :1. .. I II '_ I
+The FSL consists of two main parts, the Central Element Module . :1. . II E%::'
+(CEM) and the Optical Diagnostics Module (ODM), Cf. ﬁgure 4. ..I m” i‘I ramming {I
+The CEM includes a manually accessible operational area Which is .I 1' 3 -%ﬁ "" ..II‘
+designed to integrate the modular experiments integrated in Exper— ' iI . 1.; 1 _ - IVMU'I
+iment Containers (EC). 1 5: -_ '. I“; '. I .
+§ The GeOFlOW experiment hardware has been designed on the ' '7'"": '. *____1III‘a-f2""
+08"" basis of the geometrical data of the EC Which is strongly limited to I- - .I . J. P3331253 I 3.
+S the volume of 270 X 280 X 400 mm3. - '33. 5
+E - - - - - .'_——:'= “f""- ' 1:."" -' :I'I- 'm.—-:;_---_. -::
+R The experimental core cons1sts of an inner sphere, Which is made II. .‘I --I I I 3a.?- ”w =:
+2 up of tungsten—carbide and two outer shells, made of BK7—glass (Cf. l. 1 'I' 1-1:“ _. -I - 3 HI HI“ -
+(2 ﬁg. 3 (b)). ' I ' 3. wf —..__'=.I_I;
+E In the research cavity the temperature gradient is realised by :- I I ' :‘E' l I cII
+g uniformly heating the inner sphere and cooling the outer glass shell ' '3’“ . . . II- I
+3 using temperature controlled ﬂuid Circuits ﬁlled both With same sil— l' I. - EC. ""II '. II..I _
+f3 icone oil. The experiment cell is mounted on a rotating tray Which I H '— : w IIII
+g allows for solid body rotation. The central force ﬁeld is generated I I :5 I
+g by applying a high voltage of V7.ms = 10 kV between inner and El . ifI'
+2; outer sphere to generate the artiﬁcial central symmetric force ﬁeld '.' i5 "" .I'. I
+a analogous to the Earth’s gravity ﬁeld. II-I _ -fe _ i _""'
+Z A low Viscous silicone oil (Bayer Baysilione® M5) is used as the . . 'l' i Q ' ""' fr""
+Eu: working ﬂuid. Table 1 shows the properties of the working ﬂuid F ' ”/3“ III'.T- I:
+E measured at T = 2500, the average experiment environment tem— , ' 4| 1,. '3‘“
+(LE) perature. In particular, in the expected environment temperature Eh}? Ii? 3' '
+3:) range Which is approx. 20 — 3500 differences in physical properties '. 3:: ' . '-
+(E from the given values are negligibly small. However, temperatures III.- ..II
+8 0f the in— and outﬂow of the cooling and heating loops are measured ' IL-
+E permanently and deviation of the parameters Will be taken into ac— “‘ l ' "" ""I I
+(:5 count in the data analysis. While the Coulomb force does not affect Figure 4. Fluid Science Laboratory
+<2: ﬁuid due to high frequency alternation the dielectrophoretic effect integrated into COLUMBUS (Image
+3 results in central force ﬁeld and acts as ponderomotive force due to Source: NASA)
+3: the inhomogeneous electrical ﬁeld.
+E The system is rotating With a constant rotational frequency N = Q/(Zw). The corresponding Taylor
+3 number T a is given by
+29d2 2
+T... _ ( V ) . <1)
+In natural convection phenomena Rayleigh number Ra Characterises the temperature difference:
+3
+Ra. : MI (2)
+ma;
+Additionally, we introduce a central Rayleigh number Racentml that is proportional not only to the
+temperature gradient AT in the spherical gap but also takes into account the acceleration due to the central
+force ﬁeld 919, i.e. Racentml N (AT - 96):
+3
+Racentral : W—ged- (3)
+ma;
+5 0f 15
+American Institute of Aeronautics and Astronautics
+
+"
+"6","Here v is the dielectric variability and ya the electric acceleration due to electrohydrodynamic force
+measured in Wms that is the high voltage alternating electrical ﬁeld giving a central force
+_ 2505?. r3 2 4
+ye — p ' ﬂ2T5 ' Vrms' ( )
+Because 96 is proportional to V7.2ms ' ?_5 it follows that Racentml N AT ' V7.2ms ' ?_5. While acceleration
+due to gravity is approx. 10m/32 0n Earth’s surface the largest value of acceleration due to high voltage
+ﬁeld is less than 10—1771. 3—2 at 7"" = r0 at Wms = 10kV.
+The Prandtl number P7“ incorporates the physical properties of the working ﬂuid:
+V
+P?“ = —. 5
+H < >
+Investigating convection in laboratory on Earth superimposed With artiﬁcial central force ﬁeld, both
+Rayleigh numbers have to be considered. For the u—gravity environment at 188 only Racentml is essential.
+§ Geometric parameters
+g Inner radius m 13.5 mm
+Q Outer radius r0 27.0 mm
+v
+E” Gap Width d : r0 — m 13.5 mm
+$ Radius ratio 77 : 73/73 0.5
+8 Aspect ratio 6 : (r0 — nﬂm 1.0
+E
+g Variable experiment parameter
+g Rotation rate Q 0 — 2 Hz
+Ea! High voltage VrmS 0 — 10 kV
+2 Temperature difference AT 0 — 10 K
+g Physical properties of the working ﬂuid (T : 2500)
+E Type Silicone oil
+3‘: Density p 920 kg - m—3
+E Kinematic Viscosity V 5 - 10—6 m2 - 8—1
+(:9 Thermal conductivity A 0.116 W - K_1 - m_1
+3:) Thermal diffusivity H, 7.735 - 10—8 m2 - 8—1
+9-1
+2 Cubic exp. coeff. oz 108- 10—5 K‘1
+8 Dielectric constant 57. 2.7
+E Therm. coeff. 0f 571 1.07 - 10—3 K_1
+(2‘
+EC Dimensionless parameters
+43 Taylor number Ta Ta S 1.3 - 107
+33 Central Rayleigh number Racentml Racentml S 1.4 - 105
+E Prandtl number P7“ P7“ : 64.64
+D —
+Table 1. Experiment parameters
+B. Measurement Details
+For the ﬁrst GeOFlOW on—orbit operations investigation of the ﬂow ﬁeld is performed using Wollaston—Shearing
+Interferometry (WSI). Schlieren technique and Shadowgraphy are implemented Within FSL as well. Due to
+experiment constraints measurement techniques are used in reﬂective mode. The inner sphere of the setup
+is prepared to act as a mirror. Figure 5 (a) shows a sketch of the WSI setup at BTU laboratory used for
+preparatory experimental works. Because of the acceleration due to gravity the operation mode is parallel
+to the axis of the gravitational force 9 on Earth.
+The Adaption Optics (AO) includes an optical lens tool Which converts the planar waves emitted by
+the Laser (Q) into spherical waves and the reﬂected waves Vice versa. This is needed due to the spherical
+6 0f 15
+American Institute of Aeronautics and Astronautics
+
+"
+"7","I K
+.;""_._J""""'*M~._' #1.; '_ 91.” 7:“ -
+Fﬂ - 2.2""“. :1: :2:-HE; ' .-;_ m:
+Hf-f '11""-""-1~.'..— 7 ”7%?” :1"" 3*-—-‘.‘_-:-.:-‘
+_—- r _I-. '.- ' 1'- . .;I' .'.—_I"""""".""'
+¢ﬁ US . .ET' _ __ .-_.,..:—..¢
+—————___——\—‘_ _ _ . _ I. .
+I
+_ ' _ -' _ r .
+ﬂ L1 ST L2 AU __-r':.“:}.‘:'?.Eﬁ-‘: . 5:311 -- :75: ""l? 3%."".
+-- r W 2F-‘3gif‘gi s...__:-_-.-:T_—'_
+g . :' Iii“: ﬂ . . 1% __'-""'-_E:II;'-.'-"" In.
+EM .- .12. :f-I' ,a, "" ' "" ""“5113?
+: ' I' III? _ '
+So? (a) Sketch of the WSI set—up at BTU Laboratory. Laser (Q), (b) Natural Convection (WmS : OkV). WSI images taken
+g Lens (L), Beam Separation (ST), 90 mirror (US), Adaption at constant Rayleigh number Ra, : 4.31 - 106 and increasing
+g Optics (A0), Science Reference Model (EM), Wollaston prism Taylor numbers (from left to right and top to bottom: Ta = 0,
+E (W), Polarisator (PO), CCD Camera (K), gravity (g) vector Ta = 8.6- 102, Ta = 1.3 - 105, Ta = 5.4 - 105, Ta, : 1.1 - 107,
+33, Ta, = 1.3 - 107)
+8 Figure 5. Wollaston shearing (WSI) setup and interferograms from ground experiments
+01)
+g geometry of the experiment shell system. The 90 mirror (US) deﬂects the beams to the AO Which focuses
+EL the waves to the centre of the experiment cell (EM). The beam separation cube (ST) deﬂects the reﬂected
+E beams coming from the A0 to the Wollaston Prism (W) and the Polarisator (PO).
+é WSI method detects refractive index gradients of the working ﬂuid and is therefore sensitive to density
+33“ gradients caused by temperature differences in the GeOFlOW experiment. Optical path length variations result
+E in interference phenomena that are directly photographed by a CCD camera (K). Figure 5 (b) shows W81
+3 images from ground test sequences taken at different parameter points. Note the complicated interferogram
+E structures at large Taylor numbers. Rotating axis is located near to the middle bottom of images.
+5
+:3 C. Data Transfer and Local Storage
+9.:
+(g The GeOFlOW experiment is a fully automated
+8 stand—alone experiment and could run With— “Hm mm
+E out any crew time on 188 despite of start— ""‘ ' _ __ '* ‘3’; “i
+5:: ing up, shutting down, locking and unlocking. . ' ’giﬂ; .. a _ ﬁg.“ :5 "" i
+<2: The speciﬁed Experiment Procedures (EP) are f' I - :- - —- -- ﬂimﬁi-u ' ' '
+4: programmed by User Support and Operations . . (wry 4‘ a I I I '-
+§ Centre in Madrid, Spain (E—USOC). The hard— Dr
+‘3 ware support for the GeOFlOW experiment is ”3111 ti'ﬂﬂﬁﬁﬂ' _.,_;-=-' II mam
+E . . . . . Inga; _- H'l'il ”3.;qu ‘ 1 C: IqLib—SQF’LM'MEF
+Q given by EADS Astrium 1n Friedrichshafen, ‘ ‘_ ' r“ J IﬁlhéELE-Uhk-L‘cﬂ
+Germany. The support for the Fluid Sci— EmiT-""Q-“mﬂi'rim’ ”mm“? mm“
+ence Laboratory comes from MARS Centre in ., ‘ ﬂ
+. —~ -- ' _l_._ _ _ I
+Naples, Italy The data flow of the GeOFlOW .....'.""'l J! l E! pvnan E. E BTU
+experiment data is shown in ﬁgure 6. a gw . _*__ I.- _ L150: mmsm mcmmﬂw
+The output of all planned experiment runs """"3"" . .__ ' .'l'ﬂi'; 11
+mainly consists of GBytes of images from WSI . 'I .
+. . . .-- _ «:21 ' '.' Archival 3 -'""”“""-”""“- ;
+and telemetry data, 1.e. information about l _ I. i ﬁ=|1 I. !:|
+all relevant experimental parameters belong— L _' — '—
+ing to each image. The downlink of image data
+is controlled by MARS Centre in Naples dis— Figure 6. GeoFlow data ﬂow
+tributing the data to the other centres. The
+data storage at BTU is capable to handle
+4000GB including backup, analysis and interpretation of data.
+7 0f 15
+American Institute of Aeronautics and Astronautics
+
+"
+"8","III. Numerical Investigations
+The non—dimensionalised equations governing thermal convection in the rotating spherical shell under
+the inﬂuence of a dielectrophoretic force ﬁeld for velocity ﬁeld U and temperature ﬁeld T are given by
+V ' U = 0, (6)
+8U
+Pr‘l ' [— + (U ' V)U] (7)
+8t
+: — Vp + V2U
+—1— RaT éz
+‘1’ Racentral Tér ‘1’ V Ta éz X U
+-1— Ra T 7"" sin 6’ éeq
+:3 8T
+g E + (U . V)T = V2T. (8)
+a The corresponding system of coordinates is given in ﬁg. 7, respectively.
+g Refer also to Bergemann27 for a more detailed description of scaling of the
+5 system of equations and the evolution of parameters. 910 r. u
+g) GeoFlow experiment is characterised by Prandtl number Pr, equation (5) l‘
+‘3 giving the material properties of the ﬂuid and the Rayleigh number Ra for _ . V, (p‘w
+g measuring the imposed thermal forcing. Natural convection in spherical gaps ?\4 ’, §A
+5* With d = r0 — n for axial force ﬁeld in an Earth laboratory is scaled by Ra, ,-' y .6
+-- . E ,v
+4%“ equation (2). r {’7 D
+E For the dielectrophoretic force ﬁeld set—up parameter Racentml describes the ° .3 (p
+8“ central buoyancy thermal convection, equation (3). ""a /""
+2;, Regarding convection in Earth laboratory superimposed With high voltage ) T'
+5 ﬁeld both Rayleigh numbers have to be considered. However, for microgravity To
+:2 environment at 188 only Racentml is essential. 3
+E Effects due to rotation are accounted for by Coriolis and centrifugal fo/Ilges, Z
+(:53 described by Taylor number T a in equation (1) and an additional factor Ra Figure 7. System of coordi-
+o
+< nates
+m N (XAT
+% Ra — —4 P7“ Ta. (9)
+a The boundary conditions associated With (7) and (8) are no—slip for velocity ﬁeld U and the values at
+E the inner and outer shell for temperature T , respectively.
+(<0: This system of equations and boundary conditions is solved using the numerical code developed by
+E. Hollerbach23 Where U and T are expanded in terms of Chebyshev polynomials in the radial direction 7°,
+E and Legendre functions in the meridional 6’ and azimuthal direction 90. For the numerical simulation the
+Li parameter Racentml has to be used Without taking into account the geometry of the problem. Thus, Rayleigh
+E number is deﬁned now as
+Racentml = (2 67. 6.. y)/(pu K3) . ATVﬂbs. (10)
+
+After reaching the ﬁnal experiment temperature difference AT and high voltage value Wms only these
+two parameters power the convection.
+
+Further input values for the calculations come along With experimental constraints. Working ﬁuid ﬁlling
+the spherical gap is a silicone oil of GE Bayer Silicones having a Prandtl number P7“ = 64.64. With inner
+radius 7"".- = 27 mm and outer radius r0 = 54 mm the ratio of radii is 77 = 0.5. Experimental runs are to be
+performed by applying a constant voltage Wms = 10 kV and varying AT up to 10 K resulting in a Rayleigh
+number up to Racentml g 1.4 . 105. Maximum rotation rate up to 2 H 27 corresponds to a Taylor number
+value of Tam” = 1.3 ' 107.
+
+8 of 15
+American Institute of Aeronautics and Astronautics
+
+"
+"9","—————— .
+‘ '
+. x chaotic state —-—~lmeaxstabulxty(m=4) --~~~hnears1abalny(m=5) Imearstablluty(m=6) * :_
+_ —|nnearstabnlny(m=7) - - - -lnnearstabnlny(m=8) hnearstabuluty(m=9) -----Innearstablltty(m=10) ' . ""
+‘ ' ~ - Ta = 1.5*106
+. = I ---n
+1,0E+05 , 3‘
+. . . ”—_—_ I’ 1 . ""
+g “_-—— ' , . . ‘ ‘
+_ . 0| ——_—'-_ R5; = 20000
+Re = ---—-
+""~ r'r .- a—MW .
+_mm ennu- . .
+O _——_—_ ' 7 .
+8 ‘ =___—— . ‘ . . '.
+0? . mn_—_ Ra = 10000
+§ 7 _—_—-_ Ta = 2*105 ,.
+g j -_-- \ l
+----- o
+5 1,0E+m .. 7 . ..
+E °<' 1,0E+03 1,0E+04 1,0E+05 1,0E+06 1,0E+07 1,05 Ra; gm
+g” T Ta = 1*105
+:6 a
+if Figure 8. Overview of convective states in spherical shells of 77 = 0.5 for Pr = 64.64 depending on
+g Racentm; and Ta: Besides time—dependency of numerical solution diagram shows linear stability of
+5 most unstable modes m.
+E A. Thermal Convection
+S
+E5 Main parts of parameter variation include setup of temperature gradient between inner and outer sphere
+E (corresponding to Rayleigh number variation) and rotation of spherical system (corresponding to Taylor
+a number variation). Figure 8 shows this parameter regime and calculated convective states. Experiment
+5 runs follow thls dlagram W1th non—rotatmg cases by mereasmg Raylelgh number stepW1se and rotatmg cases,
+2 Where a distinct temperature difference is set up (Ra ﬁxed) and then rotation rates are superimposed by
+8 increasing T a, starting With 10W rotation to intermediate to high rotation regime. In ﬁgure 9 these different
+E regions are described.
+(<0:
+<2: 1. Non-Rotatmg Case
+>~.
+.13
+g Increasing Rayleigh number corresponds to intensifying thermal impulse to the system. Transition from basic
+Li state to steady and then direct to irregular time—dependent convective states are found (Fig. 8). Patterns of
+E steady state convection depend on initial state. Increasing Rayleigh number stepwise leads to axisymmetric
+states (Fig. 9 (a)—(b)), setting thermal impulse immediately from zero reveals more complex symmetries
+(Fig. 9 (c)—(d)). With methods of path following analysis the stability of patterns are validated in different
+regimes. For experimental work on 188 different patterns Will be observable due to different runs by Changing
+the initial states. Refer to Futterer et al.22 and Bergemethh27 for more details on stability discussions. For
+irregular ﬂow tetrahedral patterns dominate ﬂow structures.
+2. Rotating Case
+From low to intermediate to high rotation the experiment traverses stability lines belonging to most of the
+unstable modes (Fig. 8). The higher the rotation the higher the azimuthal mode of convective ﬂow (Fig. 10).
+Furthermore a Change of drift velocity occurs that was already predicted by stability analysis of Travnikov.28
+Direct numerical simulation results show prograde drift for 10W rotation regime and retrograde drift for
+intermediate rotation regime. For low rotation patterns are just rotated but not distorted. For intermediate
+9 0f 15
+American Institute of Aeronautics and Astronautics
+
+"
+"10","(a) axisymmetry at (b) inverse axisymmetry at (0) cubic symmetry at (d) symmetry With az—
+Racentml = 5000 Racentml = 8000 Racentml = 5000 imuthal wave number 5 at
+Racentral : 10000
+Figure 9. Patterns of convective steady states for non—rotating case Ta = 0. Images show accumulated radial
+temperature at northern hemispherezz’27
+CD
+:3? ' ea ' sa ' ea ' an
+O\ ?E ?E ?E ?E
+8 r i . m r ; . m E ; . m :1 ﬁ . m :1
+N . i . 2 .. i .. i
+8 [IS an: [IE dull [IS an: [IS an:
+E
+a 1 I25- ' W 1 I25- ' W 1 I25- ' W 1 I25- ' m
+S .1 . I: as - UT . I: as .1“ . I: as - .1“ . I: as -
+é ' I 1 . F | 1 I F I 1 l , | 1 J
+:0 (a) m = 5atTa = 1-105, (b) m: 6atTa: 2-105, (c) m = 7atTa = 6-105, (d)m=8atTa=1.5-106,
+g Racentral : 8000 Racentral : 10000 Racentral : 2000 Racentral : 50000
+E? Figure 10. Patterns of convective steady states for rotating case Ta 75 0. Images show radial temperature ﬁeld
+g in meridional cut.
+.51
+§
+33“ rotation patterns start to align as tangential cylinders. Centrifugal effects become more important.
+5 Calculations for high rotation are still under progress. Additional time—series analysis for complex time
+8 dependent behaviour is necessary as well. Final aim is to track the transition from basic Via steady to
+E3 periodic and Chaotic states for ﬁxed T a and increasing Ra as marked in diagram 8.
+%
+o
+m 0
+3:) IV. Data Analys1s
+Q—l
+m
+% Figure 11 shows the way of data processing, evaluation and interpretation. On the left side forward
+é modelling With Simulation of 3D temperature ﬁeld Which is used for construction of numerical interferograms
+E is demonstrated. This allows comparison to the experimental interferograms. The small Circle left bottom
+:0: gives the actual observation area accessible in the experiment.
+a On the right side inverse modelling With calculation of the integrated temperature ﬁeld is shown which
+.13 . . . . .
+3 is based on experimental data. An example to demonstrate inverse modelling and to illustrate forward
+Pd 0 o o o o o 0
+£3 modelling is given next. This allows for comparison With numerically calculated temperature ﬁelds. The
+a . . . . .
+5 observed ﬂow patterns can be analysed in detail by usmg this data ﬂow in a useful manner and allows the
+Q Characterization of the ﬂow pattern. Also, numerical simulations can be veriﬁed With experimental data.
+A. Image Processing
+The temperature ﬁeld T (19, Q5)
+_1 19
+A19 A dn 1
+T 19 : — - — h d1? + T 0 11
+mm W H [910W H
+is calculated in azimuthal and meridional deﬂection. Integration of the temperature ﬁeld follows the
+requirements given by Immohr.29 Variable A here is the wave length of the laser and fphase is a phase
+function that contains the derivative
+8T(19, gb) f A19 A (12)
+— : h _.
+819 p “86 2 d 5 co
+10 0f 15
+American Institute of Aeronautics and Astronautics
+
+"
+"11","GeoFlow: Visual Data Analysis
+30 Simulation GeoFlow Experiment ~
+I l l l
+n l ..
+Applying (Numerical Simulated) Fringe Pattern
+Nonlinear Methods InterferOorams (Interferograms) _
+. l
+W W1
+w ‘ 1.. J Temperature Field
+\Q _ 'g _ Compariso ‘J__---
+8' : Interferograms Interferograms 1W
+(2
+8‘1)
+g Figure 11. Veriﬁcation of experimental data by analysis and comparison With numerical data.
+3 Here dn/dT is the modiﬁcation of the refractive indeX n due to Change of temperature T , temperature T 0
+g is used as an initial value for calculation.
+2; In ﬁgure 12 (a) a work ﬂow for the evaluation of numerical data is shown namely the forward modelling.
+g The setup is for a heated inner sphere and cooled outer sphere here. The corresponding integrated temper—
+E ature ﬁeld is shown. The third picture Visualises the variation of the optical path and on upper right side
+E5 the simulated interferogram caused by this temperature ﬁeld is illustrated. The numerical interferogram is
+E needed for the evaluation of experimental data. Figure 12 (b) shows the measured interferogram With a
+C; temperature difference of AT : 4 K , S2 = 0 H z and Wms = 0 kV 0n the top left. In the image down left
+E there are the relevant extracted fringes for the consecutive ﬂow analysis. A phase shift from the extracted
+2 fringe pattern is calculated for the ﬂow analysis and afterwards integrated to the temperature ﬁeld.30 The
+8 image on the right shows the phase function of the fringes and on the top right is the temperature ﬁeld of
+E this phase function demonstrated.
+35
+<2: V. First Results from Orbit Experiments
+,9
+'0
+g First WSI results from COLUMBUS show a very good optical quality. Expected temperature gradients
+E could be achieved as well as central force ﬁeld strength and rotation rates, i.e. Rayleigh and Taylor numbers.
+8 With end of 2008 10 scientiﬁc runs out of 36 Will be completed. Some examples are presented in ﬁg. 13 and
+ﬁg. 14 Without quantitative interpretation that is now under work.
+In the upper half of the images a black line shows the position of north pole and rotation aXis approxi—
+mately. Figures give 6 images for every 60, i.e. one revolution of the sphere.
+For a lOW—rotation case at low Ra number, ﬁg. 13 (a) an axisymmetric ﬂow can be observed. Increasing
+Ra number, i.e. temperature difference, see ﬁg. 13 (b), a more complicated ﬂow pattern appears. A special
+symmetry can not recognised just from the interferograrns, however, aXial symmetry seems to be broken
+deﬁnitely.
+Increasing Ta number While keeping constant Ra number, gives rise to an even more complex ﬂow pattern,
+With increased inﬂuence of rotation rather than convection due to temperature gradient. However, these ﬁrst
+images still have to be analysed in more detail and are intended only as demonstration of feasibility and
+quality of the ﬁrst images from GeoFlOW.
+For every rotation the triggering gives 6 images With a small ﬁeld of View near to north pole, Which have
+11 0f 15
+American Institute of Aeronautics and Astronautics
+
+"
+"12","1 100 90
+“—.. ""‘{:“;‘:‘.
+7-, ."".:;.t'rﬁ..3'=_;
+""‘0 ’ , ""s '. 4 ~
+g ., J: j. - .
+.-0 ’- t 7, ‘-' ‘ ~' 15403:? . ='
+g e m 423,. ~.-.- .- ..
+0 E E 0 "",5 ~""’. ""HUL' ‘
+a 3 KJ. . ‘ -WIW '- ""‘
+0 E: “’ V' "" ’ a ,: ‘ :-
+.. g fix, _ r ‘ ‘ .. 5’2 3:,
+05h ‘ é’ I: :I ‘ 1""”‘9agézm‘fciV'
+’0 r. . . 3;;15’7- :19? L. ‘ ‘5‘
+1'1 -0 5 0 0,5 1 '9_°90 .3. go 4 a
+""‘ degree (ﬁrm norm p019) -I I "" "" ,; .
+KID.
+O ‘ ‘ E
+\o - i
+0° 08 3 i ‘
+O\ 2 .
+O
+a E 05 | 3
+. 2 E
+g :— 0‘ E _T g o.
+E _' ' '
+m 02 _ -2 .3
+S 0 T .~ ' 1: I V ,.
+{—1 ‘ ‘7 , 1E
+8 0\\/ o o ‘ : : J o . -""""‘a
+— “1.1 45 .m ol'l
+8‘0 YY xx '1 -I
+0.
+C6 . . . .
+.g (a) Forward modelhng — numerlcal data (b) Inverse modelhng — experlmental data
+8'
+C6
+E O D
+g Flgure 12. Work ﬂow for Interferogram evaluatlon of numerlcal and experlmental data
+.51
+m
+v—1
+0
+N
+m,
+N
+3
+5
+H
+a
+O
+M
+Lu
+E
+Z
+Lu
+0
+Lu
+O
+<
+9.1
+(A
+Z
+o . _ _ _ _
+m . . _ '-.-'-:.- . _ ""_ _ _. _.
+' r551: _ '- - |:-i-:f ‘_:-_.""' At . - -. '—-:' l--' .. __._. I-_:J _ _' -|_ - . --_ .: “'__3. _ _Ef"" . __I-__'=-'-""I--""-
+H ""-'f- .- ' ';'- - ti _:l:- T - _él:l:_. J - _- - l 'I 'E-F-IEI- .- — -. 'I--' _-- ‘— -_""'_:.r_-._ _.-| 'IIL-Eﬁ'trrﬂ . I _‘i; ._.-_--""'l- :‘ﬁI-""j'l-_
+< .2“ . ' .""""-.:.-r. .43- .: J55]. ' ' ' ' r'--'.'.. _-.....- - 1 vi .' 5-2""? ' ’er
+m ‘- -¢_ . '-. _ .‘ '. 11:3“.- .zgf-r '__Lﬁ .‘;_._-*' ' _' -; '_-_'; .'-r _' 'rr: -..__-'-'_ F}:- :4"" - _ﬁli‘f’mri‘c-
+< _ﬁﬁ; -_'""-_::"":E'_ .__:-_ __ n: 'I-lr-l' .- :_-'.__'~ -:':-.%;Il-1}ﬁ.:§ 3|"". _JE :.-- _ j. _l_ ¥ (5!"" 1;:_.:;..._’ -__ I -“' _le i: .__-J I ”'13”? - k1 -II_
+2 ~‘.- ;__;;£..L.I.;.- - -- - .- 1,33:- *. ' - '-;1~H_—- -,._§.,,;:;.c * . _ {1; :1. 1113:, _ {__._-r}.-
+5‘ ' J's"" _- 1-??? .11 ’ = 19. ‘E- .."" '.; ‘ir :--;.-_L.1r.-- 3-2.; EEWH —. i ﬁes""
+""U ' “i ' 4'3""! ' -. ' .*.""-' _ -' I J""..- .— a': "" '1' -'-.‘._-:"".‘-..‘-=""‘--"""" 1"" -__"" .__ '—-"" ' '!.""""'-_--i'_*.""r:"":”
+G) L_- _ ._u- 1._...._ 1i. _ """"-u_ -h'-_-.-.
+'0
+C6
+.2
+a
+o _ _ . .. . _ - H ____ __ _ :— .
+Q -, ,2 _ _- _ -"":irl ‘__E_.""':'::-""' gﬁrf __ v.3"": _f-E ""=-. A 11;: '22.? '- :5. ‘i'__.-'=-..+‘ __ 9:: '_- _. -._-:'T.',;""-
+'l '- _-_-:-'; _.+-""' -. 3“"" '- -‘ I"" - ..- - . _-';=. "" 753% i {195% ' ' .n‘""! .--"".-'="" r» 1}?
+-- . u .- .L - .._ - . _ .- ... - - - . . - - EIL': -..-.- .— “=33: 21-.- . ..I d... m“-
+'- - ' ' - - '. - - LT H"" -""- ' ""l . *—-"" - =1.”- """" - nr-i --- ,"" ""-'-=-. F 1::-
+-n.. _ _ i'._ . _. I -__' ' _ .""H.__- ""i! -_ I' : ll -' 'lgLI . 'I.- ll .- - -__ __ ‘__._ _ H '-' .. __""
+$1__ . _ , _. 1., 12‘, l. _ _.. 1- b . .- '1'} J; ___ g ..u-__.
+. 1_'-i - - _-.: .__;- - _‘Eﬁ-‘b—ri"" - - --_ ﬂ ._I-‘I _ -._ J- ' ""1. 'F _ﬂﬁlq - _ I- -___- L .__ 3:"" '15.- T l-_ ':-_-'.:1 I .. _- _ |I' ""fin
+ﬂu ' J d'r -~'- -_.- J 'J""_""w'___. L: ___-I— 1‘ 4&5""; '1' '53; u —!'+-I13:1L I. - 5-511: EH.“
+(3;) AT : 0.28K79 : 0.2HZ, V/r-ms : 10kV7Ra; : 4.01 ' (b) AT : 6.2K79 : 0.2HZ, V/r-ms : 10kV7Ra; : 8.87 '
+103,Ta, = 1.34.105 104, Ta, = 1.34.105
+Figure 13. WSI interferograms for low-rotation cases at positions 0°, 60°, 120°, 180°,240°,300°,360°
+12 0f 15
+American Institute of Aeronautics and Astronautics
+
+"
+"13",":i‘irﬂ. -, ':-' r:- _.' '3' ""4 :
+-- ”.1 f1. gr:-
+. :- ""“H___:-=;£ . _ '--.-l_-l'-_-__._pq.—£ __-_ .- _ - 1. l‘_ _-
+-: ,_.-_.-:_'=- -.-*'""'.-.=- a - --;.-.“""'“- ‘f .- .ﬁ.*§ -.._ 3:.
+“r i ..- #1.?
+-:|__'i:_-? 15%;.- n-_ :2...qu 5'- ' E 1'. _rJ “LE?_ - I. i-Iffrhi'r ':_-...I-
+L =""' l! _I .- . 11;.""
+_. '1‘? -_ .‘— -:.'-.'=I_::'- - ;....- _ _ - _ 7'; _ -1 ”W f:
+g. -. ..;. £7? g,-
+f 3711*? :~ ' v f"" - ' "" nglrhfﬁ-iﬁ
+O . . . . .
+g Flgure 14. WSI Interferograms for hlgh-rotatlon case, Images taken every 60°: AT : 6.2K,§2 : 1.6Hz,Vrms =
+g 10kV,Ra. = 8.87 - 104, Ta = 8.59 - 106
+3
+\o'
+g
+E
+2' to be combined into one Single image. An example is given in ﬁg. 15. Images usually are overlapping each
+8 other, so a deﬁned mask (ROI) is applied over each image sequence giving 6 sectors. These sectors Will be
+Q . . . . .
+:0 combmed mto 1 lmage Showmg the Whole northern hemlsphere ﬁg. 15 (b).
+H
+.8. . _-_.E;III_JII':’H Jr .1...
+8 ' '13.- ..Fn'r‘: J. “Ila """"....--'-'|‘_.:£
+S '.I. - ;-I‘I"":I:_I:FII' ll - .51: -
+> -; -.-r.-..:: . '4? . ‘ , , .
+— l - ""-- IE} ' -..I .. I-r ""I 1!"": - s V ' 1"" - ’.f‘. Q ‘
+2 h=§m$ "" ’71 e"" -' ixﬁiﬁ m... 1' 3 ""
+a I I "" I - '1'“: r“ r 1""“ 'I‘I . {i 'Q .‘. l‘ 5 \’ ‘ X. ‘
+. 4.1 '- (c-.;~' 1 1‘
+(101“ 1 image 1 image—)O° 5&1; w ""5 {9“ f. » - 4“"", i
+g I . 11"" xl}‘.‘.r:i’.; "":\ ’. ‘kj
+' ‘ '*“-' i”: ‘ ; ' Em-‘ . .. I‘M"" ,-
+5 . ..f'*-""""""-""r""*=*.-,.. 1am“ ’ ’-.1.J‘s . 1r 3 .
+. ._._ -I,;- -:':'|-' ' . . .-. V ”v"" ‘:;7 1:7’.’ _. v
+Q: _- ﬁrg _- J."" 14' 240“ ,“-‘""’"" ‘* a J 35’ '- .gr,’ W.
+E J I , -.""‘i.|.T-.-I"":I;4&'i H . m _ '- 1K ‘3 (1.”.13’ - ""3;; 3;“,
+Z .',- ""t” .- ‘Q . I -_ ‘1. ‘..‘ JL'Hh'I-s _ ., . “.11“. .‘ I:
+m m‘ ‘-‘.-.-... ""'3. :3; ?;.-'.-:.15*'---: 300” ‘ 3 ‘f"" a
+U . 3. .. J I. .-_""- - --_-1-- '13,. y: g‘ ‘ 'x .""v ~ X“ \1
+LL] &. -.-:r:.- ""31.3,"" 4% “r ' ‘I . §
+5 . * -' . ‘73:}? «w . ’
+m 2. image 1. image -) 60° , ' .,
+Z
+2 (a) Masking: from sphere to plane (b) Combined image in plane View
+9
+< Figure 15. Generation of a single image for northern hemisphere from 6 angular postions of sphere
+m
+‘z‘
+3 After applying a azimuthal map projection the Spherical View can be reconstructed for Visualisation too,
+'0
+% ﬁg. 16.
+L3
+a
+3
+O
+D V _ ’ , t .
+' “~~kf',’ ;. ~ _—-- -_— —_- --—_ :5}; .. -- -
+.5, "" ' ~ _ ‘—-=:;?.s- “-'- -.""$:- 1'.""r
+‘5', .,‘.’3‘..>.r::‘lvl' 2‘"" (“in _ r:;-I_.:::F_-_:L‘h- g,- . H -I.|I_.1h -""|.1'r . :_
+, :‘Lh‘ If»); r ""(W 'I'1'r‘ﬁI-lmﬁtr‘ '. 1.11:.” 1'11. I ' RS3”; 5' '3':
+V (Fu‘ﬁﬁ-.;::” “’33. ~34: ' 'f*1.f'-1ﬁpﬁf?a.'r-._L 5' ""1"""" $5,... E'
+, '.' . «'14-..“ '- ‘ "" I _ . H” - ""'F' i_'
+t , e"" * - .. --.A. .1. .- a .
+y: “w; 3‘25 '* 3‘3“?“ q“ .I.” ""1"" .I .ib',‘ 2.
+""-.~ "" s 1 1' 'Il . . ?-
+hi 1% L. ' Ill .1 -. .'.
+m w «11-3--
+(a) Combined image (b) Map projection (c) View on spherical surface
+Figure 16. Map projection of plane image to sphere
+13 0f 15
+American Institute of Aeronautics and Astronautics
+
+"
+"14","VI. Outlook
+For further experimental data analysis the Challenge is to implement image processing procedure for
+complex ﬂow structures, concerning the the formation and position of the fringes. Additionally, the design
+of pattern recognition is necessary for an effective comparison and sorting of many images and other exper—
+imental data under speciﬁc criteria.
+While the ﬁrst GeoFlow campaign is running now until J uly 2009, a re—ﬂight campaign is under discussion
+already (GeoFlow II). For this re—ﬂight a ﬂuid With strongly temperature—dependent Viscosity Will be used
+to form a model for Earth mantle convection. The methods of scientiﬁc analysis Will be comparable to that
+for GeoFlow I, but the convective behaviour is expected to be quite different compared to GeoFlow 1.
+Acknowledgements
+The GeoFlow project is funded by ESA (grant no. AO—99—049) and by the German Aerospace Center
+0 DLR (grant no. 50 WM 0122 and 50 WM 0822). The authors would also like to thank BSA for funding the
+\o o o o o 0
+Q GeoFlow Topical Team (grant no. 18950/ 05 / NL/VJ ) The seientists also thank the industry involved for
+CD . . .
+8. support, namely Astrium GmbH, Friedriohshafen, Germany and the User Support Center MARS, Naples,
+E Italy and E—USOC, Madrid, Spain.
+33.
+S
+d; References
+g) 1Futterer, B., Gellert, M., V011 Larcher, T., and Egbers, C., “Thermal Convection in rotating spherical shells: an experi-
+g mental and numerical approach Within GeoFlow,” Acta Astronautica, pp. 300—307, 2008.
+g 2V011 Larcher, T., Futterer, B., Egbers, C., Hollerbach, R., Chossat, P., Beltrame, P., Tuckerman, L., and Feudel, F.,
+i “GeoFlow: European Microgravity Experiments on Thermal Convection in Rotating Spherical Shells under inﬂuence of Central
+g Force Field,” Proceedings of the 3rd International Symposium on Physical Sciences in Space {3rd ISPS 2007), 2007.
+E 3Beltrame, P., Travnikov, V., Gellert, M., and Egbers, C., “GEOFLOW: simulation of convection in a spherical shell
+8 under central force ﬁeld,” Nonlin. Processes Geophys. 15’, pp. 413—423, 2006.
+Q“ 4Kious, W. and Tilling, R., This dynamic earth — The story of plate tectonics, U.S. Geological Survey, version 1.12 online
+g ed., 1996, URL (http://pubs.usgs.gov/gip/dynamic/inside.html) (last checked 2008/07/16).
+g 5Busse, F., “Thermal instabilities in rapidly rotating systems,” J. Fluid Mech, Vol. 44(3), 1970, pp. 441—460.
+% 6Busse, F., “Pattern of convection in spherical shell,” J. Fluid Mech, Vol. 72, 1975, pp. 65—85.
+E 7Busse, F. and Riahi, N., “Pattern of convection in spherical shell 11,” J. Fluid Mech, Vol. 123, 1982, pp. 283—302.
+8 8Cardin, P. and Olsen, P., “An experimental approach to thermochemical convection in the earth’s core,” Geophys. Res.
+8 Lett., Vol. 19(20), 1992, pp. 1995—1998.
+E 9Cardin, P. and Olsen, P., “Chaotic thermal convection in a rapidly rotating spherical shell: consequences for ﬂow in outer
+2 core,” Phys. Earth Planet Int, Vol. 82, 1994, pp. 235.
+8 10Cardin, P. and Olsen, P., “The inﬂuence of toroidal magmatic ﬁeld on thermal convection in the core,” Earth Planet Sc.
+é Lett., Vol. 132, 1995, pp. 167—181, Elsevier.
+Q “Carrigan, C. and Busse, H., “An experimental and theoretical investigation of the onset of convection in rotating spherical
+(:5: shells,” J. Fluid Mech, Vol. 126, 1983, pp. 287—305.
+Z 12Cordero, S. and Busse, F., “Experiments on convection in rotating hemispherical shells: Transition to a quasi periodic
+4: state,” Geophys. Res. Lett., V01. 19(8), 1992, pp. 733—736.
+5;; 13Harder, H. and Christensen, U., “A one—plume model of martian mantle convection,” Nature, Vol. 380, 1996, pp. 507—509.
+L; 14Liu, M., Egbers, C., and Bath, H., “Three—dimensional natural convection in a narrow spherical shell,” Physics of Rotating
+E Fluids, Lecture Notes in Physics, Vol. 549, 2000, pp. 269—294, Springer.
+D 15Roberts, P., “On the thermal instability of a rotating-ﬂuid sphere containing heat sources,” Phil. Trans. Roy. Soc. Lon.
+A., Vol. 263, 1968, pp. 93—117.
+16Zhahg, K., “Spiralling columnar convection in rapidly rotating spherical ﬂuid shells,” J. Fluid Mech, Vol. 236, 1992,
+pp. 535—556.
+17Carmi, S. and Joseph, D., “Subcritical convective instability,” Part II Spherical shells, J. Fluid Mech, 26, pp. 769—778,
+1966.
+18Hart, J., Glatzmaier, G., and Toomre, J., “Space-Laboratory and numerical simulations of thermal convection in a
+rotating hemispherical shell With radial gravity,” J. Fluid Mech, Vol. 173, 1986, pp. 519—544.
+19Yavorskaya, 1., Fomina, N., and Balyaev, Y., “A simulation of central symmetry convection in microgravity conditions,”
+Acta Astronautica, Vol. 11(3—4), 1984, pp. 179—183.
+20Hart, J. et 31., “NASA-TP-1999-209—576,” 1999.
+21Friih, W., “Using magnetic ﬂuids to simulate convection in a central force ﬁeld in the laboratory,” Nonlin. Proc. in
+Geophy5., Vol. 12, 2005, pp. 877—889.
+22Futterer, B., Hollerbach, H., and Egbers, C., “GeoFlow: 3D numerical simulation of supercritical thermal convective
+states,” 15th International Couette Taylor Workshop, 2007.
+14 of 15
+American Institute of Aeronautics and Astronautics
+
+"
+"15","23Hollerbach, R, “A spectral solution of the magneto—convection equations in spherical geometry,” International Journal
+for Numerical Methods in Fluids 32 pp. 773—797, 2000.
+24Futterer, B., Gellert, M., V011 Larcher, T., and Egbers, C., “Thermal convection in rotating sherical shells: An experi-
+mental and numerical approach Within GeoFlow,” Acta Astronautica, V01. 62(4—5, 2008.
+25TraVIlikOV, V., Egbers, C., and Hollerbach, R., “The GeOFIOW experiment 011 188 (Part 11): Numerical simulation,” Adv.
+Space Res., Vol. 32(2), 2003, pp. 181—189.
+26Gellert, M., Beltrame, P., and Egbers, C., “The GeOFIOW experiment — Spherical Rayleigh—Benard convection under
+inﬂuence of an artiﬁcial central force ﬁeld,” J. Phys.: Conf. Set, V01. 14, 2005, pp. 157—161.
+27Bergemann, K., Konvek‘tion im Kugelspalt: Numerische Untersuchung und Bifurkationsanalyse am Beispiel des
+GeoFlow—Easperiments, Master’s thesis, University of Potsdam, 2008.
+28Travnikov, V., Egbers, C., and Hollerbach, R., “The GeoFlow-experiement 011 188 (Part II): numerical simulation,”
+Advances in Space Research 32, pp. 181—189, 2003.
+2glmmohr, J ., Sphdrische Diﬁerentialinterferometm'e fliT' Raumfahrtanwendungen — K onvek‘tionsstrémungen im Kugelspalt
+ante?"" dem Einfluss amaler und radialer Kraftwirkung, Ph.D. thesis, Universitét Bremen, 2006, Fortschritt-Bericht VDI Reihe
+7, Nr. 481, Dusseldorf.
+30Da.hley, N., Bildvemrbeitung und Strémungsdiagnose fill?"" das GeoFlow Experiment — Schwerpunk‘t: Bildauswertung und
+Ermittlung de'r Temperaturverteilung, Master’s thesis, Brandenburgische Technische Universitét Cottbus, 2007.
+O
+\D
+O\
+o'\
+O
+O
+“1
+9
+V
+7»
+“1
+S
+S
+Q
+E
+5
+§
+“3
+8
+S
+E
+E
+Z
+S
+(\l
+m.
+(\l
+3
+3
+8
+O4
+Lu
+E
+Z
+Lu
+0
+Lu
+O
+<
+m
+(A
+Z
+O
+E
+Q
+<
+m
+<
+Z
+>~.
+.13
+""G
+g
+L3
+a
+B
+O
+Q
+15 0f 15
+American Institute of Aeronautics and Astronautics
+
+"

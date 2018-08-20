@@ -1,0 +1,587 @@
+"","x"
+"1","2646 IEEE TRANSACTIONS ON GEOSCIENCE AND REMOTE SENSING, VOL. 52, NO. 5, MAY 2014
+Assessmg the Appheatlon of Cloud—Shadow
+Atmosphene Correctlon Algonthm on HICO
+
+Ruhul Amin, David Lewis, Richard W. Gould, Weilin Hou, Adam Lawson, Michael Ondrusek, and Robert Arnone
+Abstract—Several ocean color earth Observation satellite sen- rithms, etc. Atmospheric correction is one of the biggest Chal—
+
+SOI‘S are Presently 00116“ng daily imagery, inCIUding the Hyper' lenges for ocean color remote sensing, particularly in coastal
+
+spectral Imager for the Coastal Ocean (H190) HICQ has been waters. Different atmospheric correction methods on the same
+
+Operatlng aboard the Internatlonal Space Statlon smce lts installa- . . .
+
+tion on September 24, 2009. It provides high spatial resolution hy- data can p r oduce Signiﬁcantly different ocean color p r oducts
+
+perspectral imagery Optimized for the coastal ocean. Atmospheric SUCh as water—leaVing radiance (Lw) [4], [5]-
+
+correction, however, still remains a challenge for this sensor, par- The fundamental measurement in ocean color remote sensing
+
+tiCUIal‘ly in Optically COmPIEX COaStal watEI‘S- In this paper, we is the water—leaving radiance, the upwelling spectral distri—
+
+assess the application of the cloudrshadow atmospheric correction bution of radiance from the ocean. Geophysical parameters
+
+approach on HICO data and validate the results Wlth the m Sltu . . .
+
+data. We also use multiple sets of cloud, shadow, and sunlit pixels such as Chlorophyll can be retrieved from thls water—leaV1ng
+
+to correct a single image multiple times and intercompare the signal since it contains information about the optically active
+results to assess variability in the retrieved reﬂectance spectra. Re- components in the water column. However, only about 10% of
+trieved chlorophyll values from this intercomparison are similar the total signal measured by the ocean color sensors contains
+and also agree well With the a"" sat“ chlorophyll measurements. information about the waters; the rest represents scattering from
+Index Terms—Atmospheric correction, cloud—shadow, hyper- aerosols and air molecules [6]. The goal of the atmospheric
+SPECtI‘al imagery, Ocean 001013 FemOte senSing- correction over the ocean is to remove contributions from the
+atmosphere and reﬂection from the sea surface from the top—of—
+
+1- INTRODUCTION atmosphere (TOA) radiance recorded by the sensor, leaving Lw.
+
+CCURATE estimation of Chlorophyll is very important Gordon and Wang [7] developed an atmospheric coriection
+
+A for many reasons, including primary production models, echerne for the open ocean where the aerosol contr1but1on
+
+carbon budgets, hypoxia, and eutrophication. Remote sensing is estimated us1ng TOA radiance/reﬂectance Signals obtained
+
+has opened an effective way to estimate phytoplankton biomass from near—1nfrared(NIR)bands. Th1s approach assumes that the
+and terrestrial products. Due to the tradeoff between spatial ocean 1s opt1cally black 11.1 the NIR bands due to the strong water
+resolution, image coverage, and frequency in data acquisition, absorption. Although .thls technlque works well 1n the open
+the coarse spatial resolution (1 km) optical sensors, such as the ocean, It breaks downin optically complex coastal waters s1nce
+
+Moderate Resolution Imaging Spectroradiometer, are useful at the black pixel approxnnation 1.10 longer holds true due to strong
+
+continental— and global—scale biomass mappings [1]. However, reﬂect1ons. from organic and inorganic .particulate matters. If
+
+to quantify biomass at local to regional scales, ﬁner spatial water—leavmg radlance 1snotneg11g1ble 1n the NIR bands, then
+resolution data are required, such as that provided by the the retrieved aerosol loading vyill be overestimated, iesulting 1n
+
+Hyperspectral Imager for the Coastal Ocean (HICO). underestnnated or even negative water—leavmg radiances. The
+
+The National Aeronautics and Space Administration’s Earth NIR—iterative procedure tor the coastal waters [.8] can reduce
+
+Observing System and the European Space Agency programs the number of pixels With negative retrievals 1n the coastal
+
+provide ready—to—use remote—sensing products that are gener— waters. More recently, another atmospheric correction approach
+
+ated by science—based, calibrated, and validated algorithms [2], for coastal water was proposed, wh1ch uses short—wave 1nfrared
+
+[3]. However, differences eXist in these ready—to—use standard (SWIR) bands [9]' Th1s approachis based on the fact that
+
+products due to sensor Characteristics, product generation algo— ocean water absorbs strongly 1n th1s spectral reglon, and the
+
+contributions of the in—water constituents are negligible and
+M _ _ d O b 3 2012 _ d F b 12 2 1 can safely be considered dark. However, HICO does not have
+
+Apriﬁacalgifcszzz 0f :sbtzataon Jugzezlsfmft: 6312;132:333 these SWIR ehehheh- huherehehh he ehheeehehe heeehehee
+
+February 27, 2014. This work was supported by the NavalResearch Laboratory itself is signiﬁcantly weaker in the SWIR region, requiring
+
+and the Ofﬁce of .Naval Research and in part by the National Oceanic and higher sensor signal—to—noise ratio (SNR). In such situations,
+
+?ﬁmosphenc Adnnnlstratlon NQAA Ocean Ren10teSens1ng to M. Ondrusek. the C1011 d—sha dOW atmospheric corrections [10], [11] can be
+
+e V1ews, 0p1n10ns, and ﬁndlngs contalned 1n th1s paper are those of the
+authors and should not be construed as an ofﬁcial NOAA, NRL, or US. very helpful, bUt thiS aPPTOaCh iS 1imited t0 images that ihCIUdC
+GOVemméntPOSﬁiOIh Policy, or decisiOH- at least one thick Cloud and shadow pair. Thus, this approach
+R. Amln, D. Lew1s, R. W. Gould, W. Hou, A. Lawson, and R. Arnone are . . . .
+With the Naval Research Laboratory, Stennis Space Center, MS 39529 USA cannOt always be used for atmospheﬂc COUCCUOH' Slnce thls
+(e—mail: ruhul.amin@nrlssc.navy.mil). approach depends on the assumption that atmosphere is nearly
+M. Ondrusek is With NOAA/NESDIS/STAR, College Park, MD 20740 USA. uniform throughout the image, it is more appropriate for sen-
+Color vers10ns of one or more of the ﬁgures 1n th1s paper are avallable onhne . . . .
+athttp://ieeeXplore.ieee.org. sors With high spatial resolutions such as HICO. If all of the
+Digital Object Identiﬁer 10.1109/TGRS.2013.2264166 conditions are right for an image, the Cloud—shadow approach
+US. Government work not protected by US. copyright.
+
+"
+"2","AMIN et al.: ASSESSING THE APPLICATION OF CLOUD—SHADOW ATMOSPHERIC CORRECTION ALGORITHM ON HICO 2647
+can offer some advantages over the traditional approaches. For Information System sites, respectively. An additional HICO
+example, one of the major advantages of this approach is that scene with cloud—shadow was acquired over Chesapeake Bay
+the TOA radiances from the cloud, shadow, and sunlit pixels on October 20, 2009, for which in Sim Hyperpro data were
+come from the same sensor, with all radiance components acquired as well.
+
+collected nearly simultaneously. As a result, the derived remote—
+
+sensing reﬂectance does not depend on the absolute radiance III. CLOUD—SHADOW ATMOSPHERIC CORRECTION
+yalue since the sensor’sresponse function (calibration factor) The cloud—shadow atmospheric correction method [10], [11]
+is canceled out [.10] This is very.useful for sensors Wlth hlgh is appropriate for high—spatial resolution sensors such as HICO.
+or unknown r adiornetric uncertainties. Currently, the ClOQd— This approach uses cloud and shadow pixels along with nearby
+shadow atrnospheric COUCCUOH is done by manually selecting sunlit pixels with similar optical properties. First, La()\), which
+plXClS, Wthh requires knowledge about TOA r adiance: AISO’ represents the radiance from the atmosphere and sea surface, is
+the process can be sornewhat time—consuming. Autornating the estimated from a pair of adj acent pixels that are in and out of a
+scheme can be beneﬁc1al for ocean color remote sens1ng. Us1ng cloud—shadow while ignoring the slight (< 5%) differences in
+the recently developed cloud—shadow detection technique over the remote—sensing reﬂectances (Rm (M) under the two regions
+water [12], there have been some efforts to automate the ap— [17]_[20]
+
+proach [13]. However, automation still remains a challenge due sun de
+
+to difﬁculties such as identifying thin clouds, cloud edge pixels, La (A) : Linn (A) _ w (1)
+shadow edge pixels, homogeneous waters, etc. 1 — E: y()\) /Ed()\)
+
+11.1 thls p ap er, we ap p ly the cloud—shadow atmospheric COP where Li‘mOx) represents radiance from the sunlit pixel
+rection on HICO data and use m Sltu data to validate the sdw . .
+
+. . . and Lt (A) represents radiance from the shadow pixel.
+results. We use m Sltu chlorophyll data from the literature and sky , , , ,
+. . . . E (A) /Ed()\) is the ratio between the downwelling sky irra—
+remote—sens1ng reﬂectance from c01nc1dent Aerosol Robotic ,d , , , , ,
+. diance to total downwelling irradiance which can be estimated
+Network—Ocean Color (AERONET—OC) Sites and Hyperpro , , ,
+. us1ng a radiative transfer model such as Radtran [21] for a
+measurements to compare w1th HICO cloud—shadow atmo— , , , sky
+. . given location and time. The value of E (A) /Ed()\) depends
+spherically corrected data. We also use multiple sets of cloud, , , , , , d, ,
+. . . . on atmospheric conditions such as V1s1b111ty, ozone depth, etc.
+shadow, and sunlit pixels to correct the same image multiple , sky , , ,
+. . However, s1nce E (A)/Ed()\) is applied on the difference
+times and intercompare the results. , d , ,
+between total radiance measured over the sunlit pixel (Liun (M)
+and total radiance measured over the shadow pixel (Lidw()\))
+11- MATERIALS AND METHOD and since this difference is signiﬁcantly smaller than Liunox),
+. sky . .
+
+HICO is the ﬁrst hyperspectral imager speciﬁcally made for errors in E d (M/Edo‘) .have only very.lim1tse{d effects on
+environmental characterization of the coastal ocean from space. LaO‘) estimation [101- Since the errors in Ed y(M/EdO‘)
+It has been operating aboard the International Space Station estimation have negligible effects [10], EZkY(A)/Ed()\) was
+(188) since its installation on September 24, 2009 [14], [15]. calculated for this study with the default atmospheric param—
+HICO provides hyperspectral images at 100—m resolution opti— eters in Radtran [21]. According to [10], once La()\) is known,
+mized for the coastal ocean. It collects radiance at 128 contigu— the remote—sensing reﬂectance (R7300) at any pixel can be
+ous spectral channels from 350— to 1070—nm range. However, it calculated from
+is most sensitive in the spectral wavelengths ranging from 400 L A _ L A
+
+. . . . _ t( ) a( )
+
+to 900 nm, which are the most utilized spectral region for ocean Rrs (A) — Pm (2)
+color studies. Due to altitude and inclination of its orbit, HICO t a
+
+is limited to cover about 80% of the Earth’s surface. However, where L§1d()\) is the total radiance over the cloud pixel and p is
+this covered surface includes all tropical and most temperate the remote—sensing reﬂectance of the observed cloud. The value
+coastal regions. Due to scene selection and data transfer issues, of p was determined according to [10] from a clear water pixel
+the sensor acquisition is limited in practice to one scene per or— by assuming Rm (550 nm) : 0.002 sr‘1 [22].
+
+bit. HICO has SNR greater than 200, which enables retrieval of Remote—sensing applications such as the cloud—shadow
+environmentally relevant quantities. The HICO data ﬂow from scheme that are developed using dark and bright targets suffer
+the 188 provides a maximum of 15 scenes per day, and the sen— from adjacency effects. Adjacency effect reduces the apparent
+sor is managed by the US. Naval Research Laboratory (NRL). surface contrast by decreasing radiance over bright pixels and
+
+We acquired a HICO scene with cloud—shadow over the increasing the brightness of the dark pixels. Edge pixels of the
+productive waters of the Azov Sea, Russia, on July 13, 2010. bright and dark targets are usually contaminated by the adja—
+The in Sim chlorophyll values for this scene were taken from cency effects. These contaminated pixels could make it very
+[16], where the values were determined analytically from water challenging to quantify the accuracy of the atmospherically
+samples collected during the summer of 2010 in Taganrog Bay corrected data. To minimize errors due to adj acency effects, we
+and the Azov Sea. We also acquired HICO scenes with cloud— selected pixels from around the center of the cloud and shadow
+shadow over Venice, Italy, on August 30, 2011, and over regions by careful Visual inspection of the spectra. Sunlit pixels
+northern Gulf of Mexico on March 13, 2012, for which in Sim were also carefully selected to ensure they were far enough
+AERONET—OC data were also acquired from the Acqua Alta from the shadow and cloud regions to minimize adjacency
+Oceanographic Tower (AAOT) and the Wave—Current—Surge effects.
+
+"
+"3","2648 IEEE TRANSACTIONS ON GEOSCIENCE AND REMOTE SENSING, VOL. 52, NO. 5, MAY 2014
+6000 I I . (:1 d
+: I : + on
+\_ $.43“ 7. Hset-l +Shadow|
+. ﬂ \_ 500017-- +Slmlit
+,~_ .,.- Q 1‘ 7‘“ 5f . - \ , L; E E E E
+2"",, "" ‘ '1"" j 2‘). g 3000
+O _ 2000 x
+1» -~ 5 2 a a
+1000
+200 500 600 700 800 900
+\Vavelength (nm)
+- 7000 I I I
+s aswz; i
+_ __ +Shadow
+W »7 6000 : g g +Sunlit
+’ 5000
+7x. g +000
+i 2000 -
+A ., 1000
+“w L ‘7 ‘ +00 500 600 700 800 900
+-7 A J V’ ‘ \Vavelength (11m)
+#0 8000 I . , (:1 d
+‘ . , a s . s 7* 0“
+2‘ .‘ . g g I+Sun1it
+._ V» I 6000--- -
+,5} ,. ’.-’: . a E = i E
+W"" / {3 ~, :1: ' E 5000
+”:21; 3x sooo
+7‘5""""? l 4:4 , ' E a a s
+,7: 7‘} . ' 2000
+,7} w"". ‘ : s s s
+5351f I’b‘g. a 1000
+mug; o<d> ., - ~
+51*». 7 . 1 +00 500 600 700 800 900
+a . .: , ,- p \\ avelength (nm)
+Fig. 1. HICO imagery from July 13, 2010, acquired over the Sea of Azov. (a) True color image overlaid with in situ point measurement locations (A—H) and
+cloud, shadow, and sunlit pixels used for correction of the atmospheric effects. The TOA radiances in raw counts from multiple sets of cloud, shadow, and sunlit
+pixels. (b) Set—1. (c) Set—2. (d) Set—3.
+IV‘ RESULTS AND DISCUSSION waters. For example, the red spectral region is very important
+The cloud—shadow atmospheric correction was performed for remote sensing of coastal waters due to several spectral
+on the HICO image [Fig. 1(a)] from July 13, 2010, over features unique to phytoplankton chlorophyll—a (absorption,
+the Azov Sea. TOA radiances (in raw counts) from multiple scattering, and ﬂuorescence) that takes place in this region.
+sets of cloud, shadow, and sunlit pixels were taken from the In the reﬂectance spectra of chlorophyll—rich water bodies, a
+regions labeled with set—1, set—2, and set—3 in Fig. 1(a). The distinct peak is observed somewhere in the wavelength range
+radiance spectra from set—1, set—2, and set—3 are shown in of 690—720 nm as can be seen in Fig. 2. This is mainly due to
+Fig. 1(b)—(d), respectively, where the cloud spectra are shown the relative minimum in total absorption (chlorophyll and water
+in red, the shadow spectra are shown in green, and the sunlit absorption), while the ﬂuorescence term has small but measur—
+spectra are in blue. Using these three sets of radiances, we able effects. The increase in the peak height is accompanied
+corrected the Sea of Azov scene for the atmosphere, which by a shift in the position toward the longer wavelengths with
+resulted in three sets of RTSQ). We also took an average of increasing chlorophyll, while the peak of the phytoplankton
+these RmOx) and generated a fourth set of RrsOx). Fig. 2 ﬂuorescence has a permanent position at 685 nm. The effect
+compares the four sets of results at eight in Sim locations [A—H of the chlorophyll ﬂuorescence in eutrophic turbid waters is to
+in Fig. 1(a)]. The blue, green, and red spectra are retrieved ﬁll the 670—nm reﬂectance trough and to augment the shorter
+using set—1, set—2, and set—3, respectively, while the cyan is wavelength shoulder of the 690—720 nm reﬂectance peak. For
+the average of the three sets. These reﬂectance spectra appear low chlorophyll concentrations, the region near 685 nm is
+as typically expected reﬂectance spectra from chlorophyll—rich considered the most appropriate feature of gaining information
+
+"
+"4","AMIN et al.: ASSESSING THE APPLICATION OF CLOUD—SHADOW ATMOSPHERIC CORRECTION ALGORITHM ON HICO 2649
+.3 Station A:Chlorophv1162 mg m'3 - -3 StationB:Chlorophy1185 mg m'3
+33 10 ' 3.53; 10
+2 2 2 2 2 2 2 -Set-1 2 2 2 2 2 2 2 -Set-1
+2 2 2 2 2 2 —Set-2 2 2 2 2 2 2 2 —Set-2
+2 2 2 2 2 2 —Avem —Avemge
+2 2 2 /.=’ 2 . 2 A 2 2 2 2 ' 2 - 2 2 2 s
+,3 - ~ 2 2 2 2L.2 2 2 3 2 2 . 2 2 I 2 2
+'=‘ 1..3 2 r-- ’=‘ : : ’ : : ‘ . : :
+‘ , xv : : : 2 : . : : : : : : :
+' E 5 E E 2 ' E E 5 1°
+2 2 2 2 2 v 2 2 2 2 2 2 2 y 2 2 2
+i ‘\'\. . 2 2 2 2 2 2 2 2 \2\
+0 I I I I I I I I 0‘. . I I I . . I I ”‘3
+400 450 500 550 600 650 700 750 800 850 4,00 450 500 550 600 650 700 750 800 850
+wavelength (nm) wavelength (nm)
+-3 Station C: Chlorophyll 93 mg m’3 -3 Station D: Chlorophyll 83 mg m'3
+3.53; 10 3x10
+2 2 2 2 2 2 2 -Set-1 | s 2 s 2 2 2 2 -Set-1
+3 —Set-2 i i i E i I i —Set-2
+/ \ 2 2 -Set-3 2.5 -Set-3
+. 2 s s 2 2 2 2 —Aver e 2 2 s 2 2 2 -Avera
+'T 2 """"""""I""""”""'T""' ""'1""""""""',""\""""""""‘”""""I”""""""':’""""""‘ 7 V I I I \ I I I
+E, _ i s a 2 k“, ' z 2 E '\ i 2 / 2 5; 2 A 2 a
+a ._ E ' E E E E E E 2 E E E ‘\ E ,2 E E
+1 , 9*
+5 a 2 2 2 2 . %» j a 2 2 2 2 2. 2
+E S E E 3 E E E S E E S E E E E """"
+0 L .' .L ' L ' -L ' . 0.5 ' ' ' ' ' ' L ' -
+400 430 .300 3.30 600 630 700 /.30 800 8.30 400 450 500 550 600 650 700 730 800 8.30
+wavelength (nm) wavelength (nm)
+.3 Station E: Chlorophyll 78 mg III-"" -3 Station F: Chlorophyll 40 mg 111-3
+33 10 4x 10
+2 2 2 2 2 2 2 —Set-1 2 2 2 2 2 2 2 —Set-1 |
+2 2 2 2 2 2 2 —Set-2 35 —Set-2
+2-° —Set-3 ' 2 2 A 2 2 2 2 —se.-3
+2 i i i i i -Avera i i , i i i i -Avera_
+: I I \ I I I I . 3 """""""":""""""'"".’“"""" 'I‘”” 'I""""‘""'“.'""””""I""‘""‘"""".""""""'"".""""""""
+' I I I I I I I i: I I 2‘ I I I I I
+g: E E I 3 E “I 2‘ E 5 Ag 2‘,
+1 2 = 2 2 2 2 2 2 ‘7"" 2 2 . 2 2 2
+0 L .' .L ' L ' L ' . 0.5 ' ' ' ' ' ' L ' -
+4-00 430 .300 330 600 630 700 7.30 800 8.30 400 450 500 550 600 650 700 730 800 830
+wavelength (nm) . wavelength (nm) .
+.3 Station G: Chlorophyll 47 mg m'0 -3 Station H: Chlorophyll 19.5 mg m"",
+43:10 3.5): 10
+2 2 2 2 2 2 2 -Set-1 | 2 2 = 2 2 2 2 —se.-2 |
+- —Set-2 2 2 f‘ 2 2 2 2 —Set-2
+3'” 2 2 A 2 2 2 2 —Set-3 3 —Se2-s
+2 2 2 2 2 2 2 —Avera 2 2 ‘2 . 2 2 2 2 —Avera-
+3 ”""""""I""""""""’.’"""""" ‘2"""""" 'I""””""‘.""‘"""""".'""""""""‘.""""""""‘.""”‘"" : I I I I I I :
+m . ' ' \ . ' ' ' m . ' ' ' ' ' ' ' '
+y : : : I\ : : : : er 2
+E \ E S E E S E 3 E Q 5 - 3 E E 5 5 E
+v 2 I z : ' z : 2‘.“ : 2 : . : : :
+i I 2 i i V- ? i I i 3 I i I i i
+2 2 2 2 2 2 2. <3 ""\ 2 2 2 2 2 2 —- L
+0.5 L , __ _ __ _ 0.5 _ _ __ , __ \‘_
+400 430 .300 .330 600 630 700 130 800 8.30 400 430 .300 3.30 600 6.30 700 130 800 8.30
+wavelength (nm) wavelength (nm)
+Fig. 2. Retrieved remote—sensing reﬂectance from HICO using multiple sets of Cloud, shadow, and sunlit pixels. Letters A—H at the top of each subﬁgure indicate
+station name along With in situ Chlorophyll concentrations.
+
+"
+"5","2650 IEEE TRANSACTIONS ON GEOSCIENCE AND REMOTE SENSING, VOL. 52, NO. 5, MAY 2014
+on chlorophyll due to natural ﬂuorescence signal [23]. How— 120 g , 3
+ever, for high chlorophyll concentration, the red—NIR peak can I . 86H
+. . . . ‘ Set-2
+
+prov1de 1nf0rmat10n about the concentratlon [24], The example 100 . Set-3 z
+shown here has very high concentration of chlorophyll, where A . Average : '
+the minimum, maximum, median, and mean ch10r0phy11 con- '78 80 ﬂ‘ '
+centrations of the in Sim stations were 19.67, 93.14, 63.86, and w
+70-6 mg’mg’ YCSPCCUVCIY ”6]- Due to thesehlgh chloréphyﬂ g, (,0
+concentrations, a pronounced red—NIR peak is expected in the Q /
+reﬂectance which can be seen clearly in Fig. 2. Furthermore, an 3 7, 1/ 9.- o
+increase in the peak height and shift of the peak position toward Z ‘10""
+longer wavelength is also expected with increasing chlorophyll '7 ”
+[23]. This can be seen in Fig. 2, where the spectra with the 20
+lowest chlorophyll concentration (station H) have the smallest
+red—NIR peak while the spectra with the highest chlorophyll 0
+concentration (station C) have the largest peak. The slight shift 0 (M 0-2 1 0‘3 10-4 0.5
+of the peak position is also noticeable in Fig. 2, where the lowest 3’bmd = [Rm(684)' ’ RmUOO)"" 1*Rr8(720)
+chlorophyll SpeCtra (Station H) has peak around 697 nm While Fig. 3. In situ chlorophyll versus HICO—retrieved chlorophyll using the three—
+the highest chlorophyll spectra (station C) has peak around band model from multiple sets of Rrs()\)-
+709 nm. This demonstrates that the cloud—shadow atmospheric . . . .
+correction preserves the red—NIR peak characteristic, indicating is very challenging. Inaccurate aerosol estimation can lead to
+that the shapes of the reﬂ e ctan c e sp e ctra are preserved with Signiﬁcant errors in retrievedocean color products. However,
+this approach. The shift of the peak position also demonstrates the cloud—shadow atmospheric COUCCUOH approach does not
+the value of the hyperspectral measurements that provides ﬁne— r equire any knowledge .about aer 0801 contribution and can
+resolution remote—sensing reﬂectance due to various optically overcome some Of these issues faced by NIR ap p roaches. .
+active constituents in the waters. Excellent agreement in spec— .TO evaluate the p erformance Of the four set results shown in
+tral shape can be seen in Fig. 2. However, there are slight dif— Flg' 2’ we compared the retrieved 011,10“)th from thethree—
+ferences in the spectral magnitudes. This is probably due to the banc1 reﬂectance model at the eight m S U” locations Wlth the
+residual contributions from the sky and the sea surface. In [10], ""l S U” chlorophyll concentrations. The results are shown in
+it was su g g e st e d to r em ov e a s p e ctrally c on stant valu e from the Fig. 3. Very strong correlations can be see2n between the retrieved
+calculated remote—sensing reﬂectance to obtain an average of and m S U” chlorophyll values, where T 20.94approxnnately
+zero for the spectral range 810—8 40 nm, where contributions for all four sets of resnlts. Since the spectral magnitude is slightly
+from water are considered null [25]. However, in coastal waters, different, the coefﬁc1ents shown in. Table I ﬂuctuate slightly.
+the NIR c ontributi on may not be zero, and most importantly, The .I‘ClathIlShlpS developed from different sets of Rheox) and
+the HICO results are very n oisy in this region. B ecaus e of the m Sltu chlorophyll are shown in Table I. These relationships
+noise, forcing the NIR reﬂectance to zero changes the spectral were 31’?th to all four sets Of RTSO‘) to retrieve chlorophyll,
+reﬂectance values considerably pixel to pixel, hence resulting and the“ p erformances were evaluated. Table I suinmarizes
+in noisy retrieved products. Thus, we did not do any residual the results, where the root—mean—square error(rmse)1s deﬁned
+correction for this study. However, making accurate residual as RMSEzt/Z::]1V(Chlm Situ(i)—CthICO(i))2/N and the
+correction may improve the matchups. mean absolute percentage difference (APD in percent) is def—
+
+The three—band reﬂectance model originally developed for ined as APD 2100(1/N)Z::]1V(]Chlm Situ(i)—CthICO(i)] /
+estimating pigment contents in terrestrial vegetation [24] can Chlm 3275110)), where Chlm mu“) and CthICO(7L) are in Sim
+also be used for chlorophyll estimation in the turbid waters chlorophyll and HICO—derived chlorophyll values of the 73th
+[26]. For the July 13, 2010, Azov Sea scene, Gitelson er al. [16] matchup, respectively, and N is the total number of matchup
+determined the optimal HICO bands for the three—band model pairs. For all four estimated HICO chlorophyll products, the
+which are located at wavelengths of 684, 700, and 720 nm. The rmse values ranged from 5.79 to 10.10 mg/m3, while the APD
+three—band red—NIR chlorophyll retrieval algorithm for HICO values ranged from 9.91% to 14.32%, showing a good retrieval.
+is expressed as 3_band : [RTSwgh—l — RTS(7OO)—1] >< Rmmo), However, the data set that we are using is very small, with a
+and it was found to agree well with the in Sim chlorophyll chlorophyll range higher than typical coastal waters. Thus, to
+[16]. This previous study [16], however, used the hyperspectral get more robust uncertainty values, a larger data set with a more
+atmospheric correction algorithm (ATREM) [27], where esti— diverse chlorophyll range is necessary.
+mation of aerosol contribution from TOA measurement using We also compared HICO cloud—shadow atmospherically
+NIR bands could be an issue. Atmospheric corrections that use corrected data with the in Sim AERONET—OC data from the
+NIR band to estimate aerosol contributions often fail in the Venice AAOT and northern Gulf of MeXico WaveCIS sites on
+optically complex turbid waters because of higher turbidities August 30, 2011, and March 13, 2012, respectively. For the
+which result in increased elastic reﬂectance and signiﬁcant AAOT site, the HICO image was acquired at 13:44 GMT, while
+radiance contributions in NIR bands. Since HICO does not the in Sim AERONET—OC measurement was made at 13:45
+have SWIR channels and black pixel assumption does not hold GMT. For the WaveCIS site, the HICO image was acquired at
+true in turbid waters, aerosol estimation over turbid waters 20:54 GMT, while the in Sim AERONET—OC measurement was
+
+"
+"6","AMIN et al.: ASSESSING THE APPLICATION OF CLOUD—SHADOW ATMOSPHERIC CORRECTION ALGORITHM ON HICO 2651
+TABLE I
+CHLOROPHYLL MATCHUP STATISTICS FOR THE FOUR SETS OF Rm (A) RETRIEVED USING THE CLOUD—SHADOW APPROACH
+
+—_—m-_
+—_-m_—
+__-m_
+—-__
+_—m--E-
+__-m_
+“—ms—m-
+—_-in__
+
+lleo'3 solid Circle) and blue spectra (dashed line with solid sqtiares)
+
+—HypermeBSt-1 were acquired from AAOT and WaveCIS s1tes, respectively.
+
+10 . —m§cs Reeeehehte agreemeht, h} heth eeeeteet shapes ehet magnitudes,
+
+x34 ----H1co c3 SI_2 between HICO and m szm reﬂectanees are obtained for these
+
+8 +~hwn=thee leeetiehe- AS mentiehed hetete, the residual eehttihtttiehe hem
+
+""Tim :OTCIS the sky and the seat surface were not remeved due to nonneg—
+
+p 6 ........I,._._Hi’$3ewa:21$ hgthle thtet eehthhtttteh th the N113 tegteh heht the eeefetel
+
+'3 ’1'“; . waters. However, maklng accurate res1duale0rreet10n could 1m—
+
+g 4 I t Eggztemthe metehelee Peetteehhy between Hyeeteee end HICO
+
+29/ II‘ I \ ,Eveh theegh the eteed-ehedewetmeephehe eeheetteh lete-
+
+g .r' “~~::~\3\ "" Vides reasonably well results, it is a very limited approach.
+
+l 3“. «3, It requires a thick cloud pixel and a nearby thick shadow
+
+0 I pixel where optical properties of the water in the shadow and
+
+_2 neighboring sunlit piirels must be nearly identical. If the Cloud,
+
+400 450 500 550 600 650 700 750 shadow, and sunlit pixels are not selected properly, the results
+
+wavelength (Hm) could be spurious. Since this approach uses bright and dark
+
+Fig. 4. Comparison of cloud—shadow—retrieved HICO Rm (A) versus Hyper— targets: contaminated pixels from adj acency effeq 31,80 need to
+
+pro and AERONET—OC Rm“). be aV01ded. Appropriate Cloud, shadow, and sunlit pixel selec—
+
+tion is extremely important for the success of this approach.
+
+made at 16:27 GMT. Fig. 4 compares remote—sensing reﬂec— However, to our knowledge, there is no standard procedure to
+
+tanee spectra derived from HICO to those from in situ mea— select these pixels from the TOA raw radiance counts. Thus,
+
+surements. The spectra represented by the red and green solid we carefully Visually inspected true color images using ENVI
+
+lines were collected using Hyperpro from the Chesapeake Bay image enhancement tools and selected appropriate pixels for
+
+on October 20, 2009, while the cyan spectra (dashed line with each scene.
+
+"
+"7","2652 IEEE TRANSACTIONS ON GEOSCIENCE AND REMOTE SENSING, VOL. 52, NO. 5, MAY 2014
+
+V. CONCLUSION [16] A. A. Gitelson, B.—C. Gao, R.—R. Li, S. Berdnikov, and V. Saprygin,
+
+“Estimation of chlorophyll—a concentration in productive turbid waters
+
+In this paper, we have investigated the applicability Of using aHyperspectralImager for the Coastal Ocean—The AZOV Sea case
+Cloud—shadow atmospheric correction on HICO data. Our anal— study,” Envzron. Res. Lett., vol. 6, n0. 2, p. 024023, Apr.—Jun. 2011.
+
+. [17] Z. P. Lee, K. L. Carder, C. D. Mobley, R. G. Steward, and J. S. Patch,
+yses Showed that eeee'n C0101” products sueh 3'8 remote—sensmg “Hyperspectral remote sensing for shallow waters. 1. A semianalytical
+reﬂectance and Chlorophyll retrieved from HICO imagery using m0de1,”Appl. 0pt., V01. 37, no. 27, pp. 6329—6338, Sep. 1998.
+Cloud—shadow atmospheric correction method agree well With [18] J.T.O.Kirk,“V01ume scattering function, average cosines, and the under—
+. . . . . . . water light ﬁeld,” Limnol. Oceanogn, V01. 36, n0. 3, pp. 455—467, 1991.
+m SUM date"" However, It IS a very 11m1ted approach for Wthh [19] A. Morel and B. Gentili, “Diffuse reﬂectance of oceanic waters (2): Bi—
+success depends on the selection of the appropriate Cloud, directionalaspects,”Appl. Opt, V01. 32, no. 33, pp. 6864—6879, Nov. 1993.
+shadow, and sunlit pixels. Studies are necessary to come up [20] Z. P. Lee, K. L. Carder, and K. P. Du, “Effects 0f.m01ecular and particle
+
+. . . . . scatterlng on model parameters for remote—sensmg reﬂectance,” Appl.
+
+Wlth standards that quahfy certaln plxels as usable plxels that 0191., V01. 43,110. 25,1313. 4957—4964, Sep. 2004.
+can be used to correct for the atmosphere. [21] W. W. Gregg and K. L. Carder, “A simple spectral solar irradiance model
+for cloudless maritime atmospheres,” Limnol., Oceanogr, V01. 35, n0. 8,
+
+pp. 1657—1675, 1990.
+[22] H. R. Gordon and D. K. Clark, “Clear water radiances for atmospheric
+correction of coastal zone color scanner imagery,” Appl. Opt, V01. 20,
+REFERENCES no. 24, pp. 4175—4180, Dec. 1981.
+
+[1] D. Lu, “The potential and challenge of remote sensing—based biomass [23] A. A. Gitelson, “The peak near 700 11m 011 radiance spectra of algae
+estimation,” Int. J. Remote Sens., V01. 27, n0. 7, pp. 1297—1328, 2006. and water: Relationships of its magnitude and position With chlorophyll
+
+[2] Y. Yamaguchi, A. B. Kahle, H. Tsu, T. Kawakami, and M. Pniel, c0ncentration,”1nt. J. Remote Sens., V01. 13, no. 17, pp. 3367—3373, 1992.
+“Overview of Advanced Spaceborne Thermal Emission and Reﬂection [24] A. A. Gitelson, U. Gritz, and M. N. Merzlyak, “Relationships between
+Radiometer (ASTER),” IEEE Trans. Geosci. Remote Sensing, V01. 36, leaf chlorophyll content and spectral reﬂectance and algorithms for non—
+no. 4, pp. 1062—1071, Jul. 1998. destructive chlorophyll assessment in higher plant leaves,” J. Plant Phys-
+
+[3] C. O. Justice,J. R. G. Townshend, E. F. Vermote,E. Masuoka, R. E.W01fe, iol., vol. 160, no. 3, pp. 271—282, Mar. 2003.
+
+N. Saleous, D. P. Roy, and J . T. Morisette, “An overview of MODIS [25] J . J . Mueller, C. Davis, R. Arnone, R. Frouin, K. L. Carder, Z. P. Lee,
+land data processing and product status,”Rem0te Sens. Environ, V01. 83, R. G. Steward, S. Hooker, C. D. Mobley, and S. McLean, “Above—
+no. 1/2, pp. 3—15, NOV. 2002. water radiance and remote sensing reﬂectance measurement and analysis
+
+[4] R. Amin, J . Zhou, A. Gilerson, B. Gross, F. Moshary, and S. Ahmed, protocols,” in Ocean Optics Protocols for Satellite Ocean Color Sensor
+“Novel optical techniques for detecting and classifying toxic dinoﬂagel— Validation, J . L. Muller and G. S. Fargion, Eds. Greenbelt, MD, USA:
+late Karenia brevis blooms using satellite imagery,” Opt. Exp., V01. 17, NASA, 2002, pp. 171—182, Revision 3, NASA/TM—2002—210004.
+no. 11, pp. 9126—9144, May 2009. [26] G. Dall’Olmo and A. A. Gitelson, “Effect of bio—optical parameter vari—
+
+[5] R. Amin, A. Gilerson, J . Zhou, B. Gross, F. Moshary, and S.Ahmed,“1m— ability on the remote estimation of chlorophyll—a concentration in tur—
+pacts of atmospheric corrections 0n algal bloom detection techniques,” bid productive waters: Experimental results,” Appl. Opt, V01. 44, n0. 3,
+presented at the 89th AMS Annu. Meet., Phoenix, AZ, USA, Jan. 11—15, pp. 412—422, J an. 2005.
+
+2008. [27] B.—C. Gao and C. 0. Davis, “Development of a line—by—line—based atmo—
+
+[6] H. R. Gordon, T. Du, and T. Zhang, “Remote sensing of ocean color and sphere removal algorithm for airborne and spaceborne imaging spectrom—
+aerosol properties: Resolving the issue of aerosol absorption,” Appl. Opt, eters,” in Proc. SPIE, 1997, V01. 3118, pp. 132—141.
+vol. 36, no. 33, pp. 8670—8684, NOV. 1997.
+
+[7] H. R. Gordon and M. Wang, “Retrieval of water—leaving radiance and
+aerosol optical thickness over the oceans With SeaWiFS: A preliminary
+algorithm,”Appl. Opt, V01. 33, n0. 3, pp. 443—452, Jan. 1994. m: ” ‘ . _
+
+[8] R. P. Stumpf, R. A. Arnone, R. W. Gould, P. M. Martinolich, and .__;_;;’. Ruhul Amln was born 1n.Sy1het, Bangladesh. He
+V. Ransibrahmanakul, A partially coupled ocean-atmosphere model for 3:13.: [1'3 E '2' recelved the BE degree 1n e0mputer engmeermg
+retrieval of water—leaving radiance from SeaWiFS in coastal waters, e ,1? and the M'E' degree 1n electrlcal englneermg from
+V01. 22, SeaWiFS Postlaunch Technical Report Series, S. B. Hooker {-2 The C1ty College 0fN€W YOfk,N6W York,NY,.USA,
+and E. R. Firestone, Eds. Greenbelt, MD, USA: NASA, 2003, NASA/ 2; m 2005 and 20982 respe9tlvely, a_nd the MPhIl. and
+TM—2003—206892. 3""]; PhD. degrees 1n electrlcal englneenng from The
+
+[9] M. Wang and W. Shi, “Estimation of ocean contribution at MODIS near 25:13 Qty Un1ve131ty Of New Yerk, New York, NY’ USA’
+infrared wavelengths along the East Coast of the U.S.: TWO case studies,” 23\ ﬂ. :3 1n 2908 and 2009’ respectlvely. _ _
+Geophys. Res. Lett.,V01. 32, n0. 13,p.L13 606, Jul. 2005. W; 5““ 2009’ he has been a Reseamh SClenU,“
+
+[10] Z. P. Lee, B. Casey, R. Arnone, A. Weidemann, R. Parsons, M. J. Montes, 2- \V - '2 : Wlth the U.S. Naval Research Laboratory, Stehms
+B. Gao, W. Geode, C. 0. Davis, and J . Dye, “Water and bottom properties _ Space Center, MS’ USA' He has developed 0pt1ca1
+of a coastal environment derived from Hyperion data measured from the algorlthrhs to detect and class1fy harmftll algal blooms from space. H13 current
+EO—1 spacecraft platform,” J. Appl. R em ote S ens., V01. 1,110. 1213- 011502, research 1nterests 1nc1ude 0pt1ca1 algorlthm development, atmospherlc correc—
+Dec. 2007. t10ns, cloud—shadow, ﬂuorescence, and harmful algal blooms.
+
+[11] P. Reinersman, K. L. Carder, and F. R. Chen, “Satellite—sensor calibration
+veriﬁcation With the cloud—shadow method,” Appl. Opt, V01. 37, no. 24,
+pp. 5541—5549, Aug. 1998.
+
+[12] R. Amin, R. G0uld,W. Hou, Z. Lee, and R. Arnone, “Opticalalgorithm for :1 I ‘ 3 David Lewis received the B.S. degree in computer
+cloud shadow detection over water,” IEEE Trans. Geosci. Remote Sens., { 2.x ; 3 . science from the University of Oklahoma, Norman,
+V01. 51, n0. 2, pp. 732—741, Feb. 2013. ,i ' £1: OK, USA, in 1984 and the M.S. degree in computer
+
+[13] R. Amin, R. Gould, W. Hou, Z. Lee, and R. Arnone, “Automated detection .- {g}, science and the Ph.D. degree in scientiﬁc computing
+and removal of cloud shadows on HICO images,” in Proc. SPIE, 2011, 2"" -1 "". . from the University of Southern Mississippi, Hatties—
+Vol. 8030, p. 803004. f 2.,"" _ burg, MS, USA, in 1993 and 2000, respectively.
+
+[14] M. D. Lewis, R. W. Gould, R. A. Arnone, P. E. Lyon, P. M. Martinolich, ,. ‘1 s 7 . While in Norman, he was involved in radar
+R. Vaughan, A. Lawson, T. Scardino, W. Hou, W. Snyder, R. Lucke, '3 projects at the NOAA National Severe Storms Lab—
+M. Carson, M. Montes, and C. Davis, “The Hyperspectral Imager for the oratory, Which included investigation of tornadoes,
+Coastal Ocean (HICO): Sensor and data processing overview,” presented gust fronts, and ionization effects of lightning. He
+at the IEEE Oceans, Biloxi, MS, USA, Oct. 26—29, 2009, pp. 1—9. transitioned from meteorological studies to land—
+
+[15] R. L. Lucke, M. Corson, N. R. McGlothlin, S. D. Butcher, D. L. Wood, based agricultural and then coastal oceanography remote—sensing projects.
+D. R. Korwan, R. R. Li, W. A. Snyder, C. 0. Davis, and D. T. Chen, He has over 35 years in remote—sensing activities and is currently With the
+“The Hyperspectral Imager for the Coastal Ocean (HICO): Instrument U.S. Naval Research Laboratory, Stennis Space Center, MS, USA, Where he
+description and ﬁrst images,”Appl. Opt, V01. 50, no. 11, pp. 1501—1516, is involved in data fusion, Vicarious calibration, bathymetry mapping, and
+Apr. 2011. algorithm development projects.
+
+"
+"8","AMIN et al.: ASSESSING THE APPLICATION OF CLOUD—SHADOW ATMOSPHERIC CORRECTION ALGORITHM ON HICO 2653
+_. u“ ""#25:”??? Richard W. Gould received the Ph.D. degree in , ' ' "" Michael Ondrusek received the M.S. degree in
+?,th ""' T"" ' oceanography from Texas A&M University, College .3 oceanography from Texas A&M University, College
+.;i.-'.j._;_,_3’ Station, TX, USA, in 1987. Station, TX, USA, in 1989.
+',.l - He has 30 years of oceanographic experience, He work at the University of Hawaii, Department
+’7,“ . including 22 years in remote sensing, satellite al— of Oceanography from 1991 to 1998. He has been an
+'7 -' gorithm development, and optical instrumentation Oceanographer With the NOAA Center for Satellite
+_ ' ”I? ~ and measurements. He has authored 0r coauthored Applications and Research, College Park, MD, USA,
+over 45 journal articles and over 200 conference ' for the past 15 years. His current research is on ocean
+. presentations. He has developed and validated new color remote sensing in the Satellite Oceanography
+multispectral and hyperspectral coastal ocean color and Climatology Division’s Ocean Sensor Branch.
+algorithms, and he has transitioned satellite products This includes ocean color satellite calibration, val—
+to both the Navy and the National Aeronautics and Space Administration idation, and algorithm development. He is currently a member of the JPSS
+(NASA). He has been involved on numerous interdisciplinary oceanographic VIIRS Ocean Color Ca1/Va1 Team and the STAR Ocean Color Team. His
+programs funded by the Naval Research Laboratory (NRL), EPA, NOAA, interest includes in situ biooptical measurements, coastal runoff monitoring,
+NASA, and NSF. He manages the Bio—Optical/Physical Processes and Remote algal blooms, phytoplankton pigments, phytoplankton physiology, and land/sea
+Sensing Section, NRL, Stennis Space Center, MS, USA. His current research interactions.
+interests include satellite algorithm development, uncertainty analyses, optical
+water mass classiﬁcation, coastal hypoxia, surface/subsurface linkages, and
+physical/biooptical coupling. Robert Arnone received the B.S. degree in geology
+' from Kent State University, Kent, OH, USA, in 1971
+m and the M.S. degree in geophysical science from the
+‘ Georgia Institute of Technology, Atlanta, GA, USA,
+‘ir 5»;- in 1974.
+m _ He leads the Ocean Processes branch of over 40
+k... , scientists/technicians and staff of physical, biologi—
+. ' . .- -~ - .g ' ‘ Weilin (Will) H011 received the PhD- degree from cal, and optical and remote—sensing ocean personnel
+W : the College of Marine Science, University of South 4 specializing in coupled dynamic processes (biophys—
+._ L: F10rida,Tarnpa, FL, USA, in 1997. . ‘ ical modeling), meso— and ﬁne—scale physical pro—
+, ,v'o. He iS an Oceanographer With the US. Naval Re— cesses (marginal seas, waves dynamics, and coastal
+‘l. i’ a ‘v‘ ' search Laboratory, Washington, DC, USA, and man— processes), remote sensing and ocean optics (naval EO systems, hyperspectral
+.. ‘9;- ages the Hydro Optics Sensors and Systems Section. algorithms, and satellite applications), and marine molecular processes. He
+_ ' .1. '1‘ ‘ HiS research interests include ocean OptiCS, under— leads research in basic and exploratory research and applied oceanography for
+‘- j"". . ' . i ‘ water imaging, optical turbulence, remote sensing Navy and federalagencies 0f the National Oceanic and Atmosheric Administra—
+_ J"". .»_7'=?,V\(. vf , including LIDAR, numerical simulation, data man— tion (NCAA) and the National Aeronautics and Space Administration (NASA).
+K ; _ ya / ' z ' agement, instrumentation, and platforms including He is currently leading the Ocean National calibratiorﬂvalidation efforts for
+I unmanned aerial and underwater vehicles. the satellite ocean JPSS for NASA, NCAA, and the Navy. He is coordinating
+Df- H011 helps SPIE in organizing the Ocean Sensing and Monitoring the Naval Research Laboratory hyperspectral satellite Hyperspectral Imager
+Conference as part Of the SPIE Defense and Security Symposium. He iS the 0f the Coastal Ocean, Which was successfully launched to the International
+Editor 0f P roceedings OfSPIE V018. 7317, 7678, 8030, and 8372. Space Station (in August 2009). He serves on science teams for NASA, NOAA,
+EPA, and the Navy, developing future satellite systems and establishing policy
+for ocean and coastal research. He has been an Adjunct Faculty With the Marine
+Science Department, University of Southern Mississippi (USM), Hattiesburg,
+MS, USA, since 1989 and With the University of Southern Alabama, Mobile,
+AL, USA. He serves on graduate student committees With the USM and
+Rosenstiel School of Marine and Atmospheric Science, Miami, FL, USA. He
+f“ . “.6179.“ » Adam Lawson received the B.S. degree in computer has over 90 scientiﬁc publications and more than 250 presentations. His speciﬁc
+4.35:3 ‘ ""- science from the University of Southern Mississippi, expertise is in coupling biological optical and physical processes using ocean
+""Y: ‘ Hattiesburg, MS, USA, in 2009 While working as a color satellite and ocean models. He has developed biooptical algorithms from
+-, ' {.5 STEP student for the U.S. Naval Research Labora— satellites, Which are applied to ecological forecasting models.
+. {'3‘ ‘ , LT tory (NRL). Dr. Arnone was the recipient of the Navy Meritorious Civilian Service Award
+¢ 3‘. ’ , . , - He is currently With the Bio—OpticallPhysical Pro— in 2008, U.S. Navy honors and patents in 1980, NASA honors for Shuttle
+7;, H“ q : cesses and Remote Sensing Section, NRL, Stennis Astronaut Training program, U.S. Navy Employee of the year in 1998, Navy
+‘- ’ A . . Space Center, MS, USA, working on satellite data Royalty Transition Award for Automated processing in 2002, NOARL paper
+(II processing and satellite calibration techniques utiliz— award in 1992, and NRL’s Alan Berman Award Division award for best paper
+ing various in situ data products. in 1998, 2002, and 2008.
+
+"

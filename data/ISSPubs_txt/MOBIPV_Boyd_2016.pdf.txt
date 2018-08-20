@@ -1,0 +1,550 @@
+"","x"
+"1","AIAA 2016-2306
+SpaceOps Conferences ®
+16-20 May 2016, Daejeon, Korea
+SpaceOps 2016 Conference
+ngzémgrk
+moblPV: A New, Wearable Real-Tlme Collaboratlon
+Software for Astronauts Us1ng Moblle Computlng Solutlons
+A. Boyd1 and A. Fortunate2
+European Astronaut Centre, Cologne, Nordrhein Weszfalen, 51147, Germany and
+M. Wolff3 and D. Martinez Oliveira4
+European Space Research and T echnology Centre, Noordwijk, Zuid—Holland, 2201, The Netherlands
+o mobiPV is an innovative wearable and mobile procedure Viewer, Which gives astronauts
+E a truly hands-free operations environment and provides them With an instantaneous, direct
+é two-way link With the experts on ground. In turn, the system provides the ground With an
+g exact View of the procedure being executed, including current step marker position, as well
+E as an “astronaut eye View” of the task at hand. All the hardware is Commercial Off the Shelf
+E (COTS) whereby a custom software runs on a smartphone, linked to a wearable head-
+5 mounted camera, an audio headset and, optionally, a mobile tablet. Astronauts can navigate
+a) through the procedure using either voice commands or the smartphone/tablet touchscreen.
+g A multimedia collaboration environment is available: the crew and ground can exchange
+'3 audio, text and Video notes as well as activate either audio-only or full two-way Video
+:5 communication. All data exchanges are conducted over IP and rely on the Multipurpose
+4% Computer and Communication (MPCC) system. mobiPV has been successfully tested during
+g the NEEMO 19 and NEEMO 20 underwater ‘aquanaut’ missions in 2014 and 2015 as well as
+a during the ESA iriss Mission 0n the International Space Station (188), With the plan to
+§ validate increasingly complex experiment utilisation scenarios during future increments on-
+2 board the 188. In general, mobiPV has been shown to improve astronaut efﬁciency and
+E greatly reduce the time lost suspending an activity to consult laptop/tablet/paper instructions
+E at each step in the procedure. The system also eliminates ground guesswork of What step the
+g crew is currently working on. This paper describes the ISS ﬂight crew operations of this new
+(L3 real-time collaboration software using wearable, mobile computing solutions and its
+E effectiveness in human spaceﬂight operations.
+2
+<5
+§
+‘z‘
+E
+B
+2?:
+Q
+1 Eurocom, Crew Operations Unit, Human Spaceﬂight and Robotic Exploration (D/HRE-A), Andrea.B0yd@esa.int
+2 Deputy Head, Crew Operations Unit, Human Spaceﬂight and Robotic Exploration (D/HRE-A), Antonio.Fortunat0@esa.int
+3 mobiPV Principal Investigator, Software and Technology Department, Technical and Quality Management (D/TEC—S),
+Mikae1.W01ff@esa.int
+4 mobiPV Lead Engineer, Software and Technology Department, Technical and Quality Management (D/TEC-S),
+David.Martinez.Oliveira@esaint
+1
+American Institute Of Aeronautics and Astronautics
+Copyright © 2016 by the American Institute of Aeronautics and Astronautics, Inc. All rights reserved.
+
+"
+"2","I. Introduction
+THE 188 program goal of radically increasing crew working time on utilization tasks (i.e. science and
+technology development) is a challenge to be met on many fronts. For example, performance improvement for
+crew manual tasks such as system maintenance activities and payload set-up/tear down is required, Whilst the
+anomaly resolution process must also be optimized. A crew informatics response to this efﬁciency challenge was to
+create a mobile procedure Viewer (mobiPV).
+The initial design goals of mobiPV were formulated as:
+a) embrace terrestrial mobile and wearable technology so that the required ground support to crew members is
+always at hand at the work site;
+b) improve situational awareness and real-time collaboration between crew and ground expert(s) through a
+“shared workspace” While operations are in progress.
+8
+g A. mobiPV Overview .
+§ At its core, mobiPV is a procedure Viewer enhanced With productivity and collaboration services. In this
+§ context, procedures are the standard Operations Data Files (ODF) used on-board the International Space Station for
+if all non—triVial crew activities. mobiPV is compatible With the on—board procedure library containing all validated
+E ODFs applicable to crew activities.
+0
+20 The current mobiPV implementation consists of a ﬂight and a ground segment composed exclusively of
+g Commercial-Off—The-Shelf (COTS) hardware. The application software runs on Linux based OSs (Android on-
+3 board and Ubuntu on ground) and is fully customized.
+3 Data links permitting* (i.e. availability of the Ku IP Services (Ku IPS)), mobiPV supports a real-time
+g collaboration environment (a “shared workspace”) for the distributed ﬂight operations team: the astronauts together
+2“ With their support team on the ground. This collaborative conﬁguration is well suited to contingency operations and
+3;» has the potential to signiﬁcantly shorten any anomaly resolution process.
+5: mobiPV provides the following main crew productivity and collaboration services:
+E 1) procedure voice navigation, enabling hands-busy support;
+(”3 2) real time Video streaming of workplace activities (“astronaut eye View”);
+(:3 3) real-tiIne space-to-ground communications;
+E5 4) procedure execution progress synchronization between ﬂight and ground users (i.e. the green step marker is
+E always at the same position on all connected systems);
+a 5) multimedia annotation of procedure steps (text, images, audio and/or Video clips).
+0
+(:5: These services are available, can be initiated on the
+a ground as well as on-board, and the implementation of this
+g application software relies on standard IP network protocols. o H‘
+3 During real-time operations ground and ﬂight mobiPV > <
+E systems are connected locally to identical ODF ﬂight , .
+5 libraries thereby avoiding a high bandwidth demand on Ku Smartphone Wearab'e
+IPS for loading procedures and synchronizing them as per 1 _
+item 4 above. —_ i
+B. Hardware Conﬁgurations g '
+The current implementation involves peer-to-peer d
+connection of one ﬂight system With one ground system. The 9
+ﬂight system can be conﬁgured in two ways: . ' '
+a) Prime (Figure 1): the user wears a smartphone on 'u‘
+the cuff and complements it With Google Glass for #
+audio, Video and auxiliary display functions. Laptop Tab'et
+Figure 1. mobiPV devices. Prime Conﬁguration.
+* When Ku IPS is not available, mobiPV can be used in stand-alone mode.
+2
+American Institute of Aeronautics and Astronautics
+
+"
+"3","b) Alternate: the smartphone is complemented With a head-worn webcam and a simple rnono headset With
+speaker and microphone.
+In both such conﬁgurations an iPad can be used as ;«H_
+assistive display. As in Figure 2, for example, its larger x, : 2.121.810LABTCUI&2MAF """"""""““‘""‘___
+screen size provides the user With a better operational ....._.__ --.-.~.+ __
+context (rnore instructions around the current one are wbmmeammsandexchangeonmambmus.1.3.137;
+available at a glance) and allows images and Video clips —
+to be displayed in larger formats. The Google Glass head 5 .V 11*}
+mounted display also works as an assistive display “—4? 1.3; "" “-1.: a_ 1:- ‘
+however, due to its limited size, it can only render one J ”ML £3,“ km I
+o instruction at any given time. I W a .. g6, ‘35 x
+E. Notwithstanding the Wired connections of the headset u-
+E and camera in the alternate conﬁguration, all internal Figure 2. iPad Assistive Display. Procedure images
+g rnobiPV device communication links are Wireless. The automatically popup 0n the assistive tablet, while
+in external data/Video/audio links to/from the smartphone and remaining hidden to save screen Space on the
+2 an ISS Wireless base station are also Wireless. smartphone.
+o
+2 The ground rnobiPV is composed of a laptop With a Wired webcam and a Wireless Bluetooth rnono headset. The
+E underlying software architecture allows for additional peripherals (e.g. barcode reader, Wireless serial data transfer
+§ dongle), as well as a full port to future mainstream COTS mobile devices. In addition the current architecture
+if already allows for a rnulti-node rnobiPV system in operations, Where one or many ﬂight systems can be connected
+3% With one or many ground systems to support larger team operations efforts.
+\0
+i ll. COTS Technology on ISS
+2;) There is an increasing trend to use COTS hardware solutions in crew informatics systems for human spaceﬂight.
+g This approach has pros and cons compared With traditional custom hardware development.
+m
+E The main advantages are:
+C: a) No development time. Products are market ready and no additional effort needed on hardware development.
+2-5 h) Physically appealing. Commercial products have a better ﬁnish than bespoken solutions. Even though not a
+(3 technical advantage, this feature has a positive impact on user acceptance.
+8 c) Farniliarization. Most crew members use on a daily basis a score of consumer electronic devices such as
+E srnartphones, tablets, smart watches, etc. Therefore the familiarization process With a neW system that includes
+3 them is both easier and faster.
+T: (1) Compliance to standards. Commercial products have to fulﬁl many different norms and standards to be
+E allowed on the market. Products already certiﬁed according to such standards can usually go through a faster
+g space qualiﬁcation process.
+3; e) State of the art technology. In general, custom hardware development takes time and in an era of quick
+ED obsolescence of consumer electronics this translates in systems becoming outdated even before their ﬁrst use.
+On the other hand, the adoption of COTS solutions has a few drawbacks:
+a) The success and efﬁciency of the space qualiﬁcation process heavily depends on support provided by the
+manufacturer. This is sometimes difficult to obtain When commercial devices currently on the market are
+involved, as companies tend to keep the details of their designs secret, making it difﬁcult to disclose the
+information required for the space qualiﬁcation process, even under NDAs.
+b) COTS hardware is normally highly optimized. It is rare to ﬁnd a modular COTS design to Which the
+application of small customizations is possible. Furthermore, such optimizations, aimed at a speciﬁc consumer
+market, rarely satisfy operational requirements for space applications. This usually has negative impact When
+modifying it for space in regards to system setup, ergonomics and comfort.
+0) Correspondingly, there are no COTS devices for space applications. The device is intended for something
+else and therefore, has an impact either on the qualiﬁcation process (removing srnartphone radio chips) or in the
+interfacing process (no serial port on mobile devices).
+3
+American Institute of Aeronautics and Astronautics
+
+"
+"4","d) The previous points also extend into the software area. COTS devices, like tablets or phones, come with
+their own software. Some parts of that software are proprietary and cannot be easily modiﬁed. Access to certain
+features from external applications may be difﬁcult and require signiﬁcant effort and investigation from the
+system developers.
+C. COTS on 188
+More and more COTS solutions have been adopted in recent years on-board the ISS. BSA, for instance, has been
+using COTS solutions for some years. In 2009, the WEarable Augmented Reality (WEAR)ii technology
+demonstrator was ﬂown on 188. This system, like InobiPV was completely based on COTS devices.
+Another more modest (hardware-wise) project involving COTS hardware was the CRew User Interface System
+Enhancement (CRUISE) experiment (2013)“1. In this case a COTS headset was qualiﬁed to be used in the evaluation
+of voice commanding technologies onboard.
+g Beside fully ﬂedged COTS devices (phones, tablets, etc), there is also a trend in industry to exploit emerging
+8 technologies as well as low-Cost electronics devices. An example of the former is the use of 3D-printed elements.
+5 An example of the latter is the AstroPI technological demonstrator currently tested during the Principia mission that
+g makes use of a Raspberry Pi enhanced with different kinds of sensors.
+2 The combination of these technologies appears as an interesting Inid-point in the spectrum running from custom
+g hardware development to COTS devices.
+3 D. COTS in mobiPV
+g The InobiPV project involved COTS devices since the very early stages of development. The main goal of the
+i; proj eet is to improve mobility and explore the possibilities inherent to wearable technologies, therefore, the selection
+2 of a mobile phone was the logical choice.
+i Speciﬁcally, a Nexus 5 was selected because, of all the devices available, it was the only one of its type with
+2;) some vendor support to customize the software. Moreover, the manufacturer’s ofﬁces in Europe also helped to
+E qualify the rechargeable Li-Ion battery and remove the radio ampliﬁers to avoid interference from eell-network
+g; bands. The Nexus 5 is the central element of InobiPV and it proved to be an important asset for the project.
+E However, it is interesting to note that, as mentioned above, it was not possible to strictly use it “Off The Shelf”.
+LU
+U
+8 Another major InobiPV component is Google Glass. At the beginning, the device was deemed promising
+é because of its small size and simple setup. Its qualiﬁcation, however, proved difﬁcult, and the drawbacks of the ﬁnal
+% result outweighed the main advantages of the device. In this case, in fact, it was not possible to obtain manufacturer
+% support for battery qualiﬁcation. The workaround was to modify the device by removing the original battery and use
+9 instead an existing space qualiﬁed re-Chargeable battery, provided by NASA. This modiﬁcation was possible thanks
+i to the efforts of ESTEC engineering personnel.
+2
+‘3 The use of 3D printing technology proved to be necessary for both devices. In the ease of the smartphone, a wrist
+é attachment was 3D printed in order to support the original concept of a cuff worn device. For Google Glass it was
+E necessary to 3D print a cover for the display prism such that, if it were to shatter during transportation, any piece of
+5 glass would be contained within. In fact, the cover made the display prism compliant with COLUMBUS/ISS safety
+requirements.
+The rest of the InobiPV components (head mounted camera, headset, cabling, Chargers) didn’t pose any major
+issue and could be used as-is.
+E. Interfacing with Current [88 Technology
+InobiPV interfaces with two main ISS systems: the on-board wireless network and the MPCC. The former
+provides connectivity to a number of different services, for instance the IPV server containing all the on-board
+procedures. The latter is still under development but, in principle, it is intended to enable point to point TCP/IP
+connectivity between ground and ﬂight segments and enable the so-Called Class III payload operations. (A Class III
+payload can conceptually be operated by its user from any place where an internet connection supported by Ku IPS
+and MPCC services are available). InobiPV does not fully ﬁt the deﬁnition of a Class III payload due to its bi-
+4
+Ameriean Institute of Aeronautics and Astronautics
+
+"
+"5","directional real-time audio/Video capability and therefore, interfacing with the MPCC system was a challenge
+especially for some system functionalities.
+III. Underwater Operational Veriﬁcation
+
+The success of any hardware/software solution is largely determined by how much user feedback is collected
+during development and how well this is incorporated in the ﬁnal product. Such feedback is essential to tweak the
+user interface, improve performance, ﬁnd and eliminate bugs, as well as identify which features are worthwhile and
+which are better left out. This is especially important with a system providing enhanced real-time collaboration in
+the complex technical and operational environment of the International Space Station.
+
+Awareness of this fundamental principle has characterized mobiPV since its inception. Already in the very early
+development stages, informal user evaluation sessions were conducted at the European Astronaut Centre in Cologne
+to collect feedback from astronauts as well as ground support personnel. As the system matured and grew
+
+§ increasingly more complex, those user evaluations were formalized and became important project milestones. The
+:3 typical evaluation scenario involved the execution, with the aid of mobiPV, of a real ﬂight procedure focused on
+g hands-busy, complex operations where astronauts would beneﬁt the most from a wearable system and a closer
+E collaboration with the “ground”.
+N
+3 Those evaluations provided frequent, valuable feedback but lacked a few fundamental elements: the activities
+8 were executed in “stand-alone” laboratory conditions rather than in the framework of a tight activity plan and in a
+g realistic, space-like operational environment.
+g In order to ﬁll this gap, at least partially, two special user evaluations were run by astronauts and ﬂight
+E; controllers inside Aquarius, an underwater habitat twenty miles off the coast of Florida, in the framework of the
+5 NASA Extreme Environment Mission Operations (NEEMO) program. A ﬁrst test was conducted in summer 2014
+go during NEEMO 19, followed a year later by a second one during NEEMO 20.
+N
+2;) The relevance of those tests cannot be overstated. NEEMO provides what is probably the closest space-like
+E operational environment not involving rocket propulsion. Aquanauts are conﬁned for one to two weeks in a
+55 pressurized habitat 20m (65ft) under the surface of the sea. They have a busy schedule and are supported in real-
+; time by a Mission Control Centre. Schedule pressure, isolation, limited communication infrastructure, as well as a
+<2) real component of risk combine in a unique mix that has been exploited over the years to test a number of precursor
+3:) technologies.
+52
+§ ' w ‘ .~ F. NEEMO 19
+§ - t, “H ~ ; 'i In NEEMO 19 a mobiPV prototype was put
+0 Q 7 .
+j: ‘ . I . __ _ ' through 1ts paces by ESA astronaut Andreas
+g0: ' i I mm ,,._,,—::;; ; :: g I Mogensen (who later checked-out the ﬁnal system
+E i T 13255 5 E l l'. n in space during the iriss mission) and BSA
+4: i ‘9. _ . . . . . . A , ,
+8 “$93 ' 2::::;;;; .. ‘ ’(sasa 1nstructor Herve Stevenln.
+% j :2::::::::::. ~
+g b ::::::::::::: 1“"" - . . .
+g 3 ' gggg§§§:::::; . In th1s test, the prime system conﬁguratlon was
+Q 9 1 {33333555555 used. The smartphone was as usual the centrepiece
+O """"""""Iz:zz . of the system, with Google Glass covering the
+g P e function of head mounted camera, assistive display
+"" - . and headset, and the iPad providing an additional
+\ ,, ‘ ,: . , I , assistive display with large screen real-estate. The
+v r ‘ $4M ' activity executed with mobiPV as can be seen in
+‘v a Figure 3 was Skin-B, a real scientiﬁc protocol
+’ . normally performed by astronauts in space.
+Figure 3. NEEMO 19 Aquarius underwater habitat. The test involved the veriﬁcation of all rnobiPV
+Mogensen using mobiPV prime conﬁguration to perform main features: step marker synchronisation,
+Skin-B, a procedure currently used on the [SS (ESA). multimedia note exchange and real-time audio/Video
+interaction with a ground operator located at the
+5
+American Institute of Aeronautics and Astronautics
+
+"
+"6","NEEMO Mission Control Centre. The overall results of NEEMO 19 were encouraging. mobiPV clearly showed the
+potential for enhanced space-to-ground collaboration: a tighter integration between the efforts of crew and mission
+control resulting in a more efﬁcient use of crew time. The test was also useful to identify areas of improvement:
+voice commanding, Google Glass limited battery life, as well as the need for a networking protocol that would better
+cope with limited bandwidth and frequent outages.
+G. NEEMO 20
+ESA astronaut Luca Parmitano, together with NASA astronauts Serena ~J~ ’- 7; ”‘ ‘ "" c"" ‘
+Aunon and Dave Coan (Figure 4) as well as JAXA astronaut Norishige K). | ‘ 0‘3 ,1? , , ‘
+Kanai evaluated in the summer of 2015 an updated version of mobiPV . . , T44“ ‘ -”.
+during NEEMO 20. This time the alternate conﬁguration was chosen: the ‘i ,1 ‘3’ .3"" ‘ k \K‘ ”
+smartphone was complemented by a head mounted camera, a wired ‘ “v’ ,4 r 7"" 7 . 3:. F
+headset and an iPad. The activity executed was again Skin-B, thus \3 \ f E? 7 - '”
+allowin more meanin ful corn arisons with NEEMO 19. a .. ii”
+”é Apart from an updated software, the main novelty of NEEMO 20 was ”i A. "" 7 5.
+g the veriﬁcation of a simulated multi-centre collaboration setup. The s e ‘5
+g» aquanauts did not rely any longer just on mission control, but could also
+3 interface with Skin-B activity experts located at the European Astronaut Figure 4- NEEMO 20 Aquarius. C061”
+<2 Centre in Cologne as shown in Figure 5. wearing mobiPV i"" the alternate
+E .. -____ l I conﬁgurationfor Skin-B (NASA).
+g 3 r-ZW . ' Once more the evaluation
+'§ ‘ 3:” - m 9 results were encouraging: the system was deﬁnitely more mature than
+if - l’ ”5 in NEEMO 19 and could better cope with the difﬁcult network
+g 1 ”' environment of Aquarius. Moreover, the simulated multi-centre setup
+g ‘ proved to be a valuable addition. On the other hand, problems still
+i ' persisted with the voice recognition and the cables connecting the
+2;) L“ i; i t , A 7 various hardware turned out to be quite cumbersome.
+: <~ ‘ ,- ,
+E 4'“ , i."" ,. ,H.‘ TV Figure 5. Live multi—centre operations. Kanai underwater in
+E44 7 '31“: 3 ”7 f3] "" 1.1 J! . r” Aquarius works Simultaneously with CAPCOM Stevenin in Florida,
+a ” \_ * USA and Skin-B payload Specialists in Cologne, Germany (ESA).
+E
+% IV. Spaceﬂight Operational Veriﬁcation
+a The initial activities on the ISS aimed to systematically test each of the mobiPV features for both conﬁgurations.
+Q The tests were slated for Andreas Mogensen during his 10day mission in September 2015”.
+(2‘
+E: H. International Space Station
+g On the International Space Station, the crew work to very tight schedules. In this environment mobiPV was
+$3 envisioned to be extremely useful to save crew time, increase accuracy and make it easier for crew to take on any
+E task while keeping both hands free. A key feature for ground controllers is the ability to know exactly where crew is
+8 in the procedure thus eliminating the current guesswork, which is anyway only possible when cabin Video or
+telemetry from the equipment being operated is available.
+mobiPV enables new ways of interaction, including a direct connection between the crew member on board and
+the activity experts on ground. The idea is to complement the current approach where the Flight Control Team
+“owns” all S/G communications and acts as intermediary between the astronauts and the principle investigators or
+payload developers on ground. In order to make this direct interaction possible whi1st sti11keeping the Flight Control
+Team aware of what is happening, redistribution of the mobiPV internal Video/audio channels is necessary. Those
+channels are carried as IP trafﬁc through the MPCC and then further redistributed on ground to feed them into the
+standard 188 distribution system and make it available to the various control centres.
+As mentioned, mobiPV was designed to enable multi-party collaboration models and therefore, enabling the
+different parties involved in an activity to have their own mobiPV unit with the ability to monitor and interactively
+6
+American Institute of Aeronautics and Astronautics
+
+"
+"7","join the on-going session. This whole concept, when fully deployed, will enable a more integrated solution for the
+whole mission team situational awareness.
+
+Since Andreas Mogensen’s Soyuz had to adopt a longer rendezvous (Two days instead of siX hours) and docking
+proﬁle, the original ten day docked mission was replanned into eight days and, as a result, the time allocated to
+rnobiPV was greatly reduced. In sight of this reduction it was decided to test only the alternate conﬁguration.
+
+The smartphones were both fully charged a day prior in order to have a prime and backup phone in case one was
+required. Both phones are identical such that crew could chose to use either and quickly switch from one to the other
+in case of need.
+
+On the day of execution, the phone ﬁt snugly into the 3D printed cuff worn mount. It took, however, some
+manoeuvring to set up the cables, as we had anticipated and Mogensen had trained for, and link the peripherals to
+
+‘8 the smartphone. He connected the wired audio headset to the audio adapter cable jacks and inserted the adapter cable
+$3 to the smartphone. The head mounted webcam was connected Via USB to the smartphone and all the cabling was
+é secured with a velcro strap to the crew arm to keep it out of the way.
+«5
+E» Afterwards, Mogensen activated the smartphone, veriﬁed battery levels were above 80%, connected to the
+Sf appropriate network on the Node 2 Wireless Access Point, and started the rnobiPV software. The ODF library
+<2 loaded automatically and the full rnobiPV connection to ground worked ﬂawlessly at the ﬁrst attempt. He then
+:9 powered up the iPad and navigated on the Safari browser to the IP address that would link it automatically to the
+§ rnobiPV software on the smartphone.
+5f Mogensen set the smartphone as master, disabled the speech recognition for the ﬁrst part of the test and loaded a
+E designated procedure as per the test sequence. On the ground terminal everything operated nominally: our system
+§ instantly recognized the master instance, conﬁgured itself as slave and mirrored the newly opened procedure on our
+3“ laptop screen at EAC, which was screencast to Col-CC in real time (Figure 6). Mogensen pressed next and previous
+1;) on the onscreen display to scroll forward and backward through the procedure and the ground terminal synchronlzed
+a the green step rnarker as expected. Crew also veriﬁed that the iPad synchronized.
+O
+m —...... . An I :3“... 12* : ""L‘.’ _ ‘
+E :— . ‘ i 4 tab '45:“
+Z q . :4“. “Pi ’) ‘M’ n...- _
+8 _ ° ' r ' “S a 4‘8‘ ‘3 t , r“
+e E V ‘ ' 2‘7 ~ 'i P- m
+< a . ‘ _ > r ‘ ~
+(D5 3 \' 3 » .AQ: i'IW-Iai‘ 9"",""
+g g » ’ Ct , _ 77‘. 7“ E - ~
+m ‘ . \€_ __ ’ ~ :.
+E : ,~ V: _:,_.,-
+2 I x \x.‘ \
+m D 1, l ' .\
+g = 1 § l
+E g ""A— - i ""F""
+8 TV ' 1
+a = * «~
+.2 ? ""' A
+E / 0“ﬁ‘ A '5.
+m , .
+
+~ 7%; ""“‘ ‘_. 'w 53: ‘
+
+. r ‘ _. “ ‘31: J f :1: Z ,
+H I ' . ‘5 )f—ﬁv’ ?'i , > fat:
+\\ ’_ lip"" 3%,ﬂ( ‘1 .‘\ ‘I Viz,
+(t - L X9 \{x ’ i
+Figure 6. Live space to ground mobiPV operations. Ground terminal and [SS devices synchronized (ESA).
+7
+American Institute of Aeronautics and Astronautics
+
+"
+"8","Mogensen then enabled the speech recognition and tested the I '1"" , .. ./’ 5L L.‘ a
+voice commanding. This test unfortunately failed due to issues QT"" y l “i
+with the wired audio headset that was handed down from a '. '_ 2:. V; O , “\
+previous 188 experiment. The ground quickly instructed the crew ‘ . ‘ "" 51 ,1 :- wv ‘J. (a I
+to move on and speech recognition was disabled once more. The f ' ‘5 ~ . ,
+cause of the headset failure was traced back to the strict order that - z,’ a i
+must be followed while connecting peripherals t0 the smartphone. ‘ - ""it i ' ”a“ ‘
+Crew and ground sent successful text notes and image notes “ / (72/.x/ ‘
+(Figure 7) and Video notes back and forth. Of course, because of . i: I a ($5
+the abovementioned audio issue, the crew Video note was without - {‘1' .
+audio and we had to skip the recording of audio notes on the crew \ “ x
+deVice. A real time two-way Video link was also established ‘u \_ ‘.._
+between space and ground and crew were able to View the ﬂight ‘ '
+o controllers and Vice versa with fairly good quality. Figure 7- Image note. “ASWOWW Eye View”
+El from the head—worn webcam (ESA).
+E The ﬁrst test concluded at this point as planned and the crew reconﬁgured the iPad back to nominal station
+g conﬁguration while the ground downloaded the log ﬁles and disengaged the Video link.
+3"" Bearing in mind that the ﬂight segment consisted of a new device, connected to the onboard wiﬁ, routed to the
+<2 ground Via the TDRS satellites and that the ground segment consisted of the initial receiving dish in Whitesands,
+:9 POIC in Huntsville, the MCC at Houston, the Col-CC in Munich and ﬁnally the ground terminal at EAC in
+g Cologne, with return links, this was very impressive.
+if A second rnobiPV test is planned for 2016 to check out the prime conﬁguration using Google Glass.
+3
+g V. Results
+1;» I. Comparison of NEEMO 19 and 20 Operations
+5 The software versions had developed considerably between NEEMO l9 and 20. NEEMO crew members had a
+Eu: direct network connection and found the collaborative tool between aquanauts and CAPCOM to be useful with a
+; smooth continuous Video both ways. Crew gave feedback in NEEMO 19 which was incorporated into the NEEMO
+(:3 20 version. This was well received, improving the network and testing out the multi user communication system.
+0
+(3:5 The rnobiPV versions utilized in NEEMO l9 and NEEMO 20 were different development sequences and the
+E next generation to be used in NEEMO 21 follows on from the NEEMO 19 model, while the 188 model is an exact
+a copy of the rnobiPV hardware and software used in NEEMO 20.
+o
+:5: J . Comparison of NEEMO and [88 Operations
+E NEEMO and 188 operations have the obvious difference of microgravity during operations which changes the
+g cable management approach. The communications network in NEEMO is much more straightforward than space to
+3 ground so the Video and high bandwidth connections are more ﬂuid and easier to manage. Safety constraints meant
+E removing internal batteries from the Google Glass which introduced a large NASA approved external battery with
+5 two connection cables, an activity to charge this and the need for a belt to mount it during use. In NEEMO this is
+simply a wireless operation and wearable unit.
+K. Crew Feedback
+NEEMO 19 was extremely useful for Andreas Mogensen as he was able to extensively use rnobiPV prior to his
+188 mission. This experience combined with two hardware inclusive simulations and training at EAC prepared him
+very well for the cn-board usage.
+Crew has stated that they would like more wireless technology, for example to substitute the wired earpiece with
+a wireless Bluetooth earpiece and to ﬁnd a n0n-cabled solution to the ISS requirements of the large external battery,
+a downside of having to modify a ncn-space qualiﬁed COTS deVice.
+Overall 188 crew gave the feedback that they were very well supported by ground teams and the training was
+excellent, particularly as they used rnobiPV twice, also during NEEMO l9.
+8
+American Institute of Aeronautics and Astronautics
+
+"
+"9","Crew would like to see the InobiPV smartphone as a crew preference device that they can pick up in standalone
+mode at anytime and use instead of a laptop or the iPad for any activity. In principle, this is already possible with the
+hardware and software available on-board.
+
+L. Flight Controller Feedback
+
+The ability to see exactly which step the crew was working on, synchronized in real time, was highly appreciated
+by ﬂight controllers. The two-way Video was not found to be useful in the ﬁrst operational test due to occasional
+unpredictable network performance with regard to bandwidth. All the messaging features worked extremely well.
+
+VI. Conclusion
+
+The ﬁrst version of InobiPV was tested on NEEMO 19 in 2014, a different version was utilized on NEEMO 20
+
+in 2015 followed in the same year by that identical version being demonstrated in space on the 188. The ﬁnal on-
+§ board demonstration is scheduled in early 2017. All in all InobiPV has been used by ESA astronaut Luca Parmitano,
+E NASA astronauts Serena Aunon and Dave Coan, JAXA astronaut Norishige Kanai, ESA astronaut Andreas
+8, Mogensen and BSA astronaut Timothy Peake spanning NEEMO 19 to 18$ Increment 47. NASA astronaut Kate
+E Rubins and JAXA astronaut Takuya Onishi have been trained for Increment 48. Crew have expressed a strong
+E interest in future development and integration of the mobile procedure Viewer into crew operations onboard the
+g International Space Station.
+Q
+95” InobiPV has been shown to improve astronaut efﬁciency and greatly reduce the time lost suspending an activity
+§ to consult laptop/tablet/paper instructions at each step in the procedure. The system also eliminates ground
+g guesswork of what step the crew is currently working on.
+g
+E The advantages of using COTS devices has resulted in simplifying the qualiﬁcation of mobiPV for a more agile
+é technology deployment, proving to be both cost effective and functional. Increasing TRL levels of other COTS
+g“ hardware would lead to wider options and even better performance for future hardware conﬁgurations.
+3
+g In July 2016 the second generation of InobiPV from NEEMO 19 will be ﬁeld tested underwater by the NEEMO
+g 21 crew.
+E
+‘2 Future everyday utilization of InobiPV includes making the phone available as a standalone tool so that it can
+35 potentially be picked up anytime as a crew preference, in the same way the iPad is currently utilized, as an
+% alternative to a ﬁxed laptop to View procedures. The next generation of InobiPV might include a barcode reader for
+g faster stowage operations as well as a multi-eollaboration tool so that more complex scenarios can be planned on the
+E 188: it can be used by multiple astronauts at the same time as well as multi-user ground terminals for the ﬂight
+E controllers and payload specialist to interact directly, efﬁciently and effectively with the crew optimizing systems
+2 and payload utilization time.
+E
+'8
+2?:
+Q
+
+9
+American Institute of Aeronautics and Astronautics
+
+"
+"10","Acknowledgments
+The authors Wish to thank all the participating team members from the industrial teams: Space Applications
+Services bV (prime contractor) and Skytek Ltd. (sub-Contractor): Keshav Chintamani, Boris Van Lierde, Luka
+Hranjee, Francesco Nuzzolo, Mauro Rieei, Paul Kiernan, Karl Chadwick, Martin Vaehovski, Shane Maloney.
+References
+i Chintamani, K., and Van Lierde, B., and Maloney, S., and Kiernan, P., and Martinez Oliveira, D., and Wolff, M., “Wearable
+crew support technology on the International Space Station: the mobile Procedure Viewer (m0biPV)” 5 7th International Annual
+Meeting 0fthe Human F actors and Ergonomics Society, San Diego, 2013
+H De Weerdt, D., and Ilkovitz, M., and Ambrus, R., and Nevatia, Y., and Martinez Oliviera, D., and Arguello, L., “WEAR:
+g WEarable Augmented Reality” 11th International Workshop on Simulation & E GSE facilities far Space Programmes, Noordwijk,
+3 Netherlands: European Space Agency, 2010
+S
+(x!
+§ “1 Matevska, J., and SieVi, S., and Gries, F., and Wolff, M., and Melody, J., “CRUISE — Evaluating Enhanced Crew
+if Autonomy Concepts On-Board the 188 as a Preparation for Future Long Term Crewed Space Missions,” 18th Data Systems In
+g Aerospace Conference, Warsaw, 2014
+5
+g) 1V Fortunato, A., and Wolff, M., and Boyd, A., and Martinez Oliveira, D., “mobiPV: an innovative mobile procedure Viewer
+g for the International Space Station” 66th International Astronautical Congress, Jerusalem, 2015
+E
+E
+E
+g“
+2
+3
+S
+m
+m
+E
+%
+0
+Lu
+o
+<:
+9-1
+(A
+Z
+o
+m
+E
+Q
+<:
+m
+<:
+Z
+5‘
+'0
+g
+L3
+Q
+B
+O
+Q
+10
+American Institute Of Aeronautics and Astronautics
+
+"

@@ -1,0 +1,3609 @@
+"","x"
+"1","NASA/TM—2011-21703 3
+
+luvlbvv 2!? i,
+
+Final Report for Intravenous Fluid Generation
+(IVGEN) Spaceﬂight Experiment
+
+John B. McQuillen, Terri L. McKay, and DeVon W. Grijﬁn
+
+Glenn Research Center, Cleveland, Ohio
+
+Dan E Brown and John T Zoldak
+
+ZIN Technologies, Inc., Cleveland, Ohio
+
+July 2011
+
+"
+"2","NASA STI Program . . . in Proﬁle
+Since its founding, NASA has been dedicated to the - CONFERENCE PUBLICATION. Collected
+advancement of aeronautics and space science. The papers from scientiﬁc and technical
+NASA Scientiﬁc and Technical Information (STI) conferences, syrnposia, seminars, or other
+program plays a key part in helping NASA maintain meetings sponsored or cosponsored by NASA.
+this important role.
+- SPECIAL PUBLICATION. Scientiﬁc,
+The NASA STI Program operates under the auspices technical, or historical information from
+of the Agency Chief Information Ofﬁcer. It collects, NASA programs, projects, and missions, often
+organizes, provides for archiving, and disseminates concerned With subjects haVing substantial
+NASA’s STI. The NASA STI program provides access public interest.
+to the NASA Aeronautics and Space Database and
+its public interface, the NASA Technical Reports - TECHNICAL TRANSLATION. English-
+Server, thus providing one of the largest collections language translations of foreign scientiﬁc and
+of aeronautical and space science STI in the world. technical material pertinent to NASA’s mission.
+Results are published in both non-NASA channels
+and by NASA in the NASA STI Report Series, which Specialized serVices also include creating custom
+includes the following report types: thesauri, building customized databases, organizing
+and publishing research results.
+
+- TECHNICAL PUBLICATION. Reports of
+
+completed research or a maj or signiﬁcant phase For more information about the NASA STI
+
+of research that present the results of NASA program, see the following:
+
+programs and include extensive data or theoretical
+
+analysis. Includes compilations of signiﬁcant 0 Access the NASA STI program home page at
+
+scientiﬁc and technical data and information http://www.sti.nasa.g0v
+
+deemed to be of continuing reference value.
+
+NASA counterpart of peer-reViewed formal - E-mail your question Via the Internet to help@
+
+professional papers but has less stringent Srinasagov
+
+limitations on manuscript length and extent of
+
+graphic presentations. 0 Fax your question to the NASA STI Help Desk
+
+at 443—757—5 803
+
+- TECHNICAL MEMORANDUM. Scientiﬁc
+
+and technical ﬁndings that are preliminary or - Telephone the NASA STI Help Desk at
+
+of specialized interest, e.g., quick release 443—757—5 802
+
+reports, working papers, and bibliographies that
+
+contain minimal annotation. Does not contain - Write to:
+
+extensive analysis. NASA Center for AeroSpace Information (CASI)
+
+7 l 15 Standard Drive
+
+- CONTRACTOR REPORT. Scientiﬁc and Hanover, MD 21076—1320
+
+technical ﬁndings by NASA-sponsored
+
+contractors and grantees.
+
+"
+"3","NASA/TM—2011-21703 3
+luvlbvv 2!? i,
+Final Report for Intravenous Fluid Generation
+(IVGEN) Spaceﬂight Experiment
+John B. McQuillen, Terri L. McKay, and DeVon W. Grijﬁn
+Glenn Research Center, Cleveland, Ohio
+Dan E Brown and John T Zoldak
+ZIN Technologies, Inc., Cleveland, Ohio
+National Aeronautics and
+Space Administration
+Glenn Research Center
+Cleveland, Ohio 44135
+July 2011
+
+"
+"4","Trade names and trademarks are used in this report for identiﬁcation
+only. Their usage does not constitute an ofﬁcial endorsement,
+either expressed or implied, by the National Aeronautics and
+Space Administration.
+Level ofReview: This material has been technically reviewed by technical management.
+Available from
+NASA Center for Aerospace Information National Technical Information Service
+7115 Standard Drive 5301 Shawnee Road
+Hanover, MD 21076—1320 Alexandria, VA 22312
+Available electronically at http://WWW.sti.nasa.g0V
+
+"
+"5","Contents
+Summaryl
+1.0 IntroductionandBackground...............................................................................................................1
+
+1.1 Standards2
+1.2 SpacecraftPotableWater............................................................................................................4
+2.0 Previous Spaceﬂight Experiment: Sterile Water for Injection SystemS
+3.0 IVGEN Trade Studles6
+3.1 M1X1ngStudles6
+3.2 WaterPuriﬁcationStudies..........................................................................................................8
+3.2.1 D13t111at10n9
+3.2.2 OsmOSIS9
+3.2.3 Delonlzatlonll
+3.2.4 Mlcrowavell
+3.2.5 KSCClearwaterSystem..............................................................................................13
+3.2.6 Cartridge Sizing for IVGEN 14
+4.0 DemgnoflVGENlS
+4.1 AccumulatorlS
+4.2 Pur1ﬁer17
+4.3 MlxerAssemb1y18
+5.0 Procedure20
+6.0 Results21
+6.1 HydrodynamicCharacterization...............................................................................................22
+6.2 C0nduct1v1ty24
+6.2.1 Pur1ﬁcat10n24
+6.2.2 M1X1ngUn1form1ty27
+6.3 Post-FllghtAna1y31s29
+7.0 P1ans31
+7.1 Test1ng31
+7.2 OperationalSystemDesign......................................................................................................31
+8.0 Conclu310n32
+References32
+AppendiXA.—AcronymsandAbbreviations.............................................................................................35
+Append1xB—TestResu1ts37
+B.1 Bag1,NormaISa11ne37
+B.2 Bag2,NormaISa11ne41
+B.3 Bag3,Pur1ﬁedWater44
+B.4 Bag4,Pur1ﬁedWater46
+B.5 Bag5,Pur1ﬁedWater49
+B.6 Bag6,Pur1ﬁedWater51
+Appendix C.—Investigation Results for Out-of—Speciﬁcation Saline Concentration 55
+C.1 CompletedTestPlaHSS
+C.2 Chemical Analysis Results of Bag Contents (Performed by Precision Analytical).................. 66
+C3 Conver31onAna1y31s72
+NASA/TM—ZOI 1—217033 iii
+
+"
+"6",""
+"7","Final Report for Intravenous Fluid Generation (IVGEN)
+Spaceﬂight Experiment
+J ohn B. McQuillen, Terri L. McKay, and DeVon W. Grifﬁn
+National Aeronautics and Space Administration
+Glenn Research Center
+Cleveland, Ohio 44135
+Dan F . Brown and J ohn T. Zoldak
+ZIN Technologies, Inc.
+Cleveland, Ohio 44135
+Summary
+NASA designed and operated the Intravenous F luid Generation (IVGEN) experiment onboard the
+International Space Station (188), Increment 23/24, during May 2010. This hardware was a demonstration
+experiment to generate intravenous (IV) ﬂuid from 188 Water Processing Assembly (WPA) potable water
+using a water puriﬁcation technique and pharmaceutical mixing system. The IVGEN experiment utilizes a
+deionizing resin bed to remove contaminants from feedstock water to a purity level that meets the
+standards of the United States Pharmacopeia (USP), the governing body for pharmaceuticals in the United
+States. The water was then introduced into an IV bag where the ﬂuid was mixed with USP-grade
+crystalline salt to produce USP normal saline (NS). Inline conductivity sensors quantiﬁed the feedstock
+water quality, output water purity, and NS mixing uniformity. SiX 1.5-L bags of puriﬁed water were
+produced. Two of these bags were mixed with sodium chloride to make 0.9 percent NS solution. These
+two bags were returned to Earth to test for compliance with USP requirements.
+On-orbit results indicated that all of the experimental success criteria were met with the exception of
+the salt concentration. Problems with a large air bubble in the ﬁrst bag of puriﬁed water resulted in a
+slightly concentrated saline solution of 117 percent of the target value of 0.9 g/L. The second bag had an
+inadequate amount of salt premeasured into the mixing bag resulting in a slightly deﬁcient salt
+concentration of 93.8 percent of the target value. The USP permits a range from 95 to 105 percent of the
+target value.
+The testing plans for improvements for an operational system are also presented.
+1.0 Introduction and Background
+The Vision for Space Exploration (Ref. 1) outlined a new direction for NASA, consisting of missions
+to return astronauts to the Moon and test the technologies required for Mars missions. The International
+Space Station (188) will also be used as a test bed for some of these new technologies. NASA’s
+Exploration Systems Architecture Study (Ref. 2) presented several Design Reference Missions (DRMs)
+that were used to facilitate the derivation of various requirements for the essential technologies such as
+the Environmental Control and Life Support Systems (ECLSS), spacecraft power and propulsion, and
+communications. These DRMs included 188 expeditions, Lunar Sorties lasting 7 days, a Lunar Outpost
+with crew exchanges once every 6 months, and various options for a trip to Mars. With the exception of
+the ISS expeditions, there is limited capability for emergency medical evacuations because of the distance
+from Earth and their associated return timelines. The ability to stabilize and treat patients on exploration
+missions will depend on access to needed consumables. IV ﬂuids have been identiﬁed as required
+consumables. Miller et al. (Ref. 3) reviewed the 188 Patient Condition Database (PCDB), which lists over
+400 medical conditions that could require treatment during 188 missions. These conditions are a subset of
+possible conditions that could be encountered during long-duration, Extravehicular Activity (EVA)
+intensive, exploration missions. Of the 442 conditions, approximately 115 could require medical
+NASA/TM—201 1-217033 1
+
+"
+"8","fl!‘ 1 7 i-ﬁ
+- ‘4‘; l ¢\.
+. i'.’:‘.“‘i—_ - '
+. l”; _~ L E:\E"" a‘
+i: , J - x. t
+Figure 1.—Advanced life support pack.
+ﬂuids during the course of treatment. Terrestrial treatment would typically include ﬂuids such as normal
+saline (NS, 0.9 percent NaCl), 5 percent dextrose, Lactated Ringer’s, or blood products. Watkins (Ref. 4)
+provided a condition list, the Space Medicine Exploration Medical Condition List (SMEMCL), for the
+Exploration Medical Capabilities Element of the Human Research Program that examined seven DRMs
+and listed the breakdown of various medical conditions and treatment priorities.
+
+Currently, the 188 stocks a large complement of diagnostic medical equipment and supplies for the
+purpose of both biomedical research and treatment of injuries and illnesses among the crewmembers. The
+philosophy for life-threatening and severe cases is to provide initial treatment to stabilize the patient and
+evacuate the patient back to Earth in a timely fashion. To implement this philosophy, the Advanced Life
+Support Pack (ALSP), shown in Figure 1, contains IV ﬂuid of 0.5-L bags of dextrose solution and 0.5-
+and l-L bags of 0.9 percent NS solution for a total of 4.5 L. Due to shelf life considerations, each of the
+contents of the ALSP is replaced at least every 18 months (Ref. 5).
+
+Operational constraints such as mass limitations and lack of refrigeration may limit the type and
+volume of such ﬂuids that can be carried onboard the spacecraft. Consequently, the objective of the
+IVGEN experiment was to develop, design, and validate the necessary methodology to purify spacecraft
+potable water into a NS solution thus reducing the amount of IV ﬂuids that are included in the launch
+manifest.
+
+1.1 Standards
+
+The United States Pharmacopeia (USP) is the authoritative source for medicine and healthcare
+product standards. These standards are in place to improve public health by ensuring the quality and
+safety of products. As such, the USP has developed monographs detailing standards for drug products,
+including various types of water to be used for pharmaceutical purposes. The monographs for these water
+products include a cascade of multiple techniques and requirements as illustrated in Figure 2. The
+classiﬁcation for the ﬁnal products depends not only on the preparation method, but the usage and
+packaging as well. For example, “Sterile Water for Irrigation” (SWFI) and “Sterile Water for Inj ection”
+(SW1) may be prepared identically, but SWFI is packaged “in bulk” or in sterile containers that hold more
+than 1 L of ﬂuid While SW1 must be packaged in containers no larger than 1 L.
+
+Some monographs include process-oriented descriptions, that is, they describe a series of operations
+or procedures that are not veriﬁed directly Via measurements of quantiﬁable values, such as a
+concentration, for all possible contaminants. As an example, the USP standard for puriﬁed water requires
+that source water meet Environmental Protection Agency (EPA) National Primary Drinking Water
+Regulations (NPDWR). To meet USP requirements for water for irrigation (WFI) distillation, reverse
+osmosis, or an equivalent or superior process is acceptable; however, there are no quantiﬁable values for
+assessment.
+
+NASA/TM—ZOl 1—217033 2
+
+"
+"9","Drinking Water
+(Complying with US EPA NPDWR or drinking water regulations of EU
+or Japan or WHO Guidelines for Drinking Water)
+Typical Treatment Steps could include:
+Distillation De-ionization
+Reverse osmosis Prefiltration
+Dechlorination Softening
+De-ammonification Ultrafiltration
+Organic scavenging UV Light
+Distillation, reverse osmosis or equivalent/superior process for
+removing chemicals and micro-organisms
+Packaging and sterilization
+Water for injection (bulk packaged)
+Sterile water for injection
+Sterile water for irrigation
+Bacteriostatic water for injection
+Sterile water for inhalation
+Figure 2.—Process for manufacturing water for injection.
+
+The EPA does not have limits on all possible contaminants, such as iodine and silver because these
+biocides, Which are generally used in space vehicle water, are not normally present in public water
+systems. Biocides are not allowed in SW1 and must be removed. Bagdigian et a1. (Ref. 6) discuss in detail
+the various agencies and regulations governing water quality and allowed contaminant levels in water to
+be used for different purposes.
+
+It should also be noted that there are additional stipulations listed Within the USP National Formulary
+(Ref. 7) that are imposed upon these processes that are not readily apparent otherwise. For example, With
+regards to distillation, provisions need to be incorporated that eliminate the possibility of evaporator
+ﬂooding and mist carryover. Furthermore, during periods of system nonusage, provisions need to
+incorporate the ability to drain and dry the distillation apparatus to minimize the possibility of microbial
+inﬁltration and growth. Finally, there needs to be a process to validate and periodically inspect the process
+to assure that quality standards are being met.
+
+Cascading requirements and procedures are not limited only to the preparation of WFI. Per the USP
+National Formulary, the speciﬁcation for NS solution, “Sodium Chloride Injection,” is 0.9 weight percent
+concentration of sterile sodium chloride in WFI. Therefore, a NS solution must meet the EPA
+requirements for potable water; and the USP requirements for puriﬁed water, WFI, sodium chloride
+injection and sterility. The USP monographs may be found at their online website.
+
+NASA/TM—ZOI 1-217033 3
+
+"
+"10","1.2 Spacecraft Potable Water
+
+NASA potable water must meet requirements deﬁned in the Spacecraft Water Exposure Guidelines
+(SWEGs) (Ref. 8) in NASA Space Station Program (SSP) 41000 (Ref. 9) and CXP 20024 (Ref. 10), if
+they are different than EPA NPDWR standards. While there is some overlap in the two standards,
+NASA’s standards cover contaminants speciﬁc to spacecraft water. Furthermore, the SWEGs establish
+limits based on exposure durations that include 1, 10, 100, and 1000 days. These standards reduce the
+acceptable concentration as the exposure duration increases. Some contaminant standards, such as
+manganese salts, are not addressed by the NPDWR, while the SWEGs establish a limit.
+
+While using the vehicle’s potable water for the SW1 source is an obVious choice, other potential
+sources do eXist. Short-duration missions could use fuel cells, such as those in the shuttle, to generate
+high-purity water. Moderate-duration missions feed potable water into an additional deionizing bed to
+remove the iodine biocide before feeding the water into an electrolysis unit to generate oxygen. The feed
+water into the electrolysis unit could also be used to generate SW1. A generic emergency water source to
+be used for oxygen generation, medical emergencies, or replenishing potable water stores may be a Viable
+option for moderate- to long-duration missions. Water obtained from in situ resource utilization would
+presumably go through processing to bring quality up to potable water standards. In addition, other
+sources of nonpotable water (SSP 57020 (Ref. 11)), such as the 188 technical water, which is water
+generated from fuel cells without any effective biocide additive, eXist and might be usable provided
+sufﬁcient treatment could be assured of the water supply.
+
+During initial phases of assembly for the 188, water was either supplied directly from terrestrial
+sources or the shuttle fuel cells. Water from the space shuttle or Space Transportation System (STS), was
+stored in multiple Contingency Water Containers (CWCs) and emptied as needed. The CWCs were
+treated with a silver biocide and could store 44 L of ﬂuid, much larger than the 1 L of ﬂuid required for a
+normal IV bag. CWCs were replaced by Contingency Water Container Iodine (CWC—I) that used iodine
+as the biocide. While shuttle fuel cells do have the ability to provide relatively high purity water, additives
+were used to adjust the taste and prevent bacterial growth. Subsequently, as part of the ECLSS, the Water
+Processing Assembly (WPA) was launched. Drinking water for the astronauts from the WPA is dispensed
+Via the Potable Water Dispenser (PWD). Samples from both the STS potable water source and the WPA
+were periodically returned to Earth and their water quality was tested. Some results (Ref. 12) are
+presented in Table 1 and show that the purity standards that are required are met with ample margin.
+
+TABLE 1.—ISS WPA POTABLE WATER SAMPLING RESULTS
+carbon, Ing/L Ing/L urnhos/crn Ing/L Ing/L
+rng/L
+—ﬂ""---
+level (MCL)
+—ﬂ""---
+level source 41000
+November 22, 200881 1.05 <0.1 0.174 6 1.69 7.7 0.21
+November 25, 2008 0.35 <0.1 0.031 3 0.42 7.48 1.40
+November 26, 2008 0.23 <0.1 0.011 3 0.05 7.06 1.89
+November 26, 2008 0.19 <0.1 0.009 3 0.13 7.43 1.90
+December 8, 2008 0.23 <0.1 0.016 9 0.10 7.79 2.41
+February 9, 2009 0.12 <0.1 <0.002 3 0.11 6.91 2.54
+February 27, 2009 0.12 <0.1 <0.002 3 0.25 6.82 2.70
+March 10, 2009 0.09 <0.1 <0.002 3 0.12 6.49 2.70
+aRepresents primarily residual water in the WPA at launch, not processed water
+bTotal I maX/total I at point of consumption
+NASA/TM—201 1-217033 4
+
+"
+"11","2.0 Previous Spaceﬂight Experiment: Sterile Water for Inj ection System
+
+In the late 1980s and early 1990s, NASA conducted a detailed investigation to determine the
+possibility of producing IV ﬂuids on orbit as part of the Health Maintenance F acility for the Space Station
+F reedom Program. The NASA J ohnson Space Center (J SC) led this effort, which included contracts with
+Krug International, Sterimatics, and Baxter, and culminated in a ﬂight experiment on STS—47 from
+September 12, 1992, through September 20, 1992. Part of that decision was based on the ability to rapidly
+return ill crewmembers to Earth, an option that becomes increasingly more difﬁcult as the time duration
+of exploration missions and the distance from Earth increases.
+
+As part of the SWIS effort, Creager of Krug Life Sciences (Ref. 13) evaluated siX scenarios requiring
+ﬂuids for medical treatment. F luid volumes were calculated for each scenario using seven types of
+solutions. The volume required to treat a particular scenario ranged from 11 to 90 L, averaging 37 L. The
+total volume required to treat all individual scenarios enVisioned for a mission and the minimum volume
+required to any single scenario in a mission were also calculated. The total volume of the seven types of
+solutions required to cover one incident of all of the scenarios was 220 L, while 141 L was the maximum
+required to cover any single scenario. (The report suggested that the minimum was 123 L but there was an
+18 L error in the calculations for the minimum amount of NS required.)
+
+Krug International, as lead contractor for the Health Maintenance F acility on Space Station F reedom,
+subcontracted with Sterimatics Corporation to develop a Sterile Water for lnj ection System (SWIS) to
+produce IV ﬂuids. The SWIS was a ﬂlter/adsorption-based technology to produce SW1. The design goal
+was to convert ISS “hygiene water,” which has a lower quality than 188 potable water, to SW1. System
+requirements included producing at least 6 L of SW1 at 6 L/hr with a sterile shelf life of 90 days utilizing
+a ﬁlter with a minimum shelf life of 1 year. As developed, the SWIS had a dry mass of 2 kg and produced
+9 L of SW1 from water-containing contamination levels 10 times the ISS potable water speciﬁcation.
+Testing indicated that at least 20 L of SW1 could be produced from potable water.
+
+As part of the SWIS proj ect, Baxter worked on developing methods to miX both powders and
+concentrates, but was unable to overcome problems in mixing powders (Ref. 14) even in a normal gravity
+environment. The development was constrained by a requirement to miX “passively” by utilizing only
+water pressure. Baxter conducted experiments with a dyed concentrate and observed a low degree of
+mixing, with the heaVier, dyed concentrate located on the bottom of the bag in 1 g testing. No quantitative
+mixing studies were completed in normal or microgravity. Subsequent analysis and tests have
+demonstrated that these mixing techniques can easily be gravity-driven and care must be taken not to
+interpret those results as a testament to their effectiveness in microgravity (Ref. 15).
+
+The SWIS was ﬂown on STS—47 in September 1992 as part of the F luid Therapy System (F TS) on
+the Spacelab—J (Spacelab—Japan). The test plan called for a purge sample of approximately 350 to
+400 mL of liquid to purge the SWIS cartridge, followed by an assortment of 1-L bags of four sterile
+water samples, three 5 percent dextrose samples, and three NS solution samples. Problems were
+encountered with the system including the following (Ref. 16):
+
+. Small bubbles were present in all of the ﬁlled bags.
+
+. Air was detected in the IV line.
+
+While post-ﬂight microbiological analysis indicated that all of the samples were sterile (Ref. 17),
+there were some problems that the chemical analysis detected (Ref. 18):
+
+. The saline concentration for two of the three bags was slightly higher than allowable tolerances
+
+per the USP speciﬁcations.
+
+. The Total Organic Carbon (TOC) content for both ground testing and spaceﬂight testing was
+
+considerably above USP speciﬁcations.
+NASA/TM—ZOI 1-217033 5
+
+"
+"12","Based on these results and vehicle constraints, NASA decided not to produce sterile water or IV
+ﬂuids on Space Station, but to use prepackaged IV ﬂuids. No ﬂight-ready hardware was fabricated for
+sterile water production.
+
+3.0 IVGEN Trade Studies
+
+Several trade studies were performed as part of the effort to develop the IVGEN experiment to
+evaluate different aspects for the design. Mixing techniques were evaluated in a manner in normal gravity
+that minimized natural convection due to density differences between the solvent and the solution
+mixture. The selected mixing technique was then veriﬁed in low gravity aboard the C—9 aircraft.
+
+A second series of trade studies were performed to select water puriﬁcation techniques and included
+both analysis and testing. After the selection of the water puriﬁcation technique, a secondary study was
+performed to size the cartridge.
+
+3.1 Mixing Studies
+
+In their 2006 trade study, Niederhaus and Miller (Ref. 15) evaluated several different mixing
+techniques. Their evaluation criteria were qualitative and included the following:
+
+. Efﬁciency or minimal power consumption
+
+0 Ability to maintain sterility
+
+. F IeXibility to accommodate both powders and concentrates
+
+. Overall system mass
+
+. Confidence that the technique could be adapted to use in the microgravity environment
+
+. Amount of crew time required to set up and operate the system coupled with degree of difﬁculty
+
+The mixing techniques included the following:
+
+. Recirculation within the IV bag that is generated Via a peristaltic pump attached to a tubing
+
+appendage on the IV bag
+
+. Mixing cartridge with the powdered pharmaceutical placed in the inlet ﬂow path to IV bag;
+
+dissolution and/ or mixing would occur as the water passes through the cartridge and enters the
+bag
+
+. Magnetic stir bar prepositioned within the bag
+
+. Impeller mixing with a rotating shaft that penetrates the IV bag walls
+
+. A rod that penetrates the IV bag walls and Vibrates ultrasonically
+
+. IV bag deformation or kneading
+
+. Vibrating surface in external contact with IV bag wall
+
+. High frequency acoustic emitter placed in external contact with IV bag wall
+
+Niederhaus and Miller assessed each mixing technique an adjectival rating of “High,” “Medium,” or
+“Low” for every evaluation criteria listed above. Numerical scores were assigned to the adjectival rating
+and summed and then ranked in Table 2 (Ref. 15). Based on their results, the magnetic stir bar and
+Vibrating wall methods were selected for normal gravity testing. They used Planar Laser-Induced
+F luorescence (PLIF) and schlieren were used to determine mixing times.
+
+PLIF utilizes a laser beam shaped to be narrow in one dimension and 5 to 6 centimeters wide in the
+orthogonal direction, thus illuminating a plane. In this case, Niederhaus and Miller doped the ﬂuid with
+particles that would ﬂuoresce under laser illumination. A Video camera perpendicular to the plane of
+illumination captures a time sequence of images of the particles in the ﬂow, thus mapping out the mixing
+process as a function of time.
+
+NASA/TM—ZOI 1-217033 6
+
+"
+"13","TABLE 2,—EVALUATION OF MIXING METHODS ACCORDING TO SELECTION CRITERIA
+a a 8
+
+a z» *5 é a a 3‘13 E
+
+q % 2 .2 tr: .2 CL €13 <1)
+
+~°~’ :3 I—§ .‘é‘ a 5 TC: '5 .5
+
+a : £5 a a a s E a
+
+La m L: Lu 8 1 O D D m
+———————-—n
+———————-—n
+
+A schlieren system passes collimated light from a point source through a test section of interest, where
+the obj ect under test must have refractive indeX differences, which in the case of mixing, are produced by
+density differences. After passing through the test section, the light is focused with a knife edge in the focal
+plane obscuring half of the focal spot. A camera that is focused on the test section is placed after the focal
+spot. By using this arrangement, the camera records images of density differences in the test section that
+appear as shadows moving across the ﬁeld of View. This system records the mixing process without the
+need to dope the ﬂuid. Alternatively, the optical conﬁguration for schlieren is much more complicated and
+less compact than PLIF, so each has its advantages. By using both techniques, Niederhaus and Miller were
+able to ensure that they had the best possible technique to collect the mixing data.
+
+While Niederhaus and Miller demonstrated that both mixing techniques showed promise, the presence
+of an air bubble in the IV bag greatly enhanced the mixing efﬁciency for the Vibrating wall technique
+whereas the stir bar technique did not require such assistance. Tests of the Vibrating wall technique that were
+conducted in single phase liquid with no air bubble eXhibited mixing times that approximated mixing by
+diffusion, which means that the Vibrating walls were producing essentially no mixing.
+
+As shown in F igure 3, using 30— by 3-mm (length by diameter) and 35- by 3-mm stir bars at various
+angular velocities, mixing times were well under the 20 min target. For example, the data revealed that
+the 30-mm stir bar at 700 rpm could achieve a homogeneous solution for liquid-liquid mixing in less than
+2 min. The 30-mm stir bar at 700 rpm could aid in the dissolution of a solid and achieve thorough mixing
+in under 8 min (Ref. 19).
+
+F ollowing the l g testing, Niederhaus and Miller conducted preliminary microgravity experiments in
+the Glenn Research Center (GRC) 2.2-Second Drop Tower. Results indicated that faster spinner velocities
+are required to move bubbles away from the bag wall to prevent possible “dead zones” of no ﬂow;
+however, not enough time was available to achieve a “steady-state” condition. Longer duration
+experiments were then performed aboard the NASA C—9 to examine concerns such as whether powder
+granules would collect in bag corners, and whether large bubbles would interfere with the mixing process.
+
+Small nonsoluble polymer spheres (250 and 500 um in diameter) were used as surrogates for
+pharmaceutical powders to track and analyze particle motion within various bag geometries during the
+mixing process. The use of a surrogate eliminates the regulatory issues associated with using actual
+pharmaceutical. These tests revealed that small particles do not become lodged in dead zones within the
+bag, such as ﬁll ports and corners within the IV bag, and that bag shape does not prevent particles from
+being uniformly distributed. In microgravity, the mobility of the particles greatly increased as particles
+“rose” into the bulk ﬂuid, rather than resting on or against, the bag “ﬂoor” as occurs in l g. Experiments
+demonstrated that air bubbles, some as large as 100 mL, did not interfere with the mixing process as the
+bubbles were sheared apart when contacting the rotating stir bar.
+
+NASA/TM—ZOl 1-217033 7
+
+"
+"14","800 A 20rrmx 3rrm R2=O.99151
+A x 30mm 3n'm. R2=0.95155
+o 35nmx 3rrm R2=O.99429
+A 600
+i”,
+E
+s 400
+o\°
+8
+9 200
+.“g’ X ‘ .
+l.—
+0
+0 200 400 600 800 1000 1200
+RPM
+Figure 3.—Mixing times from stir bars, sized 20 to
+35 mm, at various rpms.
+
+Bag ﬁlling tests were also conducted in microgravity. High liquid ﬁll rates (1700 mL/min) produced a
+turbulent jet that dissolved the salt almost completely by the time the bag was full. However, low ﬂow
+rates (~20 mL/min) did not aid rapid salt dissolution. Furthermore, the stir bar did not rotate easily when
+the bag contained very little water, and the stir bar became trapped within solid salt crystals. The
+dissolution of these salts crystals was limited because of the small amount of water within the bag. As the
+bag ﬁlled with water, the salt that trapped the stir bar dissolved and the stir bar would begin rotating.
+
+3.2 Water Puriﬁcation Studies
+
+The USP speciﬁes both requirements and processes for generating SW1 based on the concept that “the
+nature and robustness of the puriﬁcation process is directly related to the resulting purity (Ref. 20).” As
+speciﬁed by the USP, distillation and reverse osmosis (R0) are the “acceptable” means of producing
+SW1; however, provisions are included to utilize other processes, provided that these processes deliver
+water of equivalent quality.
+
+In addition to mixing, Niederhaus et al. (Ref. 21), examined several sterilization processes including
+the following:
+
+. Distillation—Puriﬁcation by phase change and collection of steam. Special provisions are needed
+
+to negate any liquid carryover in the form of droplet mists or boilover surges.
+
+. Reverse osmosis—Osmotic pressure removes the contaminants by applying a pressure gradient
+across a semipermeable membrane.
+
+. Adsorption—lmpurities are chemically absorbed onto a packing material.
+
+. Ultraﬁltration—Water is puriﬁed by ﬂowing through a ﬁlter medium with very small pore
+diameters that physically block the passage of impurities.
+
+In addition, three recently developed techniques were examined as part of the current effort:
+
+. Microwave—UMPQUA, Research Company, under a Small Business Innovative Research
+(SBIR) contract, examined the use of microaning the water under pressure to kill any
+microorganisms. This technique would still need to be coupled with some ﬁltering mechanism to
+remove impurities such as ions, organic carbon, and endotoxins.
+
+NASA/TM—ZOl 1-217033 8
+
+"
+"15",". Artificial kidney—Dr. Shuvo Roy, formerly an Assistant Staff member in the Department of
+Biomedical Engineering, Lerner Research Institute, Cleveland Clinic F oundation, and currently
+with the University of California, San F rancisco, demonstrated the performance of a nanodeVice
+prototype that should ﬁlter all impurities from input potable water.
+
+. F Urward osmosiS—Several manufacturers now offer a device that can take unpuriﬁed and
+untreated water, pass it through an osmotic membrane in the forward direction and generate a
+sports drink from a syrup. The physical principles governing that process can be directly applied
+to generating a pharmaceutical mixture for IV administration.
+
+F urther discussion of these techniques, including analysis and some experimental evaluations, is
+
+discussed below.
+3.2.1 Distillation
+
+Puriﬁcation by distillation relies on the evaporation and/or boiling of water and the ﬂow of the water
+vapor to a separate location where the vapor is condensed. Sterilization is achieved by subj ecting the
+water to sufﬁciently hot temperatures to kill any bacteria. Puriﬁcation is accomplished by collecting the
+water condensate over a narrow range of temperature and pressure conditions whereby any compound
+that is more volatile than water is vented prior to collection and any compound less volatile than the water
+never vaporizes and ﬂows into the condenser. Historically, this technique was the ﬁrst acknowledged
+puriﬁcation method and is still used today especially for the puriﬁcation of large quantities of water.
+
+It should be noted, however, that within the USP, there are several additional constraints placed upon
+the puriﬁcation technique. Among these constraints are the following:
+
+. Provisions must be made to demist the vapor ﬂow, that is, liquid droplets cannot be present
+
+within the vapor stream as they are likely to contain impurities that would have remained behind.
+
+. Provisions must be made to eliminate “boil-over.” A rapid increase in the amount of vaporization
+can result in the pockets of liquid mass drops and globules being carried over from the boiler/
+evaporator to the condenser as the vapor surges in. These liquid slugs would be carrying
+impurities with it.
+
+. The distillation system must be periodically inspected, drained, and cleaned for mineral deposits.
+
+. During periods of nonusage, the system must be drained and dried.
+
+Distillation is a puriﬁcation technique that relies heaVily on buoyancy forces to achieve separation
+between the puriﬁed vapor and the source liquid. Aboard the 188, the Urine Processing Assembly (UPA)
+utilizes a centrifuge operated at low pressure to achieve the evaporation and phase separation (Ref. 6).
+Consequently, this 188 hardware is heavy and power intensive.
+
+Given that some medical conditions within the SMEMCL involve burns, there is a possibility that the
+same event that caused the injury may have also damaged the spacecraft and thus limited the power
+production capability of the spacecraft.
+
+Therefore, because of the numerous gravitational complications, large power demands, and mass and
+volume requirements incompatible with constraints on system size, distillation was discounted as a
+method to generate puriﬁed water in an emergency situation.
+
+3.2.2 Osmosis
+
+Osmosis is the process of a solvent diffusing across a semipermeable membrane from a region of low
+concentration to a region of higher concentration. This movement results in the dilution of the more
+concentrated region, and as a result, the local pressure adj acent to the membrane is higher on the
+concentrated side of the membrane. This process is known as forward osmosis. These membranes have a
+ﬁltering capacity for removing particles larger than 0.1 pm. F ilters that can sterilize water typically have a
+particle removing capacity of 0.2 pm or smaller.
+
+NASA/TM—ZOl 1-217033 9
+
+"
+"16","By applying a higher pressure to the concentrated solution side of the membrane, it is possible to
+reverse the ﬂow and drive the solvent ﬂuid from the solution side to the solvent side of the membrane
+purifying it in the process. This technique is known as R0 and was the other standard process recognized
+by the USP for purifying water.
+
+Both osmotic processes, forward and reverse, will be discussed.
+3.2.2.1 Reverse Osmosis
+
+When reverse osmosis is used to purify water within a terrestrial application, typically the system is
+conﬁgured in a manner whereby only a portion of the feed stream is puriﬁed as it passes through the
+membrane (permeate) while some of the feed solution becomes more concentrated and eXits the device
+without passing through the membrane (concentrate also known as retentate) (Ref. 22 and EPA/625/R—
+96—009) as shown in Figure 4. Consequently, there is a signiﬁcant amount of feed water that is “rejected”
+from the system. Nonetheless, it was decided to test the effectiveness of this technology at nearly
+complete conversion of the feed water.
+
+For this testing, a thin-ﬁlm composite (TFC) membrane, similar to that used in NASA Kennedy
+Space Center’s (KSC’s) Clearwater device (Refs. 23 and 24), was tested. Testing revealed that the RO
+ﬁlter (manufactured by General Electric’s Osmonics Desal, model 18 GPD TFC RO Membrane) failed to
+remove sufﬁcient quantities of endotoxins, chloride ions, carbon dioxide, and oxidizable substances and
+failed sterility. It should be noted though, that the RO ﬁlter was included in the Clearwater system to meet
+the USP requirements at that time. The Clearwater system is discussed in greater detail in Section 3.2.5.
+
+Ultimately, RO technology was rejected since it demonstrated that it was not possible to achieve the
+necessary purity without a substantial efﬂuent ﬂow of water.
+
+E55133? __;.. '3' "" I- 9 II 0 U Q l} _ —-;I- Enncentrate
+{dragﬂut} .. I‘ nth . L, —_ U
+I _ I _
+_ . o
+l- l E? .I G .- .D II
+I C} 'l‘ U '
+I' I ' {j I l I
+«IL— Membrane
+' I I -
+I "" ' l
+l I
+I
+I
+Water
+{permeate}
+Figure 4.—Simplified flow schematic of reverse osmosis process.
+NASA/TM—20l l-2l7033 lO
+
+"
+"17","3.2.2.2 Forward Osmosis
+
+Osmostic membranes are used within sports drink bags that are marketed for those participating in
+outdoor wilderness activities that may not have access to a potable water source. Hydration Technology
+Innovation LLC’s X-pack can provide l-L increments of a sports drink from a syrup and “muddy” water.
+The syrup is poured into the concentrate side of the X-pack and the water is poured into the other side.
+Analysis showed that the X-pack was able to meet the USP requirements; however, the ﬂow rate was
+substantially lower than the requirements for the IVGEN experiment. F urthermore, there were concerns
+about the impact of liquid positioning within the X-pack in a low-graVity environment and its impact on
+X-pack performance. Speciﬁcally, if the liquid were in poor contact with the membrane, there would be
+insufﬁcient transfer of puriﬁed liquid across the semipermeable membrane especially during the latter
+stages of puriﬁcation.
+
+3.2.3 Deionization
+
+Deionization (D1) or demineralization uses ion-eXChange resin particles to bind with mineral salts. A
+combination of different resin particles are used to remove cations such as sodium, potassium, etc., and
+anions, such as chloride and ﬂuoride. Two different DI cartridges were tested: cartridges from the KSC
+Clearwater system and Prismedical Corporation’s MainStream (Ref. 25) device.
+
+Two identical cartridges, Pentek Part Number PCF l—lOMB, are used in the KSC Clearwater system.
+These cartridges contain a “semiconductor-grade” deionizing resin. The cartridges are constructed with a
+hollow core so that ﬂow through the resin beads is directed radially. The cartridges are typically installed
+in ﬁlter housings that permit ﬂow through the annular region outside the cartridge, through the resin
+cartridge, and out the central core region inside the cartridge. Performance testing demonstrated that the
+cartridge was able to meet USP purity requirements for SWFI; however, because of the cartridge
+geometry, challenges were encountered with bubbles and unusual hydraulic characteristics during normal
+gravity testing as the ﬂow direction with respect to the gravity vector was changed. This cartridge and its
+resin were not selected though, primarily due to a shelf life of 6 months that was posted on its package.
+
+Prismedical developed for the Army, as part of the SBIR program, the MainStream system, F igure 5.
+The entire system was sealed within a foil-barrier envelope and contained a source water bag, the
+puriﬁcation module, and a sterile receiver bag. The puriﬁcation module contained both hydrophilic and
+hydrophobic ﬁlter material, as a means of removing any gas that either entered or was trapped in the
+system, and a ResinTech, lnc., deionizing resin. The system had a shelf life of 5 years. The MainStream
+could use any available source water, ranging from potable to contaminated, and produce up to 3 L of
+SWFI. The MainStream device did pass the USP requirements for SWF I but did not work when
+attempting to ﬂow against gravity. The team conducted this test in an effort to identify gravity-related
+performance issues. An investigation revealed that an internal hydrophilic membrane did not allow the
+trapped gas present within the interstitial volume in the device to eXit through the puriﬁed water eXit port
+during the initial ﬁlling. The gas vent port is located adj acent to the water inlet port. The device was
+removed from consideration because of concerns with regards to ﬂow in microgravity: the gas will co-
+ﬂow with the liquid and attempt to eXit through the liquid eXit port. Gas has not been observed to counter-
+ﬂow through porous media in microgravity.
+
+3.2.4 Microwave
+
+Under a SBIR contract to the NASA Glenn Research Center (GRC), UMPQUA Research Company,
+developed a system to produce medical-grade water using microwaves. The system immersed a
+microwave generator within a ﬂow loop that sterilized and pyrolyzed the source water (F igure 6 and
+Ref. 26). Analyses and tests were conducted over a range of ﬂow rates and power levels to determine the
+temperatures equivalent to autoclave conditions and sterilize the source water to meet acceptable
+standards. For example, typical steady-state operating conditions in experiments on this system included a
+NASA/TM—ZOl 1-217033 ll
+
+"
+"18",". L""?
+3;; ’I-Onogn’m
+.. "" Vic
+I. I ‘1?wa
+  ‘ V Q’u‘mmlhkﬁ
+_ me‘ﬁmww
+,2
+""ﬁx: 0510!“
+M h (64 a‘n-N‘i”
+Figure 5.—Prismedical’s MainStream Device.
+69 Thermocouple
+Back-Pressure
+Regulator (BR)
+Closed-Cell Foam _
+Insulation _ Microwave
+Power In
+Removable Microwave
+Insulation Antenna Inside Coaxial
+Chamber Cable
+_ I E I _
+@ -r :-__—:-=
+‘
+Inlet :3,
+LA
+A - @
+Outlet b 4 1- EIIIE y 4 +
+I— Sterilizable Connector Section —I §
+Pressure
+Gauge
+Figure 6.—UMPQUA’S Microwave Medical Water Generation System.
+NASA/TM—2011-217033 12
+
+"
+"19","single-phase liquid ﬂow rate of 13 mL/min and a microwave power of 150 W, resulting in a sterilization
+temperature between 155 and 158 °C. Under these conditions, the system demonstrated effective
+sterilization and inactivation of endotoxins. While the technique was successful, this technique was
+discounted from further evaluation based on power consumption and the system mass and volume.
+3.2.5 KSC Clearwater System
+Components of the KSC Clearwater system, namely the R0 and DI ﬁlters, were mentioned earlier.
+The system as a whole was developed by NASA KSC with Tiger Puriﬁcation Systems (Figure 7) using
+multiple ﬁlters to produce up to 300 L of WFI. The system features its own pumps, valves, and redundant
+ﬂow paths (Figure 8). Source water ﬁrst entered 5 14m sediment ﬁlters to remove particulate matter so
+that it would not burden ﬁlter elements downstream. A KDF—55 heavy metal and chlorine ﬁlter was used
+to remove some of the ions, particularly chloride ions, to prevent premature depletion of the reverse
+osmosis membrane that was located downstream. Waste water from the RO membrane was recycled back
+into the source water, but eventually all water was processed by the system. A deionizing resin ﬁlter was
+followed by a Posidyne ELD ﬁlter (Pall Corporation) primarily to remove any air bubbles from the ﬂow.
+While the system could produce up to 300 L of WFI at a rate of 5.3 L/hr, the Clearwater system was
+removed from consideration for several reasons including the size of the system (52.5 - by 28.4- by
+23.2-cm), dry weight of the system (19.5 kg) and the need for an electrically driven pump to supply the
+ﬂow. Furthermore, each parallel leg could only be used once to generate the WFI for no more than 100 L.
+Once each leg had been used, the ﬂow through that leg could not be reestablished without Violating
+sterility protocols for Pall ﬁlter.
+. ., :3: -.;:P"" -
+K ‘-- 3'”:
+IV-GMDE WATER
+FILTRATION SYSTEM
+iai.- 1 '7’1.""t;‘;:£lﬁ
+31-:- _. 3”? ég‘é-él‘: 7;}
+I , \ L”; (£'ng . m ~—
+.4: _ — .N M 1‘.“ -
+3'7: “t 94 3 , m
+@5313 ,.———.— 5.; k-‘ j
+- ‘1: fl . 5‘; -42.:445:
+Figure 7.—Prototype Clearwater |V-Grade Water
+Filtration System.
+
+NASA/TM—2011—217033 l3
+
+"
+"20","'1‘ %
+ll-ll EIS- —D}[
+FLEX TUBE
+LEGEND:
+I ‘l-l' .Elg. 2,-. —N— CHECK VALVE
+-Il IEIII PUMP
+VALVE SELECTOR
+'ll-lla Eli El-D _ _ _ $$—
+. . . $ BALL VALVE
+SEDIMENT KDF FILTERS MEMBRANES
+FILTERS DI POST-FILTERS
+$ THREE WAY STOPCOCK
+; :L @ FLOW RESTRICTOR
+AIR REMOVAL
+FROM WATER X I :4 l3 PRESSURE SWITCH
+SOURCE ON
+SHUTTLEIISS
+. . . IV BAG FILL
+v v v
+Figure 8.—F|ow schematic of the KSC Clearwater System.
+3.2.6 Cartridge Sizing for IVGEN
+After completing the testing associated with the IVGEN trade study, the project team determined that
+DI resin bed technology augmented with ultraﬂltration would best meet medical operations, USP, and
+spaceﬂight requirements. As a result of that decision, the next tasks were to identify the best DI resin to
+produce USP WFI, and to determine the appropriate storage technology to ensure a resin lifetime long
+enough for exploration missions. During the course of this effort, system-level requirements needed to be
+established. Among these requirements included the following:
+
+. Production rate of the WFI: It was assumed that a few bags of NS solution would be available for
+immediate use in the event of an emergency. After discussions, it was determined that a
+production of approximately 1 L/hr—would be sufﬁcient to replenish consumed supplies.
+
+. Production per cartridge: Terrestrially, the treatment protocol for a severe burn requires up to
+16 L per patient for the ﬁrst 24 hr (Ref. 27). Additional amounts may be required during the
+subsequent days. However, 1 to 2 L per day may only be required for infusions of certain
+medications for treatment of infections and dehydration. Given that the USP requires that the
+distribution system be drained and dried during periods of prolonged nonuse, a balance between
+producing small quantities of ﬂuid for slow consumption rates versus large quantities for faster
+consumption must be achieved. Furthermore, while only the DI resin is depleted during the
+puriﬁcation, the packaging of the DI resin, the tubing, ﬁttings, etc., consume the signiﬁcant
+portion of the cartridge mass and size. It was decided to size the cartridge to produce up to 6 L of
+WFI from the shuttle potable water supply.
+
+. Shelf life of D1 resin: IV ﬂuid is typically rotated through the 188 every 18 months, which
+corresponds roughly to recommended shelf life of most producers of IV ﬂuid. The DRMs to Mars
+were as short as 18 months; however, some were proj ected to last up to 3 years.
+
+The volume of the DI resin is one of the principal variables in determining the total amount of water
+
+that can be puriﬁed. The water ﬂow rate into the cartridge also determines the amount of water that can be
+NASA/TM—ZOl 1-217033 l4
+
+"
+"21","puriﬁed as well as the level of purity achieved. The amount of time that the water spends in contact with
+the resin beads is known as the resonance time and is directly proportional to both the amount of water
+puriﬁed and the purity level. The resonance time is calculated by dividing the volume of the cartridge bed
+by the ﬂow rate.
+
+In normal gravity, packed bed reactors have been known to suffer from bed occlusion, in which a
+portion of the packing is blocked by the gas phase from reacting with the liquid phase. Motil et al.
+
+(Ref. 28) found that two-phase ﬂow through a packed bed of spherical beads in a microgravity
+environment tended to be well dispersed throughout the entire volume. They were operating at much
+higher ﬂow rates than Holder and Parker (Ref. 29) who found regions of occlusion where there were no
+ﬂow and liquid interaction with the nonspherical packing shapes, thus implying that there would be no
+chemical reaction or absorption in these regions. The required volumetric ﬂow rates for this system are
+similar to that of Holder and Parker, but the packing material is similar to Motil et al. Given the
+puriﬁcation efﬁciency of the selected resin, the packing material density similar to Motil et al. is used and
+the inner diameter of the cartridge (1.27 cm) was sized to yield a “superﬁcial” or empty tube velocity that
+was closer to Motil et al. than Holder and Parker.
+
+The IVGEN hardware would ideally be manufactured and stored in such a way that a 5-year shelf life
+would be possible. As the deionizing resin degrades when eXposed to oxygen, the storage would likely
+involve storing the hardware in a sealed manner to prevent such exposure. Initially, ResinTech Resin type
+MBD—lO—NG or nuclear grade was purchased and tested because it met MlL—SPEC—DTL—24l l9D(SH).
+This MlL-SPEC outlines a storage standard for resin, which allows a life of at up to 5 years; however, the
+method of storage prescribed within the MlL—SPEC does not correspond to the desired method of storage
+for this NASA technology development. The MlL—SPEC is subj ect to export control laws; therefore, a
+more detailed description of the method outlined within the document will not be disclosed in this report.
+A second resin, Resin type MBD-lO-Ultra, was purchased because the manufacturer had determined a
+method of storage that allowed for a storage life of up to 5 years. The method included using a heat-
+sealing technique to enclose the resin a ﬁlm with low permeability. As the outer most resin in a stored
+volume degrades the quickest, the shelf life is likely dependent on the volume of resin stored.
+Consequently, a test program was deVised and is being implemented to evaluate the storage techniques for
+the both the MBD—lO—NG and MBD-lO-Ultra.
+
+4.0 Design of IVGEN
+
+The objective of the IVGEN experiment was to verify in a microgravity environment the ability to
+produce WF I and miX it with a predetermined amount of salt to produce a 0.9 percent NS solution. It
+should be noted that to verify the performance of this system, diagnostic instrumentation was placed in
+critical locations to measure hydraulic and puriﬁcation characteristics. Thus, the design of an operational
+system should be much simpler with minimal diagnostics. F igure 9 shows the ﬂow schematic for the
+system to verify the operational concept. The primary components include the accumulator, the puriﬁer
+module, the mixing stand that holds both the mixing bag and transfer bag, and an avionics box. These
+components will be discussed in greater detail in the sections that follow. The design utilized Video
+cameras, pressure transducers, thermocouples, conductivity sensors, and a ﬂow meter to characterize on-
+orbit system performance and provide forensic data, if needed. While these sensors characterized the
+relative mixing uniformity, demonstrating the compliance of the solution produced with USP
+requirements would have required such an extensive array of tests so two transfer bags of mixed saline
+were returned to Earth for USP testing by a certiﬁed laboratory.
+
+4.1 Accumulator
+
+The accumulator was designed to receive potable water from either the shuttle fuel cells Via the
+CWCs or the ISS WPA (F igure 10). Two hoses that met the requirements for connecting to each water
+supply were fabricated with identical connections to the accumulator. The accumulator consisted of a
+NASA/TM—ZOl 1-217033 15
+
+"
+"22","WW 3 @ ea
+__/ / _________[_c>; W/‘ﬂﬂ
+WEST T T Tl a [CD ’93“ ﬁ - I
+@\ /®:: ::['f@/@/@/' [@f' /@ a O :4
+I II | I ll Q .. >4 I
+®—\E\ QM.“ .l- £11165“. >4 54 g IN - >4 % ""LN:_____ ____QJ
+@qu L \@ L 4 @/®/ ®/ 2 3y a \@ 22$:th
+4PLACES| |
+@:\ N \ bOII2MFAIOb2
+L_ _\/l\wmm§o IVGEN OPERATING SCHEMATIC
+Figure 9.—IVGEN purification, mixing, and transfer flow schematic.
+. ' rmﬁi; Z, ' F‘ ‘ ‘1
+‘. ,7. M; f ‘ :7 . ""P . . ""
+ﬁve??? -' 4.. _ ""'lu r /
+‘_ 5.3.1-7 .j '. [,9
+‘_\ ’ _..
+Figure 10.—Accumu|ator.
+polycarbonate housing and an internal bag, or bladder that was ﬁlled with the liquid and was sized to
+accommodate 1.5 L of water. To pump the water from the bladder, the housing was pressurized using the
+gaseous nitrogen source provided within the MicrograVity Science Glovebox (MSG). In the event that
+pressurized sources are not available or operational in a space vehicle, other pressure sources, such as a
+hand pump, may be used in an operational system.
+
+To meet the concentration speciﬁcation for NS solution, the liquid ﬁll needed to be within 19 mL of
+the speciﬁed amount of water provided that the amount of salt was accurately measured to within 0.67 g.
+Estimates were made to account for the volume of the empty liquid transfer line between the WPA or
+CWC and the bladder. However, in the very late stages of ﬂight hardware build and veriﬁcation activities,
+ECLSS required that a ﬁlter be added to the IVGEN Accumulator Fill Hose for WPA (IVGEN Drawing
+Number 60112MFAll9l) to prevent baok—oontamination into the WPA. The ﬁlter added signiﬁcant air
+volume (55 mL) to the system. That air volume meant 55 mL less water in the saline solution resulting in
+a 3.8 percent increase in salt concentration. While the addition of the ﬁlter did not guarantee an out-of—
+speciﬁcation sample, it drastically reduced the allowable tolerance of other factors such as the amount of
+dry salt in the bag, air bubbles introduced by the WPA, and completeness of accumulator ﬁlling. This
+dramatically reduced the acceptable uncertainties required to meet the USP tolerance bound for salt
+concentration in the ﬁnal product. Prior to the addition of the ﬁlter, the IVGEN system could tolerate a
+reasonable amount of error while still producing saline within USP speciﬁcation. Consequently, the
+amount of residual air in this transfer line was larger than expected and the ﬁrst ﬁlling of the accumulator
+did not have sufﬁcient water.
+
+The ﬁnal ﬂight conﬁguration was tested prior to launch. Schedule constraints only allowed for the
+generation and analysis of two saline bags. One bag passed all USP tests while the other passed all but the
+saline concentration. The test results indicated that while the ﬁnal ﬂight conﬁguration was capable of
+NASA/TM—ZOl l—217033 l6
+
+"
+"23","producing USP NS, there was very little margin for error when it came to meeting the concentration
+speciﬁcation. Due to the amount of time required to send the solution for test, testing time, and reporting
+time, the IVGEN team was not aware of the failure until after the hardware had been launched. Section
+6.3 provides a detailed summary of the post-ﬂight investigation to determine the cause of the anomalies.
+4.2 Puriﬁer
+
+The puriﬁer module was the core of the experiment. It included the DI resin cartridge, air removal
+ﬁlters, and the instrumentation. An aluminum box with a transparent top housed the components in two
+layers (Figure 11). A Coriolis ﬂow meter was used to provide the necessary accuracy to track the total
+amount of water that had passed through the system and the liquid ﬂow rate for the hydraulic
+measurements, and also measured the density of the ﬂuid ﬂowing through the meter. Using this density
+measurement, it was possible to track whether gas or liquid was ﬂowing from the accumulator into the
+puriﬁer. A dual-ring conductivity probe was used to measure the baseline conductivity of the source water
+prior to puriﬁcation. Because of the lack of conductivity for air, the probe also was able to detect bubble
+passage into the puriﬁer.
+
+Two pairs of Supor ﬁlters (Pall Corporation) were used primarily to prevent air from entering the DI
+cartridge. These ﬁlters had a polyethersulfone membrane with a pore diameter of 1.2 pm in a 0.7 mL
+housing. As water began to ﬂow through the system, the membrane would wet, thus permitting water
+passage while venting air bubbles through openings in the housing. In the event that the ﬁlters would plug
+due to particulate accumulation, each pair of ﬁlters had an isolation valve that could be used to divert
+ﬂow from one pair of ﬁlters to the other pair or to a bypass line.
+
+The DI cartridge was machined from medical-grade polycarbonate into a hollow cylinder that had an
+outer diameter of 21.3 mm and an inner diameter of 15.9 mm with a length of approximately 170 mm.
+The outer diameter at each end was machined with threads to accept stainless steel end caps.
+
+‘ ii: 0 1* .-
+- --=' r
+I :11? 5 . E:
+1 ~11. 1..
+. _ 1,— .
+-.. «1-5 “ 1 :5
+3;:- ' 7""“ i ‘1' ""lm ‘
+. 1.5 5 95 ﬁ' 9“ W1 .
+' """" f ' ‘ It
+Cm. ,
+.. . . ._ ., ""5;— ~
+' © 1 i"" l ‘_._.:.-_ .
+| J \-_ , ;
+W’ "" ‘ .3
+Figure 11.—Top level of purifier module.
+NASA/TM—2011—217033 l7
+
+"
+"24","The cartridge was loaded with DI resin from ResinTech. The speciﬁc resin used was MBD—lO—
+ULTRA and has the following characteristics:
+
+. 60 percent anion
+
+— Hydroxide form
+— Type 1 strong-base gel
+— R4N+OH (type 1 gel)
+— 1.40 meq/mL min capacity (leorm)
+. 40 percent cation
+— Hydrogen form
+— Strong acid
+— Sulfonated gelular polystyrene
+— RSO3-H+ (gel)
+— 1.95 meq/mL min capacity (Na+ form) permit volume
+
+This resin was certiﬁed by ResinTech to have a 5-year shelf life in a terrestrial environment. A space
+environment could impact the shelf life because of radiation, but this assessment was beyond the scope of
+this effort. The resin is retained in the cartridge by polyester felt ﬁlter discs that were positioned at each
+end of the cartridge and extended across the cross-sectional area of the tube. The discs had an average
+pore diameter of l um.
+
+To minimize settling of the resin particles, a procedure was developed to ﬁll the cartridge with small
+amounts of resin beads and periodically compress the interstitial volume by gently tapping on the beads
+with a blunt rod. To prevent the formation of voids or empty spaces within the resin bed, a compressed
+spring was positioned between the upstream cap and ﬁlter disc. If additional compaction occurred due to
+Vibrations, such as those imposed by launch, the spring would maintain a constant level of pressure on the
+bed to minimize the formation of voids. The spring was positioned between the end cap and the upstream
+ﬁlter disc so that any decomposition of the spring could be absorbed by the DI resin.
+
+A series of Posidyne ELD ﬁlters were used primarily to prevent air from entering the collection or
+saline bags. These ﬁlters use a nylon membrane with a pore diameter of 0.2 um and also provide particle,
+bacteria, and endotoxin retention. This ﬁlter, like the Supor ﬁlter, permits water passage while air bubbles
+are vented through openings.
+
+A ﬂat plate sensor measured the conductivity of the puriﬁed water and also could provide an
+indication of the efﬁciency of the Pall ﬁlters in removing air bubbles. Using this and the inlet conductivity
+sensor, it is possible to determine the puriﬁcation efﬁciency of D1 cartridge.
+
+Three absolute pressure transducers were plumbed into the system to measure the pressure loss across
+the two types of Pall ﬁlters and the DI cartridge and to provide a means of determining the density of any
+gas that would be present within the system.
+
+The water would ﬂow through the puriﬁer out to the mixing assembly. After the salt dissolution was
+completed, the water would ﬂow back into the puriﬁer into a third conductivity sensor. This sensor was
+used to measure the uniformity of the salt concentration within the mixture before the solution ﬂowed into
+the sterilized collection bag.
+
+4.3 Mixer Assembly
+
+The mixer assembly, F igure 12, consisted of two ﬂat aluminum plates, a mixer motor and its
+controller, and the saline and collection bags. The mixer used two samarium cobalt rare earth magnets on
+a rotor driven by a direct current (DC) motor. The motor had a maximum speed of 900 rpm. The motor
+could be activated and its speed controlled remotely by the Data Acquisition and Control Unit (DACU),
+but there were provisions to locally control Via a dial and switch. The rotor was Visible through the bags
+to verify its functionality.
+
+NASA/TM—ZOl l-217033 l8
+
+"
+"25","7’3
+.
+. T l
+I
+Figure 12.—Mixer assembly
+(without bags).
+
+Both the collection and saline bags were multilayer bags manufactured from ethyl Vinyl acetate. To
+prevent over-pressurization of the system, the accumulator was designed to supply only 1.5 L of water
+and the collection, saline, and transfer bag volumes were 2.0 L. Each bag had three ports: liquid inlet and
+outlet ports and a ﬁlling port. The ﬁlling port was used to place the salt and stir bar into collection bag
+and the port was then sealed. A 13.5 i 0.67 g of USP-grade NaCl was speciﬁed to be introduced into each
+saline bag.
+
+The stir bar was Teﬂon (DuPont) resin coated and octagonal shaped. The bar measured 28.6 by
+7.9 mm and featured a molded-on pivot ring. The mixing tests conducted by Barlow indicated that the
+complete mixing could be achieved in shorter time periods using stir bars 30 mm or longer (see Figure 3).
+However, during prototype testing, the longer stir bars would snag on the ethyl Vinyl acetate bag walls
+and decouple from the rotation of the stirring motor. It was necessary to shut off the stirring motor to
+reengage the stir bar. Additional prototype testing revealed that the 28.6-mm bar did not eXhibit similar
+behaVior within the ethyl Vinyl acetate bag.
+
+Isolation valves were installed on the inlet and outlet bag ports and were used to maintain the integrity
+of the collection bag contents. The valves were opened and closed to accept or drain liquid into or from
+the bags as needed.
+
+The transfer bags were constructed in a similar fashion as the collection bags; however, the transfer
+bags were gamma irradiated as part of the sterilization process and needed to be manufactured from
+polyethylene (PE) to avoid degradation due to the irradiation process.
+
+Isolation valves were also used on the inlet and outlet ports of the transfer bags; however, a Pall
+Pediatric IV ﬁlter was spliced between the bag and the valves. This ﬁlter uses a Supor membrane with a
+pore diameter of 0.2 pm which is retentive of B. diminuta and meets USP ZS/NF 2O requirements for a
+sterilizing-grade ﬁlter per American Society for Testing and Materials (ASTM) F838—83 test methods.
+Thus, as the salt solution ﬂowed through this ﬁlter into the transfer bag, it was sterilized. The ﬁlters also
+vented any air that was entrained in the liquid from the collection bag to the transfer bag.
+
+NASA/TM—ZOl l—217033 l9
+
+"
+"26","5.0 Procedure
+
+The MSG is a single rack facility onboard the 188 that provides power, thermal control, command
+and control, and imaging to scientiﬁc investigations (Ref. 30). The IVGEN hardware was designed to
+operate autonomously after the system was conﬁgured. IVGEN was installed into the MSG on May 4,
+2010. The installation included mounting the accumulator, the puriﬁer module, and the mixer assembly to
+the MSG baseplate and the power converter and DACU to the MSG back wall. Cabling was connected for
+power, command, and control functions, and data between the MSG facilities and IVGEN. A hose to the
+MSG nitrogen port was installed to provide the pressurant to the accumulator housing to drive the ﬂow of
+the water during the puriﬁcation process from the accumulator bladder, through the puriﬁer into the
+collection bag mounted on the mixing assembly. In addition, liquid hoses were installed between the
+accumulator and puriﬁer, the puriﬁer and the collections bag on the mixing stand and the puriﬁer and the
+transfer bag on the mixing stand for each test.
+
+Cameras were provided by MSG. One camera was focused on the parallel plate conductivity cell to
+verify that the cell was properly primed as ﬂow through the puriﬁer was initiated and later repositioned to
+View the Posidyne ﬁlters in the puriﬁer. Another camera was positioned to View the Pall 1.2-um Supor
+ﬁlters in the puriﬁer module, and the last camera imaged the collection bag side of the mixer assembly.
+
+Potable water was supplied from the WPA. IVGEN was required to install a sterilizing ﬁlter between
+the receiving container and the potable water reservoir (PWR) to prevent back contamination of the WPA
+Via the PWR. After ensuring that the nitrogen supply was closed, the nitrogen hose was disconnected
+from the accumulator. The water hose between the accumulator and the puriﬁer was also disconnected.
+The accumulator was removed from the MSG and transported to the WPA where the accumulator was
+connected to the PWR. Potable water was transferred into the accumulator until it was ﬁlled. The
+accumulator was disconnected from the PWR and carried back to the MSG where the nitrogen and water
+hoses were reconnected to it.
+
+Prior to the start of each test generating saline, the crewmember installed a new collection bag on the
+mixing stand, along with a new transfer bag. For those tests that did not generate saline, but merely tested
+ﬁlter capacity, the crewmember only installed a collection bag. The crewmember annotated unused
+Videotapes with the recorder designation and date and loaded them into recorders in the MSG Video
+drawer.
+
+To ﬂow water from the accumulator through the puriﬁer to the collection bag, the accumulator was
+pressurized with nitrogen from the MSG gas supply. At the initiation of a test, the shutoff valve for the
+gaseous nitrogen supply in MSG was opened; however, the accumulator hand valve was left closed. Thus,
+the accumulator was not yet pressurized. To avoid degradation of the DI resin, the DI cartridge was
+isolated from the rest of the system by shutoff valves. The potable water shutoff valve on the puriﬁer was
+also opened. After these steps had been completed, the hand valve on the accumulator was opened and
+liquid began to ﬂow through the system.
+
+During the puriﬁcation, the astronaut crewmember watched for leaks and tracked the progression of
+liquid through the system. After about 1 min, the liquid had ﬂowed to the collection bag inlet valve. Gas
+was vented through a Posidyne ﬁlter. The collection bag inlet valve was opened and liquid ﬁlled the bag.
+The system was periodically surveyed for trapped bubbles and leaks.
+
+The system was operated for siX puriﬁcation cycles. For the ﬁrst two cycles, the puriﬁed water
+ﬂowed into one of the collection bags containing the premeasured salt to test the mixing capability and to
+generate NS solution. For the remaining four cycles, the puriﬁed water ﬂowed into empty collection bags
+to test the capacity of the DI resin cartridge. Two cycles were performed each day with no changeout of
+the DI cartridge.
+
+For the NS generation cycles, after approximately 500 mL of liquid had been puriﬁed (based on ﬂow
+meter readings), the magnetic stirrer was remotely started Via the DACU. The operator would periodically
+check that the stir bar was still centered adj acent to rotor.
+
+NASA/TM—ZOI 1—217033 20
+
+"
+"27",". ‘4.“ 7:51 . y ""7"""" _. r27».
+r 9: ‘ ‘.
+3' .-. LC},
+‘ d» —* Md
+\K
+Figure 13.—Collection bag inserted into blood pressure cuff.
+
+For all cycles, after the water supply in the accumulator was exhausted, the operator veriﬁed that the
+collection bag was full. The MSG gaseous nitrogen supply valve, collection bag inlet valve, the puriﬁer’s
+potable water shutoff and DI cartridge isolation valves were closed.
+
+Mixing continued for 20 min after the puriﬁcation was completed for the ﬁrst saline bag and only 5 min
+for the second saline bag. The actual mixing began shortly after puriﬁed water began to ﬂow into the bag,
+thus the total mixing time was at least 30 min.
+
+After mixing was completed, the operator veriﬁed that the stir bar had ceased rotating. The collection
+bag was removed from the mixer assembly and inserted into a blood pressure cuff (Figure 13). The outlet
+line was connected to the saline port on the puriﬁer. The valves on the outlet port of the collection bag
+and the inlet port of the transfer bag were opened. The blood pressure cuff was inﬂated to pump water
+from the collection bag, through the conductivity sensor in the puriﬁer and the 02-le Supor sterilizing
+ﬁlter into the transfer bag. Periodically, the operator would check the ﬂow and reinﬂate the blood
+pressure cuff if necessary to ensure that the liquid would continue to ﬂow. After the liquid transfer had
+been completed, the valves on both bags were closed and the tubing ends were capped. The bags were
+stowed and returned to Earth for analysis on STS—l32 in May 2010.
+
+For the remaining four collection bags of puriﬁed water that were produced, there was no liquid
+transfer to other bags. The crew emptied these collection bags by transferring the water back into the 188
+water reservoir. These bags and the saline bags were returned to Earth.
+
+Upon return to Earth, the transfer bags containing NS were inspected, weighed, and photographed.
+They were shipped to Pace Analytical Services, Inc., Life Sciences for compliance with USP testing
+requirements. The collection bags were also inspected and were placed into bonded storage.
+
+6.0 Results
+
+During operation of the IVGEN experiment, conductivity, temperature, ﬂow rate, and pressure data
+were measured and recorded by the DACU Via the appropriate sensors. These data were analyzed to
+assess the puriﬁcation effectiveness, hydrodynamic performance, and the gas bubble removal
+effectiveness. For the sake of brevity, some representative plots will be shown here, with a tabulation of
+results from all the samples generated on the 188 within the body of this text. Plots of the remaining data
+are shown in Appendix B.
+
+Video imaging provided evidence of the proper priming of the ﬂat plate conductivity sensor and the
+type of ﬂow into the collection bag. The Video imaging also provided a qualitative assessment of the gas
+bubble removal in the Pall ﬁlters and the mixing process in the collection bag.
+
+NASA/TM—ZOl 1—217033 21
+
+"
+"28","6.1 Hydrodynamic Characterization
+The characterization of the ﬂow loop is quantiﬁed Via the ﬂow meter and the pressure losses across
+the Pall ﬁlters and the DI resin cartridge. A time trace of the ﬂow rate through the system and
+corresponding pressure drops are shown in Figure 14 and Figure 15. The ﬂow and pressure spike at the
+start of this puriﬁcation cycle was due to the initial opening of valves that resulted in an inrush of ﬂuid.
+Flow and pressure oscillations at the end of this cycle were due to air bubbles that entered the system
+from the accumulator. The Coriolis ﬂow meter has the capability to measure the density of the ﬂuid
+passing through it and registered signiﬁcant ﬂuctuations. These ﬂuctuations were also recorded in the
+inlet conductivity sensor and conﬁrm the presence of air bubbles prior to the Pall 12-le Supor ﬁlters.
+4 May Zﬂlﬂ, Bag #1, Saline.-
+515
+E
+E. :5 '
+E. + ' i
+111
+E 55
+I ill 1' I-
+E 35
+LI.
+2 ﬁt.“ .5 '
+i: *+ u
+:1:- ' ""'
+E 15 1.;
+E
+s n
+-5 ‘
+[1:[1[1 [1:[11' [1:14 [1:11 [1:23 [1:35 [1:43 [1:511 [1:51
+Elapsed Time {hh:mm}
+Figure 14.—Time trace of flow rate through IVGEN system.
+4 May Zﬂlﬂ, Bag #1, Saline
+2.5
+'___ 4- Inlet Falls
+E - DI Cartridge _
+3 1'3 + Exit Falls ' ""
+E +- Tntal ; I 1' L;
+i 1.5 . +3.1.
+l:- I . I.
+a 1:} . ...._.._-.--..---_..._.._... _._._.___......____--..-.... .__+.._._____1_-.u‘3.[m.
+a ' - ‘1!
+E
+~I—I ', i
+E ”'5 WK Jr
+“Ill! - . h"" i
+E cm - w |' “15d
+—[1.5
+[1:[111 [1:[11' [1:14 [1:21 [1:23 [1:35 [1:43 [1:5[1 [1:51
+Elapsed Time [hhcmm]
+Figure 15.—Time traces of pressure losses through IVGEN system.
+NASA/TM—ZOl l-217033 22
+
+"
+"29","The method of characterizing ﬂow through a packed bed is the Darcy equation:
+kA AP
+Q H L (1)
+where
+
+Q volumetric ﬂow rate
+
+k Darcy constant
+
+A cross-sectional area
+
+AP pressure difference
+
+L length of the packed bed
+
+This equation may be applied to ﬂow through the Pall ﬁlters; however, given that the parameters of
+the cross-sectional area and the length, or thickness, of the hydrophilic membrane are ﬁxed quantities, this
+is combined with the Darcy constant to yield the following:
+
+Q=-C£ (2)
+a
+with C being deﬁned as
+kA
+6— L (3)
+
+Due to the costs and constraints of the spaceﬂight experiment, the IVGEN system was tested for only
+one set of Pall ﬁlters and DI resin cartridge at nominally the same ﬂow rate. This set of data can be
+compared to normal gravity data obtained over a wider range of ﬂow rates and system temperatures and
+tabulated.
+
+The results of the spaceﬂight tests are shown in Table 3. The NS—l and NS—2 collection samples
+were generated on the ﬁrst day of test operations. WF 1—3 and WP 1—4 collection samples were generated
+on the second day of operations and WP 1—5 and WP 1—6 were generated on the third and ﬁnal day of
+operations. Overall, while the liquid ﬂow rate was slightly faster than desired, it was acceptable, because
+the conductivity data suggested that the DI cartridge was providing acceptable puriﬁcation. The total
+pressure loss through the system showed a 7 percent increase from the ﬁrst sample to the last samples
+produced. The pressure loss within the DI cartridge increased by 30 percent through the course of the
+experiment. While it is plausible that the DI cartridge may have captured additional particulate matter that
+contributed to the gradual increase, the Inlet Pall ﬁlters should have captured this matter. Other
+possibilities remain: Swelling of the resin beads due to continued exposure to the water or a shifting,
+settling of the resin beads over time due to Vibrations encountered either during ﬂow or exposure to low
+gravity, or crushing and crumbling of the particles and subsequent plugging of interstitial ﬂow paths
+within the cartridge.
+
+The maximum pressure drop is encountered when the ﬂow valve between the accumulator and the
+puriﬁer is opened. The ﬁrst sample had the lowest maximum pressure drop among all of the samples
+generated. This may be because the system was relatively dry at this point and the pressure required to
+pass single-phase air through the system is much lower than single-phase liquid or a two-phase gas and
+liquid mixture. Minor differences in the timing of opening the valves on the puriﬁer unit may also
+contribute to the differences in the maximum pressure loss encountered.
+
+After the ﬁrst day of operations, the components with the most signiﬁcant contribution to the
+maximum pressure drop were the eXit Pall ﬁlters. While there may be slight differences in the purity of
+the potable water supply, it is more likely that the eXit Palls were becoming plugged with particulate
+matter. These ﬁlters have a life of 96 hr which fell within the operational parameters of the experiment.
+NASA/TM—ZOl 1-217033 23
+
+"
+"30","TABLE 3.—HYDRODYNAMIC TEST RESULTS FROM SPACEFLIGHT EXPERIMENT
+o D Inlet Palls, psi 0.25 0.27 0.28 0.27 0.26 0.26
+g) g % DI cartridge,psi 0.14 0.15 0.14 0.14 0.19 0.18
+3 gm? ExitPalls,psi 1.08 1.09 1.10 1.09 1.11 1.10
+Total, psi 1.47 1.50 1.51 1.50 1.55 1.55
+
+g .
+2 E Palls Pa11s Palls Palls Palls Palls
+
+TABLE 4.—FLOW CONSTANTS FOR
+
+CRITICAL COMPONENTS OF IVGEN
+
+011113/s2
+
+Inlet Pa11s 0.00256
+
+DI cartridge 0.00433
+
+Referring back to Equations (2) and (3), the values of the constant —C are shown in Table 4. It should
+be noted that these values can easily be adjusted for a number of reasons. F irst, there are additional ﬂow
+system components, namely the isolation valves and the conductivity sensors, which were lumped into
+these calculations and add ﬂow resistance or pressure loss. In addition, both sets of Pall ﬁlters were
+plumbed into the system in parallel, the net effect being to reduce the pressure loss. Nevertheless, these
+values may be used as an approximation for an operational system.
+
+F rom a hydrodynamic standpoint, the IVGEN system did not exceed the maximum pressure drop
+within the system, which was 10 psi. The average pressure drop was 1.5 psi and the peak value
+encountered was less than 5 psia. The average ﬂow rate for the IVGEN system was 28 mL/min which
+was very close to meeting the target ﬂow rate range of 17 to 25 mL/min. This range was selected to meet
+the minimum production rate required for the system (approximately 1 1/hr) and to provide sufﬁcient
+residence time, or exposure, for the liquid within the DI cartridge. Even with the slightly faster ﬂow rate,
+the IVGEN system was able to meet the puriﬁcation requirements.
+
+6.2 Conductivity
+
+As was noted earlier, conductivity sensors were positioned within the puriﬁer to measure the
+effectiveness of the DI cartridge in purifying the water and to determine the mixing effectiveness. All six
+samples were evaluated for the puriﬁcation effectiveness, but only two samples, NS—1 and NS—2, were
+evaluated for the uniformity of solution concentration after the mixing was completed.
+
+6.2.1 Puriﬁcation
+
+The time trace for NS—1 sample is shown in F igure 16. Both the potable water input and the puriﬁed
+water output are shown. It should be noted that there is an initial spike in both the input and output
+streams that is partially attributable to a temperature effect on conductivity (F igure 17) and to bed
+“rinsing.” As liquid stagnates within the bed, the DI resin leaches some of its contents into the water. Bed
+rinsing ﬂushes this solution from the bed. Towards the end of the time trace, there are several points
+where the conductivity for the potable water drops below the average value. These values are most likely
+NASA/TM—201 1-217033 24
+
+"
+"31","attributable to bubble passage through the conductivity sensor. Similar drops in the density measurement
+and Widely ﬂuctuating ﬂow rate measurements from the Coriolis ﬂow meter were recorded during this
+time period. Further analysis included calculating the mass ﬂow rate based on the volumetric ﬂow rate
+and density and integrating the mass ﬂow rate over the experiment duration to obtain a total mass
+collected. The total mass was in agreement With the post-ﬂight weight of the NS—l collection bag. These
+results revealed that the IVGEN system processed an insufﬁcient amount of liquid.
+4 Mil!”' 2010, Bag #1, Saline
+3
+T r Putable Water
+g E _ - Purified Water
+a n
+‘-' 5
+I
+E 4 _
+U
+2‘
+E 3
+D i. «r
+u g m
+2 r—
+l +
+1 l
+D . .41. . I
+[1:00 (1:0? {1:14 {1:21 [1:23 {1:35 {1:43 [1:50 0:5?
+Elapsed Time [hh:mm}
+Figure 16.—Time history trace for DI cartridge purification capability.
+4 May 2010, Bag #1Jr Saline
+3D
+. Putable Water
+1:? 19 l- ! . . = '. _ -
+Ill
+:3; 13 IL _
+I‘ll
+D. -. . ._. ___._
+E 1? ._J _
+|—
+25
+25
+mm {11}? {1:14 (1:21 0:23 [1:35 {1:43 [1:50 {1:51'
+Elapsed Time [hh:mm}
+Figure 17.—Time history trace for water temperature in conductivity sensors.
+NASA/TM—2011-217033 25
+
+"
+"32","As was stated earlier, the conductivity sensors provided a limited veriﬁcation that the puriﬁed water
+produced would meet USP standards for WFI. Solution sterility and other contaminants, such as
+endotoxins, oxidizable substances, and particulate matter, could not be measured in a timely and cost-
+effective manner on orbit, but the contents of NS bags were tested by a F ood and Drug Administration
+(F DA)-certiﬁed 1ab after these bags were returned from the 188 on STS—132. It should be noted that the
+USP does adjust the maximum acceptable conductivity levels for temperature as shown in Table 5
+(Ref. 20). As can be seen from the table, the maximum acceptable conductivity for WFI is between 1.3
+and 1.4 uS/cm for the test conditions.
+
+TABLE 5.—TEMPERATURE CORRECTED
+ACCEPTABLE CONDUCTIVITY
+VALUES FOR WFI
+
+OC uS/cm
+15 1.0
+20 1.1
+25 1.3
+30 1.4
+
+To provide additional margin, for this data analysis the maximum acceptable concentration was taken to
+be 1.0 uS/cm. While the initial spike in the potable water supplied to the IVGEN may be due to warming of
+the liquid within the MSG, ionic impurities leaching from the DI resin beads into the stagnant water are the
+probable culprit. This conductivity spike was noted each time ﬂow through the DI cartridge was initiated.
+The DI resin manufacturer speciﬁes that within seven “bed volumes,” the output water will have ﬂushed
+these impurities away (Ref. 31). For the IVGEN experiment, a bed volume was approximately 30.1 mL.
+
+Average puriﬁcation was deﬁned as the percentage change in the instantaneous conductivity between
+the input (potable water) and output (puriﬁed water) from the DI cartridge:
+
+F : 100% CPotable — CPuriﬁed (4)
+CPotable
+
+Table 6 presents a synopsis of the puriﬁcation capability of the DI cartridge from the two
+conductivity probes in the puriﬁer assembly. Overall, average puriﬁcations of about 98 percent were
+achieved for each bag of potable water that was processed. It should be noted that the WPA supplied a
+very clean water supply that had an average conductivity of about 4 uS/cm with no maximum value
+greater than 7 uS/cm. The minimum values for the instantaneous conductivity data for the potable water
+were most likely due to the passage of air bubbles from the accumulator into the puriﬁer. The ﬁrst set of
+Fall ﬁlters, which removed large particulate matter and air bubbles, were located downstream of both the
+ﬂow meter and the inlet conductivity sensor. As was discussed earlier, the Coriolis ﬂow meter is capable
+of measuring the ﬂuid ﬂow rate and the ﬂuid density. Comparison of the sample volume and the sample
+mass appears consistent with the exception of NS—1. For this sample, there is approximately a 2:1
+discrepancy between the volume and mass measured. A closer examination of F igure 16 reveals at the
+end of the time trace, signiﬁcant ﬂuctuations in the conductivity for the potable water input. Again, this
+was most likely due to the presence of air within the source water. This discrepancy has repercussions
+later in the experiment, during the generation of the NS solution.
+
+With regards to the puriﬁed water produced, with the exception of the startup spike for NS—1 and
+WP 1—3, all samples fa11we11 within the criteria for the maximum acceptable conductivity. For these two
+samples, the ﬂushing of a single bed volume of liquid (30 mL) through the DI cartridge brings the volume
+averaged conductivity measurement to within speciﬁcations. The remaining samples also had startup
+spikes; however, the spikes did not exceed the USP threshold of 1.3 uS/cm, but as an academic exercise, a
+much lower threshold was chosen (0.2 uS/cm), and the rinse volumes for these samples were calculated.
+NASA/TM—2011-217033 26
+
+"
+"33","TABLE 6.—SYNOPSIS OF PURIFICATION CONDUCTIVITY DATA
+Volume, mL 2621 1516 1520 1521 1501 1488
+I *5 Average, uS/cm 4.02 3.87 3.57 3.57 3.32 3.36
+g g Maximum, uS/cm 6.99 6.49 4.96 4.24 4.09 3.78
+E a H Minimum, uS/cm 3.80 0.48 2.06 2.20 2.72 2.94
+02 g g Maximum, uS/cm 6.08 5.32 5.89 4.92 3.55 3.74
+> ?:s Minimum, uS/cm 4.03 3.02 3.59 3.59 2.77 3.35
+
+3 E Average, uS/cm 0.068 0.058 0.065 0.050 0.067 0.050
+
+g 4% Maximum, uS/cm 1.636 1.013 1.107 0.436 0.967 0.040
+
+g E Minimum, uS/cm 0.034 0.040 0.046 0.041 0.048 0.232
+
+5
+
+gag) % g Maximum, uS/cm 1.440 0.769 0.084 0.390 0.660 0.052
+
+E > ?:s Minimum, uS/cm 0.074 0.072 1.105 0.057 0.079 0.190
+——————m_
+
+Rmse Instant, mL 10.4 42.5 9.8 22.2 32.8 13.3
+volumes
+Average, mL 21.7 181.1 16.7 58.0 171.6 0.0
+
+It should be noted that a single DI cartridge easily produced about 9 L of puriﬁed water and showed
+no signs of exhausting the puriﬁcation capability. However, ground-based testing using tap water that had
+an average conductivity ranging from 250 to 300 uS/cm would show cartridge exhaustion within 6 L of
+processed water. Again, this is due to the high purity of the WPA water used as a source for IVGEN.
+6.2.2 Mixing Uniformity
+
+For samples NS—l and NS—2, software activated the magnetic stirrer after the collection bag had
+received one-half of the total ﬁltered liquid volume. After puriﬁcation ceased and ﬂow into the collection
+bag had stopped, a crewmember closed the valve between the collection bag and the puriﬁcation
+assembly. Stirring continued for 20 min for sample NS—l and only 5 min for NS—2.
+
+Prior to the ﬁll, all sample/collection bags had some residual air content. This was particularly true for
+the two bags containing the premeasured quantity of salt and stir bar. Consequently, as puriﬁed water
+entered the bag, a large air bubble was trapped inside the bag. When mixing was initiated, the large air
+bubble would periodically encounter the rotating stir bar and have a portion shear off into smaller bubbles
+(F igure 18).
+
+Per the procedure, the collection bag was removed from the mixing assembly and placed in a blood
+pressure cuff that was inﬂated to pressurize the collection bag. The collection bag was connected to the
+puriﬁer assembly that was connected to the sterile transfer bag assembly. This arrangement permitted the
+measurement of the solution conductivity as it ﬂowed from the collection bag to the transfer bag.
+
+As can be seen from F igure l9 and F igure 20, with the exception of the conductivity dropouts, due to
+the passage of air bubbles through the conductivity sensor, the upper bound of the conductivity is fairly
+ﬂat with some minor variations that coincide with temperature ﬂuctuations within the solution.
+
+Referring to F igure 19, the time-averaged conductivity measurement is 18.5 i 0.4 mS/cm from the
+time ﬂow is initiated until after 43 min have elapsed. However, if conductivity readings associated with
+the passage of bubbles through the conductivity cell are discounted from the averaging routine, the
+average is 20.2 i 0.4 mS/cm, which corresponds nicely with F igure 20.
+
+Similarly, the same averaging methodology is applied to sample NS—2 in F igure 20. This time,
+however, the time average for the ﬁrst 25 min of the ﬂuid transfer is 16.3 i 0.4 mS/cm while an average
+NASA/TM—2011-2l7033 27
+
+"
+"34","over the entire transfer period that discounts the readings associated With bubble passage yielded a value
+of 16.5 i 0.4 mS/cm. For this case, good agreement is obtained between both values.
+
+It should be noted; however, that While both mixtures appear to be uniform, there is considerable
+difference in these baseline conductivity measurements even though the target salt concentration was
+0.9 g/L of water. This discrepancy Will be discussed in more detail in the next section.
+
+<7) “ .“ \ xii t . c7: ‘ .- - a ’ ’1
+E ' \\ 9 ' E . i ' W-
+2 ;., 4 i i 8 / i. ‘ ‘3
+f. l _ __ ' ’71,; ‘.: .
+[I e 1341px. ' “W i] P ’f‘. "" -. ‘ ‘
+i r] ‘ “ , . :.~_ 5/
+:9: D ‘ "" ' I
+. v Z"" - ' ‘
+./ . i I r; I -
+‘l T a
+_ .Jr ' '
+, . t; /
+: x . \ 4 .
+i‘? :w 2',,/ ""7;! ,.
+. W '3 ‘ /
+i 1 ﬂ * A i""
+Figure 18.—Collection bag for NS—1 prior to (left) and during mixing (right).
+4 May“ 2011], Bag #1, Saline
+3D 32
+E AI _ H
+:21 3” 1- .. *ﬁ-fﬂfr-m‘ * ' 23 E
+E hi"" u: 1* ‘ ' . w
+E 15- '- l- -I- i' ' l. 1- i E
+E . 26 E
++- - .. cu
+£2.51 lﬂ 1* l I r I i- 1:.
+ﬂ l + Ii ‘ E
+E I 1‘ "" 24'! E
+U 5- * I i' 'q ,- ‘ I-
+ll *' l 'I I l-
+D ""' Jilin . “1* i .. 2.1
+0:01: 0:0? [1:14 £121 [1:23 ﬂﬂE [1:43 ﬂ:5ﬂ| {1:5?
+Elapsed Time {hh:mm}
+Figure 19.—Mixing uniformity results for NS—1.
+NASA/TM—2011-217033 28
+
+"
+"35","May 4th, Bag #2, Saline
+E —n_ 15 n
+U I I I _ I U
+E 25 - - - 24 2..
+w: Ill
+:- gﬂ - Temperature ._ .9 H I:-
+.4: . n.- 1.. i.- Zﬂ E
+2 ""' i I i I' ll 1. '- E
+'D l- "" I 1- _ 15
+E m — E
+u 5 14
+__ 11
+ﬂ '- 1:11
+[1:111] [H]? {1:14 {1:21 (1:23 0:35 {1:43
+Elapsed Time [hh:mm}
+Figure 20.—Mixing uniformity results for NS—2.
+6.3 Post-Flight Analysis
+
+Upon sample return, the NS—1 and NS—-2 sample bags were inspected, photographed, and weighed.
+These bags were then shipped to Pace Analytical Services, Inc., an FDA-certiﬁed laboratory, to evaluate
+the contents for compliance with USP standards for sterile sodium chloride solution for injection. The
+types of tests and results are shown in Table 7.
+
+As was stated earlier, the experiment requirements called for 13.5 i 0.67 g of sodium chloride to be
+measured and preloaded into each of the two collection bags. The requirements also called for ﬂow rate
+measurements that were within i1 percent of the full-scale measurement range to ensure that a tolerance
+of 25 ml in the total volume was collected.
+
+Several potential causes for the failure were identiﬁed and evaluated. Among these causes are the
+following:
+
+. Incorrect amount of water introduced into the collection bag
+
+. Incorrect amount of salt introduced into the mixing bag
+
+. Insufﬁcient mixing that did not sufﬁciently dissolve salt crystals or homogenize solution
+
+. Evaporation from the bag
+
+TABLE 7,—USP TESTING RESULTS
+Test Speciﬁcation NS—1 NS—2
+result result
+Sterile sodium chloride for injection 95.0 to 105.0% of target 117.0% Fail 93.8% Fail
+<o.oosOEU/mL
+Heavy metals by USP <231> Not more than (NMT) 0.001%
+Identiﬁcation sodium by USP <191> Sample responds to tests for sodium
+Identiﬁcation chloride by USP <191> Sample responds to tests for chloride
+Myusp NMszpm
+Particulate analysis by USP <788> :25 particles per rnL larger than 10 am 3.40 Pass 1.20 Pass
+S3 particles per rnL larger than 25 am 0.00 Pass 0.00 Pass
+sterilitybyust
+thestingbyusp<791> 4.5mm
+NASA/TM—2011—217033 29
+
+"
+"36","Reviewing the sensor data from the orbital operations, it was highly likely that an insufﬁcient amount
+of water was puriﬁed and charged into collection bag NS—l. This was conﬁrmed by post-ﬁight weight
+NS—l bag assembly of 1371 g, which is signiﬁcantly less than the speciﬁed mass of water of 1500 g.
+Nevertheless, additional analyses were conducted to decisively eliminate other potential causes. The
+water volume in the NS—2 bag was within acceptable margins, based on both sensor data and the post
+ﬂight weight.
+
+With regards to insufﬁcient mixing time, per Barlow (Ref. 19), a time of 4 min for a smaller stir bar at
+900 rpm should have been sufﬁcient to achieve the necessary homogeneity within the solution. Even at a
+revolution rate of 50 percent of the target value, 10 min should have been sufﬁcient. Actual mixing times
+ranged from 5 to 20 min after the collection bag had been ﬁlled and did not account for the 34 min of
+mixing time while NS—l was ﬁlling. F urthermore, the conductivity sensor during the ﬁll of the transfer
+bag indicated a relatively consistent level. There was still concern that residual salt crystals may have
+been trapped inside the ﬁll port of collection bag and did not get immersed by the water and thus
+dissolved during the mixing process.
+
+While it was not the original plan, the collection bags for NS—l and NS—2 were returned from the
+188. A procedure was developed to take advantage of this opportunity by analyzing the residual contents
+of the bags to better determine the cause of the saline discrepancy. It was decided to use a technique
+called inductively coupled plasma optical emission spectrometry (lCP/OES). Sodium was chosen since
+lCP/OES has a sensitiVity of 50 ng/L while ion chromatography is used for chloride content but has a
+detection limit of 50 mg/L. However, the sample needed to be diluted since the technique required at least
+100 mL of sample, and there was only an estimated 10 to 20 mL of residual solution within each bag.
+Details of this procedure and test results can be found in Appendix C, Investigation Results for Out-of—
+Speciﬁcation Saline Concentration.
+
+Each bag was weighed and approximately 100 mL of ASTM Type I water (highly puriﬁed) was
+added to the bag and the bag was reweighed. The water was sloshed around the bag in various
+orientations to ensure that any undissolved salt crystals would contact the water. The contents were
+drained into clean sample containers and sent to Precision Analytical, Inc., for the lCP/OES analysis. The
+“empty” bag was weighed, dried with gaseous nitrogen, and reweighed.
+
+The samples were analyzed and the results were 1.36 g/L of sodium for NS—l and 0.568 g/L for
+NS—2. This concentration equates to 13.78 g for NS—l and 12.59 g for NS—2. As stated earlier, each
+collection bag should have been ﬁlled with 13.5 i 0.67 g of sodium chloride, thus NS—l was ﬁlled with
+an acceptable amount of salt while NS—2 had an insufﬁcient amount of salt. The completed test plan, the
+results from the chemical analysis performed by Precision Analytical, and an analysis that converts these
+ﬁndings into the salt mass loaded into each bag is in Appendix C.
+
+Additional collection bags were prepared with stir bars and salt, but were placed in bonded storage
+and not used. During this anomaly investigation, the contents of three of these bags were evaluated. The
+bags had an “extracted” salt mass of 13.34, 13.23, and 12.76 g. This measurement was simply based on
+the salt that was removed from the bag. To negate the possibility of sample loss during this process, a
+second set of measurements were also made. The bags were weighed initially before the salt extraction.
+After the salt was extracted, the bags were rinsed to remove any residual salt and then reweighed. The
+difference between these weights yielded a calculated salt mass of 13.595, 13.449, and 12.773 g,
+respectively. Thus, while two of the bags were within the speciﬁcation, at least one additional bag did not
+meet the requirement. To summarize the ﬁndings:
+
+. NS—l ’s salt concentration was too high. The cause was that an insufﬁcient amount of puriﬁed
+water was supplied to the collection bag because a signiﬁcant amount of air had entered the
+accumulator during the ﬁlling process. Consequently, the estimate for the amount of residual air
+in this transfer line was larger than expected and the ﬁrst ﬁlling of the accumulator did not have
+sufﬁcient water. One potential resolution is to place a bubble separator at the accumulator inlet.
+
+. NS—2’s salt concentration was too low. The cause was that an insufﬁcient amount of salt was
+placed into the collection bag during the bag assembly process. While certiﬁcates of conformance
+
+NASA/TM—2011-217033 30
+
+"
+"37","received with the salt-ﬁlled bags indicated that the salt quantity met the tighter manufacturing
+speciﬁcation of 13.5 i 0.5 g. Each individual bag was not tested directly for salt quantity.
+However, initial lot testing—conducted prior to the full-up ﬂight system conﬁguration tests—was
+performed in which several bags were ﬁlled with a known quantity of water (1500 mL) and
+analyzed for salt concentration. The salt concentration was found to be within an acceptable range
+for all tested bags. Performing a pre-salt and post-salt mass analysis on all bag assemblies should
+be done rather than lot testing, but this would have signiﬁcantly affected the ﬂight hardware
+delivery schedule for IVGEN.
+
+7.0 Plans
+
+Although the spaceﬂight experiment was conducted and test results evaluated, there is still a
+signiﬁcant amount of work that should be completed, both with regards to testing and the design of an
+operational system.
+
+7.1 Testing
+
+Two types of testing and the subsequent data analysis are in the process of being performed. Data
+have been obtained but need additional analysis to assess the effect of temperature on the system. In the
+event that an IVGEN operational system is needed to address a spaceﬂight medical emergency, the
+chances are that the environmental control and life support system may not be functioning optimally. One
+result of this may be that the cabin and or potable water supply temperature may be either very warm or
+very cold. A series of tests were performed to assess the DI cartridge’s performance with input water at
+temperatures of 4, 15, 25, and 35 °C. The performance with regards to the cartridge puriﬁcation ability
+and the pressure loss as a function of the ﬂow rate through the cartridge is being evaluated. In addition,
+given that some DRMs have durations of at least 2 or 3 years, the packaging technique and the effect of
+shelf life on the DI resin are also being evaluated. As received from the manufacturer, the resin has a
+moisture content of about 60 percent and the storage container prevents direct contact with the
+atmosphere. The storage technique is important because the resin is degraded by both desiccation and
+exposure to carbon dioxide, which it absorbs. Exposure to the atmosphere produces both of these negative
+outcomes and, therefore, must be avoided by proper packaging.
+
+To validate the IVGEN storage technique, two sets of cartridges have been prepared and are
+undergoing shelf life testing. The ﬁrst set of cartridges contains ResinTech’s MBD—lO—NG resin within a
+polycarbonate tube that is capped with stainless steel ﬁttings at each end. The second set of cartridges
+contains ResinTech’s MBD—lO—ULTRA resin also within a polycarbonate tube that is capped with
+stainless steel ﬁttings at each end, but in a hermetically sealed bag. It was learned early in the program
+that vacuum sealing these bags was detrimental to the DI resin puriﬁcation performance as it dried the
+resin. Once every 6 months, one cartridge from each set will be removed from storage and tested. Pending
+the results of these tests, it may be necessary to reevaluate the storage technique and restart testing.
+
+7.2 Operational System Design
+
+The operational IVGEN system will not be identical to the experimental system. The experiment
+included conductivity sensors and temperature sensors to verify purity of water. However, with the use of
+either a color-indicating DI resin to indicate capacity or by certifying that a D1 cartridge cannot produce
+more than a given quantity of puriﬁed water, it is not necessary to use these sensors. A ﬂow meter was
+used to identify ﬂow-induced causes for anomalies, such as the air bubble. The Pall ﬁlters performed as
+advertised; however, an additional set of ﬁlters should be placed on the inlet of the accumulator. If that
+step were to be taken, the user could be conﬁdent of an appropriate saline concentration. Pressure
+transducers were used to determine the scalability of the system in terms of cartridge length versus
+quantity of puriﬁed water produced.
+
+NASA/TM—ZOI 1—217033 31
+
+"
+"38","Based on the experiment results, though, the following should be addressed:
+
+. Shelf life and storage techniques: Testing is ongoing and needs to be continued to verify that the
+components of the system can be stored for up to 5 years and maintain desired capability.
+
+. Accurate metering of water volume: Based on the results from NS—l testing, the amount of water
+that is introduced into the salt bag is critical to producing an NS solution of acceptable
+concentration. There are several technologies that may be used to address this concern including
+the use of more bubble separators 0r traps in strategic locations within an operational system or
+the use of a microgravity-rated, liquid-only, volumetric ﬂask.
+
+. Testing of puriﬁcation “challenges”: In determining the ﬁnal spaceﬂight experiment hardware,
+the IVGEN team worked closely with a pharmaceutical consultant to develop a pharmaceutical
+process validation plan. Execution of this test plan with the ﬁnal system should be performed to
+document the maximum capacity of the system for each known contaminant. These challenges
+should include preparing and testing samples of puriﬁed water with known concentrations of
+particulate matter, endotoxins, sucrose, ammonia, and representative water meeting the NASA’s
+SWEG, 41000 and CXP 20024 guidelines by ﬂowing it through the system.
+
+. Depletion of puriﬁcation capability: The 188 already provides highly puriﬁed water courtesy of
+the WPA. Future exploration systems may not provide potable water of such quality.
+Consequently, either the cartridges will have to be rated for the potable water supply of each
+spacecraft system or some method, such as either conductivity probes 0r color-indicating, purity-
+sensitive DI resin will need to be used to ensure a quality product.
+
+8.0 Conclusion
+
+Intravenous F luid Generation (IVGEN) experiment was operated onboard the International Space
+Station (188) during May 2010. This hardware demonstrated the capability to generate intravenous (IV)
+ﬂuid from 188 Water Processing Assembly (WPA) potable water using a water puriﬁcation technique and
+pharmaceutical mixing system. SiX 1.5 -L bags of puriﬁed water were produced. Two of these bags were
+mixed with sodium chloride to make 0.9 percent normal saline (NS) solution. These two bags were
+returned to Earth to test for compliance with USP requirements.
+
+On-orbit results indicated that all of the experimental success criteria were met with the exception of
+the salt concentration. Problems with a large air bubble in the ﬁrst bag of puriﬁed water resulted in a
+slightly concentrated saline solution of 117 percent of the target value of 0.9 g/L. This problem can be
+resolved by placement of a gas-liquid separator ﬂlter immediately upstream of the liquid inlet to the
+accumulator. The second bag had an inadequate amount of salt premeasured into the mixing bag resulting
+in a slightly deﬁcient salt concentration of 93.8 percent of the target value. The United States
+Pharmacopeia (USP) permits a range from 95 to 105 percent of the target value.
+
+The testing plans for improvements for an operational system were also presented and included shelf
+life testing of the storage technique for the DI resin cartridge and challenging the puriﬁcation ability of
+the DI resin cartridges.
+
+References
+1. “The Vision for Space Exploration,” NASA,
+
+http://www.nasa. gOV/pdf/SSS 83main_Visi0n_space_eXplorati0n2.pdf, F ebruary 2004.
+
+2. “Exploration Systems Architecture Study F inal Report,” NASA/TM—2005-214062,
+http://www.nasa. gOV/pdf/ 140649main_ESAS_full.pdf
+3. Miller, F .J ., Niederhaus, C., Barlow, K., Grifﬁn, D., “Intravenous Solutions for Exploration Missions,
+
+“45th AIAA Aerospace Sciences Meeting and Exhibit, Reno, NV, AlAA—2007—544, 2007.
+
+4. Watkins, S.D. “Space Medicine Exploration: Full Medical Condition List,” NASA/TP—2010-
+
+216118, 2010.
+
+NASA/TM—2011-217033 32
+
+"
+"39","5. Crew Health Care System (CHeCS) — International Medical Hardware Catalog, Ver 5.1, April 2005.
+
+6. Bagdigian, R., Cloud, Dale, and Bedard, J ., “Oxygen Generation Systems Status of the Regenerative
+ECLSS Water Recovery,” SAE 2006—01—2057, 2006
+
+7. United States Pharmacopeia National F ormulary (2007).
+
+8. James, J .T., and Torin McCoy, J ., “Spacecraft Water Exposure Guidelines (SWEGS),” J SC—63414,
+November 2008.
+
+9. “System Speciﬁcation for the International Space Station,” NASA SSP 41000 ReV B, May 1997.
+
+10. “Constellation Program Human-Systems Integration Requirements,” CXP70024, December 2006.
+
+11. “Pressurized Payload Accommodation Handbook: International Space Station Program,” SSP 57020,
+2004.
+
+12. Carter, D.L., “Status of the Regenerative ECLSS Water Recovery System,” SAE 2009—01—2352,
+International Conference on Environmental Systems, Savannah, GA, 2009.
+
+13. Creager, G., “An Evaluation of IV F luids Requirements for the Space Station F reedom Health
+Maintenance F acility Assuming a 10-Day Therapeutic Stay,” Krug Life Sciences, 1991.
+
+14. “Space Station LVP Mixing System: Interim Report #2,” J . Ogle, M. F inley, and J . Kipp, Baxter
+Healthcare, June 1989.
+
+15. Niederhaus, C.E, and Miller, F .J ., “Intravenous F luid Mixing in Normal, Partial, and MicroGraVity:
+Down-selection of Mixing Methods,” NASA/TM—2008-21500, 2006.
+
+16. Lloyd, C., Creager, G., Guess, T., Giglio, D., “Post Mission Summary—Two Week Report, Spacelab
+J (STS 47): Inﬂight Demonstration of the Space Station F reedom Health Maintenance F acility F luid
+Therapy System,” October 1992.
+
+17. Koenig, D.W., Bruce, R.J., and Stowe, R P., “Analyses of Spacelab-J F luid Therapy System
+Samples,” Test Report #M078/92, October 1992.
+
+18. Schultz, J .R., Memo on “Chemical Analysis Results from the F luid Therapy System F light Test on
+STS-47,” to Richard L. Sauer, November 12, 1992.
+
+19. Barlow, K.L., “Intravenous ﬂuid mixing times quantiﬁed using planar laser-induced ﬂuorescence,”
+Master’s Thesis, Case Western Reserve University, 2007.
+
+20. United States Pharmacopeia — National F ormulary F ifth Supplement, Physical Tests/Water
+Conductivity (645) 3465—3467.
+
+21. Niederhaus, C.E., Barlow, K.L., Grifﬁn, D.W., Miller, F .J., “Medical Grade Water Generation for
+Intravenous F luid Production on Exploration Missions,” NASA/TM—2008-214999, 2008.
+
+22. King, C.J., Separation Processes, Second Edition, McGraW-Hill Book Company, pg 45—48, 1980.
+
+23. Wykes, V., F ong, K., Gilmore, S., Scarpa, P., Woodward, D., “Onboard System for Production of
+Intravenous F luids,” Aviation, Space, and Environmental Medicine, Vol. 76, N0. 3, p. 220, March
+2005.
+
+24. Wykes, V., J ayakumar, P., Scheuer, W., Guess, T., Scarpa, P., F ong, K., “A Portable Intravenous
+F luid Production System Using Reverse Osmosis Technology for Medical Emergency in Space,”
+Aviation, Space, and Environmental Medicine, Vol .77, N0. 3, p. 333, March 2006.
+
+25. Taylor, M.A., Alambra, E.F., Anes, J ., Behnke, J ., Enachescu, B., Fitzgerald, C.L., F ortado, M.,
+Sizelove, M.L., “Remote Site Production of Sterile Puriﬁed Water from Available Surface Water,”
+Prehospital and Disaster Medicine, Vol. 19, N0. 3, pp. 266—277, 2004.
+
+26. Akse, J .R.; Dahl, R.W.; Wheeler, R.R., “Continuous-F 10W System Produces Medical-Grade Water,”
+NASA Tech Briefs, LEW—18159—1, pp. 25—26, March 2009.
+
+27. The Society of U.S. Naval F light Surgeons, The United States Naval F light Surgeon Handbook, 2nd
+edition, 1998.
+
+28. Motil, B.J., Balakotaiah, V., and Kamotani, Y., “Effects of Gravity 0n Coeurrent TWO-Phase Gas-
+Liquid F lows through Packed Columns,” AIAA—2001—0767 and NASA/TM—2001-210705, 2001.
+
+29. Holder, D.W. and Parker, D.S. “Volatile Removal Assembly F light Experiment and KC—135 Packed
+Bed Experiment: Results and Lessons Learned,” SAE 2000—01—225 1, 30th International Conference
+on Environmental Systems, Toulouse, France, 2000.
+
+NASA/TM—2011-217033 33
+
+"
+"40","30. Spivey, R., Sheredy, W., and F lores, G., “An Overview of the Microgravity Science Glovebox (MSG)
+F acility, and the Gravity-Dependent Phenomena Research Performed in the MSG 0n the International
+Space Station (188),” ALAA—2008—812, 46th AIAA Aerospace Sciences Meeting and Exhibit, Reno,
+NV, 2008.
+
+31. ResinTech, Inc. “Speciﬁcation Sheet for MDB—IO, Mixed Bed Resins,”
+http://www.resintech.com/products/frm_Pr0ductInfo.ast?qPr0ductId=78, 201 1.
+
+NASA/TM—2011-217033 34
+
+"
+"41","Appendix A.—Acr0nyms and Abbreviations
+ALSP Advanced Life Support Pack
+ASTM American Society for Testing and Materials
+CEV Crew Exploration Vehicle
+CHeCS Crew Health Care System
+CWC Contingency Water Container
+DACU Data Acquisition and Control Unit
+DC direct current
+DI deionization
+DRM Design Reference Mission
+ECLSS Environmental Control and Life Support Systems
+EPA Environmental Protection Agency
+EVA Extravehicular Activity
+F DA F 00d and Drug Administration
+F TS F luid Therapy System
+GRC Glenn Research Center
+ICP/OES inductively coupled plasma optical emission spectrometry
+188 International Space Station
+IV intravenous
+IVGEN Intravenous Generation
+J SC J ohnson Space Center
+KSC Kennedy Space Center
+MCL maximum contaminant level
+MDL Shuttle Middeck Locker
+MSG Microgravity Science Glovebox
+NASA National Aeronautics and Space Administration
+NMT not more than
+NPDWR National Primary Drinking Water Regulations
+NS normal saline
+OGS Oxygen Generation System
+PCDB Patient Condition Database
+PE polyethylene
+NASA/TM—2011-217033 35
+
+"
+"42","PLIF Planar Laser-Induced F luorescence
+PWD Potable Water Dispenser
+
+PWR Potable Water Reservoirs
+
+RO reverse osmosis
+
+SAL Sterility Assurance Level
+
+SBIR Small Business Innovative Research
+SM Service Module
+
+SMEMCL Space Medicine Exploration Medical Condition List
+SSP Space Station Program
+
+STS Space Transportation System (Space Shuttle)
+SWEG Spacecraft Water Exposure Guideline
+SWF I Sterile Water for Irrigation
+
+SW1 Sterile Water for Injection
+
+SWIS Sterile Water for Injection System
+
+TF C thin-ﬁlm composite
+
+TOC Total Organic Carbon
+
+UPA Urine Processing Assembly
+
+USP United States Pharmacopeia
+
+WF I water for irrigation
+
+WPA Water Processing Assembly
+NASA/TM—2011-217033 36
+
+"
+"43","Appendix B.—Test Results
+B.1 Bag 1, Normal Saline
+4 May 2010, Bag #1, Saline
+95
+E
+:5. 1'5 ' i
+E. 1* ' 1r
+ﬁll
+E 55
+I ill 1' I-
+E 55
+3 ﬂ“ ‘ I
+i:- *+ u
+cu ' ""'
+E 15 1.;
+2
+:2 m
+-5 ""E
+ﬂ:ﬂﬂ DH? [1:14 ﬂﬂl ﬂﬂﬂ {1:35 {1:43 {1:51.} 0:5?
+Elapsed Time {hh:mm}
+Figure B.1.—Bag 1, time trace of volumetric flow rate.
+4 Mﬂ‘f Zﬂlﬂ, Bag #1, Saline
+11
+g l'
+.3
+= :r'
+E —....-=
+E 5 . .
+i'.‘ +
+E 3 t :.
+m * Ir. *
+n 1 . .-
+E ""' ' ""' """" i
+E -1 4.
+_ *
+-3, ..
+ll-
+—5
+ﬂﬂﬂ D:ﬂ? {1:119r ﬂﬂl [1:23 {1:35 ﬂﬂﬁ ﬂ:5ﬂ {1:5?
+Elapsed Time {hh:mm]
+Figure B.2.—Bag 1, time trace of fluid density.
+NASA/TM—2011—217033 37
+
+"
+"44","3n 4 ME? 2010, Bag #1, Saline
+25
+-—- 20
+~33.
+H 15
+'11
+ti: 1:]
+n: “-- .
+g 5 i . “I
+E {1 '.
+a L '4' g. - El- 4
+g —5 I ..
+—1ﬂ
+-15 ""
+—2ﬂ
+ﬂ:[1[1 [111? [1:14 [1:21 [1:23 [1:35 [1:43 [1:5[1 [1:51r
+Elapsed Time [hh:mm}
+Figure B.3.—Bag 1, time trace for mass flow rate.
+4 ME? 2010, Bag #1, Saline
+2.5
+_ . Inlet Falls
+7% 2 ﬂ - Ell Cartridge
+5 ' 1 Exit Pall5 - ' '-
+H'I .
+4- Tntal ' "" '-
+E 1 5 11:14"";
+[I.I ' .. _ . i-
+s _ ' ' 1""
+E 1.4] _._.._...-.._-_._._._..._._._.___....._..-.-.-_.. .._._ .........__.._..._-...._._.... '1 [ 1.5.
+.1 - J
+E
+-l—‘ - i
+5 ”-5 Whit
+IE . _ k. i
+E m: -'—--——-—--'-'-—'-'—-‘-—-——-—-'1- nth;
+—[1.5
+[1:[I1 [111? [1:14 [1:21 [1:23 [1:36 [1:43 l1:5[1 [1:5?
+Elapaed Time [hh:mm}
+Figure B.4.—Bag 1, time trace of pressure drop.
+NASA/TM—2011—217033 38
+
+"
+"45","4 ME? 2010, Bag #1, Saline
+ﬂ
+1' 1r Putahle Water
+E E - Puriﬁed Water
+""--. .
+‘9.
+.. 5 I
+3‘ I
+'5 4 -
+U
+:5
+E 3
+a i i. til...
+2 .— '
+I *
+1 l '
+ﬂ . I.“
+DIILI Dd]? {lkliﬂr {1:21 [1:23 {1:35 {1:43 [1:51.] ﬂ:5}‘
+Elapsed Time [hh:mm}
+Figure B.5.—Bag 1, time trace on conductivity for potable water input and purified water output from
+DI Cartridge.
+4 I'M“r Zﬂlﬂ, Bag #1, Saline
+31.] 32
+* Canductiviw
+25
+I Temperature :- 3“
+E 4:!"" ._.
+E. I .. "" E
+E: 15 “'4’ m ""‘ I—II—I-F ' 3
+E M 15 E
+”g 1:) . . - - 3
+=1 E
+E 24 ,_
+U 5' '- 1r
+l i... l 'I l l-
+a a
+ﬂﬂﬂl {1:0} [1:14 ﬂﬂl [1:23 ﬂﬂE [1:43 I‘.1|:E-:ﬂI {1:5?
+Elapsed Time {hh:mm}
+Figure B.6.—Bag 1, time trace of conductivity and temperature during transfer of saline solution to sterile bag.
+NASA/TM—2011—217033 39
+
+"
+"46","4 l'qlr‘la'gir 211111, Bag #1, Saline
+1[1[1
+m
+fl
+95 I 1'
+9D
+.5. l =2"":
+4-; 41
+t I I... .. I
+a 5“ -‘*
+?5 I * *1. 1' 'i...‘
+I i I “'
+m ' . .
+III
+55
+1, .
+I'fii
+Eﬂ
+l1:[1[1 [1:l1? {1:14 l1:21 {1:23 ﬂﬂﬁ {1:43 l1:5{1 (1:5?
+Ha psed Time [hh:rn m}
+Figure B.7.—Bag 1, time trace for purification efficiency.
+4 May 2111111,. Bag #1, Saline
+2
+1.3 -
+E. 1 E : - Inst. Puriﬁed Water
+1:: ' - .. Aug. Puri 2 Water
+3 1“ I
+3‘ I
+1 I
+'g [1.3 .
+5 I1
+” I L
+”‘4 IL
+[1.2 - ‘
+D _ . - _ I -
+{1:[111 [1:l1? l1:1:l'lr l[1:21 [1:23 ﬂﬂﬁ {1:43 [1:31 l1:5?
+Elapsed Time [hh:mm}
+Figure B.8.—Bag 1, time trace for instantaneous and average conductivity for the purified water output
+from DI Cartridge.
+NASA/TM—2011-217033 4O
+
+"
+"47","B.2 Bag 2, Normal Saline
+MB? 4th, Bag #2, Saline
+5[1
+E 45
+E 4:: 1
+E
+-r 35
+I:I.II
+1'11 30 L -—-—m
+”E —
+3 25 .
+2 —
+“- 2[1
+E _
+1'5 15
+E —
+3 m —
+g 5 _
+[1
+ﬂ:[1[1 [111? [1:14 [1:21 [1:23 [1:35 [1:43 [1:31 [1:51Ir 1:114
+Elapﬁed Time {hh:mm]
+Figure B.9.—Bag 2, time trace of volumetric flow rate.
+May 4th, Bag #2, Saline
+3.11
+E . Inlet Falls
+3 2.5 I I rtrllge
+HI-
+E 2.1] . Exit Falls
+g k - Tntal
+:3 1.5 ,‘ I I
+ﬂ. 1‘
+:ﬁ 1“] L— -... .- _...n. .__-....u-.a._._n.-I—I-|-h.-u-.u.-.-.—_.n_n_n_...a. _22-- ._ __ 1. -. .
+H
+E
+a —
+g ”-5 ”m
+a .
+W ""t... _-_ --_.. .
+Ill]
+[1:[1ﬂ [1112' [1:14 [1:21 [1:23 [1:35 [1:43 0:5!) [1:52 1:[14
+Elapsed Time [hh:mm}
+Figure B.10.—Bag 2, time trace of pressure drop.
+NASA/TM—2011-217033 41
+
+"
+"48","I'llur‘lqayr 4th, Bag #2, Saline
+1'
++- Pntahle Water
+Eu .
+”E - Puriﬁed Water
+L1 5 l
+11?
+a 4 l
+E .. _ _ _.__*_____ __.,,___._..__. ._
+-:—: 3
+L1
+:1
+E 2
+n
+u
+1
+u L
+[1:[1[1 [1:l]? [1:14 [1:21 [1:23 [1:36 [1:43 [1:51] [1:52r 1:[14
+Elapﬁed Time {hh:mm]
+Figure B.11.—Bag 2, time trace on conductivity for potable water input and purified water output
+from DI Cartridge.
+Mﬂ‘f 4th, Bag #2, Saline
+1[1[1
+95 l
+C 9D I
+E
+E 35
+.3
+15 [H]
+E
+25
+‘aﬁ
+2D
+[55
+EU
+ﬂ:[1[1 [1:ﬂ? [1:113r [1:21 [1:23 [1:35 [1:43 [1:5[1 [1:52 1:[14
+Elapsed Time [hh:mm}
+Figure B.12.—Bag 2, time trace for purification efficiency.
+NASA/TM—201 1-217033 42
+
+"
+"49","May 4th, Bag #2, Saline
+2.0
+LE
+'E' LE
+73'"" 1'4 . nst. ' ur E ""ater
+Z 1'2 I 0g. mm 2 ""ater
+-‘=' 1.0
+.2
+E 0.0
+1' .
+“E 0.5 -'
+E 0.4
+. ‘l ..
+0.0
+0:00 0:0? 0:14 0:21 0:20 0:30 0:43 0:50 0:5? 1:04
+Elapsed Time [hh:mm}
+Figure B.13.—Bag 2, time trace for instantaneous and average conductivity for the purified water output
+from DI Cartridge.
+Wklyr 4th, Bag #2, Saline
+E —n_ 15 _
+u : * : . . - U
+E 25 mm— ” L
+Ill
+; ED '- II I '- - '- 22 E
+E 15 m 13 3
+i 15 E
+c 10 ‘ E
+a 5 m 1:
+w H
+n 3 10
+0:00 0:0? 0:14 0:21 0:20 0:36 0:43
+Elapsed Time [hh:mm}
+Figure B.14.—Bag 2, time trace of conductivity and temperature during transfer of saline solution to sterile
+bag.
+NASA/TM—2011-217033 43
+
+"
+"50","B.3 Bag 3, Puriﬁed Water
+5 I'llur‘layr 2010, Bag #3: 1IMFI
+?D
+E- ﬁﬂ
+”E: 5U
+E .
+g 4:: 5L
+II
+E 30 —n—
+LI. —
+.3 2U
+*5 _
+E 10
+3 _
+E n
+—1[]
+ﬂﬂﬂ ﬂ:14 {1:28 E43 ﬂ:5?
+Elapsed Time [hh:mm)
+Figure B.15.—Bag 3, time trace of volumetric flow rate.
+5 May 2ﬂlﬂ, Bag #3: WFI
+4.0
+E 3.5 - Inlet Falls
+E 3 ﬂ - DI Cartridge
+E I - Exit Falls
+3 2.5
+m g - Tntal Pressure L055
+’3: 2.3 '-
+E 1.5 'L
+F: HE
+E: III_.- -|'-|—--m_—lml .
+CI- ﬂﬂ L_L_._.______._..__.____.__._._.__.._._._._.__..___.._.__.__ --——..— __—
+43.5
+[1:00 [1:14 [1:23 E43 3:5?
+Elapsed Time [hh:mm}
+Figure B.16.—Bag 3, Time Trace of Pressure Drop.
+NASA/TM—2011-217033 44
+
+"
+"51","5 May 2010, Bag #3: 1WFI
+0.0
+5.0
+”E
+E. 4.0
+E .
+E 3.0
+E - Pntable Water
+'3 2.0 -
+E I Purified Water
+1.0
+{1.0 L—
+0:00 0:14 0:28 0:43 0:5?
+Elapsed Time [hh:mm}
+Figure B.17.—Bag 3, time trace on conductivity for potable water input and purified water output
+from DI Cartridge.
+5 ME}! 2010, Bag #3: WFI
+120
+100 r_—""""' ' '
+E 30
+H
+Li
+E 00
+‘5
+n.
+BE 40
+20
+0
+0:00 0:14 0:23 0:43 0:5?
+Elapsed Time {hh:mm}
+Figure B.18.—Bag 3, time trace for purification efficiency.
+NASA/TM—2011-217033 45
+
+"
+"52","5 I""I|.\“I.a1ylr 2010, Bag #3: WFI
+2.0
+1.3
+__ 1.6
+E 1.4
+3 1.2
+2:!-
+E' 1'“ _ 1' Inst. Puri IE Water
+a 0.0 '.
+'I:l .. I + '
+E 0.6 it 40-. Purified Water
+""’ {1.4 '=
+ﬂ 2 1k
+' hh— _
+0.0
+0:00 0:14 0:28 0:43 0:5}r
+Elapsed Time [hh:mm}
+Figure B.19.—Bag 3, time trace for instantaneous and average conductivity for the purified water
+output from DI Cartridge.
+B.4 Bag 4, Puriﬁed Water
+5 May 2010, Bag #4: 1WFI
+20
+E 00
+E
+:-
+E 50
+E- l‘
+E 40 LL
+F3. 30 - - --—
+E 2” _
+E
+g 1” _
+0
+0:00 0:0? 0:14 0:21 0:28 0:30 0:43 0:50 0:52 1:04
+Elapsed Time {hh:mm}
+Figure B.20.—Bag 4, time trace of volumetric flow rate.
+NASA/TM—2011-217033 46
+
+"
+"53","5 I'H‘IEI‘HIr 2010, Bag #4: WFI
+4
+*- lnlet Falls
+E - [1| Cartridge
+53
+ﬂ - Exit Falls
+3
+g = 1r Tntal Pressure L055
+a 2 ‘:
+E
+E1 -_-...-.._ ...*....._.__._......_.......i............... .
+..'-“'_’
+ﬂ LWW- ._._.-.._.._
+[1:[1[1 [1:[11Ir [1:14 [1:21 [1:23 [1:35 [1:43 [1:5[1 [1:51Ir 1:[14
+Elapsed Time {hh:mm}
+Figure B.21.—Bag 4, time trace of pressure drop.
+5 lhﬂmr 2010, Bag #4: WFI
+4.5
+4 .
+__ 3.5 L» - - ‘ - .
+E
+E“ 3
+:I.
+E 2.5
+E 2 .. Patahle Water
+E I Purified Water
+E 1.5
+E
+1
+[1.5
+ﬂ 1..
+[1:[1[1 [1:[11' [1:14 [1:21 [1:23 [1:36 [1:43 [1:50 [1:5? 1:[14
+Elapsed Time [hh:mm]
+Figure B.22.—Bag 4, time trace on conductivity for potable water input and purified water output
+from DI Cartridge.
+NASA/TM—2011-217033 47
+
+"
+"54","5 May 2010, Bag #4: 1WFI
+1[1I[||
+93 r —*—‘""——'———'——'—""—-
+E15 '
+94
+1:
+E 92
+I'll
+512‘ 90
+E 33
+3E
+35
+34
+32
+3D
+[1:[1[1 [1:[11'r [1:14 [1:21 [1:23 [1:35 [1:43 [1:50 [1:51' 1:[14
+Elapsed Time {hh:mm]
+Figure B.23.—Bag 4, time trace for purification efficiency.
+5 ME? 2111!], Bag #4: 1IMFI
+[1.5
+III-h. [1.4
+E
+L1
+ta ; _ .
+3 [1.3- 1 I I . I i. . -
+1: i -
+3 . - Aug. Pu nfied Water
+“3 n 2 j'
+3 .
+1:1
+E
+a [L
+U I11 _‘--—r
+[1
+[1:[1[1 [1:[11' [1:14 [1:21 [1:23 [1:36 [1:43 [1:5[1 [1:51' 1:[14
+Elapsed Time {hh:mm]
+Figure B.24.—Bag 4, time trace for instantaneous and average conductivity for the purified
+water output from DI Cartridge.
+NASA/TM—2011-217033 48
+
+"
+"55","B.5 Bag 5, Puriﬁed Water
+5 [111.3151r 20111, Bag #5: 1WFI
+91]
+'E‘
+E El]
+2-
+E ?D
+111
+15 El]
+1::
+g 51]
+E .
+2 w L
+E 3“ —
+:I ll]
+3 —
+h m —
+l]
+111]] [1:1]? [1:113r [1:21 [1:23 11:35 [1:43 [1:51] [1:5? 1:04
+Elapsed Time [hh:mm}
+Figure B.25.—Bag 5, time trace of volumetric flow rate.
+IE May 21110, Bag #5: WFI
+5
+. Inlet Falls
+4 . - - _
+E I nge
+E 3 *- Exit Falls
+E + Tatal Pressure Lass
+[I.I ""
+E M
+n- 1 __._ _ _ . . . _ . _. . _. .
+n W -
+[1:[1ﬂ [1:14 [1:28 [1:43 [1:51r 1:12
+Elapsed Time {hh:mm}
+Figure B.26.—Bag 5, time trace of pressure drop.
+NASA/TM—2011-217033 49
+
+"
+"56","a May 2111:], Bag #5: WFI
+__ 5
+E
+11'.
+3 4
+3 ' .
+El- 3 L . .L-
+[J
+:F
+‘D
+E
+a 2 ' i ; i '- - - ; =
+3 .
+3 - Purified Water
+= 1
+I‘ll-
+[=1
+I'll-
++- L__
+E 0
+0:00 0:0? 0:14 0:21 0:23 0:35 0:43 0:50 0:5? 1:04
+Elapsed Time {hh:mm}
+Figure B.27.—Bag 5, time trace on conductivity for potable water input and purified water output
+from DI Cartridge.
+5 ME? 2010, Bag #5: 1[MFI
+1115
+100
+95 r
+.E 9“ i
+E 35 i
+E El]
+ﬂ.
+3R ?5
+?0
+55
+50
+0:00 0:0? 0:14 0:21 0:28 0:36 0:43 0:50 0:5? 1:04
+Elapsed Time [hh:mm}
+Figure B.28.—Bag 5, time trace for purification efficiency.
+NASA/TM—2011—217033 50
+
+"
+"57","6 ME? 201D, Bag #5: WFI
+
+2
+E 1-5 . n5. '_IIUI'IIIE ”3 er
+""--.
+3 I Aug. Puriﬁed Wﬂter
+_"".'I--
+i; 1
+E
+‘D
+E 0.5
+
+kg
+[1 ..._
+[1:[1ﬂ [1:02 [1:14 [1:21 [1:23 [1:36 [1:43 [1:53 [1:52 1:[14
+Elapsed Time {hh:mm]
+Figure B.29.—Bag 5, time trace for instantaneous and average conductivity for the purified water
+output from DI Cartridge
+B.6 Bag 6, Puriﬁed Water
+6 May 2010, Bag #6: WFI
+513
+
+_ 45
+.E
+E 41.1
+1‘ L
+E 35
+‘3 L
+E 3[1
+a: ——ﬁ
+3 25 _
+3 2“ _
+E 15
+E —
+T“ m —
+:3 5 _
+
+[1
+
+[1:[1[1 [1:14 [1:23 [1:43 [1:52 1:12
+
+Elapsed Time {hh:mm}
+Figure B.30.—Bag 6, time trace of volumetric flow rate.
+NASA/TM—2011-217033 51
+
+"
+"58","6 May 2010, Bag #6: WFI
+3.0
+. Inlet Falls
+E 2.5 I I . I 'I : -
+'3; . Exit Falls
+3 2-D .. n a 'ressure [:55
+i1!
+L
+El.
+:311] L-_-_.—_—_—_—_—_————I—I_H—-ﬂ—-I_—--—I-—__ .
+E
+E _
+E 0.5
+a m
+ﬂﬂ MH— 1...-..“
+{1:00 ﬂ:14 {1:23 {H13 0:5? 1:12
+EIEIPSE'd Time {hh:mm]
+Figure B.31.—Bag 6, time trace of pressure drop.
+5 Maryr 2011], Bag #6: 1WFI
+4
+E- 3
+""'-.
+3
+3‘ 2
+E 1r Pnta- 2 Water
+E I Puriﬁed Water
+D
+U 1
+U L
+ﬂﬂﬂ ﬂ:14 [1:23 [1:43 0:5? 1:12
+ElapSE-d Time {hh:mm_'l
+Figure B.32.—Bag 6, time trace on conductivity for potable water input and purified water output
+from DI Cartridge.
+NASA/TM—2011-217033 52
+
+"
+"59","6 May 2010, Bag #5: 1IMFI
+190
+93 [ ._ .__. w-w.wwﬂw_ﬁ
+96
+.E 94
+E 92
+E 911
+D.
+32 33
+SE
+34
+32
+SD
+ﬂﬂﬂ {1:14 {1:23 {1:43 (1:5? 1:12
+Elapsed Time {hh:mm}
+Figure B.33.—Bag 6, time trace for purification efficiency.
+5 lhﬂawr 2111!], Bag #6: WFI
+[1.5
+I Inst. Puriﬁed Water
+1' A Puriﬁed Water
+[1.4 HE
+E
+""--.
+3 0.3
+3:
+E
+E 0.2
+'D
+l: .
+D
+u D 1 IL
+- _
+[II
+[1:01] [1:14 [1:23 [1:43 0:5? 1:12
+Elapsed Time {hh:mm}
+Figure B.34.—Bag 6, time trace for instantaneous and average conductivity for the purified water
+output from DI Cartridge.
+NASA/TM—2011—217033 53
+
+"
+"60",""
+"61","Appendix C.—Investigati0n Results for
+Out-of—Speciﬁcation Saline Concentration
+C.1 Completed Test Plan
+Out of Speciﬁcation Salinity Root Cause Analysis Test Plan
+And Procedure For The Intravenous Fluid Generation
+(IVGEN) Experiment
+November 9, 2010
+,NASA
+National Aeronautics and Space Administration
+Glenn Research Center
+Cleveland, Ohio
+NASA/TM—ZOI 1—217033 55
+
+"
+"62","SIGNATURE PAGE
+Date: November 9, 2010
+Revision: 1.0
+Project Selentnst ’ ( . “/mk / , ;
+T LMK \ "" ‘k-fl.£ #Flbi )Lil:
+em ' C ay Signature . Date
+CONCURRENCES
+ZlN Technologies:
+Mechanical Lead t. WW I ”
+-» #6? 0
+Daniel F. Brown M Jl—I——'—
+Slgnature Date
+Project Lead ’ ' ‘ ’ ‘ .
+15' AMn - m.
+J ohn T. Zoldak S'nature I Date
+Quality Assurance Manager // .., Z/ .
+Debra R. Lyden . , ,
+Slgnature ate
+CONCURRENCE
+N ASA Glenn Research Center:
+Principal Investigator 0 f f ,
+. . w .Msh cg 4;; 20;
+John B. McQuillen ‘( b j Z “ i C U 0
+ignature Date
+APPROVED BY
+NASA Glenn Research Center:
+Project Manager I W 7
+. z: 4-2%1/ £sz—
+DeVon W. Grlfﬁn ' _m,// Date
+P M ‘0 ""”
+rogram anager . * ”F (J /
+! A ' Y. I /
+\MMJW \Cb U f”) \O
+Marsha M. Na“ . _
+‘ 1 gn ature Date
+ii
+NASA/TM—2011-217033 56
+
+"
+"63","DOCUMEN T SUMMARY:
+The purpose of this test plan is to deﬁne the analysis that will be conducted on the returned mixing bags
+from the IntraVenous ﬂuid GENeration (IVGEN) ﬂight project. The goal of this effort is to provide
+insight into the out of speciﬁcation concentration results for both ﬂight experiment saline samples.
+REVISION HISTORY:
+Initial Release: November 9, 2010
+iii
+NASA/TM—2011—217033 57
+
+"
+"64","TABLE OF CONTENTS
+
+1.1 BACKGROUND 1
+1.2 TEST SUMMARY 2
+2.0 ITEST SAMPLE DESCRIPTION 3
+3.1 GENERAL GUIDELINES 3
+3.2 POST-ANALYSIS 4
+4.0 TEST FACILITY4
+5.0 TEST DESCRIPTION4
+7.0 APPENDIX A: TEST PROCEDURE CHECKLIST 5
+8.0 APPENDIX B: ASSEMBLY DRAWINGS AND IVGEN SCHEMATIC 8
+9.0 APPENDIX C: PACE ANALYTICAL LABS ANALYSIS REPORTS...... 10
+10.0 APPENDIX D: SALT CONCENTRATION ANALYSIS........................... 22
+
+iv
+
+NASA/TM—ZOI 1—217033 58
+
+"
+"65","1.0 Introduction
+
+This test plan documents the procedure and analysis which will be used to investigate the saline
+concentration results of the samples returned from the IVGEN ﬂight experiment. This will include
+evaluation and testing of each of the two samples for salt remaining in the saline bags which were used
+for mixing.
+
+1.1 Background
+
+The lntraVenous Fluid Generation (IVGEN) experimental hardware was ﬂown and tested onboard the
+International Space Station (188) in May 2010. The IVGEN experiment aimed to demonstrate the
+capability to purify ISS potable water and mix the water with salt to produce a normal saline ﬂuid in situ
+that met the United States Pharmacopeia (USP) standards required for intravenous injection. The two
+samples that were produced met all of the speciﬁcations listed in the current USP monograph for Sodium
+Chloride Injection except for the speciﬁcation for Sodium Chloride concentration of 95.0 — 105.0% of the
+labeled amount of NaCl.
+
+1V GEN operations involved, ﬁrst ﬁlling the IVGEN accumulator from the pressurized potable water
+source onboard the 188. Once ﬁlled, the accumulator was connected to the puriﬁer and pressurized. The
+pressure forced water through the IVGEN puriﬁer, which housed multiple ﬁlters and diagnostic
+instruments, and then into the saline bag. The saline bag contained a premeasured amount of salt to make
+a 0.9% sodium chloride solution, as well as a magnetic stir bar. After the bag was ﬁlled, the stir bar mixed
+the solution. Mixing occurred concurrently with the bag ﬁll. The ﬁrst bag that was generated was then
+mixed for an additional 20 minutes after ﬁlling was complete. The second bag was mixed for an
+additional 5 minutes after ﬁlling was complete. Following mixing, the ﬂuid passed out of the mixing bag,
+through a conductivity sensor to measure uniformity, and into a ﬁnal sterile collection bag which was
+returned to Earth for USP testing. The assembly drawing for the collection bags and a schematic of the
+IVGEN hardware can be found in Appendix B.
+
+The target speciﬁcation for concentration was 0.9% Sodium Chloride in Sterile Water for Injection (SW1)
+with an acceptable range of 95% to 105% of that speciﬁcation. This equates to dissolving 13.5 grams into
+1500 mL of water. The ﬁrst bag that was generated was at 117.0% of the target range. The second bag
+that was generated was at 93.8% of the target range. The USP test facility’s Standard Operating Procedure
+(SOP) requires an investigation for all Out Of Speciﬁcation (008) results. The initial investigation
+involved assessment of: sampling and sample integrity, method and process used, data, calculations,
+equipment and materials, samples, standards, reagents, media, cultures, and analyst training. As no
+deﬁnitive error was determined from the initial investigation, both samples were retested by two separate
+analysts. The result of the retest conﬁrmed the original 008 results. Results for both samples as well as
+the DOS investigation form can be found in Appendix C.
+
+Multiple hypotheses have been developed to explain the 008 results. The ﬁrst bag that was generated
+was more concentrated than expected. The possibilities for this occurring that have been identiﬁed are as
+follows:
+
+0 An error in the salt measurement may have resulted in too much salt in the mixing bag.
+
+0 A bubble may have been trapped in the accumulator during the accumulator ﬁll which would
+have resulted in less water than expected being delivered to the bag.
+
+0 The accumulator may not have been completely filled which would have resulted in less water
+than expected being delivered to the ﬁrst bag generated.
+
+0 The holdup volume of the dry system may have been higher than anticipated which would result
+in less water than expected being delivered to the bag. Holdup volume is deﬁned as the volume
+in the plumbing components between the accumulator and the mixing bag. The ﬁrst bag was
+generated using a dry system and therefore the holdup volume was estimated from measurements
+based on the qualiﬁcation unit.
+
+1
+NASA/TM—2011-217033 59
+
+"
+"66","Electronic data, obtained during IVGEN operations aboard the 188, from the flow meter indicated that
+between 1309 and 1329 grams of water ﬂowed through the IVGEN experiment to mix with the
+predetermined amount of salt. The ﬁrst value was determined by summing the mass output from the flow
+meter. The second value was determined by summing the volumetric output and dividing by the
+instantaneous density of the liquid. Each bag was also weighed at the USP testing facility. The first bag
+weighed 1371.6 grams (which includes tubing and ﬁlters).
+
+The saline concentration in the second bag was less than expected. The possibilities for this occurring that
+have been identiﬁed are:
+
+0 An error in the salt measurement may have resulted in too little salt in the bag.
+
+0 The decreased mixing time may have resulted in incomplete mixing. If mixing were incomplete,
+some salt may have remained in the mixing bag resulting in a lower than expected salt
+concentration.
+
+0 Salt may have been trapped in the port that was used for adding the salt to the bag which would
+have resulted in a lower than expected salt concentration.
+
+Electronic data obtained from the ﬂow meter for the second bag indicated that between 1499 and 1518
+grams of water ﬂowed through the IVGEN experiment to mix with the predetermined amount of salt.
+The bag was also weighed at the USP testing facility. The second bag weighed 1576.5 gram (which
+includes tubing and ﬁlters). In order to thoroughly eliminate the possibility of an error in salt
+measurement or incomplete mixing due to the shortened mixing duration, it is necessary to analyze the
+residual salt concentration in the bag
+1.2 Test Summary
+The purpose of this test is to determine the amount of salt remaining in the mixing bags after the transfer
+to the collection bags was completed on orbit. From this information and the results obtained from the
+analytical test facility, a mass balance calculation will be performed to determine whether the correct
+amount of salt was in the mixing bag. It may also be possible to determine whether or not the anomalous
+results were due to incomplete mixing. The test plan pertains speciﬁcally to generating a sample from
+each mixing bags to be sent out to a test lab for quantitative analysis. The test lab will analyze the sample
+for sodium using Inductively Coupled Plasma Mass Spectrometry (ICP-MS). The reporting limit for this
+method is 50 pg/L and requires a 100 mL sample. The concentration of sodium chloride will be
+calculated based on the sodium concentration results.
+2
+NASA/TM—2011-217033 60
+
+"
+"67","2.0 Test Sample Description
+The residual contents of the saline bags used for mixing during the IVGEN space ﬂight experiment will
+be analyzed. The saline bags (60112MFA1120 SNl and 8N2) were returned after the IVGEN experiment
+was conducted in May 2010. The assembly drawing for these bags is shown in Figure 2.1.
+4 - 3 2 I
+COMMERCIAL PARTS LIST ““3
+"" ggﬂgggsgggyurmcs mm m “l
+—— 2. FOR Dlll 0F IITEIIALS SEE COLE PAIIEI BIAIIIG
+ﬂI—_
+’- wmm'5.::°r;2=2.::.1:*.s::::52
+- & ""PL! 1’ X l' VELEO LN? PADS ‘3 WI.
+lLlGﬂ III"" ""05 0' lllllﬁ TMT “SERUM
+ﬂl-—
+5. ""LIME UIYH (LEM LllT-NEE GLOVES
+l. IEFOOE ""MAM, MOYECT WITH CWYQIIIMIOI MRIIER.
+03E CLEAN. IEI. YIMSPAREM POUUNYLENE BAG FOI
+139$ 352% :13‘3321.‘.31%."":l°§.:l""ll”l.22‘.1§':‘.tﬁ“
+PAH NUMBER!” SEIIMILOY Ill!!! “3 IPECIHED
+ll Ml ORDER PEI “E AMTO. [£11100 IS.
+3 4321343333 A move (inn tons mu m mu 5mm m
+‘_ 3.33.», ' ’~ ‘5”; I&SEIIU. ITEI Cl IISlIG LII“ MAINE! '0"" ON
+3 .3. w. mscm 25m Lona STIR m, :nmLL Zme
+. .1 «'4 ""~. STIR MB. Nil (3 THIDUGH lllﬁE '04"" 0"" IRS.
+,3. '. Q'\ ""If CAIE II NOT IEIOHIG ML! (""8111‘ VIN GM.
+3 k . IF; ‘ C
+' ‘-- 3‘ ﬁ-‘r 21v?"" ’ ‘
+‘ twrkﬁma WM 1 3
+4&1?!“ K: f”
+‘4'}? '5? . I.?EgNI- '- 1.” ?gibﬁgi‘u % ”I ‘5‘ ' ;l@ “.7... . . . ~ _ __ 21's! 39""!
+‘ x 3,} . _,',._.’:..vt§‘;,:;_ -. ;' 13‘:__;;3;1‘%:‘§:’Hs~:3j1 .. . ""'43:"" 312* £333. _ N
+A ~ 1:?- .*=~ » 1 43* ' ‘ :
+- 1%"". .« 4- 1 l 314.}: u. ‘3 - i’f ' E
+. .1... n_- 1‘:
+"" ‘ mmm_f 3
+W'
+n 1 s 01 III 2 uecm o 3"" munuuu unum. Inn All I u mumrm “D
+314....5 u: .. m: @f .a... '3, $.51“
+-@— gkﬁﬁﬁlmw 33:335.. °
+m_x—ma—_ I m m
+—_u-m—wmumm— ""’65
+A _—mI-mm1-HH’Afil—suuznrmoo A
+THIS DRAWING IS UNDER COIFIGURATION
+. ‘ ' ' = n It nu a 0:9
+-w-E m be IBM
+- ' 3 II A I x . ~ 4
+A a WEMW
+Figure 2.1 Saline Bag
+3.0 Test Procedure
+3.1 General Gundelmes
+1. A 100 :t 2 ml sample from each saline bag shall be submitted.
+2. A control sample of the reagent grade water used to dilute the samples and contained in
+containers identical to the sample containers shall also be submitted.
+3. All test activities shall be documented, including dates and signatures. Photo documentation of
+the bags before and after sample extraction is required.
+a. The mass of each bag, before and after sample extraction, shall be measured and
+recorded.
+b. The mass of each sample container, before and alter sample introduction, shall be
+measured and recorded. _
+~ 3
+NASA/TM—2011—217033 61
+
+"
+"68","4. Environmental conditions for sample dilution and extraction shall satisfy standards speciﬁed in
+ASTM 4453, Standard Practice for Handling of Ultra-Pure Water Samples.
+
+5. Reagent grade, ASTM Type I water, shall be used for sample dilution to ensure the sample will
+not be contaminated by the dilutant.
+
+6. Containers and transfer equipment, which will be in contact with the dilutant or sample, shall
+satisfy standards in ASTM 4453, Standard Practice for Handling of Ultra-Pure Water Samples. In
+particular the container material recommendations and procedure speciﬁed in 5.2.2 of ASTM
+4453 for the Analysis of Other Trace Ions shall be followed.
+
+7. Sample containers for storage and submission of the samples for ICP analysis shall be obtained
+from the analytical test facility. httpzl/www.grecisionanalﬁical.com/
+
+8. Samples should be submitted to the test facility on the day of extraction. Samples shall be
+submitted to the test facility within 24 hours of extraction.
+
+9. The test procedure checklist in Appendix A shall be used for sample extraction and post-sample
+extraction steps.
+
+10. Either the IVGEN P] or PS shall be present during sample extraction and post-extraction steps.
+
+3.2 Post-analysis
+
+1. Calculate grams of dissolved salt in undiluted solution based on analysis results.
+
+2. Compare undiluted residual concentration of salt bags to concentration results obtained from
+initial USP analysis.
+
+4.0 Test Facility
+
+The test facility shall be Precision Analytical of Cleveland, Ohio.
+
+http://www .precisionanalytical .com/
+
+5.0 Test Description
+
+As the test for Sodium is significantly more sensitive than the test for chloride (50 pg/L versus 50 mg/L),
+
+the samples will only be tested for Sodium. The NaCl concentration will then be calculated based on the
+
+sodium concentration. Precision Analytical tests for Sodium using ICP-MS. See Appendix D for salt
+
+concentration calculations based on 100 mL extracted samples.
+
+6.0 Test Report
+
+Results will be documented in a Test Report.
+
+4 .
+
+NASA/TM—2011-217033 62
+
+"
+"69","7.0 Appendix A: Test Procedure Checklist
+E2], Don nitrile gloves.
+d Photograph the front and back of each saline bag including labels. Photgraph using white, black
+and gray background.
+d Label the three sample containers which will be used to submit the samples for analysis. Include:
+1. Sample ID - For extraction samples, reference mixing bag label (SN! or SN2). For
+control sample, the sample ID should be ASTM Type I water.
+2. Date
+8/ Carefully inspect both bags and record any relevant ﬁndings below.
+Notes: 8/9 6-; SNZ €PfEﬁ. (EA 222 CQ/g'M/A/ mm mm W Mme [1’th £150 5% A 4 SIéNi’F/ot’h'f
+4W5 iI-f‘i- a
+ﬂmw‘u’r 53F 51;? ﬁassLES IN 21;: cums? 7035. W: “I‘
+84g SN2 H.413 ﬁstmui M9 ZJQ- wA IN avrter TuJSE.
+E Record the scale model, part number, serial number, and calibration date below.
+Scale Manufacturer: $HB‘ID/ZWS iso ML
+Part/Model Number: [.6 3-20[ A “ DQMS
+Serial Number: ‘50 ND 5’5 5’ 3
+Calibration Date: MAL; IS 20“) Ava H1312 [S , 20H __ _
+d Tare the scale. Record Value displayed: 0.:1‘00 9
+M Record the mass (:1: 0.01 gram) of each bag (including tubing and ﬁttings) and each of the three
+empty sample containers (with lids) below.
+Saline Bag SN] Mass: / ‘i/ . ‘7 ‘H‘ 53.
+Saline Bag SN2 Mass: ['25, 930
+Saline SN] Sample Container: '23. 02 i 6‘
+Saline SN2 Sample Container: ‘2 93:9 006 9,
+ASTM Type I Water Container: zen, 9 359
+d Add 100 :t: 3 ml of reagent grade, ASTM Type I water, to each saline bag. Add the water through
+the port which saline ﬂowed out of during the IVGEN experiment.
+d Close Port
+d, Record the mass (i: 0.01 gram) of each bag (including tubing and ﬁttings) to verify that the water
+speciﬁcation was met.
+Saline Bag SN] Mass: 2%”. 533% _.
+Saline Bag SN2 Mass: 226.27.65j ‘
+5
+NASA/TM—2011-217033 63
+
+"
+"70","d Ensure water enters bag ports and dilutant mixes with residual sample:
+1. Orient bag with ports down, let liquid set for 10 minutes.
+Time Started: [0 : 31
+Time Finished: [0 f 9‘!
+2. Rotate bag in planar direction 6 times at a rate no faster than 1 rotation per 2 minutes
+with agitation. M IH‘HD
+Time Started: +945? /0 “V5
+Time Finished: :0 2’57
+3 . Rotate bag in orthogonal direetion 6 times at a rate no faster than 1 rotation per 2
+minutes with agitation.
+Time Started: i0 15‘}
+Time F inished: H 1'09
+d Extract atleast 100 :i: 2 m1 of ‘liquid from each bag into labeled sample containers provided by the
+test facility. Extract sample through same port that was used for adding the reagent grade water.
+d Add 100 :t 3 ml reagent grade, ASTM Type I water to the control sample container.
+8/ Again, record the mass (:t 0.01 gram) of each bag (including tubing and ﬁttings) and each of the
+three sample containers below.
+Saline Bag SNl Mass: / 30. 5 36% V
+Saline Bag SN2 Mass: /'2?. 564% g
+Saline SN] Sample Container: 1’51}, 2 35 6;
+Saline SN2 Sample Container: IZE DVD % 7’
+ASTM Type I Water Container: [2 7.. ”29' :‘gg
+dRecord date and time of sample extraction completion.
+Date: lf—l‘i-m Time: H :35 ﬁﬂ EST
+Ell Verify sample container lids are secure and attach QA label to verify seal.
+Rf Pass dry nitrogen through saline bags to evaporate any remaining visible water.
+d Record mass (i 0.0] gram) of each bag (including tubing and ﬁttings).
+Saline Bag SNl Mass: I 20. 37009
+Saline Bag SN2 Mass: HQ- ?.gi g
+d Again, photograph from and back of each saline bag including labels . Use white (or black
+background?). '
+Sm ~ 920 .3000}
+6
+‘3“!‘41 "" M ﬁll?”
+NASA/TM—ZOI 1-217033 64
+
+"
+"71","d Record rhass displayed by empty scale pan: D, cgag
+m Send all three samples to the analytical lab for analysis. Record date and time of sample pick-up.
+Date: H‘l‘l’ID Time: /‘7 55’ PI"") EST
+8/ Witnesses sign and date below.
+(«— I
+ZIN Analyst Signature: /;’;_j~ ' 57:1; a Date: 4 - [6120/0
+' ‘ / %
+ZIN QA Signature: v.2 '11....4/ L A - LA?! % Date: W
+GRCPSorPI Signatureg 593221 E 2 (ﬁg; 216 Date: “-1ngng
+7 .
+NASA/TM—2011-217033 65
+
+"
+"72","C.2 Chemical Analysis Results of Bag Contents (Performed by Precision Analytical)
+Precision Analytical. Inc.
+P R E C I s | o N 4450J0hnston ParkwayUnitE
+Cleveland, OH 44126
+TEL: 216 663 08081241? 216 663 065C
+11""ebsite: wmv'w. grecisionanalytical. com
+November 23; 2010
+Dan Brown
+ZIN Technologies, Inc.
+6745 Engle Rd.
+Middleburg Hts; Ohio 44130
+TEL: (440) 625-2219
+FAX: (440) 625-2354
+RE: IVGEN Order No.: 1011516
+Dear Dan Brown:
+Precision Analytical, Inc. received 3 sample(s) on 11/22/2010 for the analyses presented in the
+following report.
+There were no problems with the analytical events associated with this report unless noted in an
+attached Case Narrative. Quality control data is within laboratory deﬁned or method speciﬁed
+acceptance limits except if noted. Note that sample results reported relate only the samples as
+received at the laboratory.
+Solid samples are reported in ug/Kg or mg/Kg as received, unless speciﬁed in the units as dry
+weight. Unless otherwise noted, results have not been background or blank corrected.
+If you have any questions regarding these tests results, please feel free to call.
+Certiﬁcations: Ohio EPA - 4041; NELAC NY - 11167; NELAC PA - 68-00434;
+W.Va DEP - 245; KY UST - 69
+Sincerely,
+Scott Bolam
+QA/QC Manager
+Page 1 of 4
+NASA/TM—2011—217033 66
+
+"
+"73","Precisionz‘lnabﬁtl’cal, Inc. .
+p R E c | 5 | o N 445010hnst0n PL} Units Analytlcal Report
+A N A L Y T | C A l. ’ I N C . Cleveland. OH 44128 (consolidated)
+TEL: .216 663 0808 17m:- 216 663 0656 WO#: 101 1516
+Website: nm-‘w.grecisionanalytical.con; Date Reported: 11/23/2010
+CLIENT: ZIN Technologies, Inc. Collection Date: 11/19/2010 11:35:00 AM
+Project: IVGEN
+Lab ID: 101 1516-001 Matrix: AQUEOUS
+Client Sample ID SNl
+Analyses Result RL Qual Units DF Date Analyzed
+METALS ANALYSIS BY ICP E200.7 Analyst: STB
+Sodium 1,360,000 5,000 pg/L 100 11/23/2010 1:06:29 PM
+Qualiﬁers: ”51X Value exceeds hvimcimum Contaminant Level B Analyte detected in the associated M ethod Blank
+DF Dilution Factor H Holding times for preparation or analysis cxcccdcd
+J Analyte detected below quantitation limits M I\-Ia11ual Integration used to detennine area response
+MDL Method Detection Limit N Tentatively identiﬁed compounds
+ND Not Detected at the Reporting Limit PI, Permit Limit
+RL Reponing Detection Limit ( PQL) S Spike outside acceptance limits
+Page 2 of 4
+NASA/TM—2011-217033 67
+
+"
+"74","Precision Analytical. Inc. .
+P R E C I S | o N 4450 Johnston Parkway Unit B Analytlcal Report
+A N A L Y T . c A L . , N c . Cleveland, OH 44125, (consolidated)
+TEL: 21 6 663 0808 FM.- 21 6 663 0656 WO#: 1011516
+l-f’bbsite: wnmagrecisionanalytical.com Date Reported: 1103/2010
+CLIENT: ZIN Technologies, Inc. Collection Date: 1 1/19/2010 1 1:35:00 AM
+Project: IVGEN
+Lab ID: 1011516-002 Matrix: AQUEOUS
+Client Sample ID SN2
+Analyses Result RL Qua] Units DF Date Analyzed
+M ETALS ANALYSIS BY IC P E200.7 Analyst: STB
+Sodium 568,000 5,000 pg/L 100 11/23/2010 1:06:29 PM
+Qualiﬁers: *‘C Value exceeds Maximmn Contaminant Level B AnalyTe detected in the associated Method Blank
+DF Dilution Factor 11 Holding times for preparation or analysis exceeded
+J Analyte detected below quantitation limits M Manual Integration used to dctcrminc area response
+MDL Method Detection Limit N Tcntativcly identiﬁed compounds
+ND Not Detected at the Reporting Limit PL Permit Limit
+RL Reporting Detection Limit (PQL) S Spike outside acceptance limits
+Page 3 of 4
+NASA/TM—2011-217033 68
+
+"
+"75","PrecisionAnalytical. Inc. .
+' p R E c | 5 I o N 4450JohnstonParkmyUnitB Analytlcal Report
+A N A L Y 1' ' C A L .- . N C . Cleveland. OH 44125 (COHSOhdath)
+TEL: 216 663 0808 EALX': 216 663 0656 WO#2 1011516
+Website: mm-v.grecisionanalytical.com Date Reported: 11,23,2010
+CLIENT: ZIN Technologies, Inc. Collection Date: 11/19/2010 11:35:00 AM
+Project: IVGEN
+Lab ID: 1011516-003 Matrix: AQUEOUS
+Client Sample ID ASTM Type 1 Water
+Analyses Result RL Qual Units DF Date Analyzed
+METALS ANALYSIS BY ICP E200.7 Analyst: STB
+Sodium ND 50.0 pg/L 1 11/23/2010 1:06:29 PM
+Qualiﬁers: *JX Value exceeds Maximum Contammant Level B Anal“: detected in the associated Method Blank
+DF Dilution Factor H Holding times for preparation or analysis exceeded
+J Analyte detected below quantitation limits M 1\-'Ianual Integraﬁon used to. determine area response
+MDL Method Detection Limit N 'I'cntativcly identiﬁed compounds
+ND Not Detected at the Reponing Limit PL Pemmit Limit
+RL Reporting Detection Limit (PQL) S Spike outside acceptance limits
+Page 4 of 4
+NASA/TM—2011—217033 69
+
+"
+"76","”‘3 2
+~\. 0. E a: --
+l— m g
+E e
+—...-.""'....- m ‘2’ a: Q
+B ""“"""""" .1
+g 8
+O. {% w
+E r»- 3
+'- ﬂ 0‘:
+4t ‘0 0‘ w \c
+c: 2 I ' 8 m
+U: ‘ .
+O ' g” ‘13 ‘\ ~
+3‘3 “"" 5 — IIIIIIIIII I 2"" N
+o , g '* ‘
+>. . U , 7
+H: E
+o: - ' .
+g “3 \ q.
+< O ‘ K
+g :2 L ‘3
+S Q’ J.) V
+0'3 s m .
+(1) .~- (I)
+E 9‘” ““1 -ﬁlﬁﬂlllll III! \ 7
+m ‘- ‘3} R’ A >
+.3 g N \J . ‘93\- g
+x- C’ d z»? "" . ‘ e
+8 s r 4 -/<-><IIII III. \ %
+J: .. , “91“ L.
+o 9 g ?- 5 *"" xzmvw =* -— 9?» \ 3
+s a 2 a E 8 3 ‘ .x, ' «1
+LL - a g
+t— .
+a 3 0.2 g’\ >
+.6 :9 00 a \x a
+1‘ O >~ 20 U \.‘\ U
+z 4: o: cu m
+"" “"" ”5 S IIIIIIIIIIII I m ‘m
+C: |— x.
+‘ \
+a r A 9 g g to n: 1% A;
+. L” U) u) Q E \ E
+. wt. 0 ”J O E van ‘. _
+Q 03 0 ‘~ 2., m Lu 0 F"" x F“
+cu 873. n. .0.) >- g o
+‘—- ‘ﬁ-
+2 <3- gm‘ "".2 g ‘3 S‘ 3"" 3? m .3“ w
+-:r N w =5 Lu *3 ~:\ 1 w w ..
+Em }— C .Jw c .‘ . {U *1“ (U
+I E: %2 FR .‘Q {Q 0 2 0
+PAC 3 ﬁx m o 3 ed: 5; .,
+E - -3 ’m ‘5 E u. m K . 2
+Q "" M a Y” Q) \
+Z (D ’5 N E? t: E: V
+x a)! CO ‘ FC"" w ‘00 ‘H m ""\ 'J .5
+g 5 o 4 h m c) L. <‘C ”JUJ (
+w LU . 2”,; m; 2' S m 11:— W I '
+‘ N ~ _ u—
+> m 3 D t .. mg 2< ~ 9 x. A A
+m w to <z~ "" 5 ° 6 = <0 ? 7 T 9 93
+w ._J (D A .4 ,1 § 1 “55:5 0 ‘9- w 72“ 3:- 7: 3 B
+0 f5- ;0 EV c: .. '8 g g
+% a 35"" a» > . O I: Ch 01
+T"" ‘3‘0‘ L... ‘- 'h- ..— .—
+9 CD N O u: ‘~ 4: m :2 on m) 0)
+v z —, N m G) v x V
+1*- x ~ x g h .. - 51 \7 S
+...... “t n. m 0’ '0 .0 .D
+Z < \ “ El 5 ‘ a 3 U \7g .5
+E :3 U. '~/\ a.‘ -' i“ m >- (D (D
+_ o ,4! \ J: g -% 2 m .L: .C
+>"" w x ,1) co 0 1} Q '33 Z 92 I g
+4 O ‘53 V <1- : "" E a: Q g. ”-3.
+g CO U ‘ 5 2 ‘3 Q P” LT. c
+O ‘4 ' D ‘2: U: Q < x . a :=
+X'- I Q: U w ,J 32: 3-9— 5-3 a) 03
+gum 2 RES ruaa m' x
+Q 0~ A g Q N 5 3 5*; a g
+2 no & ~.\ .u [:1 e 4 \ :2 -
+m 0 & ~ “ C: . 2 a a w 5‘
+m +- v & < . , :- g a a
+U) N N‘- ‘5 , g ‘3' ‘L 3\ z E Q
+2 k: :5 3 (z: a :3 Ix E w L""
+g 2 \ rd 7) . 0 \A 3 (n C (I
+ma 8 m>~°om<-vgﬂm ‘ 165%
+g a ‘ IL K9 \‘3 .. c Q 2r 0) E :J “J :1 g
+3: "" 'A I m .2 <2 0 :1 O Ck Ki . 0,
+ﬁg §§§Q*;Egkcdg£ .\ mﬁa
+2- ‘.:- , - .- ..
+8 &§*‘E‘3£>m \ch 9‘3
+*- In 0 o -- E x «A m m
+"" m z '- ‘V ‘3 W m '1: — a
+II: LU W .3 (U '6 V) \ (D
+0 E E r: ‘3 w 0
+f 35 c: E 3: '2 5 9- d w N v ‘1’
+u: < o a. u: 1- m 2 "" :2 $8 $2 (D u:
+
+"
+"77",".. Form 244
+P R E C I S I O N Sample Receipt ”Checklist 5’2""”
+m“ Work Order No. I I i ‘ | 5 . ‘ Q
+RUSH: [3 Yes [E No DNA
+Date & Time Received: I \ 1931 I (Z2 ﬂ '.&0 Received By: 0199——
+Date 8: Time Logged ln.‘ H [2 2 g H 2 I H 3 q 7 Logged in By: ,‘T LG)”
+Date & Time Reviewed. \\ ‘ 2‘3 l LU qﬁm Reviewed By: %-a =1
+Carrier Name: [21 PA] [:1 UPS D FedEx [:1 Cﬁent D Other
+Samples Analyzed In House? 1K3 Yes D No Subbed To
+ls Chain Of Custody Present? m Yes D N0
+ts Chain Of Custody Propeny Filled Out? {EYES D No
+Does Chain Of Custody Match Sample Labels? [EYES [:3 N0
+Are Sampies Past Hold Time? [3 Yes [X] No D NA
+Are Samples In Proper Containers? X] Yes D N0 Intact? 53 Yes D No
+No, Of Containers? 3) D Glass Eplastic Cl Baggie E] VOA [3 Micro D Other
+When Applicable, ls Headspace Present? [:1 Yes D No mm
+Matrix: £3 Aqueous [3 Liquid [1 Sludge L—J Solid [:1 01! D Drinking Water [3 Soil D Other
+On Ice? 08 ﬁg C] No 153 NA
+Are Samples Preserved? )XI Yes [:1 No g’N/A
+000m NH3____M__ Phenoim mom TKN/TONW Phosm NoZNoBW DH2804
+Sulﬁde_____~_ C] NaOH & ZnAcetate :‘ Other E
+Field Data: [3 pH 1:] Temp D Flow [:1 TRC D TRC Low D Color D Odor UTurbidity [:1 Other .4
+mmmmmmmw
+NASA/TM—2011—217033 71
+
+"
+"78","C.3 Conversion Analysis
+Postﬂightconcentrationnb 1
+I I I
+
+IV-Gen. Post-Fllght Salt Concentration
+Mathematica V5.1 by Wolfram Research, www.wolfram.c0m
+Experiment operations were conducted aboard the International Space Station (IS S) for the IntraVenous ﬂuid GENeration
+(IV-Gen) experiment during May 2010. Two bags of Normal Saline (NS) solution were produced and returned to Earth for
+analysis by a United States Pharmacopeia (USP) certified testing facility. While both samples passed several of the tests,
+they both failed to be within tolerances (i5%)for the salt concentration.
+The salt concentration for first bag was at 117% of the target value, while the salt concentration for second bag was at
+93.8%.
+Ideal Case
+
+IdealVolume (*ml H20*) = 1500.0 (*ml H20*)
+
+1500.
+
+IdealSaltMass (*g NaCl*) = 13 . 5 (*g NaCl*)
+
+13.5
+Although a tolerance was specified 0f i0.5 g NaCl, it is still possible to meet the USP requirements if a tolerance of 0.75 g
+was used.
+
+SaltTolerance (*g NaCl*) = 0 . 75 (*g NaCl*)
+
+0.75
+
+Id als ltMa N Cl
+IdealConcentration (* Lam *) = w
+“‘1 H2 0 IdealVolume (*ml H2 0*)
+0.009
+I I I NaCl IdealSaltMass - SaltTolerance (*g NaCl*)
+MinmumConcentratlon (*5— *) = —
+ml H2 0 IdealVolume (*ml H2 0*)
+0.0085
+I I 9 NaCl IdealSaltMass + SaltTolerance (*g NaCl*)
+MaszmumConcentratlon (*— *) = —
+““1 H2 0 IdealVolume (*ml H2 0*)
+
+0.0095
+
+John.B.McQuillen@nasa.g0v AMDG 7 December 20] 0
+NASA/TM—2011-217033 72
+
+"
+"79","Postﬂightconcentrationnb 2
+NSDensity (*g/m1*) = 1 . 0046 (* ﬁ -- Reported in CRC Handbook of Chemistry and Physicsw)
+1.0046
+DilDensity (*g/m1*) = 0. 9989
+(* é -- Reported in CRC Handbook of Chemistry and Physicsw)
+0.9989
+Bag #1
+I Saline Solution
+There was no direct measure of the ﬂight sterile saline bag weights. Therefore, an estimate was made based on the average
+bag weight of 5 of the 12 bags in bonded storage. This weight was adjusted to include the weight of the ﬂight labels,
+Kapton tape, and the blue hose clamp, see Dan Brown's email dated September 3, 2010, 2:55PM.
+SterileBaglEmptth (*g*) = 96.4 (*g*)
+96.4
+An analysis was performed by Pace Analytical to verify compliance with the United States Pharmacopeia (USP) for a
+Normal Saline Solution.
+SterileBaglFulth (*g*) = 1371.6(*g -- measured by Pace *)
+1371.6
+PerCentOver (* % *) = 117 . 0 (* %-- measured by Pace *)
+1 l7.
+SterileBaglLquol (*m1*) =
+(SterileBaglFulth (*g*) — SterileBaglEmptth (*g*)) / NSDensity (*ﬁak)
+1269.36
+However, review of the water ﬂow rate data from the IV-Gen DACU and adjusting it for the passage of bubbles yields a
+total water mass of 1309 g passed through the puriﬁer. While approximately 13 g of salt can be added to the water weight,
+there is still a discrepancy of a 50g of water. Nonetheless, the value of 1371.6 g will be used.
+SterileBaglConc (*%*) =
+1
+PerCentOver (* % *) * — IdealConcentration (*g NaCl/ml 820*)
+100 (* % *)
+0.01053
+J0hn.B.McQuillen@nasa.g0v AMDG 7 December 2010
+NASA/TM—2011—217033 73
+
+"
+"80","Postﬂightconcentrationnb 3
+
+SterileBangaltMass (*9 NaCl*) =
+
+SterileBaglConc (* :ﬂN—ié: *) * SterileBaglLquol (*ml*)
+
+13.3664
+- Residuals Analysis
+The residual analysis refers to the liquid that was retained within the mixing bag. This bag contained the premeasured
+abount of salt, the stir bar, and had some tubing. The amount of residual liquid was determined by weighing the bag,
+emptying, drying and then reweighing the bag.
+
+SaltBangry (*g*) = 120 . 700 (*g*)
+
+120.7
+
+SaltBaglLiqRes (*g*) = 141. 794 - SaltBangry(*g*)
+
+21.094
+It should be noted that about four months ago, this bag, with the residual liquid, weighed 143 .835 g.
+Precision Analytical was contracted to perform a quantitative analysis on the amount of sodium in residual water. How-
+ever, in order to do this, they needed at least 100 m1 sample. Therefore, approximately 100 m1 of ASTM Type I
+(distilled/deionize/purified) water was added to dilute the sample.
+
+Dilutioanol (*g*) = 240. 888 - SaltBangry (*g*)
+
+120.188
+Precision Analytical used a techique call ICP 0r inductively coupled plasma optical emission spectrometry (ICP-OES), is
+an analytical technique to detect the sodium. This technique is a type of emission spectroscopy that uses the inductively
+coupled plasma to produce excited atoms and ions that emit electromagnetic radiation at wavelengths characteristic of a
+particular element. The result obtained was 1,360,000 %.
+
+1 N 58 . 5 N Cl
+PostBaglConc (*Lfclac) = 1360000(*$*) * ﬂ * #
+1*106(*ug Na *) 23(*9 Na *)
+
+3.45913
+The amount of salt left in the mixing bag was
+
+BaglResSaltMass (*g NaCl*) =
+
+D ' l t' 1V 1 1 l
+PostBaglConc (*%aCl *) * w * #
+DilDensity Hm"") 1000 (* m1*)
+
+0.416204
+Adding together the salt in sterile saline bag and the salt left in the mixing bag yields
+J0hn.B.McQuillen@asa.g0v AMDG 7 December 20] 0
+
+NASA/TM—2011-217033 74
+
+"
+"81","Posy’lightconcenn'ationﬂb 4
+BangotalSaltMass (*g NaCl*) =
+BaglResSaltMass (*g NaCl*) + SterileBangaltMass (*g NaCl*)
+13.7826
+This quantity falls within the acceptable limit.
+For yucks, the concentration of the salt left in the mixing bag with the residual liquid yields a value of
+BaglResSaltMass (*g NaCl*)
+ResidualConcl = _—
+SaltBaglquRes (*g*)
+NSDensity (*g/ml-k)
+0.0198217
+This is over twice the concentration in the sterile saline bag. Either the mixing was incomplete or there was another source
+of sodium that contributed to this analysis.
+Bag #2 Saline Solution
+Again, since there was no direct measure of the actual weight of the ﬂight sterile saline bag, an average was used
+SterileBagZEmptth (*g*) = 96 . 4 (*g*)
+96.4
+Results from Pace Analytical are as follows:
+SterileBagZFulth (*g*) = 1576 . 5 (*g -- measured by Pace *)
+1576.5
+PerCentUnder (* % *) = 93 . 8 (* % — — measured by Pace*)
+93.8
+SterileBagZLquol (*ml*) =
+(SterileBagZFulth (*g*) - SterileBagZEmptth (*g*)) / NSDensity (*ﬁic)
+1473.32
+For this case, review of the water ﬂow rate data from the IV-Gen DACU and adjusting it for the passage of bubbles yields a
+total water mass of 1499 g passed through the purifier. While approximately 13 g of salt can be added to the water weight,
+there is still a discrepancy of a 50g of water. Nonetheless, the value of 1480.1 g will be used.
+SterileBagZConc (*EaN—Iﬁ *) =
+1
+PerCentUnder (* % *) * — IdealConcentration (*g NaCl/ml H20*)
+100 (* % *)
+0.008442
+John.B.McQuillen@nasa.g0v AMDG 7 December 201 0
+NASA/TM—2011-217033 75
+
+"
+"82","Postﬂightconcentrationnb 5
+SterileBagZSaltMass (*g*) = SterileBagZConc (*% *) * SterileBagZLquol (*ml*)
+12.4378
+
+I Residuals Analysis
+Similar to the first mxing bag, the residual analysis refers to the liquid that was retained within the mixing bag. This bag
+
+also contained the premeasured abount of salt, the stir bar, and had some tubing.
+SaltBagZDry (*g*) = 119 . 281 (*g*)
+119.281
+SaltBagZLiqRes (*g*) = 128 . 93 - SaltBagZDry(-kg*)
+9.649
+
+It should be noted that about four months ago, this bag, with the residual liquid, weighed 143.835 g.
+
+Approximately 100 ml of ASTM Type I (distilled/deionize/pulified) water was added to dilute the sample.
+DilutionZVol (*g*) = 228.225 — SaltBag2Dry (*g*)
+108.944
+
+ICP was used on this sample to detect the sodium content, and the result obtained was 568,000 %.
+
+1 N 58 . 5 N Cl
+PostBagZConc (*Llach) = 568000(*-‘%*) * ﬂ * #
+1*106(*ug Na *) 23(*9 Na *)
+
+1.4447
+
+The amount of salt left in the mixing bag was
+Bag2ResSaltMass (*g NaCl*) =
+
+D ' l t' 2V 1 1 l
+PostBagZConc (*if‘Cl*) * _w * #
+DilDensity (*m *) 1000 (* m1*)
+
+0.157564
+
+Adding together the salt in sterile saline bag and the salt left in the mixing bag yields
+Bag2TotalSaltMass(-kg NaCl*) =
+
+Bag2ResSaltMass (*g NaCl*) + SterileBagZSaltMass (*g NaCl*)
+
+12.5954
+
+J0hn.B.McQuillen@nasa.g0v AMDG 7 December 20] 0
+
+NASA/TM—2011-217033 76
+
+"
+"83","Poslj’lightconcentrationnb 6
+This quantity falls below the acceptable limit and explains the likely cause as to why the bag failed the USP requirements
+for normal saline solution
+For yucks, the concentration of the salt left in the mixing bag with the residual liquid yields a value of
+_ BagZResSaltMass (*g NaCl*)
+Re31dualCon02 = —
+(SaltBag2L1qRes (*g*) —Bag2ResSaltMass (*g NaCl-k) )
+DilDens ity (* ‘nT1_s_S%E'i_cE *)
+0.0165824
+This is also nearly twice the concentration in the sterile saline bag. Either the mixing was incomplete or there was another
+source of sodium that contributed to this analysis.
+Conclusions:
+From the combined chemical analyses performed by Pace Analytical on the sterile saline bags and by Precision Analytical
+0n the mixing bags, the following statements can be made:
+1. For Mixing Bag 1, the amount of salt loaded into the bag was acceptable. The most likely cause for the unaccept-
+able high normal saline concentration is that the insufficient water was loaded into the bag.
+2. For Mixing Bag 2, the amount of salt loaded into the bag was below the acceptable range and is the most likely
+cause of the abnonnal 10w saline concentration.
+3. Both mixing bags had a residual sodiumt concentration that was about double of that found in the sten'le saline
+bags. While this finding is disturbing, it is inconsequential 0n the amount of salt loaded into each bag.
+John.B.McQuillen@nasa.g0v AMDG 7 December 20] 0
+NASA/TM—2011-217033 77
+
+"
+"84","Form Approved
+REPORT DOCUMENTATION PAGE OMB No. 0704-0188
+data needed, and completing and reviewing the collection of information. Send comments regarding this burden estimate or any other aspect of this collection of information, including suggestions for reducing this
+burden, to Department of Defense, Washington Headquarters Services, Directorate for Information Operations and Reports (0704-0188), 1215 Jefferson Davis Highway, Suite 1204, Arlington, VA 22202-4302.
+Respondents should be aware that notwithstanding any other provision of law, no person shall be subject to any penalty for failing to comply with a collection of information if it does not display a currently valid OMB
+t | b .
+
+EEEESEUETO e[\IIFOT RETURN YOUR FORM TO THE ABOVE ADDRESS.
+1. REPORT DATE (DD-MM—YYYY) 2. REPORT TYPE 3. DATES COVERED (From - To)
+01-07-201 1 Technical Memorandum
+4. TITLE AND SUBTITLE 5a. CONTRACT NUMBER
+Final Report for Intravenous Fluid Generation (IVGEN) Spaceﬂight Experiment
+
+5b. GRANT NUMBER
+
+50. PROGRAM ELEMENT NUMBER
+6. AUTHOR(S) 5d. PROJECT NUMBER
+McQuillen, J ohn, B.; McKay, Terri, L.; Grifﬁn, DeVon, W.; Brown, Dan, E; Zoldak, J ohn,
+T.
+
+5e. TASK NUMBER
+
+5f. WORK UNIT NUMBER
+
+WBS 444543.01 .02.01
+7. PERFORMING ORGANIZATION NAME(S) AND ADDRESS(ES) 8. PERFORMING ORGANIZATION
+National Aeronautics and Space Administration REPORT NUMBER
+J ohn H. Glenn Research Center at Lewis Field E'17731
+Cleveland, Ohio 4413 5-3191
+9. SPONSORINGIMONITORING AGENCY NAME(S) AND ADDRESS(ES) 10. SPONSORINGIMONITOR'S
+National Aeronautics and Space Administration ACRONYWS)
+Washington, DC 20546-0001 NASA
+
+11. SPONSORINGIMONITORING
+
+REPORT NUMBER
+
+NASA/TM-2011-217033
+12. DISTRIBUTIONIAVAILABILITY STATEMENT
+Unclassiﬁed-Unlimited
+Subject Categories: 34 and 52
+Available electronically at http://www.sti.nasa.gov
+This publication is available from the NASA Center for AeroSpace Information, 443-75 7-5 802
+13. SUPPLEMENTARY NOTES
+14. ABSTRACT
+NASA designed and operated the Intravenous Fluid Generation (IVGEN) experiment onboard the International Space Station (188), Increment 23/24, during May 2010. This
+hardware was a demonstration experiment to generate intravenous (IV) ﬂuid from 188 Water Processing Assembly (WPA) potable water using a water puriﬁcation technique
+and pharmaceutical mixing system. The IVGEN experiment utilizes a deionizing resin bed to remove contaminants from feedstock water to a purity level that meets the
+standards of the United States Pharmacopeia (USP), the governing body for pharmaceuticals in the United States. The water was then introduced into an IV bag where the ﬂuid
+was mixed with USP-grade crystalline salt to produce USP normal saline (NS). Inline conductivity sensors quantiﬁed the feedstock water quality, output water purity, and NS
+mixing uniformity. Six 1.5-L bags of puriﬁed water were produced. Two of these bags were mixed with sodium Chloride to make 0.9 percent NS solution. These two bags were
+returned to Earth to test for compliance with USP requirements. On-orbit results indicated that all of the experimental success criteria were met with the exception of the salt
+concentration. Problems with a large air bubble in the ﬁrst bag of puriﬁed water resulted in a slightly concentrated saline solution of 117 percent of the target value of 0.9 g/L.
+The second bag had an inadequate amount of salt premeasured into the mixing bag resulting in a slightly deﬁcient salt concentration of 93.8 percent of the target value. The
+USP permits a range from 95 to 105 percent of the target value. The testing plans for improvements for an operational system are also presented.
+15. SUBJECT TERMS
+Microgravity applications; Water treatment; Separation; Fluid ﬂow; Medical equipment
+16. SECURITY CLASSIFICATION OF: 17. LIMITATION OF 18. NUMBER 19a. NAME OF RESPONSIBLE PERSON
+
+ABSTRACT OF STI Help Desk (email:help@sti.nasa.gov)
+a. REPORT b. ABSTRACT c. THIS PAGES 19b. TELEPHONE NUMBER (include area code)
+U U [PJAGE UU 85 443-757-5802
+Standard Form 298 (Rev. 8-98)
+Prescribed by ANSI Std. Z39-18
+
+"
+"85",""
+"86",""

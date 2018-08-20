@@ -1,0 +1,608 @@
+"","x"
+"1","I. INTRODUCTION
+The Allan variance is a standard statistical tool
+' ' ' to estimate Clock stabilit [2]. Clock stabilit is a
+App] lcatlon Of the Dynam IC fundamental quantity used to assess the peererance
+' of a Clock and its impact on the performance of the
+Al Ian varlance fOr the system that uses the Clock. In navigation systems,
+
+' ' for example, a stable Clock is predictable and yields
+CharaCterlzatlon Of Space a low user range error, resulting in better positioning.
+cl OCk B eh aVl or In deep space exploration a stable Cleck is essential
+
+to maintain a reference for time tagging and to
+generate the frequency needed for science mission
+measurements, often carried on for several years [18].
+Recently an extended version of the Allan
+ILARIA SESIA, Member, IEEE variance, the dynamic Allan variance (DAVAR),
+INRIM was proposed for the Characterization of atomic
+LORENZO GALLEANI, Senior Member, IEEE Clock noises that can vary with time [7, 8, 20]. It
+Politecnico di Torino is experimentally observed that the noise affecting
+PATRIZIA TAVELLA, Senior Member, IEEE atomic Clocks can be nonstationary, varying with
+INRIM time due to clock aging, the inﬂuence of an external
+Changing environment, or the malfunctioning 0f the
+clocks internal components. The DAVAR is a sliding
+version of the Allan variance where the time series
+Due to their stability atomic clocks represent the core of is truncated at a window Of length T centered at the
+navigation systems such as GPS and the future European Galileo epoch t1, and the Allan variance Of the windowed
+system. To identify possible anomalies, it is fundamental to detect data is then estimated, The window is slid to a second
+when the clock stability varies with time. The dynamic Allan epoch t2, and the Allan variance is estimated around
+variance (DAVAR) makes this monitoring process possible. We that epoch. The repetition of this procedure results
+extend the DAVAR t0 the case of a time series with missing data, in the DAVAR: Whieh 1' epr esehts the eVOlutiOh Of the
+and we analyze the presence of periodic behaviors, two common Allan Yarianee With time' The DAVAR is plotted in a
+phenomena in space clocks. three—d1mens10nal graph.
+The ability of the Allan variance to identify
+and estimate the typical Clock noises is widely
+accepted, and its use is recommended in international
+standards [14]. The DAVAR extends those features
+and adds the possibility of identifying and interpreting
+nonstationary effects. The DAVAR has raised a certain
+interest in applications to space and satellite systems,
+in particular in monitoring the Clocks 0f the Global
+Positioning System (GPS) [19], in the frame of the
+European Galileo project [13, 25], and in the NASA
+exploration of deep space [18]. The application of
+the Allan variance and the DAVAR to these contexts
+requires particular care, at least because of two effects.
+First, the measurement data from the space
+vehicle is not always available, and therefore the
+Manuscript received September 30, 2008; revised April 19 and ClOCk measurements are hOt equally Spaced. The
+August 24, 2009; released for publication November 6, 2009. space vehicle may be in fact out of view for several
+IEEE Log N0. T-AES/47/2/940819. hours, and the space—to—ground measurement system
+_ _ _ _ may also fail due to its complexity. Consider, for
+Refereeing of this contribution was handled by J . Morton. example, the projects P ARCS, RACE, and ACES
+This work was partially SUPPOfted by the PRIN 2007 program that will bring highly stable atomic Clocks onboard
+Authors’ addresses: 1. Sesia and P. Tavella, INRIM, Strada della the International Space Station These ClOCkS Will
+Cacce 91, 10135 Torino, Italy; L. Galleani, Politecnico di Torino, be measured With innovative high—resolution and
+Electrical Engineering, Corso Duca degli Abruzzi 24, Turin, 10129, high_precision measurement techniques. Such clock
+Italy, E'maﬂ: (galleani@POIit0°it)' measurements will be possible only a few hours a day
+when the space station is in View, and the expected
+0018-9251/11/$26.00 © 2011 IEEE Clock stability of 10‘16 will have to be verified on
+884 IEEE TRANSACTIONS ON AEROSPACE AND ELECTRONIC SYSTEMS VOL. 47, NO. 2 APRIL 2011
+
+"
+"2","time series with data gaps. The observation intervals Allan variance1 [2, 3, 15]
+can have different durations, and can be unevenly _ _
+spaced in time. Advanced signal processing methods 03(7) = %<Y(t + T) — Y(t)>2 (1)
+Will benecessary to verify the very high quality of the where <> in dicates a time averaging, 5’0) is computed
+Clocks involved, and such methods Will have to take . . . .
+. . . by averaging the normalized frequency deV1ation y(t)
+into account the gaps in the time measurements due to
+missing data. _ 1 t I I
+Secondly, onboard Clocks can be inﬂuenced by y(t) = ; /t_ y(t )dt (2)
+periodic factors such as temperature and by the T
+exposure to radiations from the sun. Therefore the and T is the observation interval. The average
+Clock signal can contain a periodic signature that frequency 3’0) can be 3130 written as
+may be present only in certain periods of time. The _ 1
+periodic ﬂuctuations are the consequence of different 3’0) = —[X(t) — X(t — 7)] (3)
+physical reasons. The Clock itself can actually T
+show a periodic behavior due to the inﬂuence of where X0) is the clock phase deviation. The
+environmental factors [24, 25]. Moreover periodic definition given in (1) requires the knowledge 0f the
+ﬂuctuations can also be the consequence of an continuous—time random processes 3’0) 0f X(t)- 1h
+appargnt pariodic bahavior gangratgd by thg gstimation reality thC available measures BIC thC discrete—time
+process, which can inject in the Clock estimates some versions 0f the phase and frequency deviations. We
+residuals of a nonperfect orbit estimation. In addition DOW consider N samples 0f the discrete—time phase
+relativistic effects may result in a residual periodic X[nl- It iS n = t/TO, where To iS the sampling time. The
+ﬂuctuation [17]. In all these cases the Clock signal Allan variance can be estimated from X[nl 11$ng the
+is corrupted by a periodic ﬂuctuation, which must estimator
+be Characterized and ascribed to the correct cause. A 2 1 1 N -2k-1 2
+In addition the periodic ﬂuctuation may appear in U y [k] = W702 m Z (X[” + 2k] — 2X[” + k] + X[”])
+short duration intervals, and hence it is also important ""=0
+to identify the instant of such occurrences, which . . . . (4)
+may be hard to estimate due to the Clock and system where k : T/TO is the discrete—time observation
+noise. interval, which can take the values k = 1,2, . . .,
+This article addresses the problems of missing (N/2) _ 1’ for an even N ‘
+data and periodic ﬂuctuations. In particular we first Analogously the Allan variance can be w_ritten
+develop a method that estimates the DAVAR in the in terms 0f the averaged frequency samples y[n].
+case Of missing data. Then we show that the D AVAR Unfortunately there are several factors that can
+can be used to detect periodic ﬂuctuations, and make the Clock behavior a function of time, such as
+we discuss the effect of different window lengths. temperature, aging, sudden breakdowns, among the
+Applications of the optimized D AVAR algorithm to most common ones. If the Clock behavior Changes
+clock mgasurgs coming from spacg systgms such as Wlth time, thCl’l 1ts Stablllty 3.180 Changes Wlth time,
+GPS and from the Galileo experimental satellites are and we have to represent the time—varying stability
+also presented. The results show the effectiveness of Of the ClOCk to understand if itS performances meet
+the D AVAR in detecting time—Varying clock behaviors thC required SpClelCﬂthl’lS at all times. Th6 DAVAR
+that are not often Visible from the time—series or from iS a representation of the time—varying stability of an
+the Allan variance, especially in the case of large data atomic ClOCk. The DAVAR iS defined by [5], [6]
+gaps, outliers, and missing measures. n+Nw/2_k_1
+The paper is organized as follows. In Section II 02 [n k] = 1 1 Z
+we review the Classical definition of the DAVAR, and y ’ 2k27§ NW — 2k m_n_N /2+k
+we introduce some brief notation. In Section III we _ W
+extend the DAVAR estimation algorithm to the case x E [(X[m + k] — 2X[m] + X[m — k])2] (5)
+of missing data, while in Section IV we consider the . . . . .
+effect of periodicities in the DAVAR representation. where Nw 13 the Window length 1“ discrete t1me,
+Finally in Section V we apply the extended method which corresponds to a window length T = NwTo in
+to real data from the GPS system and from the continuous time. For simplicity we take Nw to be
+ﬁrst Galileo experimental satellite, showing the even. A similar relation holds for odd NW values. The
+effectiveness Of the method. definition is given through the expectation value E [o],
+and therefore the DAVAR 0§[n,k] is a deterministic
+II. THE D AVAR quantity. The DAVAR can be evaluated from a single
+The standard definition of stability for an —
+ultraprecise oscillator, such as an atomic Clock, is the 1W6 use bold Symbols for random quantitieS-
+SESIA ET AL.: APPLICATION OF THE DAVAR FOR THE CHARACTERIZATION OF SPACE CLOCK BEHAVIOR 885
+
+"
+"3","series X[n] 0f discrete—time measures of the Clock This is the case where all the phase data X[n] are
+phase deviation by using the estimator available. Suppose now that H represents the set of
+n+NW/2_k_1 epoch values where the missing samples are located in
+A 2 _ l 1 the following:
+”ytn’k] ‘ W m E
+0 W m:n—NW/2+k H = {n1,n2,...,nNH} (9)
+X (X[m + k] _ 2X[m] + X[m _ k])2 (6) where NH is the total number of missing samples.
+When we evaluate the DAVAR we basically average
+which is now a random quantity since it Changes for the squared values of the frequency variations
+every realization 0f X[nl' obtained from the triplets X[m — k], X[m], X[m + k].
+In practice we use the dynamic Allan deviation The generic triplet is obtained by taking the phase
+ay[n,k], 0r DADEV, simply defined as the square values at the discrete times
+root of the DAVAR, (5) and its estimator &y[n,k],
+defined as the square root of (6). The DAVAR and m _ k, m, m + k (10)
+the DADEV are three—dimensional surfaces which where m represents the center of the triplet. A
+represent the stability of the clock as a function of complete triplet is a triplet that does not contain any
+thhe missing sample, that is,
+”L COMPUTING THE DAVAR IN CASE OF MISSING m —k, m, m +k e H. (11)
+DATA For a giyen epoch n and observation interval k, we
+In the case of missing data the phase signal X[n] is define M(n,k) to be the set of the triplet centers
+not available for all time epochs n, and two solutions corresponding to the complete triplets. The number
+are possible: of complete triplets is in general smaller or equal to
+1) The missing data are reconstructed by the total number of triplets; therefore
+interpolation, and the DAVAR is evaluated. The M(mk) g M(mk), (12)
+advantage of this approach is that the standard
+DAVAR algorithm can be used, but the disadvantage For some values of n and k the two sets can be
+is that the interpolation process biases the estimated identical even If there are m1ss1ng data. Bht to be
+D AVAR. The reason is that the D AVAR is always identical the data must have no .miss1ng data
+made by several Allan variances, and the Allan at all (the set H is empty). By us1ng thls notation, the
+variance is biased when interpolated data are used DAVAR m the case of missing data becomes
+[4, 12, 27]. 2 1 1
+2) Stability analysis is performed on the existing 0y[n,k] : WW Z
+data only. This implies that an extended algorithm has 0 M meM(n,k)
+to be designed to deal with missing data. X E[(X[ m + k] _ 2X[m] + X[m _ sz]
+We have taken the second approach and now (13)
+discuss how the Classical definition given in (5) must while the D AVAR estimator is given by
+be modified to extend the DAVAR t0 the case of
+missing data. It is useful to rewrite the definition by 32m, k] = L L 2
+using set theory. We define M(n,k) to be the set of y 21973 N M meMm k)
+integer indices m used in the summation of (5) ’
+>< (X[m + k] — 2X[m] + X[m — k])2 (14)
+M(n,k) =
+where for both equations, N M is the number of
+{n—NW/2+k,n—NW/2+k + 1...,n +NW/2—k— 1}. elements of M(mk), and
+7
+() k=1,2,...,ﬂ—1. (15)
+The set M is a function of the discrete epoch n and 0f 2
+the observation interval k. The number of elements of Usually the maximum discrete observation interval k
+M iS N M = NW — 2k, as it can 136 SCGH fme (5)- Using is taken to be smaller than its limit value (NW / 2) — 1.
+this notation the DAVAR becomes This choice assures that the DAVAR is estimated
+2 1 1 with a sufficient number of triplets to reduce the
+0y[n’k] = WN— Z ﬂuctuations in the estimate.
+0 M mEMWﬁ) It can happen that for a given epoch n0, n0
+2 complete triplets are available for all observation
+X E[(X[m + k] _ 2Xtm] + X[m _ kD ]' intervals k, and therefore the set M(n0,k) is empty for
+(8) all k values at the given no. In such case the DAVAR
+886 IEEE TRANSACTIONS ON AEROSPACE AND ELECTRONIC SYSTEMS VOL. 47, NO. 2 APRIL 2011
+
+"
+"4","3
+2
+w t
+""E 1 ‘
+3 I w n
+b {
+g t h t ‘ ‘
+'5 t ‘ ‘ t
+i 0 ‘ , r ~ t
+'E' t
+'Y' t
+_1 t ‘
+—2
+O 100 200 300 400 500 600 700 800 900
+n
+Fig. 1. White phase noise With missing data.
+\ \ \;;;:::;;:;seeés;,g ; ,
+\ \\ \\\\\\\\ {2‘43}:ifififzfﬁ f :.
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\§§§\\\\\\\\i'frgtéj*i:313:§33£i§2;;:§,5
+MW
+9. —1 \\\\\\\ \\\\‘ \\\\\\\ \\\\\
+C 10 \\\\\ \\‘\\\\\ \\\\\\ \\‘\‘\\}“““ ““\‘\““‘“‘“‘\\ 1‘ ~; 1'
+v \\\\\\ \\\\ \\\\\\ ““‘\\\\\\\ ea‘ea‘xggw. - -
+>. \\\\\\ \\\‘ \\\\‘\\\\“«\\» «9“»! u“ .- t -
+b “3“‘“““‘\\\“‘3‘€t&3a%%§3$”\ ‘ii“‘ 3 ; .a : 2';
+‘3‘?“ ya}? gg’x:v’:“‘-’“:é“¢‘=¢é $329355? ' : 11>
+viiaaﬁige‘a‘aailzﬂ-Eaa’aiarﬁiiiiiieggiza -._...-
+11:95:15” _ h;
+1 HM; / 890
+k 100
+n
+Fig. 2. DADEV of White phase noise shown in Fig. 1. Canyon corresponds to large gap in phase deviation.
+0§[n0,k] is not defined at epoch no, and we say that used for the Allan variance [11, 26]. In the case of
+the DAVAR has a canyon at time no since this is mlssmg data the number of complete tr1p1ets at a
+the graphical effect that appears When plotting the glven CPOCh ”o and ObSCYVaUOH 1nterva1 k0 can b6
+three—dimensional surface of the DAVAR. On the other smaller than 1n the case of no mlssmg data, and
+hand, if only a few DAVAR values are missing for a hCl’lCC thC uncertamty Of thC COI‘I‘CSpOl’ldll’lg DAVAR
+given epoch no, two solutions are possible. We can 0§[n0,k0] mereases. The estlmatlon 0f thls uncertamty
+either plot the available DAVAR values at the given IS currently under 1nvest1gat10n.
+n0, thus displaying a “partial” canyon, or alternatively W6 HOW apply thC proposed method to a SGt 0f
+we can ignore the available DAVAR values and plot a Slmulated data. In Flg. 1 we show a reahzatlon W1th a
+canyon at no. represented signal of White Gaussian noise With zero
+We note that in general the DAVAR at a given time mean and unit variance. A small gap due to missing
+corresponds to an Allan variance computed on a time data IS located 1n thC t1me 1nterva1 300 S n < 320,
+series with NW samples. Therefore the uncertainty of whlle a larger gap Is located 1n the tune Interval
+the DAVAR estimate follows the standard expressions 500 S n < 700. In Flg. 2 we ShOW the correspondmg
+SESIA ET AL.: APPLICATION OF THE DAVAR FOR THE CHARACTERIZATION OF SPACE CLOCK BEHAVIOR 887
+
+"
+"5","DADEV 33[n,k], which has been estimated using (14) g 5 g g g g 3
+with a window of NW 2 200 samples. For n < 300 the
+DADEV is essentially stationary with time, beside 10 .. ..; .. ..
+some ﬂuctuations due to the estimation process. The _ I { | ‘ i
+slopg 0f thg DADEV surfacg corrgctly indicatgs thg 3%) 5 i . I . , li A 1 . i
+presence of white phase noise. In the time interval DE 3 l ’ I . a 1
+corresponding to the small gap, for 300 g n < 320, g 0 i i .
+the DADEV does not show any canyon even though 1E . i ‘
+no data are available in the phase signal. The reason <: i g g
+is that in the small gap only a few samples Of the § _5 ‘ , ‘ A ‘ A ‘ .A 'l . i . i' A
+phase deviation are missing, and the set M(n,k) 0f i i
+complete triplets is never empty for the observation —10 ---- -- -- -- ---
+interval k. Consequently the DADEV can be evaluated ;
+and represented for all the time and observation 0 500 1000 1500 2000 2500 3000 3500
+interval values corresponding to the small gap. In n
+the région 0f the large gap, Wheh 500 S n < 700, the Fig. 3. Numeric signal made by sum of white phase noise and
+amount of missing data is greater. For those epoch short duration sinusoid.
+values, the set M(n,k) of complete triplets is empty
+for some k values, and we decide not to represent
+the DADEV surface at the epoch n. This Choice ”IWM..A....:~:_-;jj""iiiiiiii . .. \\ ""iii;
+implies the generation of a canyon in the DADEV ;;:iiiw'j'_..-.----‘
+surface, observed in Fig. 1. With this geometrical 0 $\\\\\\\\\\\\\\\\\ \\\\Q\\\.
+representation and the use of existing phase triplets : 10 \\\ \\\\\\ \\\_
+0n1y, the DADEV ClearIy represents the Clock stability -%>
+in the presence of m1ss1ng data. \\\§§\\\§§§&§§m§§§w§$§
+IV. ANALYSIS OF PERIODIC BEHAVIORS IN THE 100 Q&WWimMm v‘ ‘ t ‘ ‘ Wag;
+DAVAR DOMAI N 10 WW“ “\I' ' ‘ ‘ WWW
+WM. 1111111?»
+The space Clock estimates often present periodic “x‘ﬁﬁtﬁkﬁ‘lﬁs' “Wmmnmmhliillliihiiw
+behaviors, which are sometimes correlated to the \Wh‘tiill'lﬂlnuy 3000
+residual of the orbital period. Since we are interested 1 IWHWH W, ' 1000 2000
+in studying the time—varying stability of the Clocks, k 10 n
+It IS 1mp0rtant. to T1181 underStand hOW the DAVAR Fig. 4. DADEV of signal shown in Fig. 3. Window length of
+represents periodicities. We start by generating a DADEV equals period Of sinusoid.
+signal X[n] made by the sum of a white noise and a
+short duration s1nus01d aXis a bump appears at k % Np / 2. The reason why a
+m = A[n1[;—”n]+m am Euiipﬁﬁiﬁaiiéiﬁiif 2:51:33? ssgzﬂgghstAVAR
+p sinusoid is made by a series of bumps. It is possible
+where ﬁn] iS a white Gaussian HOiSC, Np iS the PCFiOd to show, in fact, that for the continuous—time signal
+of the sinusoid, and A[n] indicates the amplitude of x(t) = (aZID/zﬁ) sin zm/ZID the Allan deviation is given
+the sinusoid, defined as by [2]
+azsin2 7T7 T
+A[n] = {10, 1000 s n s 3000 . (17) gym 2 ( / p) (18)
+0, elsewhere ”7/71;
+A realization of X[n] is shown in Fig. 3. (We took where 7;) = NpTO is the oscillation period. This result
+NP 2 36). can be immediately obtained from the integral
+First we compute the DADEV with a window relationship between the Allan variance and the
+length equal to the period of the oscillation, that is, frequency spectrum [15]. The frequency spectrum of
+NW 2 Np. In Fig. 4 we show the computed DADEV. the sinusoid x(t) is, in fact, a delta function, and the
+The DADEV surface is stationary before and after the corresponding integral relationship readily becomes
+oscillation takes place. The random ﬂuctuations that (18). The function 0y (7') is made by a series of bumps
+we notice are due to the variance of the estimation, with decreasing amplitude. The peaks of the bumps
+which uses a finite number of samples of a single are located at 7' values that are approximately odd
+realization of X[n]. In the time interval where the multiples of 7;) / 2, while 0y (7') is zero at the even
+oscillation takes place, we observe an oscillation of multiples. The periodic signal given in (16) has a
+the DADEV along the time aXis n, while along the k period Of Np = Tb/TO samples, and that is why the first
+888 IEEE TRANSACTIONS ON AEROSPACE AND ELECTRONIC SYSTEMS VOL. 47, NO. 2 APRIL 2011
+
+"
+"6","the time aXis is more evident When the Window
+5 ; length NW is equal to the oscillation period Np. By
+\\\\\\\\ \\ \\\\\\\\\\\\\ appropriately setting the Window length, the DAVAR
+100 can reveal periodic oscillations effectively. We point
+2 WW3} out that periodic behaviors can also be revealed by
+£> W % time-frequency techniques [1, 9].
+e \\\\ \\\\ I/W$ﬁ=ﬁmaaﬁﬁaaﬁﬁg-.'.~.\\\\segélggys‘h
+\\\\\\\\\\\\\“‘$o’l/ ’//’vwﬁ-‘A‘ﬁ-I':‘-‘-‘-‘-'“'.‘-‘-nII“"".'u-II“~‘\’i‘ﬁﬁﬁ‘a‘a‘: .
+\3&§§“\\3“3¢“’ // ”/”‘t‘i‘.a:ﬁ‘.‘.t'.'.'.-.-.'.‘u--.-'““I“""“‘-“‘.\\tv=.-‘;?;—‘;’:’:-::—:=l‘v=:-‘:€-—:=. z
+WW ; v. ANALYSIS OF EXPERIMENTAL DATA
+100 W2 We analyzed a series of experimental data obtained
+I’Z/ : from the GPS system and the first experimental
+x9, “mu' Galileo satellite. We used the extended DAVAR
+7t 1‘ 3000 algorithm developed in Section 111 because of the
+“iiiiiilllllllll 2000 gaps in the available data. The results show that the
+k 102 1000 n DAVAR clearly represents the time—varying stability of
+the data, highlighting the nonstationary behaviors of
+Fig. 5. DADEV of signal shown in Fig. 3. Window length of the ClOCkS
+DADEV is ten times period of sinusoid. '
+A. GPS Data
+bump is located at
+We analyzed the Clock data of the GPS PRN G05
+k N i _ E (19) satellite, provided by the International GNSS Service
+_ 270 _ 2 ' (IGS) [16]. T hese data contain some missing values
+S d1 1 h DADEV , h , d and periodicities. The phase offset between the GPS
+1 icon y we ehva uatellt ,6 , “St .21 Wln OW PRN G05 onboard Clock and the IGS time scale for
+engt ten times t. e 0801 ationtperiod, t at 18’ NW T the period March 15—19, 2007 is reported in Fig. 6.
+10Np. The result is shown in Fig. 5. The .s1nus01d is Only a few data are missing, and they are hardly
+responsible for the bumps along the k axis. We HOUCC noticeable in the picture. The DADEV With a Window
+that the bumps start hefore the actual beginning of the length of 20 hr is shown in Fig. 7. We immediately
+s1nus01d, Wthh originates at n = 1000. The reason see the oscillation With the time of the D ADEV
+13 that the DAVAR .13 cehtered 0h ah epoch n prior surface, Which takes place at long observation
+to the Statt 0f the sinus01d, and 1t 13 evaluated.W1th intervals. T herefore we surmise that an oscillation
+data that 13 both prior to and after that analysis epoch. is present in the data. The direct observation of the
+Therefore even though the signal 13 zero at a given frequency data shown in Fig. 8 validates our assertion.
+time, the DAVAR can be different from zero at that In Fig. 9 we now show the D ADEV computed With
+time. a Window length of 40 hr. A bump is Clearly Visible,
+The short and long Window are tWO extreme C&SCS, located about the observation interval 7' = 2 X 104 s,
+and When the Window length is Within these two limits Which again indicates the oscillation in the Clock data
+we generally observe a combination of the described With a ﬂuctuation period approximately equal to 12 hr,
+effects. We have observed that the oscillation along probably related to the GPS satellite orbit.
+x 10—5
+4275
+427
+x E i i i E i E i
+4.26
+4255
+425
+71 72 73 74 75 76 77 78
+DOY [days]
+Fig. 6. Phase offset between GPS PRN G05 onboard Clock and IGS time scale, in time period March 15—19, 2007. DOY is day of the
+year. (Data obtained from IGS database.)
+SESIA ET AL.: APPLICATION OF THE DAVAR FOR THE CHARACTERIZATION OF SPACE CLOCK BEHAVIOR 889
+
+"
+"7","“3 \. i \ \
+
+1.: 10 H3. E
+
+5 \ \ \\ \\\\\\\ . W“ 2
+"""""""" || ||||| HI"" 1 1 ""Hi i1 1 l||l|| mu||||l|1|nl|||1 n||l|1|||l|
+
+‘ l“
+“ . H i 1 M1 | h
+W1.mwht.%%
+0 «5* ' >
+'96 ‘9 DOY [days]
+Fig. 7. DADEV of data shown in Fig. 6. DADEV Window length is 20 hr. DOY is day of the year.
+x 10—12
+71 72 73 74 75 76 77 78
+DOY [days]
+Fig. 8. Frequency estimates of phase data shown in Fig. 6. DOY is the day of the year.
+1.: 43 \\\\\\\ 3§§53333 E :.
+Ea 1° \z,
+” """"""””” |||||||||||||||I1Illll|||||||||||llllllll||||||llummllllull n
+”C [S] 104 ""III“ )II )9 )75 >619]
+0. ‘70 7
+‘97 DOY [days]
+Fig. 9. DADEV of data shown in Fig. 6. DADEV Window length is 40 hr. DOY is day of the year.
+
+We point out that the DAVAR can be used to the IGS database [16]. We recognize a frequency
+detect other types of anomalies in Clock behavior. For jump located approximately at MJD = 32218 (MJD
+instance in Fig. 10, we show the frequency deviation stands for modified julian date). The corresponding
+0f the GPS PRN 14 satellite Clock, obtained from DADEV is shown in Fig. 11. It can be seen that at the
+890 IEEE TRANSACTIONS ON AEROSPACE AND ELECTRONIC SYSTEMS VOL. 47, NO. 2 APRIL 2011
+
+"
+"8","X1042 complete onboard signal generation Chain, the space
+propagation path, the receiver network, and the CDT S
+2 estimation algorithm.
+GIOVE—A FM4 apparent Clock phase data for
+1 the period December 11—14, 2006 are shown in
+3 1 ‘ ‘ N Fig. 12 (data already presented in [13].) We see that
+g ‘ some data are missing, and therefore to represent the
+a O [l ‘ ‘ time—varying stability we need to use the enhanced
+% 1 ’ y . ' version of the DAVAR developed in Section III.
+E9 _1 ‘ ‘ ' In Fig. 13 we show the computed DADEV. The
+Z ‘ 1 ‘ regions with missing data in the phase signal generate
+4“ ‘ 1 [ canyons in the three—dimensional DADEV surface
+as discussed in Section III. For large 7' values the
+DADEV is estimated with few samples, and therefore
+‘3 we notice some variability in the DADEV surface,
+which is due to the statistical ﬂuctuations of the
+5.3305 5.331 5.3315 5.332 5.3325 5.333 5.3335 5.334 .
+MJD [days] X 104 estimate.
+Fig. 10. Frequency deviation of GPS PRN 14 satellite Clock GIQVE_A FMS ap p arent ClOCk frequéncyqata for
+obtained from IGS data. MJD is modified Julian date. ’ the p CI'IOd MarCh 7—1.5’ 2007 are shown H} Flg. 14
+(they represent a portion of the data used in [13]).
+Again we notice some missing data and outliers.
+time value corresponding to the frequency jump, the In addition a periodic behavior is noticed. Such a
+DADEV surface increases for large 7' values. It is a phenomenon is due to the combined presence of
+typical behavior for frequency jumps, as discussed in possible unmodeled orbital effects and environmental
+detail in [6]. This result demonstrates that the DAVAR sensitivity [13]. In Fig. 15 we show the corresponding
+can be used to detect and to identify Clock anomalies, DADEV. The missing data are represented by
+as proposed in [20]. canyons. For large 7' values, we Observe an oscillation
+with time of the DADEV surface. This oscillation
+B. The First Experimental Galileo Satellite GIOVE-A corresponds to the periodicity in the clock data, and it
+GIOVE—A, the first experimental s ate11it e of the is in agreement with the results obtained by numerical
+Galileo system [10], ﬂies two rubidium clocks, FM4 simulations in SCCUOH IV‘
+and FIVIS. The CIOCh estimates are computed with VI. C ON CLU SI ON
+the orbit determination and time synchronization
+algorithm (ODTS) [21]. A free running active Recently the DAVAR has been proposed as a
+hydrogen Maser, located at the Italian Metrological method to represent the time—varying stability of
+Research Institute (INRIM) in T urin, is used as an atomic Clock. The DAVAR is currently used
+the ground reference Clock. The obtained estimates to monitor the Clocks onboard the satellites of the
+refer to an apparent Clock as seen through the GPS system and 0f GIOVE—A. In these satellite
+A 10 \\\\\\““\§iz:s.iiii
+' H"" [I lﬂi 1 ""ﬂ""l1|||||||llll|1|II||||1|||7lllIﬂhllllhnllllnllllillllhll
+mull||l||1|| IIIIH II [I m 4
+I 3.6 3.8 X 104
+T [S] 3'4 MJD [days]
+Fig. 11. DADEV of frequency deviation shown in Fig. 10. MJD is modified Julian date.
+SESIA ET AL.: APPLICATION OF THE DAVAR FOR THE CHARACTERIZATION OF SPACE CLOCK BEHAVIOR 891
+
+"
+"9","—5
+14""1O . . . . .
+5 5 5 5 /5""
+5 5 5 5,/ 5
+a 5 5 5 5 5
+>< 9 /
+x/E : 2 5 a
+5 . . . . .
+315 315.5 316 316.5 317 317.5 318
+DOY[days]
+Fig. 12. GIOVE-A FM4 apparent Clock phase data. DOY is day of the year.
+-13\\\\\\ \\
+t: \ . \ $\W\\\ \\ \‘\\\\\:‘
+6* \\§\\\\\\\\\ .V\\\\\\\\\\\\\\\\\§\\\\ ‘\\\\\\\\\“¢\\ 11W“? 2 5
+\\\\\\ \ ‘\\\\\\\\\\\\\\\\\o\. \ \\\\\\\\\“$\ ' ‘32: : : :1
+\\ \\ \‘ \ \\\\\\\V' \\\\ ‘ \-\§‘§§§\‘:¢:}\ Ii “33.- -'
+\wx‘sm IllawtwaszsvmwM Wag:
+10 \\\§\\\\ woo» M l// v 1
+“ ~‘\““§§""§vﬁ!€‘v’v??“Skv’ﬁW/x””77 111“ 111!
+11!:{6'134’411/ ’ 1"" “”11 1“
+3 '0‘“, [9,”; "" 15
+10 \|\i:{;l,,6 / . 1..
+""15511 1 1 0’
+. 6’ 7 8
+11111111"" e 8; ‘97 876* [>0 >62? ‘97
+a ‘97 ’6 6‘ 676‘ 69 639
+'99 6‘? <° DOY [days]
+Fig. 13. DADEV 0f GIOVE-A FM4 apparent Clock data shown in Fig. 12. DOY is day of the year.
+x10—1O
+4_15 5.5..
+4_1
+5 K15“ ' 5 5 5 5 5
+> 5 5 5 5 5 5 5
+3.95 m
+66 67 68 69 7O 71 72 73 74 75
+DOY [days]
+
+Fig. 14. Frequency estimates of GIOVE-A FMS apparent Clock. DOY is day of the year.
+systems, and more generally in space systems, the measurements, in this paper we have presented a
+time series of the onboard Clocks are often represented novel method to obtain the DAVAR directly from
+With missing data. Rather than fitting the missing the available data. Moreover data from space Clocks
+892 IEEE TRANSACTIONS ON AEROSPACE AND ELECTRONIC SYSTEMS VOL. 47, NO. 2 APRIL 2011
+
+"
+"10","10 "" . \‘3\\ \ ‘
+.4 ‘ \\ \ \\\\\ \\\\\~\\\\\\\\\\\\\\\ Miiiiiéé;
+\\\\\\\\\\\ \\ \\\\\~ \\\\\\\\\\\\\\\\\\§\\\\\\\\\§§\ \\ Wifiia.
+II IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII IIIII III III t_I I I 9 >7
+7 .
+4 I IIIIIIIIII IIIIIII IIIII IIIII I ) >, )9 3% >329 (9)6
+10 019 '09 '05:? 7)
+349 DOY [days]
+6‘
+Fig. 15. DADEV 0f GIOVE-A FMS apparent Clock data [13] shown in Fig. 14. DOY is day of the year.
+are commonly affected by residual periodicities. The [7] Galleani, L. and Tavella, P.
+DAVAR is a proper tool to reveal such periodicities, as $331? :ﬁitasgiﬁges 1“ CIOCk “DISCS usmg the
+. . . y .
+we have Shown bOth by numeﬂcal Slmumtlon and by In Proceedings of the 2005 Joint IEEE Frequency Control
+the analysis Of experimental data. Symposium (F CS ) and Precise Time and Time Interval
+Finally we note that the DAVAR has been (CPTTQ Sitengngl {41955356190715 Meeting, VanCOUVera
+implemented in the commercial software STABLE32 ana. 81’ ug' _ ’ '
+, [8] Galleanl, L. and Tavella, P.
+[22] and m the CANVAS SOft‘Vare developed by the Interpretation of the dynamic Allan variance of
+US. Naval Research Laboratories [23]. nonstationary Clock data.
+Presented at the IEEE Fre uenC Control Symposium
+q y
+(FCS)/Eur0pean Time and Frequency Forum (EFTF)
+ACKNOWLEDGMENTS 2007, May 29—June 1, 2007, Geneva, Switzerland.
+The authors Wish to thank the European Space [9] Gallean1’_L' , , ,
+, , , Detectlon of Changes 1n Clock n01se usmg the
+Agency for the1r kmd support and helpful adV1ce and time-frequency Spectrum.
+for granting the use of the GIOVE data analyzed in Metrologia, 45 (2008), 8143—8153.
+1 n [10] GIOVE Mission Clock EX erimentation Team
+CCt O . P
+Time for GIOVE-A, the onboard Rubidium Clock
+experiment.
+REFERENCES GPS World, (May 2007), 64—69.
+
+[1] Agilent Technologies [11] Grienhall, (f: 1A; f f d f f b' 1,
+Agilent AN1200-4, Quick identification of periodic jitter 6.01968 0r egrees 0 fee 0““ 0 requency Sta 1 “y
+sources, Application Note—Agilent Technologies, 2000. estlmators. _ _
+
+IEEE Transactzons 0n Instrumentatzon and Measurement,
+
+[2] A”? D' vgf t, d , h t , t, 40, 6 (1991), 994—999.
+
+H116 211.1 requency .( 11ne- 0ma1n.)e arae erlza 1011’ [12] Hackman, C. and Parker, T. E.
+estlmatlon, and predlctlon 0f pre01810n Clocks and . . . .
+oscillators N01se analy81s 0f unevenly spaced t1me serles data.
+' M ' 1 4 —4 .
+IEEE Transactions on Ultrasonics, Ferroelectrics, and etrologza, 33 ( 996)’ 57 66
+[13] Hahn, J ., Gonzalez, F., Waller, P., Navarro-Re es, D.,
+Frequency Control, 34 (1987), 647—654. , , y
+
+[3] A11 D W Pirlz, R., Mozo, A., Fernandez, V., Cueto, M., Tavella, R,
+
+an . . .
+
+’ . . . and Se81a, I.
+StatIStIC8 Of atomlc frequency standards. GIOVE-A apparent Clock assessment and results.
+Proceedmgs of IEEE 54 (1966)’ 221—230' In Proceedings of the 39th Annual Precise Time and Time
+
+[4] DaV1s, J. A., Hams, P. M., Shemar, S. L., and Cocks, M. G. Interval Systems Applications Meeting (PTTI), Long
+The Characterization of regular but unevenly spaced Beach, C A, NOV. 26—29, 2007.
+
+TWSTFT data using second-difference statistics. [14] IEEE Standard Deﬁnitions of Physical Quantities for
+Metrologia, 40’ 3 (June 2003)’ 8312—8318 F undamental Frequency and Time Metrology.
+[5] Galleani, L. and Tavella, P. IEEE Standard 1139—1999.
+The dynamic Allan variance. [15] Kartaschoff, 13.
+IEEE Transactions on Ultrasonics, Ferroelectrics, and Frequency and Time.
+F r “1me C071” 01, 56, 3 (2009), 450—464- Burlington, MA: Academic Press, 1978.
+
+[6] Galleani, L. and Tavella, P. [16] Kouba, J .
+
+Identifying nonstationary Clock noises in navigation A guide to using International GPS Service (1G3)
+systems. products.
+International Journal Of Navigation and Observation, 2008 Geodetic Survey Division Natural Resources Canada, Feb.
+(2008), article 5243175. 2003.
+
+SESIA ET AL.: APPLICATION OF THE DAVAR FOR THE CHARACTERIZATION OF SPACE CLOCK BEHAVIOR 893
+
+"
+"11","[17] Larson, K. M., Ashby, N., Hackrnan, C., and Bertiger, W. [23] Senior, K., Beard, R., and White, J .
+An assessment of relativistic effects for 10W Earth CANVAS: Clock analysis, Visualization, and archiving
+orbiters: The GRACE satellites. system—A new software package for the efficient
+Metrologia, 44 (Dec. 2007), 484—490. management of Clock/oscillator data.
+[18] Miranian, M., Weaver, G. L., and Reinhart, M. J . In Proceedings of the 2005 IEEE Frequency Control
+An ensemble of ultra-stable quartz oscillators to improve Symposium, Vancouver, Canada, Aug. 29—31, 2005.
+spacecraft on-board frequency stability. [24] Senior, K. L., Ray, J . R., and Beard, R. L.
+In Proceedings of the 38th Annual Precise Time and Time Characterization of periodic variations in the GPS satellite
+Interval Systems Applications Meeting (PTTI), Reston, VA, Clocks.
+Dec. 5—7, 2006. GPS Solutions, DOI 10.1007/810291-008-0089-9, Feb.
+[19] Naval Center for Space Technology 2008.
+Monthly Analysis Report—Oct. 2006. [25] Sesia, I., Galleani, L., and Tavella, P.
+US. Naval Research Laboratory, Washington, DC, 2006. Implementation of the dynamic Allan variance for the
+[20] Nunzi, E., Galleani, L., Tavella, P., and Carbone, P. Galileo system test bed V2.
+Detection of anomalies in the behavior of atomic Clocks. EEE FCS-EFTF 2007, May 29—June 1 2007, Geneva,
+IEEE Transactions on Instrumentation and Measurement, Switzerland.
+56 (Apr. 2007), 523—528. [26] Stein, S.
+[21] Piriz, R., et 211. Frequency and Time—Their measurement and
+The Galileo system test bed V2 for orbit and Clock Characterization.
+modeling. In E. A. Gerber and A. Ballato (Eds.), Precision
+In Proceedings of the ION-GNSS 2006, Sept. 26—29, 2006, Frequency Control: Oscillators and Standards, Burlington,
+Texas. MA: Academic Press, 1985.
+[22] Riley, W. [27] Tavella, P. and Leonardi, M.
+Stable: Frequency stability analysis program. Noise Characterization of irregularly spaced data.
+Hamilton Technical Services, Beaufort, SC. Available at: In Proceedings of the 12th European Frequency and Time
+http://WWW.Wriley.Corn Forum (EFTF), Warsaw, Poland, Aug. 17—21, 1998.
+894 IEEE TRANSACTIONS ON AEROSPACE AND ELECTRONIC SYSTEMS VOL. 47, NO. 2 APRIL 2011
+
+"
+"12","Tiff ~ 7 g Ilaria Sesia (M’07) received an MS. degree in electrical engineering from
+\9- —» ’ I ._ g,” the Institut National Polytechnique de Toulouse and an MS. degree in
+y - 1 communication engineering and a Ph.D. degree in metrology from Politecnico
+v ‘ ' di Torino.
+‘ _ , ' She is a researcher at the Italian Metrology Institute (INRIM), Where she
+» ‘ works on the Characterization of atomics Clocks and time scales in satellite
+applications. She has been involved in the Galileo project since 2004, and she
+. is currently in Charge of the Characterization of the atomic Clocks onboard the
+' experimental Galileo satellites.
+' ‘ ‘ ‘ A! ‘ , Lorenzo Galleani (SM’07) received a BS. degree in electrical engineering in
+.-‘ v i 1997 and a Ph.D. degree in electrical and communication engineering in 2001,
+both from Politecnico di Torino, Italy.
+t.» He is an assistant professor in the Electrical Department Of Politecnico
+0_ di Torino. He has done research on the time—frequency representation of
+' 1 ‘. nonstationary signals and systems and on the statistical Characterization of atomic
+w ‘ Clocks. He is currently involved in the design of the reference time scale for the
+V - 1' future European navigation system Galileo.
+. ' '3'”; 'w’~..,:.. ‘ '1 17:57.; 37:""? J
+. ' ' ‘7“ ‘ '
+Patrizia Tavella (SM’09) received her BS. degree in physics from University of
+Torino and her Ph.D. degree in metrology from Politecnico di Torino, Italy.
+She is currently a senior scientist With the Italian Metrology Institute in
+Torino, Italy. Her main interests are mathematical and statistical models applied
+to atomic time scale algorithms. She is currently involved in the development
+of the European navigation system Galileo. She collaborates With the Bureau
+International des Poids et Mesures, and she Chairs the working groups on
+“International Atomic Time” and “Algorithms” 0f the Consultative Committee
+of Time and Frequency.
+SESIA ET AL.: APPLICATION OF THE DAVAR FOR THE CHARACTERIZATION OF SPACE CLOCK BEHAVIOR 895
+
+"

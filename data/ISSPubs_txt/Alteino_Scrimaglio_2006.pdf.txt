@@ -1,0 +1,411 @@
+"","x"
+"1","~' Available online at www.sciencedirect.com ——
+.ﬁ/ (1) ADVANCES IN
+NV!» ”° ( ®
+(\Q‘Zéggii SCIENCE DIRECT SPACE
+
+2‘ RESEARCH
+ELSEVIER Advances in Space Research 37 (2006) 1697—1703 w
+
+www.elseVier.com/10cate/asr
+Analys1s 0f Sileye-3/A1te1n0 data With a neural network
+technique: Particle discrimination and energy reconstruction
+
+R. Serimaglio a, E. Rantueei a’*, E. Segreto a, G. Nurzia a, N. Finetti a, A. Di Gaetano a,
+
+A. Tassoni a, P. Pieozza b, L. Nariei b, M. Casolino b, L. Di Fino b, A. Rinaldi b, V. Zaeonte b
+a Department Of Physics, University Of L’Aquila, Via Vetoio {Coppito I), 67010 Coppito {L’Aquila), Italy
+b Department Of Physics and INFN University Of T or Vergata, Via della Ricerca Scientiﬁca I, 00133 Roma, Italy
+Received 30 September 2004; received in revised form 21 October 2005; accepted 1 December 2005
+
+Abstract
+
+In this work, we present the data analysis of the Sileye—3/Alteino experiment with neural network technique. Sileye—3/Alteino is com—
+posed of two devices: the cosmic ray—advanced silicon telescope (an 8 plane, 32 strip silicon detector) and an electroencephalograph. It
+was placed on board the ISS on April the 27th 2002 to investigate on the Light Flash phenomenon and the radiation environment in
+space. We show the possibility of using neural networks as an useful tool for real—time data analysis. A feed—forward neural network
+(Multi—Layer Perceptron — MLP) has been implemented and trained (with Monte Carlo data) to perform on line particle identiﬁcation
+for ions with Atomic Number (Z) <8 and incident kinetic energy reconstruction for ions Z > 2. The result of the analysis of Sileye—3/
+Alteino real data with the neural network and the improvements over classical analysis techniques are discussed.
+© 2005 COSPAR. Published by Elsevier Ltd. All rights reserved.
+
+Keywards: Particle discrimination; Cosmic rays; International space station; Artiﬁcial neural network; Energy reconstruction
+1. Introduction 0r colorless, with a shape that most of the times is a spot
+or “starlike”.
+
+The experiment Sileye-3/A1teino was placed on board The instrument is mainly composed by a cosmic ray
+the International Space Station (ISS) on 27 April 2002 (CR) detector and by an electroencephalograph. The
+and was operational between 27/4 and 1/5/2002. The cosmic ray detector was active during all the period of
+instrument is essentially dedicated to the study of the Light the run; in order to measure cosmic ray ﬂux and com-
+Flash (LF) phenomenon and to the measurement of the position inside the ISS. To have a precise knowledge of
+radiation environment and the nuclear abundances inside the composition of CR inside the ISS during its orbit
+the ISS. The LF phenomenon is a well known one (even around the Earth is a task of great relevance for the
+if the causes are not Clear) since the earliest human missions determination of the equivalent dose absorbed by astro-
+in space (Apollo 11). It is a Visual phenomenon originated nauts. This is particularly true for what concerns nuclei
+by the interaction of cosmic radiation with the human Visu- heavier than Hydrogen that; although are much less
+a1 apparatus (Pinsky et a1., 1974; Osborne et a1., 1975; abundant (less than 10% of the total); represent the
+Hoffman et a1., 1977; Bendinger; 1976; Casolino; 2003). main component of the equivalent dose (Scrimaglio,
+The ﬂashes are generally described by astronauts as white 2004). The electroencephalograph was used during some
+
+scheduled sessions to monitor the astronaut’s brain
+activity during the perception of light ﬂashes (the aver-
+* Corresponding author. Tel.: 39 0 862433043; fax: 39 0 0862433043. age LFS rate 18 0f about 0116 eVent @3011 ten minutfls)
+
+E—mail address: egidio.rantucci@aquila.infn.it (E. Rantucci). (Narici; 2002).
+0273-1177/$30 © 2005 COSPAR. Published by Elsevier Ltd. All rights reserved.
+d0i:10.1016/j.asr.2005.12.004
+
+"
+"2","1698 R. Scrimaglio et al. / Advances in Space Research 3 7 ( 2006 ) 1697—1703
+In this paper, we show the analysis of the data collected by nique has an efﬁciency of about 85% on the single
+the cosmic ray detector performed using a non-standard particle. Furthermore, we present an analysis intended to
+technique based on neuralnetwork (NN). In apreVious work reconstruct the incident kinetic energy of the detected
+(Scrimaglio, 2004), we showed that the analysis(n1ain1y par- (and identiﬁed) particles in a range that goes from the trig-
+ticle discrimination) of the data collected withasilicon detee- ger threshold (tens of MeV per nucleon) up to ~1.5 GeV/
+tor, very similar to the one we are presently considering, can nucleon. The successful application of NN to the problem
+be done by using NN architectures and that the results are at of energy reconstruction with this kind of detector is partic-
+least as good as those obtained with the “standard” method. ularly interesting considering that, any other “standard”
+Moreover NN approach allows to easily perform a smart technique is not able to give positive results.
+and real-time analysis (i.e., when downloading raw-data
+packets from 188 to Earth) and this is a quite important point 2. Experimental set-up description
+in this kind of experiments both to have fast preliminary
+results and an immediate and continuous Check of the right The instrument is mainly constituted by a cosmic ray
+functioning of the whole apparatus. detector (AST-Advanced Silicon Telescope), an Electroen-
+In particular, we present the results of the analysis con- cephalograph (EEG), and a joystick button. The presence
+cerning particle identiﬁcation and we ﬁnd that our tech- of the EEG allows a more accurate study of the Light Flash
+a U) 104 b E 25000 ,
+g \ P + He Real Dom § 22500
+B \ S, ‘ O
+3 \ 3; 20000
+E 103 Q
+g \ 3; 17500
+a +
+\ at) 15000 N
+102 \ § 12500
+i\ B ‘ C g 0— C
+_ , § 0 m 10000
+10 » V § \ N § 1 7500 ‘k
+if \ \ w “\‘5 B
+‘ \ \ 5000
+. ‘ s V E Y = 332*X—1 154
+1 \ \ § s R 2500
+§n L . _ . s L \\ k 0
+0 5000 10000 15000 20000 25000 30000 0 10 20 30 40 50 60 70 80
+energy loss (ADC Ch) MC energy loss (Me V)
+c ‘0 40 d8 1800
+g C '5 B MC Doto
+C C
+53 35 g: Real Date 53 1600 1’
+0 {$5 0 V
+§ :~\ g g i C
+30 h
+s N E / *
+C \i C 1200 / 9 N
+§\ 1000 / % i]? 1. O
+20 ‘ 1 §.‘ 0 / / %i %'h
+I“ iiN g: 800 / / ‘.
+15 {IS} 5 \l i: i ”i iil
+1%! '\\E N g 600 / , ‘1‘ k 1 i,
+’i‘ l' i I‘ § H I‘ 1i1 i“
+. s I , r up w. "" ‘ *
+5 i\l\ 4i§$§ §§m \Q ‘ 200 /
+. ""'4 \ﬂ|\\\\~ ‘ V ‘ :i /
+7500 10000 12500 15000 17500 20000 22500 25000 27500 30000 20 30 40 50 60 70
+energy loss (ADC Ch) energy loss (Me V)
+Fig. 1. (a) Distribution of total energy loss in silicon planes for the selected sample of events; (b) calibration curve of the Sileye-3/Altein0 detector; (0)
+distribution of total energy loss for B, C, N, O in real data, the black line represents the multi-gaussian ﬁt line; ((1) distribution of total energy loss for B,
+C, N, O in MC data, the black line represents the multi-gaussian ﬁt line.
+
+"
+"3","R. Scrimaglio et a1. / Advances in Space Research 3 7 { 2006 ) 1697—1703 1699
+(LF) phenomenon with respect to previous experiments ADC through an analogue multiplexer and an operational
+(i.e.,: Sileye-l and Sileye-2). LF perception is recorded on ampliﬁer. Two CR1 Chips are present on each front-end
+one of the EEG Channels with the pressure of the joystick board to read the 32 strips of the silicon plane. A custom
+button by the astronaut. The analysis of the electro-physi- Read Out Board performs the tasks of trigger handling
+ologic waveform allows to deﬁne the LF time with greater and data acquisition. The trigger is deﬁned with the logical
+precision than what could be done with the sole pressure of AND of the signals of the two seintillators (Casolino,
+the joystick. This information can then be correlated to the 2002).
+particle ﬂux monitored by the AST and also to the position
+of the 188 with respect to its orbit. 3. Data selection and neural network training
+2.]. The AS T detector To perform the analysis of the data collected by the AST
+detector, we selected, a sample of events constituted by sin-
+The AST consists of 8 silicon strip detector planes each gle and straightforward ion tracks from the raw-data ﬁles
+divided in 32 strips with 2.5 mm pitch. There are 4 planes downloaded from the 188. This was done mainly because
+oriented along the X View and 4 planes oriented along of the complexity in training the NN to handle events with
+the Y View. Two scintillators (11 mm thick each) are locat- more complicated topologies, such as ion fragmentation
+ed on top and bottom of the silicon stack to provide the inside the AST detector and events accompanied by ener-
+trigger. The seintillators are covered by a 50 um Mylar foil getic 8-rays. The distribution of the total energy deposited
+located at 12.5 mm from the scintillator, and an A1 (70 am) in the AST detector (the sum of the loss in each of the eight
+and Mylar (50 um) foil at a distance of 12.5 mm from the silicon planes) is shown in Fig. 1a. In order to make the
+Mylar plane. Each silicon plane has a size of 8 cm X 8 cm, NN able to recognize particles and to identify their incom-
+with thickness of 380 am; the interplanar distance is ing kinetic energy, it must be trained with a large sample of
+1.4 cm. The resulting geometric factor for the AST is controlled events for which the nuclear specie and the
+44.1 cm2 sr. The front-end electronics is based on a VLSI incoming kinetic energy are well known. For this reason,
+ASIC, the CR1.4P chip (BonVieini, 2001). Each Circuit our NN was trained with Monte Carlo (MC) data.
+has 16 Channels, composed of a Charge sensitive preampli- Monte Carlo simulation is based on the GEANT 3.21
+ﬁer, a shaping ampliﬁer, a traCk-and-hold Circuit, and an (GEANT-3, 1994) package. The geometrical structure
+output multiplexer. Outputs are connected to a 16 bit and the materials constituting the AST detector have been
+accurately simulated. All possible interaction processes
+Wu“) H1 W- (2) (included in the GEANT 3.21 package) that particles can
+11 —. . U . Jk undergo while crossing the detector have been considered.
+\\./// The simulated particle species are: Proton, Alpha,
+I2 - .<‘\§“(.;I'jl’;. Boron, Carbon, Nitrogen, and Oxygen, they have been
+\ 4’, / Simulated With an isotropic ﬂux and a ﬂat energy spectrum,
+z‘QV’QVQW h' h f 1 A H h
+13 _ .Q‘A‘géizlé. v. _, 01 w 10 ranges rom0 to 0 GeV. at energy spectrum as
+‘Q‘QéVéeéW been used because it was necessary to generate a sample of
+I _. .A‘pﬁ.)§{§.’i§. _ 02 training data uniformly distributed over all the energy
+4 ﬁgfww range of the real data (cosmic ray spectrum), so that the
+Is _. .Zi’fé‘\%\. NN, after the training procedures, was able to deal, with
+// “"" the same eﬂieieney, w1th particles coming from all the
+/\ . regions of the energy spectrum. We made an exception
+16 T . . for the proton because the overlapping of the proton and
+Fig. 2. Schematic representation of a feed-forward neuralnetwork (Multi- helium peak in the diStribution Of tOtal energy lOSS
+Layer Perceptron). (Fig. 1a) poses strong constraints on the proton energy
+Table 1
+Confusion matrix for six species of nuclei (H, He, B, C, N e 0) identiﬁed by means of the MLP 9-18-18-1
+Nuclear Id. H (%) Id. He (%) Id. B (%) Id. C (%) Id. N (%) Id. 0 (%)
+Sp€Cl€S
+H 73.46 26.54 <0.002 <0.002 <0.002 <0.002
+He 13.54 86.36 0.10 <0.002 <0.002 <0.002
+B <0.002 0.30 87.47 7.04 3.55 1.64
+C <0.002 <0.002 1.27 87.16 8.21 3.35
+N <0.002 <0.002 <0.002 2.26 87.86 9.87
+0 <0.002 <0.002 <0.002 <0.002 12.29 87.71
+Each row corresponds to events of a given nuclear species which were classiﬁed as H, He, B, C, N or 0 so that the diagonal elements of this matrix give the
+percentages of events which were correctly identiﬁed by the NN.
+
+"
+"4","1700 R. Scrimaglio et a1. / Advances in Space Research 3 7 ( 2006 ) 1697—1703
+spectrum. To obtain a substantial overlap of the peaks, the where g is a non-linear function (for example the sigmoidal
+proton spectrum has been limited to 150 MeV. function).
+
+In order to test the reliability of our Monte Carlo data, In order to obtain a NN able to efﬁciently analyze
+we focused our attention on the distribution of total energy data coming from the AST detector (i.e., discriminate
+loss for Boron, Carbon, Nitrogen, and Oxygen (Fig. 10). particles and reconstruct their kinetic energy), it must
+We neglected Protons and Alpha particles because of the be properly trained and tested. For both these proce-
+indistinguishability of the two peaks. The distribution of dures, as stated above, MC data were used. The training
+the BCNO group was ﬁtted with a function f(E) which is of the NN consists in passing to the net a large sequence
+the sum of four Gaussian functions: of input patterns together with the vector containing the
+
+4 (12—1902 right answer for each pattern of the sequence. When the
+
+f(E) : 2141.8 20? (1) analysis of all the training patterns is completed the error
+i=1 (training error), that is the fraction of wrong answers, is
+through the ﬁt function we determine: evaluated and then the NN adjusts its internal parame-
+ters (synaptic weights) in order to reduce it and the
+
+. the peak position (Ei) sequence is presented again te the network. Before the
+. the standard deviation of each peak (01) NN updates the. synaptic weights, another set of MC
+data (completely independent from the training one), test
+
+The same was done for the distribution coming from set is sent to it in orcler to test .its ability to deal, with
+MC simulation (Fig. 1d) and the parameters E?“ and the same elﬁeieney, Wlth an arbitrary data set, and the
+0?“: were determined. In Fig. 1b, we plot, for each nuclear .test error is COQPPted' These p roeedures are iterated
+specie, the peak position in real data (Ei) against the peak “1,1 when [?Oth training and t?“ errors, ap p reaching a
+position in MC data (EEWC). The error bar associated with minimum in the synaptic weights space,. fall below a
+each point are the standard deviations of the gaussian ﬁxed value. When the learning p recess is successfully
+peaks (0i and 0?“). The exact linearity of the relation concluded, the NN is ready to analyze real data. In this
+between El- and E?“ shows the reliability of our MC simu- work? we use a topology Of feed-forward NN that is a
+lation and moreover allows to determine the calibration Mnlti-Layer Pereeptron (ML?) (Hertz. et al., 1991)’
+curve of the detector. The Circumstance that this line do trained Wlth the back-propagation technique (Rumelhart
+not cross the origin of the axes might be explained with et al., 1986)’ The numbers ofhidden layers and neurons
+some non-linearities in the electronic chain for low values .Of our NNS h‘i‘Ve been determ1nedw1th 891116 tests, start-
+of energy deposited in the silicon planes. The calibration mg from bas1c topologies, and increasing the hidden
+curve was then plugged in the ﬁnal MC code (used to pro- units and hidden layers UH when the minimum conﬁgura-
+duce the data for NN training) together with the Gaussian tion that gives acceptable errors is reached.
+noise for each silicon stri , comin from the electronic , , , , ,
+chain. It was d et ermin e d1 tIhrough ag d e dieate d analysis of 4. Neural network for 10118 and nuclel identiﬁcation
+°f we ww-LaMer
+
+Our analysis is based on a neural network (NN) teeh- ceptron w1th n1ne input neurones, two hidden layers w1th
+nique. This is a different paradigm for computing based 18 hidden neurones each and one eutput. .Thls struetnre
+on the parallel architecture of animal brains. A NN is a was able to ass001ate the energy lost in the Sileye-3/Alteino
+sort of multiprocessor computer system with large number
+of simple processing elements named neurones, tightly con- 12 su 4 DZ .
+nected each other through synapses. A schematic View of a A ,
+NN is shown in Fig. 2. In this example the I,- represent the IT 1 :3“: 3:0
+input units, the H]- are the hidden units, the Ok the output 9—
+ones, and W121) and W]? are the synapses (weights) between g 0.8
+units. The output of the NN 0k is a complicated function g ‘ ++
+of the input pattern [Z- and of the synaptic weights and can 2 0-6 T . +
+be schematically written as follows: < ' + a
+
+g 0.4 ‘ a
+0k = g (2 Wﬁk (Z Wijl)1i> >7 (2) § 0.2 ¢
+
+j 1' l2
+0
+4 5 6 7 8
+Atomic Number Z
+1 The average value (over all silicon strips) of the standard deviation of Fig. 3. Comparison between abundances (normalized to C) measured
+
+the electronic Gaussian noise results to be 0.9366 ADC counts. with Sileye-2 (0n MIR) and Sileye-3/Alteino (on ISS).
+
+"
+"5","R. Scrimaglio et a1. / Advances in Space Research 3 7 { 2006 ) 1697—1703 1701
+Xz/ndf 89.79 / 87 45 XZ/ndf 81.98 / 67
+25 U) Constant 0 8026.535
+m 75;: 4o -’ .75;
+0:) BORON $9 0 0 0:) CARBON Sg 008
+‘E E 35
+CD 20 E
+“5 o 30 I
+K E
+8 15 J Q 25 1
+E | -- | E ‘l
+E’ I E’ 20 l f
+. . V
+’0 l"" l 4 15 l
+j | 4| 10 ll
+5 L l R 1' ll
+'4 5 II is
+l, U 1'
+0 ILEII I I I ""EA- 0 I |I2!-!II‘ H III II
+-0.4 -0.2 0 0.2 0.4 -0.4 -0.2 0 0.2 0.4
+relative error relative error
+Xz/ndf 105.9 / 76 XZ/ndf 113.6 / 70
+Constant 23. 76 Constant 33.71
+W 40 <0 50
+9 Sigma 0. 1 123 9 Sigma 0.8109E—01
+K K
+as s 40
+‘5 30 ‘5 'I
+E E |
+3 ' 3 1
+C 20 . l C f N
+15 A1 20 . 1
+l
+10 , H 1
+W i i 10 hi 1‘
+5 9‘ 1L EL J' t
+0 I II III LJ‘V“ ‘ﬁd 0 III II # JL-l-I L I I- I
+-0.4 -0.2 0 0.2 0.4 -0.4 -0.2 0 0.2 0.4
+relative error relative error
+Fig. 4. Distribution of the relative error in kinetic energy reconstruction for Boron, Carbon, Nitrogen, and Oxygen obtained from the neural network test
+performed on Monte Carlo Data.
+detector with the Atomic Number Z of the crossing parti- but to the particular Choice for the proton spectrum we
+Cle. This conﬁguration was Chosen after the test of a lot of adopted, ranging from 0 to 150 MeV/A, in order to have
+different possible architectures, since it resulted to be the a substantial overlap with the helium peak. This was main-
+simplest one to give satisfactory results. The training of ly done to mimic the behavior observed in real data, so to
+the network was performed by means of 6000 patterns. obtain a realistic discrimination efﬁciency for Protons and
+Each pattern consists of the following 10 parameters: the Alpha particles. The average efﬁciency over all nuclear spe-
+energy loss in each silicon plane, the total energy loss Cies (included Protons) results to be ~85%. After the train-
+(sum over all the planes) 2 and the Atomic Number Z ing-test procedure and the determination of the confusion
+(desired network output) of the ionizing particle. The test matrix, the NN was used to analyze the data collected by
+set consisted in 48,000 patterns (a set of 8000 events for the Alteino detector. We remind that we selected single
+each different nuclear specie). In Table 1, the confusion straightforward tracks from the whole data sample. Even
+matrix for the siX specie of nuclei (H, He, B, C, N e O) is if the NN approach is particularly suitable to be applied
+reported. The Table 1 is related to the test events which on real-time analysis (being a sort of parallel computing),
+have been identiﬁed by means of the neural network we performed only an off-line analysis, since real-time data
+approach. downloading to Earth was not foreseen for the present
+We note a high contamination between Helium and Pro- experiment. Anyway this work could represent an impor-
+tons (about the 27% of Protons was incorrectly Classiﬁed as tant test in View of possible future applications. The knowl-
+helium). This is not strictly due to our analysis technique, edge of the confusion matrix, that is of all the
+contaminations between different nuclear species, allows
+to go back, through an inversion process, to the number
+2 Even if this information is redundant, it resulted to speed up the Of parade? belonging to eaCh spe01e, purged from
+training process. contaminations.
+
+"
+"6","1702 R. Scrimaglio et al. / Advances in Space Research 3 7 { 2006 ) 1697—1703
+a 1.2 b 1.2
+1 BORON 1|_ 1 CARBON _+_
+s 0.8 I ’> 0-8 ’—
+3. _'_ 3.
+<1: I <1:
+: 0.6 : 0.6
+E — 3
+LL LL |
+0.4 0.4 —T—
+0.2 _+_ 0.2 _|
+0 0
+0 500 1000 1500 0 500 1000 1500
+Energy (Me V/A) Energy (Me V/A)
+C 1.2 | d 1.2
+1 _,_ | NITROGEN 1 OXYGEN { |
+’1 0.8 | ’1 0.8
+3. l 3.
+E 0.6 I _ E 0.6
+E 3
+LL 0.4 LL 0.4 1
+0.2 Ti—_+_ 0.2 _|
+|
+—?—
+0 0
+0 500 1000 1500 0 500 1000 1500
+Energy (Me V/A) Energy (Me V/A)
+Fig. 5. Flux into 188 for four nuclear species obtained by the neural network: (a) Boron, (b) Carbon, (0) Nitrogen, and ((1) Oxygen.
+
+In Fig. 3, we show the results of the Sileye-3/A1teino real input units, two hidden layers with thirty-siX hidden units
+data analysis, compared with Sileye-Z experimental results3 each and one output. We built up four distinct NNs, one
+(Casolino, 2001). In Fig. 3, the abundances of protons and for each nuclear specie (B, C, N, O) and the analysis was
+helium are not reported because there was not an optimal performed in cascade with the previous one. So, after that
+separation between them (see Table 1). From this analysis particle has been identiﬁed, its pattern (energy losses in si1-
+results a good accordance between the abundances mea- icon planes and total energy loss) is sent to the relative NN
+sured with Sileye-Z and Sileye-3 experimental apparatus. for kinetic energy reconstruction. The net was trained with
+
+Monte Carlo data to reconstruct the particle energy up to
+5. Neural network for incident particle energy reconstruction 1.5 GeV. This value according to our tests is the highest
+value of the threshold that allows to obtain reasonably
+
+In this section, we show an innovative technique for good reconstruction performances. When the net is not
+incident particle energy reconstruction by using a silicon able to associate an energy value to an input pattern, the
+strip detector (Sileye-3/A1teino) and a neural network relative particle is Classiﬁed as having kinetic energy greater
+architecture. The incident particle energy reconstruction than 1.5 GeV.
+is a much more complicated problem with respect to parti- The training set was composed of 1000 patterns and the
+Cle identiﬁcation. As a consequence of this, the NN archi- test set of 800 patterns. The relative error distributions for
+tecture we used in this case is a little more sophisticated: it the four species analyzed are reported in Fig. 4. Each dis-
+is a Multi-Layer Perception (Hertz et a1., 1991) with nine tribution has an almost Gaussian shape with an average
+
+value which is always Close to zero and standard deviation
+
+— . 0 0 .
+3 The data set was divided in three region: Galactic cosmic ray region WhICh ranges from 8/0 to 17/0' When ap p 116d to real data
+(L > 2), South Atlantic Anomaly (L < 2 and geomagnetic ﬁeld B < 0.25G), thlS teChmque allows to reconStruCt the energy spectrum
+and the remaining region (L < 2 and B 2 0.25G). of the 85% of the detected heavy particles (which are the
+
+"
+"7","R. Scrimaglio et a1. / Advances in Space Research 3 7 { 2006 ) 1697—1703 1703
+B, C, N, 0 ions) up to 1.5 GeV/A, With an uncertainty applications, and this aspect, together With the good
+Which is roughly around 20%. The results of the processed performances achievable makes the NN a valuable
+data are shown in Fig. 5 . The amplitude of the ﬂux is nor- resource for future experiments of this kind.
+malized to 1. Because of the low eﬂiciency in the proton
+and helium identiﬁcation, this analysis was not applied to References
+these nuclear species.
+We want to remark again the importance of these Pinsky, LHS, OSbOI‘IlG, WHZ, B31163], JHV, et 31. L1ght 1212181168 ObSGI‘VGd by
+results because allow to access to precious information astronauts 0n Apollo 11 through Apollo 17. Science 183, 957—959,
+’ . . . 1974.
+about the low energy Spectrum Of heavy 10118 .mSlqe the Osborne W.Z., Pinsky L.S., Bailey J .V. Apollo light ﬂash investigations.
+ISS and this is of great interest for the determination of Biomedical results Opr0110.NASA SP-368, 355—365, 1975.
+the equivalent dose absorbed by astronauts. Hoffmann R.A., Pinsky L.S., Osborne W.Z. et a1. Visual light ﬂash
+observation on Skylab 4. Biomedical results from Skylab. NASA SP-
+. 377, 127—130, 2004.
+6- Conclusmns Budinger T.F., Tobias C.A., Schopper E. et a1. Quantitative observation
+of light ﬂash sensations experiment MA-106. NASA TM X-58173, 13/
+In this paper, we reported the results of the analysis per- 1—13/17, 1976-
+formed on Sileye-3/A1teino data by using a neural network Casolino, M., Bidoli, V., Morselli, A., et a1. Dual origin of light ﬂashes
+hit t Th 1 . h .1. 1 d th seen in space. Nature 422, 680, 2003.
+are 1 CC ure' 6 e?ergy 088 111 eac SI 10011 p 8.116 an e Narici, L., Bidoli, V., Casolino, M., et al. The Sileye-3/Alteino Experi-
+tOtal energy dep0s1ted 1n the deteetor have been used as ment for the study of Light Flashes, Radiation Environment and
+input Of the neural network. The neural network, a Mul- Astronaut Brain Activity on Board the International Space Station. J .
+ti-Layer Perception (MLP) With two hidden layers (9-18- Radiat- Res- 43 (Suppl), 547—552, 2002-
+18-1) resulted to be apt to identify particles recorded by Scrimaglio, R., Finetti, N., D’Altorio, L., et al. A neural network device
+th $9.1 3/A1t . d t t b d f th I t t. 1 for on-line particle identiﬁcation in cosmic ray experiments. Nucl.
+e 1 eye', €1,110 6 CC or a Car ,0 e n ema 1013a Instr. Methods Phys. Res. A 524, 152—161, 2004.
+Space Statlon Wlth an average eﬂiCIency Of about 85/0- BonVicini, V., Barbiellini, G., Boezio, M., et al. The PAMELA experi-
+These results are in agreement With those obtained With ment in space. Nucl. Instr. Methods Phys. Res. A461, 262—268, 2001.
+the standard procedure of analysis performed on the data Casolino, M, Bidoli, V., Furano, G» et al. The Sileye-3/Altein0
+Of Sileye-2 experiment (placed aboard the MIR station) experiment on board the International Space Station. Nucl. Phys. B
+Th . t tt f d th MLP .th t hidd ' (Proc. Suppl.) 113, 71—78, 2002.
+6 same 111p u p a . 61‘11 .6 8.110 61‘ W1 . W0 1 611 GEANT-3, GEANT-Detector Description and Simulation T001, CERN-
+1ayers, but With th1rty-s1X neurons for each hidden layer. W5013, 1994.
+With proper weight sets (dependent on the nuclear specie) Hertz, J ., Krogh, A., Palmer R.G. Introduction to the theory of Neural
+the neural architecture resulted to be able to reconstruct Computation AddiSOH-Wesley, Reading, MA, 115—156, 1991.
+the incident particle (among B C N O) kinetic energy RumelhartD.E. McClelland]. ParallelDistributedProcessing. V011. MIT
+t 1500 M V/ 1 ith’ ’ ’ t . t t. t d Press, Cambridge, pp. 444—459, 1986.
+up 0 e 0 nuc €011. W1 an 1111061“ 21111 y es lmae Casolino, M., Bidoli, V., De Grandis, E., et a1. Cosmic ray measurements
+to be around 20 /0- Even If we performed only an 0131-11116 on board space station MIR With SILEYE-2 experiment. In:
+analysis, NN are particularly suited to be used in real-time Proceedings of ICRC 2001, pp. 4011—4014, 2001.
+
+"

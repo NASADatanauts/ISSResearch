@@ -1,0 +1,267 @@
+"","x"
+"1","THE HYPERSPECTRAL IMAGER FOR THE COASTAL OCEAN (HICO) ON THE
+INTERNATIONAL SPACE STATION
+Michael R. Carson, Daniel R. Karwan, Robert L. Lucke, William A. Snyder
+Remote Sensing Division, Naval Research Laboratory, 4555 Overlook Avenue SW, Washington, DC
+20375
+Curtiss 0. Davis
+College of Oceanic and Atmospheric Sciences, Oregon State University, 104 COAS Admin. Bldg,
+Corvallis, OR 97331
+ABSTRACT Which are in general not met by systems designed for land
+applications.
+
+The HICO (Hyperspectral Imager for the Coastal Ocean)
+program is the ﬁrst demonstration of environmental
+characterization of the coastal zone using a spaceborne ’
+maritime hyperspectral imager. HICO is sponsored by the ""
+Ofﬁce of Naval Research as an Innovative Naval Prototype
+(INP), and Will demonstrate coastal products including m
+water clarity, bottom types, bathymetry and on-shore
+vegetation maps. As an INP, HICO Will also demonstrate E
+innovative ways to reduce the cost and schedule of this
+space mission by adapting proven aircraft imager . =13: \ ,
+architecture and using Commercial Off—The-Shelf (COTS) 3H» “a \ B (""1"" ' ﬁt jg“: 7
+
+' Wo—‘r-' ‘ ..._ ~\ may _' ”1'."" r Saff-
+components Where poss1b1e. 4.: {g?n‘e’si .. x},\ P? '1 re“ r»:- -
+
+:; _' -. “h 313‘}; ' _! ""T. ‘hf- ff“?
+Index T erms— hyperspectral, imaging spectrometry, ' ﬂ, \ /
+ocean optics, littoral, coastal ‘ ‘ _ a
+1. INTRODUCTION "" "" "" i ' P H
+Visible and near infrared wavelengths in the approximate Figure 1- Illustration ShQWing the Optical COmP16Xity found
+range 0.4 to 0.8 microns constitute the only portion of the In th? 0035131 ocean, Pamculaﬂy When “n?gmg the bOttom-
+electromagnetic spectrum that penetrates water and directly Imagmg Speammeter data are requlred. to resolve
+. bathymetry, bottom type and water column optical properties
+probes the water column. In the coastal enVironment Where .
+. . . . at the same tlme [1].
+the water contains Signiﬁcant dissolved and suspended
+matter and the bottom may be Visible, the scene image is . . .
+. . . . Hyperspectral imaging of the littoral zone from space
+spectrally complicated requiring well-calibrated
+. . . offers repeat, all-season coverage of coastal zones
+hyperspectral imaging to retrieve bathymetry, bottom type, . . . .
+. . . worldW1de to produce enVironmental products including
+chlorophyll content, and water inherent optical properties b . .
+. . athymetry, water clarity, suspended and dissolved matter,
+[1]. Furthermore the coastal ocean scene is dark, With an . . .
+. . . bottom type, class1ﬁcat10n of on-shore vegetation, and the
+albedo of only a few percent, and from space it is Viewed . . . . . . . . .
+. . . . . . opportunity to build time series of images to initialize and
+through the atmosphere Which is Signiﬁcantly brighter in the . . .
+. . validate predictive coastal models. However, hyperspectral
+V1s1b1e wavelengths than the water surface, due to scattered . . . . . .
+
+. . . . . . imaging of the littoral enVironment involves spe01ﬁc
+sunlight. These conditions impose stringent requirements h 11 f d . h 1 . . f h 1 d
+for a Maritime HyperSpectral Imaging (MHSI) system C a. enges not oun 1n yperspectra imaging 0 t e an '
+
+While land generally presents a bright, high albedo scene,
+the coastal ocean has a 10W albedo and is dark. In fact,
+978—1—4244—2808—3/08/$25 .00 ©2008 IEEE IV - 101 IGARSS 2008
+
+"
+"2","when a maritime scene is Viewed from a high-altitude The considerations discussed in section 1 lead to speciﬁc
+aircraft or space, the scattered light from the atmosphere is performance requirements for a MHSI, including
+signiﬁcantly brighter than the underlying water scene over requirements for high signal-to-noise ratio for the low
+most of the Visible spectrum (Figure 2), and careful removal albedo water scene, and accurate spectral and radiometric
+of the effects of the atmosphere is required to obtain calibration [3].
+accurate water-leaVing radiances. Water surface reﬂections Visible radiation is the only part of the electromagnetic
+of both direct sunlight and sky background are also spectrum that penetrates water to signiﬁcant depths. The
+signiﬁcant and must be accounted for. The special 400 - 700 nm spectral range is used to extract information
+challenges of atmospheric correction over the ocean about the in-water constituents and bathymetry and bottom
+required a new approach using a full vector radiative properties. Wavelengths from 760 to 860 nm are used to
+transfer model and designed speciﬁcally to deal with estimate the aerosol properties over the water for
+skylight reﬂecting off of the sea surface. This atmospheric atmospheric correction. Expanding the spectral range to 380
+correction algorithm was initially published in 2000 [2] and — 1000 nm will provide additional channels to improve
+versions have been developed for imaging spectrometers atmospheric correction.
+ﬂying at any altitude including space. Spectral absorption features of liquids and solids are on
+the order of 30 to 50 nm wide in the Visible and near
+infrared. Extensive experience with AVIRIS data and with
+100 , 3 2 nm hand held spectrometer data has shown that 10 nm
+.. 2 TOtal spectral sampling is adequate to sample and resolve these
+
+8 c 80 0 .. coastal features [1].
+
+g g ”z, The ocean is a dark target and a very high SNR is
+
+""-5 E 60 ’3” required for ocean imaging. Over 90 % of the at-sensor
+
+g L ""0.... signal for an ocean scene is from the atmosphere. Based on
+
+(—6 (:1? 4O ”3.... % two decades of experience with airborne imaging
+
+43 g From Surface ’1‘...“ spectrometers [4] a SNR of >200:1 for a 5%.reﬂectancoe
+
+(D g 20 . o,” .0 target is needed for ocean scenes so that sufﬁment SNR is
+
+(3' V oWWm..o~ WW ”3 left after atmospheric correction to resolve ocean features.
+
+0 ’ ”’3... The sky is highly polarized, and the polarization is
+dependent on the sun elevation and azimuthal angle, the
+
+0-4 0-6 0-8 1 Viewing geometry, wind speed and the amount of aerosols.
+Wave|ength (microns) Although ocean measurenoients. are made at angles to avoid
+
+Figure 2. Spectral radiance modeled (using MODTRAN) direct sun glint, some skylight is always reﬂected off the. sea
+
+spectral radiance above the atmosphere for 5% surface albedo surface Into the sensor. TO avmd errors from polarized
+
+and 45 degree solar zenith angle. In the blue wavelengths, the Skylight polarization sensitivity should be < 5% [5]
+
+atmosphere (total minus surface) is signiﬁcantly brighter than The required Ground Sample Distance (GSD) depends
+
+the surface. on the application. Extensive requirement studies including
+Navy, NCAA and other users has determined that 100 m
+The spatial scale 0f littoral hyperspectral imaging is GSD is required for many coastal applications including:
+
+also signiﬁcantly different from that often required for land
+
+applications. Hyperspectral imaging over land often - 2.5a Regional High Resolution Weather Impacted
+
+requires a Ground Sample Distance (GSD) on the order of Imagery
+
+meters, comparable to the size of man-made objects. For . 2.8 Shallow Water Bathymetry
+
+practical spaceborne hyperspectral imagers, this small GSD . 2913 Coastal Ocean Color
+
+leads to limitations on the .size of the scene that can be . 2101) Coastal Ocean Chlorophyll
+
+imaged. In contrast, a Signiﬁcantly larger GSD of tens of . 2111) Coastal Ocean Optical Properties
+
+meters, comparable to the spatial resolution of harbor charts, . 2.12 Bioluminescence Potential
+
+is often satisfactory for environmental characterization of . 2.13 Littoral Sediment Transport (supporting)
+
+the coastal zone because of the larger spatial scale of
+
+environmental features. This larger GSD makes possible [6,7]. When the bottom is imaged the 100 m data will
+
+scene sizes of thousands of square kilometers required to provide a useful product, but for many applications, such as
+
+capture the scale 0f coastal dynamics. bathymetry, a higher resolution on the order of the 30 m
+used for harbor charts is required.
+
+2- COASTAL IMAGER DESIGN REQUIREMENTS To provide high quality data there is an additional set of
+performance parameters that will be measured to evaluate
+system performance. These parameters including MTF,
+
+IV - 102
+
+"
+"3","stray light, saturation levels, and long term stability will be — Required to ﬁt image data to physical
+measured and the performance accepted as measured. Any models to retrieve environmental data
+problems that are identiﬁed will be corrected to the extent products
+possible in the processing software. This is the approach - Polarization sensitivity: 5% or less
+used with the airborne prototype for HICO the Portable — To preserve radiometric accuracy when
+Hyperspectral Imager for Low-Light Spectroscopy observing polarized scene
+(PHILLS) [8] which has resulted in high quality data. - Scene size: 50 X 200 km (nominal)
+— Appropriate for coastal scene sizes
+3. THE HICO PROGRAM - On-orbit lifetime: one year minimum
+— Required to collect data over all seasons
+The goal of the HICO program is to launch and operate the
+ﬁrst spaceborne coastal Maritime Hyperspectral Imager There are many possible products from imaging
+(MHSI). An MSHI is designed to have the high Signal-to- spectrometry data. For HICO we plan to demonstrate water
+Noise Ratio (SNR) required for dark coastal scenes. It inherent optical properties, colored dissolved organic
+captures large scenes at moderate spatial resolution matter, Chlorophyll, suspended sediments, and bathymetry
+appropriate for the coastal ocean. HICO is designed to have and bottom—type mapping. These products will be
+high sensitivity in the blue and full coverage of water- incorporated into seasonal dynamical models for
+penetrating and near IR wavelengths representative coastal types worldwide.
+A major goal of the HICO Program is to demonstrate
+the scientiﬁc and naval utility of MHSI data from space. 3.2 HICO as an Innovative Naval Prototype
+HICO data will be used to derive bathymetry, water optical
+properties, bottom type, and terrain and vegetation maps for HICO is an Innovative Naval Prototype (INP) sponsored by
+coastal areas of interest around the world. HICO is planned the Ofﬁce of Naval Research. In 2005, the Ofﬁce of Naval
+to operate for at least a year to provide an annual time series Research (ONR) and the Naval Research laboratory (NRL)
+of these products for the development of coastal models for began a program to design, build, and operate the ﬁrst
+selected sites. spaceborne hyperspectral imagers optimized for the coastal
+HICO is also an Innovative Naval Prototype. As ocean. This transition to space platforms is founded on
+discussed below in section 3.2 HICO will demonstrate new more than a decade of airborne hyperspectral imaging
+and innovative ways to develop and build the imaging experience at NRL and other laboratories, which provides
+payload to reduce cost and shorten the time to launch. The the basis for imager performance requirements and
+goal is to serve as an innovative pathﬁnder for future algorithms for atmospheric removal and littoral product
+spaceborne hyperspectral imagers retrievals [4,5].
+Wherever possible HICO uses Commercial Off-The-
+3.1 HICO on-orbit imaging system performance Shelf (COTS) components (Figure 4) this includes the
+camera, computer and rotation stage. To facilitate this
+HICO was designed to meet the requirements as outlined in approach hermetic enclosures are used for the camera,
+section 2. These are the key HICO measured and planned computers and electronics (Figure 3). This enables the use
+performance:
+- Ground Sample Distance: 100 m at nadir .
+— Sufﬁcient for many coastal environmental seagzrgirgggure - ./~
+features - ‘
+- Spectral coverage: 0.38 to 1.0 microns \; .
+— Includes all water-penetrating \ '
+wavelengths ﬂ: % .
+- Spectral binning: 0.0057 microns spectral bin 3 \ .. .
+width W ‘ .
+— Sufﬁcient to resolve spectral features in ‘\
+coastal scenes
+- Signal-to-Noise Ratio: greater than 200 to 1 for . Imaging
+. . Rotation Stage . line
+water-penetrating wavelengths, assuming 5 percent Point line ofsight of sight
+effective surface albedo and 0.011 micron spectral
+bins
+— Required for sufﬁcient residual Signal to Figure 3. An engineering model of HICO. HICO is shown in
+noise after atmospheric correction the imaging position.
+- Radiometric accuracy: 5% or better
+IV — 103
+
+"
+"4","0f ruggedized aircraft components and modern computers Scheduled Milestones:
+that might not be space qualiﬁed for years greatly reducing HICO test readiness review - June 16, 2008
+the cost and time to complete the instrument package. HICO delivery to combined payload September 1, 2008
+Payload delivery to JAXA - February 16, 2009
+3.3 HICO 0n the International Space Station Launch to International Space Station - July 9, 2009
+On-orbit checkout complete - September 25, 2009
+HICO is integrated and ﬂown under the direction of DoD’s
+Space Test Program. HICO is combined with a second ACKNOWLEDGEMENTS
+NRL experimental payload the Remote Atmospheric and
+Ionospheric Detection System (RAIDS) [9] to form the HICO is made possible by a talented and dedicated team.
+HICO RAIDS Experiment Package (HREP). HREP will be We gratefully acknowledge funding from ONR and funding
+attached to the Japanese Experiment Module-Exposed and technical support from the Space Test Program.
+Facility (JEM-EF) in the International Space Station (188) Without their support and the cooperation and support from
+where it will operate independently of the astronaut activity NASA and the J apanese Space Agency JAXA this program
+inside the station. would not be possible.
+HICO is manifested for July 2009 launch on the H2
+Transfer Vehicle (HTV) from Tanegashima, Japan. The REFERENCES
+HTV docks with the JEM and then a mechanical arm will [1] Z. P. Lee, and K. L. Carder., “Effects of spectral-band
+transfer HREP and attach it to the JEM-EF (Figure 4). number on retrievals of water column and bottom properties
+from ocean-color data”, Appl. Opt., 41, pp. 2191-2201, 2002.
+——.. . _ l'I—‘f—_ l _ 4f [2] B.-C.Gao, M. J. Montes, Z. Ahmad, and C. 0. Davis, “An
+a . . ' II :1.- -I _ a -. atmospheric correction algorithm for hyperspectral remote
+I _-_:__ ' _ J. W sensing of ocean color from space,” Appl. Opt. 39(6): 887-
+11:11.: *1""; ‘1 h ""It i. 1 [3] C. 0. Davis and K. L. Carder. 1997. “Requirements Driven
+—_ i: __ I Design of an Imaging Spectrometer System for
+' ﬁg“ ""' ‘ Characterization of the Coastal Environment”, Proceedings of
+""'---.. ""--.._ 41......_. ___ .- Ii. ' 3"" the SPIE, Imaging Spectrometry III, 3118: 322-329 (1997).
+- . . *r 3.5;""- [4] C. 0. Davis, K. L. Carder, B-C Gao, Z. P Lee and W. P.
+I' 1 # 4:7"" ' Bissett, 2006, The Development of Imaging Spectrometry of
+J"" h-i- _ ___ ""i55- . the Coastal Ocean, IEEE Proceedings of the International
+r- ‘ _W‘:* ‘1 Geoscience and Remote Sensing Symposium, V. 4: 1982-
+'. _ #45“: «av. a ﬁzg"" 1985. _ _
+u 7"". - 'h' __. [5] H. R. Gordon,, T. Du and T. Zhang, “Atmospheric correctlon
+. __ ' - I of ocean color sensors: analysis of the effects of residual
+instrument polarization sensitivity”, Applied Optics. 36(27):
+6938-6948 (1997).
+Figure 4. The Japanese Experiment Module (JEM) 0n the [6] NPOESS: Integrated Operational Requirements Document, 10
+International Space Station. The arrow indicates Where the Dec 2001.
+HICO and RAIDS Experiment Package (HREP) will be [7] J. D. Cunningham, D. Chambers, C. 0. Davis, A. Gerber, R.
+attached to the JEM External Facility. Helz, J . P. McGuire and W. Pichel, “Ocean Observer Study:
+A proposed National Asset to augment the future U. S.
+HICO is on schedule for the July 2009 launch to the Operational Satellite System”, MT S Journal, 37 (3): 142-157
+International Space Station. The program began in early (2003) _
+2006 and is progressing on a very rapid schedule as listed [8] C' 0' Dams» BOWICS’ 1» Leathers» R' A” Korwan, D'»
+b e1 OW. Downes, T. V., Snyder, W. A., Rhea, W. J ., Chen, W., Flsher,
+J., Bissett, W. P., and Reisse, R. A., ""Ocean PHILLS
+. Hyperspectral Imager: Design, Characterization, and
+ComPleFed MllesftoneS‘ . Calibration"", Optics Express, 10(4), 210—221 (2002).
+MISSIOH Reqmrements RGVIGW - February 28, 2006 [9] R. P. McCoy, Wolfram, K. D., Meier, R. R., Paxton, L. J.,
+Mission Requirements Document - March 16, 2006 Cleary, D. D., Prinz, D. K., Anderson, D. E., Christensen, A.
+HICO manifested on Space Station-March 2007 B., Pranke, J., Sivjee, G. G., and Kayser, D., ""Remote
+Preliminary Design Review _ June 18, 2007 Atmospheric And Ionospheric Detection System"" in
+Critical Design Review _ November 89 2007 Ultraviolet T echnolog., held in San Diego, CA, SPIE, 1986.
+HICO imager delivery - May 30, 2008
+IV — 104
+
+"

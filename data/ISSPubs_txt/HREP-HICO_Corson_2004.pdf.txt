@@ -1,0 +1,182 @@
+"","x"
+"1","The HICO Program — Hyperspeetral Imaglng 0f the
+Coastal Ocean from the Internatlonal Space Station
+M. R. Corsona, J . H. Bowlesa, W. Chena, C. O. Davisa, K. H. Gallellib, D. R. Korwana, P. G. Lucey"", T. J . Mosherd,
+R. Holaseke
+Abstract - The HICO (Hyperspectral Imager for the Coastal models for the coastal ocean, and Characterize and monitor the
+
+Ocean) program is a collaboration between the Naval Research health Ofreef environments.
+Laboratory (NRL), the University of Hawai’i at Manoa, Utah
+State UniverSity’ and NovaSol Inc,” to image the ,coaStal ocean The pressurized and temperature-controlled environment in
+and reef systems from the International Space Station. The ﬁrst . . . .
+phase of the program will install the NRL Portable the 188’ the ablhty t0 launCh t9 the Statlon 1n a padded locker
+Hyp ersp e ctr a1 Imager for L 0W Light Spectroscopy (PHILLS) in 1n the Space. Shuttle with relatively low launch Vibretion, and
+the Station Window Observational Research Facility (WORF), the avallablhty 0f Statlon crew for system setup, malntenance,
+which has a nadir-facing optical window. The PHILLS will and troubleshooting allow HICO to make use ofhyperspectral
+image in 10 nm bands over the wavelength range 400 to 1000 nm,
+and is designed to provide a signal-to-noise greater than 200 to 1 r""?
+when Viewin the relative] dark coastal ocean, coral, 0r 0n-sh0re "" * IF I i: . _ .1: '
+vegetation. gThese imagei and ground truth will be used to 1"" 1i 41"" _ ' {#ﬁ """"
+develop and verify algorithms for water optical properties, 'i' . 1H '1' _
+chlorophyll, CDOM, bathymetry, bottom type, coral reef status,
+and to classify on-shore vegetation. The second phase of the I __._
+program will install the University of Hawai’i MAHI short wave _ J -. I- ""
+infrared hyperspectral imager in the WORF. This paper ' f9.$ E
+introduces the HICO program, and discusses the PHILLS and its . , * ""'-' "" -
+implementation for HICO. '3‘ r II .- ' I .-
+. I'r- "" '
+I. INTRODUCTION TO THE HICO PROGRAM *9 ""‘ . ""E if t""
+The nadir-facing optical quality window in the Destiny , _ Ilffiﬁ
+module of the International Space Station (188) [1], shown - H.-
+from inside the Station in Figure 1, offers the opportunity to \
+image the Earth from space from a shirtsleeve environment. 5..
+The Window Observational Research Facility (WORF), which 1'"" H“!
+is yet to be launched, will provide payloads using the window
+With power, thermal management, and command and data Figure 1. The optical quality window in the Destiny module of the
+links. The HICO (Hyperspectral Imager for the Coastal International Space Station.
+Ocean) [2] program is a collaboration between the Naval
+Research Laboratory (NRL), the University of Hawai’i at imagers developed for airborne imaging. This avoids the
+Manoa, Utah State University, and NovaSOI, Inc., to use the substantial cost and development time of imagers designed for
+188 window facility to image the coastal ocean and reefs on a autonomous operation in a space environment. The 188
+global scale. The HICO program has been briefed t0 the DOD WORF power, thermal management, and command and data
+Space Experiments Review Board, and it is anticipated that systems further simplify the system requirements compared to
+the Space Test Program (STP) will integrate the payload with a dedicated space instrument. This opportunity will allow
+the Space Shuttle and 188. HICO will image selected coastal HICO to begin the substantial task of developing methods,
+and reef areas with sufﬁcient frequency to capture seasonal algorithms, and data systems for space-based hyperspectral
+variations, and will use the data to characterize and develop imaging of the coastal and ocean environments.
+aRemote Slensing DliVision, Naval Research Laboratory, Washington, DC, HICO Will collect data from the 188 using tWO hyperspectral
+gé . I:- . . . . .
+5131:8323 Igetiltae: 1;; Space Technology, Naval Research Laboratory, imagers, Wthh W111 be operated sequentially for
+Washington, DC, kga11e111@spacenﬂnavymﬂ approx1mately one year each. The ﬁrst on board W111 be the
+CHawai’i Institute for Geophysics and Planetology, University of Hawai’i at NRL Portable Hyperspectral Imager for LOW Light
+348111081» Honolulu» HI» MW . . Spectroscopy (PHILLS) [3], which images in the Visible and
+Mechamcal and Aerospace Englneerlng, Utah State Un1vers1ty, Logan, UT, N ear Infrared (VNIR) wavelengths from 400 to 1000 nm. The
+t]mosher@eng1neer1ng.usu.edu . . . . .
+eNovaSol, Inc., Honolulu, HI, rick.holasek@nova-sol.com PHILLS IS shown 1n Figure 2. The second imager W111 be the
+0-7803-8742-2/04/$20.00 (0) 2004 IEEE 4184
+
+"
+"2","MAHI, which is being developed by the University of Hawai’i II. THE PHILLS IMAGING SYSTEM
+and NovaScl, Inc. MAHI will image in the Short Wave
+InfraRed (SWIR) from 1000 to 2500 nm. Figure 3 shows the The NRL PHILLS is a pushbroom-scanning hyper8pectral
+NovaScl Diamond-One, from which MAHI is being derived. imager designed to produce high signal-to-noise images 0f the
+The planned Ground Sample Distance (GSD) for PHILLS is relatively low albedo coastal ocean and on-shore vegetation.
+25 m, and for MAHI is 40 m. During operation, each imager The PHILLS imager, ShOWh in Figure 2: is built using
+will be mounted on a motorized gimbal system to be Commercial Off The Shelf (COTS) components wherever
+developed and fabricated by Utah State University. The possible to minimize cost and development time. Light enters
+gimbal system will provide ground motion compensation to PHILLS through the foreoptic lens, which images the scene at
+reduce the apparent speed Of the ground past the line Of sight, the location of the spectrometer slit. The slit is the system
+and will also provide cross-track pointing to improve scene ﬁeld stop, and it allows only light originating from a line in
+access. Following the completion Of the HICO program, the the scene, parallel to the slit, to enter the spectrometer.
+gimbal system will be delivered to the Space Test Program, Spectral dispersion in the direction perpendicular to the slit is
+which intends to make it available for subsequent WORF produced by a HyperSpecTM VS'15 spectrometer, Shown in
+payloads. The discussion below describes in more detail the cross section in Figure 4- This spectrometer was developed ih
+NRL hyperspectral imager and its implementation for HICO. collaboration between NRL and American Holographic, IhC-a
+and an improved version is now available from Headwall
+.. Photonics. The spectrometer is an all-reﬂective Offner design
+' J‘ ”3.:- incorporating a convex reﬂective grating corrected for
+w EH: astigmatism, and is further optimized by selecting the grating
+i' holographic construction points and mirror tilts to balance
+' third- and ﬁfth-order astigmatism. This spectrometer has
+1, 1.. , '- 3'"" inherently low smile (the change in dispersion with ﬁeld
+- ' ' - t - ""r position) and keystone distortion (the change in magniﬁcation
+' . _ I with spectral position), both modeled to be less than 0.1%.
+. u- _ - x 4-5—
+l3.“ . .. ‘ .
+' ' IMMﬁﬁa
+ﬂ? .1: x"" 'wge- 43‘ 3
+I' I “EEIi 'in"" NI! i I §
+:1- 5! i‘. - \vx 14?. r4.
+E; 'l. ‘5”! Vi“ #237 g
+. . E \II L"" IN?"" : u' 9“;
+Figure 2. The NRL PHILLS VNTR hyperspectral imager. The overall length “‘Qi-EEIZE-Fr'ﬁﬁ'. *-“-""’='='="" ."" r...
+of PHILLS 1s approx1mately 35 cm. ﬁr“ f1""; 'I .I‘
+1 reg. . . t
+,E‘Iﬁie-‘l‘r’g 5, ""1"",“ 'a
+5-H ""mum: . .' x a.
+- .al..- ___ :—_n-.- 'l 55 '
+. _ ‘5 ea 2 4 . 5
+"" ' h I ,I ..
+t H 1 1: l ' Figure 4. The HypeiSpecTM V815. The numbered components are: 1) lens
+"" :- |. I mount and entrance slit, 2) fold mirror, 3) concave mirrors, 4) convex grating,
+. 1, 5) location of the CCD.
+-. - a- 'I
+"" .i _' .. i 1?] The spectrally dispersed image falls on a thinned, backside
+‘ . 1"" ""h” . IE % illuminated 1024 X 1024 silicon CCD in a camera from
+"" "" 4. _ “ ' t "" {55 PixelVision, Inc. The wavelength range from 400 to 1000 nm
+_. J r .- is dispersed over approximately 500 pixels, yielding spectral
+"" . ’ ' ""7- resolution as ﬁne as 1.2 nm. The focal plane assembly
+I ‘ incorporates a custom zero order beam dump and an order-
+II'H. _,J = - _ sorting ﬁlter. The backside illumination provides high
+i , quantum efﬁciency in the blue wavelengths, and the camera
+electronics provide 14-bit digitization and approximately 30
+electrons read noise. These performance characteristics, along
+, , , with ground motion compensation to increase the frame time,
+Figure 3. The NovaSol Inc. Diamond-One SWIR hyperspectral imager, . . . . . . . .
+predecessor to the University ofHawai’i and NovaS 01 MAHI. yield the high Signal to n01se ratio required to retrieve quality
+0—7803—8742-2/04/$20.00 (0) 2004 IEEE 4185
+
+"
+"3","data products from the low albedo coastal ocean scenes. develop other data products of interest to the University’s
+The PHILLS foreoptic used for data collection from an aircraft research program. At NRL, emphasis will be placed on
+is a COTS C—mount Video lens from Schneider Inc., which is atmospheric correction, water optical properties, bottom type
+corrected over the wavelength range 400 to 1000 nm. The and reﬂectance, bathymetry, and the classiﬁcation of near—
+much higher altitude of the ISS and the 25 m GSD will require shore vegetation and terrain. NRL will also use the variety of
+a longer focal length lens. A suitable lens designed to operate Viewing geometries provided by the Station orbit to
+over the full PHILLS wavelength range is not commercially investigate the sensitivity of the product algorithms to the
+available, and therefore the PHILLS foreoptic for HICO will observing geometry, Sun angle, aerosol type, and the optical
+be custom designed and fabricated. depth of the atmosphere.
+III. PHILLS IMPLEMENTATION ON THE INTERNATIONAL ACKNOWLEDGMENT
+SPACE STATION
+
+This work is supported by the Ofﬁce of Naval Research, the
+The PHILLS pushbroom mode of imaging is compatible with Space Test Program, and Navy TENCAP.
+use on the 188, where the forward motion of the aircraft
+environment for which the PHILLS was designed is replaced REFERENCES
+by the OI‘bltal mOtlon Of the Siatlon' The PHILLS. HICO data [1] M. Runco, “Earth Science and Remote Sensing from the International
+W111 be COlleCted and Stored m 10 nm SpeCtral blnS over the Space Station Using the Destiny Laboratory’s Science Window and the
+wavelength range 400 to 1000 nm, with 200 to 1 or greater Window Observational Research Facility”, Thirtieth International
+signal—to—noise for coastal ocean scenes over the range of Symposium 011 Remote Sensing of EnVironment, Honolulu, HI,
+wavelengths that penetrate the? water' InStruinent mOdeling [2] ITIO i.etii141;:i1:2013: G. Lucey, C. 0. Davis, “Hyperspectral Imager for the
+ShOWS that a ground mOtlon compensation faCtor Of Coastal Ocean (HICO)”, Thirtieth International Symposium on Remote
+approximately ten will be required to achieve the planned Sensing ofEnVironment, Honolulu, HI, November 2003.
+signal—to—noise ratio, and orbit simulations have shown that [3] C- 0- DaVisa J- Bowles, R- A- Leathers)? Korwan, TZV- Downes, W-
+m 30 to W 13-31:: WW
+achieve an acceptable scene reV1s1t time of approx1mately ten and calibration,” Optics Express,10:4,210-221 (2002)_
+days for any location accessible from the ISS orbit. The [4] K. Scott, S. Biggar,D. Eppler,E. Zalewski, L. Brownlow, and K. Lulla,
+transmission of the Station optical—quality window varies over “International Space Station Destiny Module Window Optical
+a range Of tens Of p ere em as a function Of wavelength and Characterization”, . Thirtieth International Symposium on Remote
+
+. . . . . Sensmg of the Env1ronment, Honolulu, HI, November 2003.
+angle Of ineldence [4]” and thls W111 have to be taken into [5] J. Bowles, D. Clamons, D Gillis, P Palmadesso, J. Antoniades,
+account in the data processing. M Baumback, M Daniel, J Grossmann, D Haas and J Skibo,
+“New results from the NEMO/ORASIS compression
+
+The PHILLS HICO ﬂight system will consist Of: the PHILLS algorithm”, Proceedings of the SPIE, vol. 3753 (1999) p. 226.
+imager described above; a two aXis gimbaled mount providing
+ground motion compensation and cross—track pointing; a
+Windows—based computer that controls the imaging process
+including receiving imaging scripts generated on the ground,
+receiving time and attitude data from the Station, receiving
+health and status data from the sensor system, controlling the
+imager, controlling the gimbal pointing and motion, operating
+a mechanical shutter to collect dark background frames, and
+processing and storing the data; and a power supply for the
+PHILLS, gimbal system, and computer. The computer will
+also implement the NRL Optical Real time Adaptive Spectral
+Identiﬁcation System (ORASIS) algorithm [5], to provide
+approximately 10 to 1 compression of the hyperspectral data
+with negligible loss of ﬁdelity. There is provision for some
+image and status data to be sent to the ground Via Station
+telemetry for system checkout, system monitoring, and scenes
+requiring low data latency. However, current plans call for the
+bulk of the image, pointing, and ancillary data to be stored on
+ruggedized media and transported to the ground for analysis.
+The Naval Research Laboratory will use the HICO data to
+investigate the use of existing and new algorithms to produce
+products of Naval utility using spaceborne hyperspectral
+imagery. The University of Hawai’i will analyze the data to
+characterize and monitor the health of reef environments, and
+0-7803-8742-2/04/$20.00 (C) 2004 IEEE 4186
+
+"

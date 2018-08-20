@@ -1,0 +1,503 @@
+"","x"
+"1","XXXVI Meeting of the Italian Section Of the Combustion Institute
+COOL FLAMES IN DROPLET COMBUSTION
+A. Cuoci, A. Frassoldati, T. Faravelli, E. Ranzi
+albert0.cuoci@polimi.it
+Department Of Chemistry, Materials, and Chemical Engineering “G. Natta”
+Politecnico di Milano (Italy)
+Abstract
+Anomalous combustion of n-heptane droplets burning in microgravity conditions
+was recently experimentally observed by Nayagam et al. [Combustion and Flame,
+159 p. 3583—3588 (2012)]. In particular, after a ﬁrst radiative extinction (i.e. the
+Visible ﬂame ceases to exist), relatively large, spark-ignited n-heptane droplets
+continue to strongly vaporize (according to the well-known squared-laW) for an
+extended period, ending in a secondary extinction at a ﬁnite droplet diameter. The
+hypothesis proposed by Nayagam et al. was that this seeond-stage vaporization is
+sustained by a lOW-temperature, soot-free, “eool-ﬂame’ ’ heat release.
+In this paper we applied a numerical model describing the combustion of isolated
+fuel droplets in microgravity conditions to explore the feasibility of such
+hypothesis. The numerical model solves the unsteady transport equations of mass,
+momentum species and energy, both for the droplet and the gas phase, assuming a
+spherically symmetric domain. Detailed transport properties are accounted for both
+the phases (liquid and gas) and the droplet/gas interface is described assuming
+thermodynamic equilibrium. Radiative heat transfer is accurately modeled in order
+to correctly capture the ﬁrst-stage (radiative extinction), under the hypothesis of
+gray gases. A detailed kinetic scheme With ~150 species, accounting for the low-
+temperature mechanism, is adopted. The resulting model consists of a large,
+structured system of differential algebraic equations, With numerical complexity
+due both to the stiff nature of the kinetic mechanism and to the ﬂame structure
+around the droplet.
+The numerical results conﬁrmed the hypothesis proposed by Nayagam et al.: after
+the ﬁrst-stage ignition, a cool ﬂame at ~7OO K persists around the droplet for a long
+period of time (depending on the initial diameter of the droplet), resulting in a
+Vigorous vaporization. The comparison With the experimental measurements is
+very satisfactory: both the extinction diameters are captured With reasonable
+agreement and the vaporization rate is correctly predicted.
+A couple of possible long-term implications of these results can be mentioned: i)
+the possibility to use the eool-mode combustion of individual droplets may lead to
+entirely different design concepts of spray burners; ii) since the eool-mode persists
+after the hot-ﬂame extinction, safety procedures based only on considerations of
+hot ﬂames may become inadequate for assuring safety under all conditions.
+
+"
+"2","XXXVI Meeting of the Italian Section Of the Combustion Institute
+Introduction
+The combustion of liquid fuels is of great interest in many practical applications,
+from industrial burners to diesel engines, especially because of their high-energy
+density per unit volume [1]. However, the strong interactions between the many
+physieo-ehemieal processes dominating the ignition of fuel droplets, makes the
+study of combustion of liquid fuels a very tough subject, both experimentally and
+numerically. It is thus useful to take apart the overall system and to study simpler
+and possibly ideal conditions, like combustion and evaporation of isolated fuel
+droplets in microgravity conditions.
+Mierogravity experiments of combustion of isolated droplets are quite common in
+the scientiﬁc literature, for a wide range of fuels. Experimental investigations
+clearly conﬁrmed the theory, according to which, after a short transition period, a
+steady-state regime of vaporization is reached and the square of the droplet
+diameter decreases linearly with time (d-squared law). More recently, with the
+availability of long-duration spaee-based miero-graVity platforms, larger droplets
+have been studied, characterized by longer burning histories [1, 2]. In particular, in
+these and other experiments, combustion of n-heptane droplets received a lot of
+attention, especially because of its consideration as a component of surrogate fuels
+for diesel and gasoline engines. In this context, for the ﬁrst time Nayagam et al. [3]
+reported experimental observations in which large n-heptane droplets eXhibit dual
+modes of combustion and extinction. First the droplet undergoes normal burning
+with a Visible ﬂame which surrounds the droplet and extinguishes due to the
+radiative effects at a relatively large droplet size. However, this extinction is
+followed by a quasi-steady vaporization of the droplet without any Visible ﬂame
+detected, which ends abruptly, at a point called “seeond-stage extinction”. This
+two-stage combustion has been observed in the past for bi-eomponent fuel droplets
+[4], and easily explained: the lighter component supports the initial ﬂame, while
+the second period is supported by the heaVier component. The substantial
+difference with the n-heptane case is that for the bi-eomponent droplets both stages
+involve traditional hot ﬂames. On the contrary, dual-mode combustion was not
+observed for pure-fuel droplets before the work of Nayagam et al. [3]. The possible
+explanation proposed by Nayagam et al. [3] was that this seeond-stage vaporization
+is sustained by a low-temperature, soot-free, “eool-ﬂame” heat release. However,
+they were unable to provide deﬁnitive proof of this interpretation, which, if correct,
+may necessitate deeper investigations of currently known eool-ﬂame chemistry in
+these systems.
+In this paper we applied a numerical model describing the combustion of isolated
+fuel droplets in microgravity conditions to explore the correctness of such
+hypothesis. The work is organized as reported in the following. We ﬁrst describe
+the experiments performed by Nayagam et al. [3] in which the dual-mode
+combustion was observed. Then, the numerical model is presented, together with
+details about the numerical algorithm adopted. In the ﬁnal part we present the
+numerical results and the comparison with the experimental measurements.
+
+"
+"3","XXXVI Meeting of the Italian Section Of the Combustion Institute
+Microgravity experiments
+In this section we summarize only the main features (relevant for the numerical
+simulations) of the experiments conducted by Nayagam et al. [3], in which the
+dual-mode combustion was observed. Further details of experiments and
+operational procedures can be found in Dietrich et al. [5]. The experimental
+measurements were conducted on board the International Space Station (188) using
+the Multi-User Droplet Combustion Apparatus (MDCA). The cylindrical
+combustion chamber had a free-volume of approximately 95 1. An opposed-needle
+deployment technique was adopted to freely deploy droplets of chosen initial size
+in microgravity. The experimental diagnostic system consisted of a blaek-and-
+white, baek-lit droplet image-eapture camera, a UV-sensitive ﬂame-imaging
+camera ﬁltered to observe OH*-ehemilumineseenee at a 310 nm wavelength, and a
+CCD color camera.
+The combustion chamber was ﬁlled with the desired ambient gas mixture,
+consisting of oxygen, nitrogen, and sometimes carbon dioxide, at a selected
+pressure. Over one hundred droplet burns were carried out using n-heptane fuel in
+varying ambient gas mixtures, with initial droplet diameters in the range of d0=2-4
+mm, primarily at 0.7 and 1 atmosphere pressures. From the digital images, the
+droplet diameter and the ﬂame diameter were obtained as functions of time using
+an image-analysis software.
+Mathematical model
+The general mathematical model used to describe the transient evaporation,
+ignition, and combustion of isolated pure fuel droplets in a large environment at
+constant pressure is brieﬂy reported below. Mierogravity simpliﬁes the problem,
+because of the absence of buoyancy and the resulting 1-D nature of the evaporation
+and combustion of a droplet. Time-dependent, spherically symmetrical numerical
+computations are well suited to such a problem. The creation and location of a
+droplet can be a source of asymmetry in experimental measurements. Nevertheless,
+the predictions indicate that these uncertainties do not greatly affect the model’s
+assumptions. Detailed chemical kinetics in the gas phase with multicomponent
+molecular transport are considered. Only the ordinary diffusion term of the mass
+ﬂux of species is taken into account in the gaseous phase. Estimations including the
+Soret effect did not show any signiﬁcant modiﬁcation of the results and for this
+reason are neither reported nor discussed. Given these assumptions, the liquid
+phase is described by the following equations of mass and energy:
+plainﬂmzﬁ Mi) (1)
+dt 3 dt dt
+101C171ﬂ : i220/219 ﬂ) (2)
+(9t r 6r dr
+
+"
+"4","XXXVI Meeting of the Italian Section Of the Combustion Institute
+where ,0] , Cpl and kl are the density, the speciﬁc heat and the thermal
+conductivity of the liquid phase, respectively. R d is the droplet diameter, while T1
+the droplet temperature. The term de/dt describes the movement of the droplet’s
+surface and vg is the gas velocity in the radial direction. This term can be positive
+(i.e., the droplet enlarges) if the expansion, due to heating, is greater than the mass
+loss due to evaporation. The properties of the liquid are assumed from Daubert and
+Danner’s data base [6], from Reid et a1. [7], and Perry and Green [8]. Speciﬁc
+attention is devoted to the presence of internal liquid motion due to heterogeneity
+in the surface temperature [9]. Such internal recirculation inside a pure fuel droplet
+enhances heat transfer. The heating up transient becomes slower, while the burning
+rate or extinction phenomena are not affected. To estimate the effect of this
+convective two-dimensional contribution is quite complex and would require
+further computational efforts, making the whole problem quite difﬁcult for current
+computers to handle. On the basis of the proposals of Marehese and Dryer [9], it is
+possible to use an “effective” liquid-phase conductivity, but this would introduce a
+new parameter. Generally good agreement with experimental measurements is
+observed, even when the presence of internal recirculation in the liquid phase is
+ignored. All the reported results assume unmodiﬁed transport properties.
+The following equations of mass, species and energy are taken into account for the
+gas phase:
+dog 1 a 2
+— + —— r v = 0 3
+(9t r2 8r< gpg) ()
+6a) . 5a) . 1 a 2 .
+pg (—5? + vg 7:1] 2 3—250» pgwgyjI/gymgj J =1...NC (4)
+”g 5Tg_15235i_” 5i _
+ngpg [3+ Vg E] —r—25[r 8r [kg 8r ]] pg;(Vg,ijg,ng,j) a], +QR VqR (5)
+where pg , Cpg and kg are the density, the speciﬁc heat and the thermal
+conductivity of the gas phase, respectively. The symbols wgyj, ngj, Q]. , Cpg’j
+indicate the mass fraction, the mass diffusion velocity, the formation rate and the
+speciﬁc heat of species j. QR is the heat release due to the Chemical reactions, while
+qR is the radiative heat ﬂuX. The transport properties were either taken from the
+CHEMKIN transport database [10] or estimated following the procedure proposed
+by Wang and Frenklaeh [11]. The thermochemical information on the gas phase
+was obtained primarily from the CHEMKIN thermodynamic database. Unavailable
+thermodynamic data were estimated by group additivity methods [12]. Closure of
+the system and equilibrium between gas and liquid demand an equation of state,
+
+"
+"5","XXXVI Meeting of the Italian Section Of the Combustion Institute
+generally expressed as f (V,T, P, 01, mg) 2 O , for the gas phase. The results reported
+below refer to the ideal gas equation. However, modiﬁed Redlieh—Kwong—Soave
+and Peng—Robinson equations were also tested, without any signiﬁcant
+modiﬁcations in the simulations. Radiative heat ﬂuxes were estimated by adopting
+the approach proposed by Kazakov et a1. [13]. The Planck mean absorption
+coefﬁcients were derived from polynomial expressions for C0, C02, and H20,
+which are assumed to be the only molecules inﬂuencing radiative transfer [14].
+The boundary conditions are deeply discussed in [15] and are not here reported for
+lack of space. The initial temperature in the gas phase differs according to the kind
+of experiment to be modeled. Ignition experiments require a more complex
+description. In fact, the deployment of the droplet into a cold environment is
+usually followed by the local application of a transient external ignition source
+(sparks or hot wires). These procedures can modify the spherical symmetric
+structure of the problem. In line with the approach pro-posed by Marehese and
+Dryer [9], ignition was simulated by assuming a short period (~1 s) of pure
+evaporation at ambient temperature, followed by a non-uniform temperature radial
+proﬁle peaking at~2000 K.
+The overall model consists of a differential system of the conservation equations
+with boundary and initial conditions. As previously noted, the attention to low-
+temperature phenomena leads to the use of a detailed kinetic mechanism, which
+includes a large number of components. The resulting system of algebraic and
+partial differential equations requires particular attention to the numerical aspects
+of the problem. The partial differential equations are diseretized by means of a
+moving spatial grid. The numerical problem is then Characterized by a large sys-
+tem of differential-algebraie equations (DAE), with the velocity in the gas phase
+evaluated using the mass conservation equation. Furthermore, nonlinear algebraic
+equations are used to describe the gas—liquid interphase conditions.
+Table 1. Operating conditions of the experiments
+of Nayagam et al. [3] simulated in this work.
+
+02 K
+“mm
+n----
+n----
+
+"
+"6","XXXVI Meeting of the Italian Section of the Combustion Institute
+The complexity of this problem, coupled to the intrinsic stiffness of the DAB
+system, means that speciﬁc attention must be paid to the numerical methods and
+solver routines. In fact, this problem is quite Challenging, not only with regard to
+the precision required, but also in terms of: i) robustness (sudden ignition, steep
+proﬁles, high gradients); ii) efﬁciency (simulations can take more than 2 days of
+CPU time).
+We adopted the BzzMath library [16] comprising the BzzDae C++ Classes
+(BzzMath is freeware for noncommercial use and can be directly down-loaded at
+http_ ://www.chem.p_olimi . it/home s/gbuzzi).
+The droplet ﬁrst enlarges when heated and then shrinks during vaporization.
+Therefore, a moving spatial grid was introduced to describe the moving boundaries
+between the droplet and the surrounding gas. Non-equispaoed control volumes are
+used to discretize the liquid and gas phases. In particular, by applying the simple
+rule Am] = aAri, with 0L~=l.05, the ﬁnal step size becomes ~500 times the initial
+one, depending, on the total number of grid points. Hence, a large gas volume
+around the droplet is described by maintaining a very ﬁne grid size at the gas—
+liquid interface, where the critical gradients are located.
+The structure of the DAB system is mainly a tridiagonal block, due to spatial
+disoretization, with the exception of the column corresponding to the droplet’s
+radius, where the nonzero elements refer to the moving grid. Radiation terms in the
+energy balance too are spread over the whole matrix, even though diagonal terms
+dominate. Most of the equations are devoted to the Chemical species involved in
+the detailed kinetic scheme, with ~l60 equations for each disoretization point.
+Consequently, the over-all number of DAEs ranges between ~25,000 and ~65,000,
+depending on the number of points of the adopted grid. The possibility of
+exploiting the quasi-tridiagonal block structure is of crucial importance in
+drastically reducing CPU time. For this purpose, a speciﬁcally developed C++
+DAE class of the BzzMath library was adopted.
+Results and discussion
+The numerical simulations were conducted for several droplets, with different
+initial diameters, burning in Oz/Nz atmospheres with different compositions. The
+complete list is reported in Table 1. Several computational grids, with different
+number of points, were investigated, However, all the results reported in the
+following refer to the simulations conducted using a computational grid with 30
+points for the droplet (liquid phase) and 120 points for the gas phase. The
+convective terms were disoretized using the upwind scheme, while the diffusion
+terms were disoretized using centered, 2nd order differences. The simulations were
+carried out on Intel® Xeon® CPU X5675 @ 3.07 GHz processors and each
+simulation took ~6 h of computational time.
+In the following we focus the attention on the results corresponding to the Run 2,
+which are presented in detail and discussed. Similar observations can be repeated
+also for the other droplets reported in Table l.
+
+"
+"7","XXXVI Meeting of the Italian Section of the Combustion Institute
+In Figure 1 we show the square of the droplet diameter as functions of time, as
+numerically predicted by our model (continuous line) and compared With the
+experimental measurements of Nayagam et al. [3] (points), together With the ﬂame
+diameter. Immediately following ignition at time i=0, the square of the droplet
+diameter decreases almost linearly With time. At around t=9 S, the ﬂame-diameter
+abruptly ends, indicating cessation of the detectable Visible-ﬂame and OH
+emissions. This point corresponds to the so called ﬁrst-stage (or hot temperature)
+extinction. However, the square of the droplet diameter continues to decrease
+linearly until around t=35 S, When the slope abruptly Changes to a lower value
+indicating a reduced rate of vaporization. This point corresponds to the second-
+18 — 40
+16 Flame diameter Run 2 3
+a (maXimum 0f 21% 02 5
+E 14 Tob'I-XHX temperature) d0=3.91 mm 30 E
+E 12 .-°° ‘f E
+4-! _’ ’7'. 25 t
+E 10 ; '0... g
+“C : .'o._ 20 E
+E 8 : ‘6‘? '9
+8 , : ""5’.\ 15 3
+""5 b : '0... E
+.5 Squared droplet n... 10 g
+g 4 I diameter \
+§- 2 ..(..\iﬁ«“.., 1. S
+0 0
+0 10 20 30 40 50
+time [s]
+
+Figure 1. Squared droplet diameter and ﬂame diameter (i.e. the location Where the
+peak of temperature occurs) as a function of time: comparison between
+experimental data [3] (points) and numerical predictions for Run 2.
+
+18 — 3000
+
+16 Run 2
+g Squared droplet 21% 02 2500 _
+E 14 diameter do=3.91mm %
+E 12 \“T/ \ 2000 g
+'c """" 1500 E
+'53 8 Peak 3
+§- . temperature E
+*- 6 ‘ 1000 3
+“U ‘ .g
+E 4 a a
+g ‘~.~_ 500 E
+g 2 ""-------------- ------
+0 0
+0 10 20 30 40 50
+time [s]
+Figure 2. Squared droplet diameter and peak temperature in the gas phase as a
+function of time for Run 2 (see Table 1). The continuous lines were obtained by
+accounting for the low-T mechanism, While the dotted lines by suppressing it.
+
+"
+"8","XXXVI Meeting of the Italian Section of the Combustion Institute
+stage extinction. At that point, from the experimental point of View, a vapor Cloud
+invariably is seen by the Visible camera to begin to form and grow. The numerical
+predictions are in satisfactory agreement With the experiments, both in terms of
+droplet diameter and ﬂame diameter histories.
+The burning-rate constant K (i.e. the rate of decrease of the square of the droplet
+diameter With time) was calculated for the period during Which a Visible ﬂame
+eXists (0—9 s), and for the period between radiative and second-stage extinction (9-
+35 s). Both experiments and numerical predictions show that the value of K during
+the second stage remains quite constant, at a value smaller than that at the end of
+the ﬁrst stage, indicating that the quasi-steady burning rate is less Vigorous for the
+second stage.
+Figure 2 reports the calculated maximum temperature in the gas phase and the
+squared droplet diameter as function of time in two different cases: by accounting
+for the low-temperature mechanism (continuous lines) and neglecting the low-
+O.9O 1400
+n-C7H 16 El
+0.80
+t 1200
+0.70 ‘
+x 1000
+c 0.60 ‘ OH X 5000 temperature —.
+.2 | E
+g 0.50 | ‘ 800 g
+g 0.10 \‘ COZXZ H20x5 600 g
+E 0.30 \ I I d - - - E
+.. \’ 400 3
+0.20 \ 02
+\ co x10 l» 200
+0.10 _/‘.\----\ ~
+/' \\
+0.00 - - - ... 0
+0.0E+00 1.0E702 2.0E702 3.0802 4.0302
+radial coordinate [m]
+0.80 — 800
+n-C7H 16
+0.70 1 El 700
+0.60 ‘\ 600
+c ‘ temperature _
+.9 0.50 ‘ 500 E,
+E \ OQOOHX 100 g
+; 0.40 400 a
+g ‘\ co x10 8
+E 030 x / H20x5 300 E
+\ O.)
+0.20 /. F . C02x 2 02 200 4-!
+0.10 2"" I 100
+I/- ~“~--_.._"""".._.
+0.00 --'--““""0
+0.0E+00 5.0803 1.0E~02 1.5E~02 2.0E~O2 2.5E-02
+radial coordinate [m]
+Figure 3. Calculated gas-phase species and temperature proﬁle surrounding the n-
+heptane droplet at t=2 S (panel a) and t=15 S (panel b). The results refer to Run 2.
+
+"
+"9","XXXVI Meeting of the Italian Section of the Combustion Institute
+temperature reactions (dotted lines). It is evident that the ﬂrst-stage extinction is
+followed by a cool ﬂame at ~7OO K, Which persists around the droplet for a long
+period of time, up to the second stage extinction and Which is observed only if the
+low-temperature mechanism is accounted for. On the contrary, When only the high-
+temperature reactions are considered, after the ﬂrst-stage extinction the maximum
+temperature in the gas phase rapidly moves to the ambient temperature, the
+vaporization rate strongly decreases and the agreement With the experimental data
+is completely lost. These results are a Clear conﬁrmation of the hypothesis
+proposed by Nayagam et al. [3], about the possible formation of a cool ﬂame after
+the ﬁrst extinction.
+
+In order to better support this point, we reported in Figure 3, the radial proﬁles of
+temperature and main species calculated at t=2 S and t=15 S. The selected time
+correspond to two very different ﬂame structures: a hot-ﬂame in the ﬁrst case and a
+cool ﬂame in the second case. The temperature proﬁle in the spark-ignited
+experiments shows that Oz becomes zero Where the maXimum temperature is
+reached. A typical diffusive burning regime is then observed. The concentration of
+n-heptane at the interface is dictated by vapor—liquid equilibrium and rapidly
+decreases to zero in the pyrolysis region, well before the maXimum temperature.
+The main products are H20, CO, and C02 under these conditions. Ethylene and
+acetylene (not here reported) are important intermediates, together With methane,
+benzene, and naphthalene. Moreover, the maXimum temperature, initially located
+very Close to the droplet, moves toward larger standoff ratios. C02 and H20 are the
+end products in the complete combustion of the fuel droplet. A very different
+picture is observed at t=15 S, Where the presence of a cool ﬂame With a maximum
+temperature of ~700 K seems evident. Normal-heptane does not fully react under
+these conditions and ketohydroperoxide (OQOOH) is the main component With
+Table 2. Comparison between the measured and predicted ﬁrst and
+seoond-stage extinction diameters.
+——
+“II“-
+[%V01] [mm] [mm] [mm] [mm]
+n------
+n——————
+
+"
+"10","XXXVI Meeting of the Italian Section of the Combustion Institute
+H20, H202, and CO. Normal-heptane and oxygen concentration proﬁles are
+smoother than in the previous case, as a consequence of the lower reactivity of the
+system. This lower reactivity means that complete combustion of the high-
+temperature oxidation mechanism cannot be activated, with the result that partially
+premixed combustion occurs.
+Similar results were also observed for the remaining droplets investigated in the
+present work (see Table 1). For all these cases, cool ﬂames were always observed,
+both numerically and experimentally. Table 2 reports a comparison between the
+measured and calculated ﬂrst-stage and seoond-stage extinction diameters. The
+agreement can be considered satisfactory for most cases, even if some
+discrepancies can be observed, especially for Run 3, Run 4 and Run 6. Nayagam et
+al. [3] reported that their experiments were partially performed using free droplets
+and partially using ﬂber-sustained droplets, without specifying more details.
+Therefore a possible explanation of the maj or discrepancies between the model and
+the experiments could be attributed to the presence of the ﬁber, which is not
+accounted for in the current numerical model. In particular, this could explain the
+results referring to runs in standard air (Runs 2, 3, 4 and 19). Indeed, even if the
+initial diameters are very similar (ranging from d0=3.58 mm to d0=3.92 mm), the
+behaViors experimentally observed looks quite different and uncorrelated with do,
+probably because some of the experiments were performed using ﬂber-sustained
+droplets. Of course, further investigations are needed to better Clarify this point.
+Conclusions
+In this paper we applied a numerical model describing the combustion of isolated
+n-heptane fuel droplets in microgravity, described using a detailed kinetic
+mechanism. The main objective was to investigate and eXplain the experimental
+observations of Nayagam et al. [3], showing the presence of a seoond-stage
+extinction, which follows the usual ﬂrst-stage (hot temperature) radiative extinction
+of the ﬂame around the n-heptane droplet.
+The numerical predictions, in satisfactory agreement with the experimental
+measurements, showed that, after the ﬂrst-stage extinction, the vaporization is
+sustained by a low-temperature, soot-free, “oool-ﬂame’ ’ heat release.
+A couple of possible long-term implications of these results can be mentioned: i)
+the possibility to use the oool-mode combustion of individual droplets may lead to
+entirely different design concepts of spray burners; ii) since the oool-mode persists
+after the hot-ﬂame extinction, safety procedures based only on considerations of
+hot ﬂames may become inadequate for assuring safety under all conditions.
+Acknowledgments
+The authors would like to acknowledge Prof. F. A. Williams (University of
+California, San Diego, USA) for the useful discussions and suggestions and Dr. D.
+L. Dietrich (NASA Glenn Research Center, Cleveland, USA) for providing us
+more details about the microgravity experiments.
+
+"
+"11","XXXVI Meeting of the Italian Section of the Combustion Institute
+
+References
+
+1. Nayagam, V., et a1., Mierogravily n-heptane droplet combustion in oxygen-
+helium mixtures at atmospheric pressure. AIAA Journal, 1998. 36(8): p.
+1369-1378.
+
+2. Dietrich, D.L., et a1., Droplet combustion experiments in Spaeelab.
+Symposium (International) on Combustion, 1996. 26(1): p. 1201-1207.
+
+3. Nayagam, V., et 211., Can cool ﬂames support quasi-steady alkane droplet
+burning? Combustion and Flame, 2012. 159(12): p. 3583-3588.
+
+4. Shaw, B.D., B.D. Clark, and D. Wang, Spaeelab experiments on
+combustion 0fheptane/hexadeeane droplets. AIAA Journal, 2001. 39(12):
+p. 2327-2335.
+
+5. Dietrich, D.L.
+
+6. Daubert, TE. and RF. Danner, Data compilation tables ofproperties of
+pure compounds. 1985: Design Institute for Physical Property Data,
+American Institute of Chemical Engineers.
+
+7. Reid, R.C., J .M. Prausnitz, and BE. Poling, The properties of Gases and
+Liquids. 1988, New York: McGraw Hill.
+
+8. Perry, RH. and D.W. Green, Perry's Chemical Engineers' Handbook (7th
+Edition). 1997: McGraW-Hill.
+
+9. Marehese, A.J. and FL. Dryer, The eﬂeet of liquid mass transport on the
+combustion and extinction ofbieomponent droplets ofmethanol and water.
+Combustion and Flame, 1996. 105(1-2): p. 104-122.
+
+10. Kee, R.J., F. Rupley, and J.A. Miller, Chemkin II: A Fortran chemical
+kinetics package for the analysis of gaS-phase Chemical kinetics. Sandia
+Report SAND89—8009 - Sandia National Laboratories, 1989.
+
+11. Wang, H. and M. Frenklach, T ransport propertis ofpolyeyelie aromatic
+hydrocarbons for ﬂame modeling. Combustion and Flame, 1994. 96: p.
+163-170.
+
+12. Benson, S.W., T hermoehemieal Kinetics (2nd Edition). 1976, New York:
+Wiley.
+
+13. Kazakov, A., J . Conley, and FL. Dryer, Detailed modeling of an isolated,
+ethanol droplet combustion under microgravity conditions. Combustion
+and Flame, 2003. 134(4): p. 301-314.
+
+14. Hall, R.J., The radiative source term for plane-parallel layers of reacting
+combustion gases. Journal of Quantitative Spectroscopy and Radiative
+Transfer, 1993. 49: p. 517-523.
+
+15. Cuoei, A., et a1., Autoignition and burning rates offuel droplets under
+microgravity. Combustion and Flame, 2005. 143(3): p. 211-226.
+
+16. Buzzi-Ferraris, G. BzzMath 6.0 Numerical Libraries. 2010; Available
+from: http_://h0mes.chem.p_01imi.it/gbuzzi/indexhtm.
+
+"

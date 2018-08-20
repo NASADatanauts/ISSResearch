@@ -1,0 +1,468 @@
+"","x"
+"1","Mlcrometeormd and OrbItal Debrls Impact
+Damage Recordlng System
+Gregory T. Swanson (1’ 2), Alan M. Cassell (2)
+(”Santa Clara University, Department of Electrical Engineering, 500 El Camino Real, Santa Clara, CA 95053 USA
+Email: gregoryt.swans0n@nasa.gov
+(2)[ERC Incorporated], Entry Systems and Vehicle Development Branch, NASA Ames Research Center, Moffett Field, CA
+94035 USA Email: alan.m.cassell@nasa.g0v
+Abstract— Damage from Micrometeoroid and Orbital representative models of the CEV backshell TPS. The TPS
+Debris (MMOD) impacts poses a substantial risk for the models were fabricated in a ﬂight-like conﬁguration
+loss of crew for the currently planned CEV missions to the integrating the EDR sensor at the bondline. The DRS
+International Space Station (ISS). 1 2 The Columbia Space accurately indicated damage to the TPS models on all seven
+Shuttle accident in 2003 spurred an investigation that led to hypervelocity impact tests. These results have conﬁrmed
+the requirement of an active impact monitoring system on the feasibility of the DRS employing the EDR sensor as a
+the Shuttle Orbiter. The MMOD impact Damage Recording Viable MMOD impact sensing solution. Vehicle integration
+System (DRS) presents a reliable, mass- and power-efﬁcient and further space environment testing remain critical steps
+Thermal Protection System (TPS) impact detection system in maturing this technology to ﬂight qualiﬁcation.
+that can be readily integrated with manned and robotic
+spacecraft. Thus, the Crew Exploration Vehicle (CEV) is TABLE OF CONTENTS
+considering inclusion of active MMOD detection systems
+for monitoring damage to the backshell TPS. 1. INTRODUCTION................................................................ 1
+2. DAMAGE RECORDING SYSTEM 2
+MMOD impact detection systems have been developed and 3. TESTINGS
+ﬂown on satellites and probes dating back to the 1960s. 4.APPLICABILITYTO ENTRYVEHICLES............................6
+These technolo iCS WCI‘C dCSl 116d rimaril to understand S.COMPETING TECHNOLOGIES7
+g g P Y
+and characterize the MMOD environment found in low 6. FUTURE WORK7
+. . . . ACKNOWLEDGEMENTS........................................................7
+earth orbit (LEO). The only impact monitoring system
+qualiﬁed for use on manned spacecraft is the Wing leading BIOGRAPHIES 8
+edge impact detection system (WLE IDS). During Shuttle
+ascent, the WLE IDS monitors impacts due to insulating
+foam shed from the external fuel tank onto the WLE. The 1' INTRODUCTION
+WLE is particularly vulnerable due to the high heating The Columbia Space Shuttle accident in 2003 has spurred
+enVironment experienced during reentry. .Eyer-inereasmg the requirement for a Thermal Protection System (TPS)
+accumulation of man-made debris is magnifying this threat impact monitoring system. Presently, wireless impact
+to shuttle and other spacecrafts eperating 1h .LEO' monitoring sensors have been implemented within the
+Therefore, thedevelopmerit ofbn-orbit impact monitoring leading edge of the Space Shuttles’ wings to detect foam
+systems that aid in the mitigation of the threat to manned shed from the fuel tank during ascent [1]. Development of
+spacecraft is needed. the shuttle’s successor coupled with ﬂexible, thin ﬁlm
+electronic sensing technologies, has spurred interest in the
+This paper describes the development and testing 0f the development of an impact monitoring system that could be
+DRS, a mass- and power-efﬁcient wireless MMOD impact implemented for a variety of MMOD risk mitigation
+detection system designed for potential incorporation into approaches in N AS A’s new human-rated vehicle design.
+the backshell 0f the CEV. The DRS utilizes wireless data
+acquisition Via custom designed wireless nodes. The DRS Micrometeoroid and Orbital Debris
+wireless nodes determine MMOD impact damage by
+employing an Embedded Damage Recorder (EDR) sensor. Micrometeoroid and Orbital debris (MMOD) in the low
+A variety of EDR sensor designs were considered based Earth orbit (LEO) environment is made up Of micro-
+upon different damage detection and TPS integration meteoroids and man-made debris. The man-made debris
+requirements. The DRS system design was recently tested primarily consists of fragmented rockets and satellites that
+at the University of Dayton Research Institute’s have 300111111113th from the over 50 years Of space
+hypervelocity impact range. During this test series, seven exploration. MMOD found in LEO have velocities
+hypervelocity impacts were conducted using aluminum and averaging 10 km/s (229000 mph), WhiCh can cause
+nylon projectiles to simulate MMOD impacts to catastrophic damage to TPS or other spacecraft structures in
+the event of an impact [2]. Risk from MMOD impact
+damage is a growing threat to operations in LEO as
+1 978-1—4244-7351-9/1l/$26.00 ©2011 IEEE.
+2 IEEEAC paper#153l, Version 1, Updated 2010;10:27
+l
+
+"
+"2","increased debris from man-made sources accumulates in a dependent on the area of the vulnerable structure that needs
+variety of Earth orbits. to be monitored for impact damage.
+MMOD having a diameter of greater than 10 cm can be The DRS can easily be tailored to many different
+monitored and tracked by ground systems. These larger applications ranging from armor to inﬂatables. For the
+MMOD objects can be avoided by maneuvering the purpose of this work the DRS has been optimized for space
+spacecraft out of the projected MMOD path, minimizing the vehicle systems. When the DRS is integrated With a space
+threat. Smaller MMOD, having a diameter of less than 1 vehicle, each of its three components has a speciﬁc purpose.
+mm, are generally not large enough to cause substantial TPS The SMicro sensors are the ﬁrst line of detection. In the
+damage from hypervelocity impact. However, MMOD event of an impact the SMicro sensors trigger the WDAS to
+having a diameter of greater than 1 mm and less than 10 cm ‘Wake up’ from its low power state. The WDAS then scans
+pose the greatest threat. This range of MMOD is hard to the EDR sensors performing an algorithm to determine if
+track by ground systems, but is large enough to cause critical damage has occurred. The damage indicated by the
+serious damage to a spacecraft [2]. Therefore, alternative EDR sensors is then Wirelessly transmitted by the WDAS to
+means are being considered to mitigate the threat posed by the health monitoring system of the vehicle.
+MMOD that creates signiﬁcant risk to manned spacecraft.
+Embedded Damage Recorder Sensor
+Shuttle S ng Leadmg Edge Impact Detectzon System The EDR sensor functions by mechanically storing breaks
+Accelerometer sensors were integrated into the remaining in a network of Wire traces that are embedded Within a
+Orbiters’ Wing leading edge (WLE) as an outcome of the ﬂexible printed circuit board. Performing a continuity test
+return to ﬂight process. During launch the accelerometer on the network of Wire traces can then determine impact
+sensor system, created by Invocon Inc., continuously damage by detecting factures.
+samples each accelerometer at 20 kHz. This data is then
+transferred Via Wireless communication to a data acquisition In greater detail, the EDR continuity test determines
+system Within the Space Shuttle crew compartment [1]. Whether electrical current ﬂows through a Wire trace by
+Unfortunately this system is limited, capable of only applying a potential at one end and then monitoring the
+monitoring the Space Shuttle’s WLE during the duration of other end [3]. If there is high current ﬂow through the Wire
+launch day activities. The system is not able to actively trace, indicating low resistance, then the substrate is intact
+sense throughout the mission due to the system’s high throughout. If current ﬂow does not eXist through the Wire
+power consumption. The integrity of the TPS for the trace during the continuity test, indicating an inﬁnite
+remaining extent of the mission is then determined using an resistance, then the Wire trace must be fractured. This is the
+optical process. This process uses the Space Shuttle’s functional basis of the EDR sensor. The main advantage of
+payload bay robotic arm, and dependent upon the mission, the EDR break Wire system is that it acts as a mechanical,
+the International Space Station’s (ISS) cameras during a 360 non-volatile memory by permanently storing the impact
+degree pitch maneuver before docking. The nature of this damage data Within its structure, making it attractive for
+tedious optical process and the development of the new damage detection and aiding potential Visual inspection.
+human-rated vehicle have spurred interest in impact
+detection systems that are capable of detecting impacts on Detecting impact damage on large surfaces requires more
+all TPS surfaces throughout the duration of the mission. than one Wire trace. Various Wire trace impact grid
+geometries have been designed to give the approximate
+One potential solution for determining critical impact damage size and location. The impact grid design for a
+damage to the backshell TPS on the CEV is described particular region of the TPS depends upon the critical
+below. Critical damage in this context is deﬁned as impact damage criteria deﬁned for the operational environment of
+damage that perforates the outer facesheet of the metallic the vehicle. When realizing the sensing grid, many Wire
+honeycomb/composite structure Within the aeroshell (see traces must be laid out uniformly to cover the surface of
+Figure 5). interest on the aeroshell skin. Since each Wire trace in the
+sensing grid requires continuity testing, it is more efﬁcient
+2. D AM AGE RECORDING SYSTEM to connect one end of each Wire trace to a constant potential.
+. . The other ends of the Wire traces are then monitored to
+The custom des1gned Damage Recording System (DRS) verifyimpact damage.
+delivers impact detection through the utilization of three
+main components: the Embedrled Damage Recorder (EDR) Figure 1 describes the operating principle of the EDR
+sensor, the .Shock MIC“) (SMicro) sensor, and the Wireless sensor. The dark solid lines indicate intact Wire traces, While
+Data Acquis1tion System (WDAS)' Together, these three the lighter dashed lines indicate a failed continuity test,
+components form one node of the DRS. Constrained by. the representing a fracture in the Wire trace.
+WDAS design, each node can employ up to three SMicro
+sensors and eight EDR sensors. The required number of As seen in the ﬁgure 1 example, there are ﬁve broken Wire
+DRS nodes and the amount Of sensors per node are traces. By analyzing Where the broken Wire traces intersect,
+2
+
+"
+"3","I ' Minimum
+Damage
+I I Maximum
+' I "" Damage
+' ' Broken
+Trace Figure 3 — Top (left) and Bottom (right) Layers of the
+III... 2X2 Serpentine EDR Sensor
+_ Intact
+' ' Trace In order to appropriately denote the 2X2 Serpentine sensor,
+the layout of the left side and right side serpentine traces,
+F' 1 _ S . G . d D I d' t' E l are established as X and Z, Which overlay the top half and
+lgure ensmg r1 amage n ma 1011 xamp e bottom half serpentine traces, W and Y. This creates four
+. . detectable quadrants as seen in Figure 4. Damage to Q1 is
+the damage location can be determined and the damage realized by breaks in serpentine traces W and X, Q2 by W
+diameter can be estimated. In Figure 1, the lightly shaded and Z, Q3 by Y and X, and Q4 by Y and Z. Impacts
+squares in the sensing gridillustrate the minimum possible resulting in a single line break would only indicate the
+impact damage area that is indicated by the ﬁve broken Wire requisite top/bottom or left/right as being damaged, still
+traces, While the darkly shaded squares illustrate the allowing for localization of the damage.
+maximum possible impact damage area.
+After multiple EDR design cycles, an optimized prototype
+sensor design was realized that meets the MMOD damage
+detection criteria for the CEV application, While
+maintaining a low mass and small footprint. The optimized
+EDR sensor has been designated as the 2X2 Serpentine,
+Which is shown in Figure 2.
+--..----.-.-..-....I Figure 4 — Four Quadrants 0f the 2X2 Serpentine Sensor
+IIIIIIIIIIIIIIIIIIII
+IIIIIIIIIIIIIIIIIIII
+==::===============: The 2X2 Serpentine EDR sensor is lightweight at 3.0 grams,
+EEEEEEEEEEEEEE:==EEE andlow profile measuringless than 9.2 mm thick. It is
+II
+..-.-.-.---...--:..- fabricateduSing ﬂeXible printed Circuit board technology.
+llllllllllllllllllll FleXible Circuits reduce the Size and mass ass001ated With
+==:=:==::======:==== iigid circuit board layout, along With nial<ing the circuit
+==::::============:= itself eaSily pliable [4]. The two layet des1gn of the EDR
+IIIIIIIIIIIIIIIIIIII sensor is comprised of a bottom polyinnde layer, a lower
+:=:=====:======EEEEE copper layer, a middle polyimide layer, an upper copper
+illiilI-iiIl'l' layer and a top polyimide layer. [6]. Polyiniide’s
+III . . . . .
+===============g=III demonstrated durability in the harsh enVironment found in
+LEO (resistance to atomic oxygen, thermal and chemical
+_ . . . stability), combined With Widespread use in ﬂexible printed
+Flgure 2 — 2 X 2 Serpentlne EDR Sensor Wlth 1 cm PltCh circuit board manufacturing make it ideally suited for use in
+this application [5].
+The 2X2 Serpentine EDR sensor displayed in Figure 2
+employs four serpentine .copper traces in.a grid size of 20 As seen in Figure 2, the 2X2 Serpentine EDR sensor has
+cni square (Whleh approx1niates the footprint Of theAETB—S been fabricated With cut—outs in between the copper traces in
+tiles on the CEVbackshell) and IS fabricated.Within a two— order to embed the sensor at the bondline between the TPS
+layer ﬂeXible printed eircuit. The serpentine traces are and the underlying carrier. This approach removes 64
+spaced 1cm apart to niaintain an impact detection resolution percent of the polyimide sheet between the Wire traces,
+Of 1 cm, and are pos1tioned m a 2X2 formation 50 that they greatly reducing the mass of the EDR sensor, and allowing
+form four 10 cm square quadrants for damage location. The for minimal bondline integrity interference. This can be
+can be seen in Figure 3 and Figure 4. The four serpentine seen in the TPS stack of Figure 5.
+traces have been labeled W, X, Y, and Z.
+3
+
+"
+"4","monitoring up to three SMicros and eight 2X2 Serpentine
+EDRs. The WDAS employs a PIC18F microprocessor to
+run the impact damage monitoring algorithm. It then
+TPSM . communicates any sensed critical damage data Via a
+V atenal M . .
+. aXStream XBee Wireless transceiver.
+7 , 1 /RTV
+”1“,“ \//:|“ Strain 'So'atio"" Pad The EDR and SMicro sensor support circuits located on the
+""ﬁﬁg'?"" 1.5:? EDR Sensor WDAS both utilize a resistor pull—up scheme to determine
+illlrllrf’:fpv1ﬂ‘llm‘ RTV the state of the sensors. The SMicro sensor circuits are
+Ilir'lml directly connected to the hardware interrupt pins of the
+microprocessor, enabling WDAS ‘Wake up’ after an impact
+Figure 5 — 2X2 Serpentine EDR Sensor Placed at the ?;??t' Giza; the large gmounttﬁf EDR 81611.8(” sighais, t2?)
+B011 dline in aTPS S tack .. mu 1p exers con ense e Signa inpu s me e
+microprocessor.
+ShOCk Mzcro Sensors The WDAS is extremely low power requiring 0.6mA during
+The SMicro sensor is manufactured by Signal Quest (New EDR sensor scanning, SZmA during Wireless data
+Hampshire, USA). During the occurrence of a shock event, transmission, and 5.5uA during low power sleep mode.
+the SMicro sensor produces a pulse that can be used to Utilizing a lAh half size AA lithium battery, and an hourly
+interrupt, or ‘Wake—up’ a microcontroller. The sensor is fully system check lasting approximately two seconds, the
+passive, requires no signal conditioning, and operates With WDAS could survive remotely for a little over three years
+currents as low as 0.25 14A. The SMicro sensor is offered (assuming room temperature battery operation).
+With sensitivity between 20g and ZOOOg. The mass of the
+SMicro sensor is minimal at 0.6 grams, and the dimensions g- Miami-
+are 3.3 mm X 6.9 mm [7]. liltﬂp‘ix ‘ _ .- ,-
+The SMicro sensor has been integrated With the DRS us1ng :3 afhmw “=13 ’Tf: '
+a resistor pull—up circuit. The sensor is connected to the H_:_T.;:..-;' ' H ‘
+circuit ground and acts as an electrical short until a shock #i...” ‘15 J. u I . . \ ‘
+event occurs. During the shock event, the sensor connection 3’ ' ' ' - C _ 3
+becomes an open circuit, and the pull—up resistor in the ' V7"" “'3‘ ;
+circuit becomes the path of least resistance. The circuit then EDR SEMI. Inputs Shack 5am], Inputs
+generates a pulse to communicate With the WDAS[7]. The
+SMicro sensor and its prbtotype interface can be . seen in Figur e 7 _ WDAS (right) and the WDAS M ount e d in
+Figure 6.. The attachment interface and placement still needs Protective Housing for T estin g at UDRI (left)
+to be optimized.
+The WDAS including battery and protective housing can be
+seen on the left side of Figure 7, While the WDAS alone can
+be seen on the right side of Figure 7. Including the half size
+-_ _. __ . __ _ AA lithium battery and protective housing, the module
+5:4:19” 2;; __ weighs 59.4 grams, and its footprint is 3.6 cm square by 3.2
+' :: cm tall.
+""-;;_1___ Damage Recording System Software
+ii 1‘ The DRS impact detection algorithm is implemented Within
+_ ""'1‘ng the microprocessor program code. To better understand the
+- - ‘5 capabilities of the DRS system, the following algorithm was
+_ ""3 developed as a baseline for spacecraft integration testing.
+‘ . Unless prompted earlier by the SMicro hardware interrupt,
+|II'II'II'I'IIIIIII II”. ' _I I ___ I _ -' once per hour the WDAS Will wake—up from its low power
+' ' vii ' "" I I X. _ sleep mode, and scan the EDR sensors for recorded damage.
+If recorded damage is not found, then the system quickly
+Figure 6— SMicro Sensor and Prototype In terface transmits ‘No Damage Detected.’ and returns to its low
+power sleep mode for an hour until the next system scan. If
+. . . . recorded damage is found then the microprocessor
+Custom Wzreless Data Acquzsztzon System calculates the proximity of the damage given the damaged
+The WDAS acts as an interface between the DRS sensors Wire traces, and then transmits ‘Critical Damage Detected
+and the structure’s health monitoring system. It is capable of on Panel X, Quadrant X’ alerting the health monitoring
+4
+
+"
+"5","system of the problem. If the SMicro sensors are triggered Figure 8 — UDRI Test Setup in the TWO Stage Light Gas
+due to impact, then the system will scan the EDR sensors as Gun Vacuum Chamber
+stated previously.
+Results from the ﬁrst shot indicated a successful DRS test.
+3. TESTING The system successfully detected the initial impact from the
+SMicro sensor which triggered the WDAS to scan the EDR
+Multiple versions of the DRS system have been tested at sensor. This scan found a break in the W and Z traces
+White Sands Hypervelocity Impact Test Facility, University indicating critical damage in quadrant Q2 of the EDR
+of DaytonResearch Institute (UDRI), and on the ISS. Thls sensor. The WDAS then wirelessly alerted the health
+section Wlh discuss the two most recent testing events, monitoring system that critical damage had been detected
+Whleh includes the seven shot series ht UDRFS due to impact. Figure 9 shows the location of the impact
+Hypervelocrty Impact .Range, and the Materials on the due to the projectile, and a close up View of the damage
+International Space Station Experiment (MISSE)' cavity where it is possible to see one of the broken EDR
+traces.
+University ofDayton Research Institute
+In August 2009 a seven shot test series was performed at the r: ""i .“E’ .
+UDRI Hypervelocity Impact Range to test the DRS :3 ﬂﬁi/ ImpactLucatlnn
+performance. Each of the seven shots was conducted using :13; : ,
+a two stage light gas gun that launched a projectile at a test ' 51' .
+article located in a vacuum chamber. The projectiles used to '; , —-. Bra ken EDR Trace
+simulate MMOD impact were approximately 3 mm spheres 1 I i ll
+made from either aluminum or nylon. Projectile velocities _ '
+were approximately 7 km/sec. The primary objective of this ----. _ l; J I
+test series was to achieve damage to the outer facesheet of ' : ' _ "" *1.“ I _ .
+the composite honeycomb structure in the test model stack. ’5'! 1-,; '
+Described below are detailed results from the ﬁrst shot Of . ""e921; . ' It.
+the test series as the subsequent shot results were similar. "" JET"" ' i -
+The test article utilized for the ﬁrst impact, provided by Fig. 9. First Shot Impact Location and Close Up View of
+Lockheed Martin, employed the 2X2 Serpentine EDR sensor Broken EDR Trace.
+at the bondline of a TPS stack—up between the outer
+facesheet and the strain isolation pad as illustrated in Figure The next siX shots were identical in setup, except the
+5. The SMicro sensor was placed on the frame holding the projectile material alternated between aluminum and nylon.
+test article for initial impact detection. Both sensors were On all seven hypervelocity shots, the DRS correctly
+connected to the WDAS inside the vacuum chamber identiﬁed critical damage at the bondline of the TPS test
+completing a DRS node. This setup can be seen in Figure 8. articles. This indicated that the DRS is a reliable device to
+Outside the test chamber a health monitoring system mock— determine MMOD impact damage for the CEV application.
+up was assembled to receive wireless data from the DRS The details, pictures, and results of each test shot can be
+node. found in the UDRI HVI DRS August 2009 Test Report
+compiled by NASA Ames Research Center [8].
+l - WM,“ - Materials International Space Station Experiment
+* w The Materials International Space Station Experiment
+"" ‘ ‘ (MISSE) is a materials and sensor testbed that is mounted
+. ' external to the 188. The platform allows for the
+I i l investigation of long—term exposure to the harsh
+., environment of space, which includes atomic oxygen,
+-< .. \ T t A t' I ultraviolet radiation, direct sunlight, ionizing radiation, and
+\ . , ' es r 'c e extremes of heat and cold, which all need to be accounted
+J for in—space component design [9]. MISSE is a collaborative
+‘ .’ ""r. ., effort between various NASA Centers, the Department of
+. , R _ ' ' Defense (DOD) and private industry partners. Each
+_ SMicro sensor“) ‘ ' .3 collaborator contributes experiments which are all conﬁned
+, ¢ . . \ WDAS to a small test package abcut the Size and shape of a suit
+,x- case. Once all of the experiments have been integrated into
+""‘ I the test package, the package is then launched to the 188 on—
+board the Space Shuttle and deployed to an attachment point
+external to 188 by the Shuttle crew. Once at the 188, a
+5
+
+"
+"6","mission specialist performs an extravehicular activity allow for the fasteners between the top and bottom
+(EVA) to mount the test package to the outside of the aluminum plates. The EDR is adhered to the top aluminum
+station. This conﬁguration can be Viewed in Figure 10. After plate and soldered to a 14—pin header to allow connection of
+on—orbit exposure (typically 9—18 months) the test package the 12 EDR sensor traces and the constant reference signal.
+is removed through a second EVA and brought back to The chance of an impact to the EDR sensor is unlikely, but
+Earth for analysis. the evidence of long duration space exposure to the sensor is
+invaluable. Possible failures that Will be evaluated upon the
+V , "" MISSE 7 test package return to Earth are EDR sensor
+» , delamination and degradation from the harsh space
+I‘ "" environment. In addition, unexpected damage can be
+¢ ’ “ correlated in order to further understand operation of such
+, - . % sensors in LEO.
+/‘// ' . /’1 ha . . t“ 4. APPLICABILITY TO ENTRY VEHICLES
+\x’ 2- .r
+.// . 1w}, ”£3. ‘5; "" g”. V k While the design of the DRS was primarily driven by
+1’? 2 ._ \oﬁttezg, 'ﬁ ' .1 "" . - requirements for CEV missions to the 188, the DRS
+. ’ 4:: ” ? tr. t . M; component technologies are generally applicable to a variety
+3 ‘1 ‘ :u‘f‘u,‘ “ '. ""t, . of entry vehicle health monitoring needs. For rigid entry
+‘ - . “’- """"- "" - 4 "" vehicle aeroshells, ﬂexible electronic instrumentation offers
+. . . a compliant, thin—ﬂlm substrate that is lightweight and
+Flgure 10 _ MISSE 6 Oh'Orblt Conﬁguratlon. adaptable to a variety of sensing modalities and placements
+Within the aeroshell. Many aeroshell designs utilize
+Oh MISSE 7» scheduletl for return from 188 by STS'1349 an honeycomb composite as the structure underneath the TPS.
+EDR sensor has been included as one of the NASA Ames As shown in Figure 12, the utility of embedding the EDR
+experiments that are mounted in the ram—facing direction. sensors in between layers of composite facesheets in
+The EDR Will be actively monitored by a data acquisition honeycomb composite structures has been explored. Not
+system, developed by NASA Ames, on board the test only does this approach offer a method for impact damage
+package. The test package is then linked to the 18$ for data recording for composites, but the approach also
+transfer, and once a.day the .data is downlinked to ground demonstrates the possibility for routing signal, power and
+systems for analys1s. A picture Of the NASA Ames ground lines Where traditional Wired methods are not
+experiment incorporating the EDR sensor is found in Figure possible. Furthermore, integrating circuit components
+11' The MISSE 7 EDR sensor is a two layer serpentine directly onto the ﬂexible substrate expands the design space
+sensor, With. six vertical serpentine Wire traces, and six for distributed sensing Within the aeroshell. A custom
+horizontal ere traces. designed ﬂexible circuit is shown in Figure 13.
+Additionally, temperature, pressure, strain, and structural
+____________._————— __ integrity monitoring can be facilitated by employing ﬂexible
+I' ﬂ electronics With Wired or Wireless data acquisition systems.
+""'~,_ \\
+' \
+/ \
+\$
+. “y .w 9
+t ’
+\g“ t 1 —
+. \
+- EDR Sensor
+Figure 11 _ EDR Sensor Integrated With N AS A Ames Figure 12 — EDR sensor embedded in between composite
+Research Center MISSE 7 Payload facesheets in an aluminum honeycomb composite panel
+There are eight cutouts in the sensor to allow exposure to
+different TPS material plugs, along With four corner holes to
+6
+
+"
+"7","\‘ F iber Optics
+f Utilizing ﬁber optic technology, Smart Fabric has been
+developed by the University of Toronto Institute for
+Aerospace Studies. The Smart Fabric is manufactured by
+weaVing optical ﬁbers into Kevlar forming a grid detection
+network, similar to the layout of the EDR sensor. The
+. Smart Fabric utilizes support electronics that initiate and
+monitor a light signal that is propagated through the
+l. ‘ individual ﬁbers. If the signal in a ﬁber attenuates, it is
+, considered to be damaged. If the signal cannot be
+'- -- - propagated, then the ﬁber is determined to be severed [10].
+' - . . 1 I Fiber optics present a damage detection device where the
+' data is mechanically stored within the system, analogous to
+Fi gu r e 13 _ Fl exibl e E mb e d d e d D am a g e R e c or d er the EDR sensor technology. But when the twe technologies
+sensor prototype With ci r cuit c 0 m p 0 n e nt s i nt e g r at e d areconipared. specrﬁcally, twoniain tradesex1st. The ﬁber
+dir e ctly onto the ﬂexible sub st r at e optic system is a(lvantageous given the adclitional capability
+to sense bends in addition to breaks Within the sens1ng
+Flexible aeroshells are currently under consideration for ﬁbers. Unfortunately thls advantage ls (111111318th by the
+atmospheric entry applications at Earth and Mars. Inﬂatable assocrated mass .COSt Of the teChnO.10gy' .Untll ﬁber optic
+and deployable aeroshell concept development could greatly support. electronies are further miniaturized on a broad
+beneﬁt from ﬂexible electronic instrumentation and wireless production scale, It .Wlll not make. sense to develop a ﬂight
+data transmission due to their stringent packaging system over conipeting technologies. In our opinion this is
+requirements and form factors. [11]. why a ﬁber optic detection system is yet to be employed on
+a spacecraft.
+5. COMPETING TECHNOLOGIES
+6. FUTURE WORK
+During the development of the DRS, a literature reView was . . .
+conducted to research and deﬁne competing technologies. The DRS integrationrequires further development. One hey
+Acoustic emission and ﬁber optics have been determined to des1gnation thf‘“ remains to be selected IS a 10W rISk location
+be the leaders as Viable impact detection systems in of spacecraft integration. To enibed the EDR sensor at the
+. . . . bondline of the TPS, many risks must be analyzed and
+aerospace applications. These two technologies are brieﬂy . . . .
+detailed and analyzed for proﬁciency. nntigated through ground and ﬂight testing: The mest
+important is a pull test to determine the bondline integrity
+Acoustic Emission with the embedded EDR sensor. It is imperative that the
+EDR sensor does not induce failure at this critical junction.
+Acoustic emission (AE) sensors are a piezoelectric element,
+which can generate a signal without the use of a power The WDAS needs to be structurally improved for use in
+supply. This characteristic allows the signal processing extreme environments, and space qualiﬁed through a ﬂight
+system to use the sensor itself as a trigger to ‘wake Up’ the test. The protective housing and cable connectors need to
+data acquisition, allowing the system to remain in a 10W be ruggedized in order to withstand Vibration and shock.
+power state unless impacted [1]. Connections between the WDAS and DRS sensors also will
+need to be ruggedized to minimize mass and maximize
+An AE sensor system enables the impact location to be strength. The SMicro sensor’s protective housing and
+determined by triangulation and comparison of the signal interface needs to be developed further for system
+strength seen by the sensors. Also given the properties of integration. The WDAS has been qualiﬁed for ground use
+acoustic wave propagation, an AB system has the potential by the UDRI 2009 test series. To be qualiﬁed for space
+to characterize the depth and area of damage within a ﬂight the WDAS will have to undergo extreme environment
+structure. The main disadvantage to an AB system is the ﬂight testing, much like the EDR sensor on MISSE 7.
+potential for false information. An impact that does not
+induce damage to the structure may be detected if the ACKNOWLEDGEMENTS
+impact force is substantial. Another drawback is the AE
+system only has a fraction of a second to sense the transient WC WiSh to thank Ethiraj Venkatapathy and James Arnold
+event. The AE sensors and data acquisition system has to (NASA ARC) for their invaluable guidance and support
+perform ﬂawlessly every time to detect this short duration throughout the DRS project. Eric Christensen and 13- Alan
+data, ensuring system integrity. DaVis (NASA J SC) for providing and facilitating the
+opportunity to continue work on the DRS project. The
+University of Idaho’s Team Impact senior design team for
+fabricating the embedded EDR composites. Joshua Miller
+7
+
+"
+"8","for facilitating the secondary test opportunity at UDRI. The BIOGRAPHIES
+UDRI Impact Test Facility for their hard work.
+Greg Swanson is a PhD student at Santa Clara University
+and an employee at NASA Ames
+Research Center in the Entry
+_ Systems and Vehicle Develop-
+REFERENCES ‘ ment Branch. His work
+[1] Champaigne, K. D., & Summers, J . (2006). Low—power . involves developing wireless
+Electronics for Distributed Impact Detection. IEEE , 2— ' embedded sensing systems for a
+3, variety of applications and
+custom data acquisition system
+[2] Christiansen, E. L., & Crews, J . C. (1992). The NASA design. Greg received his BS
+J SC Hypervelocity Impact Test Facility (HITF). AIAA and MS in Electrical
+92—1640, Engineeringfrom the University
+of Idaho in 2007 and 2009,
+[3] Smith, S. (2003). What is Electrical Continuity? respectively.
+Retrieved March 22, 2009, from WiseGEEK:
+http://WWW.Wisegeek.com/What—is—electrical— , [K , f, , _ ° Alan Cassell received his PhD
+continuityhtm —' e 3‘ '7‘ in Materials Chemistry in 1997,
+which was followed by
+[4] Dart—Creations. (2007, September 22). Dart—Creations. postdoctoral research at
+Retrieved March 26, 2009, from Flexible Circuit: ’ -- Stanford University to develop
+http://WWW.dart—creations.com/article—tree/ (h ; carbon nanomaterial nano-
+foreX/ﬂexible—circuit.html ‘ fabrication approaches for
+l sensors and electronics.
+[5] Mills, L. A. (2008, August 21). All About Polyimide. 1 Currently, Alan is a Systems
+Retrieved April 18, 2009, from Enzine Articles: . Engineer in the Entry Systems
+http://ezinearticles.com/?All—Ab0ut— I and Vehicle Development
+Polyimide&id=1431895 Branch at NASA Ames Research
+Center supporting re-entry mission analysis and design. In
+[6] Mince. (2008). Flex Circuit Manufacturing. Retrieved addition, Alan develops embedded wireless sensor systems
+April 20, 2009, from Flex Circuit Construction for thermal protection materials as well as supporting
+Capabilities: http://WWW.minco.com/ qualiﬁcation of thermal protection systems for planetary
+products/ﬂex.aspx?id=1 12 entry probes. T hermal protection system instrumentation
+development includes on-orbit testing aboard the
+[7] Signal Quest, Inc. (2009) Datasheet: SQ—ASX Series: International Space Station. Past projects include the Mars
+http://WWW.signalquest.com/datasheets/SQ— Science Laboratory and the Orion Crew Exploration
+ASXDatasheet.pdf Vehicle thermalproteetion system qualiﬁcation and testing.
+[8] Swanson, G., Cassell, A., & Miller, J . (2009) Test
+Report: UDRI HVI DRS Testing, NASA Ames
+Research Center
+[9] NASA LaRC. (2001, July 10). NASA. Retrieved April
+10, 2009, from MISSE: Testing Materials in Space:
+http://WWW.nasa.gOV/centers/langley/news/
+factsheets/MISSEhtml
+[10] Tennyson, R. C., Rethoret, B., & Morison, W. D.
+(2005). Design Study of Fiber Optic MOD Impact
+Detection System for Spacecraft Structures. Toronto:
+University of Toronto Institute for Aerospace Studies.
+[11]Brand0n, E]. et a1., Structural Health Management
+Technologies for Inﬂatable / Deployable Structures:
+Integrated Sensing and Self—Healing, Acta Astronautica
+(2010), doi:10.1016/j.actaastr0.2010.08.016
+8
+
+"

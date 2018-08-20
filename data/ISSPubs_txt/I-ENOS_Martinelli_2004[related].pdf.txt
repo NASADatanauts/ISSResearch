@@ -1,0 +1,420 @@
+"","x"
+"1","gﬂ‘m‘; Available online at www.sciencedirect.com =
+?%ngﬁ ' SCIENCE@DIRECT° “ND
+mums
+3‘0 B
+ELSEVIER Sensors and Actuators B 101 (2004) 346—352 &
+www.elsevier.com/locate/snb
+Chemical sensors Clustering With the dynamic moments approach
+Eugenio Martinelli M, Giorgio Pennazzaa, Corrado Di Natale a’b, Arnaldo D’Amieo 3""”
+a Department OfEleclrom'c Engineering, University OfRome ”Tor Vergala Via del Politecnico 1, Rome 00133, Italy
+b CNR-IMM Via del F0550 del Cavaliere, Rome 00133, Italy
+Received 3 February 2004; received in revised form 3 February 2004; accepted 1 April 2004
+Available online 19 May 2004
+Abstract
+One of the most important step in pattern recognition is the deﬁnition of features describing the entities that have to be assigned to classes.
+From the point of View of chemical sensors, the extraction of features consists in the selection of some characteristics of the temporal
+sequence of sensor signal taking place during the interaction between the sensors and the compound present in the environment.
+In this paper, the morphological descriptors of the sensor trajectory in the phase space are introduced and investigated. The performance
+of these new features have been compared with the usual features in three typical electronic nose applications.
+© 2004 Elsevier B.V. All rights reserved.
+Keywords: Chemical sensors; Feature extraction; Dynamic moments
+1. Introduction the properties of dynamics systems may be utilized [2].
+For instance, this approach has been followed adopting a
+In recent years, the role of data analysis in chemical sens- non-linear dynamics model to calibrate the response of an
+ing has been steadily growing. This is partly due to the emer— array of quartz microbalances [3] and to develop a drift
+gence of subjects like electronic noses and tongues where counteraction strategy [4]. In another application the time
+data analysis is necessary to extract any analytical informa- series expansion coefﬁcients were considered, for instance
+tion from sensor signal. Also the interpretation of signals by Eklov et al. [5], as sensor features.
+related to single sensors has been shown to be enhanced Beside the dynamic modelling, a number of methods
+when a little bit more than conventional data analysis is aimed at providing a graphical representation of a system
+used. Among the various data analysis tools those devoted have also been developed in the system theory realm. They
+to the deﬁnition of novel features are particularly interest- are quite useful due to the immediate information display.
+ing. To this regard, it is of great interest the fact that in- Such methods usually deﬁne suitable spaces where the state
+creasing the number of features makes possible to perform of the system corresponds to a point and the time evolution
+typical recognition application in a fashion usually reserved is represented by trajectories [6].
+to sensor arrays but using only one sensor [1]. The use of this approach for chemical sensors has been
+The extraction of features from a chemical sensor consists outlined in a recent paper where a phase space, suitable for
+in the selection of some characteristics of the temporal se- thickness shear mode resonators, has been introduced [7].
+quence of sensor signal taking place during the interaction This space was simply formed by the signal and its ﬁrst
+between the sensors and the compound present in the enVi- time derivative, The description of sensor signals in these
+ronnient. From a general point of View, a chemical sensor spaces may give rise to novel features that can alternatively
+is a dynamic system whose signal temporally evolves fol- be used to build more accurate sensor models. For instance,
+lowing, with its proper dynamics, the concentration of the the area spanned by the trajectory of the signal when it un-
+analytes at which it is sensitive. dergoes a state transition has been proposed as an alternative
+When a sensor is considered as a dynamic system any feature to estimate both gas concentration (in the frame of
+of the currently available tools usually employed to study quantitative analysis) and class membership (in qualitative
+analysis) [7]. Generally speaking, the area spanned by the
+* Corresponding author. Tel.: +39-06-7259-7347; trajectory, namely the sum instantby instant of the prod-
+fax: +39-06-2020-519. net of the Signal by its ﬁrst derivative, condenses the mag-
+E—mail address: martinelli@ing,uniroma2,it (E. Martinelli). nitude of the interaction with its velocity while standard
+0925-4005/59 — see front matter © 2004 Elsevier B.V. All rights reserved.
+doi:10.1016/j.snb.2004.04.010
+
+"
+"2","E. Marlinelli el al./Sensors and Actuators B 101 (2004) 346—352 347
+features usually considers only the magnitude of the signal analysis solved by partial least square discriminant analysis
+shifts. (PLS-DA) and cross-validated by leave-one-out.
+
+Nonetheless, the area being an obVious integral operation In the next section, an alternative phase space is intro-
+neglects the characteristics proper of the signal evolution. duced along With the deﬁnition of the dynamic moments.
+On the other hands, it is reasonable to expect that differ— Both the concepts are applied to an array of thickness shear
+ent interactions may take place When a sensor is exposed to mode resonators coated by various chemically sensitive lay-
+different compounds and that such differences should be re- ers.
+ﬂected in the sensor signal evolution namely on its dynamic
+properties. This makes important not merely the magnitude
+of the signal shift or its integral combination With the inter— 2. Phase space, dynamic moments and chemical
+action velocity (as in the area case) but also the shape of the sensors
+trajectory in the phase space; so that, the interactions With
+different compounds are expected to result in traj ectories Given a scalar observable quantity S(t) of a generic system,
+differently shaped. it is possible to deﬁne a k—dimensional vector space, here-
+
+The triVial way to describe a trajectory is to provide its an- With called phase space, With a deﬁned orthonormal base.
+alytical representation, nonetheless actual sensor trajectories The fundamental property of the phase space is the corre-
+may be difﬁcult to be ﬁtted With simple analytical functions. spondence between each point and the instantaneous state
+Furthermore, trajectories could change making impossible of the system.
+the use of a unique analytical function. A generic phase space can be deﬁned considering the
+
+A better approach consists in the deﬁnition of a set of Taken’s Embedding theorem [6]. Given an observable quan-
+descriptors able to capture general morphological properties tity S(t) and deﬁning a time delay lag r, the space coordi-
+of the trajectories like the symmetries With respect to some nates are
+ﬁxed directions such as the aXis and their bisectors.
+
+In this paper, the sensor response Will be studied in a [S(t)s(t + T) ' ' 'SU + (k _ UT” (1)
+phase space and the dynamic moments Will be introduced the time evolution of the signal S(t) results in a trajectory
+as descriptors of the sensor trajectories. containing the dynamical properties of the system.
+
+The use of moment descriptors as features in pattern Depending on the nature of the phenomena, trajectories
+recognition problem Will be illustrated and discussed in prac- assume a large variety of shapes. Disregarding scale effects
+tical electronic nose applications. Once a novel feature is the shapes of trajectories are expected to be associated to
+introduced, in order to evaluate its performance it is nec- the properties of the physical phenomena. From this point
+essary to compare its properties in a comparison test. This of View, it is interesting to deﬁne some morphological de-
+is not a straightforward operation because this kind of tests scriptors able to encode the shape of the trajectories. These
+is naturally inﬂuenced by the choice of the cases. Even so, morphological descriptors can then be used to obtain infor-
+these tests provide an indication about the potentiality of a mation about the system dynamics.
+feature extraction procedure, Which, from a practical point Here sets of morphological descriptors representing the
+of View, is offered to the chemical sensors practitioners as parameters analogous to the second moments of the area of
+an additional tool to be considered When chemical sensors a geometrical ﬁgure in a 2-D space are considered. These
+applications are considered. quantities are sometimes called dynamic moments [8,9].
+
+In this paper, dynamics moments features Will be con- They are calculated considering both the coordinates and
+sidered as input of typical pattern recognition applications. bisectors of the space
+Therefore, features Will be judged according to their capa- n
+bility to increase the distance between the samples belong- Mpg = 12361.” (2)
+ing to different classes and to decrease the distance between n i=1
+samples of the same class. n
+
+. Feature extraction is only the ﬁrst step of pattern reeog- MD3PB = @2063” _ Xiyz'Z) (3)
+nition so in order to make the comparison effective it is 2n _
+necessary that the Whole pattern recognition sequence of al- £21
+gorithms Will remain unchanged. Nonetheless, the results ﬂ "" 3 2 2
+may be different according to the kind of pattern recognition MD3SB = Z Z[2x i + 3 (x i yi + x W i )] (4)
+classiﬁer following the feature extraction procedure. i=1
+
+The choice of the pattern recognition classiﬁer has been 1 n
+driven by the consideration that an optimal feature extraction MD3X = 2— :093 + 3xi yl-Z) (5)
+should also tend to reduce the complexity of the data anal- n i=1
+ysis. So that good results can be achieved using classiﬁers n
+of low complexity. For this reason in this paper all the com- MD3Y 2 i205? + 3 x12 Yi) (6)
+parisons have been performed using a simple discriminant 2” i=1
+
+"
+"3","348 E. Marlinelli el al./Sensors and Actuators B 101 (2004) 346—352
+
+each term is labelled according to the notation used in [8], S(t) = Ale—t/ri + Aze—t/tz + c (8)
+
+the number gives the degree of the moment. The subscript
+
+indicates the direction along Which the moment is calculated: the tWO Signals differ for a httle variation 0f one Of the time
+
+PB and SB are principal and secondary bisectors, x and y constants.
+
+are the phase space axis. The quantities x and y are related The standard features extracted from this kind of s1gna1
+
+to the observable quantity S(k) by the following relations is the net variation between the Signal measured before the
+ex osure and after the transito . Obviousl accordin to
+
+xk = S(k); yk = S(k —|— r) (7) .p . . . ry . y g
+this deﬁnition these Signals result in the same feature and
+
+each moment describes different morphological features of therefore they are not distinguishable.
+
+the trajectory, so that the collective use of more than one The same signals can be represented in aphase space built
+
+moment is required for an exhaustive description. It is also from the signal and its delayed value. The two trajectories
+
+important to remark that the moments value depends on the are shown in Fig. 1b. Here the differences become more
+
+time lag generating the phase space. eVident With respect to the time domain.
+
+In order to apply dynamic moments to chemical sensors, Fig. 2a—c show three dynamic moments plotted versus the
+let us consider a typical absorption—desorption experiment time lag. In order to improve the recognition between the
+Where the sensor is abruptly exposed to a ﬁxed concentra- two signals the choice of both MD and the time lag are of
+tion of some analyte. Assuming a proportion between the primary importance.
+amount of the absorbed analyte and the sensor signal, sim- In this simple case, for MDZ (Fig. 2a) the largest differ-
+ple absorption models leads to exponential behaviours of ence between the two signals occur for 11 = 1 s; for MD3PB
+the sensor signal With time. In real cases, multi-exponential and MD3SB the separation is maximized considering TL 2
+functions are more likely found [10,11]. 4 s. This simple example puts in evidence that dynamic mo-
+
+The discerning property of dynamic moments can be i1— ments can emphasize the subtle differences between signals
+lustrated considering the response of a sensor exposed to that appears rather similar in time domain. However, opti-
+two analytes producing sensors signals very close one each mization of moment order and the time lag on Which the
+other as shown in Fig. 1. These signals follow the following phase space is built is necessary to maximize the features
+function performance.
+
+Sensor Response , S(t)
+
+W 150
+
+E i i ::, ‘:1:::::::1::: i
+
+>1 1 l :::::+_ “:‘::::‘:‘::::‘ I
+
+8 1 : m:__1_>¥1__:_1__: :
+
+g 100 1 :; i::i::i::; +:j::l; :
+
+3 i : :1 ::::::::j:\_: 4:: /"" i
+
+L: a a :-_____= / a
+
+E.- 50 ____________________________§l:,\\l:\___i::::__.—_—:'i_""‘£:::::j:—____i _____________€_____________
+
+3 ‘ : : :
+
+O i i : :
+
+o 100 200 $00 400 500 600
+(a) Tlme ,[3]
+Phase Space
+a 6"" a a a = //’1
+<0 40 ///
+o 20 40 6O 80 100
+
+(b) S(t)
+Fig. 1. The signals of two model sensor exposed to a sudden concentration variation of a compound and a successive abrupt removal of the analyte.
+Sensor signals obey to a two exponential behaviour in the time domain and they differ only for a little variation of one of the two time constants. Signals
+are represented in the time domain (a) and in a phase space deﬁned by 5(1) and S(t + 5) as coordinates (b). The phase space representation makes more
+evident the difference between the two signals.
+
+"
+"4","E. Martinellz’ et al./Sens0rs and Actuators B 101 (2004) 346—352 349
+2 x 104 MD2
+-3 ----!—-—___——-——
+”3"""" _-
+_4 __ ‘4—
+z_----
+'5 n-----
+-6
+O 5 1O 15 20 25 30
+(a) Time Lag,[s]
+5 x 105 MD3PB
+4
+3
+2
+O 5 10 15 20 25 30
+(b) Time Lag.[s]
+6
+10
+6.5 X MD3SB
+6
+5.5
+5
+4.5
+0 5 1O 15 20 25 30
+(c) Time Lag,[s]
+Fig. 2. Three dynamic moments plotted vs. the time lag calculated from the trajectories shown in Fig. 1b. The plotted moments are: MD2 (a), MD3PB
+(b) and MD3SB (c). A good separation between the two signals is achieved by the three moments, except the ﬁrst points of MD3PB, the separation
+between signals is, in this case, not dependent from the time lag.
+In the next section, the potentialities of MD will be in- of Rome “Tor Vergata” and Technobiochip) [12]. This
+vestigated in two practical cases. electronic nose is based on thickness shear rnode quartz
+resonators (TSMR). Sensors sensitivity is provided by a
+molecular ﬁlm of metalloporphyrins coating the surface of
+3. Experimental TSMR sensors [13,14].
+The sensors signal is a sequence of frequencies sampled
+The performances of the dynamic moments strategies with at the constant interval of 10 s. Time lags multiple of 10 s
+respect to standard features have been evaluated in two typ- have been utilized in the phase space building.
+ical electronic nose applications. These experiments were Measurements have been performed enclosing individual
+typical pattern recognition application aimed, in particu- fruits in glass jars. Jars were then sealed and held at a con-
+lar, at classifying between populations of kiwi-fruits and stant temperature for 20min in order to establish a steady
+peaches. headspace composition. Headspace was ﬂuxed in the elec-
+The ﬁrst experiment considers the difference ofheadspaces tronic nose measurement chamber by the LibraNose proper
+0f kiwi-fruits 0f the same cultivar (hayward) but farmed pumping system.
+in conventional and biological agriculture. Since biological Partial least square discriminant analysis has been
+agriculture avoids the use of pesticides this is expected to used as classiﬁer. Models have been cross-validated with
+result in the headspace composition. leave-one-out technique. In order to evaluate the iden-
+The second experiment represents a classic ripening stage tiﬁcation performances of the dynamic moments have
+discrimination, a number of peaches with three different been compared with the frequently shift between the
+storage time were measured in order to detect the differences steady frequencies in measuring and cleaning phase. Fea-
+in post-harvest processes. tures has been calculated and used without any additional
+The experiments involved 45 kiwi-fruits and 19 peaches. pre-processing except autoscaling (zero mean and uni-
+The chemical sensor array used for the experiments was tary variance). All calculations have been performed in
+one of the prototypes of the LibraNose series (University rnatlab.
+
+"
+"5","350 E. Martinellz' el al./Sens0rs and Actuators B 101 (2004) 346—352
+4. Results and discussion the frequency shift, the classiﬁer results biased towards the
+most populated class.
+4.]. Kiwi-fmits experiment This effect disappears When MD is used as input of the
+classiﬁer. In this case being the feature more discriminant the
+For this experiment we have used as feature MD2 With inequality in class population does not give any effect of the
+TL 2 20 and 30 s and MD3PB With 11 = 20 s. The dynamic classiﬁcation and an almost perfect recognition is obtained.
+moments have been extracted by sensor responses. As usual With PLS-DA models, classiﬁcation can be
+In Table 1 the confusion matrices obtained by PLS-DA shown plotting the scores of the PLS model resolving the
+models built considering as input either the frequency shift classiﬁcation problem. Fig. 3 shows the score plot of the
+(Table 1a) or the MD2 (Table 1b) are shown. It is relevant to ﬁrst two latent variables of PLS-DA model built from MD
+note that in the case of the shift of frequency the errors are features. Only 68% 0f the variance is explained in this
+not equally distributed between the two classes. This effect is plot, nonetheless the tendency to separate the two classes is
+mainly due to the fact that the data set is not balanced (only clearly Visible. It has to be remarked that the cross-validated
+31% 0f the data are related to the biological cultivar) and as PLS-DA model is fenned by four 1atent variables.
+a consequence due to the scarce discrimination property of
+4.2. Peaches experiment
+Table 1
+Cf' t' fPLS-DA'th k"" ' tbt'd' . . .
+ingitusmn ma “X 0 m 6 WI eXpenmen 0 am usmg as For this dataset the dynamic moments MD2 With 11 =
+—.. 10s and TL 2 20s was considered. In Table 2 the confu-
+Indusmal BIOIOglcal sion matrices resulting from the PLS-DA models obtained
+(a) The shift of frequency With these dynamic moments and the standard features are
+IQdUStrPl 29 2 shown. Also in this case the dynamic moment outperforms
+BIOIOglcal 6 8 With respect to the standard frequency shift. The percentage
+(19) The dynamic moment of correct classiﬁcation is around 89% With only two mis-
+Industrial 30 1 classiﬁed samples and the performance improvement respect
+Biological 0 14 t0 the PLS model built With the shift of frequency is around
+The classiﬁcation rates are 82 and 97% for frequency shift and dynamic 16%' The cross-yalidation gives a minimum Of the .classiﬁ-
+moments, respectively. cation errors us1ng four latent variables. The class1ﬁcat10n
+Scores Plot
+4
+O1
+3 0
+01m '9
+41 00
+2 O1
+O1
+01 ‘
+A 1 l 01 00
+°\° o
+3 O1 O1 \ 00
+N O 01
+a 0 m1 . —e% .
+N 00
+> 01 O 00
+_l
+-1 01 O
+01
+O1
+-2
+01
+-3 O1
+O1
+.1
+""33 -2 -1 o 1 2 3 4
+LV1 (46.28%)
+Fig. 3. Score plot of the ﬁrst two latent variables of the PLS-DA model calculated using the dynamic moments as input in the case of the kiwi-fruit
+experiment. Class O and class 1 label industrial and biological cultivars, respectively.
+
+"
+"6","E. Martinellz’ et al./Sensors and Actuators B 101 (2004) 346—352 351
+Scores Plot
+0.8—I—I—‘72 T : I : -,
+0.6 1
+0.4— .33 4
+32
+0.2— “r3 ,7 H;
+(H ‘ III l713
+V (‘2 I I
+’3 0 A ,. ,z I ___‘_;.,
+:2 V11 (:1 Ix’ I 1'12 7
+Q ”l I I
+S '0-2_ ’1’ Q2 _;
+V [II
+3 ’ :2
+~0.4 ‘ .
+-o.6— 4
+-O.8 “ 43.2 -*
+-1 , :
+(J1
+-1.2 —-——1———1—' ’ ' ' ‘
+-3 -2 -1 0 1 2 3 4
+LV 2 (14.13%)
+Fig. 4. Score plot of the second and fourth latent variables of PLS-DA evaluated using the dynamic moments as input, in the case of the peaches dataset.
+Ripeness states are indicated by integer numbers from 1 to 3 indicating the pre-ripe, ripe and over-ripe fruits. The plot explains only 15% of the total
+variance of the data.
+is spread over the four latent variables so that the better The difference in optimized parameters is not completely
+separation between classes is obtained plotting the second clear; likely they depend on the different kinds of experi-
+and the fourth latent variables as shown in Fig. 4, only 15% mental conditions that could mask the intrinsic dynamic in-
+of the total variance is represented in this plot. Evidently, formation of the sensors. The time lag in particular, can be
+the process of ripening in this population of peaches is not expressed only as multiple of the sampling rate of the sen-
+straightforward and the ripening stage is not the only vari- sor signal, in the experiments here described the signal rate
+ance source in the data. was large (10 s). A shorter sampling time could bring to a
+Although in both the cases the dynamic moments outper— better prediction capability.
+form the standard frequency shift the performance of the
+method depends on the phase space (through the time lag)
+and the particular selected moment requiring in practice an 5. Conclusions
+adjustment of these parameters.
+In this paper, a novel feature extraction procedure for
+Table 2 chemical sensors has been illustrated and the properties have
+Confusion matrix of PLS-DA for the peaches dataset calculated using as been investigated in the ease of an array of thickness shear
+Input mode resonators. The explored feature consists in a set of
+Pre-ripe Ripe Over-ripe synthetic descriptors of the morphological properties of the
+(a) The frequency shift sensor Signal trajectory in a proper phase space. .
+Pre-ripe 2 3 0 Such quantities are the dynamic moments that describe
+Ripe O 8 O the symmetry properties of curves towards a number of ﬁxed
+OVer-fipe 0 2 4 directions such as the coordinate aXis and their bisectors.
+(b) The dynamic moments The properties of these features have been investigated
+. mainly comparing the performances of a PLS-DA classiﬁer
+Pre-rlpe 5 O O . . .
+Ripe 0 8 0 fed alternatively With the standard frequency shift and the
+Over-ripe 0 2 4 dynamic moments. Comparisons have been performed With
+73% of samples are correctly classiﬁed feeding the classiﬁer with the tYVO data sets related F0 typical .eleCtronlc nose experiments
+frequency shift, this value increases up to 89% when dynamic moments almed at grading fmlts according to dlfferent cultwars 01‘
+are used as classiﬁer input. ripening stage. In both cases, the PLS-DA models built from
+
+"
+"7","352 E. Marlinellz' el al./Sensors and Actuators B 101 (2004) 346—352
+dynamic moments have obtained the best classiﬁcation rates. enth International Conference on Solid State Sensors and Actuators,
+Moreover in the kiwi-fruit dataset the discrimination was not [2] Eraﬁducer; 93:1 EOKIS/Ihilmiip' ”1331;11:10 JP“: 191:93' P t. H 11
+. . . Jung, . a , o e mg 0 ynam1c ys ems, ren we a ,
+inﬂuenced by the unequal population of the two ciasses. The Englewood Cliffs, NJ, 1994.
+results obtained reveal that these features contain tangible [3] F. Davide, C. Di Natale, A. D’Amico, A. Hieﬂemann, J_ Mitrovics,
+part of the information related to the essential characteristics M. Schweizer, U. Weimar, W. Gépel, Structure identiﬁcation of
+Of the System under measurement. non-linear models for QMB polymer coated sensors, Sens. Actuators
+It is important to note that the optimal choice and the B 25 (1995) 830—842; . , . . .
+number of MD and the time lags can be depending on the [4] IIVI'LHOImPérg’ FIDaVlde’ C' 1.31 Natale” A' D AHFCO’ F' quumf
+. . . . . undstrom, Dr1ft counteract10n 1n odour recogn1t10n app11cat10ns.
+SPECIﬁC apphcatlon as seen In the cases here under StUd' lifelong calibration method, Sens. Actuators B 42 (1997) 185—
+ied. Therefore, in general it could be necessary to use dif— 194.
+ferent dynamic models at different time lags to maximize [5] T. Eklov, P. Martensson, I. Lundstrom, Selection of variables for
+the discrimination of the classiﬁcation model. In particular, 3:336:13; Egltharlate gas sensor data= Anal' Chlm' Am 381
+the deﬁmtlon Of the phase Space IS important for the overall [6] F. Takens, Detecting strange attractors in turbolence, in: D. Rand,
+quahty 0f the features- In thlS paper, a space deﬁned by de' L.S. Young (Eds), Dynamical Systems and Turbulence, Warwick,
+layed signal coordinates has been used. The amount of time 1980, pp. 366—381.
+lag is important both for the deﬁnition of the trajectory and [7] E. Martinelli, C. Falconi, A. D’Amico, C. Di Natale, Feature extrac-
+for the associated dynamic moment. tion chemical sensors in phase space, Sens. Actuators B 95 (2003)
+Dynamic moments have been shown to be rather sensitive 132—139'
+. . . [8] A. Fichera, C. Losenno, A. Pagano, Clustering of chaotic dynamics
+to small Changes In the sensors dynamics, thlS makes the of a lean gas-turbine combustor, Appl. Energy 69 (2) (2001) 101—
+evaluation very sensitive to the chemical information but 117.
+also to the disturbances as for example temperature and ﬂow [9] M. Annunziato, H.D.I. Abarbanel, Non linear dynamics for classi-
+rate ﬂuctuations that, very likely, are expected to inﬂuence fication of multiphase ﬂow regimes, in: Proceedings of the Interna-
+the sensor dynamics. t10na1.C0nference 0n Soft Computmg, SQCO, Geneva. 1999.
+. . [10] R. Gu1terrez-Osuma, H.T.Nag1e, S.S. Sch1ffmann, Trans1ent response
+Although the Inﬂuence Of suCh parameters necess1tate Of analysis of an electronic nose using multi-exponential models, Sens.
+a deep investigation, we can conclude that the control of the Actuators B 61 (1999) 61 170—182.
+measurement protocol parameters is of great importance. [11] P- Accettola, M- Balsi, A- D’Amiw, C- Di Natale, A- Macagnano,
+Finally, the abundance Of features that iS possible to CX- F. Sortino, Time-constant extracting ﬁlters for fast gas identiﬁcation
+tract from the morphological description 0ftraject0ries in the in elecmmic noses” Elecmn' Lett' 38 (2002) 510—511'
+
+. . . [12] D.S. Ballantine (Ed.) Acoustic Wave Sensors: Theory, Design, and
+phase space, makes thlS approach interesting to Study from Physico-Chemical Applications, Academic Press, New York, USA,
+a different point of View the mechanisms that characterize 1996.
+the adsorption—desorption process of chemical sensors, [13] C. Di Natale, A. Macagnano, E. Martinelli, R. Paolesse, E. Proietti,
+
+A. D’Amico, The evaluation of quality of post-harvest oranges and
+apples by means of an electronic nose, Sens. Actuators B 78 (2001)
+26—31.
+References [14] C. Di Natale, R. Paolesse, A. Macagnano, A. Mantini, C. G0-
+letti, E. Tarizzo, A. D’Amico, Characterization and design of
+[1] R. Konishi, T. Aoki, The proposal of gas discrimination method by porphyrins-based broad selectivity chemical sensors for electronic
+one sensor using neural networks, in: Technical Digest of the seV- nose applications, Sens. Actuators B 52 (1998) 162—168.
+
+"

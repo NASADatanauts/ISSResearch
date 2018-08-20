@@ -1,0 +1,534 @@
+"","x"
+"1","Multlspectral decomposmon for the removal of
+out—of-band effects of VISIbIe/Infrared Imaging
+radlometer suute VlSlble and
+near-I nfrared bands
+Bo—Cai Gao* and Wei Chen
+Remote Sensing Division, Naval Research Laboratory, Washington, DC. 20375, USA
+*Corresponding author: gao@nrl.navy.mi|
+Received 13 February 2012; accepted 6 April 2012;
+posted 13 April 2012 (Doc. ID 162785); published 14 June 2012
+The Visible/infrared imaging radiometer suite (VIIRS) is now onboard the ﬁrst satellite platform man-
+aged by the Joint Polar Satellite System of the National Oceanic and Atmospheric Administration and
+NASA. It collects scientiﬁc data from an altitude of approximately 830 km in 22 narrow bands located in
+the 0.4—12.5 ,um range. The seven Visible and near-infrared (VisNIR) bands in the wavelength interval
+between 0.4—0.9 ,um are known to suffer from the out-of—band (OOB) responses—a small amount of ra-
+diances far away from the center of a given band that can pass through the ﬁlter and reach detectors in
+the focal plane. A proper treatment of the OOB effects is necessary in order to obtain calibrated at-sensor
+radiance data [referred to as the Sensor Data Records (SDRs)] from measurements With these bands and
+subsequently to derive higher—level data products [referred to as the Environmental Data Records
+(EDRs)]. We have recently developed a new technique, called multispectral decomposition transform
+(MDT), Which can be used to correct/remove the OOB effects of VIIRS VisNIR bands and to recover
+the true narrow band radiances from the measured radiances containing OOB effects. An MDT matrix
+is derived from the laboratory-measured ﬁlter transmittance functions. The recovery of the narrow band
+signals is performed through a matrix multiplication—the production between the MDT matrix and a
+multispectral vector. Hyperspectral imaging data measured from high altitude aircraft and satellite plat-
+forms, the complete VIIRS ﬁlter functions, and the truncated VIIRS ﬁlter functions to narrower spectral
+intervals, are used to simulate the VIIRS data With and Without OOB effects. Our experimental results
+using the proposed MDT method have demonstrated that the average errors after decomposition are
+
+reduced by more than one order of magnitude. © 2012 Optical Society of America
+OCIS codes: 010.4450, 010.1310, 280.0280.
+
+1. Introduction 0.4—12.5 ,urn range. The VIIRS instrument is, in many
+The Visible/infraredimagingradiometersuite(VIIRS) aspects: Sémllar ‘30 tlﬁforgﬁgeréte resomtmn ggagmg
+instrument [1], Flight Unit 1 (FUl), is now onboard spectrora tomeglzerif N AS A )Tlnstrumgnllis [J_S] cur-
+the ﬁrst satellite platform managed by the J oint Polar rentt y (:1 oarb t e f VIIR S eg'radan qlla .lpace-
+Satellite System (J PSS) 0f the National Oceanic and cra 138' num er 9 an S .are s1m1 31' t0
+Atmospheric Administration (NOAA) and N AS A and those of the MODIS 1nstrument but w1th small dlffer-
+collects scientiﬁc data from an altitude of approxi- ences 1n band center 1008113101“? and full w1dths at half
+mately 830 km in 22 narrow b ands 10 cate d in the maX1ma. The seven VIIRS V1s1ble and near—1nfrared
+(VisNIR) bands at a “moderate” spatial resolution
+— of 750 m in the wavelength interval between 0.4
+1559-128X/12/184078-09$15.00/0 and 0.9 ,urn, referred to as M1—M7 and listed in
+© 2012 Optical Society of America Table 1, have important applications for global
+
+4078 APPLIED OPTICS / Vol. 51, No. 18/20 June 2012
+
+"
+"2","Table 1. VIIRS VileR Band Names, Center Wavelengths, presents quantitative results on decomposition Of
+w OOB effects from applications of the MTD method
+VIIRS Band A(ym) FWHM (,um) t0 the simulated data. Section é gives a brief discus-
+m sion and summary.
+M2 0.445 0.018
+M3 0.488 0.020 2. Previous Research
+M4 0555 0020 The presence of OOB effects is not unique to the
+M5 0555 0-020 VIIRS instrument. The Sea-Viewing Wide Field-of—
+ﬁg 8'33: 38;: View Sensor (SeaWiFS) [§,§] satellite instrument
+— also has OOB effects. Prior to the launch of the Sea-
+WiFS instrument into space in 1997, Gordon [Q]
+remote sensing ofocean, land, and atmosphere. These developed a methodology for dealing with broad spec-
+bands are known to suffer from the 0ut-0f—band(OOB) tral bands and signiﬁcant OOB responses. Later, a
+responses—a small amount of radiances far away simple correction method, which is based on the
+from the center of a given band that can pass through Gordon methodology, to remove the spectral band ef-
+the ﬁlter and reach detectors in the focal plane. fects of the SeaWiFS 0n the derived normalized
+Figure 1 shows the normalized ﬁlter transmit- water—leaving radiances and ocean near surface
+tance curves (at the peaks of ﬁlter functions) for the chlorophyll concentration is developed and imple-
+seven bands [4]. The VIIRS ﬁlter data can be ob- mented in the operational SeaWiFS data processing
+tained freely from the website http://www.star system [Z]. It should be pointed out that the DOB
+.nesdis.n0aa.gOV/jpss/indeX.php. The M1 ﬁlter curve corrections are not made to SeaWiFS—measured top-
+(red) peaks near 0.41 ,urn, but has non-negligible of-the-atmosphere (TOA) radiances. Instead, the
+transmittances in the spectral region between 0.6— corrections are made to the derived ocean color data
+0.95 ,urn. A proper treatment of the DOB effects is products. The SeaWiFS correction scheme works
+necessary in order to obtain calibrated at-sensor ra- quite well over fairly clear ocean waters [Z]. However,
+diance data [referred to as Sensor Data Records the correction scheme is not applicable for SeaWiFS
+(SDRs)] from measurements with these bands and data products over turbid coastal waters or over land,
+subsequently to derive higher—level data products where the shapes of the TOA spectral radiance dis-
+[referred to as the Environmental Data Records tributions are very different from those over clear
+(EDRs)]. Signiﬁcant errors will be introduced in the waters.
+EDR data products, particularly in EDRs over dark In order to examine the effects of spectral response
+oceans, if the DOB effects are not well addressed. functions of individual instrument bands on their
+We have recently developed a new technique called TOA radiances, Barnes and Butler [g] described a
+the multispectral decomposition transform (MDT), radiative transfer (RT) modeling based technique
+which can be used to correct/remove the DOB effects to simulate the TOA hyperspectral radiance spectra.
+of VIIRS VisNIR bands and to recover the true nar- Using the simulated data, they evaluated the Sea-
+row band radiances from the measured radiances WiFS OOB effects over different types of surface
+with OOB effects. The development of MDT is based targets, such as blue ocean waters, deserts, and
+on linear system theory. An MDT matrix is derived grasslands. Because hyperspectral imaging data
+from the laboratory-measured ﬁlter transmittance measured from aircraft and satellite platforms, such
+functions. The recovery of the narrow band signals as those with the airborne Visible infrared imaging
+is performed through a matrix multiplication—the spectrometer (AVIRIS) instrument [9] from an ER-
+production between the MDT matrix and a multi- 2 aircraft at an altitude of 20 km and the hyperspec-
+spectral vector. Simulations of VIIRS data with tral imager for the coastal ocean (HICO) instrument
+and without OOB effects have been made using hy- [E] from the International Space Station, are now
+perspectral imaging data, the complete VIIRS ﬁlter readily available, we have decided to use the mea-
+functions, and the truncated VIIRS ﬁlter functions at sured TOA spectral radiance data, instead of the RT
+narrower spectral ranges. The MDT method is ap— model calculated data, to study the VIIRS OOB
+plied to the simulated VIIRS data with OOB effects effects.
+to derive the OOB-corrected data. The derived data For the purpose of mitigating the DOB effect for
+are then compared with the simulated VIIRS data VIIRS data acquired over clear ocean waters, re-
+without the DOB effects to evaluate quantitatively searchers at Northrop Grumman followed the
+the performance of the MDT method. SeaWiFS data processing procedures [Z] and devel-
+This paper is organized as follows: Section 2 gives oped the concept ofeffective relative spectral response
+a brief review of previous investigations on OOB (RSR). With this approach, the wavelength depen-
+effects. Section g describes the MDT method for spec- dence of Rayleigh scattering is taken into considera-
+tral decomposition and introduces an MDT matrix tion when generating look—up tables for retrieval
+for the VIIRS instrument based on an optimal strat- algorithms. Because the spectral radiance curves of
+egy of ﬁlter partition. Section 4 describes the simula- other types of surfaces, such as shallow waters, green
+tion of VIIRS data using hyperspectral-imaging data vegetation, and clouds are very different from that of
+measured from aircraft and satellite platforms and the clear water spectrum, new approaches need to be
+20 June 2012 / Vol. 51, NO. 18 / APPLIED OPTICS 4079
+
+"
+"3","developed to mitigate the DOB effect for VIIRS data hk (/1) is the normalized response (or transfer) func-
+measured over surfaces other than clear waters. The tion of a optical system (optical ﬁlters) with the
+MDT technique described below can, in principle, be wavelength /l G [2mm Amax] as a variable. The above
+used to correct/remove the DOB effects of VIIRS superposition integral expresses a relationship be-
+VisNIR bands and to recover the true narrow band tween original and measured signals with the optical
+radiances from the measured radiances with OOB ﬁlters.
+effects over any type of surface. If the range of the integral between the cut-off
+wavelengths 2min and Amax is grouped into several
+3. Multispectral Decomposition Transform sub-ranges, the sub-range partitions of the total
+integral are given by
+A. VIIRS M1—M7 Filter Characteristics
+The VIIRS VisNIR band speciﬁcations are tabulated A _ n zﬁffax
+in Table l. A set of spectrally contiguous ﬁlter trans- 8k _ 2 AU). hk ODSODd/l’
+mittance curves (normalized at the peak of the ﬁlter 121 mm
+transmission) is shozn “11$ 51g. % These ﬁlter 13138: where n is the number ofbands, and x1311 and 2%)“ are
+mittance Ci'irges, suc ?Sh O’SBOW Slgm lcantd minimum and maximum wavelengths of the sub-
+aelgggeseghglee gfalziirgn; : f ra (11:22??? the 1113131380 range of the lth ﬁlter. The total spectral range from
+. . ' Ait/l ' t' fll b- ,'..,
+grated ﬁlter assembly that overlies the VisNIR focal m n O max is a summa ion 0 a su ranges I e
+plane array. As a result, the DOB effect for a given I 1 l
+band comes from a contiguous spectral range instead x1331; = 28111
+of very limited narrow spectral intervals. Because [1(1) 2 [1mm ,
+the DOB effects come from a contiguous spectral [131)” _ [1
+range, we can apply linear system theory to deal with max _ max
+the issues of the DOB effect and to recover the nar— . .
+row band signals. Using an average value of the response function be-
+tween 2:311 and 2;an to replace the response function
+B. Partition of a Linear Optical System hk (,1) in the integral, we have
+In general, a multispectral instrument, such as
+VIIRS, can be considered a system that accepts an ﬁlffax — 1an — _
+input and produces an output in response. Such a f) (l) hk(/t)3(/t)d/t ‘3 hkl [/1 (1) 300611 2 hklA/llsl’
+system is linear because the measured optical signal min min
+[8k 2 8k (1,1)],Owhere l ancil g are pixel indexes] from a where AA; = 2%)“ — 2:311. The average of the response
+sensor can e expresse y fu n cti 0 n s is giv e n by
+Amax
+gk 2 / hk(/l)S(/l)d/l, (1) — _ 1 tiliax
+1min hkl _ E AU). hk(ﬂ’)dﬂ’7 (2)
+where §k and 3(1) are the measured (with OOB . .
+effects) and original signals of a pixel, respectively. an the narrowband signal that {S an average Of all
+signals Within the sub-band A/li is deﬁned by
+Spectral Response of VIIRS (V3) Filters _ 1 Aﬂax
+100 171‘ — Filter1(M SZ 2 M £0) SODd/l (3)
+— Filter2(M2) mln
+l i — Filler3 M3
+} I WW:M4: I The measured kth band signal is a summation of all
+0 10‘1 I . mmsms) . average narrowband signals and is given by
+U) ‘ — Filtcr6(M6) I
+g ’l l — Filter7(M7) I n _
+c3 10'2 ""l 1 ) 8k = thlA/tlgl- (4)
+‘5 l tn fl l=1
+3‘) f M ‘ ‘ l The average signals between 2:311 and 2;an deﬁned in
+10'3 ‘ § T ‘ l \ . Eq. (§) are the intended narrowband signals. The
+_‘.r “l. ‘ . ""1,1. A ‘ ll measured signal with OOB effects is a superposition
+vb '"" | ’ A p {iv H ""Mt ‘ 9‘ Q of all narrowband signals. The coefﬁcient factors and
+104 ‘ pm I ‘Mﬂ I“ i . ""\ parameters in Eq. (E) can be calculated using the re-
+400 600 800 1000 sponse functions that are dependent on the charac-
+Wanength (11m) teristics of the ﬁlters of a particular instrument.
+Fig. 1. VIIRS Version 3 M1—M7 ﬁlter transmittance curves Equation (4) is a mathematical eXpression 0f the
+normalized at the peaks. physical effects of the DOB response. Our task is
+4080 APPLIED OPTICS / Vol. 51, NO. 18/20 June 2012
+
+"
+"4","to resolve the average narrowband signals from Table 2. Wavelength Ranges of Subbands for the VIIRS
+E q. (4). Instrument Filters as MeasurecII frem the Filter
+— Transmlttance Curves In Flg. 1
+C- MDT Matrix VIIRS Band ASBmMm) Aﬂaxwm)
+A vector form of multispectral images (s E {§,§}) is m
+dGﬁned by M2 0.429 0.463
+M3 0.463 0.522
+31 M4 0.522 0.596
+(82 ) M5 0.596 0.724
+s = . (5) M6 0.724 0.782
+M7 0.782 1.001
+3n —
+Each component of the vector in Eq. (E) is a single section, we describe the numerical computations of
+band image. Substituting Eq. (4) into Eq. (5), we have the MDT matrix for the VIIRS VisNIR ﬁlters.
+The seven band ﬁlter transmittance functions, as
+n — shown in Fig. 1, indicate that the ﬁlter widths and
+21:1 (11131 . . — .
+A Zn— a g _ p0s1t10ns are not unlform. Basedbn careful analyses
+s = l—1 21 l 2 As, of the shapes of these ﬁlter functlons, we have a non-
+n _ uniform partition. The resulting wavelength ranges
+21:1 anlsl and cutting off positions for the seven bands are
+_ shown in Table 2. The wavelengths of the sub-ranges
+where akl = thA/ll. It is clear that the narrowband 4:311 of ﬁlter 1 and 2132... of the ﬁlter 7 need to extend to
+image vector can be solved by the lowest and highest boundaries within the total
+cut-off wavelength range. The transmittance func-
+§ 2 A—1§, (6) tion for ﬁlter 4, shown in Fig. 1, has more out of band
+response than the other ﬁlters. A narrower wave-
+The inverse matrix A‘1 is called the MDT matrix for length range that covers only the portion of the cen-
+recovering the narrowband signals from the mea- tral transmittance region for this particular ﬁlter is
+sured signals with OOB effects. All elements of the selected.
+matrix A depend on the response functions of the ﬁl- The transmittance functions of the VIIRS ﬁlters in
+ters, sub-band widths, and positions of the ﬁlters. Fig. l are normalized at the peak. All response func-
+Therefore, the spectral transform matrix can be fully ti0ns deﬁned in Eqs. (1) and (2) must be normalized
+determined by the characteristics of the ﬁlters. using the transmittance functions of the VIIRS ﬁl-
+Assuming an ideal case that the normalized re- ters in Fig. 1 before the computation for the MDT ma-
+sponse functions of the ﬁlters for the total wave- triX. The normalized response functions hk (/1) is
+length range from 4min t0 Amax are given by given by
+1 1 Ami 32321an H ,1
+hie“) _ All {0 moltherwise ’ hkol) = %
+k
+and the subband widths are uniform, the matrix A _
+and the MDT matrix A-1 are identity matrices. where H k (/1) and H k are the transmittance functions
+The input and output signals are identical for this Of the VHRS ﬁlters in Fig. l and it’s mean value be-
+ideal system. tween the total wavelength range from 4min t0 Amax.
+The MDT matrix A‘1 for the VIIRS instrument
+D- MDT Matrix for VHRS based on the wavelength partition in Table 2 and
+Using Eq. (Q), the recovered narrow band signals can the transmittance functions of the ﬁlters in Fig. 1
+be calculated by the MDT matrix and the measured have been computed through a mathematical inver-
+multiband image vector (with OOB effects). In this sion by Gauss-Jordan elimination, and is given by
+1.0283 —1.32656 x 10‘3 —9.64811 x 10‘5 —6.26276 x 10‘4 —5.26322 x 10‘3 —4.13883 x 10‘3 —1.68423 x 10‘2
+—1.86106 x 10‘3 1.00977 —4.52782 x 10‘4 —1.48041 x 10‘3 —2.13087 x 10‘3 —1.01843 x 10‘3 —2.82691 x 10‘3
+—9.56242 x 10‘4 —5.95628 x 10‘4 1.01368 —1.48632 x 10‘3 —3.24938 x 10‘3 —2.04484 x 10‘3 —5.34673 x 10‘3
+—1.1785 x 10‘3 —4.7093 x 10‘3 —1.20242 x 10‘2 1.0327 —7.46696 x 10‘3 —3.84353 x 10‘3 —3.47807 x 10‘3 .
+—5.78424 x 10‘4 —1.04277 x 10‘3 —2.35638 x 10‘3 —5.14373 x 10‘3 1.01684 —3.31716 x 10‘3 —4.40333 x 10‘3
+—4.38729 x 10‘4 —4.00096 x 10‘4 —6.33179 x 10‘4 —1.00671 x 10‘3 —3.99606 x 10‘3 1.01061 —4.13453 x 10‘3
+[223718 x 10‘4 —1.35422 x 10‘4 —1.89362 x 10‘4 —2.13841 x 10‘4 —3.02904 x 10‘4 —2.41025 x 10‘4 1.00131 ]
+20 June 2012 / Vol. 51, NO. 18 / APPLIED OPTICS 4081
+
+"
+"5","(a) 3 (b)
+4 4 'A . .‘ .. . . . . . . . . . . . -.
+j 3? ' . -.. ‘ 10° 0 ' ‘
+,, I v: , . .
+. 3/ , . . .
+(€93, ‘ ‘1 Green Vegetatlon
+1, 2 80— \ ~
+. . c: .. .
+o
+h , .
+.9.
+E . l
+h 60' '
+_ U)
+‘ \_ . ‘ . av ‘
+.. - » 3 \
+- v 40' '~ '
+. m ' ‘ \
+0 - . .
+. Z '. .
+_ S .. .' .x a
+a - ». .
+é x
+20 / ‘ . ""
+: Clear water - 8‘ ‘- . /'l'm'lml \\7mjc1' .
+0 .. ‘-\‘__<
+0.4 0.6 0.8 1.0
+WAVELENGTH (pm)
+Fig. 2. Image of (a) a true color AVIRIS acquired over the coastal area of New Jersey on 12 July 1998 and (b) examples ofradiance spectra
+of pixels covered by clear water, turbid water, and green vegetation.
+J . ‘4 , ' Turbid Water Spectral Curve Turbid Water Spectral Errors
+#2?“ 2500 ‘. 1 —.. Uncorrected Errors Vlr»*""'/’.\""\\‘
+""x; 0 Q 5/ $81,; 4» Corrected Errors .. \K‘»
+3+4."" 3: 7 . 5W 5'} 2000 <5
+v"" .1 ~52 ' ‘ -. 9.,
+0' ‘L “j"" if .u L -
+g . ' 0 . :3 1500 LE .
+$1.1? ‘ J. . .1 z: '. .2 . -
+'3“. . ""I. E E I'T“~ '
+' .' "" 3.. 1000 § -1 x."" '
+' . ‘x‘ I .. I If
+t i ‘ - o
+. , I. {I v i _. __ ..
+8 ya“ xx, -2 /
+""f ,5 $5; 0.4 0.5 0.6 0.7 0.8 0.9 0_4 0.5 0.6 Q7 0.8 09
+‘ . .1."" ~ . \ ~3-
+I‘ _._.. , ...-l . . ' Deep Water Spectral Curve Deep Water Spectral Errors
+. 2500 1 + Uncorrected Errors . . "" R~-.,_\\\\\
+. -<>— Corrected Errors \ ‘
+2000 A ,
+r? 1500 E
+§ 0 f 1‘ l""
+E E f ' .
+1000 7‘? -1 . '
+o: g
+500 \ /
+-2 .
+J/
+0
+0.4 0.5 0.6 0.7 0.8 0.9 0.4 0.5 0.6 0.7 0.8 0.9
+Wavelength (u m) Wavelength (pm)
+Fig. 3. VIIRS image simulated With an AVIRIS hyperspectral data set acquired over the coastal area of New Jersey on 31 July 2001, two
+sample VIIRS multiband radiance data over turbid ocean waters and clear deep ocean waters, and errors before (uncorrected errors) and
+after decompositions (corrected errors) relative to the simulated corresponding VIIRS data Without OOB effects.
+4082 APPLIED OPTICS / Vol. 51, No. 18/20 June 2012
+
+"
+"6","All main diagonal elements in the MDT matrix for ﬁlter functions to simulate the VIIRS data with and
+the VIIRS instrument are greater than and nearly without the DOB effects. Figure 2(a) is a true color
+equal to one. Almost all nondiagonal elements for image of an AVIRIS scene acquired over the coastal
+the DOB corrections are negative because the mea- area of New Jersey on 12 July 1998. Figure 2(b)
+sured signal with an OOB effect for a particular band shows examples of radiance spectra over areas cov-
+is a superposition of all other band signals. A decom- ered by clear water, turbid water, and green vegeta-
+posed signal must be extracted from the measured tion. The shapes of these spectra are very different.
+signals with OOB effects. The correction amount is The contiguous spectra are quite suited for the simu-
+dependent on the characteristics of the ﬁlters. The lation of multiband VIIRS data. Simulations of
+fourth row With larger correction amounts in the VIIRS data with OOB effects are made by convolving
+MDT matrix eorresponds to a poor ﬁlter such as ﬁlter the measured spectrum on a pixel-by-pixel basis with
+4, asshown 1h Flg. l. . the complete VIIRS ﬁlter functions (Fig. l). Mathe-
+It IS hoted that the su.mr.nat10n Of all eolurnn ele- matically, the simulated multispectral images with-
+ments In the MDT matrix 18 equal 130 Uhlty, 1.e., out the DOB effects are given by the following:
+n
+29:1)“ = 1. S _ fmhkmpmw
+1:1 k _ fM hk(/1)d;t ’
+Therefore, the correction coefﬁcients in the MDT ma- . . .
+triX for each band are also normalized. To avoid over- where 3(1) IS interpolated by 91th91' AVIBIS 01' HICO
+ﬂow results for the multiplication between the MDT hyperspectral irriage data, ahd 3k ? S(ld, 13) 18 the
+matrix and the spectral image vector, a data type 11011111131 band signal on a DIXGI Wlth wavelengths
+with double precision is used for the computation. as Shown in Table l. The spectral bandw1dths A/l
+_ _ in the integral for the kth band ﬁlter extend to the
+4- Slmulatlon Results left and right side of a 1% level of the ﬁlter’s re-
+We have used hyperspectral-imaging data measured spouse. The simulated data with OOB effects and
+with the AVIRIS and HICO along with the VIIRS without OOB effects are compared to quantify the
+Vegetation Spectral Curve Vegetation Spectral Errors
+‘5' - {3' L — s_i.
+\ . :1? it?” f. 3000 f 4 + Uncorrected Errors fl
+‘. l. . . 'h’rfr-‘t ,5 -<>— Corrected Errors (/‘j \l
+.j. . "" '0 t 3:?“ l 1/ ‘3
+1...;‘~ r. 2500 I."" Q 3 ~\
+. .07.): ; j ‘ ﬁy. ‘\ / 9% [f Ax!
+I‘. “V', 3}"" z _ - . -5 . .2“ 2000 fl.) § 2 [if] \R
+_ e: ; \ I: i: t. '4"" g {,0 l.
+. - .- "" I ~ 1500 R u‘. / 2 1 l.
+‘\-; . - O 'i; .I ‘. (l! JJTI‘ kl.
+~ 3“.» f ""v .» .3"" X r ,r t,
+k 1.4 x “(11:34: 1000 "" - s” 0 VFW i» ..../'j
+t -’.’.‘"" Egg“ 0-4 0-5 0-6 0-7 0-8 0-9 '1 0.4 0.5 0.6 0.7 0.8 0.9
+«‘7'. . ' ‘ g Wavelength (um) Wavelength (um)
+I” ?- . ' ..'.‘ . Land SpectralCurve Land SpectralErrors
+. ‘ ' 2500 .
+\ 1-5 + Uncorrected Errors {ﬁx
+. - 4» Corrected Errors \‘x‘
+1.0 ""g
+2000 A
+t 0.5 \
+z» .2 \.
+g -0.5 [’1'
+.y/
+1000 \ -1.0 xx""
+4
+-15
+0.4 0.5 0.6 0.7 0.8 0.9 0.4 0.5 0.6 0.7 0.8 0.9
+Wavelength (ll m) Wavelength ( u m)
+Fig. 4. Similar to Fig. §, except that the multiband data points are extracted from pixels covered by green vegetation and land as marked
+in the image.
+20 June 2012 / Vol. 51, NO. 18 / APPLIED OPTICS 4083
+
+"
+"7","‘ Turbid Water Spectral Curve Turbid Water Spectral Errors
+2000 _ A,
+1500 A . .
+.,.' E 0 cﬂx‘w ' {#4.
+g 1000 .g r . '
+5 E: '1 I"" .7
+500 x""
+i j + Uncorrected Errors
+-_.\_ -~- ——~_, '2 ,l —0— Corrected Errors
+0
+0.4 0.5 0.6 0.7 0.8 0.9 0_4 05 0.6 0_7 0.8 09
+Wavelength (u m) Wavelength (u m)
+Deep Water Spectral Curve Deep Water Spectral Errors
+2000
+‘\\ _ ""‘
+1500 \
+b \\ E 0 .:——:_‘—4\‘%€:O—'—’—4Hy——'_—H
+E 1000 \ ”E
+E .2 T .
+Ff"" \ E: -1 f) ""
+2’ 500 . l
+.1. _ . -2 f -o— orrece rrors
+1"" » $.33 . \, J} C tdE
+‘5- ' “g”? ‘ 0
+. ' - 7,; 0.4 0.5 0.6 0.7 0.8 0.9 0.4 0.5 0.6 0.7 0.8 0.9
+W avelength (um) Wavelength (um)
+Fig. 5. VIIRS image simulated with a HICO hyperspectral data set acquired over the Gulf of California on 1 December 2009, two sample
+VIIRS multiband radiance data over turbid waters and clear waters, and errors before (uncorrected errors) and after decompositions
+(corrected errors) relative to the simulated corresponding VIIRS data without OOB effects.
+OOB effects over different types of surface targets, The errors in the presence of OOB effects and after
+such as clear waters,turbid waters, green vegetation, corrections relative to the simulated data without
+sand, and soil. OOB effects are shown in the right portion of the plot.
+The proposed method for the multispectral decom- Before the correction, the relative errors for the M1
+position is applied to two simulated VIIRS multi- band and for both types of waters are approximately
+spectral imaging data sets with OOB effects. The —2.3%, and that for the M5 band about 1.3%. After
+decomposed multispectral images are also compared decomposition (corrected), the errors for both types
+with the corresponding simulated VIIRS data sets of waters are signiﬁcantly reduced. Figure 4 is simi-
+without OOB effects. Relative error measures on a lar to Fig. § except that the multiband data points
+pixel and band is deﬁned by are extracted from pixels covered by green vegetation
+and land as marked in the image. It is seen that the
+{g (i -) g (i 3} _ s (i -) relative error before the correction for the M5 band
+{éijk, éijk} = k’Jk—’J_k’J (centered at 0.672 ,um) for the green vegetation pixel
+3k (“1) is approximately 4%. This band receives a large
+amount of OOB contributions from the near—IR spec-
+where 8k (i,j) iS a kth band image without 0013 6f- tral region because green vegetation is highly reﬂec-
+fects. Mean values of the relative errors of the image tive above 0.7 ,um. The relative errors after the
+data with OOB effect and the image data after de- correction are reduced dramatically.
+composition for all pixels and bands are deﬁned by Figure é shows a VIIRS image simulated with a
+(lél) and (lél), respectively. HICO hyperspectral data set acquired over the Gulf
+Figure a shows a VIIRS image simulated with an of California on 1 December 2009. Two sample VIIRS
+AVIRIS hyperspectral data set acquired over the multiband radiance data over waters with large con-
+coastal area of New J ersey on 31 July 2001. Two sam- centrations of suspended sediments and clear ocean
+ple VIIRS multiband radiance data over turbid ocean waters, as marked in the image, are shown in the
+waters and clear deep ocean waters, as marked in the middle portions of the plot. The errors with
+image, are shown in the middle portions of the plot. the DOB effects and after corrections relative to the
+4084 APPLIED OPTICS / Vol. 51, NO. 18/20 June 2012
+
+"
+"8","'\ 3‘ ~ .-' ( '. ~11 Vegetation Spectral Curve 0 25 Vegetation Spectral Errors
+1800 -— . I ,_
+'\ f‘=\.\
+1 0.00 ' , »\
+“x 1 N. r"" 1 r- """"
+1600 ,1"" Q / ‘V/x REC.
+‘. 1' 9: -0.25 o""
+1400 p ,.
+§ 1200 1 E -0.50 ‘1
+C ‘- 1 E '1
+""' 1 o
+o. 1
+1000 ‘11 -0.75 ’1
+800 1 -100 1 + Unconected Errors
+1’ 11 —<>— Corrected Errors
+600 -1.25
+0-4 0-5 0-6 0-7 0-8 0-9 0.4 0.5 0.6 0.7 0.8 0.9
+Wavelength (11m) Wavelength (11m)
+Land Spectral Curve Land Spectral Errors
+9000 0.2
+‘1
+.\
+8000
+\~ 23 0.0 \‘1\/°*——8;~ ""
+g“ 7000 \ E / '1' “v/
+c \ T 1 .-""
+g \ g .1
+T‘w \\ T“; ""1
+- . y. 6000 \ ad -0.2 '1
+1"" ‘ \ l 3']
+.. vl- {i . \\ l——‘/ + Uncorrected Errors
+0. . \.
+{:10' .' '--\ 5000 —<>— Corrected Errors
+:1 . 6“ ~ .
+9 . -0.4
+- .8 . 0.4 0.5 0.6 0.7 0.8 0.9 0.4 0.5 0.6 0.7 0.8 0.9
+Wavelength (11m) Wavelength (11m)
+Fig. 6. Similar to Fig. 5, except that the multiband data points are extracted from pixels covered by green vegetation and desert as
+marked in the image.
+simulated data without OOB effects are shown in the image. It is seen from the right portion of the plot
+right portion of the plot. Before the correction, the that the relative errors after the corrections are also
+relative errors for the M1 band and for both types signiﬁcantly reduced.
+of waters are approximately —2.3%. The relative er— The average relative errors of the image data with
+rors before corrections for M5 and M6 bands and for OOB effects for the two AVIRIS and H100 simulated
+the turbid water pixels are approximately 1.5%. images are shown in Table 8. Similarly, the average
+After corrections, the errors for both types of waters relative errors of the OOB-corrected image data by
+are signiﬁcantly reduced and the error curves are the proposed MDT method for the same test images
+ﬂat. Figure 0 is similar to Fig. 5 except that the mul- are listed in Table 8. For reference purposes, the er-
+tiband data points are extracted from pixels covered I‘OI‘S fOI‘ uncorrected data, OOB-corrected data, and
+by green vegetation and desert sand as marked in the for several surface types, such as ocean water, clouds,
+land, and vegetation, are listed separately. The ratios
+Table 3. Average Relative Errors of the Uncorrected and 003- Of average 811:01‘8 after 6011861310118 over those before
+Corrected Simulated Multispectral Images of the VIIRS Instrument correCtlonS: (1911/1191): are llsted 1n the 13813 6011111111 0f
+Using AVIRIS and cho Hyperspectral Imaging Data Table 8. It is seen that after the correction the aver-
+- _ _ A age errors for deep waters and turbid waters for both
+Data 2 (0/ ) e (0/ ) e e .
+M the AVRIS and HICO-s1mulated data are reduced by
+AVIRIS A11 0903 0-0841 0-093 more than one order of magnitude.
+AVIRIS Deep Water 1.07 0.0783 0.073
+AVIRIS Turbid Water 1.02 0.0571 0.077 5 D. . d S
+AVIRIS Land 0.594 0.103 0.173 ' lscuss'm 3"" ""mmary .
+AVIRIS Vegetation 0.901 0.179 0.199 In this paper, an MDT method for removmg the DOB
+HICO A11 0.890 0.0820 0.092 effects is proposed based on linear system theory. An
+HICO Deep. Water 0935 00812 0087 MDT matrix is derived using the ﬁlter transmittance
+HICO Turbld Water 1-10 0-0670 0-061 functions for recovering narrowband signals. The
+HICO Land , 0294 0'114 03% spectral ﬁlter decomposition processing can be per-
+HICO Vegetation 0.519 0.102 0.196 - -
+— formed Simply by a production between the MDT
+20 June 2012 / Vol. 51, NO. 18 / APPLIED OPTICS 4085
+
+"
+"9","matrix and a multispectral image vector. The MDT data records,” 1n Proceedings of IEEE.Internation.al Confer-
+matriX depends only on the characteristics of the ﬁl- E1133]: Enmaggfcwncggéngfsgemow Sensmg Symposmm’ 2006
+' ' ' : : pp. — -
+ters for ah 0pt1cal mstrument. An lVIDT matr1X for 2. V. V. Salomonson, W. L. Barnes, P. W. Maymon, H. E.
+the VIIRS mstrument has been obtarned. Hyperspefl- Montgomery, and H. Ostrow, “MODIS: advanced facility in-
+tral lmaglng data measured from hlgh altltUde alr— strument for studies of the earth as a system,” IEEE Trans.
+craft and satellite platforms, the complete VIIRS Geosci. Electron. 27, 145—153 (1989).
+ﬁlter functions obtained from pre-launch laboratory 3- $131359“? EV-E-g/Iinzel: Y- i 1231311113“: II:- Tpanre, B'Cd 332»
+measurements, and the truncated VIIRS ﬁlter func- ' a me g ' ' c erman’ ' ' em?“ ' Illclls’ an ' '
+t. t t 1 . t 1 (l t . Hubanks, Cloud and aerosol propertles, pre01p1table water,
+Ions O narrower spec ra 11:1 erva S? 3r? use O 81' and proﬁles of temperature and humidity from MODIS,”
+mulate the VIIRS data Wlth and Wlthout 0013 IEEE Trans. Geosci. Remote Sens. 41, 442—458 (2003).
+effects. Our eXper1mental results usmg the proposed 4. C. Moeller, J. McIntire, T. Schwarting, and D. Moyer, “VIIRS
+MDT method have demonstrated that the average F1 ‘best’ relatiVe Slifctraglgaponse Characﬁrgzatio? by the
+B ff f I‘ m 1 1 n I‘ 1‘ government team,” roc. 8153, 81530 2011 .
+310 e eCtSda tef deco .tPOdS tﬁ: E e lgiuced. bi, 3101‘: 5. S. B. Hooker, W. E. Esaias, G. C. Feldman, W. W. Gregg, and C.
+an one 01‘ er 0 magnl u e' S 011 e pom e 011 R. McClain, “An overview of SeaWiFS and ocean color,” NASA
+that: after the launfjh 0f VIIRS 111130 space and SUbse' Technical Memorandum 104566, Vol. 1 (NASA Goddard Space
+quent data collectlon, the spectral reﬂectances of Flight Center, 1992).
+VIIRS mirrors in the space environment has been 6. H. R. Gerdonf‘Remote sensing of ocean color: 9 methodology
+changing. The instrument is expected to stabilize f?l""bdeglmg Wlth ’Pfadl Sgeitrgi 22%? Saga s11g$1§1cant OUt'
+in a few months. As a result, the stabilized spectral O ' an response: pp - p - , — ( )' .
+
+, , 7. M. Wang, B. A. Franz, R. A. Barnes, and C. R. McClaln,
+respohse curves OfVHRS bands 1n the space eny1r0n— “Effects of spectral bandpass on SeaWiFS-retrieved near-
+ment 1n the near future are expected to be sllghtly surface optical properties of the ocean,” Appl. Opt. 40, 343—
+different from those shown in Fig. 1. A new MDT ma- 348 (2001). . .
+triX needs to be derived using the stabilized VIIRS 8- g AthmeS. and J- {i.BU’ﬁler. “ModellrigSpectrgiqeﬁflfegtsﬁl
+ﬁlter response curves for recovering narrowband sig— 6181:2112 (georgé? sate lte mStrumentS’ roc' ’
+male from space-based VIIRS measurements' 9. R. 0. Green, M. L. Eastwood, C. M. Sarture, T. G. Chrien, M.
+
+The research reported here was partially sup— Aroneson, B. J..Ch1ppendale, J. A. Falust, B. E. Pavrl, C. J.
+Ch0V1t, M. 80118, and M. R. Olah, Imaglng spectroscopy
+ported by the US. Ofﬁce of Naval Research and by . . . .
+, , and the Alrborne VISIble Infrared Imaglng Spectrometer
+the J 01nt Polar Satell1te System of NCAA and NASA. (AVIRIS),” Remote sens, Environ. 65, 227—248 (1998).
+10. R. L. Lucke, M. Corson, N. R. McGlothlin, S. D. Butcher, D. L.
+References Wood, D. R. Korwan, R. R. Li, W. A. Snyder, C. 0. Davis, and
+1. R. E. Murphy, B. Guenther, J. Ip, J. Jackson, D. Olenijczak, B. D- T- Chen, “The hyperspectral imager for the 00381331
+Iisager, and K. Hutchison, “Update on the algorithmic basis ocean:instrument description and ﬁrst images,” Appl. Opt.
+and predicted performance of selected VIIRS environmental 50, 1501—1516 (2011).
+4086 APPLIED OPTICS / Vol. 51, NO. 18/20 June 2012
+
+"

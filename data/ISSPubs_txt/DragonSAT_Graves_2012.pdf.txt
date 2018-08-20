@@ -1,0 +1,1011 @@
+"","x"
+"1","50th AIAA Aerospace Sciences Meeting including the New Horizons Forum and Aerospace Exposition AIAA 2012-0434
+09 - 12 January 2012, Nashville, Tennessee
+AggleSatZ Student Satelllte MlSSlOIl
+John T. Gravesl, Joseph A. Perez2, Helen L. Reed3, Angela McLelland4
+T exas A&M University, College Station, TX, 77843-3141
+and
+David B. Kanipes, Robert S. Provence6, Timothy A. Runkle7
+NASA Johnson Space Center, Houston, TX, 77058-3696
+AggieSatZ, Texas A&M University’s ﬁrst free-ﬂying spacecraft, operated for 230 days in
+v low earth orbit (LEO) from its release from STS—127 Endeavour on 30 July 2009 until its de-
+3 orbit on 17 March 2010. This mission was the ﬁrst in a four-mission campaign, called
+g LONESTAR (Low Earth Qrbiting Eavigation Experiment for §pacecraft Testing
+g éutonomous Rendezvous and Docking), partnering the Aeroscience and Flight Mechanics
+E1 Division at NASA Johnson Space Center (JSC), AggieSat Lab8 at Texas A&M, and the
+g University of Texas at Austin (UT) to promote space engineering education as well as
+<2 research into novel, low-cost autonomous rendezvous and proximity operations techniques.
+g The ﬁrst—mission requirement was to operate the global positioning system (GPS) receiver
+§ built by NASA JSC called DRAGON (Qual BF Astrodynamic QPS Qrbital ﬂavigator).
+g AggieSat Lab developed a ﬁve-inch cubesat for this ﬁrst ﬂight, with UT building a similar
+7%; spacecraft, called Bevo-l.
+E AggieSatZ and Bevo-l were launched together from the Space Shuttle and were designed
+g to push apart and completely separate from one another for independent operations. The
+3 separation however, was incomplete and this hindered communications through antennas
+E; which were partially captive within the UT spacecraft. Over time, AggieSat Lab students
+E were able to overcome this unforeseen challenge and establish basic spacecraft operations.
+:2 AggieSatZ was an end-to—end process and served as a learning platform for all
+E participating students. AggieSat Lab is looking forward to applying the lessons learned from
+8 this mission to future ﬂight programs through the NASA J SC and UT partnership.
+LU
+é Nomenclature
+z . , . . .
+g a = 0rb1t s seml major aX1s (m)
+:: Aarev = change in the semi-major axis per revolution (In)
+E A P = geomagnetic index
+3 c E 5160 / H
+E C ir = circumference of the orbit (In)
+7% C D = coefﬁcient of drag
+E C Dmin.max = maximum variation of the CD value
+C 0M = center of mass (In)
+90 = eccentricity 0f the orbit
+FD = drag force
+F10.7 = solar radio ﬂux
+GC = geometric center (In)
+1Masters Student, Department Of Aerospace Engineering, johntgraves@gmail.c0m
+2AggieSat Lab Manager, Department Of Aerospace Engineering, jperez.tamu@gmail.c0m
+3Professor, AggieSat Lab Founder and Director, Dept Aerospace Engineering, helen.reed@tamu.edu , Fellow AIAA
+4Masters Student, Department Of Aerospace Engineering, mclelland.angela@gmail.com
+5Division Chief, Aeroscience and Flight Mechanics Division, dkanipe@tamu.edu
+6Aeroscience and Flight Mechanics Division, robert.s.pr0vence@nasa.g0v
+7Aeroscience and Flight Mechanics Division, timothy.a.runkle@nasa.gov
+8http://aggiesatweb.tamu.edu
+This material is declared a work of the U.S. Government and is not subject to copyright protection in the United States.
+
+"
+"2","h = observed height of the satellite (km)
+H = quotient of the mean asymptotic temperature value for the eX0sphere at large altitudes and the
+integrated mean molecular mass value from the base of the therrnosphere t0 the speciﬁed height (km)
+
+H = density scale height (111)
+
+I L- = Modiﬁed Bessel Functions of order 1' and argument 6
+
+IZ, 1y = rnass moments of inertias about the z and y axes (kg*rn2).
+
+m = integrated mean molecular mass value from the base of the thermosphere t0 the speciﬁed height
+
+11, n + 1 = index
+
+P = period Of the orbit (sec)
+
+R = orbit radius (111)
+
+T = mean asymptotic temperature value for the eX0sphere at large altitudes (K)
+
+v = velocity
+
+xi = sensitivity—analysis variable
+g [1, = universal gravitational constant (m3/s2)
+E p = atmospheric density
+i pp = atmospheric density at perigee (kg/rn3)
+g T9 = torque produced by graVity gradient (Nm)
+g TD = torque produced by drag (Nm)
+(2 6 = angle between the center line and the zenith direction (radians)
+g I. Introduction
+3 AGGIESATZ and a counterpart satellite from UT, BeVO-l, were launched together on STS-127, OV-105 Space
+7%; Shuttle Endeavour on 15 July 2009, and released from the shuttle payload bay on 30 July 2009 to begin
+E independent Operations in space. Developed by the AggieSat Lab, Texas A&M’s student spacecraft laboratory [1 -2],
+g AggieSat2’s primary mission was to obtain data from the DRAGON GPS unit developed at NASA J SC for space
+3 navigation. The AggieSatZ/BeVO-l mission was the ﬁrst of a larger program of four missions sponsored by NASA
+E; JSC to develop novel solutions for autonomous rendezvous and docking (ARD) and proximity operations. This
+E program, called LONESTAR, is ongoing, and the three remaining ﬂights will each feature a spacecraft built by
+34: Texas A&M and another by UT that will work together to demonstrate proximity Operations.
+g AggieSat2 provided Texas A&M students their ﬁrst opportunity to Operate a spacecraft developed with their
+(”3 own ideas and dedication. AggieSat2 was the culmination of a four year effort by students, faculty, staff,
+(:3 government, and industry partners. While the mission itself was full of challenges, the rewards for students,
+% fortunate enough to participate in the program, were vast and invaluable. AggieSat Lab encourages in-house critical
+% thinking and decision making, development, and design whenever possible. Mentorship is welcome, but students are
+% expected to maintain a large degree of independence and full personal responsibility in their work. AggieSat2 used
+2 commercial radios, solar cells, and a GPS antenna, and a J SC-furnished payload and batteries, but no other standard
+i equipment was used [3]. AggieSat2 was built from the ground up, tested and documented by the students at
+i AggieSat Lab. Components of the design that were well understood, documented, and owned by participants
+g performed well; while challenges were encountered in areas that were the less understood or lacked complete
+3 engineering data. Students were allowed to experience this contrast and take engineering lessons with them. In this
+E way AggieSat2 fulﬁlled AggieSat Lab’s overall mission: to develop and demonstrate modern technologies by using
+5 a small-satellite platform, while educating students and enriching their experience.
+
+11. AggieSatZ Mission Overview
+The AggieSatZ/BeVO-l ﬂight was the ﬁrst of the four planned missions with the NASA J SC campaign. Each
+
+mission is designed to incrementally test the complex systems needed to demonstrate successful proximity
+
+Operations between a Texas A&M and UT spacecraft by mission 4. As planned, missions 2 and 3 will test various
+
+combinations of navigation tools, docking equipment, attitude control, communications, and propulsion needed for
+
+the ﬁnal ﬂight of the campaign. The ﬁrst mission, called DRAGONSAT, was scoped as a small mission to allow
+
+each University to begin the campaign and Obtain spaceﬂight experience. NASA J SC speciﬁed a ﬂve-inch cubesat
+
+form factor for each school, and provided the DRAGON GPS unit as a test Obj ective for this ﬁrst ﬂight. Each school
+
+provided a supporting spacecraft designed to house and operate a DRAGON GPS unit while taking navigation
+
+vectors for ground processing. DRAGON was designed to Obtain relative GPS measurements for space rendezvous
+
+"
+"3","and navigation in LEO. The main objective for AggieSatZ was to acquire two orbits (two 90 minute sessions) of
+DRAGON navigation and measurement data.
+
+The AggieSatZ spacecraft was a ﬂve-inch cube with a mass of 3.2 kg. AggieSatZ was similar in size to the
+MicroElectromechanical PicoSat Inspector (MEPSI) and RAdar Fence Transponder (RAFT) spacecraft [4-5]. It was
+designed for release from the Department of Defense (DOD) Space Shuttle Picosat Launcher (SSPL), a ﬂve-inch
+cubesat launcher as used for the MEPSI and RAFT missions. AggieSatZ was packaged in this launcher for ﬂight
+with the spacecraft developed at UT. The two satellites interfaced Via spring loaded UHF antennas and inhibit tabs
+that extended inside the opposing satellite and engaged switches at the center of the mating faces. Upon release, the
+two spacecraft were designed to push apart, with assist from the preloaded springs, and separate completely for
+independent operations. Figure 1 shows the Texas A&M and UT ﬂight vehicles ready for delivery to J SC.
+
+The exterior of AggieSatZ featured 24 body-rnounted gallium-arsenide triple-junction solar cells (in 4-ce11
+panels, 1 per side), venting holes, a ground support connector, a UHF band monopole antenna, a 2.4 GHz patch
+antenna, and a GPS patch antenna. The GPS antenna was a commercial Taoglas AP12A unit, while the UHF
+
+v monopole and 2.4 GHz patch were custom designed and built by Texas A&M’s Electromagnetics and Microwave
+3 Laboratory of the Electrical Engineering Department by students under the direction of Dr. Gregory Huff. The
+g structure itself was machined from a block of 6061-T6 aluminum with recessed faces for mounting of the solar
+g panels. Each solar panel was designed and built in house. Solar cell electrical connections were soldered into place
+23 then mounted to PCB board plates with epoxy. The plates were then bonded to the spacecraft structure. Figure 1
+3f highlights the exterior.
+E
+g F: ;; ._-.r-‘
+i - , V , ‘ y
+S“ ' , mi 7 . \i
+2 . ,_ |
+S
+m n,
+E
+5 Figure 1. AggieSatZ (right) and Bevo-l (left) ﬂight vehicles at Oceaneering Space Systems prior to launcher
+:3 integration.
+D4
+% The interior of the spacecraft was divided into three bays by two stainless steel plates. The plates provided
+a structural rigidity, mass, and mounting area for the subsystems. The hinge-side steel plate housed a Digi (formerly
+Q Maxstream) 24XStrearn 2.4 GHz radio and ballast in the ﬁrst outer bay. On the opposing side in the central bay, the
+(:5: plate featured an aluminum battery bOX containing two CGR 18650 lithium-ion cells and a Microhard MHX425
+i UHF data radio. The latch-side steel plate housed a stacked electrical power system (EPS) board and command and
+g data handling (CDH) board on the central bay side, and the NASA J SC DRAGON GPS board on the other side in
+E the second outer bay. The interior arrangement is shown in Figure 2.
+E
+a
+3 EPS BOARD RADIOS
+Hf
+I .- .
+.1"". , i‘
+1.? ‘ u t ‘ ‘vi 1
+~ _ -T¥£Pig:1=1= 4—; a
+GPS UNIT CDH BOARD BATTERY
+Figure 2. AggieSatZ spacecraft interior.
+
+"
+"4","The CDH board was completely designed and populated in house and built around the PIC18F4550
+microcontroller. It featured onboard ﬂash memory, USART and SP1 interfaces for communicating with the other
+subsystems.
+
+The EPS board was also designed and built in house and featured power collection, storage and safety circuitry
+needed to meet NASA requirements for ﬂight on Space Shuttle. Battery—pack assemblies were designed and
+integrated at Texas A&M University and then qualiﬁcation units were rigorously tested at the NASA JSC Energy
+Systems Test Area (ESTA).
+
+111. Mission Development
+
+In 2005, the Aeroscience and Flight Mechanics Division at NASA JSC began an effort to provide space
+engineering education as well as promote research into novel solutions to the ARD problem. Under the direction of
+Division Chief, Mr. David Kanipe, JSC forged a partnership with AggieSat Lab and UT to undertake a set of four
+
+g joint missions meeting these goals. A team called the Mission Systems Engineering Team (MSET) composed of
+E Texas A&M and UT students developed an initial iteration of a campaign plan. The four missions were notionally
+§ deﬁned at a high level and the early requirements for AggieSat2 and BeVO-l were developed from this early
+3 deﬁnition. An early result of such planning was that the DRAGON GPS unit was assigned to the ﬁrst ﬂight. At the
+5 onset ofplanning, more complicated relative navigation and cross link communications schemes were discussed, yet
+g such plans were dropped to ﬁt within the assigned ﬁve inch cube form factor given to each team.
+9 Concepts and designs were developed throughout 2006. Early challenges were experienced in the radio and
+g power systems due to the constraints on volume and mass. It was difﬁcult to ﬁnd radio units with good data rate
+g speciﬁcations, and traditional nickel-cadmium battery systems were deemed too cumbersome. A lithium-ion system
+3 was eventually selected, and the volume and mass saVings were traded for a signiﬁcant increase in the complexity of
+E; qualifying the power system for safe spaceﬂight on a manned vehicle.
+g In 2007 ﬂat sat prototypes were developed for the CDH and EPS systems, with the prototype boards earning the
+g nickname “rnedusa” for the bulky nature of their extra long harnesses. Three iterations of these boards were
+1;“ completed in a largely trial and error process. The patch and monopole antennas for AggieSat2 were designed at
+<23? Texas A&M’s Electrical Engineering Department’s Electromagnetic and Microwave Laboratory. Anechoic chamber
+g testing on each antenna showing gain patterns and voltage standing wave ratio were performed. Another major test
+ES was conducted jointly during 2007 by both Texas A&M and UT to test the separation and spacecraft interface
+E system. A fully functional replica of the DOD SSPL launcher was developed and constructed by Texas A&M
+a freshmen. Design units with complete interface systems for both spacecraft were ejected from the replica SSPL on
+E air bearings as shown in Figure 3. In two dimensions the units successfully released and separated.
+(é , 7 ‘ - \r -
+Q
+<
+—,« , ’ .
+>~. - ' «
+3 ~- i151)- l ,4"". , 7
+Q” H» ‘ --
+Q ~;‘wu ’ .
+
+Figure 3. 2-D deployment and separation testing.
+
+The Engineering Design Unit (EDU) for AggieSat2 was completed in the summer of 2008, and performed well
+on a functional level. Unfortunately at this time the document-control habits of the student engineers were not
+mature and many of the lessons being learned from the EDU were not captured in great detail, much of the software
+documentation was incomplete, and the testing strategy for the unit was poorly deﬁned. As a result, the success
+experienced with the EDU construction would not be repeated when the ﬂight unit began to take shape in December
+2008. By late December, several major documentation discrepancies were identiﬁed when the initial harnesses were
+brought together between ﬂight boards. All work was stopped and a massive effort was undertaken to ﬁX the
+eXisting problems. Teams scoured the EDU and eXisting documents to properly deﬁne ground “truth”. Anything that
+
+"
+"5","was not properly documented 0r tracked was established in the record from the ground up by intense inspection and
+investigation with multiple cross checks from several teams. The test plan was also re-Visited at this time and
+expanded greatly in detail and scope.
+T j ‘3' 5- r
+z 3: ‘ 4 )‘a, 1' f """" ',
+4-: ....t x f '\§ « ’5 ' ‘-
+. I, ‘ g. ‘ -- i . - 1
+g ll“ ' "" I fir ’L- i ‘I
+g Figure 4. AggieSat students working on engineering design unit.
+if Flight hardware was properly coming together with exacting documentation by the end of January 2009.
+3? Students settled into a tempo of very trying, but very productive hours, working around the clock to ﬁnish the
+g spacecraft ﬂight unit for the spring delivery. A continuous problem failure and conﬁguration management cycle
+g developed as part of this tempo. After the initial documentation problems were addressed, new technical problems
+g and challenges that developed during integration were handled and resolved by the students successfully.
+g The tools for this level of conﬁguration management and quality control had always been available and
+if provided by our Lab’s Director and Manager, but it took most of the program for the students to catch on to and
+g appreciate many of the realities of this process. As per the mandate and intent of the AggieSat Lab, the students had
+g maintained full responsibility for successful completion of the program. Students were allowed to experience
+{3 problems that resulted in documentation and testing deﬁciencies - which were of their own making. The Director
+E9 and Manager mentored and educated the students about the problems when they were critical, and then challenged
+E the students to correct them. This process resulted in very tangible and hard-fought ﬂight hardware experiences for
+:2 the students. Also during ﬂight build, the students received instruction in and then performed ﬂight-rated soldering,
+E integration, and polymerics in a cleanroom environment for the ﬁrst time.
+LU
+U
+E 'T .. “L.“ V.“
+a J , ; 1 .
+o , 2. ~ , '. -« = Hr , ‘ , ""a “s
+(:0: '1 \o' .. ‘r "" "" ‘1' ""1 ' x . 7 '.. f?“ a 9
+<1 » r g ’ "" ' k . , . . /
+§ ‘Ps. i i - - ‘ '5‘ ~~ ’ =
+,3 l; g. “ "" ...,“ t ’ ""
+D
+Figure 5. AggieSatZ ﬂight build, integration, and delivery.
+Battery testing was undertaken in February 2009. Earlier in the year a batch of ﬂight-capable lithium ion cells
+were made available to AggieSat Lab by NASA J SC. Multiple battery-pack qualiﬁcation units were built and sent to
+ESTA at J SC. One unit was crush tested to destruction and others were put through under and over-charge tests with
+a qualiﬁcation EPS board and safety circuit.
+The spacecraft was delivered to Oceaneering Space Systems for integration into the SSPL launcher on 20
+February 2009. Three-aXis Vibration testing was performed in parallel with the ﬁnal safety reView at NASA J SC 25-
+27 February. On the third-aXis run, the spacecraft suffered a short on the subsequent functional check. The satellite
+was rushed back to College Station for inspection and repairs. It was discovered that a programming header had
+contacted the aluminum inhibit casing due to deﬂection of the inhibit wall during Vibration. The offending header
+was cut away and metal on the inhibit casing trimmed. The ﬂight unit was re-integrated and delivered a second time
+on 2 March 2009. [6-7]
+
+"
+"6","-4..\ 3&3 "",5,
+Figure 6. Vibration testing at J SC.
+3 The launcher with both spacecraft was shipped to NASA Kennedy Space Center and arrived on 5 March 2009.
+§ Texas A&M students performed a ﬁnal aliveness test through a ground support access panel at the Space Station
+§ Processing Facility. The ﬂight hardware was integrated into Endeavour at the Orbiter Processing Facility and rode to
+if Pad 39B for Endeavour’s rescue duty for Atlantis’ STS-125 mission to the Hubble Space Telescope.
+3 IV. Operations
+g? In the months leading up to ﬂight, a ground station was established at Texas A&M’s Riverside Campus north of
+g the main campus. This ground site features a 30’ tower and electronics that can be networked t0 AggieSat Lab
+g facilities on main campus, and UHF and 2.4 GHz services were provided for AggieSat2.
+3'
+i
+E;
+2
+8
+m ‘ t). -
+m at;
+H )1
+z
+LU 4 ,
+Q ~ -mkr. H,
+U z—aw
+<1 2
+z
+8
+E Figure 7. AggieSat Lab Riverside ground station.
+<
+E Endeavour would be delayed ﬁve times which pushed the launch into July. On the sixth launch attempt on 15
+5» July 2009, Endeavour ﬁnally left the pad with AggieSat2 and BeVO-l.
+Pg _ . . ‘Iy .
+E .
+E - _ '- _ _
+Q ‘~ ’3 * ‘ ; - - II. - '
+‘l i i i‘- 7]? ""5‘4- : .' ?9’ ‘3’,"" 0°? ‘1
+W- L‘"" fr” "" _ g ' ‘ V .
+)9 t
+. ' ‘ h I f. i 8
+Figure 8. Launch of STS-127 Endeavour with AggieSatZ.
+AggieSat2 spent two weeks with Endeavour at the International Space Station after launch. The crew of STS-
+127 on Endeavour commanded the release of AggieSat2 and BeVO-l at 12:34:50 UTC on 30 July 2009, a day after
+
+"
+"7","departure from the Space Station. Deployment was performed over South America on the ascending portion of the
+orbit. From the moment of release, it was apparent from down link Video that the two spacecraft did not separate
+from each other as planned.
+
+There were initial concerns from the Video that the spacecraft inhibits would not disengage since a separation
+was required for this event to occur. This concern was short lived because amateur radio operators received
+AggieSat2’s beacon in Italy during the ﬁrst orbit at approximately 13:00 UTC. It has since been concluded that
+some sort of partial separation occurred, as enough distance had to separate AggieSat2 and Bevo-l in order for
+inhibits on AggieSat2 to close and the spacecraft to power up. Complete separation was eventually ruled out because
+the United States Air Force reportedly tracked only one object, 35690 DRAGONSAT, during the entire 230 day
+mission.
+
+“I ,r,‘ ‘ f"" fw‘ i
+E 7 ,5; 53231 a T
+:3 2 , (:5 V- /
+E 17/"" ; ’ ‘i "" ‘
+E Figure 9. AggieSatZ and Bevo—l in Endeavour’s payload bay [left, circled in red] and deployment from
+i Endeavour [right] (NASA).
+£1
+g AggieSat Lab’s ﬁrst contact with AggieSat2 was on 30 July 2009 at 20:23 CDT when a single beacon was
+2“ received at zenith. For the ﬁrst two and a half weeks, uplink was not achieved with AggieSat2. Various numbers of
+E; beacons were received by Texas A&M and amateur operators globally during this time.
+5
+52
+E
+8 I ‘K
+E
+g r i \ ' .A. ‘ ‘
+a 3 2.2.3. r1 V \ '1‘""; _ ‘2
+Q 5""“ i ‘ "" ~\\
+<3 .. .
+(<2? ix .1 "" ’ .~"" .1 f.
+A s. V. ,, _
+E Figure 10. AggieSat Lab students receive ﬁrst beacons during pass on 30 July 2009.
+
+On 17 August, the ﬁrst commands to send back basic health information were received successfully by
+AggieSat2 and two-way communications were established. These communications were limited in duration and not
+consistently achieved, but it was a start.
+
+The difﬁculty in communication was attributed to some combination of the separation failure and the radio
+system conﬁguration itself. The incomplete separation may have been a contributing factor because the UHF radio
+antenna was partially captive and therefore obscured in some manner by the UT spacecraft. The radio system itself
+was based on a frequency—hopping device and was not satisfactorily conﬁgured by the team to handle Doppler shift
+tuning. This is explained in Section V.C.
+
+On 2 September, the command to begin taking GPS data for one orbit was ﬁnally given. The ﬁrst part of this
+data was downloaded on 10 October 2009.
+
+The balance of September was spent performing retroﬁts and upgrades to the ground station. A specially
+ordered ampliﬁer was procured in an attempt to boost signals to and from the ground station to improve
+communication given the suspected problems. The radio was also relocated out of the ground station rack and onto
+
+"
+"8","the tower in a weatherproof box to remove as much additional loss as possible. The ampliﬁer was used in the loop
+with the entire system for the ﬁrst time on 15 October and a few more kilobytes of data were obtained.
+
+Throughout the rest of the operations, DRAGON data download attempts were made. Due to the slow transfer
+rates, adjustments to procedures were made and exhaustively tested on the EDU in the Lab. Additionally, a process
+was started on 20 February 2010 to modify and control the download byte start locations to “sample” the DRAGON
+data at various places in the stream. This was to allow faster location Of samples that contained actual GPS satellite
+contacts and vectors bypassing the kilobytes of startup and “search” data that had been collected previously.
+
+Passes on 27 February, 5 March, and 13 March were used to gather some of the stored spacecraft health data for
+engineering purposes. These passes accumulated temperature and battery data from the ﬁrst 29 orbits as well as a
+sample from September that contained the period where the DRAGON GPS unit was in operation.
+
+Operations continued until 17 March 2010 when AggieSat2’s orbit ﬁnally decayed. Figure 11 shows the altitude
+history of AggieSat2. Table 1 is an Operations summary. The last ofﬁcial contact was a single beacon reception at
+1:34 UTC on 17 March just hours before re-entry into the Paciﬁc Ocean. The last ofﬁcial elements were reported for
+
+4 an epoch of 5:27 UTC on St. Patrick’s Day of 2010.
+E
+8 AggieSatE Altitude Histﬂrryr
+3 Sam ——I
+a 3.1mm +Apnapsis
+>._; 331nm ._._.___._ — - = = -'~ :- T ”:1.” +Penap5Is
+95? 230.00 I ; - __
+E : 240-00 ——
+g E m“ __
+5 i Em ——
+O
+N“ 130m
+2 ——
+5"" mm —
+é Hm —
+55 12am]
+E 31H ul 29-Aug Eﬂaﬂep 2W ET-N cw ET—D ec EE-J an EﬂFeb ET—Mar 25—Apr
+LU
+: Date
+0
+<3 . . . .
+% Flgure 11. AggleSatZ altltude hlstory [8].
+g
+(A
+E
+g Table 1. AggieSatZ operations summary [8].
+5,;
+E» Date Time (UTC) Station
+,9
+'0
+"":3: Deployment 7/30/09 12:34:50 Endeavour, over Chile
+.2
+E First Contact 7/30/09 13:00:00 IKlODO, Italy
+Q
+
+Last Contact 3/17/10 1:34:46 Texas A&M University Riverside Ground Station
+
+Approximate Decay 3/17/10 5:27:02 North Paciﬁc Ocean’""
+
+Mission Duration 230 days
+
+Initial Orbit 333km X 326km
+
+Final Orbit 163km X 157km
+
+Texas A&M Contacts 99
+
+Reported Amateur Contacts 30
+
+Total Contacts 129
+*Position at last reported elements
+
+"
+"9","V. Results
+A. DRAGON GPS Results
+
+Mission success requirements to download two full orbits of DRAGON GPS data were not achieved. However,
+the DRAGON GPS unit was commanded to Operate for one 90 minute period and data samples throughout this
+period were downlinked that show the GPS unit was in operation and tracking GPS satellites.
+
+The orbit selected featured an ascending pass over College Station, thus allowing the student team to command
+the satellite to begin data collection. Also, this put AggieSat2 in the northern hemisphere for the ﬁrst part of the run,
+which was important because the satellite was passively attitude-controlled by a neodymium magnet and hysteresis
+rods. The placement of the GPS patch antenna was such that it faced toward the GPS constellation while in the
+northern hemisphere.
+
+The 90 minute session was commanded at 2:50 UTC on 4 September 2009, and the satellite and DRAGON
+began taking data 4 minutes later at 2:54 UTC.
+
+4 The ﬁrst downloaded data set, collected from 10 October 2009 to 7 February 2010, contained the ﬁrst 216
+3 seconds from the start of DRAGON operation. During this time the GPS unit searched through the entire GPS
+§ satellite catalog and found none of them. The board reported an onboard temperature of ~9 degrees C. At this time it
+g was decided, due to the extremely low data rates, to start sampling at intervals through the data to ﬁnd converged
+E? solutions at later times. It was expected that the ﬁrst 10-20 minutes of the run would consist of the DRAGON
+E searching and attempting to acquire GPS satellite vectors before ﬁltering navigation data.
+8 The ﬁrst sample was taken at the 20% mark, by total onboard ﬁle size, which was approximately T+16 minutes
+E into the session. At this time GPS Space Vehicle (SV) 4 was tracked successfully by the DRAGON.
+g The next downloaded sample was taken at 22% mark which was approximately T+18 minutes to see if anything
+g had converged after the acquisition of SV 4. At this mark, data was downloaded that showed the unit had a full lock
+7?: 0n SV 4 and SV 7. Azimuth and elevation data were available on SV’s 2, 3, 4, 5, 6, and 7. DRAGON ternperature
+E was at 10.7 degrees C.
+Q A mark at 23% and 21% was downloaded to search around the good data being shown at 22% and see if any
+3 navigation ﬁlter solutions had been available. Eight seconds of data was captured at 21% and showed continued
+E,» tracking of SV4 and good SNR (signal to noise ratio) on SV 25. Nine seconds was captured from the 23% mark and
+5 showed a continuation of tracking on SV 4 and 7.
+3‘: This last successfully downloaded data was retrieved on 15 March 2010. At this point the spacecraft was
+E beginning to descend at a fast rate due to atmospheric drag. The subsequent passes in March were complicated by
+8 the satellite’s 10w altitude and higher speed. The ground site slew motors were struggling to keep antennas pointed
+<23 at AggieSat2 and published elements were not accurate for long periods of time. No additional data was taken and
+% the satellite re-entered on 17 March 2010.
+g The DRAGON GPS unit performed as commanded during AggieSat2’s ﬂight. It is believed that the unit was
+é able to generate a solution later in the data stream due to the SV contacts it held in the downloaded data. The data
+3 acquired shows the DRAGON unit performing satellite searches, tracking SVs, and locking onto satellites.
+<2: B. Post Mission Drag Analysis
+$3 Following AggieSat2’s de-orbit, members of the AggieSat Lab began exploring how the altitude data might
+E beneﬁt future missions. Speciﬁcally, there developed an interest in creating a model capable of predicting a
+E satellite’s drag coefﬁcient. This information, while not speciﬁcally deﬁned as a LONESTAR mission success
+9 criterion, presented several potential beneﬁts for further LONESTAR obj ectives. In addition to quantifying the data
+downlink rates necessary for mission success, drag coefﬁcient calculations could also help determine a satellite’s
+attitude, total mission lifetime, and average descent rates.
+
+The development of the aforementioned model was centered on an analysis of the drag force experienced by the
+AggieSat2/BeV0-1 combined spacecraft and how this force contributed to orbit decay. In order to achieve this goal,
+Equation 1 was used to calculate the magnitude of the orbit’s semi-major aXis decrease due to drag [9].
+
+_ CDA 2 —C
+Aam, — —27I7a ppe [10 + 29011] (1)
+Here Aam, is the change in the semi-major aXis per revolution (m), pp is the atmospheric density at perigee (kg/m3),
+C D is the coefﬁcient of drag, c E an/H, a is the orbit’s semi major aXis (In), ea is the eccentricity 0f the orbit, H
+is the density scale height (m) [10], and I L- are Modiﬁed Bessel Functions of order i and argument 6.
+
+"
+"10","The following discussion highlights several key assumptions of the drag analysis, summarizes how such
+assumptions may have affected the robustness of the ﬁnal model, and compares key aerodynamic parameters of the
+AggieSatZ/Bevo-l spacecraft to the published information from satellites of similar mass and size.
+
+Methodology
+
+As an initial input into the simulation, AggieSat members compiled orbital-element measurements from the 230
+days of the ﬁrst LONESTAR mission. These values, recorded at 104 irregular time intervals by the United States
+Air Force Space Command and shown in Figure 11, were used to obtain the apogee and perigee altitudes of the
+spacecraft for various days during the mission. The Air Force elements were compiled and saved for each day/time a
+ground pass occurred during operations. In order to mitigate the irregularity of readings, a time dependent mean of
+the system’s height was used for the totality of calculations. This mean was computed in the usual manner by
+averaging the n and n + 1 indeX to ﬁnd a time independent height. The average satellite height was then used to ﬁnd
+orbital characteristics such as, circumference, apogee, perigee, period, serni-major aXis, semi-minor aXis, and orbit
+
+v eccentricity. Such calculations can be found in most introductory orbital mechanics books and were referenced, for
+3 these purposes, from reference [9]. Additionally, rnass properties of the combined satellite were computed for the
+g necessary attitude control analyses within the overarching drag calculation. Examples of such variables include the
+g total mass of the AggieSatZ/Bevo-l spacecraft, the center of mass, both for the indiVidual satellites and the
+if combined system, and the system’s moment of inertia about each of the three primary axes.
+
+$ Following the computations of the physical parameters of the orbit, the velocity and atmospheric density for
+<2 each orbit were calculated using Equations 2 and 3, respectively [10].
+
+g _ Cir
+
+g 1? — ? (2)
+i; — h—175
+
+g p = 6 x 10‘109 H (3)
+i where C it” is the circumference of the orbit (In), a function of serni-major and semi-minor aXis [Equation 3]; P is the
+E; period of the orbit (see); It is the observed height of the satellite (km); and H is the quotient of the mean asymptotic
+E temperature value for the exosphere at large altitudes [Equation 4] and the integrated mean molecular mass value
+:2 from the base of the thermosphere to the speciﬁed height [Equation 5] (km).
+
+E It should be noted, that Equation 3, along with the subsequent supporting equations are only applicable to orbits
+8 between 200 and 500 km, since these “orbits can be regarded as essentially circular” [l 1]. As all but two data points
+(:3 of the AggieSatZ mission fell within these bounds, it was determined that this model would serve as an accurate
+% measure of the physical conditions experienced by the system. It is also important to realize that the values of T and
+g m, shown below, hold little material merit; yet are merely necessary inputs for the density model.
+
+E T = 900 + 2.5 (F10.7 — 70) + 1.5AP (4)
+<:
+
+E» m = 27— 0.012(h—200) (5)
+3 Above, T is the mean asymptotic temperature value for the exosphere at large altitudes (K), F10.7 is the solar radio
+E ﬂux, AP is the geomagnetic indeX, and m is the integrated mean molecular mass value from the base of the
+Q therrnosphere to the speciﬁed height.
+
+Using these values, and the aforementioned mass properties, the drag force of the satellite system was
+calculated by rearranging Equation 1, see Equation 6. This equation relates the decay of the serni-major aXis to the
+force of drag experienced by the satellite yet remains independent of the system’s orientation.
+
+vaarevm
+
+FD — —4TL'(126_C [10+26C11] (6)
+Next, a comparison between the effect of drag force and gravity gradient forces was computed. This comparison
+used the fact that each force, or system of forces, would produce a net torque on the overall system and thus
+inﬂuence ﬂight orientation. It was therefore assumed, that for any orbit during the mission, if the magnitude of the
+drag induced torque overcame that created by the gravity gradient, one of the two smaller square sides of the
+satellite would represent the total frontal facing area, see Figure 12. Conversely, one of the four larger rectangular
+sides would lie normal to the velocity vector.
+
+"
+"11","Z
+4.. T
+‘ h
+\ v
+I \l/l)
+Figure 12. Drag driven orientation.
+
+§ The torques of both graVity gradient forces and the total drag force, Equations 7 and 8 [9], were computed and
+
+g compared at an angle where 0 = 45°. It was determined that at this angle the equation for graVity gradient torque
+
+g reached a maximum and therefore would dominate the torque produced at lesser angles.
+
+(\1
+
+5 TD = FD(GC — COM) cos(6) (7)
+
+8
+
+Q r = 3—“ |1 — I |sin(26) (8)
+
+c6 9 2R3 Z y
+
+E: where T9 is the torque produced by graVity gradient (Nm), GC is the geometric center (m), C OM is the center of
+
+4%: mass (m), TD is the torque produced by drag (Nm), u is the universal graVitational constant (m3/s2), 0 is the angle
+
+5 between the center line and the zenith direction (radians), R is the orbit radius (In), and IZ and [y are the rnass
+
+3“ moments of inertias about the z and y axes (kg*m2).
+
+2 Finally, with the resulting areas from the torque comparison, the coefﬁcient of drag was computed for the
+
+‘2“ combined satellite, using a manipulated form of Equation 1. These results were then plotted and averaged to ﬁnd a
+
+E density independent solution representative of the entire mission. A plot of these results and the sensitiVity of this
+
+a analysis to measurements and assumptions is shown later in the report.
+
+8
+
+53 Key Assumptions
+
+é Two prirnary assurnptions driving the accuracy of this analysis were the in-ﬂight combined mass and form
+
+% factor of the AggieSat2/Bevo-l satellite. These uncertainties surrounding the actual ﬂight conﬁguration arose from
+
+a both unavailable data regarding the Bevo-l ﬂight unit and the previously discussed release failure between the two
+
+9 spacecraft. In order to address the ﬁrst of these uncertainties, the mass of Bevo-l was estimated to be 2.7 kg from
+
+g the known properties of the UT Engineering Design Unit. While this model did not include such ﬂight speciﬁc
+
+EC details as staking or conformal coating, it did include most of the major rnass components, and suggested that the
+
+4: actual ﬂight unit had a relatively even density distribution. This information prompted AggieSat Lab to assume a
+
+$2 uniform cube conﬁguration for the Bevo-l ﬂight unit as well as allowed the two satellites’ center of graVity,
+
+ED moments of inertia, and graVity driven orientation to be determined.
+
+5 The second of the aforementioned uncertainties was addressed using a series of photographs taken ﬂom
+onboard Space Shuttle Endeavour (Figure 9). These images conﬁrmed that the rectangular, stowed conﬁguration of
+the two satellites was maintained during deployment and for several seconds following. As previously discussed, it
+is unclear whether this form factor was preserved throughout the duration of the ﬂight; however given no other
+information, and for simplicity sake, a rectangular prism was utilized for the totality of the drag analysis. This
+assumption, along with the known volumes of each satellite, aided in predicting the frontal area of the combined
+satellite and the drag force, FD, experienced by the system.
+
+In addition to the above conﬁguration assumptions, the AggieSat team also estimated several orbital
+characteristics of the LONESTAR 1 mission. Namely, this was achieved with an averaging method used to
+extrapolate between apogee and perigee readings. Due to the fact that this data was only explicitly captured at
+speciﬁc, and often irregular, instances of time, there was an initial concern that these averages might not accurately
+represent realistic mission behaVior. Fortunately however, the irregularity of readings was mitigated by the fact that
+the AggieSat2/Bevo-l orbit decayed at a relatively slow rate. This guaranteed that the deViation between actual orbit
+
+"
+"12","values and predicted values would be minimal. Due to the relatively small deViations between the estimated values
+and reality, orbit averages were excluded from the subsequent sensitiVity analysis.
+
+Lastly, in calculating the drag force experienced by AggieSatZ, a simpliﬁed logic was employed to determine
+the front facing area of the system. Rather than attempting to progressively estimate and model the angle of attack of
+the satellite, members of the AggieSat team determined that an ‘if—then-else’ logical construct would achieve
+acceptable levels of accuracy for the purposes of this analysis. The logic assumed that if the force of Earth’s gravity
+gradient created a larger torque on the satellite than that created by the drag force then one of the four long
+rectangular sides of the satellite would remain perpendicular to the velocity vector. Conversely, if at any point in the
+mission the magnitude of the drag induced torque overtook that of the gravity gradient, it was assumed that one of
+the two small, square ends of the satellite would become the front facing feature. The estimated value of area was
+then used in the ﬁnal calculation of the satellite’s coefﬁcient of drag.
+
+Model Robustness
+v In order to determine the sensitiVity of this model to the assumptions stated above, an uncertainty analysis was
+3 completed in which the variability of each measurement was accounted for and used to test against the original
+g result. In the preliminary discussion of such an analysis, it was determined that the C D results of this simulation were
+g strictly dependent on the accuracy of three parameters. These variables included the actual mass, altitude of the
+E1 satellite and the solar geomagnetic indeX, A p reading. The A P indeX is a measurement of the solar actiVity at any
+3% given instance of time and helps indicate how much or how little Earth’s atmosphere expands and contracts. This
+<2 variability in the atmosphere plays an important role in determining the atmospheric density at given altitudes for
+g both past and present rnissions.
+§ In order to capture the minimum and maximum values for CD, a reasonable range of uncertainties was
+3 researched for each of the three parameters. For example, the mass of the satellite was allowed to vary between
+i; 7.13kg and 4.7 5kg. These values represent a 20% inﬂation and deﬂation; respectively and accurately capture the
+E true mass of the combined ﬂight unit. Likewise, a range of variability was found for the density rnodel utilized in the
+g C D calculation [11]. Despite retroactively computing the density, and therefore having actual historical readings
+3 from which to work, there was an inherent uncertainty associated with the methods of data collection employed in
+E; measuring A P. This variability arises from the fact that only thirteen ground stations across the globe measure and
+E record A p indices, a fact that introduces geographical bias to the value [12]. Thus, in order to accurately express a
+3‘: range of position independent AP readings, the daily measurements from both a mid-latitude and high-latitude
+E station were used. Lastly, the sensitiVity of the altitude measurement was expressed as the uncertainty of tracking
+5 measurements from the United States Air Force Space Command. These readings have been stated in public
+(:3 literature to produce satellite range accuracy on the order of i5 km by measuring the GPS constellation [l3].
+% Using these minimum and maximum values, an effective ‘error’ was calculated for each reading of the mission.
+é Each error was then weighted using the partial derivative of Equation 1, solved for coefﬁcient of drag, and taken
+E with respect to the relevant variables. The results, represented by Equation 9, were then used to constrain the C D
+9 solution by upper and lower bounds. These sums, along with the computed value of C D, provide a range of potential
+i C D ’s and highlight the dependency of this result on the assumptions of the analysis.
+2
+g 3 55D
+""g CDmin,max = Z i=1{ximin.max * 6—961} (9)
+a
+E where C Dmin,max is the maximum variation of the C D value at each reading as a result of the combined sensitiVities at
+
+either the minimum or maximum of each range and xl- is one of the aforementioned variables.
+
+Comparison of Results
+
+The drag analysis of AggieSatZ/Bevo-l was completed post mission and aimed at capturing the recorded
+physical characteristics of the mission. While this analysis relied heaVily on the initial assumptions made, there is
+positive data which suggest these assumptions accurately reﬂected the characteristics of the mission. The average
+value of C D computed for the duration of the AggieSatZ/Bevo-l lifetime was 1.74, and the below ﬁgure depicts the
+calculated CD at each measured altitude throughout the mission. These values match closely to reported C D values
+for satellites of similar size and mass. For example, OSCAR—l, a 5kg satellite had a range of C D’s between 2 and 4
+[9]. Also shown in Figure 13 is the range of possible CD’s for the AggieSatZ/Bevo-l mission. The sensitiVity
+analysis of this model showed only a slight range in values of the average C D, 1.39 to 2.01. This suggests that despite
+several assumptions, the calculation of C D remained robust and could serve as a reliable predictor for future
+m1ss1ons.
+
+"
+"13","Cd of A682 and BI for Totality of LONESTAR 1 Mission
+7
+— Computed Cd
+Minumum Cd with Sensitivty ,’
+6 ——— Maximum Cd with Sensitivty I‘
+}
+|
+I
+I f
+5 n J
+h I
+II I
+A II |
+'U h I
+8 "" H
+5:4 I l
+e I t er;
+0 ‘ :1 q /\’ 5
+<1- ..5 .5 'II III r! 5-
+m u 3 ’l l] 1 E
+I 5 '; |||l r! I' f E
+—< ._ 3 I '\ \ (I :
+a 3% 3 II} I}: jf'I/\.I // \J
+8' 8 n : I's'I , {I P,’ 1! V‘ ,/
+E U H . IgI H I: I ;.If M
+m 1 M n ;e\ H a ,II .2:
+“1 n J I'\ ,\ ‘ \/ 1 ‘ EE\ ""I IN N: 52’ j
+S 2 ' 1' r \\ M \ [I ‘ 1 5:: ‘ «I 1 1‘ “.i‘x’ 5 {ll
+I I J «,4 \ :._ XV, ’” \r 1 I32 3 33‘... .’
+,‘_; I: I J L J .‘-_ \IV \/ / LI—z ;} .‘ : 1"".
+E E . J .. '
+g 1 IV ' '
+g , v/\\/P\ /\/.\/ .X/gi ‘
+%
+£1
+Z 00 10 20 30 40 50 60 70 80 90 100
+g Orbital Element Set Number (Proportional to time, 102 sets over ~7.5mths)
+N
+:5
+>~.
+:3
+E Figure 13. Drag simulation results.
+0
+E5
+; VI. Lessons Learned
+8
+m 0
+35 A. Separatlon System
+(”5 Due to limited information, the most difﬁcult problem to analyze and learn from was the separation failure
+é between the A&M and UT spacecraft. The system used for separation on AggieSatZ and BeVO-l is illustrated in
+g Figure 14. Each spacecraft included a monopole antenna with a spring loaded pusher ﬁxed to opposing corners of
+E the spacecraft. Each antenna was compressed into a receiving tube. The entire assembly was held in by compression
+(<0: of the SSPL launcher prior to deployment. Upon command from Endeavour, the door of the SSPL was to swing
+E open and the satellites were to be pushed out. As the two satellites translated out, the antenna springs were free to
+g push and force the spacecraft apart.
+2?:
+O
+E
+8
+\‘ll l‘l‘ u\\\\\\\‘\\\\\\“V \V‘V.‘ |.' L“ ‘ L\\\\“““\‘\‘“V
+§ AggieSatZ \ § _ \
+§ § : t
+s § § §
+\ \ § N
+\ 'é' \ \ N
+k‘rcl \ ‘ N '
+§ § ‘ \ .ﬁ.g-_g|eEiat2 ﬁn
+k\\\\\\‘\\\\\\\\\\\ $\“\\\“\\\\\\\\\§
+STOWED DEPLOYED
+Figure 14. DRAGONSAT separation system.
+
+"
+"14","What is known is that upon release from Endeavour, the spacecraft were only separated slightly at one corner
+and sometime between deployment at 12:34 UTC and 13:00 UTC, the separation extended enough for AggieSat2’s
+inhibits to close and the spacecraft to activate and beacon. The U.S. Air Force never tracked more than one object
+during the entire 230 day mission.
+
+4; ~ ~ ‘\
+
+\“‘-»\ ' ,. “ .
+g Figure 15. Close up of spacecraft after deployment. AggieSatZ: left; Bevo-l: right. (NASA)
+3 Several theories have been proposed as to why the spacecraft did not separate fully. These include a cold weld
+‘2 or bonding of the spacecraft during storage and the two week ﬂight to the Space Station, material fatigue in the
+g separation springs, torsion or some other dynamic effect during separation.
+g Cold welding of metals cannot be ruled out. Welding by adhesives and treatments originating from AggieSat2 is
+E considered highly unlikely due to the documentation record of the assembly. Logs and documentation ﬂom
+f5? AggieSat2’s build indicate that the last procedures using epoxy were conducted on 28 February 2009 while
+43‘: remedying the short encountered after the last Vibration aXis. The mating face featured 32 machine screws around
+5 the periphery that were torqued and staked. Arathane 5753 was used for this staking and was speciﬁed to cure
+i during a 24 hour room temperature cycle. The spacecraft was bagged and shipped back to J ohnson Space Center for
+E, re-introduction into the launcher with Bevo-1 nearly 48 hours later on 2 March 2009. These epoxies were considered
+E fully cured.
+g; Spring fatigue was tested by putting an engineering design version of the antenna spring with the proper parts
+a and casing in compression for a length of time representative of the time AggieSat2 sat stowed. This included
+8 approximately ﬁve months of time during integration, time on the launch pad, and during ﬂight with Endeavour to
+8 the Space Station. This test was started soon after the separation failure in July 2009 and run through J anuary 2010.
+g Upon release the spring sti11 provided force.
+% The remaining theory involves some unknown dynamic effect that occurred when the ﬂight unit separated in
+a full weight1essness. The antennas themselves were made of soft brass and it is possible that something could have
+9 deformed and bent or locked. Unfortunately two dimensional tests on the ground provided no clues as to what
+i spacecraft features could have caused problems. While torsion effects could not be studied due to the constraining
+2 effect of the air bearing plane, no bending or excess friction was observed at the mating face, antennas, or the inhibit
+ﬁ sw1tches 1n tests. A three d1mens1ona1 test was proposed for NASA’s n11crograv1ty program on then DC-9 test
+é aircraft (commonly referred to as the Vomit Cornet), but not accepted. The ﬂight separation was the ﬁrst time the
+E spacecraft system was used in a full 6-degree of freedom environment.
+Q
+
+B. Radio System
+
+AggieSat2 carried an uplink/downlink system based on the MHX425 UHF data modem by Microhard and a
+downlink system based on a Digi Maxstream 2.4 GHZ data modem.
+
+The Microhard was to be used initially for uplink and downlink and then for uplink only after the 2.4 GHz
+system could be activated. The Microhard and Digi modems were selected for data rate and size. Both ﬁt easily into
+the spacecraft and operated in excess of 19200 bps. However, the modems were frequency hopping spread spectrum
+(FHSS) units and designed for ground networks. The modems would “hop” from frequency to frequency to
+maximize available channel space for multiple radios in a ground network. This feature made it challenging for
+creating a controllable center frequency that could be tuned due to Doppler effects. The sequences that these radios
+used were proprietary and not readily available.
+
+To address the frequency hopping, a “tuning system” was devised to update a text ﬁle to force the MHX425
+unit to hop continually to one frequency so it could be tracked. It was intended for the ground unit to have its own
+text ﬁle re-written real time to “tune” it as needed.
+
+"
+"15","Prior to ﬂight, antenna pattern measurements were made in a chamber at the Electrical Engineering Department
+at Texas A&M. Power measurements of the entire system with attenuators were not successfully completed. Noise
+and RF leakage problems plagued outdoor “range” testing with the equipment on hand. In the end the system was
+described primarily by analysis.
+
+During ﬂight the available “windows” to talk to the satellite were incredibly short, only about a minute at a time
+during a pass instead of the expected four minutes. In addition, many passes did not result in contact of any kind and
+it was difﬁcult to use the “tuning system” feature without understanding how the satellite was behaVing during the
+passes. The separation failure added to this mystery. This signiﬁcantly reduced the time available to download GPS
+data and contributed directly to the failure to achieve complete mission success. The problems encountered also
+prevented an attempt to activate the 2.4 GHZ system.
+
+Dropouts and missed passes could easily be explained by the incomplete separation because the primary UHF
+antenna would have been obscured in some way by a partial separation. The problem with the communications
+system, which is highlighted here, is that a great deal of test data was not obtained prior to ﬂight that could have
+
+v helped troubleshoot and describe the mission download problems. A more comprehensive set of data, beyond
+3 analysis, could have given rnission team members a better idea of how much the separation failure and
+g communication system each contributed to the difﬁculties.
+
+g Another consideration for future spacecraft would be to focus on a robust radio system in addition to trying to
+if maximize data rate. In the end a “black box” radio was implemented that was not well under stood. A well
+$ understood, but lower performance system would have likely gotten more data down for the same amount of time on
+<2 orbit.
+
+E“
+
+g C. Engineering and Conﬁguration Management
+
+3 The true importance and power of proper documentation and conﬁguration management control was not fully
+i; realized by students until much later in the program. After troubles were found when transitioning from the EDU to
+E the ﬂight unit, the student team learned very important lessons ﬁrst hand while setting the program on a more secure
+g course.
+
+3 In the end, the ﬁnal conﬁguration of the spacecraft and the assembly process of the ﬂight unit were captured
+E; extremely well. The major problem rernaining was that the time for functional testing was shortened by the time
+E needed to address problems during the ﬂight unit transition. One key area that was affected by this was software
+34: testing which proved to be incredibly time consuming. By delivery there were still inefﬁciencies left in the packet
+E handling system that made download rates even slower. This combined with the aforementioned download problems
+8 (caused by some combination of the separation and radio system issues) made it more difﬁcult to capitalize on the
+5 time available to download during the ﬂight.
+
+g The other areas that could have beneﬁted from expanded testing were the communications and separation
+% systems, which have been mentioned previously.
+
+a The basic functional capabilities of the computer and electrical systems were well tested before delivery and the
+2 spacecraft did everything it was successfully commanded to do during operations. All commands sent were acted on
+i and in the expected fashion. The areas that encountered problems and challenges were all systems that retained
+E unknowns at the time of delivery. Students were able to observe the power of conﬁguration management and quality
+g assurance ﬁrst hand. Every aspect of the mission that had been given adequate testing, attention to detail, and proper
+E docurnentation performed as designed.
+
+Q
+
+a
+
+5 VII. Future Work
+
+In the fall of 2010, the AggieSat team began work on a detailed design of the AggieSat4 spacecraft, a bigger 50
+kilogram satellite, for the second mission in the NASA campaign. This satellite is once again intended to ﬂy in
+tandem with a satellite from UT.
+
+AggieSat4 and its partner satellite, Bevo-2, will be launched and released together from the International Space
+Station (188) as a combined unit. After deployment from the ISS, AggieSat4 will release Bevo-2 and conduct on-
+orbit operations. These operations will include stabilizing and pointing, imaging the separation of the two spacecraft,
+operating DRAGON, and crosslinking relative naVigation solutions with one another. The launch date is now
+expected in 2013. Two more missions in the campaign will occur after this with the last one culminating in a joint
+rendezvous and docking between two satellites.
+
+During 2011 the interface requirements for the launch vehicle and deployment systems were re-speciﬂed by
+NASA so the overall external conﬁguration is being ﬁnalized to meet these requirements. Internally a single board
+computer rather than the PIC rnicrocontroller used on AggieSat2 is being speciﬁed. A reaction wheel system and
+
+"
+"16","torque coils will provide attitude control, and radio systems will be featured for both uplink/downlink and crosslink
+communications. In addition, there is provision for a third-party payload on AggieSat4 if an organization desires to
+test a system or component in the space environment.
+
+Relative naVigation solutions will be generated using a new generation of DRAGON GPS units onboard both
+the UT and Texas A&M spacecraft. Texas A&M is also investigating a novel infrared beacon and relative
+naVigation sensor system built from a re-purposed commercial off—the-shelf (COTS) inﬂared sensor that will likely
+ﬂy for the ﬁrst time on the third and fourth rnissions [14-15].
+
+AggieSat4 will beneﬁt greatly from the experience of AggieSat2. AggieSat2’s ﬂight build was well controlled,
+documented, and executed to ﬂight standards after transition problems from the EDU were overcome. The utility
+and importance of strict conﬁguration and quality control methods is now well understood by AggieSat students and
+will be applied in force to future spacecraft. Experiences with AggieSat2’s operations are providing key insights into
+making communications and control far more robust than before. AggieSat Lab students now respect what to expect
+and what can happen during ﬂight and are using these lessons to full advantage for the next mission.
+
+3 VIII. Conclusions
+i The overarching objective of AggieSat Lab is to develop a 100 kg class reconﬁgurable spacecraft for future
+3 rnissions. Team members take a cradle-to-grave approach to provide low-cost, low-risk solutions and test beds for
+E multiple technologies that feed forward to other missions. The Lab goal is to research, develop and test, and
+g)- ultimately collect veriﬁable data in the space environment to characterize and advance technologies such as close-
+E proximity tracking and naVigation solutions; miniaturized sensors and effectors; responsive modularized
+95° conﬁgurable space mission software, hardware, and architectures; and release and docking. Equally important is the
+g education of systems engineers by providing hands-on systems-engineering focus from concept to operations;
+g instilling cognizant engineering practices; and encouraging students to innovate, problem solve, communicate, and
+E; use their social networking skills. The bulk of the systems designed, built and utilized at AggieSat Lab are
+g developed by the students and not from kit parts common to small spacecraft.
+g AggieSat Lab provided the freedom necessary for the students to have full, detailed responsibility and control
+1;“ over their design work for AggieSat2. This even included the ability to make mistakes. The Lab provided
+<23? meaningful leadership and mentorship that was available to the students when they needed it to help them learn.
+g From the students” standpoint, the experience was complete, at times very stressful, but extremely rewarding.
+% While rnission success was not completely achieved, AggieSat2 was designed, built, and operated all the way
+E through end-of—life by Texas A&M students. The DRAGON GPS unit operated successfully in space even though it
+C; was hoped more data could be downloaded. Undergraduate students managed, implemented, and documented the
+E entire spectrum of the satellite life cycle. Many of those students also obtained real-time spacecraft operations
+2 experience. The lessons learned on AggieSat2 are already being applied to our future, more complex spacecraft in
+8 the next few years.
+s
+% Acknowledgements
+E The authors would especially like to recognize and thank every student involved with AggieSat Lab over the
+4: past ﬁve years.
+$2 For our project AggieSat2, the authors are very grateful to the Aeroscience and Flight Mechanics DiVision at
+g NASA Johnson Space Center, the United States Department of Defense Space Test Program, MEI Technologies,
+5 Oceaneering Space Systems, our colleagues at the University of Texas at Austin, and every amateur radio operator
+worldwide who contributed to operations. The team is very thankful to Lockheed Martin for its support. The team is
+also grateful to PM&AM Research, SpreadSheetWorld, Microhard Systems Inc., Texas Space Grant Consortium,
+Sandstorrn A&M Mother’s Club, and Dr. Gregory Huff and the Electromagnetic and Microwave Laboratory team at
+Texas A&M for their partnerships.
+References
+[1] Reed, H., Perez, J ., Cheek, J ., Maeland, L., Graves, J ., Lucas, P., Stancliffe, D., Betts, H., Itkoe, Z., Loftin, S.,
+
+Sewell, R., Smith, J . 2009. “AggieSat Lab: Nanosats and Cubesats”. AAS 09-081, 32nd Annual AAS Guidance
+
+& Control Conference, Breckenridge, Colorado, 30 January - 4 February.
+
+[2] Graves, J ., Sewell, R., Landivar, M., Lucas, P., Perez, J ., Reed, H. 2010. “The Role of Responsive Architectures
+in Educating Students”. AIAA-RSS-2010-1003, 8th Responsive Space Conference, March.
+
+"
+"17","[3] “Cube Sat Kit,” Pumpkin Inc. [Company Website], URL: http://WWW.cubesatkit.c0m/ [Cited 12 April 2011]
+[4] “Space Test Program — H2 - MicroelectrO-mechanical System-Based (MEMS) PICOSAT Inspector (STP-H2-
+MEPSI)”. International Space Station, Station Science [Program Website], URL: http://WWW.nasa.g0V/missi0n_
+pages/ station/ science/experiments/ STP-H2-MEPSI.htm1 [Cited 12 April 2011]
+[5] Bruninga, B., “RAFT Satellite Project”. U.S. Naval Academy Satellite Lab [Program Website], URL:
+http://Www.usna.edu/Users/ aero/bruninga/raﬁhtml [Cited 12 Apri12011]
+[6] “AGS2 Main Assembly Certiﬁcation Assembly and Testing”. AGS2-01-10-002, AggieSat Lab Internal
+Document, College Station, TX, 2009.
+[7] “AGS2 Spacecraft Assembly Certiﬁcation Log Post Delivery/Checkouts”. AGS2-01-10-005, AggieSat Lab
+Internal Document, College Station, TX, 2009.
+[8] “Flight Log and Altitude History”. AggieSat Lab Internal Document, College Station, TX, 2010.
+[9] Wertz, J . R., and Wiley, J . L., Space Mission Analysis and Design, 3rd ed., Torrance, CA: Microcosm, 1999, pp.
+g 145, 366, 207.
+g [10] Wertz, J. R., Everett, D. F., and Puschell, J. J., Space Mission Engineering: The New SMAD, Torrance, CA:
+g Microcosm, 2011, pp. 1023.
+Z? [11] Panwar, R., “Satellite Orbital Decay Calculations,” Australian Government Bureau Of Meteorology.
+:- [12] Jones, E. C., “The Basics of Radio Wave Propagation,” Department Of Physics and Astronomy, University of
+a Tennessee, Knoxville, TN 37 996-1200.
+g [13] Kelso, T. 8., “Validation of SGP4 and IS-GPS-200D Against GPS Precision Ephemerides,” 17m AAS/AIAA
+g Space Flight Mechanics Conference, AAS 07-127, AAS Publication Ofﬁce, San Diego, CA, 2007.
+if [14] Maeland, L., Stancliffe, D., Perez, J ., Reed, H. 2011. “An Improved Model for Coarse Sun Sensors to Include
+f: Geometric and Optical Nonlinearities.” To be submitted to AIAA J ournal 0f Spacecraft and Rockets.
+g [15]Maeland, L., Perez, J ., Reed, H. 2011 “Experimental Characterization and Model Validation of a Commercial
+3 Coarse Sun Sensor for Use in a 6-DOF Relative Navigation System.” To be submitted to AIAA J ournal of
+g.» Spacecraft and Rockets.
+i.
+g
+E
+z
+8
+8
+§
+2
+8
+E
+‘2
+§
+<:
+z
+E
+%
+E
+Q
+
+"

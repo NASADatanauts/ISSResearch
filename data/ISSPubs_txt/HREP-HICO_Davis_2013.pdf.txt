@@ -1,0 +1,385 @@
+"","x"
+"1","Invited Paper
+Hyperspectral Imaging of Rivers and Estuaries
+Curtiss 0. Davis* and Nicholas Tufillaro
+College of Earth, Ocean and Atmospheric Sciences, Oregon State University, 104 CEOAS Admin.
+Bldg, Corvallis, OR USA 97331-5503
+ABSTRACT
+The Hyperspeetral Imager for the Coastal Ocean (HICO) is the ﬁrst spaeeborne imaging spectrometer designed to
+sample the coastal ocean. HICO samples selected coastal regions at 92 In ground sample distance with full spectral
+coverage (88 channels covering 400 to 900 nm) and a high signal-to-noise ratio to resolve the complexity of the coastal
+ocean. HICO has been Operating on the International Space Station since October 2009 and collected over 8000 scenes
+for more than 50 users. We have been using HICO data to study major rivers and estuaries in the US and Asia. Our
+results show the advantages of HICO’s additional spectral Channels and higher spatial resolution for studying these
+complex coastal waters. We use these data to suggest requirements for spatial and spectral sampling for future ocean
+color sensors.
+Keywords: Hyperspeetral imaging, coastal ocean, rivers, estuaries
+1. INTRODUCTION
+The coastal ocean is a rich and complex environment. Over half of humanity lives on the coast or along river systems,
+utilizing water resources for transportation, waste disposal, ﬁsheries, and industries such as Oil and gas production. At
+the same time it is a difﬁcult environment for Visible remote sensing; ocean scenes are dark relative to land scenes
+because of water absorption, and coastal scenes are often spatially and speetrally complex due a wide assortment of
+sediments from land runoff, as well as pigments from biological productivity, such as plankton blooms. All Of these
+color agents are mixed together by tidal forcing and strong coastal currents. T0 unravel this complexity the
+Hyperspeetral Imager for the Coastal Ocean (HICO) was designed as the ﬁrst spaeeborne imaging spectrometer to
+speciﬁcally sample the coastal ocean. HICO targets selected coastal regions at 92 In ground sample distance with full
+spectral coverage (88 channels between 400 to 900 nm), and a high signal-tO-noise ratio to resolve the complexity of the
+coastal oceanl’z. The 0n-0rbit radiometric calibration of HICO is maintained using ground reference sites and the
+spectral calibration is maintained using the atmospheric and solar absorption lines3 .
+HICO has been Operating on the International Space Station since October 2009 and to date has captured over 8000
+images for more than 50 users. Further information about HICO, current HICO projects and access to the data is
+available through the Oregon State University HICO website (http://hieo.Coas.0reg0nstate.edu ). The initial Ofﬁce of
+Naval Research funded HICO mission was completed in December 2012. Since January 1, 2013 HICO Operations have
+been supported by the NASA International Space Station Science Program. NASA Operations include the distribution of
+HICO data through the NASA Ocean Color Website (http://oeeaneolor.gsfc.nasa.gov ). We have been using HICO data
+to study rivers and estuaries in the U.S. and Asia. HICO’s higher spatial resolution and continuous spectral sampling
+have proven extremely valuable for the studies reported here.
+2. SPECTRAL ANALYSIS METHODS
+A key advantage of HICO is the continuous spectra for each pixel; this Opens up the Opportunity for new water remote
+sensing algorithms that go beyond band ratios, and build upon analytic spectroscopy techniques developed in
+laboratories over decades. One example is derivative analysis; derivatives highlight abrupt Changes in spectral shape
+indicating absorption and scattering features. Using derivative analysis we can assess the best wavelengths needed to
+sample various features, such as bottom sediments, river plumes 0r algal b1001ns4’5 ’6. In effect, derivative analysis is just
+one Of many methods that attempt to reduce the dimension of a hyperspeetral data set to focus it on speciﬁc
+biogeoehemieal water constituents. Other approaches include the reduction of the dimension of hyperspeetral data sets
+by linear methods such as principle components7’8, 0r nonlinear methods such as manifold 1earning9.
+>“cdavis@eoas.oregonstate.edu; Phone: 541-737-5707; Fax: 541-737-2064
+Imaging Spectrometry XVIII, edited by Pantazis Mouroulis, Thomas S. Pagano, Proc. of SPIE
+Vol. 8870, 887OOK - © 2013 SPIE - CCC code: 0277-786X/13/$18 ' doi: 10.1117/12.2023401
+Proc. of SPIE Vol. 8870 887OOK-1
+Downloaded From: http://pr0ceedings.spiedigitallibrary.0rg/ on 09/12/2014 Terms of Use: http://spiedl.0rg/terms
+
+"
+"2","2.1 Derivative Analysis
+The use of derivative analysis for spectroscopic data is a standard technique in laboratory analysis, and we adapt those
+techniques for use with data from HICOIO’“. In particular, the derivative is computed with a Savitzky-Golay (S—G)
+smoothing and differentiation ﬁlter”. The nominal HICO data spectral resolution is 5.7 nm, and using the S—G ﬁlter the
+spectral data is interpolated to a 2 nm grid, with a 3rd order polynomial and a window length of 9 nm.
+Oddly, in order to reduce the dimension of a hyperspectral data set, we ﬁrst increase the dimension by estimating
+derivatives of the spectra (the slope) with respect to wavelength. The reason is illustrated in Fig. 1, which shows the
+spectra taken from a transect across the Elwha River plume. As the transect crosses the river plume, the (negative) slope
+of the spectra shows a rapid change between 700 — 730 nm, presumably due to a combination of bright backscatter from
+sediments and strong absorption by water in this spectral region. An estimate of the slope from the ﬁrst derivative
+centered at 716 nm is sensitive to the signal from the river plume, and relatively insensitive to other constituents in the
+water or atmosphere.
+1"" 0.5
+(a) 3.. ya,
+§ 30 7le \ \o:’ A A o) o 53%“ ,. pesi-ﬁﬁe
+8 4"" WA 5 a»??? ‘ ‘$-—""«/ «2'
+°‘ 25 .~’ ~\ 2 \\ //
+m 1' i -- ». ,
+.S 20 / :— 5 -0. V
+A g i [m \ / A O 5 \ /
+Ix"" 15 fw;f:"".’.'; '-’\\\‘ b 40-)
+W. 1' I ’ ' ~\\ VA; {5
+f )1 2 10 W \ -1
+- .h' . . ° \‘: A - ‘
+l- I ' ‘ 3 5 ' ‘-;-'\\ﬂ/\5
+‘: 0 ‘1'- "" 0' ‘7; -15
+l. 400 450 500 550 600 650 700 750 800 700 705 710 715 720 725 730
+Transact along the Elwha River wavelength (nm) wavelength (nm)
+Figure l. HICO image and derivative spectra from a transect crossing the Elwha River plume in Washington State, USA (10
+January 2012). (a) Image (note the transect crossing the river plume indicated by the dots from blue to red). (b) Spectra
+corresponding to transect. (c) First derivative of spectra centered about 716 nrn along transect where the spectra in (b) show a
+rapid change in slope as they cross the river plurne.
+2.2 Phase Difference Function
+When spectra are described by continuous signals parameterized by wavelength, it is possible to study the intrinsic
+geometry of the data. Using hyperspectral data and its derivatives, we deﬁned a phase difference function that can be
+valuable in detecting rapid changes in the intrinsic geometry of spectra. Computing the ﬁrst and second derivative
+deﬁnes a 3-dimensional geometry for a spectrum, (X,y,z) = (s, s’, s”) = 20»), where s0») is the spectrum of interest, and
+s’, s” denote its ﬁrst and second derivative with respect to the wavelength, 9». The vector 20») deﬁnes a natural phase
+angle, and rapid changes of the phase of 20») over a spatial transect, centered on narrow spectral bands, can be used to
+detect fronts and interfaces as we illustrate below. More details of the method are described in13 .
+3. RIVER SYSTEMS
+3.1 Elwha River, Washington, USA
+The Elwha River is being returned to its natural state. The largest dam-removal project in history began in September
+2011 on the Elwha River of Washington State. The project, which aims to restore the river ecosystem and increase
+imperiled salmon populations that once thrived there, provides a unique opportunity to better understand the implications
+of large-scale river restoration”. One of the consequences was the release of more than 19 million cubic meters of
+sediment stored in both reservoirs into the downstream system. We have been monitoring the sediment plume entering
+the Straits of Juan de Fuca at the Elwha River mouth to look at the redistribution of those sediments. Figure 1 is an
+example of the Visible sediment plume and the use of derivative products to map that plume.
+3.2 Yangtze River, China
+The Yangtze (Changjiang) River, the largest river in China and ﬁfth largest in the world, provides a dramatic example of
+sediment and nutrient transport. The Yangtze River inputs a large amount of nutrients and sediments into the East China
+Sea (ECS) which is home to one of the largest and most productive ﬁsheries in the world. Construction and ﬁlling of
+Proc. of SPIE Vol. 8870 88700K-2
+Downloaded From: http://proceedings.spiedigitallibrary.org/ on 09/12/2014 Terms of Use: http://spiedl.org/terms
+
+"
+"3","Three Gorges Dam is dramatically reducing the water ﬂow and nutrient input to the ECS affecting this important
+ﬁshery”. The Yangtze carries a large sediment load16 and the coastal waters are highly reﬂective as shown in Figure 2.
+Figure 2 shows a sequence of clear HICO images of the Yangtze River in China along with typical plots of the second
+derivative of the spectrum with respect to wavelength. The wavelengths around 620 nm are sensitive to sediment
+concentrations, and MERIS17 uses a 620 nm channel to estimate sediment. As also pointed out bylg, who studied
+phytoplankton pigments using HICO, hyperspectral images allow us to optimize the wavelengths used in product
+algorithms for speciﬁc regions. In the Yangtze River region, for example, the maximum sensitivity to sediment
+concentration occurs at 605 nm rather than 620 nm. Our principal component method, like optimized band ratio
+methods18 will weight the sediment product algorithm with an optimized sediment maximum that is trained on regional
+data (Fig. 3).
+[:1] HICD Tungize 1E1 Nm'ﬁ'l'lbif' 3009 {b} HICG ""r'angfz: 13 January EDIE . {C} HICD Yungiza E July 201D
+._ . H m ' __ an
+I I. I §35 ...I:'-"""""""" Em Li"" gas
+It 1%“ /_ :3 F u” H Al I A '1‘“: ‘ﬂﬁ 2.;
+1. “:nm .-_ ""a -=.. "" .- H - '2' - ‘ 41.
+.E liII|II.- . -':~-I""""""-‘. 3...: . _ .E _. 'F"".I'. 1""? .‘r‘ .E _ ‘Eﬁé ..
+EB” f; ._; 1."".- -E --. -- E15 ’ﬁn J"". _ _ -""l-_'L-'3'Ih _ -. - ﬂ .—
+3 ,-""'ﬁ""_ __._.- 1‘: .. 3 5 't‘u .._ﬁ t.,_~'_ __ 1"". n.1,} .-'. 3 5 _ t. —._.____ 'E
+E‘Tf-r: ‘ ""a _ - . .._- ﬁ—‘ﬁ - 1""“ Ii?"" ‘g' ; 'é-?""""'- '-'
+25D WEI hhll EULI EI'JU TN 1'51} H-D-U 1111'] I._ '- I 535:- ”-1114:- EIDI} 513D --b|.'.||J- EH] mu THE —W ”4114} -_b1} “ED EH] T'LHJ il'hﬂ EIEI- EH}
+wavelength {Hm} _ '5- I': '.""' J's: i'- wavelength {rm} wavelength {Hm}
+ma . I u: 5.): Dﬁﬂ ma
+”-1 . .
+gm 9 ' 11- Em‘
+Elam _ __'.__- _ '. .. J3; _ _ rirlgnn1~§_y ""T‘- ..,._ 'T'Eh _ Enm ‘ --_-__--..-,__ .__._- . _ ‘ F
+a a a I: _ .. a U “I I
+E I“-' '_'~-- ' -- 1: __.—-.."" “7.1-1"" . _n- 11 1-...
+ﬁ-nm W:?‘h- _‘I' -""-__:.:;'-""'- E-nm 'Z‘W ..- . gum \ ' _. _.___
+-|:|.|.'.|.'! H‘IEiH'EfW: ' I m-DﬁE '-.-._ Ev ' '1' -. I I m—IJJIL'! ""iuk- -_'..-""'.|-""-‘:E:
+‘ “KI. _ __..-'1 I ' “ETL-I-f-I
+_.m .__.___.__________ _m ._ _ __._. _ _.m _______ ___.-—
+E-S'ﬂ EIIII EUS- 510 [-15 5'95- Erllﬂ EDS 151:} I315- ‘L-SI'E- EIIII E-L'IS [-10 [-15
+wavelength [nm] — wavelength [nm'j wnvelengfh {nm}
+Figure 2. HICO images and derivative spectra of the Yangtze River in China. Using collections of images we are building up
+signatures to distinguish the constituents of the water column for this region. This sequence of images and spectra illustrates a
+consistent (negative) extrema for Yangtze River sediments in the second derivative around 605 nm. The spectra are taken from
+the rainbow-colored transect indicated in each image.
+I I
+Figure 3. (a) HICO RGB image and (b) sediment product map for Yangtze River, China on 6 July 2010. Fig. 2 (c) shows the
+second derivative of the spectrum around 605 nm, which is more sensitive to sediment concentration than the 620 nm MERIS
+band 6. Our HICO product algorithm automatically optimizes the product algorithm to weight data more heavily around 605
+nm when trained on Yangtze regional historical data, like those presented in Fig. 2.
+Proc. of SPIE Vol. 8870 887OOK-3
+Downloaded From: http://proceedings.spiedigitallibrary.0rg/ on 09/12/2014 Terms of Use: http://spiedl.0rg/terms
+
+"
+"4","3.3 Columbia River, USA
+The Columbia River is the largest river in the Western United States collecting water from 5 states and British Columbia,
+Canada. The Columbia River plume is one of the dominant features of the California Current System and it plays a key
+role in the physical and biogeochemical functioning of that system off the Oregon and Washington coasts. The
+traditional picture of the Columbia plume is that it is oriented southwest offshore the Oregon coast in summer and north
+along the Washington coast in Winter. Recent studies by Hickey et al.19 have shown that it is more complex and
+typically bi-directional in the summer With branches both north and south With the features moving in response to
+changing Wind stress. The physics is now well known and the complex plume dynamics have been modeled in detailzo.
+Tides, river ﬂow, Wind forcing and large scale circulation patterns all play a role controlling the size and location of the
+plume.
+Derivative analysis can be combined With the method of principle components to build regionally tuned maps of
+sediment concentration. Using methods similar to those described by Ortiz, we computed the principle components
+based on the ﬁrst-derivative 0f HICO data along the mouth of the Columbia River7’8. Computing the ﬁrst derivative of
+sediment rich waters from the Columbia River indicated a correlation weighted around 590 nm (Fig 4). Example
+sediment maps using principle components are shown in Fig. 5. Since the maps are weighted toward the sediment—laden
+background waters, they naturally highlight objects With different reﬂectance on this background, such as boats as
+shown in Fig. 6.
+(a) . : (b)
+j g, 0.04
+- 3“, 0.02 '
+' x l? 6.1::
+- . , E 0 m’f“’.‘§:
+; V‘\\»!/ /4
+’ .‘z’ -o.02 Sexg$ W
+Jul 8 -O 04 .. \‘v' v /
+. E \
+i 4"": -o 08 \w/
+r ' v
+' : ~24 -o.1
+i, 1‘ ""
+; ’7. .e‘ -o.12
+580 585 590 595 600 605 61 0
+Wavelength (nm)
+Figure 4. (a) HICO and transect taken for spectrum of the Columbia River Mouth on 12 May 2012. (b) The ﬁrst derivative of
+the spectrum shows (negative) extrema around 595 nm for sediment-laden waters.
+Proc. of SPIE Vol. 8870 887OOK-4
+Downloaded From: http://proceedings.spiedigitallibrary.0rg/ on 09/12/2014 Terms of Use: http://spiedl.0rg/terms
+
+"
+"5","(a) HICO Columbia 8 July 2010 (b) HICO Columbia 23 July 2011 c) HICO Columbia 12 May 2012
+/ , I ‘.\‘;* ’7 . 1’1 ‘ ~ "" . 17-. - . 2.
+.‘.r ‘ A '? q; ‘7». ‘1?) 2""“;
+”4: 1' . 1- ‘9‘? r 1“
+~vk M‘ .1'.‘ "" 7 1*, 1' ""
+Figure 5. HICO images of the Columbia River Mouth. The top images show RGB for the indicated dates. The bottom images
+are sediment maps based on a principle components decomposition of the hyperspectral basis functions.
+Figure 6. Sediment map of the Columbia River Mouth based on principle components decomposition. Since boats have a
+different spectral signature (different weighting of principle component basis functions) they are easily differentiated from the
+background sediment rich water.
+3.4 San Francisco Bay, USA
+The Sacramento and San Joaquin rivers and tributaries drain most of California and ﬂow into the San Francisco Bay.
+This collective system has important interplay With human population and economics, especially in regions of high
+Proc. of SPIE Vol. 8870 887OOK-5
+Downloaded From: http://proceedings.spiedigitallibrary.0rg/ on 09/12/2014 Terms of Use: http://spiedl.0rg/terms
+
+"
+"6","population density like the San Francisco Bay and Delta Ecosystem (SFE). The SFE is the largest estuary 0n the Paciﬁc
+coast of the United States and the largest wetland habitat in the western US. It is a critical ecosystem that links
+freshwater and marine environments providing essential habitat for ﬁsh, drinking water to over 22 million urban users,
+and irrigation water for agriculture in the highly productive Central Valley. HICO imagery provides a fresh insight into
+this complex system and here we examine the water exiting the bay.
+Fig. 7 shows an example of a phase difference function for water masses that appear inside and outside of the edge of
+what appears to be the bay water and sea water mixing interface. The red pixels in Fig. 7 c highlight areas that contain a
+jump in the phase difference centered at 709 nm, revealing patches of presumably high algal concentrations that eXist at
+the interface of the bay and sea waters. This bloom could be a result of large amounts of nutrients, particularly ammonia
+from sewage plants, that are released in the Sacramento River and San Francisco Bay system but not utilized in the Bay.
+(a) (b) r ‘v t'*‘*""‘«. i t. ‘
+\ t 2‘ ' T‘i' . k: . '
+.1 \\ , ‘ .t ‘ ._..-' y -‘. ‘ .: 5"", '1
+E1“ . \“a. - - ‘ . __‘_.- ‘ 11! ‘ ,1 ﬁl' ""‘
+E I .22“ ‘x ‘ ‘7 , ""\ . «""71”. ’2 4 q: I. 7
+$5 3 4 . . ' ' ""i'p'\“*"" . y ‘1
+E4 ‘ . ""1,... ' '..
+Q . , t
+4 ‘31
+E109 07 [.71 072 0.73
+wavele oth
+Figure 7. (a) The phase difference function for spectra at the mouth of the San Francisco Bay showing that the 709 nm HICO
+channel can be used to indicate chlorophyll rich water. (b) HICO image of the mouth of San Francisco Bay, 28 September 2011.
+(c) Indicator function for high chlorophyll levels which show a high concentration of chlorophyll at the interface of bay water
+and sea water apparently in response to large amounts of nutrients being exported from SFE.
+4. DISCUSSION AND CONCLUSIONS
+The use of derivative data, in addition to the original spectral radiances is helpful since it can highlight signiﬁcant
+features. This observation has been used often in the past for identiﬁcation of laboratory spectra, and it is possible to
+directly adapt laboratory identiﬁcation methods, such as derivative spectroscopy, to remote sensing product estimation.
+Derivative spectroscopy has previously been used to identify optimal spectral channels for the design of multi-spectral
+instruments21 and to estimate coastal bottom types from aerial hyperspectral data4. Here we illustrate the use of methods
+adapted from derivative spectroscopy for product generation from HICO data. The detection of these underlying
+absorptive and ﬂuorescent signatures can be sharpened by the use of derivative spectroscopy. Speciﬁcally, peaks with
+narrower half-widths grow more quickly with the order of the derivative. This is illustrated in Fig. 5 where we show that
+the derivative helps to highlight signatures sensitive to sediment in Columbia River spectra. Spectral features identiﬁed
+in this way can create products which are ‘regionally tuned,’ and built on historical data speciﬁc to a coastal area. Our
+method for deriving sediment and pigment products from HICO is similar to that recently described by Gitelson, et allg.
+They used HICO data to create a regionally tuned chlorophyll-a product for the Azov Sea. They pick the bands for the
+product and then optimize the choice of bands for a band-ratio algorithm based on in Situ data. Their method is also
+informed by derivative analysis in their choice of the ﬁnal bands for the regression. Our method differs in that we build
+our optimization using all the HICO wavelengths, and instead of testing for the sensitivity to speciﬁc bands, our
+Proc. of SPIE Vol. 8870 88700K-6
+Downloaded From: http://proceedings.spiedigitallibrary.0rg/ on 09/12/2014 Terms of Use: http://spiedl.0rg/terms
+
+"
+"7","sensitivity is based on the principal components which are a linear combination of all the wavelengths. Speciﬁcally, the
+
+method we describe could contain details about the spectral shape - such as spectral bandwidths - which might not be
+
+utilized in the method of Gitelson and eo-workers.
+
+All of these results highlight the advantages of hyperspeetral imaging. Future NASA ocean color sensors including
+
+PACE, GEO-CAPE and HyspIRI are all planned to be hyperspeetral sensors with 5 11m spectral sampling or better,
+
+similar to HICO. HICO’s 93 m spatial resolution is excellent for sampling the coastal ocean. However, HICO samples
+
+selected targets only, and an instrument designed to sample the entire coastal ocean should have a coarser resolution to
+maximize area coverage. Earlier studies22’23 indicated that 300 to 500 111 resolution was adequate for most coastal
+
+regions when the bottom is not imaged. This was recently conﬁrmed by Aurin, et al.24 who found that a pixel size of 520
+
+m or smaller was needed to sample large river plumes and other coastal features. Based on these results we strongly
+
+urge that the PACE sensor have a coastal mode with 500 m or better sampling. The threshold science requirements for
+
+GEO-CAPE require a 375 111 pixel size at nadir which translates to approximately 500 m in U.S. coastal waters for this
+
+geostationary sensor located over the Equator. The preferred baseline requirement is 250 m which would provide
+
+approximately 300 111 resolution for U.S. coastal waters. HyspIRI is primarily a land imager but will provide 60 111 pixel
+size data valuable for coastal areas particularly when the bottom is imaged resulting in a much more spatially complex
+scene.
+
+ACKNOWLEDGEMENTS
+
+We thank the Naval Research Laboratory for the design, development and operation of HICO. We thank the Ofﬁce of
+
+Naval Research for funding the development and initial operations of HICO. We thank the NASA International Space
+
+Station Program for supporting having HICO on the station and for the 2013 and ongoing operations of HICO including
+
+the science support at OSU. Our work on rivers was supported by grant N000141010448 from the Ofﬁce of Naval
+
+Research. We thank J asmine Nahorniak for help editing this manuscript.
+
+REFERENCES
+
+[1] Lucke, R. L., M. Corson, N. R. MeGlothlin, S. D. Butcher, D. L. Wood, D. R. Korwan, R.-R. Li, W. A. Snyder, C.
+0. Davis, and D. T. Chen, “The Hyperspeetral Imager for the Coastal Ocean (HICO): Instrument Description and
+First Images,” Applied Optics, V. 50(11): 1501-1516 doi:10.1364/AO.50.001501 (2011).
+
+[2] Corson, M. and C. Davis, “The Hyperspeetral Imager for the Coastal Ocean (HICO) provides a new View of the
+Coastal Ocean from the International Space Station,” AGU EOS, V. 92(19): 161-162 (2011).
+
+[3] Gao, B-C, R.-R. Li, R. L. Lueke, C. 0. Davis, R. M. Bevilaequa, D. R. Korwan, M. J . Montes, J . H. Bowles and M.
+R. Corson, “Vicarious calibrations of HICO data acquired from the International Space Station,” Applied Optics, V.
+51 (14): 2559-2567 (2012).
+
+[4] Louehard, E. M., R. P. Reid, C. F. Stephens, C. 0. Davis, R. A. leathers, T. V. Downes and R. Mafﬁone,
+“Derivative analysis of absorption features in hyperspeetral remote sensing data of carbonate sediments,” Optics
+Express, 10(26): 1573-1584 (2002).
+
+[5] Tuﬁllaro, N. B., C. 0. Davis, and K. B. Jones, “Indicators of plume constituents from HICO,” Ocean Optics 2010,
+27 Sept — 1 Oct 2010, Anchorage, AK (2010).
+
+[6] Tuﬁllaro, N. B., and C. 0. Davis, “Derivative spectroscopy with HICO,” Proc. Optical Remote Sensing of the
+Environment (ORS), Monterey, CA, June 25, 2012, Optical Society of America (2012).
+
+[7] Ortiz, J .D., “Application of Visible/near Infrared derivative spectroscopy to Arctic paleoeeanography,” IOP Conf.
+Series: Earth and Environmental Science 14, 012011 doi:10.1088/1755-1315/14/1/012011 (2011).
+
+[8] Ali, Khalid A., Donna L. Witter, and J oseph D. Ortiz. ""Multivariate approach to estimate colour producing agents in
+Case 2 waters using ﬁrst—derivative spectrophotometer data,"" Geoearto International ahead-of—print (2013): 1-26
+(2013).
+
+[9] C. Bachmann, T. Ainsworth, and R. Fusina, “Exploiting manifold geometry in hyperspeetral imagery,” IEEE
+Transactions on Geoscienee and Remote Sensing 43(3), 441—454 [doi:10.1109/TGRS.2004.842292] (2005).
+
+[10] Chen, Z., &; Curran, P. J ., ""Derivative Reﬂectance Spectroscopy to Estimate Suspended Sediment Concentration"",
+Remote Sens. Environ, 40:67 (1992).
+
+Proc. of SPIE Vol. 8870 88700K-7
+Downloaded From: http://pr0ceedings.spiedigitallibrary.org/ on 09/12/2014 Terms of Use: http://spiedl.org/terms
+
+"
+"8","[11] Talsky, G., [Derivative Speetrophotometry], Weihein, Verlagsgesellsehaft, Weihein, Germany, (1994).
+
+[12] Savitzky, A., and M.J.E. Golay, ""Smoothng and Differentiation of Data by Simpliﬁed Least Squares Procedures"".
+Analytical Chemistry 36 (8): 1627—1639. @101021/30602143047 (1964).
+
+[13] Tuﬁllaro, N., “The shape of ocean color,” in Topology and Dynamics of Chaos, Editors C. Letellier and R. Gilmore,
+World Scientiﬁc Publishing, pp. 251-268 (2013).
+
+[14] Warriek, J . A., J . J . Duda, C. S. Magirl, and C. A. Curran, “River Turbidity and Sediment Loads During Dam
+Removal,” AGU EOS, V. 93(43): 425-426 (2012).
+
+[15]G0ng, G-C, J. Chang, K.-P. Chiang, T.-M. Hsiung, C.-C. Hung, S.-W. Duan, and L. A. Codispoti, “Reduction of
+primary production and Changing of nutrient ratio in the East China Sea: Effect Of the Three Gorges Dam?”
+Geophys. Res. Letters, Vol. 33, L07610, doi:10.1029/2006GL025800 (2006).
+
+[16] Chen, S., G. Zhang, and S. Yang, “Temporal and spatial Changes of suspended sediment concentration and
+resuspension in the Yangtze River estuary,” J . Geogr. Sci., 13, 498— 506 (2003).
+
+[17] Rast, M., Bezy, J . L., & Bruzzi, S., “The ESA medium resolution imaging spectrometer MERIS - a review of the
+instrument and its mission,” International J ournal of Remote Sensing, 20, 1681—1702 (1999).
+
+[18] Gitelson A. A, B-C. Gao, R-R. Li, S. Berdnikov and V. Saprygin, “Estimation of Chlorophyll-a concentration in
+productive turbid waters using a Hyperspeetral Imager for the Coastal Ocean—the Azov Sea case study,” Environ.
+Res. Lett. 6 (2011) 024023, 1-6 (2011).
+
+[19] Hickey, B.M., et 31., “River Inﬂuences on Shelf Ecosystems: Introduction and synthesis,” J . Geophys. Res. 115:1-
+26, CO0B17, doi:10.1029/2009JC005452 (2010).
+
+[20]Banas, N. S., P. MacCready, and B. M. Hickey, “The Columbia River plume as a eross-shelf exporter and along-
+eoast barrier,” Continental Shelf. Res., 29:292-301 (2009).
+
+[21]Lee, Z-P., K. Carder, R. Amone, and M-X He, “Determination of primary spectral bands for remote sensing of
+aquatic environments,” Sensors 7: 3428-3441 (2007).
+
+[22]Bissett, W. P., R. A. Amone, C. 0. Davis, T. D. Dickey, D. Dye, D. R. Kohler, and R. W. Gould, Jr., “From Meters
+t0 Kilometers: A look at ocean-color scales of variability, spatial coherence, and the need for ﬁne-seale remote
+sensing in coastal ocean Optics,” Oceanography, 17(2): 32-43 (2004).
+
+[23]DaVis, C.O., M. Kavanaugh, R. Letelier, W. P. Bissett and D. Kohler, “Spatial and Spectral Resolution
+Considerations for Imaging Coastal Waters,” Proc. SPIE V. 6680, 66800P:1-12 (2007).
+
+[24] Aurin, D., A. Mannino and B. Franz, “Spatially resolving ocean color and sediment dispersion in river plumes,
+coastal systems, and continental shelf waters,” Remote Sensing of the Environment, V. 137: 212-225 (2013).
+
+Proc. of SPIE Vol. 8870 887OOK-8
+Downloaded From: http://pr0ceedings.spiedigitallibrary.0rg/ on 09/12/2014 Terms of Use: http://spiedl.0rg/terms
+
+"

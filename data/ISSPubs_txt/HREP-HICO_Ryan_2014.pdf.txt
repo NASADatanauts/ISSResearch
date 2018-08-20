@@ -1,0 +1,848 @@
+"","x"
+"1","Remote Sens. 2014, 6, 1007-1025; doi:10.3390/rs6021007
+remote sensing
+ISSN 2072-4292
+www.mdpi.com/joumal/remotesensing
+Article
+Application of the Hyperspeetral Imager for the Coastal Ocean
+to Phytoplankton Ecology Studies in Monterey Bay, CA, USA
+J ohn P. Ryan 1*, Curtiss 0. Davis 2, Nicholas B. Tuﬁllaro 2, Raphael M. Kudela 3
+and Bo-Cai Gao 4
+1 Monterey Bay Aquarium Research Institute, 7700 Sandholdt Road, Moss Landing, CA 95039, USA
+2 College of Earth, Ocean and Atmospheric Sciences, Oregon State University, 104 CEOAS Admin.
+Bldg, Corvallis, OR 97331, USA; E-Mails: CdaVis@coas.0reg0nstate.edu (C.O.D);
+nbt@coas.0reg0nstate.edu (NET)
+3 Ocean Science Department, University of California, Santa Cruz, 1156 High Street, Santa Cruz,
+CA 95064, USA; E-Mail: kudela@ucsc.edu
+4 Remote Sensing Division, Code 7232, Naval Research Laboratory, Washington, DC 20375, USA;
+E-Mail: ga0@nrl.navy.mil
+* Author to whom correspondence should be addressed; E-Mail: ryj0@mbari.0rg;
+Tel.: +1-831-775-1978; Fax: +1-831-775-1620.
+Received: 8 November 2013; in revisedform: 24 December 2013 /Accepted: 23 January 2014 /
+Published: 27 January 2014
+Abstract: As a demonstrator for technologies for the next generation of ocean color sensors,
+the Hyperspectral Imager for the Coastal Ocean (HICO) provides enhanced spatial and
+spectral resolution that is required to understand optically complex aquatic environments. In
+this study we apply HICO, along with satellite remote sensing and in situ observations, to
+studies of phytoplankton ecology in a dynamic coastal upwelling environment—Monterey
+Bay, CA, USA. From a spring 2011 study, we examine HICO-detected spatial patterns in
+phytoplankton optical properties along an environmental gradient defined by upwelling
+ﬂow patterns and along a temporal gradient of upwelling intensification. From a fall 2011
+study, we use HICO’s enhanced spatial and spectral resolution to distinguish a small-scale
+“red tide” bloom, and we examine bloom expansion and its supporting processes using
+other remote sensing and in situ data. From a spectacular HICO image of the Monterey
+Bay region acquired during fall of 2012, we present a suite of algorithm results for
+Characterization of phytoplankton, and we examine the strengths, limitations, and
+distinctions of each algorithm in the context of the enhanced spatial and spectral resolution.
+
+"
+"2","Remote Sens. 2014, 6 1008
+Keywords: phytoplankton; remote sensing; Monterey Bay; upwelling
+1. Introduction
+
+The Hyperspeetral Imager for the Coastal Ocean (HICO) is the ﬁrst spaceborne imaging
+spectrometer designed for coastal ocean research [1,2]. Sponsored by the Ofﬁce of Naval Research as
+an Innovative Naval Prototype, HICO was developed to demonstrate improved coastal remote sensing
+products including bathymetry, bottom types, water optical properties, and on-shore vegetation maps.
+Enhanced products are supported by HICO’s spatial resolution (<100 X 100 m), spectral resolution
+(400 to 900 nm sampled at 5.7 nm) and signal-to-noise ratio (>200:1 for a 5% albedo scene). Based on
+the Portable Hyperspectral Imager for Low-Light Spectroscopy (PHILLS) airborne imaging
+spectrometers [3], HICO demonstrates innovative ways to reduce the cost and schedule of a space
+mission, by adapting proven aircraft imager architecture and using commercial off-the-shelf
+components. HICO was installed on the International Space Station (188) on 23 September 2009 and
+collected its ﬁrst images the following day. HICO observations have since been targeted for a wide
+variety of environments. Here we focus on the application of HICO capabilities to the measurement of
+water optical properties and characterization of phytoplankton in a highly productive coastal system.
+
+The study region, Monterey Bay, California (Figure 1) is the largest open embayment along the
+west coast of the USA. It is located in the central California Current System (CCS). Wind driven
+upwelling 0f nutrient-rich deep water in coastal upwelling systems like the CCS supports high levels of
+primary productivity [4]. Most of the wind-driven upwelling supply to Monterey Bay originates from
+upwelling centers north and south of the bay [5,6]. These upwelling centers are shown in Figure 1 as
+the regions where cold upwelling plumes emanate from the coast: Point Aﬁo NueVO and Point Sur.
+Additionally, upwelling within the bay occurs in response to strong diurnal forcing by the sea
+breeze [7], and in response to internal oscillations over Monterey Canyon that transport deep water
+onto the shelf [8,9]. In addition to supporting great ﬁsheries, coastal upwelling systems host a variety
+of harmful algal bloom (HAB) types [10]. In Monterey Bay, blooming 0f toxigenic diatoms has been
+directly linked to wind-driven upwelling [11], and blooming of a dinoﬂagellate species that can cause
+massive mortality of seabirds [12] has been linked to canyon upwelling [9]. Additionally,
+anthropogenic nutrient sources regulate toxicity of HAB diatoms [13] as well as bloom dynamics of a
+dinoﬂagellate species linked to seabird mortality [14].
+
+The diversity and variability of natural and anthropogenic forcing in the Monterey Bay region
+creates tremendous ecological complexity. This complexity motivates advancement of methods. In this
+study, we show how the enhanced spatial and spectral resolution of HICO supports methods to
+advance understanding of this complex environment. Using studies during the contrasting seasons of
+spring and fall, we illustrate processes of phytoplankton ecology by integrating algorithm results
+derived from HICO data with multidisciplinary satellite remote sensing and in situ observations.
+
+"
+"3","Remote Sens. 2014, 6 1009
+Figure 1. Overview of the study region. Thermal (AVHRR) and color (MODIS Aqua)
+images were acquired on 13 October 2008, at 11:04 and 14:20 local time, respectively,
+during a bloom of tOXigenic diatoms [11].
+
+SST (°C)
+12 12.5 13 13.5 14 14.5
+Point Aﬁo Nuevo ‘ V i?! ‘
+37.1 1 \ ~\ _
+\ . ‘1
+l 7 .. - “""""\, Monterey | l V I '. ‘ l
+» ~ *5 Bay ' ‘
+36.7 , : “I .I: M1. 3,11}:
+36.3 . / Point Sur , ‘
+| II |
+I 1222.1 121' — —'
+
+2. Materials and Methods
+
+2.]. HICO Image Acquisition and Processing
+
+HICO is a demonstration sensor, and data are collected for particular study areas from a target list
+compiled by Naval Research Laboratory (NRL) personnel with input from Navy, academic, and
+international partners. The standard HICO scene is 42 X 192 km, and a maximum of one scene is
+collected on each 90-min orbit. Data requests are compiled by NRL and sent by NASA to the 18$ for
+execution. Data is transmitted from the 188 to NASA Marshall Space Flight Center and then to NRL in
+Washington DC for processing. The initial processing from level 0 (raw data) to level 1b (calibrated
+radiances with geolocation information) includes dark current subtraction, CCD smear correction,
+second-order correction, spectral calibration, and radiance calibration. We requested data collections
+for Monterey Bay and obtained the HICO data from Oregon State University [15].
+
+For atmospheric correction (AC) of HICO images we used two software implementations, the
+ATmosphere REMoval (ATREM) algorithm [16], and Taﬂ<aa 6s [17]. The purpose of applying multiple
+AC implementations was to evaluate (1) the quality and sensitivity of AC results relative to in situ
+optical measurements, and (2) results from phytoplankton characterization algorithms that employ
+different regions of the spectrum (Section 2.2). Limitations in HICO radiometric calibration required
+modiﬁcation of the application of ATREM. A Rayleigh scattering correction was applied based on solar
+and Viewing geometry to obtain the Rayleigh-corrected intermediate reﬂectance spectrum. The mean
+value of intermediate reﬂectance for eight narrow channels near 760 nm was calculated. This mean value
+was subtracted from the intermediate reﬂectance spectrum for all channels to retrieve water-leaving
+reﬂectance. This method effectively removed effects of sun glint, thin clouds and fog, and the spectrally
+independent portion of aerosol effects (such as those from large oceanic particles). In addition to this
+
+"
+"4","Remote Sens. 2014, 6 1010
+modiﬁed Rayleigh computation, ATREM also computed atmospheric gas absorption. Based on
+ATREM, Taﬂ<aa was similarly conﬁgured to correct for solar- and Viewing-geometry-dependent
+Rayleigh scattering and atmospheric gas absorption. For comparison with in situ spectra acquired
+during the fall 2011 study, we also examined spectra from a 26 October HICO image processed using
+standard NASA ocean color algorithms for the MODIS channels derived from the HICO spectra. This
+image was acquired from the NASA ocean color website.
+
+Atmospherically corrected HICO images of Monterey Bay contained a cross-track offset that
+depended on wavelength as well as solar and Viewing geometry. For bands above 550 nm, this offset
+was small, less than 1% of normalized water leaving radiance (an), but between 550 and 400 nm the
+offset increased monotonically. The additional signal in the blue is thought to be a polarization dependent
+artifact speciﬁc to the HICO sensor [18]. We corrected for the cross-track artifact using an empirical
+procedure that computes a wavelength dependent quadratic function from cloud-free cross-track scans and
+applies the correction to all cross-track scans. For geolocation 0f HICO image pixels, we used the
+geometry data provided with each image as well as ground control points. This procedure located
+pixels to within 2—3 pixels (a few hundred meters).
+
+2.2. Algorithmsfor Phytoplankton Characterization
+
+We employed a suite of algorithms for characterization of phytoplankton from remote sensing of
+ocean color, using single 5.7 nm HICO bands whose center wavelengths were closest to those used
+with multispectral data (Table 1). The longest standing characterization is the band-ratio chlorophyll
+algorithm that uses the blue-green region of the spectrum. Speciﬁcally, we used the 0C4 chlorophyll
+algorithm [19]. To quantify inherent optical properties (IOPs), we used a quasi-analytieal
+algorithm [20,21], specifically Version 5 [22]. IOP computations used a reference wavelength of
+555 nm. The chlorophyll and IOP calculations used remote sensing reﬂectance resulting from ATREM,
+followed by cross-track illumination correction (Section 2.1). Additionally we examined results from a
+suite of linear baseline algorithms that employ the red to near—infrared region of the spectrum. These were
+chlorophyll ﬂuorescence line height (FLH) computed using bands corresponding to both the MODIS and
+MERIS multispectral sensors and the maximum chlorophyll index (MCI) used to detect intense “red tide”
+blooms by their reﬂectance peak in the near—infrared [23,24]. For all linear baseline results, we used an
+resulting from Taﬂ<aa, followed by cross-track illumination correction (Section 2.1).
+
+Table 1. Center wavelengths of Hyperspeetral Imager for the Coastal Ocean (HICO) bands
+used in algorithm computations.
+Chlorophyll QAA IOP MODIS FLH MERIS FLH MERIS MCI
+Multispectral bands (nm) 443, 490, 510, 555 411, 443, 490, 555, 667 665, 677, 746 665, 681, 709 681, 709, 754
+
+HICO bands (nm) 444, 490, 507, 553 410, 444, 490, 553, 668 668, 679, 748 668, 679, 708 679, 708, 753
+2.3. Satellite Observations
+
+To extend characterization of the ecology of a nascent “extreme bloom” detected by HICO, we used
+MERIS MCI (Section 2.2). These images were computed from MERIS Level 2 radiance data using the
+ESA BEAM software. To examine regional sea surface temperature (SST) patterns, we used data from
+
+"
+"5","Remote Sens. 2014, 6 1011
+the Advanced Very High Resolution Radiometer (AVHRR) constellation of sensors. The AVHRR
+processing methods applied in this study are documented elsewhere [25].
+
+2.4. In Situ Observations
+
+Observations from the M1 mooring at the mouth of Monterey Bay (Figure 1) were used for study
+context, as well as direct comparison with HICO results. Speciﬁcally, we used measurements of
+surface wind speed and direction, water column temperature and salinity, and near-surface (1 m)
+chlorophyll ﬂuorescence. Details of M1 sensors are documented elsewhere [11]. Hourly data were
+daily-averaged. During the spring 2011 study, we used high-resolution multidisciplinary water column
+observations acquired by the Dorado autonomous underwater vehicle (AUV). Details of Dorado and
+its sensing suite are available in earlier publications [9,26]. During our fall 2011 study, in situ
+hyperspectral optical ground truth measurements were made using a Satlantic HyperPro II proﬁling
+radiometer. Vertical profiles were binned to 10 cm resolution and propagated to the surface using the
+ProSoft software standard processing. Remote sensing reﬂectance was determined using the surface
+reference sensor and the propagated an values from the proﬁle.
+
+3. Results and Discussion
+3.]. Environmental Overviewfor 20] 1
+
+Wind forcing and oceanic response during 2011 at mooring M1 (Figure 1) provide context for the
+spring and fall studies (Figure 2). Upwelling favorable (alongshore, equatorward) winds were most
+persistently directed and strongest during April—May. The oceanic response to this wind forcing is
+evident as the minimum temperatures and maximum salinities in the upper water column, also during
+April and May (Figure 2). These relatively cold and saline conditions reﬂect the presence of deep
+water upwelled to the surface (Figure 1). Our spring study took place during this period of maximum
+upwelling. Progressing through the summer and into the fall, average wind speed decreased, wind
+direction became more variable, and the warmest surface conditions of the year developed during
+October (Figure 2). Our fall study took place during this warm period.
+
+3.2. Spring 20]] Study
+
+During the spring study, three HICO images were acquired within an eight-day period (times shown
+in Figure 2). During this period, 25 April to 3 May, wind forcing transitioned from a brief
+relaxation/reversal to the strongest upwelling-favorable winds of the year (Figure 2). The regional
+response to upwelling intensiﬁcation was likewise strong, as evidenced in water column temperature
+and salinity at M1 (Figure 2) and regional SST (Figure 3). Flow from the upwelling centers north and
+south of the bay generated strong cooling throughout the region, and much upwelled water entered the
+bay, primarily from the Point Aﬁo Nuevo upwelling center to the north (Figure 3).
+
+Mooring M1 was in the path of this upwelling ﬂow (Figure 3), and its sensors detected not only the
+cooling, but also a decline in chlorophyll ﬂuorescence (Figure 4). Variation in chlorophyll ﬂuorescence
+at M1 occurred at two dominant time scales. One time scale was that of the transition to from relatively
+warm, high-chlorophyll conditions during 24—28 April to relatively cool, low-chlorophyll conditions
+
+"
+"6","Remote Sens. 2014, 6 1012
+after 28 April. This was associated with inﬂux of recently upwelled water (Figure 3), which is typically
+low in phytoplankton abundance. The second time scale was approximately diurnal (Figure 4). While
+diurnal variation in chlorophyll ﬂuorescence may have a physiological basis, this bio-optical variation
+coincided with similar diurnal variation in temperature during much of the record. This suggests that
+variation at this time scale was associated primarily with a physical process having a quasi-diurnal
+frequency, such as advection of gradients. This is supported by the synoptic patterns of chlorophyll
+ﬂuorescence line height (FLH) in the HICO images, particularly those for 25 and 27 April (Figure 4b,c).
+M1 was amid strong horizontal gradients in FLH, thus periodic currents caused by tidal and/or diurnal
+wind forcing would have cyclically advected local gradients and caused the oscillatory signal at M1.
+Figure 2. Environmental context for HICO results, from mooring M1 (Figure 1). Wind
+speed and direction are represented by the length and orientation of the vectors,
+respectively (vectors point in the direction the wind). Times of all HICO images acquired
+during 2011 are shown along the top time axis as open diamonds, and times of those
+images examined in this study are shown as ﬁlled diamonds.
+2011
+A Jan . Feb Mar Apr May Jun ‘ Jul ‘ Aug Se} Oct Nov Dec
+1 ,
+20 14 E
+E 40 g
+g 12 §
+8 60 8-
+80 10 g
+l...
+g 34
+20 . I
+E, 40 l .3
+5 ‘ 33.5 .2
+£33} 60 3
+80 1
+33
+100
+Figure 3. Upwelling intensiﬁcation during the spring 2011 study. Sea surface temperature
+(SST) images are from AVHRR; times are local.
+SST (°C)
+10 10.5 11 11.5 12 12.5 13 13.5 14
+—
+15v a) 25 April 7 i b) 26 April F 7 c) 28 April ;A d) 02 May
+1655 1507 1446 ‘ 1726
+37°N ‘ . \MJ‘ ’ ‘\\~-J\ ’ v l\--;A,
+45‘ ‘0. o r9 7 0 Li: ' o
+. i.""""-/ ’1‘]; ""1.; ’lw' o 7
+30' K‘ K b \ .
+, . 'L L L ' '
+15 x. ‘ \ ’ \
+o .“\ ._ l""\ 1 . 0K . . i A” ""‘ . k.
+36123°w 40' 20' 122°w 40'
+
+"
+"7","Remote Sens. 2014, 6 1013
+Figure 4. Spring 2011 study: Changes in local and regional conditions associated with
+upwelling intensiﬁcation (Figure 3). (a) Measurements from 1 m depth at mooring M1;
+
+FCh1 is raw signal from the chlorophyll ﬂucrcmeter. (b—d) FLH computed using HICO
+bands nearest those of MODIS FLH (Table 1); the white circle indicates M1 location.
+a April — May 2011
+24 25 26 27 28 29 30 1 2 3 4
+— AUV survey periods (3
+A f ’ \ ,r - - - M1 temperature 12 ‘2';
+> 4 , — — M1 F 5
+V \ - / \ \ Ch' .._.
+5 x ’ 1 _ 11 g
+LL 2 \ /»/ \ /\/A\ 1""“ I\ :x xi», 8-
+o R ‘I \I ""\‘xJ"". “101""—J
+AVHRR
+o HICO
+25 April 27 April 3 May
+—
+0.2 0.4 0.6 0.8 1 1.2 1.4 1.6 1.8
+Chlorophyll FLH (w m‘2 11m“ sr“)
+
+While the ﬁxed-point time series at M1 suggests a simple response of decreasing chlorophyll
+ﬂuorescence in association with the upwelling event, the HICO spring time-series reveals great
+patchiness developing throughout the region (Figure 4). Regions of relatively high FLH moved both
+offshore and into the central bay between 25 and 27 April (Figure 4b,c), consistent with the bifurcated
+ﬂow that typically develops when upwelled water that originates north of the bay ﬂows across the bay
+mouth [6]. The generally lower FLH that prevailed by 3 May (Figure 4d) is consistent with the
+inﬂuence of strong wind stress causing enhanced turbulent vertical mixing of the upper water column
+and associated decreases in phytoplankton concentrations near the surface. The early onset of this
+upwelling event was closely monitored by AUV surveys (Figure 5).
+
+The arrival of recently upwelled water is illustrated by the cooling of the upper water column by ~1.5 °C
+(Figure 5, left column). Corresponding with the arrival of cold recently upwelled water was a decrease
+in ﬂuorometric chlorophyll concentrations and optical backscattering (Figure 5, middle two columns).
+Interpreted as a proxy for the concentration of particulate matter, optical backscattering data indicate a
+signiﬁcant decrease in particle concentrations within the northern bay during the upwelling response.
+Using the ratio of optical backscattering t0 chlorophyll ﬂuorescence (right column), we can distinguish
+particle types. The exceptionally high values of this ratio observed at the offshore end of the last
+
+"
+"8","Remote Sens. 2014, 6 1014
+survey (Figure 5, lower right panel) were associated with suspended sediments that were transported
+with the upwelled water. An enhanced color HICO image from 27 April shows a whitish sediment
+plume originating from the coast north of the bay (not presented). Considering the potential transport of
+trace metals with sediments, this process has signiﬁcant implications not only for phytoplankton
+productivity [27,28], but also for toxicity of toxigenic diatoms—as indicated by laboratory studies [29—3 1]
+and suggested from ﬁeld studies [11,32].
+Figure 5. Spring 2011 study: Autonomous underwater vehicle (AUV) data shows upwelling
+inﬂuence in the water column; bb is optical backscattering. Rows a—c represent surveys in
+sequence (times shown in Figure 4a). The latitude/longitude/depth volume shown is the
+same in each data panel.
+Temperature (0C) Chlorophyll (.ug L-1) 0b at 420 nm (x10‘3 m“) bb x 103 / Chlorophyll
+9101112 0.5124816 246810 246
+g 20 ""
+8 3° . ' .
+36.87 ,, 2 ~
+(9&300’63633 ~ -122\’0:c:\:ﬁe 1 . .
+
+The ﬁrst HICO image of the spring series, on 25 April, was acquired following a brief (~3 day)
+wind relaxation that followed weeks of strong and persistent upwelling (Figure 2). Warming and
+freshening 0f the upper water column occurred during the wind relaxation (Figure 2). This change in
+the physical environment is characteristic of wind relaxations [9,32] and consistent with the
+development of relatively quiescent conditions and a more stably stratiﬁed water column, with
+implications for response of the phytoplankton community to the preceding upwelling and associated
+nutrient supply. We examine physical and bio-optical patterns for this time to consider patchiness in
+phytoplankton bio-optical signal derived from HICO.
+
+SST 011 25 April showed a patchy remnant signature of the upwelling that preceded wind relaxation
+(Figure 3a). This relatively cool water extended across the mouth of Monterey Bay and within two
+lobes in the northern and southern bay. While evident in the color scaling of the SST time series
+(Figure 3), we more clearly illustrate this environmental structure in Figure 6a, for comparison with
+bio-optical characterizations.
+
+"
+"9","Remote Sens. 2014, 6 1015
+Figure 6. Spring 2011 study: Relationships between thermal signatures of upwelling
+nutrient supply (a) and bi0-0ptical characterization of phytoplankton (b,c). F/C is
+chlorophyll FLH (Figure 4b) divided by chlorophyll concentration (Figure 6b).
+
+a b c
+
+SST (°C) Chlorophyll (mg m'3) F/C
+12 12.5 13 13.5 14 1 2 4 0 0.2 0.4 0.6 0.8
+— _ —
+370N \.
+48’ l 7‘ ii] ,
+36’ , 4‘ , < 'i
+301 \ 1 ‘ 3’ 3
+12’ 6’ 122°W 54’ 48’
+
+Chlorophyll FLH observed by HICO one hour after this SST image exhibited similar structure, with
+elevated FLH extending across the bay mouth and within two lobes extending into the northern and
+southern bay (Figure 4b). Chlorophyll concentration estimates from HICO also show this structure
+(Figure 6b). The FLH t0 chlorophyll ratio (F/C) revealed distinct patches (numbered in Figure 6c). F/C
+was much higher in the southern bay lobe (Figure 6c, #2) than in the northern bay lobe (Figure 6c, #1),
+corresponding with c001er water in the southern bay (Figure 6a). The relatively cool temperature in the
+southern bay suggests relatively greater nutrient input during the preceding upwelling period. Further,
+F/C was yet higher in a patch observed immediately outside of Monterey Bay (Figure 6c, #3). Nutrient
+supply to this area was evidently derived from both upwelling centers (Figure 6a), and upwelling
+ﬁlaments from both centers are known to merge in this region during strong upwelling (e.g., Figure 1).
+Thus, the combined physical and bi0-0ptical patterns are consistent with different physiological
+responses of the phytoplankton along an environmental gradient of increasing nutrient supply,
+speciﬁcally greater quantum yield of ﬂuorescence in regions of greater nutrient input [23,33]. It is also
+possible that the patchiness in F/C was due to similarly structured patchiness in phytoplankton
+communities [34], which in turn had different optical properties and physiology (absorption, scattering,
+quantum yield of ﬂuorescence).
+
+3.3. Fall2011 Study
+
+The fall study coincided with the warmest water conditions of the year (Figure 2). A clear HICO
+image acquired on 26 October (time shown in Figure 2) supported examination of phytoplankton
+ec0types (Figure 7).
+
+"
+"10","Remote Sens. 2014, 6 1016
+
+Chlorophyll and FLH exhibited similar patterns, however distinct patches were evident. One patch
+was in the northern bay, where a narrow ﬁlament extending from the coastal boundary exhibited
+elevated FLH (arrow in Figure 7b), compared to chlorophyll (Figure 7a). Applying the MCI algorithm
+to the HICO data further revealed distinction of this patch, which exhibited elevated reﬂectance in the
+near-infrared. This signal indicates dense accumulations of phytoplankton near the surface [24]. Such
+dense “red tide” patches are most commonly observed during the warm, stratiﬁed fall season in this
+region of the bay [9,32,35—37], and they have been linked to HAB effects [12]. Although at coarser
+spatial resolution, the MERIS satellite sensor also detected this distinct bloom patch in northern
+Monterey Bay on 26 October (Figure 8a). Further, a time-series from MERIS revealed that this bloom
+increased in intensity and spatial scale during the following week (Figure 8a—d). MERIS coverage of
+the entire bay conﬁrmed that throughout its expansion this distinct bloom remained within the domain
+shown in Figure 8. In situ optical measurements for ground-truth 0f the remote sensing data were
+acquired on 28 October (Figure 9), at the location shown in Figure 8b (white +), less than one hour
+after the MERIS image was acquired.
+
+Patchiness at a scale ﬁner than that resolved by the MERIS image may have inﬂuenced the in situ
+optical measurements. However, the location of in situ sensing relative to the bloom distribution
+evident in the MERIS image indicates that the in situ measurements were made in an area where MCI
+values were comparable to the maximum observed on 26 October (cf. Figures 8a,b). Thus, we compare
+the in situ data from 28 October to the HICO spectra from 26 October for the red tide patch (Figure 7),
+assuming that each represents signal of enhanced reﬂectance in the near-infrared from the same bloom
+type. This comparison (Figure 9) shows similar spectral shapes at wavelengths greater than ~ 570 nm,
+and divergence of spectral shapes at shorter wavelengths for different atmospheric correction methods.
+The similar spectral shape in both in situ and atmospherically corrected HICO data across the
+reﬂectance peak centered near 700 nm, 1.6., the optical signal of the bloom, supports application of this
+spectral shape algorithm to describing the bloom.
+
+Figure 7. Fall 2011 study: Distinguishing a “red tide” bloom patch with HICO spectral and
+spatial resolution; MCI is Maximum Chlorophyll Index (Section 2.2). The HICO image
+was collected on 26 October 2011 at 15:33 local time. The white circle in the MCI map
+(panel 0, zoom) deﬁnes the center location for which 3 X 3 pixel mean spectra are
+presented (Figure 9).
+
+Chlorophyll (mg m‘3) FLH (w m“2 m“ sr“) MCI (w m‘2 um-1 sr“)
+
+0.5 1 2 5 10 O 0.5 1 1.5 -1 O 1 2 3
+
+a b c
+
+"
+"11","Remote Sens. 2014, 6 1017
+Figure 8. Fall 2011 study: Expansion of the red tide bloom, as described by MERIS MCI. The
+26 October image was acquired at 11:28 local time, 4 hours and 5 minutes before the HICO
+image (Figure 70). Note the different MCI color scales in comparing Figures 70 and 8a.
+
+MERIS MCI (w m""2 um"" sr“)
+—2 0 2 4 6 8
+: Ha) 26 Oct _ b)1218JOct' w .1 , c1)31 Oct ' , ‘ d)’1Nov
+Figure 9. Fall 2011 study: Ground truth optical measurements acquired along the
+periphery of a red tide patch on 28 October 2011 (location shown in Figure 8b). The in situ
+Rrs spectrum was acquired 59 minutes after the MERIS image. HICO spectra are 3 X 3
+pixel means from the location shown in Figure 70 (zoom panel).
+15
+— In situ, 28-Oct
++ MERIS 28—Oct / BEAM
+— HICO 26—Oct / ATREM
+— HICO 26—Oct/ TAFKAA
+- El - HICO 26—Oct / SeaDAS
+A 10 1 I .
+1 “‘4 : 3 z
+(D \ : : :
+‘1’ \ t J ;
+O \ i 1 E
+3 '1 \ 3 , Eu i i
+cc“ 5 13‘0” 3 i
+3 ‘m . \
+ﬁ
+_ .(l
+O
+400 500 600 700 800
+Wavelength (nm)
+
+To investigate the processes underlying expansion of this distinct bloom type (Figure 8), we
+examine regional SST patterns during the same period (Figure 10). In each image, the domain of the
+bloom patch is overlaid (as indicated by the arrows in Figure 10).
+
+Activity of the upwelling centers north and south of the bay increased during this period, and
+cooling occurred throughout the region. This was associated with the return of upwelling favorable
+winds following a minimum in wind speed 011 26 October (Figure 2). On 26 October, the small bloom
+patch was located within relatively warm waters of the northeastern bay, and a cool plume extended
+
+"
+"12","Remote Sens. 2014, 6 1018
+from the coast south of Monterey Bay, northward across the mouth of the bay (Figure 10a). This
+ﬁlament was detected at mooring M1 the previous day (sudden cooling before the image acquisition time
+indicated in Figure 2). In addition to local cooling of 3 CC, nitrate concentrations at the surface increased
+by ~50M (data Viewable at http://www.mbari.org/lobo/lobovizhtm), conﬁrming the potential of this
+water to enrich nutrient supply to phytoplankton. As upwelling increased, the nutrient-enriehed cold
+ﬁlament was transported into the nearshore environment of the bloom patch (Figure 10b). By
+1 November, the expanding bloom was observed within a more distinct frontal zone between the warm
+resident bay waters and the intruding 0001 waters (Figure 100). The intrusion was apparently linked to
+a cyclonic ﬂow within the bay, as indicated by the adjacent cool/warm anomalies (Figure 10b, 0).
+Figure 10. Fall 2011 study: Processes of bloom growth. Black contours overlaid on the SST
+images (indicated by arrows) correspond with the red tide bloom patches shown in Figure 8.
+SST (°C)
+12 13 14 15 16
+—
+a) 26 October 1 b) 28 October ‘ 1 c) 1 November
+37ON ‘ ’ i ‘ M i \
+, h , \ ' ‘i. I K“ ‘1 l _ \‘
+48’ .1 ‘ ’ _ » 1 a 7‘» 1
+t a ‘ 3 '. I ; , ' . r . . r
+r x x x
+4 ~ 4‘ c
+30001—— 50’ ‘T h ——— T” ’ ’
+3.4. Examination ofAlgorithmsfor Characterization ofPhytoplankton
+Examination of algorithms for characterization of phytoplankton from HICO data is best supported
+by images that contain signals from a range of eeotypes. The fall 2011 study included a small
+“red tide” bloom that was optically distinguishable (previous section). However, an image from
+6 November 2012 contained much greater signal range, and we use this image to examine the strengths
+and limitations of different algorithms (Figure 11). The pseudo true-color HICO image indicates great
+patchiness and suggests different phytoplankton eeotypes across the range of blue, green and brown
+water color (Figure 11a). Although a light atmospheric haze is evident in the image, a swath of brown
+across the northern bay stands out. Results of both band-ratio chlorophyll and IOP algorithms
+distinguish this brown water, which contained the highest values of both parameters (Figure 11b,e;
+a¢444 is phytoplankton absorption at 444 nm). This dense bloom is further distinguished by
+identiﬁcation of the wavelength at which the reﬂectance spectrum peaked in the red to near-infrared
+
+"
+"13","Remote Sens. 2014, 6 1019
+range (Figure 11d). Extending well beyond the chlorophyll ﬂuorescence peak wavelength (~683 11m),
+this patch exhibited spectral peaks at wavelengths up to 708 nm, characteristic of intense “red tide”
+blooms [24] previously observed in this region With satellite and airborne remote sensing [36,37].
+Figure 11. Phytoplankton characterization from a suite of algorithms. The HICO image
+was acquired on 6 November 2012. The enhanced color image (a) used bands centered at
+the 466 nm (blue), 554 nm (green), and 708 nm (near infrared, to emphasize signal of
+the red tide).
+cm —1 a 444nm (m_1) 4 (nm)
+orophyll (ttg L ) 4) peak
+0.5 1 2 4 8 O 0.5 1 673 685 696 708
+_::— .- _:_
+r , 4’
+r' 9-.
+gﬁ‘; Q ‘0
+x.“ J _:t 4% V _ ,
+“.4...‘ , r ’1. 4' .‘. —
+.9 3? ;.""9-:; , (‘9
+a ’V (""5: ‘ .1“ ﬂ
+1’ ~- ‘4’ b
+:‘ ‘1 1:; ‘1‘“3'.
+FLH (w m‘2 m“ sr“) FLH (w m'2 m“ sr“) MCI (w m'2 um""1 sr“) ARPH (w m‘2 },lm_1 sr"")
+0 0.5 1 —3-2—101 —202468 0.20.5125
+—:— _:— _:- _:Z-
+‘1 Wha- 3a -
+{a 1
+i; 53‘ : Q \i\ . 3,53 R:\\ ~
+4.1a. §§- ‘\ \\
+:z'i"" 3” I I '
+i? 4
+' MODIS bands MERIS bands
+e f
+Next we examine a series of results from the linear baseline algorithms (LBAs), also known as
+spectral shape algorithms [38]. N0 distinction of the intense bloom patch (Figure 11a—d) is evident in
+
+"
+"14","Remote Sens. 2014, 6 1020
+FLH computed using MODIS FLH bands (Figure 11e). Similar FLH levels are indicated in the intense
+bloom as in a large phytoplankton patch north of the bay, which exhibited much lower chlorophyll and
+a¢444 (Figure 11b,c). The reason for this lack of distinction is illustrated in Figure 12a. The shift of the
+reﬂectance peak into the near-infrared, caused by the extremely high concentration of phytoplankton
+near the surface, placed the bloom signal to the long wavelength side of center wavelength used by the
+MODIS FLH algorithm. The spectral peak shift was more moderate in the bloom patch observed on 26
+October 2011 (Figure 9), thus placing the peak closer to the FLH algorithm center wavelength and
+yielding greater distinction of the patch in FLH (Figure 7b).
+
+The intense bloom patch of 6 November 2012 was distinguished in FLH computed using MERIS
+bands (Figure 111), however the algorithm quantiﬁes it as the largest negative anomaly within the
+image. The reason for this inversion of bloom optical signal is illustrated in Figure 12b. The shift of
+the reﬂectance peak into the near-infrared lifts the long-wavelength end of the baseline, thus placing
+reﬂectance at the center wavelength of the MERIS FLH algorithm below the baseline. Such negative
+spectral shape has been used to detect cynobacterial blooms in the Laurentian Great Lakes with both
+MERIS and MODIS data [38,39]. The intense bloom patch is effectively isolated by the MCI
+algorithm (Figure 11g), which was specifically designed to quantify strong near-infrared reﬂectance
+from this bloom type (Figure 12c). However, one consequence of isolating this spectral feature with
+this method is computation of the lowest MCI values in waters that have moderately high FLH
+(Figure 11e—g). This is because the MCI center wavelength falls in a trough of a spectrum characterized
+by ordinary chlorophyll ﬂuorescence. Spatial patterns of intense bloom signal in MCI (Figure 11g)
+chlorophyll (Figure 11b) and a¢444 (Figure 11c) are distinct, suggesting considerable patchiness of
+phytoplankton community composition and/or physiological state within the bloom patch.
+
+Figure 12. Linear baseline algorithm (LBA) performance relative to the intense bloom
+spectrum from the 6 November 2012 HICO image (Figure 11). The spectrum is an average
+computed from pixels exhibiting a peak in the HICO 708 nm band. Band centers
+(gray circles) for each algorithm are the HICO band center wavelengths listed in Table 1.
+a) MODIS FLH bands b) MERIS FLH bands 0) MERIS MCI bands
+12
+«pm 8
+52
+f; 6
+cc
+4
+2
+600 650 700 750 600 650 700 750 600 650 700 750
+Wavelength (nm) Wavelength (nm) Wavelength (nm)
+
+Each LBA was designed for a speciﬁc purpose using data from multispectral sensing. None was
+designed for hyperspectral sensing, and none consistently characterize spatial patterns of
+phytoplankton optical signal across the full range of phytoplankton ecotypes and bloom intensities.
+
+"
+"15","Remote Sens. 2014, 6 1021
+Accurate description of variation in the spectral shape and intensity of phytoplankton reﬂectance
+requires algorithms that adapt their ﬁanction according to the attributes of the reﬂectance spectrum itself.
+The maximum peak—height (MPH) is one such algorithm designed for MERIS multispectral data [40].
+It was developed for operational determination of trophic status and indication of potentially harmful
+phytoplankton blooms in coastal and inland systems. MPH uses a baseline subtraction procedure, as in the
+FLH algorithm. While the short wavelength end of the baseline for MPH is the same as that used for
+MERIS FLH (665 nm), the long wavelength end is greater than that used for FLH (885 nm versus 709 nm).
+This is to enable quantiﬁcation of signal caused by exceptionally dense cyanobacterial blooms. MPH
+computes the height of the dominant peak Within the wavelength range of the baseline, at band-center
+wavelengths of 681, 709 or 753 nm, as caused by the balance of sun-induced chlorophyll ﬂuorescence
+and particulate backscatter.
+
+To more effectively localize the reﬂectance peak caused by phytoplankton in the 6 November 2012
+HICO image, and to more consistently quantify phytoplankton optical signal across the different
+population types, we apply adaptation to the attributes of the reﬂectance spectrum itself in an
+algorithm termed adaptive reﬂectance peak height (ARPH). We do not require the Wide baseline of
+MPH and thus set baseline wavelengths to the HICO center wavelengths nearest those used for
+MODIS FLH (Table 1), which take into consideration the inﬂuence of oxygen and water vapor
+absorption on spectral shape [23], and Which are well-placed for characterization of optical signal from
+phytoplankton populations in Monterey Bay. We also constrain more narrowly the wavelength range
+for adaptive peak localization and quantification. The upper wavelength is constrained to <710 nm to
+exclude kelp forest reﬂectance evident in the image While including the maximum wavelength of peak
+reﬂectance in the phytoplankton red tide bloom (Figure 11d). The lower wavelength is constrained
+based on the observed minimum wavelength at Which the red tide bloom exhibited distinction in its
+spectral peak, 690 nm (Figure 11d). With these constraints ARPH allowed adaptive quantiﬁcation of
+phytoplankton optical signal across four HICO bands centered at 690, 696, 702 and 708 nm. Outside this
+range ARPH is equivalent to the MODIS FLH algorithm using HICO’s nearest spectral bands (Table 1).
+Results from the ARPH algorithm illustrate effective adaptation using the spectral resolution of HICO
+(Figure 11h). ARPH provides a more consistent characterization of phytoplankton optical signal than any
+of the other algorithms. Like MODIS FLH, ARPH represents ordinary chlorophyll ﬂuorescence
+consistently (Figure 11e,h). However, unlike MODIS FLH, ARPH distinguishes the extreme bloom patch
+that is evident in chlorophyll, a¢444 and reﬂectance peak wavelength (Figure 11b—d). Further, ARPH
+avoids the conﬁJsed mixture of negative and positive anomalies caused by displacement of the reﬂectance
+peak within the red to near-infrared range, as described for MERIS FLH and MCI (Figure 11 f,g;
+Figure 12). The principle of MPH, as applied to HICO data in ARPH, is promising.
+
+The spatial and spectral resolution of HICO and the growing archive of HICO image data in diverse
+aquatic environments Will augment the development of methods to effectively characterize
+phytoplankton by remote sensing. Satellite remote sensing of freshwater cyanobacterial blooms has
+effectively used data of relatively coarse spatial and spectral resolution [3 8—40]; HICO’s greater spatial
+and spectral resolutions enable more effective study of the patchiness and ecology of such blooms.
+Beyond the spectral analysis methods explored here are a host of algorithms designed for laboratory
+spectral analysis that can now be applied to HICO images [41]. An artiﬁcial neural network approach
+that analyzes ecological and geographical knowledge together With remotely sensed bio-optical and
+
+"
+"16","Remote Sens. 2014, 6 1022
+physical parameters has been applied to predict phytoplankton functional types (PFTs) in the North
+Atlantic [42], and hyperspeetral remote sensing data may enhance the effectiveness of this approach.
+Distinction 0f eoeeolithophore blooms has employed hyperspeetral remote sensing data and
+differential optical absorption spectroscopy analysis [43]. Discrimination of phytoplankton pigment
+assemblages in the open ocean during non-bloom conditions had employed cluster analysis of in situ
+optical data, including measurements of multispeetral remote sensing reﬂectance and hyperspeetral
+absorption [44]. HICO offers the opportunity to extend these analysis methods to high-resolution
+remotely sensed data.
+4. Conclusions
+
+Coastal ocean environments are profoundly important to global ecology, and they are major societal
+drivers through their support of living and mineral resource extraction, recreation, and tourism.
+Effective management of these Vital environments requires comprehensive multidisciplinary
+understanding. Remote sensing provides one of the most effective tools for understanding coastal
+ecosystems and their connections to the greater ocean and land interfaces. As with any research
+endeavor, the closer we look, the more we learn. With its enhanced spatial and spectral resolution,
+HICO provides just such an opportunity to look more closely at the highly complex processes that
+drive coastal ecology. The examples presented in this study represent a small fraction of the HICO
+images of Monterey Bay, and a yet smaller fraction of the 8600 HICO images acquired worldwide.
+Studies such as this provide the opportunity to explore utilization of enhanced remote sensing
+resolutions, toward advancing ecological knowledge, environmental management, and design of ﬁJture
+sensors. In particular the ﬁJture NASA ocean color sensors PACE, GEO-CAPE and HyspIRI are all
+proposed as hyperspeetral imagers. HICO data provides an opportunity to develop new hyperspeetral
+algorithms and evaluate spectral and spatial sampling and signal-tO-noise requirements for these sensors.
+Acknowledgments
+
+JPR was supported by MBARI, through a grant from the David and Lucile Packard Foundation.
+RMK was supported by NASA Award # NNX09AT01G-01-D. HICO was operated under ONR
+sponsorship by NRL during the period of this study. We thank J . Nahorniak for managing the OSU
+portal for HICO data acquisition requests and data access. AVHRR SST and MERIS L2 MCI images
+were provided by D. Foley of NCAA CoastWateh. Updated equations for the QAA algorithm were
+provided by Z. Lee. Comments by anonymous reViewers supported significant improvement of the
+original draft of this manuscript. This is a contribution to the GEOHAB Core Research Project 011
+HABs in Upwelling Systems.
+Author Contributions
+
+A11 eo-authors contributed to the scientiﬁc content and authorship of this manuscript. COD led
+HICO data acquisition and atmospheric correction efforts, which were conducted by NET and ECG.
+RMK provided in situ optical measurements to ground truth atmospherieally corrected remote sensing
+
+"
+"17","Remote Sens. 2014, 6 1023
+data. JPR led the study, analysis of remote sensing and in Sim data, and manuscript preparation With
+all eo-authors.
+
+Conﬂicts of Interest
+
+The authors declare no conﬂict of interest.
+
+References
+
+1. Lueke, R.L.; Corson, M.; MeGlothlin, N.R.; Butcher, S.D.; Wood, D.L.; Korwan, D.R.; Li, R.R.;
+Snyder, W.A.; Davis, C.O.; Chen, D.T. Hyperspeetral imager for the coastal ocean: Instrument
+description and ﬁrst images. Appl. Opt. 2011, 50, 1501—1516.
+
+2. Corson, M.R.; Davis, CD. A new View of coastal oceans from the space station. Eos T rams. Am.
+Geophys. Union 2011, 92, 161—162.
+
+3. Davis, C.O.; Bowles, J .; Leathers, R.A.; Korwan, D.; Downes, T.V.; Snyder, W.A.; Rhea, W.J.;
+Chen, W.; Fisher, J .; Bissett, W.P.; et a]. Ocean PHILLS hyperspectral imager: Design,
+characterization, and calibration. Opt. Express 2002, 10, 210—221.
+
+4. Barber, R.T.; Smith, R.L. Coastal Upwelling Ecosystems. 111 Analysis of Marine Ecosystems;
+Longhurst, A.R., Ed.; Academic Press: New York, NY, USA, 1981; pp. 31—68.
+
+5. Breaker, L.C.; Broenkow, W.W. The circulation of Monterey Bay and related processes.
+Oceanogr. Mar. Biol. Annu. Rev. 1994, 32, 1—64.
+
+6. Rosenfeld, L.K.; Schwing, F.B.; Garﬁeld, N.; Tracy, D.E. Bifurcated ﬂow from an upwelling
+center: A cold water source for Monterey Bay. Cont. SherRes. 1994, 14, 931—964.
+
+7. Woodson, C.B.; Eerkes—Medrano, D.I.; Flores-Morales, A.; Foley, M.M.; Henkel, S.K.;
+Hessing-Lewis, M.; Jaeinto, D.; Needles, L.; Nishizaki, M.T.; O’Leary, J .; et a]. Local diurnal
+upwelling driven by sea breezes in northern Monterey Bay. Cont. SherRes. 2007, 27, 2289—2302.
+
+8. Shea, R.E.; Broenkow, W.W. The role of internal tides in the nutrient enrichment of Monterey
+Bay, California. Estuar. Coast. SherSci. 1982, 15, 57—66.
+
+9. Ryan, J .P.; McManus, M.A.; Sullivan, J .M. Interacting physical, chemical and biological forcing of
+phytoplankton thin-layer variability in Monterey Bay, California. Cont. SherReS. 2010, 30, 7—16.
+
+10. Kudela, R.; Pitcher, G.; Probyn, T.; Figueiras, F.; Moita, T.; Trainer, V. Harmful algal blooms in
+coastal upwelling systems. Oceanography 2005, 18, 184—197.
+
+11. Ryan, J .; Greenﬁeld, D.; Marin III, R.; Preston, C.; Roman, B.; Jensen, 8.; Pargett, D.; Birch, J .;
+Mikulski, C.; Doueette, G.; et a]. Harmful phytoplankton ecology studies using an autonomous
+molecular analytical and ocean observing network. Limnol. Oceanogr. 2011, 56, 1255—1272.
+
+12. Jessup, D.A.; Miller, M.A.; Ryan, J .P.; Nevins, H.M.; Kerkering, H.A.; Mekebri, A.; Crane, D.B.;
+J ohnson, T.A.; Kudela, R.M. Mass stranding of marine birds caused by a surfactant-producing red
+tide. PLOS ONE 2009, doi:10.1371/j0umal.p0ne.0004550.
+
+13. Kudela, R.M., Lane, J .; Cochlan, W. The potential role of anthropogenically derived nitrogen in
+the growth of harmful algae in California, USA. Harmful Algae 2008, 8, 103—110.
+
+14. Kudela, R.M., University of California, Santa Cruz, CA, USA; Ryan, J .P. Monterey Bay
+Aquarium Research Institute, Moss Landing, CA, USA. Unpublished data, 2007—2009.
+
+15. HICO. Available online: http://hieo.eoas.oregonstateedu. (accessed 011 1 November 2013).
+
+"
+"18","Remote Sens. 2014, 6 1024
+
+16. Gao, B.-C.; Davis, CD. Development of a line-by-line-based atmosphere removal algorithm for
+airborne and spaceborne imaging spectrometers. Proc. SPIE 1997, doi: 10.1 1 17/ 12.283 822.
+
+17. Montes, M.J.; Gao, B.C. NRL Atmospheric Correction Algorithms for Oceans: T afkaa User’s
+Guide; NRL Report; NRL: Washington, DC, USA, 2004; pp. 1—39.
+
+18. Bowles, J . The US Naval Research Laboratory, Washington, DC, USA. Private Communication, 2013.
+
+19. O’Reilly, J .E.; Maritorena, S.; Siegel, D.; O’Brien, M.C.; Toole, D.; Mitchell, B.G.; Kahru, M.;
+Chavez, F.P.; Strutton, P.; Cota, G.; et a]. Ocean Color Chlorophyll A Algorithms for SeaWiFS,
+0C2, and 0C4: Version 4. In Sea WiFS Postlaunch Calibration and Validation Analyses, Part 3;
+Hooker, S.B., Firestone, E.R., Eds.; NASA Goddard Space Flight Center: Greenbelt, MD, USA,
+2000; Volume 11, pp. 9—23.
+
+20. Lee, Z.P.; Carder, K.L.; Amone, R.A. Deriving inherent optical properties from water color:
+A multiband quasi-analytical algorithim for optically deep waters. Appl. Opt. 2002, 4] , 5755—5756.
+
+21. Lee, Z.P.; Carder, K.L. Absorption spectrum of phytoplankton pigments derived from
+hyperspectral remote-sensing reﬂectance. Remote Sens. Environ. 2004, 89, 361—368.
+
+22. IOCCG. Available online: http://WWW.ioccg.org/groups/sofmarehtml. (accessed 011
+1 November 2013).
+
+23. Letelier, R.M.; Abbott, M.R.; An analysis of chlorophyll ﬂuorescence algorithms for Moderate
+Resolution Imaging Spectrometer (MODIS). Remote Sens. Environ. 1996, 58, 215—223.
+
+24. Gower J.; King, 8.; Borstad, G.; Brown, L. Detection of intense plankton blooms using the
+709 nm band of the MERIS imaging spectrometer, Int. J. Remote Sens. 2005, 26, 2005—2012.
+
+25. Ryan, J .P.; Fischer, A.M.; Kudela, R.M.; McManus, M.A.; Myers, J .S.; Paduan, J .D.;
+Ruhsam, C.M.; Woodson, C.B.; Zhang, Y. Recurrent frontal slicks of a coastal ocean upwelling
+shadow. J. Geophys. Res. 2010, doi:10.1029/2010JC006398.
+
+26. Bellingham, J .G.; Streitlien, K.; Overland, J .; Rajah, S.; Stein, P.; Stannard, J .; Kirkwood, W.;
+Yoerger, D. An Arctic basin observational capability using AUVs. Oceanography 2000, 13, 64—71.
+
+27. Johnson, K.S.; Chavez, F.P.; Friederieh, G.E. Continental-shelf sediment as a primary source of
+iron for coastal phytoplankton. Nature 1999, 398, 697—700.
+
+28. Bruland, K.W.; Rue, E.L.; Smith, G]. The inﬂuence of iron and macronutrients in coastal
+upwelling regimes off central California: Implications for extensive blooms of large diatoms.
+Limnol. Oceanogr. 2001, 46, 1661—1674.
+
+29. Rue, E.L.; Bruland, KW. Domoic acid binds iron and copper: A possible role for the toxin
+produced by the marine diatom Pseudo-nitzehia. Mar. Chem. 2001, 76, 127—134.
+
+30. Maldonado M.T.; Hughes, M.P.; Rue, E.L.; Wells, ML. The effect of Fe and Cu 011 growth and
+domoic acid production by Pseudo-nitzsehia multiseries and Pseudo-nitzschia australis. Limnol.
+Oceanogr. 2002, 47, 515—526.
+
+31. Rhodes, L.; Selwood, A.; McNabb, P.; Briggs, L.; Adamson, J ., van Ginkel, R.; Laezka, 0. Trace
+metal effects on the production of biotoxins by microalgae. Afr. J. Mar. Sci. 2006, 28, 393—397.
+
+32. Ryan, J.P.; McManus, M.A.; Kudela, R.M.; Lara Artigas, M.; Bellingham, J.G.; Chavez, F.P.;
+Doueette, G.; Foley, D.; Godin, M.; Harvey, J .B.J .; et a]. Boundary inﬂuences on HAB
+phytoplankton ecology in a stratiﬁeation-enhanced upwelling shadow. Deep Sea Res. Part1] T 0p.
+Stud. Oceanogr. 2013, in press.
+
+"
+"19","Remote Sens. 2014, 6 1025
+
+33. Huot, Y.; Franz, B.A.; Fradette, M. Estimating variability in the quantum yield of Sun-induced
+chlorophyll ﬂuorescence: A global analysis of oceanic waters. Remote Sens. Environ. 2013,
+132, 238—253.
+
+34. Abbott, M.R.; Brink, K.H.; Booth, C.R.; Blasco, D.; Swenson, M.S.; Davis, C.O.; Codispoti, L.A.
+Scales of variability of bio-optical properties as observed from near-surface drifters. J. Geophys.
+Res. Ocean 1995, 100, 13345—13367.
+
+35. Kudela, R.M.; Ryan, J .P.; Blakely, M.D.; Lane, J .Q.; Peterson, T.D. Linking the physiology and
+ecology of Cochlodinium to better understand harmful algal bloom events: A comparative
+approach. Harmful Algae 2008, 7, 278—292.
+
+36. Ryan, J.P.; Gower, J.F.R.; King, S.A.; Bissett, W.P.; Fischer, A.M.; Kudela, R.M.; Kolber, Z.;
+Mazzillo, F.; Rieneeker, E.V.; Chavez, F.P. A coastal ocean extreme bloom incubator. Geophys.
+Res. Lett. 2008, doi:10.1029/2008GL034081.
+
+37. Ryan, J .P.; Fischer, A.M.; Kudela, R.M.; Gower, J .F.R.; King, S.A.; Marin, R., 111; Chavez, F.P.
+Inﬂuences of upwelling and downwelling winds on red tide bloom dynamics in Monterey Bay,
+California. Cont. SherRes. 2009, 29, 785—795.
+
+38. Wynne, T.T.; Stumpf, R.P.; Tomlinson, M.C.; Warner, R.A.; Tester, P.A.; Dybie, J .; Fahnenstiel, G.L.
+Relating spectral shape to cyanobacterial blooms in the Laurentian Great Lakes. Int. J. Remote
+Sens. 2008, 29, 3665—3672.
+
+39. Wynne, T.T.; Stumpf, R.P.; Briggs, T.O. Comparing MODIS and MERIS spectral shapes for
+cyanobacterial bloom detection. Int. J. Remote Sens. 2013, 34, 6668—6678.
+
+40. Matthews, M.W.; Bernard, 8.; Robertson, L. An algorithm for detecting trophic status
+(chlorophyll-a), eyanobaeterial-dominanee, surface scums and ﬂoating vegetation in inland and
+coastal waters. Remote Sens. Environ. 2012, 124, 637—652.
+
+41. Tuﬁllaro, N. The Shape of Ocean Color. In T apology and Dynamics of Chaos; Letellier, C.,
+Gilmore, R. Eds; World Scientific Publishing: Singapore, 2013; pp. 251—268.
+
+42. Raitsos, D.E.; Lavender, S.J.; Maravelias, C.D.; Haralabous, J.A.; Richardson, 1.; Reid, P.C.
+Identifying four phytoplankton functional types from space: A11 ecological approach. Limnol.
+Oceanogr. 2008, 53, 605—613.
+
+43. Sadeghi, A.; Dinter, T.; Vountas, M.; Taylor, B.; Altenburg-Soppa, M.; Braeher, A. Remote
+sensing of eoeeolithophore blooms in selected oceanic regions using the PhytoDOAS method
+applied to hyper-spectral satellite data. Biogeosciences 2012, 9, 2127—2143.
+
+44. Torreeilla, E.; Stramski, D.; Reynolds, R.A.; Millén-Nﬁﬁez, E.; Piera, J. Cluster analysis of
+hyperspectral optical data for discriminating phytoplankton pigment assemblages in the open
+ocean. Remote Sens. Environ. 2011, 115, 2578—2593.
+
+© 2014 by the authors; licensee MDPI, Basel, Switzerland. This article is an open access article
+
+distributed under the terms and conditions of the Creative Commons Attribution license
+
+(http ://creativeeomm0ns . 0rg/1icenses/by/3 .0/).
+
+"

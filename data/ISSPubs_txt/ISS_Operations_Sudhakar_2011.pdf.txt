@@ -1,0 +1,1366 @@
+"","x"
+"1","Planning Solar Array Operations on the International Space Station
+SUDHAKAR Y. REDDY, The Boeing Company .. ..
+JEREMY D. FRANK, MICHAEL J. IATAURO, MATTHEW E. BOYCE, ELIF KURKLU,
+and MITCHELL AI-CHANG, NASA Ames Research Center
+ARI K. JONSSON, Reykjavik University
+Flight controllers manage the orientation and modes of eight large solar arrays that power the International
+Space Station (ISS). The task requires generating plans that balance complex constraints and preferences.
+These considerations include context-dependent constraints on viable solar array conﬁgurations, temporal
+limits on transitions between conﬁgurations, and preferences on which considerations have priority. The
+Solar Array Constraint Engine (SAGE) treats this operations planning problem as a sequence of tractable
+constrained optimization problems. SACE uses constraint management and automated planning capabilities
+to reason about the constraints, to ﬁnd optimal array conﬁgurations subject to these constraints and solu-
+tion preferences, and to automatically generate solar array operations plans. SACE further provides ﬂight
+controllers with real-time situational awareness and what-if analysis capabilities. SACE is built on the
+Extensible Universal Remote Operations Planning Architecture (EUROPA) model-based planning system.
+EUROPA facilitated SACE development by providing model-based planning, built-in constraint reasoning
+capability, and extensibility. This article formulates the planning problem, explains how EUROPA solves
+the problem, and provides performance statistics from several planning scenarios. SACE reduces a highly
+manual process that takes weeks to an automated process that takes tens of minutes.
+Categories and Subject Descriptors: G.4 [Mathematics of Computing]: Mathematical Software—Algo-
+rithm design and analysis; I.2.8 [Artiﬁcial Intelligence]: Problem Solving, Control Methods, and Search;
+J.2 [Computer Applications]: Physical Sciences and Engineering—Aerospace
+General Terms: Algorithms
+Additional Key Words and Phrases: Planning, scheduling, constraint satisfaction, optimization, space mis-
+sion operations
+ACM Reference Format:
+Reddy, S. Y., Frank, J. D., Iatauro, M. J., Boyce, M. E., Kurklu, E., Ai-Chang, M., and Jénsson, A. K. 2011.
+Planning solar array operations on the international space station. ACM Trans. Intell. Syst. Technol. 2, 4,
+Article 41 (July 2011), 24 pages.
+DOI = 10.1145/19897341989745 http://doi.acm.org/10.1145/1989734.1989745
+1. INTRODUCTION
+Electrical power is a highly constrained resource on the International Space Station
+(188), and is produced by its eight solar arrays. The 188 solar arrays are designed
+Authors’ addresses: S. Y. Reddy, The Boeing Company, 5301 Bolsa Ave. MC H017-D420, Huntington Beach,
+CA 92647-2099; email: sudhakar.y.reddy@boeing.com; J. D. Frank, M. J. Iatauro, M. E. Boyce, E. Kurklu, and
+M. Ai-Chang, NASA Ames Research Center; A. K. J 6nsson, Reykjavik University, Menntavegur 1, IS-101.
+@2011 Association for Computing Machinery. ACM acknowledges that this contribution was authored 01""
+co-authored by a contractor or afﬁliate of the [US] Government. As such, the Government retains a nonex-
+clusive, royalty-free right to publish or reproduce this article, 01"" to allow others to do so, for Government
+purposes only.
+Permission to make digital or hard copies of part 01"" all of this work for personal or classroom use is granted
+without fee provided that copies are not made or distributed for proﬁt 01"" commercial advantage and that
+copies show this notice on the ﬁrst page 01"" initial screen of a display along with the full citation. Copyrights for
+components of this work owned by others than ACM must be honored. Abstracting with credit is permitted.
+To copy otherwise, to republish, to post on servers, to redistribute to lists, 01"" to use any component of this
+work in other works requires prior speciﬁc permission and/or a fee. Permissions may be requested from
+Publications Dept., ACM, Inc., 2 Penn Plaza, Suite 701, New York, NY 10121-0701 USA, fax +1 (212)
+869-0481, 01"" permissions@acm.org.
+© 2011 ACM 2157-6904/2011/07-ART41 $10.00
+DOI10.1145/19897341989745 http://doi.acm.org/10.1145/1989734.1989745
+
+ACM Transactions on Intelligent Systems and Technology, Vol. 2, N0. 4, Article 41, Publication date: July 2011.
+
+"
+"2","41 :2 S. Y. Reddy et al.
+to automatically track the sun as the station orbits the earth, in order to maximize
+power production. However, normal 188 operations such as water dumps, docking
+spacecraft, attitude changes, thruster ﬁrings, and Extra Vehicular Activities (EVAs)
+can increase structural loads, environmental contamination, and thermal stresses on
+the arrays. A variety of operational safety constraints known as “Flight Rules” pre—
+scribe the correct operation of the arrays, in order to ensure safety of crew, systems,
+and vehicle, While other rules express preferences for vehicle longevity and mission ef—
+fectiveness. Ultimately, the ﬂight rules deﬁne acceptable array orientations and opera—
+tional modes, which in turn limit power generation. The operational safety constraints
+include context—dependent constraints on legal conﬁgurations, temporal constraints
+limiting allowed transitions between conﬁgurations, and preferences on the order in
+which to satisfy the constraints under contingency operations. It normally takes about
+four weeks of calendar time to manually produce a solar array plan for a f0ur—week
+planning horizon.
+
+The Solar Array Constraint Engine (SAGE) automatically generates solar array op—
+erations plans to optimize ISS solar array conﬁgurations subject to these constraints
+and user—conﬁgurable solution preferences. SACE is built on top of the Extensible
+Universal Remote Operations Planning Architecture (EUROPA) AI planning system.
+EUROPA’s built—in functionality was used to model some constraints, While EUROPA’s
+modular and extensible framework enabled the addition of custom code for modeling
+other constraints and optimizations, as well as the addition of custom planning a1—
+gorithms to generate solar array plans. In addition, SACE provides ﬂight controllers
+With a real—time situational awareness capability by monitoring the status of the var—
+ious constraints as the plans are executed. Flight controllers can also perform what—if
+analysis in SACE to address unplanned events that may cause station conﬁguration
+changes. SACE is currently in use at the NASA Johnson Space Center (J SC) for mon—
+itoring ISS solar arrays; the planning functionality is being certiﬁed for operational
+use.
+
+This article describes the planning problem, discusses how EUROPA is applied to
+solve the problem, and presents performance results from analysis of SACE 0n oper—
+ational solar array planning scenarios. The rest of the article is organized as follows.
+Section 2 formally describes the constraints and preferences on 188 solar array plans.
+Section 3 describes how the EUROPA framework was used to create SACE and presents
+some results. Section 4 describes how the work described here relates to previous work
+in the application of automated reasoning systems to space mission operations prob—
+lems. Finally, Section 5 draws some conclusions and describes opportunities for future
+work.
+
+2. GENERATING SOLAR ARRAY PLANS: THE PROBLEM
+
+Solar array planning is part of a larger activity to develop an integrated plan of opera—
+tions for the ISS. Timelines describing the orbit and orientation of the 188 are generated
+by the Attitude Determination and Control Ofﬁcer (ADCO) based on higher—level ISS
+operations requirements, in close coordination With their Russian counterparts, and
+provided to Power, Heating, Articulation, Lighting Control Ofﬁcer (PHALCON) in the
+form of attitude and thruster timelines. As discussed shortly, these timelines form the
+inputs to the solar array planning problem solved by SAGE. The Operations Planners
+(OpsPlan) take as input the solar array plans and resulting power availability produced
+by SAGE in order to develop activity plans for the crew.
+
+This section fully describes the solar array planning problem. Section 2.1 provides a
+more complete description of the ISS solar arrays. Section 2.2 describes the inputs to
+the planning problem. Sections 2.3 and 2.4 describe the constraints and preferences on
+solar array plans. Section 2.5 provides a description of the problem from an academic
+
+ACM Transactions on Intelligent Systems and Technology, Vol. 2, N0. 4, Article 41, Publication date: July 2011.
+
+"
+"3","Planning Solar Array Operations on the International Space Station 41 :3
+w
+\ SARJs '
+\ a /
+C? ‘- v ’
+.2 / . I,
+
+s. -“_ 1 . ‘ WV
+
+”5 : / 0
+
+. ‘ v‘. . _ .
+
+t; ‘J ‘3 / \
+. / \--.I - . \ .
+BGAs
+I \.
+
+Fig. 1. The ISS schematic shows the port and starboard assemblies of 4 solar arrays each, and locations of
+the SARJs and BGAs. The axes of rotation of the SARJs and the BGAs are also indicated.
+point of View, along with a discussion of the practical limitations that ﬂight controllers
+placed on the application and how they inﬂuenced the solution methodology.
+2.1. The Solar Arrays
+The ISS has eight solar arrays, each of which is mounted on a rotary joint called the
+Beta Gimbal Assembly (BGA, denoted ,Bij). A set of four BGAs is mounted on a truss
+attached to a Solar Alpha Rotary Joint (SARJ, denoted 01;), with one SARJ on each of
+the starboard and the port sides of the ISS. Therefore, each solar array has two degrees
+of rotational freedom, though some degrees of freedom are constrained by the shared
+SARJs. Figure 1 shows the ISS solar array arrangement. In addition to the angle of
+orientation, the state of each rotary joint (SARJ and BGA) is determined by its mode,
+which can be one of Autotrack, Park, 01' Lock for each SARJ, and Autotrack, Park, or
+Latch for each BGA. In the Autotrack mode, 0n—b0ard software automatically rotates
+the solar arrays so that the array surface is pointing directly at the sun. In the Park
+mode, a drive motor is engaged to maintain the current array angle facing. In the Lock
+0r Latch modes, a physical barrier is engaged to maintain the current orientation.
+2.2. Solar Array Plan Inputs: ISS Configurations
+The state of ISS relevant to solar array power generation and safety is determined
+by a combination of parameters that collectively deﬁne a conﬁguration, denoted c.
+The input to the solar array planning problem consists of a sequence of conﬁgurations
+such that the start time of a conﬁguration ck equals the end time of the immediately
+preceding conﬁguration ck_1. Some conﬁgurations may have ﬂexible start and/or end
+times and durations. Figure 2 shows a sample solar array planning problem with two
+main events that are broken down into subevents, each of which is associated with a
+time, solar beta angle, attitude type, reference frame, and Yaw, Pitch, and R011 (YPR).
+ACM Transactions on Intelligent Systems and Technology, Vol. 2, N0. 4, Article 41, Publication date: July 2011.
+
+"
+"4","41 :4 S. Y. Reddy et al.
+Start-Stop Attitude Ref
+#3 GMT 3Beta Angle3 Name Frame YPR Event
+ATV_Propellant_Line_Purge (M08_170_A_04.UAF)
++XVV 355.0
+1: 170/08:30 —27 +ZLV 3LVLH 357.3 gfgizve; Esetéis)
+TEA 358.0 p u g
++XVV 355.0
+33 170/1000 —27 +ZLV 3LVLH 357.3 M $$$$an EIECIH
+TEA 358.0 g
+ATV_Reb00st (M08_171_A_03.UAF)
++XVV 355.0
+43 171/0500 -28 +ZLV 3LVLH 357.3 HandoverUSS t0 RUS
+TEA 358.0
+171/05205 +XVV anr to Reboost Attitude
+5 171/05:10 '28 +ZLV 3LVLH 33702 (ATV on SM Aft)
+_ +XVV 355.0
+63 358%? -28 +ZLV 3LVLH 357.3 anrto LVLH TEA
+' TEA 358.0
++XVV 355.0
+73 171/0730 -28 +ZLV 3LVLH 357.3 Mljﬁﬁﬁ iijatoeiim
+TEA 358.0 g
+Fig. 2. Plan input showing a sequence of conﬁgurations, each with a start time and parameters—solar beta,
+attitude, reference frame, YaW-Pitch-Roll (YPR), and event—that determine the applicable constraints.
+Events 5 and 6 have ﬁxed start and end times, but other events have ﬂexible end times.
+A thruster timeline (not shown) lists thrusters that are allowed to ﬁre during various
+events, both during normal and contingency operations. As described previously, these
+inputs are generated by other parts of the ISS ﬂight control team.
+
+A conﬁguration c combines all activities and states that inﬂuence solar array plan—
+ning over an interval of time. An attitude reference frame and the YPR 0f the station
+With respect to that frame determine the position and orientation of the 188. In com—
+bination With the solar beta (angle between the solar vector, which points from the
+sun to the center of the Earth, and the ISS orbital plane) and the array orientation,
+this determines the shadowing 0n the arrays as well as the loads and forces on the
+arrays and their joints. Of course, the array facing relative to the sun, coupled With
+shadowing, inﬂuences power generation. Speciﬁc events (e.g., docking, EVA, water
+dump), the port to be used for docking, and the attitude control and reboost jet se—
+lects (conﬁguration—speciﬁc combinations of thrusters ﬁred, for attitude control and
+orbit maintenance, respectively) determine additional loads, environmental contami—
+nation (e.g., from thrusters) that can damage the solar arrays, and shadowing 0f the
+arrays. Other parameters that inﬂuence both the loads and contamination include the
+alternate jet selects used in case of thruster failure, and Whether or not contingency
+operations are in effect.
+
+ACM Transactions on Intelligent Systems and Technology, Vol. 2, N0. 4, Article 41, Publication date: July 2011.
+
+"
+"5","Planning Solar Array Operations on the International Space Station 41 :5
+O BGA 359
+
+0
+
+E
+
+at) -
+
+359
+SARJ Port 73: 28 169
+
+Fig. 3. A representative table indicating, for one SARJ and one BGA, the safety of setting the solar array
+orientations; the y-aXis is the SARJ orientation and the X-aXis is the BGA orientation; green is preferred,
+yellow is acceptable, and red is (most of the time) infeasible.
+2.3. Constraints on Solar Array Plans
+The orientation of a single array is deﬁned by the pair of values of the SARJ and BGA.
+There are four classes of constraints that limit orientations: power generation (denoted
+P), structural load (L), environmental contamination due to particulate accumulation
+on array surfaces (E), and longeron1 shadowing (S). These constraints are represented
+in tables (denoted t) mapping an orientation to a color from the set red (R), yellow (Y),
+and green (G). The set of colors is denoted Col. In most cases, red indicates infeasibility,
+for example, insufﬁcient power to run life support or forces strong enough to cause
+structural damage to the station; yellow values are acceptable but may result in a
+reduction of vehicle longevity or achievable mission objectives, and green is optimal. A
+Visual representation of an example 360x360 table is shown in Figure 3. These tables
+are provided by another part of the ISS ﬂight control team as inputs to the solar array
+planning process.
+
+In a legal plan, each array joint is either Turning or in one of the modes Autotrack,
+Park, or Lock/Latch. Each conﬁguration requires the arrays to be in one of the modes
+continuously while the conﬁguration holds. Consecutive conﬁgurations can be “covered”
+by a long interval during which arrays remain in the same modes.
+
+Each array type (SARJ and BGA) has a maximum rate at which the different j oints
+can be slewed or turned. The BGA slew rate dIBij is 18O/min while the SARJ rate dozi
+defaults to 90/min but is adjustable up to SOO/min (the SARJ rate is ﬁxed over the course
+of a plan). Initiating turns or mode changes requires a minimum duration to account for
+time needed for authorizing and issuing commands and monitoring their completion.
+For example, transitioning into or out of Lock or Latch takes 20 minutes. Some modes
+have minimum duration constraints; for example, Autotrack mode must last at least
+90 minutes. It is not permissible to turn during docking or undocking, reboost events,
+or station maneuvers. Finally, joints must be in position before setting the mode to
+Lock or Latch, and turns are executed When it is safe to do so. An array must be in
+the planned position and mode at the beginning of the conﬁguration, according to the
+Flight Rules. This ﬁnal constraint can be relaxed in an “attitude hold” conﬁguration,
+as no safety—critical events take place during this conﬁguration.
+1Longerons are structural elements that keep solar array blankets in tension. Differential shadowing among
+the longerons can, over time, damage the structures that hold them together.
+
+ACM Transactions on Intelligent Systems and Technology, Vol. 2, No. 4, Article 41, Publication date: July 2011.
+
+"
+"6","41 :6 S. Y. Reddy et al.
+2.4. Solar Array Plan Objectives and Preferences
+
+For a given conﬁguration of the 188, the objective is to ﬁnd orientations and modes
+for the different arrays that maximize the power availability, but at the same time
+keep them in a feasible space With respect to the various constraints.2 For a sequence
+of conﬁgurations, each successive orientation and mode selection must also satisfy the
+temporal constraints on mode changes and those imposed by the angular rotation rates.
+
+A simpliﬁed version of the Flight Rule determining the mode in a given conﬁguration
+c can be paraphrased as follows.
+
+In determining a mode, prefer Autotrack to Park, and Park to Latch or Lock. If the current orientations
+
+are safe, but if there is a possibility of the loads on any joint getting into yellow zone (as per constraint
+
+table L) during autotracking, park that joint, and if there is possibility of loads getting into red zone (as
+per L), lock or latch that joint. Further, if there is a possibility of the contamination constraints getting
+into the red zone (as per E) during autotracking, avoid Autotrack, except during contingency operations.
+
+The modes cannot be independently determined for each j oint, because four BGAs are
+mounted on each SARJ, and the legitimate modes for the SARJ depend on the behavior
+of the BGAs mounted on it. The actual Flight Rule has about forty lines of if—then—else
+clauses and involves calculating intermediate values for modes that get overwritten
+by other values depending on the intermediate values of the modes of other j oints. The
+scope of this constraint is the orientations and modes of all rotary joints associated
+With each SARJ.
+
+For orientation determination, the relevant Flight Rule can be paraphrased as
+follows.
+
+In ﬁnding a solution, ﬁrst avoid all orientations that cause red power (as per P), then avoid red loads
+
+(as per L), next avoid red longeron shadowing (as per S), then avoid yellow loads (as per L), after that
+
+avoid red environment (per constraint, E), and then ﬁnd a location that maximizes power. Under normal
+
+operations, a feasible solution is one that produces at least yellow power (as per, P), but this condition
+is dropped during contingency operations.
+
+Further objectives during planning include minimizing turns of the rotary joints
+once sufﬁcient power is available to meet critical needs (power is in the green zone),
+minimizing the change in direction of rotation of the joints, and minimizing the
+number of locks and latches. These considerations arise to reduce wear on the joints.
+The presence of multiple (and sometimes conﬂicting) optimization criteria makes the
+resulting planning problem similar to other multicriteria problems becoming common
+in planning, such as planning for modular printers [Do et al. 2008]. However, the
+criteria for optimal array orientations are quite complex.
+
+The ideal solar array plan is one that optimizes the orientations and modes in each
+conﬁguration. However, there may be insufﬁcient time to turn the arrays to a new
+orientation, or to command mode changes, especially from short conﬁgurations. Under
+these circumstances, ﬂight controllers prefer to merge adjacent conﬁgurations and
+optimize the new conﬁguration, rather than seek a suboptimal orientation for a prior
+conﬁguration that satisﬁes the temporal constraints.
+
+2.5. Planning Problem Overview
+Generating a solar array plan requires ﬁnding feasible and optimal values for
+the orientations and modes of the eight BGAs and the two SARJs in each input
+conﬁguration, as well as actions to change the modes and orientations of the arrays
+2When Autotrack mode is chosen as a solution in a conﬁguration for any array SARJ or BGA, the orientation
+for that joint is continually changing; however, the orientation speciﬁed as a solution is the orientation of
+the joint at the end of the conﬁguration.
+
+ACM Transactions on Intelligent Systems and Technology, Vol. 2, No. 4, Article 41, Publication date: July 2011.
+
+"
+"7","Planning Solar Array Operations on the International Space Station 41 :7
+from one conﬁguration to the next. The problem state is composed of the orientations,
+modes, and the (sequence of) conﬁgurations. The possible actions include: mode
+changes (Park, Lock or Latch, Autotrack) of the different BGAs and SARJs, and the
+turn or slew actions to change the orientation of the arrays. Both the state and the
+action take time, and may have ﬂexible duration. The goal of the planning problem
+is to ﬁnd a set of actions, states, and their extents that are consistent, do not Violate
+the constraints, and are optimal With respect to the solution preferences. The basic
+planning constraints are: (a) array orientations do not Violate feasibility constraints on
+power, load, contamination, and shadowing as deﬁned by the tables that apply in each
+conﬁguration; (1)) array modes are feasible for chosen orientations, again as deﬁned
+by applicable tables; (0) joints are in position before parking, latching, or locking;
+(d) actions meet minimum duration requirements for commanding and execution; and
+(e) turns are executed When it is safe to do so.
+
+A simple version of the solar array planning problem is tractable. Consider the
+problem for a single SARJ With N conﬁgurations. Focusing ﬁrst on ﬁnding feasible
+array plans for N conﬁgurations reduces planning to a Constraint Satisfaction Problem
+(CSP). A CSP consists of a set of variables V each With an associated set of values D(V),
+and a set of relations over pairs of variables (VJ, Vk) that restricts the valid assignments
+to those variables. The constraint graph of the CSP consists of a node k for each variable
+Vk, and of an arc (j,k) between the nodes representing Vj and Vk wherever there is a
+relation limiting their assignment. Imposing an ordering on the nodes k, the width
+of a node is the number of arcs from k to a node j ordered before k. The Width of an
+ordering is the maximum Width over all nodes, and the Width of a constraint graph is
+the minimum width over all orderings of the nodes.
+
+The CSP is formulated as follows: for SARJ i, and conﬁguration ck, let a CSP variable
+Vk represent the combination of the orientation (aiok, ,BiJ-ok) and mode (disk, ,BiJ-sk). The
+constraints can be either unary constraints on Vk or binary constraints between vari—
+ables V1“1 and Vk between successive conﬁgurations, ensuring that the time needed
+to change the orientations and modes of the SARJ and the BGAs is less than tk_1—tk,
+Where tk is the start time of ck. The resulting CSP, While haVing large variable do—
+mains, is nevertheless of ﬁxed size for a single conﬁguration. Since conﬁgurations are
+totally ordered sequences and constraints only limit the free variables in adj acent con—
+ﬁgurations, the resulting problem has bounded Width, and thus ﬁnding feasible plans
+is tractable [Freuder 1982]. Stated another way, the complexity of the problem scales
+only with the number of conﬁgurations, and tractability is assured because the only
+constraints are those between consecutive conﬁgurations.
+
+While optimizing each array orientation and mode requires searching a complex
+optimization landscape (described further in Section 3.4) over the domain of 360 x
+360 possibilities, this cost is constant for a single conﬁguration. Consider the goal of
+minimizing the sum of the minimum cost over all conﬁgurations. Due to the previously
+mentioned simple structure of the feasibility problem, this optimization problem is also
+tractable [Larrosa and Dechter 2003].
+
+As previously stated, however, ﬂight controllers neither use a global optimality
+criterion nor treat the problem as a single constrained optimization problem. Instead,
+they optimize conﬁgurations sequentially, constraining the solution of subsequent
+conﬁgurations based on the solution of previous conﬁgurations. Conﬂicts may arise
+because there is insufﬁcient time for actions to switch between optimal solutions for
+the adjacent conﬁgurations. If the optimal solution to a conﬁguration eliminates all
+solutions to the next conﬁguration, ﬂight controllers merge conﬁgurations and opti—
+mize again, rather than seeking new optimal solutions to the previous conﬁguration.
+Flight controllers also merge short conﬁgurations (as described in Section 2.4). The
+problem is thus treated by the ﬂight controllers as a sequence of tractable constrained
+ACM Transactions on Intelligent Systems and Technology, Vol. 2, No. 4, Article 41, Publication date: July 2011.
+
+"
+"8","41 :8 S. Y. Reddy et al.
+optimization problems, with a variety of heuristics used to integrate sequences of
+conﬁgurations. It is also worth noting here that, as described in Section 2.1, the
+planning problem is one of many solved by the ﬂight control team, and the constraints
+violated during solar array planning may have originated elsewhere in the planning
+process. Thus, unsolvable solar array planning may be addressed “upstream” in the
+planning process, leading to new inputs and a new planning problem.
+
+3. THE SACE APPROACH
+
+SACE uses the EUROPA framework for constraint reasoning and automated planning.
+EUROPA is a model—based AI planning system that accepts a declarative description
+of a planning problem consisting of a list of timelines (concurrent threads of a plan), a
+list of states that may hold on each timeline over an interval, and compatibilities de—
+scribing the relationships that must hold between states (including states on different
+timelines) in order for a plan to be valid. The EUROPA framework provides an interface
+that allows programmers to build customized planners that meet the needs of their
+applications. EUROPA incorporates special—purpose modules for reasoning about time,
+managing constraints, managing timelines, managing applicability of compatibilities,
+and managing search control heuristics.
+
+Section 3.1 describes the formulation of the solar array planning problem using
+EUROPA’s modeling language. Section 3.2 describes modeling and implementation
+of some of the more complex constraints. Section 3.3 gives a short description of the
+planning algorithm. Section 3.4 describes transforming the Flight Rules and other
+preferences into optimization criteria that govern orientation and mode selection for a
+single conﬁguration, and the algorithm for optimization. Finally, Section 3.5 describes
+how this algorithm builds a solar array plan for a sequence of conﬁgurations.
+
+3.1. The EUROPA Model for Solar Array Planning
+
+SACE uses the EUROPA modeling language, the New Domain Deﬁnition Language
+(NDDL), to declaratively represent the solar array planning problem. This greatly
+facilitated the rapid development of an initial solution, which was then iteratively
+modiﬁed in close consultation with the solar array planners at NASA J SC. The NDDL
+representation includes state and actiVity descriptions, as is common in planners using
+traditional modeling languages like the Planning Domain Deﬁnition Language (PDDL)
+[GereVini et al. 2009; Hoffmann and Edelkamp 2005]. However, unlike PDDL, NDDL
+uses a state variable—Value formalism. EUROPA thus takes its heritage from planning
+formalisms like IXTeT [Ghallab and Laurelle 1994] and SAS [Jonsson and Backstrom
+1998]. EUROPA state variables are called timelines, and the values of timelines are
+sequences of states. States are temporally extended predicates, and consist of a propo—
+sition and a list of parameters, which by default includes the start, end, and duration
+times. For example, a state Turning(X,y) indicates that an array joint is turning from
+one orientation X to another orientation y. Timelines are totally ordered sequences of
+states; hence, a timeline can be in only one state at any instant. The ﬁnal component of
+NDDL model is a set of compatibilities that govern the legal arrangements of states on,
+and across, timelines. These compatibilities are logical implications asserting that if a
+timeline is in a state, then other timelines must be in one of a set of compatible states.
+Compatibilities can incorporate explicit constraints on the parameters of the states.
+EUROPA provides a library of such constraints, and this library can be extended if new
+constraints are needed. For a detailed description of the EUROPA framework and the
+underlying concepts, please refer to Frank and J onsson [2003].
+
+The SACE model employs several timelines. One timeline represents the sequence of
+conﬁgurations for which an array plan must be generated. Each array joint also has an
+associated timeline. The conﬁguration timeline states have the form Conﬁguration(c).
+
+ACM Transactions on Intelligent Systems and Technology, Vol. 2, No. 4, Article 41, Publication date: July 2011.
+
+"
+"9","Planning Solar Array Operations on the International Space Station 41 :9
+The parameters c in this state are features of the conﬁguration needed to identify the
+tables, for example, the attitude, reference frame, Whether or not an EVA is taking
+place, and so on (as described in Section 2.2). The only decision variables on the
+conﬁguration timeline are the start and end times of the conﬁgurations.
+
+The array joint states for each (xi timeline and similarly for ,Bij timeline are
+SwitchMode(ozisk_1,ozisk), Mode(ozis,ozio), SwitchToTurning(oziok_1), and Turning(ozi0k_1
+,oziok disk). For each conﬁguration Conﬁguration(ck) there are 20 decisions to make in
+order to assign the mode and orientation of the 10 solar array j oints. For each of the ten
+joints, 041, ,811, ,812, ,813, ,814, 042, ,821, ,822, ,823, and ,824,there are associated orientation
+parameter variables (aiok, ,Biok) and mode parameter variables (disk, ,Bisk), where ,Bi
+is shorthand for ,Bilﬂigﬂigﬂi4. For legibility, the notation omits the superscripts When
+describing a single conﬁguration and its variables. The notation denotes the domain
+of legal values of parameter variable X by d(X), and the value assigned to variable X
+by V(X). The domain of each mode variable d(ozis) or d(ﬂiJ-s) is either one of the modes
+from the set M = {A,P,L} or Turning(X, y), where A, P, and L correspond to Autotrack,
+Park, and Lock/Latch, respectively, and X, y are angles. For the orientation (or angle)
+variables, the domain d(ozio) or d(ﬂiJ-o) is the set of integers in the range [00,3590], de—
+noted Deg. When in Park, Lock, or Latch the angle is the ﬁxed orientation of the joint
+throughout the conﬁguration. However, the angle continuously changes While turning
+or When in Autotrack mode; in these cases the interpretation of the angle is the value
+at the end of the conﬁguration.
+
+EUROPA’s modeling language makes it easy to represent the turn rate constraints,
+temporal and mode duration constraints, and preconditions described in Section 2.3. As
+an example, a compatibility enforces a constraint that an interval Mode(ozis,ozio) must
+be preceded by an interval SwitchMode(ozisk_1,ozisk), With OliSk = ais. A more complex
+compatibility decomposes an attitude event (e.g., Event 5 in Figure 2) into a maneuver,
+followed by an attitude hold, followed by a thruster ﬁring; each of these are distinct
+conﬁgurations requiring different table constraints to be applied.
+
+Figure 4 shows a pictorial representation of how SACE uses EUROPA timelines to
+represent conﬁgurations and the states of one SARJ. The ﬁgure shows two consecutive
+conﬁgurations (labeled K—l and K). In this example, there are two Mode states (labeled
+M—1 and M) on the SARJ timeline, separated by a SwitchMode state. The ﬁgure also
+shows a set of compatibilities (labeled Cl through C4) that enforce the constraints be—
+tween the various states. For example, Cl enforces the constraint that the conﬁguration
+K—l has to be contained within the temporal extent of the mode M—l. The compatibil—
+ity CZ ensures that all the table constraints that are relevant to conﬁguration K—l are
+enforced; it also enforces the lock—latch constraint LLCc(ozio, ,Bio) on the mode M—l. Sim—
+ilarly, C4 enforces the constraint that switching to Autotrack mode requires at least 20
+minutes, and CS enforces that the Autotrack mode has to be preceded by a SwitchMode
+state, and that mode M has a minimum duration of 90 minutes. The following section
+further describes how EUROPA models the tables and lock—latch constraints.
+
+3.2. Modeling Solar Array Constraints
+
+The majority of the constraints in SACE are the table constraints. The set of all tables
+T is provided as an input to the problem. Tables map an orientation for a SARJ, BGA
+pair to a color, that is, each table T(OtiO, ,BiJ-o) is a function r : Deg2 —> Col. Y(r) E
+{P,L,E,S} denotes the class of table constraint 1. Each table I may be applicable in one
+or more conﬁgurations. The applicability conditions are simple equality expressions
+over parameters of the conﬁguration c, such as EVA 2 true. C(r) denotes the set of
+conﬁgurations in which table 1 applies. T(c) denotes the set of tables that apply in
+c. The set C(r) and table type Y(r) are provided With each table I. Problem inputs
+ACM Transactions on Intelligent Systems and Technology, Vol. 2, No. 4, Article 41, Publication date: July 2011.
+
+"
+"10","41 :10 S. Y. Reddy et al.
+Conﬁguration Timeline
+Conﬁguration(...eva=true...)- Conﬁguration(...eva=false...)
+..
+Configuration: SAN?” K K -f |
+Configuration(...eva=true...){ o fgmssﬂgjnwew— a se...){
+contained-by SARJ: . rsnvjit'chodeé S“ a 5K).
+x-l x-l = - 1 n 1 1
+M0de(a1s ,a1o ,...eva true...),} if(v(a1s‘<)==Autotrack)
+e this.duration,90 ;
+Compatibilities Q q( )}
+SARi:
+Mode(a1s'<'1, c110“, ...eva=true. . . ){ SARJ::SwitchMode(a1s'<‘1,a1s“){
+Tables(. . .eva=true. . .) if(v(oz1s'<)==Autotrack)
+LLC a 0““: 0""“ l e this.duration,20 ;
+K c( 1 61] )} q( )}
+Mode(a1sK'1=Park, . 1_ Mode(a1s'<,=Autotrack,
+u. 0K‘1=100°...eva=true...) SWItcghglitfﬁJgﬁzc;rark, a o“=120°...eva=false...)
+1 III
+SARJ a1Timeline
+Fig. 4. An example of the conﬁguration and SARJ timelines, along with their states, and compatibilities that
+enforce some of the constraints. The two conﬁgurations are labeled K—l and K, the Mode states are labeled
+M-1 and M, and the compatibilities are labeled Cl, CZ, C3, and C4. The arrow between the conﬁguration
+states indicates a temporal constraint. The arrows between the compatibilities and the states indicate the
+states that are referenced by these compatibilities.
+are restricted to sequences of ground conﬁgurations; the planner never needs to search
+over variables to ground the conﬁguration. By design, exactly one table constraint from
+each of the classes P, L, E, and S constrains an orientation in a conﬁguration c. Thus,
+|T(c)| = 32 (8 SARJ—BGA pairs per conﬁguration, and 4 tables per SARJ—BGA pair).
+
+EUROPA makes it very easy to add new classes of constraints. The EUROPA
+infrastructure allows the creation of a constraint with a name that can then be used
+in compatibilities. These constraints must, at a minimum, report whether a ground
+assignment to all variables in the scope satisﬁes the constraint or not. Optionally,
+the constraints may prune values of variables given a partial assignment [Frank and
+Jonsson 2003]. SAGE uses custom constraints for T(c); these constraints are contained
+in compatibilities 0n the Conﬁguration(c) intervals as shown in Figure 4. The custom
+table constraint is a generic piece of code that reads tables in the format already used
+by the ﬂight controllers; thus, the same constraint code is reused for each of the classes
+of constraint.
+
+The Lock—Latch constraint, denoted LLC(ozi0, ,Bio, Otis, ,Bis, c), constrains the modes
+of all array joints on one side (port or startboard) 0f the vehicle as a function of the
+orientations. As Section 2.4 shows, this is calculated using the tables. For example,
+to autotrack SARJ ozi, requires constraining T(OtiO, ,BiJ-o) = G for all values of ,Bijo in
+both Load and Environment tables. Recall that the set of tables T(c) is deﬁned by a
+conﬁguration c, and is therefore determined by the input to the planning problem. This
+constraint can be rewritten LLCC(ozi0, mm, which is a function LLCC : Deg5 —> M 5. Rep—
+resenting the full constraint in EUROPA required splitting the Flight Rule described
+previously into several parts, most of which were additional custom constraints that
+
+ACM Transactions on Intelligent Systems and Technology, Vol. 2, N0. 4, Article 41, Publication date: July 2011.
+
+"
+"11","Planning Solar Array Operations on the International Space Station 41:11
+(1) for each configuration ckin increasing start time order
+Optimize the array orientation
+Compute array modes
+Prune infeasible angles of ck+l based on slew rate
+(2) while solution for ck conflicts with the solution for ck—l
+Merge 0k and ck""l to create Ck
+Optimize the new merged configuration Ck
+Compute array modes
+Prune infeasible angles of ck'+1 based on slew rate
+(3) for each configuration Ck in order of start times
+Eliminate Re-lock/Re-latch modes
+Insert turn and mode change actions
+Fig. 5. The solar array planning algorithm ﬁrst optimizes the orientations in each conﬁguration. If conﬂicts
+are detected, optimization is performed after adjacent conﬁgurations are merged. Finally, once all conﬂicts
+are eliminated, unnecessary lock/latch actions are eliminated, and turn/mode change actions are inserted.
+were added to EUROPA. These constraints are summarized in one element of the com—
+patibility denoted LLCC(oz,-0, ﬁle) on the M0de(ozis, 04,0) intervals as shown in Figure 4.
+3.3. The Planning and Optimization Algorithm: An Overview
+An overview of the complete solar array planning algorithm is shown in Figure 5.
+It has three main components: optimizing a single conﬁguration (labeled 1), conﬂict
+resolution through conﬁguration merging (labeled 2), and plan clean—up (labeled 3).
+Optimizing mode and orientation for a single conﬁguration is posed as an uncon—
+strained optimization problem. This requires transforming the applicable ﬂight rules
+and preferences into a cost function deﬁned over the modes and orientations. Some
+of the constraints and preferences are simple expressions, but some require solving a
+moderately complex problem simply to determine the cost function. To create a solar
+array plan, the planner optimizes conﬁgurations in chronological order, and stitches the
+resulting conﬁgurations together. The following section (3.4) describes the optimization
+problem, and the rest of the algorithm in Figure 5 is described in Section 3.5.
+3.4. Orientation and Mode Optimization
+The optimization problems for the starboard and port sides of the station are indepen—
+dent. The cost for a single SARJ is calculated from the costs of each orientation, which
+is ﬁrst calculated independently for each solar array. The cost function’s design ensures
+that every infeasible orientation has worse cost than any feasible solution. An orienta—
+tion is feasible if its power table entry is not red, its load entries (SARJ and BGA) are
+not red, and its longeron entry is not red. The environment table entry is allowed to be
+red in feasible orientations.3 The cost function for each SARJ (xiis as follows.
+
+k k k k k k k k—l k—l k k
+L((3 , 061) = wch(0 ,0610 £1,330 )+ mem(0 ,0610 , ,BijO )+ ded(OtiO , ,BijO ,0610 , ,BijO )
+k—l k—l k k k k k
+
+-|— weL9(OtiO , ,BijO , 0610 , ,BijO )-|— prp(c , 0610 , ,BijO )
+3The criteria for infeasibility are based on Flight Rules. Violations of these rules represent a possible danger
+to crew, vehicle, and mission. As a result, relaxation of Flight Rules requires human action.
+ACM Transactions on Intelligent Systems and Technology, Vol. 2, N0. 4, Article 41, Publication date: July 2011.
+
+"
+"12","41 :12 S. Y. Reddy et al.
+The component cost functions refer to the color cost, LC (due to different constraints
+being in the red, yellow, or green zones), the mode cost, Lm (due to modes of the BGA
+and the SARJ), the distance cost, Ld (due to the distance between orientations of
+arrays), the direction change cost, L9 (due to change in direction of trajectory of arrays),
+and power cost, Lp (due to incremental differences in power within a constrained power
+zone). While the cost function is less complex, a similar approach to combining objec—
+tives into a single cost function was used in planning for modular printers [Do et al.
+2008]. The weights (wc, wm, wd, w9,and w p) on the different component cost functions
+are designed such that mode cost matters only when colors are equal, distance cost
+matters only when modes are equal, direction change cost matters only when distances
+are equal, and power output cost matters only when all other components are equal.
+
+The distance, direction change, and power cost functions are simple algebraic expres—
+sions. The mode cost is derived from a simpliﬁed version of the Flight Rule described in
+Section 2.4. For each SARJ—BGA pair, there are three BGA modes (Autotrack, Park, and
+Latch) and three SARJ modes (Autotrack, Park, and Lock); there are thus 9 mode costs,
+one per pair of modes for j oints (04,-, ﬁg). Autotrack is preferred to Park, which in turn is
+preferred to Lock or Latch, and the weights for each combination are chosen accordingly.
+The color cost function requires weighting the possible color outcomes for each table in
+conformance with the appropriate Flight Rule. The weights are a simple function of the
+preferences speciﬁed by the Flight Rule, so a Linear Programming (LP) formulation was
+able to solve for these weights ofﬂine.4 Recall there are four constraint categories and
+three colors for a total of 12 LP color weights, denoted wns, r E {R,Y,G}, s E {P,L,E,S}.
+The linear constraints on the color weight values use the Flight Rule for determining
+orientations, as described previously in Section 2. Yellow power (P) is preferable to
+red power; if yellow power is feasible, loads (L) take precedence; if green loads are
+feasible, then longeron shadowing (S) takes precedence; then lastly, environment (E)
+takes precedence. Figure 6 shows a decision tree representation of the preferences over
+combinations of table types (P,L,E,S) and colors (R,Y,G); only 15 distinct combinations
+are speciﬁcally represented as paths through the decision tree (e.g., if power is red, the
+values of the other tables are irrelevant to the LP cost function). Each path through the
+decision tree is written as a linear constraint on the color variables. The LP encoding
+is shown in Table I. Since only a feasible solution is required for this LP, SACE uses
+the minimization of the sum of the color weights as the objective function.
+
+This subsection describes the details of the single conﬁguration optimization (labeled
+1 in Figure 5) and discusses its computational complexity. Optimization occurs in two
+stages. The color cost is optimized ﬁrst, after which the combined mode and orientation
+cost of the SARJ is optimized. For a conﬁguration ck, the color cost for a pair (aiok, ,BiJ-ok)
+is as follows.
+
+LC(Ck, aiOk, ﬂijOk) = U(aioiglelélaiok) U(ﬁijogelélﬁijok) Z wr’s I 7‘ = T(U(Oli0k), U(ﬂijok)’ 8 = Y(T)
+reT(ck)
+
+The color cost of the 4 BGAs is the sum over the four pairs (aiok, ,BiJ-ok), j 2 {123,4}.
+The total color cost calculation for the 4 BGAs mounted on each SARJ therefore takes
+360 x 4 x 360 x |T(ck)| table lookups, which are the dominant computational cost.
+Similarly, calculating the mode costs requires, for each V(OtiOk), V(ﬂiJ-ok) tuple, examining
+all of the cells of the relevant tables in the worst case (e.g., Autotrack mode of both
+SARJ and BGA is permitted only if all of the cells of relevant tables are green). The
+4Ofﬂine determination of the weights is more efﬁcient than evaluating the preference constraints during the
+plan generation phase. To account for possible changes to the Flight Rule in the future, the ofﬂine produced
+weights are speciﬁed to the SAGE tool Via a conﬁguration ﬁle.
+
+ACM Transactions on Intelligent Systems and Technology, Vol. 2, No. 4, Article 41, Publication date: July 2011.
+
+"
+"13","Planning Solar Array Operations on the International Space Station 41 :13
+RP YP, GP
+.9
+RL YL, GL
+®
+RS YS GS
+@
+YL GL
+RE ® YE,GE RE YE,GE
+YP GP
+LP 1 GP YE GE
+YP GP YP GP YP GP VP GP
+Fig. 6. The decision tree representation of the color preferences, Where each node is a test on the color
+(R,Y,G) for a table of particular type (P,L,E,S). The leaf nodes give the preference order/rank.
+Table |. The LP Encoding of the Color Constraints, where Each Path through the Decision Tree is
+Written as a Linear Constraint on the Color Variables
+WRPZWYP-I—l WRLZWYL-I—l
+WYPZWGP-I—l WYLZWGL-I—l
+WRS Z WYS + 1 WYS Z WGS
+WREZWYE-I—l WYEZWGE-I—l
+WGP + WYE Z WYP + WGE + 1 WRP + 2WGL + WGE + WGS Z WYP +
+2WRL + WRE + WRS + 1
+WGP + WRE Z WYP + WYE + 1 WGP + WRL + WGL + WGE + WGS Z
+WYP + 2WYL + WRE + WRS + 1
+WGP + 2WYL + WGE Z WYP + 2WGL + WRE + 1 WGP + 2WGL + WGE + WRS Z WYP +
+2WYL + WRE + WYS + 1
+total mode cost calculation for each SARJ therefore takes 360 x 4 x 360 x |T(ck)|
+lookups as well.
+
+During the second stage, the optimal cost for each value V(OtiOk) is calculated as the
+sum of the costs for the best V(ﬂiJ-ok) for the speciﬁed value of V(OtiOk). The previously
+calculated results of Lc(ck,ozi0k,,6ij0k) are stored in a 360 x 360 table for each pair
+(aiok,,8ij0k). The optimal color cost is calculated in 360 x 4 x 360 table lookups as
+follows.
+
+L*(ck, oz-ok, --0k) 2 min ( min L (ck, oz-ok, --0k))
+C L ’6” U(aiok)ed(ozi0k) 2]: U(ﬂijok)€d(/3ij0k) C L ’6”
+The mode costs used in the cost function of the ﬁrst stage are optimistic lower—bound es—
+timates. Once an optimal orientation is determined, SACE then determines the modes
+for the different joints by propagating the LLC constraint described in Section 3.2.
+ACM Transactions on Intelligent Systems and Technology, Vol. 2, N0. 4, Article 41, Publication date: July 2011.
+
+"
+"14","41 :14 S. Y. Reddy et al.
+These constraints uniquely determine the mode given the colors of each table resulting
+from the angle; no search is needed.
+
+Each of these cost function optimizations is implemented as a special—purpose soft—
+ware module that is integrated with EUROPA. The domain of array orientations is
+searched from 0 to 359, in that order; when multiple solutions of equal quality are
+present, the ﬁrst optimal orientation is used.5
+3.5. Automated Solar Array Plan Generation
+This section describes how the orientation optimizations and resulting mode assign—
+ments are integrated to plan for a sequence of conﬁgurations. The optimal array ori—
+entations determined by the optimization algorithm hold throughout the conﬁguration
+as indicated by component 1 of Figure 5, when the array timeline is in Park, Lock,
+0r Latch states. In the case of Turning and Autotrack states, the results from the
+optimization algorithm only specify the orientations at the end of the conﬁguration;
+the array orientations during the span of a conﬁguration are calculated based on the
+BGA and SARJ slew rates, along with the orientations of the arrays at the end of the
+previous conﬁguration. Once the orientations at the end of a conﬁguration are known,
+these are used to prune the feasible orientations for the next conﬁguration, once again
+based on the BGA and SARJ rates.
+
+As described in Section 2.4, if the optimal orientations in successive conﬁgurations do
+not leave sufﬁcient time to either turn or change modes, the conﬁgurations are merged
+and an optimal solution is obtained for the new merged conﬁguration (component 2 in
+Figure 5). When two conﬁgurations are merged, a new conﬁguration is created from
+the union of the properties in each conﬁguration. The table constraints in the merged
+conﬁguration are the sum total of all the tables from the constituent conﬁgurations. A
+single solution for the orientations and modes is obtained to cover both conﬁgurations,
+and must account for all applicable tables. For example, suppose that a conﬁguration
+ck deﬁned by a thruster ﬁring requires a BGA position optimized for loads and con—
+tamination. The optimal array positions in this conﬁguration may require slewing the
+arrays given the optimal orientation found for conﬁguration ck_1. If there is insufﬁcient
+time for the turn, conﬁgurations ck and cl“1 are merged to create conﬁguration Ck, and
+a new optimal orientation is found. All tables contribute to the cost function for this
+optimization. Then the temporal constraints are checked assuming the slew starts at
+the end of conﬁguration ck_2. Note that the conﬁgurations have been merged only with
+respect to the solar array operations, and the conﬁgurations are treated separately
+with respect to other actions such as the thruster ﬁrings or water dumps.
+
+There is no backtracking, and hence there is no guarantee that a feasible solution
+is found even if one eXists. However, SACE users have found that most conﬂicts are
+due to insufﬁcient duration for actions and merges allow sufﬁcient time to transition
+between optimal solutions of the new conﬁgurations.
+
+Once the entire conﬁguration timeline is processed and all temporal and precon—
+dition constraints are provably satisﬁed, the resulting BGA and SARJ timelines
+are processed to add the necessary SwitchMode(oz,-sk_1,ozisk), SwitchToTurning, and
+Turning(ozi0k_1,ozi0k) actions (component 3 in Figure 5). Consecutive Lock 0r Latch
+mode states, 01' sequences of the form Lock—Park—Lock 0r Latch—Park—Latch, are
+transformed into single intervals to prevent needless unlock 0r unlatch actions.
+The ﬁnal plan, represented by the BGA and SARJ timelines, is postprocessed ﬁrst
+to determine feasibility with respect to the longeron shadowing constraint because
+calculating the timers requires knowing the complete event sequence, and next to
+5While this may potentially overconstrain solutions for the subsequent conﬁgurations, this mirrors the
+approach used by the ﬂight controllers.
+
+ACM Transactions on Intelligent Systems and Technology, Vol. 2, N0. 4, Article 41, Publication date: July 2011.
+
+"
+"15","Planning Solar Array Operations on the International Space Station 41 :15
+
+GMT 23 GMT 180 01 02 03 O4 '35 05 CI? OE
+
+Eclipse E... m Er... m EC... m EC... m Er... m Er...
+
+ATL Handover}
+:—
+:—
+:—
+
+Fig. 7. The SACE planning window shows timelines for attitude changes (ATL), thruster choices (TRTL),
+ISS conﬁgurations, the different SARJs and BGAs, and more.
+Table II. SACE Planner Performance on Simple ISS Solar Array Planning Problems
+Max Min Tables Max
+
+Problem Horizon Conﬁgurations Tables Tables Total Merges Merged Optimizations Time
+———————-_-_-
+”nun“-
+——---—-_-_-u-
+——————-_m-_-
+1JStage 4341 ME!“
+1EFlight 10256 1698
+1JFlight 11610 —--———n-
+calculate the detailed power availability along the timeline. Figure 7 shows the SAGE
+planning results window with the various timelines.
+3.6. Performance Results
+This section describes the performance of SACE 0n representative solar array planning
+problems. Flight controllers do not have a quantitative measure of the goodness of
+a plan. For analysis, this article uses the time to plan as the primary performance
+metric. A secondary performance metric is the number of merged conﬁgurations, as
+each merge imposes more constraints on these conﬁgurations. This latter metric can
+be thought of as a weak measure of the possible suboptimality 0f the plan. Recall
+that Section 3.3 provided an intuition for planning time being roughly linear in the
+number of conﬁgurations and merges (each merge requires a new optimization with
+more applicable tables).
+
+Table II presents empirical data from applying SACE to a set of seven ISS plan—
+ning problems. The ﬁrst four are small problems created to test different aspects of
+SACE planner, and the last three are snippets of the actual ISS solar array planning
+problems over a three— to eight—day planning horizon. The “Conﬁgurations” column in—
+dicates the number of conﬁgurations that must be planned, and the “Horizon” column
+indicates the total time span, in minutes, covered by these conﬁgurations. The number
+of applicable table constraints depends on the speciﬁc conﬁguration being optimized,
+and can inﬂuence the optimization time. The next two columns show the minimum
+ACM Transactions on Intelligent Systems and Technology, Vol. 2, No. 4, Article 41, Publication date: July 2011.
+
+"
+"16","41 :16 S. Y. Reddy et al.
+_ - - - SZ'EEing_pon
+-- -- -- -- mum.mum“:
+=_- =_— :2::::::::::::“ =
+_- -- -- -- ApplyChanges
+
+BCA Power Environment Load Longeron SARI Load
+“nun""
+
+’3 --:---:-n-:-
+
+ﬂ --:---:-nn
+_-:--unn
+
+2 —-:-—-:--z-n
+
+’5 —-:-—-:-m--z-
+
+""’ —-:-—-:--:--:-
+—:-—-:--:--:-
+_-:-—-z--z--:-
+
+Fig. 8. The main window of the SAGE tool shows the conﬁguration variables on the top—right, the orienta-
+tions and modes on the top—left and a summary View of the constraint status at the bottom.
+and maximum number of applicable tables over all invocations of the optimizer. The
+next column shows the total number of table constraints invoked during the planning
+problem. The “Merges” column shows the number of times conﬁgurations are merged
+during planning, and the “Max Merged” column shows the maximum number of ad—
+jacent conﬁgurations merged during optimization. The “Optimizations” column shows
+the number of times the optimizer is invoked during planning. Conﬁgurations that are
+shorter in duration than is required for command execution procedures are automati—
+cally merged with the previous conﬁguration without ﬁrst invoking the optimizer. For
+this reason, the ﬁrst two problems have the same number of optimizations, even though
+there is an extra merge in the ﬁrst problem. The “Time” column shows the planning
+time in seconds. These data are insufﬁcient to fully and conclusively describe SACE
+performance. Nonetheless, these data match the intuition that planning takes longer
+on problems with more conﬁgurations, on problems with more applicable tables, and
+on problems that require merging.
+
+Human planners spend roughly four weeks to plan for each four—week operations
+period. This includes the time spent in gathering information and generating the con—
+straint data. In order to compare the performance of SACE relative to human planners,
+a better metric would be the man—hours spent on planning excluding data preparation
+time. The last two problems in Table II have a time horizon of roughly 1 week, and each
+one took the planners about 80 man—hours. Manual planning is an iterative process, and
+the 80 man—hours included 6 iterations. This translates to about 800 minutes per itera—
+tion, compared to about 10—15 minutes with SACE. Some of the manual planning itera—
+tions are a result of the planning inputs being reﬁned during the course of the planning
+exercise, and as such cannot be avoided even with SACE. Other iterations are a result
+of the human planners overlooking plan ﬂaws until late in the planning process. SACE
+eliminates these iterations by automatically identifying and ﬁxing draft plan ﬂaws.
+3.7. The SACE Tool
+The SACE tool has three major functions: it provides a “telemetry View” for situational
+awareness, a “sandbox View” for what—if analysis and optimization, and a “plan View”
+for automated planning. As the focus of this publication is on the planning aspects of
+SACE, this section only provides a brief overview of the SAGE tool. Both the telemetry
+and the sandbox use the same interface components with a few operational differences.
+In the telemetry View, SACE receives the state information (conﬁguration, orientation,
+and mode) from the ISS telemetry stream through the ISP interface, whereas in the
+sandbox mode, the user can input the conﬁguration and other state information. The
+
+ACM Transactions on Intelligent Systems and Technology, Vol. 2, No. 4, Article 41, Publication date: July 2011.
+
+"
+"17","Planning Solar Array Operations on the International Space Station 41 :17
+main window, which has a common form for the telemetry and sandbox, is shown in
+Figure 8, and has three different areas. The top—left area shows the orientations, modes,
+and overall summary of the constraint status for the BGAs and SARJs. The top—right
+area shows the conﬁguration variables, which determine the context for the different
+constraints. SACE reads the constraint information given in the constraint deﬁnition
+ﬁles, uses the conﬁguration information in this region to determine the set of applicable
+constraints, evaluates each constraint, and provides an indication of Whether the state
+of that constraint is unknown, safe, caution, or danger. Per—constraint state information
+is displayed at the bottom of the main Window. SACE lets the ﬂight controller to activate
+or deactivate individual constraints or groups of constraints using the check boxes. The
+aggregate safety status of array orientations and modes is displayed on the top left—
+hand side of the main Window. The aggregation is based on a “least—safe” rule over all
+applicable constraints.
+
+Contextual information, providing an indication of constraint states for ranges of
+angles other than the currently chosen ones, can be displayed in two primary forms in
+both the telemetry and sandbox: a map View displays a two—dimensional map (shown in
+Figure 3), showing the aggregate constraint state for any combination of SARJ and BGA
+orientations; a ring View displays a set of concentric rings, showing the constraint state
+of each individual constraint as well as the aggregate state for all BGA orientations
+for a speciﬁc SARJ orientation, and for all SARJ orientations given speciﬁc values for
+each BGA orientation. The map View consists of one map for each solar array, and uses
+color—coding to display the status of the constraints and uses intensity to show power
+availability.
+
+The sandbox allows the user to evaluate arbitrary orientations in any given conﬁg—
+uration in terms of the various constraints and power availability. The user can also
+invoke the optimizer from the sandbox to automatically ﬁnd orientations and asso—
+ciated modes that maximize power availability, subject to feasibility constraints With
+respect to the loads, power, contamination, and longeron shadowing. The user can arbi—
+trarily restrict the search space for the array orientations and modes, as well as change
+the preferences on Whether to include, during optimization, a speciﬁc cost metric such
+as the distance cost.
+
+The planning component of SACE loads user—speciﬂed attitude and thruster timeline
+ﬁles and automatically determines a solar array plan. The resulting plan is displayed
+as interactive timelines, as shown in Figure 7. The user can review the plan in this
+Window, or dig deeper by loading each conﬁguration into the sandbox by clicking on the
+desired conﬁguration. The user can also edit the plan by moving ATL elements along
+the timeline or adjusting their duration and restricting the orientations and modes for
+the different joints. Among the elements in the planning Window are the SARJ and
+BGA timelines, showing the modes (including orientations) and turns. The user can
+display other timelines (not pictured in Figure 7) to show the status of the longeron
+shadowing constraint and the power availability. SACE interacts With a trajectory and
+power modeling tool called SOLAR for calculating the power availability, the direction
+of the sun, and the paths taken by the arrays While tracking the sun.
+
+The component of the SAGE tool that monitors the solar array operations has been
+certiﬁed for ﬂight operations. The planning component of SACE is currently approved
+for uncertiﬂed operations, With the human planner ultimately responsible for the ﬁnal
+plans. The development team worked closely With human planners at J SC through—
+out the development timeframe, and incorporated much of their planning philosophy
+into the preferences encoded into the SAGE optimization algorithm. Currently, only a
+limited set of test cases With a small number of conﬁgurations have been used by the
+ﬂight controllers to verify the quality of the plans produced by SAGE. Though all the
+test plans produced by SAGE have been intuitive to the human planners, it is to be
+ACM Transactions on Intelligent Systems and Technology, Vol. 2, No. 4, Article 41, Publication date: July 2011.
+
+"
+"18","41 :18 S. Y. Reddy et al.
+noted that most of the test cases have been short. A couple of long test cases (from prior
+ﬂights) have produced plans that were nearly identical to the human—produced plans,
+except that in certain conﬁgurations, SACE was able to produce more optimal array
+orientations. A more extensive test suite (about 500 planning cases of various sizes) is
+being developed to prepare for ﬂight certiﬁcation of the complete SACE tool.
+
+4. AI PLANNING IN SPACE OPERATIONS
+
+In this section, we survey previous applications of automated planning technology for
+space mission applications. We ﬁrst describe several ﬁelded and prototype applications
+of planning, both for decision support systems and fully automated systems. We then
+compare the decision support applications to SACE.
+
+4.1. History of Applications
+
+The ﬁrst AI system to manage a spacecraft was the Remote Agent [Muscettola et a1.
+1998], which autonomously controlled the Deep Space 1 spacecraft for 29 hours. Part
+of the system was the Remote Agent planning system [Jonsson et a1. 2000], which
+automatically generated plans to achieve operations goals, taking a simple power model
+into account.
+
+One of the earliest decision support tools was SPIKE, an automated scheduler de—
+veloped to build observing plans for the Hubble Space Telescope or HST, launched
+in 1989 [Johnston and Miller 1994]. HST carries several instruments in a low earth
+orbit. HST schedules 10K — 30K observations annually, and these observations have
+numerous constraints and preferences imposed by scientists; HST also has numerous
+power, data, and thermal constraints that must be respected. Another early tool was
+DATA—CHASER Automated Planner and Scheduler (DCAPS), an application used to
+generate command sequences for a three—instrument science payload ﬂown on board
+the STS—85 Space Shuttle ﬂight in 1997 [Chien et a1. 1999]. The payload performed
+observations of the sun. DCAPS was used by payload operators to generate command
+sequences that were then uplinked to the payload. The problem featured a wide va—
+riety of actiVity types representing commands executed by the payload, temporally
+extended conditions describing attitude, communications availability both on board
+the Shuttle and between the Shuttle and the Earth, and resources such as communi—
+cation bandwidth and on—board memory (both tape drive and mass memory). Activities
+also featured goal decompositions (e.g., data acquisition actiVities were broken down
+by DCAPS into simpler actiVities which ultimately were broken down into individual
+payload commands).
+
+The potential of automated on—board power management was demonstrated for a
+satellite with signal processing payloads [Shriver et a1. 2002]. Though power generation
+is ﬁxed, the on—board system can choose among data processing options of differing
+power consumption that provide different expected science return. NASA Goddard’s
+ST—5 mission used a ground—based power management system for a constellation of
+three nano—satellites that ran in an automated mode [Stanley et a1. 2005], but it did not
+build schedules; its role was limited to characterizing the power system performance
+and notifying mission planners of future constraint Violations in the mission schedule
+due to changes in expected power availability or consumption.
+
+MAPGEN is a planning system that was designed to build actiVity plans to achieve
+science goals for the Mars Exploration Rover missions [Bresina et a1. 2005]. Like
+SACE, MAPGEN was based on the EUROPA framework [Frank and Jonsson 2003]
+and assisted users with building efﬁcient and safe rover plans each day. The problem
+addressed by MAPGEN features classical planning and scheduling elements; actiVities
+had both temporal and resource constraints as well as subgoals, and the problem in—
+cluded a simple notion of plan quality based on the science value of actiVities. MAPGEN
+
+ACM Transactions on Intelligent Systems and Technology, Vol. 2, No. 4, Article 41, Publication date: July 2011.
+
+"
+"19","Planning Solar Array Operations on the International Space Station 41 :19
+checked plans for Violations of temporal constraints, mutual exclusions, and numer—
+ous other constraints, and automatically generated plans for power—on 0f the CPU. It
+did not integrate activity and power planning, but rather relied on a simpliﬁed power
+model to do planning and then checked the plan against a more complex power system
+model.
+
+More recent AI tools used in spacecraft mission operations are the MEXAR2 mixed—
+initiative planning tool, which is used to plan downlink operations for the Mars EX—
+press spacecraft using detailed models of spacecraft memory, payloads, and downlink
+opportunities [Cesta et a1. 2007], and MrSpock, a long—range activity planning tool for
+Mars Express [Cesta et a1. 2009]. Like SAGE, these applications (and others) are built
+on a general framework called the Timeline—based Representation Framework (TRF)
+[Fratini et a1. 2008]. MEXAR2 solves a planning and scheduling problem similar to
+that solved by MAPGEN; there are temporal and resource constraints, as well as goal
+decompositions. Activities to schedule are downlink activities, and the schedule opti—
+mization criterion depends on the value of the data that is downlinked, the state of the
+resources, timeliness of data downlink, and schedule complexity.
+
+The RADARSAT Modiﬁed Antarctic Mapping Mission (MAMM) used an automated
+planning system for acquiring and downlinking Synthetic Aperture Radar (SAR) data
+[Smith et a1. 2008]. The SAR instrument is on an orbiting spacecraft; the scheduling
+problem is to acquire data over speciﬁc parts of the Antarctic While respecting con—
+straints imposed by the orbit of the spacecraft, downlink opportunities, and available
+on—board storage. The resulting application automatically developed a 24—day mission
+plan, including scheduling downlinks. Chouinard et a1. [2008] present an automated
+planner for the Orbital Express space mission to demonstrate on—orbit satellite servic—
+ing scenarios that included autonomous rendezvous, propellant transfer, and robotic
+arm transfers of components. The planner, based on the ASPEN system [Chien et a1.
+2000], was developed to assist scenario resource planners in assigning communica—
+tions Windows, monitoring resources, enforcing mission and satellite constraints, and
+sending commands to the spacecraft. The principal planning problem is to decompose
+the scenario into its constituent procedures and assign the communication windows
+to the procedures, at the same time enforcing the temporal, resource, and operational
+constraints on the elements of the procedures. The ASPEN AI planning system from
+NASA JPL was used in a demonstration of automated scheduling of part of the 188
+power system [Knight et a1. 2009]. This work includes a model of the power system
+that used the existing high—ﬁdelity model (TurboSpeed) for the power system and solar
+array production, but did not plan solar array operations.
+
+Chien et a1. [2010] describe a timeline—based scheduling algorithm for weekly op—
+erations scheduling of the EO—l Earth observing satellite. The objective is to record
+discrete scenes subject to constraints on Visibility, time needed for pointing/maneuver,
+operational temperatures of instruments, data capacity, the priority of scenes, and
+downlink availability. Two of the more challenging constraints are the instrument
+thermal constraints and the satellite pointing constraints. The pointing of satellite
+uses three reaction wheels and a torque bar. The thermal duty cycle is a complex func—
+tion of the on—off cycle of the instrument and heat dissipation. The resulting scheduler
+increased the number of scenes acquired by 50%.
+
+It is noteworthy that, When operational, SACE will be the ﬁrst AI planning applica-
+tion used to plan the activities of a crewed spacecraft.
+
+4.2. Comparison of Decision Support Applications
+
+In this section, we compare the technical approach used in SACE to other decision
+support—style planning systems, employing AI technology, used by ﬂight controllers 0r
+mission operators. These include SPIKE, DCAPS, MAPGEN, MEXAR, MAMM, Orbital
+ACM Transactions on Intelligent Systems and Technology, Vol. 2, N0. 4, Article 41, Publication date: July 2011.
+
+"
+"20","41 :20 S. Y. Reddy et al.
+Express, and EO—l. As such, we omit discussion of those planning systems primarily
+used for autonomous systems.
+
+Proposals are transformed by SPIKE into activities to schedule, which includes actiV—
+ity ordering, task decomposition, and grouping activities. SPIKE employs a represen—
+tation that combines multiple constraints on the same actiVity into preferences called
+suitability functions that are then used to drive optimization; suitability functions are
+represented as piecewise constant functions. These are combined with classical con—
+sistency techniques, including path consistency, to prune legal start times of activities.
+The optimization algorithm is an iterative repair strategy driven by heuristics, with a
+phase at the end to remove any conﬂicts by deleting unscheduled objects.
+
+Because of changes in circumstances during the mission (e.g., communication band—
+width, vehicle orientation), DCAPS [Chien et al. 1999] was designed as a mixed—
+initiative system, allowing the operator to add new constraints, add or delete activities,
+or reschedule activities. DCAPS employed an iterative repair strategy in which types
+of scheduling conﬂicts were resolved with different plan repair operators. An implicit
+plan quality function was employed in order to schedule as many data acquisitions as
+possible in the time allowed.
+
+MAPGEN [Bresina et al. 2005] was designed to provide assistance to a science actiV—
+ity planner, and as such provided a variety of services including: reporting constraint
+Violations, enforcement of constraints when the mission planner changed the plan, au—
+tomatically selecting goals on priority, and automatically inserting subgoals of major
+activities that the mission planner chose to schedule. Because of the need for minimum
+disruption of the mission planners’ desires, MAPGEN employs a heuristic during plan
+reVision that preserves the plan to the maximum extent possible while adding or rear—
+ranging activities to respect new constraints. Finally, due to tight planner performance
+guarantees, MAPGEN performed an incomplete backtracking search in order to gen—
+erate good plans quickly. Values were portioned into 4 classes, and low—value activities
+were discarded if they could not be inserted into a plan with a predeﬁned amount of
+effort.
+
+The design of MEXAR2 [Cesta et al. 2007] was also driven by the need for a mixed—
+initiative ﬂavor; downlink plans have to change in response to changes in data volume
+of different types. The schedule optimization function is complex, consisting of a partial
+order among several different schedule criteria, including data loss, plan size, tardiness
+of data delivery, and ﬂexibility with respect to data store availability. Users can adjust
+the importance of each of these elements of the ﬁnal schedule quality. Thus, MEXAR2
+provides users a high degree of control over the ﬁnal schedule. MEXAR2 featured a
+sound and complete solver, unlike the other tools described.
+
+The MAMM planner [Smith et al. 2008] used a greedy algorithm for generating
+data acquisition and downlink schedules. In this system, the mission planner selects
+a set of swaths to acquire, and the ASPEN—based automated planner expands it into
+a more detailed plan, develops a downlink schedule, and then checks it for resource
+oversubscriptions and other operational constraint Violations. The planner did not use
+any plan—repair mechanism to ﬁx constraint Violations, instead reporting to the mission
+planner those swaths that caused operational constraint Violations. It also generates
+what—if variations of draft plans for evaluating mission alternatives, assessing resource
+requirements, impact of alternative downlink scheduling policies, and effectiveness of
+alternative ground stations.
+
+The EO—l application [Chien et al. 2010] treats the temperature of an instrument as
+a resource, whose usage is modeled using a step—wise simulation model. The pointing
+of satellite is implemented using external constraints. A greedy heuristic scheduling
+algorithm is used to generate a schedule from a prioritized list of scenes to be scheduled.
+The planner incorporates some of the constraints in generating the schedule and tests
+
+ACM Transactions on Intelligent Systems and Technology, Vol. 2, No. 4, Article 41, Publication date: July 2011.
+
+"
+"21","Planning Solar Array Operations on the International Space Station 41 :21
+it against the more complex constraints for Violations. No schedule repair to ﬁx violated
+constraints is incorporated. The scheduling algorithm does not guarantee optimality,
+but ensures that the highest numbers of high—priority scenes are scheduled. Similarly,
+the Orbital Express system [Choinard et al. 2008] used greedy variants of bin packing
+algorithms to assign the communication Windows. If resource Violations are detected,
+they are reported to the user rather than being repaired automatically.
+
+We now compare these applications to SACE by comparing the needs of the users of
+the applications, the types of constraints and preferences characterizing the problem,
+and the characteristics of the solution methodology.
+
+The users of all of the applications desired some amount of user control over the ﬁnal
+plan. The MAPGEN, MAMM, DCAPS, and MEXAR2 applications were driven by a very
+high degree of user control over the ﬁnal plan, With users of MEXAR2 specifying not
+only constraints and schedules but also preferences over plan quality. SPIKE beneﬁtted
+from the ability to reVise proposals and rebuild schedules. SACE has two methods of
+generating a complete solar array plan from its inputs. The operator can perform mode
+and orientation optimization and check constraints on modes and orientations for a
+single conﬁguration in a mixed—initiative mode; this includes restricting the allowed
+set of modes and angles. The user can also generate a complete plan for a sequence of
+conﬁgurations. However, there was no requirement for the user to rearrange the order
+of conﬁgurations and reVise the plan. The EO—l application is fully automated.
+
+While all of the other applications have a more classical set of planning and schedul—
+ing constraints, including goal decomposition, time, and resources, SACE features only
+goal decomposition and temporal constraints. The goal decomposition constraints of
+all of the applications are very hierarchical in nature; all of the applications resem—
+ble scheduling problems more than classical planning problems. The table constraints
+in SACE are somewhat unusual When compared to the constraints present in other
+applications. They are conditional in the sense that “generic” actions (e.g., changing
+modes) are constrained by tables that depend on the conﬁguration, but since all of the
+conﬁguration information is present in the initial state, the applicable constraints can
+be calculated up—front and need not be recomputed during search. However, the lock—
+latch constraints are complex since, in general, they are functions of every element
+in every applicable table. The constraints handled by the EO—l planner and SPIKE
+are the closest to those handled by SAGE. The EO—l thermal duty cycle is akin to the
+longeron shadowing constraints addressed by SAGE, Whereas the pointing constraints
+are similar to the constraints on SARJ and BGA mode and orientation changes. SPIKE’s
+constraints are also quite complex, including time, resources, and task decomposition.
+In terms of size (number of scheduled activities), SACE is among the smallest of the
+missions, while SPIKE is likely the largest.
+
+The optimization problem that SACE must solve is more complex than that of most
+of the other applications. The Orbital Express and DCAPS problems have no explicit
+model of plan quality, but employ heuristics to try to maximize the number of activities
+scheduled. In MAPGEN, MAMM, and EO—l, plan quality is a function of the science
+value of scheduled activities, and this value is provided as part of the problem descrip—
+tion and is not subject to change by the users of the planning applications. SPIKE’s
+optimization incorporates weights derived from the types of constraints on proposals.
+In SAGE, the value of a mode and orientation is a complex function of each class of
+table constraint (power, structural load, environmental contamination, and longeron
+shadowing) and the entries in the tables. While we used an LP to solve for the weights
+of the ﬁnal form of the optimization criteria, the weights were computed once and not
+subject to change by the users. In this, SACE’s approach is closer to that used by SPIKE
+than many of the other applications. The schedule optimization criteria of MEXAR2
+is of similar complexity; while SACE combines all criteria into a single optimization
+ACM Transactions on Intelligent Systems and Technology, Vol. 2, No. 4, Article 41, Publication date: July 2011.
+
+"
+"22","41 :22 S. Y. Reddy et al.
+function, the MEXAR2 algorithm allows ﬂne—grained user control to address different
+aspects of the solution quality.
+
+SACE and MAPGEN both employ incomplete constructive search in order to control
+planning time. MAPGEN’s incomplete search may reject low—priority science goals in
+order to schedule higher—priority goals, while SAGE, in contrast, merges constraints
+in order to ﬁnd a common mode and orientation for consecutive conﬁgurations when
+there is not enough time to change modes between conﬁgurations. SACE’s incomplete
+search is also a direct implementation of the process used by ﬂight controllers. All
+of the other applications, in contrast, perform incremental—repair—based search. Both
+EO—l and SACE invoke external solvers to check some constraints after planning;
+the EO—l planner checks thermal and pointing constraints, while SACE checks power
+generation and longeron shadowing constraints. All of the other applications reason
+over explicitly modeled constraints in order to ﬁnd plans or schedules. The search for
+optimal solution for each conﬁguration in SACE is quite simple, being a brute—force
+search over a bounded number of choices of mode and orientation. In contrast to this, in
+the search for optimal solutions, the other applications employ sophisticated heuristics
+to trade objectives while satisfying constraints.
+
+5. CONCLUDING REMARKS
+
+This article has described the challenging task of automated planning and optimiza—
+tion of ISS solar array operations. The problem includes a wide variety of constraints
+and preferences, including temporal constraints, conditional constraints, and multi—
+ple weighted optimization criteria. EUROPA, an automated planning and scheduling
+toolkit, addressed this problem. The solution depends on a combination of built—in
+functionality as well as EUROPA’s extensibility. The resulting application, SAGE, re—
+duces the time it takes to produce solar array plans from weeks to hours by providing
+an end—to—end solution that starts with a timeline of ISS attitudes and events and
+automatically produces a solar array plan and a timeline of power availability.
+
+The EUROPA framework and NDDL language made parts of SACE quite straight—
+forward. NDDL’s timelines and state—based modeling framework were well suited
+to handling the causal and temporal aspects of the problem. EUROPA’s extensible
+framework made it easy to add the custom table constraints required by the problem.
+However, signiﬁcant work was needed to formalize the orientation and mode optimiza—
+tion problem correctly. As described in Section 3.3, parts of the optimization problem
+were complex enough that an LP was created for the sole purpose of determining
+how to weigh various aspects of the optimization criteria. The resulting complexity
+transcends that of optimization criteria found in other planning applications such as
+Do et a1. [2008]. Also, SACE did not extensively use EUROPA’s support for automated
+planning because of the nature of the orientation and mode optimization problem, as
+well as the constraints the ﬂight controllers placed on the search over all conﬁgurations
+(see Section 3.4). Speciﬁcally, only the most triVial “heuristics” are employed: optimize
+in chronological order, select the ﬁrst optimal orientation, and do not backtrack. These
+choices were not made to optimize performance, but because they conformed to the
+way that ﬂight controllers search for solar array plans.
+
+Parts of the solar array planning problem can be modeled using PDDL. The presence
+of temporal constraints and durative actions in the rules, and timed initial literals (the
+conﬁgurations arising from the ATL and TRTL span the planning horizon) requires
+at least PDDL 2.1 [Hoffmann and Edelkamp 2005]. The presence of the optimization
+criteria requires PDDL 3 [GereVini et a1. 2009], which allows expression of a plan—wide
+objective function expressed over states achieved in the plan. Since the objective is
+expressed over states, this would require expressing the LLC and table constraints
+as states. While this is possible, it may be less efﬁcient than the solution used by
+
+ACM Transactions on Intelligent Systems and Technology, Vol. 2, No. 4, Article 41, Publication date: July 2011.
+
+"
+"23","Planning Solar Array Operations on the International Space Station 41 :23
+EUROPA; as a practical matter, it would also require reformulating each table simply
+to create the PDDL representation of the domain.
+
+Throughout the process of creating SAGE, as is common in software development,
+requirements were continually reﬁned, and new requirements were added. For eX—
+ample, constraints that initially were assumed to be simple table constraints turned
+into complex calculations. The model—based nature of EUROPA has led to less devel—
+opment of new code compared to application—speciﬂc methodologies, since EUROPA’s
+rules language is ﬂexible enough to incorporate many of the desired changes. For eX—
+ample, metal shavings were discovered in one of the SARJs, requiring that the SARJ
+be turned as little as possible and be parked or locked otherwise. Due to the constraint—
+and model—based framework used in SAGE, this was straightforward to model.
+
+There are opportunities for future development of ISS array planning, and the more
+general problem of spacecraft power management. As noted previously, the conﬁgura—
+tion merging approach used in the planner is suboptimal, and could lead to a failure to
+ﬁnd a valid plan even though one eXists. While experience shows that the number of
+merges is small (typically 2 0r 3), it is worthwhile to undertake a study examining the
+discrepancy between optimal solutions and those found by the existing algorithm. The
+planning problem is tractable, suggesting that planning time can be further reduced.
+However, the resulting tractable algorithm may not meet all of the ﬂight controllers’
+needs, thus requiring discussion with the ﬂight controllers to bridge the gap between
+theory and practice.
+
+REFERENCES
+
+BRESINA, J., JéNSSON, A., MORRIS, R, AND RAJAN, K. 2005. Activity planning for the Mars exploration rovers.
+In Proceedings of the 15th International Conference on Automated Planning and Scheduling. S. Biundo
+et al. Eds, AAAI, Menlo Park, CA, 40—49.
+
+CESTA, A., CORTELLESSA, G., FRATINI, 8., AND ODDI, A. 2009. Developing an end-to-end planning application
+from a timeline representation framework. In Proceedings of the 218t Innovative Application ofArtificial
+Intelligence Conference.
+
+CESTA, A., CORTELLESA, G., DENIs, M., DONATI, A. , FRATINI, S., ODDI, A., POLICELLA, N., RABENAU, E., AND SCHULSTER,
+J. 2007. MEXAR2: AI solves mission planner problems. IEEE Intell. Syst. 22, 12—19.
+
+CHIEN, S., RABIDEAU, G., KNIGHT, R., SHERWOOD, R., ENGELHARDT, B., MUTz, D., ESTLIN, T., SMITH, B., FISHER,
+F., BARRET, T., STEBBINs, G., AND TRAN, D. 2000. ASPEN—Automated planning and scheduling for space
+missions operations. In Proceedings of the International Conference on Space Operations.
+
+CHIEN, S., TRAN, D., RABIDEAU, G., SCHAFFER, S., MANDL, D., AND FRYE, S. 2010. Timeline—Based space operations
+scheduling with external constraints. In Proceedings of the 20’:h I nternational Conference on Automated
+Planning and Scheduling (ICAPS’IO). R. Brafman et al. Eds, AAAI, Menlo Park, CA, 34—41.
+
+CHOUINARD, G., KNIGHT, R., J ONES, G., TRAN, D., AND KOBLICK, D. 2008. Automated and adaptive mission planning
+for orbital express. In Proceedings of the SpaceOps‘08 Conference.
+
+Do, M. B., RUML, W., AND ZHOU, R. 2008. Planning for modular printers: Beyond productivity. In Proceedings
+of the 18th International Conference on Automated Planning and Scheduling. J. Rintanen et al. Eds,
+AAAI, Menlo Park, CA, 68—75.
+
+FRANK, J. AND J éNSSON, A. 2003. Constraint—Based attribute and interval planning. J Constraints 8, 4, 339—
+364.
+
+FRATINI, S., PECORA, E, AND CESTA, A. 2008. Unifying planning and scheduling as timelines in a component-
+based perspective. Archiv. Control Sci. 18, 2, 231—271.
+
+FREUDER, E. 1982. A sufﬁcient condition for backtrack free search. J ACM 29, 1, 755—761.
+
+GEREVINI, A., HASLUM, P., LONG, D., SAETTI, A., AND DIMOPOULOS, Y. 2009. Deterministic planning in the Fifth
+International Planning Competition: PDDL3 and experimental evaluation of the planners. Artif. Intell.
+173, 619—668.
+
+GHALLAB, M. AND LARUELLE, H. 1994. Representation and control in IXTeT, a temporal planner. In Proceedings
+of the 2nd International Conference on AI Planning Systems. K. Hammond Ed., AAAI, Menlo Park, CA,
+61—67.
+
+HOFFMANN, J. AND EDELKAMP, S. 2005. The deterministic part of IPC-4: An overview. J ArtifIntell. Res. 24,
+519—579.
+
+ACM Transactions on Intelligent Systems and Technology, Vol. 2, N0. 4, Article 41, Publication date: July 2011.
+
+"
+"24","41 :24 S. Y. Reddy et al.
+
+JOHNSTON, P. AND MILLER, G. 1994. SPIKE: Intelligent scheduling of hubble space telescope observations. In
+Intelligent Scheduling, Morgan Kauffmann, San Francisco, CA, 391—422.
+
+J ONSSON, P. AND BACKSTROM, C. 1998. State-Variable planning under structural restrictions: Algorithms and
+complexity. Artif. Intell. 100, 125—176.
+
+JéNSSON, A., MORRIS, P., MUSCETTOLA, N., RAJAN, K., AND SMITH, B. 2000. Planning in interplanetary space:
+Theory and practice. In Proceedings of the 5th I nternational Conference on Artiﬁcial I ntelligence Planning
+and Scheduling. S. Chien et al. Eds., AAAI, Menlo Park, CA, 177—186.
+
+KNIGHT, R., SCHAFFER. 8., AND CLEMENT, B. 2009. Power planning in the international space station domain. In
+Proceedings of the 6th I nternational Workshop on Planning and Scheduling for Space.
+
+LARROSA, J. AND DECHTER, R. 2003 Boosting search With variable elimination in constraint optimization and
+constraint satisfaction problems. J Constraints 8, 3, 303—326.
+
+MUSCETTOLA, N., NAYAK, P., PELL, B., AND WILLIAMS, B. 1998. Remote agent: To boldly go where no AI system
+has gone before. Artif. Intell. 103, 5—48.
+
+SHRIVER, P., GOKHALE, M., BRILES, S., KANG, D., CAI, M., MCCABE, K., CRAGO, 8., AND SUH, J. 2002. A power-
+aware, satellite-based parallel signal processing scheme. In Power Aware Computing. R. Graybﬂl and R.
+Melhem Eds., Springer.
+
+SMITH, B. D., ENGELHARDT, B. E., AND MUTZ, D. H. 2002. The RADARSAT—MAMM automated mission planner.
+AIMag. 23, 2, 25—36.
+
+STANLEY, J., SHENDOCK, R., WITT, K., AND MANDL, D. 2005. A model-based approach to controlling the ST—5
+constellation lights out using the GMSEC message bus and Simulink. In Proceedings of the I nternational
+Conference on Software Engineering Research and Practice. H. Arabnia and H. Reza Eds., CSREA Press,
+Las Vegas, NV, 29—35.
+
+Received March 2010; revised February 2011; accepted March 2011
+
+ACM Transactions on Intelligent Systems and Technology, Vol. 2, N0. 4, Article 41, Publication date: July 2011.
+
+"

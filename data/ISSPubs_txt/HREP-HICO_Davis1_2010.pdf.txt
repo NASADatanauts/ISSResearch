@@ -1,0 +1,137 @@
+"","x"
+"1","Data Processing and First Products from the Hyperspectral Imager for the Coastal
+Ocean (HICO) 0n the International Space Station
+C.O. DaVisa*, R. A. Arnoneb, R. Gouldc, M.R. Corsond, and M. Montese
+81Oregon State University, Corvallis, OR, USA - cdavis@coas.oregonstateedu
+bU.S. Naval Research Laboratory, Oceanography Division, Stennis Space Center, MS - arnone@nr1ssc.navy.1ni1
+CU.S. Naval Research Laboratory, Oceanography Division, Stennis Space Center, MS - gould@nrlssc.navy.mi1
+dU.S. Naval Research Laboratory, Washington, DC, USA — mike.corson@nrl.navy.1ni1
+eU.S. Naval Research Laboratory, Washington, DC, USA — marcos.1nontes@nr1.navy.1ni1
+Abstract — The Hyperspectral Imager for the Coastal schedule of this space mission including using Commercial
+Ocean (HICO) was installed on the International Space Off—The-Shelf (COTS) components where possible. HICO
+Station on September 24, 2009. HICO is the ﬁrst was built in 16 months by the Naval Research Laboratory
+spaceborne hyperspectral imager optimized for and was completed in July 2008 and integrated into the
+environmental characterization of the coastal zone. HICO and RAIDS Experimental Payload (HREP) in
+HICO data are collected and processed to produce August 2008. HICO was integrated, launched and ﬂown
+maps including coastal bathymetry, bottom with support from and under the direction of the DoD
+characteristics, and water column optical properties. Space Test Program. HREP was launched on the Japanese
+Here we describe the HICO data processing system and H-2 Transfer Vehicle (HTV) September 10, 2009. The
+give examples of HICO products. HTV rendezvoused with the 188 on September 17, 2009.
+HREP was installed on September, 24, 2009 and the ﬁrst
+Keywords: hyperspectral, coastalremote sensing, space HICO imagery was collected on September 25, 2009.
+HICO is operating normally and Image quality is excellent.
+A companion paper in this volume by Corson et a1.
+1. INTRODUCTION discusses the HICO imager and its performance. Here we
+give an overview of the data handling and processing and
+The coastal ocean is a very complicated environment we present example results for coastal regions and river
+containing high levels of phytoplankton, suspended and mouth areas.
+dissolved organic matter, suspended sediments with various
+bottom types and depths, all of which can vary signiﬁcantly 2. HICO DATA PROCESSING SYSTEM
+on scales of tens to hundreds of meters. While
+multispectral ocean color imagers with 1 - 4 kilometer HICO is a demonstration sensor and data is collected for
+spatial resolution are excellent for imaging the open ocean particular study areas, from a target list compiled by NRL
+the coastal ocean requires higher spatial sampling and personnel with input from Navy, university, and
+multispectral data generally does not contain sufﬁcient international partners. The standard HICO scene is 42 X
+information to quantify and characterize the coastal 192 km and a maximum of one scene is collected on each
+environment (Davis et a1. 2007). Over the past two decades, 90 minute orbit. Data requests are compiled by NRL and
+hyperspectral imaging from aircraft platforms has sent to the 188 by NASA for execution. Data is transmitted
+developed as a powerful method of characterizing the from the 188 to NASA Marshall Space Flight Center and
+coastal environment. A hyperspectral imager records a then transferred to NRL in Washington DC (NRL-DC) for
+contiguous spectrum of the light received from each pixel processing. The initial processing from level 0 (raw data)
+in the scene, and this extra spectral information is exploited to level 1b (calibrated radiances with geolocation
+to produce the desired maps of bathymetry, water information) includes dark current subtraction, CCD smear
+constituents, and other coastal properties (Goetz, et a1. correction, 2rld order correction, spectral calibration and
+1985; Davis et a1. 2006). radiance calibration (Fig. 1). The calibrated data are then
+sent to NRL Stennis Space Center (NRL-SSC) for further
+The Hyperspectral Imager for the Coastal Ocean (HICO) processing using the NRL SSC Automated Processing
+(Corson, et a1. 2005) is the ﬁrst spaceborne imaging System (APS). APS was developed for processing
+spectrometer designed speciﬁcally to sample the coastal SeaWiFS, MODIS and other multispectral ocean color data.
+ocean. HICO wi11 sample selected coastal regions at It ingests level 1b data and produces a wide range of
+approximately 90 In with full spectral coverage (400 to 900 standard products. APS was modiﬁed in two fundamental
+nIn sampled at 5.7 nm) and a high signal-to-noise ratio to ways to process HICO data: the capability to ingest full
+resolve the complexity of the coastal ocean. HICO is hyperspectral data cubes was added, along with the
+sponsored by the Ofﬁce of Naval Research as an Innovative capability to apply hyperspectral algorithms to make a
+Naval Prototype (INP), and will demonstrate coastal variety of products from that data. Thus, APS HICO has
+products including water optical properties (absorption and two processing lines: one for making standard APS
+scattering coefﬁcients), bottom types, and bathymetry and products from HICO data convolved to multispectral bands
+on-shore vegetation maps. As an INP, HICO also and one for exploiting the full hyperspectral data. Using
+demonstrates innovative ways to reduce the cost and the multispectral line HICO data is binned spectrally to
+* Corresponding author. Postal address: Oregon State University, 104 COAS Administration Building, Corvallis, OR,
+97331, USA. Telephone: (541)737-5707. FAX: (541) 737-2064.
+Proceedings Oceans from Space Symposium, Scoula Grande di San Giovanni Evangelista, Venice, Italy,
+26-30 April 2010, JRC European Commission, EUR24324 EN-2010, pp 73-74.
+
+"
+"2","simulate MODIS data and then processed to produce all the we have not previously developed automated processing for
+standard MODIS products but at 90 In ground sample hyperspectral ocean color data. The hyperspectral
+distance (GSD) instead of the MODIS 1 km GSD. This is processing branch includes several options for atmospheric
+important in coastal areas were the tides, diurnal winds, correction and product production. Additionally, the
+river outﬂow and bottom features create complex patterns calibrated hyperspectral image cube is available and that
+in the coastal ocean (Fig. 2). data is being used at NRL, OSU and other universities and
+laboratories for developing new hyperspectral algorithms.
+The Hyperspectral processing is more experimental. As
+HICO is the ﬁrst ocean color hyperspectral sensor in space
+L IN — L el 1!)-
+:>- :>- ~
+Vicarious
+Calibration
+Cdlblatlon
+.'
+Senootbands
+WDIS
+KRIS
+OCM
+SQWIFS
+£11933: LL: :43 A_LLC C‘ 39—: #:l Atmospheric
+_ 11112111 ';'.‘-.1T.;- _,'z‘ |V""—‘-""‘-'1:1;1:.11:'b Correction
+LWCIZC: .1] 1-H] ‘ IIVAJ'iI‘ .- NM “ \lli‘Ilrl'u- HM MethOdS
+u l ‘
+“9,3,th —_
+Products
+, W
+0“, s ‘22:"", u magma: A‘
+MM“ 0cm“ WW“. I I I
+Bb.b.CIIL dc Etc
+(12» m m
+—
+“ _-
+Fig. 1. Flow diagram for the HICO data processing system. The initial processing from Level 0 to 1b (blue boxes) is done at NRL-DC. The
+remaining processing is done in APS at NRL-SSC. The multispectral processing line (pink boxes) is used to produce MODIS like products
+at 90 m GSD. The Hyperspectral processing line (purple and green boxes) uses multiple approaches for atmospheric correction and product
+production to test and evaluate new approaches to take advantage of the full spectral data. Level three and higher processing (geolocation,
+binning, remapping, etc.) is then done to both data types.
+Figure 2 is an image of the Florida Keys near Key Largo
+3. EXAMPLE HICO PRODUCTS showing some of the products produced with the
+multispectral HICO processing in APS. We continue to
+"" "" ‘ test and validate new products from HICO particularly for
+3""“ . the full hyperspectral data.
+.13 4. CONCLUSION
+' .-#_ The Hyperspectral Imager for the Coastal Ocean
+. ._.- demonstrates the ability to produce coastal environmental
+' products from spaceborne imagery. HICO and its products
+. '. are pathﬁnders for future operational systems.
+REFERENCES
+‘ Davis C.O., K.L. Carder, B.-C. Gao, Z.P. Lee, and W.P.
+i Bissett (2006). “The development of imaging spectrometry
+of the coastal ocean”. IEEE Proceedings of the
+International Geoscience and Remote Sensing Symposium,
+4, pp. 1982-1985.
+| Radlance ] | :hl_n2 | ““4an Davis, C. 0., M. Kavanaugh, R. Letelier, W. P. Bissett, and
+_ _ _ D. Kohler, (2007). “Spatial and spectral resolution
+1121?;- 2- ExaénpleLAPS prgdncts frorn afHICO niage Ofth: Florida considerations for imaging coastal waters”. Coastal Ocean
+nsgiegiirat ti: b21311 nentatlon ls mm sout WCSt at t 6 mp to Remote Sensing, edited by R. J . Frouin and Z. P. Lee, Proc.
+' of. SPIE V01. 6680, 66800P, pp. 1-12.
+
+"
+"3","Goetz, A. F. H., Vane G., Solomon J., and Rock B. N.,
+(1985). “Imaging spectrometry for Earth remote sensing”.
+Science, vol. 228, pp. 1147—1153.
+
+Corson, M. R., D. R. Korwan, R. L. Lucke, W. A. Snyder
+and C. 0. Davis (2008). “The Hyperspectral Imager For
+The Coastal Ocean (HICO) On The International Space
+Station”. IEEE Proceedings of the International Geoscience
+and Remote Sensing Symposium, 978-1-4244-2808-3/08.
+
+"
+"4",""

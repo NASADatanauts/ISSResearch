@@ -1,0 +1,424 @@
+"","x"
+"1","diffraction structural biology
+JOW' 0f Numerical model of protein crystal growth in a
+Synchrotron . . . . . .
+Radiation diffuswe flEld such as the micrograVIty enVIronment
+ISSN 0909-0495
+Hiroaki Tanaka,a* Susumu Sasaki,b Sachiko Takahashi,al Koji lnaka,C Yoshio Wada,“l
+Received 1 July 2013 Mitsugu Yamada,“l Kazunori Ohta,“l Hiroshi Miyoshi,“l Tomoyuki Kobayashi“l and
+Accepted 13 August 2013 Shi k- K - - h-d
+ge I amlgalc I
+aConfocal Science Inc., Hayakawa 2nd Building 7F, 2—12—2 Iwamoto—Cho, Chiyoda—ku, Tokyo
+101—0032, Japan, |C’Neo Force, 5—9—14—403 Tsurumaki, Setagaya—ku, Tokyo 154—0016, Japan,
+CMaruwa Foods and Biosciences Inc., 170—1 Tsutsui—cho, Yamatokoriyama, Nara 639—1123, Japan,
+and dJapan Aerospace Exploration Agency, 2—1—1 Sengen, Tsukuba, Ibaraki 305—8505, Japan.
+E—mail: tanakah@confsci.co.jp
+It is said that the microgravity environment positively affects the quality of
+protein crystal growth. The formation of a protein depletion zone and an
+impurity depletion zone due to the suppression of convection ﬂow were thought
+to be the major reasons. In microgravity, the incorporation of molecules into a
+crystal largely depends on diffusive transport, so the incorporated molecules will
+be allocated in an orderly manner and the impurity uptake will be suppressed,
+resulting in highly ordered crystals. Previously, these effects were numerically
+studied in a steady state using a simpliﬁed model and it was determined that the
+combination of the diffusion coefﬁcient of the protein molecule (D) and the
+kinetic constant for the protein molecule (,6) could be used as an indeX of the
+extent of these depletion zones. In this report, numerical analysis of these
+depletion zones around a growing crystal in a non-steady (Le. transient) state is
+introduced, suggesting that this model may be used for the quantitative analysis
+of these depletion zones in the microgravity environment.
+Keywords: microgravity; transient and homogeneous field; transient and diffusive field;
+protein crystal; numerical model; protein depletion zone; impurity depletion zone.
+1. Introduction The PDZ and IDZ in microgravity in the steady and
+diffusive states have been analyzed and discussed (Tanaka et
+Protein crystal growth experiments are a promising area in 611., 2004). A steady state occurs when there is a constant
+the usage of microgravity to contribute to structural biology concentration of the protein in a solution far from a growing
+(McPherson, 1999; Littke & John, 1986; Kundrot et al., 2001; crystal. The diffusive state occurs when the molecules diffuse
+Vergara et aL, 2003). When protein molecules are taken into a in a convection-free environment. We have compared the
+crystal, aspherical area of low protein concentration is formed extent of PDZ and IDZ formation in steady and diffusive
+around the growing crystal. In the terrestrial environment, a states with the formations in steady and homogeneous states
+density-driven ﬂow occurs to supply protein molecules to the and discussed how the PDZ and IDZ affected protein crystal
+low concentration area, disturbing this area. However, in growth in microgravity (Tanaka et al., 2004; Inaka et al., 2012).
+microgravity, this density-driven ﬂow does not occur, so the However, in reality, the process of crystal growth in a
+protein molecules are supplied to the crystal only by thermal conventional protein crystal growth experiment occurs in a
+diffusion caused by Brownian motion. Therefore, the low non-steady transient state, decreasing protein concentration in
+protein concentration area around the growing crystal is the solution as the protein molecules are incorporated into the
+maintained, resulting in the formation of a protein concen- crystal. Therefore, it would be valuable to have the ability to
+tration depletion zone (protein depletion zone, PDZ). The employ a mathematical model corresponding to the transient
+PDZ helps grow the crystal at a low supersaturation (Chernov, state to know under what conditions the crystals really grow
+1998; Otalora et aL, 2001), eventually suppressing the disorder and how much impurity is taken into the crystals, quantita-
+of protein molecules in the crystal. Following similar steps as tively.
+the protein molecules, a low-impurity concentration area Here we introduce a rather simple numerical calculation
+around the growing crystal (impurity depletion zone, IDZ) is model for expressing the transient state. We can compare the
+formed (Chernov, 1998; Thomas et al., 2000), also suppressing transient and homogeneous state (terrestrial gravity) with the
+crystal disorder. transient and diffusive state (microgravity), and propose that
+1. Synchrotron Rad. (2013). 20 doi:10.1107/50909049513022784 1 of 7
+
+"
+"2","diffraction structural biology
+this model can be applied to the examination of the process of X i(t) = 471R(1f)2 ,Bi Ci(t) dt, (5)
+protein crystallization both in microgravity and terrestrial
+environments, quantitatively. where ,Bi is the kinetic constant of the impurity molecule and
+Ci(t) is the impurity concentration on the surface of the crystal
+at time t.
+2. Calculation model
+2.1. Model of the field around a growing crystal 2.2. Transient and homogeneous model and transient and
+, , , diffusive model
+There are many kinds of crystallization methods such as the . .
+vapour-diffusion method, dialysis, and the counter—diffusion In the trans1ent and homogeneous model (THM) Whleh
+method etc. In our calculation model for simplicity we represents crystal growth in the terrestrial environment, the
+assume the batch method is used to crystallize protein because concentration ef the protein in the solution around the
+in this method the precipitant concentration and protein gr0w1ng crystal is uniform and the sum of the total amount of
+solubility do not change from the beginning to the end of the protein in the solution and in the crystal is constant.
+crystallization. As for the nucleation, we assume that all nuclei Therefore the concentration Of the protein SOhlheh during
+start growing simultaneously and the ﬁnal size of the crystal is crystal growth can be expressed as
+the same for all crystals. In this model, we assume that crys- 3 3 3 3
+tallization occurs in a Virtual sphere of radius L as shown in C(t) _ [C(O)L _ R(t) n]/ [L _ R(t) ] (6)
+Fig. 1 ancl that the shape of the crystal is a sphere With a radius Substituting (6) in (3),
+of R to Simplify the calculation.
+When the ﬁnal size of the crystal is R(oo), dR(t)/dt : (18/71){[C(0) _ Ce] L3 _ (n _ Ce)R(t)3}
+3
+L3 = {(n — Ce)/[C(0) — Ce]}R(oo) , (1) /[L3 — R(rf‘]. (7)
+where .C(0) and C6 are the protein concentration.at .the Therefore, the crystal radius can be obtained from the re-
+beginning and at . the encl (SOIUblhtY) Of crystallization, peated calculation of (7) using the difference equation
+respectivelyiand n is the weight (lens1ty 0f the crystal. (Tan ak a et a 1., 2004),
+The veloc:1ty of crystal growth is (Chernov, 1998)
+dR(t)/dt = ,Bw[C(t)’ — Ce’], (2) R(r + At) = R(t) + (ﬂ/n)({[C(0) — Ce]L3 — (n — Ce)R(t)3}
+where C(t)’ is the number of protein molecules in a unit of /[L3 — R(t)3])At. (8)
+volume (1/cm3) at time t after crystallization has occurred, Ce’
+is thenumber. ef protein molecules in e ”hit 0f.V0lume at the Considering the total amount of the impurity in the solution
+protein SOthlhty concentration and :8 is the klhehe constant and in the crystal is constant, the concentration of the impurity
+of a protein molecule. 0) is the volume for one molecule and in the solution can be obtained by the following equation,
+can be deﬁned as w = M/(nNA), where M is the protein
+molecular weight and N A is Avogadro’s number. Ci(t + At)471[L3 — R(t + A133] /3 =
+For experimental purposes we usually express concentra- . 3 3 .
+
+. ’. . Cll‘47TL—Rl‘ 3—th. 9
+tion as weight per volume at time t, C(t). Therefore, C(t)’ 1s 0 [ 0 ]/ 0 ( )
+expressed as C(t)’ = C(t)NA/M; (2) is
+replaced with (Tanaka et 611., 2004)
+
+i - Virtualfull 3 here
+dR(t)/dt = ,8[C(t) — Ce]/n. (3) t‘ 9
+Therefore, the weight of protein
+attaching to a crystal surface in an iota ‘ 0
+of time is ‘
+X(t) = dV(t)n 2 mm)2 dR(t) n ' "" CWSta'
+= 471R(t)2,8[C(t) — Ce] dt, (4)
+where V(t) and R(t) are the volume and
+the radius of crystal at time t, respec- Virtual sphere .
+. (a) (b) sectioned concentrically
+tively. by N
+When an impurity contaminates the Figure 1
+solution, and if the impurity attaches to The conceptual conﬁguration of the numerical model for crystal growth. (a) In actual crystallization,
+the surface of the crystal at a ﬁxed ratio several crystals are grown in a solution. ([9) To simplify this process for the model, a crystal is
+- - - assumed to grow spherically in a Virtual sphere, of which the radius, L, is related to the amount of
+aml the reverse meetmn 1S lghored’ the the protein uptake into the crystal [see equation (1)]. To accommodate the diffusive process, the
+welght 0f the Impurlty attachlng t0 the area between the surface of the crystal and the Virtual sphere are sectioned concentrically by N. The
+crystal surface in an iota Of time is diffusive processes are considered to occur between the inner section and outer section.
+2 Of 7 Hiroaki Tanaka et al. - Numerical model of protein crystal growth in a diffusive field ]. Synchrotron Rad. (2013). 20
+
+"
+"3","diffraction structural biology
+Substituting (5) into (9), the impurity concentration in the The process of the calculation for one time step of the
+solution can be obtained from the repeated calculation of the repeated calculation of the difference equation is the
+difference equation below, following:
+
+_ _ 3 3 2 _ _ (i) Calculate the crystal growth: based on (3), we can
+
+C10 + At) : {Cl(t)[L _ R(t) ] _ 3130) ,6; Cl(t)At} calculate the increase of the crystal radius by the following
+/[L3 — R(t + A03]. (10) equation.
+On the other hand, in the transient and diffusive model ARC) : ({ﬂ[C(1, t) _ C6]}/”)At’ (16)
+(TDM) Whieh represents the microgravity environment, we Where C(i, t) is the concentration of the protein in the ith
+have to consider both the diffusion process in the Virtual section at time t; and the radius after one time unit At is
+sphere of radius L and the crystal growth process in the centre
+of the Virtual sphere. The three-dimensional diffusion equa- R(t + At) 2 ARC) + RU)‘ (17)
+tion is 8C/8t = DVZC, bUt in the case Of spherical coordinates (ii) Calculate the protein concentration of the ﬁrst section
+the partial differential equation is Which contacts With the growing crystal: considering (12), the
+_ 2 2 protein concentration of this section is affected by its
+8C(r, t)/8t _ D{8 C(r, t)/8r adsorption onto the crystal surface and by the diffusive mass
++ (2/ r )[8C(r ’ 0W1}- (11) transfer from the next section. For the ﬁrst process, the
+. . f 11 ' 1 ' ' , ' h f '
+This can be applied to the area between the surface of the O .OWIhg re ation is conserved $111.06 t e amount 0 protein
+. . Wthh 1s adsorbed on the crystal is equal to the decreased
+crystal and the Virtual sphere of radius L. For the outer . .
+. . . . amount of it from the section,
+boundary Where r is equ1va1ent to L, no-ﬂux 0f the material is
+assumed. For the boundary conditions 011 the surface of the [(471{[R(t) —|— Ar(t)]3 — [R(t) —|— AR(t)]3}) /3]C 1(1, t —|— At)
+crystal, the process of the crystal growth is : (471{[R(t) + Ar(t)]3—R(t)3}/3) C(1 t)
+
+D[8C(r, r)/8r]lr=R(t) = {n — C[R(t), t]} dR(t)/dt, (12) — (471{[R(t) + AR(t)]3 — R(t)3}/3)n, (18)
+Where C(r, t) is the protein concentration at the position of r Where C T(1, t + At) iS the concentration Of the protein in the
+from the centre of the Virtual sphere at time t. The diffusion ﬁrst section after time At With the protein adsorption occur-
+equation for impurities is the same as that for protein, as ring in the ﬁrst section.
+shown below With similar boundary conditions, For the second process, the following difference equation is
+
+_ _ 2 _ 2 derived from (11) neglecting the diffusion from the inner
+8Cz(r, t)/8t = Dz[8 Cz(r, t)/8r section,
+2 8C' , t 8 , 13
+H M l” V r] ( ) Ct(1,r+ At) = [C(2,t) — C(1,t)]DAt/Ar(t)2 + C(1,t).
+and the process of the impurity uptake into the crystal is (19)
+Di[8Ci(r, t)/ar]|r=R(t) : Ci[R(t), t][,6i — dR(t)/dt], (14) Therefore, combining these two processes, the protein
+concentration of the ﬁrst section can be expressed as
+Where Ci(r, t) is the impurity concentration at the position of r t 3 3
+from the centre of the Virtual sphere at time t. C (1’ t + At) 2 HR“) + ARCH _ R(t) ”Ca, 0 _ n]
+To solve these partial differential equations numerically, it / {[R(t) + Ar(t)]3 — [R(t) + AR(t)]3}
+is common to d1V1de a sphere alohg a radius inte the same + [C(2, t) _ C(1, 01D A t/ Ar(t)2 + C(1, t).
+intervals to apply difference equations. However, in the case
+of a growing crystal, the sections are adsorbed into the crystal (20)
+one after another: We may include a cenditional judghient 011 (iii) Calculate the diffusive protein transfer between the
+Whether the sections are. embedded 1h the crystal lhte the surface of the crystal to the surface (1' = 2 to N) of the Virtual
+partial differential equation. It has been found that these sphere: the difference equation for this process is derived
+calculations may result in intolerant errors caused by the from (11),
+discontinuity of the protein concentration 011 the surface of t _ _ _ 2
+the crystal When the section is incorporated into the crystal. C (l, t + At) : [C(l _ 1, t) _ C(z, t)]D [At/Ar(t) ]
+Therefore, we divide the sphere into N sections With a x {[r2 — 2rAr(t)]/r2}
+variable length,.Ar(t), from the surface. of the crystal to the + [C(i + 1, t) _ C(i, 01D A t/ Ar(t)2
+surface of the Virtual sphere Whose radius is L and examine _
+the diffusion in those sections. If the crystal radius is R(t) at + C(l’ 0' (21)
+time t, (iV) Calculate the impurity concentration of the ﬁrst section
+Ar(t) : [L _ R(t)]/N. (15) Which contacts With. the growihg crystal: censidering (14), the
+protein concentration of this section is affected by its
+The section number i (i = 1, 2, 3, . . . , N) is placed between two adsorption onto the crystal and by the diffusive mass transfer
+spheres Whose radii are R(t) —|— (i — 1)Ar(t) and R(t) —|— iAr(t). from the next section. For the ﬁrst process, the following
+]. Synchrotron Rad. (2013). 20 Hiroaki Tanaka et al. - Numerical model of protein crystal growth in a diffusive field 3 Of 7
+
+"
+"4","diffraction structural biology
+relation is conserved, since the amount of the impurity which Table 1
+is adsorbed on the crystal is equal to the decrease Of it from Initial parameters for the calculation of the homogeneous and the
+. d1ffus1ve models.
+the section, —
+Crystallization R(oo) Ce ,6 D n
+(471{[R(t) —|— Ar(t)]3 — [R(t) —|— AR(t)]3} / 3) Cil(1, t —|— At) condition (mmﬁ (mg 1111—1): (mm 11—1) (1111112 11—1) (g C111—3)
+= (471{[R(t) + Ar(t)]3 _ R(t)3}/3)Ci(1, t) _ Xi(t), (22) Salt§ 0.46 4.55 0.34 0.360 0.79
+- - - - - - - - T Avera e of the ﬁnal size of the cr stal radius. 1 Avera e of the ﬁnal rotein
+WhCTC Cl(l’. 0 IS thC COHCCHtI'aUOIl Of thC Impunty 111 thC lth concentrition. § 20 mg ml‘1 puriﬁed lillsozyme, 0.7M sodiumihloride, 50 mM Sodium
+section at time t, and Cil(1, t —|— At) is the concentration of the acetate pH 4.5.
+impurity in the ﬁrst section after one time unit At.
+For the second process, the following difference equation is 00 t + At) _ (Cil(i +1 t + AQHRU + A t) +1. A“ t + A 013
+derived from (13) neglecting the diffusion from the inner ’ _ ’
+section, — [R(t) —|— iAr(t)]3}
+. . . 3
+Cit(1, r + At) = [Ci(2, r) — Ci(1, t)]DiAt/Ar(t)2 + CW1, ‘ + A0013“) + INCH
+4 c111,». (23) — [R0 + 4r) + (i — 1W0 + 4013))
+Therefore, by combining these two processes the impurity / {[R(t -|— At) —|— iAr(t-|— A0]3
+concentration of the ﬁrst section can be expressed as _ [R(t + Ar) + (i _ 1) Ar(t + At)]3}. (28)
+Cil(1, t —|— At) = ({[R(t) —|— AR(t)]3 — R(t)3}Ci(1, t) The calculation program was created in Microsoft C++ and
+2 was executed in Windows 7 or Windows XP. N was deﬁned as
+— 313(1) 131C109 0A1) 240 and At as 2 X 10‘5 (h). The repeated calculation for t =
+1000 (h) took about 1500 s with a conventional desktop PC.
+Rt A t3—Rt ARt3
+/{[ O + r( H. [ ( ) + ( )2] } After the calculation was ﬁnished, the calculated ﬁnal crystal
+4’ [Cz(2, 1) — C10, OlDlAt/AFU) size was almost the same as that we actually obtained
++ Ci(1, t). (24) (:l: 0.02%). Therefore, we concluded that the program ran with
+satisfactory precision for the comparison of crystal growth in
+(V) Calculate the diffusive impurity transfer between the space and on the ground.
+surface of the crystal to the surface of the Virtual sphere: the
+difference equation for this process is derived from (13),
+T 3. Lysozyme crystal growth in THM and TDM
+C""t AtzC""—1t—C'1 . .
+l (l’ + ) [ 1(1 ’ ) :( ’20] 2 3.1. Parameter calculatlons based on experlment results
+X Dz[At/Ar(t) ll” _ 2r Ar (t)]/ r 2 To use some realistic parameters, we referenced lysozyme
++ [Ci(i + 1, t) — Ci(1, 1)]DiAt/AFU) crystallization using the batch method. Puriﬁed lysozyme
++ Ci(1, t). (25) (20 mg ml_1) was crystallized using 0.7 M sodium chloride as a
+precipitant in 50 mM sodium acetate pH 4.5. The ﬁnal size of
+(Vi) Re-sectioning the sphere: after the crystal has grown the crystal [R(oo)] and the ﬁnal protein concentration in the
+during one time unit At, each SBCtiOH moves slightly to the solution (Ce) were measured, and the kinetic constant of the
+outer position. Therefore, we re-diVide the sphere into N protein molecule (,6) and the diffusion coefﬁcient of the
+sections with variable length AFC + At), protein molecule (D) were estimated as shown in Table 1
+Ar(t + At) = [L _ R(t) _ AR(t)]/N. (26) (Tanaka et al., 2012).
+The concentration of the new section, whose number is i, is 32' Lysozyme crystal growth in THM and TDM
+expressed as C(i, t —|— Ar), and can be calculated by considering The time course of lysozyme crystal growth is shown in
+the conservation of the amounts Of the protein and the Fig. 2(a). The solid line is for THM obtained from the repe-
+impurity, tition of calculation (8) and the dotted line is for TDM
+. T . . 3 obtained from the repetition of calculation of equations (16),
+C(z, t “|— At) = (C (1+ 1, t “l“ AQHRU “|— At) “|— lAFU “|— A0] (17), (20), (21), (26) and (27). This ﬁgure indicated that the
+_ [R(t) + iAr(t)]3} crystal growth in TDM 1s a little slower than in THM. This
+T . . 3 might suggest that, in the case of THM, the fast uptake of the
+‘l' C (z,t ‘l' AOHRU) +1Ar(t)] protein molecules into the crystal was accelerated by the
+—[R(t + Ar) + (i— 1) Ar(t + At)]3}) transportation of protein niolecules toward the crystal by
+convection ﬂow. However, in the case of TDM, the PDZ
+/{[R(t—|— At) +iAr(t—l— A0]3 deprived the protein molecules from around the growing
+_ [R(t + Ar) + (i _ 1) Ar(t + A 013}, (27) crystal and only the diffusive ﬂow could .deliver protein
+molecules to the crystal, so it kept the protein concentration
+4 Of 7 Hiroaki Tanaka et al. - Numerical model of protein crystal growth in a diffusive field ]. Synchrotron Rad. (2013). 20
+
+"
+"5","diffraction structural biology
+0'5 --'—— 2° 1 ' i . 4 I
+‘ I
+AO.3 I G ‘ A ‘ss‘
+ElI-I-éw ... v» .1.
+0 5 ——- . 1 . . . s.
+0.1 ‘ ‘ [ [ “x
+w
+7....- .n___._._, o .- - - .
+0 40 80 120 160 200 0.0 0.1 0.2 0.3 0.4 0.5
+0 40 80 t (h) 120 160 200 t (h) R (mm)
+Figure 2 (a) (b) (C)
+Calculated results of the lysozyme crystal growth in the salt condition in the homogeneous (solid line) and diffusive (dotted line) model in the transient
+state. (a) Time course of the crystal growth. (19) Time course of the protein concentration on the crystal surface. (c) Supersaturation level around the
+growing crystal. R(t), R: radius of the crystal (mm); C(t): concentration of the protein on the surface of the crystal (mg ml‘l); C(R): supersaturation level;
+t: time after the crystal starts growing.
+around the surface of the crystal lower than in THM and At the end of crystal growth, the supersaturation level was the
+caused slower crystal growth. same as the protein solubility both in THM and TDM.
+Since X-ray diffraction intensity depends on the volume of
+3.3. Average protein supersaturation level the protein molecules in a crystal (McPherson, 1999), the
+The de ree 0f su ersaturation 0n the surface of the cr stal quality Of an X-ray diffraction image may depend on the
+g p y 't tdd'ff t' ' bt' df t' 1
+while it is growing is deﬁned as in egra e 1 rae ion images 0. aine mm a cer a1n V0 time
+of the crystal Wthh was grown in changeable supersaturation.
+C(R) : [C(R) _ Ce]/Ce, (29) Therefore, as a quantitative index of supersaturation, the
+average supersaturation level (ASS) was deﬁned as the inte-
+where C(R) is the concentration of the protein on the surface grated ‘7 as the crystal grew, averaged by the total volume,
+of the crystal when the crystal radius is R. It is said that the ( )
+. . . . R 00
+quality of thecrystal, indexed .by the X-iay diffraction reso— ASS : (1 /V) f C(R) dV, (30)
+1ut10n,m0saicity and/or Rmerge, is better 1f1t grows at the lower R20
+supersaturation (McPherson, 1999) although dependency of
+those on C(R) has not been veriﬁed yet. To know the super— where C(R) is the degree of supersaturation at the surface of
+saturation level on the surface of the crystal while it is the crystal when the crystal radius is R.
+growing, the time course of the protein concentration on the To compare the ASS within one crystal, the crystal was
+crystal surface was calculated as shown in Fig. 2(b). The solid divided into three sections by volume from the centre of the
+line is for THM obtained from equation (6) and the dotted line crystal. The radius of the inner third of the crystal is 69.3% of
+is for TDM obtained from equation (27). Figs. 2(a) and 2(b) R(oo), the middle 87.4%, and the outer 100%. ASS in THM
+were combined to create Fig. 2(c) using equation (29). The and TDM are shown in Fig. 3(a). The ASS for a full sphere in
+solid line and dotted line are for THM and TDM, respectively. THM was 1.73 and in TDM was 1.50 which was about 87% of
+It was found that the supersaturation level was high in the that of the THM. In each third of the crystal volume, TDM
+centre of the crystal and gradually became lower toward the was lower than THM. These ﬁndings are consistent with the
+surface of the crystal. Over the full range of crystal growth, the estimations obtained by former analyses using the steady state
+supersaturation level was slightly lower in TDM than in THM. model (Tanaka et al., 2004; Inaka et al., 2012).
+3 ‘E‘ 30 _—,_—_
+b 1
+g 2.5 — ‘i ""— ITHM 7 g 25 --+—- —- ITHM —-
+9 5
+.5 2 —. — ITDM _i ‘5 20 -, ___ITDM _.
+25 e |
+a 1.5 --- -» - - — § 15 -. ,
+‘2“ 8 L
+g 1 --- ._ -— -- -- 4 g 10 —~
+3 a I
+g) 0.5 ~— —— —- , ,_. ,g 5 7
+< fullsphere ' inner middle outer g fullsphere i inner middle I outer
+D=0.36 mmZ/h, beta=0.34, C(0)=20 mg/ml Di=0.36 mmZ/h, Bi=3.4 mm/h, Ci(0)=0.2mg/m|
+(a) (b)
+Figure 3
+(a) Average supersaturation level, and (19) average impurity concentration in each section for crystallization of puriﬁed lysozyme.
+]. Synchrotron Rad. (2013). 20 Hiroaki Tanaka et al. - Numerical model of protein crystal growth in a diffusive field 5 Of 7
+
+"
+"6","diffraction structural biology
+3.4. Average impurity concentration 0.20 ._. 7 __, 120 --- -
+As for impurity, it is not realistic to L 100 ‘
+qualify and quantify the impurity 0'15 E 30 -_---
+molecules in a protein solution. There- E n‘--- E 60 ;.\ ‘ -
+fore, we assumed a contaminating €0.10 n -- g x -
+impurity, whose initial concentration, gm ‘ . 6 4° --““
+Ci(0), was 1% of that of the protein, IL .- 20 --‘§—-
+C(0), with a diffusion coefﬁcient, Di, the 0.00 “ ~ ‘ 0 ~
+same (0.36 mm2 h—l) as that of the 0 40 80 W) 120 160 200 0.0 0.1 0.2R(mm()).3 0.4 0.5
+protein, D, and a kinetic constant, ,Bi, ((1) (b)
+ten times (3.4 mm h‘l) as large as that Figure 4
+0f the protein 1300i was equal to D Calculation results of the impurity concentration in salt conditions in the homogeneous (solid) and
+b e C an S e W e a S S u m e d that the m 01 e cul a r diffusive (dotted) model in the transient state. (a) Time couise 0f the impurity concentration on the
+. . . . crystal surface. ([9) Impurlty concentratlon around the gr0w1ng crystal. R. radlus 0f the crystal (mm),
+weight 0f the impurity and the prOtem Ci(t): concentration of the impurity 0n the surface of the crystal (mg ml_1); Cicryst(R): concentration
+were the same. A ,Bi ten times larger of the impurity in the crystal at R from the centre of the crystal; t: time after the crystal starts
+meant that the impurity molecule had a grOWing-
+ten times higher afﬁnity to the crystal
+than the protein molecule. Actually, when acetylated lysozyme As in the ASS, the AIC was calculated for a full sphere crystal
+was an impurity, it was reported that the impurity attached to and in each of the three sections as in Fig. 3(b). The AIC
+the crystal with an afﬁnity severalmultiples of ten times higher of TDM and THM were the same for a full sphere crystal
+than the lysozyme protein(Th0n1as & Chernov, 2001). because all Of the impurity was ﬁnally adsorbed into the
+The time course of the concentration of the impurity around crystal. In Fig. 3(b), the AIC was high in the inner third of the
+the surface of the crystal is shown in Fig. 4(a). The solid line is crystal and fell as the crystal grew in both TDM and THM. In
+for THM obtained from equation (10) and the dotted line is the inner third of the crystal the AIC was lower in TDM than
+for TDM from equations (16), (17), (24), (25), (26) and (28). in THM, but in the middle section of the crystal the AIC was
+The concentration of the impurity attached to the crystal higher in TDM than in THM. In the outer section of the
+with a radius R from the centre of the crystal [Cicryst(R)] can be crystal, the impurity concentration was almost zero in THM
+described as and TDM. These might suggest that, in TDM, the IDZ was
+formed around the crystal in the diffusive ﬁeld and deprived
+Cicryst(R) = Xi(t)/dV(t) the impurity molecules around the crystal surface, but, in
+: ,Bi Ci(1, t)/{,6[C(1, t) _ Ce]/n} THM, the fast attachment of the impurity melecules t0 the
+_ _ crystal lowered the concentration of the impurity more
+: ,61Cz(1, ﬂAt/ARU)’ (31) quickly. These ﬁndings could not be elucidated by the steady
+state model performed previously.
+where Xi(t) is the weight of the impurity attached to the
+crystal surface in a unit of time, and C(t) and Ci(t) are
+concentrations of the protein and the impurity 0n the surface .
+0f the crystal at time t. Generally, if many impurity molecules 4' ConCIUSIon
+attach to a crystal, a highly disordered crystal may grow. From the results of the model calculation, it became clear
+Therefore, to determine the impurity concentration inside the quantitatively that all the sections of the crystal grown in THM
+crystal, Figs. 2(a) and 4(a) were combined and equation (30) and TDM are surrounded by different supersaturation levels
+was applied to create Fig. 4(b). The solid and dotted lines are of protein and different concentrations of impurity when they
+for THM and TDM, respectively. As shown in Fig. 4(b), if grow. Therefore, for X-ray diffraction experiments, we
+the radius of the crystal was between 0 and 025 mm, the recommend considering how the quality difference within a
+concentration of the impurity 0n the surface of the crystal in Wh01€ crystal, caused by th€ diffSIGIlCG ill pfOtSiIl super-
+TDM was much lower than that of THM, Then, if the radius saturation and impurity concentration levels during crystal
+was larger than 0.25 mm, the impurity concentration in TDM growth, may affect the quality of the X-ray diffraction
+became higher than that of THM, but much lower than that at patterns.
+the beginning of the crystal growth, and the concentration of As for protein SUpersaturation, it became clear that, in a
+impurity around the crystal became zero at the end of crystal diffusive model such as in microgravity, protein crystals grow
+growth. in a lower supersaturation level of protein than in a homo-
+Similar to the ASS, the average impurity concentration geneous ﬁéld- This may b6 C1116 t0 th€ foSCtS Of th€ PDZ-
+(AIC) was deﬁned as Regarding impurity, its concentration is higher in THM
+than in TDM when the inner section of the crystal grows.
+R(OO) In the middle section, although the impurity concentration is
+AIC = (1/ V) f Cicryst(R) dV- (32) higher in TDM than in THM, it is much lower than in the inner
+R20 section both in THM and TDM. This may be due to the effects
+6 Of 7 Hiroaki Tanaka et al. - Numerical model of protein crystal growth in a diffusive field ]. Synchrotron Rad. (2013). 20
+
+"
+"7","diffraction structural biology
+of IDZ and the faster uptake of the impurity molecules into the International Space Station Applied Research Partnership
+the crystal. Program since 2004.
+
+It was reported that the growth of the middle and outer
+sections of a crystal are inﬂuenced by the molecular order of References
+the inner section of the crystal as shown with X-ray tomo- Chemo“ A. A. (1998). A Cm Cryst. A54, 859—872.
+graphy (Sawaura er 611-, 2011). Therefore, we Speculate that the Inaka, K., Tanaka, H., Takahashi, s., Sano, s., Sato, M., Shirakawa, M.
+outer section of crystals grown in TDM may have better & Yoshimura, Y. (2012). DefectDiffus. Forum, 323—325, 565—569.
+quality because the supersaturation ratios and impurity KngOEZCDE-a Jlucgggeagﬁ- A., Pusey, M- L- & 311611, E- H- (2001)- CW“-
+
+- - - - r w . — .
+concentrations are lower in the inner section oi the crystais Littkg, W. &e§0h;1, C. (1986). I Cryst. Growth, 76, 6 63— 672.
+grown in TDM than those Of the crystals grown in THM' This McPherson, A. (1999). Crystallization of Biological Macromolecules.
+may explain the reason why some better quality crystals grew New York: Cold Spring Harbor Laboratory Press.
+in microgravity (Tanaka et al., 2007, 2011; Takahashi et al., Nakada, T., Sazaki, G., Miyashita, S., Durbin, S. D. & Komatsu, H.
+2010). Further examination is required to know the inﬂuence ([1999) J- CrySt- GrOWtha 196, 5.03—510- ,
+oi the ASS and AIC 0n the X-ray diffraction patterns quan- 03113:,JFK/123‘00118):thérgsifgagg.4112:4rrl1h7émas, 13' R' & Gama
+tltatlvely. Sawaura, T., Fujii, D., Shen, M., Yamamoto, Y., Wako, K., Kojima, K.
+
+111 this study, W6 have ﬁxed ﬂ as a constant Actually the & Tachibana, M. (2011). J. Cryst. Growth, 318, 1071—1074.
+increase of the impurity concentration reduces the velocity of Takahashi, S., Tsurumura, T., Aritake, K., Furubayashi, N., Sato, M.,
+the crystal growth (Nakada et al., 1999). Thus, for the next Yamanaka, M., Hirota, E., 33110, S., KObaYaShia T., Tanaka, T.,
+step, we will proceed to analyze numerically how the diffusive Inaka, K"" Tanaka’ H' & Urade’ Y (2010)' Add cry“ F66’ 846—.850'
+
+, , , Tanaka, H., Inaka, K., Furubayashi, N., Yamanaka, M., Takahashi, 8.,
+model of protein crystal growth is affected by the increase of Sam), S., Sato, M., Shirakawa, M. & Yoshimura, Y. (2012). D efe ct
+the initial amount of the impurity. Diffus. Forum, 323425, 549_554.
+
+Here we have introduced a practical mathematical model Tanaka, H., Inaka, K., Sugiyama, S., Takahashi, S., Sano, S., Sato, M.
+which can be calculated with an ordinary personal computer. & YOShitomia S- (2004} An"": N Y Acad- 50i- 1027, .10—19- .
+Using this transient model, further numerical analyses of Tanaka’ H"" Tsurumura,.T., Antake’ K"" FumbayaShl’ N"" Takahasm’
+higher Viscosity of the crystallization solution (lower D) and of i Yimaélalia’ 13/1 ""KH1;OE’ 1: Sélno’ S"" Sato, M"" KObayaShl’ T""
+
+ana a, ., na 21, . ra e, .(2011). J. Synchrotron Rad. 18,
+higher homogeneity of the protein sample (higher ,8) will be 88—91.
+examined for the veriﬁcation of the effectiveness of these Tanaka, H., Umehara, T., Inaka, K., Takahashi, S., Shibata, K,
+values 011 the improvement of crystal quality in microgravity; Be§5h0a Y., 33th M., Sugiyama, S., Fusatomia. E., Tefadaa T.,
+and, in the near future, we will use this model 011 the results Shlrouzu’ M"" Sano, S"" MOtOhara’ M"" KObayaShl’ T"" Tanaka’ T""
+
+, , , , , Tanaka, A. & Yokoyama, S. (2007). Acta Cryst. F63, 69—73.
+
+Obtamed 1n the JAXA PCG crystallization experiments to Thomas, B. R. & Chernov, A. A. (2001). J. Cryst. Growth, 232, 237—
+further understand the effects of microgravity. 243,
+
+We are thankful to Professor Atsushi Nakagawa of Osaka T501339? CI; 0551131»ng ’ 3935;] ekﬂOV’ P' G' & Carter, D' C' (2000)-
+University, Professor YOShiki Higuchi 0f University Of HyogO, Vergara, A., Lorber, B., Zagari, A. & Giegé, R. (2003). Acta Cryst.
+and Professor Sam-Yong Park of Yokohama City University in D59, 2—15.
+
+]. Synchrotron Rad. (2013). 20 Hiroaki Tanaka et al. - Numerical model of protein crystal growth in a diffusive field 7 Of 7
+
+"

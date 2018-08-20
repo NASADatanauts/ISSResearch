@@ -1,0 +1,413 @@
+"","x"
+"1","Hands-off Farming in Space
+(Development of an Autonomous Biomass Production System
+for Supporting Human Exploration in Space)
+Hae Choi, Chan Ham, and Roger J ohnson
+Florida Space Institute / Dept. of Mechanical, Materials & Aerospace
+University of Central Florida
+12424 Research Parkway #400
+Orlando, FL 32826
+eham@mail.ucf.edu
+Phone (407) 658-5598, FaX (407) 882-3577
+
+Abstract
+
+This paper focuses on the mechanization of a biomass production system (BPS) in enclosed environments
+for space agriculture. It requires an intelligent computer for the autonomous adjustment of controlled
+elements and a robotic system for measurement of plant growth and harvest. This research is to develop
+and integrate a BPS framework that enables autonomy, monitoring, diagnosis, fault detection and
+correction, and production optimization. The key feature is an integrated health monitoring and
+production management and control system (IHPMCS) implemented With the robotic system. IHPMCS is
+an integrated algorithm integrated into an embedded computer that can process biomass production data
+in real—time based on measurements of production elements in the chamber. The concept proposed is to
+take the human expert out of the control loop and build his expertise into the computer to yield an
+autonomous BPS. This Will provide an optimal and autonomous biomass production capability so that
+BPS can maximize the ability to grow plants and allow astronauts to be more involved in scientiﬁc or
+technical activities. This is a collaborative research between academia (University of Central Florida),
+industry (Dynamac), and government agency (NASA) at Kennedy Space Center.
+
+"
+"2","1. Introduction
+
+Reliable technology for biomass production in space to provide food has not yet been developed. This
+system, in order to be effective, will need an intelligent computer for the adjustment of controlled
+elements and robotics for the collection of plant growth measurements in the biomass production volume.
+These mechanism will replace human labor on space missions or applications for other planets; an
+autonomous controlled environment using Biomass Production System will be required to successfully
+grow plants autonomously in support of manned space missions
+
+It is feasible to develop a bio—production model since plants generally grow in a predictable way under
+speciﬁc conditions. Such a model that characterizes an optimal growth pattern for a tomato crop will be
+developed and used as a truth-reference model. Recorded differences between the desired growth
+parameters and the actual measured parameters more than a given threshold value, would cause the
+detection of an abnormality in one or more growth parameters. If this were to occur, the computer would
+switch to a diagnostic mode and search a predetermined intelligent data ﬁle for the necessary control
+correction to remedy the problem. The unique feature of this approach is the use of a robotic system
+instead of human labor to gather sensor data (including Visual inspection images) within the biomass
+production volume and, in real-time, have the intelligent computer to analyze the measurements and send
+the proper control corrections to the relevant actuators to correct the abnormality in near real—time, hence,
+health monitoring and intelligent control.
+
+2. Intelligent systems for the autonomous adjustment of controlled elements
+
+The concept of using plants to provide a bioregenerative life support system (BLSS) has been studied since
+the 1950’s. The early work focused on using algal systems for Q production and C02 removal from closed
+systems, Meyers (1954), Eley and Meyers (1964). Russian researchers pioneered the use of higher plants in
+large-scale closed environmental tests during the 1960’s and 1970’s Gitelson and Oklandikov (1994). The
+environmental and design considerations necessary for both microgravity and gravity-based BLSS were the
+subj ect of a recent reView by Wheeler et al (2001).
+
+Because of the harsh environment in space, growing crops for life support will require a protected
+environment. Light, C02, temperature, humidity, mineral nutrition, pressure and radiation protection will
+all require careful management in order to optimize BLSS performance. Drysdale et al. (1993, 1994)
+deﬁned the various failure modes that could be implemented, and Fortson 2nd Stutte (1996) made a
+general assessment of different failures. These included loss of C02 control, poor temperature and
+relative humidity control, and changes in light intensity. Changes to each of these parameters directly
+impact the 02 production, C02 removal, water puriﬁcation, or food production in the BLSS.
+
+There is extensive literature describing interactions between environmental factors that must be
+considered in developing a BLSS, Stutte et al (1996, 1999), Wheeler et al. (2001), and references therein.
+The PESTO experiment, which grew wheat onboard the International Space Station during Increment IV,
+was able to document the direct effects of temperature and relative humidity changes on photosynthesis
+and transpiration under both 1g, Stutte et al (2001, 2002) and microgravity conditions. The plant
+component of a BLSS will not be functioning in isolation, but be incorporated into an overall
+environmental control system. Because of the dependence of the life support functions on environmental
+control, it is critical that the operational limits of the BLSS are deﬁned and models developed are tested to
+insure that optimal growth conditions are maintained. The integration of validated crop models with
+automated monitoring and control systems is essential to implementation and utilization of BLSS 0n
+long-duration space missions
+
+"
+"3","3.R0b0tic system for the measurements of plant growth and the harvests
+
+Local and Global measurements
+
+There are two levels of measurement spatial resolution required, Whic h depends somewhat on the size of
+the growth chamber. First, for precise growth modeling and plant status monitoring, local measurements
+need to be taken at the individual plant level. In large systems, this can become very impractical from
+both a cost and sensing complexity standpoint. An autonomous Inspector robot could roam the growth
+chamber/greenhouse and collect local data samples at an individual plant level to give accurate readings
+regarding the status of randomly selected plants, Which would be representative of the chamber as a
+Whole. However, real—time control of environmental conditions cannot be dependant on measurements,
+Which vary spatially With time, unless measurements are geo—referenced and the elapsed time between
+repeated measurements at the same spatial location is less than the required control update frequency.
+This could become a problem in larger systems With one roving Inspector. Consequentially, it is
+appropriate and necessary to have a network of spatially ﬁxed sensors, Which can provide both an overall
+chamber and a quadrant—by-quadrant measurement of the critical environmental control inputs.
+Parameter Sampling Consideration
+
+Sampling is done to measure environmental parameters such as ; C02 concentration, temperature,
+humidity, light, air velocity, etc., that affect the plant growth. With the requirement of compact size, a
+commercially available probe, Which senses both temperature and humidity, is desirable. Sensors such as
+Silicon based Non-Dispersive Infra—Red (NDIR) Sensors, can be used to measure the amount of CO2 in
+the biomass production system. These are used to determine 0f the rate of photosynthesis by the plant
+through the amount of CO2 consumed. Light sensors need to measure the global and local light intensity
+from the light emitting diode (Red light at 670 nm and blue light at 470 nm can be used to support
+photosynthesis and proper plant development). A very compact commercially available photoelectric
+sensor needs to be located on end-effector for local light measurement compared to global light
+measuring sensor. Air Velocity Sensors such as bi-directional anemometer probes can be used determine
+the airﬂow as well as the air intensity. Photosynthetic Photon Flux (PPF) sensors can measure the
+intensity of radiation between 400 and 700 nm, Which are the most important wavelengths for
+photosynthesis and plant growth. Photosynthetic Photon Flux Quantum sensor or similar sensors are
+recommended to measure the PPF.
+
+Plant sampling
+
+Plant stresses can affect the plant growth considerably. Periodic plant material sampling needs to be
+performed to monitor overall plant health. Early detection of vegetation stress by passive remote sensing
+depends largely on identifying the spectral regions in Which vegetation reﬂectance is most responsive to
+unfavorable growth conditions. For individual leaves, increased reﬂectance at Visible wavelengths (400-
+700 nm) is generally the most consistent response to stress Within the 400-2500 nm range. Plant
+Fluorescence Sensors can be implemented on the end-effector to detect plant stress. A Chlorophyll sensor
+Will be mounted on the end-effector to take plant sampling from different regions of the plant canopy.
+Periodic chlorophyll sampling will be useful in determining possible plant diseases or deﬁciencies and in
+monitoring overall plant health. Sensors similar to Fluormetry Chlorophyll Sensors can be used for this
+application.
+
+A Video Monitoring system can be used to guide the robotic system The camera system implemented on
+the end-effector should be very compact. Considering the requirements of compact size, resolution higher
+than 300 pixels, ease of interface and transmission to a monitor and power supply With a low voltage and
+low consumption, commercially available color cameras similar to surveillance and Video security
+cameras can be utilized
+
+"
+"4","4 Robotic Harvesting System
+4.1 Robotic System in use
+Control requirements
+Processes and components in the system must be controlled continuously. Plant growth and health must
+be monitored in the presence of dynamic variations. Typically, control and monitoring are done
+conventionally using standard off the shelf control/sensor modules. Advanced controls (such as nonlinear
+robust control, adaptive control, etc.) are ideal candidates in the design of an autonomous system
+operating in an unknown and changing environment. However, space -b0und computers have very limited
+computational power in analyzing all data real—time and synthesizing all control signals.
+
+Dexterous End effector (ALSARM) for sampling and harvesting
+
+PSI and KSC have been 00 developing a dexterous End Effector, ALSARM. The ALSARM is
+
+composed of a three degree—of— freedom robot manipulator that has automated control. The
+
+ALSARM is to be equipped With an End Effector that is capable of retrieving samples from the
+
+BPC. End-Effector (EE) System is required to grip, cut, and move plant material. To achieve
+
+these goals, the BE Will utilize four motors to control the pitch, yaw, and roll motion along With
+
+gripping. The cutting of the vegetation sample is achieved through the use of passive means.
+a BPS Chamber Vertical Translation Assembly (VTA) LE III'HE‘I'E“ in r P_,
+.. I IJHHKM ....r_""""_
+E] :1 I Rotational Assemblv (RA) ©l) ll JIM ”£11"": .L.‘ girl:
+I ' I .1] [TE g £?.—
+—D I I Horizontal Translation ‘1. ""'H ""II: - “Hi I
+g ' Assembly (HTA) '
+- n... ""
+Figure 1: ALSARM design and End Effector Schematic
+
+One of the requirements of the End-Effector is to harvest different types of frui‘t. This has led FSI to
+
+adopt the changeable End-Effector. A cone and adapter method is proposed for easy change of the End-
+
+Effector. The cone of each end-effector Will be compatible With a single adapter in the manipulator.
+
+Key features of End Effector
+
+FSI is currently in the process of engineering to upgrade the performance of End Effector. The upgraded
+
+End Effector will have the following additional functions:
+
+- Exchangeable tool functions: Depending on the plant type, the End Effector is required to be
+adaptively designed to harvest it. The adaptive tool Will increase the productivity as well as secure
+sampling or harvesting.
+
+- Local measurement sensors: The End Effector Will be designed to accommodate more sensors. This
+Will require improvement to its structural design, and its precision and reliable functions.
+
+- Robustness control With optimal design: The weights of plants are varying depending on the size and
+type. To accommodate this uncertain condition, the End Effector control is required to be robust,
+bound by weight limits. However, the power for the actuators should be optimally designed to save
+energy.
+
+"
+"5","Manipulator
+
+The robot manipulator has two telescoping arms With a vertical, a horizontal, and a rotational joint. The
+
+ALSARM End Effector is an extension of the robot manipulator’s horizontal-telescoping arm. The End-
+
+Effector is mounted at the end of the telemag. The End-Effector that goes on the telemag 0f the ALSARM
+
+is capable of retrieving samples from the BPC. The optimum design of manipulator is also an important
+
+factor for productivity. The current system is designed for the cylindrical coordinate system. However,
+
+the manipulator platform can be modiﬁed and optimized depending on working area. FSI is actively
+
+researching robotic harvesting system With mobile platform. Kinematics and Dynamics of robotics on
+
+mobile platform is very complicated and its control algorithm is important to optimize its performance.
+
+4.2 Key features for the system
+
+In summary, the proposed control and design concept is unique in that the control system is not relying on
+
+human input and it has intelligent functions to ensure the goals. The following are the key features of the
+
+system:
+
+- An integrated health monitoring production management and control system (IHPMCS) implemented
+With the robotic system
+
+- Integrated algorithms embedded into a computer that can process biomass production in real-time
+based on measurements of production elements in the chamber.
+
+By successful implementation of the above key features, we are expecting to have the following results:
+
+- To take the human element of the control loop
+
+- To build his expertise into the computer to yield an autonomous BPS
+
+- To provide an optimal and autonomous biomass production capability
+
+- To maximize the ability to grow plants in BPS
+
+- To allow astronauts to be more involved in scientiﬁc or technical activities
+
+5. Development and integration of BPS framework
+
+Autonomy, monitoring, diagnosis, fault detect and correction
+
+Current controlled ecological life support systems cannot measure the dynamic behavior of the system in
+
+real—time. We Will measure abnormal dynamic parameters to monitor an out-of-tolerance condition of the
+
+system. These parameters can be predictors of impending failures in those systems. As shown 11 Figure 2,
+
+the proposed feature adds a new dimension to existing control mechanism that Will greatly enhance the
+
+visibility of the “System State” Which, in turn, increases the reliability of the test and evaluation process,
+
+and autonomous operations over those currently in use. This processing technique also promises the real-
+
+time detection of abnormal data ﬂow conditions and the automatic identiﬁcation of the speciﬁc area
+
+(component/subsystem) causing the fault condition. This attribute speeds up diagnostic analysis to near
+
+real—time and provides enough time to stabilize the system by parameter correction. The measurement and
+
+actuator elements must now be analyzed to understand how the increased “reliability” and “parameter
+
+correction” requirements can be implemented into the systems to support autonomous operations. The
+
+proposed system Will open a Window to achieve optimization of planned (deterministic) production that is
+
+essential for human exploration in the solar system.
+
+"
+"6","Experimental Data Update
+F—""""""n—""n—""n—""T
+U :
+: |_______ _______|
+. : :
+| | l
+| | |
+: Robust : Integrated . .
+Update Real-Time I Dynamic Detection/ I Health inonltorlng
+l Quality Detection l
+l E E (55:13:33
+| | Image Processing |
+-| = = =
+onEarth | '—— ———— ———— ——'
+I Global Local
+F——— —————————— —————————— —————l
+: Sensors (End Effector) :
+: Temperature, Humidity, Light Intensity, C02 and etc. :
+|_________13—ioEﬁs—Pr3c13cﬁo? c—m—nﬁer—in—s—pJe————————'l
+Figure 2 Control System Block Diagram
+
+Production database and optimization
+
+The optimized control of environmental parameters Will result iddn high productivity. Since these
+
+requirements differ for each plant, monitor and control of them are important. For example, potato and
+
+soybean suggest that maximum yields might be achieved near 800 to 1000? mol m'2 sec‘l, however, some
+plants, higher PAR (Photo synthetically Active Radiation) levels may be undesirable because of injuries
+such as tipburn (e.g. lettuce) and leaf chlorosis, particularly under high-intensity discharge lamps. In the
+case of this investigation the tomato crop Will be emphasized. Temperature is another important control
+issue. Many of the crops considered for life supports prefer warmer temperatures ranging from 250C to
+300C, Where as potatoes and Wheat do well at cooler temperatures ranging from 150C to 200C. In addition
+to these parameters, pressure, C02 gas rate, and relative humidity should be closely controlled for
+increased productivity. With biologists’ collaboration, an optimized database for plant growth
+environment conditions Will be created. This preliminary database Will be initially utilized as a model for
+the reference of monitoring environment. Integrated Health Monitoring and Production Management and
+
+Control System (IHPMCS) is a development of an integrated control framework that enables autonomy,
+
+monitoring, diagnosis, and fault—recovery and self—healing execution at execution at both levels of
+
+dynamic and steady state control. In order to overcome the major obstacles, an intelligent control
+framework will achieve the following technical objectives: By overcoming two major obstacles, the
+proposed intelligent control framework can achieve the following technical objectives.
+
+- Robustness in a changing, uncertain environment: The system is capable of identifying external
+disturbances and operating conditions using the standard sensors and computation power on board,
+Which can be done using advanced nonlinear robust control algorithms. The control system must also
+be robust so that all uncertainties Within actuator capability can be compensated for.
+
+- Fault tolerance: Upon automatic detection of a failure of any component, the control system can
+maintain system functionality by switching to the redundant backup. More importantly, in the case
+
+"
+"7","that no more redundant part is available; the control system is capable of automatically adapting and
+achieving the best possible performance.
+
+- Autonomous and self reconﬁguration: Robust identiﬁcation and control are integrated so that the
+system is capable of self—activating through environment diagnosis, self calibrating, self deploying,
+and self adjusting by intelligent reasoning. Upon detecting a fault, the robust estimation module Will
+provide sufﬁcient information for transient control after excluding feedback from faulty sensors.
+
+- Intelligence: Model-based reasoning capability Will be an integrated part of monitoring, diagnosis,
+and recovery.
+
+Evaluation of plant growth
+
+Machine Vision and other spatial imaging techniques Will provide the corner stone for the IHPMCS
+
+robotic inspection. A Visual surveying technique Will be used to locate the surface and control the end-
+
+effector’s approach towards the plant canopy. Once the Inspector has locked in on the plant canopy and
+achieved the appropriate length to surface, the Inspector Will scan the plant canopy evaluating plant health
+indicators in real time using the full sensor suite. When necessary, the Inspector can zoom in on the
+canopy for taking surface measurements. In order to fully implement the envisioned inspection
+capabilities, signiﬁcant research Will need to be conducted to develop a library of plant status
+indicators. These indicators Will need to be identiﬁed through a systematic and controlled study
+of the target plants responses to known diseases, nutrient and environmental deﬁciencies. It does
+however, point toward the need for a significant ongoing research effort to categorize plant
+health status indicators. With this library 0n—b0ard, the Inspector can roam a space based
+
+IHPMCS and detect plant abnormalities so that the IHPMCS can make control decisions to
+
+maintain crop productivity.
+
+6. Conclusions
+
+The prototype robotic system has been successfully operated in a Biomass Production Chamber
+
+at KSC. The ALSARM end effector is currently in manufacturing and Will be interfaced With the
+
+robot manipulator, Which Will enable us to measure environmental variables as well as to harvest
+plants in the chamber. Artificial disturbance or environment data such as temperature or light
+intensity Will be ﬁltered through the computer system, and the control system Will optimally
+order the actuators such as heater or LED light source after comparing initial desired values.
+
+Remote system control to improve desired values from earth Will be another testing item in the
+
+ﬁature. The biologist can continue to update plants’ growing conditions on the earth and
+
+implement the information Via communication systems. The upgraded manipulator With more
+features Will be implemented after completing feasibility studies, and development of new
+algorithm to incorporate hardware Will remain as future tasks.
+
+Acknowledgement
+
+This paper could not be completed Without advice from experts in Biomass Production System. We thank
+
+Dr. Sager (NASA) WhO has in fact, shaped the element of technology to clarify/ analyze the
+
+missing areas yet to be solved before developing a prototype ABPSS for the International Space
+
+Station for testing. Also consultants from Dynamac Corp (Dr. G. Stutte and Dr. P. Folwer) and
+
+Boeing (Dr. A. Drysdale) vxho have been involved in the Bio-Production research for the last
+
+ﬁve to ten years and are the resident experts in NASA’S agriculture experiments over these years.
+
+Dr. Drysdale’s critical review was the most essential part to complete paper.
+
+"
+"8","7. References
+
+[1] C. Ham, L. Retamozo, R. Patil, H. Choi, R. Johnson, and J . Brandenburg, ""Design of an autonomous
+harvest robotic system and a greenhouse on Mars"", Fifth Int'l Mars Society convention, accepted,
+August 2002
+
+[2] D. Schreckenghost, P. Bonasso, D. Kortenkamp, and D. Ryan, “Three Tier Architecture for
+Controlling Space Life Support Systems”, Proceedings of SIS’98 IEEE, May 1998
+
+[3] D. Schreckenghost, C. Thronesbery, P. Bonasso, D. Kortenkamp, and C. Martin, “Intelligent Control
+of Life Support for Space Missions”, IEEE Intelligent Systems. 1999
+
+[4] A. Drysdale, H.Dooley, W. Knott, J . Sager, R.Wheeler, G. Stutte, and C.Mack0wiak. 1994. A more
+completely deﬁned CELSS. SAE Tech. Paper 941292. 12 pgs.
+
+[5] A. Drysdale,J.Sager, R.Wheeler, and R. Fortson and P. Chertirkin. 1993. CELSS engineering
+parameters. SAE Tech. Paper 932130.
+
+[6] J . Meyers. Fundamentals of Space Biology. Japan Scientiﬁc Societies Press. Tokyo, pp. 9 Eley,
+1964. Study of a photosynthetic gas exchanger. A quantitative repetition of the Priestly experiment.
+TeX. J. Sci. 16: 296-333.
+
+[7] R.F0rts0n,. and G. Stutte. 1995. Measuring the reliability of a CELSS. ICES SAE Technical Paper
+951535.
+
+"

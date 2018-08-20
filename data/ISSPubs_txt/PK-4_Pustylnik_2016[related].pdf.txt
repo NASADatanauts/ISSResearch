@@ -1,0 +1,1059 @@
+"","x"
+"1","® ErossMark
+REVIEW OF SCIENTIFIC INSTRUMENTS 87 , 093505 (2016)
+Plasmakristall-4: New complex (dusty) plasma laboratory on board
+the International Space Station
+M. Y. Pustylnikﬁaa) M. A. Fink,‘ V. Nosenko,‘ T.Antonova,1 T. Hagl,‘ H. M.Thomas,1
+A. V. Zobnin,2 A. M. Lipaev,2 A. D. Usachev,2 V. |. Molotkov,2 O. F. Petrov,2 V. E. Fortov,2
+C. Rauf” C. Deysenroth,3 S. Albrecht,3 M. Kretschmer,4 M. H. Thoma,4 G. E. Morfill,5
+R. Seurig,6 A. Stettner,6 V. A. Alyamovskaya,7 A. Orr,8 E. Kufner,8 E. G. Lavrenko,9
+G. |. Padalka,‘0 E. O. Serovaﬂ0 A. M. Samokutyayev]0 and S. Christoforetti“
+lForschungsgmppe Komplexe Plasmen, Deutsches Zentrumﬁir Luft- und Raumfahrt, Miinchener Straﬁe 20,
+82234 Weﬁling, Germany
+2Joint Institute for High Temperatures, Russian Academy ofSCienceS, Izhorskaya 13/19,
+125412 Moscow, Russia
+3Max-Plaan-Institutﬁjr Extraterrestrische Physik, Giessenbachstmﬁe 1, 85741 Garching, Germany
+4I. Physikalisches Institut, Justus-Liebig-Univeritc’it Gieﬁen, Heinrich-Buﬁ-Ring 16, 35392 Gieﬁen, Germany
+5Terraplasma GmbH, Lichtenbergstraﬁe 8, 85748 Garching, Germany
+6OHB System AG, Manfred-FuchS-Straﬁe 1, 82234 Weﬁling, Germany
+7SJ"". Korolev RS C “Energia,” 4A Lenin Street, 141070 Korolev, Moscow Region, Russia
+SEuropean Space Research and Technology Centre, European Space Agency, Keplerlaan 1,
+2200 Noordwijk, The Netherlands
+9Central Research Institute for Machine Building (TSNIIMaSh), Pioneer Street 4, 141070 Korolev,
+Moscow Region, Russia
+IOGagarin Research and Test Cosmonaut Training Center, 141160 Star City, Moscow Region, Russia
+“European Astronaut Center, European Space Agency, Linder H0126, 51147 K6111, Germany
+(Received 8 June 2016; accepted 27 August 2016; published online 20 September 2016)
+New compleX—plasma facility, Plasmakristall—4 (PK—4), has been recently commissioned on board the
+International Space Station. In complex plasmas, the subsystem of ,urn—sized microparticles immersed
+in low—pressure weakly ionized gas—discharge plasmas becomes strongly coupled due to the high
+(103—104 e) electric Charge on the microparticle surface. The microparticle subsystem of complex
+plasmas is available for the observation at the kinetic level, which makes complex plasmas appropriate
+for particle—resolved modeling of Classical condensed matter phenomena. The main purpose of PK—4
+is the investigation of ﬂowing complex plasmas. To generate plasma, PK—4 makes use of a Classical
+dc discharge in a glass tube, whose polarity can be switched with the frequency of the order of
+100 Hz. This frequency is high enough not to be felt by the relatively heavy microparticles. The
+duty cycle of the polarity switching can be also varied allowing to vary the drift velocity of the
+microparticles and (when necessary) to trap them. The facility is equipped with two Videocameras
+and illumination laser for the microparticle imaging, kaleidoscopic plasma glow observation sys—
+tem and minispectrometer for plasma diagnostics and various microparticle manipulation devices
+(e.g., powerful manipulation laser). Scientiﬁc experiments are programmed in the form of scripts
+written with the help of specially developed C scripting language libraries. PK—4 is mainly operated
+from the ground (control center CADMOS in Toulouse, France) with the support of the space station
+crew. Data recorded during the experiments are later on delivered to the ground on the removable
+hard disk drives and distributed to participating scientists for the detailed analysis. Published by AIP
+Publishing. [http ://dX.doi.org/10. 1063/1 .4962696]
+I. INTRODUCTION ﬁrst very simple microgravity experiments on board “Mir”
+space station6‘8 as well as further microgravity complex
+Complex (dusty) plasmas are electrically quasi—neutral plasma facilities PKE—Nefedov9 and PK—3 Plus10 on board
+media containing, along with electrons, ions, neutral gas, the International Space Station (188) was stimulated by
+and radiation, also a strongly coupled subsystem of ,um— the idea of compensating the gravitational force acting on
+sized solid microparticles. It has been demonstrated in relatively heavy microparticles and obtaining uncompressed
+many experimental investigations that the subsystem of three—dimensional complex plasmas, allowing to model also
+individually resolved microparticles in complex plasmas three—dimensional liquids and solids. The new laboratory
+can be used to study phenomena of Classical condensed Plasmakristall—4 (PK—4) is a continuation of this family“ of
+matter physics at the kinetic level.1‘5 The development of space—station—based microgravity complex plasma facilities.
+In a typical complex plasma experiment, the microparti—
+Cles are usually injected into a low—pressure low—temperature
+a)Electlonic mail: mikhail.pustylnik@dlr.de gas discharge plasma. Geometry of the plasma Chamber
+0034-6748/2016/87(9)/093505/16/$30.00 87, 093505-1 Published by AIP Publishing.
+
+"
+"2","093505-2 Pustylnik et al. Rev. Sci. Instrum. 87, 093505 (2016)
+and used plasma generation technique(s) usually determine in the European Physiological Module (EPM)32 in November
+the ranges of dynamic and structural properties of the 2014 and commissioned in June 2015.
+microparticle suspensions. PKE—Nefedov and PK—3 Plus In this paper, we will give the overview of the
+(where a parallel—plate capacitively coupled rf discharge experimental abilities of the facility in connection with
+was used) were mainly designed for the observation of the scientiﬁc tasks it is designed to solve. The paper is
+static three—dimensional compleX—plasrna formations. The organized as follows: In Section II, we will concentrate on
+elongated geometry of the PK—4 plasma chamber (in which the description of the scientiﬁc equipment and illustrate its
+a dc discharge is produced) in combination with numerous abilities based on the data from ground tests and from the
+manipulation techniques makes it a very attractive tool for facility commissioning on board the ISS. In Section III, we
+studying ﬂowing complex plasmas at the kinetic level. will explain the internal data communication inside the PK—4
+After capacitively coupled rf plasrna,12‘14 striations facility, its data storage capabilities, and data distribution
+of a dc discharge were the second plasma conﬁguration during the PK—4 operation on board the ISS. In Section IV,
+where the crystallization of microparticle subsystem was we will introduce the scientiﬁcally relevant aspects of the
+observed.15’16 Summary on the stratiﬁed dc discharge dusty PK—4 operational concept.
+plasma investigations can be found in Ref. 17 (see also
+references therein). Stratiﬁed dc discharge has also been
+tested as a medium for complex plasma investigations under ||_ EXPERIMENTAL H ARDWARE
+microgravity conditions.7’8 . . . . .
+As a basis for the ﬂight version of PK—4, a uniform dc AS a space—station—based Iac111ty, 2K4 experiment 18.3
+discharge was chosen.18‘20 The uniformity was achieved due rather complicated system, which we Wlll brieﬂy describe in
+to the use of better vacuum system compared to laboratory Section III. Here, we would like to concentrate on one part
+experiments of Refs. 1547. During the predevelopment of the system,. the so—called Integrated Baseplate (IBP): It is a
+phase, the PK—4 setup was tested in numerous laboratory rnass1ve alurn1nurnplate,carrying all the sc1ent1ﬁc equipment
+experiments and in nine parabolic ﬂight campaigns. It was on its bOth s1des.
+used for the measurements of microparticle charges,21’22
+measurements of the ion drag force acting on the micro—
+. 23 24 . . . 25 26 A. Vacuum and gas supply system
+particles, ’ non—Newtonian Viscos1ty, electrorheology,
+shock27 and nonlinear28’29 wave experiments in complex As any low—pressure plasma experiment, PK—4 requires
+plasmas, and evaluation of dust—plasrna interaction.30 good vacuum conditions in the experimental volume.
+These topics outline but do not conclude the broad PK—4 gas—vacuurn system is schematically presented in
+range of scientiﬁc issues which are going to be addressed Fig. 1. Forevacuum is provided by Columbus ventline. A
+by the currently operational PK—4 microgravity complex turbomolecular pump (Pfeiﬂer Vacuum, TPD 011, pumping
+plasma facility. Similar to its predecessors, PKE—Nefedov speed 11.5 Us for argon gas), being a part of the IBP, provides
+and PK—3 Plus, PK—4 was designed not as a predetermined the high vacuum. Plasma chamber with the volume of about
+experiment but rather as a laboratory allowing for a large 650 ml is connected to the turbomolecular pump with a
+variety in choice of experimental instruments and scenarios. 25 mm diameter tube. Pumping can be closed by an angular
+The facility was installed in the Columbus module of the ISS31 valve. Parallel to the angular valve, the pressure controller
+Plasma Chamber
+[mm -'—|
+[mm -._|
+E DN16
+'m ”I Pressure WI_I
+Measurement
+L ll. B'Ock
+go mm
+Gas Reservoir E 55 53
+1. Tube 1. Tube Block TMP TPD 011 $23 gi 0st
+Ipamcmer paniclemte, I
+% $
+FIG. 1. Scheme of PK—4 vacuum and gas supply system. Plasma chamber contains the main experimental volume, where appropriate vacuum condition as well
+as working pressure regulation must be provided. Columbus ventline is used as a prevacuum pumping stage and Pfeiﬂer Vacuum TPD 011 turbomolecular pump
+produces high vacuum. The plasma chamber is ﬁlled with the working gas Via the Bronkhorst IQFD—200C ﬂow controller, whereas the pressure is controlled by
+the MKS 640A pressure controller. Gas reservoir, pressurized with the Bronkhorst IQPD—600C high pressure controller, contains gas for the operation of gas—jet
+dispensers. The bold horizontal line behind the particle ﬁlters designates the wall of the hermetically sealed experiment container (see Section III A). Gas and
+forevacuum are supplied to the IBP Via the feedthroughs.
+
+"
+"3","093505-3 Pustylnik et al. Rev. Sci. Instrum. 87, 093505 (2016)
+(MKS 640A) is connected. It allows to vary the working B. Plasma generation
+
+ressure in the ran e of 0.1—2 mbar. Pressure in the lasma . . .
+p . g . . p . In PK—4, the plasma is generated 1ns1de a glass Chamber.
+Chamber is measured by three different sensors (Pirani and .
+
+. . . DC and If plasma sources described below may be used
+piezo 1ns1de a MKS 910 dual transducer and a MKS 750C . . . . . .
+
+. . _5 1nd1V1dually as well as in any combination to form an
+baratron), covering the entire pressure range from 2- 10 to a to riate s atiotem oral lasma to ﬁle for the needs of
+103 mbar. Working gas under pressure of 700—750 mbar is appartibular e )1: erimenlt) p p
+supplied to the IBP. A ﬂow controller (Bronkhorst, IQFD— p p '
+200C) is used to ﬁll the plasma Chamber With the working
+gas. The ﬂow rate can be varied in the range of 01—10 seem
+
+. . . 1. Plasma chamber
+With the step of 0.01 seem. Repeatability of the gas ﬂow value
+is 0.2%. Gas—jet microparticle dispensers (see Section II E) The PK—4 plasma Chamber consists of three glass tubes
+are fed With gas (same gas type as the plasma Chamber) of 30 mm inner diameter welded together: the main tube of
+from a small (12 ml) gas reservoir. It is separated from the 500 mm length and two side tubes of 180 mm length (Fig. 2).
+plasma Chamber by an angular valve. The pressure inside it is About 200 mm of the central part of the main tube constitute
+controlled by a pressure controller (Bronkhorst, IQPD—600C) the working area, Which is available for imaging by the particle
+in the range of 10—750 mbar. The pressure in the gas reservoir observation (PO) cameras (see Section II F) and a plasma
+is therefore normally much higher, than that in the plasma glow observation (PGO) camera (see Section II D 1). SiX
+Chamber. The entire system can be pumped down to the base microparticle dispensers are mounted on the conjunctions of
+pressure <2 - 10‘5 mbar. the side tubes With the main tube (three on each conjunction).
+Three working gases are available: neon, argon and Each side tube is terminated With an electrode. Between
+argon—oxygen mixture (76:24). Neon and argon are used these two electrodes, the dc discharge is ignited and
+in experiments. The argon—oxygen mixture is used for the maintained. High voltage (HV) is applied to the so—called
+plasma—assisted Chemical etching of the microparticles stuck active electrode. At the same time, it serves as a gas ﬂow
+to the plasma Chamber surface. This procedure is necessary to inlet. Great care has been taken to prevent the breakdown
+ensure the optical transparency of the plasma Chamber during from the active electrode to the structural ground and, at the
+its long—term operation. Gases can be exchanged from one same time, to provide suﬂiciently low resistance for the gas
+experiment type to the other. For that the tubing between the ﬂow transmission. A porous ceramic plate was used as a
+IBP and the gas bottles must be disconnected from the old spacer between the electrode and metallic tubing to satisfy
+gas bottle, pumped down through the plasma Chamber, and both requirements. Gas ﬂows from the active to the passive
+connected to the new gas bottle. All three bottles are built into electrode connected Via the pressure control and measurement
+the EPM rack. Each bottle has 1 1 volume and contains gas block to the turbomolecular pump.
+under the pressure of about 130 bars. The amount of gas is The main tube is sealed on its sides by two ﬂanges.
+considered to be enough for the lifetime of the apparatus. The right ﬂange (on Fig. 2) is an entrance window for
+i=— - I PO camera1 ' 7 ' PO cameraZ I I _,_.
+1 =2
+Manipulation laser . Illumination. laser
+collimatorlens ;:::?$htor gaictrometer EM electrode Sgggﬂary entrance wmdow
+\ \ \ z /
+‘ ’ I _‘—.|I T a l :L:
+- ' 7 _”l7 —l-_-§I— ' ‘11
+I 0 ' «\s :7 ‘ e - . 0
+. .. u ‘02' 03a ’ 'i«""""‘\
+A ' /
+1223:”;2250221 \ .
+| lﬂl
+| Working area :200 mm +
+Illumination
+; :_ laser
+Gas supply
+,. z
+I.
+x
+Active Passive
+electrode Pumping electrode Y
+FIG. 2. Schematic of the PK—4 experiment. The working area occupies about 200 min in the middle of the 30 mm diameter glass plasma chamber. Six
+microparticle dispensers (D1—D6) are mounted on the two side tubes. Each of the side tubes has an electrode on its edge. Between these electrodes, the dc
+discharge can be ignited. The plasma chamber evacuation and pressure control are performed With the help of the on—board gas—vacuum system (see Section II A).
+The working area of the plasma chamber is illuminated by an illumination laser sheet and observed by the two (micro)particle observation (PO) cameras With
+the ﬁeld of View 22.4>< 16.8 min2 each (see Section II F). Both cameras can be moved along as well as across the plasma chamber axis. A spectrometer
+(see Section II D 2) collimator lens is moved together With them. Several manipulation devices may be used to manipulate the microparticles in the working
+area. Among them—stationary and movable rf coils, heater for thermal manipulator, manipulation laser, electric manipulation (EM) electrode (see Section 11 G).
+
+"
+"4","093505-4 Pustylnik et al. Rev. Sci. Instrum. 87, 093505 (2016)
+the illumination laser (see Section II F) and the left Fig. 3 presents an idealized waveform. In reality,
+(on Fig. 2) is the collimator lens of the optical manipulation transients With the duration up to 0.5 ms due to the recharging
+laser (see Section II G 3). Other manipulation devices are of the stray capacitance and due to the discharge relaxation
+mounted on the outer tube surface (rf coils, heater) or inside take place.
+the tube (electrical manipulation (EM) electrode). The variation of polarity switching duty cycle allows to
+control the drift velocity of microparticles at practically the
+2_ DC discharge same discharge conditions: The iconditions in the positive
+. . . . column do not depend on the discharge polarity, only the
+The p0s1t1ve column ofe dc thscharge is supposed to be forces acting on the microparticles Change direction. Due to
+the main experimental medium In PK'4- The dc discharge the low Charge—to—mass ratio, a microparticle is not able to
+is created In theiplasma charnber by breaking down the gap follow the oscillating discharge and Will only react 0n the time—
+between the active and passwe electrodes. A custom—made averaged net force. At 5 = 0.5 the discharge is symmetric
+bipolar high—voltage (HV) power supply used for this purpose and the net force is zero. For 6 < 0.5, the microparticles will
+is a current source, Whleh PheVldeS the stabilized output experience the force in the direction from active to passive
+current up to 3.1 mA at the mammal overall voltage of 2.7 kV. electrode and Vice—Versa for 5 > 0.5.
+The current is regulated 0n the active side, Whereas the return In the arbitrary generator mode the output waveform
+current measurement is performed on the passive side. During is obtained as a result of the modulation of constant offset
+the dischaige operation, the active electrode carries the htgh current With the digitally tabulated functions. Four functions
+voltage W1th respect to structural ground and the passwe are available in the PK—4 HV generator: sinusoidal, square
+electrode is separated from the structural ground With a 47 Q wave, sawtooth, and constant (“n0 modulation”). Modulation
+current—measurement resistor. Steady state deviations from frequency can be set to 3 kHz maximum.
+the set current value do not exceed 5% IV—Curves 0f the dc discharge are measured by setting a
+The HV power supply can work In one Of the two modes: relatively slow (10—2—10'1 Hz) sawtooth current modulation.
+pulse generator or arbitrary generator. In the pulse generator Typical IV—curves are shown in Fig. 4. The knees at 05 mbar
+mode, the periodic output current waveform is deﬁned in the correspond to the abrupt but weak (emission intensity
+following way: The period is divided into four time intervals variation below 5%) stratiﬁcation of the discharge. Apart
+(given by the times t0,1,2,3),f0r Wthh 1nd1V1dual current values from that it is clearly seen that in the pressure range of
+(10,1,2,3) are ass1gned, respectively, as shown 1h Flg- 3- Thhe 0.5—2 mbar, the discharge voltage quite weakly depends on
+13 determines the period duration of the waveform. Possible the discharge current.
+range for the times is 0 to 327.67 Ins and for current —3.1
+to 3.1 mA. The dc current may be commanded by assigning
+10,1,2 = O, 13 = tdc > O, arbitrary positive value with 13 = IDC, 3- RF dlscharge
+the dc current yalue. . In addition to the dc discharge, an inductively coupled rf
+. The other 1m}: ortant conﬁgurationaof the pulse generator discharge can also be generated in the PK—4 plasma Chamber.
+is the so—called polarity sw1tch1ng, when. the generator In the dc discharge, the longitudinal electrostatic force always
+keeps the same absolute value of current, While periodically dominates over the ion—drag force. On the contrary, in the
+sw1teh1ng its polarity. It is achieved in the f0110w1ng way: inductively coupled rf discharge due to almost an order of
+t0’2 = 0, t3 = T >. O, the pCI‘IOti. 0f the polarity sw1tch1ng, magnitude higher plasma density, the ion drag force caused by
+t1 = t+ > O, duretion ef the p0s1t1ve polarity, 11,3 2 i113 5 ’ the ambipolarly drifting ions Will dominate over the electrostatic
+current of polarity sw1tch1ng. Further, frequency f = 1/ T of
+polarity switching and its duty cycle 6 = t+/T, being the
+fraction of the period occupied by the positive polarity, can
+be deﬁned. 0'6 - 0.5 mbar
+. .
+0_4 - 1.5 mbar .
+I0 E 0.2
+I §
+[1 -o.2
+_ t3 '
+_ 1 -o.4 . . . . . .
+Time “ “I"" II I at! E
+-O.6 ' - .
+-3 -2.5 -2 -1.5 -1 -O.5 0 0.5 1 1.5 2 2.5
+Return current [mA]
+FIG. 4. IV—curves 0f the PK—4 dc discharge in neon measured during the
+FIG. 3. Schematic representation of awaveform period in the pulse generator commissioning experiment. The discharge current was varied in the range
+mode of the PK—4 high—Voltage power supply. Periodic waveform is deﬁned between —3 and 3 mA. On the positive branch of the curve, the current
+by assigning four current values 10,1,23 t0 the four time intervals determined range is signiﬁcantly compressed due to the current redistribution between
+by the times t0,1,2,3. Setting t0,1,2 = 0 results in the output of dc current 13. the actual passive electrode and structural ground.
+
+"
+"5","093505-5 Pustylnik etal. Rev. Sci. Instrum. 87, 093505 (2016)
+force. In PK—4, the rf discharge is therefore seen as one of the 1-2
+microparticle manipulation techniques.
+PK—4 contains a custom—made two—Channel rf generator, 1
+which may power (through ﬁxed matching devices) one of
+the two or simultaneously both rf coils. One of the coils has a _
+ﬁxed position on the plasma Chamber, whereas the other can i 0'8
+. . G)
+be moved along the working area (see Fig. 2 and Table I). g
+. . . 0.
+Each C011 cons1sts of a s1ngleturn and serves as an antenna for g; 0.6
+the ignition of the inductively coupled discharge. Frequency .
+of the rf signal is 81.36 MHz and maximal forward power is 0 4
+5 W. Both forward and reﬂected power are measured by the '
+rf generator. Each rf Channel can be independently modulated
+with low (up to 255 Hz) frequency. Sinusoidal, square wave, 0-2
+and constant functions are available.
+The matching of the movable rf coil was optimized for the 0
+middle of the working area of the plasma Chamber. Position 0 10 20 3° 40 50 R? .70 .89 9° 10° 110 120 13° 140 150
+. . . conl posmon [mm]
+dependence of the matching for the movable rf 0011 is shown
+in Fig. 5. 1n the range of If C011 positions roughly between 30 FIG. 5. Dependence of the forward and reﬂected power on the position of the
+and 140 mm (the entire travel range Of the movable I‘f C011 is movable rf 0011. The measurement was performed on orb1t by slowly (1 mm/s)
+, moving the rf coil with 1 W forward power set value. During the motion, the
+150 mm, 866 Table I), the value Of reﬂeéted power IS below coil was generating a plasma in neon at the pressure of 1 mbar.
+10% of the forward power. The matching for the argon rf
+plasma is of similar quality.
+was developed.34’35 The model combines kinetic description
+. . of electrons and ﬂuid description of ions. It uses the set of
+C. Mlcropartlcle-free plasma parameters . . .
+cross section for neon gas atoms and is therefore applicable
+The Langmuir probe measurements were performed in a only for the discharge in neon.
+plasma Chamber identical to the PK—4 ﬂight version during For the dc discharge positive column, it has already been
+the predevelopment phase of the apparatus. The measurement shown in Ref. 18 that ne and T6 are quite uniformly distributed
+setup was in detail described in Ref. 18. Amolybdenum probe along the discharge aXis and (15 grows linearly from cathode
+tip with the diameter of 50 ,um and 4.5 mm length could be to anode, implying also the axially uniform electric ﬁeld E .
+moved aXially and radially in the working area of the plasma Typical radial distributions of (15 and ne are shown in Fig. 6. Te
+Chamber. A constant gas ﬂow of 0.2 seem was applied during does not exhibit a signiﬁcant radial variation.
+the measurements to prevent gas purity degradation. Plasma
+potential gb, electron density me, and electron temperature T6
+were deduced from the current—Voltage Characteristics of the
+Langmuir probe. 0 I (a)
+In order to deeper understand the background plasma, a —5
+hybrid two—dirnensional numerical model of a dc discharge _1 0
+2
+e45
+TABLE 1. Summary of the translation stage axes of the PK—4 experiment. _20
+Directions and movable obj ects are shown in Fig. 2. Minimal set value of the
+velocity for all axes is 0.1 m/s. -25
+Range Maximal '3: b
+Axis title Movable object(s) (mm) velocity (mm/s) Direction 1 ( ’
+PO cameras PO cameras, 200 10 X _ 4
+X spectrometer lens 'g 3
+PO cameras PO cameras, 30 5 Y 30
+Y spectrometer lens, Q 2 I
+illumination laser 1 I
+mirror
+I
+Illumination Illumination laser 215 10 X 0 0 2 4 6 8 10 12 14 16
+laser focus nmm]
+RF coil RF coil 150 10 X FIG. 6. Radial distributions of (a) plasma potential gb and (b) electron density
+_ _ _ _ (me) in a neon dc discharge at 0.2 mbar pressure and 2 mA current in
+Manlpulatlon Manlpulatlon laser ”200 1 ‘X the middle of the working area. Circles represent the results of Langmuir
+laS€f33 optic ﬁber output and probe measurements, whereas the curves are the results of calculations using
+its image the numerical model of the discharge. Quite a good agreement between
+: measurements and the model is ObSCI‘VCd.
+
+"
+"6","093505-6 Pustylnik etal. Rev. Sci. Instrum. 87, 093505 (2016)
+12
+E O 0.6 mbar IE 8 0 experiment 9
+000 10 * 1.0 mbar 0 6 . .
+‘9 000 4 . o o i i
+'—' E o
+t 5 - ""‘ :‘D 2 ‘ ‘ ‘ o s i
+0 =_-_-'____..—-—- (a) O (a)
+12 10
+_ 10 H 8
+E 8 3
+km [‘0’ 6 . .
+6 . O O . I . . .
+4 (b) 4 (b)
+2.6 E 3 . . C . . . . O . .
+ﬁ2.4 \\ H .
+E \ E ° ° 1
+\ 2.2 \ \ 2-5 0
+2 \§—_ 2-
+m 2 \ggg m 2 I i i I i i
+1.8 i f i I (C)
+1.6 1.5
+0.5 1 1.5 2 2,5 3 0.2 0.4 0.6 0.8 1 1.2 1.4 1.6 1.8 2
+[DC [mA] p [mbar]
+FIG. 7. Measured dependencies of (a) electron density ""e, (b) electron FIG. 8. Pressure depehdencies ef (a) electron density n.6, (b) electron tem—
+temperature T e, and (c) axial electric ﬁeld E on the discharge current and gas perature Te, anti (c) and electrlc ﬁeld (In a neon.dc thscharge) measured
+pressure in a PK—4 neon dc discharge. Circles and curves represent measure— by the Langmulr probe and calculated by the hybhd dlseharge m0c1e1fr0m
+ment results and ﬁts (summarized in Table II), respectively. Measurements Refs. 34 and 35 he the d1scharge current 1 mA Oh the d1scharge 3X13 In the
+were performed on the discharge axis in the middle of the working area. mlddle Of the workmg area.
+Flg' 7 shows the dependence Of the 1.16011 dc .plasma Therefore, for a correct interpretation of the experiments, the
+parameters (measured on the dlscharge aX1s 1n the Huddle 0f . .
+, , data of the Sectlon II C are not always suﬁic1ent, and the
+the worklng area) on gas pressure and dlscharge current. The . . . . . . . .
+, , , add1t10na1 m sztu obtamed mformatlon about the plasma 1s
+measurement results are plotted along Wlth the emplrlcal ﬁts . . . . .
+, , very des1rable. To address th1s 1ssue, two plasma dlagnostlc
+summarlzed 1n Table II. . .
+, , , mstruments—the plasma glow observatlon (PGO) system
+A comprehenswe comparlson 0f the Langmu1r probe . .
+, , , , and a spectrometer—were mcluded 1nt0 the PK—4 IBP. Both
+measurements and the calculatlons us1ng the hybrld dlscharge . . . . .
+, , , , , mstruments are optlcal (and therefore, non—mvaswe unhke
+model 1s done 1n Flg. 8. Quahtatlvely, pressure trends of . .
+, , , Langmmr probes used for the measurements of Sectlon II C)
+measured and calculated values of ne, T6, and E eXh1b1t qulte . . . . .
+, , , and both are able to dehver at least quahtatlve mformatlon on
+a good agreement. Quantltatlvely, the agreement 1s much . . .
+the mlcropartlcle—plasma 1nﬂuence.
+better for p < 0.4 mbar. Above 19 = 0.6 mbar, the calculated
+electron density and electric ﬁeld are 20%—50% higher than
+the measured ones. We suppose, the main reasons for the 1. Plasma glow observation
+discre anc are the im urities in a real dischar e Which .
+P y p g The purpose of the plasma glow observatlon (PGO)
+unavmdably appear as a result of the glass tube wall and . . . .
+. . . . . system 1s t0 pr0V1de the overV1eW lmage 0f the PK—4 plasma.
+mleropartlcle decomp0s1t10n by plasma and systematlc errors . . . .
+. . . Its scheme 1s shown 1n Flg. 9(a). A Basler ScoutV1deocamera
+espec1a11y 1n the ne measurement due to the electron reﬂectlon . . . .
+. . . Wlth a 640 X 480 plxels CCD Chlp and 25 fps frame rate 1s used
+from the probe t1p surface and Up holder 1nﬂuence. . . . . . .
+as an lmaglng deV1ce. A kaleldoscoplc mlrror system creates
+. . three ima in Channels in three different s ectral ran es. TWO
+D. On-board plasma diagnostics g g p . g .
+0f the Channels (upper and lower) are des1gned t0 transmlt
+It is known (also, for the PK—4 discharge) that 703.2 and 585.2 nm spectral lines of neon, respectively, in
+microparticles affect the background plasma propertieseeee’37 the entire range of incidence angles (80—150). The ﬁlters have
+TABLE II. Summary of the ﬁts of discharge current dependencies of the Langmuir—probe—measured PK—4 dc
+discharge plasma parameters (plotted in Fig. 7). Discharge current [DC is in mA. The ﬁts are valid for p from
+0.2 to 1.0 mbar and for [DC between 0.5 and 3 mA.
+n..,(108 cm-3) = AIDC + 313C Te(eV) = C + 01133: E(V/cm) = F + 01133:
+[9 (mbar) A(108 cm‘3/mA) B(108 cm‘3/mA2) C (eV) D(eV><mA) F (V / cm) G(V/cmxmAz)
+0.2 1.92 —0.38 7.13 1.23 1.97 0.14
+0.4 2.75 —0.42 7.06 0.75 2.11 0.072
+0.6 3.15 —0.34 6.98 0.77 2.07 0.098
+1.0 4.01 0.047 5.50 1.59 1.94 0.12
+
+"
+"7","093505-7 Pustylnik et al. Rev. Sci. Instrum. 87, 093505 (2016)
+(a) deﬂection mirror although they might eXhibit a certain level of emission either
+due to the impurities or due to the adjacent argon lines (e.g.,
+,, 7032 nm ‘ 706.7 nm).
+‘ finer neutral density
+holder ""12%transmission camera
+I PGO . 585.2 nm lens \ 2. Spectrometer
+PK—4 has an OceanOptics USB2000+ minispectrometer
+2. g!_ 4 . on board. Equipped With 600 mrn'1 grating and 25 ,um input
+mi“ / ' (‘7‘ 5 ‘l‘ ‘- aperture, it provides a spectral resolution of 1.5 nm. The 2048—
+,7 ’ I , 4 pixel linear sensor of the spectrometer allows the simultaneous
+""**‘ "" acquisition of a spectrum in the wavelength range of
+£233; ca'egﬁfgfpe h A’ 350 — 1100 nm. The receiving optics of the spectrometer
+working area is installed on the X—aXis translation stage (Table I) together
+With the particle observation cameras and can therefore be
+moved along the working area of the plasma chamber to gether
+(b) with them (Fig. 2). The readout rate of the spectrometer is
+limited by the internal interfaces of the experimental setup.
+The minimal readout time of a full spectrum is 4 s.
+Compared to the PGO system, the spectrometer delivers
+much more spectral information but only locally. The
+spectrometer was intensity—calibrated before launch With
+. the help of a tungsten—halogen lamp. The spectral data can
+' "" therefore be used to determine, e.g., the metastable densities
+in the plasma in the manner of Ref. 38.
+The spectrometer is also useful to determine the presence
+of impurities in the plasma. In Fig. 10, the process of the
+' - "" ' plasma puriﬁcation after the argon—oxygen Cleaning of the
+plasma Chamber is demonstrated. When a neon plasma is
+2 cm generated for the ﬁrst time after the Cleaning, the spectrum
+eXhibits a massive pollution by carbon monoxide and nitrogen.
+FIG. 9. (a) Technical image of the plasma glow observation (PGO) systern. HOWCVCI"", after 0116 hour 0f the 116011 discharge Operation With
+The kaleidoscopic rnirror system produces three images of the plasma charn— the gas ﬂow of 0. 5 seem, only neon lines remain Visible in the
+ber through three different ﬁlters. Upper and lower narrow—band ﬁlters are spectrum
+designed to transmit 703.2 and 585.2 nm spectral lines of neon, respectively. '
+The central ﬁlter is a neutral density ﬁlter With approximately 12% trans—
+mission. Bold arrows show the View directions of the PO and PGO cameras.
+The mirror systern covers the entire working area of the plasma chamber and _ _ ht ft th I _
+is therefore not shown in Fig. 2 for clarity. (b) Typical image of a neon dc 12000
+discharge (pressure 0.5 rnbar, current 1 mA) taken by the PGO camera. NeI(2P _> IS)
+. . . 10000
+the spectral Widths of 9.2 and 8.2 nm, respectively. The third
+Channel (central) is equipped With a neutral density ﬁlter With
+approximately 12% transmission. A typical PGO image of _ 8000
+the neon plasma is shown in Fig. 9(b). The resolution of the 2
+PGO system on the central image is about 430 ,urn/pixel. g, 6000
+The central imaging channel Will provide a (spectrum— E,
+integrated) plasma image irrespective of the gas type. 5
+Moreover, it Will register not only the plasma light but also 4000
+the scattered light of the illumination (see Sec. II F) and
+manipulation (see Sec. 11 G 3) lasers. The central Channel , 1 1
+. . . . 2000 (O(B Zj —> A H) N) (B311 _) A432+)
+would therefore deliver also the overvrew information on the (OI—mn m (0.2) (0.3) “ “Wm”
+distribution of the microparticles in the working area of the I I I l H. k .W (513"" “M
+plasma Chamber. This information is very important during 0 J W'N' “ ' h- .2an-
+the real—time operations as well as for the interpretation of 350 400 450 500 550 600 550 700 750 800
+. . . . . . w | th
+the microparticle dynamics observed With the high—resolution ave eng [hm]
+particle observation cameras. FIG. 10. Puriﬁcation of a dc neon plasma (1 mA, 0.5 rnbar, gas ﬂow
+In the case Of a neon discharge, the upper and lower 0.5 seem) after argon—oxygen cleaning. The on—board PK—4 spectrometer
+Channels C arry diagn osti C informati on, Which may be used for allows tgg detect3 the linguritles 1n the plasma. F1rst pos1t1ve systern g(f)
+, , nitrogen N2(B Hg—> A Eu) and Angstrom group of carbon rnon0X1de
+the eharaeteﬂzatleh 0f the background plasrha- In the case Of CD(Blle —> AIH) are Visible along With the NeI(2P —> IS) lines right after
+an argon discharge, both Channels should (ideally) be black, the cleaning.
+
+"
+"8","093505-8 Pustylnik etal. Rev. Sci. Instrum. 87, 093505 (2016)
+TABLE 111. Summary of the dispenser and microparticle types used in the 250
+ﬂight model of the PK—4 experiment. As a microparticle diameter error, a
+standard deviation of the diameter distribution (provided by the manufacturer, 200
+microParticles GmbH) is given. %
+— :l 150
+Reservoir grid Microparticle j:
+Dispenser number Dispenser type cell size (,um) diameter (,um) “g 100
+1 Gas-jet 15.2 10.41 i 0.13 O
+2 Gas-jet 6.1 2.64 i 0.05 50
+3 Gas-jet 6.1 3.38 i 0.07
+4 Shaker 4'9 1'31 i 0'04 0 0.4 0.5 0.6 0.7 0.8 0.9 1 1.1 1.2
+5 Shaker 6.1 3.38 i 0.07 Diode current [A]
+6 Shaker 9.0 6.86 i 0.12
+— FIG. 11. Dependence of the illumination laser output power on the diode
+current.
+E- Microparticle dispensers for approximately 1.36 mm horizontally. The total size of the
+« 2
+PK—4 has siX microparticle dispensers (see Table III). FOV Of both P0 cameras is therefore about 44 X 17 mm '
+Each dispenser has a reservoir with a load of microparticles The maX1mal frame r ate Of the PO earner as 1s 35 fps at full
+and larg e metal balls. The microparticles are injected into resolution. The frame rate may be increased at the expense of
+the plasma through the gridded bottom of the reservoir. Two the CCD readout r ange s1ze. F07: example, in an extreme case
+different injection principles are used in the PK—4 dispensers. ef readout r ange size 1600 X 1 plxels, the mammal frame rate
+The s 0— c all e d “shaker” dispensers, in which the reservoir is 210 fps. A practical case could be the readout range Size of
+with the microparticles is shaken with an electromagnet, 1600 X 480 pixels Wlth the maX1mal frame r ate ef 70 fps.
+are attached to the side tub e terminated by the passive Pre01se p0s1t10ns of both camera lenses With respect to
+electrode. This type of dispensers was used in the PK—3 Plus the CCD ChlpS and illumination laser plane were optimized
+experimental setup.” The so—called “gas—jet” dispensers, in on ground by a spe01al procedure. The p0s1t10ns 0f the
+which the microparticles are dragged into the plasma with a lenses were. ﬁxed in such a .way that the miage s1ze Of
+small portion of gas supplied through a magnetic valve, are 1'31 ,um diameter mlcroparticles .leV1tat1ng 1.11 a plasnia
+attached to the side tube terminated by the active electrode. was appr0X1mately three plxels (Flfg' 13): Thls. results in
+Plastic microspheres (microPartiCles GmbH) with a small a reasehable trade—off between .the lmége 111161131? anti die
+size dispersion are used as microparticles. Melamineformalde— p 0ss1b111ty Of Spr 1er microparticle p 0s1t10n determination.
+hyde (MF) was Chosen as the material for all microparticle Wlth the help Of X and Y translation stages, the cameras
+types for three reasons: MF microspheres are available in may be moved along ancl across the Plasma chamber,
+a wide range of sizes, they can be chemically etched in an respectively, covering practically the entire volume of the
+arg on— oxy g en plasma, but at the same time, are b etter resistant working area. The deﬂection mirror of the illumination laser
+to sputtering in noble gas plasmas 41 is mounted on the Y translation stage. In this way, the
+distance between the laser sheet and the camera optics is kept
+constant during the Y—motion. This allows to perform the 3—D
+F. Microparticle imaging reconstruction of the microparticle Clouds in the manner of
+The microparticle imaging in PK—4 is provided by the Refs. 10 and 43. In X—direction, the waist of the illumination
+particle observation (PO) system. This system consists of an laser sheet and the cameras may be, in p r1n01p le,. “med
+illumination laser and two PO cameras. Many 0 f the system independently. However, 1n a normal experimental Situation,
+elements are movable (see Table 1) the waist of the illumination laser sheet is positioned in the
+For observation, the microparticles immersed in plasma nude}: ofﬂtlhekljloV. f th 1 h t , t ‘f 'th'
+are illuminated with a 5 32 nm diode laser (Snake Creek e 10 ess 0 e aser S .ee 1s n0 uni orm W1 1n
+Lasers MiniGreen 150) with the power variable in the range the FOV. The transverse illumlnatlon laser sheet proﬁle was
+from 20 to 240 mW. The dependence of the illumination laser extenswely investigated Wlth a beam p roﬁler camera on the
+output power on the diode current is shown in Fig. 11. The PK—4 ﬂight model (during its integration) With the completely
+optical bench forms a sheet 0 f >18 mm height out 0 f a thin assembled PO system but before the installation of the plasma
+cylindrical output beam of the illumination laser unit. The chamber. The laser sheet p roﬁle shap e experiences the largest
+lens responsible for the formation of the waist is mounted on variation in the horizontal (X) direction. Flg' 14 summarizes
+a translation stage. This allows to move the illumination laser the results Of the measurements for the FOV p 0s1t10ned 1n the
+waist within the working area of the plasma Chamber.
+TWO B38161” P1101 Cameras With the CCD chips 0f TABLE IV. Scaling 0f the particle observation (PO) cameras.
+1600 X 1200 pixels and identical optics are used to observe :
+the light scattered by the microparticles. Interference ﬁlters Cameral Camera 2
+block the plasma and manipulation laser radiatioh. Details of Horizontal scale (,um/piX) 14.18 i 0.02 14.20 i 0.03
+the image scaling for both cameras are collected 1n Table IV. Vertical scale (,um/piX) 14.25 i 0.02 14.31 i 0.03
+Fields of View (FOV) 0f the two cameras (see Fig. 12) overlap :
+
+"
+"9","093505-9 Pustylnik et al. Rev. Sci. Instrum. 87, 093505 (2016)
+FIG. 12. A cloud of 3.38 ,um microparticles (from the commissioning experiment on board the 188) in the FoV of PO camera 1 and PO camera 2 (see Fig. ).
+The background intensity is artiﬁcially increased. The area with the darker background designates the overlap of the FoVs of the individual PO cameras. The
+inset shows the central PGO image with the microparticle cloud illuminated by the laser. The dashed line on the inset shows the approximate location of the PO
+cameras FoV.
+middle (both along X and Y axes) of the working area on the on the microparticles. In contrast, plasma-non-dismrbing
+axis of the plasma chamber. The full width at half maximum techniques rely on the forces of non—electrostatic nature and
+(FWHM) of its shape (see Fig. ) varies between 40 ,um therefore affect the microparticles only. Their inﬂuence on
+in the middle of the FoV and 220 pm at 20 mm distance the background plasma is negligible. The simplest example
+to the left from it. Moreover, at the edges of the FoV, the of such a manipulation technique would be the gas ﬂow
+shape of the laser sheet starts to eXhibit two maxima (see manipulation: microparticles can be dragged by the gas ﬂow
+Figs. and ). There is also a signiﬁcant height (Z) through the plasma chamber. Their ﬂow velocity can be
+dependence of the illumination laser sheet width; it is the controlled by the variation of the gas ﬂow. We would, however,
+thinnest on the plasma chamber aXis and increases up to 25% concentrate on the two other techniques of this kind: thermal
+and 80% i 9 mm from the aXis, respectively. The illumination manipulation, making use of the thermophoretic force, ’ and
+laser sheet width exhibits also a much weaker dependence on optical manipulation, which employs radiation pressure. ’
+the position of the FoV; the waist is thinnest in the middle of Both of these techniques are realized in PK—4.
+the working area and increases about 15% towards the edges.
+G. Microparticle manipulation
+. . . . . E (a) o
+PK—4 offers a diverse ch01ce of microparticle manip— 3 200
+ulation techniques. They can be divided into two groups: E o
+Plasma-mediated techniques imply the variation of external E 150 .
+discharge parameters (supplied electric current or power) g .
+leading to the respective change in the net plasma forces acting C2L 100 . .
+E
+8 50 o o
+m
+20 15 1O 5 O -5 -1O -15 -20
+AX [mm]
+H04 (c)
+:5
+5
+3.0.2
+6
+C
+B
+C
+- o
+-200 o 200 -200 o 200 -200 o 200
+Distance [um]
+FIG. 14. (a) Dependence of the illumination laser sheet full width at half
+maximum (FWHM) on the distance AX from the center of the ﬁeld of
+View (FoV). Shapes of the transverse laser sheet intensity proﬁles at (b)
+AX = 20 mm, (c) AX = 0, and (d) AX = —20 mm. FoV was positioned in the
+FIG. 13. Size—optimized images (from the PK—4 ﬂight model) of individual middle of the working area. The measurement was performed on the plasma
+1.31 ,um diameter microspheres suspended in a plasma. Optimization was chamber axis. Laser diode current was 0.7 A. Direction of the abscissa is
+achieved by ﬁne—tuning the distance between the camera lens and CCD chip. chosen to comply with the direction of the X—aXis in Figs. and .
+
+"
+"10","093505-10 Pustylnik etal. Rev. Sci. Instrum. 87, 093505 (2016)
+1. PIasma-mediated manipulation switched on and operating dc discharge. After reaching the
+The temporal and spatial plasma modulation is one of the new thermal equilibrium, the heater was commanded to keep a
+easiest methods of microparticle manipulation Section II B certain constant temperature (above the ambient temperature).
+suggests numerous ways of plasma modillation (e g After about one hour, the heater was switched off. Fig. 15(a)
+modulation of dc current or r f power motion of the movable shows a typical temporal evolution of the temperature gradient
+rf coil etc) We would like to concentrate here on the two during such a procedure. Typical equilibration times are of
+.’ ' . . . the order of 5 and 10 min for switching the heater on and off,
+most important ones: namely, on the polarity sw1tch1ng duty .
+. . . “ . respectively.
+cycle variation and on the powering of the so—called electrical . . .
+manipulation” (EM) electrode The value of the aX1al temperature gradient rapidly
+As alread mentioned in Section II B 2 the du decreases with the distance from the heater (Fig. 15(b)).
+. . y ’ . 1y At 30 mm distance from the heater, the aXial temperature
+cycle varzatzon actually Changes the average electric ﬁeld . . . .
+experienced by the microparticles (which are unable to gradient is ~O.l K/Inrn, leading to the thermophoretic force of
+follow the actual relatively high frequency electric ﬁeld the order of the electrostatic force acting on a microparticle in
+. . . _ . . . a dc dischar e.21 In the center of the lasma Chamber workin
+osc1llations). This allows to vary the microparticle drift area (about lgOO mm from the heater)pthe tem erature radiengi
+velocity very precisely. Variation of the average electric ﬁeld t icall dro s 30 40 times ’ p g
+by means of polarity switching duty cycle may also be used yp y p '
+in electrorheology experiinents26’48 for the modiﬁcation of
+interparticle interaction potential. 3. Optical manipulation
+The ring—shaped EM electrode is installed coaXially with A h , th t f h t , , ,
+the plasma Chamber at the right edge of its working area , ny C .ange in e inomen urn O p O OHS linpinging on
+(Fig. 2). Electrically the EM—electrode is connected to the a microparticle (absorption, reﬂection, or refraction) leads to
+second channel of the HV power supply which has the same the emergence of radiation pressure force on the particle.
+functionality as the one controlling the active electrode of the The .radliattion pfressure foiéel 1s thePpKth1§al bag: $511; t13cgl
+main dc discharge (both pulse and arbitrary generator modes manipu a 1,011 O micropar 1C es in _ ' .enop 1 _ _
+are supported see Section II B 2). The negative dc current FCM—12 diode laser With the maX1mal optical output of 20 W
+driven through the EM electrode can be use d to squeeze the and 808 nm wavelength is used as a light source for the optical
+microparticle clouds ﬂowing through it producing a nozzle manipulation. In spite of high power, the laser has practically
+effect.” The pulses of current applied to the electrode may no inﬂuence on the background plasma Since its wavelength
+be used to rapidly compress the microparticle Cloud and to does not rnatch Wlth any Of the atomic trans1tions Of bOth
+. . . PK—4 working gases.
+produce shock waves in 1t1n the manner of Ref. 27. , , , ,
+The laser light is delivered to the plasma Chamber Via
+a 200 mm thick optic ﬁber with 0.22 numerical aperture. As
+2. Thermal manipulation
+The thermophoretic force exerted on the microparticles 0-14
+in a gaseous medium is proportional to the local temperature E 0-12
+gradient. It arises due to the difference in momentum E 0-1
+transferred to a microparticle by gas atoms hitting its surface E 0-08
+from the “hot” and “cold” sides, respectively. PK—4 allows g 0-06
+to intentionally create an aXial temperature gradient and E 0-04
+. . . . E
+thermally manipulate the microparticles. For this, a heater .9 0-02
+ring (“thermal manipulator” in Fig. 2) is mounted on the 0
+outer surface of the plasma Chamber at the left edge of the 200 210 220 T230 [ (2140 250 260 270
+working area. The electronics can automatically control its
+temperature up to 55 OC. Such small gas temperature variations E (b)
+. . . O 100 mm(centeroftheworkin area)
+produce a negligible effect on the background plasma s1nce E 10-1 g . ’
+the ionization rate as well as the ambipolar diffusion are E ’
+determined by the electron Characteristic energy, which is E10-2
+orders of magnitude higher than that of neutral gas. E . °
+The ﬂight version of the PK—4 experiment has no $103 '
+temperature sensors in the working area of the plasma
+. . . 28 30 32 34 36 38 4O 42
+Chamber, Wthh makes the m Sltu measurements of the Heatertemperature[°C]
+temperature gradients impossible. However, the temperature _ _
+d. t (1 db th th 1 . 1 t 1‘ 1‘ m 1‘ (1 FIG. 15. Results of the measurements of the anal temperature gradlent
+gra. len S p 1‘0 uce y e erma manipu a O WC 6 easu 6 caused by the PK—4 thermal manipulator. PK—4 IBP with the temperature
+during the predevelopment phase. The tests were performed sensors on the outer surface of the plasma chamber working area was in—
+according to the following procedure: From the initial tegrated in the experiment container (Section III).- The experiment container
+- 1 1 1 n 1, was placed 1nto the enV1ronmental chamber, Wthh kept constant amblent
+pumping mOde (open angu at Ya veS,hon y pressure SC SOhS temperature of 22 0C. (a) Temporal evolution of the temperature gradient
+.and turbOmOICCUIarPump running), t e'syStem was broug t at 30 mm distance from the heater. (b) Dependence of the steady—state
+into a typical experimental condition With all three cameras temperature gradient 0n the heater temperature.
+
+"
+"11","093505-11 Pustylnik at al. Rev. Sci. Instrum. 87, 093505 (2016)
+shown in Fig. 2, the output of the optic ﬁber is mounted on the 20
+“ . . ,, . . (a) o .
+manipulation laser translation stage (Table I). The deﬂection 18 .
+rnirror directs the laser light into the plasma Chamber. On the E 16 . '
+entrance ﬂange of the plasma Chamber, a collimator lens with E 1: .
+30 mm focal distance is mounted. This lens images the output 8 10 '
+of the optic ﬁber inside the plasma Chamber and thus creates a E; 8 , .
+spot where the intensity has its maximum. Moving the output 5 6 .
+of the optic ﬁber, one can move the spot through the entire 4 °
+working area. S . . . .
+The dependence of the output optical power on the laser 0 5 10 15 20 25 30
+diode current is shown in Fig. 16(a). The laser generation starts DiOde current [A]
+at the current value of about 6 A. To investigate the intensity Intensity
+proﬁle in the spot, it was projected (Via the attenuating ﬁlters) [am u_]
+onto the Chip of a bearn—proﬁling camera. A typical proﬁle . q . 250
+is shown in Fig. 16(b). It contains numerous spikes where _ ‘ ' .
+the intensity is about a factor of two larger than that of ' . "" ‘ ' l
+the background level. The spatial dimension of the spikes is f ‘ 7, ‘ “k . l, ’ 200
+~100,um. .. - \ 5 WV” ' y
+The optical manipulation was tested during the PK—4 ‘ : ‘ 5“ V‘- ‘ 7 ’ _ ' . ‘
+experiment eornrnissioningon orbit. Fig. 17 Clearly shows ._ Q 1""; ,‘ﬁ f ° ( “ y H' 150
+the effect of the laser radiation on the microparticle Cloud; 1t . ‘X ? ' ' ~ n ' ’ ~“ ‘ 0 ' ‘
+creates about 2 mm wide stripe ﬂowing in the direction of the _ . :51; ("".1 ‘ . . . "" 'I‘p - t.“
+illumination laser. Such an experimental conﬁguration can be p; ' v , y?! . ‘ : . r . ' , 1;.
+used to measure the Viscosity of the complex plasma ﬂuid . ; .' ‘ . \‘ . l s. . 1; . '1 100
+with the help of shear ﬂows.50‘52 ’ . "". ) ’_, _ ' ‘ ‘. ' '
+Powerful laser radiation may heat up and even evaporate . - . . “’3 ‘O. o - ‘ ‘5- ' 1'
+the microparticles. At the moment, we do not have . . . “ ' t 5“: ' _ 50
+any experimental evidence of microparticle evaporation by ' ' , ‘- .
+the manipulation laser. Estimations of the microparticle - ' - u? ‘0 . .Y‘c ‘
+equilibrium temperature suffer from the uncertainty in the ‘ ' ‘ ' ' 1' ‘ 7 L h 0
+value Of the imaginary part Of the MF refraCtive indeX—ﬁom FIG 16 (a) Dependence of the manipulation laser output power on the diode
+1'2 X 10—6 in Ref‘ 53 t0 5 X 10—3 in Ref' 41' WC’ however’ laser current. (b) Light intensity proﬁle in the spot created by imaging of the
+GannOt CXCIUdC that CVapOfatiOIl takes place in 1"" CalitY-54 manipulation laser optic ﬁber output with the collimator lens. Diode current
+8 A.
+H' Mlcropartlcle transport and trapplng technlques the dispensers are attached to the side tubes of the plasma
+Unlike PKE—Nefedov9 and PK—3 Plus,10 in PK—4, the Chamber. Therefore, the injected microparticles would need
+microparticles are not inj ected directly into the working to be transported about 15 cm before they enter the FoV of the
+area. As mentioned in Section II B 1 and shown in Fig. 2, PO cameras located, e.g., in the middle of the working area.
+(a) (b)
+m m
+FIG. 17. Videoimages of a cloud of 3.38 gm diameter microparticles from the PK—4 facility commissioning on orbit (a) without the inﬂuence of the manipulation
+laser and (b) under the inﬂuence of the manipulation laser at 24 A diode current. The manipulation laser obviously creates a ﬂow of microparticles inside the
+cloud.
+
+"
+"12","093505-12 Pustylnik et al. Rev. Sci. Instrum. 87, 093505 (2016)
+Transport of microparticles and their trapping in the working universal microparticle trapping method, Which can be used
+area are the important steps before the actual experiment can Without major limitations at any discharge conditions. Since
+be started. We have developed and tested on board the 188 the experiment does not have a real—time image analysis
+three different techniques in Which transport and trapping of capability, this technique, however, requires a participation of
+microparticles are performed by the dc discharge only, by the an ISS crew member (see Section IV), Whose task is to switch
+rf discharge only, and using a combination of both discharges, the dc discharge to the polarity—switching mode upon arrival
+respectively (Fig. 18). of the microparticles in a PO camera FoV.
+
+In the case of dc discharge transport and trapping In the case of If discharge transport and trapping
+(Fig. l8(a)), the microparticles injected from one of the (Fig. 18(b)), the microparticles are injected into the rf
+dispensers are transported by a dc discharge to the FoV of the discharge. To make it possible, the rf plasma should be
+PO cameras. Once the microparticles arrive into the FoV, the sufﬁciently long to extend to the dispenser area. This can
+do discharge is switched to the polarity—switching mode With be achieved by increasing the forward power as well as by
+6 = 0.5 (see Section II B 2). After this, the microparticles moving the rf coil towards the used dispenser. After the
+experience zero net force and are trapped. This is the most microparticle injection, the rf power is reduced in small steps.
+
+The microparticles trapped at the edge of an rf plasma due
+to the balance of electrostatic and ion drag forces would
+(a) follow their equilibrium point. As they appear in the FoV
+of PO cameras, the procedure is over. This procedure is
+2 fully automatic. It should be, however, optimized for every
+I l gm, 1.3! gas pressure since the extension of the rf plasma is strongly
+/ 5 $3: pressure dependent. Other disadvantages of this technique are
+i [—1 1. ' the limited capacity of the trap at the rf plasma edge and
+3 a 4. signiﬁcantly slower transport compared to the dc discharge.
+H The combined transport and trapping technique
+_ — (Fig. 18(C)) implies transport by the dc discharge (Which
+is much faster than that by a rf discharge) and trapping by the
+(b) rf discharge. Similar to the rf transport and trapping, it can
+2 be made fully automatic, however, for this, in addition to the
+\ pressure dependence of the rf plasma length, microparticle
+43*""? P 1 I I plasma transport time has to be taken into account. The
+"" injection of too many microparticles might however result
+\3® 4 in their leakage through the radial edges of the rf discharge
+towards its other edge.
+1® The described above techniques were proved to work in
+principle on board the 188. In order to deeper understand their
+(C) advantages and disadvantages under long—term microgravity,
+much more operation experience is required.
+3
+1% W? III. PK-4 SYSTEM
+i 1 4/ 2@ As already mentioned, the PK—4 IBP. described in
+Section II is a part of a larger system (schematically shown in
+H Fig. 19), providing commanding and data storage capabilities
+' ' as well as connections to the ISS infrastructure. The IBP
+contains all the scientiﬁcally relevant experimental equipment
+FIG. 18. Schematic representation of microparticle trapping procedures. and therefore: for the SCientiﬁC community, it represents the
+Each procedure contains four steps marked by numbers from 1 to 4, respec— most interesting system component. However, in this section
+tively. For the explanation of each trapping technique, the injection side is we give a short overVieW Of the entire system in order to
+:;:::;:r:§:a::ii126223;;2133231231tzztsiiesc0::H:::;;if:;:3, ehhhh he hhhhhhhhhh hhhheh oh hh—h whhh hhhhh he
+and camera PO camera positions. DC microparticle trapping (a) steps: 1 — important for a SCientiSt planning to work With it-
+ignition of the dc plasma, 2 — microparticle injection, 3 — microparticles arrival
+into the PO camera FoV, and 4 — the discharge in the polarity—switching _ _ _
+mode. RF microparticle trapping (b) steps: 1 — ignition of the high—power A- Integratlon Into European PhySIology MOdUIe
+21115533;ionTéiLZiirﬁfifeﬂiﬁlgiiviilsiifnﬂﬁﬁ$$$$$le Eye {35 For safety reasons, the IBP is built into a hermetically
+camera FoV, ﬁxed rf power. In the combined trapping procedure (0), the dc sealed container ﬁlled With 800 mbar Of nitrogen. Data,
+discharge is used for the transportation of microparticles and the rf discharge power, forevacuum lines, and gas supply are connected Via
+for their. “2.1913 ing' The procedure $0.68 through. the $1.10ng “6.138: 1 ' dc the feedthroughs. One of the container walls is equipped With
+plasma 1gn1t10n, 2 — rf plasma 1gn1t10n, 3 — mlcropartlcle IIIJGCUOII, and 4 , , ,
+— arrival of microparticles into the PO camera FoV, their trapping at the rf‘ fans on bOth s1des and serves as an a1r—to—a1r heat eXChanger
+plasma edge. drawing off the heat generated by the experimental equipment.
+
+"
+"13","093505-13 Pustylnik etal. Rev. Sci. Instrum. 87, 093505 (2016)
+.. Shaynz I Removable Ground
+dgwxlsczZ"" Hard Drive Console
+. g 05 E, g
+‘é a £2 a o
+m8 029%
+Experiment Adapter System 5 § 5 §>
+U o
+E _ t HIK Data and HIK Data and
+M 3:12:21: Commanding Control & Video Commanding EPM Data
+With IBP Video UHit Video Interfaces
+0 i ' HIK Data&
+3 ; Commanding
+«
+> (D
+> EPM
+a
+With PK-4 HCI
+Experiment { 0
+oum us Ada te c
+USB 2.0 H
+|_I J-
+(USB 2.0)
+FIG. 19. Block diagram of the PK—4 facility. The IBP with the experimental hardware is located inside the experiment container. Experiment can be controlled
+from the two terminals: the ground console and from the EPM laptop unit. On both terminals, PK—4 HCI is installed. In addition, PK—4 Video is distributed to
+both terminals. Scientiﬁc data (both Video and H/K) are temporarily stored inside the control and Video unit and at the end of each experiment run, copied to the
+removable hard disk drives, Which are physically delivered to the ground by Soyuz capsule.
+Any leakage of the IBP vacuum system would result in PK—4 software does not contain real—time image analysis
+the loss of container atmosphere. Should this happen, PK—4 capabilities. Only a human operator is able to provide a
+operation must be stopped since the container atmosphere feedback from the microparticle Cloud condition to the
+serves as a coolant for the IBP and at the same time as an experiment workﬂow (Section IV). Therefore, Video is
+electrical insulator for both dc and If discharge Circuits. delivered to both terminals. For the ISS terminal, a dedicated
+PK—4 is located in the European module of the ISS, monitor laptop (connected to the VGA output of the CVU
+Columbus.31 It is integrated into the European Physiology Via a VGA—to—USB adapter) is used. This Video is displayed
+Module (EPM)32 With the help of the s0—called experiment in 1024 X 768 pixels resolution. For the ground terminal, the
+adapter, Which provides mechanical and electrical interfaces analog Video output of the CVU is digitized on board by the
+t0 the EPM rack. The forevacuum connection of the IBP t0 EPM Video unit to MPEG1 format (320 X 240 pixels), sent to
+the Columbus ventline also goes Via a shut—on valve inside the ground and replayed 0n the console by the EPM software.
+the experiment adaptor. In addition, the experiment adapter is The resolution of this Video stream is certainly far too low for
+directly connected to the cooling system of the EPM rack. scientiﬁc usage but suﬂicient for the operational purposes.
+In a microgravity experiment, it is in general important to
+distinguish between “internal,” intentionally applied forces,
+and those that are caused by the microgravity noise. In
+PK—4, the residual acceleration is measured by the Space 10-3 x
+Acceleration Measurement System (SAMS).55 The SAMS _Y
+is based on a triaxial acceleration sensor (Allied Signal —z
+Accelerometers, 3QA—3100). The sensor is placed on an
+EPM rack Closeout panel covering the PK—4 experiment
+container. For PK—4, the accelerometer data are acquired 104
+With the bandwidth of 200 Hz. An example of a steady state E
+. . . . C
+Vibration spectrum measured by PK—4 SAMS during pumping %
+is shown in Fig. 20. The maximal Vibration amplitude is %
+~10'3 g. <15
+‘10-5 1‘ ‘
+B. Communications and software 1 .,
+I t
+The main communication hub in the PK—4 system is ' , ‘ ‘ I
+the Control and Video Unit (CVU). It links the IBP Via
+different data interfaces to the EPM laptop (on the ISS) and 6
+t0 the ground console. On both of these terminals, the PK—4 1O 0 20 40 60 80 100 120 140 160 180 200
+human—computer interface (HCI) software is running. Using Frequency [HZ]
+thlS HCI’ a human Operator ls able to Observe and COHtrOl the FIG. 20. Vibration spectrum registered by a SAMS attached to the EPM rack
+IBP parameters. front panel during the pumping of PK—4. Sampling rate 500 samples/s.
+
+"
+"14","093505-14 Pustylnik et al. Rev. Sci. Instrum. 87, 093505 (2016)
+C. Data D. PK-4 programming language
+1. Storage and delivery The commanding access to IBP is available Via the low
+E h 1 , d 1 f h IBP 'bl f level software interface that only allows to read and write
+ac. e eironic mo 11 e O, t eh (resp 01181 i or values to the memory cells of PK—4 electronic modules. To
+a eelrltairi flu system) transrn1ts t e p Ialrsmeters O 1? make the programming of complex scientiﬁc experiments
+p er1p era CVICCS (p ressure sensors, —generator, r _ possible, a collection of 14 libraries (based on C scripting
+generator, spectrorneter, etc) to the CVU e1ther W1th a language (CSL)56) containing the higher level commands was
+certain rate set 1nd1V1dually for each parameter between 1 .
+
+, developed. Each of the higher level commands represents
+and 10 samp 168/ S’ or on request. These housekeep 1ng (H/K) a technically meaningful often used sequence of low—level
+data are being continuously recorded on the system hard disk ’ . . .
+
+d , HDD f h CVU h h CVU , , d commands and Checks. The libraries are updated according to
+rive ( ,) O t e W enever t.e .18 running an the actual operational experience.
+the respective IBP subsystem is active. Unlike other H/K The routine procedures (e g starting up PK—4 gas
+data, the spectrometer acquisition can be commanded to be ' . . ’
+exchange, etc) as well as the sc1ent1ﬁc experiments are
+started and stopped. Spectra are, however, also recorded to . . . . .
+, , programmed as scripts us1ng the PK—4 libraries and bas1C
+the system HDD of the CVU The Video is stored on a . . .
+, , ' , , , CSL commands. After a script is uploaded to the CVU, its
+750 GB solid state drive (SSD) array 1ns1de the CVU, Wthh .
+, , , , execution can be commanded from the HCI software. Each
+is capable of recording the Video stream at the maX1mal data . d 1 ﬁl h 11 h d d
+acquisition rate of PO and PGO cameras during 90 min SCﬂpt pro uces a 0g e, W ere a t e execute comman S
+, , , , ' With res ective time starn s are listed.
+The Video acqu1s1tion can also be started and stopped by a p p
+command.
+
+After the experiment, the so—called postprocessing E. PK-4 models
+procedure is executed. During this procedure, the data are . . .
+copied to the two removable transport HDDs (500 GB The development Chain and execution of PK—4 experi—
+
+. . . rnents involves four ﬂight—like PK—4 models. Their summary
+capaC1ty each) and veriﬁed. The removable HDDs W1th data . . . .
+. is given in Table V. The PK—4 ground model (GM) in
+are returned to the ground With the Soyuz return capsule. . . .
+
+The S AMS data are recorded on an external computer CADMOS is built 1nto the ground model of the EPM rack
+(which is not a part of the PK—4 system) during every PK—4 and is therefore technically the Closest possible approach
+mission and delivered in blocks of 10 min Via a NASA ft to the ﬂight model (FM)' Science—reference models (SRMS)
+server p run without EPM infrastructure. All four models include
+
+' experiment containers with scientiﬁcally fully functional IBPs
+inside can be controlled With the help of a control laptop and
+HCI software Via the CVU and can be programmed using the
+
+2. Synchronization same programming language.
+
+PK—4 generates, therefore, three different kinds of The experiment preparation proceeds as follows: First, an
+experimental data' Video H /K and S AMS These data types experiment idea is formalized and documented. Then, based
+make use of ﬁve a priory uncorrelated time axes: CVU central on the documentation, an experiment script is p rogramrned
+processor unit (CPU) time is a time basis of all the H/K data and tested on one Of the SRMS' SRMS are 1n p ossess1on Of the
+
+. . two sc1ent1ﬁc groups, Who are fully ﬂeX1ble and independent
+(including the spectrometer). Each of the three cameras has f t h rt' , 1 d , PK 4 , , 1 ,
+its own Clock and therefore each of the three respective Video ( “?m 0 er p a 1es.1nvo V6 in ,_ ,Opgatlgns) 1n p anning
+streams has its own time base Finally the time aXis of S AMS their work. The script documentation is iteratively updated in
+data is provided by an external computer. To correlate all time p arallel W1th p rogramming and testing. Final ﬂlght SCﬂpt
+axes, we established two synchronization procedures.
+
+In the ﬁrst one, the SAMS data are synchronized With the TABLE S f 4 1
+H/K data. As a synchronization event, a sequence of several V‘ ummary 0 PK‘ mOde 8'
+opening and Closing cycles of the evacuation valve (see Fig. 1) Model (abbreviation) Purpose Institution /10 cation
+is used. The Vibration generated by this event can be detected —31
+by SAMS. The correlation of the acceleration peaks With the F11ghtm0del<FM) conduCt10n_0fthe 183’ CClumbus mOd‘ﬂe
+evacuation valve opening and Closing commands is then used PKd'4 eXPenmenlS
+to synchronize the time axes. Ezngftilrmgmmy
+
+. 1 1 S
+
+In the second one, the Video data from the three streams
+are synchronized With each other and With the H/K data. In Ground model (GM) Validation of the CADMOS, CNESS7/
+the right edge of the plasma Chamber, a special light—emitting— experiment Procedures, TOUIOUSC’ France
+diode (LED) (not shown in Fig. 2) is installed Whose light trammg 0f CADMOS
+is Visible to all three cameras. Powering this LED with the personnel
+current pulse of 100 ms duration is used as a synchronization Science—reference Development of DLR—CP58/
+event. The correlation of the LED images With the pulse model 1 (SRMI) experimental Oberpfaffenhofen, Gemany
+command is then used to synchronize the time axes. Science—reference Procedures JIHT RASSg/ Moscow
+
+In this way, all the time axes of PK—4 data may be mode12 (SRM2) Russia
+synchronized With the accuracy better than 2 ms. —
+
+"
+"15","093505-15 Pustylnik et al. Rev. Sci. Instrum. 87, 093505 (2016)
+versions are delivered to CADMOS Where they are validated hydrodynamic phenomena in complex plasmas. Micropar—
+on GM (which involves EPM environment). After successful tiCles used to create complex plasmas are relatively heavy
+validation on GM, experiment procedures are executed during ,urn—sized plastic microspheres. Therefore, to obtain undis—
+respective experiment campaigns on board the ISS. turbed three—dimensional complex plasmas, microgravity is
+We should also mention here a PK—4 training model, required.
+located at the ESA Astronaut Center. It has no IBP inside and The scientiﬁc core of PK—4 is the integrated baseplate
+can only be used for the training of ISS crew members for the Which contains the plasma Chamber With electrodes and
+routine PK—4 tasks. microparticle dispensers, vacuum and gas supply systems,
+plasma generation and diagnostic means, microparticle
+IV. OPERATIONAL C ON CEPT manipulation devices, microparticle observation system With
+cameras, and illumination laser. The main experimental
+PK—4 FM on board the ISSis operated from CADMOS57 in features of PK—4 are (i) elongated plasma Chamber, (ii)
+prescheduled experiment campaigns. Atypicalcampaignlasts versatile dc discharge power supply allowing to switch the
+siX days. It starts With the initialization procedures and pump— polarity with the frequency of ~ 100 Hz and vary the duty cycle
+ing occupying two days. Three more days are dedicated to the of the polarity switching, (iii) a large Choice of microparticle
+scientiﬁc experiment runs and data postprocessing and on the manipulation possibilities, including also plasma non—
+last day the PK—4 is powered off. The experiment run duration disturbing techniques (e.g., optical manipulation and thermal),
+is limited to 90 min of Video recording by the volume of CVU and (iV) on—board plasma diagnostics represented by the
+SSD (see Section III C 1). Each experimental run is followed plasma glow observation system and a minispectrometer.
+by data postprocessing and removable HDD exchange. This set of tools makes PK—4 a real facility, appropriate for
+Three operation regimes are foreseen in PK—4: Fully various different experimental scenarios ranging from the
+automatic, semi—automatic Without time—critical tasks, and simplest like, e.g., microparticle Charge ineasurementszh22
+semi—automatic With time—critical tasks. In the fully automatic to the rather complicated ones like, e.g., complex plasma
+regime, an experiment procedure is independent of the Viscosity measurement using the shear ﬂow.25
+microparticle Cloud condition, and the script runs therefore PK—4 is installed in the Columbus module of the 188,
+without any intervention neither from the ground nor from inside the European Physiological Module. It is mainly
+crew. Most of the experiments, however, require certain operated from the ground (control center CADMOS57 in
+adjustments or Checks of the microparticle condition (e.g., Toulouse, France) With the support of the ISS crew. Scientiﬁc
+proper positioning of the microparticle Cloud in a camera experiments are programmed in scripts using the specially
+FoV) and therefore use the semi-automatic regime. In the developed, CSL—based PK—4 libraries. Scripts include pauses
+semi—automatic regime, an experiment script runs With one Where a human operator can adjust the parameters of the IBP
+or more pauses. During each pause, a certain task has to be according to the Video information from the PK—4 cameras.
+executed by a human operator, Who is able to control the After the experimental run, the Video and housekeeping data
+IBP parameters using the PK—4 HCI. After the pause task is are copied to the removable hard disk drives, Which are
+completed, the operator commands from the HCI software to delivered to the ground for the detailed scientiﬁc analysis of
+continue the experiment script execution. the experiments.
+Time-criticalily of the pause tasks is determined by the
+space—to—ground commanding delay, Which is on average 5 s ACKNOWLEDGMENTS
+one way. If the reaction time required during the pause is
+below 10 s (doubled commanding delay), the pause task is All authors greatly acknowledge the joint ESA'
+considered time—critical since it cannot be executed by the Roscosmos “Experiment Plasmakristall—4” on—board the
+ground operator and must be performed by a trained 188 International Space Station. A. V. Zobnin, A. M. LipaeV,
+crew member. An example of such a time—critical task is A. D. UsacheV, and V. I. Molotkov, supported by the Russian
+switching the dc discharge to the polarity—switching regime Science Foundation Grant No. 14—12—01235, participate in the
+during the microparticle trapping (step 4 in Fig. l8(a)). The PK—4 Project since the predevelopment phase. In particular,
+microparticle transport velocity in a dc discharge is ~1 cm/s.60 they made major contributions to “Microparticle—free plasma
+Within 10 s, the microparticles Will therefore travel a distance parameters” (Section H C) and “On—board plasma diagnostics”
+comparable to the plasma Chamber working area length. This (Section H D)- This work was also partially supported by DLR
+type of microparticle trapping is therefore always performed Grant Nos. 50WM1441 and 50WM1442-
+by the ISS crew. All authors also appreciate the guidance of BSA PK—
+In cases When the fast reaction during the pause is not 4 Facility Science Team during the development 0f the
+required, the pause tasks can be performed from the ground. apparatus.
+Maj ority of the pause tasks are not time—critical. 1
+V. E. Fortov, A. G. Khrapak, S. A. Khrapak, V. I. Molotkov, and O. F. Petrov,
+ZS/hhSIJIcifovstk 4377131232. A Khra ak A G Khra ak and G E Morﬁll
+V' CONCLUSION Phys. Rep. 421, 1 (20053. p ’ p ’ ’
+PlasmakristaH-4, 1.8 the next generation microgravity ii: iﬁ?r§.li“oiviﬁé7lﬁlgiii' Zﬁﬁdfhﬁi'yiﬁ:1§§i§?33?2asmas and
+COIIIplCX plasma fac1lity on board the Ihterhatlonal Space ColloidalDispersions:Particle-Resolved Studies ofClassicalLiquids and
+Station focused mainly on the particle—resolved studies of Solids (World Scientiﬁc, 2012).
+
+"
+"16","093505-16 Pustylnik etal. Rev. Sci. Instrum. 87, 093505 (2016)
+5V. Tsytovich, Phys.-Usp. 58, 150 (2015). 29M. A. Fink, s. K. Zhdanov, M. H. Thoma, H. Héfner, H. M. Thomas, and
+6V. E. Fortov, A. P. NefedOV, O. S. Vaulina, A. M. LipaeV, V. I. Molotkov, G. E. Morﬁll, Eur. Phys. Lett. 102, 45001 (2013).
+
+A. A. Samaryan, V. P. Nikitskﬁ, A. I. Ivanov, S. F. Savin, A. Kalmykov, 30A. D. UsacheV, A. V. Zobnin, O. F. Petrov, V. E. Fortov, M. H. Thoma, M. Y.
+A. Y. Solov’eV, and P. V. Vinogradov, J . Exp. Theor. Phys. 87 , 1087 Pustylnik, M. A. Fink, and G. E. Morﬁll, Plasma Sources Sci. Technol. 25,
+(1998). 035009 (2016).
+7A. P. NefedOV, O. S. Vaulina, O. F. Petrov, V. I. M010tk0V,V. M. Torchinskﬁ, 31See http://www.esa.int/Our_ActiVities/Human_Spaceﬂight/Columbus/
+V. E. Fortov, A. V. ChernysheV, A. M. LipaeV, A. I. Ivanov, A. Y. Kaleri, Y. P. C01umbus_laboratory for Columbus module, International Space Station.
+Semenov, and S. V. Zaletin, J . Exp. Theor. Phys. 95, 673 (2002). 32See http://www.esa.int/Our_ActiVities/Human_Spaceﬂight/Columbus/
+8A. P. NefedOV, O. S Vaulina, O. F. Petrov, V. I. Molotkov, V. M. Torchinskii, European_Physiology_M0dules for European Physiology Module.
+V. E. Fortov, A. V. ChernysheV, A. M. LipaeV, A. I. Ivanov, A. Y. Kaleri, Y. P. 33Motion range and direction are given for the optic ﬁber output image.
+Semenov, and S. V. Zaletin, New J . Phys. 5, 108 (2003). 34A. V. Zobnin, High Temp. 47, 769 (2009).
+9A. P. NefedOV, G. E. Morﬁll, V. E. Fortov, H. M. Thomas, H. Rothermel, T. 35A. V. Zobnin, A. D. UsacheV, O. F. Petrov, and V. E. Fortov, Phys. Plasmas
+Hagl, A. V. IVleV, M. Zuzic, B. A. Klumov, A. M. LipaeV, V. I. Molotkov, 21, 113503 (2014).
+O. F. Petrov, Y. P. Gidzenko, S. K. Krikalev, W. Shepherd, A. I. Ivanov, M. 36S. Mitic, M. Y. Pustylnik, and G. E. Morﬁll, New J . Phys. 11, 083020 (2009).
+Roth, H. Binnenbruek, J . A. Goree, and Y. P. Semenov, New J . Phys. 5, 33 37S. Hubner and A. Melzer, Phys. Rev. Lett. 102, 215001 (2009).
+(2003). 38M. Schulze, A. Yanguas—Gil, A. von Keudel, and P. Awakowicz, J. Phys. D
+
+10H. M. Thomas, G. E. Morﬁll, V. E. FortOV, A. V.IV1eV,V.I.M010tk0V,A. M. 41, 065206 (2008).
+
+LipaeV, T. Hagl, H. Rothermel, S. A. Khrapak, R. K. Si'ltterlin, M. Rubin— 39V. N. Ochkin, Spectroscopy ofLow Temperature Plasma (Wiley—VCH Ver—
+Zuzic, O. Petrov, V. I. TokareV, and S. K. Krikalev, New J . Phys. 10, 033036 lag, 2009).
+(2008). 40H. Kawata, Y. Takao, K. Murata, and K. Nagami, Plasma Chem. Plasma
+11p. Hoffman, R. Seurig, A. Stettner, J. Burfeindt, G. Morﬁll, H. M. Thomas, Process. 8, 189 (1998).
+M. Thoma, H. Héfner, V. Fortov, V. Molotkov, O. Petrov, and A. LipaeV, 418. Mitic, M. Y. Pustylnik, E. Kovaéevié, J . Berndt, L. Boufendi, and G. E.
+Acta Astronaut. 63, 53 (2008). Morﬁll, J . Phys. D 45, 335203 (2012).
+
+12H. Thomas, G. E. Morﬁll, V. Demmel, J . Goree, B. Feuerbacher, and D. 42Y. Feng, J . Goree, and B. Liu, Rev. Sci. Instrum. 78, 053704 (2007).
+Méhlmann, Phys. ReV. Lett. 73, 1994 (1994). 43s. A. Khrapak, B. A. Klumov, P. Huber, V. 1. Molotkov, A. M. LipaeV, V.
+
+13]. H. Chu and L. 1, Phys. Rev. Lett. 72, 4009 (1994). Naumkin, A. V. IVleV, H. M. Thomas, M. Schwabe, G. E. Morﬁll, O. F.
+
+14Y. Hayashi and K. Tachibana, Jpn. J . Appl. Phys., Part 2 33, L804 (1994). Petrov, V. E. Fortov, Y. Malentsehenko, and S. Volkov, Phys. Rev. E 85,
+
+15V. E. FortOV, A. P. NefedOV, V. M. Torchinskii, V. 1. Molotkov, A. G. Khrapak, 066407 (2012).
+
+0. F. Petrov, and V. F. V01ykhin,J. EXp. Theor. Phys. Lett. 64, 92 (1996). 44H. Rothermel, T. Hagl, G. E. Morﬁll, M. H. Thoma, and H. M. Thomas,
+
+16A. M. LipaeV, V. 1. M010tk0V,A.P.Nefed0V,O. F.Pet10V,V. M. Torchinskﬁ, Phys. Rev. Lett. 89, 175001 (2002).
+
+V. E. Fortov, A. G. Khrapak, and S. A. Khrapak, J . Exp. Theor. Phys. 85, 458. Mitic, R. K. Siitterlin, A. V. IVleV, M. H. Thoma, S. Zhdanov, and G. E.
+1110 (1997). Morﬁll, Phys. Rev. Lett. 101, 235001 (2008).
+17V.I. M010tk0V,O.F.Petrov,M.Y. Pustyl’nik, V. M. Torchinskii, V. E. Fortov, 46B. Liu, J . Goree, V. Nosenko, and L. Boufendi, Phys. Plasmas 10, 9 (2003).
+and A. G. Khrapak, High Temp. 42, 827 (2004). 47M. Y. Pustylnik, V. Y. Nosenko, S. Mitic, and G. E. Morﬁll, in New De-
+18V. E. FortOV, G. E. Morﬁll, O. Petrov, M. H. Thoma, A. D. UsaCheV, H. velopments in Photon and Material Research, edited by J. I. Jang (Nova
+Héfner, A. V. Zobnin, M. Kretschmer, S. Ratynskaya, M. A. Fink, K. Publishers, 2013), Chap. 7.
+Tarantik, Y. Gerasimov, and V. Esenkov, Plasma Phys. Controlled Fusion 48A. V. IVleV, G. E. Morﬁll, H. M. Thomas, C. Réith, G. J oyce, P. Huber, R.
+47 , B5 37 (2005). Kompaneets, V. E. Fortov, A. M. LipaeV, V. I. M010tk0V,T. Reiter, M. Turin,
+19M. H. Thoma, M. A. Fink, H. Héfner, M. Kretschmer, s. A. Khrapak, s. and P. V. Vinogradov, Phys. Rev. Lett. 100, 095003 (2008).
+Ratynskaya, V. V. Yaroshenko, G. E. Morﬁll, O. F. Petrov, A. D. UsacheV, 49M. A. Fink, H. Héfner, M. Kretschmer, G. E. Morﬁll, S. Ratynskaia,
+A. V. Zobnin, and V. E. Fortov, IEEE Trans. Plasma Sci. 35, 255 (2007). K. Tarantik, M. H. Thoma, V. E. Fortov, O. Petrov, A. UsacheV, and A.
+
+20M. A. Fink, M. H. Thoma, and G. E. Morﬁll, MicrograVity Sci. Technol. 23, Zobnin, in Proceedings of the 5th International Symposium on Turbulence,
+169 (2011). Heat and Mass Transfer (Begell House, InC., 2006), pp. 101—104.
+
+218. Ratynskaya, S. Khrapak, A. Zobnin, M. H. Thoma, M. Kretschmer, A. 50V. Nosenko and J . Goree, Phys. Rev. Lett. 93, 155004 (2004).
+
+UsacheV, V. Yaroshenko, R. A. Quinn, G. E. Morﬁll, O. Petrov, and V. Fortov, 51V. Nosenko, A. V. IVleV, and G. E. Morﬁll, Phys. Rev. E 87 , 043115 (2013).
+Phys. Rev. Lett. 93, 085001 (2004). 52A. Gavrikov, I. Shakhova, A. Ivanov, N. Petrov, O. Vorona, and V. Fortov,
+228. A. Khrapak, s. Ratynskaya, A. V. Zobnin, V. V. Yaroshenko, M. H. Phys. Lett. A336, 378 (2005).
+Thoma, M. Kretschmer, A. D. UsacheV, H. Héfner, G. E. Morﬁll, O. F. 53H.—B. Liu,Z.—J. H0u,L.—Y. Liu,Z.—L. Xu, L. Xu,W.—C. Wang, F.—M. Li, and
+Petrov, and V. E. Fortov, Phys. Rev. E 72, 016404 (2005). M.—X. Ye, Acta Phys. Chim. Sin. 16, 563 (2000).
+
+23V. Yaroshenko, S. Ratynskaya, S. Khrapak, M. H. Thoma, M. Kretschmer, 54V.Nosenk0,A.V.IVleV,andG.E.M01ﬁ11,Phys.Plasmas 17, 123705 (2010).
+H. Héfner, G. E. Morﬁll, A. Zobnin, A. UsacheV, O. Petrov, and V. Fortov, 55See http://pims.grc.nasa.gOV/pimsdocs/public/ISS%20Handb00k/hb_vib_
+Phys. Plasmas 12, 093503 (2005). equipment_PK—4_SAMS_Check0ut.pdf for PK—4 SAMS Checkout report.
+
+24V. Yaroshenko, S. Ratynskaya, S. Khrapak, M. H. Thoma, M. Kretschmer, 56See http://csl.sourceforgenet for C Scripting Language Public HomeSite.
+and G. E. Morﬁll, Contrib. Plasma Phys. 45, 223 (2005). 57See https://cadmos.cnes.fr/en/cadmos—0 for Center for the Development of
+
+25A. V. IVleV, V. Steinberg, R. Kompaneets, H. Héfner, I. Sidorenko, and G. E. MicrograVity Applications and Space Operations, National Center for Space
+Morﬁll, Phys. Rev. Lett. 98, 145003 (2007). Studies (CNES).
+
+26A. V. IVleV, M. H. Thoma, C. Réith, G. J oyce, and G. E. Morﬁll, Phys. Rev. 58See http://compleX—plasmas.dlr.de for Research Group Complex Plasmas,
+Lett. 106, 155001 (2011). German Aerospace Center (DLR).
+
+27A. UsacheV, O. Zobnin, A. amd Petrov, M. H. Thoma, H. Héfner, M. Fink, 59See http://jiht.ru/en/ for Joint Institute for High Temperatures, Russian
+A. IVleV, and G. Morﬁll, New J . Phys. 16, 053028 (2014). Academy of Sciences.
+
+288. Zhdanov, R. Heidemann, M. H. Thoma, R. K. Siitterlin, H. M. Thomas, 608. A. Khrapak, M. H. Thoma, M. Chaudhuri, G. E. Morﬁll, A. V. Zobnin,
+H. Héfner, K. Tarantik, G. E. Morﬁll, A. D. UsacheV, O. F. Petrov, and V. E. A. D. UsacheV, O. F. Petrov, and V. E. Fortov, Phys. Rev. E 87, 063109
+Fortov, Eur. Phys. Lett. 89, 25001 (2010). (2013).
+
+"

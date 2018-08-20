@@ -1,0 +1,425 @@
+"","x"
+"1","NRL SSC HICO Article for Oceans 09 Conference
+Title: The Hyperspectral lmager for the Coastal Ocean (HICO): Sensor and Data Processing
+Overview
+MD. Lewis, R.W. Gould, Jr., RA. Arnone, P.E. Lyon, P.l\/l. Martinolieh, R. Vaughan, A. Lawson,
+
+T. Scardino, W. Hou, W. Snyder, R. Lucke, M. Corson, M. Montes, C. Davis
+Abstract
+
+The Hyperspectral Imager for the Coastal Ocean (HICO) is a new hyperspectral sensor that will be housed
+on the International Space Station (188). The low-eost, rapid-development sensor was built by the Naval
+Research Laboratory (NRL). NRL is also responsible for mission planning and operational data processing
+for this new sensor. HICO is sponsored and funded by the Ofﬁce of Naval Research (ONR) within its
+Innovative Naval Prototype (INP) program. HICO is integrated and ﬂown with support from and under the
+direction of the Department of Defense Space Test Program. HICO will be the first spaceborne
+hyperspectral sensor optimized for environmental characterization of both the coastal and open ocean.
+HICO samples the 350 to 1070 nanometer spectral range in 128 spectral channels and has a spatial ground
+sampling distance (GSD) of 100 meters. HICO is manifested for launch in September, 2009; once
+operational it will be used to routinely collect imagery of select coastal regions around the world.
+
+In the spirit of the INP program, HICO will be used as a prototype pathﬁnder sensor to establish sensor
+management and algorithm requirements for future generations of spaceborne hyperspectral sensors. The
+HICO project is designed as a one-year mission, with the goal of placing a similar sensor aboard a future
+free-ﬂying satellite, following demonstration of the sensor capabilities on the ISS. Hyperspectral imaging
+provides unique capability for coastal monitoring and ocean Characterization. Coastal products from HICO
+such as bathymetry, optical properties, biological properties, and bottom characterization can provide
+coastal managers and researchers new capabilities for ocean observation from space. HICO derived
+products requires complex processing procedures from calibration, atmospheric correction, and in water
+algorithms in order to exploit hyperspectral signatures. This presentation describes the HICO sensor and the
+operational processing required to convert raw HICO data to ocean bio-optical products.
+
+Introduction
+
+The Hyperspectral Imager for the Coastal Ocean (HICO) is designed to provide hyperspectral imagery for
+the study of the coastal ocean and adjacent land. The HICO sensor collects 128 contiguous spectral channels
+of solar reﬂectance in the 350 to 1070 nm range. HICO will be installed on the International Space Station
+(188) in September of 2009. The HICO data ﬂow from the 188 will provide a maximum of 15 scenes per
+day. Standardized data processing is required to provide timely HICO data products and to create
+coordinated evolution of the processing applications and data products. Several data reﬁnement
+transformations are required to generate the products that are useful for research. These transformations
+will be performed by the Remote Sensing and Oceanography Divisions of the Naval Research Laboratory,
+located in Washington, DC and at the Stennis Space Center in Mississippi, respectively.
+
+HICO will be installed on the Exposed Facility (EF) 0f Kibo, which is the J apanese Experiment Module
+
+1
+0-933957-38-1/09/$20.00 ©2009 MTS
+
+"
+"2","(JEM) 0n the 188. The BF section of Kibo was connected to Kibo's Pressurized Module (PM) on July 18,
+2009. The HICO sensor will be one of the first experiments to be installed on the J EM-EF shown in Fig. 1.
+After the sensor begins to provide a stream of hyperspeetral data scenes, NRL will pass the data through a
+series of processing steps to create a set of data products. A sequence of software modules will transform
+the raw data packets of HICO data into ocean parameter data products. First, the raw data (Level 0) will be
+calibrated and geoloeated (Level lb). Then the data will be processed through a series of software modules
+to yield ocean products, such as Chlorophyll concentration, absorption and backseattering coefficients, and
+others. Several of these software modules will be developed within the Automated Processing System
+(APS), a data processing system developed at NRL to create ocean products from a variety of satellite
+sensors [1]. Each data transformation will be tested to ensure data quality. Once the data processing system
+is ﬁnalized, the processed data sets will be distributed to Navy customers and the broader research
+community.
+Exper iment Logistics Module
+, I"" i i i/Pressurized Section (ELll-PS)
+l 1
+I 1
+‘ l ' iii Airlock
+:‘tha I I l ‘ /Remote Manipulator System
+i. “5‘ “.43: a a (JEIIRMS)
+'- ‘13.”; v j, ‘17? wagi-
+3""* ' Wﬁ ‘
+”\‘K‘jl‘ rf f. ., A a
+Pressurized Module ‘ Lsﬁw
+_' ' i .5"" AF ' .‘
+(PH) ‘ ‘. ‘ ‘ ‘ﬁ 5 ﬁg
+Exposed Faci I ity "" .' x ’ .‘Jj
+(EF) /
+lnter-orbit Commnication SystemUCS) Experiment Logistics Module
+~Exoosed Section(ELM—ES)
+Figure 1. Kibo Module
+The HICO sensor (Fig. 2) has been assembled, tested and evaluated by NRL [2]. The evaluation included
+radiometric, spectral, and geometric calibration, Characterization of polarization sensitivity, and Vibration
+and thermal-vaeuum testing. Once completed, HICO was integrated into the HICO RAIDS Experiment
+Payload (HREP) which was subjected to further testing at NRL, NASA and the Japanese Space Agency
+(JAXA). The HICO sensor is now at JAXA’s Tanegashima Island Launch facility ready for integration to
+the H-II Transfer Vehicle (HTV) and is scheduled to be launched to the 188 on September 11, 2009. HICO
+data will provide unique hyperspeetral data with 100 m ground sample distance (GSD) for selected regions
+of the coastal ocean around the world. Data will be collected to demonstrate the utility of hyperspeetral data
+for naval applications and for scientiﬁc studies of the coastal ocean. Due to the ISS orbit the HICO sensor
+will sample selected coastal regions at different times of the day and from a range of Viewing angles. The
+unique Viewing geometry and orbit of HICO 0n the 188 is quite different from existing ocean color sensors
+in sun-synehronous, polar orbit (SeaWiFS, MODIS), providing a variety of data processing Challenges,
+2
+
+"
+"3","including pixel geolocation, atmospheric correction, and bio-optical inversion to yield useful ocean
+products. However, the ﬂexibility also makes HICO especially useful as a pathﬁnder for future ocean color
+imagers, including those in geostationary orbits.
+
+The data plan for HICO has three main components: data collection, data processing and data distribution.
+In addition, processed data Will be validated by comparing it to other sensor data and in situ data sources.
+Prior to launch, NRL assembled a “target deck” of desired ocean targets (geographic locations of interest to
+the Navy and the scientiﬁc community). Data collection includes determining Which scenes are to be
+acquired (based on priorities and sensor ephemeris data), and scheduling those scenes for acquisition. It
+also includes the actual sensor activation and data storage. A mission plan containing the schedule of data
+requests Will be created every 2 days based on the HICO constraint that no more than one scene can be
+acquired per orbit.
+
+These mission plans will be uplinked to the 188. After data collection the HICO data Will be downlinked
+by NASA using standard procedures and communication links for the 188. Data Will then be transferred to
+NRL for processing from raw data packets (Level 0 data) to calibrated and geolocated images (Level lb
+data). Level lb data Will be archived at NRL and processed into ocean data products. Following product
+generation, NRL Will distribute the data products to naval users and Oregon State University (OSU); OSU
+will further distribute the HICO data products to university researchers and the international science
+community.
+
+{2mm Spectrumaw _-..,
+Endourl ,, I .. ._
+Farm DEL“ -.__:.' 1 \l
+Rutary 3139:: J V» r I
+m Pcinl Line 7' t 4 “r -. "" , I
+afﬂiuht “R . :3 1. -..- r H.“ . . - .. . 1""“
+: : IL - . .r '
+i . _ _ _ ”*1“. . 1,: _
+_ ‘w: _ . _
+smmvmﬁam ‘5'/
+Figure 2. HICO Sensor (Image Credit NRL)
+HICO Mission Planning and Data Collection
+
+A methodology for HICO mission planning and data collection has been established. This includes
+implementing a system for selecting sites for HICO data collection and translating the scene information
+into a data collection schedule. It also involves transferring that information to NASA for uplink to the ISS,
+collecting the data and then downlinking the data to ground stations.
+
+3
+
+"
+"4","1. Scheduling and Commanding
+
+A list of desired scenes has been developed and prioritized. During the operating life of the HICO sensor
+a two or three day mission plan Will be uploaded to the 188 every Monday, Wednesday and Friday. The
+mission plans Will be developed using the Satellite Tool Kit (STK). STK is a software package available
+from Analytical Graphics, Inc that allows compleX sensor orbital and Viewing computations to be performed
+from airborne or orbital platforms. It Will be used to model the HICO sensor Viewing geometry from the
+188. Other inputs into STK will be NASA operational data including the planned ISS orbital traj ectory and
+attitude time line. STK Will be used to determine What scenes from the prioritized list can be acquired given
+the planned ISS orbit and attitude information. The schedule is a 2 or 3 day list of scenes Within the HICO
+field of regard, Which is +45 deg/—30 deg off—nadir. The HICO sensor Will then be programmed to acquire
+these scenes.
+
+2. Mssion and Data Characteristics:
+
+The HICO sensor Will acquire at most one observation (scene) per orbit (15 orbits per day). The
+integration time is 13.7 milli-seconds Which translates to 73 frames per second. During data collection the
+sensor Will sequence through several positions and data collection phases. First, the rotating stage Will
+position the sensor at the stowed position and the camera Will be turned on. Two hundred dark frames Will
+be collected With the sensor in this position. Then the camera Will be turned off and rotated to the scene
+imaging position. The sensor Will be turned on and the frames of the scene Will be acquired. After the
+scene is acquired the camera Will be turned off and rotated back to the stowed position. Finally the camera
+Will be turned on and additional dark frames Will be acquired before the camera is turned off. The dark
+frames Will be used to calibrate the data by providing information on the inherent electronic noise generated
+by the system.
+
+This results in a standard HICO scene that consists of:
+
+0 Dark frames before scene acquisition = 512 samples X 200 lines X 128 channels
+0 Standard image = 512 samples X 2000 lines X 128 channels
+
+0 Dark frames after scene acquisition = 512 samples X 200 lines X 128 channels
+0 Scene total = 512 samples X 2400 lines X 128 channels X 2 bytes
+
+0 Data ﬁle scene size is therefore 314.6 Mbytes
+
+0 Geographic scene size is 50 km Wide by 200 km long
+
+High spectral resolution observations of 384 spectral Channels Will occasionally be acquired for
+wavelength calibration, tracking or special eXperiments. In this high spectral resolution mode the
+integration time Will be set to 30 milli-seconds Which translates to 33 frames per second. In this mode only
+500 lines of data and 200 lines of dark frame data Will be collected and the total scene size Will be 2753
+Mbytes.
+
+3. Data/Information Downloading:
+
+The images Will be stored in ﬂash memory in the onboard computer until overwritten. The memory Will
+hold approXimately 40 images or a minimum of 2.5 days of data. The images Will be placed in the
+downlink queue immediately after collection. It should take less than one 188 orbit to downlink one HICO
+scene to a ground station.
+
+4
+
+"
+"5","Once the HICO data is downlinked t0 the NASA ground station it is forwarded to NRL to be reassembled
+from its individual downloaded data packets. NRL will assemble the image data and processes it to Level
+1b, which involves calibration of the raw counts to radiance values and appending geolocation information.
+The imagery will then be stored in the Hierarchical Data Format (HDF) and processed further using APS.
+HDF is a data ﬁle format designed by the National Center for Supercomputing Applications (NCSA) to
+assist users in the storage and manipulation of scientific data across diverse operating systems and
+machines. NCSA developed a library of callable routines and a set of utility programs and tools for creating
+and using HDF files [3].
+
+HICO Data Processing in APS
+
+To meet the research community's needs, HICO data must be processed and distributed in a timely
+fashion. The data scenes need to be downlinked, ingested and processed into HICO data products, rapidly
+and with minimal operator intervention. These processing steps include modules for quality assurance,
+sensor calibration Checks, algorithm validation, and product generation. The data products will be
+distributed to Navy operational users as part of the Innovative Naval Prototype (INP) demonstration and t0
+the broader HICO science team and research community.
+
+1. Automated Processing System (APS)
+
+NRL developed APS, which processes satellite data into ocean color data products. APS is a collection of
+methods used for ocean color processing which provide the tools for the automated processing of satellite
+imagery [1]. These tools are in the process of being modiﬁed to handle the HICO data stream. APS was
+developed for multispectral imagery from polar-orbiting satellites, s0 modiﬁcations are required to handle
+the hyperspectral data stream and the unique Viewing geometry. Furthermore, additional atmospheric
+correction routines will be adapted for HICO imagery and evaluated. This will include an implementation
+of the TAFKAA atmospheric correction procedure which focuses on atmospherically correcting images over
+shallow aquatic areas, where complications arise dur t0 the varying effects from specular reﬂection, wind
+blown surface waves, and reﬂectance from the benthic substrate [4]. Cloud and Shadow and Near Infrared
+(NIR) armospheric correction algorithms will also be evaluated.
+
+APS currently processes data from the Advanced Very High Resolution Radiometer (AVHRR), the
+Moderate Resolution Imaging Spectroradiometer (MODIS), the Medium Resolution Imaging Spectometer
+(MERIS), the Sea-Viewing Wide Field-of-View Sensor (SeaWiFS), the Coastal Zone Color Scanner (CZCS),
+and the Ocean Colour Monitor (OCM) sensors. There are some major differences between the HICO data
+and the AVHRR, MODIS, MERIS, SeaWiFS, CZCS, OCM data. Specifically, HICO data is hyperspectral
+providing many more spectral Channels than the currently processed data sets, which are all multispectral.
+However there are substantial software methods and capability already eXisiting in APS which makes it a
+good choice for the automated processing of HICO data. Methods of calibration, atmospheric correction
+and bio—optical inversion algorithms for HICO data are being integrated into APS. In addition, many NRL
+customers who plan to use HICO data already use APS and can readily ingest products at different data
+levels from APS into their processing systems.
+
+APS is a collection of UNIX programs and shell scripts designed to automatically generate map—projected
+image data bases of satellite derived products from a heavy ﬂow of raw satellite data. Individual scenes are
+sequentially processed using standard parameters from the raw digital counts (Level-l) t0 radiometrically
+and geometrically corrected (Level-3) products within several minutes. APS further processes data into
+
+5
+
+"
+"6","several different temporal (daily, 8-day, monthly, yearly, and latest pixel) composites or averages. These
+products are stored in the HDF with APS speciﬁc attributes. Additionally, it automatically generates quick-
+look “browse” images in J PEG format and may populate an SQL database using PostgreSQL.
+
+APS was designed, developed, and implemented by the NRL Ocean Sciences Branch (Oceanography
+Division) to handle continuous streams of satellite data from multiple sensors. Originally, the system was
+designed to produce sea surface temperature maps from data collected by the Advanced Very High
+Resolution Radiometer (AVHRR) sensor. Data from the AVHRR is received and processed daily (up to siX
+passes per day). APS has since been upgraded to process ocean color satellite data from the MODIS,
+MERIS, SeaWiFS, CZCS, and OCM sensors. APS provides near real-time processing with the additional
+option of reprocessing historical data. This reprocessing capability provides a powerful tool to test
+algorithm changes; we can easily compare results from previous processing versions with results using new
+or modiﬁed algorithms. For example, we can reprocess the entire 11-year SeaWiFS archive of Gulf of
+Mexico imagery in a few weeks.
+
+APS uses a simple monitoring technique, which has been found to be reliable. The main driver regularly
+polls a speciﬁed input directory for incoming data and, for each ﬁle that is found, executes what are known
+as areas scripts on the ﬁle in a working directory. Multiple area scripts deﬁne the geographic regions of
+interest to the user. If the image swath covers any of the areas of interest, the scene is processed and ocean
+products are produced for each area covered. After each area script has been run on the ﬁle, the resulting
+data products are moved to an output directory. This method uses the input directory as the queueing system
+for data to be processed. The areas scripts do the actual construction of the desired data products.
+
+2. APS Data Levels
+
+APS transforms data through a series of processing levels. The data at each level is stored in units of
+measurements consistent with the associated transformation. In addition, metadata containing information
+about the scene will be added at speciﬁc levels. This metadata includes information such as the number of
+rows, columns, and Channels as well as information such as Channel wavelength, geoloeation projection,
+sensor Viewing geometry and ephemeris data.
+
+The following discussion gives a brief introduction to the data levels that will be used by APS for HICO
+data processing. Initially, the raw data are transformed to a calibrated and geoloeated format, eventually
+ending at Level 1b. Higher order data products are created from the Level lb data.
+
+Level 0 contains at-sensor data information stored as top of atmosphere radiance data in digital numbers.
+It also contains metadata describing instrument status, 188 location and star ﬁnder/traeker data.
+
+Level 1a incorporates navigational information into the top of the atmosphere radiance data set. This
+includes geoloeation information for each pixel in the image and also stores additional status information of
+the sensor.
+
+Level 1b data is the result of a calibration transformation to top of the atmosphere radiance in units of
+milli-watts/meter2/steradian. The geoloeation, sensor status and Viewing geometry metadata are also
+updated. NRL is in the process of extending APS to transform the HICO Level lb data into a variety of
+ocean data products. The system will be developed to automatically perform the transformations when new
+HICO data is received. These data levels are described in the following paragraphs.
+
+6
+
+"
+"7","Level 10 data contains HICO data that has been used to model speciﬁc multispectral sensor data. The
+modeled data Will primarily be MODIS data, but can also represent data from other sensors Which are
+currently processed by APS. The modeled MODIS data Will have 9 spectral Channels generated by
+integrating the HICO Channels across the spectral response function of the MODIS Channels in the 350 nm
+to 1070 nm range. This will enable the HICO data to be processed as though it were MODIS data, With
+existing multispectral algorithms in APS, for direct comparison With and validation against MODIS
+imagery.
+
+Level 221 is the result of a transformation designed to remove sea surface glint. The sun glint correction
+algorithms will incorporate methodology from Hedley, et al. [5] and/or Hochberg et al. [6]. These
+algorithms were developed for 10 meter data and may need to be modified to accommodate the 100 meter
+HICO data sets. The output of the glint correction may not be in units of remote sensing reﬂectance.
+Depending on how and When this transformation is performed, the results could be glint-eorrected radiance
+or glint—corrected at-sensor reﬂectance or glint-eorrected remote-sensing reﬂectance.
+
+Level 2b data is the result of an atmospheric correction using the automated TAFKAA atmospheric
+correction algorithm. This process Will use date, time, latitude, longitude, as well as the input radiance ﬁle
+and scale factors to generate atmospherically corrected reﬂectance or Rm ﬁles.
+
+Level 2c data is the result of standard APS multispectral algorithms. These transformations Will be only
+performed on the Level 10 multispectral data modeled from HICO data. These data products Will include
+the QAA optical products, the Gould water mass classification, and the radiance ratio derived Chlorophyll
+concentration. Standard Level 2 pixel quality ﬂags Will be set for a variety of data quality conditions.
+
+Level 2d data contains processed hyperspectral ocean water and bathymetry products. These data
+products include data products of the water's inherent optical properties (IOP), optimization of absorption
+and scattering coefﬁcients as well as bottom depth and bottom reﬂectance products. Metadata ﬂags for
+conditions such as turbid water, high and negative radiance values Will be added.
+
+Level 2e data contains land products such as the results of the Bachmann algorithms for vegetation/terrain
+mapping.
+
+Level 2f data contains hyperspectral remote sensing surface reﬂectance Rrs data products. It Will also
+update the metadata for ﬂags showing land areas and water areas and also pixels covered by clouds and
+those Which failed the atmospheric correction process.
+
+Level 3 data contains previously described Level 1a data products that have been remapped to standard
+projection systems such as UTM.
+
+Fig. 3 shows the relationship and transformation ﬂow of the data as it passes through the various levels of
+data transformation. The arrows show the data ﬂow from level to level. All of the output Will be archived
+in the HDFS format.
+
+7
+
+"
+"8","Level 0 Level 1a: Level 1b:
+Navigation Calibration
+Multiband Hyperspectral Algorithms
+Level 1c: Modeled
+sensor bands Level 1b: Calibration
+MODIS
+MERIS i
+OCM Level 2a :
+SeaWIFS Sea Glint
+Level 2b : Level 2f: Cloud and
+TAFKAA shadow atmospheric
+Lev_e| 2°: Standard _APS Atmospheric correction
+Mulltspectral Algorithm Correction
+Products
+Level 2d: Hyperspectral Algorithm
+Derived Products
+Level 3: Remapping |
+Figure 3: HICO Data Levels
+HICO Data Distribution
+Once the data products have been processed through APS they will be made available to the research
+community. Domestic users of the data Will be able to acquire dataset through NRL. International users of
+the data Will be able to acquire data sets through OSU.
+Data Product Validation and Usage
+HICO data Will provide a rich set of data products for coastal ocean research. Multispectral data sets Will
+be modeled by HICO. For example, HICO Channels Will be integrated across the MODIS spectral response
+function. This will provide proxy data at 9 MODIS wavelength channels. However, the MODIS proxy data
+derived from HICO will have the 100 meter HICO GSD. Comparison of the proxy multispectral data
+products to the true multispectral data products Will give some indication of improvement in data products
+due to the increased spatial resolution. Data products generated by multispectral sensors include standard
+NASA products as well as navy-speeiﬁc products: Chlorophyll concentration, partitioned absorption
+coefﬁcients (colored dissolved organic matter (CDOM), phytoplankton and detritus), backscattering
+coefﬁcients, diver Visibility, bottom depth, bottom reﬂectance, optical water mass characterization, and
+total/organiC/inorganic suspended particulate loads. The HICO bio—optieal products Will be compared to in
+8
+
+"
+"9","situ ground truth data. This will enable assessment of HICO data product quality.
+
+In situ data stored at the Martha's Vineyard Coastal Observatory (MVCO) in Massachusetts will be used
+to validate HICO data. MVCO has a wealth of ocean data from the coastal waters of Massachusetts.
+Among other data types this data sets includes wave ﬁelds, turbidity, Chlorophyll and temperature. Data
+products derived from HICO data will be compared with the MVCO in situ data to quantify the accuracy of
+the remotely sensed data products.
+
+Other sites, such as White Sands, New Mexico, may be used in the validation process. The area around
+White Sands has large homogeneous psuedo-invariant bright reﬂective Characteristics. Spectra from HICO
+can be compared to spectral reﬂectance taken from the ground to also Characterize the spectral response of
+the sensor and also atmospheric phenomenon.
+
+Conclusions
+
+The HICO sensor was built and tested by NRL, and NRL will manage the collection, processing, archival,
+and distribution of the data. A wide variety of bio-optical products will be generated to support both Navy
+and scientific missions in open-ocean and coastal waters. Furthermore, the 100 meter spatial resolution of
+HICO will enable investigations of riverine and estuarine environments. With the wealth of contiguous
+spectral wavelength information, HICO will facilitate development of new hyperspectral algorithms and
+ocean products, and will advance our understanding of phenomena that are better identiﬁed in more narrow
+wavelengths than current multispectral satellite sensors.
+
+Acknowledgment
+
+This program is supported by NRL 6.2 base program PE- 6000123, Autonomous “Processing for
+Producing Hyperspectral Products on Tactically Relevant Time scales” and “Realizing the Naval Scientific
+return of HICO”
+
+References
+
+[1] P. M. Martinolich, (2006), Automated Satellite Processing System User’s Guide 1257 Version 3.4, NRL. Washington, D. C., Accessed August, 2009,
+(Available at http ://www73 3 3 .nrlssc.navy.mil/docs/aps_v3 .4/user/aps/)
+
+[2] M. R. Corson, D. R. Korwan, R. L. Lucke, W. A. Snyder, C. 0. Davis, “The Hyperspectral Imager for the Coastal Ocean (HICO) on the International Space
+Station,” Proceedings of IGARSS 2008 (IEEE International Geoscience & Remote Sensing Symposium), Boston, MA, USA, July 6-11, 2008
+
+[3] The HDF Group — Information, Support and Software, Accessed August 2009, www.hdfgl‘oupDI‘g
+
+[4] B. C. Gao, M. J . Montes, Z. Ahmad, and C. 0. Davis, 2000, “An Atmospheric Correction Algorithm for Hyperspectral Remote Sensing of Ocean Color from
+Space,” Appl. Opt. 39(6): 887-896.
+
+[5] J . D. Hedley, A. R. Harborne, and P. J . Mumby (2005), “Technical note: Simple and Robust Removal of Sun Glint for Mapping Shallow Water Benthos”,
+International J ournal of Remote Sensing 26:10, 2107 — 2112.
+
+[6] E. J . Hochberg, S. Andrefouet, and M. R. Tyler, (2003), “Sea Surface Correction of High Spatial Resolution lkonos Images to Improve Bottom Mapping in
+Near—Shore Environments”, IEEE Transactions on Geoscience and Remote Sensing, 41 :7, 1724 — 1729.
+
+9
+
+"

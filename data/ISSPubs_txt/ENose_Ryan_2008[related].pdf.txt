@@ -1,0 +1,445 @@
+"","x"
+"1","2008-01-2044
+Ground Validation of the Third Generation JPL Electronic Nose
+M. A. Ryan, A. V. Shevade, A. K. Kisor,
+K. S. Manatt, M. L. Homer, L. M. Lara and H. Zhou
+Jet Propulsion Laboratory, California Institute of Technology, Pasadena CA 91109
+Copyright © 2008 SAE International
+ABSTRACT developing a Third Generation ENose which is designed
+to monitor spacecraft cabin air quality in near real-time.
+The Third Generation ENose is an air quality monitor
+designed to operate in the environment of the US Lab on Development Of the Third Generation JPL ENose has
+the International Space Station. It detects a selected required tWO major areas 0t development. One area is
+group of analytes at target concentrations in the ppm the design and fabrication Of an interface unit Which Will
+regime at an environmental temperature range of 18 - allow the ENose to be operated through the EXPRESS
+30 °C, relative humidity from 25 - 75% and pressure Rack (EXpedite The PRocessing 0t Experiments T0
+from 530 to 760 torr. The abilities of the device to detect Space Station) on the '33 for a six-month technology
+ten analytes, to reject confounders as “unknown” and to demonstration experiment. The second area 0t
+deconvolute mixtures of two analytes under varying development includes the sensing platform and the data
+environmental conditions has been tested extensively in analysis software. Using the Second Generation ENose
+the laboratory. Results of ground testing showed an as a base, the sensing materials, sensor substrate, and
+overall success rate for detection, identification and data analysis routines are being expanded in order to
+quantification of analytes of 87% under nominal include the ability to detect additional inorganic species,
+temperature and humidity conditions and 83% over all mercury and SUttUF dioxide, and to provide quasi-real
+conditions. time data analysis. The design and development of the
+3rd Generation ENose has been discussed in detail
+INTRODUCTION elsewhere [7,8]-
+The JPL Electronic Nose [1_5] is an event monitor This paper will focus on extensive laboratory testing of
+designed and built for near real time air quality the capabilities of the 3r Generation Electronic Nose
+monitoring in crew habitat aboard the space (ENose) undera variety of environmental conditions.
+shuttle/space station. This is an array—based sensing
+system which is designed to run continuously and to
+monitor for the presence of selected chemical species in
+the air at parts-per—million (ppm) to parts-per—billion (ppb) ‘\\
+concentrations. '0 ' ,
+There have been three phases of development of the ﬁfe? ‘ "" 7 j
+JPL Electronic Nose. In the first phase, a device f‘fg ,
+capable of detecting, analyzing and quantifying ten ’3? ‘x ‘5
+analytes at the 1-hour Spacecraft Maximum Allowable ""\‘ *s.
+Concentration (SMAC) was developed. This device was a; Q
+tested successfully in 1998 on Space Shuttle flight STS— \
+95 [4]. In the second phase, the ENose was _ ' :
+miniaturized and the capabilities were significantly ' 0
+expanded to include 21 analytes and detection at
+varying humidity and temperature. The Second
+Generation ENose was tested extensively on the ground ' h ”‘3’”
+and was demonstrated to be able to detect, identify and _ _
+quantify the 21 analytes at or below their 24-hour Figure 1:. The Th'rd .Generatlon ENose. The
+SMACs [6]. In preparation for an upcoming, six-month Sensor Unit IS enclosed In the Interface Unit, which
+technology demonstration aboard the International W'” be connected to the '88 EXPRESS Rack
+Space Station (ISS) in 2008-09, the JPL ENose team is
+
+"
+"2","requirement for this program; however, formaldehyde
+was treated as a Tier 2 analyte for ease of testing.
+THE THIRD GENERATION JPL ENOSE
+The ENose was tested for response and ability to
+identify and quantify eleven chemical species, shown in ENVIRONMENTAL CONDITIONS
+Table1. A quantification is considered to be correct if
+the concentration value reported by the ENose data The environmental conditions under which testing was
+analysis software is +/-50% of the independently done were defined according to conditions which can be
+measured concentration of the species. The error range expected in the US Lab on the ISS. Background air
+of +/-50% in quantification is based on the approximate composition was based on allowed ISS atmospheric
+range with which the Spacecraft Maximum concentrations of water, carbon dioxide and methane.
+Concentrations (SMACs) are set; toxicities are not well Relative humidity (RH) may vary from 25-75% at
+known for most chemical species, and SMACs are set temperatures of 18°C - 30°C, C02 concentration may be
+very conservatively. as much as ~15 mm Hg partial pressure and CH4 may
+be several hundred ppm). Atmospheric pressure in the
+Success rate in analyte identification and quantification ISS may vary from 538 - 760 torr (10.4 to 14.7 psi) and
+is the number of correctly identified and quantified may rise for brief periods (minutes) as high as 830 torr
+deliveries of analyte, minus the number of false (16 psi).
+negatives and false positives, divided by the number of
+deliveries of analyte. A false negative is failure to detect Temperature may vary over the range 18 - 30°C (66 to
+the delivery and presence of a targeted chemical 86 °F). Nominal conditions are 760 torr, temperature 21-
+species. A false positive is a report of the presence of a 23°C and relative humidity 30-40%. Testing was done
+chemical species when it was not present. under all conditions, but not all concentrations of all
+Misidentification of a targeted species, for example analytes were tested under all conditions. For
+identifying propanol as methanol, or identifying a repeatability in testing, water content was controlled as
+confounder as a targeted species, is considered to be a ppm water rather than as relative humidity. Nominal
+false positive. conditions on orbit in ISS correspond approximately to
+21-22°C, 10,000 ppm water, and atmospheric pressure.
+Table 1: Analyte List and Target Detection
+Concentration; mg/m° is a pressure independent unit;
+ppm is for1 atm. TRAINING SETS
+ANALYTE ?AJRAgg-T ?:IRAélg-T As the ENose is an array-based chemical sensor device,
+. 3 (ppm) before It can be used as an air quality menitor, training
+m lm sets must be achIred. Based on the training sets, the
+patterns of array response to targeted analytes under
+-—_— specified conditions are included in the data analysis
+———— a.gomhm.
+Data from the ENose are recorded for each individual
+-—_— sensor as resistance versus time. Because the ENose
+-—_— is designed to function as an event monitor, the data are
+-—_— analyzed as change In reSIstance vs. time. Individual
+-—_— sensor teSIstances are recorded Simultaneously, With a
+e ano pOInt being taken every twenty seconds. While It would
+-——— be possible to take data more or less frequently than
+-—_m three times a minute, this data rate has been established
+as an optimumlrate to show fairlly rapid changes in the
+enVIronment Without ovenNheImIng computer memory
+with data. Our data analysis approach defines an
+I I I I I I “event’ as a change in the composition of the
+The chemical species m Table 1 are d'V'ded 'n’F‘? three environment which lasts longer than ten minutes, or
+tiers, based on the 'mport‘fmcg to NASA Hab'tab'l'ty and thirty points at the standard data rate, in part because
+Envnronmental Factors Office In detectingthese speCIes. events of duration shorter than ten minutes cannot
+Formaldehyde was classifleci as Tier 3 because Its practically be addressed or mitigated using either
+Identification and quantification was a goal, not a breathing apparatus or c|ean-up techniques. The data
+analysis algorithm needs about ten points (~ three
+
+"
+"3","minutes) to establish that resistance has Changed Training sets can be used to judge the accuracy of the
+significantly. Based on the data rate and needs of the identification and quantification algorithm even though
+data analysis algorithm, training sets are established they are used to establish the coefficients. Accuracy of
+using vapor deliveries, or events, of 30-45 minutes the algorithm has been computed using half the data to
+duration. establish the algorithm and coefficients and the other
+half to test the application, and using all the data for both
+The data analysis algorithm is a Levenberg-Marquart functions. The statistical difference in results is
+non-linear least squares fitting approach to insignificant. In the success rates for identification and
+deconvolution of change in resistance across the quantification shown below, all the data are used for
+sensing array into identification and quantification of the both functions.
+analyte causing response in the sensors. The analysis
+approach has been discussed in detail previously [9].
+Training sets were established for the eleven analytes in SUCCESS RATES
+Table 1. The environmental conditions for the training
+sets vary only in water content. Because there is Tables 2 and 3 summarize the identification and
+temperature control in the sensing chamber in the quantification accuracy results based on training sets. In
+ENose, the environmental temperature does not these data, success in detection signifies that the
+influence the temperature at which analytes are analyte was detected, identified correctly, and quantified
+detected, identified and quantified. Detection within +/- 50% of the measured delivered concentration
+temperature iS held at 25-270C for all training $9128. of anaIyte_ An “event” is defined as a change in
+Detection temperature rises above 270C only when environment caused by the presence of a targeted
+environmental temperature approaches 300C, the species. A false positive is detection of an “event,”
+maximum temperature for ENose operation, in which either where there was no event, or mis-identification of
+case detection temperature Wt” be 27-2800 The relative an event (e.g. identification of toluene as methanol.) A
+humidity 0f the environment Wt” be altered it the false negative is failure to identify that an event has
+temperature Of the sensing Chamber iS different from the happened, without respect to identification or
+temperature of the environment, so for training sets, the quantification.
+humidity is regulated as ppm water. Training sets were
+made in a baCkground Of ﬁltered house air With water AS can be seen from both Tables 2 and 3’ accuracy in
+concentrations 0t 5000: 10,000, 15,0000 and 20,000 identification of analytes is best at nominal humidity
+ppm. These concentrations correspond roughlyto 20%: conditions, approximately 10,000 ppm water (30-40%
+40%, 60% and 80% relative humidity at 210C, and cover RH). The overall success rate for identification and
+the specified range 0t humidities for the specified range quantification is better when the water content of the air
+oftemperatures. is not at its highest; for Tier 1 species, the overall
+success rate at nominal temperature and humidity is
+lnitial training sets where pressure was varied showed 93%, and for Tier 2 the overall success rate at nominal
+that the sensor resistance Changes with respect to the conditions is 85%.
+presence of analyte were not dependent on
+environmental pressure, so a complete set of varied At conditions Of 50-60% relative humidity with
+pressure training sets was not made. environmental temperature above 21-22°C, the
+increased water absorbed by polymer based sensors
+In designing training sets, the range 0t analyte lowers the sensor responses to other vapors. ln
+concentration to which sensors are exposed is set at 1/3 addition, high water content in polymer based sensors
+to 3 times the target concentration. ThIS range is lelde can resuIt in disso|ution of some Tier 2 compounds,
+into 10-12 concentrations, and the sensor array exposed particularly oxygen-containing compounds, which will
+to those concentrations at each water content. A total of result in a different type Of capture Of analyte molecules
+1599 differentanalyte exposures were made to establish in the sensing ﬁ|m_ At high humidity, overall success
+the training sets; 325 for Tier 1 compounds and 1274 for rate for Tier 1 species falls to 82% and to 74% for Tier 2
+Tiers 2 & 3- The exposures were divided approximately species. Sensors for mercury are inorganic, and so are
+equally among four humidity levels, although there was not significantly affected by humidity; the fall in success
+a larger number at the tWO lowest humidities in both with humidity for Tier1 species is cause bya slightfall in
+sets, Tier 1 and Tiers 2 & 3- Formaldehyde, the one Tier success with ammonia and a significant fall in success
+3compound, had the fewest exposures, as it wasagoal for 302_ With Tier 1 species, lower, but not zero,
+rather than a requirement in thiS program. humidity tends to be better for sensing, especially with
+802, which reacts with water to form sulfuric acid.
+Training sets give insight into the COhditiOhS under WhiCh Sensor response to ammonia falls off with humidity as it
+the ENose operates best, WhiCh COhditiOhS cause does for the organic species in Tier 2; it is the same
+difficulties in identification and quantification, and allow polymer sensors which are used to detect and quantify
+calculation Of performance as accuracy Of identification organic compounds that are used in sensing ammonia
+and quantification, number of false negatives and
+number of false positives using a large number of trials.
+
+"
+"4","For Tier 2 compounds, lower humidity, 5000 ppm water, Because the concentration of formaldehyde is very low,
+and slightly higher than nominal humidity, 15,000 ppm and because it is a small molecule, response to this
+water, have similar overall accuracy, success rates of compound is masked by response to water at high
+80% and 79%, respectively. The overall accuracy at the humidity. Although the ENose program has worked to
+high end of humidity conditions, 20,000 ppm, is develop approaches to deconvolute response to an
+significantly lower that at the lower humidities for Tier 2 analyte masked by high humidity, in the case of
+species, as it is for Tier 1. formaldehyde, which has a very small signal in polymer
+sensors, the sensor response cannot be separated.
+The Tier 3 species, formaldehyde, is detected well at
+nominal conditions, but poorly at high humidities.
+Table 2: Analyte ID success rates for Tier 1 chemical species, based on training set data
+
+Analyte at 25°C, 5000 ppm Number
+
+H20 . 16% RH Correct False Pos False Neg of events
+
+Ammonia (2 - 25) .m—“m
+
+Mercury(.003-.03)
+
+Sulfur Dioxide
+
+Average, Tier1 —-m-m-m
+
+Analyte at 25°C, 10000 ppm Number
+
+H20 . 32% RH Correct False Pos False Neg of events
+
+Ammonia (2 - 25) ———-m
+
+Mercury(.003-.03)
+
+Sulfur Dioxide
+
+Average, Tier1 m-m-m-m
+
+Analyte at 25°C, 15000 ppm Number
+
+H20 . 43% RH Correct False Pos False Neg of events
+
+Ammonia (2 - 25) ——-m-aa
+
+Mercury(.003-.03) ———-m
+
+Sulfur Dioxide
+
+Average, Tier1 —-m-m-m
+
+Analyte at 25°C, 20000 Number
+
+ppm H20 . 64% RH Correct False Pos False Neg of events
+
+Ammonia <2 - 25) ———-m
+
+Mercury(.003-.03) ———-m
+
+Sulfur Dioxide
+
+Average, Tier1 m-M-m-Il
+
+Number
+Correct False Pos False Neg of events
+verage, Ier overa
+conditions 0.89
+
+"
+"5","Table 3: Analyte ID success rates for Tier 2 & 3 chemical species, based on training set data
+—----
+H20 - 16% RH Correct False Pos False Neg of events
+———-m-m
+————-Eﬂ
+———-m-m
+————-!E
+————-!E
+———-m-m
+—----
+H20 - 32% RH Correct False Pos False Neg of events
+———-m-m
+———-Eﬂ-=E
+————-!E
+————-!E
+————-!E
+————-!E
+————-!E
+————-E=J
+—.na-ma-m—
+—----
+H20 - 43% RH Correct False Pos False Neg of events
+———-m-m
+————-m
+——m
+————-m
+——m
+————-m
+————-m
+———-m-m
+_----
+ppm H20 - 64% RH Correct False Pos False Neg of events
+——m
+————-m
+——m
+————-m
+——m
+———-m-m
+Number of
+—----
+mum!!-
+over all conditions 0.80 1274
+
+"
+"6","The reasons for lower success rates at lower humidity FOLLOW PROGRESS OF CONTAMINATION
+with Tier 2 (organic) compounds are not Clear. A model EVENT
+of sensor—analyte interaction developed under the JPL
+ENose program has shown that the Interaction energy at In addition to identifying and quantifying the appearance
+an analyte With the sensor matrix IS decreased as water of the analytes shown in Table 1 the function of the
+content in the sensor increases; it might therefore be ENose includes following the progress of a
+expected that air With lower humidity, 5000 ppm water or contamination event. That is, the ENose should show
+RH about 20/9, WOUId result 'h better SECCGSS rates than both the rise in concentration of a targeted analyte as it
+a't W'th nominal humidity (about 40/"" RH) [10’ 11]- is released into the environment, and the fall in
+However, the data in Table 4 indicate that this is not the concentration as it is cleaned UP- The plots in Figures 2
+case. It is possible that this phenomenon comes from and 3 show how resistance changes over time as
+the methods used to select the sensor set. Data used 'h analyte is added to then removed from the environment.
+selecting the polymer materials from which to make the
+sensors were taken at 1OOQO'ppm water 'h att’I and 30 Figures 2 and 3 shows the development of resistance
+the sensor set has been optimizee'for th'SI humidity level. change data for eight sensors after analyte is let into the
+Future applications, where conditions might vary more sensing chamber. As seen in both figures, there is a
+than typieal conditions on. ISISI W'” have to take that period of about 5 minutes after analyte is turned on at
+variation Into account In optlmlzmg the sensor set. the vapor delivery system until the sensors show any
+I I response as change in resistance. This lag time is
+The rhoctel of sensor—analyte Interaction also shows that systematic; it is the time it takes for the concentration
+the b'hd'thehetgy 0t analyte 'h a polymer sensor WI'” gradient from the vapor delivery system to reach the
+decrease W'th “e'hQ temperature. Even a modest “Se 'h sensing Chamber and for analyte concentration to reach
+temperature IS suffICIent to prevent weak bonding such its maximum in the sensing chamber. There is also a
+as hyerogeh bonding between analyte and sensor. In time constant for response related to each analyte and
+fact, It IS In. part because of thIs abIIIty'of modest each sensor. As can be seen by comparing the rise
+temperature Increase to prevent weak bonding that the times for sensors in Figures 2 and 3’ sensors respond
+polyrher senosors 'h the ENose are held at 28 C for more rapidly to ethanol than to toluene. For these 30
+sensmg. 2e C '3 SUtt'e'eht to prevent polymer sensors minute events, sensors do not always reach equilibrium
+from becoming saturated In sorbed water under nominal to every analyte, as can be seen for Sensors 5 and 6 in
+humidity conditions. However, because the ability of a Figure 3_
+polymer based sensor to detect analytes will be
+expected to fall off W'th Increasmg temperature, a After the analyte delivery is stopped, there is a period of
+balance between a sensor temperature h'gh enough to about 10 minutes for the analyte to be flushed from the
+prevent saturation 'h water and low enough to. allow system; this period is reflected in a rapid but incomplete
+sorption 0t most analytes had to be found. In add'tteh’ 't fall in sensor response after “analyte off.” This region of
+has been shown by other researehers that optimum the sensor response is used to track the diminishing
+sensmg can be aeoomplished only 't the envnronmental concentration of a Chemical species during a Cleanup
+temperature (In thIs case temperature Within the ENose) operation. The complete recovery of sensors after
+'3 lower than the temperature of the sensmg surface removal of analyte might take an additional 30 minutes
+[12]- For tIh'S reason, the temperature of the sensmg after the environment is Clean, as analyte desorbs from
+chamber. 'h the JPL ENose . '3 controlled by a the polymer sensors; however, quantification of the
+combination of thermoelectric deVIces and fans. sensor response in this region will show the analyte
+concentration to be below the lowest concentration to be
+0.015 _S1 0.007 _ 1
+f K :82 0.006 f \ —s2
+analyte on analyte off _83 analyte on analyte off —s3
+5‘ :‘5‘ 0.005 —:g
+0.010 M —s6 —s6
+—S7 0.004 —37
+“Q t l —88 —S8
+2 mqk mo 0.003
+0.005 . to... M k E 0.002
+W x . m. w»
+W \am: 0-000 * 0 ﬁg” ”*‘aw-«AMM
+0.000 “ . “M“ M WWF""7§~W~V7 WWW»,
+-0.001
+analyzed T analyzed T T
+event start event finish '0-002 anal zed analyzed
+event start event |n|S
+'0-005 IIII|'""'|""""|""""|""''|'""'|""""|""""|""""|""""| '0'003|""""|""""|""""|""""|""""|""""|""""|""""|""""|""""|
+620 630 640 650 660 670 680 690 700 710 720 170 180 190 200 210 220 230 240 250 260 270
+TIME (min) TIME (min)
+Figure 2: Sensor response to 1083 ppm ethanol. Figure 3: Sensor response to 37 ppm toluene
+
+"
+"7","reported by the ENose. ACKNOWLEDGMENTS
+Analysis Of the onset, maximum and decline in these tWO The research reported in this paper was carried out at
+examples Wt” tOHOW the rise and fall Shown in the PIOtS, the Jet Propulsion Laboratory, California Institute of
+Table 4 ShOWS analysis for the ethanol event shown in Technology under a contract with the National
+Figure 2- th the table, the single, overall event 0f the Aeronautics and Space Administration and supported by
+appearance 0t ethanol lasts from 662 minutes to 693 the Advanced Environmental Monitoring and Control
+minutes. The ethanol event is reported as four sub- Program, ESMD, NASA.
+events; the first sub-event has a concentration of about
+900 ppm, the second a concentration about 1150 ppm,
+the third 900 ppm, and the fourth 349 ppm, showing the
+rise and fall of the appearance of ethanol in the REFERENCES
+environment.
+Table 4: Rise and Fall of Ethanol concentration as 1' ||\:/|.AZ. Ryanakj.LéH<]3rrlﬁﬂr, M'G.‘ Buehlepr‘, K'S' :tﬂahatt,
+determined by ENose Data Analysis algorithm ' ee, an ' ra ’ . onltorlng t e. W Qua'l'ty m a
+Closed Chamber Usmg an Electronic Nose, Proc.
+Event Event en d Analyte ID Analyte 27th Int]. Conf. on Environ. Systems, SAE (1997).
+--- 2. MA. Ryan, M.L. Homer, MG. Buehler, K.S. Manatt,
+(min) (ppm) B. Lau, D. Karmon, and S. Jackson, ""Monitoring
+-__m Space Shuttle Air for Selected Contaminants Using
+an Electronic Nose,"" Proc. 28th Int]. Conf. on
+W“ syStemS’ SAE (1998’
+3. MA. Ryan, M. L. Homer, H. Zhou, K. S. Manatt, V.
+8. Ryan, and S. Jackson, ""Operation of an
+Electronic Nose Aboard the Space Shuttle and
+Directions for Research for a Second Generation
+-__m Device,"" Proc. 30th Int]. Conf. on Environ. Systems,
+SAE @000»
+4. MA. Ryan, H. Zhou, MG. Buehler, K.S. Manatt,
+V.S. Mowrey, S.P. Jackson, A.K. Kisor, A.V.
+CONCLUSION Shevade, and ML. Homer, “Monitoring Space
+Shuttle Air Quality Using the JPL Electronic Nose,”
+In a total of 1599 exposures, the overall success rate for IEEE Sensors Journal, 4, 337 (2004).
+Tier 1 s ecies was 89%, and for Tiers 2&3, 80%, over all
+humiditi/3 and pressure conditions. Weighting the 5' M'A Ryan, A'V' Shevade,lH. Zhou and ML Homer,
+success rates for number of Chemical species in each Polymer—Carbon-Qomposlte Sensors for an
+category, the overall success rate for identification and Electronic Nose A” Quality Monitor, MRS Bulletin,
+quantification of delivered species in training sets was 29’ 714 (2004)-
+83% over all conditions. 6. Spacecraft Maximum Allowable Concentrations for
+. .. . Selected Airborne Contaminants, vols.1 & 2,
+Success rates at nongmal eondltlons, envnronmental NationalAcademyPress,WashingtonDC,1994.
+temperature of 21-22 C, With analyte temperature
+(sensing Chamber temperature) at 25°C, and 10,000 7- M-A- Ryan, M-L- Homer, H. ZhOU, K. Manatt, A-
+ppm water (about 40% RH), the success rate for Tier 1 Manfreda, A. Kisor, A. Shevade and S.P.S. Yen;
+species was 93%, and for Tiers 2 & 3 was 85%. The “Expanding the Analyte Set of the JPL Electronic
+overall success rate for all species under nominal Nose to Include Inorganic Species;” Journal of
+conditions was 87%. Aerospace, SAE Transactions, 2005-01-2880
+(2005)
+While, in eneral, success was im roved at lower
+relative hurgidity, this was not true in artl cases; nominal 8' M'A' Ryan, ML' Homer, H' Zhou, K' Manatt, A'
+conditions provided the bestsuccess rates. Future work ‘l‘Vlanfreda, A' Klsor, A.HSIhevade and S'P'S' Yeh;
+will consider whether it is possible to optimize a sensor Expanding the GaPab'l't'eS Of the .JPL Electronic
+set over all conditions, so that success rate does not N039 for an International $79309 Station Technology
+vary with water content of the background air_ DemonStration”, PrOC. 36 Int]. Conf. on EnViron.
+Systems, SAE, 2179 (2006).
+9. H. Zhou, M. L. Homer, A. V. Shevade and M. A.
+Ryan “Nonlinear Least-Squares Based Method for
+Identifying and Quantifying Single and Mixed
+
+"
+"8","Contaminants in Air with an Electronic Nose;”;
+Sensors, 6, 1 (2006).
+
+10. A.V. Shevade, MA. Ryan, M.L. Homer, AM.
+Manfreda, H. Zhou, K.S. Manatt, “Molecular
+Modeling of Polymer Composite-Analyte Interactions
+in Electronic Nose Sensors,” Sens. & Act. B, 93, 84
+(2003)
+
+11. A.V. Shevade, MA. Ryan, M.L. Homer, AM.
+Manfreda, H. Zhou and K. Manatt, “Correlating
+Polymer—Carbon Composite Sensor Response with
+Molecular Descriptors,” J. Electrochem. 800., 153,
+H209(2006)
+
+12. E.J. Severin and N.S. Lewis, “Relationship among
+resonant frequency Changes on a coated quartz
+crystal microbalance, thickness Change, and
+resistance responses of polymer—carbon black
+composite Chemiresistors;” Anal. Chem. 72, 2008
+(2000)
+
+CONTACT
+
+Dr. M. A. Ryan
+
+MS 184-105; Jet Propulsion Laboratory
+
+California Institute of Technology
+
+4800 Oak Grove Drive
+
+Pasadena CA 91109
+
+tel: (818) 354-8028
+
+email: mryan@jp|.nasa.gov
+
+"

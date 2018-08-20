@@ -1,0 +1,492 @@
+"","x"
+"1","P roj ect
+Remote Robotic Operations Conducted from
+the International Space Station
+
+s the International Space Station (133) ﬂies over the would be encountered in planetary exploration missions. It also
+Canadian Space Agency (CSA) headquarters located covers the full range of space robotic applications from orbital
+near Montreal, Canada, a Russian cosmonaut is care— manipulators to planetary exploration rovers. One of the impor—
+fully peering at the screen of his laptop controlling a tant features of the ARGO framework is that it does not provide
+robotic test bed located in CSA laboratories, a universal architecture for ground control and autonomy. Instead,
+350 km below He must hurry because his communication ARGO provides a set oftoolboxes that can be assembled in a vari—
+Window Will last at most 10 min until the radio ground station ety ofmanner depending on the application and its requirements.
+disappears below the horizon. His next To facilitate the reuse of software, the
+opportunity to interact With the robot design is modular and portable to the
+
+Will come approximately 90 min later. maximum extent possible.
+
+This cosmonaut is running a series Within the ARGO framework, in
+of teleoperation experiments coﬂec— 2006—2007, the robotics group of the
+tively named as Avatar, whereby differ— Space Technologies division of CSA
+ent command and control schemes are demonstrated many times the autono—
+evaluated in View of future planetary mous capture of a tumbling satellite.
+exploration missions. These experi— CSA’s Automation and Robotics Test
+ments are invaluable in View of the Bed (CART) was operated from dif—
+future exploration initiatives currently being deﬁned by most ferent remote locations using low bandwidth Internet links. As
+space agencies. Indeed, these plans place a strong emphasis on shown in Figure 1, CART is a dual—manipulator test bed Where
+robotic missions, either in support of human missions or as a each arm has 7 degrees of freedom (DOF). One arm emulates
+precursor to astronaut ﬂights. Most ofthese robotic mis—
+sions Will involve remote operation of robotic assets. ,, ,‘
+
+Examples include controlling orbiting robots or plane— <
+
+tary rovers from Earth—based stations or from manned - "" 7 / ' TN
+orbital stations. For better efﬁciency, the operation of (f/ ‘ , , X §
+these rob otic systems shall be performed With various R “‘ ° u i n v_gg
+level of autonomy. x ,i g ""\/
+
+During the past few years, CSA has been developing % , ""/h' 2"" get.
+the autonomous robotics and ground operations \ a/;¢ﬂ gf‘Q\
+
+(ARGO) software suite [1]. ARGO provides a frame— Vii“ (??%W ( / C)
+
+work for the integration of the space operations process ,7 "" ""9’ )
+
+from planning to postﬂight analysis. The objective of \ ‘ / - ‘
+
+ARGO is to reduce the operational costs and increase \ ' j \\ E,
+the efﬁciency by providing operator aids and permitting 5; % \O/ J) i ” c?
+the implementation of a level of autonomy appropriate 1 _.1 \\ k/ g
+to the application. The target applications of the ARGO \5 3 ‘ j / 31’!"" E
+framework cover the full spectrum of autonomy from ‘/ i g
+supervisory control such as might be expected for the :7 I E
+183 robotics to more autonomous operations such as TalembOtlcs c;
+Digital Object Identypzer 10. 1 109/MRA.2008.929926 ©
+@2008 Canadian Crown Copyright DECEMBER 2008
+
+"
+"2","the ﬁee—ﬂyer dynamics, and the second is the Chaser robot Avatar: A demonstration Of
+equipped With a self—adapting robotic auxiliary hand _
+(SARAH) [2]. The laser camera system (LCS) [3] from N eptec teChnOIogleS for fUture planetar y
+is used to guide the Chaser robot. A hierarchical ﬁnite state - - -
+machine (FSM) engine based on Cortex, one of the compo— exploration mISSlonS'
+nents ofARGO, is used to coordinate the autonomous capture
+task and to provide feedback to the remote operator. The role
+of the operator is very simple: initiate the capture by submit— rendered. This model requires only the transfer of 13 numbers
+ting a high—level command and monitor the Chaser robot corresponding to the seven joint angles of the manipulator and
+While performing the task. The sequencing of events (ap— the siX numbers required to represent the pose of the satellite
+proach, ﬂy together, and capture) is fully autonomous. With respect to the base of the manipulator. This 3—D model is
+In the ﬁrst planned Avatar mission, Avatar RESCUE, the presented in Figure 3 as part of the operator station. The scarcity
+project, described in the previous paragraph, is brought one step of information returned to the operator limits his decision—
+ﬁlrther by initiating the commands to operate the system from making capability and forces much of the decision—making
+the 188. An amateur radio already available on the Russian seg— capability to reside on the robot. It is unrealistic to assume that
+ment of the 188 is used to communicate With a ground radio the operator could guide arobot manually using aset ofjoysticks
+counterpart located at CSA facility in St—Hubert. The concept of to capture a tumbling satellite under these conditions.
+Avatar RESCUE ﬂight demonstration is summarized in Figure 2. Given these constraints, the operator is, therefore, conducting
+This mission is to be executed during the fall of 2008. operations in a supervisory mode. Different levels of autonomy
+The Avatar RESCUE experiment is implemented using a
+reverse ground—control conﬁguration. In a real satellite servicing
+mission, the robot would be in the Earth orbit, and the operator
+would be located at a ground—control station somewhere on x/,_“Tg,
+Earth. For Avatar RESCUE, the robot is located in a laboratory F . / —-""’ A-w A 1 M\
+on Earth, and the operator is orbiting the Earth onboard the ‘ _. .5""; C f}; ﬁg; *
+188. This seemingly reversed conﬁguration faces exactly the ‘w ,_ ' "" -. mﬁ‘i
+same Challenges as the real implementation but allows the costs O"" ,7 g *A- —*""‘ L_ A {-32 ’1‘
+to be dramatically reduced by keeping the robotic infrastructure . ""V 1:: . ' A 1%., V‘ ‘i
+on the ground. The only component that needs to be sent to 11 gf \\
+space is the operator station. 1 31’ /<\ \ J,
+In this article, the various components of the Avatar RES— ""' ""i 1 \
+CUE mission Will be described in detail in the following sec— , , ,
+. . Figure 1. A dual manipulator system that Simulates the
+tions. An overV1eW of the next phase, the Avatar EXPLORE . . . .
+, , , , 6‘ ,, , tracking and capture scenario. The manipulator on the left [5
+mlssmn’ 15 p resented m the Avatar EXPLORE secuon' equipped With a hand, and the manipulator on the right is
+_ carrying a satellite mock-up.
+Concept of Operatlon
+The concept of operation of the Avatar experiments is dictated
+primarily by the constraints imposed by the communications
+between the operator and the remote robot. (§1_ , / 3 12"" l"" T l
+The ﬁrst factor to consider is the duration of the Windows 1’ K. ‘3'— _ 95‘ "" ""‘ €2.51; ,’
+ofcommunications: interactions between the ISS operator and L"" mg"" , 1' ' ﬁ 7 H, < ' :1”: “ 4 ’2?“ 1 :
+the ground robot can only occur While direct radio contact is I‘ 1' £36. :1 'gg/ .1 0“ ‘13—: . f”? , 1
+established. As mentioned previously the ISS orbits arOund the 1 € / :1, ﬂ u : 1
+Earth at an altitude of apprOXimately 350 km and vyith a period \Russian Segment on ISS Avatar Operator Station '4‘
+of approx1mately 90 min. As a result, there are typically four or
+ﬁve Windows of communication per day With the 18$ for a _ _
+ﬁxed ground—based radio station. These communication Win— Amateur Radlo Lmk
+dows last for a maximum of 10 min and are approximately
+. . . . CART Test Bed Located at CSA
+90 mm apart. It is, therefore, important to des1gn the opera—
+. . . . . , \
+tions such that they can be safely exeeuted Within this Window. :\ 1 (ﬂ S AR AH N»
+The second factor to cons1der is the limited bandw1dth L‘v'f ‘42 f5; -
+. . . Q. ~ 5'
+imposed by the usage of an amateur radio link for command mil 1“, _ , 1&5}
+and telemetry transfer. The current setup is limited to approxi— LE; ,‘g ,I _ ‘_. :- i:
+mately 600 b/s. It is, therefore, impossible to transfer a Video e' K Quicksat
+stream of the remote scene to the operator, thus limiting his sit— ' L08 :7, ‘\ 6'
+national awareness. To help the operator, a three—dimensional
+(3—D) model of the Chaser manipulator and the target satellite is Figure 2. Concept Of the flight demonstration.
+
+"
+"3","are investigated through three different modes of operation: received on the ground, the operation Will continue. Once the
+autonomous, semiautonomous, and autopilot operations, later communication is reacquired, the operator Will get feedback on
+referenced as operation modes. the state of the system and see if the operation was successful.
+
+In autonomous mode, the transitions between the various In semiautonomous mode, the autonomy software veriﬁes
+phases in the operations are commanded by the autonomy soft— conditions required for transitions between states. However,
+ware residing on the robot. The sequencing of commands is operator conﬁrmation is required to trigger transitions be—
+determined by the autonomy engine that Will take the necessary tween critical phases of the operation. If the communication
+actions to capture the satellite or abort the mission in case of link is broken in this mode, then the mission will abort and the
+malfunctions. The only intervention possible by the operator is chaser manipulator Will return to a safe state.
+the abort command, Which aborts the mission. At the limit, if The autopilot mode is halfway in between the autonomous
+the communication link is broken after the capture command is mode and the semiautonomous mode. The operations can be
+
+conducted from end to end Without operator intervention, but
+the transitions between critical phases are driven by autonomy
+—“m' software running on the operator station. In autopilot mode,
+0 amvnlif» ""D ’ -.x ”'0 . . .
+—s°:msm— Wmmum— the software located on the robot segment is identical to the
+I Slandb mno- |x ‘ , . . . .
+mmsl... I mm I _ case ofsemiautonomous operations. If the communication link
+ulu- I I ('1', . . . . . .
+
+W“ m ., . ’ 7:“ is lost in autopilot mode, the m1ss1on Wlll abort, and the chaser
+
+7 am I all: I 5...... '1 v” 1.114%» ff) naanipulator Will return to a safe state. This control mode vyas
+
+""W""""""°""'"":,f;';;—' ‘ I ljfﬁr:€;g ' implemented to reﬂect the Situation that, for space robotics
+
+fﬁM:;—WW m i “ 2 1,. 1% f, _. V applications, it is often easier to change software on the opera—
+
+‘ o I u I "" .» ' ' \— ‘ . .
+
+F % .3 tor station than control software on the robot itself.
+
+m... ‘ ﬂ; 4 ’ . In all operation modes, the control system on the robot is re—
+
+WOI / l“ I"" \‘ .r T “ , . .
+3'3?“ ‘ :3. m 9......- - a spons1ble for dynamic control actions such as tracking the tumbling
+‘ satellite based on artiﬁcial Vision data. The differences between the
+w . three modes are implemented in a decision layer that controls tran—
+
+sitions between control modes throughout the operation.
+' A typical satellite capture operation is implemented as illus—
+trated in Figure 4. This ﬁgure depicts an FSM implementation
+Figure 3. G U/ of the Avatar Operator Station. of the different control modes (e.g., initial approach, align,
+Capture Free Flyer
+Goto Searching Position ‘ Searching Target l
+—j a O
+confirm() [operatorLess] [visionFailed > [lostCommunication
+[!targetReachable] 10 s] && !operatorLess]
+[!targetReachable]
+Initial Approach I
+— O [lostCommunication
+&& !operatorLess]
+confirm() [opertorLess] [visionFaiIe d > 2 s]
+o
+confirm() [opertorLess]
+Capturing I O
+— _+ 0
+Figure 4. Avatar capture state machine.
+
+@ IEEE Robotics & Automation Magazine DECEMBER 2008
+
+"
+"4","tracking, capture) involved in the capture process and their programming languages, thus making reusability very difﬁcult, if
+sequencing. The operation is decomposed into four major not impossible. Cortex is based on the FSM formalism, Which
+phases: the searching—range phase, the medium—range phase, provides a higher—level way of creating, modifying, debugging,
+the short—range phase, and the contact—range phase. and monitoring such reactive autonomy engines. Some advan—
+In the searching—range phase, the autonomy software com— tages Of this representation are its intuitiveness and ease With
+mands the LCS to detect and identify the target satellite to be Which it can be graphically constructed and monitored by human
+captured. This phase ends after the Vision system has positively operators. The concept of hierarchical FSM allows a high—level
+identiﬁed the satellite and returns the pose of the satellite in a FSM to invoke a lower—level FSM. This provides the capability to
+data stream. implement hierarchical task decomposition from a high—level task
+The next phase in the operation is the medium—range phase. into a sequence of lower—level tasks. If the FSM is implemented
+The chaser arm is commanded to approach the satellite grapple in a modular fashion, it allows the implementation of the concept
+ﬁxture Within a given standoff distance but Without lining up the oflibraries that provide the operator With the reuse OfFSMs from
+end effector With the grapple ﬁxture. This phase is completed one application to another.
+When the Chaser manipulator attains the initial approach location.
+The next phase in the operation sequence is the short—range Capture Autonomy Scenario
+phase, Where the Chaser manipulator is commanded to align Using Cortex, the Avatar capture state machine presented in
+the end effector With the grapple ﬁxture and move to the ﬁnal Figure 4 has been implemented. Based on the ﬁltered poses of
+approach location. The Visual—serVOing controller then maintains the capture frame fc attached to the capture handle, and the
+the end effector aligned With the grapple ﬁxture of the tumbling tool frame .7:T attached to the grasping device (see Figure 5), a
+satellite at a distance of a few centimeters, ready for capture. Cartesian velocity command is generated in the tool frame f}
+The ﬁnal phase is termed the contact—range phase. The of the manipulator to progressively reduce the distance between
+manipulator is then commanded to engage the satellite and to them. Generating the command in the tool frame provided the
+complete the capture of the grapple ﬁxture using the end opportunity to independently activate and assign each DOF to a
+effector, thus completing the operation. different task. In the experiments, the activation of the tasks is
+Off—nominal conditions can occur at any time throughout triggered by Cortex based on the distance between the grasping
+this sequence. For example, the LCS could lose track of the tar— device and the target satellite. Each 0fthese tasks generates a part
+get satellite, communications could be lost, or the target satel— 0f the desired end—eﬁector twist as
+lite could move out Of capture range. The local autonomy
+software is in Charge-Ofcommanding appropriate maneuvers to tdesﬁed : [ rdesired ] : [Vx Vy Vz cox CO), 602 ]T. (1)
+keep the system safe in the presence of anomalies. These safety— wdesired
+critical maneuvers are triggered autonomously 0n the robot
+regardless of the operation mode selected by the operator. The Referring t0 Figure 4, once the autonomy software is acti—
+selection of operation mode affects mainly the nominal transi— vated, it automatically enters in the searching—range phase
+tions between the four main phases in the operations sequence. Where the chaser manipulator goes in its safe 0t searching P051—
+tion. Once the Vision system identiﬁes the target satellite, the
+Autonomy Softwa re autonomy software goes in the medium—range phase. At that
+The heart of the Avatar RESCUE experiment is the autonomy point, the initial approach is started, and the manipulator end
+software that is used to assist the operator in successfully con— effector orients itself toward the target by adjusting its pan—tilt
+ducting robotic operations. The software is based on two motion using only 2 rotational D01: as
+closely coupled layers. The ﬁrst layer is the control layer that is _ [e _1
+in Charge of guiding the robotic Chaser toward the tumbling 60” _ _ RV tan (lz/lx)’ (2)
+satellite. The second layer is a decision layer that handles state wz : _leRz tan_1 (ty/Vx)a (3)
+changes throughout the capture operation and that handles
+safety critical maneuvers in case Of anomalies. The decision
+layer is based on CSA’s Cortex Autonomy Toolbox, Which is ZW
+one of the toolboxes developed under the ARGO framework. f,» _ k YW
+”$:$| Ii TNT“ ‘_ _‘ X W J—’
+Cortex Autonomy Toolbox ~41
+Cortex provides a set 0ftools to implement onboard autonomy gg“ w “ ZT
+software based on the concept of hierarchical FSMs. Cortex ZC 4%,‘3 YT
+allows an operator to graphically generate the behaviors to be , yin- ‘l; X ‘iff‘ﬁf,
+implemented on the remote system. It automatically generates ‘ _ @133"" X0 {g T ﬁgéslt‘lﬁﬁigh
+the code to be uploaded, and it can be used to debug and moni— ‘*l / %‘L—‘%ﬁ§€éﬂ¥
+tor the execution of the autonomy software online and Off—line. Yo I ???I/OISI-ég
+Cortex has been developed in light of the fact that the devel—
+opment of such behavior sets rapidly becomes labor intensive Figure 5. Computer-aided design (CAD) models Of Quicksat
+even for relatively simple systems When using lOW—level and SARAH Showing reference frames.
+
+"
+"5","Autonomy scenario is coded Ma’funct'ons
+_ In all three operation modes, ﬁve different malfunctions have
+USlng the CSA IS Cortex been considered, and the autonomy scenario has been coded
+accordingly. These malfunctions can be generated artiﬁcially by
+aUtonom-y tOOIbOX' the controller of the mission on the ground to Check the cor—
+rectness of the autonomy scenario. They can also be detected
+automatically during the mission if an anomaly would actually
+where leRy and [eRz are control gains for their respective axes, occur. In both cases, the feedback to the operator will be the
+and 7x: 71/: and 72 are the components 0t er/Cl T» namely, the same and presented in the operator panel. As one can observe in
+position of the capture frame fc with respect to the tool frame Figure 3, the possible malfunctions are as follows:
+fT- It can be calculated as 0 loss of communication link
+0 hardware roblem
+trT/ClT : R;(ll‘clw — trle)’ (4) 0 loss of Visitbn system
+where the position of the capture frame rC is the output of a . target unreaehable
+Kalman ﬁlter operating on LCS data, and rT and R; are calcu— . “Sh Of COhlSth' , ,
+lated from the kinematics model of the Chaser manipulator. 80th? malfunctions may have a different effect depending on
+These quantities are all expressed in the base frame fw. At this the m_lSSth stage. For eiramp 16’ as illustrated m the capture state
+point, the desired distance between the grasping device and machine Of Figure 4’ 1f the VISIOh system failed during the
+the target is controlled by the translational DoF that move the medium—range p hase where the chaser manipulator 1s a .few
+en d effector forwar d and backward. The comman d is com— meters away from the satellite, the Chaser arm would continue
+pu te d from to approach the satellite for 10 s while the autonomy engine tries
+to restart the Vision system. If the restarting commands are not
+1-. : KRgRCdrTlc _ [rdeslc)a (5) successful, then the arm would return to a safe state. On the
+other hand, if the failure would occur during the ﬁnal approach,
+where RT and RC are, respectively, the rotation matrices in the short—range phase, the approach COUId Stih continue hUt
+representing the orientation of the tool frame f} and the cap— only for a shorter period Of time of2 5: while trying t0 restart
+ture frame ~7:C with respect to the base frame fw; K is the con— the Vision system. If the Vision signal is not reacquired, then the
+trol gain matrix deﬁned as K : diag(/ex, 1e)” leg); erlC is the autonomy engine would bring back the Chaser arm at the end of
+position of the tool frame expressed in the capture frame; and, the initial approach phase for a period Of 8 5: again trying t0
+ﬁnally, [rdes] C is the desired tool frame position relative to the solve the problem With the ViSiOh system. Finally, it the failure
+capture frame. In (5), the gains km 1e)” and leg are not used would occur during the contact—range phase, the capture of the
+simultaneously. At ﬁrst, during the initial approach, only the satellite Wih proceed by using the prediction 0f the pose 0f the
+approach gain (lax) is activated. satellite generated by the extended Kalman ﬁlter.
+To avoid undesirably large end—effector velocities, the grasp— _
+ing device is aligned perpendicular to the target only when they Expe” mental TeSt Bed
+are close to each other. Therefore, only when f(x) : 0, the The experimental test bed used for the experiment is based on
+state of the system becomes initial approach completed, and the CSA’S CART It is composed 0t three main hardware compo—
+chaser manipulator is ready to proceed to the short—range nents, namely, the target satellite held by one robotic arm, a
+phase. On entering the short—range phase, the translational ViSiOh system composed ofa scanning laser range sensor With
+alignment is initiated by activating the alignment gains (lei, and pose determination software, and a Chaser manipulator
+leg) to use the remaining 2 translational DoF of (5). When equipped With a dexterous end effector: the SARAH hand.
+erlC : [rdeslca the grasping device is positioned directly in Another important element of the Avatar project is the ama—
+front of the target, and the ﬁnal roll alignment is initiated to teur radio communication hhh between the ISS and CSA
+align the hand so that the handle ﬁts between the ﬁngers of the ground station. A ShOtt description 0t each element is
+hand. To that end, the remaining rotational DoF is used: presented later; see [4] for an in—depth description.
+cox : 46119.99” /C, (6) Target Satellite
+The target satellite is a two—third scale mock—up of a Canadian
+where IeRx is the control gain, and QxT/C is the orientation of microsatellite called QuickSat. Its trajectory is generated oﬁline,
+the capture frame fc about the x—aXis of the tool frame .731 and it mimics the dynamics of the tumbling motion of a satellite in
+At the completion ofthese tasks, with all the corresponding free fall. The ensued motion of the target satellite can be character—
+controllers active, the Chaser manipulator is positioned very ized as a maj or rotation about a spin aXis with small precession and
+Close to the target and is tracking its motion. The ﬁnal capture nutation [5]. This is similar to the motion described in [6].
+command is issued by entering the contact—range phase. The
+capture is executed by adjusting the desired relative pose, Vision System
+[rdes] C, to have the handle in the middle of the hand and then The LCS, shown in Figure 6(a), and the Collision Avoidance
+closing the SARAH hand ﬁngers. and Pose Estimation (CAPE) software, both from N eptec [3],
+
+"
+"6","are used to generate the pose (position and orientation) of the AX.25, and DTP. Each ofthese protocols was evaluated for its
+target satellite to guide the Chaser manipulator throughout suitability for the Avatar mission using the following criteria:
+the capture operation. 0 data integrity (assurance of data transmission)
+The LCS sensor is particularly suited for space application as 0 low bandwidth usage (the effective bandwidth of an
+it is immune to harsh and/ or changing lighting conditions [3]. amateur radio link is about 600 b/s)
+In addition, the LCS is capable ofhandling solar interference. It 0 adaptability to amateur radio
+has been successfully ﬂown on the space shuttle Discovery 0 tolerance to high communication delays (in the order
+(STS—105) in 2001 and is now used routinely to inspect the of minutes).
+thermal protection tiles on every space shuttle ﬂight. The range From Table 1, three choices appear suitable for the proposed
+data from the LCS sensor is processed using N eptec’s proprie— application, namely, SCPS, LTP, and DTP. The SCPS protocol
+tary software CAPE, and the pose of the satellite is obtained. was not considered because of its complexity of implementa—
+The pose estimation method is model based, using a CAD tion and adaptation for the amateur radio. The LTP protocol
+model of the target satellite and a modiﬁed version of the itera— could have been appropriate. However, the LTP protocol was
+tive closest point algorithm [3]. not available at the time this work was started: it has been devel—
+The pose is calculated at about 2 Hz, with a delay of 0.5 s oped during the same period as the proposed DTP protocol.
+on the pose of the object at a given instant. Careful calibration The DTP protocol is purely a transport layer protocol that can
+of the LCS positioning is required to transfer the pose data in be overlaid onto any network level protocol such as, in our case,
+the proper coordinate frame to guide the capture. AX.25. DTP would also be suitable for IP—based communication,
+simply by integrating it with the IP protocol as its network layer.
+Chaser Manipulator The DTP implementation is in the form of a Java input/
+The chaser manipulator is symmetric to the manipulator carrying output stream, which means that communicating by DTP is
+the satellite mock—up. It is equipped with an underactuated deX— identical to writing to any other stream. For instance, combin—
+terous robotic hand developed by Université Laval [2]. The ing the DTP output stream with an object output stream
+SARAH hand, has three reconﬁgurable ﬁngers mounted on a allows us to sendJava objects through ham radio, the same way
+common structure. SARAH has 10 DoF but can be actuated someone would do overa TCP/IP network.
+with only two drive systems. One drive controls the opening and
+closing of the ﬁngers, whereas the other drive controls the orien— Current Status and Future Plans
+tation of the ﬁngers to reconﬁgure the grasp. Each ﬁnger of
+SARAH has three phalanges. The self—adaptability of the hand is Avatar RES C UE
+obtained using underactuation. Note that, although the hand pas— At the time this article is submitted, the ﬁrst test runs of the
+sively adapts to any geometrical shape, it is not back—drivable and, Avatar RESCUE experiment are about to be executed. The
+therefore, provides a ﬁrm grip. The hand is shown in Figure 6(b).
+The chaser manipulator is guided strictly based on target pose
+data obtained from the Vision system. An extended Kalman ﬁlter
+is used to ﬁlter the LCS raw measurements and to provide a ~' N x ’ _
+smoothed pose of the target satellite every millisecond. The Kal— . ""' ’ - -. , ‘f g"" I
+man ﬁlter is ﬁilly adaptive and does not need any a priori knowl— I"" - ' i ' I l 1 I.
+edge of the inertia properties of the satellite or the noise properties ' g, . [ ' '
+of the Vision sensor [7]. After a short observation period, the ﬁlter -_ ‘3’ . \3- . ‘~ « ‘
+converges to the actual motion of the satellite and can be used to ' . ’ 47‘
+accurately predict the pose of the satellite even when the Vision ’
+system becomes occluded. The system has been demonstrated to (a) (b)
+successfully perform the capture of the satellite aﬁer the Vision sys—
+tem had been blinded {Or PeriOdS OfOVer 20 S l8l- Figure 6. (a) LCS. (b) Underactuated SARAH hand.
+Communication Link
+The communication infrastructure between the ISS and the Table 1. Comparison Of
+ground station is based on an amateur radio link using the AX.25 data communication protocols.
+protocol to transfer data. AX.25 is the equivalent of the IP part in
+the transmission control protocol (TCP)/IP protocol. To guaran—
+tee reception of the AX.25 packets, an extra layer, the delay toler— Protocol Integrity Usage Adaptability to Delays
+ant protocol (DTP), was developed internally at CSA. DTP is the SCPS Yes Average Yes Yes
+equivalent of the TCP part of the TCP/IP protocol. LTP Yes LOW Yes Yes
+Table 1 compares many candidate communication proto— UDP NO Low NO Yes
+cols to run over AX.25. The comparison includes the space TCP NO ngh Yes NO
+, , , , , AX.25 No Low Yes Yes
+communication protocol standard (SCPS), Licklider transmis— DTP Yes Low Yes Yes
+sion protocol (LTP), user datagram protocol (UDP), TCP,
+
+"
+"7","Robotic Operations are The rover travels autonomously to the destination points
+_ considering exclusion zones provided by the operator. Using a
+performEd over IOW'bandWIdth ﬂash lidar, the rover can detect unexpected obstacles. In this
+communica tion links. situation, the rover autonomously stops, takes a new scan of its
+enVironment, and plans a new path cons1der1ng again the
+
+exclusion zones speciﬁed by the operator.
+
+The data resulting from each scan are decimated by an appli—
+operator station software has been shipped to the ISS Via a cation that generates a representation of the terrain as a mesh of
+Russian Soyuz ﬂight on 8 April 2008. A ﬁrst communication a minimum set of triangles. The thermal images are processed
+experiment was performed in October 2008, and other com— and compressed on a hybrid processing board on the rover in a
+munication tests are planned for N ovember 2008. The teleop— way to provide useful information to the operator and being
+eration experiments should be performed by ISS Expedition— transferable using the ham radio link. The resulting tempera—
+18 before the end of December 2008. ture images are relayed to the operator station along With the
+
+terrain scan data. The topographical data are displayed to the
+
+Avatar EXPLORE user superimposed onto the global terrain map. The operator
+The next planned experiment in the Avatar series is the Avatar has the possibility to superimpose all previous scans on the
+EXPLORE experiment whereby a mobile robotic test bed global map. He also has the possibility to select any thermal
+located in the Mars—emulation terrain (MET) located at CSA images taken since the beginning of the mission and Visualize it
+headquarters in St—Hubert Will be autonomously operated on a two—dimensional (2—D) View panel of the operator station.
+from the 188. This Mars—like terrain, shown in Figure 7, simu— The operator is provided With a set oftools to analyze the con—
+lates the topography found in typical Mars landscapes. tent of the 2—D thermal images and to triangulate in the 3—D
+
+The Avatar EXPLORE experiment Will build on the terrain model the location ofthermally interesting features.
+building blocks tested under Avatar RESCUE, such as the Given the short duration of the communication Windows,
+transfer of data at low bandwidth using an amateur radio link the large amounts of data to be transferred, and the slow speed
+to control a robotic experiment from space. It Will also build of planetary rover operations, the rover Will operate mostly
+on CSA—developed autonomous planetary exploration soft— When the operator is out ofradio contact. The contact period
+ware, based on the ARGO framework [9]. Will be used to send telemetry to the operator, to plan the next
+
+In the exploration of the MET, the mission is to search and sequence, and to send commands to the rover. The process
+identify a target thermally different from the rest of the enVi— continues until the thermally distinct target is identiﬁed and
+ronment. The exploration is conducted by a rover operated by the rover reaches it to take a ﬁnal scan of the target’s surround—
+an astronaut onboard the ISS. The rover is equipped With a ings. The Avatar EXPLORE mission is currently planned for
+3—D laser range scanning sensor, a thermal imager, a ﬂash lidar the summer of 2009.
+for obstacle detection, and a siX—aXis inertial measurement unit.
+
+When the mission starts, the operator has a coarse global Conclusions
+map of the MET loaded on his operator station. The operator CSA is currently developing and conducting a series ofexperi—
+prepares a list of commands for the rover to travel to selected ments dubbed Avatar to investigate different command and
+destination points and to acquire laser scan and thermal control schemes allowing operators to interact With robots in
+images. The list of commands is displayed in the operator sta— space or on other planets. The objective of the Avatar experi—
+tion, and once the operator is satisﬁed, he can download the ments is to develop and test concepts in support offuture space
+commands before the loss of contact With the ground. exploration missions.
+
+Although some of the concepts can be (and have been!)
+tested on Earth by simulating space—relevant communication
+links, the beneﬁts of conducting them from the ISS are numer—
+ous. First, the usage of an intermittent amateur radio link has
+
+‘ raised several issues regarding the robustness of the software: it
+. . is impossible to cheat When the communication link really goes
+E9 . ‘T-i' '“ down. It has also allowed the team to develop unique opera—
+A 4 I . ' "" a4i» tional expertise. One ﬁnal advantage not to be neglected is the
+""i . ' l, fact that these experiments Will have provided ﬂight heritage to
+4“.» l the command and control concepts described in this article and
+. “ to the software that was used to implement them. Such heritage
+- is precious in the traditionally conservative space community.
+
+By the time this article goes into press, preliminary com—
+munication tests Will have already been conducted, and the
+ﬁrst set oftrials ofAvatar RESCUE should have been initiated.
+
+Figure 7. A view of the MET located at CSA Headquarters in The next Avatar experiment, Avatar EXPLORE, is planned
+St—Hubert, Quebec, Canada. for the summer of 2009. In Avatar EXPLORE, an astronaut
+
+"
+"8","located on the 188 will control an autonomous rover operating He recently designed and implemented the ground data sys—
+in a planetary analog terrain located at CSA headquarters. tem of the Meteorological station of the Phoenix Mars polar
+lander. He is leading the software development under JC2Sat
+Keywords that consists of a two satellite constellation with free forma—
+Space robotics, teleoperation, autonomy, on—orbit capture of tion ﬂying capability.
+satellites, amateur radio, low—bandwidth communication link.
+Sébastien Gemme received his bachelor’s degree in com—
+References puter science from Universite du Quebec a Montreal and a
+[1] E. Dupuis, R. L’Archeveque, P. Allard, I. Rekleitis, and E. Martin, “A maSter’S degree in computer engineering from ECOlC P0137—
+framework for autonomous space robotics operations,” in Intelligent Space technique (16 MOIltI'éal, specializing in computer Vision. He
+Robotics, A. M. Howard and E. W Tunstel, Eds. Albuquerque: TSI has been a software developer and a UNIX systems adminis—
+Press’ 2006’ PP' 217—234 trator at the CSA for the past eight years. His work has been
+[2] T. Laliberté, L.”Birglen, and C. M. Gosselin, “Underactuation in robotic focused on automatic 3—D registration and amateur radio data
+grasping hands, Jpn. J. Mach. Intell. Robot. Contr. (Speaal Issue 011 Under— . . . .
+actuated Robots), VOl. 4, n0. 3, pp. 77—87, 2002. communlcatlon for space apphcations.
+[3] S. Ruel, C. English, M. Anctil, and P. Church, “3DLASSO: Real—time
+pose estimation from 3D data for autonomous satellite servicing,” in Ioannis Rekleitis received his B.SC. degree from the
+#221211: éntMSWPiIAgwdal [meslligimeé $020515; anggbg’mation 1"" Space Department of Informatics, University Of Athens, Greece.
+[4] ll. Rekleiti)s,, Eu 1:141:1rtin,eg.nla:1:ule:lii, R. L:Archev[$que, K(irgbrsa, and E. H6 Obtalned hls PhD and M'SC' dégreés from [he SChOOl
+Dupuis, “Autonomous capture of a tumbling satellite,” J. Field Robot. Of Computer SCICIICC, MCGIH UDIVCI‘SIty. During 2002—
+(Special Issue on Space Robotics), VOl. 24, n0. 4, pp. 275—296, 2007. 2003, he was 21 postdoctoral {CHOW in Carnegie MellOIl
+[5] H. Goldstein, Classical Mechanics, 2nd ed. Reading, MA: Addison— University and WOI'de 0n multirobot coverage and single
+WCSICV’198O' . . robot exploration. He is currently a research scientist and
+[6] H. Nagamatsu, T. Kubota, and I. Nakatani, “capture ’s’ttategy for retrieval adjunct professor at the SChOOl Of Computer Science,
+of a tumbling satellite by a space robotic manipulator, in Proc. IEEE Int. . . . . .
+Conf Robotics and Automation, Minneapolis, MN, 1996, pp. 70—75. MCGIH Un1vers1ty. H15 work focuses on human—rObOt Inter—
+[7] F. Aghili and K. Parsa, “Configuration control and recalibration of a faCeS {01' underwater VChiCleS, mUltiI'ObOt algorithms, and
+new reconﬁgurable robot,” in Proc. IEEE Int. Conf. Robotics and Automa- sensor networks. H6 3150 continues his work on autonomous
+8 :‘mA 1:301; 1:13“ May 301271519 4073;101:331 d k' f f {11' planetary exploration and on—Orbit servicing of satellites that
+[ ] sbaceg (1)1133ect wiltlsiabireluded viii, conflitifrf,” i): 11::O9t: 11:: gyipg. he Started during his work at the CSA in 2004—2007' His
+Artiﬁcial Intelligence, Robotics and Automation in Space (iSAIRAS), Los reseamh has focused on mobile, space, and underwater
+Angeles, CA, Feb. 26—29, 2008. [CD—Rom]. robotics and, in particular, cooperating intelligent agents
+[9] I. Rekleitis, ].—L. Bedwani, and E. Dupuis, “Over—the—horizon, autono— With application 110 multirobot cooperative localization,
+mous navigation for planetary exploration,” in Prat. IEEE/RS] Int. Conf. mapping, exploration, and coverage. His interests extend 110
+on Intelligent Robots and Systems (IROS), San Diego, CA, Oct. 2007, . . .
+pp. 2248—2255. computer V1s10n, human—robot interfaces, and sensor net—
+works. He has authored 0r coauthored more than 40 journal
+and conference papers in the aforementioned areas.
+Eric Martin received his PhD. degree at McGill University
+on the dynamic interactions of a space manipulator with its Erick Dupuis received his B.SC.A. degree from the Univer—
+base attitude controller. He joined the Robotics Group at the sity of Ottawa, master’s degree from the Massachusetts Institute
+CSA in 1999, where he was one Of the main developers of the Of Technology, and PhD. degree from McGill University, all
+Special Purpose Dexterous Manipulator (SPDM) Task Veriﬁca— in mechanical engineering, with specialization in robotics. He
+tion Facility used to emulate on ground the Dextre robotic sys— joined the CSA in 1992 and is currently the manager of the
+tem 0n the 188. He was involved in the development of robotics group in the Space Technologies Branch. He has
+numerous robotics simulators. Since 2005, he has been leading been a research engineer in robotics and the lead systems engi—
+the R&D activities in on—orbit servicing and assembly at the neer for the SPDM Task Veriﬁcation Facility and for several
+CSA, where the main focus is on the autonomous operation projects in planetary exploration. He was also a member of the
+of robotic systems. He is the project manager for the Avatar Jet Propulsion Lab’s Mars Program Systems Engineering Team.
+missions presented in this article. He is currently a member of the space robotics working group
+of the European Technology Platform. His research interests
+Regent L’Archevéque received his bachelor’s and master’s have concentrated on the remote operation of space robots,
+degrees in software engineering from Ecole Polytechnique starting with ground control of Canada’s Mobile Servicing
+de Montreal and specialized in Virtual reality and computer System on the 188. He is now directing R&D 0n autonomous
+graphics. He has been a software engineer at the CSA since rover navigation for planetary exploration missions.
+1998. He started his career in robotics in the development
+of multibody systems modeling tools and astronaut training Address for Correspondence: Eric Martin, Space Technologies,
+simulators. He has been mainly involved in the development Canadian Space Agency, 6767 route de l’Aeroport, Saint—Hubert,
+of software to support teleoperation of autonomous systems. QCJ3Y 8Y9, Canada. E—mail: Eric.Martin@space.gc.ca.
+
+"

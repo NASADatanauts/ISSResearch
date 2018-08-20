@@ -1,0 +1,523 @@
+"","x"
+"1","PASJ: Publ. Astron. SOC. Japan , 1—??,
+© 2011. Astronomical Society Of Japan.
+Solid-state Slit Camera (SSC) on Board MAXI
+Hiroshi TOMIDA,1 Hiroshi TSUNEMI,2 Masashi KIMURA,2 Hiroki KITAYAMA,2 Masaru MATSUOKA,1 Shire UENO,1
+Kazuyoshi KAWASAKI,1 Haruyoshi KATAYAMA,3 Kazuhisa MIYAGUCHI,4 Kentaro MAEDA,4 Arata DAIKYUJI,5 and
+Naoki ISOBE,6
+1155' Project Science Oﬁ‘lce, Institute of Space and Astronautical Science, Japan Aerospace Ewplomtz'on Agency, 2—] Sengen,
+Tsukuba, Ibaraki, 305—8505 Japan
+tomida. hiroshi@ja$a.jp
+2Department of Earth and Space Science, Osaka University, 1—1 Machikaneyama, T oyonaka, Osaka 560—0043 Japan
+3Earth Observation Research Center, Japan Aerospace Ewplomtz'on Agency, 2—1—1, Sengen, T sukuba, Ibaraki 305—8505
+4Solid State Division, Hamamatsu Photonics K.K., 1126—] Ichino, Higashz', Hamamatsu, Shizuoka 435—8558, Japan
+5Department of Applied Physics, Miyazaki University, 1—1 Kihanadai—nishz', Miyazaki, Miyazaki 889—2192, Japan
+6Department of Astronomy, Kyoto University, Oiwake—cho, Sakyo—ku, Kyoto 606—8502, Japan
+(Received ; accepted )
+Abstract
+Solid—state Slit Camera (SSC) is an X—ray camera onboard the MAXI mission of the International
+Space Station. Two sets of SSC sensors View X—ray sky using Charge—Coupled devices (CCDs) in 05—12 keV
+band. The total area for the X—ray detection is about 200 cm2 which is the largest among the missions of
+X—ray astronomy. The energy resolution at the CCD temperature of —70 0C is 145 eV in full width at the
+half maximum (FWHM) at 5.9keV, and the ﬁeld of View is 10 .5 (FWHM) X 900 for each sensor. The
+SSC could make a whole—sky image with the energy resolution good enough to resolve line emissions, and
+monitor the whole—sky at the energy band of < 2 keV for the ﬁrst time in these decades.
+Key words: instrumentation: detectors, methods: data analysis, space vehicles: instruments, X—rays:
+general
+1. Introduction MAXI has two types of X—ray camera, the Gas Slit
+Camera (GSC) and the Solid—state Slit Camera (SSC).
+The Monitor of All—sky X—ray Image (MAXI) mis— The SSC is a CCD camera covering 0.5—12keV energy
+sion (Matsuoka et a1. 2009) is an all—sky monitor (ASM) range. The energy band below 2keV has not been COV—
+launched by Space Shuttle Endeavor on 2009 Ju116. After ered by ASMs in these decades, which is achieved with
+the successful installation onto the Japanese Experiment MAXI/SSC. The moderate energy resolution enables us
+Module — Exposed Facility (JEM—EF or Kibo EF) 0n the to make all—sky maps with resolved line emissions. The
+International Space Station (188) by astronauts using the X—ray detection area of the SSC is unprecedentedly large
+remote manipulator system, MAXI was activated on 2009 to obtain the enough photon statistics.
+Aug 3. The initial Checkout was also successfully com— This paper describes the design and the results of the
+pleted, and MAXI is in the normalobservation phase from ground performance test for the SSC. We overview the
+Mar 2010. In the 1—year observation, MAXI has discov— SSC system in section 2. Details of the sensor unit and
+ered many transient phenomena in X—ray band such as X— the onboard data processing are described in section 3 and
+ray bursts, Gamma—ray bursts, X—ray ﬂashes, star ﬂares, 4, respectively. The results of the CCD screening and the
+outbursts of recurrent nova. MAXI now occupies the es— calibration 0n the ground are summarized in section 5. In—
+sential position in monitoring astronomy. orbit performance of the SSC is described in Tsunemi et
+The SIS (Solid—state Imaging Spectrometer) onboard a1. (2010).
+the ASCA satellite was the ﬁrst X—ray photon counting
+CCD (Charge—Coupled device) camera in space (Burke et 2. SSC system
+a1. 1991). Its energy resolution was good enough to re—
+solve Characteristic K—shell X—rays from heavy elements Figurel shows the block diagram of the SSC and the
+such as oxygen, silicon, and iron. The ASCA/SIS opened peripheral systems. The main components of the SSC are
+a new window of the X—ray astronomy. Since then, CCDs two SSC Units (SSCUs). Figure 2 is a photograph and an
+have been standard focal plane detectors of X—ray mis— exploded View of SSCUs. The SSCU is a sensor part of
+sions, such as Chandra (Weisskopf et a1. 2002), XMM— the SSC. One SSCU consists of COD units, preampliﬁers,
+Newton (Lumb et a1. 2000), Swift (Gehrels et a1. 2004), multiplexers, a collimator and slit unit, and a calibration
+and Suzaku (Mitsuda et a1. 2007). For the X—ray monitor— source. The 188 orbits around the earth like the moon
+ing with a large ﬁeld of View, the SXC 0f HETE2 employed in which the ISS always faces the same side towards the
+X—ray CCDs for the ﬁrst time (Villasenor et a1. 2003). earth. So MAXI is placed such that it always sees the
+
+"
+"2","2 H.Tomida et a1. [VOL ,
+X—rays
+slit unit _
+. . (U Signal processor
+i V :57 E L
+: : ""’ .9
+E C-_l E > controller 3 P
+: E .03 U ""S : g E q;
+5 ' _ : Tg 5'3 8% SSC
+5 / preamplfler . 8 I
+: sscu : H 0 DP
+""""""'sé'c'aaihaagaaatg""'""'"" I I
+—> dlgltal Ilne
+—> power line
+Fig. 1. Block diagram of the SSC including peripheral systems and signal ﬂow among the components.
+sky direction. Since one of two SSCUs is placed so as to wafer is front—illuminated p—type CCD operated in full
+monitor the zenithal sky, it is called SSC—Z. The other frame transfer mode. The pixel number for the X—ray de—
+unit is called SSC—H Which sees +20O above the horizon— tection is 1024 X 1024, and the pixel size is 24 umx 24 ,um,
+tal (forward moving) direction of the ISS/MAXI. The SSC giving the detection area of about 25 mm X 25 mm. We
+Electronics (SSCE) controls SSCUs. The SSCE generates employ two phase Clock for the vertical and horizontal
+CCD drive signals, and digitizes the analog signals from transfers. The weight is 55 g. The number of pin is 32 for
+GOD. The SSCE also controls CCD temperature using the CCD operation, and there are two other electric lines
+peltier devices embedded in each CCD unit. Heat from in Which the peltier current of 1.2 A ﬂows at the maximum.
+peltier devices in SSCUs is transferred to ﬁxed radiator In order to obtain a large X—ray detection area, each SSCU
+panels by using a Loop Heat Pipe (LHP). The digitized includes 16 CCD units that are aligned in 2><8 array as
+data from the SSCE are transferred to the Data Processor shown in Figure 4. The total X—ray detection area of the
+(DP). The DP analyzes image data from the SSCE, eX— SSC (32 CCD units) is about 200 cm2.
+tracts X—ray events, edits them into the telemetry data, GOD is sensitive for optical and infrared lights that de—
+and sends them to the ground Via the ISS / J EM—EF. The grade the performances of the X—ray detection. In order to
+DP also relays commands from the ground to the SSCE. avoid it, aluminum of 0.2 um thick is coated on the GOD
+The Power Distributor of Attached Payload (PDAP) sup— surface, Which makes the structure of the SSCUs quite
+plies electric power to the SSCE in three channels. One simple. The aluminum coat is free from pinhole, Which is
+channel is used for the CCD operation, and other two are conﬁrmed by illuminating the CCD With optical light.
+for peltier currents in SSC—H and SSC—Z. Since the SSC does not have an X—ray mirror, the en—
+ergy range of the SSC is determined by mainly CCD wafer.
+3. SSC Units The quantum efﬁciency for soft X—ray is limited by absorp—
+tion at the gate structure (dead layer) and aluminum on
+The body of the SSCU is made of aluminum. To sup— the front surface of a CCD wafer. That of hard X—ray is
+press the light reﬂection, black inorganic anodized alu— limited by thickness of the depletionlayer. The gate struc—
+minum alloys are used for the surface. The SSCU is tures are made of Si02 and Si Whose designed thickness
+244>< 112>< 124 mm, and 3.9 kg including a collimator and are 0.8 and 0.1 ,um, respectively. The designed value of de—
+slit unit. pletion layer thickness is about 70 ,um. Then the energy
+. range determined by GOD is 0.5—15keV Where the quan—
+3'1' CCD Umt tum efﬁciency is larger than 10%. However, the actual en—
+CCD units used in the MAXI/SSC are fabricated by ergy end of the SSC coverage is limited by dynamic range
+Hamamatsu Photonics K.K.1 using the CCD, FFTCCD— of analog—to—digital converters. Then the energy range of
+4673. A photograph of a CCD unit is shown in Figure 3. the SSC including the electronics is 05—12 keV.
+The CCD unit consists of a CCD wafer, peltier devices,
+and a base plate made of copper—tungsten. The COD
+1 http://WWW.hamamatsu.Com/
+
+"
+"3","No. ] SSC onboad 188 3
+"" .4g;\a ‘ . * ﬂ“ ,-
+’ .1 \.’ - . ' KV
+I -. "" - . - f Slit __=5_.’W
+I"" - ’* .- , - o, 134 / /é“\\\,{4¢
+K‘ .‘\ t: ' b . l‘\ \/ \ \
+-- ~ ; . . * u SSC-H \\ .;; \ x ,
+K “ ~ .1. ' "" - <\ \,*
+. 1 - . 4. . M 11 . .. \ \ 1’ - 330-2
+9 ‘ ‘ ‘1 1 K/ 1"" \- _ - 7,
+>g - ' ~ - v . ' .-, 3’ 1"" \ = “'"""" -\ \/ /
+0 1 . . .1‘ . e ,r ~ ﬁﬁkggg\ ° 1 /
+‘ 2’ ‘ I‘ “V b” e 4‘ r I ‘14 - «$- -',' 1/ 1 qgﬁffﬁéﬁ ‘ ‘ ”3|.
+- x 4 .- v~ - , .. 4.: / .., mex ”612-14
+/\ 4 :1 |' -. ) \ ‘ "" 1:837; .\ h,“ .“{‘I“\ “:7. .. b‘ v.14”: ”’7
+« ' "" o {_ A 2’"". L 1$7£E€§ﬂ\ -_ , 4,. pug $0
+- ‘ - a - ' A ’ Jt4y.“ i ’ﬁﬁﬁw K /‘I
+. , A .1 ’4‘ 11-! 4:: i \ '55.»!14..a e %
+I'f' ‘ 415,... y / thermal
+preamp: Ier . insulater
+CCD alumlnum
+stand
+Fig. 2. Left is a photograph of SSC units mounted on the aluminum stand before the installation to MAXI. Slit apertures are
+protected by cover plates (non—ﬂight item). Multi—layered insulator Will cover the SSCUs in the ﬁnal conﬁguration. Right is an
+exploded View of the SSC.
+.1 .1 § 1 '7 '3‘ if? e"":
+currentlines bonding wires i K *7 ' ”' '
+for peltier devices for the CCD opearation 1 't‘ 1H. “‘1' ,
+‘___—_-—__-—-—-_> ‘- 1' ‘~1Iuas—""-""‘”tr' ”Hmm-
+1t— R 25 ' “ "" t“ .:;"".i""_.‘i‘_""‘::::‘_ .:_____ ‘
+gf’ﬁit CCD wafer(A| coated) ‘-.\\ mm
+V 4“ -_______ __,,: ”i ‘3‘ .......>
+_ _ 7 . I ~ —— - 4 V ‘ , , a 1 2 3 4 5 7
+,-.- ¥°*?-'r:~?'¥~‘ V '- ~ ‘ W 10 11 12 13 14 15
+. - ~ - ,3 .- ~ peltier devices If
+- 1 . ‘ base plate. _ . . "" 1 ""
+- I i I ' ‘ ' -- ' f; ‘ 4...""...
+I readoutnode
+<— verticaltransfer
+4-..."" horizontaltransfer
+Fig. 3. A bird’s-eye VieW of a CCD unit in the SSC. exposed region °“he ca'ibration some
+3.2. Collimator and Slit Unit (USU) Fig. 4. The upper panel is a photograph of CCD array in
+. . . an SSCU. The gap Width between adjacent CCDs is 0.4mm.
+EaCh SSCU has a COHlmator and Sht unlt (CSU)- The lower panel shows the position of the readout node, the
+Figure5 iS a schematic View Of the CSU. Collimators Of direction of horizontal and vertical transfer, and the region
+the CSU restrict the ﬁeld Of View (FOV) to be a fan_beam. exposed to the calibration source. The numbers in the lower
+The collimator sheet pitch determines the narrow FOV to panel (ONE) are CCDIDS'
+be 30.0 in bottom—to—bottom (61 in Figure 5). A scan of
+an object With constant ﬂux forms a triangular response, The collimator COhSlStS 0fth1h sheets made 0f phosphor
+Whose full Width at the half maximum (FWHM) is 10.5. bronze With the thickness of 0.1 mm. There are 24 sheets
+On the other hand, the combination of 8 CCD units and With 2-4 mm interval that are placed 5.0mm above the
+the slit determine the long FOV to be 900 (93 in Figure 5). CCD units. The surface of the collimator sheet is Chem—
+One orbit scan corresponds to 900 X3600. About 29% of ioally etched to suppress the X—ray reﬂection, and plated
+the entire sky are not covered by SSC in an orbit scan. Wlth black chromium to suppress the optical hght-
+It takes about 70 days to cover the unobservable region, The Sht 0f the SSC COhSlStS 0f tWO tungsten bars Wlth
+depending on the precession period of the ISS orbit plane. sharp edges. The Wldth between the tWO edges 15 2-7 mm.
+In addition, SSC cannot observe the region around the The angular resolution depends on the aoqu1s1tion angle
+Sun, Which is too bright to block optical light With the Which is the angle between the moldent X—ray dlreotion
+aluminum coat on the CCD surface. Then it takes about and the normal 0f the Sht plane. For larger aoqu1s1tion an—
+a half year to obtain the actual all—sky image. gle, angular resolution becomes better, While the effective
+
+"
+"4","4 H.Tomida et a1. [VOL ,
+area becomes smaller by a cosine factor. At the acquisi— is for peltier devices in the SSCUs. Then SSCE including
+tion angle=00.0, the angular resolution (62 in Figure 5) is DC/DC converters generates 53 W. The SSCE is main—
+10.5. tained at about 20 0C by the ﬂuid loop system on the
+3.3. Calibration Source ISS/JEM'
+Each SSCU has an 55Fe calibration source. The cali— 4. Onboard Data Processing
+bration source is mounted on the CSU so that small part 4 1 CCD drive
+of 2 CCDs (CCDID20,8) in each SSCU is exposed to Mn ' '
+Ka(5.9 keV) and K6(6.5 keV) X—rays. The Circle area in CCD Clocking signals are generated in the SSCE. CCD
+Figure4 shows the exposed region. The main purpose of has two—dimensional pixel array, while the SSC requires
+the calibration source is to monitor the long—term trend only one—dimensional position information since the SSC
+of the gain. The ﬂuxes are high enough to determine the conducts a scan observation. Hence, we operate the SSC
+gain with the statistical error of 0.1 % in one—day accumu— in paralleI—sum mode, that is, Charges in multiple pixels
+lation. are summed in serial register at the bottom of the imaging
+. region. The summed charges in the serial register are hor—
+3'4' Thermal D6829” izontally transferred to the readout node. The number of
+The energy resolution and the detection limit at the summed pixels in observation can be selected from 16, 32,
+lower energy region of the SSC are limited by various con— 64 by commands. We call this number as the “binning”
+ditions, one of which is a variance of thermally excited parameter that is selected to be 64 for the standard ob—
+Charges (electrons) in CCD pixel during the exposure and servation. The larger binning gives the better time resolu—
+the Charge transfer. The low temperature operation is es— tion, that provides better angular resolution in X—ray sky
+sential to suppresses the thermal noise. As for the SSC, map. The binning of 1, 2, 4, 8 is used only for diagnosis.
+one—stage peltier devices are used to cool CCDs. Each The horizontal pixel Clock is 8 us pixel‘l, and the vertical
+CCD unit is equipped with peltier devices as shown in Clock is 100 as Iine‘1 for binning:1. The Video signal from
+Figure 3. The CCD wafer in each unit is mechanically 16 CCDs in a SSCU is processed serially by one readout
+supported by 12 pairs of peltier devices (24 posts made electronics. When one GOD is readout, other 15 CCDs
+of bismuth telluride). There is no other mechanical sup— receive no Clocking signal and are in the exposure state.
+port, which suppress the heat input through the conduc— Since it takes 0.232 s to readout one CCD in binning=64,
+tion. Since eight CCD units are serially connected in the the read cycle for 16 CCDs is 3.719s. Clocking voltages
+peltier line, there are four electric current lines in SSC, are common for 16 CCDs in each SSCU. During the expo—
+each of which can be controlled independently. For the sure state, CCDs are left in the ﬂip mode (Miyata et a1.
+current control, we have two operation modes; the cur— 2004), in which the bias voltage of CCDs is periodically
+rent constant mode and the temperature constant mode. inverted from +3V to —9V to reduce the dark current.
+In the former mode, the constant electric current is pro—
+vided into the peltier line. In the latter mode, the peltier In the ISS orbit, CCDs are exposed to high ﬂux of
+current is controlled so that the CCD temperature is kept Charged particles, which degrades the CCD performance.
+at the target temperature. We expect the increase of the CTI, dark current, and the
+The electrical resistance of the peltier devices in each number of hot pixels. The degradation of the MAXI/SSC
+CCD unit is about 1 S2, and the peltier current in stan— was estimated based on the experiments (Miyata et a1.
+dard SSC operation is about 1 A. Hence, peltier devices 2002 and Miyata et a1. 2003). It is known that the Charge
+of 32 CCDs generate 32W. In addition, 5 W is required injection (CI) technique was a good way to restore the
+to operate analog Circuits in SSCUs. Then the power con— CTI (Tomida et a1. 1997). Uchiyarna et a1 (2009) demon—
+sumption of the SSCUs is 37 W that is transferred through strated that the increased CTI due to Charged particles
+the LHP to radiator panels on MAXI. It is designed that could be restored in the orbit operation of the Suzaku/XIS
+the LHP and radiator system could cool SSCUs to around with CI, and constructed a new method of correcting pulse
+—200C . The hot sides of peltier devices are thermally heights. We, then, added the CI function to the SSC, and
+connected to the SSCU body. The peltier devices give could select by command whether or not the CI function
+the temperature difference of >400C between the GOD is applied.
+wafer and the SSCU body. Hence, CCDs are to be op— The CI function has two important parameters: the
+erated below —600C . The body of SSC—H and SSC—Z amount of Charge and the injection period that is deter—
+are, both, placed on an aluminum stand, then they are mined from the binning parameter. In the case of bin—
+thermally combined to each other. The aluminum stand ningzN (N>1), charge is injected at every N rows. The
+is mounted on the GSC—H unit with a thermal insulator signal charges in N—1 rows that include no injected Charge
+made of polycarbonate (Figure 2). are summed and readout in serial register. Whereas the
+The total consuming power of SSC is 90 W in typical; injected Charges are transferred and discarded at the read—
+26 W for CCD operation and 64 W for the CCD 0001— out node. Since the extra horizontal transfer is required
+ing. 21 W of 26 W for the CCD operation is consumed in CI, the readout cycle of 16 CCDs is 5.865 s, which is
+in the SSCE, and 5 W is in SSCUs. 32 W of 64 W for 1.577 times longer than that without CI.
+the CCD cooling is used in the SSCE, and the rest 32 W The Charge amount can be roughly controlled by com—
+
+"
+"5","No. ] SSC onboad 188 5
+_-_93____
+\: 2.7mm : /\}'” collimaoztorsheets
+\i i/ ‘-. ,:' ‘\
+_~ 5'” 2.4mm ‘3""0‘1‘1': “x
+\ ‘::<:: / ' ' , \‘
+\(93/ ‘5
+"" ' 5.0mm
+208mm
+
+Fig. 5. Schematic View of a collimator and slit unit (CSU) in an SSCU. The left ﬁgure shows the positional relation between the
+
+slit and CCDs. The right ﬁgure, perpendicular to the left ﬁgure, shows the 24 collimator sheets and CCDs.
+rnanols through the Clocking voltage. The voltage can be the SSC are used for the detailed analysis (spectroscopy
+changed in 0.1 V step, which gives the difference of about and diagnosis of sensors) while the MIL—STD—1553B data
+6000 electrons pixel‘1 for the injected Charge. Since the are to search for the transient phenomena quickly.
+larger amount of Charge gives the better restoration of the Each event data of Ethernet telemetry includes X— and
+CTI (Tomiola et al. 1997), we set the injected Charge as Y—address (X—ray detected pixel position in CCD), and
+much as possible with the condition that there is no over— the PHs of adjacent 5 pixels (local maximum, two trail—
+ﬁow during the transfer. The Charge amount is estimated ing pixels, and two leading pixels). X—adolress is used to
+to be about 105 electrons pixel‘l. The CTI before the determine the position of X—ray in the FOV, Y—adolress is
+launch is negligibly small, so we could not conﬁrm the CI used to correct PH with CTI. If the number of event is
+effect in the ground test. The Suzaku/XIS has a capability too large, the event data are compressed automatically or
+to control the amount of injected Charge precisely, which is by command. In the compress mode, PHs of ﬁve pixels
+utilized to measure the CTI (Nakajima et al. 2008, Ozawa are replaced with a summed PH according to the pixel
+et al. 2009). The SSC, however, cannot precisely control pattern called grade. There are four grades (G0, G1, G2,
+the Charge amount. We use the CI method only for the and G3), which is the same to the timing mode of the
+CTI improvement. Suzaku/XIS. Figureﬁ shows the four grade patterns. G0
+
+. . . is a pixel pattern that all signal Charge electrons gener—
+
+4'2' ngztal 11376066882719 ated by an incident X—ray photon is conﬁned in orie pixel.
+
+The CCD images digitized in the SSCE are sent to the PH of the pixels adjacent to the local maximum is smaller
+DP. We adopted the data reduction procedure used in the than the value called split threshold. G1 and G2 indicate
+timing mode of Suzaku/XIS (Koyama et al. 2007). The that either the leading pixel or the trailing pixel to the
+dark level, which is the time—averageol pixel data with nei— local maximum has more Charge than the split threshold.
+ther incident X—rays nor Charged particles, is determined G3 is that both of the leading pixel and the trailing pixel
+for individual pixels and up—olateol at every readout time. to the local maximum have more than the split thresh—
+
+The DP searches for the Charge deposit pattern of sig— old. The replaced PH of the telemetry in the compress
+nals, which is called an “event”. The pixel data after the mode is the sum of local maximum and those over the split
+dark—level subtraction are called “pulse height (PH)”. The threshold. In the compress mode, we can select events to
+event search is done by referring to the PH. An event is be downlinkeol according to the grade pattern. Events of
+recognized when both of the following conditions are sat— G3 are discarded in normal operation since G3 events are
+isﬁed : (1) a pixel has a PH between the lower and the thought to be generated by Charged particles.
+upper thresholds deﬁned by command, (2) the PH is a For the MIL—STD—1553B telemetry, the DP compresses
+local maximum among adjacent three pixels in the row. every X—ray event into 16 bits. 14 bits are assigned for X—
+
+The MAXI telemetry data are transferred from the address and the summed PH, and 2 bits for the grade. The
+DP to the ground through two physical networks in the grade deﬁnition is the same to that of Ethernet, but the
+ISS / J EM—EF. One network is MIL—STD—1553B and the grade selection to be sent to the ground can be selected in—
+other is Ethernet. MIL—STD—1553B has higher reliabil— dependently from the Ethernet data. The bit assignment
+ity and more real—tirne connection between 188 / J EM—EF for X—address and PH is determined by command. In the
+and the ground station than Ethernet. However, the data standard operation, 6 bits are assigned for X—aololress and
+transfer rate of MIL—STD—1553B allocated for MAXI is 8 bits for PH, where the accuracy of the position deter—
+50 kbps (Ishikawa et al. 2009), while that of the Ethernet mination (X—address) is 0.36 mm and that for the energy
+is 600kbps. Therefore, we designed that Ethernet data of is 60 eV. The number of SSC events for MIL—STD—1553B
+
+"
+"6","6 H.Tomida et a1. [VOL ,
+GO After the operating volt ages were ﬁxed, we measured
+local maximum various par ameters as a function of temperature; the dark
+current, the number of the hot pixel, the number of the
+G- dead column, the readout noise, and the energy resolu—
+G- ning of 1 and 64 are tested. We sorted the ﬂight devices
+D under the split threshold based on the energy resolution, then we selected 16 CCD
+units having the best energy resolution for SSC'H and
+G- SSC—Z, respectively. The readout noise of the selected
+CCDs ranges from 6 to 10e1ectrons in root mean square
+transfer direction (RMS) that includes system noise. The readout noise is
+measured from the ﬂuctuation of PH in horizontal over—
+Fig. 6. Four grade patterns (G0 through G3) use d in the clocked region. The values of CTI are < 1.2><10_5 for all
+880 data processing. the selected CCDs, where the CTI is deﬁned as the ratio
+of the lost Charge to the original one in a single vertical
+telemetry is limited to be less than 255 events for every transfer. .
+161ines. The hot pixels and the dead columns are troublesome
+since the ﬂuctuation of the dark current is so large de—
+5. Screening Test and Pre—ﬂight Calibration pending on the temperature. We, then, Check the number
+of the hot pixels and the dead columns for the selected
+5-1- CCD screening CCDs. We deﬁned the hot pixel that the PH with no
+Before assembly of the SSCUs, we had many candidates X—ray is signiﬁcantly higher than that Of the surrounding
+of COD units to be installed. Then we conducted the pixels. The dead column is deﬁned that the event number
+screening test to select the CCD units suitable for the SSC. IS smaller th5a5n that Of neighborbolurnns by 5 0 level when
+CCDs were driven by using the E— N A system (Miyata et X—ray frorn Pie are uniformly illuminated. The numbers
+a1. 2001), and cooled down with a pulse tube cooler in a 8‘? evaluated in binning.:1. The total number Of dead
+vacuum chamber. The peltier devices were not activated. pixels and dead columns in 32 CCDS were 37 and 15’ re—
+The CCD units for the ﬂight camera are selected from spectively. AbOUt half Of the CCDS are free from .dead
+6 4 candidates provided by Hamamatsu Photonics K.K. pixels and dead columns. We found that the cosmetics of
+Miyata et a1 (2004) described the detailed setup of the the .MAXLCCDS. IS excellent. .
+experiment and the initial results of 25 CCDs. We report Figure 7 eXhlbltS the dark current as a function Of the
+the ﬁnal results here. CCD temperature. From the thermal analys1s, the CCD
+At ﬁrst, we determined the proper voltages to drive the temperature in the normal operation in the 188 is esti—
+CCDs. There are 16 voltages for the operation of the mated to be about _GOOC (Section3.4). The o1ark our—
+MAXI—CCDs. The 16 CCDs in each SSCU have to be rent at —600C is about 0.02 electron 860—1 p1xe1‘1 1n
+operated with common voltages since we have only one binningzl. In the normal operation, the binning param—
+set of electronics for each SSCU. To search for the proper eter IS 647 and the readout cycle time IS 5'9 S.W1t_hl CI'OD'
+voltages, the CTI and the CI ability are mainly evaluated. The (jerk onrrent 18’ then, abo‘.” 8 electron pixel cycle—
+From the experiment, we conﬁrmed that 14 of 16 voltages time 7 Whmh gives us the 90.186 Of about 3 electrons as
+could be common for 2 SSCUs to obtain the low CTI and a ﬂuctuation in typical. This is smaller than the readout
+good CI performance, while we could not operate with DOISG’ then we concluded that T6000 was .low ePough to
+common voltages for two which are used to inject Charge operate the CCDS at the beginning Of the 1n—orb1t opera—
+correctly. They are ISV (Input Source for the Vertical tion. . . 55 . . .
+transfer) and IGV2 (second Input Gate for Vertical trans— Since the X—ray intensity Of .Fe sources Utﬂlzed 1n the
+fer), which are important to control CI. The structure of above performance tests was calibrated well, we could es—
+the Charge injection gate is described in the technical note timate the detection efﬁmeney at 5:9 keV. Our experi—
+of the manufacturer 2_ In the case of ISV, we found that ments showed that the detection efﬁmency of the selected
+CCDs were separated into two groups; one is that appro— CCD units is >89% at least. while the designed depletion
+priate voltage of ISV is 3.0 V while the other is 3.8 V. We, layer thickness Of 70pm prov1des the detection efﬁoienoy Of
+then, decided that CCDs in the 3.8 V group were installed abont 91%' W67 hence, conﬁrmed the detection efﬁoienoy
+to SSC—H, and the 3.0V group were installed to SSC—Z. IS hlgh enough to cover the energy range up to 1? keV.
+The appropriate voltages of IG2V are scattered and can— In order to conduct the detailed spectrurn analys1s, the
+not be properly grouped. So we designed the SSCE such calibration at the low energy range is also important. We
+that the IG2V voltage could be set separately for each plan to measure the detection efﬁoienoy from 9'5 to 12 keV
+us1ng the Crab nebula 1n the 1n—orb1t operation.
+2 http: //sale.harnamatsu.corn/assets/applications/
+SSD/fft_CCd_kmpd9002eO6.pdf
+
+"
+"7","No. ] SSC onboad 188 7
+2 i l
+10 1 4 A 1 Q
+- Deep2K2_NH93_9-I l} H w 1 i l I
+O i y i .r
+Nix 10 . ‘ E r l) H ‘ 1‘
+‘4 .0"" \ i N 4
+TN .00.. g ‘ ii i )
+.° 0 '
+.3 ..- g 8 AIMSi (CI (Ti Mri' p Fe Ni ‘Zn
+Q.‘ I :3. 8 '— ' ‘ M I P1 l
+E ""e. . ' W i ' I i i:
+.o o ‘ ‘ j . i
+E - .. “0° . W H Ni ii 1“
+310 m ‘i, H. R), w '4
+k a (.3) ‘1 iii i:."" Hi I!‘ )+
+3 0.. LI} ‘lﬂ V\ ;i g)(l‘. H g ( i
+D e‘ O 0 M1,"") H r *1“ 1‘ *‘U' "" '; Hi."" /i
+f ' * +1, Q o 2 4 6 8 10
+§ 10 + + + 7 energy [keV]
+Q
+_ i n
+10 '1
+-I]0-100 -90 -80 -70 -60 -500 -40 -30 -20 0
+Temperature[ C ] ‘— i
+E
+Fig. 7. The dark current as a function of the CCD temper— % _
+ature at the screening experiment. The CCD unit employed 3”
+is assigned to CCDID23 in SSC—H. %
+8 e | i ) i |
+5.2. Energy Calibration o M 1 I (1‘ w M i
+The energy calibration of COD performance with the )i i +H+liﬁiii+iﬁi+ H
+SSCE was done before the SSC was installed into the 5 +'l'
+MAXI ﬂight structure. Fluorescent X—rays from nine ma— 0 0 2 4 6 8 10
+terials arid Mn—K X—rays from 55Fe sources were used to energy (keV)
+study the energy response of the SSC. The energy range
+iS 0-52 (oxygen) to 12-5keV (selenium) Figure 8 (left) Fig. 8. Pulse heights distribution of the SSC—H/CCDIDzB.
+shows a energy spectrum of various ﬂuorescent X—rays. In the top ﬁgure, ﬂuorescent X—rays from A1, Si, Cl, Ti, Mn,
+The Conﬁguration of the calibration experiment was: (1) Fe, N17 Z11 are irradiated. The vertical aXiS TS in linear scale.
+The SSCU to be calibrated is in the vacuum chamber In the better“ hgure’ X‘reye hem 55Fe (5'895 end 6490 keV)
+. are irradiated. The vertical axis is in log scale, and the unit
+and the other SSCU and the SSCE are in the atmosphere is count sec3—1 keV—l.
+(room temperature at 1.0 atom). (2) The CSU are re—
+moved. (3) CCDs are driven with the same operation low 1.0 keV in Figure8 is not created by X—ray but by
+condition as that in the orbit. The binning is 64 and the a background component. The count rate of the com—
+CI is on. (4) The SSCU in the vacuum Chamber is cooled ponent is about 0'1 counts seo‘l keV‘l at 0.5keV while
+to around —300C and peltier devices are controlled so that the particle background in the orbit is 03 counts, seo‘l
+QCDs are at the constant temperature. The plilse height keV‘l even at the high out—off—rigidity region (Tsunemi
+d18tr1but10h7 energy resolution, and. the linearity Of the et a1. 2010). Although the origin of this component is still
+energy scale are irivestigated 1h detail. unclear, we concluded that there is no need to pay atten—
+5'21 Pulse Hezght Dzstmbutzon 55 . tion to the low energy component by applying the normal
+Figure 8 (right) shows the spectrum of Fe sources w1th background subtraction method.
+SSC—H/CCDID—3 at —700C . The binning parameter is 5.2.2. Energy Resolution
+64' The spectrum IS created from G0 events only. We We deﬁned the energy resolution as the width of the
+can see that Mh KO‘ and K6 lines are clearly resolved, main Gaussian peak. The energy resolution of Figure8 is
+bUt the spectrum shape cannot be represented by two 136 eV at 5.9 keV in FWHM. Figure 9 shows the distribu—
+Gauss1ar1s for Mh'KO‘ anol Kﬂ. Then we ﬁt the spectrum tion of the energy resolution of 32 CCDs at —60 OC and
+Wlth a model employed In the Suzaku/XIS (Koyama et —700C . The average of the energy resolution is 149 eV
+a1. 2007) that includes six components : a main Gaussian, for —60 OC and 145 eV for _70 OC . Since we apply the
+a sub Gaiissian, a triangle component, a silicon escape same Clocking pulses to all the CCDs in each SSCU, we
+peak, a Shleeh peak, and .a constant component. We, tuned them so that the averaged performance (energy res—
+however, could not determine the parameters of the tr1— olution) becomes the best.
+angle component since this component is very small. In The energy resolution of the CCDs depends on the en—
+thle way, wefound that the 880 data coulol be repre— ergy of incident X—rays. Figure 10 shows the energy resolu—
+sented well With other ﬁve components. The increase be— tion of SSC—H/CCDID—3 at _7OOC as a function of X—ray
+
+"
+"8","8 H.T0mida et a1. [VOL ,
+2500
+E 1000
+8
+g 6 60degC 7%%7
+g%%%% 0
+V
+a%%//// ,yi
+135 140 145 150 155 #
+energy resolution a _1
+8 -1.5
+Fig. 9. Distribution of the energy resolution (FWHM at 0 2 4 6 8 10 12
+5.9 keV) for 32 CCDs in sscus at —70 OC (upper) and —60 OC Energy (keV)
+(lower).
+Fig. 11. Pulse height of SSC—H/CCDID23 as a function of
+X—ray energy. The lower panel shows the residuals between
+(3| [F the best ﬁt model (linear function) and the data.
+§ 5. 5’. Performance Of Peltz'e'r Devices
+(D
+E [i] The performance of peltier devices was investigated in
+g [1] the system pre—ﬂight test, where the whole system of
+U; E [1] MAXI including the SSCUs, the SSCE, and the DP were
+E [1] assembled as ﬂight conﬁguration. MAXI structure was
+73) ID installed in a vacuum Chamber, and the structure was
+é surrounded by cooled black panels. Radiator and LHP
+a m worked well. Figure 12 shows the distribution of temper—
+E 8 [[1 ature difference between CCD wafer and aluminum stand
+”"" ‘— [1] described in Figure 2. Peltier current was set to 1.0 A, and
+the temperature of the aluminum stand was —21OC . The
+0 5 1o averaged temperature difference was —45.4 0C , which was
+Energy (keV) large enough for CCDs to be kept at < —600C when SSCU
+bodies were at —200C .
+Fig. 10. Energy resolution of SSC—H/CCDID23 as a func— The annealing is a good method of recovering the CCD
+tion of X-ray energy performance degraded by Charged particles (J anesick
+2001). Holland et a1. (1990) reported that the high tem—
+energy. G0 events are used for the spectrum analysis. The perature above 1000C could signiﬁcantly restore the de—
+readout noise of 32 CCDs ranges from 5 to 10 electrons graded performance. Since we also designed that the func—
+in EMS, which is the same level to that measured in the tion of LHP can be halted in the orbit by command,
+CCD screening. SSCUs could warm up. The SSCU, however, must to be
+5.2.3. Energy Scale Linearity kept at <+60 OC . The temperature difference of +40 0C
+Figure 11 shows the PH peak of SSC—H/CCDID—3 as between CCD wafer and SSCU body is required for the
+a function of incident X—ray energies, where PH peak is annealing at 1000C . We, then, tried the reverse current
+the center of the main Gaussian of G0 events. We ﬁtted 0f peltier devices, and conﬁrmed that the reverse current
+the data with a linear function, and the best ﬁt line is of 0.22 A made the temperature difference of about 200C
+shown in Figure 11. We can see that the relation is well . We, then, plan to supply the reverse current of 0.44 A
+reproduced by a linear function. No signiﬁcant deviation for the restoration, when the degradation of the CCD per—
+can be seen around the silicon K—edge. The residuals is formance becomes signiﬁcant after the several years of 0p—
+less than 1.0 % . eration in the orbit.
+
+"
+"9","N0. ] SSC onboad 188 9
+15 6. Summary
+We have prepared the SSC consisting of two SSCUs.
+Each sensor contains the slit, collimators, and X—ray
+CCDs. The slit and collimators of each SSCU deﬁne
+8 has 32 CCDs 0f FFTCCD—4673 fabricated by Hamamatsu
+8 Photonics K.K. The SSC has total X—ray detection area
+sum mode. The binning number of 64 is standard, but it
+Can be Changed by commands CCDS are readout one by
+5048454442403835 ticle. The working temperature of CCDs is < —600C in
+temperature difference orbit by using the peltier devices, LHP, and the radiators.
+The energy resolution (FWHM) of the SSC for 5.9 keV
+Fig. 12. Distribution of the temperature difference between X—rays IS 145 eV at the COD temperature Of —7OOC and
+CCD wafer and SSCU body. The temperature of SSCU body 149 6V at _6OOC -
+is —21°C , and the peltier current is 1.0 A. This work is partly supported by a Grant—in—Aid for
+Scientiﬁc Research by the Ministry of Education, Culture,
+Sports, Science and Technology (16002004 and 19047001).
+M. K. is supported by J SPS Research Fellowship for
+Young Scientists (22—1677).
+References
+Burke, B. E., Mountain, R. W., Harrison, D. C., Bautz, M.
+Fig. 13. An image taken with SSC—H. Mn—K X—rays from W., Doty, J. P., Ricker, G. R., & Daniels, P. J., 1991,
+two radiO—active source of 55Fe are irradiated. Data are taken IEEE Trans. ED, 38, 1069
+With 10111101118264- The image iS 3130 binned in the hOYiZOHtal Ishikawa, M., et a1. 2009, Transactions of the J apan Society for
+direction with binning264 by software so that the ratio of Aeronautical and Space Seeinces, Space Technology Japan
+the horizontal axis to the vertical is the same to a real CCD 7, ist826, 43
+conﬁguration Gehrels, N., et a1. 2004, ApJ, 611, 1005
+Janesick, J . R., 2001, Scientiﬁc Charge—Coupled devices (SPIE
+5.4. Imaging and Eﬁective Area. Press, Bellingham, WA), 836
+The X—ray direction of the SSC events is determined 53;:m1),.I11.623212300020‘03185352140 2
+With the combination Of the CCD and the CSU. The imag— Matsubka 1V1, et a1. 2009 PASJ 61 9997
+ing capability of the CCDs was simply Checked with the Mitsuda, k, gt a1. 2007, 1,)AS J, 5:9, él
+55Fe source in the energy calibration. Figure 13 is the Miyata, E, Natsukari, (3,, Akutsu, D., Kamazuka, T,,
+image showing two bright spots generated by two radio Nomachi, M., Ozaki, M., 2001, Nucl.1nstrum. and Method,
+active sources of 55Fe. We ﬁnd that there is no defect 459 157
+region for the X—ray detection. Miyata, E., Kamiyama, D., Kouno, H., Nemesh, N.,
+SSC has a large X—ray detection area, but the effective Tomidav H'v Katayamav H'v Tsunemiv H'v MatSUOkav M'v
+area for the X—ray collection is limited by the CSU. We, , 2004 Proc SPIE 5165’ 366
+. . Mlyata, E., et a1. 2002, Jpn. J. Appl. Phys. 41, 7542.
+then, measured the effective area by usmg an X—ray beam .
+. . . . Mlyata, E., et a1. 2003, Jpn. J. Appl. Phys. 42, 4564.
+line. In the beam line, the CSU was installed in SSCU Naka"" t 1. 2008 PASJ 60 81
+. . Jlma e a , , ,
+of engineering model, and the parallel X—ray beam was Ozawa et a1. 2009, P AS J, 61, 81
+irradiated into the CCD through the CSU. As the results, Tomida, H., et a1. 1997, PASJ, 49, 405.
+we conﬁrmed the silt width to be 2.70 $0.05 mm, which Tsunemi, H., et a1, 2010, pAsJ, 52, 1371
+was consistent with the designed value of 2.7mm. The Uchiyama et a1. PASJ, 61, 9.
+collimator sheets reduced the effective area to 89.5% and Villasenor, J . N., et a1. 2003, GAMMA—RAY BURST
+86.8% of the designed value for the SSC—H and the SSC—Z, AND AFTERGLOW ASTRONOMY 20013 A WorkShOP
+respectively. It was due to the bending and non—uniform Celebrating the FirSt Year Of the HETE MiSSiOD- AIP
+alignment of the collimator sheets. These factors are taken W ocinfeé’erﬁe grogeedings, 66132? 333m ares C Garmire G
+- - - else 0 , . ., rm man, ., Z , ., , .,
+into account for the astronomical analys1s. Murfay, S., & Van Speybroeck, L. P. 2002, P ASP, 114, 1
+
+"

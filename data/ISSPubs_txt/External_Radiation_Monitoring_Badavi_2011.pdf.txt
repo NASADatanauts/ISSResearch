@@ -1,0 +1,1109 @@
+"","x"
+"1",".o w.- - - - - =
+$$$$$me Available onllne at www.SCIencedIrect.com
+ebaé ADVANCES IN
+Mg°v;'é§’€s H I‘ Q o
+‘11:, 6&4/14, 2
+:31? SCIenceDI rect SPACE
+ELSEVIER Advances in Space Research 48 (2011) 1441—1458 w
+WWW.elseVier.com/locate/asr
+The LOW Earth Orbit validation of a dynamic and anisotropic
+trapped radiation model through ISS measurements
+. . b .
+Franeis F. BadaV1 a’*, J ohn E. Nealy , J ohn W. Wilson C
+a Christopher Newport University, OSP, I University Place, Newport News, VA 23606, USA
+b Old Dominion University, 5115 Hampton Boulevard, Norfolk, VA 23529, USA
+CNASA Langley Research Center (DRA), MS 188E, Hampton, VA 23681, USA
+Received 16 October 2010; received in revised form 6 June 2011; accepted 7 June 2011
+Available online 13 June 2011
+Abstract
+
+The International Space Station (ISS) provides the proving ground for future long duration human activities in space. Ionizing radi—
+ation measurements in ISS form the ideal tool for the experimental validation of radiation environmental models, nuclear transport code
+algorithms and nuclear reaction cross sections. Indeed, prior measurements on the Space Transportation System (STS; Shuttle) have
+provided Vital information impacting both the environmental models and the nuclear transport code development by requiring dynamic
+models of the Low Earth Orbit (LEO) environment. Previous studies using Computer Aided Design (CAD) models of the evolving ISS
+conﬁgurations With Thermo—Luminescent Detector (TLD) area monitors, demonstrated that computational dosimetry requires environ—
+mental models With accurate non—isotropic as well as dynamic behavior, detailed information on rack loading, and an accurate siX degree
+of freedom (DOF) description of ISS trajectory and orientation. It is imperative that we understand ISS exposures dynamically for crew
+career planning, and insure that the regulatory requirements of keeping exposure as low as reasonably achievable (ALARA) are ade—
+quately implemented. This is especially true as ISS nears some form of completion With increasing complexity, resulting in a larger drag
+coeﬂicient, and requiring operation at higher altitudes With increased exposure rates. In this paper ISS environmental model is conﬁgured
+for 11A (Circa mid 2005), and uses non—isotropic and dynamic geomagnetic transmission and trapped proton models. ISS 11A and LEO
+model validations are important steps in preparation for the design and validation for the next generation manned vehicles. While the
+described cutoff rigidity, trapped proton and electron formalisms as coded in a package named GEORAD (GEOmagnetic RADiation)
+and a web interface named OLTARIS (On—line Tool for the Assessment of Radiation in Space) are applicable to the LEO, Medium
+Earth Orbit (MEO) and Geosynchronous Earth Orbit (GEO) at quiet solar periods, in this report, the validation of the models using
+available measurements are limited to STS and ISS nominal operational altitudes (300—400 km) range at LEO Where the dominant ﬁelds
+Within the vehicle are the trapped proton and attenuated Galactic Cosmic Ray (GCR) ions. The described formalism applies to trapped
+electron at LEO, MEO and GEO as well. Due to the scarcity of available electron measurements, the trapped electron capabilities of the
+GEORAD are not discussed in this report, but are accessible through OLTARIS web interface. GEORAD and OLTARIS interests are
+in the study of long term effects (i.e. a meaningful portion of solar cycle). Therefore, GEORAD does not incorporate any short term
+external ﬁeld contribution due to solar activity. Finally, we apply these environmental models to selected target points Within ISS 6A
+(Circa early 2001), 7A (Circa late 2001), and 11A during its passage through the South Atlantic Anomaly (SAA) to assess the validity
+of the environmental models at ISS altitudes.
+© 2011 COSPAR. Published by Elsevier Ltd. All rights reserved.
+
+Keywords: LEO; GCR; STS; ISS; GEORAD; HZETRN
+1. Introduction
+* Corresponding author. Tel.: +1 757 864 1410; fax: +1 757 864 8094. ,
+
+E—mail addresses: francis.f.badavi@nasa.gov (F.F. BadaVi), John. The commltment Of aStronautS t0 the long term CXpO-
+e.nealy@nasa.gov (J.E. Nealy), jwils0n61@cox.net (J.W. Wilson). sure of the space environment in ISS requires resolution
+0273-1177/$36.00 © 2011 COSPAR. Published by Elsevier Ltd. All rights reserved.
+d0i:10.1016/j.asr.2011.06.009
+
+"
+"2","1442 FF. Badavi et a1. /Advances in Space Research 48 {2011) 1441—1458
+of health issues directly related to the eﬂects of ionizing The ﬁrst step in the analytical process begins with the
+radiation on the crew. Evidence of early cataract formation establishment of an appropriate environmental model.
+in STS operations (Cucinotta et al., 2001) adds emphasis to For the LEO environment as applied to a pressurized vehi-
+the need for improving analysis and mitigation strategies of Cle, the most important contributors to the deposition of
+ionizing radiation. For the high inclination of 188 (51.60), ionizing radiation energy are the trapped protons and
+computational models indicate that about half of the ioniz- GCR. The present study addresses ﬁrst the highly direc-
+ing radiation exposure near solar minimum results from tional (vectorial) proton ﬂuX, which roughly constitutes
+GCR (@233 uSV/day), and the bulk of the remainder from half of the total cumulative exposure for long duration mis-
+trapped particles (@166 uSV/day) (Wu et al., 1996). For sions. However, instantaneous dose rates are much higher
+lightly shielded regions within 188 (e.g., in the crew quar- during the approximately 10—15 min of the SAA transits,
+ters usually nested against the pressure vessel), the trapped for which most of the trapped proton exposure occurs.
+particle exposure increases relative to GCR as the altitude During the transits, both omni-direetional and vector pro-
+of ISS increases to reduce atmospheric drag for the more ton ﬂuX vary from near zero to maximum values, and
+advanced ISS conﬁgurations. Excluding the eﬂeets of the directionality is controlled by the vehicle orientation with
+intervening material, there is also contribution from the respect to the magnetic ﬁeld vector components. Conse-
+neutron albedo (Wilson et al., 1989) of 25—54 uSV/day quently, an added degree of complexity is introduced with
+(varying with solar cycle). Within the structure of 188, the time variation of proton ﬂuX spectra along the orbit,
+the ionizing radiation environment is a complex mixture for which individual transport properties through the
+of surviving primary particles and secondary radiations. shield medium must be taken into account. The study then
+Various arrangements of detectors have been used to study analyzes the directional dependent geomagnetic transmis-
+the composition of the internal radiation ﬁelds within 188, sion due to the omni-present GCR. The deterministic high
+which needs to be understood to allow a more comprehen- energy heavy ion transport code HZETRN (Wilson et al.,
+sive modeling of the eﬂects of the local radiation enViron- 1995; Slaba and Blattnig, 2010; Slaba et al., 2009,
+ment on the astronauts’ critical tissues. As a result, a 2010a,b), developed at NASA Langley Research Center
+number of studies of various past spacecrafts within LEO (LaRC), is used to describe the attenuation and interaction
+environment have been made to better understand the nat- of the LEO environment particles and to calculate dosimet-
+ure of the ionizing radiations (Dudkin et al., 1992, 1995; ric quantities of interest. Finally, the three 188 geometries
+Keith et al., 1992; Badhwar et al., 1995a) and to further deﬁned by the CAD models are used to calculate exposures
+understand these results in terms of computational models at selected target points within the modules, some of which
+(Badhwar et al., 1995b, 2002; Shinn et al., 1995, 1998; represent locations of TLD detectors.
+Wilson et al., 2002).
+
+A prior report (Wilson et al., 2002) used a relatively 2. Analytical description of vector ﬂux in LEO
+complete dynamic model based on simple scaling relations
+of the LEO environment as related to the solar activity The two primary limitations in the environmental mod-
+Cyele to compute the omni-direetional ﬂux of particles from els described by Wilson et al. (2002) were the assumption
+GCR, trapped particles, and neutron albedo. In the present that the trapped particles are isotropic (resulting from the
+report, we ﬁrst discuss the addition of directional depen- omni-directional ﬂuence description), and the use of the
+dency to the LEO environment. In addition to the direc— vertical geomagnetic cutoﬂ to describe the transmitted
+tional dependent trapped proton model, we also discuss GCR. These models have been relatively successful in
+the development of a directional dependent geomagnetic describing the radiation environment aboard the highly
+transmission model, with the understanding that the main maneuverable STS wherein anisotropies tend to be aver-
+eﬂeet of this dependency is the penetration of particles aged (smeared) out. This averaging process is due to the
+below the vertical transmission cutoﬂs used in the past fact that the spinning and random STS orientations wash
+models. out proton anisotropies, and hence directionality in the
+
+The 188, at the present time has evolved as a near Earth trapped proton ﬂuX is generally ignored for STS ﬂights,
+space habitat suitable for continuous human occupation. with omni-directional ﬂuxes being used for dosimetric cal-
+Further evolution of 188 should render it as a facility form- eulations. Such models will not be adequate in the forma-
+ing a Vital part of an expanding space exploration infra- tion ﬂying of 188, which is mainly oriented in the local
+structure. The main motivation behind this work is to horizontal plane along the velocity vector. Presented here
+look at the ionizing radiation exposure aspects of astronaut are the dynamic and anisotropic trapped proton enViron-
+health and safety by utilizing analytical procedures to deter- ment and generalized geomagnetic cutoﬂ models. These
+mine ionizing radiation dose rates, with a View toward models are placed in a suitable form for the evaluation of
+implementation, as an analysis tool to facilitate the evalua- incident radiation on the bounding surface of the siX
+tion of the shield augmentation for the habitation modules. DOF motion described by longitude, latitude, and altitude
+A CAD model of 188 6A, 7A, and 11A conﬁgurations, spe- (i.e., trajectory); and yaw, pitch, and roll (i.e., orientation)
+ciﬁcally dedicated to exposure analysis has been developed of an orbiting spacecraft. It must also be stated that even
+as part of this continuing study. though both the trapped protons and GCR are positively
+
+"
+"3","FF. Badavi et a1. /Advances in Space Research 48 {2011) 1441—1458 1443
+Charged, their directional behaVior in the geomagnetic ﬁeld extended to 1970, resulted in the particle population maps
+are vastly different since GCR is incident on the magneto- of APSMAX (Sawyer and Vette, 1976). Since their intro-
+sphere with essentially isotropic ﬂux, while trapped protons duetion, these models are considered the best global repre-
+are largely introduced into the geomagnetic conﬁned ﬁeld sentations of the trapped proton environment.
+from the underlying earth atmosphere. Hence, these 0011- It was believed at one time that better estimates of parti-
+stituents require somewhat different analytical approaches ele environments could be gained by evaluating the popula-
+to describe their respective directional ﬂux. tion maps deﬁned on invariant MeIlwain coordinates over
+current magnetic ﬁeld conditions. This interpolation would,
+2.]. Trapped proton environment for example, contain the westward drift (~03O W/yr) of the
+SAA, observed in recent years by Badhwar et al. (1996).
+The trapped proton population is traditionally modeled However, it was recognized by STS dosimetry group
+as APS for solar minimum and maximum (Vette, 1991). (Atwell et 81-9 i989; Atwell, 2002; Badhwar, 19973, 2001;
+These inner zone particles result from the decay of atm0_ Badhwar Ct al., 19971)) that large CITOI'S I'CSUlth from SUCh
+spherie neutrons as they leak from the Earth’s atmosphere a procedure and it was concluded that the use of the particle
+into the trapping region. The inner zone particles are lost population maps interpolated over the magnetic ﬁeld model
+from the trapping region by interaction with the tenuous for which the population map was derived would provide
+atmosphere and generally have long trapping lifetimes. the best estimates of the long term orbit averaged particle
+The inner zone consists of both proton and electron decay environments even though the westward drift is het repre-
+products. The average kinetic energy Of the inner zone elee- sented. It is now customary to introduce the westward drift
+trons is a few hundred keV. The electrons are easily as a rotation 0f geographic coordinates (”030/ 3’1”) WithOUt
+removed from the spacecraft interior by the slightest modifying the magnetic ﬁeld (Heynderickx, 1996)-
+amount of shielding, and are mainly of concern to an astro- Since the principle source 0f trapped protons results
+naut in a spacesuit during EVA, or for an externally from the neutron albedo of the atmosphere, the temporal
+mounted, lightly shielded electronics deViee. Within any behaVior 0f the trapped proton population correlates With
+pressure vessel such as STS or 188, the electrons are easily the GCR intensity, and hence, solar activity (Huston and
+shielded by the meteoroid/debris bumper and pressure ves- Phtzei‘a i998)- Fig. 1 compares the monthly temporal vari-
+sel wall. of the trapped particles, only the protons with ation of neutron measurements at the Deep River neutron
+energies near or above 50 MeV are of concern to the interior monitor (DRNM) station (46- iON—77-50W) With local geo-
+environment Of STS or 188. magnetic vertical cutoff rigidity of about 1.15 GV for the
+The particles trapped in the geomagnetic ﬁeld were mod- period Of 1960—1965, 011111 (normalized to DRNM) neu-
+eled from data obtained during two epochs of solar cycle ti‘Oii monitor station (65-iON—25-50E) measurements With
+20 (solar minimum Of 1965 and solar maximum Of 1970), local geomagnetic vertical cutoff rigidity of about 0.8 GV
+and are used with the geomagnetic ﬁelds on which the B/ for the period of 1965—201 1, and neutron counts projection
+L maps were prepared (MeCormaek, 1988). The 1965 anal- up to 2020; with the solar radio ﬂux F10.7 measurements
+ysis using the magnetic ﬁeld model of Jensen and Cain and projection for the epoch 1960—2020 to depict this
+(1962), resulted in the particle population maps APSMIN correlation.
+(Sawyer and Vette, 1976). The 1970 analysis using the mag- Practically all Of the trapped proton ﬂux ih LEO region
+netie ﬁeld model of GSFC 12/66 (Cain et al., 1967) (N300—N1000 km) is encountered in the SAA region. The
+300 — 7500
+DRNM 0qu normalized to DRNM PYOJeCtiO"" E
+O
+250 . 7000 3
+§ 5:. ‘° 5: 9
+E ""I 3, 6500 ‘E 5
+: E .. 1' ‘ t. t :' A ‘1 32
+291% 2. ~?: := .‘ :1 °8
+’1- its. 5‘: 53
+EEC g g 3. 5:3 "" £14: ""2t :6°0°§L§
+F. 100 #1: “£3.53, 2H5; xi ? {g i: ii. 1“ zg
+“‘5 ”1%“ ?%é‘ °' \5‘ ’25 ”w 2
+5500 '
+50 F10.7 measured projection g
+......... ---N g
+
+0 5000
+
+1960 1970 1930 1990 2000 2010 2020
+Epoch(year)
+Fig. 1. Temporal correlation of solar radio ﬂux F10.7 with DRNM, Oulu normalized to DRNM and projection neutron monitor counts.
+
+"
+"4","1444 FF. Badavi et a1. /Advances in Space Research 48 {2011) 1441—1458
+ﬂux exhibits pronounced directional Characteristics, since Where I is the magnetic dip angle, and rg is the proton gyro-
+this is a region Close to a “mirror point” Where the proton radius, given (in km) by
+pitch angle With respect to the magnetic ﬁeld vector is Close
+to 90°. Within the SAA, trapped protons attain their min- r _ sin 9V E2 + 1876E (2)
+imum mirror point altitudes, displaying planar geometry as g 30‘ 1‘3""
+their dominant feature. This means that the protori ﬂux is With the pr ot on kinetic energy, E, in MeV and magnetic
+inaxuriized 1n the p lane. normal to theloeal magnetic ﬁeld, ﬁeld strength, B, in gauss. The standard deviation of pitch
+implying that at the pomt of observation, protons that are an g1 e 09 is given by
+not normal to the magnetic ﬁeld are mirrored at lower alti-
+tudes While being heaVily attenuated due to the increased 06 : / d5 (3)
+interaction With the upper atmosphere. K 31111
+
+The theoretical basis for the trapped ﬂux directionality Where dS is the thermospheric scale height and
+was initially developed by Heckman and Nakano (1969), FE + 11
+Who had studied the angular distribution of trapped pro- K : (4/3) W (4)
+tons With nuclear emulsion on rockets earlier, and pre-
+sented a simple model of the pitch angle distributions with rE representing the earth radius. 111 — 1, FN is a nor-
+about the geomagnetic ﬁeld lines as related to the lifetimes malization factor, parameterized by Kern (1994) as
+of particles With guiding centers on different ﬁeld lines FN : (.075/09)(-8533 + x)?"" (5)
+(Heekman and Nakano, 1963). The protons’ velocity vec- .
+tors lie Within 150 of a plane perpendicular to the geomag- Wlth
+netic ﬁeld line. Thus, those protons arriving from the east rg cos I
+or the west differ in intensity according to the atmospheric x : m (6)
+:31: 13:11: 5:215:13: £33]: Sd1§§:::ieels);nwrilo§ﬁl 1:12:21 11:: . When the omrii-directional ﬁuX is redistributed accord-
+tons arrive from the west direction than the east direction, mg to the distribution fuPCUOH Of, Eq. (,1)’ a p attern
+is primarily due to the energy loss in the residual high alti- emerges in Wthh most p articles are directed in a yery p ro-
+tude atmosphere. Simply stated, protons arriving from the nouneed band Of azunuth and zenith angles' Wlthm the
+west have trajectories With gyration about a point located SAEA’ thls p 2,“th is concentrated around p “Ch angles near
+above the reference observational point, and hence encoun- 90 and eXhlbltS the aforementioned east-west asymmetry.
+ter less residual atmosphere. On the other hand, protons It was shown by Heekman and Nam?"" (1969) that 09 1,11
+arriving from the east have trajectories With gyration about Eqs. (1) and.(3), depends on atinospherie 3931191161551» alti-
+a point located below the reference observational point, tude, 39d dlp angle SO that p “Ch angle distributions are
+and hence encounter more residual atmosphere. It is also nearly independent Of p article energy. In distinction, the
+well established that proton anisotropy is more pro- east-vyest 31911111199 depends on the p article radius of
+nouneed at higher energies, Where protons have a larger gyration. displaying marked energy dependency in a21-
+radius of gyration and thus can traV ers e through lar g e 1, muth. Fig. 2, demonstrates the east-west asymmetry for 5
+ranges of atmospheric densities. Limited measurements and 500 MeV p rotons. Due to the dependence ,Of the asym-
+and models seem to indicate that, roughly speaking, proton metry on the p article gyration, the asymrrietry is noticeably
+anisotropy is inversely proporti o 11 al to the altitude, as pronounced for 500 MeV protons, While it is almost abserit
+atmospheric density gradients gradually diminish at higher from the 5, MeV p rotons. The Wldth Of the band shown in
+altitudes. the ﬁgure is determined by the pitch angle distribution.
+
+After Heekman’s initial work, some computational ,It must be stated that the IGRF ﬁelds, as implemented,
+models were developed to analyze the effects of directional- dnﬁ the trap p ed ﬁeld statigally in a northgwest dlreCUOI} at
+ity (Watts et al., 1989; Kern, 1994). Using assumptions and an 61p p rox1mate rate Of 0'3 W/yr an 0'04 N/yr t0 the time
+approximations of Heekman and Nakano (1969), an of interest, and the scale height is found from the solar
+expression for directional ﬂux, .1, can be expressed in terms modulated ﬁt ,Of Pﬁtzer (199.0% as used by. Badhwar
+of local magnetic ﬁeld vector, B; altitude, h; thermosphere (1999) to organize the STS dos1metry data, and is given by
+scale height, ds; and pitch and azimuth angles (6 and (b, (me/Z)
+respectively). That is, for the direction of arrival, the direc— 10(7) : Poe A(Hm) (7)
+tional intensity can be deﬁned by the local pitch and azi- Where p0 : 2] x 10—11 g/Cm3, h is altitude above ground
+muth angle pair 6, (b. This formula, in the nomenclature (in km), and ﬁtting parameter A is deﬁned as
+of Kern (1994 , is ex ressed as a ratio of the vector ﬂux — 1 2
+to the omni-dii‘eetiongl value, J47. A Z 0'99 + 'SISKF + F)/1 10] / (8)
+
+With F as the average of F over three prior solar rotations
+_ _ 2 (81 days).
+
+i = F N exp [W] exp [W] (1) Due to orbital precession, the trapped protons as
+J4” 209 d5 encountered by 188 during its 10—15 min passage through
+
+"
+"5","F.F. Badavi et al. /Advances in Space Research 48 (2011) 1441—1458 1445
+5 MeV proton directional distribution 500 MeV proton directional distribution
+18° — 18° —
+- 1&5 - 1&5
+- '94 - 194
+""‘ =13 I: :13
+CD - 191 C” - 191
+g 120 g 120 =3?
+3*}. - ...2 w“. - m2
+2 2
+C) C)
+5 E
+E 60 E 60
+ﬂ '3’:
+0 — 0 —
+0 60 120 180 240 300 360 0 60 120 180 240 300 360
+Azimuthal angle “A (deg.) Azimuthal angle \II. (deg.)
+Fig. 2. Directional dependence of trapped protons of 5 MeV (left), and 500 MeV (right) as Viewed in the center of the SAA.
+the SAA, encounter this region from both ascending and environment is then proportional, in steady state, to the
+descending node directions. Because the radiation incident source (i.e., neutron albedo) and the population lifetime
+on the outer surface of the spacecraft is required for shield (i.e., atmospheric interaction), as was shown by Blanchard
+evaluation, and the attitude of the spacecraft is never ﬁxed and Hess (1964). The interpolation procedure implemented
+but has limited cycles due to the required reorientation here assumes a steady state solution to the population
+maneuvers, the angular distribution averaged over space- kinetic equations as the product of the albedo neutron
+craft attitude in the region of radiation encounter needs source and the particle population lifetimes. These two
+to be evaluated. This is accomplished by relating the orien- quantities are proportional to the product of neutron mon-
+tations in the spacecraft frame through yaw, pitch, and roll itor count rate and solar radio output at the 10.7 cm wave-
+to the local vertical reference frame where the radiation length. The interpolation of the AP8 models then involves
+environment is evaluated. In this work, 970 ray directions, two operations. First is the shift of approximately 0.19OW/yr,
+as will be discussed in Section 3, are used to evaluate the 0.07°N/yr, and second, the solar modulation through the neu-
+boundary conditions for shield evaluation, and the same tron decay source and loss terms due to the atmospheric
+directions will be used for the evaluation of the directional interaction.
+environment. The region over which the environment is to The AP8MIN and AP8MAX models associated with
+be evaluated is typical of results shown in Fig. 3. epochs 1965 and 1970 use diﬂerent ﬁeld models resulting
+The trapped proton environment has as its main source in some artifacts in the data analysis that we have approx-
+the neutron albedo generated by the interaction of the eos- imately corrected. The AP8MIN and AP8MAX locations
+mic rays with the upper atmosphere, and losses which of the SAA are given in Table 1. Here, based on the
+occur through atmospheric interactions. The proton analysis of Atwell (2002), conventions in the work of
+400-km APBMIN Flux (>100 Mev], protons/(crrr‘Z-sec) 400-km APBMAX Flux (>100 He""). protons/(cm‘2-seC)
+""..."".ruumm.........-.--.{-- ....._ ""'-..""""\-...u.' I”.......O'l.'""""'..............“mif... ...:r. '.........?..,_""_..'.I
+-- © ~ mo
+'. .' 0'. : 3""""'-.- .1: '.. 1': 3"" : :- :""'.._. 3""
+-. "" :2 : : .- '. ' 3:9 : : .'
+'. _. f ', ; \ ,' ""-._.' .' '._. . '. : \ .' ""._.:
+Fig. 3. Location and integral ﬂux of the SAA region for AP8MIN, and AP8MAX.
+
+"
+"6","1446 FF. Badavi et a1. /Advances in Space Research 48 {2011) 1441—1458
+Table 1 N—W drift of SAA 1965 — 2010
+SAA locations for 100 MeV protons at 400 km during epochs 1965 and
+1970.
+SAA location AP8 model AP8 model adjusted :1: :3:
+1965 1 E f j
+Latitude 35.00s 32.608 o
+Longitude 33.00w 37.10w \
+1970 J5 -40
+Latitude 37.00s 32.203
+Longitude 30.00w 38.00w ‘31? 1_ 40 ‘30
+Heynderiekx (1996) are modiﬁed, and we assume a para- 0
+metric ﬁt for the location of the center of SAA as a func- _50
+tion of time, based on the following equations applicable
+t0 APSMAX of 1970 epoch:
+9(1‘) : _32.2 + 007* (t _ 1970) (9) Fig. 4. North-westward drift of the SAA between 1965 and 2010.
+¢(t) = —38 — 0.19*(t — 1970) (10) fp,MAX(r, <15, 6,E) = 0.6pr8MAX(r, qb + 8 + 0.19m, 9
+The quantities 60) and gb(t) in Eqs. (9) and (10), represent — 4-8 — 0.07At 7 E ) (13)
+the latitude and longitude drift of the center of SAA as a . .
+function of time. These two equations assume a north-west- Note the scale factors Of the prier model (theh et al.,
+ward drift to properly locate the SAA associated with 2002) have decreased after changing the APSMIN ﬁeld
+APSMAX, as given in Table 1, as the adjusted longitudinal model from IGRF (1965) to Jensen and Cain (1962) and
+values. Thus, fAPSMAX(V, <0 +8,6— 4.8, E) as derived from APSMAX ﬁeld model from US C&GS/1970 niodel to
+APSM AX is adjusted by 4.80 N and 8° W while assumed val- GSFC 66/12 for 1970. Furthermore, upon substantial com-
+ues for fAP8M1N(V, <0 + 4.17 9 _ 2.471;) are those from parison of the results of Eqs. (12) and (13) above with mea-
+APSMIN shifted by 2.4°N and 4.1°W. A ﬁrst approxima- surements onboard STS/ISS and collaboration with the
+tion to the successive solar maximum and solar minimum Johnson Space Center (JSC) Space Radiation Analys1s
+is found by simply shifting in the north-westward direction, Group (SRAGL 1t. was deeided to introduce 0.5 and 0'6
+the adjustedengAng Cb + 8 + 0.19 At 9 _ 4.8 _ .07At E) attenuation coeﬁi01ents into these equations in order to
+and fAPgMIW, gb + 4.1 + .19At, 9 — 2.4 — .07At, E) values, best ﬁt the measured data-
+where AI is the time difference from time of evaluation to time
+Of epoch fee the AP8 data set. 2.2. Geomagnetic transmission factor
+Application of Eqs. (9) and (10) between 1965 and 2010,
+results in the noi‘th-west drift of the SAA for the past 40 In the past, the commonly used geomagnetic transmis-
+years, as ShOWh 1h F1g4.. sion factor was based on the extrapolation of a world
+The proton emni-directional ﬂux spectrum, fp(r, 1b, 6, E, map of vertical cutoff rigidities by Smart and Shea
+t), at any location and time is then extrapolated (Wilson et (1983). In this model, it was assumed that there is no trans-
+al., 2002): us1ng the follow1ng functional form mission below the vertical cutoff and 100% transmission
+_ * * (excluding the Earth’s shadow) above the vertical cutoff,
+fpm gb, Q’E’ t) _ fP’MlN(r’ gb, Q’E) eXp[—ap(DRNM [$107)] while in fact there is partial transmission, which is depen-
+(11) dent on the angle of incidence relative to the east direction.
+In Eq. (11), a1, is evaluated using the solar maximum The eompes1t10n Of GCR is comprised Of multiple
+f (r Cb 6 _0 3 E At) related to APSMIN and M AX charged nuclei of the chemical elements that appear w1th
+p,max 9 a - a a . .
+models, but with the latitude shifted westward by 0.3OW/ energies haV1ng spectral range Of many decades. GCR par-
+yr as discussed previously. The quantity D R N M * F107 is ticles at LEO that are modulated by the geomagnetic ﬁeld
+averaged over the prior 14 months at solar minimum and carry a large number of ions that interact w1th Earth s
+2 months at solar maximum as was determined to be the UPI)“ atmosphere. LOW energy GCR particles are rela-
+best ﬁt to the limited NO A APRO model data set (Huston tively easy to slow down and all particles below a certain
+and Pﬁtzer, 1998). Following the NO A APRO analysis, we threshold energy are blocked by the Earth’s geomagnetic
+use the prot on ﬂux at solar minimum with ﬁeld. In contrast, high energy GCR particles, due to their
+long interaction range, are more difﬁcult to block. Based
+fp7M[N(1"", gb, 6,E) : 0.5fAP8MIN(r, gb + 4.1 + 0.19At, 6 on the model of O’Neill (2006), Fig. 5 represents the mag-
+_ _ nitudes of siX naturally abundant GCR ions (H, He, C, O,
+2'4 0'07At’E) (12) Si, Fe) in the free space and LEO (ISS attitude) at 1 solar
+and solar maximum with distance (AU 2 1) for the 1977 solarmin (solid line) and
+
+"
+"7","F.F. Badavi et al. /Advances in Space Research 48 (2011) 1441—1458 1447
+1 .OE+03 1 .OE+O3
+Free space Hydrogen LEO (ISS)
+A I” Helium
+ﬁ I”:,v""‘\‘ § Carbon
+.9 I”I” ‘\ U
+“‘ 1.0E 00 x,” \ N' 1.0E oo --
+S + x’:” ”_~ ~ g + Slllcon
+% ,:/’ \X >' Iron
+é ’ ”—-~‘\ \'\'\ g
+E I’;:""—-~“§\ E
+3 ,437 Hydrogen \\ \ 5 / \
+:3 1.0E-O3 x33” Helium \ 2—: 1.0E-03 , t
+E :3” Carbon V E: X
+Silicon
+Iron
+1.0E-06 1 0506
+1'0E+00 1.0E+O1 1'0E+02 1'OE+03 1'0E+04 1'0E+05 I 1.0E+00 1.0E+01 1.0E+02 1.0E+03 1.0E+04 1.0E+05
+Energy, MeV/n Energy, MeV/n
+Fig. 5. Flux intensities of six selected GCR ions in free space and LEO (188).
+1981 solarmax (dashed line). In the ﬁgure, the LEO ions R _ CDcos4/1M (14)
+attenuatieri 1n megnitude is. due to geomagnetic vertical 7%{1 + (1 _ eos3 /tM sinisin¢)1/2}2
+cutoff rigidity Wthh is described next.
+It is most convenient to Characterize the geomagnetic where g: is the zenith angle, and 1P is the azimuth angle mea-
+interaction 0f .GCR particles 1h terms 0f flgldltya R sured Clockwise from magnetic north. The constant CD is
+(momentum/unit Chaige) rather than energy A common directly proportional to the dipole moment, and has a
+method 0f representing GCR transmission through the value of 58.0 GV for the 1990 IGRF dipole. The nomencla-
+geomaghetie ﬁeld 13 the use.of a computed leeal Vertical ture used above is essentially that of Cooke (1983). Eq. (14)
+cutoff rlgldlty, RVC: for Whleh tfahSIhlSSth IS Uhlty for basically states that particles With lower rigidity values are
+R > RVC: and zero otherwise. . . transmitted as incidence angles become more aligned With
+. After .3 lengthy derivation, ah expression for the diree- the geomagnetic ﬁeld. For this reason, higher GCR ﬂux
+t10h31 dIStflbutIOH 0t cutoff tlgldlty wss developed by values for 10W rigidity particles can access the polar regions
+Stermer (1937)» Whleh eleseribed the interaetion Of a in near vertical directions, Whereas at low and mid lati-
+Charged particle W}th a dipole magnetiehelci 1h terms 9f tudes, a distinct cutoff rigidity appears for which no parti-
+the dipole magnetic momerit ahd the directieriai coordi- eles are transmitted. For this simpliﬁed model, the rigidity
+nates. This express10n for directional cutoff rigidity, R, in for vertically incident particles is given by
+terms of distance from the magnetic dipole center, m,
+and magnetic latitude, RM, is usually given by RVC = CD 0084 114/473) (15)
+400 km Cutoff Rigidities at 3.7°N and 288.2°E 400 km Cutoff Rigidities at 8.5°S and 296.90E
+180 — 180 —
+-8., -8q
+:1; El;
+A 20 A 20
+d) 150 =24 d) 150 - 24
+0) (D
+E 3
+MP nﬁ
+Q) Q)
+E) 120 e E) 120
+C C
+< <
+.C .5
+.‘ﬁ 9:
+C C
+(D Q)
+N 90 , N 90
+60 — 60
+0 60 120 180 240 300 360 0 60 120 180 240 300 360
+Azimuthal Angle \p (deg.) Azimuthal Angle \p (deg.)
+Fig. 6. 2010 geomagnetic cutoff rigidities at 400 km at 3.7°N—288.2° E (left) and 8.508—296.9°E (right).
+
+"
+"8","1448 FF. Badavi et al. /Advances in Space Research 48 {2011) 1441—1458
+This simple dipole approximation may be improved by uti- Z
+lizing detailed calculations of vertical cutoff rigidity evalu-
+ated from the multipole ﬁeld models. Global maps of ’II A
+cutoff rigidity are now available (Smart and Shea, 1994), ’ II X Y
+and have been incorporated in the present work. The tem- 1 ’ ' , I
+33135 V3323? (2111131? (13113111211112? €13; ”£3 1121?; ”47/1/1111|‘\\\\\\§\\‘\\e
+, , , ,Il, unn\\\“\\\
+(1994) for t1me 111tervals eover111g most of the last half een- 0.5 /”’II’.'...:I=‘I‘“‘“\§‘\\
+tury and reﬂecting the varying ﬁeld strength observed dur- $2,....-:I=III““‘“8
+111g this period. In the present model, we use the IGRF ?...l.::======‘I““
+ﬁeld model evaluated for arbitrary dates from 1945 to N 0 §§EEEE==IIII=-‘Iﬁ1r
+2020. Usin IGRF ma netie ﬁeld model for 2010 contours i. ===--==== iigﬂ‘
+.g.” . g . .’ ‘13:! ---- l: git
+of cutoff r1g1d1t1es 1n GV at two geograph1e locat1ons for 188 \“i=====i===.:if
+nominal altitude of 400 km, as computed by Eq. (14), are '05 ‘\\\“‘:=-==-Eggi’lf
+shown in Fig. 6. The zenith angle is in the 600—1800 range I §$E==Eﬂﬂé
+With geomagnetic equator at near 90°. The ﬁgure indicates wigﬁyg. ‘
+that at lower azimuthal values, ions experience a consider- '1 '(Q “‘4‘?!
+ably higher cutoff rigidity to reach 188 altitude than at high- _ -05” “0‘5
+er azimuthal values, and therefore there is a preferred path E], 059‘ 0.5 7‘
+for a GCR ion in the geomagnetic ﬁeld. Furthermore, as the 1 1
+two ﬁgures indicate the ion path and hence its cutoff rigidity Fig. 7. Directional grid (sphere) with 970 rays.
+is sensitive to it’s proximity to the geomagnetic equator. 0086.
+Note that the ﬁgure on the right is almost at geomagnetic _ ' _ _ .
+equator, While the left ﬁgure is about 150 north of it. A9 _ Agb [0891.1 d(COS 6) _ AMCOS Bi COS 61—1) (16)
+3. Description of computational procedure or
+A9
+The formalisms of previous section to describe the COS Bi _ E + COS 6H (17)
+trapped protoh and GCR environmehts are easted into Using deﬁnitions A9 : 417 490 : 2_717 and N: Nd) . N9,
+a11 ITAR restr1eted code package Wh1eh eons1sts of two here N = 44 and N : 2V2 resultsN1011
+primary routines. The main program, GEORAD, controls W 1) 6 ’
+the input/output and computational grid deﬁnition, and A_9 : 471/ N : 2N_¢> (18)
+module RADAVE performs Spacecraft to Local Vertical Agb 27r/N¢ N
+(SC—LV) coordinate .eonversion and controls. GCR and Combining Eqs. (17) and (18) yields
+proton ﬂux ealeulat1ons. The program requ1res several
+input ﬁles: APSMIN and APSMAX proton ﬂux ﬁles, glo- cos 91' : 2N_¢> + cos 91—1 (19)
+bal vertical cutoff data (17 sets for years between 1945 N
+and 2010): and spherical harmonic expansion 0061110161113 providing an iterative process to calculate all 22 zenith
+for IGRF ﬁelds between 1945 and 2010. Several other values.
+input ﬁles are also required: the Deep River Neutron Once the rays are deﬁned, the spacecraft (SC) coordi-
+MOHitOl‘ (DRNM) 0011111 rate records, F107 radio fre- nate system is mapped into aloealvertieal (LV) coordinate
+queney ﬂux data, and WW) 31360131 sets 0f magnetic ﬁeld system Where magnetic ﬁeld quantities are calculated.
+0061110161113 f01‘ AP8 ﬂux evaluations. In addition, GEO' Fig. 8 depicts the relationship between the two coordinate
+RAD requires a user-supplied trajectory ﬁle for orbital systems.
+position deﬁnition, Which is comprised of a series of val-
+ues for time, latitude, longitude, altitude, yaw, pitch, and
+roll. R
+The calculations performed during execution are con-
+trolled by a series of option ﬂags. Initiating execution leads ﬁﬁ
+ﬁrst to the deﬁnition of energy and rigidity grids and a R3 'Roll turﬁ
+directional grid of azimuth and polar angles. The diree- P
+tional grid, as depicted in Fig. 7, consists of 970 rays sub- R1 Yawturn PitCh turn
+tending equal solid angles deﬁned by 44 equally spaced
+azimuth angles and 22 polar angles, plus 2 polar rays.
+Each element of the surface solid angle complies With R R2
+the following requirements to assure even distribution of 3
+directionality. We deﬁne each SOlid angle element by: Fig. 8. Graphical relationship between SC and LV coordinate systems.
+
+"
+"9","F.F. Badavi er a1. /Advances in Space Research 48 (2011) 1441—1458 1449
+Here, the rotational mapping complies With the follow- RLV(Y,P,R) = R§C1(R)R§C1(P)R§C1(Y)RSC(Y,P,R) (22a)
+111g matrlx relatlonshlps:
+or in expanded form as
+1 0 0
+RSC(R) : 0 eosR — sinR (20a) 1 0 0 COSP 0 _ smP
+- 0 — sinR eosR sinP 0 eosP
+cos P 0 smP
+cos Y sin Y 0
+RSC(P) = 0 1 0 (20b)
+. >< — in Y Y >I< R Y P R 22
+—smP 0 eosP S COS 0 SC< ’ ’ ) < b)
+. 0 0 1
+cos Y — 3111 Y 0
+RSC(Y) : sin Y cos Y 0 (200) Which for the desirable coordinate system RLV(Y,P,R) re-
+0 0 1 sults 111
+' ' ' RLV(Y,P,R)
+Implementatlon of Eq. (20) matrlees result 1n the follow- _ _
+ing relation between the SC and LV coordinate systems COSPCOSY COSPSIHY ‘SmP
+: — sin YcosR —|— sinR sinPeos Y cosRcos Y —I— sinR sinPsin Y sinReosP
+RSC(Y7 P: R) : RSC(Y)RSC(P)RSC (R)RLV(Y7 P7 R) (21) sinRsinY—l—cosRsinPcosY —eosYsinR+cosRsinPsinY cosRcosP
+With the inverse transform being *Rsc(YaPaR) (23)
+l. GEORAD (MAIN PROGRAM)
+0 Deﬁne proton energy grid
+0 Deﬁne GCR rigidity grid
+0 Deﬁne spherical coordinate directional grid
+0 Set ﬂag for ﬂux calculation (GCR 0r protons or both)
+0 Read sequential trajectory position data:
+(time, latitude, longitude, altitude, yaw, pitch, roll)
+OUTPUT SECTION
+(controlled by option ﬂags)
+CALL RADAVE
+(controls computational procedures)
+0 Initialize ﬂux arrays
+0 Use yaw-pitch-roll rotation matrix to convert vehicle coordinates to local vertical system
+0 Calculate B-ﬁeld variables with NSSDC algorithms and IGRF ﬁeld models
+GCR Calculation AP8 Calculation
+CALL VERCO CALL AP8DIST
+Reads venical cutoff data (1944-2005) for
+interpolation in time, latitude and longitude C ALL AP8MOD, M AGFLD
+0 Calculation of AP8MAX and
+CALL NUCUT AP8MIN integral omni-ﬂuxes and
+’ F0? each ray duectlon and imposes modulation within solar
+“.gldlﬁy value, computes cycle and scales with coefﬁcients
+directional cutoffs derived from NOAA-PRO model
+0 Set directional transmission to 0 o Differentiates integral ﬂuxes
+or I (O for cutoff < rigidity
+value) . . CALL APSANG
+0 Accumulate durecuohal Converts omni—ﬂux lo directional ﬂux using
+transmissmns for each orbital theoretical distribution function
+point
+Send output data to main program
+Fig. 9. Schematic diagram of protons and cutoff rigidity computation ﬂow for GEORAD.
+
+"
+"10","1450 FF. Badavi et a1. /Advances in Space Research 48 {2011) 1441—1458
+
+GCR calculations are performed by accessing the verti- The GEORAD code package coupled With a trajectory
+cal cutoff database and interpolating for the appropriate package is made available to the space radiation shield
+time, latitude, and longitude. The angular distribution of design community the web interface OLTARIS (https://
+rigidities is calculated and converted to 0 or 1 transmission oltaris.larc.nasa.g0V/). This interface allows a spacecraft
+over the range of directional grid values. The cumulative shield designer to upload a mass model derived geometry
+directional transmissions are available for direct output such as 188, deﬁne a trajectory, select appropriate time
+or they can be averaged to obtain an “effective” GCR dependent (i.e. mission speciﬁc) environment for proton,
+transmission. electron and heavy ions at LEO, MEO, GEO and free
+
+The proton ﬂux calculation begins by calculating the space, perform particle transport using HZETRN and
+standard APSMIN and APSMAX omni-direetional ﬂux obtain partiele/energy speciﬁc ﬂux or integrated dosemet-
+for the speciﬁed time and global position. Solar cycle rie based quantities such as organ speciﬁc effective dose.
+modulation is then applied to obtain a ﬁnal proton It is worth mentioning that the current focus of OLTA-
+omni-ﬂuX spectrum. The direction distribution function R18 is to extract speciﬁc quantities of biological interest
+is applied to the ﬁnal omni-ﬂux spectrum to provide a and therefore OLTARIS is not an appropriate substitute
+vectorial proton ﬂux. The cumulative directional ﬂux or for the more general purpose space radiation web inter-
+the averaged omni-ﬂux are both available for direct out- faces such as SPENVIS (http://WWW.spenVis.oma.be/) or
+put. Fig. 9 presents a computational ﬂow diagram for CREME (https://cren1e.isde.vanderbilt.edu/).
+GEORAD. Note that for a speciﬁc mission duration,
+GEORAD is capable of deﬁning a time dependent enVi- 4. Demonstration of anisotropic environment
+ronment for both protons and electrons and Fig. 9 merely
+shows the protons and rigidity cutoff components of the Unlike STS, Which is a highly maneuverable craft and
+environment ﬂow Chart as the validation portion of this thus the omni-direetional environmental model is sufﬁ-
+paper focuses entirely on STS/ISS LEO orbits Where elee- eiently applicable to describe its environment, 188 is nor-
+trons do not play a major role. mally stabilized in the local vertical reference frame;
+
+It must be stated that GEORAD does not incorporate hence, the direction of arrival of environmental particles
+the effect of external magnetic ﬁelds due to solar activity. plays an important role in describing its environment.
+These external ﬁelds of Which the most popular one is per- This directionality of arriving protons is especially impor-
+haps the Tsyganenko variety (e.g. Tsyganenko and Sitnov, tant if shield augmentation of the habitable volume is
+2005) are coupled to the IGRF ﬁelds and provide a more considered.
+accurate short term (i.e. hours to days) representation of In this work, the ISS nominal Circular orbit is selected
+the geomagnetic ﬁeld during solar activity beyond 4 or 5 for analysis, With the goal of a somewhat detailed exami-
+Earth radius. GEORAD and HZETRN interests are in nation of the directional aspects of the cumulative trapped
+the study of long term effects (i.e. a meaningful portion of protons and GCR. Since the ISS orbit is in LEO, the sin-
+solar cycle). Therefore, the authors chose not to incorporate gle orbit considered is tailored to pass through the center
+any external ﬁeld to GEORAD. It is worth mentioning that of the SAA, presently (2010) centered near 29.408,
+the authors work With other groups Who have keeninterest 314.4OE. The global tracks of this orbit are shown in
+in coupling the IGRF ﬁelds With external ﬁelds to study the Fig. 10.
+short term effects of solar activity for commercial aviation The 188 Chosen orbit is intended to represent typical
+safety purposes (Mertens et al., 2010). Such collaboration conditions for human operations in LEO. Calculated
+has resulted in the creation of the project NAIRAS results are performed for 188 orientation With zero pitch
+(http://sol.spacenVironment.net/~nairas/) Which provides and roll angles, With yaw angle prescribed by the horizontal
+real time warning to airerafts during solar activity. heading With respect to the geographic north.
+
+9 i «w? i <5? i ‘ :5- mu?"" V? E ?=—
+a,‘ jg?)
+Fig. 10. Single 188 ascending (left), and descending (right) orbit tracks (400 km, 51.6°)cr0ssing 2010 SAA center.
+
+"
+"11","F.F. Badavi et a1. /Advances in Space Research 48 (2011) 1441—1458 1451
+4.1. Results for trapped proton vector ﬂux 1e+9
+1e+8 . . l+ Ascending I
+The trapped protons exhibit more pronounced direc— % 1e+7 ° ° . . _°_ Descend'""g
+tional characteristics than the GCR primarily because of 5 ° .
+the different nature of the source of radiation, and the N3 “3+6 ' . .
+inherently lower energy range of the trapped particles. % 19+5 ‘ - .
+For the typical LEO orbit, the proton ﬂux of interest is i 1e+4 ' - . .
+of importance only in the SAA Vicinity. This is also a g 1e+3 ° ' ' - . . .
+region of particle path reversal (“mirror point”) where 1e+2 - .
+the pitch angle approaches and recedes from its 900 limiting
+value. Thus, proton ﬂux is expected to be conﬁned to pitch 1e+10 1 1 10 100 1000
+angles nearly perpendicular to the local B ﬁeld vector, ' Prom” Kinetic Energy,MeV
+Which in this region results in a high intensity ﬂux band
+tilted normally to the magnetic dip angle. The directional Fig. 1%. ISS orbit accumulated omni-direetional differential proton ﬂux
+differential proton ﬂux is calculated for all proton energies for a smgle pass through SAA'
+speciﬁed in the grid of values in the range of 01—500 MeV.
+A number of diagnostic calculations have shown that direc— descending nodes at lower energies can be accounted for
+tional distributions are relatively insensitive to energy by the presence of extremely low energy particles
+value, especially for the higher energies of most interest (<10 MeV at 400 km) in the deep southern latitudes due
+(>~50 MeV) for a pressurized spacecraft. In order to dem- to the “southern proton aurora region”, through which,
+onstrate the directional results, a single grid point energy for the chosen two treks through the SAA, only the
+value (82 MeV) has been selected for graphical display. descending node of ISS passes. From a dosimetrie point
+In the case of the nominal ISS orbit, the expected band of View, these low energy protons essentially have no eon-
+of high proton ﬂux is especially prominent, as shown in tribution to the radiation Within the interior of the
+Fig. 11. These results represent the orbit averaged direc— spacecraft.
+tional ﬂux. However, since ﬂux contributions appear only For nominal ISS trajectory (400 km., 51.60), the contri-
+in the relatively short trek across the SAA (~10 min dura- butions of the “southern proton aurora region” to AP8
+tion), the directional ﬂux pattern is established for a rela- models are shown on a world map in Fig. 13. Note that
+tively narrow range of magnetic dip angles. only during the descending orbit through the SAA does
+When the directional ﬂux is integrated over the total 4 the ISS encounter this region of low energy particles.
+solid angle, an omni-direotional ﬂux is obtained, as is The omni-ﬂux environment can be applied directly to a
+shown in Fig. 12. The discrepancy between ascending and randomly oriented spacecraft. For long duration missions
+in LEO involving many orbital transits, it is found that
+exposure rates for GCR and trapped protons in moderately
+ISS Z shielded spacecraft (e.g., STS, ISS) are of similar magni-
+12:31:35 l tudes (Wilson et al., 2003). In the case of spacecraft orbit-
+109-714——I ing in approximately ﬁxed orientation (e.g., ISS), the
+§é§§§ l——-.l X directional exposures for GCR are relevant over the entire
+123333 ﬁeld of View, While the trapped protons exhibit much more
+$34325? II. "" ‘ piononnced directionality that imply eons1deration of spe-
+5- r 1 eial sh1eld des1gn strategies.
+In this work, the selected ISS track over the SAA region
+I' ‘ is chosen in such a manner that minute by minute trajecto-
+0-5 ries in ascending and descending nodes provide sufﬁcient
+1 information to calculate the proton ﬂux in 2010 based on
+i NOAAPRO modulations of AP8MIN (1965) and
+0 N AP8MAX (1970) epochs. Fig. 14 depicts the ascent and
+‘ descent orbital tracks With overlaid integral proton ﬂux
+‘ Q contours (E > 100 MeV) based on the AP8MIN and the
+I—L * 0 5 AP8MAX.
+-1 ' ' a 3 Using the proton environmental model and minute by
+x- 0 7 0' 4 minute trajectories of Fig. 14, the omni-direotional proton
+‘ y I differential spectra were then calculated, and for selected
+1 1 x 0'5 ' ' '0-5 '1 points near the region of peak ﬂux (i.e. SAA), are depicted
+X in Fig. 15. The chosen points are identiﬁed by time values
+Fig. 11. Trapped proton ﬂux (orbit-averaged) directional pattern for in minutes elapsed after ascending and descending nOde
+nominal ISS orbitat 82 MeV. points.
+
+"
+"12","1452 FE Badavi et al. /Advances in Space Research 48 (2011) 1441—1458
+90 M 90 _.
+‘xﬁﬁ:: ""VA“ 4:. :23 (,3. ITWV ‘::- .2§§9£3_ :6:— '23? ,r' {13%, ‘:,_~
+'79:: L g “‘4‘ * ii“: t, 3
+“‘ 4 ’r“ -.:""“»“3-.“§“ 5:14 21‘- 2"": J4 3“ ;’ ',“5L 41:“ J; 1;
+30 “27% SIPX: ‘23.; 4“ '(' f ~30 “f ""“4 “.1“. “”31. ,1 ,“f 7’;
+““' ““ ""ﬁt“vu“ “ ' 1'7“” ”‘2 1"","": ﬂ ““3 *1“:- ‘“ ‘V “Mfr"". ~ (35“ V
+‘ 3:13“: 4 “-. ‘4 .- 1 '- ' ' ‘ 2:“: 3""“. § ‘1, '- '
+3 f 7i “ g g N “‘ ““5““ 4'. '3‘“ Xi f” “00
+a 3 ' T > 100 a 7- . ‘ at; f‘.’ >.
+‘3 O ‘ - "" w“ j ‘5 '15 ° ' t “‘ ‘- ~r“ .-a ’
+3 . ' a ‘: ‘4 j § 3 - "" 1| ‘“ ‘é
+: '-,| 1“, ,. : “V“ K . t ‘1 E.“ .- ‘. ‘ “ “K“ 4‘ 4
+-:50 i“ I “2, 4 C -50 s“ “ “t s“ A
+I g‘ “ ‘“‘Tw““ )1 j 5 ““ . “ “‘74“ r}? 3 10
+, i :4 ‘ 5‘ g 10 ' a“ “ é
+Kg)- “ 5 k4“ - ' 1'
+-eo ,, . “P -60 3., - ‘1’
+h. . c ; ,4 2. h, _ rum ,. , 2
+_7fr ' '“' m—Fr“ 6,: _#__Hr ' 255:” CL,
+-90 -90 1
+‘180 “120 '60 0 50 120 130 —180 -120 -60 0 60 120 180
+Longitude Longitude
+Fig. 13. Contribution of low energy aurora protons, courtesy of SPENVIS http://www.spenvis.oma.be/.
+4OU—km APBMN Flux (>100 MeV), protons/{cm'Z-sec) 400-km APBMAX Flux [>100 MeV). protonS/(CM‘Z-sx)
+'. '. “v ‘, .' “2, 3 __';__.. . -..__'.. § "" ._
+.:- . _....-,.n"":."" 6% ”..'“t.-. ..'. '.__-‘ Ill .- ,......I- Q : ...-..-‘“.- l: H.“
+:II .-""' “...-..'” '( ""I‘gg \. -: ....""1: 2| ...“ ”...“, ( Q'( 8 ‘-.~ -: .5"";
+$01.1. ' ’0"".=‘--... -. » - A 4' .='
+'- '-\.e - '- VQ 1° ""‘
+‘80 "" ""1' . ' '- . 5“ -8.” ... H ... _ . :
+' “ ‘50: “ 1' h ..‘-..'; 7': “33'?” ‘ 1M ..'“uu': .3:
+.' 2'1 0' : :'\“-... l.‘ '.'I 1. . I.' ‘3‘...“ .'
+I'n. “ . .,_,....--n.3u.n:50._- I“ f. ..'-5 .,‘ 1. ‘ ' ""_.....-~---i....._-,50“- ,"" ..' .5..- ..'
+... u“; E ..'f._...."" :4 . ... ... -_' ""J; E ...'..""u. I"" ‘ _.. ...
+‘ 1' 3‘ .-“ s , 3. 5‘ ...- .-
+Fig. 14. Ascent and descent orbital tracks of 188 through the SAA for AP8MIN, and APSMAX. Spacing (*) represents 1 min intervals.
+/”“\.. -/""“—~
+2 / ' ‘xxxx‘*\\‘ 2 / / \\\
+E, 10000/ 4‘ E- 10000/ I
+N 1 1 “E i 4“
+E9 1000“ x“ 9 1000“. 4'
+> : > g :
+0.) .v Q) j I
+2 1001 g 2 100i ]
+r 1 I :4: ‘4
+u 101 ,4 . 1 \ .:
+g 1 “l ' E 10 “1 k g
+a: 1 \ 88 \0' “a 3 \ '60 xo-
+8 0.1 “\\ 86 0+? .9 1 58 +50
+§ 1 84 .96 0e 1 56 \063
+0' 10\\\ 82 \99 ""7‘ 10 54 9‘69
+""f/n . 100 30 69 061/0 100 52‘06
+et/C e 1000 <@ 806 1000 «\
+""er ’Qy
+9?, M ’44:?
+61/ I/
+Fig. 15. Omni-direetional differential proton ﬂux obtained from the trapped proton model in central region of the SAA for ascending (left) and descending
+tracks (right).
+The complex (erratic) low energy behavior (~<10 MeV) most likely due to several contributing factors, including
+in the proton spectra can not be readily explained, and is the usage of simple numerical interpolation. However,
+
+"
+"13","F.F. Badavi et al. /Advances in Space Research 48 (2011) 1441—1458 1453
+since only higher energy protons (>~50 MeV) penetrate 0.8
+the ISS structure, the low energy ﬂuctuations are not of
+much practical importance. E 0'7 ’__._____
+i 0.6 w’”
+4.2. Results for GCR transmission 35’ 0'5
+g 0.4
+
+In order to demonstrate salient features of directionality g 0 3
+0f GCR cutoff rigidity, two time points have been chosen 5 '
+for the ease of the nominal ISS orbit. At the orbital posi- E 0-2
+tion occurring near 30°N, the cutoff rigidity does not vary '— 0.1
+dramatically for the portion of the directional sphere above
+the earth shadow. Fig. 16 (left), shows the directional pat- 0
+tern associated with the cutoff rigidity at this location in the o 5 1o. . . 15 20 25
+orbit. Even though the range of rigidity values is not large, R'g'd'ty’ GV
+the expected east-west asymmetry is Clearly seen. In Fig. 16 Fig. 17. 188 transmission coefﬁcients for vertical cut off rigidity and
+(right), a similar “snapshot” of the directional rigidity is direction averaged rigidity-
+shown at an equatorial location. Here, the directionality
+is niueh more pronounced, and the range of calculated val- in dieates that at R values in the ran g e of 10—20 GV, the
+96818 mnehlarger: Each ﬁgure shows a darkened regionfor vertical cut off model allows more particles to penetrate
+inaccessibledireetions 9111610 th?§ﬂ?0t ofearth shadow1ng. the ﬁeld than the cutoff rigidities that are directionally
+
+Calculations for Wthh the rigidity values are averaged aV era g e d.
+over all orbital time steps exhibit much more uniformity
+over the directional sphere since the vehicle heading angle
+undergoes large Changes in the course of this relatively high
+inclination orbit. Directional calculations should prove 5. Impact an ISS shielding
+particularly useful in validation studies involving active
+particle ﬂux monitors, and dosimeters for which directional 5.]. Correlation with ST S T LD data
+response is well deﬁned.
+
+From the standpoint of total mission exposures, the In an attempt to validate the model we combined the
+cumulative GCR transmission averaged over all directions omni-direetional trapped proton model with the Badh-
+beeomes signiﬁcant since it may be related directly to war-O’Neill GCR model (Badhwar and O’Neill, 1995;
+incurred dose by means of standard environment models O’Neill, 2006), using vertical cutoff geomagnetic transmis-
+of GCR ﬂux spectra. An example is the ISS mission aver- sion factors (not dependent on angle) and a neutron albedo
+aged transmission coefﬁcient (0 < T < 0.8) as a function model (Wilson et al., 2002), and compared with 17 years of
+of rigidity, as shown in Fig. 17. Note that the ﬁgure eom- Shuttle TLD data. The points of comparison were Chosen
+pares the vertical cutoff rigidity versus cutoff rigidity where at random over the 17 years covering nearly two solar
+directionality is averaged over the entire sphere. The ﬁgure cycles and a broad range of altitudes (Badhwar, 1999) as
+
+Cutoff Rigidity Z Cutoff ngldlty Z
+1333 I 3322 I
+:32; iiil 4i :3; iiil 1 A
+1033 16.22
+1313 13033
+I 3:? "" 1 1332 r ‘ 1
+9.50 9.00
+as [15
+i o N i 0 N
+I i -u5 1 Li 415
+’1 30°N ' Equator
+Jr D _1 L D -1
+11 M o -1 1,u53-us-1
+X
+Fig. 16. Pattern of directional cutoff rigidity for nominal ISS orbit at 30°N (left), and equator (right).
+
+"
+"14","1454 FE Badavi er a1. /Advances in Space Research 48 (2011) 1441—1458
+Table 2 * Comparison of accumulated omni and anisotropic methods with
+Comparison of present model With Shuttle ﬂight data ( Deep River TLD100f0r'SS'6Af0rPeri0d04'19'01t°°7'12'°1(34days)
+Neutron Monitor count rate, TGCR corrected TLD100 data). 25 D _
+— omnl
+— >~ . TLD100
+STS—41A 11/83 6421 3 64.6 59.6 3 20 Dexp ( )
+STS-51D 4/85 6661 4 917.4 889.3 g
+STS-31 4/90 5701 1 2141 2290 8 15
+STS-43 8/91 5894 4 20.7 18.6 g r I I I I I
+STS-62 3/94 6771 1 94.3 89.2 E 10
+STS-65 7/94 6822 2 28.3 25.1 E
+STS-67 3/95 6925 3 250.8 238.1 g
+STS-80 11/96 6973 4 264.4 256.5 < 5
+STS-82 2/97 7074 1 2978 3080 I I I I I I
+STS-91 6/98 6894 1 89.1 83.2 0
+STS-101 5/00 6460 2 140.8 131.1 |ab01 |ab02 |ab03 |ab04 |ab05
+STS-92 10/00 6417 2 165.9 153.4 Target Point
+Fig. 19. Comparison of accumulated TLD100 predicted by omni and
+. . . . . d' t' 1 ' t 1 d 1 'th ISS 6A TLD t f
+shown 1n Table 2. It IS seen that all pomts are W1th1n 15% of mo 101121 enVIronmgl a m0 6 S W measuremen S or
+target pomts located 1n the US Lab Module.
+TLD measurements.
+In Table 2 above, computed dose results for STS-31 and
+STS-82 are higher than TLD measurements While all other Comparison of accumulated omni and anisotropic methods with
+. 9 . . TLD100 for |SS-6A for period 04-19-01 to 07-12-01 (84 days)
+ﬂlghts have lower values. The over/under est1mat10ns 25
+. . . . . |:| '
+among dlfferent ﬂlghts are partly attrlbuted to maceuraeles
+in the TLD location deﬁnition Within the STS CAD model 5‘ 20 Dexp- (TLD100)
+. . U
+3 15
+'5
+5.2. Energetic proton transport in Shield medium .3 10 I I I I I I I
+E
+E
+The proton spectra of Fig. 15 along With GCR spectra § I I I I I I I
+of Badhwar and O’Neill (1995) and O’Neill (2006) were < 5
+used as input to the HZETRN particle transport code to 0
+comptlte transport through thieknes8 rahges of sh1e1d sm01 sm02 sm03 sm04 sm05 sm06
+materlal (A1). Subsequent exposu1‘es 1n S1m111at€d tlssue TargetPoint
+(H20) are evaluated as dose equlvalents usmg ICRP-60
+(1991) quality factors for normally incident ﬂux 011 semi Fig. 20. Comparison of accumulated TLD100 predicted by omni and
+inﬁnite S1 ab geometry. The N AS A L aRC HZETRN is a d1rect10n811 env1ronmental m0de1s W1th 1SS 6A TLD measurements for
+. . . . . . target pomts located 1n the Russmn SerV1ce Module.
+well estabhshed determlmstlc procedure allowmg rap1d
+and accurate solution to the Boltzmann transport equa- VS. depth functions obtained from the transport calcula-
+tion. Details concerning the interaction and attenuation tions through the aluminum slab, and are used to evaluate
+methodology are described at length elsewhere (Wilson ultimate exposures at target points Within complex sh1e1d
+et a1., 1995; Slaba and Blattnig, 2010; Slaba et a1., 2009, conﬁgurations deﬁned by the desired CAD solid model of
+2010a,b). Fig. 18 shows the resultant total dose equivalent the full scale geometric structure (e.g. ISS).
+//T‘”““ /—~-~....2
+10001/""1 ‘ f 1000 /€:¢\ ~ 5'
+t l ' \\ 1 . I "" ‘\\\ :1
+g 1 ’.§o 1 E : gigiéz‘x 1
+, 3% 1‘ if€~cz~39$$5 ;
+l. , ‘x m 1 ~33.
+3101/ 'é’é‘i‘a =1 1 .I’QWX
+0' 1k / , I/’/"".v . 10 I/////[’I/ _
+w 2 ' ’ , ’4 ‘ ' 8 ‘1 4M,” 1
+g 11 k 1 // \\“~\i ‘0' o.) 1,""le \Q'
+0 ‘ // N / 88 6“ m 1: 60 6‘
+o 1/ ,7, , 86 +~ o a 58 +~
+0.1 ~\\~ 1"" /84 . 60 D ‘ [I 55 bq’
+\5‘ x / /82 8 0.1 2 ﬂ]; \0
+1 \\\ / «9 \i\\\ ll 54 Q9
+10 \\/ 80 Q,” 1 \\_ 52 c}
+Depth - 100 46“ 10 \~ <2»
+' / /
+00,2 ’ gm/Cm2
+Fig. 18. Total dose equivalent VS. depth functions calculated for Aluminum slab geometry at selected times during the SAA transit: ascending tracks (left);
+and descending tracks (right).
+
+"
+"15","F.F. Badavi et al. /Advances in Space Research 48 (2011) 1441—1458 1455
+Comparison of accumulated omni and anisotropic methods with
+TLD100 for |SS-7A for period 07-12-01 to 08-22-01 (40 days)
+10
+9
+'ammpi“ — — "" j“ J""
+g 8 |Dexp.(TLD100) - 1 1‘.
+g7—— :— ”—‘¢‘.l=' l\
+36. - - - - I 5 ‘I ., l},
+8 5 I I I I I I T : mam; u, , w- .‘
+'5 - w -- ‘
+I I I I I \\,0 \(
+§3I I I I I I Eff , ‘9
+2 I I I I I I - ,0 A
+< 1 I I I I I I L...)
+0 I I I I I I
+|ab01 |ab02 |ab03 |ab04 |ab05
+TargetPoint
+Fig. 21. Comparison of accumulated TLD100 predicted by omni and . . . . .
+directional environmental models with 188 7A TLD measurements for Flg' 24' Spht Vlew Of US Lab MOdUIC showmg selected target pomts.
+target points located in the US Lab Module.
+Comparison of accumulated omni and anisotropic methods with
+TLD100 for |SS-7A for period 07-12-01 to 08-22-01 (40 days)
+10
+>5
+8 Dexp.(TLD100) I _
+3 7 I-r—l —-I-I azi- . 52%
+a: ‘ \ff‘
+§6I I rFI -I l'
+u5IIIIIII ’02:?
+L; 4I I I I I I I _. -
+g 3 I I I I I I I - r
+22I I I I I I I = ~
+1I I I I I I I
+0 I I I I I I I
+sm01 sm02 sm03 sm04 sm05 sm06
+TargetPoint
+Fig. 22. Comparison of accumulated TLD100 predicted by omni and
+directional environmental models with 188 7A TLD measurements for Fig. 25. Split View of Russian Service Module showing selected target
+target points located in the Russian Service Module. points.
+1 _
+-4-
+(‘ ‘ / 0.9 . —Lab 1
+’ M ' 4—- 0.8 Lab 4
+""1-- 44 v —Node1 1
+0 0.7
+Ed» N. g Rack1
+t “5"" ’ ﬁ 05 -
+' 5 v E - —SM 6
+~\ 5 0.4
+\V g 0_3
+g 0.2 , ,
+u. 0.1 d
+‘ ,—' f
+’ 0
+0.1 1 10 100 1000
+Scaled Thickness, t, gm/cm2
+Fig. 26. Cumulative thickness distribution for selected target points in 188
+Fig. 23. External View of CAD Modeled ISS 11A conﬁguration. 11A conﬁguration.
+
+"
+"16","1456 FF. Badavi et a1. /Advances in Space Research 48 {2011) 1441—1458
+5.3. Comparison with T LD measurements from [SS 6A and US Destiny Lab Module, the US Unity Connection Mod-
+ISS 7A ule (Node 1), the US Airlock, and the three US Pressur-
+ized mating Adaptors (PMA’s). Other components
+Descriptions of the 6A and 7A conﬁgurations can be include the Russian Functional Cargo Block (FGB, or
+found in Hugger (2003). The accumulated TLD100 values Zarya), the Russian Service Module, the Russian Soyuz
+at 11 target points have been calculated for the respective Spacecraft, the Russian Progress resupply vehicle, the
+ISS trajectories using both omni and directional environ- Russian Docking Compartment, and truss structures. A
+mental models. Five of the selected target points are simpliﬁed model of this conﬁguration has been con-
+located in the US Lab Module and siX are distributed structed for shield analysis using the commercially avail-
+throughout the Russian Service Module. Figs. 19—22 dis- able CAD software I-DEAS. The model consists of 460
+play the results of these calculations compared With the separate components, each With individual dimensions,
+TLD measurements from 188 6A and 188 7A. orientation, and density distribution. Shielding for the
+These bar Charts show that most of the values calculated interior is primarily from the distributed micrometeoroid
+using the anisotropic model for the 188 service module tar- shield and the pressure vessel. Additional shielding occurs
+gets, correlate more favorably With the experimental from the cargo in the primary modules.
+TLD100 measurements, and in most cases predict slightly Six target points Within 188 11A have been selected for
+more accurate values than the omni method. The direc— evaluation. Figs. 23—25 show the external View of the
+tional values predicted for the ISS lab target points are also 11A CAD model and the locations of the siX target points.
+in general more favorable than those predicted by the omni The thickness distributions of the 970 rays have been
+method. These results give us reason to be optimistic that evaluated in terms of the scaled thickness in g/eni2 for each
+the incorporation of directionality into the LEO environ- of the siX selected target points. Fig. 26 gives the cumula-
+mental model has the capability of improving their ability tive thickness distributions for the siX points.
+to predict the appropriate dosimetric responses Within 188. Table 3 provides the predicted dose equivalent rates at
+each of the siX target points for ascending and descending
+5.4. Analysis using C A D solid model of [SS 11A trajectories using both the omni and directional environ-
+conﬁguration mental models. Each entry represents the solid angle inte-
+gration of dose equivalent rate resulting from protons
+We Will now apply the directional environmental mod- incident on the target point from all directions. TLD100
+els for LEO to the current conﬁguration Of ISS. The pri- rate predictions (not shown) have also been calculated
+mary components of the ISS 11A conﬁguration are the and are ready for experimental comparison.
+Table 3
+Minute by minute dose equivalent rate (uSV/min) for six selected target points Within ISS 11A, for isotropic and directional proton environments within
+the SAA (TS indicates time step).
+TS RACKOl LABl LAB4 NODE1_1 SM5 SM6
+Directional Omni Directional Omni Directional Omni Directional Omni Directional Omni Directional Omni
+Ascending track
+79 0.55 0.69 0.44 0.56 1 1.13 0.85 0.97 0.51 0.67 1.24 0.35
+80 3.72 3.95 2.52 2.74 8.44 8.57 7.2 7.34 3.38 3.62 10.36 10.5
+81 11.37 11.5 7.84 8.05 24.32 24.2 21.36 21.3 10.79 11 29.42 29.3
+82 22.31 21.6 16.03 15.5 44.25 43.2 39.99 39 21.49 20.8 52.35 51.2
+83 32.45 31.3 23.98 23 60.92 59.3 52.89 51.4 31.8 30.6 74.74 72.9
+84 32.54 31.3 24.21 23.2 59.47 57.9 51.78 50.3 32.14 30.9 73.74 72
+85 23.95 23.1 17.75 17 43.97 42.8 38.1 37 23.67 22.8 55.17 53.8
+86 14.48 14 10.61 10.2 27.39 26.7 24.29 23.7 14.18 13.7 33.77 33
+87 6.06 5.9 4.36 4.23 12.25 12 11.07 10.8 5.86 5.69 15.18 15
+88 1.06 1.31 0.77 0.99 2.25 2.48 2.04 2.26 0.99 1.28 3.35 3.58
+Descending track
+51 0.42 0.55 0.35 0.46 1.28 1.41 1.26 1.38 0.36 0.5 2.47 2.6
+52 2.18 2.2 1.53 1.57 5.54 5.51 5.19 5.17 2 2.02 9.69 9.59
+53 15.46 14.4 12.26 11.3 22.97 21.8 20.86 19.7 15.94 14.8 29.51 28.2
+54 21.26 20.1 16.21 15.2 32.87 31.6 29.22 28 21.97 20.7 42.07 40.6
+55 23.91 22.7 18.13 17.1 39.15 37.8 34.95 33.6 24.39 23.1 47.53 46
+56 30.68 29.4 22.92 21.8 54.09 52.5 48.37 46.8 30.8 29.4 69.81 67.9
+57 32.69 31.6 24.02 23.1 60.45 58.9 52.77 51.3 32.32 31.2 75.8 74
+58 24.77 24.1 17.86 17.3 48.86 47.8 43.06 42.1 23.85 23.1 49.46 58.2
+59 12.4 14.1 8.2 9.88 29.95 31.2 26.26 27.6 11.34 13.2 34.06 33.3
+60 4.26 5.59 2.72 3.9 14.33 15.4 12.49 13.6 3.26 4.75 17.26 18.3
+
+"
+"17","FF. Badavi et a1. /Advances in Space Research 48 {2011) 1441—1458 1457
+DoseH, iLSv/(min-sr), RACK01, Omni Ascending DoseH. tlSv/(min-sr), RACKO1. 500MeV,
+Directional
+180 — 180 —
+150 '10 150 '30‘
+= 100 = 3""
+3' as =
+'o 120 g 120 ‘
+31]) 1171'""
+2 a)
+g 90 Fan 90
+‘9 <
+g 5
+E 60 §ch 60
+30 30
+0 — 0 —
+O 60 120 180 240 300 360 O 60 120 180 240 300 360
+Azimuth angle \[1, deg. Azimuth Angle W, deg.
+Fig. 27. Contour plots of directional dose equivalent at target point RACKOI.
+
+Table 3 indicates that the proton dose rates are of sim- constraints. It is felt that the described GEORAD enVi-
+ilar magnitude for both omni and directional external enVi- ronmental package coupled With the HZETRN particle
+ronments. Results from 188 6A and 7A also indicated that transport package can be quick and useful tools to ana-
+We should expect about a 5% change in the values predicted lyze measurements from experiments such as the Euro-
+using a directional environment. pean Space Agency (ESA) project MATROSHKA With
+
+Even though the total doses are of the same magnitude an anthropomorphic phantom (Reitz and Berger, 2007;
+for both isotropic and vectorial external environments, the Reitz et a1., 2009) onboard 188. Furthermore these tools
+directional properties of the radiation ﬁeld may be vastly offer an efﬁcient radiation analysis capability to shield
+different for the two cases. This is illustrated in Fig. 27 designers of the next generation piloted interplanetary
+for the target point designated RACK01 as contour plots spacecraft in the earliest design phases.
+of the directional dose equivalent. The directionality of
+the incim‘ed dosehas poss1b1e des1gn implications for opti- References
+mal shielding des1gn.
+
+Atwell, W., Beever, E.R., Hardy, A.C., et a1. Space radiation shielding
+
+6. C 0n eluding remarks analysis and dosimetry fer the space shuttletprogram, in: Rester, A.C.,
+Trombka, J .I. (Eds), High-Energy Radiation Background in Space,
+
+. . . AIP Conference Proceedings, New York, vol. 186, pp. 289—296, 1989.
+
+The use Of phys10s-based seahhg Of the trapped radla' Atwell, W. A summary of the southern atlantic anomaly (SAA) drift
+tion environment has proven promising considering the motion and trapped proton enhancements in the SAA, in: 34th
+simplicity of the procedure. The addition of the angular COSPAR: HOUStOUa TX, 2002- _ _
+dependence further increases the usefulness Of the basic Badhwar, G.D., Atwell, W., Benton, E.V., et al. A study 0fthetrad1at10n
+
+. enVironment on board the space shuttle ﬂight STS-57. Radiat. Meas.
+models. Such developments are of importance due to the (24) 283—289 1995a
+increased human aetiVity ih LEO and a necessary deVelOp' Badhwar, G.D., Patel, J.U., Cucinotta, F.A., et a1. Measurements of
+111th for further infrastructure deployment in Earth’s secondary particle energy spectrum in the space shuttle. Radiat. Meas.
+neighborhood. (24), 129—138, 1995b. _ _ _
+
+Regardless Of What the next generation piloted inter- Badhwar, G.D., Atweil, W., BadaV1, F.F., et a1. Space radiation absorbed
+
+. . . . dose distribution in a human phantom. Radiat. Res. (157), 76—91,
+
+planetary spacecraft W111 look like, even early preliminary 2002
+designs of such a craft will require considerable conﬁgU- Badhwar, G.D., Golightly, M.J., Konradi, A., et a1. In-ﬂight radiation
+ration details as well as deﬁnition of likely mission see- measurements on STS—60.Radiat.Meas.(26),17—34,1996.
+narios and timelines. It is important that radiation Badhwar, G.D. Drift rate of the southern Atlantic anomaly. J . Geophys.
+ex osure anal sis is ineor orated into the earl desi 11 Res‘ 102(A2)’2343_2349’1997a'
+
+hp f y 1 p1 f h .1 d fy . g Badhwar, G.D., Shurshakov, V.A., Tsetlin, V. Solar modulation of the
+p 856.8 01‘ severa 168,801.18. SUC 8' p1 Ote era t ls telly dose rate onboard the MIR station. IEEE Trans. Nucl. Sci, 23,1997b.
+porarily doeked at 188: It would spend mOSt Of that tune Badhwar, G.D. Radiation Measurements at the International Space
+in a ﬁxed orientation, for Which knowledge of the direc- Station Orbits. SAE 2001-01-2331, ICES-2001, Orlando, FL, July
+tional ﬂux environment is a factor. The escape trajectory 2001- _ _ _ _
+deﬁnition is important since passage through the high Badhwar, G.D.Radiat10n dese rates in space shuttle as a function of
+. t it be1t re ions ma be involved Radiation rotec— atmospheric dens1ty.Rad1at. Meas. (30), 401—414, 1999.
+11.1 611:1 y ,9 . g y . ' p . Badhwar, G.D., O’Neill, P.M. An improved model of galactic cosmic
+tIOh ﬁxes In later Stages Of the des1gn process are hkely radiation for space exploration missions. Nucl. Tracks Radiat. Meas.
+to have adverse affects on both budgetary and schedule (20), 4104127, 1995.
+
+"
+"18","1458 F.F. Badavi et a1. /Advances in Space Research 48 {2011) 1441—1458
+
+Blanchard, R.C., Hess, W.N. Solar cycle changes in inner zone protons. J . Reitz, G., Berger, T., Bilski, P. Astronaut’s organ doses inferred from
+Geophys. Res. (69), 3927, 1964. measurements in a human phantom outside the international space
+
+Cain, J .C., Hendricks, S.J., Langel, R.A., et al. A proposed model for the station. Radiat. Res. 171 (2), 225—235, 2009.
+international geomagnetic reference ﬁeld-1965. J . Geomag. Geoelec. Sawyer, D.M., Vette, J .I. AP-8 Trapped Proton Environments for Solar
+(19), 335—355, 1967. Maximum and Solar Minimum, NSSDC/WDC—A-R&S 76-06, 1976.
+
+Cooke, D.J. Geomagnetic—cutoff distribution functions for use in estimat- Shinn, J .L., Cucinotta, F.A., Wilson, J .W., et al. Effects of target
+ing detector response to neutrinos of atmospheric origin. Phys. Rev. fragmentation on evaluation of LET spectra from space radiations in
+Lett. 51 (4), 320—323, 1983. low earth orbit (LEO) environment—impact 0n SEU predictions.
+
+Cucinotta, F.A., Manuel, F.K., Jones, J., et 211. Space radiation and IEEE Trans. Nucl. Sci. (42), 2017—2025, 1995.
+cataracts in astronauts. Radiat. Res. (156), 460—466, 2001. Shinn, J.L., Cucinotta, F.A., Simonsen, L.C., et a1. Validation of a
+
+Dudkin, V.E., Potapov, Y.V., Akopova, A.B., et a1. Neutron ﬂuences and comprehensive space radiation transport code. IEEE Trans. Nucl. Sci.
+energy spectra in the Cosmos-2044 biosatellite orbit. Nucl. Tracks 45, 2711—2719, 1998.
+
+Radiat.Meas.(20),139—141,1992. Slaba, T.C., Blattnig, S.R., BadaVi, F.F. Faster and More Accurate
+
+Dudkin, V.E., Karpov, O.N., Potapov, Y.V., et a1. Studying radiation Transport Procedures for HZETRN NASA TP-216213, March 2010a.
+environment on board STS-55 and STS-57 by the method of passive Slaba, T.C., Blattnig, S.R. Coupled Neutron Transport for HZETRN —
+detectors. Radiat. Meas. (25), 483—484, 1995. Radiation Measurements 45, 173—182, 2010.
+
+Heckman, H.H., Nakano, G.H. LOW-altitude trapped protons during Slaba, T.C., Blattnig, S.R., Clowdsley, M.S., et al. An improved neutron
+solar minimum period, 1962—1966. J. Geophys. Res. 74 (14), 3575— transport algorithm for HZETRN. Adv. Space Res. 46, 800—810,
+3590, 1969. 2010b.
+
+Heckman, H.H., Nakano, G.H. East-west asymmetry in the ﬂux of Smart, D.F., Shea, MA. Geomagnetic transmission functions for 400 km
+mirroring geomagnetic trapped protons. J . Geophys. Res. (68), 2117— altitude satellite, in: 18th International Cosmic Ray Conference—
+2120, 1963. Conference Papers MG Sessions, V01. 3. Tata Inst. of Fundamental
+
+Heynderickx, D. Comparison between methods to compensate for the Research, Colaba, Bombay, pp. 419—422, 1983.
+secular motion of the South Atlantic anomaly. Radiat. Meas. (26), Smart, D.F., Shea, MA. Geomagnetic cutoffs: a review for space
+369—373, 1996. dosimetry applications. Adv. Space Res. 14, 787—796, 1994.
+
+Hugger, C.P., Nealy, J.E., Clowdsley, M.S., et a1. Preliminary valida- Stermer, C. On the trajectories of electric particles in the ﬁeld of 21
+tion of an ISS radiation shielding model, in: Proceedings of AIAA magnetic dipole With applications to the theory of cosmic radiation.
+Space 2003 Conference, AIAA 2003-6220, Long Beach, CA, pp. 23— Astrophys. Norvegica II (4), 193—248, 1937.
+
+25, 2003. Tsyganenko, N.A., Sitnov, M.I. J. Geophys. Res. 110, A03208,
+
+Huston, S.L., Pﬁtzer, K.A. Space Environment Effects: LOW-Altitude doi:10.1029/2004JA010798, 2005.
+
+Trapped Radiation M0de1.NASA CR-1998-208593, 1998. Vette, J.I. The NASA/National Space Science Data Center Trapped
+
+Jensen, D.C., Cain, J .C. An interim geomagnetic ﬁeld. J . Geophys. Res. Radiation Environmental Model Program (1964—1991), NSSDC/
+(67), 3568—3569, 1962. WDC—A-R&S 91-29, 1991.
+
+Keith, J .E., Badhwar, G.D., Lindstrom, D.J. Neutron spectrum and dose- Watts, J .W., Parnell, T.A., Heckman, H.H. Approximate angular
+equivalent in shuttle ﬂights during solar maximum. Nucl. Tracks distribution and spectra for geomagnetically trapped protons in low-
+Radiat. Meas. (20), 41—47, 1992. earth orbit, in: Rester, A.C., Jr., Trombka, J .I. (Eds), Proceedings of
+
+Kern, J .W. A note on vector ﬂux models for radiation dose calculations. AIP Conference: High Energy Radiation in Space, pp. 75—85, 1989.
+Radiat. Meas. 23 (1), 43—48, 1994. Wilson, J .W., Townsend, L.W., Farhat, H. CosmiC-ray neutron Albedo
+
+McCormack, P.D. Radiation dose and shielding for the space station. dose in low-earth orbits. Health Phys. (57), 665—668, 1989.
+
+Acta Astronaut. (17), 231—241, 1988. Wilson, J.W., BadaVi, F.F., Kim, M.Y., et 211. Natural and Induced
+
+Mertens, C.J., Kress, B.T., Wiltberger, M., et a1. Geomagnetic inﬂuence Environment in Low Earth Orbit. NASA TM-2002-211668, 2002.
+on aircraft radiation exposure during a solar energetic particle event in Wilson, J .W., BadaVi, F.F., Cucinotta, F.A., et a1. HZETRN: Description
+October 2003. Space Weather 8, S03006, doi:10.1029/2009SW000487, of a Free-Space Ion and Nucleon Transport and Shielding Computer
+2010. Program. NASA TP-3495, 1995.
+
+O’Neill, P.M. Badhwar—O’Neill galactic cosmic ray model update based Wilson, J .W., Nealy, J .E., De Angelis, G., et a1. Dynamic/Anisotropic
+on advanced composition explorer (ACE) energy spectra from 1997 to LOW Earth Orbit Environmental Model. AIAA 2003-6221, Space2003,
+present. Adv. Space Res. 37, 1727—1733, 2006. Long Beach, CA, Sept. 2003.
+
+Pﬁtzer, K.A. Radiation Dose to Man and Hardware as a Function of Wu, H., Atwell, W., Cucinotta, F.A., et a1. Estimate of Space Radiation-
+Atmospheric Density 0n the 28.50 Space Station orbit, McDonnell Induced Cancer Risks for International Space Station Orbits, NASA
+Douglas Space Systems Co. Report No. H5387A, Huntington Beach, TM-104818, 1996.
+
+CA, 1990. 1991 Recommendations of the International Commission on Radiological
+
+Reitz, G., Berger, T. The MATROSHKA facility — dose determination Protection, ICRP Publication 60, Annals of the ICRP, V01. 21. Elsevier
+during an EVA. Radiat. Prot. Dos. 120, 442—445, 2007. Science, NY, 1991.
+
+"

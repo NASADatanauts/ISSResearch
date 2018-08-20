@@ -1,0 +1,2312 @@
+"","x"
+"1","Taylor &Francis
+INT. J. REMOTE SENSING, 2002, VOL. 23, NO. 20, 4403—4438 TayloraFranciscmup
+Astronaut-acquired orbital photographs as digital data for remote
+sensing: spatial resolution
+JULIE A. ROBINSONT"": DAVID L. AMSBURYi,
+DONN A. LIDDLET and CYNTHIA A. EVANST
+TEarth Sciences and Image Analysis Laboratory, NASA Johnson Space Center
+and Lockheed Martin Space Operations, 2400 NASA Road 1, C23, Houston,
+TX 77058, USA
+1128 Homestead, Kerrville, TX 78028, USA
+(Received 15 November 2000; in ﬁnalform 9 August 2001)
+Abstract. Astronaut-acquired orbital photographs (astronaut photographs) are
+a useful complement to images taken by orbiting satellites. They are in the public
+domain, and have been particularly useful for scientists in developing countries,
+as supplementary low-cloud data, and for studies requiring large numbers of
+images. Depending on camera, lens and 100k angle, digitized astronaut photo-
+graphs can have pixel sizes representing areas on the Earth as small as 10m or
+less, although most photographs suitable for digital remote sensing have pixel
+sizes between 30 m and 60m. The Objective of this paper is to provide a practical
+reference for scientists in a variety of disciplines who want to use astronaut
+photographs as remote sensing data. The Characteristics of astronaut photography
+systems that inﬂuence spatial resolution are detailed and previous image acqui-
+sitions relative to these elements are summarized. Methods are presented for
+estimating ground coverage under three different levels of assumptions, to meet
+accuracy needs of different users. Of the more than 375000 photographs taken
+to date, at least half have the potential to be used as a source of digital remote
+sensing data.
+1. Introduction
+1.1. Overview of N ASA astronaut photograph y
+Astronaut photography of Earth is produced and archived by the National
+Aeronautics & Space Administration (NASA) and provides an important record of
+the state of the Earth that has not been used to its potential (Lulla et al. 1996). The
+practice was the foundation for the development of other forms of orbital remote
+sensing (Lowman 1999). Although the geometry is more complex than that of a
+vertical aerial photograph, astronaut photographs still provide information that can
+be interpreted by knowledgeable observers (Ring and Eyre 1983, Lowman 1985,
+Rasher and Weaver 1990, Drury 1993, Campbell 1996: 121—156, Arnold 1997).
+Ofﬁcial NASA campaigns of terrain, ocean, and atmospheric photography were
+carried out during the Gemini missions (Underwood 1967, Lowman and Tiedemann
+>“email:julie.a.1‘0binson1@jse.nasa.g0v
+International Journal of Remote Sensing
+ISSN 0143-1161 print/ISSN 1366-5901 online © 2002 US Crown
+http://www.tandf.co.uk/journals
+DOI: 10.1080/01431160110107798
+
+"
+"2","4404 J. A. Robinson et al.
+
+1971), the Earth-orbitin g Apollo missions (Colwell 1971), the Apollo-Soyuz mission
+(El-Baz 1977, El-Baz and Warner 1979), Skylab (NASA 1974, Wilmarth et al. 1977),
+a few Shuttle missions (e.g. the two Space Radar Laboratory missions of 1994, J ones
+et al. 1996), and the Shuttle-Mir missions (Evans et al. 2000). Extensive training in
+photography is available to members of all ﬂight crews, during their general trainin g
+period and during intensive training for speciﬁc missions (Jones et al. 1996). Most
+photographs have been taken by astronauts on a time-available basis. Astronaut
+photographs are thus a subset of the potential scenes, selected both by opportunity
+(orbital parameters, lighting, and crew workloads and schedules) and by the training,
+experience, and interest of the photographers.
+
+As remote sensing and geographic information systems have become more widely
+available tools, we have collaborated with a number of scientists interested in using
+astronaut photography for quantitative remote sensing applications. Digitized images
+from ﬁlm are suitable for geometric rectiﬁcation and image enhancement followed by
+classiﬁcation and other remote sensin g techniques (Lulla and Helfert 1989, Mohler et al.
+1989, Helfert et al. 1990, Lulla et al. 1991, Eekardt et al. 2000, Robinson et al. 2000a,
+2000c: and in press, Webb et al. in press). The photographs are in the public domain,
+thus, they provide a low-eost alternative data source for cases where commercial imagery
+cannot be acquired. Such cases often include studies in developin g countries, in areas
+that have not usually been targets for major satellites, needing supplemental low-cloud
+data, requirin g a time series, or requiring a large number of images.
+
+1.2. Extent of the dataset
+
+As of 30 September 1999, 378 461 frames were included in the photograph
+database (Ofﬁce of Earth Sciences 2000) comprising 99 missions from Mercury 3
+(21 July 1961) through STS-96 (27 May to 6 June 1999). The database was reviewed,
+removing photographs that were deemed unsuitable for remote sensing analysis
+because they were not Earth—lookin g (no entry for tilt angle), had no estimated focal
+length, were over- or undereXposed, or were taken at oblique tilt angles (further
+discussion of these characteristics follows). The remaining 190911 frames (50.4% of
+the records present in the database) represent photographs that are potentially
+suitable for remote sensing data. As the database is always having new photography
+added, statistics can be updated on request using the web link ‘Summary of Database
+Contents’ at the Gateway to Astronaut Photography of Earth (Ofﬁce of Earth
+Sciences 2000).
+
+1.3. Objectives
+
+The overall purpose of this paper is to provide understandin g of the properties of
+astronaut—a cquired orbital photographs to help scientists evaluate their applicability
+for digital remote sensing. Previous general descriptions of astronaut photography
+have been much less extensive and have tended to focus on numbers of photographs
+taken and geographic coverage, and emphasized interpretative applications (Helfert
+and Wood 1989, Lulla et al. 1993, 1994, 1996). By providing a unique compilation
+of the background information necessary to extend the use of astronaut photography
+beyond interpretation to rigorous analysis, it is hoped to provide a resource for
+scientists who could use this data in a variety of disciplines. In keeping with a
+potential interdisciplinary audience, we have tried to provide sufﬁcient background
+information for scientists who do not have extensive training in remote sensing.
+
+We focus on spatial resolution because it is one of the most important factors
+
+"
+"3","Astronaut photograph y as digital data for remote sensing 4405
+determining the suitability of an image for a remote sensing objective. In remote
+sensing literature, spatial resolution for aerial photography is often treated very
+differently from spatial resolution of multispeetral scanning sensors. To provide
+suﬁieient background for a discussion of spatial resolution for a data source that
+shares properties with both aerial photography and satellite remote sensing, we
+ﬁrst summarize the ways that spatial resolution is typically quantiﬁed for aerial
+photography and satellite remote sensors.
+
+Given this background information, we (1) describe and illustrate factors that
+inﬂuence the spatial resolution of astronaut photographs, (2) show examples of
+estimating spatial resolution for a variety of photographs in a way that will
+enable users to make these calculations whether or not they have a background in
+photogrammetry, and (3) compare spatial resolution of digital data extracted from
+astronaut photographs to data obtained from other satellites.
+
+2. Background—Spatial resolution of imaging systems
+
+Spatial resolution is a fundamental property of any imaging system used to
+collect remote sensing data, and directly determines the spatial scale of the resultant
+information. Resolution seems intuitively obvious, but its technical deﬁnition and
+precise application in remote sensing have been complex. For example, Townshend
+(1980) summarized 13 different ways to estimate the resolving power of the Landsat
+MultiSpeetral Scanner (MSS). Simonett (1983, p. 20) stated ‘In the simplest case,
+spatial resolution may be deﬁned as the minimum distance between two objects that
+a sensor can record distinctly...[but] it is the format of the sensor system that
+determines how spatial resolution is measured’. By focusing attention on the proper-
+ties of the system (and not the images acquired) this deﬁnition can be applied to a
+variety of types of images provided by different systems. In order to provide as
+complete a treatment as possible, background is provided on several Views of spatial
+resolution that are relevant when considering the spatial resolution of astronaut
+photography.
+
+2.1. Ground resolved distance
+
+Photogrammetrists were measuring spatial resolution of aerial photographs using
+empirical methods long before the ﬁrst scanning sensor was placed in orbit. These
+methods integrated properties of the imaging system with the other external factors
+that determine spatial resolution. Ground resolved distance (GRD) is the parameter
+of most interest, because it measures the applicability of an image to a speciﬁc task.
+The GRD of an image is deﬁned as the dimensions of the smallest discernible object.
+The GRD is a function of geometry (altitude, focal length of optics), equipment
+(internal system spatial resolution of the camera or scanner) and also on reﬂectance
+characteristics of the object compared to its surroundings (contrast).
+
+Performance of a ﬁlm, ﬁlm and camera, or deployed aerial photography system
+is measured empirically using standard targets that consist of blaek-and-white bars
+of graduated widths and spacings (ﬁgure 6—9 in Slater et al. 1983). The area-weighted
+average resolution (AWAR) in lp mm‘ 1 (line pairs mm‘ 1) at the ﬁlm plane is deter-
+mined by measuring the smallest set of line pairs that can be discriminated on an
+original ﬁlm negative or transparency. Line pairs are quoted because it is necessary
+to discriminate between one object and another, to detect it and measure it.
+
+Film resolVin g power (in lp mm‘ 1) is measured by manufacturers under standard
+photographic conditions (Smith and Anson 1968, Eastman Kodak Company 1998)
+
+"
+"4","4406 J. A. Robinson et al.
+
+at high contrast (objeet/baekground ratio 1000/1) and low contrast (objeet/baek-
+ground ratio 1.6/1). Most terrestrial surfaces recorded from orbit are low contrast,
+for the purpose of estimating resolving power of ﬁlm. Kodak no longer measures
+ﬁlm resolving power for non-aerial photographic ﬁlms (Karen Teitelbaum, Eastman
+Kodak Company, personal communication), including ﬁlms that NASA routinely
+uses for Earth photography.
+
+AWAR can be measured for the static ease of ﬁlm and camera, or for the
+eamera—aireraft system in motion. For example, AWAR for the National Aerial
+Photography Program includes effects of the lens, resolving power of original ﬁlm,
+image blur due to aircraft motion, and spatial resolution of duplicating ﬁlm (Light
+1996). Given AWAR for a system in motion, the GRD can be calculated by
+trigonometry (see equation (3) in §5, d=1/AWAR and D=GRD).
+
+An impediment to similar rigorous measurement of GRD for orbital remote
+sensing systems is the lack of a target of suitable scale on the ground; thus, spatial
+resolution for most orbiting sensors is described in terms of a less all-eneompassin g
+measure, instantaneous ﬁeld of View (see below). Additional challenges to measuring
+AWAR for a complete astronaut photography system include the number of different
+options for aspects of the system including different cameras, ﬁlms, and orbital
+altitudes. These elements that must be standardized to determine AWAR provide
+a useful list of those characteristics of astronaut photography that will most
+inﬂuence GRD.
+
+2.2. Instantaneous ﬁeld of view
+
+The instantaneous ﬁeld of View (IFOV) is generally used to represent the spatial
+resolution of automated satellite systems, and is commonly used interchangeably
+with the term spatial resolution when eomparin g different sensors. IFOV is a combina-
+tion of geometric, mechanical and electronic properties of the imaging system.
+Geometric properties including satellite orbital altitude, detector size, and the focal
+length of the optical system (Simonett 1983). The sensitivity of each detector element
+at the wavelength desired plus the signal-to-noise level desired are electronic proper-
+ties that determine a minimum time for energy absorption. For a linear sensor array
+(pushbroom scanning), this minimum time is translated to areal coverage by the
+forward velocity of the platform (Campbell 1996, p. 97). Usually, each detector
+element in the array corresponds to a pixel in the image. Thus for a given altitude,
+the width of the pixel is determined by the optics and sensor size, and the height of
+the pixel is determined by the rate of forward motion. When magniﬁed by the ratio
+of the sensor altitude t0 the focal length of the optics of the sensor system, IFOV is
+the size of the area on the ground represented by an individual detector element
+(pixel, Slater 1980, p. 27).
+
+The equation of IFOV with spatial resolution can be misleading because IFOV
+does not include factors other than geometry—faetors that largely determine the
+level of detail that can be distinguished in an image. For example, IFOV does not
+include characteristics of the target (contrast with surroundings, shape of an object,
+colour), atmospheric conditions, illumination, and characteristics of the interpreter
+(machine or human). Factors inﬂuencing spatial resolution that are included in IFOV
+can be calculated from design speciﬁcations before the system has been built, whereas
+the actual spatial resolution of an image captured by the sensor will be unique to
+that image. IFOV represents the best spatial resolution possible given optimal
+conditions.
+
+"
+"5","Astronaut photograph y as digital data for remote sensing 4407
+2.3. Imagery from scanners versus ﬁlm from cameras
+
+Like aerial photography systems, the GRD of early remote sensing scanners
+(electro-optieal imaging systems), was calibrated empirically (ﬁgures 1—6 in Simonett
+1983) but such methods are impractical for routine applications. Satellites are now
+common platforms for collecting remote sensing data, small-seale aerial photographs
+are widely available within the USA and Europe, and astronaut photographs
+have become available worldwide. Straightforward comparison of resolutions of
+photographs to IFOVs of scanner images is necessary for many applications.
+
+How can spatial resolutions of data from different sources be compared using
+common units? Oft-quoted ‘resolution numbers’, actually IFOV, of digital scanning
+systems should be at least doubled for comparison to the standard method of
+expressing photographic spatial resolution as GRD, simply because of the object
+contrast requirement. The following rule of thumb has been used in geographic
+applications to compare spatial resolution of scanners and aerial photography (Weleh
+1982, Jensen 1983): a low-eontrast target may be converted to an approximate IFOV
+by dividing the GRD (of the photograph) by 2.4. Such a rule of thumb might also
+be reasonably applied to astronaut photography, making it possible to convert
+observed GRD to IFOV, and IFOV to an estimated GRD.
+
+In this paper, we discuss the spatial resolution of astronaut photographs in terms
+of system properties and compute the area on the ground represented by a single
+pixel, the equivalent to IFOV. To complete our treatment of spatial resolution, we
+also provide estimates of the sizes of small features identiﬁable in images, for several
+cases where this can be readily done.
+
+3. Factors that determine the footprint (area covered by the photograph)
+
+The most fundamental metric that forms the basis for estimatin g spatial resolution
+of astronaut photographs is the size of the footprint, or area on the ground captured
+in a photograph (see reView of satellite photogrammetry by Light 1980). The basic
+geometric variables that inﬂuence the area covered by an astronaut photograph are
+(1) the altitude of the orbit, H, (2) the focal length of the lens, f , (3) the actual size
+of the image on the ﬁlm, d, and (4) the orientation of the camera aXis relative to the
+ground (the obliquity or look angle, t). The relationships among these parameters
+are illustrated in ﬁgure 1 (also see equation (3) in §5).
+
+3.1. Altitude
+
+Human spaceﬂight missions have had a variety of primary obj eetives that required
+different orbital altitudes. The higher the altitude, the larger the footprint of the
+photographs. The differing scale of photographs taken at different altitudes is illus-
+trated in ﬁgure 2. The two photographs of Lake Eyre, Australia were taken with the
+same camera and lens, but on different dates and from different altitudes. In (a), the
+lake is relatively ﬂooded, while in (b) it is dry. A 2.3 x difference in altitude leads to
+a eorrespondin g difference in the scales of the resulting photographs.
+
+3.2. Lenses
+
+The longer the lens focal length, the more magniﬁcation, the greater detail, and
+the smaller footprint. A variety of lenses with different focal lengths are ﬂown on
+each space mission (table 1). The effect of lens length on spatial coverage and image
+detail is shown in ﬁgure 3. In these Views of Houston (a)—(c), taken from approxi-
+mately similar altitudes with the same camera, most of the difference in scale of the
+
+"
+"6","4408 J. A. Robinson et 211.
+Film
+\4 Film
+focal ‘ . ,_______...__ ._,
+length — "" SC (perspectwe centre) d
+(f) .
+look
+angle
+(1)
+altitude
+(H) .
+Footpnnt
+offset Earth’s surface
+_
+W ;;;;;:;:::::::= / _
+SN ....:::::::‘.':2‘.3'...........................-- N
+' '/D/ Footprint
+:3:3:3:3'3:i=.~""c1:3.
+ﬂﬂﬂnm @332. I 'I _ I . I _
+0ffseL-W""""'” 3:3:3:3::3'3""°""'
+,....--""'"" ' ' Along
+“I...““m.u.um....u.muu.u.uuuuunu.m um; TN
+SN Alat .
+Figure 1. Geometric relationship between 100k angle (t), spacecraft nadir point (SN), photo-
+graph centre point (PC), and photograph principal point (PP). The dark shaded area
+represents Earth’s surface. The distance covered on the ground D corresponds to
+table 5. Original image size d is listed for various ﬁlms in table 1. Variables correspond
+to equations (2)—(9) in §5.
+
+"
+"7","Astronaut photography as digital data for remote sensing 4409
+1‘ . I ~ ‘3” ”'3‘; MN“ -: 1' i i ' j- ‘
+J, .3 g} . a 1., 3‘ ¢,|:\ m ,. E . , i -
+{Li S. "" 1,: ' 9 \~» 0
+F“ ‘ -.1‘- > 4114;71W‘. ‘ , '
+, i - h:‘!"" ??‘Si‘ ’ “V L; . i ‘1
+{a}, . \‘T‘ - . .
+. \v ; t , ,1 .
+‘N ‘N .
+250 mm lens, 617 km altitude 250 mm lens, 271 km altitude
+Figure 2. Example of the effect of altitude on area covered in a photograph. Both photographs
+of Lake Eyre, Australia, were taken using a Hasselblad camera With 100mm lens:
+(at) altitude 283 km, STS093—702—062; (b) altitude 617km, STS082—754—61.
+photographs is due to the diﬁerent magniﬁcations of the lenses. Although taken from
+a different altitude and using a different camera With a diﬂerent original image size
+(see table 2), an electronic still camera image taken With a 300mm lens is also
+included for comparison.
+
+For remote sensing, longer focal length lenses are generally preferred (250mm or
+350mm for Hasselblad; 300mm or 400mm lenses for 35mm format cameras and
+ESCs). Unfortunately, longer-focal-length lenses exhibit poorer performance toward
+the edge of a frame. For example, a 250mm 1ens (Distagon CF 5.6) used on the
+Hasselblad camera has spatial resolution of 571p mm‘“L at the centre, but only
+511p mm‘ 1 at the edge and 461p mm‘ 1 at the corner (tested With Ektachrome 5017,
+f/8 aperture and high contrast). A longer 300mm 1ens used on the Nikon camera
+has a greater spatial resolution diﬁerence between centre (821p mm‘ 1) and corner
+(491p mm‘ 1), using Kodak 5017 Ektachrome, f/4 aperture and high contrast, Fred
+Pearce (unpublished data). There are tradeoffs among 1ens optics and speed. For
+example, the lenses for the Linhof system, and the 250 mm lens for the Hasselblad
+(Distagon CF 5.6, see footnotes to table 1) are limited to apertures smaller than
+f /5.6. This becomes an important constraint in selecting shutter speeds (see discussion
+of shutter speed in §4.2).
+
+3.3. Cameras and actual image sizes
+
+After passing through the lens, the photographic image is projected onto ﬁlm
+inside the camera. The size of this original image is another important property
+determining spatial resolution, and is determined by the camera used. Camera
+formats include 35 mm and 70 mm (Lowman 1980, Amsbury 1989); and occasionally
+5 x 4 inch (127 x 100mm) and larger (table 1). Cameras ﬂown on each mission are
+not metric—they lack vacuum platens or reseau grids, image-motion compensation,
+or gyro-stabilized mounts. The workhorse for engineering and Earth photography
+on NASA missions has been a series of 70mm Hasselblad cameras (table 1), chosen
+for their reliability. The modiﬁed magazine databack imprints a unique number and
+
+"
+"8","4410 J.A.R0binson et a1.
+(0 (D H H (D
+q (7; > 8w 0 q
+2 Q? m E w% 8 a
+3 5” 3 4.. 53;) O o
+g 33 . :6 ~90; : 0
+<< 3 :3 QT) -‘= H
+""’ mm H “H B a
+v: Q) m A ”—1
+.30 << ,_ 9 EA '0 v-o
+Cl: ZZ <1) .9 ES “5’ <1)
+(1) VV v_kd 4.) H
+:6 :HH 0 H O 2 8
+CL «:00 2 En HE C“ CL
+<1) 0 Ln “3
+G H __Ct$Ct$ >3 g .V o O
+E z “mm 9 o N E 9
+2 SEE O U ”m “
+a 0:: G a U” E Q
+< :00 H <6 S: q: q
+388 v m 00 0
+U] II I (1) mm (D t
+< 0'01: m m can 5 5
+Z 5:00) H S EH 0
+'76 G “h g “'5 T) 0
+egg 2 AA : G
+E a~~ a 5 58 E .2
+“‘0 me co 5 H
+%£ 5 lam 4a C6
+%S (1) HH (D Woo. C: -
+HRS g a: E“ LLN 4: 3
+00's ggvvm 00 cc: 0m 00 a
+O “H (Donna \o —* S '5
+“(D O HHGQQ 0\ <1) qLH O
+25 w ?%TTT T a o: a Q
+H . H
+9-4: .2 mvmmoq—H “#60330 2 5:
+0'"" 5 \ooohhoxooxo 094500 ""O
+Um oxoxoxoxoxoxox _2._§3 . cc:
+:0) Q4 V—iu—iV—iV—iV—iV—iV—i 8QO g Q
+v—1 m ""d
+0% §~~ «G u: a
+""""9“ Q) 80 H 0
+v—‘ ‘0 2 4.» m 0)
+:6“ “HQ 9:68 5—4
+HH 0 O (D 9-4
+:60 H9 Wmmoommoo DHQO 0
+Q4.» 03 C\l\V—<l\lf3<l'u—< EOVO cc on
+.V—* O OOGNLOVN HOW to ”—1
+5‘3 8+.» comm m H G
+1:? so (\1 £me 43 ._
+«:00 z: 53L)?» 3 8
+mg: CL HS >» 5
+ccClQ) M H
+9—. h g £1 (/3 (D
+00 '~U%~ U
+O\ N FOG)“ G)
+>‘C\ ‘0 O 0).qu £1 H
+9‘0 38 N 5 MD “"" LH
+cc 0) n O ~8Qw o
+“a #8 0 m a ”9 m'a
+DD: ._‘V o (\1 ._""Omc=$ (Dmﬂ)
+OH 0mg <1)H
+ow; .20) «O O 0:00 ”05‘
+i? &% 83 2 3 “ENE 38
+(/3 F nan\ “tn n m_ci‘ig 038
+“H oemmooo H~¢g q
+5 voxHﬁ-anh 66>qu “Em
+cam ._‘ a 5.4
+0%) USED -qo'*5""‘
+#45 mg mﬂouhoo
+4; A mH—OWE LE.) O\
+O (D V—i
+ccs,H NE o to 1\ Sooam 0V
+,5 -~ mNh—Hnlnln ""UOHW b13213
+w 330x ><><><><><><>< gg~ﬂgﬁuf
+""o «:8 mmhmmmm E m'dvg'o‘gm
+<1) 8 mOln—anxlln v—‘DSCGVOQD ,_
+m a V—1 V—i (\1 @HQ“ ""Ugo
+m Esaamcsas
+cc ECG (05.40):
+“ A U'Oﬂccx'“ccz
+(D Am tn “mmmmw
+E < mtDF‘ m ""—‘(D>‘~
+‘—< H """"ch
+V—i :64:me ""(j
+q) mm HHmUBQNOD
+,4: VV q- oomq®$%ﬁw
+""’ :6“ cs Em: F £100
+0 E E Ooomqmmwg
+Ea: cc: “0““ 'ccc‘s‘c‘o'ao
+E “3 L) “36A 50‘”
+M 00 a DEA “cg
+“3 H HUm 8O'
+Q “3 '13 3:13 a ._"" «mm Qm—Q
+a C6 OH 5"" ~U®N©®H< n
+A m QQQHDWH EWSGNQN m
+B TJO-E “:03 msq-VFG<“
+.—‘ a m ##0) 5 CIN «7 5—4? cc:
+2% ct: NESEEE“ 8 Lam 4; *5;
+H U qumMAE a on m c
+
+"
+"9","Astronaut photograph y as digital data for remote sensing 4411
+(a) .i-. .. * , ‘ «3 ”‘*~7""' »
+. » §§M<<*W77>};.. -~ 3 »
+:7 ' ' ‘ Mi?.iznﬁﬁgugﬁ'w.1‘7752’2231'1~""‘::':..'~'-;-:..-:’*""‘,
+‘ .3 -~ _ ,7 -» §.‘§Q§?‘%y.§37§k ¢
+‘ . . '- "" ‘77.. - "" $972.“. 75777‘77'.‘z:2.:e:7s.
+, _ . .3) 7 , {g'vm’}§1""; 3-‘1‘fxs:.;—‘. 7-7.3?» 1‘33“"" 7'- 25' -.E€-Ei‘r...,’ 7‘""... U .3 ‘ .
+» ‘ - . @273“ 77"":{< ‘
+‘ ‘9 l ‘ .9“ ' ﬁmﬁﬁﬁﬁf‘nl“..~;.‘_7~,'-?§;'5€L‘f\i‘i;}'ﬁx""\.,.~;:‘;
+' "" "" - - t."" 7. 1. p§:.ssée§~.:.nsw Wm... -. ,
+- ~ . .. 3. . ' "" 29.9172: . ‘27.? 22‘; L-‘ . \
+' 2 >3. “7‘71, www.fifmjvx‘”; .33.; 7.7.2 .
+_ a, 3;, 31""..)3z”. - f7 a7""; uﬂw‘wmr @
+- . .. - -» , w. . 439‘ .' ax“ - , wlmﬁﬁl; ~ 3*. 455.5 .: 3
+‘ , ' /’ :7»? 77%.? 2.; ::.ue:.% . $5“ 797.1%. “‘- 79:23:72
+~. 1'. - :2. / .-. :w‘éw $22,437.42» 7.. .aga?£\‘;%.¢~
+‘ 3 .7 ...-= 7.; L32“ 75:3}.‘ﬁy. .372» _gggii‘.zj;.5..agg - ""m. 3.
+“- ‘ .. 7 17.2-72.12273 , 3&737‘ i"" .‘3
+‘ 2.7:- .L‘ ;if;~:,”-f:'~§xi”£.‘3* 3.4.72. - ‘i.; — . ,
+-. - 33,4 2792...... V
+.. T‘vﬁf 2.22. ~-; 7733:1233»; 55.392.377.597"":-.».-7.;..-"":'.«7:.'-2:~5 7 4--
+"" ’32:» . 2351: 3.119.213» % ‘?:‘7?-:a‘i?§7i§¥‘£$"".K'Vr 1357""."" 4. g. v/ _.
+"" 78377:. 3
+» 9‘ 1.77.6 37””: ‘7‘
+40 mm lens, 298 km altitude 100 mm lens, 294 km altitude
+7 Ms» 7: . 37 ‘ .2.. , .. - , ' "" eriﬁ' . 21‘... ii .7“..-
+(ﬂ%. Eigzm <3 27$“: ’
+7. .‘c‘V-‘v,“'f"";~.'_f pi x.) .3 f .3 -- 1:15:51 '. ‘ xii, j 3 s,» “ ' ""7:. ‘34. ~
+m2“; . 71* 3 . $9."" x. -- ’T‘"" :
+«7.21sz 1.5.2271... - -“'-*9 ”’37 ' .; f‘ 535‘ 7. 783.71 ‘. ‘ ”5‘ $3 f’w/ . ~
+772-3232 '35::- $1""! 3., .3. z . .2 7» , . ﬁ- ,.325,\ i?
+. €7.77 ‘.—':>34*-.;.;b2.1~. 7-5. <7“ 13-» .""-‘.i . ‘1 .2 {7%. .7 -. 5% .- ”s‘e “ .7: : ”
+.. ”5:71.“. ,, 333:; 3W?“ “:34? ’5.“ s.» . “ ﬂ: 1"" a“.. {13$}!- m7 ’2 ' u ’3... ts:
+-, ~ »:*:i""%""%. 3.372;: 7.174%. $5.7 7' 7 7 :‘..»~3'_, aﬁé‘ .3: :3» ; . 3, 5”, ,1
+i ‘. ”1%:‘417': “17;“??‘éZS. H, "" ' 3:933:15- :73"" (\‘ﬁg‘ ’ ' . .. m. i 3.6 73""77’3‘?“ . ‘
+_ QM ,W‘Mng p; «7"" via.“ [‘ .C’i’»”»‘x.' “$153k 7‘2;- 2:?)
+‘*«""??‘§‘%‘z’.= 773%,!” 1 2.5;, ""’ _-,..??7.£»_7'.3’¢:%\._>~. , «2;...31: 3, 3733*“ 79?"".
+s :7..-» =2: .7 ‘\~> . 77 7.7"" 3. .‘x
+7 £729.43. Wu.».,€~‘ » . 7. 5:3,.- 7 «7773‘u- . ﬁ$7§ rd 33-?!” ""g ‘4‘
+.5 , ' 3‘.-*‘.- 1.17 . »-,~:.! :77: . . :7-“ 7:"" - 7: 3%: #7‘3"" ""1'— 2
+.319?! 1*‘5"" ""7“ ~. 13:3: 3§77 . 4- T, :72». a“ 723...»...7 , “x""iﬁ ’13
+‘7‘ ‘7- ”7’52. .4/ ‘ V7737‘77\ *3. J.
+57.3: 22.77, 122.3% .‘m‘7:27:53...“~"".’§;».':7-..~:-. ‘ ” % 2‘7? v ""..«....»,,’*‘3~»«+§I.. .mgékgy.» 7*! ="" ~
+‘. :7 «5'.» 2'7 “.hé} .772“ 3.3; 2 . Ta 7 mg. 17:6 9.. 9 4.. 2'»
+m“ ; nﬁéﬁr-ﬁﬁ?’ 1.733.775.1279“. 7’ ' "" u “H . .27.; . . -7§3§L{.I "" a. "" 7 3 2.15.7 ..im‘3;}..;:s.f ""ﬁre 2..
+y'fZgﬁﬁﬁgg .737 ,-’ {$537.32. 300 mm lens (ESC), 269 km altitude
+4i ""2‘""? 7 .‘-i ‘1-27 ’73“? .7 ” i' . ‘ .. .
+' *3ng ‘1‘? 7.7-7"". 1"" ""
+4
+- ' . N
+250 mm lens, 302 km altitude
+Figure 3. Example of the effect of lens focal length on resolving power. Hasselblad images
+of Houston were all taken from an altitude of 294 km—302 km with different lenses:
+(a) 40mm, STSO62-97-151; ([9) 100mm, STSO94—737-28; (6) 250mm STSOSS-71-41. For
+comparison, an Electronic Still Camera image with 300mm lens at 269 km altitude is
+also shown (d) S73E5145.
+timestamp on each frame at the time of exposure. Cameras are serviced between
+ﬂights. Occasionally there is enough volume and mass allowance so that a Linhof
+5 ><4inch (127 x 101mm) format camera can be ﬂown. Nikon 35mm cameras are
+ﬂown routinel also because of roven reliabilit . Electronic still cameras ESC
+9
+were tested for Earth photography beginning in 1992 (Lulla and Holland 1993). In
+an ESC, a CCD (charge-coupled device) is used as a digital replacement for ﬁlm
+recording the image projected inside the camera. An ESC (consisting of a Kodak
+DCS 4600 CCD in a Nikon N—9OS body) was added as routine equipment for
+handheld photographs in 1995. ESCs have also been operated remotely to capture
+and downlink Earth images through a NASA-sponsored educational programme
+(EarthKAM). Discussion of CCD spatial array and radiometric sensitivity are
+beyond the scope of this paper, but are summarized by Robinson et al. (2000b). The
+
+"
+"10","4412 J. A. Robinson et al.
+
+format of the ﬁlm (or CCD) and image size projected onto the ﬁlm (or CCD) are
+summarized for all the different cameras ﬂown in table 2.
+
+3.4. Look angle or obliquity
+
+No handheld photographs can be considered perfectly nadir; they are taken at a
+variety of look angles ranging from near vertical (looking down at approximately
+the nadir position of the spacecraft) to high oblique (images that include the curvature
+of Earth). Imaging at oblique look angles leads to an image where scale degrades
+away from nadir. A set of Views of the same area from different look angles is shown
+in ﬁgure 4. The ﬁrst two shots of the island of Hawaii were taken only a few seconds
+apart, and with the same lens. The third photograph was taken on a subsequent
+orbit and with a shorter lens. The curvature of the Earth can be seen in the upper
+left corner.
+
+Obliquity can be described qualitatively (ﬁgure 4) or quantitatively as the look
+angle (t, ﬁgure 1, calculations described in formulation 2 (§5.2)). Because obliquity
+and look angle have such a dramatic inﬂuence on the footprint, we summarize the
+database characteristics relative to these two parameters. Figure 5 is a breakdown
+of the spatial resolution characteristics of low oblique and near vertical photographs
+in the NASA Astronaut Photography database. Number of photographs are grouped
+(1) by calculated values for look angle (t) and (2) by altitude. After obserVing the
+overlap between near vertical and low oblique classes, we are currently restructurin g
+this variable (‘tilt’) in the database to provide a measure of t when available. Users
+will still be able to do searches based on the qualitative measures, but these measures
+will be more closely tied to actual look angle.
+
+3.4.1. Obliquity and georeferencing digitised photographs
+
+Often the ﬁrst step in a remote sensing analysis of a digitized astronaut photo-
+graph is to georeferenee the data and resample it to conform to a known map
+projection. Details and recommendations for resampling astronaut photography
+data are provided by Robinson et al. (2000a, 20000) and a tutorial is also available
+(McRay et al. 2000). Slightly oblique photographs can be geometrically corrected
+for remote sensing purposes, but extremely oblique photographs are not suited for
+geometric correction. When obliquity is too great, the spatial scale far away from
+nadir is much larger than the spatial scale closer to nadir; resampling results are
+unsuitable because pixels near nadir are lost as the image is resampled while many
+pixels far away from nadir are excessively replicated by resampling.
+
+To avoid the generation of excess pixels during georefereneing, the pixel sizes of
+the original digitized image should be smaller than the pixels in the ﬁnal resampled
+image. Calculations of original pixel size using methods presented below can be
+useful in ensuring meaningful resampling. For slightly oblique images, formulation 3
+(§5.3) can be used to estimate pixel sizes at various locations in a photograph (near
+nadir and away from nadir), and these pixel sizes then used to determine a reasonable
+pixel scale following resampling.
+
+4. Other characteristics that inﬂuence spatial resolution
+
+Beyond basic geometry, many other factors internal to the astronaut photography
+system impact the observed ground resolved distance in a photograph. The lenses
+and cameras already discussed are imperfect and introduce radiometric degradations
+(Moik 1980).Vignetting (slight darkening around the edges of an image) occurs in
+
+"
+"11","Astronaut photograph y as digital data for remote sensing 4413
+q R
+0‘8 0)
+'08 '3
+a H
+H A ”—1
+:60 a :A
+pm V «:8
+n .— M 09011501961981“?
+ﬁﬂ 0; 8H HWVWHGOOOM
+5—40) ._ 5—4 [\NKONNHMHH
+8-5 m as,
+me H a
+g._ >3 “3
+cam .9 2
+$51309"" 8‘11)
+80 H3
+‘55“ 83 “3
+o“; 83 52A
+*-’ (DO :8
+:0“ H xx 00990999009“:
+“QNJ «)8 \o OOMﬁ'mV—MXDGGB
+5.“ 00 SN mHm—m—4 u—4
+gt? :13 Sm
+0.20 38 ""UV .
+MPG to (D H
+H ”—1 5
+“'8 '0‘“ Ag?
+>ua gm m-v—t
+DE 5< (1) 89-4
+3 8 Po '55
+>3: 8 EA 5:
+“cc 5 .M ﬁﬁiWYOQOE—ilfo. 00
+5Q ._ 8N \ooxmothﬁxom “0*;
+:2 a :2 N N H :8
+05.4 ""-‘ “50
+m“ .8 00w“
+E; 2 309‘
+80 H32
+mv—* >3 <
+>30 $.40
+mo gSM
+£1
+31;; 85+;
+“’8 394:6
+$.48 Q 00 <I- m 0?.55,
+£3 N O\ l\ V mama
+to m V—i V—i V—i 0 PVC
+Em _>_< x x x x ﬁg:
+8; g 00 oo oo o boo“
+'“0 <1) l\ o o \0 509-4
+D'F‘ _E O\ H m C oﬁ-m
+”NE; m co m m m MN“
+m.—‘ G) v:
+‘63 go “‘53
+.876 a 88%
+Q40 p—4 5.254
+:0 E N m <l- oo ""ENS
+2.8 F‘ l"" N F‘ cc-so
+Hm x x x x x 5-8.:
+5 mm
+#8 a m m \o \q “0%
+e“: N wa
+EU q8L3
+5% 33“
+C6 “Umo
+94m“ 0):ch
+mg mmmmmmmmmm 8(1):
+'32 888888888 22.2
+4.» 22.22.22.222 83H
+'Eoo)“ 5H2
+g? 888888888 5g:
+DH 888888888-58510
+BE ooooooooo MO:
+-~c=: mmOmOOoooo E «O
+00? 5—4 a
+Q>u1—‘ :EO
+85g: 33%
+SD'F‘
+88'0"" 8 EEO
+KG) 8 o m.ﬁH
+c6503. 3 a 1\ E gag
+20g a m U a a 57:38
+‘SV—i m N :6 l0 8 5:5
+-H C6 ‘_‘ E m '13 HH0
+(\1 5.4 L.“ ,_‘ #0:
+a) a) O a) Q m <<H
+E a J: a O U HNm
+q .M
+cc :6 ._ <6 -~ (/3
+E U A E Z Lu
+
+"
+"12","4414 J. A. Robinson et al.
+
+Near Vertical Low Oblique High Oblique
+D (I C
+
+"" mu. ' MU J;,;.'<r.1;a..:= f-..~ e ‘
+
+w _ 6 ~ .,.. *'
+
+Figure 4. Deﬁnitions of look angle for photographs taken from low orbit around Earth.
+The example photographs of Hawaii were all taken from approximately the same
+altitude (370—398km) and with the same (250mm) lens on a Hasselblad camera
+(STSO69-701-69, STSO69-701-70, and STSO69-729-27 [100mm lens]).
+
+astronaut photography due to light path properties of the lenses used. A lack of
+
+ﬂatness of the ﬁlm at the moment of exposure (because cameras used in orbit do
+
+not incorporate a vacuum platen) also introduces slight degradations. A number
+of additional sources of image degradation that would affect GRD of astronaut
+photographs are listed.
+
+4.1. F ilms and processing
+
+4.1.1. Colour reversalﬁlms
+
+Most ﬁlms used in NASA handheld cameras in orbit have been E-6 process
+colour reversal ﬁlms (Ektaehromes) that have a nominal speed of 64 to 100 ASA,
+although many other ﬁlms have been ﬂown (table 3). Reversal ﬁlms are used because
+damage from radiation exposure while outside the atmospheric protection of Earth
+is more noticeable in negative ﬁlms than in positive ﬁlms (Slater 1996). The choice
+of ASA has been to balance the coarser grains (lower ﬁlm resolving power) of high-
+speed ﬁlms with the fact that slower ﬁlms require longer exposures and thus are
+affected more by vehicle motion (approximately 7.3 km s‘ 1 relative to Earth’s surface
+for the Space Shuttle). Extremely fast ﬁlms (> 400 ASA) are also more susceptible
+to radiation damage in orbit (particularly during long-duration or high-altitude
+missions, Slater 1996) and have not traditionally been used for Earth photography.
+
+The manufacturer stock numbers identifying the ﬁlm used are available for each
+
+image in the Astronaut Photography Database (Ofﬁce of Earth Sciences 2000).
+
+4.1.2. Colour infrared ﬁlms
+
+Colour infrared ﬁlm (CIR) was used during an Earth-orbiting Apollo mission
+(Colwell 1971), in the multispectral S-190A and the high-resolution S-190B camera
+
+"
+"13","Astronaut photograph y as digital data for remote sensing 4415
+(a) All cameras and lenses, centre point and nadir point known
+Near Vertical, n = 35251 Low Oblique, n = 73042
+16000 <——-—w_-—_--——->
+0 12.5%
+14000 11.9% 11.7% 112% 103V
+. 0
+12000 9.1% 92%
+10000 34%
+8000 5.1% 63%
+6000
+3 4000
+E 2000 18%
+c»
+o
+.5 0 I
+g 0 5 10 15 20 25 30 35 40 45 50 55
+“5 Calculated Look Angle 1°)
+In-
+.3
+g (b) Hasselblad camera, 100 and 250 mm lenses, altitude known
+2
+35000
+30000
+25000 100 mm, n 3 59792 250 mm, n = 99254
+20000 IELow Oblique - EILow Oblique
+r I Near Vertical [3 Near Vertical
+15000 ﬂ V v
+10000 I g f 5555; g
+0000 5 5| AI 5
+0 E zisia 22222 a 0...... - ,0 g .. 0-.) ! m _____'
+200 250 300 350 400 450 500 550 600 650
+Altitude (km)
+Figure 5. (a) Distributions of astronaut photographs by look angle off—nadir (calculated from
+centre point and nadir point using Formulation 2). Data included for all photographs
+for which centre and nadir points are known, with high oblique look angles (n:
+55155) excluded. (Total sample shown is 108 293 of 382563 total records in the
+database when compiled. For records where nadir data was not available, number of
+observations for qualitative look angles are: near vertical, 14 086; low oblique, 115 834;
+undetermined, 89195.) (b) Altitude distribution for astronaut photographs of Earth
+taken with the Hasselblad camera. Data included for Hasselblad camera only, focal
+length determined, with high oblique look angles excluded. (Total sample shown is
+159 046 of 206 971 Hasselblad records with known altitude and of 382 563 total records
+in the database when compiled. For Hasselblad records with known altitude, data not
+shown includes high oblique photographs using 100 mm and 250 mm lenses, n= 20 262,
+and all look angles with other lenses, n=27 663.)
+systems on Skylab (NASA 1974, Wilmarth et al. 1977), and occasionally on Shuttle
+missions and Shuttle-Mir missions (table 3). The CIR ﬁlm used is a three-layer
+Aerochrome, having one layer that is sensitive to reﬂected solar infrared energy to
+approximately 900 nm (Eastman Kodak Company 1998); protective coatings on
+most spacecraft windows also limit IR transmittance between 800 mm and 1000 nm.
+This layer is extremely sensitive to the temperature of the ﬁlm, which creates
+unpredictable degradation of the IR signature under some spaceﬂight conditions.
+
+"
+"14","4416 J. A. Robinson et a1.
+
+a) n m .
+€13“ < 8:1“ 8
+O>w « 3 .Sw «r:
+ag e h :28 g
+mg .2 g 0 .2®> H
+_2$—< O H 2% 1328 g
+3% g 94 (/3 Z goo ::
+cy—t H Q—{Q—{h Q—1 n n O m
+53 0 oo o 9< “'5 Bid; M
+H 8 £15 av: 00 £1 HH'U
+£8 :6 qqoq ﬁg q <1)ch 53
+£05 U qqﬁq Zm A gee Q
+
+an “N h n n
+03 'o'oz'o'o'o'o '0 99‘3
+% SEQBEEE £3 COED“ “3
+ms aeeeeaa em .890 E
+“H 3353333 a©<< 3's“ ‘3
+$13 mgmm £333 83% a
+
+(D mV—iV—i 0H0 ,_‘
+gr; mm mmmm E mm MHM £2
+a .cccc $3
+
+a 6‘8 m
+<._ m8 :5
+(IDLE (D N NEM H
+< m E E “70% “H
+
+U 5 “m 00>‘Q 0
+Z: moomooghtn 3 <r<r aw
+,_c=$ “'5 ooooxoxooxh <1) [\l\ ""‘42:“ :
+Tc: mmﬁmwmm H mm V D o
+
+""O U V—iV—1|V—1QV—1V—1 9-4 V—1V—1 -m""O 3:;
+83 o ||‘—<| I II I | I 35% :6
+
+0 .ﬁ oomoovonm tn mm ,_‘> 5.4
+Os; 5 ©©O\O\O\O\l\ \o 1\1\ Ema ct:
+Him 94 OOHOGQO ox mm Hg CL
+>3
+mm sﬁi 9.
+9*“ ‘73:: ‘9‘?
+«a 4:
+003 O >“H8 9—.
+OLH Hm OON monv <l- m1\ JD”: 00
+*-’ (Du) mm #00005 <3 mm ,Oqcn 4—»
+00 £8 Hex l\<I-oo\o 1\ mo 03cc: gm
+'50 8“ mm ln—imo O 00 “00 I
+ma H H ovﬁ v HH .EQE U<
+(D 5g“ H H F‘M>3 “Lu
+“UV Z UHH ED
+3 Go': 08
+of, “GE 7:30
+-S§ OD MEAD HQ:
+
+SH c6“: NU
+cam MM 0 ""O_tjcc o
+E; >0 mo 0 N Nm 0 5.4 H30
+8 ‘63 Im O m mo M1300 Qq
+DE 3& Sr H go 9w
+. >n :
+g, o: nmnp £5
+HA a .
+«:8 Bag 3%
+mg < (\lﬁ' OON o EH0 QB
+LH U] MG COM V >>~.""-‘
+
+5Y3 V—1V—1 .—‘*—’ mm
+0:; < 808 28
+>w H-v—1 0
+£113 9""“: HO
+Q—«o m8: (DH
+:34: NQE .994
+3404‘ $4 A08 Ea
+O: ©N ‘—<=-« 8'“
+8.“ ""PF” 3&8 0‘4:
+4:8 oo 6 M63 03
+9‘8 mm ‘0 OE: ch
+32 Hhooh C? gng -.—¢§
+:69“ 2: O HESS Sq
+87:: .\o “3 68m T:
+:8 Oh“ N“ a §Mx“ ””5
+g“ U33“ 3 ""o N 0%«3 55.2
+
+‘—< 000 I a) O H ""O 0
+MG V“: O mg ' bl3'90 Go
+8* :33, m 8,3: 8 ﬁBM 0?
+
+00 V‘_‘ A
+UN [<0 a a LEE vv BE “ Ev
+8m vmgﬁ. 0 <1) NB \H8 :60]
+Sm <l- “ o F‘ _+—"""" v 805 OD“
+
+l\© AGO 1—10 N 9—1“ CGQ
+mg Sﬁwmmmu S's v°3 35—0 a
+Em C «\oLA B m 4:)ng “Cox
+#H :exgoma 60 B 0mg a~
+: ' 88 “l“ m“ «860540 moF m""
+050) H CONDOU—O‘Meﬁ-QE Hﬁ'. ""
+mH'O g z*-‘$~-4<><>z~_4<3 «m OQNHO “NMGBG
+:22 : o€€g2~©o go“ ~ §.2VO~-~
+«:on +5 >Oc=s EDWMQOMB“ oqm'soco
+809.8 :6 'ssgogﬁgg Usgoag Bnﬁsﬁg
+GEES “'5 §<mgqm3m §<mmm OEmg-ﬁg
+
+m: g mxxﬁxxgx mewx joggo-go
+
+Cr; zHc=:c=:.c=:c:: :6 '0de6:6 <5: :0
+E S—o'oo'o'o;~'o ng—o'o 4.. EHm
+
+2 E Ooomoog’omogooﬁagﬂmm
+
+g E: EMM MMLLM QEM MM 0:}?
+
+P Lu U E d:o%
+
+"
+"15","Astronaut photograph y as digital data for remote sensing 4417
+4.1.3. Film duplication
+
+The original ﬁlm is archived permanently after producing about 20 duplicate
+printing masters (second generation). Duplicate printing masters are disseminated
+to regional archives and used to produce products (third—fourth generation) for the
+media, the public, and for scientiﬁc use. When prints, slides, transparencies, and
+digital products are produced for public distribution, they are often colour adjusted
+to correspond to a more realistic look. Digital products from second generation
+copies can be requested by scientiﬁc users (contact the authors for information on
+obtaining such products for a particular project), and these are recommended for
+remote sensing applications. Care should be taken that the digital product acquired
+for remote sensing analysis has not been colour adjusted for presentation purposes.
+Based on qualitative observations, there is little Visible increase in GRD in the third
+or fourth generation products. There is a signiﬁcant degradation in ﬁdelity of colour
+in third and fourth generation duplicates, because an increase in contrast occurs
+with every copy.
+
+4.2. Shutter speeds
+
+The impact of camera motion (both due to the photographer and t0 the motion
+of the spacecraft) on image quality is determined by shutter speed—1/250 t0 1/500
+second have been used, because slower speeds record obvious blurring caused by
+the rapid motion of the spacecraft relative to the surface of the Earth. Generally
+1/250 was used for ISO 64 ﬁlms (and slower), and after the switch to ISO 100 ﬁlms,
+a 1/500 setting became standard. New Hasselblad cameras that have been ﬂown
+beginnin g with STS-92 in October 2000 vary shutter speed using a focal plane shutter
+for exposure bracketing (rather than varying aperture) and 1/250, 1/500 and 1/ 1000
+second are used.
+
+Across an altitude range of 120—300 nautical miles (222—555km) and orbital
+inclinations of 28.50 and 57.00, the median relative ground velocity of orbiting
+spacecraft is 7.3 km s‘ 1. At a nominal shutter speed of 1/500, the expected blur due
+to motion relative to the ground would be 14.6 m. When cameras are handheld (as
+opposed to mounted in a bracket), blur can be reduced by physical compensation
+for the motion (tracking) by the photographer; many photographs show a level of
+detail indicating that blur at this level did not occur (e.g. ﬁgure 3(d)). Thus, motion
+relative to the ground is not an absolute barrier to ground resolution for handheld
+photographs.
+
+4.3. Spacecraft windows
+
+Most of the photographs in the NASA Astronaut Photography Database were
+taken through window ports on the spacecraft used. The transmittance of the window
+port may be affected by material inhomogeniety 0f the glass, the number of layers
+of panes, coatings used, the quality of the surface polish, environmentally induced
+changes in window materials (pressure loads, thermal gradients), or deposited con-
+tamination. Such degradation of the window cannot be corrected, is different for
+each window, and changes over time. See Eppler et al. (1996) and Scott (2000) for
+discussion of the spectral transmittance of the fused quartz window that is part of
+the US Laboratory Module (Destiny) 0f the International Space Station.
+
+4.4. Digitized images from ﬁlm
+
+When ﬁlm is scanned digitally the amount of information retained depends on
+
+the spectral information extracted from the ﬁlm at the spatial limits of the scanner.
+
+"
+"16","4418 J. A. Robinson et al.
+
+To date, standard digitizing methodologies for astronaut photographs have not been
+established and ﬁlm is digitized on a case-by-case basis using the equipment available.
+4.4.1. Digitizing and spatial resolution
+
+Light (1993, 1996) provided equations for determining the digitizing spatial
+resolution needed to preserve spatial resolution of aerial photography based on the
+static resolVin g power (AWAR) for the system. For ﬁlms where the manufacturer has
+provided data (Eastman Kodak 1998, K. Teitelbaum, personal communication),
+the resolving power of ﬁlms used for astronaut photography ranges from 32 lp mm‘ 1
+to 1001p mm‘ 1 at low contrast (objeet/baekground ratio 1.6/1, table 3). The AWAR
+for the static ease of the Hasselblad camera has been measured at high and low
+contrast (using lenses shown in table 1), with a maximum of approximately
+55 lp mm‘ 1 (Fred Pearce, unpublished data).
+
+Based on the method of Light (1993, 1996), the dimension of one spatial resolution
+element for a photograph with maximum static AWAR of 551p mm‘ 1 would be
+18 ,umlp‘ 1. The acceptable range of spot size to preserve spatial information would
+then be
+
+18 ,um , 18 pm 1
+
+2 \/5 <sean spot s1ze< 2 ( )
+and 6um<sean spot size<9um. Similarly, for a more typical static AWAR of
+301p mm‘ 1 (33 ,umlp‘ 1, low contrast, Fred Pearce, unpublished data) 11 um<scan
+spot size< 17 pm. These scan spot sizes correspond to digitizing resolutions ranging
+from 4233—2822 ppi (pixels ineh‘ 1) for AWAR of 55 lp mm‘ 1 and 2309—1494ppi for
+AWAR of 301p mm‘ 1. Sean spot sizes calculated for astronaut photography are
+comparable to those calculated for the National Aerial Photography Program
+(9—13 um, Light 1996).
+
+Widely available scanners that can digitize colour transparency ﬁlm currently
+have a maXimum spatial resolution of approximately 2400 ppi (10.6 um pixel_ 1). For
+example, we routinely use an Agfa Arcus II desktop scanner (see also BaltsaVias
+1996) with 2400 ppi digitizing spatial resolution (2400 ppi optical resolution in one
+direction, and 1200 ppi interpolated to 2400 ppi in the other direction) and 2400 ppi
+was used to calculate IFOV equivalents (tables 2 and 4). For some combinations of
+lens, camera, and contrast, 2400 ppi will capture nearly all of the spatial information
+contained in the ﬁlm. However, for ﬁlm with higher resolving power than
+Ektaehrome-64, for better lenses, and for higher contrast targets, digitizing at 2400 ppi
+will not capture all of the spatial information in the ﬁlm.
+
+Improvements in digitizing technology will only produce real increases in IFOV
+to the limit of the AWAR of the photography system. The incremental increase in
+spatial information above 3000 ppi (8.5 pm pixel_ 1) is not likely to outweigh the
+costs of storing large images (Luman et al. 1997). At 2400 ppi, a Hasselblad frame
+is approximately 5200>< 5200 or 27 million pixels (table 2) while the same image
+digitized at 4000 ppi would contain 75 million pixels.
+
+Initial studies using astronaut photographs digitized at 2400 ppi (10.6 um pixel_ 1,
+Webb et al. 2000, Robinson et al. 20000) indicate that some GRD is lost compared
+to photographic products. Nevertheless, the spatial resolution is still comparable
+with other widely used data sources (Webb et al. 2000). Robinson et al. (20000)
+found that digitizing at 21 um pixel‘ 1 provided information equivalent to 10.6 um
+pixel‘ 1 for identifying general urban area boundaries for siX cities, except for a single
+
+"
+"17","Astronaut photograph y as digital data for remote sensing 4419
+photo that required higher spatial resolution digitizing (it had been taken with a
+shorter lens and thus had less spatial resolution). Part of the equivalence observed
+in the urban areas study may be attributable to the fact that the ﬂatbed scanner
+used interpolates from 1200 ppi to 2400 ppi in one direction. The appropriate digitiz-
+ing spatial resolution will, in part, depend on the scale of features of interest to the
+researchers, with a maximum upper limit set of a scan spot size of approximately
+6 gm (4233 ppi).
+4.4.2. Digitizing and spectral resolution
+
+When colour ﬁlm is digitized, there will be loss of spectral resolution. The three
+ﬁlm emulsion layers (red, green, blue) have relatively distinct spectral responses, but
+are fused together so that digitizers detect one colour signal and must convert it
+back into three (red, green, blue) digital channels. Digital scanning is also subject to
+spectral calibration and reproduction errors. Studies using digital astronaut photo-
+graphs to date have used 8 bits per channel. However, this is another parameter
+that can be controlled when the ﬁlm is digitized. We do not further address spectral
+resolution of digitally scanned images in this paper.
+
+4.5. External factors that inﬂuence GRD
+
+Although not discussed in detail in this paper, factors external to the spacecraft
+and camera system (as listed by Moik (1980) for remote sensing in general) also
+impact GRD. These include atmospheric interference (due to scattering, attenuation,
+haze), variable surface illumination (differences in terrain slope and orientation), and
+change of terrain reﬂectance with Viewing angle (bidirectional reﬂectance). For astro-
+naut photographs, variable illumination is particularly important because orbits are
+not sun-synehronous. Photographs are illuminated by different sun angles and images
+of a given location will have colour intensities that vary widely. In addition, the
+Viewing angle has an effect on the degree of object—to-baekground contrast and
+atmospheric interference.
+
+5. Estimating spatial resolution of astronaut photographs
+
+In order to use astronaut photographs for digital remote sensing, it is important
+to be able to calculate the equivalent to an IFOV—the ground area represented by
+a single pixel in a digitized orbital photograph. The obliquity of most photographs
+means that pixel ‘sizes’ vary at different places in an image. Given a ground distance,
+D represented by a photograph in each direction (horizontal, vertical) an approxi-
+mate average pixel width (P, the equivalent of IFOV) for the entire image can be
+calculated as follows:
+
+P D 2
+
+— d S ( )
+
+where D is the projected distance on the ground covered by the image in the same
+
+direction as the pixel is measured, d is the actual width of the image on the original
+ﬁlm (table 1), and S is the digitizing spatial resolution.
+
+Here, we present three mathematical formulations for estimating the size of the
+footprint, or area on the ground covered by the image. Example results from the
+application of all three formulations are given in table 5. The ﬁrst and simplest
+calculation (formulation 1) gives an idea of the maximum spatial resolution attainable
+at a given altitude of orbit with a given ﬁlm format and a perfectly vertical (nadir)
+
+"
+"18","4420 J. A. Robinson et al.
+
+View downward. Formulation 2 takes into account obliquity by calculating look
+angle from the difference between the location on the ground represented at the
+centre of the photograph, and the nadir location of the spacecraft at the time the
+photograph was taken (ﬁgure 1). Formulation 3 describes an alternate solution to
+the oblique look angle problem using eoordinate-system transformations. This
+formulation has been implemented in a documented spreadsheet and is available
+for download (http://eol.jse.nasa.gov/sseop/FootprintCaleulator.Xls), and is in the
+process of being implemented on a Web-based user interface to the Astronaut
+Photography Database (Ofﬁce of Earth Sciences 2000).
+
+Although formulations 2 and 3 account for obliquity, for the purposes of calcula-
+tion they treat the position of the spacecraft and position of the camera as one. In
+actuality, astronauts are generally holding the cameras by hand (although cameras
+bracketed in the window are also used), and the selection of window, position of the
+astronaut in the window, and rotation of the camera relative to the movement of
+the spacecraft are not known. Thus, calculations using only the photo centre point
+(PC) and spacecraft nadir point (SN) give a locator ellipse and not the locations of
+the corners of the photograph. A locator ellipse describes an estimated area on the
+ground that is likely to be included in a speciﬁc photograph regardless of the rotation
+of the ﬁlm plane about the camera’s optical aXis (ﬁgure 6).
+
+Estimating the corner positions of the photo requires additional user input of a
+single auxiliary point—a location on the image that has a known location on the
+ground. Addition of this auxiliary point is an option available to users of the
+spreadsheet. An example of the results of adding an auxiliary point is shown in
+ﬁgure 7 with comparisons of the various calculations in table 5.
+
+5.1. Formulation 1. Footprintfor a nadir view
+The simplest way to estimate footprint size is to use the geometry of camera lens
+and spacecraft altitude to calculate the sealing relationship between the image in the
+~ *4 A Three of the possible
+,7 1‘“ photo orientations, given
+V the locator ellipse.
+f.\y
+$y‘l germ can be in an
+direction relative t0y
+the top of the photo
+.SN or locator ellipse.
+Figure 6. Sketch representation of the locator ellipse, an estimated area on the ground that
+is likely to be included in a speciﬁc photograph regardless of the rotation of the ﬁlm
+plane about the camera’s optical axis.
+
+"
+"19","Astronaut photograph y as digital data for remote sensing 4421
+l w ja‘ .'.,'v“’ I I Mia's, ‘ :1 A. ""
+r , ~ 4.; I T 'i3‘113.é'lrii§:i.nn,‘€%igi""-
+' "" 7 ‘ "" T.e:'5?‘1:\.d_s,s , ‘3 ~
+a 7 - ~ amr e 442» - .. -
+‘ ft , . i».‘..::°’?‘€;j.' ,- «. ‘ "" ’“l'f’it ‘ “v‘ge- K
+. . ‘ ’3 a s '95” . ‘3 : ML
+, C‘-‘ '2 -. I Li"" fl: ' V ‘. h—u» “ j __..:"", vs""
+' M7333. ‘bfgﬁh Q -',.,*)‘\‘.’>” . W/‘(azj . , ......
+lfLZJéEm'z-‘d‘ ‘qk .iéyg""<""l""ii i, ' J .. .-, , .."" A j“ V ‘
+vi} 1‘ ’ .f ' ‘ gg ”\XY’. I , outpuurommo-Footpnnt-calculator
+.'-‘..Z ‘ ivw‘{‘,'?%‘( 45311 ‘1. ‘ "" f’ Wye ‘ Key: Top or PHOTO
+, - ' V 'i. '9‘.“ ’9 1.13,: ‘qﬁka‘ 3.1;}. / Lam.“ -u.52«
+‘ w ' 'j‘ — .145; 1?; , 1,? - 3g Eds .t 7‘ 37:22:13.; 311333;.__33g‘;”'°“’__sz_{a§s_z__.3§213é33
+.4 ~ tJ «3 .,»-r' j .5 .= T\\.\s
+. x"" ..f "",i 4‘ '_ ' a '_ 33.342“ :msv.“ 33.01559
+' .“ii-v ’5: i "" ’31 7» ‘79:.1', "" _ "" E/ \i
+U: . 7* L [.‘4/ . {fin \T\ V 2 _ : smosu i 3|,ooo.r.s \: _
+M ""3/” , 1 1‘25; :11: ' “i‘-_‘ I35:ns1s?\—T—__? IJSA‘IS')
+. r 0‘ ‘ - -J . V"" , [WJ‘VT ‘:,’:;‘.- .I 3|,avo.'nl\‘ “JMH. ’1/51512,“
+"" ' ' Wkﬁ ‘;;.-:;t51: i‘; '1 E \\l// i
+W33.» ""3% -J 1:! 1.4-"" ' ""2i ..sm. 0‘312'55"" 1.703033"". ....ns,
+._ l, 5': L. ‘3‘?)7 - ’ilx'fik ISS‘Z‘MA $21333 Iss.6ooo
+i ‘ M.“ i I ""7?, Hi 1 i 1r}; , \ iétj-{gjﬁ‘ﬁ ‘ aononorpuom
+Figure 7. An example of the application of the Low Oblique Space Photo Footprint
+Calculator. The photograph (STSO93-704—50) 0f Limmen Bight, Australia, was taken
+from an altitude of 283 km using the Hasselblad camera with a 250mm lens. Map
+used is 1:1 000 000 Operational Navigational Chart. The distances shown equate to
+an average pixel size of 12.4m for this photograph.
+ﬁlm and the area covered on the ground. For a perfect nadir View, the scale
+relationship from the geometry of similar triangles is
+d f
+— = — (3)
+D H
+where d =0rigina1 image size, D=distanee 0f footprint on the ground, f =foca1
+length of lens, and H =a1titude. Once D is known, pixel size (length=width) can be
+calculated from equation (2). These calculations represent the minimum footprint
+and minimum pixel size possible for a given camera system, altitude and digitising
+spatial resolution (table 2). Formulation 1 was used for calculating minimum pixel
+sizes shown in tables 2 and 4.
+
+By assuming digitizing at 2400 ppi (10.6 um pixel_ 1), currently a spatial resolution
+commonly attainable from multipurpose colour transparency scanners (see §4.4.1),
+this formulation was used to convert area covered to an IFOV equivalent for missions
+of different altitudes (table 2). Table 4 provides a comparison of IFOV of images
+from various satellites, including the equivalent for astronaut photography. Values
+in this table were derived by using formulation 1 to estimate the area covered because
+a perfect nadir View represents the best possible spatial resolution and smallest ﬁeld
+of View that could be obtained.
+
+5.2. Formulation 2. Footprint for oblique views using simpliﬁed geometry and the
+great circle distance
+
+A more realistic approach to determining the footprint of the photograph
+accounts for the fact that the camera is not usually pointing perfectly down at the
+
+"
+"20","4422 J. A. Robinson et al.
+
+Table 4. Comparison of pixel sizes (instantaneous ﬁelds of View) for satellite remote sensors
+with pixel sizes for near vertical Viewing photography from spacecraft. Note that all
+data returned from the automated satellites have the same ﬁeld of View, while indicated
+pixel sizes for astronaut photography are best-case for near vertical 100k angles. See
+ﬁgure 5 for distributions of astronaut photographs of various 100k angles. High-
+altitude aerial photography is also included for reference.
+
+Altitude Pixel
+
+Instrument (km) width (m x m) Bands1
+
+Landsat Multipectral Scanner2 (M88, 1974-) 880—940 79 x 56 4—5
+
+Landsat Thematic Mapper (TM, 1982-) ~ 705 30 x 30 7
+
+Satellite pour l’Observation de la Terre (SPOT, 1986-) ~832
+
+SPOT 1-3 Panchromatic 10 x 10 1
+SPOT 1-3 Multispectral (XS) 20 x 20 3
+Astronaut Photography (1961-)
+Skylab3 (1973-1974) ~435
+Multispectral Camera (6 camera stations) 17— 19 x 17—19 3—8
+Earth Terrain Camera (hi-res colour) 8.75 x 8.75 3
+Space Shuttle5 (1981-) 222—611
+Hasselblad 70 mm (250mm lens, colour), vertical View 9—26 x 9—26 3
+Hasselblad 70 mm (100mm lens, colour), vertical View 23—65 x 23—65 3
+Nikon 35 mm (400mm lens, colour ﬁlm or ESC), vertical 5—16 x 5—16 3
+
+High Altitude Aerial Photograph (1:100 000) ~ 1.2 2 x 2 3
+
+1Three bands listed for aerial photography obtainable by high-resolution colour digitizing.
+
+For high-resolution colour ﬁlm at 651p mm‘ 1 (K. Teitelbaum, Eastman Kodak C0., personal
+
+communication) the maximum information contained would be 3302 ppi.
+
+2Data from Simonett (19832Table 1-2).
+
+3Calculated as recommended by Jensen (1983:1596): the dividend of estimated ground
+resolution at low contrast given in NASA (1974:179-180) and 2.4.
+
+4Six ﬁlters plus colour and colour infrared ﬁlm (NASA 1974:7).
+
+5Extracted from table 2.
+
+nadir point. The look angle (the angle off nadir that the camera is pointing) can be
+
+calculated trigonometrically by assuming a spherical earth and calculating the dis-
+
+tance between the coordinates of SN and PC (ﬁgure 1) using the Great Circle
+
+distance, haversine solution (Sinnott 1984, Snyder 1987:30—32, Chamberlain 1996).
+
+The difference between the spacecraft centre and nadir point latitudes, Nat:
+
+lat 2— lat 1, and the difference between the spacecraft centre and nadir point
+
+longitudes, Alon: lon2—l0n 1, enter the following equations:
+, 2 Alat , 2 Alon
+
+a=sm T +cos(lat1)cos(lat2)s1n T (4)
+c=2arcsin(min[1, JED (5)
+
+and oﬂset=R c, with R the radius of a spherical Earth: 6370 km.
+
+The look angle (t) is then given by
+0 set
+t: arctan (—ﬂ ) (6)
+H
+
+Assuming that the camera was positioned so that the imaginary line between the
+
+centre and nadir points (the principal line) runs vertically through the centre of the
+
+photograph, the distance between the geometric centre of the photograph (principal
+point, PP) and the top of the photograph is d/2 (ﬁgure 8(a)). The scale at any point
+
+"
+"21","Astronaut photograph y as digital data for remote sensing 4423
+Earth Earth
+(a) \ (b) ’\
+SC SC
+,1 ,1
+l“ I /2 m I /2
+. .... f ‘9'.
+'-. Film 'o, Film
+'20 .'° 2..""
+'. ’. °
+SN 'o, g
+. . . O o
+Pnnmpal lme 'o d SN '0 Isometric parallel
+d
+Isometric parallel
+Principal line
+Figure 8. The geometric relationship between 100k angle, lens focal length and the centre
+point and nadir points of a photograph (see also Estes and Simonett 1975). Note that
+the Earth’s surface and footprint represented in ﬁgure 1 are not shown here, only a
+representation of the image area of the photograph. Variables shown in the ﬁgure:
+100k angle, t ; focal length, f ; PP, centre of the image 011 the ﬁlm; SN, spacecraft nadir;
+d, original image size. (a) The special case where the camera is aligned squarely with
+the isometric parallel. In this case, tilt occurs along a plane parallel with the centre of
+the photograph. When the conditions are met, calculations using Formulation 3 will
+give the ground coordinates of the corner points of the photograph. (12) The general
+relationship between these parameters and key photogrammetric points 011 the photo-
+graph. For this more typical case, coordinates of an additional point in the photograph
+must be input in order to adjust for twist of the camera and to ﬁnd the corner point
+coordinates.
+in the photograph varies as a function of the distance, y, along the principal line
+between the isoeentre and the point according to the relationship
+d f — ysint
+— = — (7)
+D H
+(Wong 1980, equation (2.14), H >>the ground elevation, h). Using ﬁgure 8(a) at the
+top of the photo,
+ft t + d (8)
+2 an — —
+y 2 2
+and at the bottom of the photo,
+ft t d (9)
+2 an — — —
+y 2 2
+Thus, for given PC and SN coordinates and assuming a photo orientation as in
+ﬁgure 8(a) and not ﬁgure 8(b), we can estimate a minimum D (using equations (7)
+and (8)) and a maximum D (using equations (7) and (9)), and then average the two
+to determine the pixel size (P) Via equation (2).
+
+"
+"22","4424 J. A. Robinson et al.
+5.3. Formulation 3. The Low Oblique Space Photo Footprint Calculator
+
+The Low Oblique Space Photo Footprint Calculator was developed to provide
+a more accurate estimation of the geographic coordinates for the footprint of a low
+oblique photo of the Earth’s surface taken from a human-occupied spacecraft in
+orbit. The calculator performs a series of three-dimensional coordinate transforma-
+tions to compute the location and orientation of the centre of the photo exposure
+plane relative to an earth referenced coordinate system. The nominal camera focal
+length is then used to create a vector from the photo’s perspective point, through
+each of eight points around the parameter of the image, as deﬁned by the format
+size. The geographical coordinates for the photo footprint are then computed by
+intersectin g these photo vectors with a spherical earth model. Although more sophist-
+icated projection algorithms are available, no signiﬁcant increase in the accuracy of
+the results would be produced by these algorithms due to inherent uncertainties in
+the available input data (i.e. the spacecraft altitude, photo centre location, etc.).
+
+The calculations were initially implemented within a Microsoft Excel workbook,
+which allowed one to embed the mathematical and graphical documentation next
+to the actual calculations. Thus, interested users can inspect the mathematical pro-
+cessing. A set of error traps was also built into the calculations to detect erroneous
+results. A summary of any errors generated is reported to the user with the results
+of the calculations. Interested individuals are invited to download the Excel work-
+book from http://eol.jsc.nasa.gov/sseop/FootprintCalculator.Xls. The calculations are
+currently being encoded in a high-level programmin g language and should soon be
+available alongside other background data provided for each photograph at Ofﬁce
+of Earth Sciences (2000).
+
+For the purposes of these calculations, a low oblique photograph was deﬁned as
+one with the centre within 10 degrees of latitude and longitude of the spacecraft
+nadir point. For the typical range of spacecraft altitudes to date, this restricted the
+calculations to photographs in which Earth’s horizon does not appear (the general
+deﬁnition of a low oblique photograph, e.g. Campbell 1996171, and ﬁgure 4).
+
+5.3.1. Input data and results
+
+Upon opening the Excel workbook, the user is presented with a program intro-
+duction providing instructions for using the calculator. The second worksheet tab
+‘How-To-Use’, provides detailed step-by-step instructions for preparin g the baseline
+data for the program. The third tab ‘Input-Output’ contains the user input ﬁelds
+and displays the results of the calculations. The additional worksheets contain the
+actual calculations and program documentation. Although users are welcome to
+reView these sheets, an experienced user need only access the ‘Input-Output’
+spreadsheet.
+
+To begin a calculation the user enters the following information which is available
+for each photo in the NASA Astronaut Photography Database: (1) SN, geographical
+coordinates of spacecraft nadir position at the time of photo; (2) H, spacecraft
+altitude; (3) PC, the geographical coordinates of the centre of the photo; (4) f ,
+nominal focal length; and (5) d, image format size. The automatic implementation
+of the workbook on the web will automatically enter these values and complete
+calculations.
+
+For more accurate results the user may optionally enter the geographic co-
+ordinates and orientation for an auXiliary point on the photo, which resolves the
+camera’s rotation uncertainty about the optical aXis. The auXiliary point data must
+
+"
+"23","Astronaut photograph y as digital data for remote sensing 4425
+be computed by the user following the instruction contained in the ‘How-To-Use’
+tab of the spreadsheet.
+
+After entering the input data the geographic coordinates of the photo footprint
+(i.e. four photo corner points, four points at the biseetor of each edge and the centre
+of the photo) are immediately displayed below the input ﬁelds along with any error
+messages generated by the user input or by the calculations (ﬁgure 7). Although
+results are computed and displayed, they should not be used when error messages
+are produced by the program. The program also computes the tilt angle for each of
+the photo vectors relative to the spacecraft nadir vector. T0 the right of the photo
+footprint coordinates is displayed the are distance along the surface of the sphere
+between adjacent computed points.
+
+5.3.2. Calculation assumptions
+
+The mathematical calculations implemented in the Low Oblique Space Photo
+Footprint Calculator use the following assumptions:
+
+1. The SN location is used as exact, even though the true value may vary by up
+
+to i 0.1 degree from the location provided with the photo.
+
+2. The spacecraft altitude is used as exact. Although the determination of the
+nadir point at the instant of a known spacecraft vector is relatively precise
+(i 1.15 x 10— 4 degrees), the propagator interpolates between sets of approxi-
+mately 10—40 known vectors per day, and the time code recorded on the ﬁlm
+can drift. Thus, the true value for SN may vary by up to $0.1 degree from
+the value provided with the photo.
+
+3. The perspective centre of the camera is assumed to be at the given altitude
+over the speciﬁed spacecraft nadir location at the time of photo exposure.
+
+4. The PC location is used as exact, even though the true value may vary by up
+to $0.50 latitude and $0.50 longitude from the location provided with the
+photo.
+
+5. A spherical earth model is used with a nominal radius of 6372161.54m (a
+common ﬁrst-order approximation for a spherical earth used in geodetic
+computations).
+
+6. The nominal lens focal length of the camera lens is used in the computations
+(calibrated focal length values are not available).
+
+7. The photo projection is based on the classic pin-hole camera model.
+
+8. N0 correction for lens distortion or atmospheric reﬂection is made.
+
+9. If no auXiliary point data is provided, the ‘Top of the Image’ is oriented
+perpendicular to the vector from SN towards PC.
+
+5.3.3. Transformation from Earth to photo coordinate systems
+
+The calculations begin by converting the geographic coordinates (latitude and
+longitude) of the SN and PC to a Rectangular Earth-Centred Coordinate System
+(R-Earth), deﬁned as shown in ﬁgure 9 (with the centre of the Earth at (O, O, 0)).
+Using the vector from the Earth’s centre through SN and the spacecraft altitude, the
+spacecraft location (SC) is also computed in R-Earth.
+
+For ease of computation, a Rectangular Spacecraft-Centred Coordinate System
+(R-Spaeeeraft) is deﬁned as shown in ﬁgure 9. The origin of R-Spaeeeraft is located
+at SC, with its +Z-aXis aligned with vector from the centre of the Earth through
+SN and its +X—aXis aligned with the vector from SN to PC (ﬁgure 9). The speciﬁc
+
+"
+"24","4426 J. A. Robinson et a1.
+R-Earm
++Zaxis
+Non‘h Poie
+:VJ / ,, TOP
+11:53:: ‘ 1/"" SC
+fr; _. é”
+A\E, \//_ _./\ \y/
+,3_/.\ :P‘
+'/” \
+t r
+R—Earth :77: , '
++Xaxis "" "" ' ' , .
+Greenwich ’ _ “ “ ' "" R-Earth
+Meridian + Y axis
+, , R—Photo
+‘Refatwnsﬁtps Eetween + Z axis (optical axis)
+coordinate systems w
+A R_Ph0t.o TOP angle
++ YaXIS .y’ calculated
+fromAE
+R-Photo ’ am""? 0,
+so R—Spacecraft +X axis Ala 3:333:
++ Z axis
+SN
+R-Spacecraft
+_ + X axis (parallel to NEW R—Photo
+PC 5 fgigecraft R-Photo + X) + Xaxis
+gasgfclzelﬁioe) ‘Jf auxiﬁaquoint (WP) 1’5 added;
+Earth rotate ‘R-‘P 101:0 anut + Z axis
+centre to affgn coordinate system.
+Figure 9. Representation of the area included in a photograph as a geometric projection
+onto the Earth’s surface. Note that the focal length (the distance from the Space
+Shuttle t0 the photo) is grossly overscale compared to the altitude (the distance from
+the Shuttle t0 the surface of the Earth.
+rotations and translation used to convert from the R-Earth t0 the R-Spacecraft are
+computed and documented in the spreadsheet.
+
+With the mathematical positions of the SC, SN, PC, and the centre of the Earth
+computed in R-Spacecraft, the program next computes the location of the camera’s
+principal point (PP). The principle point is the point of intersection of the optical
+axis of the lens With the image plane (i.e. the ﬁlm). It is nominally positioned at a
+
+"
+"25","Astronaut photograph y as digital data for remote sensing 4427
+distance equal to the focal length from the perspective centre of the camera (which
+is assumed to be at SC) along the vector from PC through SC, as shown in ﬁgure 9.
+
+A third coordinate system, the Rectangular Photo Coordinate System (R-Photo)
+is created with its origin at PP, its X—Y aXial plane normal to the vector from PC
+through SC and its +X aXis aligned with the +X aXis of R-Spacecraft, as shown
+in ﬁgure 9. The X—Y plane of this coordinate system represents the image plane of
+the photograph.
+
+5.3.4. Auxiliary point calculations
+
+The calculations above employ a critical assumption that all photos are taken
+with the ‘top of the image’ oriented perpendicular to the vector from the SN towards
+PC, as shown in ﬁgure 9. To avoid non-uniform solar heating of the external surface,
+most orbiting spacecraft are slowly and continually rotated about one or more axes.
+In this condition a ﬂight crew member taking a photo while ﬂoating in microgravity
+could orient the photo with practically any orientation relative to the horizon (see
+also ﬁgure 8(b)). Unfortunately, since these photos are taken with conventional
+handheld cameras there is no other information available which can be used to
+resolve the photo’s rotational ambiguity about the optical axis, other then the photo
+itself. This is why the above assumption is used and the footprint computed by this
+calculator is actually a ‘locator ellipse’, which estimates the area on the ground what
+is likely to be included in a speciﬁc photograph (see ﬁgure 6). This locator ellipse is
+most accurate for square image formats and subject to additional distortion as the
+photograph format becomes more rectangular.
+
+If the user wants a more precise calculation of the image footprint, the photo’s
+rotational ambiguity about the optical aXis must be resolved. This can be done in
+the calculator by adding data for an auXiliary point. Detailed instructions regarding
+how to prepare and use auXiliary point data in the computations are included in the
+‘How-To-Use’ tab of the spreadsheet. Basically, the user determines which side of
+the photograph is top, and then measures the angle between the line from PP to the
+top of the photo and from PP to the auXiliary point on the photo (ﬁgure 9).
+
+If the user includes data for an auXiliary point, a series of computations are
+completed to resolve the photo rotation ambiguity about the optical aXis (i.e. the
++Z aXis in R-Photo). A vector from the Auxiliary Point on the Earth (AE) through
+the photograph perspective centre (located at SC) is intersected with the photo image
+plane (X—Y plane of R-Photo) to compute the coordinates of the Auxiliary Point on
+the photo (AP) in R-Photo. A two-dimensional angle in the X—Y plane of R-Photo,
+from the —X aXis to a line from PP to AP is calculated, as shown in ﬁgure 9. The
+—X aXis is used as the origin of the angle since it represents the top of the photo
+once it passes through the perspective centre. The difference between the computed
+angle and the angle measured by the user on the photo resolves the ambiguity in
+the rotation of the photo relative to the principal line (ﬁgures 7 and 9). The
+transformations from R-Spacecraft and R-Photo are then modiﬁed to include an
+additional rotation angle about the +Z aXis in R-Photo.
+
+5.3.5. ‘Footprint’ calculations
+
+The program next computes the coordinates of eight points about the perimeter
+of the image format (i.e. located at the four photo corners, plus a bisector point
+along each edge of the image). These points are identiﬁed in R-Photo based upon
+the photograph format size and then converted to R-Spacecraft. Since all computa-
+tions are done in orthogonal coordinate systems, the R-Spacecraft to R-Photo
+
+"
+"26","4428 J. A. Robinson et al.
+
+rotation matrix is transposed to produce an R-Photo to R-Spaeeeraft rotation matrix.
+Once in R-Spaeeeraft, a unit vector from each of the eight perimeter points, through
+the photo perspective centre (the same point as SC), is computed. This provides the
+coordinates for points about the perimeter of the image format, with their direction
+vectors in a common coordinate system with other key points needed to compute
+the photo footprint.
+
+The next step is to compute the point of intersection between the spherical earth
+model and each of the eight perimeter point vectors. The scalar value for each
+perimeter point unit vector is computed using two-dimensional planar trigonometry.
+An angle )2 is computed using the formula for the cosine of an angle between two
+included vectors (the perimeter point unit vector and the vector from SC to the
+centre of the Earth). Angle w is computed using the Law of Sines. Angle 8:180
+degrees—y—w. The scalar value of the perimeter point vector is computed using a
+and the Law of Cosines. The scalar value is then multiplied by the perimeter point
+unit vector to produce the three-dimensional point of intersection of the vector with
+Earth’s surface in R-Spaeeeraft. The process is repeated independently for each of
+the eight perimeter point vectors. Aside from its mathematical simplicity, the value
+of aresine (computed in step 2) will exceed the normal range for the sin of an angle
+when the perimeter point vectors fail to intersect with the surface of the earth. A
+simple test, based on this principle, allows the program to correctly handle oblique
+photos which image a portion of the horizon (see results for high oblique photographs
+in table 5).
+
+The ﬁnal step in the process converts the eight earth intersection points from the
+R-Spaeeeraft to R-Earth. The results are then converted to the standard geographic
+coordinate system and displayed on the ‘Input-Output’ page of the spreadsheet.
+5.4. Examples
+
+All three formulations were applied to the photographs included in this paper
+and the results are compared in table 5. Formulation 1 gives too small a value for
+distance across the photograph (D) for all but the most nadir shots, and thus serves
+as an indicator of the best theoretical case, but is not a good measure for a speciﬁc
+photograph. For example, the photograph of Lake Eyre taken from 276 km altitude
+(ﬁgure 2(a)) and the photograph of Limmen Bight (ﬁgure 7), were closest to being
+nadir Views (offsets < 68 km or t<150, table 5). For these photographs, D calculated
+using Formulation 1 was similar to the minimum D calculated using Formulations
+2 and 3. For almost all other more oblique photographs, Formulation 1 gave a
+signiﬁcant underestimate of the distance covered in the photograph. For ﬁgure S(A)
+(the picture of Houston taken with a 40 mm lens), Formulation 1 did not give an
+underestimate for D. This is because Formulation 1 does not account for curvature
+of the Earth in any way. With this large ﬁeld of View, assuming a ﬂat Earth inﬂated
+the value of D above the minimum from calculations that included Earth curvature.
+
+A major difference between Formulations 2 and 3 is the ability to estimate pixel
+sizes (P) in both directions (along the principal line and perpendicular to the principal
+line). For the more oblique photographs, the vertical estimate of D and pixel sizes is
+much larger than in the horizontal direction (e.g. the low oblique and high oblique
+photographs of Hawaii, ﬁgure 4, table 5).
+
+For the area of Limmen Bight (ﬁgure 7), table 5 illustrates the improvement in
+the estimate of distance and pixel size that can be obtained by re-estimating the
+location of the PC with greater accuracy. Centre points in the catalogued data are
+
+"
+"27","Astronaut photograph y as digital data for remote sensing 4429
+$050 of latitude and longitude. When the centre point was re-estimated to i 0.020,
+we determined that the photograph was not taken as obliquely as ﬁrst thought
+(change in the estimate of the look angle t from 16.9 to 12.80, table 5). When the
+auxiliary point was added to the calculations of Formula 3, the calculated look angle
+shrank further to 11.00, indicating that this photograph was taken at very close to
+a nadir View. Of course, this improvement in accuracy could have also led to estimates
+of greater obliquity, and eorrespondin g larger pixel sizes.
+
+We also tested the performance of the scale calculator with auxiliary point by
+estimating the corner and point locations on the photograph using a 111000 000
+Operational Navigational Chart. For this test, we estimated our ability to read
+coordinates from the map as i0.02Oand our error in ﬁnding the locations of the
+corner points as $0.150 (this error varies among photographs depending on the
+detail that can be matched between photo and map). For Limmen Bight (ﬁgure 7),
+the mean difference between map estimates and calculator estimates for four points
+was 0.310 (SD=O.18, n28). For a photograph of San Francisco Bay (STSOé2-
+151-291) the mean difference between map estimates and calculator estimates for
+four points was 0.0640 (SD=O.18, n28). For a photograph of San Francisco Bay
+(STSOé2-151-29 1) the mean difference between map estimates and calculator estim-
+ates for eight points was 0.1960 (SD 20.146, n: 16). Thus in one case, the calculator
+estimates were better than our estimate of the error in locating corner points on the
+map. It is reasonable to expect that for nadir-Viewing photographs, the calculator
+used with an auxiliary point can estimate locations of the edges of a photograph to
+within $0.30.
+
+5.5. Empirical conﬁrmation of spatial resolution estimates
+
+As stated previously, a challenge to estimating system-AWAR for astronaut
+photography of Earth is the lack of suitable targets. Small features in an image can
+sometimes be used as a check on the size of objects that can be successfully resolved,
+giving an approximate value for GRD. Similarly, the number of pixels that make up
+those features in the digitized image can be used to make an independent calculation
+of pixel size. We have successfully used features such as roads and airport runways
+to make estimates of spatial scale and resolution (e.g. Robinson et al. 20000). While
+recognizing that the use of linear detail in an image is a poor approximation to a
+bar target, and that linear objects smaller than the resolving power can often be
+detected (Charman 1965), few objects other than roads could be found to make any
+direct estimates of GRD. Thus, roads and runways were used in the images of
+Houston (where one can readily conduct ground veriﬁcations, and where a number
+of higher—eontrast concrete roadways were available), to obtain empirical estimates
+of GRD and pixel size for comparison with table 5.
+
+In the all-digital ESC image of Houston (ﬁgure 3(d)) we examined Ellington
+Field runway 4-22 (centre left of the image) which is 2438.4m x 45.7 m. This runway
+is approximately 6—7 pixels in width and 304—3094 pixels in length, so pixels
+represent an distance on the ground 7—8m. Using a lower contrast measure of a
+street length between two intersections (212.5 m = 21.1 pixels), a pixel width of 10.1 m
+is estimated. These results compare favourably with the minimum estimate of 8.1 m
+pixels using Formulation 1 (table 5). For an estimate of GRD that would be more
+comparable to aerial photography of a line target, the smallest street without tree
+cover that could be clearly distinguished on the photograph was 7.92m wide. The
+smallest non-street object (a gap between stages of the Saturn rocket on display in
+
+"
+"28","4430 J. A. Robinson et a1.
+3&8 “Fr. “3.0.""? QW<
+'5“: NO moxoo —<\O\
+H53 A V—<C\l OMV—i NOZ
+G) ' n n n n n n n “
+S§€ m V ﬁ5 ﬁﬁﬁ ﬁwﬁ
+SQ .“ (\ll\ Lnlnln oooﬁ
+«01 ”—1
+89% E5 Q 15m 00th oxxo
+O..H'_:‘ 5 (DE ©V—4 ©0100 V—ilﬂ
+Moo) 8 00M II ||| Ilm
+CL'UN H 9V moo Hoom OOON
+85.54 0 <6 0""” mm“; oo'ﬁ-m
+HE“ LL 9‘ \O“ m—‘h 00""
+«3'76:
+c5? A ww mod 95:
+HO mm 'ﬁ'N OOON
+gmg V ‘—<‘—< 301m N©©
+NEE
+43% A Q0 dww Q5
+(028 35 (\ll\ ovm [\waoo
+qﬁg‘ V ‘—<(‘\l O\M—< Hmln
+.QCESG) V—1
+238“
+v—4L._.FO
+5mg (\1 Q N00 mmlf mme
+ﬁg: (DA ﬁ'ﬁ' 000v 00mm
+528 8 ma $7 WT? ?TT
+[1-1 «00 u gﬁ moo ogooxo ooxoo
+“‘0 cs: 94 0""“ qmm' [\‘vm
+”—1
+'08: E
+300 S A 59 mvw QYY
+0&0 H0 moo 'ﬁ'N comm
+EHO LL‘ V —n—< 301m N©©
+m=§
+QM“ EA <1-
+(0 .
+ggg. VIE 1\‘—< NmN #005
+;Mm 2 EM \oo Hmox <3me
+5 “ 0v (\1 —w—M—< N1\oo
+“3 Dun
+0%
+4—) .n
+0 “US A
+EEES q A 5ﬁ wﬁwq 55a
+Q09“ O 148 ‘—<\o 00—40100 mlnN
+‘5’c=$z~—4>3 -v-‘ V V-<(‘\l [\mV—4 V—iu—iﬁ
+.F‘b‘ow H
+mu :6
+QNOB ‘3
+o>ncc A ”.15 “i”. “1"""".
+mhqvA H .M \Om Hows] OOOOV—d
+660050 O V ‘—4 ﬁ'H (\1
+a [1-1
+9—.“ c6
+0&3 N
+OOl\
+gmsﬁ wow Maw
+-~‘-4>O ""10. mlnm Lam?
+Egov— [\Ln oxoxox ‘-<—H-*
+~ °¢ mm III III
+8E8 n Z ‘—<‘—<
+8093 m {4 @@& f&@
+#335 0000 00000 000
+«:ng (\lN mNN N—‘N
+'50'0‘5 II
+as «A
+”eq% 00 WWG
+00 4—? ”3.""? .. L686
+SEQ}: 0.0. lnlnLnln mlnm
+'5H'""O l\l\ oxoxoxox —n—n—<
+“30“ N mm |||| |||
+859‘8 0 HH
+5%%% m dd @666 655
+«)0ch oxoo oxoxoxox ow—m:
+q (\IN NNNN V—iNN
+Hid J:
+3.5:“ ||
+""89%); me on oovcxloo 0000
+>05 .M 1\‘—< oxoxoxo 1\1\0\
+Egg V NW3 NNMN mmm
+£2942
+>< “ 00 0000 000
+“5521—3 “NE WW VOmo Lame:
+<69): 8 (\IN V—iNm NNu—i
+Egéb e
+8m-5Q‘ EOng—doo ”qlﬂOh
+”“0949 OOGHWNV—i EGFN
+v—14—) DI ImH Iﬂ- I I I
+Q—«Cﬁog [\VS |l\| BV—iu—im
+9‘8“ A ‘MV—imohmV—i doom
+<EEE a SWWEQWWQEWWW
+mod) :6 MN (\lﬁ'lﬂu—i O\O\O\
+.oo—O 5.4 N“O\oom“©©mmv“©\o\o
+m co co ooom 000
+D o gmmgmmmmgmmm
+—< *5 SHHSHHHBSHHH
+J3 mmmmmmmmmmmm
+C3 v: -v—1 ”—1 ”—1
+E Q [1-1 [1-1 [1-1
+
+"
+"29","Astronaut photograph y as digital data for remote sensing 4431
+2 ""O ‘_‘ ‘D.E <3 0
+N50 9 u a 3 SH a ;
+mNN \o m <3 5 <1) ""o 5.4
+q a V—iV—iV—i m 2 l0 q ‘53 H (D
+Q“ v \Ohmhmh \(5 G O 5"": Q 8 L5 3
+m . . . . O +IOO-1 S a
+NNN 00 H cc q :6
+‘—“—*‘—* N 4—» a) a G cc:
+.2 2 ""ﬂaw 5: “'5 C6
+""’ ©l\V—< H 0 900 So 9""
+S Q . . 0 (SH ”—10 M G)
+5 (DA $88 8 ‘5‘ D‘HH :0 O ‘—‘
+a ”a II I 1-: 333 E“ w 3
+H :5, 0mm G 3 C65 (\i #4 ct;
+O “3 m'ﬂimi m >00 a) ,
+LL 9‘ ©©© “‘ 9 OH'“ 51: 0 q
+:3 3°02 HQ 3 .2
+:6 Sam ““5 :6 H
+o
+A 00000 ‘—< 4—» 832:; :6 IE: 3
+. h H ,_‘
+“CV ‘32: E m <Ba g: > 8
+3 QB gé “ o
+a 8138 L2 ‘5’ 7'3
+m8 mm 00 O o a
+V V—1V—1 (\l l\ 'U‘E‘D HH 0 -.—¢
+(/3 mm"": 90) E E;
+H “EU PE :6 E
+O a) .,_‘
+N Q “2""? 1\ """" 5“,g BS ‘5 4;
+(DA $3 :2 35“ 3%“ ﬁg '5 0
+g EOE || | 8 m3-5 58 n: ‘5
+‘3 “3‘0 V” '5'53 3 a q
+E || ago) LEE co 2
+H E 80:9 ""O G H
+o A 0300. ‘9. n 8333 Aqﬂwa g
+LL “0v “3N g 330 mac: mmq: 3:.
+""‘H :6 000 VABO :0
+3? OT”? """" 3E}: 8—3358 .n
+EM WV l0 (1) 34:10 EDHHE 2
+0v coo cl: 5 Egg mega g“
+Q a 533 “55013 C“
+m ‘—< O 908 am; G
+§ A o o :5 och >v~ﬁcc 2
+'3 q 148 (\i (*6 cs .300 33:3 *-’
+4—) .n
+8 2 o gnc: §g%§ e
+V 5 A m g :39“ (DCDFUH 0
+l0 H #4 G (\l .._‘ H&m cocoon: ©
+2?: m ”“08 :VSE «g
+0mm mid ""U
+0° 8 S “:60 «$009313 5‘“
+vi H a ?JD #580 :E’
+m Una ~94 4—» con)
+Z H I 8 ARE: ""Eoéog 98
+M d @ U gag 352g 23
+OO
+2 (\l S B>ucc @9530) 28
+.9 ""‘58 h 138 .
+' ‘6 Eng was: ”Ma
+3 031'"" :8“:H 28
+ct: “‘qu .9 “o “a
+l\ “O“ “(Docs mm
+3 E @458 gﬁﬁx '01::
+HQ 5 vwa Easemgo
+0%. m.“ M €80 5553:0953
+Laﬁ- 0 S 0:15, >_§®'§§HE
+|| gav<o Emﬁhgm'a
+a Cgﬁgq GEEDLE—S‘cgo
+m m 4—» cc: #0 2
+mg m % gaﬁgg gsgﬁgcs
+A asgudq) OU—Oamgm
+E O O ®n>©ﬁ .Eﬁo'geﬁ'ov
+\a a a maag; s“§oowﬁ
+H H
+V €880_§ 588.04%???
+ca x :3 «0m soumﬂsw
+03¢ G Hm 0: .ﬁﬁmmw H
+5&50 «d: 08mg? Boq-E-3>~Q
+H 300.5% SV—i 8N “H “.3219“ DEE”
+i mﬁga :5 nH2a§,§“oUm:w
+a gaaéeééa mﬁwiaraﬁséiig
+094: o = “D #97:: “:H:
+g 25m M&wwo‘<9mm8<m25”<=<§
+H FUD (SE H (D ”—1 08 (D
+58 S N m 0v 4.. tn >© 4—»
+o < 0 a
+a wswm @zm m z a go 8 g
+m LL LL 0 v: A £63 a o
+
+"
+"30","4432 J. A. Robinson et al.
+a park at Johnson Space Center) that could clearly be distinguished on the photo-
+graph was 8.53 m wide.
+
+For the photograph of Houston taken with a 250mm lens (ﬁgure 3(C)), and
+digitized from second generation ﬁlm at 2400 ppi (10.6 ,um pixel_ 1), Ellington Field
+runway 4-22 is 3 pixels in width and 161.3 pixels in length, so pixels represent
+15.1—15.2m on the ground. These results compare favourably with the minimum
+estimate of 15.2m using Formulation 2, and 15.4—18.5 m pixels using Formulation 3
+(table 5). For an estimate of GRD using an 8 x 8 inch print (1:3.69 enlargement) and
+4 x magniﬁcation, the smallest street that could clearly be distinguished was 8.22m
+wide, the same feature could barely be distinguished on the digitized image.
+
+We also made an empirical estimate of spatial resolution for lower contrast
+vegetation boundaries. By clearing forest so that a pattern would be Visible to landin g
+aircraft, a landowner outside Austin, Texas (see also aerial photo in Lisheron 2000),
+created a target that is also useful for evaluating spatial resolution of astronaut
+photographs. The forest was selectively cleared in order to spell the landowner’s
+name ‘LUECKE’ with the remaining trees (ﬁgure 10). According to local surveyors
+who planned the clearing, the plan was to create letters that were 3100 ft x 1700 ft
+(944.9 m x 518.2 m). Photographed at a high altitude relative to most Shuttle missions
+(543 km) with a 250mm lens, Formula 3 predicts that each pixel would represent an
+area 28.6m>< 36.0m on the ground (table 5). When original ﬁlm was digitized at
+2400 ppi (10.6 um pixel_ 1), letters correspond to 29.4 x 18.8 pixels for a comparable
+pixel size of 27—32 m.
+
+6. Summary and conclusions
+
+Astronaut photographs can be an excellent source of data for remote sensing
+applications. Best-ease resolutions are similar to that for Landsat or SPOT with
+pixels as small as < 10m. It was estimated that of images taken to date, 50.4% had
+lens and obliquity characteristics that make them potential candidates for remote
+sensing information. Digitized astronaut photographs can be overlaid with other
+satellite data using GIS (Eekardt et al. 2000), or used to ﬁll in gaps in time series
+when other imagery is not available. As a source of publie-domain information, they
+can be very useful for scientists who do not have access to satellite imagery either
+because of the eXpense of image acquisition (to the end user), or the computer
+systems needed for processin g satellite images. These differences in image acquisition
+costs (to the user) are summarized in table 6.
+
+Searching of the complete database of NASA astronaut photography, including
+low-spatial-resolution browse images, is available Via the Web (Ofﬁce of Earth
+Sciences 2000). This provides nearly global access for identifying images that will
+contribute to a speciﬁc scientiﬁc project. For the most detailed studies, digital
+products posted to the web will not be of suﬁieient quality. To date, we have made
+it a practice of digitizing small numbers of images when requested by scientists at
+no charge. Such requests (including a description of the project involved) can be
+made through the authors or using the contact information listed on the website.
+Investigators with needs for larger numbers of digital images have also been served
+through collaborative agreements.
+
+In our experience, scientists that ﬁnd the data most valuable are those in develop-
+ing countries, those studying areas that have not usually been targets for the major
+satellites, those haVing diﬁieulty in ﬁnding low-eloud images, those interested in
+eonstruetin g time series, or those interested in using a large number of images.
+
+"
+"31","Astronaut photography as digital data for remote sensing 4433
+(a) I 4‘ N
+. . .1 . ~ 13:: v
+(b) j ’ ' - '
+?‘s . “""57."" ' ~ .
+P ‘ v. ~' ‘ i < . ’0 .
+i ‘ ”:9"" 7 _ . ' 1- V
+.§ , . ""' ‘ . 1
+‘ 5 ~ , """"33“, “ -
+'9 \ 3"" 1%,! . . ‘ , t
+(C) ' - .' ﬂ ‘ "" 7 ' (d)
+‘ ' 18.8 pixels (1700 ft)
+, ., _ 2.9.4 pixels \
+- '. ‘ g ' (3100 ft) /
+1 ~ ' .-‘.;;:-'2-*’r-_vz ._ 6.3 ﬁrm. -- b .
+, ‘— 7‘55“"" ' ., A‘ g 1' -.,, ; 27 to 32 m 1xels
+4""”ﬁf? g“ liq >4.- ’%25‘ P
+7 gr} wit a k Eh
+w :l—z‘s. ‘ VA 2. ,1 L), .‘fi'f‘ﬁ‘ """"‘ >2” 0- ..'. 5‘ ,- ..r. W P,
+- 1- «1;.»71324.’ .. . 2 , a ,5:
+Figure 10. Patterns of forest clearing outside Austin, Texas serve as a test pattern for
+estimating spatial resolution (a) Complete ﬁeld of View for STSO95—716—46 taken With
+a 250mm lens from 543 km altitude (2 November 1998). ([9) Detail of a portion of the
+frame. (0) Aerial photograph taken With an ESC (Kodak DCS620C) from an unknown
+altitude With zoom lens (2 March 2000, B. K. Diggs, Austin—American Statesman,
+used With permission). (d) Detail showing the limits of spatial resolution when the ﬁlm
+was digitized at 2400 ppi (10.6 ,um pixel‘ 1). The legend in the right—hand corner shows
+the ﬁeld measurements for the letters (P. Tovar, Jr., personal communication) and the
+corresponding pixel size.
+
+"
+"32","4434 J.A.R0binson et a1.
+POI “v—1
+g 25 89E?
+:3: W o E, (\l q-QQQ
+F 0 CG +| Nmoaa
+“O M V g a UK:
+a :6 [\IOI O 0% .: m m-ﬁg
+'0"" ‘9 QOm‘Qomm FD < Bw<
+E (/3 ""OD cc:
+GHOOOOO + Qm
+8 —n—<1\0\N—<>-* Zo Z 2§m<
+: H'BEZ
+O o MOB “
+.4: O .qu
+cs: \0 :3 v q.>~.2
+U] 00 cc (GUJH
+E o +I Du) cc:
+H U ‘—4 B 9-4
+m n (/39M
+L2 N I (0% 5-4 < '0"" 0‘;
+q U 00 O Gd F5 (/3 me5—1
+. GNWQW (D ""-‘>
+H HoooxoxH©>-* Z0 Z 0358 .
+a 'Scﬁmg E
+o < won Q
+m U) 80300 :6”.
+a O < (D “ -v-1 5.40)
+m . 9‘ “CG Z £000) ODE
+00 v 3 \ GHQ Hid
+3:10 m Xl\ (05"" < Cﬁﬁm OH
+:C} > I 00 (D -: < 2000 QC}
+gs < geaaaxa w 0 Hog ~s
+0 OJ:
+:94 €01?“ £3
+(GM <1) cs: :6: Oct:
+8% 5 00m“ 5—40
+0 U‘ (/3: o O
+G F ”#0 O . LHO
+B: 30 ~Nmﬁ 3
+“'0‘ 0;? Om §‘_OQ.¢ ESL
+:0 % om «T 33mg Um
+5:2 I G? :0 E cumLTJbo 35
+By—1 G Xv-O ""Um 0 8-45 “0 0C6
+4.» 00 No :0 «3m .00): Gm
+ﬁg momoooov Z—I O—I -:;U""Oct$ '""o
+Ho) Hmoooxxocxl> 99 m Emog 3.:
+H00
+«Sm: 2080 8:
++ 1\ “3
+9,321 m MUM“ 5g
+0H 2 I :g» H m m “8% :0
+>3 ”—1 5.40 H
+2‘9 F 3 anklmpom '38 a 239-15 76%;
+Om: LTJ oxooooooxoﬂ) \o Hoﬂcﬁ “d“
+:60) Hm1\0\—<—<>* Z99 LTJ WEEZ 08
+ac BC)5 obi)
+0'; BEE< coca
+4—»0 H ‘Bcc < “E
+59-1 m 2 [\m X 00
+m: 2 F I :9 ~ w ggnz “a
+8g “3 % lngltnpom 2%ch a o'ﬁgéc"" 5%
+8a) A moooooooﬂ) Zﬁ' $308 :6
+_$:$-< mm :6 .Ea
+6% Béﬁm #0
+g” m 3 °°m We“; a?
+EU (/3 a ‘—‘>» H (/3 cc“:
+I C6 _ J: O 5.40
+O: 2 N I0 X ""‘0 0 low .ﬁo
+E“ gmsgais 38 m 33% 2w
+«:3 Hmmmﬁﬁ> Z99 LTJ §§a£ 9.5
+goo q 0:6 <1)H
+0C6 13>» H'OmLL‘ ma
+m_o 0% o o:
+0(1) 'I: (D >QON .'L.—¢
+'5 53 Omqu‘a’o
+.23 tree é “>H-900
+5 g8 E :: Ugsm-gmb
+H IO Q) ,9 q 0 “C6 -;:1
+O H ”—1
+3 3% 2323 O “maﬁaﬁg
+“3 9v— I «>ng .EW < Emé’E'EE-g
+a 0C6 Lnln| |._H UN (/3 OE:S""“C§$¢:
+O 5-45: GGNLQHD | m 0mg“
+LH “,9 mlmwﬂao “O < 9>“ Uq>
+0 £8 H0NN>HZ Z99 Z 3<£Q<.~“5
+m A Hm“ .2®.£®
+8 a -3 ERFggm8
+m n >» 3% a_‘OZQ‘ccbo
+': N o HW‘Q C0 Q'IOUJBD
+G a 05V G“ <1) "":3
+:6 ""O m 5 00m '13
+'0"" $4.2 (D: 1-3-20) u—IQqhwv-Oﬁm
+8 0H 30 O>q gmwmqwg
+o 83 80): ~28 -~waowq._
+U #408 $45.48 (094mm >2QHm.OE
+m g «9—1 (D m (D CSOv-I
+LHDMOQDDQ #FOH'UG) HODH'5-:H
+. (DH'EODQM GHQHQ £4.» row
+\9 Q—‘Ucc “>3O'ct3ct3 -~ <NBU“
+a) “.§5:o""‘m-‘: E“58 EQOQ<Q
+.— WHH:QBIQB._Bwo H -~.+:on
+_c, QCS'SODOQHOHOOQ"" “?q“
+H Am<~m0m >Lﬂ Dd HOD<
+
+"
+"33","Astronaut photograph y as digital data for remote sensing 4435
+
+Because use of astronaut photography data is unfamiliar to most scientists and
+remote sensing experts, we have tried to provide a general synopsis of its major
+characteristics. One common source of confusion about the data arises from its
+variable spatial resolution. The issue of spatial resolution of astronaut photographs
+has been treated to a level of detail that has not been previously published. In
+addition, a primer of equations has been provided that can be used for calculating
+spatial resolution of a given photograph, and user-friendly methods have been
+incorporated for non-specialists to estimate spatial resolution of speciﬁc photographs
+
+(using tools on our Web interface or by downloading a spreadsheet). Although more
+
+variable than other types of satellite data, the information in the images can be
+
+extracted using familiar remote sensing techniques such as georeferencing and image
+classiﬁcation. This makes the data source valuable for remote sensing applications
+in ecology and conservation biology, geography, geology and other related ﬁelds.
+
+Acknowledgments
+
+We thank the astronauts, cataloguers, and scientists whose efforts over the last
+
+25 years have developed and preserved the remote sensing resource described in this
+paper. Barbara Boland served as a primary beta-tester for the Photo Footprint
+Calculator, and helped to improve its user interface. James Heydorn searched data-
+bases to help in compilation of summary statistics and ﬁgure 5; he also did the
+programmin g for our web display of photo footprints. J oe Caruana researched older
+ﬁlm types. James C. Maida helped to produce the three-dimensional Visualization
+in ﬁgure 9. Karen Scott provided comments on this manuscript and input into the
+section on window effects. Serge Andrefouet, Kamlesh P. Lulla, Edward L. Webb,
+and anonymous reviewers made constructive comments that greatly improved the
+manuscript.
+
+References
+
+AMSBURY, D. L., 1989, United States manned observations of Earth before the Space Shuttle.
+Geocarto International, 4(1), 7—14.
+
+ARNOLD, R. H., 1997, Interpretation of Airphotos and Remotely Sensed Imager y (Upper Saddle
+River, NJ: Prentice Hall).
+
+BALTSAVIAS, E. P., 25 April 1996, Desktop publishing scanners. OEEPE Workshop on the
+Application of Digital Photogrammetric Workstations, 4—6 March 1996, Lausanne.
+http://dgrwww.epﬂ.Ch/PHOT/workshop/wks96/art_1_4.htrnl
+
+CAMPBELL, J. B., 1996, Introduction to Remote Sensing, 2nd edn (New York: Guilford Press).
+
+CHAMBERLAIN, R. G., 1996, What is the best way to calculate the distance between two points?
+GIS FAQ Question 5.1. http://www.census.gov/cgi-bin/geo/gisfaq?Q5.1 (revised in
+November 1997 and February 1998, 11 April 2000).
+
+CHARMAN, W. N., 1965, Resolving power and the detection of linear detail. The Canadian
+Surveyor, 19, 190—205.
+
+COLWELL, R. N., 1971, Monitoring Earth Resources from Aircraft and Spacecraft, NASA
+SP-275 (Washington, DC: National Aeronautics and Space Administration).
+
+DRURY, S. A., 1993, Image Interpretation in Geology, 2nd edn (London: Chapman and Hall).
+
+EASTMAN KODAK COMPANY, 1998, Kodak Aerochrome II Inf rared ﬁlm 2443, Kodak Aerochrome
+II Infrared NP ﬁlm S0-134, Aerial Systems Data Sheet, TI2161, Revised 3-98. Also
+available at http://www.kodak.com/US/en/government/aerial/technicalPubs/tiDocs/
+ti2161/ti2161.shtrnl (29 November, 1999).
+
+ECKARDT, F. D., WILKINSON, M. J., and LULLA, K. P., 2000, Using digitized handheld Space
+Shuttle photography for terrain Visualization. International Journal of Remote Sensing,
+21, 1—5.
+
+EL—BAZ, F., 1977, Astronaut Observationsfrom the Apollo-Soyuz Mission, Smithsonian Studies
+in Air and Space, Vol. 1 (Washington, DC: Smithsonian Institution Press).
+
+"
+"34","4436 J. A. Robinson et al.
+
+EL-BAZ, F., and WARNER, D. M., 1979, Apollo-Soyuz Test Project, Vol.11, Earth Observations
+and Photography, NASA SP-412 (Houston, Texas: National Aeronautics and Space
+Administration, Lyndon B. Johnson Space Center).
+
+EPPLER, D., AMSBURY, D., and EVANS, C., 1996, Interest sought for research aboard new
+window on the world: the International Space Station. Eos, Transactions, American
+Geophysical Union, 77, 121,127.
+
+ESTES, J. E., and SIMONETT, D. S., 1975, Fundamentals of image interpretation. In Manual of
+Remote Sensing, edited by R. G. Reeves (Falls Church, VA: American Society of
+Photogrammetry), pp. 869—1076.
+
+EVANS, C. A., LULLA, K. P., DESSINOV, L. V., GLAZOVSKIY, N. F., KASIMOV, N. S., and
+KNIZHNIKOV, YU. F., 2000, Shuttle-Mir Earth science investigations: studying dynamic
+Earth environments from the Mir space station. In Dynamic Earth Environments:
+Remote Sensing Observations from Shuttle-Mir Missions, edited by K. P. Lulla and
+L. V. Dessinov John (New York: John Wiley & Sons), pp. 1—14.
+
+HELFERT, M. R., and WOOD, C. A., 1989, The NASA Space Shuttle Earth Observations Oﬂice.
+Geocarto International, 4(1), 15—23.
+
+HELFERT, M. R., MOHLER, R. R. J., and GIARDINO, J. R., 1990, Measurement of area] ﬂuctu-
+ations of Great Salt Lake, Utah, using rectiﬁed space photography. H ouston Geological
+Society Bulletin, 32, 16— 19.
+
+JENSEN, J . R., 1983, Urban/suburban land use analysis. In Manual of Remote Sensing, 2nd edn,
+Vol. II, Interpretation and Applications, edited by J. E. Estes (Falls Church, VA:
+American Society of Photogrammetry), pp. 1571—1666.
+
+JONES, T. D., GODWIN, L. M., WISOFF, P. J ., AMSBURY, D. L., and EVANS, C. A., 1996, Astronaut
+Earth Observations during the Space Radar Laboratory missions. Proceedings of the
+IEEE Aerospace Applications Conference, 3—10 February 1996, Snowmass at Aspen,
+Colorado (Piscataway, NJ: Institute of Electrical and Electronics Engineers), V01. 2,
+pp. 29—46.
+
+LIGHT, D. L., 1980, Satellite photogrammetry In Manual of Photogrammetry, 4th edn, edited
+by C. C. Slama (Falls Church, VA: American Society of Photogrammetry), pp. 883 —977.
+
+LIGHT, D. L., 1993, The National Aerial Photography Program as a geographic information
+system resource. Photogrammetric Engineering and Remote Sensing, 59, 61—65.
+
+LIGHT, D. L., 1996, Film cameras or digital sensors? The challenge for aerial imaging.
+Photogrammetric Engineering and Remote Sensing, 62, 285—291.
+
+LISHERON, M., 6 March 2000, Jimmy Luecke thinks big. Austin American-Statesman, E1, E6.
+
+LOWMAN, P. D., JR., 1980, The evolution of geological space photography. In Remote Sensing
+in Geology, edited by B. S. Siegal and A. R. Gillespie (New York: Wiley and Sons),
+pp. 90—115.
+
+LOWMAN, P. D., JR., 1985, Geology from space: A brief history of geological remote sensing.
+In Geologists and Ideas: A H istory of North American Geology, edited by E. T. Drake
+and W. M. Jordan (Boulder, CO: Geological Society of America), pp. 481—519.
+
+LOWMAN, P. D., JR., 1999, Landsat and Apollo: the forgotten legacy. Photogrammetric
+Engineering and Remote Sensing, 65, 1143—1147.
+
+LOWMAN, P. D., JR., and TIEDEMANN, H. A., 1971 , Terrain Photograph y from Gemini Spacecraft,
+Final Geologic Report, Report X-644-71-15 (Greenbelt, MD: National Aeronautics
+and Space Administration, Goddard Space Flight Center).
+
+LULLA, K., EVANS, C., AMSBURY, D., WILKINSON, J., WILLIS, K., CARUANA, J., O’NEILL, C.,
+RUNCO, S., MCLAUGHLIN, D., GAUNCE, M., MCKAY, M. F., and TRENCHARD, M.,
+1996, The NASA Space Shuttle Earth Observations Photography Database: an under-
+utilized resource for global environmental geosciences. Environmental Geosciences,
+3, 40—44.
+
+LULLA, K. P., and HELFERT, M. R., 1989, Analysis Of seasonal Characteristics of Sambhar Salt
+Lake, India, from digitized Space Shuttle photography. Geocarto International, 4(1),
+69—74.
+
+LULLA, K., HELFERT, M., EVANS, C., WILKINSON, M. J ., PITTS, D., and AMSBURY, D., 1993,
+Global geologic applications of the Space Shuttle Earth Observations Photography
+database. Photogrammetric Engineering and Remote Sensing, 59, 1225—1231.
+
+LULLA, K., HELFERT, M., AMSBURY, D., WHITEHEAD, V. S., EVANS, C. A., WILKINSON, M. J .,
+RICHARDS, R. N., CABANA, R. D., SHEPHERD, W. M., AKERS, T. D., and MELNICK,
+
+"
+"35","Astronaut photograph y as digital data for remote sensing 4437
+B. E., 1991, Earth Observations during Shuttle ﬂight STS-41: Discovery’s mission to
+planet Earth, 6—10 October 1990. Geocarto International, 6(1), 69—80.
+
+LULLA, K., HELFERT, M. and HOLLAND, D., 1994, The NASA Space Shuttle Earth Observations
+database for global change science. In Remote Sensing and Global Change Science,
+edited by R. A. Vaughan and A. P. Cracknell, NATO ASI Series, Vol. I24 (Berlin:
+Springer-Verlag), pp. 355—365.
+
+LULLA, K., and HOLLAND, S. D., 1993, NASA Electronic Still Camera (ESC) system used to
+image the Kamchatka Volcanoes from the Space Shuttle. International Journal of
+Remote Sensing, 14, 2745—2746.
+
+LUMAN, D. E., STOHR, C., and HUNT, L., 1997, Digital reproduction of historical aerial
+photographic prints for preserving a deteriorating archive. Photogrammetric
+Engineering and Remote Sensing, 63, 1171—1179.
+
+MCRAY, B., SCOTT, J., and ROBINSON, J. A., 2000, Technical applications of astronaut
+orbital photography: how to rectify multiple image datasets using GIS. Earth
+Observations and Imaging Newsletter, Oﬂice of Earth Sciences, Johnson Space
+Center. http://e01.jsc.nasa.g0V/news1etter/gis/
+
+MERKEL, R. F., SALMON, J. G., and SIMS, B. A., 1985, Mission Ephemerisfor the Maiden Voyage
+of the Large Format Camera (LFC) aboard the Space Transportation System (STS)
+Mission 41G, Job Order 84-427, JSC-20383 (Houston, TX: Lyndon B. Johnson
+Space Center).
+
+MOHLER, R. R. J., HELFERT, M. R., and GIARDINO, J. R., 1989, The decrease of Lake Chad as
+documented during twenty years of manned space ﬂight. Geocarto International,
+4(1), 75—79.
+
+MOIK, J. P, 1980, Digital Processing of Remotely Sensed Images, NASA SP-431 (Washington,
+DC, National Aeronautics and Space Administration).
+
+NATIONAL AERONAUTICS AND SPACE ADMINISTRATION, 1974, Skylab Earth Resources Data
+Catalog, JSC—09016 (Houston, TX: Lyndon B. Johnson Space Center).
+
+OFFICE OF EARTH SCIENCES, NASA-JOHNSON SPACE CENTER, 14 Mar. 2000. The Gateway to
+Astronaut Photography of Earth, http://e01.jsc.nasa.g0V/sse0p/defaulthtm
+
+RASHER, M. E., and WEAVER, W., 1990, Basic Photo Interpretation: A Comprehensive Approach
+to Interpretation of Vertical Aerial Photograph y for Natural Resource Applications (Fort
+Worth, TX: United States Department Of Agriculture, Soil Conservation Service,
+National Cartographic Center).
+
+RING, N., and EYRE, L. A., 1983, Manned spacecraft imagery. In Introduction to Remote
+Sensing of the Environment, 2nd edn, edited by B. F. Richason, Jr. (Dubuque, Iowa:
+Kendall/Hunt Publishing Company), pp. 112—129.
+
+ROBINSON, J . A., FELDMAN, G. C., KURING, N., FRANZ, B., GREEN, E., NOORDELOOS, M., and
+STUMPF, R. P., 2000a, Data fusion in coral reef mapping: working at multiple scales
+with SeaWiFS and astronaut photography. Proceedings of the 6th International
+Conference on Remote Sensing for Marine and Coastal Environments, V01. 2,
+pp. 473—483.
+
+ROBINSON, J. A., HOLLAND, S. D., RUNCO, S. K., PITTS, D. E., WHITEHEAD, V. S., and
+ANDREFOUET, S., 2000b, High Deﬁnition Television (HDTV) Images for Earth
+Observations and Earth Science Applications, NASA TP-2000-210189 (Houston,
+TX: Lyndon B. Johnson Space Center). Also available at http://e01.jsc.nasa.g0v/
+newsletter/HDTV/
+
+ROBINSON, J. A., MCRAY, B., and LULLA, K. R, 20000, Twenty-eight years of urban growth
+in North America quantiﬁed by analysis Of photographs from Apollo, Skylab and
+Shuttle-Mir. In Dynamic Earth Environments: Remote Sensing Observations from
+Shuttle-Mir Missions, edited by K. P. Lulla and L. V. DessinOV (New York: John
+Wiley & Sons), pp. 25—42, 262, 269—270.
+
+ROBINSON, J . A., LULLA, K. P., KASHIWAGI, M., SUZUKI, M., NELLIS, M. D., BUSSING, C. E.,
+LEE LONG, W. J., and MCKENZIE, L. J., In press, Astronaut-acquired orbital photo-
+graphy as a data source for conservation applications across multiple geographic
+scales. Conservation Biology.
+
+SCOTT, K. P., 2000, International S pace S tation Laborator y Science Window Optical Properties
+and Wavefront Veriﬁcation Test Results, ATR-2000(2112)-1 (Los Angeles, CA:
+Aerospace Corporation).
+
+"
+"36","4438 Astronaut photograph y as digital data for remote sensing
+
+SIMONETT, D. S., 1983, The development and principles of remote sensing. In Manual ofRemote
+Sensing, 2nd edn, Vol. I, Theory, Instruments and Techniques, edited by D. S. Simonett
+(Falls Church, VA: American Society Of Photogrammetry), pp. 1—35.
+
+SINNOTT, R. W., 1984, Virtues of the haversine. Sky and Telescope, 68, 159.
+
+SLATER, P. N., 1980, Remote Sensing Optics and Optical Systems (Reading, MA: Addison-
+Wesley).
+
+SLATER, P. N., DOYLE, F. J., FRITZ, N. L., and WELCH, R., 1983, Photographic systems for
+remote sensing. In Manual of Remote Sensing, 2nd edn, Vol. I, Theory, Instruments
+and Techniques, edited by D. S. Simonett (Falls Church, VA: American Society Of
+Photogrammetry), p. 231—291.
+
+SLATER, R., 1996, U.S./Russian Joint Film Test, NASA Technical Memorandum 104817
+(Houston, TX: Lyndon B. Johnson Space Center).
+
+SMITH, J. T., and ANSON, A. editors, 1968, Manual of Color Aerial Photograph y (Falls Church,
+VA: American Society Of Photogrammetry).
+
+SNYDER, J . P., 1987, Map Projections—A Working Manual, US. Geological Survey Professional
+Paper 1395 (Washington, DC: US. Government Printing Ofﬁce).
+
+TOWNSHEND, J. R. G., 1980, The Spatial Resolving Power Of Earth Resources Satellites: A
+Review, NASA Technical Memorandum 82020 (Greenbelt, Maryland: Goddard Space
+Flight Center).
+
+UNDERWOOD, R. W., 1967, Space photography. In Gemini Summary Conference, NASA SP-138
+(Houston, TX: Manned Spacecraft Center, National Aeronautics and Space
+Administration), pp. 231—290.
+
+WEBB, E. L., EVANGELISTA, MA. A., and ROBINSON, J . A., 2000, Digital land use classiﬁcation
+using Space Shuttle acquired orbital photographs: a quantitative comparison
+with Landsat TM imagery of a coastal environment, Chanthaburi, Thailand.
+Photogrammetric Engineering and Remote Sensing, 66, 1439—1449.
+
+WELCH, R., 1982, Spatial resolution requirements for urban studies. International Journal of
+Remote Sensing, 3, 139—146.
+
+WILMARTH, V. R., KALTENBACH, J. L., and LENOIR, W. B., editors, 1977, Skylab Explores
+the Earth, NASA SP-380 (Washington, DC: National Aeronautics and Space
+Administration).
+
+WONG, K. W., 1980, Basic mathematics of photogrammetry. In Manual of Photogrammetry,
+4th edn, edited by C. C. Slama (Falls Church, VA: American Society Of
+Photogrammetry), pp. 37—101.
+
+"

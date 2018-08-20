@@ -1,0 +1,702 @@
+"","x"
+"1","Performance of the GSC engineering-counter for MAXI/ISS
+Tatehiro Miharaa, Nobuyuki Kawaia, Atsumasa Yoshidaa, Ikuya Sakuraia, Toshikazu Kamaea,
+Masaru Matsuokab, Yuji Shirasakib, Mutsumi Sugizakib, Weiming Yuanb, Isao Tanakac
+aRIKEN, Wako, Saitama, 351—0198, Japan
+bNAsnA, Tsukuba, Ibaraki, 305—8505, Japan
+CGraduate University for Advanced Studies, Tsukuba, Ibaraki, 305—0801, J apan
+ABSTRACT
+We are developing Monitor of A11 Sky X—ray Image (MAXI) Which Will be mounted on the Japanese Experiment
+Module of the International Space Station. MAXI is an all—sky X—ray monitor Which scans the sky in every 90
+minutes. The sensitivity Will be as high as 7 mCrab (5 0 level) in one scan and 1 mCrab in one—week accumulation.
+The GSC (Gas Slit Camera) instrument consists of twelve one—dimensional position sensitive proportional counters
+using the Xe+C02 gas and the carbon ﬁber anodes of 10mm diameter. The Window size is 272 X 190 mm. The
+position is obtained by the Charge division method. It is used to identify the source in the long rectangular ﬁeld—of—
+View (1.5 X 80 degrees). Three cameras Will be set to cover the 1.5 X 160 degrees are. The position resolution is
+essentially important, Which becomes better in the higher gas gain. We have tested gas mixtures of Xe+C02 With
+C02 : 0.2%, 0.5%, 1%, and 3%. The C02 : 0.5% showed the most uniform gas gain, but has a little after pulses.
+We Chose the Xe (99%) —1— C02 (1%) combination for the ﬂight counters. It can achieve the uniform gas gain in the
+cell and negligible after—pulse in high operating voltage. The engineering model of the counter (EM1) was build. We
+have tested the position resolution and the energy resolution across the counter. The position resolution and the
+energy resolution depend on the X—ray energy. On the basis of these results, together With the collimator response,
+
+we performed a realistic simulation.
+Keywords: MAXI, International Space Station, X—ray, All—sky monitor, proportional counter, anomalous gas gain
+1. MONITOR OF ALL-SKY X-RAY IMAGE (MAXI)
+Monitor of All—sky X—ray Image (MAXI) is the ﬁrst astronomical payload to be placed on the International Space
+Station (ISS)’s Japanese Experimental Module (JEM) in 2005 (Fig. 1 left) [1, 2, 3, 4]. MAXI has the size of 0.8 X
+1.2 X 1.85 In and the weight of 500kg. Power, communication, and cooling ﬂuid are supplied from the JEM/ISS.
+MAXI has two X—ray observational instruments, Gas Slit Camera (GSC) and Solid—state Slit Camera (SSC, Miyata
+in this meeting). The GSC uses gas counters Which is sensitive in 2—30 keV. The SSC uses X—ray CCDs sensitive
+in the soft X—ray (0.5—10 keV). Both instruments are s1it—cameras and have a long rectangular ﬁeld—of—View (FOV)
+(Fig. 1 middle). With the combination of one—dimensional X—ray detector, the positions of the X—ray sources in the
+FOV are determined (Fig. 1 right). The narrow FOV scans across the sky With the 90—minute orbital rotation of the
+188. The GSC has two identical FOVs, one is facing forward and the other zenithal. The forward FOV is tilted up
+by 6 degrees to avoid the earth and the atmosphere completely. There are non—operational periods in the orbit, such
+as the South Atlantic Anomaly and the high—radiation polar regions. Although one FOV cannot observe the portion
+of the sky Which to be observed from there, the other FOV can cover that region after or before 21 minutes, because
+it is offset by 84 degrees. Thus MAXI can monitor almost the Whole sky in every 90 minutes, twice in most part.
+As an all—sky monitor MAXI has unprecedented sensitivity in the hard X—ray band (0.5—30 keV). The purposes of
+the all—sky monitor are not only the discoveries of new X—ray sources, but also the Challenge to the cosmology models
+by measuring the large scale structure of the universe Via the distribution of distant active galaxies as well as the
+cosmic X—ray background. The sensitivity is 7 mCrab (5 0 level) in one scan and 1 mCrab in one—week accumulation
+[1, 3]. The former is as sensitive as can detect the X—ray afterglow of the gamma—ray burst if it scans Within 290 s
+after the burst. The latter is as sensitive as can detect hundreds of faint extra—galactic objects (AGNs and galaxy
+Clusters). The AGNs (quasars, BL Lac objects, Seyfert galaxies) are variable in a time scale of 100 s N years. It is
+the ﬁrst experiment to monitor the variability of the extra—galactic sources Without a bias.
+Wiharaﬁicrabrikengojp
+
+"
+"2","Solid-state Slit Camera (880)
+7 16chips(100cm2) x 2views _
+. . zennh
+ls~\\~¢i~‘%\\\% ‘% .m
+x \Iagﬁmév/ .h
+. ’4‘ \ "" ISS moving
+-. . /“ ~ direCtion 2‘ .44»:
+\ -‘ - ""‘ Fov f d
+Ekfl b\ﬂ/ (Urwar )
+Gas Slit Camera (GSC) ‘ position sensitive couiriier
+445cm2 x 6cameras x 2views earth w
+Figure 1. left: The MAXI payload has two scientiﬁc instruments, GSC and SSC. middle: Both instruments have
+two ﬁeld of Views (FOV) Which cover the one’s dead area due to the South Atlantic Anomaly by the other. right:
+One—dimensional X—ray detector is used to determine the source positions in the rectangular FOV.
+2. GAS SLIT CAMERA (GSC)
+GSC consists of twelve cameras With proportional counters. Two cameras are set in a ’pillar’ (a unit) as arrows in
+Fig. 1 left indicate, and watch the same FOV. The triangular part above the counters contains slats collimators to
+limit the FOV to 1.5 X 80 degrees. There is a slit on the top of the triangle to transmit the X—ray from the sources
+onto the counter. Three units (i.e. six cameras) are placed to cover 1.5 X 160 degrees. The 10 degrees from the edge
+are abandoned, because some of them are shadowed by other modules on 188.
+
+Fig. 2 is the top View of one GSC ﬂight model counter. The Window size is 272 X 190 mm, Which is about
+A4—paper size. The opening area is 445.9 cm2. Twelve counters make 5350 cm2 in total. The gas is the mixture of
+Xe and C02 With total pressure of 1.4 atm at 0 OC. The carbon ﬁbers With 10 am in diameter are used for anodes.
+The resistances are about 33 k9, and the length is 333 mm. The position is obtained by the Charge division method.
+The preampliﬁers (A225 hybrid IC) are connected to both ends of the anode. The pulse height from the left L and
+that from the right R are obtained. The position measure PM is deﬁned as PM = (R — L)/ (R + L). The incident
+X—ray position is determined by PM using the calibrated curve.
+
+358.0
+272.0
+' —I_— -
+—_ ‘— - a -
+ﬂ, o-
+:J . 5 .
+(:1 :
+:1 \F— - i -
+Z :1 :
+Z t: . : .
+f: :) . E .
+Z t: E
+t: (: - i -
+I t: (:1 I i
+Z t: - 5 '
+— :1 i
+o —o |o_0=
+Figure 2. Top View of the MAXI/GSC Flight Model counter. The unit is [mm]. Gray parts are Be Window, Which
+is supported by the beams of 1.4mm Width and 17mm height. The Be Window area is 445.9 cm2. There are 6 cells
+With carbon anodes, Which are surrounded by the 10 veto cells. Each cell has three beams. The counter is made of
+titanium. It was Chosen because it has a similar expansion coefﬁcient With beryllium.
+
+"
+"3","3. ANOMALOUS GAS GAIN
+To obtain the good position resolution with this proportional counter, high pulse height is needed. The noise is
+dominated by the Johnson noise of the resistive anode. Therefore the position resolution has AX / X oc PH‘1R0'5
+relation. Thinner wires with higher resistance can improve the position resolution, but 10 ,um is almost the limit of
+the handling. As will be shown in §4, the GSC will be operated in rather high gas gain (N 6000), compared with
+that of the usual proportional counters (gas gain of ~1000). When we raised the high voltage, we encountered the
+hard tail problem.
+3.1. Hard tail With C02 2 3% gas
+A hard tail as shown in Fig. 3 emerged at high voltage (1600V) with the common Xe + C02 : 3% gas. The pulse
+height ratio of the hard tail to the normal peak became larger at higher voltage. It exists when we irradiate X—ray
+near the anode wire, and not exist off the wire (Fig. 3). The proportional counter of the same gas but with metal
+anode also showed the hard tail in the high gas gain. Thus, it is not the problem of the anode wire, but the gas.
+Off-Wire 10mm from anode Qn-Wire 2mm from anode
+35"" ‘1 Normal ‘ E X Normal
+: peak 1
+300 ‘w Xpeak : . ‘
+E” i i i Hard tail
+2"""" J 5 J W ;
+_ ; l l l g
+x \NO hard tall 3 Mi W p 3
+wmwim 2th ‘7 _ “M MWWM \ Z % m 4 g
+‘ ‘Pulse Height - ‘ yiPulﬁse Heigiht
+Figure 3. Hard tail appeared when operating in rather high gas gain (HV 2 1600V). It exists only when the X—ray
+is irradiated near the anode (left: off—wire, right: on—wire). The gas was C02 2 3%, and the X—ray was Mo—K.
+3.2. Slant beam method
+To investigate this phenomena, we used the slant beam method. We tilted the X—ray beam within the plane which
+the anode and the beam make. Fig. 4 shows the case when the beam crosses the anode wire. We used 6’ = 45 degrees.
+Let X the direction of the anode and Z the depth from the window. By using the one—dimensional position sensitive
+counter, we know X for each X—ray event. Since X and Z correspond to each other in the slant beam method, we
+know the depth Z , where the X—ray is absorbed.
+beam E
+Z 0 : X—ray 6 .
+5 86 0mm : Be window
+Y v -m
+x L | \\\ Anode
+’z”l-_____—_—_______\~i___-- -25mm Z : . Cathode
+X0 X
+Figure 4. Slant beam method: When the beam is tilted, the detected position X correspond to the stepped depth
+Z . One—dimensional position sensitive counter can tell the position X of each X—ray, and we can know the depth Z .
+
+"
+"4","3.3. M-curves
+Fig. 5 upper is the event plots by the slant beam method in Z and PH plane. The PH changed With the depth Z .
+The gas gain is normal at the Window and the bottom of the cell, rises towards the anode, has maximum at 3mm
+from the anode, and then goes down. The hard tail was due to the different gas gain on the position Where the
+X—ray was absorbed, The Y—scan 0f the slant beam method can make a gain map in the cell. It showed that the gain
+variation is symmetric 0n the anode and very similar to the shape of the electric ﬁeld [5]. We deﬁne the anomalous
+gas gain factor g, as PH 2 Q0 ( 1 + g ), Where Q0 is the pulse height of the normal peak. The g is the function
+of Z , and the maximum of g is denoted as gmam. What causes the anomalous gas gain ? Fig. 5 also shows the HV
+dependency. The anomalous gas gain factor increased With high voltage. Actually it was proportional to the normal
+gas gain Q0 itself [5]. This means that the additional pulse height of the hard tail from the normal peak increases as
+oc Q3. We used Mo—K X—ray because Ti—K and Cu—K cannot penetrate very far. The X—ray mean free path in Xe of
+1.4 atm is 4.7 mm for Ti—K, 8.0 mm for Cu—Ka, and 28.8 mm for Mo—Ka.
+5
+._..,‘
+E Mo-K
+E 140017 1500V 1600117
+3; (17.5keV)
+E. ‘7’ ' -
+m ' f '
+-5 Z i 53: - - 3+ .- .;-"".'-
+-1 o “a I
+'1 5 : *‘
+- 13'""
+-20 f I
+-' . ' ’- I.
+.:.:=.;: -:':':«.-::::;. - . I
+i ' 3r -' TL-r'gl'. 1 £5 ' I ‘
+‘25 ﬂ. .. .. -.
+Q 0 Q 0 (1+8)
+-30
+0 500 1000 1500 2000 2500 3000 3500 4000 PH(C]7)
+1400V 1500V 1600V
+mm Gas Gain r 4mm 5 ~
+~1600 ﬂ ~4000 m. ~8500
+i ' 3000 (I H
+l 2500 T i“. ”m A
+6000 l ) ’ 2000 i i r “k
+4mm '50"" '1 81‘ Hm I H“
+J i I (H l! ‘ {V { ”Jib“
+’mm ~ '1' I in i 500 ,‘1 Ill
+- ‘ ff] 1 500 . “ \ 5""; \‘x
+_ Pulse Height b 0 I5u|se Hgighi : d ' 'Puise Ijeig-ht
+Figure 5. The upper is the M—Curves With 1400V, 1500V, 1600V 0f the Xe —1— C02 2 3% gas. The gas gains of the
+normal peak are about 1600, 4000, 8500. The bottom is the spectra obtained by integrating the M—Curves over the
+depth. The X—ray is Mo—Ka. The ‘soft tail’ in the spectrum is the continuum Which is left over after the Zr ﬁlter.
+We deﬁne the anomalous gas gain factor g as shown in the ﬁgure. Q0 is the pulse height of the normal peak. The
+pulse height at depth Z is written as Q0 ( 1 + g ), Where g is the function of Z .
+
+"
+"5","3.4. Ar —|— C02 and Ar —|— CH4 combinations
+
+We investigated this phenomenon With Ar + C02 and Ar + CH4 gases in the gas—ﬂow counter. Fig. 6 upper shows
+the M—Curves With C02 : 3%, 5%, 10%, and 20%. M—Curve is also seen, but higher density of C02 is needed to have
+the similar M—shape (10% in Ar instead of 3% in Xe). Moreover, the C02 : 3% showed V—Curve. The V—ourve can
+be understood as the expanded M—Curve. The position of gmam is expanded outward in the smaller density of C02.
+
+We also tried Ar —1— CH4 2 5%, 10%, 20% combinations. All of them showed V—ourve (Fig. 6 lower), although the
+depth of V—ourve is shallow in the high CH4 density. Higher density of CH4 (30%) and higher total pressure (7atm)
+can make the curve M—shaped [7].
+
+Thus the M—ourve is the common phenomenon in the cylindrical proportional counters operating in the high gas
+gain. However, the extent of M—shape and the amount of gmam in the same gas gain are different With the combination
+of the main gas (Xe or Ar) and the quenching gas (C02 or CH4). They also depend on the density of the quenching
+gas and the total pressure.
+
+Ar + C02 mixture
+0 .- Be
+”113.3135 i ’ a5 ' ,5""
+11“ ' 5 - g 1,,
+«*0 1 - 7 1 '
+H €115“ ; l
+E ‘. $55“, . _ ,' .
+_""'."":'; fairlﬁlﬁﬁjw.“ 1,,15 ""1.,”‘l’jrr . ‘. . ,‘- 3,153
+~14 5 - ' .- = Anode
+:9. 131a: 1 ~ f»- . 11,»
+o. 1152‘ - 1 5
+(D = ' ‘ 2,-5.5“ *2? t, ‘ , 5 _ f“ - ‘. 3: .
+11 ' ""
+jg? I
+“5%:fﬂv ' g r. {H r
+1000 2000 3000 1000 2000 3000 1000 2000 3000 1000 2000 3000
+pulse height [ch]
+Ar+CH4 mixture
+5% 10% 20%
+0 - . .1 a A , 1 i . 2, . _ . 7 Be
+5 14 . _. ; i. r . J I _ i ""15 f Anode
+- 14*3~,_ ‘ _ ' , 2:32.51] _ ' » -- a 1 531.; ,in$; ""
+250 750 1250 1750 500 1000 1500 2000 500 1000 1500 2000
+Pulse height [ch]
+Fi ure 6. u er: The M—ourves of Ar + C02 : 3 5 10 20% ases. The curve Chan es from V—Curve to M—ourve
+7 7 7
+With increasing C02. lower: The M—ourves of Ar + CH4 2 5, 10, 20% gases. The high voltage is 1380, 1488, 1640V,
+Which are Chosen to have the similar gas gain. The Ar + CH4 always shows V—ourve, but the depth Changes. The
+X—ray is Cu—K. The counter is HETE gas—ﬂow type (1 atm). The cell size is almost the same as MAXI counter.
+
+"
+"6","3.5. Xe —|— C02 combination
+First we reduced the C02 as much as possible. The results of C02 : 0.2% is shown in Fig. 7 left. It showed V—Curve.
+However, this gas has another big problem of cross talks (§3.6) and cannot be used. We increased C02 density as
+0.5, 1.0%, and took the M—Curves with a similar gas gain. C02 : 0.5% gas is almost free from the cross talks. But
+ﬁnally, we took C02 2 1% as the gas for the ﬂight counter. It is the safety side of the cross talks problem. It has
+M—Curve, but shows better spectrum than the C02 : 3% (Fig. 7 lower).
+Xe+C02(0.2%) Xe+C02 (0.5%) Xe+C02 (1%) Xe+C02 (3%)
+.15 = ' 933%? ~ ' ’ ' l ""* '5‘ . -. _- ' =s : ' . ' 7';
+425 ‘ ‘ ‘ 3% ﬂ ‘ ‘ '- . ‘7 i “i _
+Pulse Height ‘ Pulse Height . Pulse Height _ Pulse Height
+250
+i i 1“
+m ""i
+t I i i I
+i N "" 1
+y i N 1‘
+150 * A ‘ i ’ I
+l
+ii i if i‘ j ’i 3"" M
+100
+H i! I '1 ‘ "" r
+1 ﬂ 1
+I | w | H '
+1 1' a
+50 i W l u;
+i H 'i 11 1,
+i0 ‘ ""M I “0"" '1 '
+4 MW wil . 1,“. MM \1"" ""v X,“ “If
+0100015""2000 2500 3000 3500 4000' M4500 500001500MM 2000 2500 3000 3500““ A 2000 2500 30003500 4000 450 00 2500 3000 3500 500
+Pulse Height Pulse Height Pulse Height Pulse Height
+Figure 7. The M—Curves 0f Xe + C02 : 0.2, 0.5, 1.0, and 3.0% gases. The gas gains are adjusted to be similar.
+The X—ray is Mo—K. The lower is the spectra obtained by the projection of the upper curves to the PH axis. The
+‘soft tail’ is obvious in C02 : 0.2%, and the hard tail is in C02 : 3%, which originate from V—Curve and M—Curve.
+3.6. UV lights and quenching gas hypothesis
+As Cited in §3.3, the additional pulse height of the hard tail is proportional to the square of the gas gain. It suggests
+a secondary mechanism which is caused by the gas ampliﬁcation. For example, UV light is one of such candidates.
+(1) If the amount of the UV lights would be proportional to the gas gain, and (2) if extra electrons are ejected by the
+UV lights from the quenching gas, the number the extra electrons is proportional to the gas gain. Those electrons
+are also gas—ampliﬁed at the anode, which end up as the additional Charges proportional to the square of the gas
+gain. In this case, ejection of the extra electrons must occur in the vicinity of the anode, because the rise—tirne 0f
+the pulse was faster than 0.5 ,us, and the ejection of the photo electron from the Be window was rejected.
+
+With Xe + C02 : 0.2% gas, We had another big problem of cross talks. When Mo—K X—ray was irradiated in
+one cell, the cross talk appeared in the next cell. The cross talk pulses come in several micro seconds later than the
+main pulse. The after pulses in the same cell were also seen. The cross talk is considered to be an after pulse to the
+next cell, which is caused by the photo electrons ejected from the Be window by the UV lights. The several micro
+seconds is the drifting time from the Be window to the anode. The pulse height of the cross talk is not constant, but
+1% of events showed more than 3.7keV pulse heights for Mo—K (17.5keV). The pulse height of the cross talks was
+roughly proportional to the square of the gas gain. If we consider that the UV lights can reach the Be window, it is
+the same story as the hard tail. At least, the above hypothesis (1) was proved.
+
+Further study with the Y—scan 0f the slant beam method reveiled follows. The pulse height of the cross talk
+depends on the X—ray absorbed position in the main cell. When the X—ray stops in the Closer side to the Be 0f the
+
+"
+"7","next cell, it has large cross talk. When it stops in the further side to it, the pulse height of the cross talk is very
+small. This would be explained by the shadow of the UV lights by the anode. Then the UV lights would be created
+in a very small region comparable to the anode diameter (10mm), and the avalanche would occur in one side, not at
+all around the wire.
+
+The gmam can be understood as the typical position where the most of the UV lights are absorbed by the quenching
+gas. It is a natural supposition from the fact that we had cross talks and after pulses in the V—Curve gas, and not in
+the M—Curve gas. The V—Curve happens in the insufﬁcient quenching when the UV lights can reach the Be window.
+There is not a proof for the hypothesis (2), but some of the quenching gas would eject electrons, or excited quenching
+gas would have smaller work function to produce electrons and eject electrons with smaller collision energy. This
+could be an explanation candidate for the anomalous gas gain.
+
+3.7. Shape of electron cloud hypothesis
+An interesting relation was found between M / V—Curves and the shapes of electric Clouds. Fig. 8 upper is the simulated
+distribution of the electrons when the ﬁrst electron reaches the anode (by the garﬁeld software). In the Ar+C02
+: 3% gas, the near—anode event has round shape, but the window event has an elongated shape along the wire
+(wide), which has considered to have less space—Charge effect. Then it had V—Curve. In the Ar+C02 = 20% gas,
+the near—anode event has round shape as well, but the window event has an elongated shape vertical to the wire
+(high), which is considered to have more space—Charge effect. Then the curve is M—Curve. By the mechanism of the
+space—Charge effect the gain curve may be related to the width/height ratio. Fig. 8 lower are the graphs for Ar+CH4,
+Ar+C02, and Xe+C02. Compared with Fig. 6 and Fig. 7, the curves are very similar. However, the relation between
+the space—Charge effect and the width/height ratio is not Clear.
+Ar+C02 (3%) V-curve Ar+C02 (20%) M-curve
+4 4
+E M I.»
+g \ / “.9; window E
+g 3 near-anode ] , 3 '92“: events _c_»
+g events WINdOW ""' . g
+g 2 events 2 -§
+“ '.- :- .
+S . , 233' WI th
+‘5 c o c. . I .3.
+81 .. °‘. 4:5“ ’ ,- . 1 nea -an d :5.
+ﬁ . . 1'3"": mfg '23.; everrIts o :82.
+'6 ""x ' ""'.“:'...-.. r -.‘.a'.-""' -, . '
+0 £123] . .._-II‘_r__.- ( n! _
+-1 0 1 2 3 4 0-1 O 1 2 3 4
+position along the anode : x [mm] position along the anode : x [mm]
+AF+CH4 1atm Ar+C02 1atm X9+C02 1.4atm
+am 10% ++++
+20% 5% 20% 23:2}: 0 0
+\ EEEE 20%10% 5% 3% H 3% 1% 0-7/00-5/0 0.2%
+E, / \ gggg E ‘ 1 3 E e A\\ n
+§ 10 1 ii iii: § 10 ll E 10
+g , g l, g “ ”a ""
+E j 1; E /// 5
+, ﬂ , E
+E E U .2 .l ..
+8 5 jr/rr”: T 8 5 J g 5
+g f, .x’j . 3 ll} 5 ’ ,3
+£2? . I I (’W”,
+0 0 0 iro
+0 2 4 6 8 10 0 1 2 3 0 1 2 3 4
+width / height width / height width / height
+Figure 8. upper: The simulated image of the electron Cloud when the ﬁrst electron reaches the anode in Ar+C02
+: 3% and 20% gases. 1000 electrons were tried. lower: The simulated width/height ratios for various gas mixtures.
+Y—axis is the position where the X—ray is absorbed.
+
+"
+"8","4. PERFORMANCE OF THE ENGINEERING (EMl) COUNTER
+As discussed in the previous sections, we decided to use C02 2 1.0 % for the ﬂight counter. The engineering counter
+(EM1) was built by Metorex Company, Finland, and delivered to RIKEN in April 2001. It is called ‘engineering’,
+but actually the ﬁrst counter of the ﬂight model. It has the ﬂight quality and have a little possibility to be launched.
+The results are shown in the ﬁgures; the Energy linearity (Fig. 9 left), the HV—PH relation (Fig. 9 right), the Energy
+resolution (Fig. 10 left), the Position resolution (Fig. 10 right), the Position error (Fig. 11), and the Gain uniformity
+(Fig. 12). P3 and P4 are points on the counter; P3 (Xz—Smm, Y=0mm on—wire), P4 (X:—5mm, Y:14mm oﬂ—wire).
+HV—PH re1ati0h @P4 Mo—K
+9 25 0/,
+s /
+g 22.5 / g %
+Lﬁ 20 /“° 8 /
+/
+17.5 ,T/ Q Mo-K
+/ e %
+15 J/ % © ;’/
+/ % g V
+12.5 / 1%
+/ m / a C0
+10 / T 0 C1
+1’ a /
+1:1
+7.5 / cu'K m : A C41
+? Fe-K ‘2‘ - C5
+5 / y=a*x**2 + b*x
+/ Ti'K 1500v a=5.27233E-06, b=0.0237737 /
+1700V a;1:0283E-06, 13=0.00240941 Q
+0 C:
+0 500 1000 1500 2000 2500 3000 3500 4000 CQ 1400 1500 1600 1700
+ADC(ch) HV [v]
+Figure 9. left: Energy linearity was measured at P3 (Ti—K, Fe—K, Cu—K) and P4 (Mo—K) in 1500, 1600, 1650,
+1700V. The measurement at P4 is used for Mo—K to get rid of the hard tail effect. For the others the effect is small,
+since their X—ray stops very closely to the Be window. The curve is the ﬁt with the E : aPH2 + bPH. right: The
+HV—PH relation at P4 with Mo—K. The six anodes have similar gain. The curves start to bend at 1550V.
+Energy resolution (FWHM) Position Resoiution (FWHM)
+i 1500V i
+g 1 E m 1
+£3 3 3 g 3 g: 1650V i 3 1
+g 3 3 3 1700V E 3 3
+E 3 Cuiki 3 3 1600V % 3 3 3
+5 3
+g .mwwm ”m mm km W” m” w” p- m. W,-W.,;,.m ,W m” § Cuih §
+3 3 } 3 i §M07K
+3 ; :Moih i 3 3
+5 10 20 5 10 20
+Energy [keV] Energy [keV]
+Figure 10. left: Energy resolution at P3 (Ti—K, Fe—K, Cu—K) and P4 (Mo—K). The energy linearity in Fig 9 left
+is considered. The data points roughly 0n the line of QC E ‘0'5, which is the case dominated by the statistics of the
+primary electrons. In higher voltage, gain difference in the cell or other reasons degrade the energy resolution. right:
+Position resolution. The data of Ti—K and Cu—K has the relation of QC E‘l. This is when the position reolution is
+dominated by the noise (mainly Johnson noise). Actually it is oc PH‘l. The position resolution saturated at 1.0mm.
+
+"
+"9","S—Curve residuais i650V MO—K
+0.2 m m I ma
+0 3 C0
+EP‘II m'uﬂ'uunllrmlmmll'lll-m' ||- uul. m. llllllmﬂl
+—O.2
+% 0 . 2 El mml'mmﬂI-ﬂﬂimmlﬂ'mnwl “mumI1mmmmmmmmlmmmflllllmmlmm“rm El
+E O IIIth-‘II lmmmmlwww .I. nmm'mmlm lnmmn'wmm mﬁ C 1
+E — O ., 2 m n ”Illﬂlm'nﬂﬂmmmnmmm‘m"" ”1""
+|% 02 _H mmlm'l III
+Ts —O.,2 ""
+3 02 ““111 .I. 1: m
+ﬁ 0 Wm C3
+°$ —O.2 ""
+E 0 . 2 “um“: um Hull ll lllllllm ml: Inullllﬂl'umrup '1'
+0 WEE C4
+—O.2
+02 mum: mil .1
+0 W lmmili‘m”'""Im‘mm'mrmmm""mnlnmm'm'l‘n‘l'mm'lmﬂli‘mIrm'ml'ﬂhm'm I'mmmm'wﬂﬂlllllhﬂllllﬂum'ml C 5
+—092 m
+—O.5 O 0.5
+Position Measure
+Figure 11. The position measure of eaCh anode is ﬁt by X = (Lo —|— alPM — ag/(PM — a4) — ag/(PM — a5). These
+are residuals from the bestﬁts. The data points are X = —135 N 135mm by 2mm step. This empirical equation
+represents the curve within i0.2mm. Since this residuals are proper to the anode, we will correct these to obtain
+more precise position.
+2D gain Map Puise Height [ch]
+% i400 i600 1800
+Q ‘ .
+L "" ‘ O
+80 3!; .i!! . ' 33 CS
+60 ___ J
+20 51 C3 3
+(L) 0 , (R) 3' O
+5‘ f, E i ,
+—40 r, ,4 I ,7
+2: :1: c1 am
+1' O i
+-60 .0 ., .
+é-so ELI: C0
+E: 3’ J
+E a i i
+-100 -50 0 50 100 S
+DetX (mm) 0
+Figure 12. This is the gain map of EMl counter obtained by Mo—K at 1600V. X—ray was irradiated in every 2 X
+1 mm grids. The color level is 10 steps in 1000—2000 Ch. The gain was uniform within i5% in one cell. The gain
+difference of the anodes was i7%. We selected the carbon wires of similar resistances and mounted them in one
+counter to achieve a uniform gain. The right is the cross section at X 2 —5mm (P3). The high gain near the anode
+is due to the hard tail.
+
+"
+"10","5. OBSERVATION SIMULATION
+Based on the obtained performance of the test and EMl counters, we performed the simulations of MAXI/GSC
+observations [8]. First, we consider instrumental properties for the whole assembled system (§5.1). The second part
+deals with scanning of any sources with given celestial coordinates in the sky by considering the ISS orbital motion
+and integrating all the GSC units (§5.2). Simulations of X—ray backgrounds by the cosmic X—ray background and
+the cosmic Charged particles are described in §5.3.
+5.1. Simulations of source scanning With GSC
+Let’s consider a source moving into the FOV of a slit collimator as the camera moving across the sky. Exposure
+T is deﬁned as the time duration between the source moving into and moving out off the FOV (N3 deg) in the 9
+direction (for the simple case for the central GSC units, T N3 deg/w N 45s where w is the angular velocity of the
+188 of 4 arcmin s_l). The Monte Carlo simulation was designed for the scanning processes of a source with constant
+X—ray ﬂux density fx, at elevation angle gb, and with exposure T .
+
+Firstly, a series of incident photons onto the GSC slits is simulated within time T , in a way that the time interval
+675 of two successive photon events following exponential distribution, as expected from the Poissonian statistics of
+photon emission/absorption processes. Each photon is registered with the arrival time ti, energy Ei, and incident
+position on the slits. Ez- is drawn from the ultimate spectral energy distribution of the X—rays before detection. The
+azimuth angles of the incident photons can then be determined from their arrival time ti. With the photon incident
+aspect and energy known, we can trace each photon along its path into the collimator, and subsequently, the detector
+window and gas counter. A photon is discarded if it either fails to pass through the collimator, or is absorbed in the
+Be—window, 0r penetrates the anode cell. Survival photons are taken as ‘detected’ X—ray events.
+
+Laboratory calibration data for the energy—pulse height relation and the energy resolution (pulse height ﬂuctu—
+ations) were used for converting the photon energy to pulse height in the gas counters. The position dependence of
+the gas gain or ‘hard—tail effect’ (§3, [6]) was taken into account properly. The ‘measured’ absorption positions of
+photons are converted from the ‘actual’ position X in ray—tracing by using the calibrated position measure vs. X
+relationship.
+
+5.2. Putting all together
+
+Next we calculated the trajectories of stars moving across the FOV 0f slit camera in the scanning processes for both
+the forward and the zenithal Views, using the information of the ISS orbits and the attitude of the GSC units. This
+enables us to determine, for a star at any given celestial position in the sky, the time of starting to move into the
+FOV, the exposure T , and the elevation angle gb, i.e. the parameters needed as inputs for the simulations of source
+scanning/detection. As a useful example, we show in Fig. 13 the exposure time of sources as seen by the three GSC
+units in one FOV. For the two side GSC units, the exposure time depends on the latitude of a star in the orbital
+coordinate systems, but it is constant for the central unit.
+
+By combining these results with the above scanning/detecting processes, we are able to simulate complete scanning
+processes of the whole sky with the MAXI/GSC, by assuming a population of celestial X—ray sources. The simulated
+‘observational’ data comprise photon registration time, left and right pulse heights (thus the position measure), the
+detector and anode IDs. The spatial and energy information of the X—ray sources can be re—constructed by analysis
+of these data.
+
+5.3. Backgrounds
+
+There are two methods for the simulations of the cosmic X—ray background (CXB). One is to divide the whole sky
+into grids with elements which are much smaller than the point spread function of the GSC, and then to treat each
+element as a point source; however, this is CPU—time consuming. Alternatively, we used another method by taking
+the advantage of the CXB isotropicity. The idea is that, during the scanning processes, the detectors are seeing the
+diffuse background emission with the same X—ray brightness*, regardless of which part of the sky is actually being
+seen. The expected photon ﬂux density at the slits within a solid angle in any direction in the FOV can be obtained
+and the above simulations of photon detection are used.
+
+*In fact this is not the case as the CXB is modiﬁed by Galactic absorption in the soft X—ray band. However, this effect is
+not signiﬁcant in the whole MAXI/GSC energy band for most part Of the sky, and, if needed, can be compensated ultimately
+by using Monte Carlo drawing if the probability of absorption, or optical depth, is known.
+
+"
+"11","MAXﬂ/GSC: source soonning time 2=GSC unit (overoged over soonning)
+200 8
+— ¢:o°
+150 ‘E 6 kfjjiiﬁﬁg 95f“):
+
+”E? o ,y/ \gg, * * * * (75400
+
+a v / 96:30
+
+2: E 327/ iii? t
+
+S 100 cﬂteotoi’s with normal deteoiou’s wit; normal 6 4 if/ \il‘x.
+
+8 cut orbitoﬂ loti=40 Cﬂeg C111” orbital ﬂo""||.:+4 deg E 3// Kg.
+
+% F..V. (=80, o) F.O.V. e +80) LE (3/ \\
+
+m (D l"" v \“
+
+so 5 2 ,7»
+F.O.V (=40, +40» /
+o J 0
+=50 0 so 5 10 15 20 25 30
+Orbital] ﬂotitudle (degree) Energy (keV)
+
+Figure 13. left: Source exposure time as functions of source orbital latitude for three GSC units in one ( forward
+or zenith ) View. A source can be seen by one or two units depending on the orbital latitude and is scanned twice
+by two FOVs successively in one complete orbit. The exposure time is the full Width at bottom of the scan proﬁle.
+right: Effective area of 1 center unit (2 cameras), averaged While a source moves across FOV by the scanning. qﬁ is
+the photon incident angle relative to the detector normal. The low energy transmission is limited by the Be—Window.
+The difference of the effective areas in 2—15 keV is by the decrease of the slit area With gb. The difference becomes
+smaller at higher energies by the compensation effect, i.e. the stopping power increases at larger Q5 because the travel
+length in the gas is longer.
+
+The simulation of detector background (DBG) caused by cosmic Charged particles is straightforward, but is
+uncertain due to the unknown intensities of these particles in orbit. We assumed in our simulations a power law
+spectrum for the DEC With a photon index F20 in 1—30 keV and normalization as two times as the room background,
+Which is 2 X (4.5 X 10—4) C s‘1 cm_2 keV‘1 at 1keV. This is the value after the anti—coincidence between carbon
+anodes, and carbon anode and veto.
+
+6. RESULTS OF SIMULATIONS
+The ﬁrst—hand outcomes are simulated photon events data resembling the read—out given by the on—board processors,
+namely, the time and the IDs of detectors/Wires of photon, the pulse height Channels of left and right readouts,
+Which can be used as inputs for the MAXI data analysis tools. Moreover, the simulation code can also be used to
+examine and quantify some instrumental Characteristics, and to produce anticipated ‘scientiﬁc results’ by analysis of
+the simulated data.
+6.1. Effective area and point spread function
+The detection efﬁciency, or effective area Aeff for the assembled system can be obtained by a direct comparison of
+the detected and source counts. It is dependent on photon energy E and photon incidence aspect, i.e. Aeﬂ:(E, 6’, gb).
+Since MAXI operates in a scanning mode in Which a source moves across the FOV With 6’ varies from —6’max to Qmax,
+it is more meaningful to use the effective area averaged over 6’, i.e. <Aeff>(E, gb). We show in Fig. 13 the averaged
+(Aeﬂ:>(E, Q5) for a unit as a function of photon energy at several Q5 angles. The Virtue effective area With respect to
+a given source depends on the number of GSC units (either 1 or 2, see Fig. 13) Which are actually seeing the source
+as well as the respective Q5 angles, both determined by the source position and the ISS orbit.
+
+The point spread function (PSF) can be derived by mapping the spatial distribution of detected events from an
+input point source on the detector X (anode) and Y (scanning direction, or time) space, and much meaningfully,
+de—projected back onto the 6’ — Q5 space. Fig. 14 shows the PSF at 8keV photon energy for sources With incident
+angle Q5 2 Odeg (left) and 20 deg (right), respectively. At large incident Q5 angles, a tail emerges (right panel) With
+the extent increasing With gb, Which results from slant incidence of photons and becomes prominent for photons With
+higher energies, i.e. larger mean free paths in the gas counter.
+
+"
+"12","-3 3
+-2 2
+99%
+_‘| 1
+’6? ’5; 90%
+e O 2
+9 g 0
+3 3
+e- 1 o e-
+-1
+99%
+2 -2
+3 ﬁﬁ—ﬁﬁr -3
+-3 -2 ‘1 O 1 2 3 3 2 1 O -1 —2 -3
+0 (degree) 6 (degree)
+Figure 14. Proﬁle of the GSC response function for a point source on the orbital longitude (vertical) — latitude (Q5,
+horizontal) plane for 8keV photons, derived from the simulations. Left panel: Q5 2 0deg. Right panel: Q5 : 20 deg.
+at large Q5 a tail appears in the Q5 direction for high energy photons caused by slant incidence of photons.
+6.2. Crab count rate and in—orbit data rate
+One good indicator of the capability of X—ray detectors is the yielded count rate in observing the Crab Nebula—the
+standard calibration source in X—ray astronomy. As a useful example, we listed in Table 1 the simulated Crab count
+rate as observed With one GSC in the 1—30 keV band for various off—axis angle Q5. For on—aXis scanning (Q5 2 0 deg) this
+yields N 10 C s‘1 per GSC in 1—30 keV When averaged over the scan time. Note that 4 GSC observe the source, if the
+orbital latitude is Within i 40 degrees. Then the average count rate is N 40 C s_l. Incorporating the source exposure
+in Fig. 13 one may have a rough estimate about source counts accumulated in the scanning With the MAXI/GSC.
+Then by sealing the source ﬂuxes to that of Crab (1 Crab : 4 X 10‘8 erg s‘1 om‘2 in 1—30 keV), we can know the
+flux of the source.
+Table 1, Simulated GSC count rate for the Table 2. Simulated in—orbit GSC data rate (one orbit, 1—30 keV)
+Crab Nebula (1—30 keV) ——
+—— countsa CRb unitsC
+Q5 angle (deg) count rate (C s_l) (104 C) (C 5—1)
+0 9,9 Craba 0.33 8.1/9.7 central/left X 2 Views
+10 9,6 800 X—1e 3.0 714/871 oentral/right X 2 Views
+20 9.1 CXB 10.3 1.6 all (6 units)
+30 8.1 DBG 87.7 13.5 all (6 units)
+Total 3 N 104 N 16.0 all (6 units)
+When the Crab passes in a GSC camera. AV— —
+eraged over the scan time. The peak count a. The total counts accumulated in one orbit.
+rate in the triangular scan proﬁle is double of b. The mean count rate per GSC, averaged over the scan time.
+the value above. (2. The unit With Which the source is in FOV. One unit has 2 GSC.
+d. Assuming an orbital latitude —29 deg.
+e. Assuming an orbital latitude 32 deg and Crab—like spectrum.
+f. CXB+DBG+HEAO—1 sources With Crab—like spectra assumed.
+
+"
+"13","The estimation of data rate is important in designing the on—board signal processing electronics and telemetry,
+as well as estimation of the dead time for strong X—ray sources. This can be easily obtained from the simulations.
+We show in Table 2 the estimated data rate for the total 12 GSC for one orbit data—taking. It should be noted that,
+however, since the ‘detected’ counts are dominated (N 85%) by detector particle background, the estimated total
+counts depend strongly on the assumption on the DBG rate. The values given in the table 2 were obtained based
+on the above DBG model in §5.3, and should be taken as a reference value only. More accurate estimation has to
+rely on more realistic modeling/measurement of the DBG.
+
+6.3. Simulations of scientiﬁc results of MAXI
+
+For demonstration purpose we show here examples of simulated observational results of the MAXI/GSC. Fig. 15
+shows simulated X—ray light curves of the Galactic neutron star binary (burster) X1608—52 (left) and the Seyfert
+galaxy MCG—06—30—15 (right) for one month data—taking. A power law photon index of —1.9 and —1.8 was assumed
+in the MAXI band for X1608 and MCG—06—30—15, respectively. The detector backgrounds were subtracted. The
+input data are from ASCA observations of the two sources, respectively.
+
+Fig. 16 shows the all—sky X—ray image obtained with the MAXI/GSC for ﬁve months data—taking, with the detector
+particle background subtracted. The input X—ray sources are from the HEAO—l source catalog as well as the CXB.
+
+3.0 0.30
+2.5 0.25 1 1
+1 1 1 1 111
+.. » 1 1 1 11 1 1
+. .3 . 11 1 11 1
+1o # . 111 0.10 111 1 + +1 11 1+1
+"" ""1111!"" .1111111. 1.1113111”
+Q . 5 11111111"" '..:1:111111|11 '~1|l|1ilii11111111111"".""11- .111 1.1111 '11...»;."" ""I“:ilh 11"" ..;1»li1|1r' 1.1.113. |.1""-.1il111l"".""""1 1'11 0 . 05 1
+111.111117111113:»”11111111”‘H'1'11II:1'11""1' ' ..I|u»'..fi'»""..1"":'1'1!1§ 1:311""1.11111111......111D 11"" 1|""~I1 ""1111111.. 1111111111111».1111»:*1-1'11'111.1:.“ II '11!...‘.’.j‘;""“1
+m “I H .. .. u , | 1:11. 1 ,. ... .. .1 .. . .... 1 1
+@101 0.00
+© 1 Q 2© 3© 0 10 2o so
+doy (binsize: 1 V1ew (Z/H) 1n 1 orb11= doy (bmsﬁe; 8 0113113)
+Figure 15. Simulated X—ray light curves for the X—ray burster X1608—52 (left) and the Seyfert galaxy MCG—06—30—15
+(right) for one month data—taking. Sources are assumed to be at orbital latitudes of 10 degree and the precession of
+the ISS orbit is not taken into account. For X1608—52, the time bins represent data samplings in each View (two Views
+in one orbit). X—ray bursts and orbital intensity modulation are seen. For MCG—06—30—15 each time bin represents 8
+188 orbits. Each ﬂare and the long—term variation are seen. Input data are from ASCA observations (X1608: data
+credit Dotani; MCG—06—30—15: data credit Negoro).
+7. SUMMARY
+The MAXI mission was introduced and the design of the GSC ﬂight—model counter was shown. The detailed
+investigation on the hard tail was explained. The M—Curves of Xe+C02, Ar+COg, and Ar+CH4 were presented
+with various COg/CH4 densities. The anomalous gas gain might occur when the quenching gas absorbs the UV
+lights near the electron—avalanche region. Or it might be by the space—Charge effect depending on the shape of the
+electron Cloud. The engineering model counter (EM1) was made and tested. The various results were shown, which
+was almost as expected. We are ready to move on to the production phase of GSC ﬂight model. The observation
+simulation was performed and the current results were summarized.
+
+"
+"14","Figure 16. All—sky X—ray image (Galactic coordinate) obtained With the MAXI/GSC for ﬁve months data—taking,
+With the detector particle background subtracted. The inputs are the HEAO—l X—ray source catalogue and the cosmic
+X—ray background. The absorption and diffuse emission of the Galactic plane were not included. Instrumental effects
+such as aspect—dependent exposure and effective area were not corrected.
+
+REFERENCES
+
+1. M.Matsu0ka, et a1. “MAXI for JEM 0n the Space Station,” PTOC. SPIE 3114, pp. 414, 1997.
+
+2. K.Torii et a1. “X—ray detectors and calibration system for the MAXI mission,” Proc. SPIE 3765, pp. 636, 1999.
+
+3. T.Mihara, M.Matsu0ka, N.Kawai, A.Yoshida, H.Tsunemi, E.Miyata, H.Neg0ro, K.Torii, S.Uen0, M.Sugizaki,
+H.T0mida, I.Sakurai, Y.Shirasaki, M.Yamauchi, “Monitor 0f All—sky X—ray Image (MAXI),” Proc. Space Tech-
+nology and Applications, International Forum 2000, pp. 181—186, 2000.
+
+4. H.T0mida, M.Matsu0ka, S.Ueno, K.Torii, M.Sugizaki, W.M.Yuan, S.K0matsu, Y.Shirasaki, N.Kawai,
+A.Yoshida, T.Mihara, I.Sakurai, H.Neg0r0, H.Tsunemi, E.Miyata, M.Yamauchi, I.Tanaka “ The MAXI Mis—
+sion on the International Space Station,” PTOC. SPIE 4012, pp. 178—185, 2000.
+
+5. I.Sakurai, T.Mihara, N.Kawai, A.Yoshida, Y.Shirasaki, M.Matsuoka, M.Sugizaki, and T.Kamae “Dependence
+of Gas Gain on X—ray—absorbed Position in Proportional Counter,” PTOC. SPIE 4140, pp. 511—519, 2000.
+
+6. Y.Shirasaki, et a1. “Performance of the Wide—ﬁeld X—ray monitor on board the High—Energy Transient Explorer
+2,” PTOC. SPIE 4012, pp. 166—177, 2000.
+
+7. S.It0, et a1. “Gas ampliﬁcation of proportional and SQS modes observed as a function of the radial distance of
+the position of primary ionization,” NIM A348, 297, 1994.
+
+8. W.Yuan, M.Matsu0ka, et a1. “Simulation of Observations and Data of MAXI,” Proc. MAXI Symposium on
+AGN Variability, Nikko, 2001.
+
+"

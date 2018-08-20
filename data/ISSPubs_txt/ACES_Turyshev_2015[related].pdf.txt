@@ -1,0 +1,1400 @@
+"","x"
+"1","General relativistic observables for the ACES experiment
+Slava G. Turyshevl, Nan Yul, and Viktor T. Toth2
+1 Jet Propulsion Laboratory, California Institute of T echnology,
+4800 Oak Grove Drive, Pasadena, CA 91109—0899, USA and
+2Ottawa, ON KIN 9H5, Canada
+(Dated: December 31, 2015)
+We develop a high—preoision model for relativistic observables of the Atomic Clock Ensemble
+
+in Space (ACES) experiment on the International Space Station (188). We develop all relativistic
+
+coordinate transformations that are needed to describe the motion of ACES in Earth orbit and to
+
+compute observable quantities. We analyze the accuracy of the required model as it applies to the
+_ _ _ . proper—to—coordinate time transformations, light time equation, and spacecraft equations of motion.
+. [(3 . We consider various sources of nongravitational noise and their effects on ACES. We estimate the
+' v—4 - accuracy of orbit reconstruction that is needed to satisfy the ACES science objectives. Based on
+: O ' our analysis, we derive models for the relativistic observables of ACES, Which also account for the
+. (\l : contribution of atmospheric drag on the Clock rate. We include the Earth’s oblateness coefﬁcient
+- O . J2 and the effects of major nongravitational forces on the orbit of the 188. We demonstrate that
+: Q) ' the ACES reference frame is pseudo—inertial at the level of accuracy required by the experiment.
+, Q : We construct a Doppler—canceled science observable representing the gravitational redshift. We
+- . derive accuracy requirements for 188 navigation. The improved model is accurate up to < 1 ps and
+' O - N 4 X 10—17 for time and frequency transfers, correspondingly. These limits are determined by the
+: m : higher order harmonics in Earth’s gravitational potential.
+- '3': PACS numbers: 03.30.+p, 04.25.NX, 04.80.-y, 06.30.Gv, 95.10.Eg, 95.10.Jk, 95.55.Pe
+: 87‘:
+- $511 I. INTRODUCTION
+: F4 The Atomic Clock Ensemble in Space (ACES) experiment is developed by the BSA1 and CNES2, to be ﬂown on
+. > , the International Space Station (188) in 2017—18. The ACES experimental package consists of two atomic Clocks: the
+: Q - cold—atom Clock PHARAO3 (developed by CNES ID and a space hydrogen maser (SHM, developed by SpectraTime
+. F4 8A4 ED. The experiment Will be attached to the external payload facility on the European Columbus module on the
+' O - space station. Associated With ACES is the European Laser Timing (ELT) experiment E].
+: Q Placed in a microgravity environment on the 188, the expected overall frequency stability of PHARAO is 1 X 10—16
+- O . (see Table l. The short—term frequency stability of PHARAO Will be evaluated by direct comparison to the SHM.
+: (\1 ' Long term stability and systematic frequency shifts Will be measured by comparison to ultra—stable ground Clocks.
+. v—4 The medium term frequency instability Will be evaluated by direct comparison to ultra—stable ground Clocks. The
+' V3 - long—term stability Will be determined by on—board comparison to PHARAO.
+: F: To compare time and freouenoy between various ground Clocks, ACES Will use a two—way microwave system called
+' > - the microwave link (MWL)q.—m (Tablel. Given the anticipated accuracy of the MWL, ACES is expected to provide
+: ° “-1 absolute synchronization of ground Clock time scales With an uncertainty of 100 ps. The experiment Will also enable
+- >5 . comparison of primary frequency standards With accuracy at the 10—16 level. Additionally, high precision time transfer
+: C3 Will be facilitated by the BLT experiment, With overall planned accuracy of 50 ps, and a per—pass space—to—ground
+' ' ' Clock comparison precision of 4 ps.
+
+With an atomic Clock offering such accurate performance in the microgravity environment, ACES Will conduct sev—
+eral tests of fundamental physics. Speciﬁcally, ACES Will conduct gravitational redshift measurements, test Lorentz—
+invariance, and it Will search for possible variations in the ﬁne structure constant. It is expected that the uncertainty
+on the gravitational redshift measurement Will be below 50 X 10—6 for an integration time corresponding to one 188
+pass. However, With the ultimate accuracy of PHARAO, ACES may reach an uncertainty level of 2 X 10—6. Measure—
+ments can reach a precision level of 60/0 2 10—10 in the search for anisotropies of the speed of light. Time variations
+of the ﬁne structure constant, oz, can be measured at the level of precision (35/05 < 1 X 10—16 yr‘l.
+
+To reach its science objectives, ACES Will rely on the time and frequency stability of the SHM, PHARAO, the
+1 The European Space Agency,
+
+2 The Centre National d’Etudes Spatiales (CNES) — the French Space Agency, http://www.cnes.fr/
+3 Projet d’Horloge Atomique Par Refroidissement d’Atomes En Orbite (PHARAO), http://WWW.CI1es.fr/web/CNES—en/4488—pharao.php
+4 SpectraTime SA, see http://Www.spectratime.com/
+
+"
+"2","2
+TABLE I: Anticipated frequency and timing stability of the ACES package I, '3, IE]. Note that one pass is N300 sec.
+
+PHARAO frequency stability 10— 3 X 10— ' 10— '
+
+Common View comparison 2 ps 5 ps 20 ps
+
+Non—common View comparison 0.3 ps 6 ps 23 ps
+MWL and Clocks over one ISS pass. The most important component of a Clock is an oscillator, the periodic oscillation
+of which has to be generated, maintained and read out by suitable means. As it is known, an oscillator on board
+the ISS is subject to many Classical disturbances. In addition to relativistic gravity, Clock performance is affected by
+nongravitational forces external to the station and also by the dynamical environment on the ISS. This environment is
+rather complex and includes forces and torques due to causes such as extended structure Vibrations, frequent thruster
+ﬁrings, spacecraft docking and undocking, on—going human activity, thermal imbalance, outgassing, etc. Some of
+these effects directly impact the trajectory of the ISS and consequently, the relativistic timing and frequency transfer
+observables of ACES. Other effects will directly impact the Clock stability by producing unwanted acceleration noise
+at the clocks location. These effects should be accounted for in a Classical description of an oscillator subjected to
+various sources of acceleration noise.
+
+Although a Newtonian formulation of the coordinate reference systems for the ISS is readily available 1, it is not
+sufﬁcient for ACES. The requirement to formulate models of ACES observables within the framework of Einstein’s
+general theory of relativity was recognized early on during mission development -, m. ACES will rely on accurate
+navigation of the ISS and accurate timing measurements between the station and ground—based terminals. The
+experiment will require precision timing of all critical events related to the transmission and reception of various
+microwave and optical signals used on ACES for time and frequency transfer, as well as navigation. The resulting
+time series of high accuracy radio—metric and opto—metric data will provide the time transfer accuracy that is needed
+to perform tests of fundamental physics with ACES. Based on the anticipated performance of hardware that will
+be involved in the ACES experiment, the models for the ACES observables must be accurate at the level of 1 ps
+and 6 f / f 2 1 X 10—16 for time and frequency transfers, correspondingly. We will use these numbers in developing
+relativistic models for observables on the ACES experiment.
+
+To describe the dynamics around the Earth we will introduce several reference frames, each with its own coordinate
+Chart. In the immediate Vicinity of the Earth we can introduce a set of local coordinates deﬁned in the frame
+associated with the Earth: The origin of the Geocentric Coordinate Reference System (GCRS) is the Earth’s center
+of mass. Positions of ground stations are given with resoect to another terrestrial coordinate system, the Topocentric
+Coordinate Reference System (TCRS; see also Ref. i.) We also consider the Spacecraft Coordinate Reference
+System (SCRS), the origin of which is ﬁxed at the ISS’ center of mass. We also use ACES Coordinate Reference
+System (ACES) associated with the ACES package. The deﬁnition and properties of the TCRS, to ether with useful
+details on relativistic time—keeping in the solar system are given in m. The SCRS was discussed in h in the context
+of the GRAIL mission. Here we introduce the SCRS on the ISS and we deﬁne the ACRS together with appropriate
+coordinate transformations.
+
+Previous studies of ACES El, I, I, offered relativistic models of the basic experimental observables: time and
+frequency transfer. These efforts treated the ISS as a free—falling platform, moving on a geodesic worldline in the
+GCRS. However, the motion of the soace station is subject to nongravitational forces that are present in the near—
+Earth environment (as discussed in h), including atmospheric drag, solar radiation pressure and thermo—elastic
+cycling. As the shape of the space station is complex, its center of mass does not coincide with its center with respect
+to nongravitational forces. This mismatch results in torques that affect the orientation of the ISS. Also, the presence
+of these dissipative forces results in the ISS constantly loosing altitude, in apparent Violation of naive models of
+energy—momenturn conservation. Furthermore, as the ISS orbits the Earth, its extended structure vibrates and ﬂexes,
+resulting in a complex proﬁle of nongravitational acceleration noise on the station.
+
+This paper is organized as follows: In Section-we discuss the conventional deﬁnitions of the GCRS and TCRS,
+including representations of the metric tensor in these reference systems and the coordinate transformations between
+them. We also present the equations of motion for Earth—orbiting spacecraft and light—time equations. We pay special
+attention to contributions by various nongravitational forces acting on the ISS and the ACES package, including
+atmospheric drag and solar radiation pressure. In Section-we present the coordinate reference frames important
+for the ACES experiment, namely the SCRS and the ACRS, again including representations of the metric tensor and
+coordinate transformations, at a level of accuracy appropriate for ACES. In Section-we discuss the formulation
+of the relativistic observables of the ACES experiment. We present models for time and frequency transfer and
+evaluate the navigational requirements needed to fulﬁl the science objectives of ACES. We conclude with a set of
+
+"
+"3","3
+2 ﬁx“ SCRS
+\ ACRS *
+TCRS //
+FIG. 1: Schematic relationship of the coordinate systems discussed in the text(not to scale).
+recommendations and an outlook in Sec.
+II. REFERENCE FRAMES AND THE EQUATIONS OF MOTION
+
+A properly deﬁned set of coordinate reference frames simpliﬁes the discussion of the observables of an experiment.
+Because of its high—precision science objectives and its deployment on the ISS, ACES presents a set of unique features.
+One of the primary Challenges is the presence of various nongravitational forces acting on the experimental payload.
+In this section we present descriptions of various reference frames relevant to ACES. We pay particular attention to
+the dynamical environment relevant to each of these reference frames. Although our analysis is motivated by the
+ACES experiment, the results obtained here are relevant to other missions that Will use precision clocks to reach their
+science objectives 1.
+
+The coordinate systems that represent the ACES experiment are each Characterized by a unique set of harmonic
+potentials including the scalar potential w and the vector potential w)‘. Using these harmonic potentials, we represent
+the metric tensor of a reference frame in the f0rm5,
+
+2 2 2 —6 4 A —5 2 —4
+900 = 1 — 0—210 + 0—410 + 0(0 ), goa = —%AC—3w + O(c ), 9045 = Vaﬁ + M50710 + O(c ). (1)
+
+For the standard non—rotating GCRS, the scalar gravitational potential is formed as a linear superposition of the
+gravitational potential UE 0f the isolated Earth, and the tidal potential utﬁdal of all other solar system bodies:
+
+11113 = UE + uEidal + O(c_4). (2)
+
+UE is conveniently represented in the form
+
++€
+GME 00 RE e 00 RE e
+UEX : —(1— (—) JP cosé’ + (—) P cosé’ C cosk +5 sink ) 3
+() T Z T 6M ) Z: T M Ma ¢ 6k Cb)» ()
+£22 £22 k=1
+
+Where ME is the Earth’s mass, RE is its equatorial radius, Jg = —Cg0 are the zonal harmonics coefﬁcients of the Earth
+
+mass distribution, ng are the Legendre polynomials, While Cgk and Sgk are relativistic normalized spherical harmonic
+
+coefﬁcients that Characterize the Earth.
+
+5 The notational conventions used in this paper are as follows. Latin indices (m, n, ...) are space—time indices that run from 0 t0 3. Greek
+indices 04, ﬂ, are spatial indices that run from 1 t0 3. In case of repeated indices in products, the Einstein summation rule applies:
+e.g., ambm : 2:120 ambm. Bold letters denote spatial (three—dimensional) vectors: e.g., a : (a1,a2, a3), b : (b1,b2,b3). The dot is
+used to indicate the Euclidean inner product of spatial vectors: e.g., (a- b) : a1b1 —|— agbg —|— a3b3. Latin indices are raised and lowered
+using the metric gm”. The Minkowski (ﬂat) space—time metric is given by 7mm : diag(1,—1,—1,—1), so that vuyaWJV : —(a- b). We
+use powers of the inverse of the speed of light, 0—1, and the gravitational constant, G as bookkeeping devices for order terms: in the
+10W-Velocity (2) << 0), weak-ﬁeld (GM/r << 02) approximation, a quantity of O(c‘2) 2 O(G), for instance, has a magnitude comparable
+to 212/02 0r GM/CQT‘. The notation O(ak, be) is used to indicate that the preceding expression is free of terms containing powers of a
+greater than or equal to k, and powers of b greater than or equal to E.
+
+"
+"4","4
+
+At the level of accuracy required by the ACES experiment, the tidal potential ugdal can be given in terms of
+Newtonian contributions only (mostly due the Moon and the Sun):
+
+tidal N GM?) 2 2 —4 —2
+“E : Z (Ub(rbE + X) — Ub(rbE) — X ’ VUb(rbE)) — Z ?(?)(nbn ’X) — X ) + O(rbE ,c )7 (4)
+b75153 (975E bE
+where U5 is the Newtonian gravitational potential of body I), rbE is the vector connecting the center of mass of body
+I) with that of the Earth, and VUb denotes the gradient of the potential. The potential can be expanded to higher
+order terms if necessary.
+The vector harmonic potential 111%} captures the contribution of the Earth’s rotation, deﬁned as:
+GM _ _
+w?) : ‘Tle X SE]’\ +00“ 4,0 2). (5)
+Eq. explicitly accounts only for the largest rotational moment, SE, which is the Earth’s spin moment (angular
+momentum per unit of mass), SE 2 9.8 X 108 m2/s.
+
+Although ACES data will be transmitted, received, and analyzed in GCRS, using TCRS, SCRS, and ACRS, we
+still need access to a global inertial reference frame to account for the presence of the solar system bodies. For
+these purposes, we need one global coordinate Chart, deﬁned for the inertial reference frame that covers the entire
+solar system. The Solar System Baryoentric Coordinate Reference System (BCRS) has its origin at the solar system
+barycenter. It is a convenient reference system for the purpose of describing the motion of the Earth, the Moon, and
+the Sun , whose dynamics will be important for ACES. In particular, the ellipticity of Earth’s orbit introduces
+annual variations of solar gravity potential at the location of the ACES Clock which must be accounted for, as it was
+done, for instance, in 1. Otherwise, GCRS fully satisﬁes the needs of the ACES experiment.
+
+A. Terrestrial reference frames
+
+The formulation of the GCRS treats the Earth’s trajectory in the solar system as being determined solely by
+gravitational forces — a well justiﬁed assumption. Indeed, the largest nongravitational force acting on the Earth is
+that due to the solar radiation pressure, which is responsible for acceleration of 1.95 X 10—16 In/s2, which is negligible
+for the ACES experiment. Further details on the formulation of the GCRS are in m.
+
+In Ref. 1, we showed that the transformations between the harmonic coordinates of the GCRS {1107”} E (ct, X) and
+a non—rotating body—centrio reference system {3/31} E (eta, ya) associated with a body a may be written as below:
+
+ta
+2: = t. + c-2{<v... y.) + / EVE... + ma] alt} + O(c—4> t... (6)
+taO
+—2 1 — 1 2 —4
+X : Xao + ya + C {§Va0 (Vac) ' ya) _ ngtya + §aa0ya _ ya(ya ' 8.00)} + O(C )7 (7)
+where Xao = Xa0(t) is the vector that connects the origin of the {xm} reference system with that of the {yan}.
+
+The quantity ngt in (Elk. is a combination of potentials evaluated at the origin of a particular reference frame.
+This combination consists of i) the Newtonian gravitational potential (including, if necessary, multipole corrections)
+due to all bodies in the solar system other than body a, at the location of body a, and ii) a contribution from
+nongravitational forces acting on the body a. Next, VaO E Xao is the geocentric velocity of the body a and aaO E
+jiao = —ngxt + O(c‘2) its Newtonian acceleration due to ngt, i.e., the combined effect from gravitational and
+nongravitational forces acting on the body.
+
+Introducing ra : X — Xao, the inverses of the transformations (13%. can be written aS .7 m
+
+t
+ta 2 t— c_2{(va0 .ra) +/ Evie +ngt]dt’} + O(c—4) t, (8)
+to
+ya : ra + C—2{%Vao (Vao ' ra) + ngtra _ %aaorc2t + ra(ra ' 8.00)} + 0(0—4)' (9)
+Note that the 0—4 terms in (El), are of the order of N vaS/c‘l 2 4.3 X 10—19 and are therefore negligible for the
+ACES experiment. For complete post—Newtonian form of transformations (IED—(El), consult Ref. 1.
+
+Applying the coordinate transformations (13%. together with the external potentials ngt and acceleration aa,
+from the metric tensor of the GCRS given by one can derive the metric tensor 93m of the non—rotating coordinate
+reference system associated with an object a (see details in m):
+
+a _ 1 _ 2 2 2 O —6 a _ _ 4 A O —5 a _ 3 O —4 10
+900 — C—gweﬁ C—4waﬁ (C )7 900. — vaAC—gwa + (C )7 90.5 —va5+%.ﬁcgwa+ (C )7 ( )
+
+"
+"5","5
+Where wa and w: are the scalar and vector harmonic potentials representing gravity and inertia in a particular
+coordinate reference system associated With the body a.
+
+The topocentric coordinate reference system, TCRS, can be obtained by transforming the GCRS metric gin using
+(13%., Where the “external” potential ngt is now the gravitational potential wE given by and evaluated at the
+surface of the Earth:
+
+wSxt<yc> = Hays) + 2 (mm + ya) — Ub<rbE> — yo . VUb<rbE>) + OW), (11)
+
+(975E
+Where yC is the position vector in the GCRS of a particular ground station. Note that UE(yC) must be treated as
+the potential of an extended body and include a multipolar expansion With sufﬁcient accuracy, taking into account
+time—dependent terms due to tidal effects on the elastic Earth. The corresponding acceleration is ac = —ngxt(yc).
+
+The proper time Tc, kept by a Clock C located at the GCRS coordinate position rc(t), and moving With the
+coordinate velocity VC : drC/dt : [wE >< rc], Where wE is the angular rotational velocity of the Earth at C, is
+determined by
+
+dTC 1 1 2 2 - 2 —17
+W = 1 — 0—2 [§wErC(6’) sm 6’ + UE(rC)] + O(3.89 x 10 ), (12)
+Where 6’ is the latitude of C and the error bound is set by the lunar tides at the location of the tracking station.
+
+The largest contribution to ch/dt comes from the velocity and mass monopole terms, Which are estimated to
+produce an effect of the order of 0—2 (%w%R%3 —1— GME/RE) N 6.97 X 10—10. The quadrupole term produces contribution
+of the order of 0—2GMEJ2/(2RE) N 3.77 X 10—13, Which is large enough to be included in the model. Contributions
+of other zonal harmonics ranging from —c_23GMEJ4/(8RE) N 4.23 X 10—16 (from J4) t0 0—25GMEJ5/(16RE) N
+1.18 X 10—16 (from J5). Although individual contributions of these and other terms are quite small to warrant their
+place in the model, their cumulative effect may be noticeable at the level of up to 3 X 10—15.
+
+In practice, time measurements are based on averages of Clock and frequency measurements on the Earth surface
+1. For this purpose, the time coordinate called Terrestrial Time (TT) is deﬁned. TT is related to TOG: t linearly
+by deﬁnition:
+
+dtTT
+— : 1 — L . 13
+dt G ( )
+IAU Resolution 1319 (2000) turned LG into a deﬁning constant With its value ﬁxed to LG 2 6969290134 >< 10—10.
+This deﬁnition accounts for the secular term due to the Earth’s potential When converting between TCG and the
+time measured by an idealized clock on the Earth geoid . Using Eq. -, we also have
+dTC dTC dt 1 2 —17
+—:——:1 L ——[lv U ] (93.89><10 . 14
+dtTT dt dtTT + G c2 2 C + E(yC) + ( ) ( )
+B. Spacecraft motion in the GCRS
+In the GCRS, the relativistic equations of motion of an artiﬁcial Earth satellite are given as .7-7-713
+GM 8 GM 00 M R e
+f' : —T—3EI‘ — ${TE Z :3 (TE) ng<COS€><C£k COS k¢ ‘1’ Sgk Sin k¢)} ‘1—
+€=2 k=0
+GME GME . . . .
+-1— c27{ [2(5 —1— WT — yr . r]r —1— 2W —1— 1)(r . r)r} -1—
+GME . GMS . .
+—1— (7—1— 1)W{ [r X (SE — 3n(n . SE))]} + (2y+ 1)2—3{ Up X p] X r]} —
+0 TA 0 p
+GM
+_ Z r3 b (B(nbE ' r)nbE _ r) + aNG + 0(10_12 m/s2), (15)
+(975E 513
+Where r is the position of the satellite in the GCRS, 1"" its velocity, n = r / 7° is the unit vector in the direction of
+the spacecraft, p is the Sun—Earth vector, SE is the Earth’s angular momentum per unit mass, and GME and GMS
+are the gravitational coefﬁcients of the Earth and Sun, respectively. Furthermore, rbE : rE — rb is the position of
+the body I) With respect to the Earth in the BCRS and mm = rbE/rbE is the unit vector in this direction. The ﬁrst
+
+"
+"6","6
+two terms in this equation represent the gradient of the Newtonian relativistic gravitational potential of the extended
+Earth, given by .. The coefﬁcients 6 and y are the Parameterized Post—Newtonian (PPN) parameters, equal to 1
+in general relativity. Lastly, am}, is the contribution of nongravitational forces (to be discussed in Sec. -.
+
+As expected, Newtonian acceleration has the largest effect on Earth—orbiting spacecraft. For satellites in the vicinity
+of the Earth (up to GEO orbit) the terms in Eq. can be evaluated With respect to the main Newtonian acceleration,
+as follows: The Schwarzschild terms (second line) are a few parts in 1010 (high orbits) to 109 (10W orbits) smaller;
+the effects of Lense—Thirring precession (frame—dragging, ﬁrst term on the third line) and the geodesic (de Sitter)
+precession (last term on the third line) are about 1011 to 1012 smaller. The main effect of the Schwarzschild terms
+is a secular shift in the argument of perigee While the Lense—Thirring and de Sitter terms cause a precession 0f the
+orbital plane at a rate of the order of 0.8 mas/yr (geostationary) to 180 mas/yr (10W orbit) for Lense—Thirring and 19
+mas/yr (independent of orbital altitude) for de Sitter. The Lense—Thirring terms are less important than the geodesic
+terms for orbits higher than LAGEOS (altitude above 6,000 km) and more important for orbits lower than LAGEOS.
+
+1. Gravitatianal eﬁects 0n the [SS Orbit
+
+Eq. consists of seven terms, the ﬁrst of Which represents the largest force acting on the 188, the contribution
+of the Earth gravitational monopole (N 8.69 m/s2). The second term arises from treating the Earth as an extended
+body, and represents the contribution from the spherical harmonics, contributing a few parts in 10—3 (for J2) to
+a few parts in 10—6 — 10—7 (for harmonics of higher order) relative to the monopole term. The third term is the
+post—Newtonian contribution from the Schwarzschild metric, contributing up to 2.85 X 10—9 m/s2, including also the
+contribution due to the eccentricity 0f the ISS orbit (€Iss N 0.0006), Which is N 1.37 X 10—11 m/s2. The fourth term
+represents the Lense—Thirring precession due to the Earth’s angular momentum, SE 2 9.8 X 108 m2/s, amounting to
+an acceleration of the order of N 2.15 X 10—10 m/s2. The ﬁfth term is due to the contribution of solar gravity on the
+ISS orbit, With a magnitude of N 4.56 X 10—11 m/s2. The sixth term represents the tidal potential (mostly due to the
+Earth and the Sun). The tidal acceleration due to the moon is of the order of N 5.85 X 10—7 m/s2 Whereas for the
+sun it is N 2.69 X 10—7 m/s2. Finally, nongravitational forces are captured by the symbol aNg, and Will be discussed
+in the next subsection.
+
+The relativistic geocentric equations of motion of a satellite that are recommended by the IERS may include
+the contribution from the relativistic quadrupole moment of the Earth at the 1/02 order. It is estimated that the
+corresponding Jg—term would contribute N 2.85 X 10—11 m/s2 for the 188. As such, the relativistic effects of the Earth’s
+oblateness are small for the ISS and may be neglected in the analysis.
+
+The independent variable of the satellite equations of motion may be, depending on the time transformation being
+used, either TT 0r TCG. Although the distinction is not essential to compute this relativistic correction, it is important
+to account for it properly in the Newtonian part of the acceleration.
+
+2. Non—gmm'tatz'onal farces acting on the [SS
+
+The trajectories of Earth—orbiting spacecraft can be signiﬁcantly affected by nongravitational forces. Atmospheric
+drag is especially signiﬁcant for the 188, Which has a very large surface area compared to its weight (i.e., it has a
+10W ballistic coefﬁcient), While moving in a 10W Earth orbit. Another signiﬁcant contribution is due to solar radiation
+pressure and related torques. Other, lesser contributions include radiation pressure from the Earth, interactions With
+the Earth’s magnetic ﬁelds, outgassing, thermo—elastic deformations and extended structure vibrations of the 188‘.
+However, for the 188 these contributions are small compared to the effect of the main nongravitational forces and Will
+be addressed elsewhere.
+
+The 188 is orbiting at an altitude of N 400 km. It is constantly losing altitude due to atmospheric drag. The station
+is regularly boosted to prevent atmospheric re—entry. The atmospheric drag force on the station acts in the opposite
+direction of its velocity vector and is responsible for deceleration given by
+
+8‘ad : _%patmv2nva (16)
+Where Cd is the drag coefﬁcient, patm is the air density at the station location, ’0 is the station’s velocity With respect to
+the atmosphere, nv = V / v is the unit vector in the direction of velocity, and A is the cross—sectional area of the station
+in the direction of its motion through the atmosphere. The drag coefﬁcient and cross—sectional area are dependent on
+the geometric shape and orientation of the station. These are generally determined through experiment 0r numerical
+simulations. Earth orbiting satellites typically have very high drag coefﬁcients Cd in the range of about 2 t0 4.
+
+"
+"7","7
+
+The atmospheric density patm varies by up to two orders of magnitude as it responds to solar and geomagnetic
+activity 1. The MSISE—90 model of the Earth’s upper atmosphere6 provides patm as a function of solar activity. At
+the altitude of 400 km, the atmospheric density is expected to be in the range patm = (3.89 — 50.4) X 10—12 kg/m3,
+corresponding to mean to extreme high solar activity.
+
+To estimate the magnitude of aad, we use the current mass of the 1887 m = mISS : 4.2 X 105 kg, see Table. The
+largest cross—sectional area, based on the size of the solar panels, can be estimated at A g 8 X (36.5 In X 11.6 m) :
+3, 387 m2. We use Cd : 2 for the 188 used in orbit analysis8. Substituting these values in Eq. -, we obtain
+
+laadl 2 (1.8 — 23.9) X i()—6 m/s2, (17)
+These values9 (corresponding to mean and extreme high solar activity) are approximately three orders of magnitude
+larger than relativistic accelerations in the motion of the ISS.
+
+Computational models for solar radiation pressure are usually developed prior to launch. These models can be used
+to compute the acceleration as a function of spacecraft orientation and solar distance:
+
+2 fQA
+asr(7°) : CTn—T2HQ7 (18)
+where f® = 1, 367 W/(m2AU2) is the solar constant at 1 AU, rig is the unit vector in the direction of the Sun and 7°
+is the distance between the spacecraft and the Sun. Using the physical parameters of the ISS and its orbit, an upper
+limit of Eq. can be obtained:
+lasrl g 7.3 X 10—8 m/s2, (19)
+which is nearly 108 times smaller than the Newtonian acceleration and over N 102 to 103 times smaller than the
+deceleration due to atmospheric drag. However, solar radiation pressure will in general perturb the eccentricity, which
+may have to be counteracted by actively controlling the orbit. This acceleration, if not accounted for, will result in
+an error in the estimated radial position of the 188. Over a time interval At this error is 67° 2 %6a A752, where 6a
+is the unmodeled acceleration. If the effect of solar radiation pressure was completely unmodeled, over a period of
+At = 103 s, the position error due to solar pressure would be N004 In, which is negligible over the time scale of one
+orbital revolution.
+3. Equation 0f mation app’mp’rz'ate for the [SS
+
+The orbit of the ISS (hence, ACES) is presumed known to an accuracy of ~10 In El, 1. Atmospheric drag corrupts
+the orbital estimates for the ISS, making it impractical to keep terms below N 1 X 10—7 m/s2. Consequently, we may
+neglect all the relativistic terms (O(c‘2) and smaller), i.e., terms three through ﬁve in 1-D, truncating the equation
+of motion to its Newtonian form:
+
+GM 8 GM 00 M R e
+
+r : ——7°3 r — E{—r Z Z (T) 13gk((:0s6’)(Cg;€ cos kqﬁ + Sgk s1n k¢)} _
+€22 k=0
+GM], CdA . _ 2
+— 2 ?(?)(nm . r)nbE _ r) — ﬁpatmwnv + on X 10 7 m/s ), (20)
+b75153 bE
+where the bound is provided by the solar radiation pressure -.
+
+C. Light travel time
+
+Knowing the time that it takes for a signal to travel between the Earth and a spacecraft is required both for
+radio—metric navigation and for clock synchronization. Given a time of transmission t1 and a time of reception t2, the
+6 For details on the MSISE-90 model of the Earth’s upper atmosphere, please consult http://www.braeunig.us/space/atmos.htm
+7 For data on the 188, see http://Www.nasa.gov/mission_pages/station/main/onthestation/facts_and_figures.html
+8 See details at http://spaceflight.nasa.gov/realdata/sihtings/SSapplications/Post/JavaSSOP/orbit/ISS/SVPOST.html
+9 Our estimates are consistent with the values derived in BE that relied on the data representing earlier conﬁguration of the ISS.
+
+"
+"8","8
+positions of the transmitter (XA) and receiver (X13) are related by the light time equation
+1
+752 —?51 = ER(XA(t1)7XB(t2))7 (21)
+Where R(XA, X3) is the total geodesic 0ne—way distance traveled by light between the transmitter and receiver. T0
+ﬁrst order in G, in Ref. it was derived as
+GME 7“A1 + 7°32 + TA1B2 3
+RXA t1,XBt2 :XBt2 —XAt1 +1+v—ln[— +Oc_,J2, 22
+(()())l() ()l( >02 “1+7?er ( > H
+With 7° A1 = le(t1)l and 7°32 = lXB(t2)l being the distances of the transmitter and receiver from the origin of GCRS and
+rAlBQ 2 big t2) — XA(t1)l is their spatial separation. The logarithmic contribution in is the Shapiro gravitational
+time delay that, in the case of ACES, is all due to the Earth (contributions from the Moon and the Sun are
+negligible). Between the ISS and the ground, the Shapiro time delay is 0.5—3.1 mm (i.e., 1.8—10.4 ps). The next
+order term in this expression would be the one due to Earth’s quadrupole Whose presence extends the standard
+formulation given in l, m. The largest contribution from the quadruple Will be for a ground—based receiver. It
+amounts to N 3 am (or 0.01 ps) and is negligible for ACES, providing the corresponding bound in -.
+
+These computations are applicable When signals travel in a vacuum. This is not the case for signals between ground
+stations and spacecraft in lOW—Earth orbit. These signals experience propagation details due to the Charged particle
+environment in the exosphere and, most notably, due to the oroperties and composition of the troposhere. There is
+extensive literature available on this topic (see., e.g., ., El, ), a comprehensive discussion of Which is beyond the
+scope of our present paper.
+
+D. Coordinate systems on the ISS
+
+Observables on board the 188 are naturally described in a coordinate system (the SCRS) associated With the space
+station’s center of mass. However, this Choice must be scrutinized for a precision experiment that is intended to detect
+minute gravitational effects, if the experiment is not located at the station’s center of mass, as it is subject to tidal
+accelerations as well as nongravitational forces, such as structure Vibrations. The ACES experiment is some distance
+away. For this reason, we also introduce the ACES Coordinate Reference System (ACES), and use the coordinate
+transformations between the SCRS and the ACRS to estimate the relativistic corrections due to the location of ACES.
+We begin, though, by establishing the relationship between terrestrial and station reference frames.
+
+1. Coordinate transformations between GCRS and SCRS
+
+To determine the metric tensor for the SCRS, we perform the coordinate transformation between the GCRS
+coordinates, {30%} E ($0 : ct, X), and coordinates of the non—rotating ISS—Centric reference system {gigs} E (075133, y)
+associated With the center of mass of the 188. With the help of (13%., these transformations are taking the form:
+
+tiss
+75 = tlss + C_2{(VISS '3’) + / [éviss + Egg] altiss} + O(C_4)tISSa (23)
+tisso
+— —Iss 2 —4
+X = XISS + y + C 2{§V1ss(V1ss ' Y) — wexty + %alssy — Yb"" 'aISS)} + 0(0 )7 (24)
+Where X133 2 X13305) is the geocentric position vector of the ISS and VISS E X133 its geocentric velocity. The geocentric
+acceleration of the ISS, aIss E X133, is given by Eq. -, Which is accurate to N 1 X 10—7 m/s2 and accounts for
+Newtonian gravity of the Earth together With the contribution from the atmospheric drag.
+The “external” potential, wig? deﬁned in the vicinity of the 188 is given as:
+wISS:U()+Z U( + —U — .VU . O —2 25
+ext E y b rbE Y) h(rbE) y b(rbE) + (aNG Y) + (C )7 ( )
+(975E
+With the last term being the contribution of the nongravitational forces acting on the space station. Evaluated at the
+origin of the SCRS (y : 0) this potential is:
+_ — GM!) _
+10$: = UE + Z W (3mm . xlss>2 — ﬁgs) + 0(c 2), (26)
+[975E bE
+
+"
+"9","9
+TABLE 11: Select parameters of the ACES mission I], along With corresponding symbols and approximate formulae used in
+the text.
+188 orbital altitude hiss 400 km
+188 orbital eccentricity 6 0.0006
+188 orbital inclination i133 51.60
+188 mass mlss 420,000 kg
+188 cross—sectional areaa A133 3,400 m2
+ACES position in SCRS on 30 m
+Geocentric velocity ’UAO : (GME/(Rgg + hISS))1/2 7.67 km/s
+Mean orbital frequency wG : (GME/(Rg3 + hiss)3)1/2 1.13 mHz
+Geocentric acceleration aAo : GME/(Rgg + hISS)2 8.70 m/s2
+“Based on the size of the solar panels.
+Where VB is the contribution of extended Earth evaluated at the center of mass of the 188, as given by Eq. at
+7° 2 lXIssl 2 RE —1— hIss- We can now substitute in and evaluate all the terms. To facilitate our analysis, we
+present the resulting equation in differential form:
+% Z 1 — 0—2{%Viss + UE + Z % (3(nbE 'XISS)2 — Kiss) + (3188 ' W} + C(54) (27)
+675E 6E
+
+The ﬁrst term in curly braces in Eq. is due to the orbital velocity of the 188. The actual velocity of the
+188 at the end of a time interval 675 may be written as the sum of the initial velocity VISS(t) and perturbations
+from gravitational (6Vgrav(t) = Lt+6tagrav(t’)dt’) and nongravitational (6VNg(t) = ﬁ+6taNg(t’)dt’) accelerations:
+VISS(t + 675) = VISS(t) + 6Vgrav(t) + 6VNg(t). Writing V1880“ + 675) = Vlss(t) + 6VgraV(t) and replacing aNg(t) With
+a constant value aNG representing the maximum nongravitational acceleration allows us to estimate le2SS — ”U?SSO‘ SJ
+2(VISSO 'aNg)6t+a12\IG6t2. The two largest terms in aNG are given by Eqs. and -. Given ”01330 N 7.67 km/s, over
+a time interval 675 = 103 s, the contributions of these terms is given by, respectively, 20_2(VISSO . aad)6t SJ 4.1 X 10—15
+and 20—2(VISSO 'asr)6t g 1.3 X 10‘”, Whereas the contribution of the term o< aim for that time interval is N (9(10_20).
+Therefore, we estimate that atmospheric drag contributes %C_2(VISSO 'aad) g 2.04 X 10—15 to Clock olesynchronization,
+Whereas the contributions of other nongravitational accelerations are negligible.
+
+The monopole term in the Newtonian potential of the Earth at the ISS location VB is responsible for a con—
+tribution of O_2GME/TISS 2 6.55 X 10—10. We estimate that the quadrupole term produces a contribution of
+0—2GMEJ2R%/(2T%SS) 2 3.14>< 10—13. Contributions of J4 and J5 are given by —c_23GMEJ4R4E/(8r15ss) N 3.12>< 10—16
+and J5 is 0—25GMEJ5Rg/(16r1788) N 7.68 X 10‘”, Which are signiﬁcant. Although individual contributions of other
+zonal harmonics (i.e, Jk, k 2 7) are small, their cumulative effect may be noticeable at the level up to 61330 2 3 X 10—16.
+
+The constant rate 61330 would likely be absorbed in other terms during clock synchronization. What is important
+is the variability in the entire error term 6133(75) = 61330 + 6613305), Where the amplitude of the variable term 6613305) is
+due to seasonal Changes in the Earth hydrosphere, crust, etc. and is expected to be of the order of 6613305) N 3 X 10‘”,
+resulting in the ultimate uncertainty in ACES Clock instabilities 6(dTA/dt)elss at that level. Thus, the mission may
+consider including the higher spherical harmonics in the model for Earth gravity potential. Conversely, the ACES
+data could be used for accurate determination and study of the lowest spherical harmonics (i.e, Jk, k E [2, 10]), Which
+could be a valuable scientiﬁc result for geodesy.
+
+The next 1/02 term in is the sum of the Newtonian tides due to other bodies (mainly the Sun and the Moon)
+at the origin of the SRCS. These terms are small for the 188 being of the order of 4.40 X 10—17 for the Moon and
+2.02 X 10—17 for the Sun, and, thus, they may be omitted for ACES.
+
+The last 1/02 term in is the acceleration—inoluceol redshift for Clocks on the 188. Although this term vanishes at
+the origin of the SRCS, ACES Will not be located at the center of mass of the 188, but at some distance of on = 30 m
+away from it. Such an offset leads to acceleration—inoluceol redshift between a ﬁctitious Clock at the origin of the SGRS
+and the atomic Clocks of the ACES package. The dominant term in a133, given by 318807 yields a surprisingly large
+contribution: C_2(alss0 .yAO) 2 2.91 X 10—15. Contributions from nongravitational accelerations are (9(10_20) and
+thus can be safely neglected.
+
+As a result, the temporal part of coordinate transformation (also given by -) takes the following form:
+
+dtlss _ 1 —2 1 2 — —17
+7 — — C {§VISSO -1— (VISSO ' Vad) + UE + (8.1830 ' 37)} + 0(44 X 10 ), (28)
+Where the accuracy bound is set by the omitted contribution from the lunar and solar tides (third 1/02 term in -).
+
+"
+"10","10
+
+We also evaluate the 1/c2 terms present in the spatial transformations -. Taking, for example, the term with
+the Newtonian potential we determine that its contribution is of the order of QC 0—2713on 3 c_2(GME / 7133)on =
+6.55 X 10—10yA0. Even for the largest separation on the ISS, yIss = 120 m, this term is only N 7.86 X 10—8 m. As the
+uncertainty in the geocentric position of the ACES package is expected to be N1 m, this value is exceedingly small.
+The other 1/c2 terms in are also negligible. Thus, the entire package of 1/c2 terms in may be omitted.
+
+As a result, the spatial part of the coordinate transformations between GCRS and SCRS takes a simple form:
+
+x : x133 + y + 0(6.55 >< 10—10)y. (29)
+
+Compared to ""—, the coordinate transformations ""— have a much simpliﬁed form, but are accurate
+
+enough to describe the ACES observables and will be used them for this purpose in the reminder of the paper.
+2. Metric tensor of the SCRS 0n the [SS
+
+Using the formalism of Eq. ., the metric tensor of the SCRS can be expressed in the harmonic coordinates of this
+SCRS, {gigs} E ct s, y), using scalar and vector potentials that incorporate both gravitational and nongravitational
+contributions @Jﬁﬂ:
+
+wlss = UISS + Uisicslal + (aNG ' Y) + C(53): (30)
+M
+WISS = —§7°—12s:[nlss >< SE] — 1_1()(BY(Y'é-NG) — élNoy2) + O(C_2)- (31)
+
+Of the terms present in Eq. -, contributions to clock desynchronization by the gravitational potential due to the
+self—gravity of the 188 at a distance 3/ = lyl = 30 m away from that point are given by 6(dTACEs/dt)lss = O_2U1ss :
+0—2Gm1ss/ly1ssl 2 1.0 X 10—23, which is negligible. Similarly, contributions from the tidal term, 6 (dTACES / dt)tida1 =
+C—2u%g%al : c_2{GME [3(n1ss . y)2 _ y2l/2Ti5ss + O(y3, 0—2)} 2 1.3 X 10—20, can also be dropped. Finally, estimating
+the contributions from nongravitational forces by using the largest nongravitational force, atmospheric drag, we ﬁnd
+that the magnitude of these contributions, 6(dTACES/dt)NG = c_2(aNG . y) N 613(1on 2 8.2 X 10—21 means that the
+third term can also be omitted.
+
+As the center of ﬁgure of the 188 does not coincide with its center of mass, the nongravitational forces may result
+in torques applied to the entire soace station, changing the attitude orientation of the 188. The 188 is maintained in
+a “torque equilibrium attitude” i, which means that the cumulative effect of torque over a full orbit is near zero,
+but during an orbit, signiﬁcant accelerations may be present. To estimate the order of magnitude of such torques,
+we model the space station as a spherical, homogeneous m : 4.2 X 105 kg mass of R = 30 m radius, with moment of
+inertia I : 2mR2/5, and assume that atmospheric drag, the largest nongravitational force acting on the station, is
+displaced by up to 1 m relative to the center—of—mass at some point during the orbit. The torque, then, is given by
+7' = r X (maad) g 10 N ' m, and the rotational acceleration is oz : 7/] N 10—7s_2. At 3/ = 30 m, this translates into
+an acceleration of atrq N 2.0 X 10—6 m/s2, contributing 6(dTACES/dt)trq SJ c_2atrqy N 10—21, which is negligible.
+
+The space station also rotates. Normally it completes one revolution per orbit, but higher rotation rates are also
+possible. However, even at the unrealistically high rotation rate of w = 10 /s, acf : wgrquO 2 0.009 m/s2, which
+would contribute to the frequency comparison of the ACES clocks at the level of 6(d7‘ACES /dt)cf = (atr01 . y A0) / c2 2
+3.05 X 10—18, still small compared to our accuracy goal for ACES.
+
+In Eq. -, the ﬁrst term contributes 0—4GME([HISS >< SE] 'Ulss)/(27°I2SS) g 4 X 10—21, which is negligible. The
+second term, a gravitomagnetic term that results in the dragging of inertial frames and a clock redshift, is due to
+temporal variability of the nongravitational accelerations. Taking am 2 aadwlss, where wIss is the orbital frequency
+of the 188, this contribution amounts to C_4(4aadw1ssyio’01ss) / 5 g 1.9 X 10—35, which is exceedingly small.
+
+As a result, the SCRS at the position of the ACES package on the 188 may be treated as inertial, with the metric
+tensor given by the Minkowski space—time with insigniﬁcant deviations due to non—inertial contributions:
+
+95%8 = 1 + O(3.1 >< 10—18) E 1, gags : 0(6.3 >< 10—16) E 0, gas; 2 Wow + O(3.1 >< 10—18) E M5. (32)
+This Minkowski metric covers the entire space station and may be used to analyze and process the data for the
+ACES experiment. In -, the error terms for temporal, gags, and spatial, 9:838, components provided by a sudden
+nongravitational torques changing the attitude of the 188 by 1 O /s, while the error bound for the mixed terms, gas, is
+due to omitted contribution from the Earth’s spin moment. As a result, to a good approximation, the metric tensor
+of the SCRS can be taken in the form of the Minkowski metric -, which is sufﬁcient to describe the relativistic
+observables of the ACES experiment. The SCRS may be treated as a locally inertial frame that covers the entire 188.
+Together with the coordinate transformations ""— the metric tensor completes formulation of the SCRS.
+
+"
+"11","11
+E. ACES Coordinate Reference System (ACRS)
+
+To describe the observables 0f the ACES experiment, we need to introduce the ACRS coordinate reference system
+located at the center of mass of the ACES package. The coordinate transformation between the SCRS and the ACRS
+will be given in a form similar to ""—2
+
+15A
+25138 = 25A + c_2{(vo . yA) +/ (§v3 +wﬁxt)dt§(} + O(c—4)tA, (33)
+
+tAO
+= + +‘21(')——A 12—(-)+O(‘2) 34
+YIss YAo YA C 2V0 V0 YA wextyA + 2309A YA YA a0 0 7 ( )
+where y A0 = y A0 (tlss) is the positional vector of the ACES package with respect to the SCRS, with lYAol : 30 m.
+Also, VO = m and a0 = M are the velocity and acceleration of the ACRS as seen from the SCRS, correspondingly.
+The “external” potential, EeAxt, is the potential due to the gravity of the ISS evaluated at the ACES location. Its
+
+magnitude is EeAxt/c2 = Ulss/C2 g 1.0 X 10—23, making this term negligible.
+
+The velocity V0 = M is mostly due to extended structure vibrations of the 188. If we assume that the ISS vibrates
+at the ACES location at wvib = 10 Hz with the amplitude 6Vib = 0.1 m, this motion leads to a Vibrational velocity of
+vvib = 6Vibwvib = 1 m/s, which will be responsible for a contribution of 5(dt1ss/th)vib = %C_2’031b = 5.56 X 10—18 t0
+ACES Clock desynchronization. (As environmental factors on the 188 may increase the magnitude of this effect, it is
+important to analyze it in more detail, which we plan to do this in a separate publication.)
+
+Based on this analysis, we conclude that the coordinate transformations between the SCRS and the ACRS ""—
+may be given as
+
+75188 : tA -1— C—2(Vvib ' yA) + O(5.56 >< 10—18)tA, (35)
+
+YIss : YAO + YA + 0(5-56 X 10—18)YA7 (36)
+
+where the bound is set by the vibrations of the 188 at the location of the ACES package. As a result, the metric
+tensor representing the ACRS has the nearly Minkowski form:
+
+930 = 1 + O(i >< 10—16), 95; : O(i x 10—21), gfiﬁ : ”7&5 + O(l x 10—16). (37)
+
+Furthermore, Eq. implies that the proper time of an atomic Clock at the origin of the ACRS is nearly equivalent
+to the time of the SCRS, namely:
+
+d7
+—A : 1 + O(5.56 >< 10—18). (38)
+dtlss
+
+Using the coordinate transformations ""— between the SCRS and the GCRS, we can relate ACES proper time
+to GCRS geocentric time, TCG. Dropping quadrupole terms from the expression as well as the acceleration—dependent
+term C_2alss0 'yAO 2 (9(42 >< 10—18), we obtain
+
+dTA 1 GME RE 2332 — r2
+—:1——{lV2—l—V 'V +—(1 J[—]#)} (93X10_16. 39
+dt c22A<Aad> TA +2“ 27% +< > <>
+
+Clearly, may be obtained directly by deﬁning the ACRS Via a coordinate transformation between the GCRS
+and ACRS. However, by introducing the hierarchy of reference systems GCRS—>SCRS—>ACRS, we were able to discuss
+the appropriate gravitational and nongravitational forces and related torques at each step of these transformations.
+
+Note that the accuracy of may be improved to O(4.4 X 10‘”) by including several terms with the gravitational
+harmonics beyond J2. Such an improvement may be needed to be consistent with the ultimate ACES Clock accuracy,
+which is expected to be at the level of 1 X 10—16 at 1 day.
+
+Concluding, we emphasize that, contrary to our original expectations, the ACES coordinate reference system may
+be treated as a quasi—inertial one. One can use the coordinate transformations and the metric tensor discussed in this
+section to describe the relativistic observables 0f the ACES experiment. However, the proposed Space Optical Clock
+(SOC) mission will require the introduction of a more accurate set of coordinate reference systems.
+
+III. MODELING THE RELATIVISTIC OBSERVABLES FOR ACES
+
+Now that we have successfully formulated all the coordinate systems and coordinate transformation rules required
+to describe the ACES experiment and associated ground stations, we can proceed with modeling the timing and
+frequency observables 0f ACES.
+
+"
+"12","12
+TB 32 33
+t y
+2 t3
+XB(t)
+A1
+XA(t) A4
+t4
+‘ GCRS
+FIG. 2: Timing events for paired one—way scenarios: Depicted (not to scale) are the trajectories of the terminals A and B , with
+corresponding proper times TA and TB and with four events in the GCRS, corresponding to a one—way signal transmission at
+X13051) and its reception by the A terminal at XA(t2), and, similarly, another one—way signal transmission at xA(t3) by terminal
+A and reception of this signal at xB(t4).
+A. Timing observables
+First, we consider the generic two—way scenario shown in Fig. representative of the European Laser Timing (ELT)
+experiment Q, operating in conjunction with ACES. Depicted are the worldlines of two terminals, A (e.g., a ground
+station) and B (the ACES experiment). Proper times of transmission and reception, time—stamped by local Clocks,
+are recorded at both locations. Thus, a signal emitted at %A(t1) = 72A1 (where the tilde is used to indicate that
+7‘ is a discrete data point in a measurement sequence, as distinguished from the continuous variable 7' representing
+proper time) will be recorded at 7:131 = 72A1 + 673:, where 67‘]: captures the ﬁnite precision of the timestamp and
+other instrumental uncertainties. We similarly introduce the time of the ﬁrst signal’s reception along worldline B,
+ﬂg2 = 713052) +67% = 7:32 +67%, and the corresponding quantities for the return signal: 7:133 = 713053) +6711?) = 7:33 +67%
+and 7K4 = 71054) + 67‘}; = 714 + 6731;. We assume that 67:3, 6731;, 67:13) and 67% are constant and known ahead of time
+(through instrumental calibration) though in general, the emission and reception delays are different: 67‘]: 7E 67‘}; and
+67% 7E 67%. For convenience, we introduce the following combinations corresponding to pseudoranges:
+A?A1B2 : 7:132 — 7:317 A7:B3A4 I 7:34 — 7:133: (40)
+A?A1A4 : f[1&4 — fZ1, A7:B2B3 = ?]33 — $132 (41)
+These values are all functions of the coordinate time quadruplet of coordinate times {751, t2, t3, 754}. Using Eq. 1-D,
+we can use these coordinate times to form the light travel times
+A7512 = 752 — 751 = O_lRAB (X131, XA2), A7534 = 754 — 753 = O_lRAB (X133, XA4): (42)
+where
+GME 7“A1 + 7°32 + X132 — XA1 _
+RAB (XA17XB2) = iXBZ — XAli + (1 + 7)—21n[# + O(C 3, J2,G2), (43)
+C TA1 + 7°32 — iXBZ — XAli
+GME TA4 + 7°33 + XA4 — X133 _
+RAB(X133,XA4) = iXA4 — XB3i + (1 + v)—21n[# + 0(0 3, J2,G2), (44)
+0 TM + 7°33 — \XA4 — XB3‘
+where we used the shorthand XA1 = XA(t1), X32 2 X13052), X33 2 XB(t3), and XA4 = XA(t4) to indicate the various
+positions along the two worldlines. Additionally, we can form the time intervals A7514 2 t4 — t1 and A7523 2 t3 — 752,
+which correspond to the intervals of proper time measured by the Clocks on A and B .
+
+"
+"13","13
+1. Clock synchronisation
+The quantities ""— toether With and ""— allow us to express At = t3 — 751, Which is required for
+synchronization of two Clocks i7-711
+1
+At = t3 — t1 = 5 (A2514 + A2523 + A2512 — A2534). (45)
+At is known because it is expressed in terms of A7514 and A7523, Which are measured at the two terminals, and A7512
+and A7534, Which are computed from Eqs. ""—.
+The sum of the two Eqs. (1212]) may also be written as
+1 —1 —1
+753 — 751 = 5 ((754 — 751) + (753 — 752) + C RAB(XB17XA2) — C RAB(XA37XB4))- (46)
+
+The difference between the two range measurements RAB(X131,XA2) and RAB(XA3, X34) produces a correction to the
+the sum of the two Clock times intervals measured at the two terminals. This correction depends on the range—rate
+between the two terminals l]. Equation can also be written as
+
+1 1 1
+
+§(t1 + 754) — §(t2 + 753) = 2—0 (RAB(XA37XB4) — RAB(XB17XA2))7 (47)
+Which represents the essence of Einstein’s procedure for Clock synchronization.
+
+Clearly, for ideal Clocks and perfect measurements, is an exact identity. However, for realistic measurements,
+When various sources of noise present in the system (-1 could lead to an observational model that may be used
+to evaluate the stability of Clock synchronization .7 I, m. The baseline approach in ACES is to use the MWL
+hardware to enable time and frequency transfer Em. Alternatively, the BLT may also be used for this purpose, relying
+only on the timing information in Eqs. ""—. Below, we develop the appropriate relativistic models.
+
+To express the observed Clock offset, we use the quadruplet {7:21, 711152, 7:133, 7314} of the time tags reported by terminals
+A and B :
+
+1 N N N N
+6sz = 5 ((721 + 724) — (7122 + 7133)). (48)
+This term can also be computed as follows:
+comp 1 A A e r
+67—AB : g ((7A1 — TA1) + (7A1 — 751) + (7A4 — TA4) + (7A4 — 754) + 57A + 57A) —
+1 A A
+— 5 ((7132 — 7132) + (7132 — 2:2) + (7133 — 7139+ (7133 — 2:3) + 55; + 55;) +
+1 1
++ 5 ((254 — t3) — (2:2 — 251)) + 50633;“ — 6s“), (49)
+Where the terms in the equation above represent ﬁve groups of terms that have the following meaning:
+
+0 The quantities (?Al — 7A1), (7354 — 7A4) and (72132 — 7'35), (72133 — 7'33) represent the differences between recorded
+time tags and proper times. These Clock errors may be modeled as quadratic functions of the measured proper
+time. For example, the time tag error (?Al — 7A1) is given as:
+
+A A A 1 A A A
+(7A1 — 7A1) : 05A + 5A(7'A1 — TA0) + 57A (7A1 _ 7'A0)2 + O(AT/iﬂa (50)
+Where ?A0 is a speciﬁed epoch and Aim 2 +A1 — 72A0' The constants 0%, 5A and 7A are to be estimated during
+the data analysis. The other time tag errors are modeled in a similar manner.
+
+0 The quantities (7A1 — t1), (7A4 — t4) and (7-32 — 752), (7-33 — 753) are the general relativistic differences between
+proper time and coordinate time. These relationships are established by integrating the equations and -.
+
+o The error terms 67-3, 67-11 and 67g, 671% are instrumental delays due to ﬁxed propagation paths between the optical
+systems, detector electronics and the time tag unit. These delays are usually measured and calibrated before
+the ﬂight.
+
+o The terms (t4 — t3) and (t2 — t1) represent the coordinate light transfer time elapsed between the signal emission
+at one terminal and its reception at the opposing terminal, related to pseudo ranges as given by (1212]).
+
+"
+"14","14
+o The term (632m — $3“) is the difference the atmospheric signal propagation delay during uplink and downlink.
+
+In the case of the BLT experiment, the signal received on the 188 is time—stamped at the reception and is simulta—
+
+neously returned by a retroreﬂector. Thus, 7E2 = 7:133, A?ngg = 0 and becomes:
+b 1 ~ ~ ~
+57:38 : 5(731 + 7/14) — 71%2- (51)
+Furthermore, 7E2 = 7:133, and, therefore, becomes:
+comp 1 A A 6 e 6 r
+67—AB : § (7A1 — TA1) + (7A1 — 751) + (7A4 — TA4) + (7A4 — 754) + TA + TA —
+— ((+32 — 7132) + (732 — 2:2) + 6712;) +
+1 1
+
++ 2—0 (RAB (X133, XA4) — RAB (XA1, XB2)) + 2—0 (531m — 5%“)- (52)
+This model could be used to evaluate clock desynchronization in the ACES experiment. It may also be used to develop
+appropriate simulation code that is needed to understand the features of ACES. Note that when two ground—based
+clocks are used for common View comparison (see Tablel in a terrestrial reference frame, the Sagnac effect must also
+be accounted for, as discussed in m.
+
+The ﬁrst 1/c—term in represents the difference between optical paths (given by (1213]) and (171211)) of the two signals
+traveling between receiver and transmitter in a two—way communication link. This term depends on the geocentric
+positions of both the ACES and a ground station. This information, in particular, is helpful to investigate the accuracy
+needed for trajectory reconstruction of the 188 in order to satisf the ACES’ science requirements. Similar questions
+were addressed previously under different sets of assumptions Elia, I, 1.
+
+Using -, we evaluate the geometric uncertainty due to imprecision in the ISS navigation:
+
+6mm), —i73 ( )—R (X X ) —ilx —X l—lx —X1 (53)
+TAB geom — 20 AB XB37XA4 AB A1; B2 — 20 A4 133 B2 A1 7
+where we neglected the contribution from the Shapiro delay, which, even in the absolute sense, contributes g 10 ps.
+For the BLT experiment, where 753 = t2, becomes
+comp 1 —2
+67—AB lgeom : 2—C(HAB 'VAB)(754 — t1) + 0(0 )- (54)
+Consider the case in which the velocity of the ground—based station is well known and the largest systematic error comes
+from the uncertainty in the velocity of the 188. We take the instant with the longest round—trip time A7514 2 t4 — 751
+of A7531“ 2 20—1x/(TE + hIss)2 — 7% % 20—1x/2TEhIss = 15.2 ms. The angle between two unit vectors ﬁAB and 913 at
+that instant is also small, cos(ﬁAB, 913) m 1 — hlss/TE. Then, assuming that the timing accuracy for the ISS pass is
+better than éﬂmp] g 0.3 ps, from (1E1) we have the accuracy at which the ISS velocity needs to be known:
+geom
+c2 )
+A1113 3 —0.3 ps : 0012 m/s, (55
+V?TEhlss
+which is equivalent to the requirement that the geocentric position of the ACES package on the 188 be known to
+Ahlss 3 20°13 + hISS)AvB /’UISS = 20.8 In, assuming that this positional error is responsible for the entire timing error
+of 0.3 ps. On the other hand, as we see from -, there will be many contributions to the timing error, with the ISS
+positional error being just one of them. Thus, based on the anticipated precision of the time transfer experiments,
+we require that the ISS positional error contributes less than 10% of the timing error of 0.3 ps, which translates into
+a requirement that the eocentric position of ACES be known to Uhxss g \/0—1 . 20.8 In 2 6.3 m. This is consistent
+with earlier estimates j and can be achieved with existing navigation capabilities m.
+2. Two—way pseudomnge
+
+The time observables -—(]71_T[) may also be used to develop a two—way pseudorange estimate. Similarly to -, we
+use the time tag quadruplet {7131772157 7:133, 7014} to derive an expression for the observed two—way pseudorange, which
+is half the sum of the one—way pseudoranges:
+
+6pOAb§ I %C(A7:A1]32 + ATB3A4) : %C(A7:A1A4 — A?Bng) E %C((7:K4 — 7:31) — (711%?) — 71132)), (56)
+
+"
+"15","15
+Where all the times are the actual time measurements reported by the two terminals. In the case of the BLT experiment
+E], 7%2 = 7:133, and Eq. becomes:
+b N N
+57-13135 : %C(7—X4 _7'£1)- (57)
+The computed pseudorange is given by
+(Spffénp = %c(A+AlB2 + MW) 2 %C((ﬂ§2 — $131)+(ﬂ§4 — +139), (58)
+Where now times are modeled times for those reported by the Clocks 0n stations A and B . To facilitate computation,
+this expression is written as a sum of the following terms:
+(SPCAOignp : %C((7A—A4 — TA4) + (7A4 _t4)_(7A-A1 — TA1) — (7A1 — 751) + 57/1; — 571i) —
+1 A A
+_ 50((7133 — T133) + (7133 — t3) — (7132 — TB2) — (7132 — 752) + 57f), — 571%) +
++ %c((t4 —t3) + (252 —t1))+%(6§i‘5m +6336“), (59)
+Where all the quantities present in this equation are deﬁned after (ll
+For the BLT experiment, 7%2 = 7:133, and, therefore, becomes:
+6p??? = a(m — 7A4) + (m — t4) — (m — 7A1) — (nu — 2:1) + 67;; — 672) —
+l R R l 6atm 6atm 60
++ 2 AB(XA17XB2)+ AB(XB27XA4) + 2(12 + 24 ). ( )
+
+The two—way range model may be used to improve navigation of the ACES package on the 188. If enough
+satellite laser ranging (SLR) stations participate in the laser ranging campaign, ACES may be able to completely
+address its precision navigation needs. Although geodetic satellites yield trajectory reconstruction accuracy at the
+level of N1 cm, the 188 Will not allow for such a precision. As we discussed earlier, the station is subject to signiﬁcant
+nongravitational forces Whose presence degrades the trajectory reconstruction. Nevertheless, because of its potential
+navigational value, the use of SLR for ACES needs further investigation, especially Within the BLT experiment El].
+
+B. Frequency observables: the gravitational redshift
+
+The microwave link (MWL) component of ACES utilizes three different microwave frequencies (one uplink, two
+downlink) to provide for reliable (not weather—dependent) transfer of timing and frequency information. In particular,
+for frequency observables, the combined use of uplink and downlink observables allows for the formulation of a science
+observable, from Which the effects of the Doppler frequency shift and atmospheric noise are canceled t0 the ﬁrst order.
+
+To formulate the gravitational redshift observable, we assume the presence of a 0ne—way and a two—way frequency
+observable. TWO—Way, in this context, means a coherent retransmission of a signal received from the ground. We
+assume that the signal retransmission is instantaneous. Such an observable can always be synthesized using the three
+radio frequency observables that are produced by the MWL experiment.
+
+We use ?Al to represent the proper time transmission of a signal from worldline A at proper time 71051), Which
+is then received at worldline B at proper time 7A'132. An inﬁnitesimal interval d7A'A1 at the transmitter corresponds to
+an inﬁnitesimal interval (£72132 at the receiver. The number of cycles transmitted during this interval, dn, is equal to
+the number of cycles received at the receiver. On the other hand the number of cycles is the product of the signal
+frequency and the time interval, therefore ng(%A1)d%A1 = fgﬁggmfgg, 0r
+
+I‘X A tx A de1
+f3 (7132) = fi (mar. (61)
+
+7'B2
+Similarly, this signal is immediately retransmitted t0 the ground at the same frequency and then received at 713 in a
+
+two—way retransmission scheme, the received frequency is given by
+df- df' df-
+2W A rx A B2 tx A A1 B2
+
+A < A3) f3 < B2) mg a < A1) (#132 M < >
+
+"
+"16","16
+Similarly, a one—way signal transmitted from B at 7A'132 at frequency fEXﬁBg) is received at station A at the frequency
+w A x A d? B
+f1 (m) = 113, <TB2>dA—2. (63)
+7'A3
+The one—way frequency shift between the transmission and the reception frequency includes contributions from the
+relativistic Doppler effect, from atmospheric noise, and from the gravitational redshift. In contrast, the frequency shift
+in the two—way transmission includes twice the contributions from the relativistic D0 opler effect and from atmospheric
+noise, but gravitational redshift contributions are canceled out to ﬁrst order -, This allows for the formulation
+of a ﬁrst—order “D0pp1er—canceled” observable in the form,
+obs _ féw(rA3)—f13(ﬂ32) 1 fiwﬁm) — fAWAl)
+fB(TB2) fA(TA1)
+For ACES, the removal of the ﬁrst—order Doppler effect will be enabled by the MWL El], which will also allow for the
+removal of the troposphere time delay, as well as the removal of instrumental delays and common mode effects.
+This observable can also be computed from the ratio of proper times that, in turn, can be estimated from orbits:
+df'Bg 1 df'Al
+5mm: [__1]__[__1]. 65
+""f (mg 2 (mg ( )
+To develop Eq. further, we use the differential equation that relates the rate of the proper times, TA and 73,
+as measured by a round—based and on—board Clock in Earth’s orbit, correspondingly, t0 the time in GCRS, denoted
+here as 75 (see Refi) as
+d’TA 1 Vi _4 d7 B 1 V123 —4
+W = 1 — 0—2 [7 + UE(yA)] + O(C ) and E = 1 — 0—2 [7 + UE(yB)] + O(C ). (66)
+Taking into account that (dTA /dt— 1) % (dTB /dt — 1) N 10—9, and assuming that time tag errors, ?A, and instrumental
+drifts, 67):, are small, we can rewrite d7A'A1 in the following form:
+d(i‘A — 7' ) ($67): dTA
+1A : (1 _A _)(_) 11 o , 67
+7A1 + dt + dt dt :51 1+ (6A) ( )
+were we use (dTA/dt)t1 to mean the value of the expression at t = t1 and the error term, 6A, is
+dTA d(i‘A — 7' ) d67'e _
+:___1](—A —A) o 4. 68
+EA idt dt +dt + (C) ()
+For 6A to be less than the frequency stabilization accuracy anticipated from on ACES, i.e., EA 3 10—17, the time tag
+errors (i.e., scale and Clock acceleration errors), 6731 = d(i‘A — TA)/dt, and instrumental drifts, 67""): = d6TX/dt, must
+not exceed 671,671): g 10 ns/s. Otherwise the approximation needs to be updated to include -, which we omit
+below. Using -, our approximation results in
+A d 7A'A — 7' A A A _
+(”A 3 % = 6A Mm — TAO) + amiss 2). (69)
+As a result, to approximation appropriate for ACES, (m takes the following linearized form:
+- d
+(ml : (Hm +613) (ﬂ) dtl. (70)
+dt 751
+Similarly, we have the other two expressions
+- d
+d7A'A3 : (1-1—67A'A-1—67Lg) (i) dtl, (71)
+dt t3
+A A -r dTB
+dTBg : (1 -1— 673 -1— 6713) (—) dtl. (72)
+dt :52
+Therefore, the ratio of the estimates of proper times in may be expressed Via the ratio of their coordinate
+counterparts as
+(£72132 - , - , dTB dTA ‘1 dig
+— = 1 6A —6r><—> <—> _, 73
+(mg ( + 73+ TB TA TA dt 12 dt 13 £113 ( )
+
+"
+"17","17
+d7A'A1 , , dTA dTA _1dt1
+— 2 1 68—6r><—> <—> —- 74
+As a result, Eq. takes the form
+dig 1 dtl - , - , dTB dTA _1 dig
+6 comp= (—-1)--(—-1) [(1 5“ 6 “ “5A -6 r)(—) (—) -1l—-
+77f dtg 2 dtg + + TB + TB TA TA dt t2 dt t3 dtg
+1 , , dTA dTA _1 dtl
+—— 1 66—6r><—> (—> 41—, 75
+2 K + TA TA dt t1 dt 75;; dtg ( )
+where the instances of coordinate time 752 and 753 are related by -. Although events of the original signal emission
+at 751 and its ultimate reception at 753 are not connected by the same light cone, we nevertheless may compute the
+total time elapsed between the two events (as was ﬁrst observed in 1.) Indeed, taking 752 = 753 in -, we have:
+251 : t3 — C_1(RAB(XA(t1),XB(t2)) + 7213A (x3022), Mag»). (76)
+Thus, the total coordinate time elapsed between the two events is fully determined by the locations of the two stations.
+In fact, using the ﬁrst equation in and we have the following exact expression for the ratio of coordinate
+times present in .:
+dtg 1 d 1 d6atm
+_:1___[R , ]___B23, 77
+dtg Cdtg BA<XB2 XA3) C dt3 ( )
+dtl 1 d 1 d
+—=1———[72 , 72 , ]———6atm 63”“, 78
+dtg C dtg AB(XA1 X132) + BA(XB2 XA3) C dt3( A12 + A23) ( )
+where we introduced atmospheric delay 6333 for the signal from station A on the up—link and atmospheric delays
+6333, 613% for the downlink leg of the two—way signal originating at station A and the downlink signal originating at
+B , respectively. This allows us to account for the fact that atmospheric delay is frequency dependent effect increasing
+the length of the propagation path in the atmosphere. Note that due to the relativistic frequency shift, atmospheric
+delay is different for uplinks and downlinks.
+The results given by Eqs. ""— allow us to present -, describing the frequency difference between the signal
+transmitted from B and received at A, comparing it to the local oscillator at A, as
+comp 1 d 1 d 1 atm atm atm
+677]? : 2—Cd—753 [RAB(XA17XB2) _ 7?IBA(XB27XA3):| ‘l— Ed—tg (§(6A12 ‘1’ 6A23) — 61323) ‘l’
+- - dTB dTA _1 1 d 1 d6atm
+1 5“ 5‘1”“ -5“‘)(—) (—) -1l(1--—l72 , l--—323) -
++ i( + TB + TB TA TA dt t2 dt t3 0 dtg BA<XB2 XA3) c dtg
+1 dTA dTA ‘1
+- - 1 5'8 -5""‘)(—) (—) *1 X
+2 |:( + TA TA dt t1 dt t3
+1 d 1 d atm atm
+>< (1 — -— [RAB(XA1,XB2) + RBA(XB27XA3)] — -—(5A12 + (5A23)). (79)
+C dig C dt3
+The resulting expression is valid for arbitrary worldlines of A and B . Although contains all three values of
+time, t1, t2, 753, any two of these values are determined by the third. We Choose the time of ﬁnal reception at A, 753, as
+the independent variable. The values of 751 and 752 may be explicitly expressed Via 753 as t1(t3) and 752(753) by applying
+the transformations and -. Furthermore, and relate the coordinate time t3 t0 the proper time 7A3
+and can be integrated to determine t3 = t3(7'A3) and Vice versa.
+To simplify the model (El), we evaluate the terms on the right—hand side of this equation using the ACES conﬁgu—
+ration. To do this, we estimate the following ratio:
+d7 d7 ‘1 1
+1 — (—13) (_A) 2 _2 (%(V]232 — v33) + UE(X132)— UE(XA3)) + 0(0—4) : 3.675 X 10—10. (80)
+dt t2 dt t3 C
+This term is signiﬁcant and must be kept in the model. The 1/04 terms in produce contributions of the order
+of N 5 X 10—19, which is beyond the ACES capability and may be omitted. Next, using expansions presented in the
+Appendix B of we evaluate the term
+1 d 1 d _ 1 _
+-— [RBA(XB27XA3)] = ——lXA(?53) — XB(t2)l + O(C 3) = -(HA3132 ’VA3B2) + O(C 2) =
+c dtg c dtg c
+
+"
+"18","18
+: 2.71 X 10‘5 + 0(7 >< 10—10), (81)
+where rA3132 : r132 —rA3, rA3132 : ergggl, nA3132 : rAggg/rAggg, and VA3132 = V132 —VA3 Thus, this term also must be
+included in the model. However, the atmospheric contribution may be omitted from this term. Indeed, atmospheric
+delay is 6??“ N 2 m and, even if it changes at a rate of N 2 m/s, the resulting term 046??“ = 6.67 X 10—9, multiplied
+by -, produces a negligible contribution.
+Similarly we evaluate the factor in the square brackets in second term of (TED. Thus, using we have:
+dTA dTA —1 1 d V2
+1—(—) (—) :——[—A+U x lAt +0At2,c_4, 82
+dt t1 dt t3 02 dt 2 E( A) 13 ( 13 ) ( )
+where A7513 2 t3 — 751. The magnitude of the RHS can be easily evaluated. For the time of transmission in the two—way
+case, we get A7513 N 2dAB/c, with maximal value of Atgrgax = dng/c = 2c_1\/ (”FE + hiss)2 — 70%) % 2c_1\/2rEhISs =
+15.2 ms. Therefore, the RHS of has the magnitude
+d Vi GM ZdAB 18
+—— —.—<1.3><10_, 83
+dt i 2 + TA ] C3 _ ( )
+which is negligible for ACES, allowing us to drop from the combination of terms proportional to -.
+To simplify the third term in -, we need to express time 751 Via 753, which can be done by using .2
+2 2 _3
+t1 = 753 — ETA3B2 — C—2(I'A3]32 ‘VA3) + O(C )7 (84)
+Next, using formulae from Appendix B of l, the third term in takes the form:
+2 ZTA _
+
+RAB(XA17XB2) — RBA(XB27XA3) = E(I'A3B2 ‘VA3) + 0—3132(V1243 — (I'A3132 ‘aA3)) + O(C 3), (85)
+where aA 2 VA is the acceleration of station A. To take the derivative d/dt3 from we ﬁrst need to account that
+752 and a faction of 753. Thus, using -, with sufﬁcient accuracy, we have
+
+dtg 1 _
+— : 1 — —(nA3]32 ' VAng) + O(C 2). (86)
+dig C
+As a result, the third term in takes the form:
+1 d 1 1
+2—0? [RAB(XA1,XB2) — RBA(XB27XA3)] = 0—2 ((VA3B2 ‘VA3) + (I'A3132 41/83)) (1 — E(HA3B2 ‘VA3B2)) +
+3
+1 . _
++ C—3TA3B2 (((3VA3 — V132) 'aAs) — (I'A3B2 ‘aA3)) + O(C 3)- (87)
+As a result, Eq. may be written as
+Comp 1 1 2 1
+577f : —C—2(§VA3]32 + UE(XB2) — UE(XA3) —(I'A3132 'aA3))(1 — E(HA3B2 ’VA3B2)) +
+1 . 1 . m
++ C—3TA3132(((3VA3 — V132) ‘aA3) — (I'A3B2 ’aA3)) + 2P3; +
+. . 1 1
++ (6+3 + 57°13 — m — 5+3) (1 — —(nA3]32 .vA332)) + 5 (5+; — 57°11) + O(l.3 >< 10—18). (88)
+c
+This quantity is fully determined by the worldlines 0f the two stations at various moments of signal propagation. We
+introduced p335“ = §(63tf3 + 6333) — 61233, which denotes temporal change in the asymmetry of the atmospheric delay
+between down— and uplinks during the combination of a two—way and a one—way communication link used to cancel
+the ﬁrst—order Doppler shifts. We can see that the ﬁrst—order Doppler cancelation scheme given by Eqs. ""—
+also greatly reduces contributions associated with various noise sources, especially atmospheric noise. Originally, with
+accuracy up to 1/02, Eq. was developed for the Gravity Probe A experiment 1, which was later updated for
+ACES to include the 1/02 terms in 1. Our results are similar, but they were developed using a different approach,
+which allows for a signiﬁcant generalization.
+As a last step, we express all the quantities in using the proper time of ﬁnal reception, 7A3, corresponding to
+coordinate time 753. This can be done by using the relation between 752 and 753, which to sufﬁcient order is
+1
+t2 : t3 — ETAB -1— O(C_2). (89)
+
+"
+"19","19
+As a result, we are able to express the model for the D0ppler—canceled gravitational redshift in its most convenient
+form:
+5 “mp — 1 1 2 U U 1 1
+77f — —C—2 §VAB + E(XB) — E(XA) — (I'AB 'aA) — E(HAB 'VAB) —
+1 , 1 , m
+—C—37°AB (2(VAB ' 8A) + (VA ' 8A3) + (I'AB ’aA)) + Epgﬁv +
+. . 1 1
++ (5+3 + 57°13 — MA — 5+3) (1 — E(nAB .VAB)) + 5 (5+; — 571;) + 0(1.3 >< 10—18), (90)
+where aAB = a3 — aA and all the quantities are expressed in terms of 753. Ultimately, ACES will be able to test the
+gravitational redshift to an uncertainty level of < 2.0 X 10—6 in 10 days of integration time. Therefore, the contribution
+of each term in must be known to an appropriate accuracy. We address these questions and the related precision
+of the ISS orbit in the following subsection.
+
+Note that one can also use timing observables to investigate the relative frequency stability between the Clocks 0n
+the ground and those is space. In Sec. III A we introduced desynchronization between the two Clocks with observable,
+6TAB(t), given by and the model -. The local time stability of these measurements may allow for a precise
+estimation of a time drift over a short duration (around 1 min), according to this approximation of the derivative:
+
+61018588 1 obs 1 Obs 1 6f1233mp 1 comp 1 comp 1
+T : ?{67—AB (t ‘1’ §T) — 6TAB (t — §T)} and T : ?{67—AB (t ‘1’ §T) — 67—AB (t — §T)}. (91)
+These quantities correspond to a relative frequency offset, 6 f AB, seen by the station A during the time interval T
+with respect to the nominal frequency f0 0f the oscillator at A. Such a quantity may allow the use of laser ranging
+data from the BLT experiment for an independent veriﬁcation of 5f AB / f 0 established by the MWL.
+C. Precision of ISS navigation
+
+Now we can address the question of navigational precision for the 188, which is needed to satisfy the ACES
+requirements based on the anticipated precision of the red—shift experiment. To do that, we consider the proper—to—
+coordinate time transformation for the clock on the 188 that is given by -. We begin with presenting this equation
+in terms of the Keplerian elements of the orbit of the 188 including the semi—major axis, a, eccentric anomaly,
+5 : M —1— e sing (with M being the mean anomaly), eccentricity, e, orbital radius, 7° 2 a(1 — 6 cos 5).
+
+Collecting all the terms relevant to establishing the orbit of the ACES Clocks, we have:
+
+dTB GMEg 7 RE2 3.2. 3 RE2 3.2.
+E — 1 : ——C2a0 {g + §J2E [(1—0] (1 — § SID Z0) ‘1’ 2(1 — §J2E [(1—0] (1 — § SID ’60))80 C0850 ‘1—
+R 2 A
++ 263 (30s2 50 —1— .1213 [—E] sin2 730 cos2(w0 —1— u) — cos 6A0 & —1— WCd—patmao} + O(4.4 X 10‘”), (92)
+a0 a0 m
+where 730 is the inclination, w is the altitude of perigee and u is the true anomaly. Also, the subscript 0 refers to an
+unperturbed quantity and the error term is set by the lunar tides.
+
+The ﬁrst term in Eq. evaluates to 9.83 X 10—10 and is responsible for the largest frequency shift for a clock on
+Keplerian orbit around the Earth. The second term, which is of the order of 1.73 X 10—13, represents perturbation
+due the Earth’s oblateness. The third term is the eccentricity correction, which was evaluated to be 7.86 X 10—13.
+Note that oblateness contributes a N 1 X 10—16 correction to this term. The fourth term is a quadratic eccentricity
+correction with a magnitude of 4.72 X 10—16. The ﬁfth term has an amplitude 3.86 X 10—13. The sixth term amounts
+to N 3.39 X 10—16 and is due to the shift of the ACES position with respect to the center of origin of the SCRS 0n
+the 188. The last term has the magnitude of up to N 1.15 X 10—14 is due to atmospheric drag. The contributions of
+all these terms are signiﬁcant at the expected level of accuracy of ACES.
+
+Considering the ﬁrst term in Eq. (0r, similarly, the ﬁrst two terms in for the red—shift experiment), we see
+that during a 90—minute ISS orbit, the altitude of the space station must be known to
+
+BGME ‘1 dTA dTA
+6a 2 a [—] 6(—) < 6.89 X 10156(—) . 93
+0 0 202cm dt _ dt m ( )
+It is anticipated that during an integration time of 103 s, the frequency stability of the ACES Clock should be better
+than 6f/f = 6(d7‘A/dt) : 1 X 10—15. This sets the requirement on the ISS positional error of 6.89 m or less. In
+the absence of reliable computer simulations or other estimates, we rely on the “rule of thumb” that no individual
+
+"
+"20","20
+contribution to the total error shall exceed 10% of the total error. This implies that the position of the 188 on its orbit
+around the Earth should be known with accuracy better than 6610 g \/0—1 ' 6.89 m 2 2 m (i.e., similar to 1.) As the
+orbital plane of the ISS precesses with each revolution, it is necessary to track the orbital changes on a permanent
+basis. Therefore, a combination of several methods of orbit determination is needed, including the use of traditional
+radio—tracking in conjunction with GPS and SLR (for instance, as part of the BLT experiment).
+
+The presence of the J2 term in may be accounted for within a perturbation theory. Perturbations of the
+ISS orbits due to Earth’s quadrupole are a signiﬁcant fraction of the change in semi—major axis associated with the
+corresponding orbit change. One needs to estimate the effect of the Earth’s quadrupole moment on the orbital elements
+of a Keplerian orbit of the space station and also on the change in frequency induced by an orbit change. Accounting
+for the perturbation in Keplerian orbital elements of the ISS orbit including the semi—major axis, a, eccentric anomaly,
+5 : M —1— e sing (with M being the mean anomaly), eccentricity, e, orbital radius, 7° 2 a(l — 6 cos 5), we can compute
+perturbations to each of the terms vi, in GME/TA and the quadrupole term in (or, equivalently, in Eq. -).
+The corresponding calculations are lengthy but straightforward, and are well—known. Here we present only the ﬁnal
+relevant result to the frequency shift of the ACES clock induced by the orbital parameters of the ISS. Considering
+only the last periodic term in -, the additional time elapsed for an orbiting clock may be given as
+
+2
+A7112 2 —%J2E [E] sin2 730/ dt cos2(w0 + nt), (94)
+C a0 a0 path
+where the true anomaly was replaced by u 2 77.75, with n = (GME/agﬁ being the approximate mean motion of the ISS.
+Integrating and dropping the constant of integration (assuming as usual that such constant time offsets are lumped
+with other contributions) gives the periodic relativistic effect on the elapsed time of a clock due to Earth’s quadrupole
+moment:
+A7112 = —MJ2E [E] 2 sin2 730 sin 2(w0 + nt). (95)
+202 cm
+The phase of this effect is zero when the ISS passes through Earth’s equatorial plane going northwards. The magnitude
+of this effect A7112 AGES 2 1.70 X 10—10 s, which is signiﬁcant for the ACES experiment. Contributions of higher zonal
+harmonics in the Earth’s gravitational potential are beyond the ACES sensitivity and may be neglected.
+
+Next, we consider the frequency shift due to the ACES position on the 188. By parameterizing the ACES position
+vector with respect to the SCRS as y A0 = onnAo, we may present the relevant term in in the form
+
+(dd? — 1)10C : —Cl—2(aISSO 'yAO) : f2—jz2flyA0(nlsso 'nAO) S 2.91 X 10—15COSQAO, (96)
+where cos 6A0 = (ﬂIssO ' nAO) with nIss being the unit vector in the direction to the 188 from GCRS.
+
+As the reference systems introduced on the ISS accelerate in the Earth’s gravity ﬁeld, their clocks follow different
+worldlines separated by a small, but ﬁnite distance. Such a separation leads to an acceleration—inoluceol redshift
+between the clocks at the origins of the SCRS and the ACRS. Instrumentally, this effect represents a constant bias in
+the ACES clocks compared to the time in the SCRS. Because of the small eccentricity of the ISS orbit of e = 0.006
+(see Table I, any variability in will be at least e—times smaller and, thus, insigniﬁcant. The ACES package
+will be located on the exterior surface of the Columbus module being at N 30 m from the ISS center of gravity. In
+addition, the package will be at N 3.5 m in the nadir direction from that point. This position results in cos HAD 2 0.12,
+thereby reducing the effect to 3.39 X 10—16, which is small, but still signiﬁcant for ACES.
+
+The near—Earth environment also contributes to the clock rate, especially the atmospheric drag which depends on
+the air density, patm, at the ISS altitude. Thus, the density of the upper Earthy’s atmosphere must be monitored.
+From Eq. suggests that one needs to know this quantity
+
+6 M c A ‘1 d7 d7
+
+7:: = l—Gc2 EWdWatml 50—23) = 5-20 X 10145(d—f)v <97)
+which implies that the atmospheric conditions along the orbital track of the 188 must be known to N 52%, which should
+not be a problem if this effect would constitute the total navigational error. However, assuming that atmospheric
+drag contributes only 10% of the total error for ACES, the knowledge of the density of the upper atmosphere along
+the ISS orbit must be at the level of 6patm/patm : \/0.—1 ' 52% N 16%, which may be challenging as this effect is
+dissipative and changes each orbital pass. Furthermore, due to unavoidable orbital boosts needed to raise the altitude
+of the 188, the air density will also change.
+
+Atmospheric drag results in the lowering of the semi—major axis of the 188, leading to a change of the gravitational
+potential and velocity of the station. This change may indirectly affect relativistic observables. Assuming a circular
+
+"
+"21","21
+
+orbit for the 188, we approximate the changes in the semi—major axis, a, and orbital velocity, V, using the equations
+
+[Aaad]rev : _27T%patma(2)7 [Avadhev : Wﬁpatmaﬂvm (98)
+
+m m
+
+where do is the initial length of the semi—major axis and 110 is the initial velocity. For the 188, we determine that
+
+during each revolution, atmospheric drag causes the station’s altitude and velocity to change by up to —18.4 In and
+
+0.01 m/s, respectively, during the period with mean solar activity; and by up to —239 In and 0.13 m/ s during extreme
+
+solar activity. These numbers are of course worst—case estimates, calculated by assuming that the entire area of the
+
+solar panels contributes to the effect (i.e., that the solar panels are perpendicular to the velocity vector with respect
+
+to the atmosphere). Nevertheless, to compensate for this drop in orbital velocity, the ISS periodically has to re—boost
+and regain velocity and orbital altitude.
+
+Orbital changes due to atmospheric drag will have a direct impact on the relativistic time and frequency
+observables of ACES. Taking, for instance, the velocity change per revolution Avrev (given by the second equation in
+-), from we see that, depending on the solar activity, these changes produce the contribution to proper—to—
+coordinate time of the order of (dTA/dt)ad and, as a result, its effect on frequency stability may be given as:
+
+(1 — ddeLd : g(vlsso .vad)rev g and—gpatmaovg = %w%pm : (0.89 — 11.54) X 10—15. (99)
+
+Although there is no explicit dependence of this effect on the ISS orbit, there is implicit dependence as the air density
+at the ISS orbit is a function of its altitude and orbital inclination. Atmospheric drag results in the loss of the ISS orbital
+altitude, causing changes of the gravitational potential at the clocks location. Such an altitude decrease results in the
+change of the clock rate per orbital revolution at the level of (1—d7'B/dt) ad 2 O_2VUE [Aaadhev 2 (1.78—23.11)>< 10—15.
+
+The projected stability of the ACES’ frequency transfer of 6 f / f : 1 X 10—16 puts even tougher requirements on
+the knowledge of the ISS position and the air density at the its altitude. In fact, in accord with and (103, one
+would have to require that the geocentric position of the ISS and the air density for each orbit must be known to
+0.2 In and 2%, correspondingly, which is consistent with l, m, but is stronger than previously thought E”. If the
+orbital parameters of the 188 would stay constant over many days, these new requirements would not matter. In that
+case, the corresponding effects would contributions only constant once—per—orbit terms, which could be estimated and
+removed in the data analysis. However, we know that this is not true and the trajectory of the space station
+changes signiﬁcantly each orbit. Therefore, ﬁnding ways to mitigate the related uncertainty deserves further study.
+
+IV. CONCLUSIONS AND RECOMMENDATIONS
+
+We considered the formulation of a relativistic model for the observables of the ACES mission. We derived an
+analytic expression that characterizes the process of forming the frequency comparison observables. This material can
+be used to improve the accuracy of modeling of the ACES fundamental observables.
+
+We presented a hierarchy of relativistic coordinate reference frames that are needed to ACES. We introduced the
+geocentric (GCRS), topocentric (TCRS), spacecraft (SCRS), and ACES—centric coordinate reference systems, together
+with the structure of the corresponding metric tensors in each of these systems and the form of the proper relativistic
+gravitational potentials—all presented at the accuracy required for ACES. We presented the rules for transforming
+time and position measurements between the reference frames involved. We demonstrated, by meticulously computing
+all possible forces, that contrary to naive expectations the ACES reference frame is pseudo—inertial at the level
+of accuracy required by the ACES experiment. We also emphasized the need to recognize the importance of the
+barycentric (BCRS) reference frame for proper modeling of the solar gravity potential at the ACES’ location.
+
+We considered the model for the relativistic observables of the ACES experiment. The currently implemented
+proper—to—coordinate time transformation is a concern as it accounts only for the monopole contribution of the Earth’s
+gravity ﬁeld omitting higher multipoles. As such, the current model is accurate only up to 3.86 X 10—13 for ACES.
+Including the Earth’s oblateness J2 improved the relation between proper and coordinate times. In the improved
+model, J2 is responsible for a periodic effect of the order of 170 ps (or N 10.2 cm peak—to—peak) for ACES.
+
+After accounting for the Earth’s oblateness J2, the error term in the updated model for ACES is at the level of
+3 X 10—16, the limit set by the higher other gravity harmonics in the gravitational potential of the extended Earth.
+The conventional form of the light time solution is accurate up to the order of N 2 X 10—15 s (due to the Earth’s
+J2 coefﬁcient) and, thus, it is adequate for ACES. The usual form for relativistic terms in the spacecraft equations
+of motion are also adequate for the task. They are accurate up to the contribution comin% from relativistic term
+due to Earth’s oblateness l], which was evaluated to be of the order of N 2.85 X 10—11 m/ s for a LEO spacecraft,
+which may be important for some high—precision orbit determination in the near future. However, the presence of
+
+"
+"22","22
+the nongravitational forces, especially atmospheric drag, limits the equation to only N 1.0 X 10—7 m/s2 (from -)
+resulting in -, which is adequate for the anticipated positional accuracy needed for ACES.
+
+In a practical sense, the small relativistic terms that we calculated are easily absorbed into constant and periodic
+aol—hoc biases that are introduced during data analysis, with no impact whatsoever on mission objectives or the
+quality of the mission’s results. Yet the existence of these terms, and the fact that they are observable at the level of
+sensitivity of the ACES experiment demonstrate that ACES is already a practical instrument for relativistic geodesy.
+For future spacecraft that operate at even greater accuracy, accounting for these relativistic terms will be essential.
+
+As we discussed, the ISS is a subject to many nongravitational forces and related torques; therefore, the ISS may
+not be treated as a free—falling platform. Although any direct effect of nongravitational accelerations on Clock rates
+is negligible, these forces still affect the ACES experimental precision. The effect is indirect and comes from the
+uncertainties introduced in the estimates of the ISS trajectory. In fact, the ACES experiment must rely on the
+navigational precision of the ISS to reach its science objectives.
+
+In particular, it is necessary to consider the effect due to attitude variations. While this effect is small, it is larger
+than that of the atmospheric drag and, thus, it is of concern. If such a contribution to the frequency comparison is
+of a systematic origin, it is possible to develop a model to calibrate ACES observables and remove such an unwanted
+effect. However, attitude variations at this level may occur during various mission events (e.g., docking/un—docking
+of the crew and cargo supply vehicles, conﬁguration changes in the ISS, crew exercise, thruster ﬁrings, etc.) It may
+be necessary to monitor the dynamical environment on the ISS to keep track of those Changes in order to be able to
+account for their likely effects on the ACES Clock.
+
+Comparing the newly developed models for time transfer and gravitational redshift given by and -, we see
+that frequency transfer puts more demanding requirements on the orbit of the space Clock. Similar questions were
+addressed previously under different set of assumptions El, El, I, m. In this work, we found that to satisfy the
+anticipated stability of the frequency transfer of 6 f / f : 1 X 10—16 the geocentric position of the ACES Clock and the
+air density at the ISS altitude must be known to 0.2 m and 2%. We investigate the ways to satisfy these requirements
+including the use of the advanced facility for high—precision satellite laser ranging being currently developed at J PL and
+implementation of the new data analysis strategy that relies on processing the Clock and navigational data together.
+
+Concluding, we mention that we begun to address the issues above by developing a comprehensive modeling,
+simulation, and data analysis software system for ACES. To that extent, we already initiated the development of a
+simulation system relying in part on existing software suite developed for other missions (i.e., OPALSlO). We pay
+special attention to the issues related to I88 navigation and combination of various data—types needed to achieve
+not only high—precision navigation, but also highly accurate science models. The high—accuracy models for the time
+transfer and the gravitational redshift experiment developed here will be used to process the ACES measurements
+for science data analysis. The corresponding software suite relying on the models obtained here is currently being
+developed. Preliminary results are encouraging and will be published in subsequent publications.
+
+Acknowledgments
+
+This work was performed at the Jet Propulsion Laboratory, California Institute of Technology, under a contract
+with the National Aeronautics and Space Administration. ((3) 2015. All rights reserved.
+
+[1] L. Cacciapuoti and C. Salomon, J. Phys: Conf. Ser. 327, 012049 (2011).
+
+[2] P. Laurent, M. Abgrall, A. Clairon, P. Lemonde, G. Santarelli, C. Salomon, D. Massonnet, and L. Cacciapuoti, in Pro—
+ceedings 0f the Frequency Control Symposium, 2008 IEEE International, 19—21 May 2008, Honolulu, HI, USA (2008), pp.
+795—800.
+
+[3] D. Goujon, P. Rochat, P. Mosset, D. Boving, A. Perri, J . Rochat, N. Ramanan, D. Simonet, X. Vernez, S. Froidevaux,
+et al., in Proe. 0f the EFTF—2010 24th European Frequency and Time Forum, Noordwz'jk, 13—16 Apr 2010 (2010), pp. 1—6.
+
+[4] I. Prochazka, L. Cacciapuoti, U. Schreiber, and W. Schafer, in Presented at the Conference “From
+Quantum t0 Cosmos”, Universite Nice Sophia Antipolis, France October 15—17, 2013 (2013), URL
+
+[5] W. Schafer, M. Kufner, A. Seidel, M. Hess, and J. Kehrer, in Workshop on “ACES and Future GNSS—Based Earth
+Observation and Navigation”, 26—27 May 2008, Munich, Germany (2008), URL—
+
+10 Optical PAyload for Lasercomm Science (OPALS), for details see—
+
+"
+"23","23
+[6] U. Schreiber, I. Prochazka, P. Lauber, H. Urs, 8. Wolfgang, L. Cacciapuoti, and R. Nasca, in Praeeedz'ngs 0f the Frequency
+Contml Symposium, 2009 Joint with the 22nd European Frequency and T tme Forum. April 20—24, 2009 (2009), pp. 594—599.
+[7] P. Delva, F. Meynadier, P. Wolf, C. Le Poncin—Laﬁtte, and P. Laurent, in Praeeedz'ngs 0f the European Frequency and T tme
+Forum {EFTF) 2012 held in Gothenburg, Sweden, April 23—27, 2012 (2012), pp. 28—35, arXiv:1206.6239 [physics.space—ph].
+[8] L. Duchayne, F. Mercier, and P. Wolf, in SF2A—200’7: Praeeedz'ngs 0f the Annual meeting 0f the French Saez'ety 0f Astmnomy
+and Astrophysics, edited by J . Bouvier, A. Chalabaev, and C. Charbonnel (2007), p. 93.
+[9] L. Duchayne, F. Mercier, and P. Wolf, Jeornal of Geophysical Research 504, 653 (2009).
+[10] NASA SSP 30219J, Space Station Reference Coordinate Systems. International Space Station Program (NASA, 2008), URL
+[11] L. Blanchet, C. Salomon, P. Teyssandier, and P. Wolf, Astron. Astrophys. 370, 320 (2001).
+[12] G. Petit and P. Wolf, Metrologia 42, S138 (2005).
+[13] D. D. McCarthy, Tech. Rep, U.S. Naval Observatory (2010), IERS Conventions, URL
+[14] S. G. Turyshev, O. L. Minazzoli, and V. T. Toth, J. Math. Phys. 53, 032501 (2012), arXiv:1109.1796 [gr—qc].
+[15] M. Wermuth, O. Montenbruck, A. Helm, and L. Cacciapuoti, in PTOC. 0f the 6th ESA Workshap 0n Satellite Navigation
+Technologies, European Workshap 0n GNSS Signals and Signal Praeessz'ng, (NAVITEC), Dec. 5—7, 2012 (2012), pp. 1—7.
+[16] N. Ashby, S. Jeffers, P. Bijunath, and M. Weiss, in Presented at the Fundamental Physics Workshap, Nov. 17—18, 2014.
+Unpublished, private eammuntcatton (2014).
+[17] S. Schiller et a1. (2012), arXiv:1206.3765 [quant—ph].
+[18] S. G. Turyshev and V. T. Toth, Int. J. Mod. Phys. D 24, 1550039 (2015), arXiv:1304.8122 [gr—qc].
+[19] S. G. Turyshev, V. T. Toth, and M. V. Sazhin, Phys. Rev. D87, 024020 (2013), arXiv:1212.0232 [gr—qc].
+[20] S. G. Turyshev, M. V. Sazhin, and V. T. Toth, Phys.ReV. D89, 105029 (2014), arXiv:1402.7111.
+[21] N. Ashby, T. P. Heavner, S. R. Jefferts, T. E. Parker, A. G. Radnaev, and Y. O. Dudin, Phys. Rev. Lett. 98, 070802
+(2007).
+[22] M. Soffel, S. A. Klioner, G. Petit, P. Wolf, S. M. Kopeikin, P. Bretagnon, V. A. Brumberg, N. Capitaine, T. Damour,
+T. Fukushima, et 31., Astron. J. 126, 2687 (2003), astro—ph/0303376.
+[23] T. D. Moyer, Farmulatton f0?“ Observed and Computed Values 0f Deep Space Netwark Data Types f0?“ Navtgatz'an, JPL
+Deep—Space Communications and Navigation Series (Wiley—Interscience, 2003).
+[24] S. A. Klioner, Astron. Astrophys. 478, 951 (2008).
+[25] S. A. Klioner, N. Capitaine, W. Folkner, B. Guinot, T. Y. Huang, 8. Kopeikin, G. Petit, E. Pitjeva, P. K. Seidelmann, and
+M. Soffel, in Relativity tn Fundamental Astronamy: Dynamics, Reference Frames, and Data Analysis, edited by S. Klioner,
+P. K. Seidelmann, and M. Soffel (Cambridge University Press, 2010).
+[26] S. M. Kopeikin, M. Efroimsky, and G. Kaplan, Relativistic Celestial Mechanics 0f the Salon“ System (Wiley—VCH, 2011).
+[27] O. Montenbruck and B. Gill, Satellite Orbits (Springer, 2005), 3rd ed.
+[28] P. Gerard and L. Brian, IERS T eehnieal Note; 36 (IERS Conventions (2010), Frankfurt am Main: Verlag des Bundesamts
+fiir Kartographie und Geodéisie, 2010. 179 pp., ISBN 3—89888—989—6, 2010).
+[29] K. Sos’nica, Artiﬁcial Satellites 50, 1 (2015).
+[30] O. Montenbruck, S. Rozkov, A. Semenov, S. F. Gomez, R. Nasca, and L. Cacciapuoti, JSR 48, 1055 (2011).
+[31] S. G. Turyshev, Ann. Rev. Nucl. Part. Sci. 58, 207 (2008), arXiv:0806.1731 [gr—qc].
+[32] J . B. Abshire and C. Gardner, IEEE Trans. Geoscience and Remote Sensing GE-23, 414 (1985).
+[33] C. Gardner, Applied Optics 15, 2539 (1976).
+[34] V. Mendes, G. Prates, E. Pavlis, D. Pavlis, and R. Langley, Geophysical Research Letters 29, 53 (2002).
+[35] V. Mendes and E. Pavlis, Geophysical Research Letters 31, 52 (2004).
+[36] P. Fridelance, E. Samain, and C. Veillet, Experimental Astronomy 7, 191 (1997).
+[37] P. L. Bender, in PTOC. 0f the Sympastum 0n Refraction Of T ransatmasphem'e Signals in Geodesy (SPIE Conference Series,
+1992), pp. 117—125.
+[38] S. Gomez, in Memorandum EG—DIV—10—040, Navember 19, 2010, JSC, NASA, Haustan, TX, USA (2010), pp. 1—2.
+[39] R. R. Kumar, M. L. Heck, and B. P. Robertson, in Guidance, Navigation and Contml Conference (American Institute Of
+Aeronautics and Astronautics, 1990).
+[40] S. G. Turyshev, M. V. Sazhin, and V. T. Toth, Phys.ReV. D89, 105029 (2014), arXiv:1402.7111.
+[41] J. J. Degnan, J. Geodynamics 34, 551 (2002).
+[42] E. Samain, P. Exertier, C. Gourde, P. Fridelance, P. Guillemot, M. Laas—Bourez, and J .—M. Torre, Metrologia 52, 423
+(2015).
+[43] P. Exertier, E. Samain, N. Martin, C. Gourde, M. Laas—Bourez, C. Foussard, and P. Guillemot, Advances in Space Research
+54, 2371 (2014).
+[44] N. Ashby, Living Rev. Relativity 6, 1 (2003), UR—
+[45] R. F. C. Vessot, M. W. Levine, E. M. Mattison, E. L. Blomberg, T. E. Hoffman, G. U. Nystrom, B. F. Farrel, R. Decher,
+P. B. Eby, C. R. Baugher, et 211., Phys. Rev. Lett. 45, 2081 (1980).
+[46] V. A. Fock, The T he07°y Of Space, T tme and Gravitation (Fizmatgiz, Moscow (in Russian), 1959), [English translation,
+Pergamon Press Ltd., Oxford (1964)].
+[47] D. Svehla, M. Rothacher, C. Salomon, J. Wickert, A. Helm, G. Beyerle, M. Ziebart, and J. DOW, in Workshap 0n
+“ACES and Future GNSS—Based Earth Observation and Navtgatz'an”, 26—27 May 2008, Munich, Germany (2008), URL
+[48] C. M. Will, Phys. Rev. D 89, 044043 (2014).
+
+"

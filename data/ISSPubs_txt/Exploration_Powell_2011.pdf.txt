@@ -1,0 +1,440 @@
+"","x"
+"1","Method to Employ Covarlate Data 1n Rlsk Assessments
+Mark A. Powell
+Attwater Consulting
+P.O. BOX 57702
+Webster, TX 77598-7702
+208-521-2941
+attwater@a01.com
+
+Abstract—The International Space Station Program compensated risk would not exceed 1.5%. The 188 Program
+experienced a problem with the extra vehicular activity decided to employ the proposed drift compensation
+(EVA) pre-breathe oxygen (02) sensor 0n-b0ard the approach 0n-b0ard the 188.
+International Space Station (188). 1 2 Astronauts 0n the 188
+must pre-breathe a mixture rich in oxygen prior to a For any aerospace risk assessment problem where
+scheduled EVA to prevent nitrogen nareosis (the bends) measurement data have covariates, proper covariate models
+during the EVA. The 02 measurement from this sensor on may be developed and conditional inferential methods may
+the pre-breathing apparatus was Observed during its 270 day be employed to take advantage of the additional information
+mission to be in error by more than i6mmHg, subjecting the provided by the covariates. These quantiﬁed risk
+life of the EVA astronaut to an unacceptable risk. The 188 assessments enable effective decision making.
+Program was faced with either halting EVA’s for the 188
+until this sensor could be redesigned, tested, and delivered TABLE OF CONTENTS
+t0 the 188, or ﬁnding some other way to reduce this risk to
+
+1. INTRODUCTION 1
+the EVA astronauts to an acceptable level.
+
+2. METHOD 2
+The method considered to reduce this risk was to compute lg/IodceltSeleletiofn tlAhg
+average drift rates of the error of several 02 sensors and to R911: 30:12.1) 1: ereln 1a lpgroac 3
+compensate the on-board measurements using these. N1s is r111; ltelndormu a 10n 4
+Compensation of the experimental 02 measurements using 3 D:IT11:rlca e 0 s4
+these average drift rates however produced errors in excess .
+of i6mmHg at less than 270 days since calibration, and 4. RESULTSIS
+even earlier than without drift compensation. This MCMC Samphng ofuo, LL , anti 656
+compensation scheme appeared to produce no risk reduction RlSk Calculations and Comparisons.................................6
+for the EV A astronaut, and possibly increased the risk. S.CONCLUSIONs7
+Quantiﬁcation of the risk that 02 sensor measurement errors REFERENCESS
+would exceed the tolerable i6mmHg range before the end BIOGRAPHY 8
+0f the 270 day mission period, with and without drift
+compensation, was required to enable a decision. 1- INTRODUCTION
+
+. . . . . . . Because space suits used 0n-b0ard the Space Shuttle and
+T1me s1nee calibration (TSC) 1s covariate With the 02 sensor International Space Station (188) use a much lower
+measurement error data. A proper distribution model that atmospheric pressure than that inside the vehicles,
+adds .parameters can be used to take advantage Of the astronauts who are to perform extra vehicular activities
+covariate data for the .02 sensor measurement errors. (EVA) must pre-breathe an oxygen (02) rich mixture to
+Unfortunately, no 013551031 ,Stat15t1931 methods eXlSt. to avoid nitrogen narcosis, or the bends. Well known to divers,
+assess 901m est1mates Of ?{Sk us1ng such a covarlate the bends can cause debilitating pain limiting the ability to
+distribution model. Conditional inferential methods, function, and possibly cause irreparable injury or even
+however, are suitable for quantiﬁed risk assessment using death. Outside of the Space Shuttle or 188, an astronaut
+complex. covarlate 111991615» 39d w1th0ut us1ng any performing an EVA who experiences the bends will be
+assumpt10ns. A cond1t10na1 . 1nferent1a1 process was seriously compromised in performance of the EVA mission,
+developed to quantlfy the r1sks Of these 02 sensor and may be subjected to signiﬁcant risk of injury or loss of
+measurement errors exceeding the i6mmHg range before life.
+the end of the 270 day mission period, with and without
+drift compensation. The risk assessments thus Obtained On board the 188, the pre-breathe apparatus is equipped
+revealed that the risk of the 02 sensor measurement error with an O2 sensor to assure that the EV A astronaut is
+exeeedmg i6mmHg was found to acmﬁ‘ﬂly reduce by more breathing the proper ratio of oxygen and nitrogen. If the 02
+than an , order Of magmtude us1ng the proposed sensor were to read more than 6mmHg above truth during
+compensatlon scheme, Wlth 95% assurance that the the pre-breathe, the EVA astronaut is considered to be at an
+1978-1-4244-7351-9/11/$2600©2011IEEE unacceptable risk of getting the bends during a normal
+2IEEEACpape1r#1653,Version 39 Januarle, 2011 EVA. If the 02 sensor were to read more than 6mmHg
+1
+
+"
+"2","below truth during the pre-breathe, the EVA astronaut whether the drift compensation scheme was suitable as an
+would be breathing a mixture considered too oxygen rich alternative to sensor redesign and replacement.
+and would subject the EVA astronaut to an unacceptable
+risk of oxygen toxicity. Oxygen toxicity can result in cell
+damage and death, with effects most often seen in the 2. METHOD
+central nervous system, lungs and eyes. NASA personnel
+require that this 02 sensor be accurate during its intended M0016] 56166170""
+mission life to Withih iommHg to avoid exposing EVA Selection of a model for the uncertainty about the data is a
+astronauts to unacceptable risks. task typically based on knowledge of the physics that
+produces the data and the basic Characteristics of the data.
+The author was alerted by NASA personnel that the oxygen For this problem however, since linear regression was used
+sensor on the pre-breathe apparatus on the 188 had been to develop the drift compensation parameter values, it is
+observed to drift post calibration. This 02 sensor is typically appropriate to continue with the same assumptions
+calibrated 90 days prior to launch and delivery to the 188: necessary to apply linear regression. These assumptions are
+and is expected to provide accurate service for 180 days on- that the O2 sensor error data are all independent and
+board. The amount 0f drift in accuracy Withih this 270 day modelled by the same Normal distribution with parameters
+period since calibration that had been observed was greater ,Us and 0}.
+than the maximum iommHg required to avoid exposing
+EVA astronauts to unacceptable risks. In an analysis of the To factor into this standard model the effects of the
+drift Of several Of these 02 sensors, it was observed by eovariate TSC, the mean of the Normal distribution is
+NASA engineers that they all drifted in the same direction modelled as a straight line as a function of TSC. Equation
+and about the same apparent rate. This raised the possibility (1) provides this model for the mean of the Normal
+of compensating the 02 sensors for this drift rate, rather distribution.
+than requiring redesign, and postponement of EVA’s on the
+188 until the new desi 11 could be tested and delivered to the
+188. g #3 (Tsc) = #0 + ,u’*TSC (1)
+NASA engineers performed a linear regression analysis on Equation (1) introduces two new parameters into the
+the drift error data obtained from ﬁve 02 sensors to obtain Normal model, #0 and [U]: which results in a covariate
+the drift rate and intercept constants for the drift Normal model. The eovariate Normal model reﬂects the
+compensation scheme. The drift error data were then information provided by TSC for the sensor errors, and is
+compensated using these constants. While the overall presented in equation (2),
+balance of errors looked better, some sensors showed errors
+of more than iommHg even earlier than in the I
+uncompensated data. It was not Clear whether the drift pd<€S l’uo’ﬂ ’O-S’TSC)
+compensation reduced the risk, or increased it. 1 _t ljte 110 _#’*TSC]2 (2)
+. . . . . . . = —e 2 US
+For sensors that drift With time, the time Since calibration mo-
+(TSC) is a factor in the measurement errors that will be S
+observed. TSC is thus eovariate with the sensor . . .
+measurement errors. A proper distribution model for the Condztzonal Inferentzal Approach
+measurement errors Will factor thiS eovariate into the The ﬁrst step to assess the risk of exceeding the safe limits
+parameters of some standard distribution model, increasing of i6mmHg at 270 days since calibration is to infer from
+the number 0f parameters in the resulting model. the data the uncertainty model for the parameters of the
+Unfortunately, no Classical statistical methods eXist that will selected failure model, our eovariate Normal distribution
+allow point estimate assessment of risk using such eovariate model in equation (2), This is where classical methods
+models. Fortunately, conditional inferential methods are become inadequate; no Classical statistical recipes have been
+particularly well suited to statistical inference for models developed for the covariate Normal model in equation (2),
+that have eovariate factors in the parameters. With conditional inferential methods, the joint probability
+density model for the parameters of the covariate Normal
+This report describes the development of a covariate model distribution model is developed based solely on the data.
+for the 133 02 sensor data, and a conditional inferential Where Classical statisticalreeipes produce point estimates of
+approach to process the sensor measurement error data with the parameter values, conditional inferential methods
+covariate TSC to quantify the risk of the sensor produce full joint distributions of the parameters. This is
+measurement errors exceeding iommHg both before and particularly useful for risk assessments. Typical risk
+after drift compensation. The comparison of these risks distributions are skewed, and point estimates of risk
+before and after drift compensation allows determination of calculated from point estimates of distribution model
+parameters may be spurious.
+2
+
+"
+"3","With this joint density developed using conditional equation (5) using the covariate Normal distribution With
+inferential methods, it is possible to compute any TSCi being the time since calibration of the ith sensor error
+probability that might be useful, including the risk of measurement esi.
+exceeding the safe limits of i6mmHg at 270 days since
+calibration. To develop the joint density 0f #0, ,u’, and 0; pd (”09/1201 I data)
+given the data, Bayes’ Law [1] is employed per equation (3) 2
+. ﬁ 1 _[:j[esi—ﬂo;ﬁ: *TSCi] *[ 1 j (5)
+0c —e _
+pd(,uo,,u',0'S |data) i=1 0s 0s
+, , (3)
+0C pd (data I 'u 0 ’ Ia ’ O-S ) p d (la 0 ’ Ia ’ Us) In equation (5), the ﬁrst term to the right of the proportion is
+the likelihood for the 0; sensor error data, the second term
+In equation (3),the ﬁrst term to the right of the proportion, is the Jeffrey’s priors for ya, ,u’, and 0;. The priors for #0
+pd(data|,ug, ,u’, 0;), is the likelihood. When the data is and ,u’do not appear explicitly.
+limited to Observed events, this is the same likelihood
+function used in calculating maximum likelihood estimates Risk Distribution Formulation
+gfogtbitiihragiim T36) 8:02:11: .téﬂ? to, th: nght Pf the The inference of the uncertainty distribution from the data
+, ’ .O’IU ’ S,’ .101n przor 61181 y or ’uO’ 0f the risk of exceeding the safe limits of i6mmHg at 270
+,u ’ and 0;"" The101ntprzor dens1ty 1s 5616(3th to model the days since calibration is very important. In any decision
+knowledge or 1gn0ranee 9f 140’ ,u 9 and 9:9 befereobtaining regarding compensation or redesign of the 02 sensor, the
+the data. The proportionality 1n the equat10n 1s 1ns1gn1ﬁeant; decision should be based upon that risk, and Whether it
+the proportionality constant can always be calculated by exceeds some unacceptable level and is appreciably
+integrating over all values 0f #0, ,u’, and 0;. The term on the improved (reduced) by the drift compensation scheme. The
+left, 19070109,“: 0} |data), the joint density 0f #0» ﬂ: and 0} uncertainty distribution for that risk,
+given the data, is called the jointposterior density. pd((R(|eS|>6mmHg)|TSC)ldata), can be developed by
+starting With the standard Normal distribution model
+Selection Of the prior model for some problems can pose denoted commonly as ¢(‘lHoG)- Equation (6) provides the
+some difﬁculty. Some decision makers feel that using a formulation of this risk using this model Where emax is the
+priori knowledge of the parameters somehow prejudices the absolute maximum acceptable 02 sensor error of 6mmHg.
+results, casting the pall Of a rigged decision subject to
+second-guessing. Beyond that, for many uncertainty models
+that might be selected for the data for various problems, the R (iesi > emax I ”S 9 0s )2 P (iesi > emax I lug a 0s) 6
+parameters have no useful physical meaning, and thus n0 2 2* (I) (—e l,“ 0_ ) ( )
+reason exists to have any a priori knowledge of them. To max 5’ S
+address both of these difﬁculties, it is possible to use a prior
+density model that imparts no a priori knowledge of the By substituting equation (1) into equation (6), the
+parameters. This is called using a noninformative 01‘ formulation for the I‘ISk taking advantage Of the covariate
+ignorance prior [2]. Use Of ignorance prions establishes a TSC iS developed in equation (7).
+basis of maximum Objectivity for the decision, and
+alleviates the difﬁcult of dealin With an second- ’
+guessing. The joint piior densityg model isy generally R (iesi > emax I #0,” 9 0S, TSC) (7)
+structured such that the parameters are independent. Using 2 2 * (I) (—emax | #0 + ,u’* TSC, 0's)
+the Normal model, because ,LMTSC) and 0; are location and
+503.116 parameters respectively, Jeffrey’s prions [3] are very For a given set of 0; sensor errors, With their concomitant
+suitable as the zgnorance przors for #0, ,u , and 0; and are . . . . . . .
+. . covariate tnnes s1nee calibration TSC, equation (5) pr0V1des
+presented in equat10ns (4) the joint uncertainty model for #0, ,u’, and 0; given this data.
+The uncertainty model for the risk of exceeding the
+pd(/10) °C 1 maximum 0; sensor error of 6mmHg based on the data,
+105101,)“ 1 (4) pd((1.2(|es.|>emax)|zu09. # Z 0s ,TSC)|data), _iS . obtainéd by
+multlplylng equation (7) by the posterior in equation (5).
+1 The full algebraic expansion of that product is quite busy,
+pd (0s) °C — and as Will be seen later, is unnecessary. The shorter form
+05 Of this product is in equation (8).
+NOW, given as data eS(TSC), the 02 sensor errors at the
+covariate TSC, the posterior density model is formed in
+3
+
+"
+"4","d(R e > e 9 [’0 ,TSC data) Once the joint MCMC samples 0f #0, ,u’, and 0; are
+p (I SI max I’UO ’u S )I obtained, samples from the uncertainty model in equation
+= R e > e 9 ’9 0. ,TSC 8 (9) may be Obtained using a n0n-intuitive yet simple
+(I SI max I'UO 'u S ) ( ) process. Monte Carlo samples of
+* pd (#0, ,U’, O-S I data) R(leS|>6mmHg)|TSC)|data) may be Obtained by substituting
+equation (1) into equation (6) and simply evaluating at these
+. . . . . ' ' M M 1 f ’ S. ' '
+Th1s still does not yield the quantity Of interest, the J0 ?:iatesc theC £31362; 21:: O’e’: ’32::- Ogilsujglﬁ: g; 0:118;
+uncertainty distribution of the 02 sensor error as a function (9) g p q
+of TSC given the data, pd((R(|eS|>emax)|TSC)ldata). '
+However, th1s , distribution 1s [obtalned by applying With Monte Carlo samples of R(leS|>6mmHg)|TSC)|data, it
+marginalization 1ntegra1s for [[10, ,u , and 0;. to equation (8). - 1 1 h - - h h
+E uati0n (9) provides this marginalization without full is very easy to ca cu ate sue quant1t1es as t e assurance t at
+q . . . . . the risk of the 02 sensor error at TSC=27O days does not
+algebraic eXpans10n, Wthh aga1n w111 be shown later to be 0 . .
+unnecessary exceed 5%) given the data. Us1ng M samples of
+' R(IeS|>6mmHg)|TSC)|data (developed using the M joint
+samples 0f #0, ,u’, and 0;), equation (10) shows how easily
+pd (R (IeSI > emax I TSC) I data) this quantity may be calculated.
+2 I IIRIIesI > em Iﬂ09#,90-59TSC) (9) P(RIIeSI >emax |TSC=270,,uS,0'S) < 0.05 | data)
+—oo —oo 0
+M 12*(13 —e .+ 7*270,0'. <0.05
+*pd(#0’#/’0_S Idata)dﬂ0 dﬂIdO-S Z I ( max IILIOZ qu SZ) (10)
+_ i=1 0 | 2*(I)(—emax | IL101. +#;*2702 0'51.) 2 0.05
+By integrating .the density model in equation (9), it is _ M
+p0ss1b1e to Obtain quantitative values for the assurance that
+the the risk of exceeding the safe limits of i6mmHg at 270
+da s since calibration iven the data is be10 a re ired
+levyel g W qu 3. DATA
+Five 02 sensors (units 1014, 1026, 1031, 1037 and 1039)
+Numerical Methods were selected and calibrated, and allowed to drift for a
+The uncertainty distribution in equation (5) is not per10d Of, almostl 300 d?” fMeasurﬁments Of 02
+ana1ytiea11y integrable. As a result, neither is the integral in egneentrlation 6Y6 aeeuraeies .or 16 ac 1 sensorl were
+equation (9), nor the marginalization integrals in equation 0 serve .at varying. O2 concentratlon eve S severa t1mes
+(9) The solution is to use numerical methods name1y dur1ng th1s per10d.F1gure 1 shows these measurements w1th
+M Ont e C ar10 methods [4] Monte Carlo methods’are use d regression lines for each sensor. Also indicated in ﬁgure 1
+widely for accurately approximating the evaluation of are red horizontal 11nes at emaﬁzi6mHIHg’ Wthh 1s .thC
+probability integra1s. Quite Often, risk problems such as the maX1mum O2 sensor 61?“ that is eons1dered safe. Dr1fts
+subject of this report are solvable only using Monte Carlo accumulate IO exceed this maX1mum 02 sensor error as early
+methods. as 80 days Since calibration.
+The central issue to evaluating equations (5) and (9) using It was Observed Visua11y in ﬁgure 1 that all Of the regression
+Monte Carlo methods is to Obtain a large number of samples 11.1165 for all Of the O2 sensor errors had SIOPCS Of th? same
+of #0 ﬂ, and 0. from the joint posterior uncertainty m0 de1 Sign, and were Close to the same value. This Observation led
+in equation (5). There eXist no statistical software packages to the e0ns1derat10n Of compensatlon for the dr1ft as an
+with built-in s amp1ers for the joint posterior density a1temat1ye to 02 sensor redes1gn. All Of the 02 sensor error
+function of e quati 0n (5) based on the covariate Normal Observations from all sensors were processed as a Single
+model. The remedy is to use Markov Chain Monte Carlo group Of data us1ng 11near regress10n to compute the
+(MCMC) m eth 0 ds to sample this joint posterior MCMC intercept and slope of the drift with time since calibration.
+methods allow full range sampling of arbitrary distributions Elggrzz presenttls the resultant O2 sensor errors compensated
+of any dimension given the formulation of the joint density or r1 tus1ng t ese V3 ues.
+[5]. With sufﬁcient MCMC sampling of the joint posterior A b , f h , 1 ,
+in e quati 0n (5), it is possible to compute very accurate s.ean e seen in 1gure 2, t ere rema1n severa times at
+approximations for almost any measure or statistic 0f Wthh compensated O2 sensor errors exceed i6mmHg, and
+interest, including evaluation of the integrals in equation (9) that these CXCUISIOIIS beyond emax oeeurred even ear11er now
+. than 1n ﬁgure 1 Without compensation. At this p01nt, it is
+unclear whether compensation for drift would be a suitable
+a1temative to 02 sensor redesign.
+4
+
+"
+"5","ISS 02 EVA Pre-Breathe Sensor Measurement Errors
+at Varying 02 Concentration Levels
+Uncompensated for Drift
+8
+6 —-
+2 L_ n 1026
+E 0 I . 1039
+E K _ - -
+'2 IN ~‘F- ‘i ‘lil 43:;
+g _4 I n: §¥ ‘ ‘h —Linear (1031)
+“' _“ -I:- ‘
+‘— — Linear (1014)
+3 —l.— -- _Lm (1037)
+—-—-
+-10
+0 50 100 150 200 250 300
+DaysSince Calibration
+Figure 1 — Uncompensated ISS 02 sensor measurement data demonstrate a consistent drift regardless of 02
+concentration level.
+ISS 02 EVA Pre-Breathe Sensor Measurement Errors
+at Varying 02 Concentration Levels
+Compensated for Drift
+8
+6 —-
+2
+E . 1026
+Z -2 n 1014
+U
+E n 1039
+a -4
+2 n 1037
+.5
+3 _-
+270 Days
+-12
+0 50 100 150 200 250 300
+Days Since Calibration
+Figure 2 — ISS 02 sensor measurement data compensated for drift still show that errors may exceed :I:6mmHg, and
+perhaps even earlier than Without compensation. Drift compensation may not have reduced the risk at all.
+and 0; based on the uncompensated Oz sensor error data in
+4, RESULTS ﬁgure 1, and based on the compensated Oz sensor error data
+. . . . in ﬁgure 2. The second step is to obtain the distributions of
+The ﬁrst step 1n.0bta1n1ng reeults IS to use the procedure the risk of the ()2 sensor error exceeding i6mmHg at 270
+descrlbed 1n sectlon 2 t0 obtaln MCMC samples of ya, ,u’,
+5
+
+"
+"6","days since calibration given the data both for the Table 2: MCMC Parameter Sample Statistics Obtained
+uncompensated and compensated data. using a Conditional Inferential Approach 0n the
+Proposed Compensated 02 Sensor Errors
+MCMC Sampling 0f,u0, ,uf and 0;
+The procedure described in section 2 was applied to the data -—
+presented in ﬁgure 1 to Obtain 10,000 MCMC samples 0f
+#0, ,u’, and 0; without any compensation. Table 1 . . .
+summarizes the statistics for the MCMC samples of [[10, ,u’, -----
+and 0;. Obtained using this procedure.
+Table 1: MCMC Parameter Sample Statlstlcs Obtalned
+using a Conditional Inferential Approach 0n the
+-—
+---II
+All of the Markov chains based on data with compensation
+stabilized and were well behaved, and Visual inspection of
+the marginal samples for each parameter revealed noise like
+behavior. N0 remarkable correlations were Observed
+----- Risk Calculations and Comparisons
+as 2.01 2.50 2.24 0.562
+The ﬁrst issue related to this problem is assessment of the
+risk of the 02 sensor errors exceeding i6mmHg before 270
+days without compensation. The drift compensation scheme
+All Of the Markov chains stabilized and were well behaved, only remains a Viable solution if it reduces the risk. Recall
+and Visual inspection Of the marginal samples for each from Visual Observations of ﬁgures 1 and 2 that it is difﬁcult
+parameter revealed noise like behavior. N0 remarkable to tell how much or if any risk reduction is achieved by
+correlations were Observed between any two parameters. compensating the 02 sensor for drift.
+The procedure described in section 2 was applied to the data Monte Carlo samples Of this risk were obtained by
+presented in ﬁgure 2 to Obtain 10,000 MCMC samples of evaluating equation (7) at the joint MCMC samples 0f #0,
+#0, ﬂ: and 0;, with the proposed compensation. Table 2 ,u’, and 0; Obtained using the approach presented in section
+summarizes the statistics for the MCMC samples Of #0, ﬂ: 2 for the uncompensated 02 sensor error data in ﬁgure 1.
+and 0; Obtained using this procedure for this data.
+Likewise, the analog risk samples with the proposed drift
+compensation were Obtained with the same procedure using
+the compensated 02 sensor error data in ﬁgure 2.
+A very good means to compare risk assessments is to use
+modiﬁed bar Charts. Figures 3 and 4 use these modiﬁed bar
+Charts. The bars in ﬁgures 3 and 4 start on the left at the 5th
+quanti1e for the risk distribution, and end at the 95th
+quanti1e. Based on the data for each bar, there is 90%
+certainty that the true value of the risk in question 1ies
+somewhere on the bar. The gray vertical lines on the bars
+are the modes of the distributions, and the color density on
+the bar is directly proportional to the probability density.
+These modiﬁed bareharts provide insights into these
+distributions Visua11y. Figure 3 shows this comparison of
+risk distributions based on the data using a linear scale.
+6
+
+"
+"7","ISS 02 Sensor Measurement Error ISS 02 Sensor Measurement Error
+Risk Distribution Comparison at TSC = 270 Days Risk Distribution Comparison at TSC = 270 Days
+m Risk with No Compensation /|l|
+I Risk with No Compensation
+|\ Risk with Drift Compensation |l:|
+. E i ' Risk with Drift'Compensation
+0.05 0.15 0.25 0.35 0.45 0.55 0.65 0.005 0.010 0.020 0.050 0.100 0.200 0.500
+Risk (linear scale) Risk (logarithmic scale)
+Figure 3 — There is a 90% probability based on the data Figure 4 — There is a 90% probability based on the data
+that the risk of the uncompensated 02 sensor error that the risk of the drift compensated 02 sensor error
+exceeding :I:6mmHg by 270 days since calibration Will be exceeding :I:6mmHg at 270 days since calibration is
+between 36% and 46%. The risk based on the data for between 0.6% and 1.5%. The logarithmic scale
+the drift compensated 02 sensor error is hardly demonstrates the risk distribution after drift
+measurable on this linear scale. compensation.
+
+Figure 3 clearly demonstrates using the modiﬁed barcharts While ﬁgure 3 made risk reduction using the proposed drift
+
+that the risk before drift compensation is rather serious at compensation scheme obvious, ﬁgure 4 helps quantify the
+
+270 days since calibration, and that drift compensation amount of reduction. As seen in ﬁgure 4, there is a 95%
+
+dramatically reduces it. This result was not anticipated from probability based on the data that drift compensation for the
+
+Visual observation of ﬁgures 1 and 2. Since in ﬁgure 3 the 02 sensor reduces the risk of exceeding i6mmHg at 270
+
+bar for the risk distribution based on the data using drift days since calibration is less than 1.5%. There is a 95%
+
+compensation is so short, these same bars are presented With probability based on the data that the risk of exceeding
+
+a logarithmic abscissa in ﬁgure 4 to show an expansion of i6mmHg at 270 days since calibration Without drift
+
+the bar for risk With drift compensation. compensation is greater than 36%.
+Where risk reduction was not so apparent in ﬁgures 1 and 2,
+ﬁgures 3 and 4, developed using the covariate model and
+conditional inferential method presented in section 2 to
+incorporate the covariate data for the 02 sensor error data,
+demonstrate very clearly how much risk reduction actually
+occurred between ﬁgures 1 and 2.
+This information helped the ISS program decide to use the
+proposed drift compensation for the pre—breathe 02 sensor
+Vice halting ISS EVA’S until the pre—breathe 02 sensor
+could be redesigned, tested, and delivered to the ISS.
+
+5. CONCLUSIONS
+There are two important conclusions from the work
+presented in this report.
+First, it is no longer necessary to ignore relevant
+information from covariates in a risk assessment for
+aerospace system decisions. In making important decisions
+7
+
+"
+"8","about aerospace systems, it is never a good idea to ignore
+available information. When using classical statistical BIOGRAPHY
+recipes to obtain point estimates of risk, models cannot be
+used that take advantage of covariate data and the covariate . Mark Powell has practiced Systems
+data must be ignored. Rarely in fact are distribution models I i "" Ehglneermg for over 35 years 1h a
+ever developed that formulate the parameters of a standard : "" f _ w1de range _ 0f _ technlcal
+model as a function of the covariates because of this. The 4 ‘ ,e env1r0nments mcludmg DeD,
+primary advance presented in this report is that conditional M 3? NASA» DOE» and commer01a1.
+inferential methods can be used to develop risk inferences h :3 More than 25 Of those years have
+for such covariate models, as demonstrated for the ISS pre- k 4 been 1h the aerospace arena. H15
+breathe O2 sensor measurement errors. roles In these env1r0nments have
+. included project manager,
+Second, decisions for aerospace systems are easier and engineering manager, chief systems
+more comfortable to make when the entire distribution of engineer, and research scientist. His academic afﬁliations
+the risk is provided for the alternatives, rather than just have included the University (?f Idaho, Stevens Institute Of
+point estimates. The modiﬁed barcharts that were used in Technology, and the 11n1vers1ty eh Houstoh, Clear Lake.
+ﬁgures 3 and 4 in this report demonstrate both a signiﬁcant Mr. Powell mamtams an act1ve engmeermg and
+improvement in risk when drift compensation was used, as management consaltlng practlce throughout North Amerlca,
+well as quantitative probabilistic values of the risk. Europe, and As1a. Beyond consultmg, he 1s sought
+frequently as a symposium and conference speaker and for
+Every risk problem for aerospace systems is different. If, tralnlng, worhshops, and thtorlals 0n varlous toplcs _1h
+however, the data for a problem has covariates, then the Systems Englneerlng, Preject Management, and RISk
+parameters for an appropriate standard distribution model Managenient. Mr. Powell 1s an. act1ve member Of AIAfA""
+should be modiﬁable as functions of these covariates as Slgma X19 the Internatlonal Seelety for Bayes1an Analys1s,
+demonstrated in this report. The choice of functions to and the Internatlonal Ceuncﬂ on Systems Ehglneermg,
+incorporate the covariates should be based on engineering where he has served as R1_Sk Management worklhg Greup
+principles as well as understanding of the chosen standard Cha1r and as Ass1stant D1rect0r for Systems Engmeermg
+model parameters. Further, these data with covariates may Processes.
+be processed using an approach based on conditional
+inferential methods that will produce full distributions of
+risk. Because the risk assessments took advantage of the
+information inherent in the covariates as well as the data,
+better decisions for aerospace systems are possible.
+REFERENCES
+[1] Harold J effreys, Theory of Probability. Oxford University
+Press, Oxford, 1939.
+[2] James O. Berger, Statistical Decision Theory and
+Bayesian Analysis, Springer-Verlag, New York, 1980.
+[3] D. S. SiVia, Data Analysis, A Bayesian Tutorial, Oxford
+University Press, Oxford, 1996.
+[4] Christian P. Robert and George Casella, Monte Carlo
+Statistical Methods, Springer-Verlag, New York, 1999.
+[5] W. R. Gilks, S. Richardson, and D. J . Spiegelhalter,
+Markov Chain Monte Carlo in Practice, Chapman & Hall,
+Boca Raton, 1996.
+8
+
+"

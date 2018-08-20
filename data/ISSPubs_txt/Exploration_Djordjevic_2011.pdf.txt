@@ -1,0 +1,766 @@
+"","x"
+"1","O
+Deep-space and near-Earth optical
+O O O
+communicatlons by coded orbltal angular
+O
+momentum (0AM) modulatlon
+Ivan B. Djordjevic
+University ofArizona, Depart. Electrical & Computer Eng, 123 0 E. Speedway Blvd, T ucson, AZ 85 721, USA
+ivan@ece.arizona.edu
+Abstract: In order to achieve multi-gigabit transmission (projected for
+2020) for the use in interplanetary communications, the usage of large
+number of time slots in pulse-position modulation (PPM), typically used in
+deep—space applications, is needed, Which imposes stringent requirements
+on system design and implementation. As an alternative satisfying high-
+bandwidth demands of future interplanetary communications, While keeping
+the system cost and power consumption reasonably low, in this paper, we
+describe the use of orbital angular momentum (0AM) as an additional
+degree of freedom. The DAM is associated With azimuthal phase of the
+complex electric ﬁeld. Because 0AM eigenstates are orthogonal the can be
+used as basis functions for N-dimensional signaling. The DAM modulation
+and multiplexing can, therefore, be used, in combination With other degrees
+of freedom, to solve the high-bandwidth requirements of future deep-space
+and near-Earth optical communications. The main challenge for 0AM deep-
+space communication represents the link between a spacecraft probe and the
+Earth station because in the presence of atmospheric turbulence the
+orthogonality between 0AM states is no longer preserved. We Will show
+that in combination With LDPC codes, the OAM-based modulation schemes
+can operate even under strong atmospheric turbulence regime. In addition,
+the spectral efﬁciency of proposed scheme is N2/log2N times better than that
+of PPM.
+@2011 Optical Society of America
+OCIS codes: (060.2605) Free-space optical communication; (060.4080) Modulation;
+(010.1330) Atmospheric turbulence; (1880) Detection; (120.6085) Space instrumentation
+
+References and links
+
+1. B. Moision and J . Harnkins, “Deep-space optical communications downlink budget: modulation and coding,“
+The Interplanetary Network Progress Report 42-154, April-June 2003 (J et Propulsion Laboratory, Pasadena,
+California, 15 August 2003), pp. 1-28, http://ipnpr.jp1.nasa.gOV/progress_report/42-154/154K.pdf.
+
+2. B. Moision and J . Harnkins, “Coded modulation for the deep-space optical channel: serially concatenated pulse-
+position modulation,“ The Interplanetary Network Progress Report 42-161 (J et Propulsion Laboratory, Pasadena,
+California, 15 May 2005), pp. 1-25, http://ipnpr.jp1.nasa.gOV/progress_report/42-161/161T.pdf.
+
+3. F. Xu, M.-A. Khalighi, and S. Bourennane, “Coded PPM and multipulse PPM and iterative detection for free-
+space optical links,” J . Opt. Commun. Netw. 1(5), 404—415 (2009).
+
+4. S. J . Dolinar, J . Harnkins, B. E. Moision, and V. A. Vilnrotter, “Optical modulation and coding,” in Deep Space
+Optical Communications, H. Hemmati, ed. (Wile, 2006), pp. 215—299.
+
+5. H. Hemmati, “Interplanetary laser communications,” Optics & Photonics News 18(11), 22—27 (2007).
+
+6. L. C. Andrews and R. L. Philips, Laser Beam Propagation through Random Media (SPIE Press, 2005).
+
+7. I. B. Djordjevic and M. Arabaci, “LDPC-coded orbital angular momentum (0AM) modulation for free-space
+optical communication,” Opt. Express 18(24), 24722—24728 (2010).
+
+8. I. B. Dj 0rdj eVic, “Orbital angular momentum (0AM) based LDPC-coded deep-space optical communication,”
+Proc. SPIE 7923, 792306, 792306—792308 (2011) (invited paper).
+
+9. C. Paterson, “Atmospheric turbulence and orbital angular momentum of single photons for optical
+communication,” Phys. Rev. Lett. 94(15), 153901 (2005).
+
+10. J . A. Anguita, M. A. Neifeld, and B. V. Vasic, “Turbulence-induced channel crosstalk in an orbital angular
+momentum-multiplexed free-space optical link,” Appl. Opt. 47 (13), 2414—2429 (2008).
+
+#148481 - $15.00 USD Received 1 Jun 2011; revised 27 Jun 2011; accepted 29 Jun 2011;pub1ished 11 Ju12011
+
+(C) 2011 OSA 18 Ju1y2011 /Vol. 19, No. 15/OPTICS EXPRESS 14277
+
+"
+"2","11. J . Leach, J . Courtial, K. Skeldon, S. M. Barnett, S. Franke-Arnold, and M. J . Padgett, “Interferometric methods to
+measure orbital and spin, or the total angular momentum of a single photon,” Phys. Rev. Lett. 92(1), 013601
+(2004).
+
+12. G. Gibson, J . Courtial, M. Padgett, M. Vasnetsov, V. Pas’ko, S. Barnett, and S. Franke-Arnold, “Free-space
+information transfer using light beams carrying orbital angular momentum,” Opt. Express 12(22), 5448—5456
+(2004).
+
+13. M. T. Gruneisen, W. A. Miller, R. C. Dymale, and A. M. Sweiti, “Holographic generation of complex ﬁelds with
+spatial light modulators: application to quantum key distribution,” Appl. Opt. 47(4), A32—A42 (2008).
+
+14. M. P. C. Fossorier, “Quasi-cyclic low-density parity-check codes from circulant permutation matrices,” IEEE
+Trans. Inf. Theory 50(8), 1788—1793 (2004).
+
+15. S. Lin and D. J . Costello, Error Control Coding: F undamentals and Applications (Prentice Hall, 2004).
+
+16. I. B. Djordjevic, M. Arabaci, and L. Minkov, “Next generation FEC for high-capacity communication in optical
+transport networks,” J . Lightwave Technol. 27(16), 3518—3530 (2009).
+
+17. J . Chen, A. Dholakia, E. Eleftheriou, M. Fossorier, and X.-Y. Hu, “Reduced-complexity decoding of LDPC
+codes,” IEEE Trans. Commun. 53(8), 1288—1299 (2005).
+
+18. I. B. Djordjevic and M. Arabaci, “LDPC-coded orbital angular momentum (0AM) modulation for free-space
+optical communication,” Opt. Express 18(24), 24722—24728 (2010).
+
+19. J . D. Jackson, Classical Electrodynamics (Wiley, 1975).
+
+20. I. B. Djordjevic, M. Arabaci, L. Xu, and T. Wang, “Generalized OFDM (GOFDM) for ultra-high-speed optical
+transmission,” Opt. Express 19(7), 6969—6979 (2011).
+
+21. H. G. Batshon and I. B. Djordjevic, “Beyond 240 Gb/s per wavelength optical transmission using coded hybrid
+subcarrier/amplitude/ phase/polarization modulation,” IEEE Photon. Technol. Lett. 22(5), 299—301 (2010).
+
+22. H. G. Batshon, I. B. Djordjevic, L. Xu, and T. Wang, “Multidimensional LDPC-coded modulation for beyond
+400 Gb/s per wavelength transmission,” IEEE Photon. Technol. Lett. 21(16), 1139—1 141 (2009).
+
+23. I. B. Djordjevic and H. G. Batshon, “Generalized hybrid subcarrier/amplitude/phase/polarization LDPC-coded
+modulation based FSO Networking,” in Proceedings OfIEEE 12th International Conference on T ransparent
+Optical Networks (ICTON 2010) (IEEE, 2010), paper Th.B3.4.
+
+24. W. Shieh and I. B. Djordjevic, OFDM for Optical Communications (Elsevier/Academic Press, 2009).
+
+25. S. M. Alamouti, “A simple transmit diversity technique for wireless communications,” IEEE J . Sel. Areas
+Comm. 16(8), 1451—1458 (1998).
+
+26. A. Goldsmith, Wireless Communications (Cambridge University Press, 2005).
+
+27. D. Tse and P. Viswanath, F undamentals of Wireless Communication (Cambridge University Press, 2005).
+
+28. T. M. Duman and A. Ghrayeb, Coding for MIMO Communication Systems (Wiley, 2007).
+
+29. I. B. Djordjevic, L. Xu, and T. Wang, “PMD compensation in multilevel coded-modulation schemes with
+coherent detection using BLAST algorithm and iterative polarization cancellation,” Opt. Express 16(19), 14845—
+14852 (2008).
+
+30. J . G. Proakis, Digital Communication (McGraw Hill, 2001).
+
+31. I. B. Dj 0rdj eVic and G. T. Dj 0rdj eVic, “On the communication over strong atmospheric turbulence channels by
+adaptive modulation and coding,” Opt. Express 17 (20), 18250—18262 (2009).
+
+32. I. B. Dj 0rdj eVic, “Adaptive modulation and coding for communication over the atmospheric turbulence
+channels,” in Proceedings OfIEEE Photonics Society Summer T apicals (IEEE, 2009), paper TuD3.3.
+
+33. M. Arabaci, I. B. Dj 0rdj eVic, R. Saunders, and R. M. Marcoccia, ""Polarization-multiplexed rate-adaptive non-
+binary-quasi-cyclic-LDPC-coded multilevel modulation with coherent detection for optical transport networks,”
+Opt. Express 18(3), 1820—1832 (2010).
+
+1. Introduction
+
+Power-efﬁcient modulation schemes, such as pulse-position modulation (PPM), are widely
+
+adopted in current deep-space optical communications [1—6]. The very large bandwidth of
+
+these links (compared to RF links) has made the low spectral efﬁciency of PPM less of a
+
+concern. However, in order to achieve multi-gigabit transmission (projected for 2020) for the
+
+use in interplanetary communications [5], the use of large number of time slots in PPM is
+needed, which imposes stringent requirements on system design and implementation. On the
+other hand, we have shown recently [7,8] that through the use of orbital angular momentum
+
+(0AM) modulation we can satisfy high-bandwidth demands of future interplanetary
+
+communications, while keeping the system cost and power consumption reasonably low. The
+
+DAM is associated with azimuthal phase of the complex electric ﬁeld. Because 0AM
+
+eigenstates are orthogonal, in principle, arbitrary number of bits per single photon can be
+
+transmitted. The ability to generate/analyze states with different OAMs, by using
+interferometric 0r holographic methods [9—13] allows the realization of deep-space/near-Earth
+optical communication systems with ultra-high photon efﬁciencies expressed in terms of
+number of bits per photon. The DAM modulation and multiplexing can, therefore, be used, in
+combination with other degrees of freedom, to solve the high-bandwidth requirements of
+future deep-space and near-Earth optical communications. By increasing the number of CAM
+#148481 - $15.00 USD Received 1 Jun 2011; revised 27 Jun 2011; accepted 29 Jun 2011;pub1ished 11 Ju12011
+(C) 2011 OSA 18 July 2011 /V01. 19, N0. 15 / OPTICS EXPRESS 14278
+
+"
+"3","states we can increase the aggregate data rate of the system, while enabling reliable
+transmission at these higher speeds by using low-density parity-check (LDPC) codes [14—17].
+Dramatic increase in photon efﬁciency through 0AM modulation and multiplexing will
+provide revolutionary capabilities for future deep-space/near-Earth applications. The main
+challenge for 0AM deep-space communication represents the link between a spacecraft probe
+and the Earth station because in the presence of atmospheric turbulence the orthogonality
+between 0AM states is no longer preserved.
+
+In this paper, we will show that in combination with LDPC codes, OAM-based
+modulation schemes can operate even under strong atmospheric turbulence regime. The
+following multi-gigabit enabling approaches for deep-space and near-Earth optical
+communications based on 0AM are described: (i) 0AM multiplexing (Sec. 2); (ii) N-
+dimensional 0AM modulation (Sec. 2); and (iii) orthogonal 0AM division multiplexing (Sec.
+3), similar to OFDM [24]. We will also describe different approaches to deal with
+atmospheric turbulence induced 0AM crosstalk including: (1) equalization; (2) OAM-time
+coding, which is analogous to the space-time coding; and (3) adaptive modulation and coding
+(AMC).
+
+Notice that our previous paper on 0AM modulation [18] deals with terrestrial FSO
+communications, and it employs volume holograms to perform 0AM
+modulation/deniodulation, while in this paper instead we use multimode ﬁber (MMF) to
+perform 0AM modulation/demodulation. Moreover, Ref. [18] does not discuss at all neither
+orthogonal 0AM division multiplexing nor compensation of CAM crosstalk effects
+introduced by atmospheric turbulence. Further, we provide detailed description of CAM
+demodulator and iterative demapper/decoder. Finally, we describe both direct detection and
+coherent detection 0AM demodulators.
+
+The paper is organized as follows. In Section 2, we describe the concepts of CAM
+multiplexing and modulation. We also describe an N—dimensional OAM-based coded
+modulation scheme suitable for deep-space and near-Earth applications. The DAM division
+multiplexing is described in Section 3. Different methods to re-establish the orthogonality of
+CAM modes, after transmission over atmospheric turbulence channels, are described in
+Section 4. We evaluate the suitability of OAM-based coded-modulation schemes for deep-
+space/near-Earth applications in Section 5. Section 6 is devoted to concluding remarks.
+
+2. Deep-space and near-Earth optical Communications based on LDPC-coded 0AM
+modulation
+In this section, we describe how to simultaneously increase the photon and spectral
+efﬁciencies based on N—dimensional 0AM coded modulation. The angular momentum, L, of
+the classical electromagnetic ﬁeld can be written as [19]
+inj ExAdV+ij 2 E (rxV)AdV (1)
+47:0 V 47w V kzx’y’z k k 7
+where E is the electric ﬁeld intensity, A is the vector potential associated with magnetic ﬁeld
+intensity H by H =V><A and electric ﬁeld intensity by E = -c_16A/ 81 , and c is the speed
+of light. The second term in (1) is identiﬁed with the DAM because of the presence of the
+angular momentum operator rtherm. Among various optical beams that can carry 0AM,
+Laguerre-Gauss (LG) vortex beams can easily be implemented. For example, a ﬁeld
+distribution of LG beam traveling along z-direction can be expressed in cylindrical
+coordinates (r,¢,z) (r denotes the radial distance from propagation axis, ¢ denotes the
+azimuthal angle and Z denotes the propagation distance) as follows [10]:
+M 2 —:—Z _#222 '2 +Z+1tan_1i
+7r(p+|l|)! w(z) w(z) w (Z)
+#148481 - $15.00 USD Received 1 Jun 2011; revised 27 Jun 2011; accepted 29 Jun 2011; published 11 Jul 2011
+(C) 2011 OSA 18 July 2011 /Vol. 19, N0. 15 / OPTICS EXPRESS 14279
+
+"
+"4","where w(z) = w0[1 + (Z/ZR)]1/2 with wo being the zero-order Gaussian radius at the waist,
+ZR 2 7rwo2 / xi is the Rayleigh range (with 9» being the wavelength), k = 271:0» is the propagation
+constant, and Llp(-) is the associated Laguerre polynomial, with p and 1 representing the radial
+and azimuthal mode numbers, respectively. It can be seen from (2) that lth mode of LG beam
+has the azimuthal angular dependence of the form exp(-jl¢), and consequently, l is also called
+the azimuthal mode number (index). For I = 0, ﬁeld u(r,¢,z) becomes a zero-order Gaussian
+beam, that is the TEMOO mode. For p = 0, Llp(-) = 1 for all Is, so that the intensity of a LG
+mode is a ring of radius proportional to (|l|)1/2, as illustrated in Fig. 1(a). It can be shown [10]
+that for ﬁxed p, the following principle of ethogonality is satisﬁed:
+
+2
+
+(ummmmp) 2] 14;}, (r,¢,z)un,p (r,¢,z)rdrd¢ = {I lum’pi rdrd¢, n m (3)
+
+0, n 72 m
+
+Clearly, different 0AM states for ﬁxed p are mutually orthogonal and as such they can be
+used as basis functions for 0AM modulation. The number of CAM states to be used depends
+on atmospheric turbulence strength. For N = 2L + 1, the corresponding 0AM states can be
+indexed by l where 1 takes values in the set {-L,-L + 1,...,-1,0,1,...,L}. By increasing the
+number of dimensions (i.e., the number of CAM eigenstates), we can increase the aggregate
+data rate of the system.
+
+The transmitter and receiver block diagrams for 0AM modulation are shown in Fig. 1.
+Previously, we studied the use of volume holograms based multidimensional terrestrial FSO
+communication [18]. The terrestrial FSO system described in [18] employs the volume
+holograms to perform 0AM multiplexing/de-multiplexing. Instead of using the set of
+holograms to impose different 0AM states, here we use mode multiplexer/demultiplexer
+based on multimode ﬁbers as shown in Fig. 1(b)/(c). During mode multiplexing, a continuous
+wave laser diode signal is split into N branches by using a power splitter (such as 1:N star
+coupler) to feed N Mach-Zehnder modulators (MZMs), each corresponding to one of the N
+0AM modes. The mode demultiplexer can be implemented by propagating the multimode
+signal in opposite direction, as shown in Fig. 1(0). The jth input to the jth MZM, 13 j S N,
+corresponds to the jth coordinate of the signal to be modulated (see Fig. 1b). The output of
+mode multiplexer is expanded by telescope and transmitted towards remote destination. The
+DAM multiplexing is obtained by summing up N independent streams per each 0AM state
+into a single optical beam. Clearly, when 0AM transmitter and receiver are implemented as
+shown in Fig. 1(b,c) we are not able to distinguish between 0AM modes with azimuthal mode
+numbers of the same magnitude but of opposite sign. Nevertheless, distinguishable modes I =
+0,1,...,L (for ﬁxed p) are still orthogonal. The mode detector shown in Fig. 1(e), instead of
+being implemented based on Fig. 1(c) it can be implemented based on integrated ring-shaped
+detector with N-different p.i.n. regions to capture different l—modes, as illustrated in Fig. 1(a)
+for p = 0. Such a mode detector will have N outputs that correspond to N-projections along
+0AM modes. After this generic description of CAM based deep-space/near-Earth optical
+communication systems, we provide more details of CAM transmitter and receiver.
+
+The K different bit streams coming from different information sources are encoded using
+(n,km) (m = 1,...,K) LDPC codes, as shown in the Fig. 1(d). The outputs of the encoders are
+interleaved by the K X n block interleaver. The block interleaver accepts bits from the
+encoders row-wise and outputs bits column-wise t0 the mapper, which accepts K bits at each
+time instance 1'. The mapper determines the corresponding MN-ary signal constellation point
+by
+
+s; =CNZ:I(DMCDJ.; i=1,2,---,MN (4)
+where M is the number of amplitude levels per 0AM state and CN is the normalization
+constant. The set {(Dl, (D2,. . .,(DN} represents a set of N orthogonal 0AM basis functions, while
+with guy- we denoted 0AM modulation coordinates of ith constellation point. The signals are
+#148481 - $15.00 USD Received 1 Jun 2011; revised 27 Jun 2011; accepted 29 Jun 2011; published 11 Jul 2011
+(C) 2011 OSA 18 July 2011 /Vol. 19, N0. 15 / OPTICS EXPRESS 14280
+
+"
+"5","then modulated, mode multiplexed and sent over the deep—space 0r near—Earth optical channel
+(see Fig. 1).
+
+The number OAM modes N to be used is determined by the desired ﬁnal rate and current
+channel conditions. The simplest OAM—based coded modulation scheme With direct detection
+can be described by the following set of constellation points for N = 3 and M = 2 {(0,0,0),
+
+p=0
+[=0
+[:1
+I=L
+,._____________£a)_____________
+I N-dimensional 0AM transmitter l
+_____________________ I
+I
+: OAM coord. 1. Mode-multiplexer : I
+I | I
+I —~I Channel1 MMF I I
+' mm” \
+Laser Power _ — Expanding
+- . —— — Taper—core I
+lede I spIItter w te|escope
+I —_/
+I I Channel N I |
+|_____________________u I
+: OAM coordinate N I
+________£b)___________
+I N-dimensional 0AM receiver :
+I ._______________
+I I Mode-demultiplexer 1 l. .
+I I PrquctIon along
+I I I o A M mode 1
+'- /’—_
+. E I E
+CIgI'epgsssrg |—-——-
+E 5'
+: ' \———
+|________________I Prpjectionalong
+L 9AM mode N
+(C)
+Source
+channels LDPC
+_ S m OS
+r1—k1/ n y to FSO expanding
+5 E E Interleaver K Mapper& _ Modes telescope
+Kxn .
+LDPC MZMS l multIplexer
+K encoder
+rK=kKl n
+(d)
+ExtrinsicLLRs :
+> I
+FSO compressing - % O LDPC Decoder1 1
+telescope Modes 9 37’ g _ _
+— detector I g i g : :
+g g' ""’ LDPC Decoder K —> K
+ﬂ :
+|_______________J
+(6)
+Fig. 1. Multidimensional LDPC-coded 0AM modulation scheme: (a) intensity spatial
+distribution for p = 0, (b) MMF-based mode-multiplexer and N—dimensional transmitter
+conﬁgurations, (c) MMF-based N—dimensional 0AM receiver, ((1) overall transmitter
+architecture and (e) overall receiver architecture. MZM: Mach-Zehnder modulator, MMF:
+multimode ﬁber, PD: photodetector, APP: a posteriori probability, LLRs: log-likelihood ratios.
+#148481 - $15.00 USD Received 1 Jun 2011; revised 27 Jun 2011; accepted 29 Jun 2011;pub1ished 11 Ju12011
+(C) 2011 OSA 18 July 2011 /Vol. 19, N0. 15 / OPTICS EXPRESS 14281
+
+"
+"6","(0,0,1), (0,1,0), (0,1,1), (1,0,0), (1,0,1), (1,1,0), (1,1,1)}. The N—dimensional signal
+constellation can be obtained as the N—dimensional Cartesian product of a one-dimensional
+signal constellation originating from non-negative pulse-amplitude modulation (PAM). At the
+receiver side (see Fig. 1(d)), after 0AM demodulation (or mode demultiplexing) and
+photodetection, the outputs of the N branches of the demodulator are sampled at the symbol
+rate, and the corresponding samples, after analog-to-digital conversion, are forwarded to the a
+posteriori probability (APP) demapper. The orthogonality among 0AM modes in realistic
+deep—space and near-Earth optical communication systems can be re-established by various
+MIMO and equalization techniques, as discussed in Section 4. The APP demapper provides
+the bit LLRs required for iterative LDPC decoding (see Fig. 1e). The 1th branch in Fig. 1(1)
+represents the projection along lth 0AM state (coordinate). Let
+5. {51—0 S.(‘L+1)--- 51—1) 510) S11) SmT
+denote the transmitted signal constellation point for system shown in Fig. 1(a), Rl- denote the
+received constellation point, and S0 denote the reference constellation point. The superscript
+(l) (l = -L,...,-1,0,1...,L) is used to denote the lth 0AM coordinate. When the deep-
+space/near-Earth optical communication system is based on N—dimensional transmitter and
+receiver shown in Fig. 1(c,d), then the corresponding signal constellation point is deﬁned as
+T
+S. = [5110) Sim ---Sl.(N_1)] . Let P(Rl-lSi) denote the conditional probabilities that are estimated
+by collection of CAM crosstalk histograms, obtained by propagating sufﬁciently long training
+sequence over the deep-space/near-Earth optical channel, While P(S) denotes a priori
+probability of symbol S. The symbol log-likelihood ratios (LLRs) can be calculated by
+P(s.|R.)
+1(8) = log # , (5)
+111811191
+Where P(SilRi) is determined by Bayes’ rule as
+P(Ri|Si')P(Sl.)
+P(Sz-le-Ff- (6)
+2411,15,.)43)
+S,
+By substituting Eq. (6) into Eq. (5) we obtain
+PRiSiPSl. PRiSl. PS. PRiSl.
+g(si) =10g M =10g w +10g[ﬁ] =10g w 4.161(3),
+P(R1s0)P(s0> P(R1so> P(s0> P(R1so)
+(7)
+Where la (8, ) = log [P(Sl. ) / P(S0 )1. Let us denote by c]- the jth bit in the observed symbol S
+binary representation c = (60,61,. . .,cb_1) (b is the number of bits needed to represent the symbol
+S). The prior symbol LLRs for the next iteration are determined by
+19—1
+P c. = 0
+P(So) g ( J ) b—l P(Cj :0)
+211a (S):10gm:10ng—:ZlogP—. (8)
+i HP(Cj) FD (6])
+1:0
+Because
+#148481 - $15.00 USD Received 1 Jun 2011; revised 27 Jun 2011; accepted 29 Jun 2011gpub11shed 11 Ju12011
+(C)20110$A 18 July 2011/Vol. 19, No. 15 / OPTICS EXPRESS 14282
+
+"
+"7","P(c.=0) 0, 0.20
+10g]—= J =C.L(C.), (9)
+P(cj) {L(cj),cj =1 J J
+where L(cj) = 10g[P(cj = 0)/P(cj = 1)], the prior symbol LLRs become
+b
+/1a (s)=chL(cj ). (10)
+j=1
+Finally, the prior symbol estimate can be obtained from
+b
+a, (s) = chLW (cj ) (11)
+j=1
+where
+LB, (5]. ) = L(cf‘“) ) —L(c§i“) ) (12)
+
+In Eq. (12), we use L(c(m)j) [L(c(°u0j)] to denote the LDPC decoder input (output). The bit
+
+LLRs L(cj) are determined from symbol LLRs by
+
+A 2020120 exp [1(5)] eXp(Zczck=0,k¢j La (Ck ))
+
+L(cj)=10g—. (13)
+20:01-21 CXp [1(5)] eXp(Zczck=0,k¢j La (Ck ))
+
+Therefore, the jth bit reliability is calculated as the logarithm of the ratio of a probability that
+c]- = 0 and probability that c]- = 1. In the nominatcr, we perform the summation over all
+symbols S having 0 at the observed position j, while in the denominator over all symbols S
+having 1 at the same position j. With La(ck) we denoted the prior (extrinsic) information
+determined from the APP demapper. The inner summation in (13) is performed over a11bits of
+symbol S, selected in the outer summation, for which ck = 0, kij. The bit LLRs are forwarded
+to LDPC decoders, which provide extrinsic bit LLRs for demapper according to (12), and are
+used as inputs to (11) as the prior information.
+
+Notice that deep-space/near-Earth optical communication systems shown in Fig. 1 are
+based on direct detection. When coherent detection is used, the corresponding modulator can
+be: (i) one-dimensicnal MZM biased at null point (see Fig. 1(b)), (ii) two-dimensional
+modulator based on I/Q modulator (see Fig. 2(a)) and (iii) four-dimensional (see Fig. 2(b)).
+When I/Q modulator is used, in addition to N 0AM orthogonal modes, we employ the in-
+phase (I) and quadrature (Q) components so that the corresponding space is 2N—dimensi0nal.
+On the other hand, when four-diniensional modulator is used, with two coordinates being I-
+and Q-ccordinates in X-polarization and two coordinates being I- and Q-ccordinates in y
+polarization, the corresponding space is 4N—dimensi0na1. The 4N—dimensi0nal scheme allows
+even 4N—bits to be transmitted per single symbol, which represents an energy-efﬁcient
+communication scheme. However, the complexity of such receiver might be too high even for
+near-Earth applications. The one-dimensicnal coherent detection scheme seems to be a good
+compromise between optical link energy-efﬁciency and receiver complexity. In Fig. 2(c), we
+show the receiver conﬁguration with coherent detection that assumes that one-dimensional
+MZMs are used. One laser is used to detect all coordinates, whose output is used as an input
+to 1:N power splitter. The output of balanced detector 71 (n = 0,1,. . .,N-1) provides the
+projection along 0AM state n. This coherent detection receiver scheme; composed of mode-
+demultiplexer, balanced coherent detectors, power splitter and local laser; can be integrated on
+a single chip using hybrid opto-electrcnic integrated circuit (OEIC) technology.
+
+Notice that different orthogonal basis functions can be used instead of orthogonal 0AM
+eigenstates (e.g., [20], [21—23]). For example, the orthogonal subcarriers can be used as the
+#148481 - $15.00 USD Received 1 Jun 2011; revised 27 Jun 2011; accepted 29 Jun 2011; published 11 Ju12011
+(C) 2011 OSA 18 July 2011 /V01. 19, N0. 15 / OPTICS EXPRESS 14283
+
+"
+"8","1% ; i I 1
+Nth complex: From to modes
+coordinate power- T. multiplexer
+i |m{-} splitter i
+i i i Q a
+(a)
+QX IX
+l l I/Q-MOD in x-pol.
+I I
+From 3 dB
+to modes
+power- multiplexer
+splitter
+I I
+Qy [y I/Q-MODin y-pol.
+(b) _______________
+v ExtrinsicLLRs I
+—> Balanced _, cu '
+from E coh. det.1 § 3 E -1
+compressing M0?6- 5 Local 5 rn E: F 5 :
+telescope demultlplexer laser 2 g E -
+l: E—’- 8 0’ -K
+Balanced _, 5; 1
+coh.det.N "" :
+(C)
+Fig. 2. Coherent detection based 0AM modulation: (a) two-dimensional modulator, (b) four-
+dimensional modulator and (c) coherent receiver architecture (corresponding to one-
+dimensional modulators).
+basis functions for multidimensional signaling, which was the subject of Ref. [20]. However,
+the subcarrier-based multidimensional signaling cannot be used to simultaneously improve
+SNR sensitivity and spectral efﬁciency. For example, if we are concerned with SNR
+sensitivity we can use the orthogonal subcarriers as basis functions in multidimensional
+signaling to increase the Euclidean distance between signal constellation points, while
+keeping the total signal bandwidth the same. In proposed scheme, however, we can
+simultaneously improve the SNR sensitivity and spectral efﬁciency. Namely, by increasing
+the number of CAM eigenstates, used for basis functions, we can dramatically increase the
+aggregated data rate, while keeping the symbol rate ﬁxed, as the increase of the number of
+CAM modes does not lead to bandwidth expansion. In order to achieve multi-gigabit
+transmission, which is projected for 2020, for the use in interplanetary communications [5],
+the use of better spectral efﬁcient schemes, such as proposed one, is needed. The current
+deep—space optical communications are based on PPM, and in order to achieve the multi-Gb/s
+data rate, predicted by Hemmati in [5], a huge number of time-slots will be needed in PPM,
+which introduces too stringent requirements from implementation point of View.
+3. Orthogonal 0AM division multiplexing
+The transmitter and receiver conﬁgurations for orthogonal 0AM division multiplexing are
+shown in Fig. 3(a), and (b), respectively. It has certain similarities with OFDM [24]. The
+transmitter conﬁguration up to the mapper is very similar to that shown in Fig. 1(e). The
+mapper accepts K bits at time instance 1' from the (K X n) interleaver column-wise and
+determines the corresponding M—ary (M = 2K) signal constellation point (¢U, ¢QJ-) assuming a
+#148481 - $15.00 USD Received 1 Jun 2011; revised 27 Jun 2011; accepted 29 Jun 2011; published 11 Ju12011
+(C)20110$A 18 July 2011/Vol. 19, No. 15 / OPTICS EXPRESS 14284
+
+"
+"9","tWO-dimensional (2D) constellation such as M—ary PSK 0r M—ary QAM. The coordinates
+correspond to in-phase (I) and quadrature (Q) components of M—ary 2D constellation. The 2D
+constellation points, after serial-to-parallel (S/P) conversion, are used as the inputs to I/Q
+modulators of CAM transmitters shown in Fig. 3(a). On the receiver side, upon 0AM
+demultiplexing and detection as shown in Fig. 3(b), the soft estimates of symbols §k carried
+by kth 0AM state are forwarded to the APP demapper, Which determines the symbol LLRs.
+The soft symbol estimates in the kth 0AM state §k are obtained by using one of the DAM-
+crosstalk compensation techniques described in next section. The bit LLRs needed for LDPC
+decoders are calculated in the bit LLR calculation block in similar fashion to that described in
+Section 2.
+1 LDPC encoder QAM
+Source ' r1=k1/n - K SymbOIS Buffer — MZMs& t FSO
+channels ' . Integfiver + - N-dimensional ,0
+K ' LDPC encoder - S/P converter 0AM multiplexer expandmgtelescope
+rK=kK/ n
+(a)
+as 1
+- ' ' 0 -
+N dlmenSIonal g 9—, g LDPC Decoder1 .
+from F30 _ OAM demux, co 2 ,— _
+compressingtelescope photodetectors& - - g g 0;; -
+P/S converter LPF ADC 8 3 -K
+(b)
+Fig. 3. Deep-space optical communication by orthogonal 0AM division multiplexing: (a)
+transmitter and (b) receiver conﬁgurations.
+4. Compensation of CAM crosstalk introduced by atmospheric turbulence
+In this section, we describe several approaches to compensate for atmospheric turbulence
+effects.
+0AM Channel Model
+Atmospheric turbulence is caused by variations in the refractive index of the transmission
+medium due to inhomogeneities in temperature and pressure caused by solar heating and
+Wind. The optical turbulent channel has been intensively studied, and various models have
+been proposed to describe turbulence-induced performance degradation [6]. The OAM-based
+FSO channel model With coherent detection can be described as follows:
+hll [112 hi,N
+y=Hx+w, H: 21 22 2’N’ , (14)
+hN,1 hN,2 hN,N
+Where x = [x1 x2 xN]T is transmitted vector With ith complex number component being the
+in-phase/quadrature (I/Q) signal constellation point transmitted using ith 0AM state; y = [y1 y2
+yN]T is the received vector; w = [w W2 wN]T is the vector of noise samples; and H
+represents the channel matrix With rank(H) = N that corresponds to the number of CAM states
+not experiencing fading (due to atmospheric turbulence). The channel matrix coefficients can
+be determined by using a training sequence. The DAM FSO channel model (14) is similar to a
+Wireless communication MIMO model [25—29] and, therefore, different techniques used in
+spatial interference cancellation are directly applicable here. Below we describe equalization,
+OAM-time coding, and adaptive modulation and coding. Other methods suitable to deal With
+atmospheric turbulence induced crosstalk among 0AM states include: 0AM diversity; linear
+#148481 - $15.00 USD Received 1 Jun 2011; revised 27 Jun 2011; accepted 29 Jun 2011;pub1ished 11 Ju12011
+(C) 2011 OSA 18 July 2011 /V01. 19, N0. 15 / OPTICS EXPRESS 14285
+
+"
+"10","interfaces: zero-forcing interface and minimum mean-square error (MMSE) interface;
+nonlinear interfaces: vertical and diagonal BLAST [29], iterative atmospheric turbulence
+cancellation; parallel decomposition of OAM-MIMO by singular value decomposition (SVD)
+0f the channel matrix; and OAM-beam forming.
+0AM crosstalk compensation by equalization
+The scalar representation of Eq. (14),
+N
+yi=Zhinj+wi; i=1,2,---,N (15)
+j=1
+indicates that ith 0AM detector output can be represented as a ﬁnite impulse response (FIR)
+ﬁlter. That is, the channel model (15) is similar to an intersymbol interference (181) model so
+that various channel equalization techniques [26—30] can be used to compensate for 0AM
+crosstalk including a feed-forward equalizer (FFE), decision-feedback equalizer (DFE),
+maximum-likelihood sequence detector (MLSD), and a turbo equalizer.
+0AM-time coding
+If we allow the signal designs to be extended over multiple 0AM states and over multiple
+symbol times, we can refer to these designs as the OAM-time codes, in analogy to the space-
+time codes used in wireless communications [25—29]. Most space-time codes designed for
+wireless communications are straightforwardly applicable here, but they are most probably
+not optimal. Under the assumption that the F80 channel is quasi-static for the duration of NS
+symbols, which is true for multi-gigabit transmission, the DAM FSO channel inputs and
+outputs are matrices, with dimensions corresponding to space-coordinate (the number of
+CAM modes) and time-coordinate (the number of symbol intervals). This can be modeled by
+Y 2 IR + W, (16)
+where
+Y : |:y19y29""'9yNS :l : (Yij)N><NS 9X :|:x19x29""'9st:|:(Xij)NxNS (17)
+W =[w19W29---9WN;]=(Wz-j)zvxm
+and where N is the number of CAM modes. Let us observe an OAM-time code in which the
+receiver has the knowledge of the channel matrix H . Under maximum-likelihood (ML)
+detection, the optimum transmit matrix is obtained by the following minimization:
+A NY 2
+X = ' . — H . 18
+arg Xglia; Eb; x; H , < >
+where the minimization is performed over all possible OAM-time input matrices.
+Adaptive modulation and coding (AMC)
+There are many parameters that can be varied at the transmitter side to accommodate FSO
+channel conditions, including data rate, power, coding rate, and combinations of different
+adaptation parameters. In several of recent papers (e.g., [31—33]), we have studied various
+adaptive modulation and coding schemes suitable for dealing with atmospheric turbulence for
+different multilevel modulation schemes. This study can be extended to coded 0AM
+modulation schemes.
+5. Performance analysis
+In Fig. 4, we show the BER performance of (girth-12, column-weight-3) LDPC(15120,7560)-
+coded N—dimensional (ND) 0AM modulation versus PPM. On horizontal aXis we use average
+#148481 - $15.00 USD Received 1 Jun 2011; revised 27 Jun 2011; accepted 29 Jun 2011; published 11 Jul 2011
+(C) 2011 OSA 18 July 2011 /Vol. 19, N0. 15 / OPTICS EXPRESS 14286
+
+"
+"11","number of photons per dimension (in dB-scale) so that ND-OAM and PPM can be compared.
+The results of simulations shown in Figs. 4-6 are obtained for Poisson deep-space optical
+channel model for the average number of background photons of 0.1. We assume that residual
+crosstalk on a given 0AM mode is given by nX = 0.1. From Fig. 4 it is clear that as we
+increase the number of dimensions, the improvement of ND-OAM over PPM is larger. The
+improvement (measured at BER of 10—6) ranges from 0.67 dB for N = 2 to 2.81 dB for N = 8.
+Moreover, the spectral efﬁciency SE of ND-OAM is
+SE,ND-OAM _ 10g2 2N/(1/71) _ N (19)
+SE,PPM 10g2 M/(M / TS) 10g2 M/M
+
+times better than that of PPM. In (19), with T S we denoted the signaling interval (reciprocal of
+a symbol rate). For the same number of dimensions (M = N), the spectral efﬁciency of ND-
+OAM is N2/10g2N times better. For example, for M = N = 8, the spectral efﬁciency of ND-
+OAM is 21.334 times better.
+
+In Figs. 5-6, we evaluate performance of LDPC-coded ND-OAM in the presence of
+atmospheric turbulence, under medium (Fig. 5) and strong (Fig. 6) turbulence regimes. (For
+deﬁnition of Rytov standard deviation GR see [6].) For N = 8, the degradation in performance
+ranges from 2.02 dB in medium turbulence regime to 2.87 dB in strong turbulence regime (at
+BER of10‘6).
+
+104 .\~ ND-OAM, nx=0.1:
+e ‘0‘ —I— N=2
+n: 10‘2 \ ' ‘0‘ N=4
+UJ \ \ — >— N=8
+m. 10.3 9 PPM:
+G.) O
+E \ \
+L _4 —A— :
+ct) 10 e . —v— M=8
+“P -5
+r: 10
+£0
+10‘6 \
+10‘7 °
+-6-5-4-3-2-101
+Average number of photons per bit, nb
+Fig. 4. LDPC(15120,7560)-coded ND-OAM modulation versus PPM.
+10° ND-OAM:
+—I— N=2
+10'1 r - _e_ N=4
+n: V ' — >- N=8
+'33 10'2 , '
+9‘ r v
+E 10'3
+§
+”a? 10'4 ' '
+E ,
+10'5 -
+10'6 0R2=1
+nx=0.1
+10'7
+-5 —4 —3 —2 —1 o 1 2 3
+Average number of photons per bit, nb [dB]
+Fig. 5. LDPC(15120,7560)-coded ND-OAM modulation in medium turbulence regime (GR =
+1).
+#148481 - $15.00 USD Received 1 Jun 2011; revised 27 Jun 2011; accepted 29 Jun 2011;pub1ished 11 Ju12011
+(C) 2011 OSA 18 July 2011 /V01. 19, N0. 15 / OPTICS EXPRESS 14287
+
+"
+"12","100 ND-OAM:
+10'1 “egg 2;: m:
+E 10-2 \0 —>— N=8
+m \
+- _3 e
+“E 10 \
+§ 10'4 e
+1’ -5
+5 1o
+10'6 0
+1O nX=O.1 0
+10'8
+-4 -3 -2 —1 o 1 2 3 4
+Average number of photons per bit, nb [dB]
+Fig. 6. LDPC(15120,7560)-coded ND-OAM modulation in strong turbulence regime (GR = 2).
+
+In Fig. 7, we evaluate (girth-8, column-weight—4) LDPC(4320,3242)-coded ND-OAM
+scheme for use in near-Earth applications. Both direct and coherent detection schemes are
+evaluated. In simulations, we assume that 0AM crosstalk distribution follows the Gaussian
+distribution (the same assumption was used in [10]), which motives the use of signal-tO-noise-
+and-crosstalk ratio (SCNR) instead of signal-to—noise ratio (SNR). Direct detection schemes
+can operate properly in weak turbulence regime, while in strong turbulence regime they
+exhibit error ﬂoor phenomena (not shown in ﬁgure) and as such must be combined with
+repetition MIMO schemes. On the other hand, the coherent detection schemes with M = 2 and
+N22 can operate even in strong turbulence regime for reasonable high SCNRs, as shown in
+Fig. 7.
+
+GR=O.3
+LDPC-coded OAM (dir. det.):
+—e— M=2, N=2
+_1 —e— M=2, N=4 Back-to—back
+10 9. . o'O-o-o_o LDPC-coded OAM (dir. det.):
+* ‘ ""Nu ‘°~o —-— M=2, N=2
+10'2 \ 1' \o —o— M=2, N=4
+{I * \ —A— M=2, N=8
+LIJ 10-3 ° —E>— M=4, N=2
+CD \ \ —o— M=4, N=4
+05 _4 at o
+E 10 LDPC-coded OAM (coh. det.):
+s5 -5 \ \ GR=1.OI
+:: 10 o —e— M=2, N=2
+ﬁj * —29<— M=2, N=4
+E 10'6 \ [} GR=2.OI
+—o— M=2, N=2
+10-7 * o Back-to—back:
+. O —*— M=2, N=2
+2 4 6 8 1o 12 14 16
+Signal—to—noise—and—crosstalk—ratio, SNCR [dB]
+Fig. 7. BER performance of LDPC(4320,3242)-coded 0AM modulation based FSO systems in
+weak (GR = 0.3), medium (GR = 1) and strong (GR = 2) turbulence regimes.
+6. Concluding remarks
+In this paper, we studied the use of CAM as an additional degree of freedom for modulation
+and multiplexing in deep-space and near-Earth applications. The following multi-gigabit
+enabling approaches for deep-space communication based on 0AM have been described:
+0AM multiplexing, N—dimensional 0AM modulation, and orthogonal 0AM division
+multiplexing. We demonstrate by Monte Carlo simulations, over the atmospheric turbulence
+channels, that proposed schemes can operate under strong atmospheric turbulence and provide
+dramatic improvement in throughput. We have shown that the improvement of ND-OAM
+#148481 - $15.00 USD Received 1 Jun 2011; revised 27 Jun 2011; accepted 29 Jun 2011; published 11 Ju12011
+(C) 2011 OSA 18 July 2011 /V01. 19, N0. 15 / OPTICS EXPRESS 14288
+
+"
+"13","over PPM, for the same number of dimensions, (measured at BER of 10—6) ranges from
+0.67dB for N = 2 to 2.81 dB for N = 8. Moreover, the spectral efﬁciency, for the same number
+of dimensions, of ND-OAM is N2/10g2N times better. The proposed OAM-based schemes,
+therefore, represent the excellent candidates for next generation deep-space and near-Earth
+optical communications. In addition to next generation deep-space/near-Earth optical
+communication enabling technologies, we have described different approaches to deal with
+atmospheric turbulence induced 0AM crosstalk including equalization, OAM-time coding,
+and adaptive modulation and coding.
+
+Notice there is a signiﬁcant effort to improve the result from [2] in terms coming closer to
+the channel capacity limits. Some researchers are trying to improve this result even for a
+fraction of dB. With the proposed scheme, however, we are able to outperform LDPC-coded
+PPM for even 2.81 dB for N = 8, and at the same time improve spectral efﬁciency 21 times
+(also for N = 8), indicating that the proposed scheme is a promising candidate for next
+generation deep-space and near-Earth optical communications.
+
+Some other applications of interest of OAM-based systems described in this paper include:
+providing ultra-high-speed Internet connection, increasing data rate and reducing system cost
+and deployment time in access networks, enabling ground-t0-satellite/satellite-t0-gr0und FSO
+communications at high-speed, enabling ultrahigh-speed intersatellite communications, and
+possibly enabling aircraft-to—satellite/ satellite-to—aircraft high-data-rate communications.
+Acknowledgments
+This work was supported in part by the National Science Foundation (NSF) under Grants
+CCF-0952711 and ECCS-O725405.
+
+#148481 - $15.00 USD Received 1 Jun 2011; revised 27 Jun 2011; accepted 29 Jun 2011;pub1ished 11 Ju12011
+(C) 2011 OSA 18 July 2011 /V01. 19, N0. 15 / OPTICS EXPRESS 14289
+
+"

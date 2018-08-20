@@ -1,0 +1,1852 @@
+"","x"
+"1","NASA/TM—2012-217022 CLEAR—RPT—007
+luvlbvv 2!? i,
+
+Component Repair Experiment-lz
+
+An Experiment Evaluating Electronic
+Component-Level Repair During Spaceﬂight
+
+John W. Easton
+
+National Centerfor Space Exploration Research, Glenn Research Center, Cleveland, Ohio
+
+Peter M Struk
+
+Glenn Research Center, Cleveland, Ohio
+
+March 2012
+
+"
+"2","NASA STI Program . . . in Proﬁle
+Since its founding, NASA has been dedicated to the - CONFERENCE PUBLICATION. Collected
+advancement of aeronautics and space science. The papers from scientiﬁc and technical
+NASA Scientiﬁc and Technical Information (STI) conferences, syrnposia, seminars, or other
+program plays a key part in helping NASA maintain meetings sponsored or cosponsored by NASA.
+this important role.
+- SPECIAL PUBLICATION. Scientiﬁc,
+The NASA STI Program operates under the auspices technical, or historical information from
+of the Agency Chief Information Ofﬁcer. It collects, NASA programs, projects, and missions, often
+organizes, provides for archiving, and disseminates concerned With subjects haVing substantial
+NASA’s STI. The NASA STI program provides access public interest.
+to the NASA Aeronautics and Space Database and
+its public interface, the NASA Technical Reports - TECHNICAL TRANSLATION. English-
+Server, thus providing one of the largest collections language translations of foreign scientiﬁc and
+of aeronautical and space science STI in the world. technical material pertinent to NASA’s mission.
+Results are published in both non-NASA channels
+and by NASA in the NASA STI Report Series, which Specialized serVices also include creating custom
+includes the following report types: thesauri, building customized databases, organizing
+and publishing research results.
+
+- TECHNICAL PUBLICATION. Reports of
+
+completed research or a maj or signiﬁcant phase For more information about the NASA STI
+
+of research that present the results of NASA program, see the following:
+
+programs and include extensive data or theoretical
+
+analysis. Includes compilations of signiﬁcant 0 Access the NASA STI program home page at
+
+scientiﬁc and technical data and information http://www.sti.nasa.g0v
+
+deemed to be of continuing reference value.
+
+NASA counterpart of peer-reViewed formal - E-mail your question Via the Internet to help@
+
+professional papers but has less stringent Srinasagov
+
+limitations on manuscript length and extent of
+
+graphic presentations. 0 Fax your question to the NASA STI Help Desk
+
+at 443—757—5 803
+
+- TECHNICAL MEMORANDUM. Scientiﬁc
+
+and technical ﬁndings that are preliminary or - Telephone the NASA STI Help Desk at
+
+of specialized interest, e.g., quick release 443—757—5 802
+
+reports, working papers, and bibliographies that
+
+contain minimal annotation. Does not contain - Write to:
+
+extensive analysis. NASA Center for AeroSpace Information (CASI)
+
+7 l 15 Standard Drive
+
+- CONTRACTOR REPORT. Scientiﬁc and Hanover, MD 21076—1320
+
+technical ﬁndings by NASA-sponsored
+
+contractors and grantees.
+
+"
+"3","NASA/TM—2012-217022 CLEAR—RPT—007
+luvlbvv 2!? i,
+
+Component Rep air Exp eriment-l :
+
+An Exp eriment Evaluating Electronic
+Component-Level Repair During Spaceﬂight
+
+John W. Easton
+
+National Centerfor Space Exploration Research, Glenn Research Center, Cleveland, Ohio
+
+Peter M Struk
+
+Glenn Research Center, Cleveland, Ohio
+
+National Aeronautics and
+
+Space Administration
+
+Glenn Research Center
+
+Cleveland, Ohio 44135
+
+March 20 1 2
+
+"
+"4","Acknowledgments
+The authors would like to thank Astronauts Michael Fincke and Sandra Magnus; team members Eric Anderson, Gary Gorecki,
+Gregory Funk, Amber Krauss, Richard Oeftering, and Due Truong; Arthur Perry and Alyssa Mueller 0f the Station Detailed Test
+Obj ective (SDTO) Ofﬁce; SDTO sponsor Kevin Watson of the Constellation Supportability, Affordability, and Operability ofﬁce;
+SDTO sponsor Anthony Butina 0f the ISS Logistics and Maintenance Ofﬁce; Ivy Apostolakopoulos and Blake McCracken from
+the Operational Support Ofﬁce at NASA J Ohnson Space Center. Finally, the authors thank Dan Dietrich and J ohn Mcbrine, as
+well as the Astronaut Crew Ofﬁce, for their review of this document. This effort was funded by the Supportability Project of
+NASA’s Exploration Technology Development Program Ofﬁce (NASA Langley Research Center) and the ISS Vehicle Ofﬁce
+(NASA J Ohnson Space Center).
+Trade names and trademarks are used in this report for identiﬁcation
+only. Their usage does not constitute an ofﬁcial endorsement,
+either expressed or implied, by the National Aeronautics and
+Space Administration.
+Level ofReview: This material has been technically reviewed by technical management.
+Available from
+NASA Center for Aerospace Information National Technical Information Service
+7115 Standard Drive 5301 Shawnee Road
+Hanover, MD 21076—1320 Alexandria, VA 22312
+Available electronically at http://WWW.sti.nasa.g0V
+
+"
+"5","Component Repair Experiment-I:
+An Experiment Evaluating Electronic
+Component-Level Repair During Spaceﬂight
+J ohn W. Easton
+National Center for Space Exploration Research
+Glenn Research Center
+Cleveland, Ohio 44135
+Peter M. Struk
+National Aeronautics and Space Administration
+Glenn Research Center
+Cleveland, Ohio 44135
+Executive Summary
+
+The Component Repair Experiment-l (CRE-l) examines the capability for astronauts to perform
+electronics repair tasks in space. The goal is to determine the current capabilities and limits for the crew,
+and to make recommendations to improve and expand the range of work that astronauts may perform.
+CRE-l provided two-layer, functional circuit boards and replacement components, a small tool kit,
+written and Video training materials, and 1 hr of hands on training for the crew slated to perform the
+experiment approximately 7 months prior to the mission. Astronauts Michael F incke and Sandra Magnus
+performed the work aboard the International Space Station (188) in F ebruary and March 2009. The
+astronauts were able to remove and replace components successfully, demonstrating the feasibility of
+performing component-level electronics repairs within a spacecraft. Several unsuccessful tasks
+demonstrated areas in need of improvement. These include improved and longer training prior to a
+mission, an improved soldering iron with a higher operating temperature and steady power source, Video
+training and practice boards for refresher work or practice before a repair, and improved and varied hand
+tools and containment system.
+
+1.0 Introduction
+
+Future long-duration human exploration missions will be challenged by constraints on mass and
+volume allocations available for spare parts. Addressing this challenge will be critical to the success of
+these missions. As a result, it is necessary to consider new approaches to spacecraft maintenance and
+repair that reduce the need for large replacement components. On the 188, the maintenance concept for
+avionics almost exclusively relies on the removal and replacement of entire Orbital Replacement Units
+(ORU’s), with limited removal and replacement of circuit cards when possible. The next step to reducing
+the size of the items being replaced would be to implement component-level repair. This mode of repair
+has been implemented by the US. Navy in an operational environment and is now part of their standard
+approach for maintenance. It is appropriate to consider whether this approach can be adapted for
+application on future manned space missions. The Component-Level Electronic-Assembly Repair
+(CLEAR) project at NASA Glenn Research Center has begun to explore the logistics, training, and
+research and development required to provide this capability to future 188 operations as well as missions
+to the moon and Mars.
+
+There are a number of beneﬁts to in-situ electronics repair during a space mission. Providing a repair
+capability can help relieve the costs of launching and storing full-sized spares, a signiﬁcant consideration
+for any space mission. The ability to perform repairs adds to the ﬂexibility and range of activities
+available to the astronauts, increasing the ability to recover from faults or damage, or to take advantage of
+NASA/TM—2012-217022 1
+
+"
+"6","opportunities such as scavenging used equipment or adapting equipment to a new, previously unforeseen
+opportunity. However, there are obvious differences between the repair capabilities of a ground-based
+versus a space vehicle or habitat. Technicians on Earth are well trained and have years of experience,
+while a crew member typically will not have this focused training and experience. A technician in a lab
+has access to a wide variety 0ft001s, and is typically not limited in the power and volume or footprint
+available for these tools; space travel limits tools in both respects. While a consideration on Earth,
+containment and management of evolved fumes or debris are much more important in the contained,
+closed-loop environment of a vehicle or module. An in-situ electronics repair plan must account for all of
+these factors.
+
+A necessary ﬁrst step in evaluating an electronics repair capability is to determine the current
+capabilities to conduct electronics repairs. To do this, the CLEAR team developed CRE-l, a Station
+Development Test Objective (SDTO). CRE-l has two main goals. The ﬁrst goal is to demonstrate the
+feasibility of performing component-level electronics repair tasks during a space mission. This includes
+understanding which component types and sizes are amenable to manual repair by an astronaut. The
+second goal of this work is to determine ways to provide and improve an in-situ repair capability, with
+recommendations for crew training, tools, and ways to expand the types of repairs a crew member could
+perform during a mission. The next section describes the experiment including circuit cards, replaced
+components, tools, facilities, and astronaut training followed by the results from the experiment including
+a Visual inspection, a review of the operations and downlinked Video, and results from a crew debrieﬁng.
+This document concludes with a discussion of the results and recommendations for future work and for
+enabling an electronics repair program for future space ﬂight missions.
+
+2.0 Experiment Description
+
+CRE-l provided 188 astronauts a set of ﬁve realistic circuit boards, three sets of replacement parts,
+and a small selection 0ft001s commonly used for electronics repair and manufacturing on Earth. These
+tools supplemented some existing equipment already aboard the 188 as described below. CRE-l, as ﬂown
+to the 188, was a scaled-back version of the experiment initially proposed. This initial experiment,
+described in Appendix A, was reduced in scope to reduce the package volume to allow for manifesting
+within the tight launch constraints available for SDTOs aboard the Space Shuttle.
+
+2.1 Overall Design of Experiment
+
+The astronauts performed ﬁve of the following siX tasks normally conducted to complete a
+component-level electronic repairlz
+
+1. Removal of conformal coating
+
+2. Removal of defective component (both destructive and non-destructive)
+
+3. Preparation of board surface for component replacement
+
+4. Placement of new component
+
+5. Soldering of new component
+
+6. Replacement of conformal coating of repaired area
+
+The last step, replacement of conformal coating, was not attempted during CRE-l as is discussed later
+in this section.
+
+1 In general, the ﬁrst step to component-level repair is fault diagnostics. This is required to understand what
+component, if any, must be replaced. Fault diagnostics were not part of the CRE-l scope; astronauts removed and
+replaced pre-determined components using hands-on training, written procedures, and Video training. The CLEAR
+project does provide a detailed concept (Ref. 1) for conducting fault diagnostics within the conﬁnes of a spacecraft
+environment.
+
+NASA/TM—2012-217022 2
+
+"
+"7","2.1.1 Removal of Conformal Coating
+
+F irst, the crew removed conformal coating from the joint area of the circuit board and component
+legs. A conformal coating is a material applied in thin layers to a circuit board during the manufacturing
+process. This layer protects the circuit and components from foreign obj ect damage, moisture and
+humidity, and can help slow ﬂame spread during a ﬁre. This coating must be removed to provide direct
+access to the soldered joint area. The method for removing the conformal coating varies based on the type
+of material and can include mechanical methods, such as rubbing, scraping, or sanding with a hand or
+motorized tool; heating, to melt or decompose the coating material; or using a chemical solvent to
+dissolve the conformal coating. For CRE-l, the crew used a hand tool (a ﬁber-glass stickz) with a rub and
+scrape technique to remove conformal coating from the board.
+
+2.1.2 Removal of Defective Component (Both Destructive and Non-Destructive)
+
+The next step is to remove the original, faulty component. There are two general methods for
+performing this task and both were attempted by the astronauts during CRE-l. F irst, one may cut the
+component legs and remove the component, leaving the remaining leg debris in the solder joint for
+removal during the next step in the process. While simple, this process can cause damage to the circuit
+board if a leg is not out completely, and can be difﬁcult when component legs are spaced close together.
+This process can also make future diagnostic studies of the removed part difﬁcult, as the diagnostic
+equipment must attach to shortened or removed component legs. Alternatively, a crew member may heat
+a solder j oint or multiple solder joints along one side of the component, and once the solder is liqueﬁed
+lift the component leg away from the j oint area. In CRE-l, all heating is performed using a resistively
+heated soldering iron, described later. This process is more complicated than simply cutting the
+component legs, and may damage a circuit board by attempting to remove a leg before the solder
+completely liqueﬁes, but it keeps the component legs intact for future analysis and may be easier for
+multi-legged components with closely spaced legs.
+
+2.1.3 Preparation of Board Surface for Component Replacement
+
+The third step is to prepare or clean the circuit board joint area of any leg debris and remaining solder
+and conformal coating from the original joints. The leg debris may be removed by heating the joint and
+removing the debris with tweezers or, for surface mount components, wiped with the remaining solder
+into solder wick. The solder wick is also necessary for through-hole components, to remove the original
+solder from the through-hole. The crew member must also remove remaining conformal coating, so it
+does not contaminate the new solder joint or prevent the new component from resting ﬂat on the circuit
+board surface. Stray particles of conformal coating must also be removed; tweezers or pressing a loop of
+adhesive tape3 to the circuit board is typically sufﬁcient for this task.
+
+2.1.4 Placement of New Component
+
+The placement of components in reduced gravity was accomplished differently for through-hole and
+surface mount device (SMD) components. There were two types of through-hole components: a resistor
+and a multi-leaded integrated circuit (1C). To reduce crew time needed for conducting the repair, the
+resistors were pre-bent so that they would ﬁt into the through-holes on the circuit card. For through-hole
+components, the astronaut ﬁrst aligns the proper component leg with the correct through-hole, and then
+inserts all legs fully into the through holes. Sometimes this required slight bending of the component legs.
+Once inserted, one or two legs (depending on the component type) are bent ﬂush to the circuit board,
+clinching the component in place. The excess lead length is then trimmed, if necessary, particularly for
+through-hole resistors.
+2Also called a spudger.
+3When using adhesives, care must be taken to avoid generating electro static discharge (ESD) which can damage
+components. Special ESD safe tapes were used during CRE-l which helped minimize this effect.
+NASA/TM—2012-217022 3
+
+"
+"8","SMD components were tacked (Via soldering) into position using a small amount of solder placed on
+one of the leads. Again orientation was very important in placing the component properly. The astronaut
+aligned the proper component legs and circuit board pads, holding the component with tweezers while
+reheating and ﬂowing the previously placed solder over the component leg, tacking the component in
+place.
+
+2.1.5 Soldering of New Component
+
+After cleaning the circuit board to place the new component, the astronaut soldered the new
+component into place. The astronaut added heat and solder to each joint, making a heat bridge, from one
+side of the circuit board, ﬁlling the through-hole and forming a ﬁllet on both sides of the circuit board.
+For SMD components, the astronaut added a small amount of solder to each of the circuit board pads and
+legs, soldering each joint one at a time.
+
+2.1.6 Cleaning the Joint Area and Replacement of Conformal Coating of Repaired Area
+
+The ﬁnal step to performing an electronic repair is to clean the new joint areas and apply a new layer
+of conformal coating. Cleaning the joint area removes residue from the solder ﬁuX used during soldering.
+Some types of ﬂux, such as rosin active (RA) or rosin mildly active (RMA), are acidic and can, over time,
+damage the solder joints. The ﬂux residue can, with many conformal coating materials, interfere with the
+adhesion between the circuit board and coating material. The CRE-l experiment, however, did not require
+cleaning the joint area. This was because the solder provided for CRE-lused a no-clean type of ﬂux; ﬁuX
+residue from this material would not damage the circuit boards or joints, reducing or eliminating the need
+to clean the joint areas. Furthermore, the manufacturer indicates that conformal coating can be reapplied
+without any cleaning of the circuit board.
+
+Typically, the cleaning of circuit boards after soldering usually requires large (~lOO mL) amounts of
+solvent, usually alcohol. Managing such a large, free amount of liquid would be very difﬁcult in reduced
+gravity. In addition, the air handling systems of the 188 can also be damaged by vaporized alcohols. For
+the 188, only 1 mL of alcohol can be evaporated daily into the cabin. Nonetheless, the lack of cleaning
+did not interfere with the validity of the CRE-l tests, despite these factors.
+
+To complete the repair, conformal coating typically would be reapplied over the new solder joints,
+legs, and component body, restoring the integrity of the coating and the protections it provided. The
+coating material selected, and speciﬁed in a later section, is thick and Viscous, similar to petroleum jelly.
+Unfortunately, reapplication of conformal coating was not performed during CRE-l operations. Although
+part of the original experiment, the conformal coating was eliminated to reduce the mass and volume of
+the CRE-l payload. This was an acceptable compromise since the CRE-l team believed that applying the
+conformal coating material in reduced gravity would be no different than performing the same process in
+normal gravity.
+
+2.2 Circuit Board Description
+
+The CRE-l team provided the crew members ﬁve functional circuit boards, such as the one shown in
+F igure 1. The circuit boards are 3.1 in. long and 1.8 in. wide. Each circuit board has four sections. The
+ﬁrst section, in the upper left quadrant of the circuit board, is used to accept and distribute power to the
+other three, independent sections. The astronauts did not work on this section of the circuit board, and did
+not power and use the circuit during the mission; it is only used by the CRE-l team to determine proper
+function of the circuit board before turning the hardware over before launch, and after receiving the
+hardware at the end of the mission. The other three quadrants are independent circuits which, when
+powered and properly constructed, blink a LED at 1 Hz. The ﬁrst circuit, in the upper right quadrant, is
+NASA/TM—2012-217022 4
+
+"
+"9","(uni! [I I p 5 Ci“ RL' . I:- -'R:3 R4 . '. "" Component
+* .' +5! ' H ..p .. ._c5 r'%=- J R1
+[i -,- g ,;
+J] 2- ..1 ""l 932 L13 ...x I : :; _1__'
+, “I.” ' . 1.. -i-__--:~-*i': ' 'I r
+Egg 1 m,._ L]; ». m
+1 ' 7 . :I - E C Cumpunent
+*5 ma FEE R? r? [:13 PB ---+ i“ I I “2
+{Lil} m m mﬁﬁﬂqﬁl‘ﬁl UBH HULL
+5.: "": 1. FL? 2? i; [WE r;— ”='1'11I‘T-- [:3 C ""C '1 BE
+' .1: "" ""' U .T- ;: '7” L|-'~'=-‘F' -1
+Component __ﬁ'—J ”‘1 U5 :2 :1: ""_"""";13 El :-.; ”hi: ; 5; _= _!:-.3
+' ' r. l, 1.. . __. -' ‘-‘ 't— 1 "" - "" Llr’ - '
+U4 U 3'! in “T D PI “-‘H - arm .c I HE P I TI‘I‘H 3
+Component U6 C 01111101191]! U7
+Figure 1.—The CRE-1 circuit board highlighting the five components crew members removed and
+replaced.
+populated with through-hole components. The crew worked on two components in this quadrant: R1, a
+resistor, and U2, an eight-lead dual in-line package (DIP). The second quadrant used “standard pitch”
+surface mount devices which had a lead/pad spacing of 0.050 in. between adj acent component legs. The
+astronauts removed and replaced U4, an eight lead small outline integrated circuit (SOIC) from this
+section of the circuit board. The third quadrant is populated with ""ﬁne pitch"" surface mount components,
+where the pad spacing is 0.025 in. Initially, the CRE-l team did not plan any crew work with these
+components. During the course of CRE-l operations, additional crew time became available and the
+astronauts attempted to remove components U6 and U7 as this would further the obj ectives 0f the CRE-l.
+Table 1 lists the components worked by the crew, the type of component, and the section of the circuit
+board where the component resides.
+TABLE 1.—COMPONENTS WORKED DURING CRE-l OPERATIONS.
+
+The CRE-l circuit boards are generally typical of those used in other NASA applications, particularly
+in 188 science payloads. Three of the circuit boards (serial number 1, 2, and 3) have a conformal coating,
+Dow 3140, with a thickness of 0.004 in. Two of the circuit boards (serial numbers 9 and 10) do not have
+conformal coating. These uncoated boards were added as “contingency” boards, for use by the astronauts
+as practice or if they encountered problems removing or working with the conformally coated circuit
+boards. Ultimately, the CRE-l team was given enough crew time to add these uncoated circuit boards into
+the test matrix, providing additional opportunities for the crew to work these tasks. The circuit boards are
+a two-layer design, meaning the traces connecting the components run along the top and bottom surfaces
+of the circuit board. This is not typical of circuit boards; most boards have additional interconnecting
+layers within the circuit board. The original CRE-l circuit board design used four layers, but the team
+NASA/TM—2012—217022 5
+
+"
+"10","learned during ground testing that the 600 °F soldering iron tip available on the 188 did not provide
+enough heat to reliably reﬁow solder in the through-holes for removal. Changing to a two-layer circuit
+board did not present this heat loss issue, at the cost of some ﬁdelity between standard ﬂight circuit
+boards and the CRE-l circuit boards.
+
+2.3 Tools
+
+The CRE-l team provided a small tool kit for the crew to use during CRE-l operations. The tools
+provided are standard tools used for working with electronics components, and are typically small, with
+ﬁne points suitable for manipulating the small parts and working areas found in electronics repair. The
+provided tools expand the capabilities of the ISS Tool Kit, which does not have the small tool sizes
+needed for this work. A white fabric pouch, shown in Figure 2, stores the tools when not in use.
+
+The tool kit includes two sizes of cutters, standard and ﬁne, shown in Figure 3. The cutters were used to
+cut component legs, solder wick(described1ater), and solder wire, if necessary. The standard sized cutter
+was used for through-hole components, solder wick, and solder wire. The ﬁne cutters were used on the
+standard and ﬁne pitch surface mount devices.
+
+The tool kit also contains three types of tweezers (Figure 4). One type is a standard tweezers, with
+rounded tips. The second type is curved tweezers with ﬁne tips, and the third is a reverse tweezers with
+rounded tips. The reverse tweezers open rather than close when the arms are squeezed, and act similarly
+to a hand-held clamp. Providing different tweezers gave the crew a variety of options, depending on the
+task at hand and personal preference. All the tweezers had smaller tips than those provided in the ISS
+Tool Kit, with the curved tweezers tip having ﬁne points.
+
+u _ ___ _'__________.- .. - '
+i553! ' _ :_ 4 .15.:
+11""- ‘-.._.'.1....*‘*-- _
+v‘ .
+- I L'iﬂﬂ'J‘i. ,' I I ii I
+- _ g 1;; - -- .1: PR;
+__' II- t ' mm“ ' .. i J. 1 T ' Ii
+Q . z, I- . 'r.‘ .. '--r- it: ~ ’-“-‘* .i
+,5}, I - ""___ 1' r; i {,fﬂ 1:3' r t 3.-
+. g; '- ' i :1 —— .. *q; .1 i . I.' '.I
+....::: .ﬂgéa‘a r 111-.. 1;,
+:5 .. ‘ d’ _ ,
+J-r.” '51 __--_-.:~'--"" In, ' . J . i
+J .1.. _ ,‘. 1. '-_ .15: . .1 '5.—
+' ‘+-_ _ - 1b 1|- . Llﬁi- 'L —‘-ﬁ-L ‘1‘
+‘1, u, m; , i 1 -—--~r—-—----— -
+m— __""III i. -- .—.-_='
+Figure 2.—CRE-1 Tool Kit, unfolded.
+NASA/TM—2012-217022 6
+
+"
+"11","Figure 3.—Standard (left) and fine (right) tipped cutters, part of the CRE-1 Tool Kit.
+Figure 4.—Straight (top), curved (middle), and reverse (bottom) tweezers
+included in the CRE-1 Tool Kit.
+NASA/TM—2012-217022 7
+
+"
+"12","The tool kit contains a ﬁberglass stick (Figure 5) which is used to rub the conformal coating off the
+circuit board and bend or clinch component leads. The dental pick (Figure 6) also cleans conformal
+coating in tight areas of the circuit board and can be used to help position a component lead on a circuit
+board pad. The tool kit also contained a spool of standard solder wick, a copper braid used to absorb
+liquid solder when cleaning the j 0th area; a small spool of solder wire, a eutectic (63% tin, 37% lead)
+alloy with Kester 245 no-clean ﬂux core, which has a diameter of 0.015 in.; and a syringe with Kester 958
+liquid ﬂux, which is added to a joint area to help remove and clean the original solder.
+
+The ﬁnal items in the CRE-l tool kit were two tips (Figure 7) for the US. Soldering Kit soldering
+iron, a Weller PTA6, a 1/8 in, screwdriver tip, and Weller PTP6, a 1/32 in. screwdriver tip. The CRE-l
+team provided the larger soldering iron tip to replace a similarly sized tip in the US. Soldering Kit. These
+tips were required for work with the small standard pitch and ﬁne pitch SMD components. Additionally,
+the existing tips in the US. Soldering Kit had shown damage in previous work (Ref. 2).
+
+u
+Figure 5.—Fiberg|ass stick, used for removing conformal coating, from the CRE-1 Tool Kit.
+Figure 6.—Dental pick from the CRE-1 Tool Kit.
+Figure 7.—Soldering iron tips
+provided in CRE-1 Tool Kit:
+1/32 in. (left) and 1/8 in. (right).
+NASA/TM—2012—217022 8
+
+"
+"13","The CRE-l experiment also used equipment available on the 18$ for general repair work and other
+tasks. This includes the Maintenance Work Area (MWA), a ﬂat table Which attaches to wall racks and
+provides a work space for the crew. Mounting t0 the MWA is the containment area, a tent-like structure
+used to contain vapors and debris generated during soldering or other work. The US. Soldering Kit
+contains a soldering wand similar to a Weller TCP12P soldering iron, modiﬁed to accept rechargeable
+batteries as a power source, as well as soldering iron tips, solder, solder wick, and heat sinks not used in
+CRE-l. CRE-l also used the circuit board clamp provided With the MWA, but provided a longer vertical
+rod to improve crew Visibility. CRE-l operations also required use of a vacuum line to remove vapors and
+debris generated during the soldering process, a 15X magnifying Visor to improve Visibility for the crew,
+and a still camera and lab Video camera to record the work in progress and provide real-time images and
+Video to the CRE-l team on the ground, Which is discussed below. Figure 8 shows the setup of the MWA
+and containment area during CRE-l operations.
+
+During ground testing, the CRE-l team observed that the clamp holding the circuit board could not be
+position close enough to the Viewing port of the MWA containment area. The shaft, along Which the
+clamp can be fastened, was too short. Adequate Visibility of the circuit card is important for soldering
+operations conducted While the containment area is sealed. Therefore, a 12.75 in. aluminum shaft (also
+shown in Figure 8) was provided With the CRE-l hardware to allow the board clamp to be brought closer
+to the Viewing port.
+
+‘ '_ 1‘ ' 3. .; Leia: ‘3 -'
+, ﬂ ' K; {'3‘ .h' i . ' r. -”‘ tiff""?
+- .* (prOVIded as part of CRE-1 kIt) ‘ - .- - a 75: J. ‘-""'
+' .9 ;.J:“.'r:': : _ i? ,1 3""- ‘_.‘.""~-."".,___~ :_ :1"" ”I H . ..-'""“""I .
+' ""r I _;_ ‘ ""T
+.. ”ﬂ.” aﬁ- ”I -..- Ii
+.I _ :l'.._..+*] '_ L - . .
+!. *1? .f- -.— a
+‘ é . - ﬂ; m '* é“: £2 """" — '3
+l'. .' - .35""! “f '__' .:r ._ - . hr .
+1;... . . _: _. '1. 'i 1- L“? 1-
+“a ' ' :. ‘- ' .1 ' ;
+IssmsEﬂaqﬁm ' I ' ""
+Figure 8.—MWA setup with containment area, soldering iron, and CRE-1 circuit board.
+NASA/TM—2012-217022 9
+
+"
+"14","2.4 Training
+
+The CRE-l team provided a number of training materials for the crew, who did not have prior
+experience performing electronics repairs. The team prepared a detailed procedure outlining each step in
+the removal, cleaning, and replacement process for component Rl, U2, and U4. The team also made a
+training Video, demonstrating each step for each component. These materials were uploaded to the ISS
+prior to operations and available to the crew during operations.
+
+Prior to ﬂight, the astronauts received 1 hr of hands-on training in July 2009 (about 7 months prior to
+conducting the experiment aboard the 188). The training was based on the written procedures and training
+Video, and led by a NASA electronics technician and instructor. During this training, the crew members
+practiced all of the necessary tasks for component repair. This includes soldering all of the joint types,
+though not necessarily completing all the solder j oints for a particular component (i.e., soldering four of
+the eight leads on U4). This limit on practicing the electronics repair skills was dictated by the amount of
+time available with the astronauts. The astronauts were not shown how to identify ﬂaws in the work and
+methods to remedy these ﬂaws. These aspects were not covered because rework was discouraged by the
+team and the limited amount of time available for training preventing lessons on what to look for and how
+to ﬁnd the ﬂaws (magniﬁcation and still photos, where on the component to look, etc.).
+
+Additionally, the CRE-l team was able to provide some assistance during crew operations on the 188.
+Live downlinked Video allowed the team to watch the crew member work, and note their progress and
+some of the successes and difﬁculties the crew encountered. This View was limited by the ﬁeld of View of
+the camera system, which was too wide to discern ﬁne details of the work. The team could also ask and
+answer questions to and from the crew, and provide some updated procedures or questions at the end of
+each day. The crew members also took still photos of the work, both to document the work as it
+progressed and as a source of magniﬁed Views of their work, beyond what the magniﬁer Visor could
+provide.
+
+2.5 Post-Flight Analysis
+
+One of the key areas of post-ﬁight analysis is identifying areas to improve crew training and tools,
+and ﬁnding the current limits for electronics repair. F irst, the team inspected the downlinked Videos and
+still photos to determine any problems or successes from the available information. Another key aspect of
+the post-ﬁight analysis was the inspection of circuit boards returned from operations on 188. The
+inspection was carried out by a NASA electronics technician who is qualiﬁed for this type of work. The
+boards was inspected using a bench microscope (20-100 X magniﬁcation), typically used for populating
+and inspecting circuit boards. The technician determined if the work passed the NASA Standard 8739.3,
+Soldered Electrical Connections (Ref. 3). For joints that did not pass the standard, the technician also
+noted if rework would be required to make the solder j oint functional, or if the joint is functional as-is. In
+addition, the CRE-l team debriefed the ISS crew members, asking both general and speciﬁc questions
+based on observations during the ﬂight operations as well as those based on results of ground inspections
+of returned circuit boards. F inally, select solder joints were analyzed for void defects (Ref. 4).
+
+3.0 Results
+
+Component Repair EXp-l (CRE-l) experiment was launched to the 188 on November 14, 2008,
+aboard the Space Shuttle Endeavor as part of STS-l26. Operations took place during Increment 18 from
+F ebruary 19 to March 2, 2009. The ﬁve circuit boards were returned to Earth on March 28, 2009, aboard
+the Shuttle Discovery after completing mission STS-l l9.
+
+NASA/TM—2012-217022 10
+
+"
+"15","1 . -f 1 mg - ' a 5' ' _ _. _
+1 ﬂ, ,. i ‘ .. ““-_,‘r'-.: r :__ 'u_f':'— 1!!
+J '5"" "".1"" i - I , £1. ?€qu 5 _. _ . r, '
+
+. _ ' "" . '-.. ._ J. ' . III. .
+y )7 l’V}; 4 .51“?! *5 ?.1‘?‘ 'j'? . * _ .-
+t. I ' I h - 12“! - ~— l.._ I .'
+
+, ,. a -_ .5,“ 4-3-...- '
+7“.” ' ,1' -
+— ISSD1BEEI35?95
+
+Figure 9.—Astronauts Michael Fincke (left) and Sandra Magnus (right) work on CRE-1 during Expedition 18.
+3.1 Operations Summary
+
+The following section describes the activities of Astronauts Michael Fincke and Sandra Magnus While
+performing CRE-l operations on-board the 188 from February 19 to March 2, 2009. Figure 9 shows a
+photo of each crew member working on CRE-l aboard the 188. The following sections list, day by day,
+the operations conducted on that day, With some notes on the amount of time required for various tasks
+and comments made by the crew or noticed by the ground team during the Video downlink. Each section
+ends With a table listing, for that session, the component worked on, the type of work done, and an
+estimate based on downlinked Video of how much time those tasks required. The durations of the tasks
+are important to future mission planners. More detailed descriptions of each day’s activities may be
+found in the Appendix B.
+
+3.1.1 Day 1, February 19, 2009
+
+Michael Fincke began operations by installing and conﬁguring the ISS and CRE-l equipment needed
+for the work, including the Containment Area, Soldering Kit, and other tools. After completing these
+tasks, he began work on CRE-l Board 1. Table 2 shows a summary of the tasks completed and estimates
+of the time required to perform the work. The CRE-l team took the time estimates from the Video
+downlink of the activities. Loss of Signal (LOS) periods required several activities to be grouped together
+for these time estimates.
+
+Astronaut Fincke completed the removal and replacement of R1 and the removal and cleaning of U2
+during the allotted time. He also commented after the work that soldering in reduced gravity took longer
+than in normal gravity training, and he worked on various techniques for positioning the soldering iron tip
+and solder on the circuit board.
+
+TABLE 2.—TASKS COMPLETED ON BOARD 1, DAY 1
+under work min
+Conformal coating removal; Component removal; Solder and
+NASA/TM—2012—217022 11
+
+"
+"16","3.1.2 Day 2, February 20, 2009
+
+Michael F incke continued working on Board 1 during this session. Prior to beginning work, he
+commented that the batteries used with the Soldering Kit were not charging properly. He also commented
+on molten solder ﬂowing differently in reduced gravity, with the solder not ﬂowing as freely as in normal
+gravity training, requiring him to develop his own techniques in reduced gravity.
+
+During this session, F incke completed the replacement of U2, and removed and replaced U4. He also
+found a charged battery for use with the soldering kit. Table 3 shows the time required to complete these
+tasks.
+
+TABLE 3.—TASKS COMPLETED ON BOARD 1, DAY 2
+under work mm
+U2 U 4 Solder remaining0U2 joints; Remove U4 conformal coating; 0
+(other, tasks) Remove U4; Begin cleaning U4 pads (ﬁnd good battery, take still 30
+photos of U2)
+Clean U4 pads; Solder new U4 on board 1; Take photos, resolder a
+3.1.3 Day 3, February 23, 2009
+
+Prior to beginning the session’s work, Michael F incke commented that using a good battery helped in
+the soldering process, and that he was using the 188 still camera to both document his work and as a
+magniﬁcation and joint inspection aid. During this session, he removed and replaced components Rl, U2,
+and U4 from Board 2. F incke changed the order of operations, working task by task (removing conformal
+coating from all three components, for example) rather than working one component at a time. With extra
+session time, the CRE-l team recommended that F incke attempt removing U6 and U7, tasks which are
+outside the original scope of CRE-l but would provide information on small components with closely
+spaced component leads. The ground support team recommended using the same technique for removing
+U4—cutting the leads then cleaning the solder and leg debris—for U6 and U7. F incke attempted this, and
+commented that it was difﬁcult to cut one lead at a time, and must out two or three leads at a time due to
+the size of the ﬁne cutters. This led to damage to one of the lands on U7, and F incke commented that
+components U6 and U7 were at the limit of his capabilities. Table 4 lists these tasks and the time required
+to complete them. With still more time remaining, F incke then worked on Board 9, removing and
+replacing components R1 and U2; Table 5 lists the time required to complete these tasks.
+
+TABLE 4.—TASKS COMPLETED ON BOARD 2, DAY 3
+under work mm
+and remalning conformal coating
+———
+NASA/TM—2012-217022 12
+
+"
+"17","TABLE 5.—TASKS COMPLETED ON BOARD 9, DAY 3
+under work rnin
+3.1.4 Day 4, February 24, 2009
+Astronaut Sandra Magnus worked on Board 3 during this session and this was her ﬁrst session of
+CRE-l. She removed and replaced Rl, U2, and U4. While removing the original U4 component, the
+astronaut pulled three pads from the circuit board. During operations, the team speculated that the pads
+were pulled during removal of the component. This was later conﬁrmed by ground inspection (see
+App. C.3). Subsequently, Astronaut Magnus soldered the new U4 in place with the circuit board as-is,
+using only the ﬁve remaining circuit board pads. Table 6 lists these tasks and the time needed to complete
+them. During the process, Astronaut Magnus commented that the molten solder tended to wet and stay
+near the iron tip, rather than ﬂow onto the pad area on the circuit board.
+TABLE 6.—TASKS COMPLETED ON BOARD 3, DAY 4
+under work rnin
+coating
+3.1.5 Day 5, February 26, 2009
+Michael F ineke complete work on Board 9 during this session, removing and replacing U4. With
+additional time remaining, he then removed U6 and U7, trying different techniques to remove the
+components compared to his previous work. The astronaut heated each original solder joint and lifted the
+leg out of the molten solder, using the dental pick. This process led to a damaged circuit board lead on
+U6. This process was repeated on one side of U7, but on the other side, all leads where heated and lifted
+at once, with some success. Again, the lead spacing on U6 and U7 were difﬁcult to work with using the
+tools and methods provided. Table 7 list the time used to complete each task.
+TABLE 7.—TASKS COMPLETED ON BOARD 9, DAY 5
+under work rnin
+resoldering one JOlnt)
+NASA/TM—2012-217022 l3
+
+"
+"18","3.1.6 Day 6, March 7, 2009
+
+During this ﬁnal session for CRE-l , Sandra Magnus worked on removing and replacing Rl , U2, and
+U4 on circuit board 10. Table 8 lists each task completed and the time required for the task. The session
+was successful in attempting and completing this work, with the use of still camera images to check and
+retouch new solder joints on U2. During voice communications Astronaut Magnus mentioned that
+forming new solder joints for U4 required positioning the soldering iron tip at the far end of the circuit
+board pad, and positioning the solder wire near the component leg, which worked with some success.
+
+TABLE 8—TASKS COMPLETED ON BOARD 10, DAY 6
+under work inin
+———
+——-
+
+3.2 Inspection results
+
+On April 30, 2009, CRE-l team members, including the team electronics technician, inspected the
+CRE-l circuit boards used during 188 operations by Astronauts Michael F incke and Sandra Magnus. This
+inspection followed an inspection of the still photos taken by the crew and the down linked Video of ISS
+operations by the electronics technician. Inspecting the circuit boards required the use of a standard bench
+inspection microscope, with magniﬁcations varying from 7X for general inspection to 20X for close
+inspection of speciﬁc joint features. The Visual inspection focused on the requirements of NASA Standard
+8739.3, though the notes also indicate if the solder joint would be functional, if not meeting the
+speciﬁcation. In addition, a power supply set for 9 VDC, 1% mA output provided power to the circuit
+boards to test the circuit operation; the integrated ammeter in the power supply provided an estimate of
+the peak current used in the circuit.
+
+Table 9 summarizes the results of a Visual inspection and functional test of circuit boards 01, 02, and
+03 (boards with conformal coating) and Table 10 summarizes the Visual inspection and functional test
+results for boards 09 and 10 (boards without conformal coating). Each table lists the components worked
+for each board, and if the component is functional, if it passes inspection based on NASA Standard
+8739.3, and if further rework is necessary. Components are judged to be functional if the LED for that
+section of the circuit blinked in the correct pattern. Examining components to the NASA Standard 8739.3
+indicates that the work is of the same quality that technicians and engineers must meet for ﬂight
+hardware, and is judged based on the geometry and surface ﬁnish of the new solder joints. The rework
+comment indicates if, after failing the NASA Standard 8739.3 Visual inspection, further work is necessary
+for the component to be functional. For example, component Rl on Board 03 failed the Visual inspection
+due to excessive solder on the bottom of the solder joint. This failure of the Visual inspection, however,
+does not lead to functional failure, and no further work is needed. For components U6 and U7, NASA
+Standard 8739.3 does not apply, because those criteria focus on the characteristics of an installed
+component. Since U6 and U7 were only removed and not replaced, a “N/A” has been used in Table 9 and
+Table 10.
+NASA/TM—2012-217022 l4
+
+"
+"19","TABLE 9.—SUMMARY RESULTS OF CRE-l ISS BOARDS Ol, 02, AND 03
+Board 01 Board 02 Board 03
+Functional? Yes Yes Yes Yes Yes Yes Yes No Yes Yes No
+Pass 8739.3? Yes No No Yes Yes No N/A N/A No No No
+Rework? No Yes No No No No No Yes No Yes Yes
+TABLE 10.—SUMMARY RESULTS OF CRE-l ISS BOARDS 09 AND 10
+Board 09 Board 10
+Functional? Yes Yes No No No Yes Yes No
+Pass 8739.3? No No No N/A N/A No No No
+Rework? No Yes Yes Yes Yes No Yes Yes
+Figure 10 shows some of the soldering issues found in the initial inspection. This ﬁgure shows both a
+good solder joint, and a solder joint that failed inspection and would require rework. The good solder joint
+shows a ﬁllet on the top side of the circuit board, wetting the leg of the component. The second solder
+joint does not have sufﬁcient solder ﬁlling the plated through hole; in practice, this solder joint would
+require rework to ensure proper wetting of the solder and a functional circuit. Figure 10 also shows some
+yellow residue on the circuit board near the soldering joints. This residue is believed to be from the ﬂux
+used in the soldering wick which was not a no-clean type ﬂuX. The ﬂux used in the solder and provided
+in the syringe was no-clean type and did not leaving signiﬁcant residue during ground bench testing.
+H ' ' I '1 '4-
+— i. ’ t i C
+i. . . ‘,
+Q —» ‘ ' I . -’
+- a _, F"" . ‘ 1% i
+’ ‘ w , g . 0‘ j
+' ' t .' . ‘
+'5 i ’7 . '3 ‘
+a -, b . 0: ', ‘ \
+u‘~4“ ""3“._ __ i
+.- ; o. ' -, 5. .
+F .2; . . P ‘A “l a
+- -‘ x _ '“ Good solderJomt . W” ‘ . _ f,“ ,
+.o.\ - :‘t‘ I ‘ T ‘ ‘ ' - '--"" ’
+‘3’ ‘4 ‘3“ Ar
+v”; ’. i ,' i“, 4‘ 7‘ .27"" . 4.;
+q ‘ \ e a - 1 c ' .
+. . ‘3 ‘ ) $""
+A .
+Em t lated throu h hole
+K * ‘ 9
+O "" a ,
+Figure 10.—A good solderjoint (left) and solderjoint where solder did not fill the plated through hole (right) from
+Board 01, component U2.
+NASA/TM—2012-217022 15
+
+"
+"20","I | . - . ﬂwﬂ-I—I-I *‘iﬂF-m‘ ““
+a . t -Mv:--ﬁ~=m~:m I i i
+h
+cm! .- II'I‘i. ‘: f} -~ .
+. '1- . '
+*9- i‘ ' ' _T - ' "" ' .
+Figure 11.—Compenent U4, Board 02 where the component legs are not flat on the circuit board pads, but the
+solderjoints bridge from the legs to the pads.
+— , 3.? ‘+:"".IH’ ’1 - > "" ‘ gr ,1: .1
+I IN . ' .1. I‘ V . I “M ' JD
+"" ' ‘7 “' ""‘ ‘. "" 1 - g
+""L ,,
+w: ' . ‘ M- , -
+1‘ .- - u ' , _ . ‘I’
+Figure 12.—Component U4, Board 10, again without all the component legs flat on the circuit board pads. In this
+case, a solder bridge between Leg 1 and pad 1 did not form.
+NASA/TM—2012-217022 16
+
+"
+"21","‘ . ‘ OFF; ’0”: C 9 ‘ ‘ ‘ '
+a . I“? ~ . Oi 4-2"" ' ‘ J?"" :J' “
+‘ é ‘1’} -_.“—.LJ l ""-1“ [I . i‘ ‘
+,3 a "" t ' .
+. SMD STD _ _ _
+Figure 13.—The area surrounding component U4, Board 03 (left) after removing the original component.
+
+There is damage to pads 5, 6, and 7. The pulled leg and circuit board pad, attached to the original
+component, are seen on the right.
+
+Photos of the original U4 component from circuit board 3 show the cause of the difﬁculties
+encountered during that removal and replacement (Figure 13). The returned chip shows circuit board pad
+and circuit board traces still attached to the original component leads. This indicates that the original leads
+were not completely out, and the pads and trace were pulled off the circuit board with the original chip,
+under the assumption that the leads had been cut. This type of error can occur on the ground, and
+indicates a lack of experience working with these components and tools, which can only be remedied with
+practice.
+
+A summary of results for each circuit board may be found in Appendix C.
+
+3.3 Crew Debrief Notes
+
+These notes are from the crew debrieﬁng held on May 6, 2009, at J ohnson Space Center. Astronauts
+Michael Fincke and Sandra Magnus were present, as well as J ohn Easton, Peter Struk, and Gary Gorecki
+from the CRE-l team at NASA Glenn Research Center, and Blake McCracken, an Operational Support
+Ofﬁcer (080) at the NASA J ohnson Space Center. The crew made general comments about the CRE-l
+work, and then answered speciﬁc questions, adding comments along the way.
+
+The session began with J ohn Easton brieﬁng the crew on the method of analysis and the inspections
+conducted to date, and described the results of those inspections. The crew was interested in the results,
+and generally happy with the results.
+
+When asked about the usefulness of the training, they felt that the hands on training were critical to
+the experiment’s success. They also noted that the general soldering class conducted by 080 was also
+very useful as a foundation, with the CRE-l training building on that foundation (author’s interpretation
+of their words).
+
+3.3.1 Question 1
+
+What components (through hole resistor R1, through hole chip U2, and surface mount chip U4)
+were easier to remove or replace, and which were more difﬁcult? What made the components easier or
+more difﬁcult than the others?
+
+Sandra Magnus felt that the through hole components were easier, as she didn’t have to worry about
+damaging the circuit board pads. They were also bigger than the SMD components, which helped as well.
+Michael Fincke also commented that U4 was difﬁcult because it was small; if there was a SMD the size
+of U2—with corresponding pad sizes—then that would be easier to work on. Both crew members said the
+size issue was the biggest difﬁculty. Additionally, Magnus felt she was scratching the circuit board during
+NASA/TM—2012—217022 l7
+
+"
+"22","conformal coating removal, and that was another concern. The Visual inspection showed that she did not
+damage the board during this process, alleviating that concern.
+3.3.2 Question 2
+
+Which tasks (removing conformal coating, or removing solder from a through hole, for example)
+were easier for you, and which were more difﬁcult? What made these tasks easier or more difﬁcult?
+
+Both crew members agreed that removing the conformal coating was the most difﬁcult process, and
+the most time consuming. F incke felt that removing solder from the plated through hole after removing
+the component was fairly easy. He also commented that the ESD Safe Tape was not sticky enough to use
+as a trash collection strip during ﬂight; he simply used the vacuum hose to remove debris.
+
+3.3.3 Question 3
+
+Can you describe some of the techniques for the various steps in removing, cleaning, and replacing
+a component you developed while performing the work? We would especially like to hear about the
+soldering process; both Magnus and Fincke made comments about adapting a technique for forming
+solderjoints.
+
+F incke commented that in general the process for soldering in microgravity is similar to the process in
+normal gravity. The solder ﬂowed a little differently, but it still ﬂowed as expected over pads and through
+plated through holes. Magnus noted that the solder ﬂow seemed to be a function of how hot she got the
+joint area. She found she needed to heat the area for a while with the iron—reminding herself to do this at
+times—or else the solder would ball onto the tip of the iron. She tended to keep the iron tip further away
+from the solder wire, similar to but exaggerated compared to her process on the ground. She also noted
+that just as the solder melted, she would remove the soldering iron. F incke noted that small changes in
+technique were the difference; using good batteries for the soldering iron helped him (this problem was
+resolved before Magnus began work on her boards).
+
+3.3.4 Question 4
+
+How would you compare performing repairs aboard the ISS versus on the ground?
+
+F incke commented that operating in space was not a big factor; all he needed was small technique
+changes. Magnus noted that she would work faster on the ground than in space, and it was easier to get a
+good ﬁllet shape on the ground. Both agreed that stabilizing their bodies was not an issue.
+
+3.3.5 Question 5
+
+Do you have any recommendations to possibly improve any of the procedure steps?
+
+Magnus used the Video exclusively during operations based on F incke’s recommendation, and
+commented that it would be hard to describe the work in words, that Video was much better. F incke
+commented earlier that he read the procedures before beginning the CRE-l work, but did not use them
+during the work. Both relied on the Video, going back and forth from it to the work for refresher
+frequently during the work. F incke felt that following step by step procedures would take a long time to
+do the work. He also commented that the Video was broken up in chunks that were a little awkward in
+practice (talking about putting board away at the end of each component)—he understood why, but
+suggested that such steps weren’t necessary. Both crew members agree that if something broke and they
+needed to replace a component, the practice should be to make the best training Video possible showing
+tools and operations, and have a section on inspecting the work. Then the crew could take photos, send to
+Earth, and use ground team evaluations for further work if necessary.
+
+NASA/TM—2012-217022 l8
+
+"
+"23","3.3.6 Question 6
+
+Do you have any recommendations for adding or changing tools? Were there any tools you didn ’t
+think helped in the work, and didn’t use?
+
+Magnus would have liked more ﬁne point tools, including a ﬁner tipped solder iron tip. F ineke
+commented that a better kit was needed so tools didn’t ﬂoat away. More magniﬁcation is also necessary,
+and lighting is very critical (the use of the work light was important). Both crew members used the laptop
+to zoom in on photos taken during work. This was difﬁcult to do during operations because it interrupted
+the work ﬂow too much.
+
+3.3.7 Question 7
+
+Were the written procedures and video helpful? Do you feel that both were essential to successful
+repairs? Was one better than the other?
+
+This question was answered earlier in the debrieﬁng, and not asked.
+
+3.3.8 Question 8
+
+We noticed that the repairs were performed with the M WA opened. Do you feel that the repairs
+could have been accomplished with the M WA closed?
+
+Neither crew member wanted the MWA Containment closed; they felt that would be too difﬁcult to
+work with. Both had the vacuum on continuously. F ineke commented that the only time he saw solder
+balls was when wiping the solder off the iron tip; he kept the vacuum near the sponge for this reason. He
+did not see solder balls while soldering. F ineke also commented that he worked with the containment area
+open during another proj eet, ln-Spaee Soldering Investigation (1881) (Ref. 6).
+
+3.3.9 Question 9
+
+Would you be comfortable performing similar repairs on a criticalpiece of hardware?
+
+Both astronauts indicated they would be comfortable performing critical repairs, given a good
+training Video to prepare them for the work and observation by a ground support team watching the work
+they do live, offering suggestions and critiquing the work. A practice board would be a good idea, using it
+to ﬁgure out techniques. This, coupled with a good training Video, would help build skills and perform a
+dress rehearsal of the repair. The Video should explain what can and can’t “break” or be damaged, what
+the crew can and can’t do or attempt—let them know where the danger zone is in terms of the work. An
+example was Magnus pulling a pad on U4—she didn’t initially realize that was a possibility. The Video
+should also show what good, effective work and bad work that needs to be reworked should look like.
+3.3.10 Question 10
+
+How helpful was the visor magnifier?
+
+The crew noted that the Visor magniﬁer was required, and that a better one (with higher
+magniﬁcation) is needed.
+
+3.3.11 Question 11
+
+Do you have any additional comments, observations, suggestions, or questions for the PIS?
+
+The crew added comments and observations throughout the debrieﬁng, and are captured in the
+responses.
+
+NASA/TM—2012-217022 l9
+
+"
+"24","3.3.12 Question 12 (for Magnus)
+
+Regarding component U4, it appeared that the pads were lifted during one of the repairs. Do you
+think this happened while cutting away the component, or when wicking solder from the joint?
+
+Magnus believes the pad was lifted off the circuit board while lifting the old component off; she
+didn’t know lifting the pads was a problem. She noted that she used both tweezers and solder wick to
+remove legs on U4; frequently she could see the leg debris and could pick it off with the tweezers.
+Magnus commented on the need for ﬁner cutters, and F incke commented that towards the end of his work
+he used the ﬁne cutters exclusively. They commented on a need for the right tools, after discussing the
+limitations of the cutter sizes and solder tip limitations, and on the need for better magniﬁcation and better
+soldering iron tips.
+
+3.3.13 Question 13 and 14 (for Fincke)
+
+For the fine pitch components that were only removed and not replaced (U6 and U 7), please
+describe your technique. Did you attempt to heat and lift all the legs on one side of the component?
+
+What improvements, including tools and training, do you think are necessary to make the removal
+and replacement of small components such as U6 and U 7 feasible?
+
+F incke used tweezers and the solder iron to remove the legs of U7. He tried the cutters to cut a couple
+of legs at once, and may have loosened a pad this way. He commented that direct conversation with the
+ground would be good, especially for critical work, after discussing the removal method originally
+proposed at the time of the work (laying the soldering iron tip along all joints on one side of the
+component). F incke also commented on the need for proper tools, training, magniﬁcation, and lighting.
+He also commented on not closing the work volume.
+
+3.3.14 General Comment
+
+Generally, the crew found the experiment useful, challenging, and fun.
+4.0 Discussion
+
+One of the goals of CRE-l is to test the limits of current capabilities and to ﬁnd the improvements
+required to make in-situ electronics repair a Viable capability for future missions. The results of the
+CRE-l operations show a great deal of potential for future astronauts to perform low-level electronics
+repair during a mission. Each crew member was able to remove and replace components successfully,
+demonstrating that with limited training and tools these low-level repairs are a realistic option for future
+missions. However, each crew member experienced difﬁculties with some of the tasks. These problems
+range from forming solder j oints that are functional but do not pass current standards, to failed solder
+joints and damage to the component or circuit board. The difﬁculties encountered by the crew point to
+areas requiring improvement. F urther, the crew members were not trained to identify and correct mistakes
+or ﬂaws in their work, which contributed to the number of components which did not pass a Visual
+inspection to NASA Standards. The results of the CRE-l work show two main areas for improving an
+electronics repair capability: improving crew training and improving the tools provided. These areas
+along with recommended future work are discussed below.
+
+4.1 Crew Training
+
+The CRE-l team provided the crew with limited training. This included 1 hr of hands-on instruction,
+a training Video showing all steps in the repair process, and detailed written procedures. The training
+Video and procedures were available to the crew during CRE-l operations, and the crew commented on
+Viewing the Video before work as well as reviewing relevant segments of the Video immediately before
+NASA/TM—2012-217022 20
+
+"
+"25","performing a speciﬁc task. While these activities and materials were helpful and key to the successes of
+CRE-l , they were also too limited and point to a greater need for training to make in-situ electronics
+repair a Viable option for future missions. Ways to improve the training of crew members include:
+
+(1) emphasizing the fundamentals of soldering rather than speciﬁc tasks, (2) increasing the amount of
+hands on training, (3) providing reinforcing and task—speciﬁc training Videos, and (4) ensuring that future
+crews have at least one person with a background in electronics repairs. These recommended
+improvements are further described below.
+
+4.1.1 Fundamentals of Soldering
+
+One area of improvement is in the emphasis of the training itself. The training for CRE-l was speciﬁc
+for the components used and tasks required. The written procedures and training Video presented a step by
+step process for performing the tasks necessary to remove and replace the speciﬁc components,
+describing how to remove conformal coating from each component or how to cut component U2 from the
+circuit board and remove the leg debris, for example. While this method contributed to the overall success
+of the experiment, it did present some limitations to the current work and to future work if this paradigm
+were used for future operations and repair capabilities. By emphasizing speciﬁc tasks and processes, the
+crew was limited in their ability to anticipate difﬁculties and required more time to work around those
+difﬁculties. Using this training regime would limit future crews to working with a select list of
+components, or approaching unfamiliar components only by analogy to known tasks and processes. It
+would also limit future crews abilities to evaluate and correct when necessary their own work (inspection
+and correction of work are not aspects of the repair process explored in CRE-l).
+
+A different training paradigm focuses on the fundamentals of repair work and soldering; the training
+would focus on why speciﬁc tasks are performed and how the outcome should look and perform, while
+allowing the crew to practice the speciﬁc tasks and methods leading to those outcomes. For example, the
+training would discuss how a solder joint should look and what this indicates for the mechanical and
+electrical connection, while training how to achieve this goal. Understanding this basic aspect of
+soldering, for example, can then be applies to Virtually any solder joint a crew member may encounter
+during a repair. Once the fundamentals of repair are taught, the training can then include more speciﬁc
+techniques, demonstrating how the fundamentals apply to the more speciﬁc example. Understanding the
+fundamentals also prepares the crew for working with unfamiliar components and tasks by providing
+them a basic set of fundamentals applicable to Virtually any situation. For these reasons, the focus of
+training should change from that used in CRE-l.
+
+4.1.2 Increased Hands—On Training
+
+A second improvement is to increase the amount of hands-on training the crew receives. While the
+single hour of time used by the CRE-l team was sufﬁcient for the speciﬁc tasks, it will not be sufﬁcient
+for a robust in-situ electronics repair program. A longer course, ranging from 4 to 16 hr, would provide a
+number of beneﬁts. The CLEAR proj ect, working jointly with the US Navy, has made a recommendation
+(Ref. 4) for an astronaut training course for manual component-level electronics repair including syllabus
+topics and approximate course durations. The most important aspect of a longer training period is more
+opportunity for hands-on practice with an instructor present to offer guidance for various soldering
+techniques. The increased time will also allow for instruction in the fundamentals of electronics repair as
+discussed, forming a solid foundation for future work in the class and during a mission. The increased
+time also allows the crew to put these fundamentals into practice by working with a wide range of
+components, well beyond the components used in CRE-l. The training may also include additional
+aspects of electronics repair beyond the removal and replacement of components. This includes repairing
+damage to the circuit board, such as land and trace repair, repair of connectors or jumpers, and other
+repairs to damage or faults that may occur during a mission.
+
+NASA/TM—2012-217022 21
+
+"
+"26","4.1.3 Reinforcing and Task-Speciﬁc Training Videos
+
+An additional aid to in-situ repairs is to provide training materials and practice boards and
+components for the crew. The crew should have a library of Videos documenting the training they have
+received, as well as Videos documenting repair procedures they may not have speciﬁc training With, but
+are Within their capabilities and are repairs that may occur. In cases Where the crew do not have a training
+Video prior to a repair, ground support teams should produce one and send it electronically to the crew
+prior to a repair. These practice materials and Videos Will help the crew maintain proﬁciency at the
+repairs, and practice speciﬁc tasks prior to conducting the repair. One result from the CRE-l tests is the
+crew preference for Video training over written procedures.
+
+4.1.4 Crew Member With Background in Electronics Repairs
+
+F uture crews should include someone With previous experience in electronics repair tasks. This
+person’s experience could include experience as an electrical or electronics engineer, laboratory or
+practical experience in another ﬁeld, and personal work as a hobby or side-interest, but does not require
+this person to be an experienced, certiﬁed electronics technician. F urther, the entire crew should be
+trained as described, With the “experienced” person receiving further training. Training the entire crew
+can prevent the “experienced” member facing a backlog of repairs, and Will increase the ﬂexibility of the
+crew for scheduling and/or conducting repair activities.
+
+4.2 Improved Tools
+
+The results of CRE-l point out three broad areas for improving the tools provided to crew members
+for in-situ electronics repairs. The ﬁrst area discussed is the soldering iron, and some of the requirements
+for a new instrument. The next area is in magniﬁcation of the work, a containment area, and crew
+comfort. F inally, additional tools to the ones already provided by the ISS and CRE-l are proposed.
+
+4.2.1 Improved Soldering Tool Set
+
+The CRE-l experiment illustrated a number of improvements to the soldering tool set Which would
+make in-situ electronics repair a Viable option. The ﬁrst improvement is providing a soldering iron With
+higher temperature tips than the 600 oF currently available With the US. Soldering Kit soldering iron.
+Typically, 700 0F is a suitable soldering temperature for most applications. The higher temperature Will
+improve function by providing more heat to the joint area, a critical improvement for a number of
+reasons. F irst, modern circuit boards use multiple internal conductive layers. These internal connections
+allow for simpler design of circuit boards and denser component layouts, but draw heat away from the
+work area When soldering. The CRE-l team learned of this problem When designing the circuit boards.
+The original design of the CRE-l circuit boards used four internal layers; the relatively cool temperature
+of the US. Soldering Kit did not provide enough heat to overcome loss through the internal layers,
+leading to the redesign of the circuit boards. Second, higher temperatures Will melt the solder faster and
+reduce the dwell time of the soldering iron on the joint, Which improves the joint formation and makes the
+soldering task easier on the operator. Third, the higher temperature also compensates for the presence of
+heat sinks or other heat loss paths on a circuit component or board.
+
+In addition to the higher tip temperature, the soldering iron should have a fast recovery time,
+returning the tip to operating temperature after contact With cold components and j oint areas. This Will
+improve the quality of the joints and ease the work of the crew. The soldering iron should also have
+accurate temperature control, to provide ﬂexibility to the crew for task—speciﬂc temperatures and helping
+to ensure rapid tip temperature recovery time.
+
+Another improvement is to provide the crew a Wider range of available tip shapes. A variety of shapes
+allows the crew to work With a variety of component types and sizes, from Wide, ﬂat tips (or channel or
+box shaped tips) for surface mount devices such as U4 on the CRE-l board to large, rounded tips for the
+NASA/TM—2012-217022 22
+
+"
+"27","through-hole type components such as U2 on the CRE-l board. Soldering tips of different sizes and
+shapes would also make the removal of components U6 and U7 easier for the crew.
+
+Another improvement for the soldering iron is to address the power source for the soldering iron. As
+discussed, the crew encountered difﬁculties when using the soldering iron in the US. Soldering Kit when
+the rechargeable battery voltage dropped. This is also seen in the tip temperature testing the CRE-l team
+performed after the ﬂight. A future soldering iron should be powered from a constant power source (i.e.
+from the vehicle power system), or operate with improved batteries which hold charge for a longer work
+time than currently available. F inally, mission outﬁtters and planners may consider additional, task
+speciﬁc soldering tools. One example is a soldering iron with a vacuum line attached, which rapidly
+removes solder from a repair site. Additional tools such as this are not required, but could ease the repair
+task if provided.
+
+Another soldering tool that should be provided is a back plane heater. This heater is placed below a
+circuit board and radiantly heats the entire board prior to work. Heating the entire board provides a
+number of beneﬁts. Heating the entire board to a temperature near, but not over, the solder ﬂow
+temperature requires less heat from the soldering iron, resulting in shorter dwell times with the soldering
+iron. Heating the entire board also reduces the temperature gradient between the joint under work and the
+rest of the circuit board, reducing thermal stresses induced during work. The use of a back plane heater
+also reduces the effects of multiple internal layers and the presence of heat sinks, because the thermal
+gradient between these obj ects and the joint under work is reduced. The back plane heater will require
+more power than operations with just a soldering iron, and require more care by the crew to avoid injury
+or damage to the circuit board, and it does not relieve the need for higher temperature soldering iron tips
+with better thermal recovery and control. The use of a back plane heater will make the repair tasks easier
+for the crew, and help improve the results of a repair task.
+
+4.2.2 Improved Magniﬁcation and Containment
+
+A second area for improving electronics repair tools is in magniﬁcation and containment. As noted
+earlier, the crew felt that the current magniﬁcation, a Visor magniﬁer with 15X magniﬁcation, limited
+their capabilities to standard pitch surface mount components such as U4 or larger. The results of CRE-l
+in replacing component U4 and removing components U6 and U7 support this statement. Providing
+improved magniﬁcation to the crew will both increase the types of components they may work on as well
+as reducing the difﬁculty of working with standard pitch surface mount components.
+
+Two options for providing enhanced magniﬁcation are the use of a Video system and/or the use of a
+microscope. Both systems are portable, require power (lighting for both, power for the camera and
+monitor if Video magniﬁcation is used), and require some training and experience so the crew becomes
+accustomed to working by watching a monitor or looking through eye pieces. These magniﬁcation
+systems would be useful in a wide range of repair, operational, and research tasks and would be part of a
+larger tool kit, not necessarily limited to an electronics repair kit. An additional magniﬁcation aid,
+available to crew now, is the still camera with a macro lens. This lens can focus in on small features in the
+joint and, with training and reference photos, allow the crew to use still images to judge the quality of a
+repair and what, if any, additional work is required. This would help improve the end product, but would
+not improve the ability or ease of the crew to perform the work.
+
+The containment area provided to the crew could also be improved. During CRE-l operations, the
+crew left the front panel of the MWA containment area open primarily to allow for better Visibility. A
+solution should be provided which allows both good Visibility and containment of debris and fumes.
+Other factors include comfortable operations for the crew, including the use of the soldering iron,
+magniﬁcation tools, hand tools, and other instruments as required, while keeping the work area closed to
+contain debris or vapors. The area will need feed through for power, Video, a vacuum line, and possibly
+other instrumentation such as thermocouples. F inally, the containment area should be easy to set up and
+disassemble (the current MWA requires approximately 30 min to assemble and another 30 min to
+disassemble).
+
+NASA/TM—2012-217022 23
+
+"
+"28","4.2.3 Expanded Set of Hand Tools
+
+The third general area for improving electronics repair capabilities is to expand the set of hand tools
+available to the crew. Currently there are very few tools on the ISS appropriate for electronics repairs,
+Which required the CRE-l team to provide a small tool kit for operations. These tools are typically small,
+such as the dental tools; small, pointed tweezers; and the two cutters, both of Which have smaller heads
+than those available on the 188. These tools remain on the 18$ for any future use by the crew, but need to
+be augmented for a robust electronics repair capability. Increasing the amount of tools Will expand the
+capabilities of the crew for handling and manipulating different components, repairing circuit boards, and
+make tasks easier by using the appropriate tool for a task rather than inappropriately adapting a tool. Note
+that the tools discussed here are in addition to the soldering tools (including soldering iron tips) and
+magniﬁcation aids already provided.
+
+The crew should have access to a variety of probes or dental tools With varying head shapes and sizes.
+These varying shapes are used for components With narrow lead spacing, removing various types of
+conformal coating from a circuit board, and preparing damaged land, trace, and open circuit board areas
+for repair. Additionally, an electronics repair tool kit should include a variety of cutters, With different
+head shapes and cutting angles to allow work on a variety of components. The varying sizes are important
+because small cutters, appropriate for small components, may be damaged When cutting leads or other
+parts of larger components, While cutters appropriate for larger components may be too big for small
+components. Varying cutter angles allow crew members to access components on tightly spaced circuit
+boards and provide cut leads With the appropriate shape for the application. The authors, in conjunction
+With the US Navy, have developed a recommended set of tools to enable a manual repair capability
+(Ref. 4).
+
+Additional tools, such as small sized sockets, wrenches, screwdrivers, heX drivers, and similar tools
+are also necessary. While these types of tools are found in the ISS tool kit, they do not always
+accommodate the small size parts found in electronics applications. F inally, specialized tools such as
+forming tools Which bend component legs into speciﬁc dimensions and conﬁgurations, Wire strippers,
+crimping tools, and specialized commercial repair kits for ﬁlling in damaged circuit boards and repairing
+traces and lands Will all increase the capabilities of the crew.
+
+4.3 Future Work
+
+Component Repair Experiment-l demonstrated that With a small set of tools and limited training crew
+members can perform electronics repair tasks in-situ With a degree of success. This work also
+demonstrated areas for improvement, ranging from the focus and amount of time training the crew to
+improvements in the tools and facilities provided for these tasks. The next step is to begin exploring and
+implementing these suggestions. NASA should expand the training available to the crew, perhaps With
+consultation With other agencies, to develop an in-situ electronics repair capability. An improved
+soldering iron Will require work to select an existing tool from a vendor or design one, and make this tool
+compatible With operations Within a space vehicle or habitat. Designers should consult With astronauts
+Who have performed repair tasks during a mission for guidance in designing a containment area, and
+should extensively test it for both containment and human factors considerations. F inally, the tools
+provided should be augmented for the small, and sometimes specialized, nature of electronics repairs.
+Adding an electronics repair capability Will allow future missions to become more self sufﬁcient, and
+save mass and volume by replacing a large spares capability With the repair capability.
+
+5.0 Conclusion
+
+The CRE-l experiment demonstrated the feasibility of astronauts performing electronics repairs
+during a mission. CRE-l provided circuit boards, replacement parts, tools, and training to two astronauts,
+Who conducted work on the 188 during F ebruary and March, 2009. Both astronauts were able to remove
+NASA/TM—2012-217022 24
+
+"
+"29","and replace components on the circuit boards, and one crew member was able to work beyond the test
+matrix and extend the experiment. The results showed a number of areas that Will improve and expand the
+capability for electronics repairs. F uture crews should receive more training prior to a mission, and should
+have access to training Videos and practice circuit boards during a mission for refresher training or to
+practice speciﬁc techniques prior to a repair. An improved soldering iron, With higher operating
+temperature and more robust power supply Will make the repair tasks easier. Increasing the number and
+type of soldering iron tips available to the crew Will expand the types of components that can be repaired.
+Increasing and varying the hand tools available to the crew Will also improve the quality and type of work
+feasible, as Will improving the magnifying and Visualization aids and the containment of the work debris
+and vapors. CRE-l has shown that electronics repair is feasible during a mission, With the improvements
+described.
+
+NASA/TM—2012-217022 25
+
+"
+"30","NASA/TM—2012-217022 26
+
+"
+"31","Appendix A.—Original CRE-l Kit Design
+
+Due to volume constraints, the ﬂown CRE-l kit was substantially reduced compared with the original
+design. The original CRE-l hardware contained additional spare tools, conformal coating, more circuit
+boards, and more replacement parts, reﬂecting a more ambitious experiment. This eXpanded test matrix
+included removing a thicker layer of conformal coating, and attempting the removal and replacement of
+additional standard pitch surface mount deVices as well as ﬁne pitch surface mount deVices. Two foam
+trays, which were held together face-to-face by Velcro when not in use, held the various tools, parts, and
+circuit boards, and is shown in Figure 14 and Figure 15.
+
+The additional tools and conformal coating reﬂect the original plan, for crew members to replace
+conformal coating after soldering a new component in place. The conformal coating was Dow Corning
+3140. This material was used to coat the original boards, and the crew would apply the material to new
+solder joints after soldering a new component into place. The tool kit included a second spudger, which
+the crew would have used to apply and spread the conformal coating material in place. The kit also
+contained three types of solder: the eutectic, no-clean ﬂux kept in the CRE-l experiment as well as a 60
+percent tin, 40percent lead no-clean ﬂux wire and a 60 percent tin, 40 percent lead wire with no ﬂux core.
+These other two solders were selected based on previous work (Ref. 2) in mitigating internal void formed
+during soldering.
+
+The extra circuit boards and parts provided additional conditions for the crew to test. The original kit
+contained four circuit boards with a thin (0.004 in.) primed layer of conformal coating, four boards with a
+thick (0.010 in.) unprimed layer of conformal coating, and four boards with no conformal coating. The
+thick coating generated larger debris when removed, compared to the boards with a thin coating; testing
+would determine which type of coating was easier to remove and manage debris. Uncoated boards were
+provided, in the original and ﬂown kits, as contingency boards if the crew encountered problems
+removing coating or if additional time was provided. The extra parts allowed for testing with a larger
+variety of components: through hole chips with different conﬁgurations (C2, Ql) or more legs (U5);
+standard pitch surface mount components of different sizes and legs (R5, U5, Q2); and similar ﬁne pitch
+components (U6, R1 1, C15, R10), which would also challenge the crew to the limit of Visibility and tool
+size available.
+
+I I )--)-
+m 1 —I
+I 3.443; .
+m i
+I .1
+Figure 14.—Top half of original CRE-1 tool kit, containing tools and materials.
+NASA/TM—2012—217022 27
+
+"
+"32","l l I L Ia ""
+' r . ' . I .\ Ii
+.1 E I H J 1 i ‘
+. l q. I: - ‘ .
+I j I r. II- I .I
+I .' : -.l
+I I : I !J
+. ' ' ' I' ' -2 '
+I I ; I-
+. """" -- - . . -' l
+- —-:—'_._-h:-:-=.""'—:""’=FI -_-:1- - _
+Figure 15.—Bottom half of original CRE-1 kit, containing circuit boards and
+spare parts bags.
+
+Ultimately, many of the circuit boards, tools, and parts were not ﬂown. The expanded test matrix,
+using the various solder types, conformal coating thicknesses, and component types, was reduced to
+accommodate limited crew time. Reducing the types of conformal coatings used, components removed
+and replaced, and solders tested decreased the amount of time necessary to train the crew before ﬂight and
+the amount of crew time used during a mission. These reductions resulted in the removal of many
+components, decreasing the mass and, most importantly, volume of the kit, providing an opportunity to
+perform the experiment on the 188. The reduced test matrix did not reduce the importance of the CRE—l
+SDTO; the crew was still able to demonstrate the capability to perform electronics repairs during mission,
+and provided insight on the capabilities and improvements towards an in—situ repair capability.
+NASA/TM—2012-217022 28
+
+"
+"33","Appendix B.—Day-By-Day Operations
+B.1 Day 1, February 19, 2009
+
+Michael F incke performed operations on this day, setting up the Maintenance Work Area (MWA),
+the Containment Area (CA), and CA support equipment as well as collecting the CRE-l Kit, U.S.
+Soldering Kit, rechargeable batteries, vacuum, and other materials. The poles for the CA were not used
+during assembly, as the CA held its shape on its own. He also assembled the PC Circuit Board Clamp
+with the 12.75 in. shaft included in the CRE-l Kit, with the clamp jaws aligned so the circuit board plane
+was (almost) parallel to the shaft. After completing these tasks, work began on CRE-l Board 1, which is a
+coated circuit board.
+
+Work on Board 1 began by removing the conformal coating from the joints on Rl. This task required
+at least 15 min, followed by a 20 min Loss of Signal (LOS) period. At the end of this period (and 35 min
+after beginning work) the conformal coating, original Rl , and solder from the circuit board through holes
+had been removed. F itting a new Rl into the circuit board, trimming the leads, and soldering new joints
+required 10 min. During this process, the ground team noticed the crew member leaving the soldering iron
+tip on the joint area for 10 or more seconds; the training, written procedures, and training Video
+recommend leaving the soldering iron tip on the joint no longer than 5 sec.
+
+F ollowing work on Rl , work began on U2 with the removal of conformal coating at the start of a
+35 min LOS. At the end of this period, the U2 chip and legs were removed and cleaning the remaining
+conformal coating and solder was in progress. This continued for 25 min; the U2 joints were cleaned and
+ready for a new component, with the day’s session ending.
+
+After performing the work, the crew member provided general comments on the work. Astronaut
+F incke noted that soldering took longer in 0g than in the l g training, and that he was trying various
+techniques for soldering in reduced gravity. He also commented that the tools are helpful, but need a
+better way to restrain them in 0g for temporary stowage; going back and forth to the tool kit was
+cumbersome.
+
+B.2 Day 2, February 20, 2009
+
+Michael F incke worked on Board 1 again today, with the goal of completing the tasks (replacing U2
+and removing and replacing U4) left over from the last session. Prior to beginning, the crew member
+provided comments on the previous day’s work. F irst, he noted that the batteries used to power the
+soldering iron were not charging properly; the batteries should recharge in approximately 2 hr, but some
+had not received a full charged after charging overnight. He also noted that the solder wants to “grab
+itself’ rather than ﬂow more in microgravity than on the ground, and he had to work out slightly different
+soldering techniques than on the ground, mostly by holding the solder wire further from the soldering iron
+in 0g than on the ground. These problems may have occurred due to the low power provided by the
+battery, reducing the tip temperature and making soldering difﬁcult. He also seemed to have difﬁculties
+holding the soldering iron tip and solder wire in position in microgravity, compared to ground tests.
+
+This day’s work began with soldering a new U2 component to Board 1. The crew member completed 3 or
+4 joints in 15 min. During the subsequent 30 min LOS Mike completed soldering the remaining U2 joints,
+removed the conformal coating on U4 as well as the chip, and took still photos of the completed U2 and
+found a good battery to power the soldering iron. After cleaning the solder pads, the crew member
+required 20 min to reView the procedures and solder a new U4 chip to the circuit board. He used an
+additional 5 min to take photos of the circuit, and resolder one of the U4 joints.
+
+The ground team sent up a question based on a still photo from the ﬁrst day’s operations, showing
+conformal coating debris in one of the U2 through holes. The team asked the crew member if he could see
+to that magniﬁcation, and to try and clean the joint areas more thoroughly. He was unable to answer these
+points today.
+
+NASA/TM—2012-217022 29
+
+"
+"34","B.3 Day 3, February 23, 2009
+
+The day began with Michael F incke calling down comments based on operations the previous day, as
+well as a note sent to the 188 based on earlier work. He commented that the solder is ﬂowing differently
+in 0g than in l g, and is positioning the soldering wire a little differently. He commented that using a tape
+loop for debris is difﬁcult, and it is easier to simply allow the vacuum to suck debris from the tool tip
+(tweezers, dental pick, or ﬁberglass stick). Using good, charged batteries also helps soldering, and may
+alleViate problems encountered earlier. He is also going to use the still camera as a magniﬁcation aid in
+addition to a record of work. He is using a 105 mm lens for this work; he used a 70 mm lens for each of
+the ﬁrst two days.
+
+The day’s work included attempting to remove and replace Rl , U2, and U4 on Board 2. The crew
+member will work task by task (remove all conformal coating from all components, then remove
+components, etc.) rather than work component by component. In the ﬁrst task, the crew member removed
+conformal coating, removed components, and cleaned solder from R1 and U2. These tasks required 110
+min, and include making sure conformal coating is removed after removing the component and solder
+from the original joints, a task inﬂuenced by the note sent by the ground team at the end of day 2. The
+crew member then took another 25 min to clean conformal coating from and remove U4, and then broke
+for lunch.
+
+After returning, the crew member required 9 min to solder a new Rl into place, noting that the solder
+ﬂowed through the through hole. After this, he took 22 min to place and solder a new U2 component on
+the circuit board (including LOS time). He noted in a call down that solder ﬂowed off the soldering iron
+tip into the plated through hole, and asked why—the ground team did not have a good answer called up.
+During a 14 min LOS, the crew member began soldering a new U4 component onto the circuit board, and
+was using the still camera to inspect joints.
+
+During a 20 min LOS, the crew member ﬁnished work on U4, then attempted to remove U6. This
+work is outside the range of tasks for CRE-l, but was added to ﬁnd the limits of the crew’s capabilities
+and to use the remaining time scheduled for CRE-l. The suggested method of removal is to use ﬁne
+cutters to cut the legs, similar to the process used for U4. The crew member called down that working on
+U6 was feasible, but work on U7, the next task, would be more difﬁcult. He used the next 14 min to clean
+the pads for U6. Note that these times all include taking and looking at still photos, analyzing the images
+for good solder j oints, clean pads, etc. The crew member then spent 43 min cutting and cleaning U7,
+including taking photos. He commented that the ﬁne cutters did not ﬁt between indiVidual component
+legs, requiring him to cut 2 or 3 legs at a time. As a result, the lower right pad on U7 was pulled. He felt
+that working this far with U7 is the limit of his abilities.
+
+With a surplus of time, the crew member then moved on to Board 9, which is not coated. Over the
+course of 39 min, he removed and replaced R1 and U2 on this circuit board. After performing that day’s
+activities the crew member commented that the soldering process was easier today. He spent more time
+and attention cleaning the circuit board, and used the still camera as a magniﬁcation aid, looking for
+conformal coating debris and new joint quality.
+
+B.4 Day 4, February 24, 2009
+
+This is the ﬁrst session Sandra Magnus worked, removing and replacing components on Board 3. She
+began working on Rl , taking approximately 25 min to remove conformal coating, then spending 29 min
+removing the component and clearing solder. Inserting and soldering a new Rl component required
+14 min. The ground team noted that the crew member left the soldering iron on the joint for a long time,
+as seen in earlier work. After soldering, she commented that the back side of each j oint has a nice ﬁllet,
+but that the solder didn’t want to ﬂow through the plated through hole.
+
+The crew member began work on U2 by stating that she will cut the component off before removing
+the conformal coating; this seemed easier to her, as the component will be out of the way while removing
+the coating. She spent approximately 20 min completing these tasks. Sandy then spent 55 min removing
+NASA/TM—2012-217022 30
+
+"
+"35","leg debris and solder from the plated through holes, a period which included two LOS times, and periods
+where she was out of the ﬁeld of View, presumably watching the training Video or reading procedures, or
+conducting other 188 tasks. Sandy then takes 14 min to insert and solder U2 in place. She commented that
+it was “tricky” removing the conformal coating. She also notes that the solder wets to the iron, instead of
+ﬂowing to the joint area. The crew member developed a process where she adds a small amount of solder
+to the joint, moves on to another joint, then comes back and uses the initial solder to help ﬂow new solder
+and form a joint.
+
+The crew member began work on U4 by ﬁrst replacing the battery in the soldering iron. This task,
+with removing the component, required 13 min. After 12 min, the crew member called up that she had
+removed the original solder from the joints, but had also removed three of the circuit board pads
+(corresponding with legs 5, 6, and 7). The crew member stated she would use the remaining 5 pads to
+attach a new component, which was accomplished during a 21 min LOS. At the end of the work, the crew
+member noted that when removing the U4 legs, she heated the pad and removed the leg with tweezers,
+similar to the method used to remove leg debris for U2. Her initial guess is that the pads came off with the
+legs, though she noted that the pads “looked strange” after removing the chip. Photos of the board show
+that the pads and some of the traces had been removed; the damage may have occurred during chip
+removal, rather than leg debris removal.
+
+B.5 Day 5, February 26, 2009
+
+Michael F incke worked a brief, 1 hr session on this day to complete tasks begun on Day 3 with Board
+9. His work began with removing U4 from the board for 5 min, followed by removing the leg debris by
+heating the joint and removing it with tweezers, similar to the method used by Sandra Magnus in the
+previous session for this component. This task required 5 min as well. The crew member required a
+further 18 min to solder a new U4 into place. This included re-soldering joint 2, based on a Visual
+inspection using the still camera.
+
+After this work, the crew member began attempts to remove U6 and U7, similar to the work
+performed on Board 2. In these cases, he attempted to heat the solder joints and lift the legs off the pad on
+each side of the board, rather than out the leads. This process began with component U6, but the crew
+member was attempting to heat one pad at a time with the iron perpendicular to the board, rather than
+laying the tip along all the joints at once. He is able to heat the solder and use the dental pick to lift one
+side of the chip up, but may have pulled pads off the board. He then heats the other side of U6, and lifts
+the component off the board with tweezers. This process requires 10 min. The crew member tried the
+same process on U7, without success. During a LOS, he was able to wick solder off the pads on one side
+of the component, and lift each leg off the lead with the dental pick. He then heated the other side at once
+and lift the chip off. His inspection did not reveal any damage to U7. This process required 20 min,
+including a LOS.
+
+As a general comment, the crew member noted that working on obj ects the size of U6 or U7 required
+improved magniﬁcation; working on obj ects the size of U4 is currently feasible, using a still camera as a
+Vision aid to check work.
+
+B.6 Day 6, March 7, 2009
+
+On this day Sandra Magnus worked on Board 10 (an uncoated board), removing and replacing the
+primary (R1, U2, U4) components. The work began on R1 during a LOS, and after 14 min had the old
+component removed, cleared the old solder, and had inserted the new R1 and trimmed the leads. Over the
+next 18 min, she soldered the two R1 joints, taking photos during the process; it appeared that she
+soldered each joint multiple times, and that she had trouble keeping the soldering iron tip in place on the
+j oint, which seemed to “slip off” the j oint in the downlinked Video.
+
+The crew member next worked on removing and replacing U2. She took 4 min to cut the component
+off the circuit board, then an additional 4 min to remove the leg debris from the joints. This included time
+NASA/TM—2012-217022 31
+
+"
+"36","attempting to use the curved tweezers to remove legs, then switching to the straight tweezers with more
+success. The crew member then spent 15 min clearing solder from the through holes, and then broke for
+lunch. She returned to work during a LOS; the new U2 component was attached to the board at A08,
+ready for soldering. Over the next 13 min, she soldered the U2 joints, using photos to check the joints,
+reworking joints 1, 2, 7, and 8 during this process. At completion, she commented that she does not have
+ﬁllets on all the j oints. Two joints have solder balls sticking 0n the joints. She thinks solder went into the
+plated through hole, but there is no topside ﬁllet. She is leaving the j oints “as is” for ground analysis.
+
+The ﬁnal task for this day is to remove and replace U4. The crew member took 6 min to remove the
+chip, then an additional 6 min to wipe the pads clean of solder and leg debris. She did this using the
+technique described in the training materials, wiping the pad with solder wick and the soldering iron tip,
+rather than heating each joint and plucking the leg off the pad. She then spent 19 min soldering the new
+U4 onto the circuit board, alternating from one side of the chip to the other when soldering each leg to the
+pad. She commented at the end of the work that it was hard to tell if U4 was on the circuit board. On the
+left side of the chip, the solder climbed up the leg during soldering, and commented that a smaller
+soldering iron tip might be helpful. On the right side of the chip, the middle legs (joints 6 and 7), she used
+the following technique to solder the joint: she’d position the iron tip near the far edge of the pad, then
+position the solder wire near the leg, and this technique seemed to work well. She commented that
+working on the right hand side of the chip was easier than the left, and that she used the 1/32 in. soldering
+iron tip for all tasks (R1, U2, and U4) during this session.
+
+NASA/TM—2012-217022 32
+
+"
+"37","Appendix C.—Speciﬁc Circuit Board Inspection Results
+The following sections describe the results of Visual inspection of each circuit board used in CRE-l.
+These Visual inspections were conducted by a NASA certiﬁed electronics technician and instructor, using
+NASA Standard 8739.3 (or “NASA Standard”) as a basis for judging the quality of the work. The
+inspector also noted when a joint did not pass the NASA Standard, but was never the less functional. The
+inspection also included a functional test of each circuit board, providing 9 VDC to the power section of
+the circuit board with a bench-top power supply, current limited to 100 mA. This power supply provided
+a measure of the current used by the circuit, accurate to 10 mA. The peak current draw is reported with
+the results of the functional test.
+C.1 Circuit Board 01
+The Visual inspection for R1 revealed good ﬁllets on both the soldered side and ﬂowed side of the
+component, passing the NASA Standard criteria. For component U2, all ﬁllets on the soldered side of the
+circuit board passed inspection as well. On the ﬂowed side, pins 1, 4, 5, 6, and 7 passed the NASA
+Standard without comments. Pin 2 passed, though no ﬁllet formed; solder in the board through hole is
+sufﬁcient for passing the NASA Standard. Pin 3 did not pass, with no solder in the board through hole.
+Figure 10 in the Section 3.0 shows this defect. Pin 8 passed, though no ﬁllet formed on the ﬂowed side of
+the circuit board. For component U4, generally there was good contact between the legs and the pads with
+good ﬁllets, though there was excessive solder. While this would not pass the NASA standard, rework
+would not normally be required. Additionally, the left side (pins 1, 2, 3, and 4) were slightly elevated,
+with the legs not ﬂat on the pads. Figure 16 shows both the elevated legs and excess solder. The legs on
+the right side of the component (pins 5, 6, 7, and 8) were ﬂat on the circuit board pads, and acceptable.
+When powered, all LEDs on the circuit board blinked normally, with a peak current draw of
+approximately 40 mA.
+Q
+9'?! F H 8 ,1
+w ii *‘
+“2"" I '5 x
+. , t 1
+'h
+Figure 16.—An image of pins 1 through 4 from component U4,
+board 01. This images shows both excess solder and the
+component legs floating above the board. This would not pass
+NASA inpsections, but is usable.
+NASA/TM—2012-217022 33
+
+"
+"38","C.2 Circuit Board 02
+Both j oints for component Rl passed inspection, as did the ﬁllets on the soldered side of component
+U2. On the ﬂowed side of U2, pins 1, 2, 3, 4, 5, 6, and 7 passed inspection. Pin 8 on the ﬂowed side of
+component U2 was acceptable, but on the border of not passing due to insufﬁcient solder, as no ﬁllet
+formed though the plated through hole is ﬁlled with solder. The joints for component U4 were generally
+good, though all had too much solder. In addition, the part is tilted, with pins 1 and 8 higher than pins 4
+and 5, which are ﬂat on the circuit board pads, similar to the results seen for component U4 on board 01.
+This does not pass the NASA Standard, but the solder j oints are functional. The removal of component
+U6 was acceptable, with no damage seen on the circuit board, as shown in Figure 17. The removal of
+component U7 did show some damage, as pad 8 was lifted from the circuit board, and other pads showed
+some damage from removing the component, as shown in Figure 18. The circuit board passed the
+powered functional test, with the LEDs in the plated through hole and standard pitch surface mount
+regions blinking as expected, drawing a peak current of approximately 20 mA. The LED in the ﬁne pitch
+surface mount region did not blink as expected, due to the removal of components U6 and U7.
+1- * -—-_—- -_— _ _ r
+E - ”1 . _
+1. . - i. ll! ' '|""
+g _: .. “E'- f. O . . 1|- -.
+m- ' rt. :3“- .a. I
+.-. ""
+Figure 17.—Removal of component U6 from board 02. The removal was successful, with
+no damage to the circuit board.
+1 .. -‘ . I ' t. T u \ ‘ - 1
+L d 1 ' I ‘ ' ' 1' “‘7‘ ' §
+8“ ‘ Wm -~ Land 14
+ﬂ' _‘ $\- . .3“ “14m: .. .. .
+v . r '. $.l a I -‘ ' 3 '* a \ i
+i ""’1 r ~11."" . "" ‘ 6
+m- - w t, «ma
+y. .- «In. . w .~~.«-.
+i.‘. f --- l."" ‘ ""r"" ._ j
+A i "" . ' . . ‘ . Ti :V
+: ' \ s . ~ _ .
+'o . ' '
+Figure 18.—Lands from removed component U7, board 02. Land 8 shows damage to the land,
+while lands 9, 10, and 11 show minor damage.
+NASA/TM—2012—217022 34
+
+"
+"39","C.3 Circuit Board 03
+For component R1, the ﬂowed—side solder joints show minimal but acceptable solder ﬂow through.
+The soldered side j oints show excessive solder, though possibly acceptable. The j oints are functional. The
+excessive solder on the soldered side and minimal solder on the ﬂowed side is due to insufﬁcient heat to
+drive the solder through the circuit board and form a ﬂowed side ﬁllet. This is a technique problem and
+not indicative of a problem with the soldering iron. Figure 19 shows these problems. For component U2,
+the ﬁllets on the soldered side of the circuit board all passed NASA Standards, though the leads were not
+clinched (that is acceptable). For the ﬂowed side of the circuit board, pins 3, 4, 5, 6, and 8 passed the
+NASA Standard. Pins 1, 2, and 7 did not, due to insufﬁcient solder, though the joints are functional. For
+component U4, pin 1 had solder on the component lead, but not on the pad, while pins 2, 3, and 4 were
+acceptable but with excessive solder. A trace near pad 4 is exposed, which may have occurred when
+removing solder. Pins 5, 6, 7, and 8 demonstrated some difﬁculties, arising largely from removing the
+original component and cleaning the pads. The pads for pins 5, 6, and 7 were removed from the circuit
+board, and traces from pads 6 and 7 were also removed. Much of this damage occurred during component
+removal because the component leads were not fully cut, and the component pulled from the board.
+Figure 13 shows the area around U4 after removing the component. The pad for pin 5 is still attached to
+the original component lead. Leg 5 on the original component was not out completely, and the pad was
+pulled off the circuit board when removing the component, also seen in Figure 20. This also damaged the
+trace leading from pad 5, run under the component location. In functional testing, the LED in the plated
+through hole and ﬁne pitch surface mount regions operated normally, drawing approximately 30 mA. The
+LED in the surface mount region did not blink normally, due to the issues described for component U4.
+‘ "" «""1 , :1? 7 i . ’-
+.. ‘ ‘ ""(-- . .. i . . 1\ I 3""
+. v- y: ' \. ,— . ""i .‘3' 1X ‘
+huff, , \‘I 1 .' ...-
+‘ ..-.';"". ‘. '-. _- ﬁg"" u‘ ‘11
+"" 5 ‘ 3’}? xi?!"" . -i 3’ {I 4‘ i , - .' I: E
+S}.- J. . _ ‘. i . . ' _ E: '- .
+g e }}‘-i *""~':1i~'}-.7 , ii , [Iii "" 'I ‘1 , .. .1 1?: .
+. ' z I 3.270 .. ‘ i d . .- 3 4:3 T- a.
+- TV .I' ' a W ' ' .-
+Figure 19.—Solderjoints for R1, board 03. The images of flowed side joints (left, right) show excess
+solder, while the topside joints (middle) show problems with the solder flowing through the through-
+holes.
+NASA/TM—2012-217022 35
+
+"
+"40","l o I‘ to $
+. - ﬂ ‘ ‘- 7
+*i i“
+I lv—
+3
+I 1""
+:I I '
+r -
+Figure 20.—Component U2 from board 09, showing
+poor wetting on pin 7. This defect would not pass
+inspection criteria, but the component is functional.
+C.4 Circuit Board 09
+The inspection of component R1 showed that both the soldered and ﬂowed ﬁllets were good and
+passed NASA Standards, though the “outside” lead was cut short; this is still acceptable work. The
+soldered side ﬁllets for component U2 all pass inspection, as do all the ﬂowed side ﬁllets except for pin 7,
+shown in Figure 20. This joint had insufﬁcient solder, where the solder did not ﬂow through the board’s
+plated through hole. Component U4 showed problems with coplanarity, where pin 5 was low and pin 1
+was high. Pin 1 was not ﬂat on the pad, though solder bridged from the pad to the lead. Pin 2 was also not
+on the pad, and showed excessive solder, with solder dabbed on the joint with the soldering iron. Pin 3
+does not appear soldered to the pad, though both the pad and lead are wetted with solder. Pin 4 has
+excessive solder and was reheated, but is function. Figure 21 shows these four legs. Pin 5 passed
+inspection. Pins 6 and 7 had excessive solder, but were otherwise good. Pin 8 had very excessive solder, a
+solder spike, and overheated solder. The removal of components U6 and U7 also presented challenges to
+the crew. For U6, the pads show little damage; there is minor damage to the solder mask on land 7, as
+shown in Figure 22. The solder was not cleaned off the pads in any joint, as the solder was heated and
+lead debris removed or peeled from the pad. For component U7, pads 4 and 5 showed damage to traces
+from these pads which run under the component, shown in Figure 23. The damage may have arisen from
+use of the dental pick, which may have gotten under the trace and removed a piece of the circuit board.
+All other pads for this component pass Visual inspection. The functional test showed only the plated
+through hole region of the circuit board operating normally, with a maximum current draw of
+approximately 30 mA. The ﬁne pitch SMD section of the circuit is expected not to function, due to the
+removal of U6 and U7.
+NASA/TM—2012-2l7022 36
+
+"
+"41","t ‘9 ”r"" . C
+”- ..
+i a
+1|. E
+h ' i-
+H”; :r I! ""r I
+h .1
+Figure 21 .—Component U4, Board 09. Leg 3 is not soldered tethe- circuit board,
+while the other legs show excess solder and do not rest on the circuit board pad.
+This component would not work, due to the problems with leg 3.
+,t, I
+h ‘ . _ . ’ f; ”(3* o O
+.. , “ - . - . -.' 3‘. l». I,
+- l #.’*~.,.41"" ""ﬂ. d "" f:{___ ’ .
+‘ ‘ A - 3: ,
+. PI. 7.; —' ) W .|_ I ' I
+' 1 . I
+Figure 22.—A photo of the lands after removing component U6, board 09. Land 7 shows some minor
+removal of the solder mask. The original solder and leg debris remains on the pads.
+NASA/TM—2012-217022 37
+
+"
+"42","mm: -P—w g , :- ., , q|\ ""vzm _ _f x
+.--_i a -4 _.,__
+M3?“ - Mr”?
+. ‘ l‘ . .
+I 3' —— ‘l ‘ -__- - - a
+“ - -- \J . . ,
+Figure 23.—Board 09 after removing component U7. Lands 4 and 5 show some damage to the traces.
+C.5 Circuit Board 10
+The Visual inspection of R1 showed good ﬁllets on both sides of the circuit board, though the outside
+
+leg was cut short (as before, this is acceptable). For component U2, the Visual inspection found some
+issues. On the soldered side of the circuit board, pin 1 showed insufﬁcient solder, and pin 2 had a large
+solder ball where the solder attached to the joint, and reheating the joint formed a ball. Pins 3 and 4
+passed inspection, while pin 5 showed evidence that the operator removed the soldering iron prior to
+removing the solder wire. Pin 6 passed, pin 7 had a piece of solder wire attached to the j oint as in pin 5,
+and pin 8 passed, though had the same problem as pin 7 with a small piece of solder wire attached to the
+joint. On the ﬂowed side of the circuit board, only pins 3 and 8 passed Visual inspection. All other ﬁllets
+showed evidence of insufﬁcient solder, as described previously. These results are shown in Figure 24.
+Component U4 showed coplanarity problems, where leads 5, 6, 7, and 8 (the “right” side of the
+component) were ﬂat on the circuit board pads, but leads 1, 2, 3, and 4 (the “left” side of the component)
+were off the board. Further, pin 1 was not soldered to the circuit board, and pin 2 was soldered with a
+reasonable amount of solder, but was overheated. Lead 3 was soldered, but there is no solder 0n the
+circuit board pad. The lead and pad for pin 4 were soldered together, forming a bridge; while functional,
+this is not ideal. Leads 5, 6, 7, and 8 passed the Visual inspection. Figure 25 shows these results. The
+plated through hole and ﬁne pitch surface mount section of the circuit functioned properly, while the
+standard pitch surface mount region did not. The circuit drew a peak current of approximately 40 mA.
+NASA/TM—2012-217022 38
+
+"
+"43","M
+. 7 , 4 ﬂ .
+‘ :e ..  . «l- n .-
+.__ 4 ‘.~ .. *W' 5 .
+u. b . v , u.
+x, e x- -— - —4 - w J, m. .\
+‘ V; “g :' ‘ “c, I ‘of ‘ ﬁ , l -"" I
+~ 1: ~ age ,a - c
+. ,f I. . ;, .7"" 1,. ‘73:. i 31'. '3': ; ‘
+L. fo-( / 4- I!!- ,1 ""1r 3 . 1'
+$9123 9‘ f, ""77”.""! ' ‘2“ . r. ‘
+?f'. I Q 7* .iJi 3""? - .151“?
+_ - . «:14 , L. *3“? ‘ t .. 2' ? x
+4"" .-"" 1: J'-‘I.’""-‘ ' .'--- r '5‘?” ”f"" I ~
+'. ‘ .r. . ' f ' ,. ; .«9’9': 'Q - . '
+1' \ ~. ‘. A . p;.ﬁ._ mi. 7 c ..'- j 2 .
+a ’ '7? _-‘: .‘ﬂwh'g‘J 2""; ‘V - '.- .' _ I ‘ 7.: - ' . ’ ‘
+' 6' .33} ""in 7 ' 28:, F— - -,
+.W' . ‘ Ex ‘r.'°-‘.'.°.“-V ‘-'*',‘ § ""1' .' .- . ~' '.
+53% ,, v“ :- ﬁt“? .- V"" ‘
+2‘ u ;-"""".-.'.a: . -f “‘1 *a -.
+'53 w .3?! n *‘_- . ﬂ-i ‘ ‘ "" l ' .<V“£.Ir‘_ (“‘M . . I“ -#;S._ . . 4
+1 I :, ‘ ll .EH 7 I _ > . "" . a 8
+, l: . A .7 R...” -‘ .V Wk-
+‘ .I“ f“! J. _-._I.-‘ '*.'- 3N . - l‘ , --r
+‘ , 7""; . '3 ‘( ”fl. 2;; j ‘1‘; 6’1""."" l’. -_
+- "" iv; “ rﬂgﬂ~ n 19' ill u: Egan.
+‘3 1* C ’gr"" , ‘- 4 f. * 3-. ‘IL..--_a_af:;‘>~. 3‘; ._ __
+Figure 24.—Soldered (left) and flowed (right) views of component U2, board 10
+II
+n . ,. ,
+:44; e' “ $1"" 3 Egg; av , ..
+~- "" 7 4’“: iéi ~. .. ~ wage; war;
+<' .' . '2' w'. - ‘ ""'ff'V‘ . V ‘5 '
+g 3': F! ‘ .
+, . J ‘ .. '
+Figure 25.—Side views of component U4, board 10. Leads 1 and 3 are not soldered to the circuit board, while lead
+4 shows the joint was remelted. Leads 5 through 8 are acceptable, though lead five has insufficient solder.
+NASA/TM—2012-217022 39
+
+"
+"44","References
+
+1. P. Struk and R. Oeftering, “Approach to In Situ Component Level Electronics Assembly Repair
+(CLEAR) for Constellation,” presented at the AIAA SPACE 2009 Conference and Exposition,
+AIAA—2009—6472, Pasadena, CA, 2009.
+
+2. J . Easton and P. Struk, “Current Space Station Experiments Investigating Component Level
+Electronics Repair,” presented at the AIAA SPACE 2009 Conference and Exposition, AIAA—2009—
+6798, Pasadena, CA, 2009.
+
+3. NASA, “Soldered Electrical Connections. NASA Technical Standard NASA—STD—8739.3,” ed:
+National Aeronautics and Space Administration, 1997.
+
+4. P. Struk, J . Easton, G. Funk, G Latta, A. Ganster, and B. Estes, “Recommendations for Enabling
+Manual Component Level Electronic Repair for F uture Space Missions,” NASA/TM—2011-216933,
+201 1.
+
+5. J . Easton and P. Struk, “Void Analysis of Select Solder J oints from the Component Repair
+Experiment-l ,” NASA TM, in preparation, 2011
+
+6. R. Grugel, L. Cotton, P. Segre, J . Ogle,; G. Funkhouser, F . Parris, L. Murphy, D. Gillies, F . Hua, A.
+Anilkumar, “The In-Space Soldering Investigation (1881): Melting and Solidiﬁcation Experiments
+Aboard the International Space Station” presented at the 44th AIAA Aerospace Sciences Meeting and
+Exhibit, Reno, Nevada. AIAA-2006-521. Jan. 9—12, 2006.
+
+NASA/TM—2012-217022 40
+
+"
+"45",""
+"46","Form Approved
+REPORT DOCUMENTATION PAGE OMB NO. 0704-0188
+data needed, and completing and reviewing the collection of information. Send comments regarding this burden estimate or any other aspect of this collection of information, including suggestions for reducing this
+burden, to Department of Defense, Washington Headquarters Services, Directorate for Information Operations and Reports (0704-0188), 1215 Jefferson Davis Highway, Suite 1204, Arlington, VA 22202-4302.
+Respondents should be aware that notwithstanding any other provision of law, no person shall be subject to any penalty for failing to comply with a collection of information if it does not display a currently valid OMB
+t | b .
+EEEESEUSIO eb:0T RETURN YOUR FORM TO THE ABOVE ADDRESS.
+1. REPORT DATE (DD-MM—YYYY) 2. REPORT TYPE 3. DATES COVERED (From - To)
+01-03 -2012 Technical Memorandum
+4. TITLE AND SUBTITLE 5a. CONTRACT NUMBER
+Component Repair Experiment-I: An Experiment Evaluating Electronic Component-Level
+R ir D rin ﬂi h
+epa u g Space g t 5b. GRANT NUMBER
+
+5c. PROGRAM ELEMENT NUMBER
+6. AUTHOR(S) 5d. PROJECT NUMBER
+Easton, J ohn, W.; Struk, Peter, M.
+
+59. TASK NUMBER
+
+5f. WORK UNIT NUMBER
+
+WBS 431767040103
+7. PERFORMING ORGANIZATION NAME(S) AND ADDRESS(ES) 8. PERFORMING ORGANIZATION
+National Aeronautics and Space Administration REPORT NUMBER
+J ohn H. Glenn Research Center at Lewis Field E'17687
+Cleveland, Ohio 44135-3191
+9. SPONSORINGIMONITORING AGENCY NAME(S) AND ADDRESS(ES) 10. SPONSORINGIMONITOR'S
+National Aeronautics and Space Administration ACRONYWS)
+Washington, DC 20546-0001 NASA
+
+11. SPONSORINGIMONITORING
+
+REPORT NUMBER
+
+NASA/TM-2012-217022
+12. DISTRIBUTIONIAVAILABILITY STATEMENT
+Unclassiﬁed-Unlimited
+Subject Categories: 33, 38, and 12
+Available electronically at http://www.sti.nasa.g0v
+This publication is available from the NASA Center for AerOSpace Information, 443-75 7-5 802
+13. SUPPLEMENTARY NOTES
+14. ABSTRACT
+The Component Repair Experiment-l (CRE-l) examines the capability for astronauts to perform electronics repair tasks in space. The goal
+is to determine the current capabilities and limits for the crew, and to make recommendations to improve and expand the range of work that
+astronauts may perform. CRE-l provided two-layer, functional circuit boards and replacement components, a small tool kit, written and
+Video training materials, and 1 hr of hands on training for the crew slated to perform the experiment approximately 7 months prior to the
+mission. Astronauts Michael Fincke and Sandra Magnus performed the work aboard the International Space Station (188) in February and
+March 2009. The astronauts were able to remove and replace components successfully, demonstrating the feasibility of performing
+component-level electronics repairs within a spacecraft. Several unsuccessful tasks demonstrated areas in need of improvement. These
+include improved and longer training prior to a mission, an improved soldering iron with a higher operating temperature and steady power
+source, Video training and practice boards for refresher work or practice before a repair, and improved and varied hand tools and
+containment s stem.
+15. SUBJECT TERMS
+Soldering; Space maintenance; Astronaut training; Circuit boards; Microgravity; International Space Station; Solders; Space missions
+16. SECURITY CLASSIFICATION OF: 17. LIMITATION OF 18. NUMBER 19a. NAME OF RESPONSIBLE PERSON
+
+ABSTRACT OF STI Help Desk (email:he1p@sti.nasa.g0v)
+a. REPORT b. ABSTRACT c. THIS PAGES 19b. TELEPHONE NUMBER (include area code)
+U U PAGE UU 48 443-757-5802
+U
+Standard Form 298 (Rev. 8-98)
+Prescribed by ANSI Std. Z39—18
+
+"
+"47",""
+"48",""

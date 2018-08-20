@@ -1,0 +1,593 @@
+"","x"
+"1","’ frontlers ORIGINAL RESEARCH
+. . published: 30 March 2015
+III Ecolog y and EVOlUthD doi: 10.3389/fevo.2015.00025
+Stefanie M. Countryman 7, Martin C. Stumpe 2, Sam P. Crow3, Frederick R. Adler"",
+Michael J. Greene 5, Merav Vonshaks and Deborah M. Gordon 6*
+7BioServe Space Technologies, University of Colorado, Boulder, CO, USA, 2AnTracks Computer Vision Systems, Mountain
+View, CA, USA, sDepartment of Computer Science and Engineering, University of Washington, Seattle, WA, USA,
+4De,oartment of Mathematics, University of Utah, Salt Lake City, U7: USA, 5Department of Integrative Biology, University of
+Colorado Denver, Denver, CO, USA, BDepartment of Biology, Stanford University, Stanford, CA, USA
+The problem of collective search is a traoleotf between searohihg thoroughly and covering
+as much area as possible. This traoleotf depends on the density of searohers. Solutions
+to the problem of collective search are currently of much interest in robotics and in the
+study of distributed algorithms, for example to design ways that without central control
+OPEN ACCESS robots can use local information to perform search and rescue operations. Aht oolonies
+Editedby, operate without central control. Because they can perceive only local, mostly ohemioal
+JamesA- R Marshall and tactile oues, they must search collectively to find resources and to monitor the
+University of Shefﬁeld, UK , . . . . . .
+oolonys thIrOhmeht. Examlhlhg how ahts Ih oIIverse thIrOhmehts solve the problem
+Reviewedb : . . . . .
+Chris H Ref: of collective search can eluololate how evolution has led to diverse forms of collective
+New Jersey Institute of Technology, behavior. An experiment on the International Space Station in January 2014 examined
+M S US; how ahts (Tetramor/um oaesp/tum) perform collective search in microgravity. In the ISS
+a ao asa /, . . . . .
+Ariana State Unmersﬁy, USA experiment, the ants explored a small areha In which a barrier was lowered to Increase
+Thomas Owen Richardson, the area and thus lower aht density. Ih microgravity, relative to ground controls, ahts
+Univers/t of Lausanne, Switzerland
+y explored the area |ess thoroughly and took more convoluted |oaths. It appears that the
+*Corres ondence: . . . . . , .. .
+Deborah?” Gordon difficulty of holding on to the surface Interfereol WIth the ants ability to search oolleotlvely.
+DepartmentofB/o/ogy, Stanford Ahts frequently lost contact with the surface, but showed a remarkable ability to regain
+University, Gilbert Biological Sciences oontaot With the surface
+Building, 377 Serra Mall, Stanford,
+CA 94305-5020, USA Kewvords: exploration, distributed algorithm, international space station, searching behavior, collective behavior
+dmgordon @stanford. edu
+Specialty section: Introd ucti on
+This article was submitted to
+BehaV/Ora/ and EVO/Ut/Onary 500/0914 a In collective search, a group of agents move around independently, using only information from
+seem” Of meloumal Front’ers ”7 local interactions to adjust their paths so as to cover the area (Hayes, 2002). The collective goal
+Ecology and Evolution . . . . . . .
+is to have an 1nd1V1dual search almost everywhere so that if there is something to ﬁnd, some
+ReceiVed107Ja/7U8ry2075 individual Will encounter it (Adler and Gordon, 1992). If time is limited, there is a tradeoff
+Accepted: 27 February 2075 between covering the area thoroughly, for Which a convoluted path is most effective, and cov—
+Published: 30 March 207 5 . . . . . . . .
+ering ground, Wthh requires mov1ng 1n straighter lines so as to traverse more distance (Bell,
+Citation: 1991; Benhamou, 1994). This tradeoff depends on the density of searchers. For example, sup—
+;DZ’EW/g 2M 811359 dwarf); OX; pose that you lost something small and valuable —a contact lens, or a diamond ring — on a
+, , n , n .
+er fee 6 O s a . football ﬁeld. If you have a 100 friends to help search, each can choose a small area to search
+and Gordon DM (2075) Collect/ve _ _
+search by ants in microgravity. very thoroughly. But if you have only a few friends to help, each one must walk up and down
+Front. Ecol. EM, 325, the ﬁeld to be sure to cover the entire area. Collective search algorithms, used in robotics,
+doi: 70.3389/fevo.2075.00025 seek to solve this problem using local, decentralized cues (Hecker et al., 2012), for example to
+Frontiers in Ecology and Evolution | www.frontiersihorg 1 March 2015 | Volume 3 | Article 25
+
+"
+"2","Countrymah et al. Collective search by ants in microgravity
+design ways that robots can use local information to perform
+search and rescue operations.
+Ant colonies operate without central control, coordinating
+their behavior through local interactions with each other (Gor- A 2
+don, 2010). Ants perceive only local, mostly chemical and tactile rea
+cues. For a colony to monitor its environment, to detect both
+resources and threats, ants must move around so that if some—
+thing happens, or a food source appears, some ant is likely to be
+near enough to ﬁnd it. A previous study of the invasive Argentine
+ant (Gordon, 1995) showed that this species manages the tradeoff A 1
+for the colony, between thorough search and covering as much rea
+area as possible, by adjusting ant path according to local density.
+When density is high, and ants can afford to be thorough (Adler
+and Gordon, 1992), ants use a more convoluted path, approach—
+ing a random walk, which leads each ant to move around in a
+relatively conﬁned area (Collignan et al., 2014). When density is
+low, ants use straighter paths that cover more ground. It appears
+that an ant assesses the local density of nestmates through its rate
+of brief antennal contact with them. In the course of a brief anten— FIGURE 1 | Diagram of arena used in the experiment. The blue rectangle
+nal contaCt> an ant can assess the cuticular hydrocarbon proﬁle in the bottom section represents the nest area. Dotted lines represent barriers
+of another and use this olfactory information to determine if the that were opened from the outside. The data reported here compare ant
+other ant is a nestmate and, at least in some species, What task the behavior in Area 1 and Area 2, before and after the barrier was opened that
+other ant has been performing (Greene and Gordon, 2003). separated Area 1 from Area 2'
+Ants are an extremely diverse taxon that have evolved to func—
+tion in every habitat on Earth. There are species that search col—
+lectively on the ground, underground, in trees, inside stems and
+twigs, and on many different kinds of vegetation. Because species
+differ in the resources they collect and the threats they contend ' tﬁ w— am...
+with, they are likely to differ as well in the ways that they search. .
+Here we examined the relation between collective search and ﬂ “ ti .
+local conditions in an extremely unusual condition: we investi— ‘ . .J—ﬂ‘*‘
+gated how ants carry out collective search in microgravity. The g - - . -
+experiment, conducted on the International Space Station in § .’ ' . "" ° - t 7
+January 2014, used the pavement ant Tetramorium caespitum, 43"" ‘
+an invasive species introduced from Europe, abundant in cities g 1&7. 1 , . .a .
+worldwide throughout the Northern temperate zone, commonly E » \ ~ - Q3) — -- v e
+found nesting between paving stones and near other human—built 55;, 2-, ' ' V ‘.
+structures (Nuhn and Wright, 1979; MCGlynn, 1999; Klots et al., "" '\
+2008). Ants of this species recruit to food sources (Collignon . . ' . \ ..
+and Detrain, 2010), but in the experiment described here, the A
+ants explored an arena without any food sources, and so there _ _
+. . FIGURE 2 | Arenas right before loading on Cygnus capsule to travel to
+was no recruitment. In the experiment, the ants were allowed to the Space station.
+explore one section of a small arena. Then a barrier was low—
+ered to allow the ants access to a second section of equal area;
+this increase in area could lead to a lower ant density (Figure 1).
+We examined how the searching ants responded to a larger area Iacob Burrows Freeman. One section, at one end of the arena,
+to search. Ant search behavior has never been observed before was a nest area of 23 by 23 mm, of which 23 by 13 mm was
+in microgravity. We expected that the effort to carry out search— plaster of Paris. This plaster area was moistened with 12 m1 of
+ing in microgravity might inﬂuence behavior enough to interfere Sigma—Aldrich Minimum Essential Medium Eagle that had 0.03%
+with the usual relation of interaction rate and density, and thus methylparaben V/V added to it to prevent mold. The ﬂoor of the
+to inﬂuence how ants adjust path shape when the area to be arena had a rougher surface, of Delrin plastic, than the polycar—
+searched expands. bonate ceiling, and the ants in microgravity mostly clung to this
+rougher surface; very few ants walked on the other, smoother,
+Methods ceiling surface of the arena. Each arena had an inner dimension
+of 8 by 11.1 cm, divided into three sections, separated by metal
+All experiments were conducted using arenas made of plas— barriers that could be turned, using a wrench on the outside of
+tie and plexiglass (Figures 1, 2) designed and constructed by the arena, until the barrier was ﬂush with the arena ﬂoor.
+Frontiers in Ecology and Evolution | www.trontiersihorg 2 March 2015 | Volume 3 | Article 25
+
+"
+"3","Countryman et al. Collective search by ants in microgravity
+Eighty ants were placed in the nest area of each arena, but in all were performed on January 13 2014. For 4 ground controls the
+replicates, some ants died before the experiment was conducted. ants were loaded on January 11 2014 and the experiments were
+The experiment began when the barrier next to the nest was low— performed on January 23 2014. In all replicates, both on the ISS
+ered, allowing the ants to enter freely from the nest into Area 1, and on the ground, some ants died between the time they were
+and to return. During all experiments, some ants remainedinside loaded and the time the experiment was conducted, so there
+the nest area, and the numbers of ants in all areas ﬂuctuated. were some dead ants in the nest area when the experiment was
+After about 25 min, the second barrier, between Areas 1 and 2, conducted.
+was lowered and the ants could move freely from Area 1 to Area
+2 and back. Because Area 1 and 2 were the same size, opening the Measures of Ant Behavior
+barrier doubled the area accessible to the ants. During all replicates of the experiment, the movements of the
+The ants were loaded into the arenas for transportation to ants were recorded on Video. The trajectories of the ants were
+the International Space Station in a laboratory located at NASA’s extracted from the Videos using the image analysis software
+Wallops Flight Facility, in Wallops Island, VA. Each arena, while AnTracks (http://www.antracks.org).
+completely sealed to prevent liquid escape per NASA safety Often groups of ants were clustered in the corners and at
+requirements, had air vents within the nest area that provided the edges of the arena, and it was not possible to distinguish
+appropriate gas exchange to the ants, but preventedliquid escape. their trajectories with image analysis. We deﬁned the edges as
+These vents were holes manufactured into the polycarbonate a distance of about 5mm of the edge of the arena, including
+window but covered with a small Gore TeX patch. Once the the barrier which formed one edge of Area 1 before the barrier
+ants were placed in the nest area of each arena, the arenas were was opened. To evaluate the proportion of ants in the center
+placed in groups of 4 and connected to an aluminum plate. The and edges of the arena, we made an instantaneous count in each
+2 plates of 4 arenas were placed in separate unsealed bubble bags frame of the number of ants present, and then found from these
+for protection and placed in a NASA hard sided transportation counts the average numbers of ants per frame in the center and
+locker. This locker was then loaded into the Orbital Sciences edges over the entire 25 min of Video for Area 1 when the bar—
+Cygnus capsule. The ant arenas were maintained in the cor— rier was closed, and for Areas 1 and 2 combined when the barrier
+rect orientation, with the gravity vector going down toward the was open.
+ﬂoor of the arena at all times during this phase of the experi— In the data analysis described below we used the trajectories
+ment, except for a brief period (13.5 h) when the arenas were in obtained by image analysis. We eliminated the trajectories from
+the rocket and while the rocket remained horizontal for cargo ants within a distance of about 5 mm of the edge of the arena,
+loading. including the barrier which formed one edge of Area 1 before the
+The ant arenas were launched to the International Space Sta— barrier was opened. This led to many small fragments of trajec—
+tion on January 9, 2014 at 18:07 GMT on the mission called tories; for example, when an ant entered the region close to the
+“Orbital 1” and arrived at 08:44 GMT on January 12, 2014. Dur— edge and then returned to the arena, this produced 2 short tra—
+ing the time from loading until the experiment was performed jectories. To analyze the data, we divided the image of the ants’
+on board the 188, the ants were held at ambient temperature. The trajectories into a grid of squares about 9.2 mm on each side, each
+ambient temperature was between 21 and 240C during transport 2—3 times the length of an ant (2.5—4 mm). To eliminate small
+to ISS and while on board the 188. The same temperature range trajectory fragments, we analyzed data only from trajectories of
+was maintained for the ground controls. ants that had traversed more than 10 squares in any direction.
+The experiment was replicated 8 times on the 188 on January When an ant left a square and then entered it again, this was
+13, 2014, 1 day after the Cygnus capsule had berthed with the counted as traversing 2 squares. The cutoff of 10 squares was cho—
+space station. The 8 arenas were placed in 2 groups of 4, arbi— sen after examining the distribution of trajectory numbers, and
+trarily numbered 1 through 8, and the experiment was begun for led to numbers of trajectories ranging from 7 to 188 in 188 trials,
+all replicates between 11:20 and 13:00 GMT; replicates 1 and 2 and 3 to 200 in ground controls, up to about 3 times the number
+began at 11:20, 3 and 4 13:01, 5 and 6 11:50, 7 and 8 12:43. The of ants actually observed at one time in the arena. Measures of the
+experiment was also replicated 5 times in ground controls in the distances traveled are approximate; because the camera was not
+laboratory of BioServe Space Technologies at the University of always at exactly the same distance from the arena, images varied
+Colorado Boulder. Ants were collected from colonies in North slightly in size.
+Carolina, Colorado and Virginia. A total of 80 ants were loaded We estimated the standard deviation of turning angle for each
+into each arena. For both the ﬂight and ground controls, 12 days trajectory that traversed 10 or more 9.2 mm squares. Each tra—
+elapsed between the day the ants were placed into the nest area jectory was divided into steps using a piecewise—linear discretiza—
+of the arenas and the day the experiment was conducted. For 4 of tion, with each step about 5 mm, slightly longer than the length
+the 5 ground controls, loading and thus the experiment occurred of an ant. We found the turning angle in degrees between each
+10 days later than the experiments on the 188. Both the ﬂight and pair of successive steps. For each trajectory, the standard devia—
+ground controls followed the same timeline for loading into the tion of turning angle was then the standard deviation of all turn—
+habitat, changes in orientation when loaded into the rocket and ing angles in that trajectory (Kareiva and Shigesada, 1983). The
+launched, and the time elapsed between loading and the begin— maximum possible standard deviation of turning angle, that of a
+ning of the experiment. For all the ISS and 1 ground control, random walk, would be 103.9 degrees; the minimum forastraight
+the units were loaded on January 1 2014 and the experiments line or perfect circle, would be 0 (Berg, 1953).
+Frontiers in Ecology and Evolution | www.frontiersinorg 3 March 2015 | Volume 3 | Article 25
+
+"
+"4","Countryman et al. Collective search by ants in microgravity
+The numbers of interactions were estimated by binning all the barrier was opened, we counted the number of squares that
+trajectories into 30 s windows, and ﬁnding the number of times each ant traversed. For this analysis we considered only trajec—
+that trajectories met during that interval. tories that traversed 10 or more 9.2 mm squares. We then found
+To examine the response of the ants to an increase in the area the difference between the mean number of squares traversed by
+to be searched, we compared ant movement only in the 5 min all ants in Area 1 before the barrier was opened, and the mean
+before and after the barrier was opened, with 60—100 s omitted number of squares traversed by all ants in Area 2 after the barrier
+while the barrier was being opened. After about 5 min since the was opened. We tested whether ants were better able to adjust
+barrier was opened, so many ants had moved into Area 2 that path shape to cover more distance when the area to be searched
+density was not appreciably lower, and in some cases was higher. increased, in Area 2 after opening the barrier, in ground controls
+than in microgravity, by comparing the mean differences between
+Data Analysis distance traversed in Area 2 after the barrier was opened, relative
+To illustrate the thoroughness of search before and after the bar— to Area 1 when the barrier was closed. Because we expected a
+rier was opened, we created heat maps showing the density of more thorough search, and straighter paths, in ground controls
+search. To do this we divided the image into small square regions than in microgravity, we used a one—tailed Mann—Whitney U
+of about 1.9mm on each side, for a total of about 43 by 33 test to determine if the mean difference for the 5 ground control
+small grid squares for each region. The images for Area 1 dif— replicates was higher than that for the 8 188 replicates.
+fered slightly in size when the barrier was open because an edge To estimate changes in path shape before and after the barrier
+of about 5 mm was excluded from analysis, and when the bar— was opened, we ﬁrst estimated the standard deviation of turn—
+rier was open, the region close to the barrier was no longer an ing angle for each trajectory that traversed 10 or more 9.2mm
+edge. We found the number of ant trajectories ever to enter each squares. We tested whether ants on Earth were more likely than
+small (1.9 by 1.9 mm) grid square during the 5 min of observa— ants in microgravity to adjust path shape when density was lower,
+tion before and the 5 min after the barrier was opened. If an ant in Area 2 after opening the barrier. We found the difference
+entered, left and re—entered a grid square, this would be counted between the mean standard deviation of turning angle for all tra—
+as 2 ants. We chose a cutoff of 100; the mean maximum number jectories in Area 1 before the barrier was opened, and the mean
+of times an ant entered a small grid square in 5 min was about standard deviation of turning angle for all trajectories in Area
+150. We created heat maps for Area 1 before, and Areas 1 and 2 2 after the barrier was opened. We used a one—tailed Mann—
+after the barrier was opened. Whitney U test to determine if the mean difference for the 5
+To examine the extent to which each area was searched in ground control replicates was higher than that for the 8 188
+ground controls and in Space, we found the frequency distribu— replicates.
+tion of the number of times a grid square was entered by an ant. We examined, for ground control and 188 trials, the relations
+We then examined how this distribution shifted after the barrier among path shape, number of ants, and number of interactions.
+was opened and density decreased. We plotted the number of interactions, counted as the num—
+To compare the thoroughness of search in ground controls ber of all trajectories that met, vs. the number of ants, counted
+and in the 188, we compared the mean numbers of ants per grid as the number of trajectories that traversed more than 10 grid
+square across treatments. We used linear mixed effect models on squares, and the mean standard deviation of turning angle for
+log transformed data using replicate as a random effect (R func— all trajectories vs. the number of interactions for each area in
+tion lme from the nlme package) to compare the mean numbers the 5 min before and 5 min after the barrier was opened (Area 1
+of ants per grid square in ground controls and 188 replicates. The when closed, Area 1 when open, Area 2 when open). We used
+models compared numbers in Area 1 with the barrier closed to a Spearmann’s rank correlation test to examine whether there
+those in Area 1 with the barrier open and Area 2 with the bar— was a signiﬁcant correlation between number of interactions and
+rier open. We tested whether the number of ants that explored number of ants, and between mean standard deviation of turning
+Area I changed with the barrier open, and compared the num— angle and number of interactions.
+ber of ants that explored Area 2 after the barrier was opened with
+the number in Area 1 before the barrier was opened. We exam— ResuIts
+ined both the main effects of treatment (Earth or Space) and their
+interaction with Area. More ants entered the arenas from the nest area in ground con—
+To estimate the rate at which ants in microgravity lost hold of trols than in microgravity. The mean (SD) number of ants in the
+the surface, we used 8 3 min samples, 4 from before the barrier arena at any time, from instantaneous counts made in each Video
+was opened, and 4 from after, from 4 replicates. In each sample, frame, was higher in ground controls [35.9 (5.6) in Area 1 when
+an observer watching the Video recorded the time elapsed from closed, 39.3 (7.9) in Areas 1 and 2 combined when open] than in
+when an ant left the bottom surface and then regained its hold on microgravity [5.9 (7.6) in Area 1 when closed, 23.1 (8.4) in Areas
+the surface. The observer also counted the number of ants present 1 and 2 combined when open] (Mann—Whitney U test, z — 2.7, U
+in the arena during that 3 min. We then found the proportion of 1, p < 0.05 for Area 1 closed, z — 2.4, U 3, p < 0.05 for Areas
+ants present that lost hold of the surface and the mean duration 1 and 2 combined). The maximum number of ants observed in
+of time spent ﬂoating. Areas 1 and 2 when open, in any instantaneous count in a single
+To compare whether ants covered more distance when given frame, was 66 for ground controls, and 74 for the ISS replicates.
+a larger area to explore, after the barrier was opened, than before In Area 1 when the barrier was closed, a higher proportion of
+Frontiers in Ecology and Evolution | www.frontiersinorg 4 March 2015 | Volume 3 | Article 25
+
+"
+"5","Countryman et al. Collective search by ants in microgravity
+ants went around the edges in ground controls [mean (SD) pro— reﬂecting a higher mean, from Area 1 to Area 2 when the barrier
+portion at edges (0.59) (0.03)] than in the ISS replicates [0.53 was open (Figure 4A). In microgravity the ants were less likely to
+(0.06)] (Mann—Whitney U test, Z — 1.97, U 6, p < 0.05), but do this (Figure 4B), especially in replicates 1—4.
+the proportion of ants at the edges were not different for Areas The mean numbers of ants per grid square reﬂect these trends;
+1 and 2 combined when the barrier was open [ground controls the ants searched more thoroughly on Earth than in micrograv—
+0.51 (0.05), 188 replicates 0.57 (0.06), Mann—Whitney U test, Z — ity. There were more ants per grid square in Area 1 when closed
+1.39, U 10, p = 0.2]. We estimated from the Videos how many in ground controls than on the ISS replicates (Table 1, Figure 5).
+ants had died in the nest area between the time that the ants were Overall fewer ants explored each grid square on the 188 than in
+loaded into the arenas, and the experiments were performed. The ground controls (Table 2), and the number of ants exploring Area
+mean (SD) numbers of dead ants were 9.2 (3.1) with range 5—12, 1 decreased when the barrier was opened, and was slightly lower
+in the ground controls, and 12.1 (6.8), with range 5—25, in the 188 in Area 2 after opening than in Area 1 before opening. The sig—
+replicates. niﬁcant statistical interaction of treatment (Earth vs. Space) and
+It appears that in microgravity, relative to ground controls, Area shows that in Space, activity declined less in Area 1 after the
+ants searched less effectively in response to an increase in the area barrier was opened, and is slightly lower in Area 2.
+to be explored. In microgravity, relative to ground controls, there In microgravity the ants did not adjust path shape to den—
+were more regions of the arena that were never, or very rarely, sity as much as they did on Earth. When the barrier was
+Visited by any ant after the barrier was opened, creating a larger opened, creating a larger area to search (Figure 1), the ants
+area to search (Figure 3). in ground controls, relative to ants in microgravity, tended to
+In the ground controls, ants expanded their search when the change their paths so as to traverse more area (Figure 6A) and
+barrier was open, to move into the novel area, Area 2, and to use straighter paths (Figure 6B). There was a tendency, which
+cover the entire arena thoroughly. In the ground controls the dis— was not statistically signiﬁcant, for the mean number of grid
+tribution of number of ants per grid square shifts to the right, squares traversed to increase more in ground controls than in
+A 1 - 3 - B 1 - 2 -
+4 - 5 - 3 4
+6 - 5 6
+._ - r_.- -.:. 2!. Ff"".
+_
+- - 0 50 100 7 - 8 -
+—
+0 50 100
+FIGURE 3 | Heat maps showing number of times any ant entered a side. Within a replicate trial group of 3 maps: Left: 5min before barrier
+small grid square during 5min. (A) Earth. (B) Space. 3 maps are was opened, Area 1. Right: 5min after barrier was opened. Bottom:
+shown for each replicate trial. Each small grid square is 1.9mm on the Area 1. Top: Area 2.
+Frontiers in Ecology and Evolution | www.frontiersin.org 5 March 2015 | Volume 3 | Article 25
+
+"
+"6","Countwman et al. Collective search by ants in microgravity
+A um um Mt
+- Nu? Dzo'coen
+z; 8 8 8
+g 1- !- 1-
+3 8 8 8
+B
+3 8 8 8
+3
+g 8 8 8 .
+5 8 “3,. 8 8 I,‘ '1‘
+O O O
+o 50 100 150 o 40 80 120 o 50 100 150
+Number/grid square
+ms me
+8 8 8
+g 1- v-
+3 8 8
+78
+3’ 8 8
+3
+5‘53 8 t 8 ’ 1
+. ‘3, ‘ - ’ A
+O O
+o 20 60 100 o 20 4o 60
+Number/grid square Number/grid square
+B
+8900.1 Spoon! 89.003 8pm“
+8
+N
+§ § §
+9
+8 | o
+N
+g 8 8 8 .
+S . r g
+g, 8 | 8 8 P
+... ‘ o
+8 o ‘ \ o I t o 1 2 '
+3 v I v v
+E ‘ ‘ II
+o
+i 8 f 8 8 m .
+’ . t '
+o o ' ’ o o
+0 40 80 0 40 80 0 20 40 60 0 20 40 60
+89.005 89.006 Spoon? Space.
+0 O r
+8 8
+§ §
+8 8 8
+g 8 8
+5? 8 8
+g, ‘- P 8 L 8
+3 8 8 o o ¢
+8 o o
+2 m | a m 8 2 ‘
+$h- ""' :' ‘
+o o o o
+0 40 80 0 40 80 0 40 80 0 40 80
+Number/grid square Number/grid square Number/grid square Number/grid square
+FIGURE 4 | Thoroughness of search as the search area expanded. (A) Earth. (B) Space. Each curve shows the frequency distribution of number of ants per
+large grid square (9.2 by 9.2 mm). Black, Area 1 with barrier closed; Red, Area 1 with barrier open; Green, Area 2 after barrier was opened.
+Frontiers in Ecology and Evolution | www.frontiersinorg 6 March 2015 | Volume 3 | Article 25
+
+"
+"7","Countrymah et al. Collective search by ants in microgravity
+TABLE 1 I Mean number of ants per 9.2 mm grid square. A 3
+Ground controls ISS 1-4 ISS 5-8 L
+— CD
+a 3 2
+Area 1 Closed 52.339 18.310 33.817 E E
+3
+Area1 Open 28.455 15.873 13.573 c g 1 I I
+Area20peh 51.718 25.017 23.578 E b 0 =_
+— (D
+8 9
+9 “-1 ,
+:5
+3 U l
+__ w
+8 U U_2 Space Earth
+I Area1Closed c 'C
+I Area10pen 8 3 .
+o _ [:1 Area 2 Open 2 0'3 E
+1.0
+—4
+8 B
+6 _
+""5
+C
+.6 g 5
+o ._ 9
+m 8 “'5 c» 4 j |
+CD -— C
+L > (g 7
+a) G) 3 ‘
+FE '5 2°
+8 U E 'E 2 1
+C (U L
+(U '0 2 1 E.
+3 3 l
+Q j ‘5 0 EL ‘ ‘
+4 l Ii
+-2
+0 Space Earth
+Ground ISS . .
+FIGURE 6 | (A) Comparison of distance traversed per ant when the search
+FIGURE 5 I Change in thoroughness of search when the search area area expanded. Shown are the means over all replicates of the mean numbers
+expanded. Each bar shows the mean number of ants per large grid square of large grld sqluares (9.2 mm by 9.2 mm) traversed 1h Area 1 befere the barner
+(9.2 by 9.2 mm). Dark, Area 1 with barrier closed; Medium, Area 1 with barrier was Op?”ed mmus the mean numbers Of 9nd squares traversed '” Area 2 after
+0 p e n; Light gray, Area 2 after b arri er was op eh e d. the bamer was opened. Error bars show standard errors of the mean. (B)
+Comparison of path shape when the search area expanded. Shown are the
+means over all replicates of the mean standard deviation of turning angle in
+TABLE 2 I Results of linear mixed effect model of mean number of ants Area 1 beforelthe bamer was opened mlhus the mean standard dev1at10h 1h
+p er s qu are a g ain st Are a and treatment (ISS or ground controls), with turning angle In Area 2 after the barrier was opened. Error bars show standard
+replicates serving as a random effect. errors Of the mean.
+Covariate Estimate p-value
+— (range 12—17 in Area 1 closed, 14—16 Area 2 open, range of
+'33 ‘0-8750 <O-O14 Ants in microgravity, relative to ground controls, were some—
+Area 1 Open 415853 <0-0001 what less likely to straighten their paths in response to an increase
+Area 2 OIOGn -0-0551 0-0001 in the area to be searched. The straighter the path, the smaller
+'88: Area 1 Open 0-0702 <0-001 the standard deviation of turning angle; for example, a path in a
+'88: Area 2 OIOGn —0-0611 <O-001 straight line would have a standard deviation of turning angle of
+The negative coefﬁcients forArea 1 Open and Area 2 open are relative to Area 1 Closed, 0 because ever)? Step Is In the Silme dlrécuon as the P revrous one'
+and show the reduced activity after opening the barrier When the barr1er was opened, 1ncrea31ng the area to be searched,
+the mean standard deviation of turning angle decreased more,
+indicating a stronger trend toward a straighter path, in ground
+microgravity when there was a larger area to search (one—tailed controls than in microgravity. The mean difference between
+Mann—Whitney U test, Z = 0.81, U = 14, p = 0.2); in mean standard deviations of turning angle in Area 1 when closed
+fact, in microgravity the ants often traversed fewer grid squares and Area 2 when open tended to be larger in ground controls
+when there was a larger area to search, leading to a positive (one—tailed Mann—Whitney U test, Z = —1.68, U = 8, p = 0.05;
+difference between numbers in Area 1 when the barrier was two—tailed test ns at p = 0.09). In fact, in microgravity the ants’
+closed and Area 2 when it was open (Figure 6A). Overall the trails often became more convoluted, not straighter, after the bar—
+mean numbers of grid squares traversed in microgravity were rier opened; in many trials, the standard deviation of turning
+more variable (range 13—22 in Area 1 closed, 15—20 Area 2 angle increased (Figure 6B). The mean standard deviation of
+open, range of difference —6.9—5.9) than in ground controls turning angles was more variable in microgravity (Space range
+Frontiers in Ecology and Evolution | www.frontiersinorg 7 March 2015 | Volume 3 | Article 25
+
+"
+"8","Countrymah et al. Collective search by ants in microgravity
+71—83 Area 1 closed, 75—82 Area 2 open, difference range —6 Spearmann’s rank correlation). There was no signiﬁcant correla—
+to —2) than in ground controls (Earth range 80—86 Area 1 closed, tion between the number of interactions and the number of ants
+76—80 Area 2 open, difference —2 to 8). in ground controls (R 0.01, p = 0.9), while the signiﬁcant corre—
+Although the ants were mostly able to walk around on the lation in microgravity (R 0.44, p = 0.03) appears to be due to the
+arena surface in microgravity, many ants occasionally left the sur— 6 points with very low numbers of ants (Figure 7).
+face and tumbled around in the air. They quickly regained their
+hold on the surface; the time an ant spent in the air ranged from Discussion
+3 to 8.2 s, with a mean of 5.08 (SD 1.74). The proportion of ants
+that lost hold of the surface in 3 min ranged from 0.12 to 0.28, or The ants did not perform collective search as effectively in micro—
+about 7% per min. gravity as they did in the ground controls. Because ants in micro—
+Ants in Space may have missed interactions with each other gravity did not use straighter paths or traverse more distance
+because they were moving more slowly to manage walking on when the area to be searched expanded, they did not search the
+the surface in microgravity, and some were ﬂoating in the air. area thoroughly. In microgravity there were more regions of the
+However, we saw no difference between ground controls and the arena that were never, or very rarely, Visited by any after the bar—
+ISS trials in the relation of number of interactions to number of rier was opened (Figure 3), and the mean number of ant Visits to
+ants (Figure 7), and the relation of standard deviation of turning each part of the search area was lower than on Earth (Figure 5).
+angle to number of interactions (Figure 8). There was no sig— On Earth as the area to be searched expanded, the ants spread out
+niﬁcant correlation between mean standard deviation of turning more to cover it (Figure 4); on the 188 the ants did not spread out
+angle and number of interactions either in the ground controls (ﬁrst 4 replicates) or spread out much less than they did on Earth.
+or in microgravity (R 0.35, p = 0.2 Earth, R 0.26, p = 0.2 Space, In microgravity the ants tended to traverse less ground and take
+A B
+600 600
+g 500 8 500 . :
+O
+""*8 400 4% 400 0 0 0
+E o S O
+.03 9
+“5 “5 o
+5 200 5 200
+.0 .Q
+E __————.————/ E '
+g 100 ., . Z 100 .
+O
+o . o O 0 O o 0.! 0. . . '
+o 50 100 150 200 250 0 50 100 150 200 250
+Number of ants Number of ants
+FIGURE? | Relation of number of interactions and number of 5min after the barrier was opened, and Area 2 open for 5min after
+ants. (A) Earth (B) Space. Each point shows the number of the barrier was opened. There are 15 points in Panel 7A (3 Areas, 5
+interactions and the number of trajectories that entered one area: Area replicates) and 24 for Panel 73 (3 areas, 8 replicates). Lines show
+1 closed, for 5min before the barrier was opened, Area 1 open, for the least squares fit.
+A B
+m 90 9 90
+_ C)
+. 5
+g 85 . g 85
+g g o 0
+”5 80 . '0 ' o E 80 ' 0 ' °
+~§ ' - g k“ . -
+E 75 '0 '5 75 ' ' .
+*9 '9 ~
+8 g o
+g 70 g 70
+*5 17,
+g g
+g 65 g 65
+o 100 200 300 400 500 600 0 100 200 300 400 500 600
+Number of interactions Number of interactions
+FIGURE8 | Relation of mean standard deviation of turning angle was opened, Area 1 open, for 5min after the barrier was opened,
+and number of interactions. (A) Earth. (B) Space. Each point and Area 2 open for 5min after the barrier was opened. There are
+shows the mean standard deviation of turning angle and the number 15 points in Figure 7A (3 Areas, 5 replicates) and 24 for Figure 7B
+of interactions in one area: Area 1 closed, for 5min before the barrier (3 areas, 8 replicates). Lines show the least squares fit.
+Frontiers in Ecology and Evolution | www.frontiersihorg 8 March 2015 | Volume 3 | Article 25
+
+"
+"9","Countryman et al. Collective search by ants in microgravity
+more convoluted paths when the area to be searched expanded Groups of ants varied in their responses to microgravity. Slight
+(Figure 6). variation in initial conditions, such as how many ants leave the
+
+Searching was less effective in microgravity than on Earth nestinitially, or the response of particular ants to interaction, may
+in part because on Earth, slightly fewer ants entered the arena produce variation among groups in the thoroughness of their
+from the nest. However, the differences were not due to num— search.
+ber alone; the pattern of search also differed in microgravity. In It is not clear how much the effort to stay on the surface,
+the ground controls, relative to the ISS replicates, more areas of and time spent ﬂoating when an ant released its contact with the
+the arena were searched by many ants, and ant searchers spread surface, inﬂuenced the ants’ searching behavior in microgravity.
+out more when the barrier between Areas 1 and 2 was opened. The ants showed an impressive ability to walk on the surface in
+This is shown in the greater shift to the right the distribution of microgravity, and an even more remarkable capacity to regain
+searching, indicating more squares searched by many ants, as the their contact with the surface once they were tumbling around
+barriers were opened, on Earth than in Space (Figure 4). This in the air. It seems that ants made an effort to maintain con—
+is also reﬂected in the interaction of Area and treatment (Earth tact with the surface. An ant that lost contact with the surface
+or Space) in the statistical analysis of the mean number of ants usually turned and tumbled in the air, or skidded rapidly, in the
+per square (Table 2). Relative to the results for ground controls, small space between the two surfaces of the arena. This indicates
+the mean numbers of ants per square increased less in micro— that the ant exerted some pressure on the surface before losing
+gravity when the barrier separating Areas 1 and 2 was opened contact with it; otherwise the ant would have just ﬂoated away
+(Figure 5). from the surface without turning in the air or going quickly in
+
+The searching behavior of the pavement ant, T. caespitum, one direction. Sometimes an ant attached itself to another ant
+differs from that of the Argentine ant, L. humile, studied in pre— to climb back down to the surface. Once back at the surface an
+Vious work (Gordon, 1995). Argentine ants adjusted path shape ant appeared to hold on to it by ﬂattening its body toward the
+to local density. Groups of pavement ants, by contrast, concen— surface, a movement characteristic of distantly related arboreal
+trated their search on the side of the arena furthest from the nest species (e.g., Cephalotes goniodontus, DMG pers obs). In other
+area, both in ground controls and in microgravity (Figure 3). It ant species, ants use their ability to hold onto each other to form
+appears that their method of collective search leads ants away bridges or balls of ants that can ﬂoat when the nest is ﬂooded
+from the nest. Conﬂict between neighboring nests occurs fre— (e.g., Mlot et al., 2011), and it is not known exactly how an
+quently in Tetramorium pavement ants (Sanada-Morimura et al., ant can regain its hold on a tree after gliding through the air
+2006). Competition between neighboring nests for foraging area from above (Yanoviak et al., 2005). Further observation in micro—
+may have shaped the evolution of an algorithm for collective gravity might elucidate this biomechanical process, which may
+search that takes ants to the edges of their foraging areas, where be of interest for roboticists using biomimesis of adhesion (e.g.,
+they encounter ants of neighboring colonies. Hawkes et al., 2014).
+
+We do not know how much the collective search behavior It seems likely that invasive species, such as Argentine ants
+of ants in microgravity was due to unreliable information about (Gordon, 1995) and the pavement ants studied here, are effec—
+local density. Interaction rate can provide a cue to density (Adler tive at solving the problem of collective search, as they easily
+and Gordon, 1992); the more ants are nearby, the higher the ﬁnd resources in human—dominated environments. Ants are an
+probability of an encounter. However, in microgravity many ants extremely diverse taxon of about 20,000 species, and have evolved
+left the surface and landed somewhere else, thus disrupting the to search without central control in an enormous variety of con—
+relation between density and encounter rate. This may have inter— ditions (Gordon, 2014). By repeating this experiment on Earth
+fered with each ant’s ability to assess local density and to adjust with different species of ants, we are likely to discover many
+its path shape accordingly. There was no clear relation of path new distributed algorithms for collective search, and to learn
+shape and density either on Earth or in Space. In Space, the rela— about how evolution has shaped collective behavior in response
+tion of number of ants and the local density of ants in any one to local conditions. It would be especially interesting to exam—
+area may have been obscured by the fact that at any time, about ine the search behavior of the many tropical ant species whose
+7% of the ants were not in contact with the surface. We saw behavior has never been studied.
+no obvious trends in the relation of interaction rate and path
+shape, but our estimates of number of interactions per ant were Author Contributions
+not precise. We counted interactions based on fragments of tra—
+jectories; the image analysis broke trajectories into fragments, SMC supervised the design of the arena, set up the experiment,
+so we did not track the interactions of particular ants. A more wrote the protocols, and loaded the ants for the ISS (several times
+detailed analysis would be needed to determine how indiVid— due to postponements of the ﬂights), conducted the ground con—
+ual ants changed turning angle in response to interactions with trols.; MCS performed the Video analysis to extract the trajecto—
+other ants. ries of the ants from Video; both SPC and FRA contributed to
+
+Changes in olfaction in microgravity may have inﬂuenced the data analysis and produced some of the ﬁgures; MIG collected
+ants’ response to interactions. MicrograVity affects the ability of some of the ants and advised on maintaining T. caespitum in the
+humans to perceive odor and taste (Olabi et al., 2002). Ants laboratory; MV collected some of the ants; DMG designed the
+assess local rates of interaction through the detection of chemical experiment, participated in the design of the arena, supervised
+recognition cues (e.g., Greene and Gordon, 2003). and did some of the data analysis, and wrote the manuscript.
+Frontiers in Ecology and Evolution | www.frontiersinorg 9 March 2015 | Volume 3 | Article 25
+
+"
+"10","Countryman et al. Collective search by ants in microgravity
+Acknowledgments BioServe Space Technologies. We are very grateful to the astro—
+nauts, Rick Mastracchio and Micheal Hopkins, for their careful
+We thank TaYIOr Prentice and Eleanor SpiCer RiCe for their help attention in conducting the experiment on the 188.
+in collecting the ants, and Clint Penick for his advice in hous—
+ing and feeding the ants. The experiment would not have been Supp|ementary Materia|
+possible without the excellent work of Jacob Burrows Freeman
+in designing and constructing the arenas. We would also like The Supplementary Material for this article can be found
+to thank NASA and the Center for the Advancement of Science online at: http://www.frontiersin.org/journal/10.3389/fevo.2015.
+in Space for sponsoring this experiment, as well as the staff at 00025/abstract
+References Kareiva, P., and Shigesada, N. (1983). Analyzing insect movement as a correlated
+random walk. Oecologia 56, 234—238.
+Adler, F. R., and Gordon, D. M. (1992). Information collection and spread by Klots, ]., Hansen, L., Pospischil, R., and Rust, M. (2008). Urban Ants ofNorth Amer-
+networks of patrolling ants.Am. Nat. 40, 3731100. ica: Identiﬁcation, Biology, and Management. Ithaca, NY: Cornell University
+Bell, W. I. (1991). Searching Behaviour. London: Chapman & Hall. Press.
+Benhamou, S. (1994). Spatial memory and searching eﬂiciency. Anim. Behav. 47, McGlynn, T. P. (1999). The worldwide transport of ants: geographic distribution
+1423—1433. doi: 10.1006/anbe.1994.1189 and ecological invasions. I. Biogeogr. 22, 535—548.
+Berg, H. (1953). Random Walks in Biology. Princeton, NJ: Princeton University Mlot, N. 1., Tovey, C. A., and Hu, D. L. (2011). Fire ants self—assemble into water-
+Press. proof rafts to survive ﬂoods. Proc. Natl. Acad. Sci. USA. 108, 7669—7673. doi:
+Collignan, B., Cervantes ValdiVieso, L. 1., and Detrain, C. (2014). Group 10.1073/pnas.1016658108
+recruitment in ants: who is willing to lead? Behav. Proc. 108, 98—104. doi: Nuhn, T. P., and Wright, C. G. (1979). Ecological survey of ants (Hymenoptera,
+10.1016/j.beproc.2014.09.033 Formicidae) in a landscaped suburban habitat. Am. Midl. Nat. 102, 353—362.
+Collignon, B., and Detrain, C. (2010). Distributed leadership and adaptive doi: 10.2307/2424662
+decision-making in the ant Tetramorium caespitum. Proc. Roy. Soc. B 277, Olabi, A. A., Lawless, H. T., Hunter, D. A., Levitsky, D. A., and Halpern, B. P.
+1267—1273. doi: 10.1098/rspb.2009.1976 (2002). The effect of microgravity and space ﬂight on the chemical senses.
+Gordon, D. M. (1995). The expandable network of ant exploration. Anim. Behav. J. Food Sci. 67, 468—478. doi: 10.1111/j.1365-2621.2002.tb10622.X
+50, 995—1007. doi: 10.1016/0003-3472(95)80100-6 Sanada-Morimura, S., Satoh, T., and Obara, Y. (2006). Territorial behavior and
+Gordon,D. M. (2010).Ant Encounters:1ntemction Networks and Colony Behavior. temperature preference for nesting sites in a pavement ant, Tetramorium
+Princeton, NJ: Princeton University Press. doi: 10.1515/9781400835447 tsushimae. Insectes Soc. 53, 141—148. doi: 10.1007/500040-005-0849-2
+Gordon, D. M. (2014). The ecology of collective behavior. PLoS Biol. 12:e1001805. Yanoviak, S. P., Dudley, R., and Kaspari, M. (2005). Directed aerial descent in
+doi: 10.1371/journal.pbio.1001805 canopy ants. Nature 433, 624—626. doi: 10.1038/nature03254
+Greene, M. 1., and Gordon, D. M. (2003). Social insects: cuticular hydrocarbons
+inform task decisions. Nature 423, 35—32. doi: 10.1038/423032a Conﬂict of Interest Statement: The authors declare that the research was con-
+Hawkes, E. W.) Eason, E. V.) Christensen, D- L.) and Cutkosky, M- R- (2014). ducted in the absence of any commercial or ﬁnancial relationships that could be
+Human climbing with eﬂiciently scaled gecko-inspired dry adhesives. I. R. SOC. construed as a potential conﬂict of interest.
+Interface. 12:20140675. doi: 10.1098/rsif.2014.0675
+Hayes, A. T. (2002). How many robots? group search and eﬂiciency in collective C0pyright©2015 Countryman, Stumpe, Crow, Adler, Greene, Vonshak and Gordon.
+search. Distr. Auton. Robot. Syst. 5, 289—298. doi: 10.1007/978-4-431-65941- This is an open-access article distributed under the terms of the Creative Commons
+9_29 Attribution License (CC BY). The use, distribution or reproduction in other forums
+Hecker, I. P., Letendre, K., Stolleis, K., Washington, D., and Moses, M. E. is permitted, provided the original author(s) or licensor are credited and that the
+(2012). Formica ex machina: ant swarm foraging from physical to Vir- original publication in this journal is cited, in accordance with accepted academic
+tual and back again. Swarm Intell. 7461, 252—259. doi: 10.1007/978-3-642- practice. No use, distribution or reproduction is permitted which does not comply
+32650-9_25 with these terms.
+Frontiers in Ecology and Evolution | www.frontiersinorg 10 March 2015 | Volume 3 | Article 25
+
+"

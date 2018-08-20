@@ -1,0 +1,406 @@
+"","x"
+"1","SAE TECHNICAL ' A ‘ .., ’ ‘ '
+PAPER SERIES 2003-01 -2042
+—
+' "" ’ ANITA Air Monitoring on the
+comm;HT International Space Station
+i Part 1: The Mission
+T. Stuffler, H. Mosebach and D. Kampf
+Kayser-Threde GmbH, Germany
+A. Home, H. Schumann-Olsen and K. Kaspersen
+SINTEF, Norway
+W. Supper and G. Tan
+ESTEC, Noordwijk, The Netherlands
+38th International Conference
+on Environmental Systems
+. '"" San Francisco, California
+Su-‘uE/nternat/ona/ June 29-July 2, zoos
+_
+400 Commonwealth Drive,Warrenda|e,PA15096-0001 U.S.A. Tel:(724) 776-4841 Fax: (724) 776-0790 Web:www.sae.org
+
+"
+"2","l ‘ I .ic. nu. M'CAS 'Ie’: st .ncc ;‘.- .:.'
+.icc ,.' . ‘11:- ‘ j J.gitalLibrary{T':_..-; L"". 2.1 E .' 2“ Ii .11
+’1- il. sup) .g-c d"" :mctpos kg. :1..' .bit;:
+J :2. .2 ‘ . ;,J; 29 .20221::1:'3_w=
+By mandate of the Engineering Meetings Board, this paper has been approved for SAE publication upon
+completion of a peer review process by a minimum of three (3) industry experts under the supervision of
+the session organizer.
+All rights reserved. No part of this publication may be reproduced, stored in a retrieval system, or
+transmitted, in any form or by any means, electronic, mechanical, photocopying, recording, or otherwise,
+without the prior written permission of SAE.
+For permission and licensing requests contact:
+SAE Permissions
+400 Commonwealth Drive
+Warrendale, PA 15096-0001 -USA
+Email: permissions@sae.org
+Tel: 724-772-4028
+Fax: 724-776-3036
+QAE
+""6)
+ﬁlnhal Mobility Ilatallase®
+All SAE papers, standards, and selected
+books are abstracted and indexed in the
+Global Mobility Database.
+For multiple print copies contact:
+SAE Customer Service
+Tel: 877-606-7323 (inside USA and Canada)
+Tel: 724-776-4970 (outside USA)
+Fax: 724-776-0790
+Email: CustomerService@sae.org
+ISSN 0148-7191
+Cepyright © 2008 SAE International
+Positions and opinions advanced in this paper are those of the author(s) and not necessarily those of SAE.
+The author is solely responsible for the content of the paper. A process is available by which discussions
+will be printed with the paper if it is published in SAE Transactions.
+Persons wishing to submit papers to be considered for presentation or publication by SAE should send the
+manuscript or a 300 word abstract of a proposed manuscript to: Secretary, Engineering Meetings Board, SAE.
+Printed in USA
+
+"
+"3","'
+:- - il thespf‘ig‘ Jiniur. cttzt- .‘g. .-;.: -ibitc'
+3: '1-'..' ' '. ,';.‘.{I}."" “227.: ""*
+2008-01 -2042
+ANITA Air Monitoring on the International Space Station
+Part 1:The Mission
+T. Stuffler, H. Mosebach and D. Kampf
+Kayser—Threde GmbH, Germany
+A. Honne, H. Schumann-Olsen and K. Kaspersen
+SINTEF, Norway
+W. Supper and G. Tan
+ESTEC, Noordwijk, The Netherlands
+Copyright © 2008 SAE International
+ABSTRACT
+After the launch to the International Space Station with Beside continuous measurements in the vicinity of the
+The Space Shuttle flight STS 118 13A.1 on August 9th gas monitor, air samples from remote places in the
+2007 and the accommodation in the US lab Destiny, the International Space Station can be analyzed using gas
+air quality monitor ANITA (Analyzing Interferometer for bags and a hand pump. However, considering the
+Ambient Air) has been successfully PUt into operation. experimental character of ANITA, the measurements are
+ANITA is a technology demonstrator ﬂight experiment not on—line visible to the Crew.
+being able to continuously monitor with high time
+resolution the air conditions within the crewed cabins of ANITA is an on-orbit test experiment and a precursor for
+the ISS (International Space Station). The system has its a permanent continuous trace gas monitoring system on
+origin in a long term ESA (European Space Agency) the ISS - ANITA II. It further represents a precursor
+technology development program. The ANITA mission system for future air monitoring in crewed vehicles being
+itself is an ESA-NASA cooperative project. ESA is developed for the Human Space Exploration program.
+responsible for the provision of the HW (Hardware), the
+data acquisition and data evaluation. NASA’s This is the ﬁrst paper of two describing the measurement
+responsibilities are launch, accommodation in the US principle, the HW and the mission on the '83- Finally, an
+Lab Destiny,operation and data download. outlook into the future highlights the potential of the
+ANITA technology for the Exploration program. The work
+The ANITA air analyser is designed to detect and described has been performed under contract of the
+quantify online and with high time resolution 30 trace European Space Agency.
+gases simultaneously with down to sub-ppm (parts per
+million) detection limits in addition to the always present
+background gases carbon dioxide and water vapour.
+The air analyser thus monitors the trace gas dynamics of
+the spacecraft’s atmosphere in providing continuous air
+monitoring as well as crew warning capability in case of
+malfunctions.
+1
+
+"
+"4","I I ,iccm-i - ‘on \ mo Cc-n
+Lire sc: s 11:.“ 41 ~35. l-ib's.‘ Ct;;;-ig :ze'z . -: .- i ,:.'.!
+""""“ijii 3:25? Iii ; -‘.,°i‘t2""‘;:-‘;;?.’j .1“i“°""
+INTRODUCTION measured signal applied to the mathematical method of
+a Fourier transformation. This finally leads to 8
+Starting in 1991 the European Space Agency ESA has characteristic spectrum shown in Fig. 2. The wave
+selected the FTIR (Fourier Transform infrared) number ran 9 e between 600 and 3500 cm” is used for
+technology to continuously monitor the crewed monitoring of the multiple, gas characteristic absorption
+spacecraft atmosphere quaiity.Within differentstudy and features in parallel. The location and details of the
+breadboard activities (compare eg. [1] ' [15]) supported absorption bands are used for gas identiﬁcation and the
+by a very successful blind sample testing for NASA [6, depth of the absorption for the corresponding
+8], it has been shown, that the requirements on quantiﬁcation.
+simultaneous gas detection are best fulfilled by an
+optical analyses method in combination With Owing to the inherent optical compensations in the FTIR
+sophisticated analysis SW(Software). measurement principle and the additional SW
+compensations, the system calibration is in principle
+The system’s measurement principle is based on the permanent. No recalibration is required to handle long-
+detection of the IR (infrared) absorption features term variations in e.g. the source or the optical
+stemming from the different gas molecules’ vibration throughput of the system.
+modes. From the measured IR spectra the gas
+concentrations are derived via sophisticated analysis / / ’I\
+SW applying optimised, non-linear data-evaluation / / / /\I \
+methods [compare especially 3, 4, 5, 11]. The system’s / /'/ ./ / .t/\\l; \\ $9
+capability to measure with a time resolution in the order _/ / / _/ I / / ./ \
+of minutes allows for the first time to trace the dynamics K / /‘/ /\ \II \
+in the concentrations of trace gases within the iSS b / // 5 37.5%9
+atmosphere. \ a%/i ??AKI .I
+// M‘.vjn/ / / A
+ANITA BACKGROUND SYSTEM ASPECTS ‘\ 3/ f“? / / / /
+\\ / /""' / x""
+The gas mixture which shall be analyzed, is flushed into '\\l/' / /
+a gas cell with optical folding mirrors enlarging the \{/""’ /
+optical path length to in total 10 m. Important
+development steps consisting Of an optimization 0f Fig.1 Operation Principle of the FTIR measurement system:
+several HW sub-components have been realized for Slightsource,BS beam splitter.gas cell&Ddetector
+ANITA (e.g. highly stable opto-mechanical set—up,
+lightweight high-performance optical modulator, new
+type of IR source). Important is also the interaction with l- , . "" {K
+the specially developed data evaluation SW tuned to the i . I i *l ,I: ’
+HW performance. This SW is optimized through complex . I Ii 3 I II [ I \I
+simulations and multivariate statistical analyses, but the L. . ‘ I7 TI I . l? Pi
+runtime SW is simple and fast. Due to additional noise I . “(ff .l E I3 N
+effects during the ANITA mission, supplementary SW I L ,‘ I I {
+activities on the ground model have to be executed to ‘ V“ II t , f I .
+improve the system data evaluation. M g» K -
+In Fig- 1. a sketch 01‘ the FT'R Spectrometer Fig.2 TypicalFTlR spectrum detected by ANITA.
+measurement principle is shown. The modulated The embracing curverepresentsablackbody witha
+infrared radiation from a broadband light source is
+directed through a gas cell with the air sample (target temperature °f1500K
+gases) present. The radiation is then detected and the
+2
+
+"
+"5","V 3.9 .2: . cat ?|Ci‘39tvl;?t'l;b L: {50:}‘szflicgggfmm ‘ttln .:l
+ANITA FLIGHT HW any occurring outlier (“surprise”) gases, allowing such
+gases to be included in the system calibration. In the
+The ANITA HW consists of two standard mid~deck ANITA mission, sulphur hexafluoride appeared as an
+locker inserts shown in Fig. 3 and a laptop to control outlier gas, which was calibrated for by applying the
+ANITA during the operation and store the corresponding Ground Model. — More details are covered in Part 2: Air
+measurement data. The system mass is 48 kg and the Analyses.
+average power consumption 70W. One 19"" locker
+contains the FTIR system and the gas cell. The other ANITA M'SS'ON DESCR'PT'ON
+one houses control electronics and gas cell flushing unit. . _ .
+The lockers are connected in front with a cable and tube During the system development, the ANITA mnssnon
+set. planning went through several launch scenarios; from a
+single Shuttle-SpaceHab science mission to an ISS
+The ANTIA air monitor is capable to continuously mission. Initially planned to be launched on the first ATV
+analyze the air conditions locally in front of the system. (Automate Transfer Vehicle) flight (Jules Verne) bUt
+Using a hand sampling unit, consisting of a hand pump ﬁnally launched on the Shuttle ‘Endeavour’. All together
+and exchangeable gas-bags, also gas measurements this caused a three-year delay until ANITA reached its
+from remote places inside the ISS can be made final on-orbit destination. The system’s operational
+(denoted ‘non-local’ measurements). Gas bags ﬁlled at scenarios have also been extended. Additionally to the
+locations of interest can be transported to ANITA, fed to original 10-day experiment phase on '33: ANITA has
+the system, and automatically analyzed like air samples been prepared for a continuously measurement phase 0f
+taken locally. 6 months, the so called extended experiment phase.
+-. £3"" During system operations on-orbit, several surprises
+"" “ happened: It was problematic to power-on ANITA, the
+- .. ' measurements were signiﬁcantly disturbed by a high
+Q; . ;' ' I f: level of noise, and the detection of a major outlier gas
+9 {f7 ‘11: 3% SF6, not known to be present and consequently not
+; .L ff ', ' 3‘ .7? . ““ ‘ calibrated for.
+. .‘ ix? 43% 77
+- . e / After a successful system set—up on lSS, the FTIR
+\* ‘ '1 :' \-""'~i~ moving mirror could not be started. Here, multiple
+“ _ ?VK power—on and —off cycles led to a warming up and finally
+‘1 ‘ ""‘3: b - a to the successful start of the system.
+X\ . / \\' '1 am, , 4
+“x r, 7‘ . ' “ ' The unexpected high level of noise in the spectra is still
+under investigation. Other surprises include the ﬁnding
+Fig. 3 ANITA Flight hardware mounted in two mid deck of a strong IR absorber (SF6), Changing spectral line
+'00kerinsens(""vith°”tthe contrOI'aptOP) shapes, and occurrence of spectral ‘ghosts’ (spectral
+GROUND MODEL SYSTEM signals that falsely reappear in other positions in the
+measured spectrum). All these effects led to an
+The decision to use ANITA for continuous air analyzes extended evaluation effort WhiCh is Still ongoing at the
+beyond the originally planned 10-day test mission time Of writing.
+required a twin system on ground. With the Ground
+Model non-nominal (and normal) situations can be Figs. 4 through 7 show the ANITA set-up on lSS and the
+simulated enhancing the interpretation of the system NASA astronaut Clay Anderson, who did all the system
+housekeeping data and planning of any troubleshooting set—up, control and onboard troubleshooting during the
+and corrective actions. In addition, the Ground Model ANITA mission.
+can be applied to measure proper reference spectra for
+3
+
+"
+"6","' Mic. v.2: m N ' ‘2 ». Zo'msv- l'azcc Cc 'tc
+,icc ~cd . .‘1‘. 2 T _ .‘nzitzl Rib: 273 Ctpg':g~ $.61!!- ':-‘. r-u ':ti:‘al
+'I- ‘1 .il‘ 2, (-9) ‘2; a. w i -c-.ac'. posrivgxrc prs‘ ibltc
+3.2.121. c» .' 26:2,.3; ct..29’2 2317.05 FM
+The unique and partly surprising mission air analysis 1 - _
+.1. JV”- "" '
+data are highlighted in the paper part 2 including a I -
+general description of the system calibration and non- .
+linear data evaluation methods. '
+: ""Ti""?- EL * *3? ~ , h.- ,2 A »
+'1 I ‘v‘ 9?! 3:59? 15.51%"":- . . -
+1' T211,“ 0‘ 352%""? . ‘ _ . 2-. 4
+.2“. “ﬂﬂhﬁk' :‘4 L ' , . c. . ‘ / :
+._ ‘1 3
+_., ‘ .. ‘ K 2 ' ‘ o
+3 f2"" "". -
+- 2;?"" y I Fig. 6 Power chassis with expansion unit and notebook
+5‘ .l \‘ ,
+2,. ’ N—J - \ ""ma. .4 "" .
+. \ ‘ K a . ‘ 1
+*. ‘ C = =:;}“""%?????*"" :- V
+2 , \ 2'. 2:27:3- \ i"" ”3'2 ; 2.
+{\ 3 2:12.: . ,, .5. ‘
+a ‘ "":1: l ‘ v ”Air...” 2
+Fig. 4 The ANITA Ground Model, set-up for trouble r M V -. I / ” , ,
+shooting in the ISS command centre in Houston ', ‘ “ ""3 ‘ 1"". 2 . 7 ' - 2 ;.
+I Ff}. , 1 . i. ‘ "" .   ~35: .
+- ‘ 3."" vi“ ""a f! V :32;
+Cr: 5C: ""‘ ‘ . 3’3! , 1:}3-1- . ~. 2: 2.
+- ~ a 2"" A #2 'r' _ »
+.. "" ' ' . ., s ""V ""t £5 ‘ 2’ ' .""°""_§‘§;f_$‘
+, 2s; = . / : \ 4;} . ‘
+. 2»: r, -I = ““5. 4 . z
+‘ 2 “-1, 4f ' '_ . ‘I 2- a
+- ‘ $2,235,... . ‘ .:' ‘ i. , ’ ' ' 4 ‘ﬂ‘ ' ‘ ' \_ ..-
+i 2 3 _ : . - - ' i \-. w
+§ ‘ .‘ J; 7’ \. "" "" . '~ g
+' ~ ,9"" '1’ V '3"": ' _ ' ‘l . J 1-2: , > 3"""" ‘
+a"". I a , q . ‘  » 3‘ '. U I _ ‘ 2
+“ k ‘ ‘L . = , ‘1, N“ “
+2 2
+. .'
+Fig. 7 NASA astronaut Clay Anderson in
+action during the ANITA experiment phase
+Fig. 5 ANITA operating on ISS accommodated in an
+EXPRESS rack in the US lab
+4
+
+"
+"7","I I.i-.cr‘:i.. ts. ""- - C114. .gncc C; ‘3:
+-i. at t. .21: ¥"".““.I.-.1il.l'sib ; yCcp; ﬁg :1’..2 . ‘3' *tczzati; :!
+;-;‘:.2il g,c«p}..'g.. . i 1L..-ipos; { '23.:‘.ibitcd
+3""». . 1., 4;"" ..Lx 3‘,“172-'. ,2)!‘E I‘:t7:"". , P” ‘
+OUTLOOK INTO THE FUTURE — ANITA ll CONCLUSION
+In terms of size, mass and performance, ESA set strict After the successful launch Of ANITA on STS 118 in
+requirements for an ANITA follow-on unitANITA II. In the August 2007’ outstanding data sets of trace gas
+design the lessons learned from the AN'TA flight dynamics in the ISS air conditions could be retrieved.
+experiment shall be considered. Fig. 8 shows a During the mission, several problem areas could be
+reduction in terms of volume and mass. A BB
+(breadboard) model study accompanied by HW ANITA has delivered new results on the dynamics of gas
+investigations on the Ground Model (if possible on the concentrations in the ISS and has proven the usability of
+Flight Model, if it is returned to earth and which is still to the technology for air analyses in crewed cabins. The
+be confirmed) will support the design process for the signiﬁcantly smaller and more lightweight next
+next generation air analyzer ANITA ll. With this cabin air generation FTIR system for continuous air monitoring in
+quality monitor, ESA is in the position to provide a crewed cabins — ANITA ll — will consider the different
+continuous ISS air monitor and a core element for lessons learned from the flightexperiment. ANITA II will
+sophisticated air monitoring tasks in the exploration operate autonomously with high time resolution and is
+program e.g. on-board the CEV (Crew Exploration intended to operate primarily on the ISS. The follow-on
+Vehicle), the CSTS (Crew Space Transportation air monitor is a promising candidate for integration into
+System), another crewed Moon/Mars transportation the planning of the future Human Space Exploration
+vehicle or in crewed stations on the Moon or Mars. program.
+The current planning for the ANITA ﬂight experiment is
+that it will be returned to ground in September 2008 After
+4E1!!! . . .
+W the 6 months operation phase the unit wnll probably be
+A. shut—down and passively stored in EXPRESS (EXpedite
+F: l the PRocessing of Experiments to Space Station - rack
+[ I ,f for electronic equipment) rack four.
+' ENE“ . ' 240m
+’ ﬁtmgg ' ACKNOWLEDGMENTS
+meme? ""J The described work is performed under ESA contract
+444‘ 665% tebook {com CARMADA ‘
+45 W ° ‘ 9'"") number ESTEC/15743/01/NL/JSS-ANITA.
+mscnm} ,Avaomammsx
+‘“"" ' ""“""""""’“"" "" ‘ — __._4vgNthssguumg However, we also want to thank NASA for the
+' CI ~‘5'7’ - ;;-. wéﬁéﬁﬂsmucﬁ professional support and good cooperation before and
+b 33;; 1‘ 2:33;,“ during the whole ANITA ﬂight mission.
+33' ,1, 490m
+”mm"" + is ,
+4. MB.
+| wmg
+L A l
+‘- _ J ~ 4;;
+919.1%.- I ’Ausmem M1332.“ ‘FWSHMPUW
+“m““omcs” '
+Fig. 8 Preliminary one-mid deck locker design of
+ANITA |l including the control computer
+5
+
+"
+"8","H ' ' .ic “3 "" “id."" 3.41%? 1th ‘
+- . I‘ --:tll',clmglbor: ‘cl':""‘;‘ :i-biu; J“ I
+REFERENCES
+[14] NASA Toxicology Group: Spacecraft Maximum
+
+[1] Johansen I-R Home A Tschudi J 1996: Allowable Concentrations For Airborne Contaminants;
+Investigation of FTIR instruments for trace gas detection, JSC 20584: NASA! Johnson Space Center, Houston,
+Spectroscopy EurOpe, Vol. 8 No. 6, 10-16. Texas, USA"" 1999
+
+[2] Breadboarding Of an FTIR Spectrometer for Air [15] The [SS Alf MOHitOI' ANITA — Going iNtO Operation
+Monitoring in manned Spacecraft; H. Bittner, I.-R. on [88, T. Stuffler, H. Mosebach, D. Kampf, A. Honne,
+Johansen, A. Honne, G. Tan; ICES 1996; Monterey H‘ Odegard, (3' Tan, 'CES 2007' Chicago
+
+[3] Johansen I-R, Lines G T, Home A, Midtgaard T
+
+1997: Calibration of an FT-IR spectrometer for ambient DEFINITIONS ACRONYMS ABBREVIATIONS
+air monitoring using PLS (Partial Least Squares), ’ ’
+
+Applied Spectroscopy. Vol. 51 No. 10, 1540-46.
+
+[4] Progress in an FTIR-based Multi-Component ANITA: Analysing Interferometer for Ambient Air
+Monitoring System for Spacecraft Air Analysis; T.
+
+Stufﬂer, A. Honne, L-R. Johansen, H. Able, G. Tan; ATV: Automate TransferVehicle
+
+ICES 1999; Denver
+
+[5] Current Status of the ESA FTIR-based Multi- BB: Breadboard
+
+Component Moniton'ng System for Spacecraft Air
+
+AnalySIs; A. Honne, l.-R. Johansen, T. Stufﬂer; H. CEV: Crew Exploration Vehicle
+
+Mosebach, D. Kampf, H. Abele, G. Tan, ICES 2000;
+
+Toulouse .
+
+CSTS: Crew Space Transportatlon System
+
+[6] Blind test performance of the ESA FT/R-based Multi-
+
+Component Monitoring System for Spacecraft Air _
+
+Analysis; A. Honne, |.-R. Johansen, G. Tan, T. Stuffler; ESA' European Space Agency
+
+ICES 2001, Orlando
+
+, , EXPRESS: EXpedite the PRocessing of
+
+[7] ANITA: An FTIR Spectrometer Flight Experiment for , ,
+
+Space Craft Cabin Air Analysis; T. Stufﬂer, D. Kampf, Exper'ments ‘0 Space Stat'on
+
+H. Mosebach, A. Honne, G. Tan; ICES 2001, Orlando (rack for electronic equipment)
+
+[8] A Process to Evaluate Advanced Technologies for .
+
+Future NASA needs; T. Limero, J.T: James; ICES 2001; FM: Fl'ght Model
+
+Orlando
+
+[9] Status Report on A NITA, an FTIR Spectrometer FTIR: FounerTransform Interferometerl-metry
+Flight Experiment for Manned Space Cabin Air Analysis;
+
+T. Stuffler, D. Kampf, H. Mosebach, M. Glier, A. Honne, HW: Hardware
+
+Gijsbert Tan; ICES 2002, San Antonio
+
+[10] ANITA — The Optimized Spacecraft Air Monitor on 'R: Infrared
+
+its way to Orbit; T. Stufﬂer, D. Kampf, H. Mosebach,
+
+A. Honne, G. Tan; ICES 2003, Vancouver ISS: International Space Station
+
+[11] ANITA and ANITA I/ - Optimised Analysers for
+
+Advanced Air Quality Monitoring in Crewed Space Craft; PLS: Partial Least Squares
+
+T. Sthﬂer, D. Kampf, H. MosebaCh, A. HOnne, (multivariate statistica| method)
+
+H. Odegard, G. Tan; ICES 2004, Colorado Springs
+
+[12] ANITA — Preparing for Automatic Air Analyses on PPM: Parts Per Million
+
+the ISS; A. Honne, H. Odegard, H. Schumann-Olsen,
+
+;.Osmtgffler, H. Mosebach, D. Kampf, G. Tan; ICES 2005, SW: Software
+
+[13] The ANITA Air Monitoring Program and
+
+Instrumentation - ISS and other Applications; T. Stufﬂer,
+
+H. Mosebach, D. Kampf, A. Honne, H. Odegard, G. Tan,
+
+ICES 2006, Norfolk
+
+6
+
+"

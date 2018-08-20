@@ -1,0 +1,1171 @@
+"","x"
+"1","GIScience & Remote Sensing, 2014 5 Taylor & Francis
+Vol. 51, No. 2, 120—138, http://dX.doi.org/10.1080/15481603.2014.895577 Taylor&FrancisGroup
+Evaluating Hyperspectral Imager for the Coastal Ocean (HICO) data
+for seagrass mapping in Indian River Lagoon, FL
+Hyun Jung Choa*, Igor Ogashawarab, Deepak Mishrac, Joseph Whitea,
+Andrew Kameroskya, Lori Morrisd, Christopher Clarkea, Ali Simpsona
+and Deya Banisakhera
+aDepartment 0f1ntegrated Environmental Science, Bethune-Cookman University, 640 Dr. Mary
+
+E McLeod Bethune Blvd, Daytona Beach FL 32114, USA; bRemote Sensing Division, National
+
+8 Institute for Space Research, Avenida dos Astronautas, S670 José dos CampOS-SP 1758, Brazil;
+
+4;; CDepartment of Geography, University Of Georgia, Athens, GA 30602 USA; dSt. Johns River Water
+
+EB Management District, PO Box 1429, Palatka, FL 32178 USA
+
+:3
+
+: (Received 29 September 2013; accepted 2 January 2014)
+
+(\l
+
+55 Differentiation between benthic habitats, particularly seagrass and macroalgae, using
+
+l5 satellite data is complicated because of water column effects plus the presence of
+
+E? chlorophyll-a in both seagrass and algae that result in similar spectral patterns.
+
+?‘ Hyperspectral imager for the coastal ocean data over the Indian River Lagoon,
+
+8 Florida, USA, was used to develop two benthic classiﬁcation models, SlopeRED and
+
+{j SlopeMR. Their performance was compared with iterative self—organizing data analysis
+
+.3“ technique and spectral angle mapping classiﬁcation methods. The slope models pro-
+
+é Vided greater overall accuracies (63—64%) and were able to distinguish between
+
+D seagrass and macroalgae substrates more accurately compared to the results obtained
+
+E using the other classiﬁcations methods.
+
+COD) Keywords: HICO; Indian River Lagoon; seagrass; macroalgae; SlopeRED; SlopeMR
+
+Ea”
+
+T5
+
+8
+
+E“ 1. Introduction
+
+,3 Satellite data have been extenswely used to prov1de information on benthic habitats
+
+3 including seagrass, macroalgae, and coral reefs (Holden and Le Drew 1998; Mumby
+
+E et a1. 1999; Malthus and Mumby 2003; Mishra et a1. 2005; Pasqualini et a1. 2005).
+
+8 Classiﬁcation of benthic habitats through spectral analyses of satellite data provides a
+time and resource efﬁcient alternative to the extensive ﬁeld campaigns necessary for
+evaluating spatially continuous benthic coverage in a coastal environment (Lidz, Brook,
+and Nagle 2008). However, one of the maj or setbacks of benthic remote sensing is that the
+composite upwelling radiance from substrates (i.e., seagrass, macroalgae, and bare sub-
+strate) is often contaminated with signals from other optically active constituents in the
+water column such as chlorophyll-a (chl a) and suspended and dissolved materials
+(Mishra et a1. 2005, 2006, 2007). Therefore, isolating the spectral pattern from the benthic
+habitats for accurate mapping is a challenging task. Hyperspectral remote sensing has
+been shown to be an important tool in distinguishing these patterns by capturing the key
+spectral characteristics differences among the targets (Fyfe 2003; Kutser, Vahtniae, and
+Metsamaa 2005). Studies conducted by Fyfe (2003) and Kutser, Vahtniae, and Metsamaa
+>“Corresponding author. Email: ohoh@oookman.edu
+© 2014 Taylor & Francis
+
+"
+"2","GIScience & Remote Sensing 121
+(2005) provide insight into the use of hyperspectral signals in delineating benthic habitat
+coverage types.
+
+Seagrass is a group of vascular benthic vegetation that has adapted to live in full
+marine salinities and a Vital component of ecological processes, dynamics, and productiv-
+ities of coastal ecosystems. Differentiation of the seagrass spectral proﬁle from bare
+substrate or macroalgae is complicated because the effects of ‘red absorption by chl a’
+and ‘near infrared (NIR) reﬂectance’ by seagrass decrease with increasing water depth
+(Cho 2007). This becomes particularly difﬁcult to separate signals of seagrass from
+macroalgae since both contain chl a that results in similar spectral patterns.
+
+The key difference between macroalgae and seagrass spectral characteristics has been
+identiﬁed within the wavelength regions of green (530—580 nm) and red edge (680—
+720 nm) (Fyfe 2003; Kutser, Vahtniae, and Metsamaa 2005). Seagrass-dominated areas,
+
+v compared to macroalgae, would have stronger red absorption by chl a and, therefore,
+§ exhibit relatively higher green reﬂectance and a higher and broader peak near 705—
+4;; 710 nm (Cho et al. 2013). According to our previous close-range hyperspectral studies
+3:13 on submerged aquatic vegetation, the underwater vascular plants have slight, but several
+<ﬁ differences in their spectral characteristics from microalgae (Cho, Kirui, and Natarajan
+ﬂ 2008). The differences in spectral characteristics between macroalgae and seagrass were
+ER evidenced at the NIR band around 708—713 nm in terms of the peak location, magnitude,
+5 and width (Cho et al. 2013). In addition, the width of the chl a absorption feature at 665—
+E? 675 nm appears to be the key for distinguishing seagrass from macroalgae (Cho et al.
+E 2013).
+
+5 The Hyperspectral Imager for the Coastal Ocean (HICO) is a hyperspectral sensor
+39 onboard the International Space Station (188), with a high signal-to—noise ratio that can
+é facilitate benthic habitat mapping. HICO provides the hyperspectral bands from 400 nm to
+g 900 nm that are sampled at 5.7 nm with a spatial resolution of 90 m. The presence of
+<3: narrow bands within the wavelength regions that are important for seagrass and macro-
+?) algae discrimination (665—680 nm and 708—715 nm) makes HICO suitable for benthic
+i)” mapping. Thus far, HICO data have not been tested for distinguishing between seagrass
+3 and macroalgae. The primary goal of our study was to develop a novel approach using
+: HICO data that can be efﬁciently used to distinguish seagrass and macroalgae signals and
+ﬁ help facilitate accurate benthic vegetation mapping. The secondary goal was to compare
+g the performance of this approach with conventional supervised and unsupervised classi-
+E ﬁcation methods used for benthic habitat mapping. HICO image of the Indian River
+E Lagoon (IRL) and ﬁeld survey data were used in our analysis to separate algal chlorophyll
+8 signals from seagrass signals.
+
+The IRL was an ideal site for this study because there are abundant ancillary data
+collected over two decades that were available for training and validation. The St. Johns
+River Water Management District (SJRWMD) has been collecting water quality data since
+1989 and surveying seagrass beds using transects since 1994 in IRL. In addition, lagoon-
+wide seagrass maps are generated every two years from aerial photography though
+SJRWMD. Development of an efﬁcient seagrass mapping technique using satellite data
+was also timely for IRL. During the summer of 2011, an unprecedented algal bloom
+formed, producing chl a concentrations over eight times (often exceeding 100 ng/L) than
+the historical mean in some areas, lasting seven months and spanning the entire northern
+IRL (SJRVVMD 2012). As a result, the IRL suffered a loss of over 34,000 acres of
+seagrass, in part due to light reduction resulting from the highest recorded phytoplankton
+bloom density and spatial expanse ever documented (Phlips and Badylak 2011). This
+bloom and associated seagrass decline far exceeded any past events documented in terms
+
+"
+"3","122 HJ. Cho et al.
+
+of geographic scale, intensity, duration, and rate of seagrass loss. The 2011 ‘super bloorn’
+covered approximately 53,000 hectares of open water (SJRWMD 2012). IRL seagrasses
+suffered further from brown tides occurring in 2012 in Mosquito Lagoon, one of the IRL’s
+sublagoons. In many areas, the seagrass abundance has not returned to the pre-bloorn
+status as of summer 2013. Therefore, accurate and spatially continuous mapping of the
+IRL seagrass coverage at regular interval is crucial for conservation and restoration
+purposes.
+
+The speciﬁc objectives of this study were to (1) isolate spectral bands that can
+distinguish between seagrass and rnacroalgae and (2) map benthic habitats particularly
+seagrass and rnacroalgae coverage in IRL using HICO data. The overall approach
+included: (a) obtaining and pre-processing HICO data over IRL; (b) developing spectral
+models for effective discrimination of seagrass vs. rnacroalgae; (c) benthic classiﬁcation
+
+v using three methods (supervised, unsupervised, and newly developed slope models); and
+§ ((1) performance comparison based on accuracy assessments using high-resolution aerial
+4;; data and ﬁeld survey data. A new seagrass/rnacroalgae mapping technique using HICO
+50 data would improve lagoon-wide benthic mapping capacity which will aid in planning for
+:13 seagrass habitat restoration in IRL.
+3
+5*»
+S 2. Study site
+B IRL is a 252 km long estuarine system on the Atlantic Ocean side of central Florida, USA
+§ (Figure l), with a mean depth of 2 1n and widths varying from 0.5 km to 5 km. The IRL is
+5 reported to be one of the most productive and diverse estuaries in North America, largely
+#2“ related to its expansive seagrass coverage (Littler, Littler, and Hanisak 2008). The IRL’s
+E seagrass community boasts the highest species richness in North America (Virnstein and
+$23 Hall 2009). The species-rich, healthy seagrasses and rnacroalgae areas provide a Vital
+<5 habitat, nursery, and forage ground for several commercially and recreationally important
+00)!) species as well as or along with endangered species such as the Florida rnanatee
+g (Trichechus manatus latirostris) and several species of sea turtle as well as numerous
+é estuarine-dependent ﬁn ﬁsh and invertebrates such as blue crabs and shrimps. The value
+3 of seagrass in reducing wave energy, enhancing sedimentation, stabilizing sediment,
+3 providing ﬁsheries habitat, and serving as a food source for wildlife is also well docu-
+“3 rnented (Larkuni, Orth, and Duarte 2007; Vizzini 2009). In Florida, it is estimated that one
+%
+E
+Q 1 I. {A} PET {R 1:13}
+_1 :,r*"" TEE;
+'- :""7: ~*- r
+l-~..-_ L : [1“ I; ['41] Indian
+GulfﬂfMex-‘m 5f:- ETHH. H Li; muer
+-. -:.-..5:.».+:.”9W""
+a.
+l. . / Atlantic Dram “Huh“ 1::
+N “um"" 10 .3.
+' "" ' Em"" “3-30
+Figure 1. (A) Location map of the IRL in relation to the state of Florida, USA. (B) The entire
+geographical extent of the IRL system. Color ﬁgures are available in the online version of this article.
+
+"
+"4","GIScience & Remote Sensing 123
+acre of seagrass beds can support 50 million invertebrates (FFWCC 2003). Florida’s
+Department of Environmental Protection estimated that the state’s seagrass communities
+supported commercial ﬁsheries valued at over 124 billion dollars in 2000. The area
+surrounding the IRL has been undergoing rapid development, resulting in degradation
+of the ecological services the lagoon provides. In addition, the recent algal blooms and
+mysterious deaths of manatees, dolphins, and pelicans in IRL draw attentions from all
+over the nation (Wines 2013). Therefore, accurate mapping and monitoring of seagrass
+habitats in IRL is high priority for SJRWMD.
+3. Materials and methods
+v 3.1. HICO data acquisition and pre-processing
+§ HICO image data were collected over IRL (centered at latitude 28.568844, long-
+}; itude80.757854) on 21 March 2013 at around 1:55 pm local time at a sensor angle
+6:0 of 9.60. The data were initially corrected for geometric and atmospheric distortions by
+<ﬁ the Oregon State University who manages and distributes the HICO data (http://hico.
+g coas.oregonstate.edu/). Atmospheric correction, one of the most important steps in
+5: benthic habitat mapping, was performed using TAFKAA (The Algorithm Formerly
+é Known As ATmospheric REMoval (ATREM)). TAFKAA radiative transfer model
+E? developed by the US Naval Research Laboratory (Gao et al. 2000; Montes and Gao
+E 2004) is based on the earlier ATREM code of Gao and Goetz (1990). The scattering
+8 effects are calculated using the second simulation of the satellite signal in the solar
+Z? spectrum (68) and user—speciﬁed aerosol model and optical depth. The HICO dataset
+E was further pre-processed and analyzed with ENVI Classic 32—Bit Interface software
+g (ENVI® 5.0, Exelis Visual Information System, McLean, VA). The HICO data were
+<3: provided in a ‘rough geolocated’ format that was reﬁned through the ENVI 5.0
+C3 georeference tool into UTM WGS-84. The base map used was the temporally closest
+i)” cloud-free Landsat 7 SLC-Off image (3 March 2013) over the study area, provided by
+3 the USGS Earth Explorer. The average root mean square error (RMSE) of the geor-
+: eferencing process was 0.05.
+§ There was a signiﬁcant cloud cover over most of the IRL on 21 March 2013 when the
+% HICO data were collected. Iterative self-organizing data algorithm (ISODATA) unsuper-
+E Vised classiﬁcation was applied to the image data in order to identify the pixels affected by
+E cloud cover and were masked out (Ball and Hall 1965). The ISODATA was run with the
+8 following settings: classes: 5—10, maximum iterations: 5, change threshold: 5%, minimum
+pixels in class: 100, maximum class standard deviation: 0.25, minimum class distance: 10,
+maximum number of merge pairs: 10. Cloud pixels were selected based on regions of
+interest (RoI) and excluded from the following analyses. As a result, a geographic subset
+within the Banana River and a part of the central IRL area was selected for further data
+analyses due to its cloud-free condition and proximity to siX of the long-term seagrass
+monitoring stations of SJRVVMD (Figures 1 and 2). Water depth point shape ﬁles were
+obtained from SJRWMD (ftp://ftp.sjrwmdeom/IRL/BathymetryO and were stacked onto the
+HICO data for bathymetric data incorporation needed for masking out deepwater areas
+(areas with no benthic signals). In addition, pixels that were above the mean low tide
+mark were classiﬁed as ‘land’. All land and marsh areas in the image were also masked
+out in order to enhance the spectral variation across the water pixels using a binary mask
+applied to one of the infrared bands (>800 nm). In addition, a vector ﬁle obtained from
+Florida Geographic Data Library was applied to mask out the Atlantic Ocean.
+
+"
+"5","124 HJ. Cho et al.
+j ..
+1 [A] I
+H I '
+31"" 9
+Hi 9 9' . '
+I; t- ' ._ '.
+.. . e .
+I . A 6 5' a
+a H“? .4 l...—
+_ .. _ ~r i
+: ~ . . '
+: E Fig; "" .1
+L - “qr“. . .'i -- 1“ J I
+n- a I"" T I i-
+E ‘ - .. T ~ T! I
+3 m “~ a 1
+273 [:1 km “ -. -.- 5‘ .
+5 I "" .1
+g”
+< Figure 2. (A) Location map: the study area in the IRL is indicated with a rectangle. (B)
+Q Hyperspectral Imager for the Costal Ocean (HICO) image: a spatial and spectral subset of the
+51-3 atmospherically corrected HICO image of the study site in the lagoon is displayed using a true color
+I; combination. The red points/lines with numbers are the seagrass survey transect data collected and
+S archived by St. Johns River water Management District. The bright green areas shown in the HICO
+'3' image can be seagrass 0r macroalgae beds or phytoplankton signals.
+§
+53
+>» 3.2. Seagmss survey data
+é Annual seagrass transect survey data were obtained from SJRWMD. Transect data
+2 surveyed in August 2013 at six of the monitoring sites that fell within the HICO image
+‘5 subset were selected and used to identify locations for seagrass beds and areas for
+go macroalgae (Figure 2). The seagrass transect data were converted to a point shape ﬁle
+g and added onto a base map in ArcGIS® 10.1 (ESRI, Redlands, CA). These points are the
+8 individual locations surveyed in the ﬁeld using a 1 X 1 1n quadrat and have been
+: documented and categorized for substrate type (seagrass species, macroalgae species,
+ﬁ and their percent coverage) along the transect lines (Figure 2). The point data were
+5?: added onto the HICO image, with the most recent benthic coverage monitoring data
+% (August 2013) incorporated into the attribute table. The survey point data along with
+E aerial photography obtained in August 2013 were later used as reference data for end—
+Q member collection, classiﬁcation, and accuracy assessment. HICO data were obtained in
+March 2013, and the ground truth data were collected in August 2013; however, the
+SJRWMD’S seagrass research team conﬁrmed that there were not signiﬁcant changes in
+seagrass and macroalgae locations and abundance, particularly in the core study areas,
+between March and August in 2013.
+3.3. Slope model development
+The transect survey points were used as the foundation for understanding the variations in
+spectral patterns in the HICO pixels representing each benthic habitat. HICO spectra at
+100 selected pixels from ﬁve benthic habitats were extracted and analyzed to ﬁnd unique
+features that would help distinguish between seagrass and macroalgae (Figure 3). The ﬁve
+classes selected for end—member collection and analysis were: (1) exposed: air—eXposed
+
+"
+"6","GIScience & Remote Sensing 125
+HICO derived spectral profile
+Exposed Seagrass
+0.08 0.08
+A (A) __.. --'..':- (B)
+'2): 0.06 EVE: 1”: 0.06|
+3 xrﬂf—i ‘1’
+E 0.04 .5 #1}— ; 0.04
+E f'?;=—_ '-' r '5 ﬁx
+”:3 0.02 -.-- .--""'-.--'-—'-"" § 0.02 3‘"". -- “i-kr-JM
+DC .. :;-__---F- ,
+0.00 0.00 - - . -
+400 500 600 700 800 900 400 500 600 700 800 900
+Wavelength (nm) Wavelength (nm)
+<t- Mixed beds Macroalgae
+S 0.08 0.08
+51‘ .A (C) .3 (D)
+:3 g): 0.06 g 0.06
+00 a: a:
+5 o o
+< E 0.04 g 0.04
+E, 0'02 % DOC, 0'02 “-.-.
+55 ""j“‘ _. m
+[5 0.00 . +- .. 0.00 *—-—-—-—-—
+._. 400 500 600 700 800 900 400 500 600 700 800 900
+CG
+.— Wavelength (nm) Wavelength (nm)
+§
+63
+Dee water
+29 0.08 p
+o .A E
+?J L”: 0.06 ( ) — Macroalgae
+‘8 8 — Mixed beds
+5‘ g 0.04
+G) .13 Seagrass
+lb? 61:, 0-02 - — Deepwater
+8 0.00 w — Exposed
+: 400 500 600 700 800 900
+,5
+F8 Wavelength (nm)
+g Figure 3. Hyperspectral Imager for the Costal Ocean spectral proﬁle of each pixel within the
+“g following classes: (A) exposed, (B) seagrass, (C) mixed beds, (D) macroalgae, and (E) deepwater.
+8
+sandbars 0r shallow substrate with or without microalgae and seagrass that were at least
+partially emergent during the image acquisition; (2) deepwater: deepwater sites with no
+bottom reﬂectance; (3) seagrass: seagrass—dorninated areas; (4) macroalgae: macroalgae—
+dominated areas; and (5) mixed beds: mixed beds with both macroalgae and seagrass
+present. For each of these ﬁve classes, 20 pixels” spectral proﬁles were extracted from the
+cloud—free HICO data using the Z—spectrum function in ENVI. Each spectrum was
+exported in the form of an ASCII ﬁle and grouped together for further analysis.
+Comparison of the spectral properties between the classes revealed that the red—edge
+band near 700 nm can be potentially exploited to distinguish between substrate types
+(Figures 3 and 4). First, the within—class variations were low (standard deviations for
+macroalgae, mixed beds, seagrass, deepwater, and exposed were 0.003, 0.002, 0.004,
+0.003, and 0.011, respectively), indicating the homogeneous nature of the substrate types.
+Second, maximum differences between classes were observed on both sides of the
+
+"
+"7","126 HJ. Cho et a1.
+RED and NIR slope (HICO profile)
+Seagrass Macroalgae
+
+0.08 - 0.08 n; E
+F."" (A) 1—. FA (B) ﬁg;
+
+g 0.06 '1 3_ ('7) 0.06 - $5;
+3 25': ' 7.? ii]
+c 0.04 r; ; g 0.04 :3;
+«3 f, - . 23 ' :3 Li:
+r - - ' 0 !i' E
+g 0.02 «5:; ""’ *‘lﬂh'ﬁd— 3““ g 0.02 - ﬂ
+n: '= f“ ' a: ﬂaw
+0.00 - -'-i--'- - o_oo . . . Lu- .5 . .
+400 500 600 700 800 900 400 500 600 700 800 900
+Wavelength (nm) Wavelength (nm)
+Average
+0.08 - .
+
+3 A (C) L;
+8 ‘T,_ :5 3
+”:73 g 0-06 ' i? i —- Macroalgae
+5 q, Ij ‘— — Mixed beds
+g!) g 004 . :- — Seagrass
+< 3 I i: J; — Deepwater
+00 o {____ .‘I ‘ — Exposed
+N g 0-02 :{$Hﬁ:. _ i ._._. 700 nm (Aproximated red edge)
+5.1-3. m —T_-. ‘7'? ""—_ : :S/OpeRED
+[\ 000 . !_-_.- .
+E 400 500 600 700 800 900 -. . .- Slopem
+CG
+El Wavelength (nm)
+0
+63 Figure 4. Hyperspectral Imager for the Costal Ocean spectral proﬁles of seagrass (A) and macro-
+_>9 algae (B) pixels and average spectral proﬁle of each benthic class (C). The hatched areas show the
+E ranges of both slope models and dashed line shows the approximated red edge.
+0)
+5.
+ES
+0) red-edge band near 700 nm (Figure 4). In seagrass areas, the magnitude of the 700 nm
+E)” peak was the highest, with the exception of the exposed class. The NIR reﬂectance for
+8 seagrass pixels was also higher than Inacroalgae. A close examination of the spectral
+: differences between Inacroalgae and seagrass revealed that both algae and seagrass
+ﬁ showed chl a absorption minima at 673 nm; however, the NIR peak for Inacroalgae and
+F8 seagrass was at 708 nm and 713 nm, respectively. More importantly, the higher magnitude
+:3 of the seagrass peak produced steeper slopes on both sides compared to other benthic
+E substrate types (Figures 3 and 4). The variations observed in the red and NIR slopes
+8 between substrates were further analyzed using derivative analysis.
+
+First and second derivatives were derived from the average spectra for each substrate
+for Visual analysis of the red and NIR slopes (Figure 5). The ﬁrst derivative showed that
+the red slope between 679.024 nm (HICO band 49) and 690.48 nm (HICO band 51) were
+positive and had distinct magnitude for each substrate. For example, seagrass magnitude
+was higher than both mixed beds and Inacroalgae (Figure 5A). Similarly, the NIR slope
+between 696.208 nm (HICO band 52) and 742.032 nm (HICO band 60) were negative
+with the exception of exposed substrate and had a distinct magnitude for each substrate
+types (Figure 5A). The second derivative showed similar pattern for the red slope;
+however, no speciﬁc pattern that would distinguish the substrate types was observed for
+the NIR slope (Figure 5B). In both cases, the crossover in derivative values occurred at
+the chl a scattering peak near 700 nm. The derivative analysis provided promising
+possibility for using the red and NIR slopes in distinguishing and mapping different
+benthic substrate types using HICO data.
+
+"
+"8","GIScience & Remote Sensing 127
+First derivative Second derivative
+0.5 . o’n‘ 60 . .
+:I C< I
+A A Q-IV '5 B 'i 3
+‘é 04” M .9: H ﬁ
+E .xé '6 40 :i .1
+U 0.3 *5 v /:
+E 0-2 .I‘ 3‘ r1 2 20 4/
+-— ' ..- ' i ""’ . q. r.:_:. 1
+45 0.1 ,I"" "" . 5' Eli .H _ g l ﬁr ﬂ 3%5/11 - , I
+> _l L‘ E”! ‘I ah .-'J l: 0 I ll ._ 1' 1-H?- _.F.1'-""Hl.'ﬂx i....-. _::'1- .nl!
+-: 0.0 - "" -;. x '4. J -- ‘ ""' w I I I r 1 N'rr ""E ‘F l'
+d, ,. . y '1' Y ﬂy: I ._. u I f g I LII. II
+.. -. a x W
+'6 —0.1 ., - U.- (fix '5 V V
+q.- . t .g .41 c —20 i fax
+9 —0.2 gﬁ o t
+i: E”, 3
+—O.3 5 J u) _40 . .
+400 500 600 700 800 900 400 500 600 700 800 900
+Wavelength (nm) Wavelength (nm) $333333:
+— Seagrass
+3 : 23533.?”
+8 @ SIOPGRED
+175 E SIOpeN/R
+En
+E Figure 5. First (A) and second (B) derivatives derived from the average spectra for each substrate.
+g The hatched areas show the ranges of both slope models.
+5*.
+g Further graphical and statistical analyses were performed to estimate the separability
+*5 between substrate types using the two slope models. Graphical analysis included devel—
+E oping a coincident slope plot to estimate the between—class overlap (Figure 6A and B). As
+8 expected, both slopes showed a good separability between macroalgae and seagrass;
+.2“ however, NIR slope showed signiﬁcant overlaps among mixed beds, macroalgae, and
+E deepwater classes (Figure 6B). Red slope exhibited more within—class variability which in
+2 turn decreased the between—class separability (Figure 6A). In addition, both slope models
+5: showed that mixed bed substrate type cannot be accurately distinguished or mapped
+% because of the signiﬁcant within—class variability and overlap with other classes.
+i)” The statistical analysis to quantify the between—class separability was conducted using
+3 divergence matrix. Divergence is a measure of statistical distance which is calculated by
+: using the mean and covariance matrices between two classes (Jensen 2005). Divergence
+ﬁ for each benthic class was derived by using the covariance between bands used in slope
+g models, i.e., covariance between bands used for red slope (679 nm and 690 nm) and NIR
+L3 slope (696 nm and 742 nm). Using the covariance matrix and mean vector between the
+a
+E . .
+Q Comcxdent slope plot
+SlopeRED SIOpeNIR
+6 (A) 6 ' (B)
+Exposed 5 gunnin- a II- Exposed5 1' unn-u-uuuu I
+Seagrass 4 ."" m . .. Seagrass 4 .- -.. .
+Mixed beds 3 I“ I :—5IIIII I- II I Mixed beds 3 5 — I
+Macroalgae 2 gunna— Macroalgae 2 - .—
+Deepwater 1 m 1. . Deepwater1 uh
+O o . . . - .
+0 0,0001 00002 00003 00004 00005 —0.0004 —0.0002 —0.0000 0.0002 0.0004 0.0006 0.0008
+Slope value Slope value
+Figure 6. Coincident slope plot showing the between—class overlap for SlopeRED (A) and SlopeMR (B).
+
+"
+"9","128 H.J. Cho et a1.
+red and NIR slope bands for each class, divergence between classes was computed using
+Equation (1).
+- 1 —1 —1
+Dlver : Etr[(Vc — Vd)(Vd — Vc )]
+1 T (1)
++ Etr[(Vd—1 — VC_1)(MC — Md)(MC —Md) ]
+where: tr [ ] is the trace of a matrix, VC and Vd are the covariance matrices between bands
+used for red and NIR slopes from the class c and class (1; MC and Md are the mean vector
+for classes 0 and d and T indicates the transposed matrix. A transformed divergence,
+TDiveer, was also calculated using Equation (2) in order to scale the divergence values to
+3 lie between 0 and 2000.
+8
+g —Diver d
+0:13 TDivercd : 2000 [1 — exp (TC)] (2)
+<
+00
+(\1
+33 A transformed divergence value of 2000 indicates excellent separation, above 1900
+15 suggests good separation, and below 1700 indicates poor separation (Jensen 2005).
+E3 Contrary to the graphical analysis, the divergence and transformed divergence matrices
+5 showed good statistical separation between most classes for both slopes (Table 1).
+5 Separation between mixed beds and seagrass for the NIR slope was poor (shown in
+Z“
+0
+% Table 1. Divergence matrix showing between-class separability for SlopeRED and SlopeMR.
+a —
+‘5 SZOPBRED
+O) .
+ED Exposed Seagrass Mlxed beds Macroalgae Deepwater
+8 Exposed 0
+: Seagrass D: 2454.4 0
+ﬁ TD: 2000
+_8 Mixed beds D: 2490 D: 99 0
+8 TD: 2000 TD: 1999.9
+'3 Macroalgae D: 7977 D: 1559.2 D: 610.3 0
+5 TD: 2000 TD: 2000 TD: 2000
+Q Deepwater D: 16067 D: 4157.8 D: 2167 D: 333.1 0
+TD: 2000 TD: 2000 TD: 2000 TD: 2000
+SlapeMR
+Exposed Seagrass Mixed beds Macroalgae Deepwater
+Exposed 0
+Seagrass D: 511.8 0
+TD: 2000
+Mixed beds D: 439.6 D: 3.4 0
+TD: 2000 TD: 703.9
+Macroalgae D: 2699.5 D: 123.7 D: 77.1 0
+TD: 2000 TD: 1999.9 TD: 1999.8
+Deepwater D: 4856.4 D: 331.8 D: 231.1 D: 231.1 0
+TD: 2000 TD: 2000 TD: 2000 TD: 2000
+
+"
+"10","GIScience & Remote Sensing 129
+bold in Table 1) similar to the coincident slope diagram. The overall analyses showed that
+either slope can be used to map and distinguish between benthic habitats in IRL using
+HICO data. Therefore, the slopes were computed on HICO image data as:
+
+Rrs(679) — Rrs(690)
+
+SZOPQRED _ | 679 — 690 | (3)
+Rrs(696) — Rrs(742)
+
+SlopeNIR — | 696 _ 742 | (4)
+
+The slope images were then classiﬁed and compared with results obtained from
+
+3 traditional classiﬁcations.
+
+§
+
+E3
+
+:13 4. Benthic classiﬁcations
+
+3 Four types of classiﬁcations were performed on the IRL HICO data. The classiﬁcation
+
+55 methods used included supervised spectral angle mapping (SAM), unsupervised
+
+l5 ISODATA classiﬁcation, SlopeRED, and SlopeNIR. Other common classiﬁcation procedures
+
+B such as maximum likelihood classiﬁer (MLC) and decision tree classiﬁer (DTC) were not
+
+g used because of the lack of a robust training dataset for the study site. Most of the ﬁeld
+
+{3 data available for the site were therefore used for classiﬁcation accuracy assessment.
+
+7:“
+
+E
+
+3:)
+
+g: 4.1. Spectral angle mapping
+
+C3 Supervised classiﬁcation of the HICO dataset was performed using the SAM algorithm
+
+i)” (Kruse 1998). SAM classiﬁcation relies upon the use of pre-processed radiometrically and
+
+3 atmospherically corrected data so that a relatively ‘pure’ spectrum is present within the
+
+: pixels (end-members). The SAM technique efﬁciently differentiates and groups various
+
+ﬁ spectra present on the reference image by isolating similar spectra, by matching with
+
+g reference spectra. SAM is then able to relate these spectra to the pixel vectors in n-
+
+2 dimensional space (n = number of end-members) — the smaller the angles between spectra,
+
+E the similar they are to each other (Honarmand, Ranjbar, and Shahabpour 2012).
+
+8 Conversely, the pixels that fall further away than the user-speciﬁed threshold are not
+classiﬁed (Narumalani et a1. 2006).
+
+The aforementioned ﬁve benthic substrate classes were used for SAM classiﬁcation;
+and end-member collection was conducted for the classiﬁcation. This step was different
+from the previous step of collecting ASCII ﬁles to create spectral ‘proﬁles’ for the slope
+models. High-resolution aerial photography obtained in May 2013 and seagrass transect
+data that were taken from June to August 2013 were used to collect the end-members. The
+transect points were overlaid onto the HICO image, and percent benthic coverage data
+were used to observe what benthic cover type was inﬂuencing each signal. In addition to
+the 20 spectra per classes that were used for supervised SAM classiﬁcation, additional 20—
+25 points per class were selected for accuracy assessment. The end-members (20 per each
+class) were stored as ROIs and were used to conduct the supervised SAM classiﬁcation.
+The maximum acceptable angle between an end-member spectrum and a pixel vector (in
+n-dimensional space) was kept as 0.1 radians.
+
+"
+"11","130 HJ. Cho et al.
+4.2. Unsupervised classiﬁcation
+The HICO image was also classiﬁed using ISODATA, also known as a squared-error
+clustering method (Ball and Hall 1965). This algorithm performs an unsupervised classi-
+ﬁcation that aims at grouping pixels belonging to the same cluster that present similar
+spectral properties (Tou and Gonzalez 1974). Unlike supervised classiﬁcation, the unsu-
+pervised classiﬁcation method does not require extraneous data for initial clustering; and
+clusters are determined purely in accordance with the differences in spectral values within
+the HICO bands. The ISODATA was performed so that the unsupervised classiﬁcation
+result would be compared to the benthic classiﬁcation performance by supervised SAM
+and the slope models. The parameters used for the classiﬁcation were classes: 50,
+maximum iterations: 7, change threshold: 5%, minimum pixels in class: 1, maximum
+class standard deviation: 1.0, minimum class distance: 5 .0, maximum number of merge
+
+3 pairs: 2. The resultant clusters were merged when necessary and labeled with the most
+
+8 appropriate of the ﬁve classes, based on previously constructed end-members used in
+
+”g supervised SAM classiﬁcation.
+
+b5!)
+
+<t
+
+ﬁ
+
+53 4.3. SlopeRED and SlopeNlR
+
+§ Slope images were created using SlopeRED and SlopeNIR models calculated from the HICO
+
+ﬂ data. Slope thresholds for each substrate and each model were determined from the
+
+g univariate statistics of each class and the distribution of slope values of each class.
+
+63 Average and standard deviations for each slope class were used to determine the lower
+
+7:“ and upper limit to categorize the HICO pixels for each model (Table 2). The slope
+
+E threshold for each model and for each class was chosen as plus/minus one standard
+
+$23 deviation from the mean value plus a constant (Table 3). The constant was used to avoid
+
+‘5 any gaps in threshold limits between classes and to create a continuous range of slope
+
+0&3 threshold for each class. The constant was derived by analyzing the between-class overlap
+
+g from the coincident slope plot.
+
+é
+
+>3
+
+ﬁ Table 2. Univariate statistics derived from SlopeRED and SlopeMR values for each class.
+
+0) —
+
+E SZOPeRED
+
+E Average Standard deviation
+
+Q Exposed 0.000293636 5.2605E-05
+Seagrass 0.000202727 4.02364E-05
+Mixed beds 0.000164545 6.82153E-05
+Macroalgae 9.95455E-05 2.67859E-05
+Deepwater 6.36364E-05 3.45228E-05
+
+SZOpeNIR
+Average Standard deviation
+
+Exposed 0.000325652 0.000165025
+Seagrass —0.00014859 5.2085lE-05
+Mixed beds —9.4565E-05 4.39169E-05
+Macroalgae —7.8043E-05 1.69943E-05
+Deepwater —5.1087E-05 1.10898E-05
+
+"
+"12","GIScience & Remote Sensing 131
+Table 3. Slope thresholds for each class used in benthic classiﬁcation.
+Limits for SlopeRED
+Class Threshold
+Seagrass 0.00016 — 0.00029
+Macroalgae 0.00009 — 0.00016
+Deepwater 0 — 0.00009
+Exposed >0.00029
+Limits for SlopeMR
+Class Threshold
+<t- Seagrass <—0.00013
+S Macroalgae —0.00013 — —0.00006
+(\1 Deepwater —0.00006 — 0
+1% Exposed >0
+co —
+:s
+<
+ﬂ
+5: Statistical tests of independency (Mann—Whitney) were performed among the slope
+é thresholds between classes to check their dependency with each other (results not shown).
+‘5 However, all classes are shown to be independent from each other, which led us to
+? perform an F—test to analyze their tendency to relate to each other. Results showed that
+CO . . . .
+a class thresholds developed for SlopeRED exhibited greater w1th1n-class dependency com-
+: pared to the thresholds for SlopeNIR model (Table 4). A stronger dependency was observed
+E between exposed and seagrass, exposed and mixed beds, seagrass and deepwater, and
+D macroalgae and deepwater for the SlopeRED model compared to SlopeNIR model. For
+E SlopeNIR model, some dependency was observed only between seagrass and mixed beds.
+0 This was expected because mixed beds class contains information from a mixed substrate
+0) . .
+60:30 which also includes seagrass.
+%
+B
+3‘
+B Table 4. F -test results showing between-class dependency for SlopeRED and SlopeMR.
+,5 —
+E P (F Sf) fOI' SlopeRED
+: —
+5 Exposed Seagrass Mixed beds Macroalgae Deepwater
+Q —
+Exposed 1
+Seagrass 0.125815988 1
+Mixed beds 0133116862 0013142129 1
+Macroalgae 0.002518216 0042042463 7. 89222E-05 1
+Deepwater 0.03700709 0.25540199 0002338693 0138763279 1
+P(F Sf) for SlopeMR
+Exposed Seagrass Mixed beds Macroalgae Deepwater
+Exposed 1
+Seagrass 8.21218E-07 1
+Mixed beds 4.30601E-08 0224443934 1
+Macroalgae 1.30199E-14 2.64512E-05 0000332025 1
+Deepwater 3.8273 8E-17 1.84648E-07 3.28471E-06 0091803311 1
+
+"
+"13","132 HJ. Cho et a1.
+
+4.4. Classification accuracy assessments
+
+Classiﬁcation accuracy measurements, including overall accuracy, producer’s and user’s
+
+accuracies, as well as kappa coefﬁcients, were calculated using reference points that were
+
+not used in the supervised classiﬁcation (Jensen 2005). Contingency tables were con-
+
+structed for the four classiﬁcation results (the slope algorithms, SAM, and ISODATA).
+
+5. Results and discussion
+
+5.1. Slope model for benthic classification
+
+Slope models were developed and tested in order to better separate benthic substrate types,
+
+particularly vascular seagrass beds from macroalgae in shallow estuarine environments.
+v Spectra of the ﬁve benthic classes (exposed, seagrass, macroalgae, mixed bed, and deep-
+5* water) were Visually separable in the red and NIR regions (Figure 4). The magnitude of the
+$1, 700 nm peak was higher for seagrass compared to macroalgae (Figure 4) because of the
+a combined effect of chl a in the water column and seagrass canopy. Spectral reﬂectance from
+:3"" productive waters always shows a narrow peak at or near 700 nm because of absorption on
+g both sides — chl a absorption near 675 nm on the red side and water absorption after 710 nm
+33 on the NIR side (Mishra et a1. 2012). The magnitude at 700 nm peak increased when
+é arranged in the order of increasing chl a concentrations during our preliminary analyses.
+‘5 Seagrass species contain higher amount of chl a when compared to the macroalgae species
+? (Enriquez and Borowitzka 2010) occurring in IRL (Riegl et a1. 2005; Riegl and Foster
+§ 2011). In addition, the NIR reﬂectance for seagrass pixels was also higher than that of
+a macroalgae because of the increased scattering by the seagrass leaf structure (Figure 4);
+E hence, spectra reﬂectance slopes in the red and NIR were Visually distinguishable between
+0) even seagrass and macroalgae substrate types. The apparent variations in positive spectral
+E slopes between 679 nm and 690 nm and the negative spectral slopes between 696 nm and
+C03) 742 nm in the ﬁrst—derivative graph were distinguishable among the seagrass, macroalgae,
+‘33 and mixed beds (Figure 5A), which support the difference in seagrass and macroalgae in
+:0 terms of chl a effects and internal cellular structure. The ﬁrst—derivative results were used to
+8 determine the wavelengths for slope calculations and to develop the slope algorithms,
+3 SlopeRED and SlopeNIR. The second derivatives indicated that the second slope model
+E SlopeNIR may not be as efﬁcient as SlopeRED when distinguishing the benthic vegetation
+8 covers (Figure 5B). Figure 6 conﬁrms that by displaying the overlaps particularly between
+E seagrass and mixed beds and between mixed beds and seagrass. However, Figure 6 still
+8 indicated that SlopeRED and SlopeNIR can be effectively used to distinguish seagrass and
+
+macroalgae. The divergence matrix (Table 1) further supported the successful use of the
+
+slope models in distinguishing seagrass and macroalgae.
+
+5.2. Analysis of the three classification results
+
+The performance of the four classiﬁcation methods using reference points from the ﬁeld
+
+seagrass survey data and aerial photography is presented in Tables 5 and 6. The overall
+
+accuracies and kappa coefﬁcients were considerably lower for the unsupervised
+
+ISODATA classiﬁcation compared to the other three methods (Table 5). The low accuracy
+
+for ISODATA was expected because, as Figure 4 indicated, the four spectral classes
+
+including seagrass, mixed beds, macroalgae, and deepwater have very similar spectral
+
+patterns within the wavelength range of 400—900 nm, with the exclusion of ‘exposed’
+
+substrate. Therefore, the 0% producer’s and user’s accuracies for ‘exposed’ class and
+
+"
+"14","GIScience & Remote Sensing 133
+Table 5. Overall accuracy and kappa coefﬁcient for SlopeRED, SlopeMR,
+SAM, and ISODATA classiﬁcations validated with R01 points.
+Overall accuracy (%) Kappa
+SlapeRED 64.21 0.5264
+SlapeMR 63.16 0.5171
+SAM 47.50 0.3466
+Unsupervised 25.00 0.0722
+Table 6. Producer’s and user’s accuracies for each classiﬁcation method (SlopeRED, SlopeMR,
+SAM, and ISODATA).
+3 Class Producer accuracy (%) User accuracy (%)
+§ SlopeRED Exposed substrate 20 100
+a Seagrass 52 68.42
+:s Macroalgae 90 52.94
+: Deepwater 100 67. 57
+(\1 Exposed substrate 0 0
+3; SlopeMR Seagrass 100 42.55
+K Macroalgae 72 85.71
+E Deepwater 88 81.48
+F. SAM Exposed substrate 72 47.37
+g Deepwater 100 54. 3 5
+63 Macroalgae 16 3 3 .3 3
+.2“ Mixed beds 20 50
+o Seagrass 25 55.56
+% Unsupervised Exposed substrate 0 0
+E, Deepwater 20 23.81
+‘5 Macroalgae 0 0
+0) Mixed beds 35 14.58
+i)” Seagrass 72 94.74
+g Note: Mixed beds class was excluded from analysis using the SlopeRED and SlopeMR models.
+3‘
+E relatively high accuracies for ‘seagrass’ class (Table 6) were unexpected, but it demon-
+;3 strated that the unsupervised ISODATA was not an appropriate method to distinguish
+E underwater features even in case of partially exposed substrate (Table 6). The accidental
+8 high accuracy values for the seagrass class were probably resulted from the large over-
+estimation of seagrass areas with the ISODATA classiﬁcation, which increased the prob-
+ability of a validation point to fall in a seagrass cluster. In addition, the uneven geographic
+distribution and lack of ground truth data in the north portion of the HICO image resulted
+in the accidental high accuracy for the seagrass class (Figure 7).
+
+Unsupervised classiﬁcation algorithms have been extensively used in terrestrial
+remote sensing; however, they have been rarely applied in coastal aquatic environments
+for benthic mapping because the spectral properties of the benthic habitats are contami-
+nated by the interference from water column optical properties (Mishra et a1. 2005; J oseph
+et a1. 2005). Another reason for the limited use of unsupervised classiﬁcations over coastal
+aquatic habitats is the lack of knowledge pertaining to the spectral variations of various
+benthic habitat types (Cho, Mishra, and Wood 2012). Without the application of an
+accurate water column correction model, unsupervised classiﬁcation would not provide
+proper delineation and grouping of benthic habitats (Mishra et a1. 2006).
+
+"
+"15","134 H.J. Cho et al.
+(A) SAM (B) Unsupervised
+527000 533000 539000 527000 533000 539000 N
+c ' - o o _
+i3: - 1‘ :3; § - é w% _- E
+to ' - to E 27-,
+. 0‘) I. ..
+8 I "" L -- . o o .I 8 S
+c ' O O ' ' O
+‘9 "". o o ' .. ' to
+W . - "" co co - to
+c l I. ”__. m m -: I I I. I o
+8 '- - ' 5 ' 8 8 : 8
+N ,l - o O ' . N
+W ' L = .. N N ' . . W
+\- - .- -: .- .- - :9 ‘° - ' - ‘—
+m .. 7! 3:, g _ . -. . .3
+c . i»; 8 ° ' o
+co .1 1 o g . 00
+N . I w - N
+\- 1 i N g ' \-
+3 § ' ‘2 - 8 § §
+8 5 a . 3 a ' ' . ' E
+4—» W ' ' ﬁ 2; _ ' I m
+cg c i 2 o ' o
+S a . _.. I '1 -,- a 8 . ' I . a
+< t; '«I t; t; . 27-, Legend
+00 - Unclassifed
+N 527000 533000 539000 527000 533000 539000
+‘1' -:-::— km Ii-Z—Z— km LI Exposed
+V3
+[K 01.25 25 5 7.5 10 01.25 25 5 7.5 10 - Deepwater
+i (C) SlopeRED (D) SIOPGNIR - Macroalgae
+2 527000 533000 539000 527000 533000 539000 - Mixed beds
+3 '.' :‘. . ""'-"""" - ' F; _--I,. - Seagrass
+8 8 =- '. I.-. -'. 8 2 - 'JE' 5. ”L 8
+B 0"") II .III I_. H . C"") or) .III :11“. I :II' II; C"")
+m 8 . . _ __ ' _ 8 8 3 ri'é. -'__.. . __II. c
+o) 8 .' ' ' - ° 8 f : -. ' ' I g
+f; $3 . _ ' _ -.. . S S."" .I. if I: l ' .3“: 39>
+9—4 m ' ' ' . . - 3-"" m '. .1 3.5.43 ‘-
+O c - - o -. '. -._ 1. 044:} °’
+G) 8 . - . . 8 8 ' ‘ k .I: I l‘ I.- durii; -. 8
+00 E , . . ,. § 3 i. -"".'.'. L—L'H 8
+O 8 _ '~i -. ° IL! ""- - 1.
+a .I g g '.II .II .'-' _.' w
+>3 m .I g. N m :IIII |. 2
+V9 . rI. ‘- I' ll ' -' of)
+Pd 8 --r m 8 11.. IE
+G) O I- h c O 1"" - . ' 8
+g a _ - - g a \ “m -. 5
+O t; ' g 2; hi I""""0"": -. 2
+E c . :5 c ‘1 1:1, 8
+g 8 .— - 8 L. --. -- - 8
+O c . . - . o c :5. '3‘."" .1 o
+3 - “- "" 8 3 ""L... 3. 3
+Q 0"") r: O m ' IT”. II 0"")
+I. g 1. '.I
+527000 533000 539000 °° 527000 533000 539000
+0125 25 5 7.5 10 O 1.25 25 5 7.5 10
+Figure 7. Benthic habitat maps derived for the study area using the HICO data and the four
+classiﬁcation models including SAM, Unsupervised, SlopeRED, and SlopeMR.
+
+SAM classiﬁcation provided a better overall accuracy value and higher kappa coefﬁ—
+cient compared to ISODATA (Table 5). The results also showed an improved accuracy in
+distinguishing exposed substrate from submerged vegetation (seagrass, macroalgae, mixed
+beds classes) or from deepwater substrates (Table 6). However, it still did not serve as a
+reliable tool in classifying three benthie types including seagrass, macroalgae, and mixed
+beds and showed low producer’s and user’s accuracies (Table 6). The results demonstrate
+
+"
+"16","GIScience & Remote Sensing 135
+that even advanced supervised classiﬁcation methods such as SAM would perform poorly
+in discriminating benthic vegetation types (Vahtniae and Kutser 2013) due to the water
+column interference. In addition, the 90 m spatial resolution of the HICO data probably
+introduced additional confusion and variations in the benthic vegetation classes. Even
+with the use of higher spatial resolutions data from airborne CASI (compact airborne
+spectrographic imager) and satellite WV—2 (WorldView-2; 2 m resolution), image-based
+supervised classiﬁcation by Vahtniae and Kutser (2013) provided low producer’s and
+user’s accuracy values (30—50%) for benthic vegetation, which were comparable with our
+study results (Table 6).
+
+The new slope models SlopeRED and SlopeNIR did not pick up the class ‘mixed beds’
+(Table 5) as predicted by the statistical and divergence analyses (Figure 6; Table 1).
+Nevertheless, this method provided overall accuracies (63—64%; Table 5) greater than the
+v other two classiﬁcations and even greater than the benthic classiﬁcation accuracy result
+§ (algae, seagrass, and bare substratum) in IRL by using acoustic seaﬂoor discrimination
+4; method (~60%; Riegl et al. 2005). Also, the slope algorithms were better to distinguish
+3:0 between seagrass and macroalgae substrates, one of the objectives of this study, compared
+<ﬁ to SAM or unsupervised methods (Table 6). The low classiﬁcation accuracy for the
+ﬁ exposed class with the slope algorithms was again due to the uneven spatial distribution
+ER of the ground truth points, similar to the results observed with the unsupervised classiﬁca-
+5 tion for the seagrass class. There was not much ﬁeld survey-based or aerial photo-based
+ES information on the benthic cover type in north portion of the HICO image data. Therefore,
+E supervised SAM classiﬁcation clumped much of those area as ‘unclassiﬁed’ (Figure 7),
+8 but the unsupervised ISODATA and slope models produced multiple clusters for those
+2? areas, which later were labeled based on the ﬁeld reference points used for SAM
+é classiﬁcation (20 points per class). As described earlier, the accidental high accuracy
+g values for the seagrass class in Figure 7B were probably due to a small number of ﬁeld
+<3: reference points, to label with, in those areas that were clustered as the same group. In this
+C3 case, a few reference points were matched with a class used (seagrass), and the larger area
+i)” of the same cluster was labeled as seagrass because there were no other reference points
+3 that matched with other class labels in the area (Figure 7B). Because of these reasons, a
+: signiﬁcant difference was observed between map composites produced by the four
+ﬁ classiﬁcation procedures (Figure 7).
+g Considering the relatively small HICO image size that was useable (cloud free) for
+:3 this study, the 90 m spatial resolution in addition to the limited benthic information at
+E some portions in the image, only 20 reference points/class for SAM and 20—25 points/
+8 class for accuracy assessment were available. This probably was the reason for the
+relatively low kappa coefﬁcient values (Table 5). This can be improved when the entire
+lagoon-wide HICO data become available because more ﬁeld data and pixels can be used
+throughout the image for both classiﬁcation and accuracy assessment. Nevertheless, the
+new slope models performed better in distinguishing benthic vegetation types by picking
+up the subtle differences in the red and NIR slopes between vascular seagrass and
+macroalgae (Table 6); and the new methods can signiﬁcantly improve the benthic
+vegetation mapping when used along with a supervised classiﬁcation method.
+According to the graphical and statistical results (Tables 1 and 2), SlopeNIR appeared
+to perform better for seagrass vs. macroalgal discrimination, but it is hard to determine
+which slope method performed better based on the overall classiﬁcation contingency table
+(Table 6). Classiﬁcation maps suggest that SlopeNIR incorrectly classiﬁed much of the
+deepwater portion into macroalgae (Figure 7). And along with conventional unsupervised
+classiﬁcation, slope model classiﬁcation results should be used with caution in areas with
+
+"
+"17","136 HJ. Cho et al.
+little reference points available. In summary, the best classiﬁcation results achieved 63—
+64% overall accuracy in benthic mapping, which might be considered poor when com-
+pared to traditional land use and land cover studies using remote sensing. However, for a
+benthic mapping study using orbital remote sensing data and without the application of a
+robust radiative transfer model, these accuracy numbers could be considered signiﬁcant. A
+radiative transfer model-based protocol could be considered as the best way to map the
+benthic habitat; however, it needs a signiﬁcant amount of ﬁeld data including optical data
+of the water column, which is frequently missing, difﬁcult to collect, and not economical.
+We believe that with the collection of more training site data and ﬁne tuning of the slope
+models, the results of this benthic mapping study would improve considerably.
+E 6. Conclusion
+§ Atmospherically corrected HICO data were used to distinguish and map benthic substrate
+3 types in IRL. Hyperspectral sensors such as HICO typically provide detailed spectral
+é"" features of targets that can be used in benthic mapping. However, use of the large number
+g of highly correlated bands and the narrow short-wavelength bands would not always
+5: produce the best classiﬁcation results. This study examined the HICO data to ﬁnd key
+é wavelength ranges to distinguish between benthic vegetation types, especially between
+E? seagrass and macroalgae. Two slope methods, SlopeRED and SlopeNIR, were developed by
+? calculating the slopes between HICO bands 49 and 51 and between HICO bands 52 and
+§ 60, which demonstrated the greatest abilities in distinguishing spectral features of seagrass
+a and macroalgae. Classiﬁcation accuracies of the new methods for seagrass and macro-
+T: algae classes were considerably higher compared with performance of conventional
+% ISODATA and SAM classiﬁcation methods that use all bands with redundant information.
+3—: Our study demonstrates the advantage of selecting key narrow bands to accentuate the
+O subtle differences between seagrass and macroalgae. Results suggest that combining a
+ED supervised clustering method and the new slope models, SlopeRED and SlopeNIR, will
+% signiﬁcantly improve the accuracy of benthic mapping because supervised classiﬁcation
+8 will compensate the slope method application in areas with little reference points avail-
+E‘ able. This study is timely because an improved detection technique for accurate mapping
+E of seagrass and macroalgae areas in IRL will aid in the ongoing research and management
+3 efforts to understand and restore the recent dramatic loss of seagrass habitats during the
+E super algal blooms. We conclude that for accurate benthic habitat mapping in estuarine
+o environments such as IRL, a few narrow bands on both sides of 700 nm are required in
+Q future multispectral satellite sensors.
+Acknowledgments
+We sincerely thank Robert Chamberlain, Jennifer Miller, Lauren Hall, and Margaret Lasi from St.
+Johns River Water Management District, and Joe Faella, John Whipple, and John Terry from the
+Brevard County for conducting and making the ﬁeld survey and sampling data available for us.
+Funding
+This research is supported by grants from National-Geospatial Intelligence Agency [grant number
+HM01771210001], Ofﬁce of Naval Research, and Florida Space Grant Consortium [grant number
+NAIOOAR4170079].
+
+"
+"18","GIScience & Remote Sensing 137
+
+References
+
+Ball, G. H., and D. J . Hall. 1965. ISODATA.‘ A Method OfData Analysis and Pattern Classiﬁcatian.
+Menlo Park: Ofﬁce of Naval Research, Information Sciences Branch. Stanford Research
+Institute.
+
+Cho, H. J . 2007. “Depth-Variant Spectral Characteristics of Submersed Aquatic Vegetation (SAV)
+Detected by Landsat 7 ETM+.” Internatianal Jaurnal OfRemOte Sensing 28 (7): 1455—1467.
+doi:10.1080/01431160600962772.
+
+Cho, H. J ., P. Kirui, and H. Natarajan. 2008. “Test of Multi-Spectral Vegetation Index for Floating
+and Canopy-Forming Submerged Vegetation.” International Journal ofEnvironmental Research
+and Public Health 5 (5): 477—483. doi:10.3390/ijerph5050477.
+
+Cho, H. J ., D. Mishra, C. Clarke, and A. Kamerosky. 2013. “Hyperspectral Signal Bands t0 HICO
+Image Data Bands for Seagrass Mapping.” Proceedings of the 2013 IEEE WHISPER (the 5th
+Workshop on Hyperspectral Image and Signal Processing: Evolution in Remote Sensing),
+Gainesville, FL, June 25—28.
+
+‘1. Che, H. J ., D. Mishra, and J . Wood. 2012. “Remote Sensing of Submerged Aquatic Vegetation.” In
+
+5 Remote Sensing OfSubmerged Aquatic Vegetation, Remote Sensing — Applicatians, edited by B.
+
+:1 Escalante, 297—308. Rijeka, Croatia: InTech.
+
+g Enriquez, S., and M. A. Borowitzka. 2010. “The Use of the Fluorescence Signal in Studies of
+
+g” Seagrasses and Macroalgae.” In Chlarophyll a Fluorescence in Aquatic Sciences: Methods and
+
+< Applicatians, edited by D. J. Suggett, O. Prééil, and M. A. Borowitzka, 187—208. Dordrecht:
+
+g Springer.
+
+51; FFWCC (Florida Fish and Wildlife Conservation Commission). 2003. Conserving F Zoridais‘
+
+l; Seagrass Resaurces: Develaping a C00rdinated Statewide Management Pragram.
+
+E St. Petersburg: Florida Marine Research Institute.
+
+3 Fyfe, S. 2003. “Spatial and Temporal Variation in Spectral Reﬂectance: Are Seagrass Species
+
+$ Spectrally Distinct?” Limnology and Oceanography 48 (1—2): 464—479.
+
+8 Gao, B. C., and A. F. H. Goetz. 1990. “Column Atmospheric Water Vapor and Vegetation Liquid
+
+3 Water Retrievals from Airborne Imaging Spectrometer Data.” Journal of Geaphysical Research:
+
+3‘ Atmospheres 95 (D4): 3549—3564. doi:10.1029/JD095iD04p03549.
+
+E Gao, B. C., M. J . Montes, Z. Ahmad, and C. 0. Davis. 2000. “Atmospheric Correction Algorithm
+
+g for Hyperspectral Remote Sensing of Ocean Color From Space. ” Applied Optics 39 (6): 887—
+
+<H 896.
+
+C03) Holden, H., and E. Le Drew. 1998. “Hyperspectral Identiﬁcation of Coral Reed Features in Fiji and
+
+‘33 Indonesia.” Proceedings of Fifth International Conference on Remote Sensing for Marine and
+
+:0 Coastal Environments, San Diego, CA, October 5—7.
+
+B Honarmand, M., H. Ranjbar, and J . Shahabpour. 2012. “Application of Principal Component
+
+% Analysis and Spectral Angle Mapper in the Mapping of Hydrothermal Alteration in the Jebal-
+
+ﬁ Barez Area, Southeastern Iran.” Resource Geology 62 (2): 119—139. d0i:10.1111/j.1751-
+
+g 3928.2012.00184.X.
+
+8 J ensen, J . R. 2005. Introductory Digital Image Pracessing. 3rd ed. Upper Saddle River, NJ: Prentice
+
+E Hall.
+
+5 Joseph, M., G. D. Quartly, C. Robertson, V. Byﬁeld, and R. Harris. 2005. “Application of Clustering
+
+Q Techniques to Multispectral Optical Data Over the Ocean.” Paper presented at the MERIS (A)
+ATSR Workshop of 2005, Frascati, Italy, September 26—30.
+
+Kruse, F. A. 1998. “Advances in Hyperspectral Remote Sensing for Geologic Mapping and
+Exploration.” Proceedings of 9th Australasian Remote Sensing Conference, Sydney, NSW,
+July 1998.
+
+Kutser, T., E. Vahtmae, and L. Metsamaa. 2005. “Spectral Library of Macroalgae and Benthic
+Substrates in Estonian Coastal Waters.” Proceedings of the Estonian Academy of Sciences
+Bialagy Ecalagy 55 (4): 329—340.
+
+Larkum, A. W. D., R. J. Orth, and C. M. Duarte. 2007. Seagrasses: Bialagy, Ecalagy and
+Conservation. Reprint, Dordrecht: Springer.
+
+Lidz, B. H., J. C. Brock, and D. B. Nagle. 2008. “Utility of Shallow-Water ATRIS Images in
+Deﬁning Biogeologic Processes and Self—Similarity in Skeletal Scleractinia, Florida Reefs.”
+Jaurnal 0f Caastal Research 24 (5): 1320—1338.
+
+Littler, D. S., M. M. Littler, and M. D. Hanisak. 2008. Submersed Plants of the Indian River
+Lagoon: A F loristic Inventmjy and Field Guide. Washington, DC: OffShore Graphics.
+
+"
+"19","138 HJ. Cho et a1.
+Malthus, T. J., and P. J. Mumby. 2003. “Remote Sensing of the Coastal Zone: An Overview and
+Priorities for Future Research.” International Journal of Remote Sensing 24: 2805—2815.
+doi:10.1080/0143116031000066954.
+Mishra, D. R., H. J . Cho, S. Ghosh, A. FOX, C. Downs, P. B. T. Merani, P. Kirui, N. Jackson, and S.
+Mishra. 2012. “Post-Spill State of the Marsh: Remote Estimation of the Ecological Impact of the
+Gulf of Mexico Oil Spill 0n Louisiana Salt Marshes.” Remote Sensing ofEnvironment 118 (15):
+176—185.
+Mishra, D., S. Narumalani, D. Rundquist, and M. Lawson. 2005. “High Resolution Ocean Color
+Remote Sensing of Benthic Habitats: A Case Study at the Roatan Island, Honduras.” IEEE
+Transactians in Geasciences and Remate Sensing 43 (7): 1592—1604.
+Mishra, D., S. Narumalani, D. Rundquist, and M. Lawson. 2006. “Benthic Habitat Mapping in
+Tropical Marine Environments Using QuiekBird Imagery.” Photagrammetric Engineering and
+Remate Sensing 72 (9): 1037—1048.
+Mishra, D., S. Narumalani, D. Rundquist, M. Lawson, and R. Perk. 2007. “Enhancing the Detection
+and Classiﬁcation of Coral Reef and Associated Benthic Habitats: A Hyperspectral Remote
+3 Sensing Approach.” Journal of Geophysical Research 112 (C8): C08014. doi:10.1029/
+8 2006JC003892.
+‘53 Montes, M. J ., and B. C. Gao. 2004. NRL Atmaspheric Carrectian Algarithmsfar Oceans: TAFKAA
+€13 Users’ Guide. Washington, DC: Naval Research Laboratory Memorandum Report.
+:3 Mumby, P., E. Green, A. Edwards, and C. Clark. 1999. “The Cost-Effectiveness of Remote Sensing
+00 for Tropical Coastal Resources Assessment and Management.” Journal of Environmental
+: Management 55 (3): 157—166.
+[(3, Narumalani, S., D. R. Mishra, J . Burkholder, P. B. T. Merani, and G. Wilson. 2006. “A Comparative
+8 Evaluation of ISODATA and Spectral Angle Mapping for the Detection of Saltcedar Using
+E; Airborne Hyperspectral Imagery.” Geocarto International 21 (2): 59—66.
+E Pasqualini, V., C. Pergent-Martini, G. Pergent, M. Agreil, G. Skoufas, L. Sourbes, and A. Tsirika.
+g 2005. “Use of SPOT 5 for Mapping Seagrasses: An Application to Posidonia oceanica.”
+U Remate Sensing OfEnvirOnment 94 (1): 39—45.
+%‘ Phlips, E. J., and S. Badylak. 2011. “Phytoplankton Abundance and Composition in the Indian
+E River Lagoon July 2010—July 2011.” University of Florida: Report 59 for Indian River Lagoon.
+g Gainesville, FL: St. Johns River Water Management District.
+(:3 Riegl, B. M., and J . G. Foster. 2011. “Mapping the Distribution and Abundance of Macroalgae in
+O the Indian River Lagoon.” Final Report to St. Johns River Water Management District (Contract
+ED 26265). 1 April 2011. Palatka, FL, 43.
+g Riegl, B. M., R. P. Moyer, L. J. Morris, R. W. Vimstein, and S. J. Purkis. 2005. “Distribution and
+8 Seasonal Biomass 0f Drift Macroalgae in the Indian River Lagoon (Florida, USA) Estimated
+: with Acoustic Seaﬂoor Classiﬁcation (QTCView, Echoplus).” Journal ofExperimental Marine
+Q Bialagy and Ecalagy 326: 89—104. doi:10.1016/j.jembe.2005.05.009.
+'8 SJRWMD. 2012. Indian River LagOOn 2011 Superblaom: Plan OfInvestigatiOn, 26. Palatka, FL: St.
+’3 Johns River Water Management District.
+% Tou, J. T., and R. C. Gonzalez. 1974. Pattern Recognition Principles. Reading, MA: Addison-
+B Wesley Publishing Company.
+8 Vahtméie, E., and T. Kutser. 2013. “Classifying the Baltic Sea Shallow Water Habitats Using Image-
+Based and Spectral Library Methods.” Remate Sensing 5: 2451—2474. doi:10.3390/rs5052451.
+Vimstein, R. W., and L. M. Hall. 2009. “Northern Range Extension of the Seagrasses Halophila
+johnsonii and Halophila decipiens Along the East Coast of Florida, USA.” Aquatic Botany 90
+(1): 9—92.
+Vizzini, S. 2009. “Analysis of the Trophic Role of Mediterranean Seagrasses in Marine Coastal
+Ecosystems: A Review.” Botanica Marina 52: 383—393. doi:10.1515/BOT.2009.056.
+Wines, M. 2013. “Deaths of Manatees, Dolphins and Pelicans Point to Estuary at Risk.” Accessed
+October 2013. http ://WWW.nytimes. com/20 1 3/ 08/0 8/us/ deaths-0f—manatees—dolphins—and-peli-
+cans-point-t0-estuary-at-risk.html?pagewanted=1 &_1°=2&hpw&
+
+"

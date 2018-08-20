@@ -1,0 +1,606 @@
+"","x"
+"1","Acta Astronautica I (IIII) IlI—III
+g;fgiilt‘rgg{Lj-""xg:,.;:~‘:f{:§-‘_,::;;g; Contents IIStS available at SCIVerse SolenceDIrect ' ’
+.t _: 7 , ‘v‘ '
+v; {4 Acta Astronaut1ca /
+ELSEVIER journal homepage: www.elsevier.com/locate/actaastro :: tl._':(.: ,2?
+—
+Space rad1at1on analys1s: Rad1at1on effects and part1cle 1nteract1on
+o , o i?
+0uts1de the Earth 5 magnetosphere us1ng GRAS and GEANT4
+Lisandro M. Martinez *1, Jennifer Kingston
+Space Research Centre, Cranﬁeld University, Cranﬁeld, Bedfordshire MK43 OAL, United Kingdom
+ARTICLEINFO ABSTRACT
+Article history: In order to explore the Moon and Mars it is necessary to investigate the hazards due to
+RECETVEd 2716011307 2011 the space environment and especially ionizing radiation. According to previous papers,
+RECEIVEd 1“ rEVISEd form much information has been presented in radiation analysis inside the Earth’s magneto—
+? Autgudstlgosll t b 2011 sphere, but much of this work was not directly relevant to the interplanetary medium.
+CCEP 6 6p em er This work intends to explore the effect of radiation on humans inside structures such as
+— the ISS and provide a detailed analysis of galactic cosmic rays (GCRs) and solar proton
+Keyword? . events (SPEs) using SPENVIS (Space Environment Effects and Information System) and
+Space radlatlor} CREME96 data ﬁles for particle ﬂux outside the Earth’s magnetosphere. The simulation
+Space EXploragor} was conducted using GRAS, a European Space Agency (ESA) software based on GEANT4.
+Spacecraft rad1at10n . .
+H . Dose and equ1valent dose have been calculated as well as secondary part1cle effects and
+uman space explorat1on _ _ _
+Space radiation effects GCR energy spectrum. The calculated total dose effects and equ1valent close 1nd1cate the
+Galactic cosmic radiation effects risk and effects that space radiation could have on the crew, these values are calculated
+using two different types of structures, the ISS and the TransHab modules. Final results
+indicate the amounts of radiation expected to be absorbed by the astronauts during
+long duration interplanetary ﬂights; this denotes importance of radiation shielding and
+the use of proper materials to reduce the effects.
+© 2011 Elsevier Ltd. All rights reserved.
+1. Introduction Mars are set to become a reality, pushing the limits of
+today’s technologies.
+
+Throughout the years human space exploration has Mars missions pose an intense Challenge to the future
+been an important part of the evolution of society, since of space exploration; the transit times are high and will
+the beginning of the space program men and women have expose the crew to extended periods within the harsh
+had the opportunity to experience life in space. As we space environment. The piloted Mars interplanetary
+move into the 21st century the future holds new missions transfer (Earth—Mars) should be a high energy fast trajec—
+and difﬁcult challenges that should be addressed in tory to limit the exposure of the crew to radiation and
+advance in order to provide continuous support to the micro gravity effects; the same procedure will be applied
+evolution of space exploration. Missions to the Moon and t0 the return transfer (Mars—Earth). One of the limiting
+
+factors for the transfer time are the entry velocities; in
+which case tradeoffs between time and performance will
+* This paper was presented during the 61 st IAC in Prague have to be taken into consideration in the design phase.
+* Corresponding author. Tel.: +54 11 48991959, +54 341 4451409; A common concern throughout the literature indicates
+Cell: +54 911 40275206, +54 11 40275206; fax: +54 341 4255508. the necessity Of having the crew in space for the least
+
+E-mail addresses: lisandromartinez@hotmail.com (L.M. Martinez), . . . .
+
+. . . amount of t1me clue to the fast decond1t10n1ng that the
+J.k1ngst0n@cranﬁeld.ac.uk (J. I(1ngston). , , , ,
+
+1 Present/Permanent address: Juncal 4690, Torre Golf 4—3, Ciudad aStronaUtS W111 SUffer durlng ﬂlght 35 a r9511“ 0f mlcro—
+Auténoma de Buenos Aires, Buenos Aires 1425, Argentina. gravity effects and radiation exposure. This iS why close
+0094—5765/$ — see front matter © 2011 Elsevier Ltd. All rights reserved.
+doi: 1 0.1 01 6/j.actaastro.201 1 09001
+
+Please cite this article as: L.M. Martinez, J. Kingston, Space radiation analysis: Radiation effects and particle interaction
+outside the Earth’s magnetosphere using GRAS ancl GEANT4, Acta Astronautica (201 1), doi:10.1016/j.actaastro.201 1.09.001
+
+"
+"2","2 L.M. Martinez, ]. Kingston / Acta Astronautica I (IIII) III—III
+/,,--~ ---\ SImrt-StuyMissions Table 1
+/ \ (Opposition (”11155) Physics model used for the simulation.
+~ °\ \. XE‘JESEEi-‘éfi :‘Eiiiﬁli‘lﬁifliiiiflde . .
+‘ ] Jr. \ie’nus swmgby» - Particle Energy range Phy51cs model
+* Protons < 10 GeV QGSP_BERT_HP and
+\ ~ ' electromagnetic standard
+— Long-Stay Missions Protons > 10 GeV and < 100 GeV QGSP
+r4""- (Conjunction Class) Ions < 10 GeV QGSP_BERT
+' _ \ V ariations of missions with long —
+y 5/ x,“ Mars surface stays.
+. t . ,, . . .,
+MO d visual analysis of the interaction geometry. For this
+\ L ' : sulmgm,» reason, the software has become an important tool in
+K _ mm“ any type of radiation analysis including human radiation
+Fig_ 1, Mars mission trajectories [1] protection. In order to study and model different situa—
+tions, a pre—deﬁned set of physics models are included in
+GEANT4, the different physics lists include electromag—
+attention should be paid to the tradeoffs during trajectory netic and hadronic models with different accuracies and
+analysis, and provides the rationale for the work pre— computational requirements [8].
+sented here on assessing radiation (dose). The simulations performed on the spacecraft models
+
+There are two main trajectory types for human missions presented here were conducted using different physics
+to Mars; conjunction Class and opposition Class (Fig. 1). models depending on the type of particle and energy
+
+Both of these trajectories have direct implications on level. Table 1 indicates the physics models used.
+the time spent at Mars upon arrival, the ﬁrst one,
+conjunction Class, proposes a longer stay at the planet 2.2. GRAS
+while opposition Class gives a longer ﬂight time.
+
+According to [1], mission times range between 365— The GEANT4 Radiation Analysis for Space (GRAS) soft—
+661 days for opposition Class and 892—945 days for ware [9] is a3—D modeler that provides the opportunity to
+conjunction Class with surface stay times ranging from perform different analyses using the same radiation
+30 to 596 days accordingly. parameters; the results provided by GRAS are: particle
+
+According to previous work by Spillantini et al. [2], ﬂuence, path length, Charge deposition, equivalent dose,
+Stanford et al. [3], Bernabeu et al. [4] and the numerous total dose and dose equivalent among others.
+
+NASA publications [5] the radiation environment is a During this research dose and equivalent dose analysis
+signiﬁcant issue for the astronauts’ health during long was performed to an ICRU (International Commission of
+exposure periods in the interplanetary medium. During Radiation Units) Sphere, deﬁned in order to match the
+space exploration the crew will be exposed to two physical characteristics of the human body. The ICRU
+different types of natural radiation sources: ionizing and Sphere is a tissue equivalent representation; it is a
+non—ionizing. The radiation environment duringa mission 30 cm diameter sphere with density of 1 g/Cm3 with a
+to Mars will show considerable temporal and spatial mass composition of 76.2% 0, 11.1% C, 10.1% H and 2.6% N.
+ﬂuctuation; this means that a crew will require different A 1 mm thick spherical detector was placed inside the
+protection techniques over the course of their ﬂight, sphere at a depth 0f 10 mm from the surface; this is the
+according to NASA [6]. Many studies have expressed this recommended value for strong penetrating radiation [10].
+concern but so far the literature has not provided a The software provides a weighting factor for the equiva—
+detailed analysis of the radiation effects in structures, lent dose analysis based on the ICRP (International Com—
+such as the ISS, outside the Earth’s magnetosphere; this mission on Radiological Protection) 60 [11] or ICRP 92
+paper focuses on this idea by analyzing the radiation [12], which can be chosen by the user.
+effects on the 155 Columbus module structure and the
+TransHab structure. 2.3. Geometry
+2. Materials and methods In order to perform the different simulations and to
+obtain meaningful results geometries with a certain level
+2.1. GEANT4 of accuracy had to be created. Since the results are very
+much affected by the accuracy and size of the simulated
+
+“Geant4 is a toolkit for the simulation of the passage of “world” and its geometries, a tradeoff had to be made in
+particles through matter. Its areas of application include order to ﬁnish the simulation within an acceptable time.
+high energy, nuclear and accelerator physics, as well as GRAS allows a series of software products to be used in
+studies in medical and space science” [7]. Geant4 is a order to upload the geometrical models such as the 155 0r
+Monte Carlo particle transport simulation software being TransHab; GDML (Geometry Description Markup Lan—
+developed by an international collaboration that includes guage) was used in this case for convenience. For all of
+CERN, SLAC, BSA and many research institutes around the the simulations a four meter diameter world sphere was
+world. It is a C—I—I— open source software that provides created to provide a vacuum environment where the
+solutions to particle interaction with matter including physical models could be placed for simulation purposes.
+
+Please cite this article as: L.M. Martinez, J. Kingston, Space radiation analysis: Radiation effects and particle interaction
+
+"
+"3","L.M. Martinez, 1. Kingston / Acta Astronautica I (IIII) III—III 3
+During the simulation, different models and types of Table 3
+radiation where implemented providing a fundamental Material composition, thickness and construction description for the
+basis for comparison between the models. In order to TranSHab Sthture'
+provide a human body representation inside the different TransHab components
+structures an ICRU Sphere detector was placed at the —
+center of the different geometries. Material Thickness # Total
+Two models have been created to perform the radia— (cm) Plies thiCkness
+tion analysis; one is similar to the ISS outer structure (see (cm)
+2.3.1) and the other to the TransHab model (see 2.3.2). KevlarWeave 04318 1 04318
+The TransHab model is a proposed expandable habitat Kevlar 0.0508 10 0.508
+inﬂated by air in space; it provides several advantages to POIYUFEthane Foam 7-52 4 30-48
+rigid sttuctui‘es, one of them being launch capabilities ?:vitglensity Polyethylene (LDPE) 8:53 4 S 5:33:
+concerning Size and weight.
+TransHab structure description
+2.3.1. 155 Model —,
+The model, which represents the ISS structure, is com— Layer Mammal
+posed by different layers of aluminum, Kevlar and Nextel. 1 KevlarWeave
+The characteristics are shown in Table 2 and Fig. 2 shows a 2 to 8 Kevlar
+graphical interpretation of the model used for the simulation. 9, 17. 22. 31 Polyurethane
+The data used for the structure of the ISS model was based on 10 to 12 Km“
+.. 13, 15, 18, 20, 23, 25, 27, 29 Nextel
+the Columbus 1 model from Ersmark [13] work on Geant4 14’ 16’ 19’ 21’ 24’ 26’ 28’ 30 LDPE
+Monte Carlo Simulation of the International Space Station —
+Radiation Environment”, utilizing the basic structure and
+thickness of the different layers composing the structure.
+2.3.2. TransHab model
+The main structure of the inﬂatable TransHab is made of
+low atomic number materials in order to restrict the
+formation of secondary particles and provide shielding from
+Table 2
+155 structure composition.
+S/C A1 (mm) Kevlar (mm) Nextel (mm) Al hull (mm)
+Cylinder 2.57 5.6 5.3 4.8
+Aft/front cover 2.57 5.6 5.3 4.8
+
+Fig. 3. Layer structure of the TransHab with ICRU Sphere inside.
+highly energetic particles. For the simulation, the structure
+was constructed following the paper by Badhwar et al. [14]
+in which there is a layer by layer description of the
+TransHab structure. Table 3 shows the geometric structure
+of the TransHab used during this simulation.
+
+The different materials are distributed along the struc—
+ture to provide a homogeneous layout, Fig. 3 shows how
+the structure looks in the simulation.
+
+2.4. Software validation
+
+Software validation was conducted to verify the accu—
+racy of the process used; in this case the validation was
+performed by comparing the stopping power of different
+materials with several particles, the total dose deposition
+and a comparison with GEANT4 MULASSIS (Multi Layered
+Shielding Simulation Software) tool simulating an astro—
+naut phantom [15]. The phantoms’ geometry consisted of
+
+Fig. 2. 155 module structure shown with front side removed, ICRU Shidding material (5 mm aluminum and 4 mm water), a
+sphere inside and GCRs isotropic particle shower. vacuum area in between and the target made Of water
+Please cite this article as: L.M. Martinez, J. Kingston, Space radiation analysis: Radiation effects and particle interaction
+
+"
+"4","4 L.M. Martinez, ]. Kingston / Acta Astronautica I (IIII) III—III
+103 variation of these phenomena is directly linked to the
+solar activity; the solar cycle and variations in activity
+_ PSTAR impose a direct effect on the ﬂux and time variation of the
+3 space radiation environment [18]. GCR particles are
+""LE, 2 - . always present and the intensity varies with the varia—
+E 10 \\. tions of the solar cycle [18] therefore the GCR are at their
+E \ highest point during solar minimum and lowest during
+63 \“ solar maximum, this variation is noticeable for particles
+E \ with energies below 1000 MeV.
+(é: 10' The data used for the simulation of the solar proton
+75"" model were obtained using the [PL model from SPENVIS
+'— ' [19]. The JPL—91 model [20] has also been used in different
+radiation effects studies, “It is based on data from solar
+100 cycles 20 and 21 and part of 22 and cover energy ranges
+10° 10‘ 102 103 104 of >1 to >60 MeV” [21] and provides a solar proton
+Kinetic Energy [MeV] model prediction of long term solar proton ﬂuence and it
+. . . . has been recommended for mission planning [20]. The [PL
+Fig. 4. Proton stoppIng power 1n alum1num 1 MeV to 10000 MeV. model “data consist Of nearly continuous record Of daily
+average ﬂuxes above the energy thresholds of 1, 4, 10, 30
+Table“ , and 60 MeV. The proton events considered in the [PL
+Total average dep051ted energy results from GRAS and SPENVIS. .
+models are deﬁned as the total ﬂuence occurring over
+Material E_dep GRAS (MeV) E_dep MULASSISS (MeV) series of days during which the proton ﬂuence exceeded a
+— selected threshold” [20]. One of the negative sides of the
+Aluminum 3-164+/—0-534 3-140+/—0-565 JPL model is that assumes a quiet time (no solar proton
+— ﬂuence) during solar minimum conditions. Fig. 5 shows a
+plot of the solar proton ﬂuence results obtained from
+simulating the astronaut. The different physics models SPENVIS.
+used by GEANT4 have been previously validated in [8] The dominant ﬂux of GCRs is believed to come from
+and the results are available online. supernova events. It is composed of 90% protons, 9% alpha
+The stopping power validation was conducted by com— particles and the remaining 1% of various ions. These
+paring simulation data using GRAS and the NIST (National particles are trapped inside the galactic magnetic ﬁeld
+Institute of Standards and Technology) PSTAR (stopping and may travel around the galaxy various times before
+power and range tables for protons) and ASTAR (stopping reaching the Solar System [22]. The GCRs energy spec—
+power and range tables for helium) [16] web data bases, trum is shown in Fig. 6. These data were obtained from
+which calculate stopping power for protons and helium ions. CREME96 (Cosmic Ray Effects on Micro—Electronics)
+ASTAR and PSTAR generate the data from ICRU Report 49. As model for GCRs ﬂux outside Earth’s magnetosphere. It
+shown in Fig. 4, the result from the 3—D simulation with can be seen that there are many more particles in the
+GRAS is in close agreement with the ones from the NIST lower energy end of the spectrum while the ﬂux of highly
+database. Fig. 4, shows one of the calculations performed energetic particles is much lower.
+during the research, as an example. This one represents the The CREME96 model allows the creation of a numer—
+stopping power of protons in aluminum, other calculations ical representation of the radiation environment in
+such as water and hydrogen where also conducted having
+the same consistency of results with the NIST data. ,2 ESP-PSYCHIC Total Fluence: Solar Protons
+Table 4 shows the results of the total Average Depos— 1O
+ited Energy (E_dep) after targeting a slab of 100mm 1011
+thickness using MULASSISS (online tool), and GRAS. The A
+data validation was performed by doing a comparison 1 1010
+between these two results. g
+In order to validate the close deposition in the astro— ”NE 109
+naut phantom a comparison between Mulassis and GRAS %
+was conducted. The proton beam used was generated by § 108
+SPENVIS [17] representing solar proton emission at 1 AU, 5 7
+the results obtained were consistent and with less than a E 10
+5% difference between the two simulations. E 106
+D
+3. Theory and calculations 105
+3.1. Space radiation 104
+0.1 1.0 10.0 100.0 1000.0
+. . . . . Energy(MeV)
+The most Signiﬁcant space radiation threats out51de
+Earth’s Magnetosphere come from GCRs and SPEs. The Fig. 5. JPL—91 solarproton ﬂuence from SPENVIS [19].
+Please cite this article as: L.M. Martinez, J. Kingston, Space radiation analysis: Radiation effects and particle interaction
+
+"
+"5","L.M. Martinez, ]. Kingston / Acta Astronautica I (IIII) III—III 5
+103 manifest as medical symptoms such as radiation sickness,
+31:39 cataracts or cancer in the longer term.
+_ 10‘ \ 31313 The changes induced by radiation effects can be
+:3 _ ‘ gégige summarized in two types: deterministic and stochastic
+§ 10"" x effects. The deterministic effects are those in which
+g ‘, exposure above a certain threshold energy increases their
+{'5 10‘3 -\\ f2, : 7 \_ severity as the close is increased: examples are acute
+N‘?’ radiation effects and cataracts. The stochastic effects are
+E 10'5 A ~ those in which the probability of occurrence is propor—
+3 \\ tional to the close increase, these are cancer and heredi—
+L"" 10-7 \\_. . tary effects [24].
+10‘9 0 1 2 3 4 \\\ 5 3.2.1. Deterministic
+10 10 10 10 10 10
+Kinetic Energy (MeV/“UC'90“) 3.2.1.1. Acute radiation. These effects occur sometime
+Fig. 6. Solar min GCR ﬂux outside Earth’s magnetosphere [22]. after the exposure to a large dose Of radiatioh m a short
+per10d 0f t1me. The ma1n effect of acute radiation is the
+prevention or delay of the cell division as well as killing
+109 the cells, thus inducing depletion in cell population.
+Depending on the close received the main effects of this
+_ 107 type of radiation are observed in bone marrow,
+*g gastrointestinal and neuromuscular damage; the
+§ 105 absorption of a close above 1 Gy gives rise to radiation
+E sickness and its side effects such as nausea and vomiting
+5 103 only a few hours after the exposure. Absorption of a close
+4» 0f 2 Gy or larger could lead to death a few days after the
+(:E/ 101 exposure [24].
+5.
+LL 10-1 3.2.1.2. Cataracts. Cataracts induced by radiation could
+develop many years after the close was absorbed. The
+10-3 main effect is the visual impairment clue to the
+10° 101 102 103 104 105 appearance of opacities in the lens of the eye [24].
+Kinetic Energy (MeV/nucleon)
+, 3.2.2. Stochastic
+Fig. 7. SPE ﬂux worst day case.
+near—Earth orbits outside Earth’s magnetosphere making .3‘2'2'1‘ Cancer. .The damage to the. cell’s .Cont‘f‘)‘ system
+it an important tool for this study [22]. induced by rad1at10n causes the rap1d pr011fei‘at10n of cells
+
+The worst day case (SPE) is mainly composed of in body organs; the damage 1.5 transmitted to the
+protons (90 to 95%) followed by ions, which interact with daughter cells, creat1ng a population of abnormal b0d1es
+the interplanetary medium to travel through the Solar damag‘Pg the normal cells. The appearance Of cancer after
+System. The composition varies among different events arad1at10n exposure could'vary betweeh 5 t0.30 years and
+according to Bernabeu et al. [23]. 1t. 15 not yet clear how It happens Since It cannot be
+
+The particle ﬂux representing the worst day model d1fferent1ated from other types Of .cancer. The ICRP
+using CREME96; Fig. 7 shows the energy spectrum of this est1mates othatthe exposure to. a racl1at10ndose Of 1 SV
+event that represents the average over 18 h on October giyes a 10/31nc1denceoicancer1nan all age populat1bn;
+1989, this period experienced the largest ﬂux of that year, this. leads to. the p0551b1l1ty O.f est1mat1ng fatal cancer IESk
+
+. . . . 112mg a risk factor value given by the ICRP (0.05 Sv 1)
+wh1ch produced an 1ntense geomagnet1c storm. The ma1n ut1
+issue when studying SPE effects on humans during inter— Risk 2 Risk Factor (Sv‘1) >< Dose (Sv)
+planetary space ﬂight is the lack of protection from the therefore a 10 mSv close
+Earth’s magnetosphere: an unav01dable problem. which Risk: 005 SV—l X 0.01 5v: 5 X 10—4 (1)
+could potent1ally have harmful consequences durmg the
+mission.
+
+Or 10 mSv radiation dose gives a 0.05% chance of fatal
+3.2. Radiation effects cancer [24]-
+
+High energy space radiation is harmful to the human 3.2.2.2. Hereditary effects. These effects occur as a result of
+body as it has enough energy to ionize water, which is the damage in the reproductive cells, leading to mutations in
+main constituent of cells. This effect will lead to changes the genetic material of the cells [24]. The real
+in the cell’s constituent molecules, which will affect the consequences of the hereditary effects are unknown but
+construction and function of different cells. These effects the genetic effects could be passed on following the
+
+Please cite this article as: L.M. Martinez, J. Kingston, Space radiation analysis: Radiation effects and particle interaction
+
+"
+"6","6 L.M. Martinez, ]. Kingston / Acta Astronautica I (IIII) III—III
+Table 5
+Ten year human radiation equivalent close limits for excess risk of fatal
+cancer of 3% as a function of age and gender [19].
+Age at exposure (yr) Female (Sv) Male (Sv)
+25 0.4 0.7
+35 0.6 1
+45 0.9 1.5
+55 1.7 3 __ .
+irradiation of the male or female with low doses of around .
+3 ><10_2 Sv.
+Clearly the radiation effects cannot be overlooked
+when analyzing the possibility of exploring the depths
+of the solar system, this brief description of the effects
+and consequences shows that large efforts should be
+placed in the development of radiation protection for
+astronauts. The development of preventive techniques
+such as medical or mechanical mitigation should be
+studied before astronauts are exposed to long journeys
+outside the Earth’s magnetosphere. High energy particles
+snch as the ones 1ncluded 1n the GCRs impose a challen— Fig. 8. TransHab GCRS particle Shower-
+ging Sltuation Since they are very harmful and could lead
+to large absorbed doses by the astronauts. Shielding using
+low atomic number materials in combination with high world increasing the number of interactions between the
+density aluminum shelters are considered as a possible ICRU sphere and the particles. This simulation was per—
+mechanical solution for this problem. formed using a MacBook Pro 2.4GHz Intel Core 2 Duo
+As a consequence of the lack of information, there are taking a total time of more than 700 CPU hours to obtain
+uncertainties in the possible radiation effects that humans the ﬁnal results, including set—up, data validation and
+would suffer during an Earth—Mars journey. Currently, the simulations.
+dose rate limits used by NASA and recommended by the Table 6a and b compares the different effects of the
+NCRP are based on the 3% lifetime excess risk of cancer GCRs on a sphere inside the ISS and TransHab structures
+mortality, and take into consideration the age of ﬁrst during different solar conditions. The radiation effects
+exposure and the astronaut’s gender [25]. The career during solar minimum conditions are expected to be
+limits depend on age, gender and organ exposed; the higher than during solar maximum since the ﬂux of
+values are shown in Table 5. particles between 1.5 MeV and 10000 MeV increases
+The crew—members of a mission to Mars will be considerably. As expected, this outcome is observed in
+exposed to ionizing radiation inside the Earth’s magneto— the radiation dose effect inside the ICRU sphere. Table 6b
+sphere when traveling through the radiation belts and to shows a noticeable increase in the radiation effects by low
+GCRs and Solar Particle Events (SPEs) during the inter— energy H and He particles (< 10000 MeV) compared to
+planetary journey. Inevitably, the radiation protection the ones obtained in Table 6a. On the other hand, the
+should be made following the ALARA (As Low as Reason— effects of high energy H ( > 10000 MeV) does not seem to
+ably Achievable) concept in order to provide the max— present a signiﬁcant effect in the observed results. These
+imum possible shielding while still permitting mission results are important since they show that the solar cycle
+feasibility. has a partial impact on the radiation effects from the GCR
+spectrum. According to the results, only the low energy
+4. Results part of the GCR spectrum is affected by the solar changes,
+this narrows the area of investigation/interest and focuses
+A comparison between the different geometries and the attention to the lower part of the energy spectrum of
+radiation characteristics is now presented. Each of the the GCR. In the ﬁrst column of both (Table 6a and b) it is
+geometries has been exposed to different radiation types possible to observe the different effect of low energy H
+including GCRs and SPEs; a complete analysis of the from the GCR effects in solar minimum and maximum
+absorbed dose and secondary particle creation and effect conditions, on the other hand, the high energy H is shown
+is included. Fig. 8 shows the TransHab structure under the in the second column. The low energy hydrogen is
+GCR isotropic particle shower. affected by the different solar conditions, while the high
+A computational tradeoff had to be made due to the energy H stays the same regardless of the sun average
+length of the simulation times, and the high complexity of output during solar minimum or maximum.
+particle interaction with the models and the detector. Table 7 shows the effects of the solar proton event
+Therefore, in order to obtain signiﬁcant results without worst day case inside the different structures, the effects
+affecting the statistical accuracy, the different models of the SPE high energy range is highly damaging and
+have been placed in a relatively small virtual spherical should be taken into consideration in any further
+Please cite this article as: L.M. Martinez, J. Kingston, Space radiation analysis: Radiation effects and particle interaction
+
+"
+"7","L.M. Martinez, ]. Kingston / Acta Astronautica I (IIII) III—III 7
+Table 6
+(a and b) Daily average total dose rate in solar max and solar min. H ( < 10 GeV) while H high ( > 10 GeV).
+H (HGY/d) H High (HGY/d) He (HGY/d) Fe (HGY/d) Total (HGY/d)
+GCR daily average dose rate during solar max conditions
+155 5.77 382.4 7.01 0 395.18
+TransHab 152.67 811.073 91.166 0 1054.9
+GCR daily average dose rate during solar min conditions
+155 81.61 382.4 75.76 0 539.77
+TransHab 188.8 817.949 91.16 0 1055.8
+Table 7 a
+Total dose from SPE worst day scenario
+including high energy particles. - Tom
+— _ 0'25 -Alpha
+SPE worst day total dose effects “30) - 8ch0”
+— N
+Total (uGy/d) E 02 =::Tt:::
+155 1322.92 é 0‘15 -pr°t°""
+TransHab 1649.1 9:.
+— g 0.1
+5
+3
+investigation. The analysis for the SPE case uses the I 0‘05
+SPENVIS implementation of the JPL model [20].
+The simulation results show how the ICRU sphere 0 H Hhigh He Fe
+detector is affected by different types of radiation; all of Incidence Particle
+the results provide a comparison between ICRU spheres
+inside the ISS module and the TransHab module. Another b
+interesting result is that the 155 type structure seams to 0-5
+provide a higher radiation protection than the TransHab N— 0.45 -Tom
+structure; this may be due to the composition of the g” 04 -Alpha
+structures. While this may seem to be a disadvantage in g 0 35 -Electron
+this analysis due to the higher radiation exposure, the g ‘ -Gamma
+TransHab structure is lighter and easier to transport to g “-3 =22?""
+orbit, a tradeoff between the selections of materials for C: 0.25
+the spacecraft should be taken into consideration during g 02
+the design process. g 015
+GCR Particle Fluence, Secondary Particles and Radiation. g '
+The isotropic ﬂux of the GCRs interacts with the space— E “-1
+craft structure and with the ICRU detector; some of the CL 005
+particles strike the spacecraft, some of them penetrate 0
+and hit the detector and some others do not even interact H H high He Fe
+with the model. According to the simulation, a very small Incidence Particle
+number of particles actually strike the detector inside the , , , ,
+ICRU sphere, the ﬂux Of particles inside the spacecraft Fig. 9. ICRU Sphere GCRs and secondary partlcle ﬂuence lnslele the 155
+and TransHab habltats durlng solar Max. (a) Solar max condltlon 1n51de
+depends on the material and thickness of the shielding; 155; (b) solar max condition inside TransHab
+this is why the ISS and TransHab models provide different
+results. Fig. 9a and b shows secondary particle quantities
+as a result of primary particle ﬂux and interaction with due to the initial impact of H GCRs. The effects on humans
+the ISS and TransHab structures. Fig. 9a shows the ﬂux of each one of these particles is based on the quality
+inside the 155 during solar max and 9b inside the Trans— factors, gamma radiation has a quality factor of 1, 0n the
+Hab during similar conditions. other hand alpha particles quality factor has a value of 20
+Fig. 9a and b shows the secondary particle ﬂuxes [26], which means that the radiation effects on human
+inside each habitat due to the interaction of high energy health are of a higher concern. This is the reason why
+particles with the structures. The interaction of the high further research should focus on the study of the enclosed
+energy hydrogen (H high) with the spacecraft structure environment conditions in order to understand the real
+(shielding) induces the production of secondary particles effects that crews will face in a long duration interplane—
+and radiation such as alpha, gamma, neutron, electron tary ﬂight.
+and protons. The creation of these events depends on the Equivalent Dose. The biological damage due to radia—
+type, geometry and composition of the shielding material; tion depends on the different radiation types; therefore, a
+in this case, a high ﬂux of gamma radiation is produced 0.05 Gy of fast neutrons can do much more biological
+Please cite this article as: L.M. Martinez, J. Kingston, Space radiation analysis: Radiation effects and particle interaction
+
+"
+"8","8 L.M. Martinez, 1. Kingston / Acta Astronautica I (IIII) III—III
+damage than a 1 Gy of gamma radiation [25]. This 5. Conclusion
+analysis intends to identify the equivalent dose effects
+of the simulated particle shower at solar max and min GRAS-GEANT4 simulations of the proton, He, and Fe
+inside the main structures. Table 8 shows the quality induced radiation inside the ISS and TransHab models
+factors of different types of particles and radiation. when unprotected by the Earth’s magnetosphere have
+The comparison (Fig. 10) indicates the real effect that been calculated. The initial approximation (simple model)
+GCRs and SPEs has in humans (i.e. close deposition), Fig. 10a used during this simulation intends to set a starting point
+shows the results of GCRs during solar maximum and solar for future, more detailed and realistic simulations incor-
+minimum inside the proposed structures. (b) Illustrates the porating user friendly design software to allow the
+effects observed when the models are affected by a SPE. development of more accurate environmental models.
+Although the radiation effects inside the 155 are about GCR total dose and equivalent dose rates produced by
+30 percent less than inside the TransHab, in both cases GRAS calculations were compared to experimental and
+the equivalent close during solar minimum is double that modeled rates during solar maximum and minimum. The
+at solar maximum, imposing a real danger to the crew and results obtained in this research have been compared to the
+an operational limitation that should be taken into con- ones published at the Geant4 Monte Carlo Simulations of
+sideration when the journey to Mars is undertaken. the International Space Station Radiation Environment [13]
+Therefore, when the spacecraft is designed, either a more and have been found to be larger than those ones. According
+highly shielded area should be created for the living to the paper by Ersmark [13] the dose equivalent at solar
+quarters of the crew or an emergency shelter should be maximum for GCR is of 159.5 nGy/d while for solar mini-
+supplied, similar to what the International Space Station mum was 225 nGy/d, these values are similar to the ones
+crew currently utilizes. The main issue with the high obtained in this paper(solar maximum: 395.18 nGy/d,solar
+energy GCRs is that there is no feasible or realistic minimum: 539.76 nGy/d) and reﬂect an increase that could
+shielding that could stop the damaging effect of the be due to the fact that the simulation accounts for the
+secondary radiation cascade. spacecraft to be outside the protection of the magneto-
+sphere. According to the data provided by Reitz et a1. [27],
+Table 3 the observations by DOSTEL and TEPC [13] are on the same
+Quality factor effects d6pending on radiation type {26}- order of magnitude as the ones obtained in this simulation
+m and induce the necessity to extend this research into .a
+(Q) higher accuracy Simulation to be able to prov1de realistic
+— and comparable results for future space missions.
+X—, gamma or beta radiation 1 SPE worst day effects inside the 155 are 1322 [,le/d, and
+Alpha Partidesv mUItiple'ChaFEEd Partidesv ﬁSSion 20 1649.1 nGy/d inside the TransHab model, these results are
+fragments and heavy parades Of unknown Charge comparable with previous simulations by Ersmark inside
+Neutrons of unknown energy 10 ,
+High_energy protons 10 the Earth magnetosphere [13] (1500 0G) in the worst day
+— case. The discrepancies, which are found in the results are
+D 4000
+3500 —
+3000 -
+7: 2500 -
+5
+a 9000 §
+8000 g: 2000 _
+7000 g
+,;—- .2
+3 6000 Er 1500 _
+(f)
+i 5000
+O
+2 4000 1000 ‘
+2
+g 3000
+a 2000 500 ~
+1000
+o ISS TH ISS TH o '33 T“
+Fig. 10. GCR and SPE equivalent dose effects in human tissue inside the different modules. (a) Represents GCR and (b) shows the SPE effects. The light
+color in a represents solar minimum conditions. (For interpretation of the references to color in this ﬁgure legend, the reader is referred to the web
+version of this article.)
+Please cite this article as: L.M. Martinez, J. Kingston, Space radiation analysis: Radiation effects and particle interaction
+
+"
+"9","L.M. Martinez, ]. Kingston / Acta Astronautica I (IIII) III—III 9
+expected and may be due to different spatial situations, [4] ].Bernabeu,I.Casanova,Geant4—based radiation hazard assessment
+model inaccuracies arising from the simpliﬁcation of the E‘EFBShulggag exPloratlon ““5510“ AdV- Space Res- 40 (2007)
+geomEtrlcal mOdEI as we“ as the hlgher energy 11m1tat10ns [5] Ad Hoc Committee of Members of the Space Medicine Association
+of the physics models by the GEANT4. Furthermore, con— and the Society of NASA Flight Surgeons, “Human Health and
+siderations of model inaccuracies and the creation of a Performance flor Lang-Duraltiog SpacgﬂightgégAvéZtiorzlbggace, and
+
+. . - Environmenta Me icne, v0 . 7 , No. , pp. — 5, .
+larger geomEtrlcal mOdEI W111 allow better resmts' In addl_ [6] C.A11en, Guidelines and Capabilities for Designing Human Missions,
+tion, the level of ﬂuence in the medium energy range NASA TM_2003_210785, 2003_
+provided by the JPL mode] has been underestimated by a [7] S. Aﬁoztirflg’e e(t2 C.2)1é).,3)(32e.21cr)1t42 a simulation toolkit, Nucl. Instrum.
+
+- - - Met 0 s 5 5 .
+faCtor Of 2. aecording t0 RoseanIStet 31' [281’ Wthh add [8] J. Allison, et al., Geant4 developments and applications, IEEE Trans.
+some restrlctlons t0 the model 1n thlS case. Nuc] SC] 53 (1) (2005) 270_27g_
+Further research should take into consideration the set— [9] G. Santin. V. Ivanchenko. H- Evans, P- Nieminen. E- Daly, GRAS: a
+- - - - - - - general—purpose 3—D modular simulation tool for space environ—
+backs learned during the initial stage of the investlgation, ment effects analysis, IEEE Trans_ NUCL 5d 52 (6) (2005)
+espec1ally by the comPUtatmhal tlme teqmted by the Monte [10] G. Shani, Radiation Dosimetry Instrumentation and Methods,
+Carlo simulation, this affected the development of the initial Second edition, CRC Press, 2001.
+estimation in this research. The use of higher computational [“1 ICRP, “ICRP 60,1999 Recommendations 0f the International com""
+. . . . mision on Radiological Protection”, Annals of the ICRP, vol. 21, no.
+power W111 allow the creation of a larger Simulated env1r0n— 1_3’ 1991_
+ment and the increase on the number Of ICRU spheres, [12] ICRP, “ICRP 92 Relative Biological Effectiveness (RBE), Quality
+having a direct effect on the precision of the model. Also, the FaCtor (Qt and Radiation WEighting FaCtor (Wm Annals 0f the
+. . ICRP, vol. 33, no. 4, 2003.
+use Of more accurate geomEtrlcal dESIgn 50ftware ShOUId be [13] T. Ersmark, “Geant4 Monte Carlo Simulations of the International
+implemented to create high deﬁnition models Of the space— Space Station Radiation Environment”, Thesis Work, Stockholm:
+crafts allowing a realistic result and the possibility to study KTH. 2005- . . . .
+different conﬁguration Of future space vehicles [14] G. Batlhwar, H. Huff, R. Wilkins, S..Th1.beault, Cemparison of
+. . . ' Graphite, Aluminum, and TransHab Shielding Material Character—
+ThEFEfOFE, the l“ESUItS from thlS SlmUlatlon represent istics in a High—Energy Neutron Field, Elsevier Science, 2001 (vol.
+an initial approximation model for radiation deposition [15] :51 . PR T cs D B Q h b D H d . 1
+- - - - , - . e1, . . ruscott, . . yer, . uag e eur, . eyn er1c (x,
+and pamtle mOdEImg for deeP space mlSSlOIlS, 1t rePte' P. Nieminen, H. Evans, E. Daly “MULASSIS: A Geant4 based Multi—
+sehts a Slmple mOdel that analyzes the etteCtS 0f hlgh Layered Shielding Simulation Tool”,in: Proceedings ofIEEE Nuclear
+energy particles on different materials and gives an idea and Space Radiation Effects (NSREC’OZ). Phoenix. USA. 20-24Ju1y.
+0f the p0551ble radiatlon effects on humans whileout51de [16] NIST ESTAR’ ASTAR and PSTAR [Cline], October 7’ 2009’ 30
+the magnetOSPhete- The Observed teSUItS durlhg the December, 2008, <http://www.nist.gov/physlab/data/star/version.
+analysis indicate that the inﬂatable TransHab structure Cfm>.
+may not provide enough shielding t0 the crew in itS [17] Belgian Institute for Space Aeronomy, “European Space Agency
+. . . Space Env1ronment Information System”, 2009, December 2008,
+current conﬁguratlon and a requirement for extra sh1eld— <http://www.spenvis.oma.be/help.php>.
+ing should be expected. On the other hand the 155 model [18] J. Bernabeu, I. Casanova, Geant—4 based radiation hazard assessment
+represents a better shielding option but a more compli— for human exploration missions, Adv. Space Res., 2007. Vol. 40.
+. [19] D. Heynderickx, B. Quaghebeur, E. Speelman, E. Daly, “Space
+catEd Structure t0 conStFUCt In space. Environment Information System (SPENVIS): a WWW interface to
+models of the space environment and its effects”, AIAA—2000—0371,
+2000. SPENVIS web—site: <http://www.spenvis.oma.be/spenvis/ >.
+[20] J. Feynman, G. Spitale, J. Wang, S. Gabriel, Interplanetary Proton
+ACRHOWIEdgementS Fluence Model: [PL 1991, J. Geophys. Res. 98 (13) (1993) 281.
+[21] MA Xapsos, et 31., Model for Solar Proton Risk Assessment, IEEE
+
+0 Cranﬁeld University Space Research Centre. Trans. Nucl. Sci. 51 (6) (2004)-
+
+. Lulea Technical University Space Science. [22] A.].. Tylka, James H. Adams Jr., Paul R. l30berg, Buddy Brownstein,
+
+, , , William F. D1etr1ch, Erw1n O. Flueckiger, Edward L. Petersen,
+
+. Geaht4 Radlatlon Ahaly515 for Space (GRAS) Team Margaret A. Shea, Don F. Smart, Edward C. Smith, “CREME96: A
+
+Members. Revision of the Cosmic Ray Effects on Micro—Electronics Code”, IEEE
+Trans. Nucl. Sci. 44 (1997) 2150—2160; (and references therein).
+URL: < https://Creme.isde.vanderbi1t.edu/ > .
+[23] J. Bernabeu, I. Casanova, Geant—4 based radiation hazard assess—
+References ment for human exploration missions, Adv. Space Res. 40 (2007).
+[24] A. Martin, S. Harbison, An Introduction to Radiation Protection,
+Arnold, London, 1996.
+
+[1] Drake, “Exploration Blueprint Data Book”. Houston: NASA TM— [25] M. Stanford, J. Jones, Space Radiation Concerns for Manned
+2007—214763, 2007. Exploration, Acta Astronaut. 45 (1) (1999).
+
+[2] P. Spillantini, M. Casolino, M. Durante, R. Mueller—Mellin, G. Reitz, [26] United States Nuclear Regulatory Commission, “Units of Radiation
+L. Rossi, V. Shrurshakov, M. Sorbi, Shielding from cosmic radiation Dose”, January 13, 2011, January 16, 2011, <http://www.nrc.gov/
+for interplanetary mission: active and passive methods, Radiat. reading—rm/doc—collections/cfr/part020/part020—1004.htm1>.
+Meas. 42 (2007) 14—23. [27] G. Reitz, et al., Radiat. Prot. Dosimetry 116 (2005) 374.
+
+[3] M.Stanford,].]ones,Space Radiation Concerns for Manned Explora— [28] Rosenqvist, et al., A toolkit for updating interplanetary proton
+tion, Acta Astronaut. 45 (1) (1999) 39—47. cumulated ﬂuence models, J. Spacecr. Rockets 42 (6) (2005).
+Please cite this article as: L.M. Martinez, J. Kingston, Space radiation analysis: Radiation effects and particle interaction
+outside the Earth’s magnetosphere using GRAS and GEANT4, Acta Astronautica (201 1), doi:10.1016/j.actaastro.201 1.09.001
+
+"

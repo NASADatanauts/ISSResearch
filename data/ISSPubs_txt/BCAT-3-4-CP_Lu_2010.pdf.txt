@@ -1,0 +1,887 @@
+"","x"
+"1","J Real—Time Image Proc (2010) 52179—193
+DOI 10.1007/s11554—009—0133—1
+ORIGINAL RESEARCH PAPER
+Orders-of—magnltude performance Increases 1n GPU-accelerated
+correlatlon of Images from the Internatlonal Space Statlon
+Peter J . Lu - Hidekazu Oki - Catherine A. Frey - Gregory E. Chamitoff - Leroy Chiao -
+Edward M. Fincke - C. Michael Foale - Sandra H. Magnus - William S. McArthur Jr. -
+Daniel M. Tani - Peggy A. Whitson - J effrey N. Williams - William V. Meyer - Ronald J . Sicker -
+Brion J . Au ° Mark Christiansen - Andrew B. Schoﬁeld ° David A. Weitz
+Received: 16 March 2009/ Accepted: 28 September 2009/ Published online: 30 October 2009
+© Springer—Verlag 2009
+Abstract We implement image correlation, a funda— times faster than simple C code, and 30 times faster than
+mental component of many real—time imaging and tracking optimized C++ code using single—instruction, multiple—
+systems, on a graphics processing unit (GPU) using NVI— data (SIMD) extensions. The speed increases from these
+DIA’s CUDA platform. We use our code to analyze images parallel algorithms enable us to analyze images down—
+of liquid—gas phase separation in a model colloid—polymer linked from the 188 in a rapid fashion and send feedback to
+system, photographed in the absence of gravity aboard the astronauts 0n orbit While the experiments are still being
+International Space Station (188). Our GPU code is 4,000 run.
+times faster than simple MATLAB code performing the
+same calculation on a central processing unit (CPU), 130 Keywords GPU - CUDA - Autocorrelation -
+International Space Station - SIMD
+P. J. Lu (E) - D. A. Weitz
+Department of Physics and SEAS, Harvard University, .
+Cambridge, MA, USA 1 IntrOduCtlon
+e—mail: plu@fas.harvard.edu
+Most computer programs are serial, Where the results of
+H-Qki one stage of computation are used as input for the next.
+Shmagawa‘ku’ TOkyO’ Japan Since they execute on a computer’s central processing unit
+C. A. Frey (CPU), their performance is determined by CPU Clock
+ZIN Technologies, InC., Middleburg Heights, OH, USA speed. For the early years of CPU evolution, Clock speeds
+increased exponentially, but over the past decade this rate
+G. E. Chamitoff - L. Chiao - E. M. Fincke - - - _ - - _
+C. M. Foale _ S. H. Magnus _ W. S. McArthur Jr. _ 1ncrease has not pers1sted, 1nstead, computers. have 1nc1u
+D. M. Tani . p. A. Whitson . J. N. Williams ded multlple CPU cores to 1ncrease computatlonal power.
+International Space Station, Low Earth Orbit, Unfortunately, serial code cannot automatically take
+and NASA JOhnSOH Space Center, HOUStOHa TX, USA advantage of multiple cores to execute more quickly, so
+W. V. Meyer _ R. J. Sicker that software perforrnance has not 1n general kept pace Wlth
+NASA Glenn Research Center, Cleveland, OH, USA hardware 1n thlS peﬂOd'
+Nevertheless, some applications commonly used by
+B- J- Au scientists and engineers can use multiple cores in parallel
+United Space Alliance and NASA Johnson Space Center, for S ecialized O erations M ATL AB for exam 16 uses
+Houston, TX, USA p p ' . ’ p ’
+parallel processes on multlple cores to accelerate fast
+M. Christiansen Fourier transforms (FFTs) and certain aspects of image
+Flowseeker LLC, San FranCiSCOa CA, USA processing; these calculations are ideal for parallelism
+A. B. Schoﬁeld because the same operatlon 1s apphed 1ndependently to
+The School Of Physics and Astronomy, University Of Edinburgh, dlfferent pleces of data. Software development tools have
+Edinburgh, UK also simpliﬁed the process of parallelizing code, including
+@ Springer
+
+"
+"2","180 J Real—Time Image Proe (2010) 52179—193
+specialized libraries [43] and modern compilers that par— to two orders of magnitude over that of a single CPU, far
+allelize certain operations automatically, without requiring more than usually possible with only four CPU cores [48].
+additional work by the programmer [5]. While convenient In this paper, we present several parallel implementa—
+and simple to use, these CPU—based parallel approaches are tions of a fundamental image—analysis calculation, spatial
+ultimately limited by the number of processor cores, rarely autocorrelation. We step through its expression in a simple
+more than four; the resulting performance increases are MATLAB code, a simple C code, and an optimized C++
+generally less than an order of magnitude [5]. version that uses single—instruction, multiple—data (SIMD)
+By contrast, all modern PCs come equipped with a extensions to improve CPU—based calculation speed. We
+specialized multiprocessor, a graphics processing unit then present our CUDA C implementation, and demon—
+(GPU) containing up to hundreds of simpliﬁed processor strate how the GPU performs the same calculation several
+cores—opening up the tantalizing possibility of far greater orders of magnitude faster. We Characterize and explain the
+speed increases. In fact, although they are designed strengths and weaknesses of the approaches taken in the
+and heaVily optimized for rendering pixels on a screen, different codes, emphasizing underlying concepts for sci—
+GPUs can also be harnessed for general computation entists and engineers who may not be expert programmers.
+in a modality known as general—purpose GPU (GPGPU) We apply our code to analyze images of liquid—gas phase
+[29—31]. In the earliest GPGPU applications, the GPU separation, collected in the low—graVity environment by
+performed operations on regular data formatted as graphics astronauts aboard the International Space Station (188) [3].
+objects [11, 31], a tricky programming task that limited its Our accelerated parallel algorithms enable rapid analysis of
+use to graphics experts. images downlinked from 188 to earth, allowing us to pro—
+In recent years, however, GPGPU computing has been Vide feedback to the astronauts on orbit in time to make
+revolutionized by the advent of general programming changes while the experiment is still running. This inter—
+languages implemented on the GPU [28]; an excellent active mode of operation is a signiﬁcant departure from
+overview of the different approaches is given in [30]. Of most other 188 experiments, which are typically conﬁgured
+particular present interest are the CUDA C [48] and to run in an automated fashion and cannot be modiﬁed after
+OpenCL [49] languages supported by the CUDA architec— launch.
+ture. CUDA C is a set of parallel extensions to the C/C—|——|—
+programming languages and interacts with a special hard—
+ware interface built into all current NVIDIA GPUs; within 2 Materials and methods
+CUDA, the GPU appears to the programmer as a collection
+of general—purpose parallel processors [29, 48]. Speciﬁc 2.1 Sample preparation and photography
+knowledge of graphics programming is no longer necessary
+for GPGPU; as a result of CUDA, the number of GPGPU Our colloid—polymer sample preparation procedure is
+applications in science and engineering has increased sig— described in detail in Chapter 12 of [25]. We suspend
+niﬁcantly [14]. Impressive performance gains have been polymethylmethacrylate spheres in a solvent mixture that
+achieved in several types of CUDA simulations [29], nearly matches the particles’ indeX of refraction. The
+including molecular dynamics [2, 20,41, 45], Monte—Carlo samples are transparent when Viewed straight on, but
+[1], N—body gravitation [4], NaVier—Stokes [44], lattice scatter blue light at a high angle. We induce phase sepa—
+quantum Chromodynamics [17], particle—in—cell plasma ration by adding a linear polystyrene, which creates a
+[40] and schooling ﬁsh [18]. A number of computational depletion attraction between the particles, which we tune
+algorithms and numerical calculations have also been Chemically to mimic the role of temperature in molecular
+implemented in CUDA [9], including parallel sorting [39], systems [22—24, 47]. Our samples have polymer and col—
+binary—string search for digital forensics [27], sparse— loid concentrations near where previous experiments have
+matrix factorization [36], fast—multipole methods [15] and extrapolated the liquid—gas critical point [6, 7].
+diffraction integral calculations [37]. CUDA applications
+that analyze experimental data mostly involve information 2.2 Performance testing
+and image processing [8], including matching DNA
+sequences [26, 35], correlating cosmological data [32] and Differences in CPU hardware limit useful comparison of
+radio—astronomy telescope output [16], laser—speckle CUDA speedups to order—of—magnitude estimates. While
+imaging of blood ﬂow [19], digital holographic microscopy GPUs are fairly standard (G80 or GT200), almost every
+[38], face tracking [21], magnetic resonance image (MRI) paper compares to a different CPU; in general, Pentium 4
+reconstruction [42], and aligning and deforming micros— CPUs are roughly twice as slow, and Core i7 CPUs
+copy images for 3D reconstruction [33, 34]. Using CUDA, twice as fast, as Core2 CPUs at the same Clock speed. For
+most of these applications accelerate performance by one our testing platform, we selected a middle—of—the—road
+@ Springer
+
+"
+"3","J Real—Time Image Proc (2010) 5:179—193 181
+consumer desktop PC conﬁguration likely to represent particles that we photograph, and whose interactions we
+what is found in a typical laboratory: a Dell XPS 730 control with chemistry [24, 47].
+
+with an Intel Q6600 Core2 Quad at 2.4 GHZ, with 3GB of Samples are loaded into glass cuvettes, which are then
+RAM and WinXP SP2. We observe the same GPU per— placed inside a sample holder, shown in Fig. 1. Inside each
+formance on the Tesla C1060, Quadro FX 5800, and cuvette is a tiny teﬂon stir bar, which is agitated to miX the
+reference—design GeForce GTX 280 graphics cards. colloids and polymers. The samples then separate into
+Because our code uses an atomic operation, it requires a colloid—rich liquid and colloid—poor gas phases, much like
+GPU with CUDA Compute Capability level 1.1 or salad dressing separates into an oil layer and a water layer.
+greater; in particular, the G80 series of cards, with We photograph this process with a digital SLR camera
+capability level 1.0, cannot run this code in its entirety. (Kodak DCS760) and ﬂash (Nikon SB28) controlled
+An earlier version of our code therefore wrote interme— remotely Via ﬁrewire from a laptop running EarthKAM
+diate values back to global memory, which were summed software, which inputs a list of times to trigger the camera,
+using a second kernel; this leads to an overall decrease in then automatically downloads the resulting images without
+performance of 25%, relative to the GPU results pre— astronaut intervention. The photography setup onboard the
+sented in Fig. 9. 188 is shown in Fig. 2.
+
+We compare results for total program execution times We usually take a photograph every hour for a week,
+on a single CPU core and single GPU, motivated by the generating a few hundred images of the sample evolution
+hardware of recent GPU clusters [32]. Because autocorre— throughout the course of a complete data acquisition run.
+lation involves only one image at a time, the most efﬁcient Each day, we receive a couple dozen images, downlinked
+way to parallelize is to designate each CPU core or GPU to from 188, showing how the sample evolved during the
+separately analyze a different image from the time previous day; we analyze these images immediately to
+sequence; OpenMP provides a convenient and straightfor— monitor the progress of the experiment. Based on these
+ward way to implement this parallelization, though the data results, we can communicate feedback to the astronauts on
+handling becomes slightly more complicated. We have 188, who can then alter the experiment, if necessary, before
+achieved the expected, nearly fourfold performance the next day’s data are collected and downlinked. A typical
+improvement for the C—l——|— algorithm using OpenMP and raw, unprocessed image from the middle of one of these
+executing the code on the quad—core processor, relative to sequences is illustrated in Fig. 3a. We use the Adobe
+the single core, non—OpenMP version. However, a nearly Camera RAW converter [12] to import the camera’s CCD
+identical speedup would be achieved by using OpenMP to data stored in the Camera RAW format into Adobe
+send the images to four graphics cards, which could take Photoshop CS3, where we convert the image to grayscale,
+the form of two GeForce GTX 295 cards; these cards as illustrated in Fig. 3b. To remove the random motion due
+would provide the four GT200 GPUs to match the four to drift over time in the relative positions of camera and
+CPU cores in the quad—core processor. This perfect scaling sample, we stabilize the converted grayscale image
+applies equally to all codes, so that the relative speedups sequence in Adobe After Effects CS3 [10], which pre—
+shown in Fig. 9 will remain unchanged. cisely registers and aligns all images in the time series.
+3 Photographing phase separation onboard the
+
+International Space Station r'—-—--—-:—-==_=q=*1_._._5 ——r"" _
+Understanding the separation of liquid and gas phases is a 'ﬁ 1‘5: :— _: : : 1.1 I ':
+fundamental problem with myriad practical applications, E. ' -. I '— ""f —"" -- ﬂ
+including the formation of clouds, the decompression of h LI H u H ""
+liquid fuel in a rocket engine, and the spray from an aerosol ” ~
+can. The liquid foim 1s (lenser than the gaseous form .of the .~ #1} 1r 1r- ? ~.
+same material, so investigating the structures formed 1nth1s ‘ i -
+process is difﬁcult in the presence of gravity on earth. We '- i— =.— ._ _ ' _ . :3
+therefore launched a series of liquid—gas mixtures to the -= _ .1... i '_ 3' _i I q I
+188 as part of the BCAT3 and BCAT4 experiments, where 3 ' 1, H J u —-—' i
+the effects of gravity are reduced by siX orders of magni— I .. h a ﬁ' ' ‘1 '~"" 1'
+tude. Our samples comprise colloids and polymers diffus—
+ing in a background solvent; this model system mimics the Fig. 1 BCAT sample holder with ten glass cuvettes in an anodized
+behavior of molecular liquids and gases using larger aluminum frame, between two sheets of plexiglass
+
+@ Springer
+
+"
+"4","182 J Real—Time Image Proc (2010) 5:179—193
+1"". f1 I=€.f""' "" -I'- ‘ '1 #13:“ {El} ' - I {b} ' I I
+ﬁﬁ"" H'— ' :r 4 -
+W -.. a I . ; . . .1:
+' 1‘ . . . -. .' '-.. _- . .f '4‘ .
+. Eﬁi , :11- ! 51“.
+'I'. . _ I-L""""' ‘ I. ""If"" _ .' : i . ”5*:
+\u... -~ 1- FM _ . - eff = 1* =
+' .- tut? ""1r .* I'n._: _. I II TI} -‘_ l! I
+5.:1. . k: 1 . . 1: l ' 1 1 'I” I”: -
+‘.I,. I; .'. I ”L- 1 I}. -'
+I .'_-._ :i-i— . Tb"" . ' .. ' 1?;
+- *3“; - '-.. .' 1 “""4”
+I ‘5' 1h - . .' "" j ' I
+,'*%I;__;¥'§l '1'“ ' "" .'- "" ‘ wr- .- ' u I h -' H . _
+__ - r . -1r_..- '.
+:... .~ I 1—;- - '
+._=.1- .; 1' _ - , 1 l I _,__ _. .I 1... 1.1... _- _-I _ ;.--_u. ‘ ___._ .. 1.- “I I 'l-i""- 1_ j .4;- ..-I -
+'-""I. _ .p, L 3:. .ﬂ‘,‘ . .
+Fig. 2 Camera setup onboard the ISS, clamped to bars that attach to ‘ . ‘1‘ - J -' _ - ** . $ - ' ._ - . '
+the walls and ceiling for greater stability . . ‘E - ‘ . _ t“ I; -_ _ EFF .iﬁ '
+.211. . . . .. J.
+We remove the uneven lighting background by blurring an it“ i "" '3‘ _ h"" ﬂ . q ,_ ‘13-. . '
+inverted copy .of the image on a separate layer, .usihg the '~.: ’1‘ __ ' i. "" ' ' r1 _- _* ﬂ-W~ 1r.""
+Overlay blendlng mode w1th 50% 0pac1ty, resultmg 1n the . ' ~I _ _ .' I '. __ ‘.“_
+image in Fig. 3C. To remove the dust on the camera sensor ﬂ; I : ""f *' ﬁ; .' ‘: ‘ﬁ 1. ', 5'"" ‘ -'
+and in the sample, we use the Color Key Filter to select the . . i"" _ 3.."" ﬂ . 4 . 5 i"" I . i '9'. 5'""!
+white and b1aciepixe1s and replace these regions with t ‘F .u .' t .""h ’1. _ ?“ ‘ ...
+comes of the 011g1na1 1mage offset by a few plxels, mam— _ .1; £1“: ! 'i ‘1‘ '0 ""ﬁn
+taining the correct brightness and noise distributions, as ,. ""' . ' n I ‘ ﬂ .: :11: t . ’ '
+shown in Fig. 3d. In the last step, we enhance contrast and . _ ' ' l. . . ' i. I
+crop, yielding the ﬁnal image shown in Fig. 3e. A11 inter— ' I
+mediate steps are implemented as 16—bit nested (precom— Fig- 3 Automated PI‘OCCSSing 0f Photographs 0f liquid-gas PhaSe
+posed) projects in After Effects, maximally preserving separation collected onboard the 188 as part of the BCAT3
+. . f t. b f ﬁ 1 t t Th 1t. . experiment. The colloid—rich liquid is the brighter phase; the
+Image 1n.0rma 1011 e ore na (?u pu ' e resu mg lma— colloid—poor gas appears darker. a Original image before processing.
+ges, typlcally 750 X 1,500 PIXCIS, are COHVCFth 111 bGrayscaleimage after conversion in Camera Raw. cCropped image
+PhOtOShOp t0 IOSSICSSIy compressed 8—bit grayscale PNG after uneven lighting background has been removed. d Image after
+format and form the data input for the autocorrelation automated dust removal. e Final image, after further cropping and
+calc lation ﬁnal contrast enhancement
+u .
+4 Image autocorrelation analysis offsets X0 and Y0 are also in units of pixels. The
+overlapping portions of the two images are multiplied,
+The network structure that appears in the phase separation and the p roduct 1s norinahzed by the sguare 0f the 1mage. S
+images has a Characteristic length scale, which in Fig. 3 is “#31 1ntegrated plxel 1ntens1ty, 2W I (x, y), as shown 1n
+about one—eighth of the width of the sample. H 0w this F1g. 4. Because the 1mage 1s mult1p11ed by a copy of 1tse1f,
+length changes with time gives insight into the thermody— th1s fbrm Of Cfmemo? 1s known .as autojcorrelauon;
+namics driving the phase separation [13]. To quantify this Ch00s1ng two. d1fferent 1mages quantﬁies the1r degree 9f
+length, we calculate the 2D intensity autocorrelation [3]: cr USS —Cbrrelat10n, but the underlying calculat10n 1s
+2 I( )I( Y Y ) 0therw1se the same. When the offset 1s zero, the overlap
+X y X — 0 y — 0 ' .
+C2D(X0, Y0) : x,y 7: 12(x )7 (1) 1s complete.
+x,y 7y C2D(0,0) E 1
+Each ptocessed 1mage 1s represented as .an 1ntens1ty As the offset increases, the function decays to zero:
+d1str1but10n I(x, y), where x and y are 1nteger p1xe1 C 0
+coordinates. For each image, a copy of the same image is 2D<OO’ 00) _>
+made and offset by the vector I? : (X0, Y0), where the The resulting C2D for the image in Fig. 3e is shown in
+@ Springer
+
+"
+"5","J Real—Time Image Free (2010) 52179—193 183
+Fig. 5a. The azimuthal average of C2D is the 1D 4.1 Simple CPU—based MATLAB and C
+
+autocorrelation function, implementations
+
+C1D(R) E (C2D(X(), Y0)>9: (C2D(R COS 6,RSIH 6)>9 (2) . .
+
+_, In the most straightforward algorithm to calculate C2D,
+where R E ‘R‘ Z V X(Z) + Y3 15 the scalar offset magnitude, each pixel in the image at position (x, y) is multiplied by
+and the brackets ()9 indicate an azimuthal average over all another pixel in the Offset copy at (x _ X0, y _ Y0), as
+angles 9 E arctan(Y 0/ X0)- The characteristic length scale is shown in Fig. 4. Four loops are needed to cover all pixel
+the local max1mum at Rmax, Whleh quantiﬁes the average values at all offsets. Our simple MATLAB code loops over
+separation between bright features 111 the image [3] and 15 X0 and Y0, then uses its native matrix operations to multiply
+marked Wlth a blue dot Oh the plot 0f C 1D 111 Flg- 513- RmaX the image by a copy offset by (X0, Y0) and sum the result in
+grows over time to magnitudes comparable to the length L Eq. 1. We measure the time to calculate C1D(R) for the
+0f the image. Us1ng autocorrelation to locate the peak image in Fig. 3e on an Intel Core2 Quad 2.4 GHZ CPU for
+p0s1t10n In real space, when Rmax 15 tens t0 hundreds pixels, all offsets up to R pixels, and plot these execution times
+is far more accurate than using a fast Fourier transform to with red symbols in Fig. 6. We obtain the same perfor—
+locate the corresponding peak in reciprocal space at 2 71 L/ mance running the code from the internal M ATL AB
+Rmax PlXeIS- Thls value quickly shrinks to JhSt a few pixels, command line, and by compiling the program ﬁrst and
+requiring Sllb—plXCl accuracy to locate the peak properly, running it externally; MATLAB takes several hours to
+and is far more susceptible to n01se effects than the more calculate C1D(250). Expressing the same algorithm (Fig. 4)
+robust real—space analys1s. using C requires four nested for ( ) loops: two outer loops
+
+(1.6) i (2,6)§<3,6) i (4.6)
+(1.5) i <2.5)§<3,5)§ (4.5)
+b (1,4) (2,4)§(3,4) (4,4)
+. . . (1,3) 5 (2,3)E(3,3)E (4,3)
+(1,2) : <2,2>:<3,2>: (4,2)
+i i (1,1)g<2,1)g<3,1)g<4,1) .I..<1,2)
+M44~w <w II...
+| |
+“wee” --- llmll
+i ! (1,6) 5 (2,6)E(3,6)E (4,6)
+wwvhw- w~~~ II...
+E i (15) : (2,5):(3,5) : (45)
+~:: ~~~w IE...
+5 5 5 (1,4) 5 (2,4)5(3,4)5 (4,4)
+c (Xow
+5 5 5 (1,3) 5 (2,3)5(3,3)5 (43)
+J (12) E (2,2)E(3,2)E (4,2)
+(H) i (2,1)§(3,1)§ (4,1)
+(X1sY1)
+(a) (b) (C)
+Fig. 4 Schematic of a simple algorithm to calculate the autocorre— regions are multiplied and summed, following Eq. 1. In the images
+lation of an example image With dimensions of 4 x 6 pixels, at an above, the pixel value at (x2, y2) = (1, 1) is multiplied by (x1, y1) =
+offset of (X0, Y0) = (+ 1, + 2). a The original image is shown in red; (1 + 1, 1 + 2) = (2, 3); (x2, y2) = (1, 2) by (x1, y1) = (1 + 1,
+the copy offset by (+ 1, + 2), in blue. The center of each image is 2 + 2) = (2, 4); and so on. The total sum of all products in the
+marked by a colored Circle. The overlapping area multiplied in the overlap region forms the numerator in Eq. 1; this value is stored in the
+two images is shaded in purple. b In the blue image, the shaded C2D(X0 = 1, Y0 = 2) matrix element shaded in green in c. By
+overlap region corresponds to 1 3 x2 3 3 and 1 f yz f 4; in the red symmetry, C2D(1, 2) = C2D(— 1, — 2), since both the original
+image, 2 3 x1 3 4 and 3 f yt f 6. All elements in these overlapping image and the copy are identical
+@ Springer
+
+"
+"6","184 J Real—Time Image Proc (2010) 53179—193
+(a) 3m.
+4? Iw _ - +15... ,-.:'-'- 3
+ﬂ__. _. .hrr .- .'. .r ' ..'r . 1 O
+_ m. - g
+_l
+- |—
+. <
+E
+L 2
+(b) 1.0 g 10
+0.8 g.
+E 0.6 g ,
+e 0.4 g It
+' l + GPU (CUDA)
+0-0 "" —v— CPU (SIMD C++)
+-O.2 .
+o 20 40 6O 80 100 120 140 . I CPU (S'mp'e C)
+R(pixels) 100 '
+O 100 200
+Fig. 5 a C2D(X0, Y0) calculated for the image shown in Fig. 3e. R(pixels)
+b C1D(R), calculated by azimuthally averaging C2D shown in (a). The
+function decays from C(O) = 1 t0 .3 trough, and then rises t0 a Fig. 7 Speedup 0f the different implementations relative to MAT—
+secondary maX1mum at Rmax = 88 PIXCISa Wthh deﬁnes the Charac— LAB. For R > 250, simple C is 30 times faster; optimized C++, 125
+teristic length scale and is indicated by the blue dot times faster; and CUD A C, 4000 times faster
+104 -
+' 4.2 Accelerated CPU—based C—I——|— implementation
++ GPU: CUDA optimizing cache and using SIMD
+103 —v— CPU: SIMD C++
++ CPU: Simple C Within the innermost loop, the simple C code multiplies
+. . I .
+’6‘ 102 CPU' MATLAB the values of pixels located at (x, y) and (x — X0, )2 — Y0);
+:3 A in general, these two pixel values Will reside in locations
+GE) far away from each other in main memory, and will rarely
+i: 101 be loaded into the CPU’s memory cache at the same time.
+é Direct multiplication thus requires two independent
+é accesses of main memory, a relatively slow process in the
+ljj 100 V absence of caching. We therefore reorder the loops to
+access adjacent memory locations consecutively, allowing
+104 w ' the CPU to load the Whole neighborhood of pixels into
+the cache once. In our re—ordered code, the outermost
+loop is over the Y0, as before. The second loop is over y;
+10'2 1 10 100 the third, over X0. With this arrangement, the innermost
+_ 100p multiplies pixels With consecutive x coordinates;
+R (pixels) . . . .
+these re31de in adjacent memory locations that are
+Fig. 6 Total program execution times to calculate 011303) for all cached when the memory is accessed, signiﬁcantly
+Offsets up to R pixels. CPU implementations using MATLAB, simple speeding memory access, We also exploit the symmetry
+C and SIMD—optimized C++ are inclicated With red diamonds, black C2D(X0, Y0) = C2D(_ X0, _ Y0) to calculate only half of
+squares and blue triangles, respectively; the GPU implementation th Y 1 . th h . f b
+using CUDA C is marked With green Circles. At useful Offsets of e 0 V3 ues, 686 C anges 1mp I‘OVC p er ormance y a
+R > 100, the GPU requires seconds to calculate what requires hours factor 0f tWO-
+in MATLAB on the CPU. In all cases, the azimuthal—average in Eq. 2 Additional performance comes by carrying out the
+takesfleﬁs than 2‘ feign? t0 falcullatithg 131‘”th data therefore multiplication in Eq. 1 in parallel, since each product is
+essen la y represen S 6 me 0 ca cu a6 2D independent of all others. Modern CPUs, such as Intel’s
+over X0 and Y0, as before, and two inner loops over x and )2 Pentium and C0re2, have speciﬁc Circuitry devoted to
+[3] in place of the MATLAB matrix multiplication. This vector operations, Where a single instruction is executed on
+simple C implementation is about 30 times faster than multiple data at the same time. SIMD instructions that
+MATLAB, as shown with black symbols in Figs. 6 and 7. exploit this special hardware can be added automatically to
+@ Springer
+
+"
+"7","J Real—Time Image Proe (2010) 52179—193 185
+standard C++ code by modern compilers, such as the Intel pixels at (x, y) and (x — X0, y — Y0) requires reading from
+Compiler 11 that we use. In a process called “autovec— two distant locations in the GPU’s texture memory, which
+torization,” the compiler examines for () loops and adds on average will not be cached. As a result, every pass
+appropriate parallel SIMD instructions if performance will through the inner loop in every thread incurs two memory—
+improve as a result [5]. Without further Changing the code, access delays of up to hundreds of Clock cycles each; SPs,
+but only recompiling with the proper options, we gain an therefore, spend most of their time waiting for data to
+additional factor of two in performance as a result of the arrive instead of calculating.
+SIMD instructions. Overall, this optimized C—l——|— code To rectify this problem, we create a new CUDA C
+executes four times faster than the simple C implementa— implementation which places pixels to be multiplied into
+tion, and more than 100 times faster than the MATLAB shared memory. Because shared memory is so much
+implementation, as shown in Figs. 6 and 7. smaller than global memory, we can only load a pair of
+lines of image data into shared memory at one time. As a
+4.3 Parallel GPU—based CUDA C implementation result, we organize the calculation so that each thread
+sums the contribution of a single line in the image to a
+To further improve performance with greater parallelism, running total at each offset; thus, the ﬁnal C2D(X0, Y0),
+we implement the autocorrelation using CUDA C and stored in global memory, accumulates the results of many
+execute the code on an NVIDIA Tesla C1060, which threads.
+contains a GTZOO GPU [48]. The GTZOO contains thirty We use a two—dimensional grid of thread blocks, and a
+streaming multiprocessor (SM) units; each SM contains one—dimensional line of threads in each block. Each thread
+eight streaming processors (SP) and 16 KB of high—speed has three unique indices: block indices blockIdX . X and
+shared memory accessible to all SPs within the same SM. blockIdx . y, and thread indeX threadIdX . x. Each
+Each of the 240 SPs is analogous to a simpliﬁed CPU core, block loads two lines of the image into shared memory,
+and interacts with the 4 GB of GPU main memory in the whose y—coordinates are given by yo = blockIdX . X (line
+form of generic read/write global memory, and cached 9 in code Listing 1) and y1 = blockIdX.X —|— bloc—
+read—only texture memory for large 2D arrays. The CPU kIdX .y (line 10), as shown in Fig. 8a. Each thread con—
+eXChanges data with global and texture memory over the tains a single for () loop over the x coordinate of the
+PCI express (PCIe) bus, but cannot access any data in image lines; inside this loop, the products of the pixel
+shared memory. Each SP executes one thread at a time; values at x and x — X0 are summed (lines 14—16). The
+each SM executes one block of threads at a time, with its same value of the pixel at x is broadcast to all threads in the
+constituent threads exchanging data Via shared memory block simultaneously, while no two threads access the
+[48]. same memory address for the pixel at x — X0, because each
+We ﬁrst implement the simple MATLAB/C algorithm of thread has a different X0 = threadldx . X (line 15); this
+Fig. 4 using CUDA C, loading the image into texture strategy reduces shared—memory queues and memory—bank
+memory. Each GPU thread is assigned a particular (X0, Y0) conﬂicts, as shown in Fig. 8b. After performing this sum,
+offset, and sums over x and y pixel coordinates with two each thread adds its contribution from line y to the accu—
+f or ( ) loops. This simple GPU implementation executes mulating sum collected for the offset at (X0, Y0), as shown
+about siX times faster than the simple C approach, due to in Fig. 8C. We use an in—place atomic addition operation to
+the large number of processors and high memory band— increment directly the value stored in the corresponding
+width inside the graphics card. However, this algorithm is element of the global memory array output_Z DCorr
+only slightly faster than the optimized C—l——|— CPU code, (line 18); this obViates the need to read the old value
+because it suffers from the same design limitation inherent from global memory to an SP, add the new result and
+in the simple C implementation: multiplication of two write it back.
+@ Springer
+
+"
+"8","186 J Real—Time Image Proc (2010) 5:179—193
+
+17 __global__ void AutoCorr_0neLine(int *output_2DCorr, int
+
+image_width, int max_offset) {
+2 __shared__ float ImageDataLinel[IMAGE_WIDTH];
+3 __shared__ float ImageDataLine2[IMAGE_WIDTH + 0FFSET_SIZE];
+4 ImageDataLine2[threadIdX.X] = 0;
+5 ImageDataLine2[image_width+2+threadIdX.X] = O;
+6 __syncthreads();
+7 int num_horiz_blocks=__float21nt_ru(__int2float_rd(image_width)/
+__int2float_rd(blockDim.X)), n = O;
+8 for(n=0; n<num_horiz_blocks; n++) {
+9 ImageDataLinel[__umul24(n,blockDim.X)+threadIdX.X] = teX2D(
+inputTexture, __umu124(n, blockDim.X) + threadIdX.X,
+blockIdX.X + 1);
+10 ImageDataLine2[max_offset+__umul24(n,blockDim.X) + threadIdx.
+X] = teX2D(inputTexture, __umu124(n, blockDim.X) +
+threadIdX.X, blockIdX.X + blockIdX.y + 1);
+11 }
+12 __syncthreads();
+13 float linesum = O;
+14 for(int X_coord = O; X_coord < image_width; X_coord++) {
+15 linesum += ImageDataLinel[x_coord] * ImageDataLine2[X_coord+
+threadIdX.X];
+16 }
+17 int coeff_out = __float2int_rn(100.0 * linesum / __int2float_rd
+((image_width - abs((int) threadIdX.X - max_offset))));
+18 int temp = atomicAdd(&output_2DCorr[threadIdX X + __umul24((2*
+max_offset + 1), blockIdX.y)], coeff_out);
+19 }
+Listing 1 CUDA C code for the kernel using shared memory. The function has several arguments: a pointer to the global memory array
+output_2DCorr, where the output data is stored; image_width, the width of the image in pixels; and max_offset, the maximum Offset up
+to which the correlations are calculated. Two constants, IMAGE_WIDTH and 0FFSET_SIZE, are macros deﬁned to be 800 and 514, respectively,
+and represent maximum possible values for image width and offset in units of pixels; these must be explicitly deﬁned in the code, because
+CUDA C does not at present allow dynamic memory allocation in shared memory. We launch this kernel with the conﬁguration
+threads2(2* max_offset + 1, 1)and grid2(image_height-max_offset+2,max_offset)
+
+Together, these optimizations dramatically increase the complete multiplication results (see, for example, exam—
+speed of the code: the execution time, even for the largest ples and tutorials at [48]). These algorithms operate
+offsets, is mere seconds; by contrast, MATLAB requires efﬁciently because the tiles are two—dimensional and ﬁt
+hours, as shown in Fig. 6. Our optmized CUDA C imple— entirely into shared memory; the actual multiplication,
+mentation runs nearly 4,000 times faster than MATLAB, which requires two nested loops in sequential code, is
+130 times faster than simple C, and 30 times faster than the carried out by a two—dimensional block of threads. The
+SIMD—optimized C++, as shown in Fig. 9. All of these size of the tiles is determined by the capabilities of the
+codes yield the same results, up to small rounding errors, GPU, speciﬁcally the number of threads in a block, and
+and demonstrate a linear growth of RmaxU) over time t [13], the total shared memory size.
+as shown in Fig. 10. Our algorithm, however, is not merely a simple extension
+
+of these principles. We have four nested loops, which
+
+exceeds the total dimensions available to threads in a block.
+5 Discussion That is, we cannot simply replace each loop with a thread
+
+coordinate, and directly extend these well—known approa—
+Our method to calculate autocorrelation rapidly joins a ches. Instead, we use the described line—by—line approach,
+family of related algorithms that tackle different aspects and replace the four loops with two grid coordinates, one
+of the general problem of correlation. An optimized thread coordinate, and one loop inside each thread. This
+method to calculate a single matrix multiplication, com— architectural Choice was motivated by the sizes of our data
+putationally equivalent to the autocorrelation at zero and the capabilities of the current generation of NVIDIA
+offset, is presented as an example Chapter in the NVIDIA GPUs. Our images are roughly a thousand pixels on a side;
+CUDA programming guide. There, large matrices are therefore, several lines will ﬁt into the 16 kB of shared
+broken into a number of smaller two—dimensional sub— memory available on the GT200. Moreover, we typically
+matrices, called tiles, which are loaded into shared examine offsets of a couple of hundred pixels, so that setting
+memory; a block of threads performs the multiplication of the number of threads to equal twice the maximum offset
+two tiles, then these partial sums are added up for the conveniently falls within the limitation of the GT200’s
+@ Springer
+
+"
+"9","J Real—Time Image Proc (2010) 52179—193 187
+Fig. 8 Schematic of a CUDA 1-
+algorithm using shared memory 8 ( ’ )5 ( ’ N ’ )5 ( ’
+to calculate the autocorrelation (x2,y2) . . E) . I I
+of the image in Fig. 4a for E i E I |— m (1,2)5 (2,2)5 (3,2)5 (42M
+— 2 < XO < 2 and Y0 = 2. I ' ' '
+a The CUDA algorithm loads ' N I I I
+into shared memory only one (1,4): (2,4)(3,4)§ (4,4 3 (1,4): (2,4)(3,4)§ (4,4
+11ne from the or1g1na11mage at 9 = = = = :
+3’1 = 2, shown shaded in red; and ' If m (1,2): (2,2): (3’2): (42“ g g g g i
+one line from the offset copy at II ' ' ' L L L L L
+y2 2 321+ Y0 = 4, shown shaded 00 .1; g g g g
+in b1ue.b Each thread multiples '0 (1,4); (2,4)(3,4); (4,4 8 8 8 8 8
+the same two lines in shared ' ' ' g ' ' ' E E E E E
+memory, but with a different If m (1 2); (2 2): (3 2): (4 2“ IT. IT. IT. IT. LT.
+offset equal to its index, X0 (X1’y1)I I I ’ I ’ I ’ I ’ + * * * *
+= threadIdX.X. E f E )
+For example, thread 1 calculates { g (1,4)5 (2,4](3,4)5 (4,4
+the sum of the products ' 8 : ' : I...-
+1(1, 4) X 0 + [(2, 4) i g i 1 E I I I
+x W34) 1 F (1,2)I(2,2)I(3,2)I <42 II...
+x [(1, 2) + [(4, 4) x [(2, 2), as 1
+shown in the top line. c the 12223242 L0 1 4 ; 2 4. 3 4 ; 4 4 (XO’YO)
+results of the partial sums ()()()( 8 ( ’ )5 ( ’ N ’ )5 ( ’
+calculated by eaCh thread are E) I I I
+added to the accumulating ' ' ' l— m (1,2); (2,2); (3,2); (42“
+values for C2D(X0, Y0) in global ' ' '
+memory (a) (b) (C)
+150
+1’7 .-...«;;.-.=:e3~i""
+.95) 100 .sangeze:r;:=%~""‘""“""
+8- xvieﬁw""
+1 O3 >< nfﬁﬁ'ﬁ‘mﬂ
+E 50 u-sv'.=:='.‘=‘5“"""""""" — GPU: CUDA
+g‘ 0: “fags???” 0 CPU: SIMD C++
+'C
+8 O 4 4 4 4 5
+C?)- 102 0 2x10 4x10 6x10 8x10 10
+2 t(seconds)
+D
+8 Fig. 10 Growth of RmX as a function of time t. The results from
+S 1 CPU—based MATLAB/C/C++ (blue circles) codes are the same as
+n. 10 », from the GPU—based CUDA C implementation (red line), up to small
+0 relative to SIMD C++ rounding differences. Both sets of data conform to a best—ﬁt black line
+I I t' t S' I C that passes through the origin, demonstrating a linear growth of the
+I rea We 0 mp e sample’s Characteristic length scale, a hallmark of a type of phase
+100 . relatlve to MATLAB separation known as 1ate—stage spinodal decomposition [13].
+I the offset value following our approach. Using a small tile in
+0 100 200 shared memory, however, might be useful in the calculation
+R (DIXGIS) of particle image velocimetry (PIV) or optical ﬂow, as these
+Fig. 9 Speedup of the GPU—based CUD A C code relative to the procedures correlate smaller subreglons of lmages, 1nstead
+CPU—based implementations. For R > 250, the CUDA C implemen— 0f the entlre large lmages In our case- Other types 0f C01“—
+tation is 30 times faster than SIMD—optimized C++, 130 times faster relation on the GPU, for instance of a one—dimensional time
+than simple C, and 4000 times faster than MATLAB series, or the two—dimensional angular distribution of the
+cosmic microwave background radiation [32], require
+maximum of 512 threads per block. By calculating the sums approaches that differ signiﬁcantly from ours.
+for multiple offsets in each thread block, we maximize the The performance of our CUDA C code exceeds that of
+usage of our lines of image data residing in shared memory. the simple C code, executed on a recent Intel Core2 Quad
+In our particular situation, there is no obvious reason to use CPU, by more than two orders of magnitude. This per—
+square tiles: we would rapidly run out of shared memory for formance increase is relatively rare among CUDA appli—
+any useful offset value, as the tile size grows as the square of cations involving real experimental data [16]; more typical
+@ Springer
+
+"
+"10","188 J Real—Time Image Proe (2010) 52179—193
+maximum speedups range from 30 to 60 times [19, 26, 34, In between CPU—based C++ and a full CUDA C
+42]. Several factors limit GPU—based analysis of real data. implementation are ordinary C libraries available for some
+Data transfers from CPU host memory to the GPU must common operations that execute on the GPU, including
+cross the relatively slow PCIe bus. Moreover, data size or matrix multiplication (CuBLAS), fast Fourier transforms
+format is often ill—suited for the GPU memory organiza— (CuFFT) and a number of image processing functions
+tion; instead, data must be partitioned into pieces suitable (NPP) [48]. The inner workings of these functions on the
+for analysis, adding overhead. By contrast, simulations and GPU are transparent to the programmer, who only interacts
+numerical calculations remove these constraints; they with the standard C/C—|——|— interface; some scientiﬁc appli—
+generally transport little input data across the PCIe bus, and cations leverage GPGPU capabilities in this way [38].
+they can format their generated data (e.g. random numbers) However, because only some operations in an otherwise
+optimally. As a result, the best CUDA simulation speedups serial program can execute on the GPU, total speedups
+are between 2 to 3 orders of magnitude faster than imple— exceeding a factor of ten are rare with this approach.
+mentations on the older Pentium architecture [1, 18, 45]; To achieve speedups greater than an order of magnitude,
+however, top speedups of 100 times relative to the more some speciﬁc programming of the GPU’s hardware is
+recent Core2 CPU are more common [4, 15, 41]. Simula— usually required; this is a major difference between pro—
+tions also beneﬁt from community expertise in program— gramming the GPU and the CPU. In general, MATLAB
+ming and algorithm design; with few exceptions [1], papers and C/C—|——|— do not require, or even allow, direct access to
+describing CUDA simulation speedups of two or more the CPU hardware and memory caches. Indeed, this access
+orders of magnitude have corresponding authors in com— is usually not necessary: the X86 CPU architecture is
+puter engineering departments [4, 15, 18, 41, 45]. By mature, and optimizing compilers will typically generate
+contrast, experimentalists have on average far less pro— faster code than that tuned by hand in most cases [5]. By
+gramming experience. Many experimental papers achieV— contrast, the GPU architecture is still evolving. Not only
+ing the best CUDA speedups are collaborations involving are the compilers at an earlier stage of development, but the
+co—authors in computing—related departments [16, 26, 34, optimizations of parallel algorithms also require the inter—
+42], with few exceptions [19]. play of many more factors, many based on the speciﬁcs of
+Is CUDA practical for scientists and engineers who do the application that cannot simply be guessed by a com—
+not specialize in programming? This dilemma reﬂects the piler. Consequently, the GPU programmer must exercise a
+tradeoff between performance and development effort. In greater degree of control over the hardware to maximize
+general, solutions that require the least programming tend performance. The earliest GPGPU applications required
+to execute slowest. MATLAB programs are quite easy to programming the graphics pipeline explicitly [30] and
+write, but their performance is heaVily constrained by the manually inserting processor—speciﬁc assembler instruc—
+signiﬁcant inefﬁciencies and overheads inherent in the tions. In particular situations, this approach can still lead to
+MATLAB application, which cannot be removed by the impressive beneﬁts today on GPUs [42] and the Closely—
+programmer. For R z 100, our CUDA C code executes related Cell processor inside the Sony Playstation3 [26,
+completely in the same time that MATLAB merely opens 46], but requires tour—de—force programming feats. Fortu—
+the image and loads it into memory, with no calculation nately, CUDA opens up the GPU architecture for general
+of Eq. 1 at all. No matter how fast that calculation computation in a way that requires no previous knowledge
+runs—even with specialized toolboxes, multiprocessor of graphics or assembler. CUDA programming does
+support, or a Cluster of machines—the MATLAB code require a reasonable foundation in C/C—|——|—, though, and a
+will always trail by orders of magnitude in this particular willingness to redesign algorithms to take advantage of
+application. speciﬁc features of current GPU hardware, particularly the
+Using C/C—|——|— requires somewhat greater development various sizes and speeds of the different memory buffers.
+effort, but boosts performance signiﬁcantly. Application Nevertheless, our work uses a few dozen lines of CUDA C
+overheads are minimized, and optimizing compilers and code to achieve thousands—fold performance increases rel—
+libraries can automatically utilize SIMD instructions ative to MATLAB, demonstrating the practicality of
+without much additional programmer effort [5]. A major CUDA in a real—world science application.
+motivation for our inclusion of the autovectorized C++ In general, however, such large performance increases
+code was to demonstrate that, by only switching the order may not always be achievable. Our algorithm’s speed is
+of a few loops and recompiling with different options, due to several factors that make it a nearly—ideal candidate
+performance can be improved by half an order of magni— for CUDA implementation. We perform a large number of
+tude. Undoubtedly, even greater gains could be achieved calculations on a moderately—sized data set, so that the
+with explicitly adding CPU assembler or intrinsics, but GPU spends far more time performing numerical opera—
+require a substantially greater amount of skill and effort. tions than transferring data; this is a general principle
+@ Springer
+
+"
+"11","J Real—Time Image Free (2010) 52179—193 189
+Which all of the most efﬁcient algorithms use. We use the real—time realm. In this regime, fully—analyzed results can
+line—by—line approach to maximize the usage of shared be obtained fast enough to inﬂuence the data collection
+memory: different offsets are all calculated Within the same process itself [23], and existing applications include the
+thread block, maximizing the amount of computation per— real—time tracking of moving targets like faces [21].
+formed on data already in shared memory; in general, Clearly, CUDA applications are beginning to have a
+maximizing shared memory usage may be the single most signiﬁcant impact in several key areas of science and
+important factor in achieving high CUDA performance. engineering, and Will undoubtedly continue to do so in the
+There is a cost in ﬂexibility to this speciﬁc approach, future.
+however, as offsets in our algorithm are limited by the
+maximum number of threads that can occur in a single ACknOWledgments This work was supported by NASA grant
+. . NNX08AE09G and the NVIDIA professor partnership program. We
+bIOCk’ 512 O“ the cm?“ GTZOO hardware [48]' TIPS .Slze thank A. Bik, J. Curley, A. Ghuloum, D. Luebke, E. Phillips, B. Saar,
+happens to be eenVement for our spe01ﬁc application, H. Saito, M. Schnubbel—Stutz, L. Vogt, and many helpful individuals
+Where the image size is limited by the resolution of the throughout NASA and its contractors.
+CCD Chip in the cameras on—board the ISS; correlations
+greater than a third of the image Width suffer from poor
+statistics, so we do not need to measure offsets greater than References
+about 250 pixels. Were our images an order of magnitude
+larger or smaller, we would have opted for a different 1. Alerstam, E., Svensson T., Andersson—Engels, 8.: Parallel com—
+a mach Finall our a1 orithm re eatedl erforms ver puting With graphics processing units for high—speed Monte Carlo
+Pp ' , y’ g , p y? , , y simulation of photon migration. JBO Lett. 13, 060504 (2008).
+Simple operations, essentially only multiplication and doi:10.lll7/l.304l496
+addition, SO that the GPU can be very effectively deployed; 2. Anderson, J .A., Lorenz, C.D., Travesset, A.: General purpose
+had our algorithm required more complex functionS, 0r mOICCUIar dynamics SimUIationS fully Implemented 0n grapthS
+even a lar 6 number Of divisions the S eedu S would not processing units. J . Comput. Phys. 227, 5342—5359 (2008). doi:
+g . ’ p p 10.1016/j.jcp.2008.01.047
+haVe been 50 large relathe t0 CPU'based code. Conse— 3. Bailey, A.E., Poon, W.C.K., Christianson, R.J., Schoﬁeld, A.B.,
+quently, speedups exceeding two orders of magnitude may Gasser, U., Prasad, V., Manley, S., Segre, P.N., Cipelletti, L.,
+not be achievable in many applications, but most well— Meyer, W.V., DOhertya M.P., Sankaran, S., JankOVSkya A.L.,
+im lemented CUD A a1 orithms can erform faster than Shiley, W.L., Bowen, J .P., Eggers, J .C., Kurta, C., Lorik, Jr., T.,
+p g p Pusey, P.N., Weitz, D.A.: Spinodal decomposition in a model
+CPU'based code by more than a faeter 0f ten- colloid—polymer mixture in microgravity. Phys. ReV. Lett 99,
+Tantalizingly, increasing performance by several orders 205701 (2007). doi:10.1103/PhysRevLett.99.205701
+in science and technolo While researchers often focus mance direct gravitational N—body simulations on graphics pro—
+. . . . gy' . . . . cessing units 11: an implementation in CUDA. New Astron. 13,
+011 mlnlmlzmg dCVCIOPmCHt tlme, Wﬂtlng the Slmplest 103—112 (2008). doi:10.1016/j.newast.2007.07.004
+piece of software that Will “get the job done” regardless 5. Bik, A.J.C.: The Software Vectorization Handbook. Intel, Hills—
+of performance, the dramatic speedups offered by GPGPU bom (2004)
+“- ,, . . 6. Bodnar, I., Dhont J .K.G., Lekkerkerker, H.N.W.: Pretransitional
+may fundamentally Change What that 10b is. Dramati— . . . . .
+. . . phenomena of a COllOld polymer mlxture studled W1th statle and
+cally faster analys1s can enable commensurate increases in dynamic light scattering. J. Chem. Phys. 100’ 19614—19619
+the amount of data collected, particularly in ﬁelds like (1996)
+radio astronomy [16] where data collection is limited by 7. Bodnar, 1., Oosterbaan, W.D.: Indirect determination of the
+recessin rates downstream' observation of structures in compOSition Of the COCXiSting phases in a demixed COHOid
+p ,g , ’. , , , polymer mixture. J. Chem. Phys. 106, 7777—7780 (1997)
+space Wlth increased resolution fac1litates more—detailed 8. CastaﬁO_Dl’eZ’ D., Mozer, D., Schoenegger, A., Pruggnaller 8.,
+understanding Of hOW the universe formed. On a practical Frangakis, A.S.: Performance evaluation of image processing
+the reconstruction of a scan to Check its accurac ' faster 10‘1016/j‘j8b‘2008‘07‘006
+. . . . y’ 9. Che, S., Boyer, M., Meng, J ., Tarjan, D., Sheaffer, J .W., Skadron,
+reconstruction yields more time to collect higher—resolu— K.: A performance study Of general—purpose applications on
+tion data [42] that may facilitate earlier detection Of graphics processors using CUDA. J. Parallel Distrib. Comput. 68,
+diseases like cancer. For our code, the frame rate ObVi— 1370—1380 (2008} doe10-1016/j-deC-2008-05-014
+. . _ . . 10. Christiansen, M.: Adobe After Effects 7.0 Studio Techniques.
+ously depends on image Size, for standard Video—s1zed .
+. . . Peachpit, Berkeley (2006)
+images Of 640 X 480, ealelﬂatlen 0f the autocorrelation ll. Fernando, R., Kilgard, M.J.: The Cg Tutorial: The Deﬁnitive
+Of Offsets up to 16 pixels Will exceed real—time Video rates Guide to Programmable Real—Time Graphics. Addison—Wesley,
+0f 30 frames per second. Beyond our particular applica— BOStO“ (2003)
+tion our code could ﬁnd real—time usa e in stabilizin or 12. Fraser F., Schewe, 1.: Real World Camera Raw With Adobe
+’ . . . g. . 3 Photoshop CS3. Peachpit, Berkeley (2008)
+tracklng full—frame displacements 1n llVe'metlen VldeO, l3. Furukawa, H.: A dynamic sealing assumption for phase separa—
+for example, bringing data analysis into the interactive tion. Adv. Phys. 34, 703—750 (1985)
+@ Springer
+
+"
+"12","190 J Real—Time Image Proc (2010) 5:179—193
+14. Garland, M., Le Grand, S., Nickolls, J., Anderson, J., Hardwick, 34. Samant, S.S., Xia, J., Muyan—Ozgelik, P., Owens, J.D.: High
+J., Morton, S., Phillips, B, Zhang, Y., VolkOV, V.: Parallel performance computing for deformable image registration:
+Computing Experiences With CUDA. IEEE Micro 28, 13—27 Towards a new paradigm in adaptive radiotherapy. Med. Phys.
+(2008) 35, 3546—3553 (2008). d0i:10.1118/1.2948318
+15. GumerOV, N.A., Duraiswami, R.: Fast multipole methods on 35. Schatz, M.C., Trapnell, C., Delcher, A.L., Varshney, A.: High—
+graphics processors. J. Comput. Phys. 227, 8290—8313 (2008). throughput sequence alignment using Graphics Processing Units.
+doiz10.1016/j.jcp.2008.05.023 BCM Bioinformatics 8, 474 (2007). d0i:10.1186/1471—2105—
+16. Harris, C., Haines K., Staveley—Smith, L.: GPU accelerated radio 8—474
+astronomy signal convolution. Exp. Astron. 22, 129—141 (2008). 36. Schenk, 0., Christen, M., Burkhart, H.: Algorithmic perfomance
+dOi:10.1007/S10686—008—9114—9 studies on graphics processing units. J . Parallel Distrib. Comput.
+17. Ibrahim, K.Z., Bodin, F., Pene, 0.: Fine—grained parallelization of 68, 1360—1369 (2008). dOi:10.1016/j.jpdc.2008.05.008
+lattice QCD kernelroutine 0n GPUs.J.Para11e1Distrib. Comput. 37. Shimobaba, T., Ito, T., Masuda, N., Abe, Y., Ichihashi, Y.,
+68, 1350—1359 (2008). dOi:10.1016/j.jpdc.2008.06.009 Nakayama, H., Takada, N., Shiraki, A., Sugie, T.: Numerical
+18. Li, H., Kolpas, A., Petzold, L., Moehlis, J .: Parallel simulation calculation library for diffraction integrals using the graphic
+for a ﬁsh schooling model on a general—purpose graphics pro— processing unit: the GPU—based wave optics library. J. Opt. A:
+cessing unit. Concurr. Comput. Pract. Exp. (2008). d0i:10. Pure Appl. Opt. 10, 075308 (2008). d0i:10.1088/1464—4258/
+1002/Cpe.1330 10/7/075308
+19. Liu, S., Li, R, Luo, Q.: Fast blood ﬂow Visualization of high— 38. Shimobaba, T., Sato, Y., Miura, J., Takenouchi, M., Ito, T.: Real—
+resolution laser speckle imaging data using graphics processing time digital holographic microscopy using the graphics process—
+unit. Opt. Express 16, 14321—14329 (2008). d0i:10.1364/OE.16. ing unit. Opt. Express 16, 11776—11781 (2008). d0i:10.1364/OE.
+014321 16.011776
+20. Liu, W., Schmidt, B., Voss, G., Miiller—Wittig, W.: Accelerating 39. Sintorn, E., Assarsson, U.: Fast parallel GPU—sorting using a
+molecular dynamics simulation using Graphics Processing Units hybrid algorithm. J. Parallel Distrib. Comput. 68, 1381—1388
+With CUDA. Comp. Phys. Comm. 179, 634—641 (2008). doiz (2008). dOi:10.1016/j.jpdc.2008.05.012
+10.1016/j.CpC.2008.05.008 40. StantcheV, G., Dorland W., Gumerov, N.: Fast parallel Particle—
+21. Lozano, O.M., Otsuka, K.: Real—time Visual Tracker by Stream To—Grid interpolation for plasma PIC simulations on the GPU. J .
+Processing. J. Signal Process. Syst. (2008). d0i:10.1007/s11265— Parallel Distrib. Comput. 68, 1339—1349 (2008). d0i:10.1016/
+008—0250—2 j.jpdc.2008.05.009
+22. Lu, P.J., Conrad, J.C., Wyss, H.M., Schoﬁeld, A.B., Weitz, D.A.: 41. Stone, J.E., Phillips, J.C., Freddolino, P.L., Hardy, D.J., Trabuco,
+Fluids 0f Clusters in Attractive Colloids. Phys. ReV. Lett. 96, L.G., Schulten, K.: Accelerating Molecular Modeling Applica—
+028306 (2006). d0i:10.1103/PhysReVLett.96.028306 tions With Graphics Processors. J . Comput. Chem. 28, 2618—2640
+23. Lu, P.J., Sims, P.A., Oki, H., Macarthur, J.B., Weitz, D.A.: (2007). d0i:10.1002/jCC.20829
+Target—locking acquisition With real—time confocal (TARC) 42. Stone, S.S., Haldar, J .P., Tsao, S.C., ku, W.—m.W., Sutton, B.P.,
+microscopy. Opt. Express 15, 8702—8712 (2007). d0i:10.1364/ Liang, Z.—P.: Accelerating advanced MRI reconstructions 0n
+OE.15.008702 GPUs. J. Parallel Distrib. Comput. 68, 1307—1317 (2008). dOi:
+24. Lu, P.J., Zaccarelli, E., Ciulla, F., Schoﬁeld, A.B., Sciortino, F., 10.1016/j.jpdc.2008.05.013
+Weitz, D.A.: Gelation of particles With short—range attraction. 43. Taylor, S.: Intel Integrated Performance Primitives. Intel,
+Nature 453, 499—503 (2008). d0i:10.1038/nature06931 Hillsboro, OR (2004)
+25. Lu, P.J.: Gelation and Phase Separation of Attractive Colloids. 44. Thibault, J .C., Senocak, I.: CUDA Implementation of a Navier—
+Harvard University Ph.D. Thesis (2008) Stokes solver in multi—GPU desktop platforms for incompressible
+26. Manavski, S.A., Valle, G.: CUDA compatible GPU cards as ﬂows. In 47th AIAA Aerospace Sciences Meeting and Exhibit
+efﬁcient hardware accelerators for Smith—Waterman sequence (2009)
+alignment. BCM Bioinf. 9(Supp1 2), S10 (2008). d0i:10.1186/ 45. Van Meel, J.A., Arnold, A., Frenkel, D., Portegies Zwart,
+1471—2105—9—S2—S10 S.F., Belleman, R.G.: Harvesting graphics power for MD simu—
+27. Marziale, L., Richard III, G.C., RousseV, V.: Massive threading: lations. M01. Simulation 34, 259—266 (2008). d0i:10.1080/
+Using GPUs to increase the performance of digital forensics 08927020701744295
+tools. Digital Investigation 4S, S73—S81 (2007). d0i:10.1016/ 46. Wirawan, A., Kwoh, C.K., Hieu, N.T., Schmidt, B.: CBESW:
+j.diin.2007.06.014 sequence alignment on the Playstation 3. BCM Bioinf. 9 377
+28. MCCOOI, M., Du Toit, S.: Metaprogramming GPUs With Sh. (2008). d0i:10.1186/1471—2105—9—377
+Peters, Wellesley (2004) 47. Zaccarelli, E., Lu, P.J., Ciulla, F., Weitz, D.A., Sciortino, F.:
+29. Nguyen, H. (ed.): GPU Gems 3. Addison—Wesley, Upper Saddle Gelation as arrested phase separation in short—ranged attractive
+River (2007) colloid—polymer mixtures. J . Phys. Condens. Matter 20, 494242
+30. Owens, J .D., Luebke, D., Govindaraju, N., Harris, M., Kriiger, J ., (2008). dOi:10.1088/0953—8984/20/49/494242
+Lefohn, A.E., Purcell, T.: A survey of general—purpose compu— 48. http://WWW.nVidia.COIn/0uda
+tation 0n graphics hardware. Comput. Graph. Forum 26, 80—113 49. http://WWW.khr0n0s.org/Opencl
+(2007)
+31. Pharr, M. (ed.): GPU Gems 2. Addison—Wesley, Upper Saddle
+River (2005) . .
+32. Roeh, D.W., Kindratenko V.V., Brunner, R.J.: Accelerating Author Blographles
+cosmological data analysis With graphics processors. In Pro—
+ceedings of 2nd Workshop on General Purpose Processing on Peter J- Lu received his AB summa cum laude in physics (2000)
+Graphics Processing Units. ACM, Washington (2009) from Princeton University, and AM (2002) and PhD (2008) in physics
+33. Ruiz, A., Ujaldon, M., Cooper, L., Huang, K.: Non—rigid Regis— from Harvard University. He is presently a post—doctoral research
+tration for Large Sets Of Microscopic Images on Graphics fellow in the department of physics and in the school of engineering
+Processors, J . Sign. Process. Syst. (2008) d0i:10.1007/s11265— and applied SCiChCCS at Harvard University; hiS main fOChS is Oh the
+008—0208—4 physics of attractive colloids and the integration of high—performance
+@ Springer
+
+"
+"13","J Real—Time Image Proc (2010) 5:179—193 191
+imaging and analysis techniques. He has developed PLuTARC, areal— science experiments and two repair and installation space walks,
+time target—locking system for use in confocal microscopy, allowing becoming the ﬁrst Asian—American and ethnic Chinese Mission
+the observation of freely—mOVing objects, such as biological cells, for Commander of the ISS.
+extended periods of time. He has also published the discoveries of
+modern quasicrystal geometry in medieval Islamic architectural Edward M. Fincke attended the Massachusetts Institute of Tech—
+tilings; the hfSt precision COIhPOUhd machines, from ancient China; nology on an Air Force ROTC scholarship and received a BS (1989)
+the ﬁrst use Of diamond, in prehistoric China; and the hfSt in aeronautics and astronautics, and a BS in earth, atmospheric and
+quasicrystalline miner al found in nature. planetary sciences. He received an MS in aeronautics and astronautics
+(1990) from Stanford University, an AS in earth sciences/geology
+Hidekazu Oki received his BSE in computer science (2000) and (1993) from El Camino College, and an MS in physical sciences/
+M.Eng in electrical engineering (2003) from Princeton University. He planetary geology (2001) from the University of Houston, Clear Lake.
+currently works as a software engineer, focusing on cryptography and After graduation from MIT in 1989, he attended a summer exchange
+security in smart—card software development, at Dai Nippon Printing at Moscow Aviation Institute in the former Soviet Union, where he
+in Tokyo. He collaborates in the implementation and improvement of studied cosmonautics. After graduation from Stanford University in
+scientiﬁc computing software, using computer architecture—aware 1990, he entered the United States Air Force as a space systems
+software—performance optimizations. His past work includes data— engineer and a space test engineer at Los Angeles Air Force Base; and
+cache—aware optimization and software optimization using SSE as a ﬂight test engineer at Edwards and Eglin Air Force Bases, ﬂying
+instructions. in F—16 and F—15 aircraft and attaining the rank of Colonel. In 1996,
+he was the United States ﬂight test liaison to the Japanese/United
+Catherine A. Frey received her degree in physics and astronomy States XF'2 ﬁghter program at the Git“ Air Base in Japan. At NASA
+from the Bowling Green State University, in Ohio. She currently from 1996, he has served as ISS spacecraft communicator, a member
+works at Zin Technologies, where she has integrated scientiﬁc 0f the crew test support team in Russia, back—up crewmember for 133
+payloads for the Space Shuttle and International Space Station, for the expeditions 4 and 6, and baCk—up commander for 133 expeditions 13
+NASA Glenn Research Center, for the past 19 years. She has trained and 16- He has ﬂown aboard two 133 missions. During ISS
+astronauts and participated in real—time operations of ﬂight payloads Expedition 9 (April 18—October 23, 2004), he served as NASA
+since 2001. science ofﬁcer and ﬂight engineer, where he conducted numerous
+experiments, maintained ISS systems, and performed four space—
+Gregory E. Chamitoff received his BS in electrical engineering walks. He commanded Expedition 18 (12 October 2008—8 April
+(1984) from California Polytechnic State University, an MS (1985) in 2009), which helped prepare the station for future 6—pers0n crews and
+aeronautical engineering from the California Institute of Technology, hosted the Space Shuttle crews Of STS'126 and STS'119'
+a PhD in aeronautics and astronautics (1992) from the Massachusetts
+Institute of Technology, and an MS in space science/planetary C- Michael Foale received a BA in physics (1978), completing the
+geology (2002) from the University of Houston Clear Lake. While at natural sciences tripos with ﬂrst—Class honors, and his DPhil in
+MIT and Draper Labs (1985—1992), he performed stability analysis laboratory astrophysics (1982) ffOIh Queen’s College, Cambridge. In
+for the deployment of the Hubble Space Telescope, designed ﬂight June 1983, Foale joined NASA Johnson Space Center as payload
+control upgrades for the Space Shuttle autopilot, and developed ofﬁcer in the Mission Control Center, coordinating payload opera—
+attitude control system software for the Space Station. In 1995, he tions on Space Shuttle missions STS—51G, STS'S 1'1, STS'61'B and
+joined Mission Operations at the Johnson Space Center, where he STS—61—C. He has ﬂown on four Space Shuttle missions as a crew
+developed software applications for spacecraft attitude control member. STS-45 (March 24 to April 2, 1992) was the hfSt 0f the
+monitoring, prediction, analysis, and maneuver optimization, includ— ATLAS series 0f missions to study the atmosphere and solar
+ing the 3D ‘big screen’ display of the Station and Shuttle used by interactions. STS'56 (April 9—17, 1993) carried ATLAS-2 and the
+Mission Control. He served 6 months aboard the 188 as Expedition SPARTAN retrievable satellite that made Observations Of the SOIElI'
+17—18 ISS Flight Engineer and Science Ofﬁcer. corona. STS—63 (February 2—11, 1995) was the ﬁrst rendezvous with
+the Russian Space Station Mir. During STS—63 he made his ﬁrst space
+Leroy Chiao received a BS in Chemical engineering (1983) from the walk, evaluating extremely cold spacesuit conditions, and exploring
+University of California, Berkeley, and an MS (1985) and PhD (1987) mass handling of the 2800—p0und Spartan satellite. On May 15, 1997,
+in Chemical engineering from the University Of California, Santa he joined the crew aboard the Russian Space Station Mir, where he
+Barbara. He worked for Hexcel until 1989, on a joint N AS A—JPL/ initially conducted science experiments, and later helped reestablish
+Hexcel project to develop an optically correct, polymer composite the Mir after it was degraded by a collision and depressurization.
+precision segment reﬂector, for space telescopes, and on cure From December 19 t0 27’ 1999’ he ﬂew Oh STS'103 to repair and
+modeling and ﬁnite element analysis. In 1989, he began work at the upgrade the Hubble Space Telescope, replacing the telescope’s main
+Lawrence Livermore National Laboratory on processing research for computer and ﬁne guidance sensor during an EVA‘ From October 20’
+fabrication of ﬂ1ament—w0und and thiCk—section aerospace compos— 2003 to April 29’ 2004’ he commanded Expedition 8 aboard the
+ites. An instrument—rated pilot, he ﬂew three times aboard the Space International Space Station, and conducted numerous science
+Shuttle. On the STS—65 Columbia mission (July 8—23, 1994) he experiments.
+became the 196th NASA Astronaut to ﬂy in space and the 311th
+human in space. During 9—day the STS—72 Endeavour (January 11—20, Sandra H- Magnus received a BS (1986) in physics and an MS in
+1996) mission, he performed two spacewalks designed to demonstrate electrical engineering (1990) from the University Of Missouri—Rolla,
+tools and techniques to be used in the assembly of the International and a PhD in materials science and engineering (1996) from the
+Space Station, and became the ﬁrst Asian—American and ethnic Georgia Institute Of Technology. From 1986—1991, she developed
+Chinese to perform a spacewalk. He was the EVA/Construction lead stealth technology at the McDonnell Douglas Aircraft Company, and
+for the STS—92 Discovery (October 11_24, 2000) mission, which also contributed to the propulsion system of the Navy’s A—12 attack
+continued 188 assembly and prepared the 18$ for its ﬁrst resident aircraft. She jOIl’lCd NASA in 1996, WOkaHg initially in the astronaut
+crew. From October 13, 2004 to April 24, 2005, he commanded ISS ofﬁce, in the payloads and habitability branches. From October 7—18,
+Expedition 10 and served as NASA Science Ofﬁcer, performing 20 2002 she ﬂew aboard the Space Shuttle Atlantis during the STS—112
+@ Springer
+
+"
+"14","192 J Real—Time Image Proc (2010) 5:179—193
+mission, operating the Shuttle’s robotic arm during three spacewalks ofﬁcer during Expedition 5 (June 5 to December 7, 2002), she
+to deliver and install the third piece of the ISS’s integrated truss conducted numerous experiments, in addition to installing the mobile
+structure. From November 2008 to March 2009, She served as the case system, the S1 truss segment, the P1 truss segment, and
+NASA science ofﬁcer and second ﬂight engineer aboard the ISS micrometeoroid shielding 0n the Zvezda Service Module during an
+during Expedition 18, where she prepared the ISS to begin 6—pers0n Orlan EVA. She commanded ISS Expedition 16 (October 10, 2007 to
+crew operations, supported two Orlan—based spacewalks and con— April 19, 2008), overseeing the ﬁrst expansion of ISS living and
+ducted a number of science experiments. working space in more than six years, including the Harmony
+connecting node, the European Space Agency’ s Columbus laboratory,
+William S. McArthur Jr. received a BS in applied science and the Japan Aerospace Exploration Agency’s Kibo logistics pressurized
+engineering (1973) from the US Military Academy, West Point, and module and the Canadian Space Agency’s Dextre robot. Her siX space
+an MS in aerospace engineering (1983) from the Georgia Institute of walks are the most numerous 0f any woman.
+Technology. Commissioned as a second lieutenant in the US army
+following his West Point graduation, he was the top graduate in his Jeffrey N. Williams received a BS in applied science and engineer—
+ﬂight class from the US Army Aviation School in 1976, and ing (1980) from the US Military Academy, an MS in aeronautical
+subsequently served as an aeroscout team leader and brigade aViation engineering (1987) and the degree of aeronautical engineer (1987)
+section commander with the 2nd Infantry Division in Korea. In 1978, from the US Naval Postgraduate School, and an MA in national
+he served as company commander, platoon leader, and operations security and strategic studies (1996) from the US Naval War College.
+ofﬁcer with the 24th Combat Aviation Battalion in Savannah, Commissioned as a second lieutenant upon graduation in 1980, he
+Georgia. After graduating from Georgia Tech, he joined the faculty was designated an Army aviator in 1981 and subsequently served in
+of West Point as assistant professor in the Department of Mechanics. the 3rd Armored Division’s aviation battalion in Germany. In 1992,
+In 1987, he graduated from the US Naval Test Pilot School and was he was selected for the Naval Test Pilot School, and graduated ﬁrst in
+designated an experimental test pilot. Joining NASA in 1990, he his class before serVing as an experimental test pilot and ﬂight test
+became an astronaut in 1991, and ﬂew four space missions. During division chief in the Army’s airworthiness qualiﬁcation test director—
+STS—58 (October 18—November 1, 1993), he performed extensive ate at Edwards Air Force Base. During his Army assignment at NASA
+medical tests on himself, in addition to a number of other medical Johnson Space Center from 1987—1992, he served as a Shuttle launch
+experiments, and made extensive radio contact with school children and landing operations engineer and a pilot in the Shuttle aVionics
+and amateur radio operators around the world. The STS—74 (Novem— integration laboratory. In May 2000, he served as a the ﬂight engineer
+ber 12—20, 1995) mission was the second to dock with Russian space and lead spacewalker for STS—101 (May 19—29, 2000), the third
+station Mir, during which he attached at permanent docking collar, shuttle mission devoted to ISS construction. He was backup
+transferred large payloads, and conducted experiments. During STS— commander and Soyuz ﬂight engineer for the 12th ISS Expedition
+92 (October 11—24, 2000) performed several space walks to assemble in 2005. On ISS Expedition 13 (March 29 to September 28, 2006), he
+and conﬁgure several new structural elements of the ISS, preparing it served as the ﬂight engineer and science ofﬁcer, during which he
+to receive its ﬁrst resident crew. From September 20, 2005 to April 8, conducted two EVAs to resume ISS orbital laboratory assembly,
+2006, he commanded ISS Expedition 12, and served as science oversaw the restoration of a three—person crew, and conducted
+ofﬁcer. In addition to conducting a number of experiments, he was the numerous science experiments.
+ﬁrst to dock to every Russian docking port on the ISS, and to conduct
+spacewalks with both US and Russian spacesuits. William V. Meyer received his BA in philosophy (1978) and BS in
+physics and mathematics (1983) from the University of Nebraska; his
+Daniel M. Tani received his BS (1984) and MS (1988) in mechanical MS in physics, with a minor in engineering management (1987) from
+engineering from the Massachusetts Institute of Technology. In 1988, the University of Missouri—Rolla; and his PhD in physics (2002) from
+he joined Orbital Sciences Corporation, where he managed the the University of Amsterdam. He has published extensively on
+mission and deployment of the Transfer Orbit Stage during the STS— dynamic and surface light scattering, and is a senior scientist at NASA
+51 space shuttle mission in 1993, before leading the development of Glenn Research Center, where he has worked since 1987. He has
+launch procedures for the Pegasus unmanned rocket. Joining NASA directed NASA advanced technology development projects in laser
+in 1996, he ﬂew aboard STS—108, the 12th shuttle ﬂight to the ISS, light scattering and surface light scattering, and is the deputy director
+where he assisted the installation of the Raffaello multi—purpose at the National Center for Space Exploration Research, where his
+logistics module, and performed a space walk to wrap thermal work as NASA project scientist for microgravity ﬂight experiments
+blankets around the ISS solar array gimbals. On his second probes how nature manifests order from disorder.
+spaceﬂight, he served as the Expedition 16 (October 23, 2007 to
+February 20, 2008) ﬂight engineer aboard the ISS, during which he Ronald J. Sicker received his BSEE from Ohio University. From
+performed robotic installation operations, and conducted numerous 1983-1989, he was a US Air Force ﬂight test engineer on a ﬂeet of
+scientiﬁc experiments. EC—135 advanced range instrumentation aircraft, coordinating in—
+ﬂight support for 38 space and missile tests, and managing the
+Peggy A. Whitson received her BS in biology/chemistry (1981) from satellite and telemetry support for over 501aunches. Moving to NASA
+Iowa Wesleyan College, and her PhD in biochemistry (1985) from in 1989, he was an original member of the advanced communications
+Rice University, continuing as a post—doctoral fellow at Rice until technology satellite experiment ofﬁce. From 1991 to 1993, he
+1986, before moving to NASA. From 1989 to 1993, She worked as a managed the design of the power protection system for the Space
+research biochemist at NASA—JSC. From 1992 to 1995, she served as Station (Freedom) which became the ISS design. From 1994 to 2004,
+project scientist of the Shuttle—Mir Program (STS—60, STS—63, STS— he managed the space acceleration measurement system and the
+71, Mir 18, Mir 19), and as co—chair of the US—Russian mission orbital acceleration research experiment payloads for 15 Shuttle,
+science working group. From November 2003 to March 2005 she Shuttle/Mir and ISS launches. From 2004 to 2005, he served as
+served as deputy chief of the astronaut ofﬁce, then as chief of the deputy project manager of the satellite based technology/advanced
+astronaut ofﬁce station operations branch until November 2005, when communication navigation and surveillance architectures system
+she began training as backup ISS Commander for Expedition 14. She technology project. In 2006, he developed architecture requirements
+served aboard two expeditions to the ISS. The ﬁrst NASA science for the new ARES and ARES—5 launch vehicles for the Level II
+@ Springer
+
+"
+"15","J Real—Time Image Proc (2010) 52179—193 193
+Constellation program. Since August 2007, he has served as project David A. Weitz received his BSC with honors in physics (1973) from
+manager for the ISS ﬂuid integrated rack and light microscopy the University of Waterloo, and AM (1975) and PhD (1978) in
+module, launched August 25, 2009, and is managing their outﬁtting physics from Harvard University. From 1978 to 1995, he worked at
+and on—orbit operations. Exxon Research and Engineering as a group leader in interfaces and
+
+inhomogeneous materials (1987—1989) and the science area leader in
+Mark Christiansen received his BA, Phi Beta Kappa, in English complex ﬂuids (1989—1993)- 1:me 1995 to 19999 he was a Professor
+(1990) from Pomona College, and began his career at LucasArts 0f Physics at the University Of Pennsylvania, before becoming 21
+Entertainment. He is the author of After Eﬁects Studio Techniques Gordon McKay Professor 0f Physics and 0f Applied Physics at
+(Adobe Press). He has supervised Visual effects for features ﬁlms such Harvard University (1999—2005)- In 2005, he was appointed
+as All About Evil and created Visual effects and animations for Mallinckrodt Professor 0f Physics and 0f Applied Physics at Harvard,
+features including Avatar, Pirates of the Caribbean 3, The Day After and 3130 currently serves as a professor 0f systems biology, director Of
+Tomorrow, and Spy Kids 3D. Clients Of his company, Flowseeker the Harvard Materials Research Science and Engineering Center, CO-
+LLC, include Sony, Adobe, Cisco, Sun, Cadence, Seagate, Intel and director of the Kavli Institute for Bionano Science and Technology,
+Medtronic, and his broadcast motion graphics work has appeared on and co—director 0f the BASF Advanced Research Initiative at
+HBO and the History Channel. Mark’s roles have included producing, Harvard. His research group focuses on the physics 0f 30ft condensed
+directing, designing and Qn_set and post production supervision. Mark matter, colloidal (1181361810118, foams and emulsions, and biomaterials;
+is a founding author at ProVideoCoalition, an instructor at fohd.com the mechanics 0f biomaterials and cell rheology; microﬂuidic
+and Academy Of Art University, and a guest host on podcasts techniques for new complex ﬂuid structures, bio—Chemical assays,
+including the VFX Show (Pixel Corps). screening; synthesis of new soft materials; engineering structures for
+
+encapsulation; new optical measurement techniques for dynamics and
+Andrew B. Schofield received his PhD (1994) from the school of mechanics of random systems; and multiple scattering of Classical
+Chemistry at the University of Bristol. He currently works in the anes‘
+school of physics at Edinburgh University. His research interests
+include the preparation of novel colloidal particles and their
+applications.
+
+@ Springer
+
+"

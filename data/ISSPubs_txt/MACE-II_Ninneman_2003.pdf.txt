@@ -1,0 +1,477 @@
+"","x"
+"1","Space 2003 AIAA 2003-6243
+23 - 25 September 2003, Long Beach, California
+MIDDECK ACTIVE CONTROL EXPERIMENT REFLIGHT (MACE II) PROGRAM:
+ADVENTURES IN SPACE
+R. Rory Ninneman, Air Force Research Laboratory, Kirtland AFB, NM
+David B. Founds, Air Force Research Laboratory, Kirtland AFB, NM
+Lawrence DaVis, Planning Systems, Inc., Melbourne, FL
+Scott Greeley, Planning Systems, Inc., Melbourne, FL
+J ames King, Planning Systems, Inc., Melbourne, FL
+ABSTRACT AFRL successfully presented our experiment plan to the
+Department of Defense (DOD) Space Experiments Review
+The Middeck Active Control Experiment Reﬂight Board (SERB) and were ranked the #1 DOD Space Shuttle
+(MACE II) Program was the ﬁrst on-orbit payload. Our program was subsequently assigned to the
+demonstration of adaptive structural control DOD Space Test Program detachment in Houston to
+technology and the ﬁrst active science experiment coordinate with NASA to get us manifested 0n the shuttle.
+ﬂown aboard the International Space Station. Our However, due to space availability problems, it appeared
+program objectives were to (1) greatly decease the we had no hope of getting manifested in a realistic amount
+need for modeling and ground testing to develop of time. This was mainly due to the majority of shuttle
+controllers and (2) allow for autonomous missions supporting the assembly and supply of the
+reconﬁguration of the control system to changing International Space Station. With hopes of a shuttle ﬂight
+dynamic characteristics and sensor/actuator failures. slipping away, the DOD STP took a different course. We
+This paper discusses the development of the MACE requested that MACE 11 be manifested on 188 during
+11 program, an overview of the technical success of Increment 1. Initially, this idea was rejected because the
+the MACE II mission, and lessons learned from both ﬂight experiments had already been assigned. However,
+a technical and programmatic standpoint dealing with several experiments did not meet their ship dates and
+the Space Test Program and NASA. NASA agreed to ﬂy MACE II. MACE II was then
+manifested 0n STSlO6 (188 Flight 2A.2B) for delivery to
+INTRODUCTION ISS, Captain William Shepherd (USN) was selected to be
+our on-orbit investigator, and MACE II launch on 8 Sep
+The Middeck Active Control Experiment Reﬂight 2000 aboard the SPACEHAB module. MACE II was
+(MACE II) Program was an outgrowth of adaptive extended through Increment 2 and C01 Susan Helms took
+controls research sponsored by the Air Force over as our experimenter. MACE II was 0n-0rbit 347
+Research Laboratory (AFRL). Through a series of days and returned to KSC on 20 Aug 2001 aboard STS-
+small business innovative research efforts, 105.
+educational partnership agreements, cooperative
+research and development agreements, and This paper will provide a brief overview of the original
+reutilization 0f the original MACE hardware MACE mission, the motivation for MACE II, a
+developed by the Massachusetts Institute of description of the ﬂight hardware, the technical success of
+Technology (MIT) for NASA Langley Research the program, and lessons learned from the experience.
+Center (NASA LaRC); AFRL was able to craft a
+program resulting in the ﬁrst on-orbit demonstration MIDDECK ACTIVE CONTROL EXPERIMENT
+of adaptive structural control. MACE II consisted of gMACE)
+two science teams. The ﬁrst led by AFRL and their
+prime contractor, Planning Systems Inc. of NASA Langley through the NASA In—Step Program and
+Melbourne, FL. In addition, the AFRL team included the NASA CSI ofﬁce funded the original MACE program.
+Payload Systems, Inc., the University of Michigan, The MACE ﬂight experiment was designed through a
+Virginia Tech and Sheet Dynamics Ltd. MIT SSL cooperative effort between the MIT Space Engineering
+led the second team that included Lockheed Martin Research Center, Payload Systems, Inc. (Cambridge,
+and Mide Technologies. MA), Lockheed Martin, and NASA Langley. The original
+MACE ﬂight experiment was designed to investigate
+modeling and control issues for achieving high precision
+1
+American Institute of Aeronautics and Astronautics
+This material is declared a work of the U.S. Government and is not subject to copyright protection in the United States.
+
+"
+"2","pointing and Vibration control of future spacecraft.
+The primary objective of the original MACE The Middeck Active Control Experiment — Flight 11
+experiment was to demonstrate the effectiveness of (MACE II) was a follow-on ﬂight experiment to the
+structural control in improving spacecraft stability original MACE ﬂight experiment. The Air Force
+and to assess the predictability of controller Research Laboratory (AFRL) initiated a program to re-ﬂy
+performance based on analysis and l-g testing. To the MACE hardware in 1998 to investigate the use of
+accomplish these objectives, a variety of techniques adaptive control algorithms for precision structural
+were developed to obtain accurate O-g models, along control. The ﬂight hardware was transferred from NASA
+with associated parameter uncertainty models, using Langley to AFRL. In addition, AFRL established a
+ﬁnite element modeling and l-g ground testing. second science team, led by MIT, to perform experiments
+These models were then used to design a variety of demonstrating Controls/Structures Interaction (CSI)
+ﬁxed gain control laws that were demonstrated on control approaches for Time Varying (TV) systems.
+orbit and later modiﬁed during ﬂight to improve Space based systems offer particularly challenging
+performance and robustness using on-orbit data. The examples of CSI, as in situ (O-g) test data is not available
+original MACE ﬂight experiment ﬂew on STS67 in for controller design or veriﬁcation prior to ﬂight, and
+March 1995. The experiment was highly successful generally l-g test data is not representative of O-g
+and demonstrated structural control could be dynamics.
+effectively accomplished using the developed
+techniques. [1] The remainder of this paper will focus on the activities of
+Despite these signiﬁcant achievements, the MACE the two primary Air Force science team members,
+program also revealed limitations of the model-based Planning Systems, Inc. and the University of Michigan.
+ﬁxed gain linear control approach. These limitations MACE II was the ﬁrst experiment to investigate and
+include: demonstrate adaptive structural control in a micro-graVity
+space environment. MACE 11 answered key questions
+- Signiﬁcant expense and time associated with about the ability of adaptive control algorithms to
+developing high ﬁdelity ﬁnite element models maintain performance of a complex space system as its
+needed for control design dynamics change from l-g qualiﬁcation testing to O-g.
+We have demonstrated the ability to autonomously
+- Loss of robustness due to unknown or .
+an dele d 0_ d namics recover from subsystem failures such as the loss of an
+11 g y actuator or sensor and the ability of adaptive algorithms to
+- Difﬁculties in handling nonlinear behaVior perform with respect to the constraints and uncertainties
+. . . . associated with space ﬂight. MACE II also provided a
+- Potential loss of performance or instability due . . . . .
+. . . . bas1s for comparing these adaptive techniques With the
+to t1me-vary1ng dynamics or sudden failures of . .
+d t t ﬁxed-gain linear control approach employed by the
+sensors an ac ua ors. original M ACE ﬂight.
+Despit e extenswe research, .MACE. and other The primary objective of MACE II is to validate the
+experiments have shown that it remains extremely . . .
+. . . . . . ability of adaptive neural network—based and other
+difﬁcult to predict on-orbit O-g behaV1or. In addition, . . . . .
+. . . . adaptive algorithms to control, With little or no prior
+system dynamics often tend to be time varying. This . .
+system knowledge, a representative small satellite system
+can be due to thermal effects, slow changes due to . . . .
+. . . that alters its dynamics between l-g qualiﬁcation and O-g
+degradation of materials and the aging of the . . . . . . .
+. operations. [2] Spe01ﬁc experiment ObJCCtIVCS include.
+spacecraft, or sudden failures such as the loss of a
+sensor or actuator. These events become1ncreas1ngly 1. Demonstrate that performance achievable on the
+likely as spacecraft become more complex and are . . .
+. . . . ground can be achieved on-orbit Without the need
+expected to be in serV1ce for longer periods of time. .
+. . . . for control redes1gn.
+By decreas1ng modeling and testing requirements,
+lowering operations and maintenance activities, and 2. Demonstrate autonomous failure recovery to events
+increasing reliability and survivability, adaptive such as sensor/actuator failure.
+methods .have the potential to Signiﬁcantly reduce 3. Demonstrate the saVings that can be achieved by
+cost and increase performance of these systems. . . . .
+reduCIng modeling and testing currently required to
+Middeck Active Control Experiment Reﬂight a:ﬂfﬂ:gfgvlgegnjfogggorme W a ﬁxed-
+{MACE 11) g p '
+2
+American Institute of Aeronautics and Astronautics
+
+"
+"3","4. Demonstrate that adaptive algorithms can be EX erinient Su ort Module
+implemented successfully using limited
+com utational ower consistent With space The EX eriment Su ort Module (ESM) is a complete
+P P P PP
+applications. controlled-systems laboratory in a single low power
+. . . . ' + ' l '
+5. Collect data for further evaluation of the ability EECk?ge Volt}: eESaMndreiulgizteszégaYDﬁl nﬂﬁﬂ (HES:
+of nonlinear modeling and identiﬁcation tools 00:? :rtnient gressures anfcl tem eratures
+to accurately predict 0-g on-orbit behavior. p p p '
+The ESM uses a 486-based processor host for a 40 MHz
+—FLIGHT HARDWARE DESCRIPTION TI C30 processor With 1 MB of system RAM. PCMCIA
+. . disk drives, compatible With the STS communication
+The MACE ﬂlght hardware COHSIStS Of .three system, are used for protocol (algorithm) and data storage.
+components; the Multi-body Platform; Experiment
+Tippsrltl Module; and tthe Hafn $161? aerial Terntnﬁa: Custom software development tools are used to create
+f e OWE): ingMelsdcrii 10:8 ti) 2 a: Vila: a em: em new protocols. Protocols contain system initialization
+($11: CE)‘ Se 1 e; r:,,1V[e1] on ro Xpe e commands, disturbance generation parameters, real-tinie
+' ummary epo ' and background control operations, and last known state
+Multi-bod Platform and data archival commands.
+. . H h l ' lT ' l
+The Multi-body Platform (MBP) cons1sts of a and e d Seria ernnna
+segmented ﬂexible structural buswith integral power The Handheld Serial Terminal (HST) is the astronaut
+andtdata connections. A: two-ax1s gimbaied p.13]??? interface to the ESM. Essential a ruggedized keypad, the
+con (:1ng lwzatXlS .rate gyroscopesd (1r 1he nad HST controls all operational functions. The protocol
+p01n1ng ang e e ernnna ion is moun e a .eac e naming convention uses a ﬁle name consisting of up to
+of the bus. In the center, a three-aX1s reaction Wheel ﬁve numeric characters This greatly simpli ﬁes
+assembly .(RWA)’ used to provid e attitude control operations and HST design. In addition to the ten
+torques, tls. ngougted. t 1:1 .adlditiotn,d a tltNOt 3:? numeric keys, there are special character keys to allow for
+E13526 ectﬁc e n 1ng sdruf tﬁs tocater neX 0 e entry of date and time, to answer questions (Yes and No),
+on e primary en 0 e S rue u e. Enter, Exit and Stop (software kill switch). The unit also
+E h t t . . t t d 'th tr in contains a hardware kill switch (Halt button) to disable the
+ac .8 rub 1;. ins funqen e t W S aAn gfigesl output of the actuator ampliﬁers to disable the multibody
+nieascliiring en lilgd S rain 1:11 W01) alxes: t op ca platform (MBP) in case the software kill switch is unable
+E100 er 118 mm? e 21m déacl gim at aiistho mealsur: to abort the controller. An experiment is aborted if the
+16 :mgltl atrh r: e an 1sp acemen 0 e pay oa MBP is about to or does make contact With a crewmember
+re a we 0 e us. of the vehicle or When the MBP exhibits “Limit Cycle”
+. , behavior.
+Bus Reaction Wheel (3) © 85%
+Prima-End - ‘ A 4/ I /Straages (6)\ Secdary End
+EIEIHIEII'AV'H'EEI— El'n'ﬂll MACE II FLIGHT OPPORTUNITY
+Ilka £333 Sﬁfa‘iis(§xa§§dzi) 323$ Sﬂiﬁ‘fﬁgwc The 1998 DoD Space Experiments Review Board (SERB)
+D P_ P 1 d y SecondaryPayload All ranked MACE II as the fourth overall highest priority
+11:12:? (:1: X Sm-OsdaryGyr(Xm) DoD ﬂight experiment and ﬁrst among DoD shuttle
+. . Z middeck experiments. The 1999 DoD SERB ranked
+Figure 1: MUItl'BOdy Platform (MBP) MACE II sixth out of 40 experiments and continued its
+. . number one ranking among STS payloads.
+A PD servo controller is closed between each gimbal
+and encoder pair. Attached to the RWA are three rate M ACE II was manifested on STS-106 Which is also
+gyroscopes to measure inertial attitude Of the bus and designated as International Space Station (188) Flight
+three. tachometers to measure the speed Of the 2A.2B. STS-106 launched on 8 Sep 2000 from Kennedy
+reaction Wheels. Analog speed control servos are Space Center. M ACE II ﬂew solely as cargo on STS-106
+closed between each tachometer and reaction Wheel and was transported to the 188 Where it awaited the
+pair. Increment 1 crew for operations.
+3
+American Institute of Aeronautics and Astronautics
+
+"
+"4","University of Michigan and members of PSI’s Melbourne
+Captain William Sheppard (USN) operated MACE II. Controls Group. Its development was motivated by the
+need for an algorithm for feedback which requires only a
+MACE II is a labor-intensive ﬂight experiment local measurement, has predictable convergence
+requiring mission specialist participation in minimum properties, and yields performance in terms easily
+four hours blocks to unstow the experiment, understood by control system engineers. The Frequency
+assemble, perform checkout, execute protocols, Domain Expert algorithm can be thought of as a nonlinear
+disassemble, and stow the hardware. AFRL has adapter that measures and inspects the frequency response
+requested a total of eighty hours of experiment time characteristics of the system in order to arrive at a control
+on orbit. This time will be shared equally between design that meets frequency domain performance
+the AFRL and MIT Science Teams. speciﬁcations. N0 adaptation of an internal system model
+is needed. Instead, the algorithm takes frequency
+AFRL AND MACE II PARTNERS response measurements of the system, applies a nonlinear
+mapping to arrive at a stabilizing control law, closes the
+AFRL is the program manager for the MACE II ﬂight loop, and if needed takes a new measurement to begin the
+experiment. There were four AFRL science team process again. Once it has converged on a controller
+partners developing adaptive control algorithms for which meets the performance speciﬁcations, it no longer
+implementation on the MACE II ﬂight hardware. performs frequency response measurements but switches
+Our partners include: Planning Systems, Inc., the to a passive monitoring of the measurement, waiting for a
+University of Michigan, Virginia Tech, and Sheet change in the signature of the signal which indicates that
+Dynamics, Ltd. Due length restrictions, only the system dynamics have changed. If a change occurs,
+overviews of Planning Systems and the University of the algorithm begins adapting again.
+Michigan will be presented later in this paper.
+PSI Ground Test Results:
+In addition, AFRL is sharing time with a second team
+of experimenters led by the Massachusetts Institute of The results of the Frequency Domain Expert algorithm
+Technology. The MIT team includes the Lockheed applied to the MACE test article, as suspended at the
+Martin Corporation, Mide Technology and NASA AFRL test facility, are shown Figure 4. In each case, the
+Langley Research Center. [3] results were obtained with a low-authority gimbal
+stabilization loop closed. The results were obtained by
+Air Force Research Laboratog gAFRL) carrying out automatic loop designs in the following
+order, where each design entails an automated collocated
+AFRL has primary programmatic responsibilities loop FRF measurement and loop design with all
+coordinating this effort. Through a series of previously designed loops closed:
+contracts, Educational Partnership Agreements
+(EPAs) and a Cooperative Research and ' A local control loop was closed around the X-aXis
+Development Agreement (CRDA); AFRL has momentum wheel and collocated rate gyro.
+established a science team to meet our mission .
+objectives. AFRL is also coordinating with the Space . A.local control 190p was closed around the Z-ax1s
+and Missile System C enter (SMC) D epartment of primary payload gimbal and collocated rate gyro.
+Defense (DOD) Space Test Program (STP) DOD ' A local control loop was closed around the X-aXis
+STP has primary responsibility for ﬁnding launch primary payload gimbal and collocated rate gyro. At
+opportunities for Air Force research payloads and this point, the performance of the combined X and Z
+acts as the Air Force liaison with NASA. DOD STP axes (RSS) was measured (the bottom line Of the
+is currently working With the International Space ﬁgure). An overall attenuation 0f 18 dB rms was
+Station (188) Payload Ofﬁce to complete the manifest obtained over the 0. 5-50 Hz performance, with
+process requirements for MACE H to ﬂy on STS'106 approximately 30 dB attenuation achieved in the
+(188 Flight 2A-2B)- proximity of 1-2 Hz.
+Planning Systems Inc. ' A failure was introduced into the X momentum wheel
+loop by zeroing the command to the actuator. The
+The Frequency Domain Expert (FDE) algorithm is a controller automatically. detected the failure. .The X-
+recent invention by Dr. David Hyland at the aX1s primary payload gimbal loop was redes1gned1n
+4
+American Institute of Aeronautics and Astronautics
+
+"
+"5","real-time without the momentum wheel loop. 0 and 1 g environments being readily accommodated. In
+The combined X and Z-aXis results were again fact, the O-g results were better than those achieved on the
+measured (the next-to—bottom line in the ﬁgure). ground. Flight testing produced FDE controllers that
+An overall attenuation of 17 dB rms was reduced line of sight (LOS) error by almost 20 dB (only a
+obtained over the 05-50 Hz performance band. few dB less than the best performance attained Via ofﬂine-
+designed, optimal controllers during the original MACE
+10-5 ﬂight). In addition, ﬂight tests showed FDE’s ability to
+redesign controllers autonomously after a simulated
+i23:23223é;:é;3%;;23223i2322;z:5;;;3223;:é;;23;ié;;i;223223;:é:;7fffffff'fifff’fiffi‘ii‘i???_ actuator failure, achieving 16 dB ofLos attenuation.
+E104 11f:1:1:iiififi1:1:1:1:1:11:15:1:1:111151111115:1:1:1:1:11.51.15:'11:1'1:11:11:::1::::::::::f:::::f:::: Now the vastly different low frequency dynamics below 5
+2310—8 iffffffff?ffffffffffffffiffffffff?ffffffifffffffffffimff7337fffffffffifffffffffiff: Hz from Figures 3 and 4. The ground result (Figure 3)
+ff fffff ffffffffff'f'f.VHf]. ”ff: fffffff shOWS a graVity ofﬂoad SUSpensiOH mode around 2 HZ as
+35:1“ well as much lower non-ﬂeXible Vibration levels. In both
+cases, however, FDE designed controllers from scratch
+iii;iiiii355:5i;iiii1:iiiiiii5:55iiiiiij:i:ii5:5iiiiiiiiii5:5i5:5iiiiiiiiiiiiiiiiiiiiiiiiijéi that reduce the LOS error by nearly a factor of 10 rms
+0V6r5-50HZ-
+4217::i::ififiifiii:i:ii:i:i:7::i:i::ifiii:ii?i:i:ii:i::Tiifii:ii:i:i:ii:i::iiiiiiiiiiiiiiiiifiiii pGXposmonPSD,mpezpempemmw17513520atten
+100 Frequency(Hz) 101
+Figure 2: RSS X and Z Axis Ground Test Results for 10-8 / \_
+MACE using FDE 1/ M/ L“
+3 win “rim
+Note the presence of a strong line of closed-loop gm Mk
+ampliﬁcation (de-stabilization) at approximately 24 E MU
+Hz. This ampliﬁcation line reduced overall 10“ W
+performance by about 1 dB. The ampliﬁcation I
+occurred in spite of single-iteration gain margin 10-12
+constraints on the measured loop-transfer function of 12021GroundTestData m
+6 dB. Two effects gave rise to this defect. First, the “I
+gain margin of the overall control law is not 10 1o” F H 10‘
+constrained. Only the gain margin of a single FDE requenm Z)
+iterate is constrained at a time. The FDE algorithm Figure 33 Ground Test RCSUItS using FDE
+slowly reduces the overall predicted gain margin by
+successive design iterations while meeting the 6 dB PGXvositionPSDyBX/PGZ/PGXopen/closed19-880532atten
+restriction on each iteration.
+Second, the combination of residual FRF 10b b\l/gﬁ/
+measurement inaccuracy and ﬁnite resolution can Wt
+give rise to small errors in the FRF. These became (”10.5 i
+greatly ampliﬁed when the loop transfer function i “M
+closely approaches the -1 point. The proximity of the E 10.10 W
+overall control loop to the -1 point has been
+constrained in later versions of the FDE algorithm, ‘
+and has helped resolve both of these issues. 10 ‘1'»
+”""th
+PSI Flight Test Results: 10'” 100 101 10
+Figures 3 and 4 show the X-aXis primary payload Freqmy‘Hz’
+gimbal position PSD performance plots obtained on Figure 4: Flight Test Results using FDE
+the ground and during ﬂight for the same protocol.
+Flight test results show that the FDE algorithm
+worked in ﬂight much as it did on the ground, with
+changes in the structural dynamics associated with the
+5
+American Institute of Aeronautics and Astronautics
+
+"
+"6","University ofMichigan level regulation and tracking tasks. They are generally
+based on the backpropagation learning mechanism and
+The impetus for the University of Michigan work was address supervised learning tasks (e.g. Vibration control)
+the realization that contemplated future space wherein at every time, the desired response of the system
+missions will require a higher degree of autonomy in is known and is provided to the learning algorithm for
+their control operations. This is because these appropriate adaptation of the on-line control. A second
+systems will entail complex, high performance and quite distinct type of algorithm may be termed
+controls that will necessarily be sensitive to estimated ""Hebbian"" learning algorithms because they do not
+system parameters and will be comprised of many employ backpropagation but instead are based on the
+components with a high probability of some earlier and considerably simpler learning paradigm of
+component failures during the mission. Secondly, Hebb. Hebbian algorithms are applicable to more general
+future concepts involve remote and long duration situations than the N—Step ahead controls, including
+operations, during which the use of conventional inﬁnite horizon optimization and unsupervised learning, in
+controls approaches would necessitate cumbersome which the ""right answer"" or desired behavior are not
+and costly ground station operations. known or provided to the system at every time but,
+instead, learning is guided by a regime of rewards and
+In response to these factors, Dr. David Hyland penalties imposed by the environment. In this work, both
+believes it necessary to develop self—reliant control of the broad types of control are applied to active
+systems. In the context of this paper, self—reliance is suppression of Vibration-induced line-of—sight (LOS)
+taken to comprise four basic features: pointing error within the context of the MACE II
+hardware and within the limitations of the ﬂight processor.
+(1) Autonomous multi-level mission planning and
+control. Michigan Ground Test Results:
+(2) Comprehenswe adaptive control capabilities. The University of Michigan Team initially considered the
+(3) Capability for identifying faults and working control loop from the Primary Gimbal Z Torque (PGZt) to
+around problems to recover control effectiveness. the Primary Gimbal Rate Gyro Z (PGRGZ). Though
+. . . . colocated, the loop is non-minimum phase due to anti-
+(4) Effectively communicate critical events to human 1. . f1 ters Two 0 en 100 modes near 40 and 50 Hz
+agents and to respond to human direction when a 1as1ng 1 ' p p ’
+. . respectively, have phase near -180 degrees and thus
+SUCh direction becomes necessary. provide a signiﬁcant design challenge. The disturbance to
+By addressing adaptive control capabilities, MACE II reject is a bandlimited, uniform white noise fed into PGZt.
+will take a modest step toward self—reliant systems. The open loop power spectral density (PSD) ofPGRGZ is
+The speciﬁc goals of the study are to: shown as the dash-dot line in Figure 5. The power in the
+1-60 Hz control bandwidth is 10.11. A 13th order
+(1) Demonstrate in a space ﬂight environment the classical, ﬁxed-gain controller was designed and the
+capabilities of adaptive neural control (ANC). resulting closed-loop PSD is shown as the dashed line in
+(2) Explore and resolve practical implementation Figure 5. The power in the control bandwidth has been
+. reduced by 47%. This controller is used to initialize the
+issues for ANC on space systems. adaptive algorithm. For this ground test the algorithm
+(3) Experimentally test, Via Vibration control, a proceeded for 10 design cycles (~3 minutes). The design
+selection of ANC algorithms drawn for a variety was done online and did not destabilize the system. The
+of layers of the necessarily multi-layer hierarchy ﬁnal controller’s PSD is shown as the solid line in Figure
+of intelligent control needed for self—reliant 5. Although the initializing controller’s PSD is lower for a
+systems and large part of the frequency range, the ﬁnal controller has
+(4) Correlate experimental data and pre-ﬁight Zeundb a better. trad: hotflfﬁ between low-ﬁequency
+predictions to increase the conﬁdence with which 1stur ance rejection an 1g. _ equency n01se attenuation
+. . . (the ﬁnal controller s PSD is lower above 45 Hz). In 3
+ANC can be used in future nnss10ns. minutes, the closed loop power has been reduced by 10%.
+The overall technical approach for MACE II
+emphasizes two distinct types of controls. The ﬁrst
+category may be termed ""N—Step ahead controls"".
+These are applicable to fast control loops for lower-
+6
+American Institute of Aeronautics and Astronautics
+
+"
+"7","a great deal of consternation for our program. MACE II
+J had previously ﬂown on STS-67, however, this was not
+‘0"" £th geed enough for 155 and we had to deal With a Whele new
+h‘ﬂhm certiﬁcation process. Several requirements (anUStiC, emi,
+IIiiti:Q‘TE::ﬁ'it'ttt’gifg'ﬂ:LIEIHTTi:t'itﬁEEETI: power) had to be retested and eventually waivered to
+E102attilltftahtti‘tt:I==it53333333;.tt allow us to ﬂy. My favorite was trying to meet an
+i :Lhrtttthteth acoustic speciﬁcation that to my knowledge no system
+05: ::':_: {9:11.:.:::::5:::::?::::::2::::‘i‘a?:::::9::::::?:_*tf'?‘%efth5 was able to meet The MACE H electronic support
+mg .1 module (ESM) had a single 3”, 100 cfm mufﬁn fan. It
+failed the speciﬁcation. The “quiet” chamber we tested in
+.Iigiiii .Igii3333;33333E333331;33333;"";‘5regains}IteéLJeT—Lidh'im"" could barely pass the requirement when we performed the
+5 10 15 2D 25 3D 35 40 45 5D 55 EU
+Frequem (HZ) The “Power System” Nightmare
+Figure 3. PSD of PGZt to PGRGZ Ground Test
+The decision was made (for many reasons) to specify the
+Michigan Flight Test Results were unavailable at the 188 power system to be 120V DC. However, no
+time or publication. provision was made in the initial designs to accommodate
+traditional 28 VDC systems. MACE II (and other safety
+W critical systems to be ﬂown on 188) required 28V DC. At
+the time MACE II was considered for manifest on 188, no
+The MACE 11 program was in many ways a guinea ISS certiﬁed 120 VDC to 28V DC power
+pig. We were one Of the ﬁrst experiments through the eonverter/supplies existed at time of ﬂight. Fortunately
+ISS “pipeline”, 50 we were trailblazers in the maze or for us, the DoD STP found an existing waivered design
+155 bureaucracy, requirements, procedures and used by a safety critical piece of ISS hardware. Even with
+operations. AS many or these procedures were being this precedent, we had to ﬁght to build/test/use this
+developed in parallel with our PUSh through the system. Finally, we were only waivered because other
+system, it led to many interesting situations. The systems need to “borrow” the three converters we were
+following is brief overview of some of the lessons going to develop.
+learned from our experience.
+Lack of Astronaut training opportunities
+How do we get to orbit?
+Since we were a science experiment and not a critical ISS
+MACE H received the #1 STS payload ranking by the system, we were not allowed to schedule “Hands-On”
+DOD Space Experiments Review Board (SERB)- Astronaut Training for mission science or experiment
+However, that rating had little or he meaning to operations. We were only allowed a single 30 minute
+NASA: due to ﬂight commitments to assemble and Safety Training Session with Astronaut William
+supply the 155- At the time Of our request, there were Sheppard. Science/operations training were handled
+hO STS science ﬂight opportunities scheduled With a strictly through computer-based training (CBT). This
+reasonable timeframe. We thought all was 105t- turned out to be detrimental to science ops as it was
+Fortunately, the dedicated and creative members to difﬁcult to relate anomalous behavior due to lack of a
+the DOD Space Test Program (STP) tried another common vocabulary. Due to software restrictions, success
+approach. Monitoring the payloads manifested Ch of certain experiments was dependent on astronaut
+155: they fOUhd an opportunity to ﬂy 0h 155 when interaction. The majority of the experiments that failed
+several experiments failed to meet their delivery failed due to lack of proper astronaut training. As part of
+deadlines. They then negotiated our manifest on STS developing and validating the experiment mission
+106 and 155- It’s the 01d adage, “If you can’t procedures, Astronaut Candidates, not the actual astronaut
+beat’em, join’em”. executing the experiments, performed procedural
+checkout of the step—by-step experiment procedures. In
+W addition, the initial set of procedures was written in the
+standard “STS” format. Unfortunately, there was a new
+STS and 155 requirements levied 0h external “188” format and all of the procedures had to be modiﬁed
+experimenters are signiﬁcantly different. This caused at the last minute to ﬁt the new 188 format. Due to the
+7
+American Institute of Aeronautics and Astronautics
+
+"
+"8","last minute rush, we were unsure if procedural Due to political reasons, the ﬂow of data went from J SC
+changes (in 188 format, NOT STS format) made it to MSFC and back to J SC. The result was that all data
+into CBT. The Astronaut Candidates conducted no downlinked and processed through 188 ground system
+similar scrub of the CBT. was corrupted due to software and operating system
+incompatibilities between the two sites. DoD STP came
+The “Communications” Nightmare to the rescue by making arrangements to grab the raw data
+“at the source” to get clean data sets.
+When Astronaut Sheppard began the MACE 11
+experiments, we suffered an initial hardware failure. Downlink availability
+The description of the problem relayed to the PI (at
+0400 local) was “... it’s broke...”. No other details We found it very difﬁcult to schedule access to the OCA
+were available and he was told to wait for the daily to downlink data. Last data we received was in June and
+logs to be downlinked. Unfortunately, the daily log it was a small subset of what was taken on orbit. MACE
+did not have sufﬁcient information to diagnose II was on the ground before we could access all our
+problem. Working completely in the dark, we science data. Delays in experiment operations and data
+developed and submitted trouble-shooting downlink cost the program signiﬁcant science. The MIT
+procedures. We have no idea where they ended up Science team was dependent on data downlink of System
+and there was no response sent back to the PI. The Identiﬁcation experiments to develop their Control
+convoluted communications path is still bewildering. System algorithms. They were unable to get their data in
+The PI submitted information to the DoD STP. DoD time. As a result, they were not able to develop or test
+STP talked to their interface at NASA J SC. From any of their control algorithms and were unable to meet
+there, we think the information was forwarded to their stated program objectives.
+NASA MFSC (they were in charge of science -
+maybe), then back to some organization at NASA CONCLUSION
+J SC, who then relayed it to CapCOM who talked to
+the astronauts on 188. Nothing appeared to ﬂow in Successful completion of experiments such as MACE II is
+reverse. Viewed as critical as the ﬁrst step in allowing adaptive
+control technology to go from state-of—the-art to state-of—
+The problem was eventually ﬁxed when Astronaut the-practice. The beneﬁts of this transition will be the
+Sheppard tried the backup boot disk. The problem availability of algorithms that have the ability to quickly
+was due to failure of the primary PCMCIA boot disk and autonomously recover from subsystem failures, to be
+during launch. developed and maintained at greatly reduced cost, and to
+control systems that may be nonlinear in nature. It is
+Data downlink woes expected that this research will allow complex future
+systems to have much greater robustness and reliability
+MACE II was the ﬁrst active science experiment than possible with techniques currently used in spacecraft
+operated on 188. This occurred during Increment 1. operations.
+Unfortunately, this was no high—speed downlink
+available when we got up to 188 because there was no The MACEII AFRL Science Team successfully met
+OCA during Increment 1. The Russians had a high- several of its objectives. Being the ﬁrst through any
+speed link, but we were not allowed to use it. Data process can be a difﬁcult and frustrating experience.
+could only be transferred physically, I.e. data disks
+returned during resupply missions. Unfortunately, We would like to express our thanks to all of the
+this decreased available storage on-orbit. During individuals of the DoD Space Test Program for their
+Increment 2, the OCA was delivered to ISS and efforts. Special thanks go to Captain Tom Hoge, Johnnie
+installed. Installation checkout discovered a TDRSS Englehardt, and Todd Hellner for all of their hard work
+tracking problem and this further delayed availability and support. Special thanks to John Uri, NASA J SC
+of the system. When it was ﬁnally ﬁxed, we were the Increment 1 Chief Scientist, for championing our cause on
+guinea pigs to test the OCA. the NASA side. Finally, thanks to Bill Shepherd for his
+efforts trouble-shooting our initial hardware failure and
+Data retrieval/transfer/storage/release p_rocess ﬂawed Susan Helms for her extraordinary efforts to maximize the
+number of on-orbit experiments run during Increment 2.
+8
+American Institute of Aeronautics and Astronautics
+
+"
+"9","REFERENCES
+1. Miller, D., etal., The Middeck Active Control
+Experiment (MACE): Summary Report, SERC#7-96,
+June 1996.
+2. Denoyer, K.D., Hyland, D.C., Davis, L.D., and
+Miller, D.W., “MACE II: A Space Shuttle
+Experiment for Investigating Adaptive Control of
+Flexible Spacecraft”, AIAA-98-4319.
+3. Blaurock, C., Yung, J . Kenny, S. and Miller, D.,
+“Nonlinear Modeling and Control for the Middeck
+Active Control Experiment Reﬂight”, AIAA Space
+Technology and Exposition, Albuquerque, NM,
+September 1999.
+9
+American Institute of Aeronautics and Astronautics
+
+"

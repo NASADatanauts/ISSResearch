@@ -1,0 +1,2196 @@
+"","x"
+"1","International Journal ofRemote Sensing, 2014 6 Taylor & Francis
+V01. 35, No. 9, 2927—2962, http://dx.doi.org/10.1080/01431161.2014894663 Taylor&FrancisGroup
+Remote sensing of selected water—quality indicators with the
+hyperspectral imager for the coastal ocean (HICO) sensor
+Darryl J . Keitha*, Blake A. Schaefferb, Ross S. Lunettac, Richard W. Gould er,
+Kenneth Rochaa, and Donald J . Cobba
+aUS EPA Natianal Health and Envimnmental Eﬂects Research Labaratmjy, Atlantic Ecalagy
+Divisian, Narragansett, Rhade Island 02882, USA; bUS EPA Natianal Health and Envimnmental
+q- Eﬂects Research Labaratarjy, Gulecalogy Divisian, GulfBreeze, F [Orida 325 61, USA; CUS EPA
+S Natianal Expasure Research Labaratmjy, Research Triangle Park, Narth Caralina 27709, USA;
+2 dBiO-Optical Physical Pracesses and Remote Sensing Sectian, Naval Research Labaratarjy, Stennis
+3 Space Center, Mississzppi 39529, USA
+S
+.3 (Received 12 September 2013; accepted 25 January 2014)
+c)
+m
+<r The Hyperspectral Imager for the Coastal Ocean (HICO) offers the coastal environ-
+: mental monitoring community an unprecedented opportunity to observe changes in
+'ﬁ coastal and estuarine water quality across a range of spatial scales not feasible with
+8 traditional ﬁeld-based monitoring or existing ocean colour satellites. HICO, an Ofﬁce of
+E; Naval Research-sponsored programme, is the ﬁrst space-based maritime hyperspectral
+E imaging instrument designed speciﬁcally for the coastal ocean. HICO has been operating
+g since September 2009 from the J apanese Experiment Module — Exposed Facility 0n the
+8 International Space Station (188). The high pixel resolution (approximately 95 In at
+m nadir) and hyperspectral imaging capability offer a unique opportunity for characterizing
+“a a wide range of water colour constituents that could be used to assess environmental
+3» condition. In this study, we transform atrnospherically corrected ISS/HICO hyperspectral
+é imagery and derive environmental response variables routinely used for evaluating the
+0; environmental condition of coastal ecosystem resources. Using atmospherically cor-
+? reeted HICO imagery and a comprehensive ﬁeld validation programme, three regionally
+2. speciﬁc algorithms were developed to estimate basic water-quality properties tradition-
+E‘ ally measured by monitoring agencies. Results indicated that a three-band chlorophyll a
+'8 algorithm performed best (R2 = 0.62) when compared with in situ measurement data
+'3 collected 2—4 hours of HICO acquisitions. Coloured dissolved organic matter (CDOM)
+2 (R2 = 0.93) and turbidity (R2 = 0.67) were also highly correlated. The distributions of
+E these water-quality indicators were mapped for four estuaries along the northwest coast
+0 of Florida from April 2010 to May 2012. However, before the HICO sensor can be
+Q transitioned from proof—of—concept to operational status and its data applied to beneﬁt
+decisions made by coastal managers, problems with Vicarious calibration of the sensor
+need to be resolved and standardized protocols are required for atmospheric correction.
+Ideally, the sensor should be placed on a polar orbiting platform for greater spatial and
+temporal coverage as well as for image synchronization with ﬁeld validation efforts.
+1. Introduction
+The Clean Water Act protects waters in the USA (CWA, 1988). The objective of the CWA
+is to ‘restore and maintain the chemical, physical, and biological integrity of the Nation’s
+waters’. This Federal mandate authorizes states, tribes, and US territories, with guidance
+and oversight from the US Environmental Protection Agency (EPA), to develop and
+>“Corresponding author. Email: keith.darryl@epa.g0v
+© 2014 Taylor & Francis
+
+"
+"2","2928 DJ. Keith et a1.
+implement water-quality standards to protect the resources of the Nation’s waterways.
+Water-quality standards include designated uses, deﬁned as the services that a waterbody
+supports such as drinking water, aquatic life, harvestable species, and recreation. These
+standards under the CWA are applicable Within navigable waters of the USA and extend
+seaward a distance of three miles from the coast. Therefore, a majority of research by the
+EPA addresses scientiﬁc questions Within state waters, estuaries, lakes, rivers, and streams
+Where applicable water-quality regulation could be implemented. Policymakers and envir-
+onmental managers need tools enabling them to assess the sustainability of watershed
+ecosystems, and the services they provide, under current and future land-use practices.
+Water-quality condition has historically been assessed based on a suite of indicators
+related directly to the stress of an ecosystem or can serve as an indicator of stress.
+Examples are concentrations of chlorophyll a (Chl a), suspended sediment, salinity, coloured
+v dissolved organic matter (CDOM), and temperature. Chl a is used as a proxy for phytoplank-
+3 ton biomass and can be an indicator of increased nutrients (Devlin, Bricker, and Painting
+(:3 2011; Ferreira et a1. 2011; Schaeffer et a1. 2012) or a direct measure ofpotential harmful algal
+£ bloom development (Stumpf et a1. 2003). Suspended sediment concentrations are important
+3 for monitoring Wind-driven re—suspens1on events (Chen 2006), a predictive factor for patho-
+§ gens such as E. coli (Nevers and Whitman 2005), and a valuable tracer of anthropogenic
+g disturbance to 1and(Ricker, Odhiambo, and Church). CDOM serves as a nutrient source and a
+5: vector for heavy metals in water (Zhang et a1. 2011; Heyes, Miller, and Mason 2004).
+g Detection from space provides a measure ofriver plume extent and transfer of organic carbon
+ES (Tehrani et a1. 2013), both critical to the management of coastal aquatic resources.
+E Measuring this indicator suite often requires ﬁeld teams to spend hours on boats to
+4% collect data from discrete locations, Which ultimately Will not provide complete informa-
+3 tion on the spatial and temporal variations of environmental processes in an estuary or a
+E lake. Although this protocol Will continue to be necessary for various reasons, water-
+: quality monitoring using remote-sensing technologies may provide the most practical way
+E to ensure that management practices, at temporal and spatial scales relevant to environ-
+2 mental managers and the general public, are achieving sustainability.
+5 Over the last several decades, sate11ite technology has allowed measurements on a
+: global scale, but often has poor resolution at local scales, Which are more relevant to
+§ environmental managers and the general public. Remotely sensed water-quality products
+g were ﬁrst developed for global ocean observations. In 1978, the Coastal Zone Color
+H: Scanner (CZCS) began measuring ocean colour parameters such as phytoplankton bio-
+5 mass With a pixel resolution of approximately 1 X 1 km. This satellite lasted until 1982
+Q and served as a proof—of—concept for the Sea-VieWing Wide Field of View Sensor
+(SeaWiFS), Which became operational in 1997. This sate11ite also had a resolution of
+1 X 1 km and provided global coverage With daily revisit cycles. In 2002, the Moderate
+Resolution Imaging Spectroradiometer (MODIS) and the European Space Agency’s
+Medium Resolution Imaging Spectroradiometer (MERIS) became operational With
+1 X 1 km resolution providing global coverage. MODIS had daily repeat cycles Whereas
+MERIS had a 1—2 day reVisit cycle. MERIS has also collected data at 300 X 300 m pixel
+resolution Whereas MODIS had several bands at 250 and 500 m resolution for use in
+coastal waters. All three sensors provided important information on the global aspects of
+water quality. However, the 1 km pixel resolution characteristic of all three sensors and
+the Case 1 centric algorithms developed from their data have provided limited assess-
+ments of near-shore Case 2 coastal waters, estuaries, and lakes. Case 1 waters are deﬁned
+as those waters in Which phytoplankton are the principal constituent responsible for
+variation in optical properties of the water. Case 2 waters are those waters inﬂuenced
+
+"
+"3","International Journal ofRemote Sensing 2929
+not only by phytoplankton but also by other substances (e.g. CDOM, inorganic suspended
+sediments) (Morel and Prieur 1977; Gordon and Morel 1983).
+
+Because of these limitations, it has been difﬁcult to derive products from these sensors
+that could be used by environmental managers or researchers to adequately address issues
+associated with smaller estuaries or those waters in proximity to the land-water conti-
+nuum. However, there have been some demonstrations of limited success in deriving
+water-quality products in coastal and inland waters (Ladner et a1. 2007; Miller and McKee
+2004; Gons, Auer, and Efﬂer 2008; Werdell et a1. 2009, Witter et a1. 2009).
+
+Owing to the complex interactions between the biotic and abiotic components in
+estuarine and coastal waters, approaches and methods to develop sate11ite-based water-
+quality products are more complicated than in the adjacent open ocean. Currently, there is
+no single method that can resolve water-quality products across the spatial continuum of
+
+v lakes, reservoirs, bayous, estuaries, and the near coastal environment at various temporal
+S scales. Furthermore, algorithms traditionally used to derive water-quality products for the
+(:33 global ocean typically fail or fundamentally do not have accurate assumptions when
+E applied to estuarine or coastal waters. Finally, straylight contamination and bottom
+3 reﬂectance typically confound the derivation of products where environmental manage-
+§ ment needs are greatest along the land—water interface (Schaeffer et a1. 2012).
+g The Hyperspectral Imager for the Coastal Ocean (HICO) on the International Space Station
+5: (IS S) is the ﬁrst space-based, maritime hyperspectral imaging instrument designed speciﬁcally to
+5 measure water-quality parameters near the land—water interface. HICO is a pushbrooni, imaging
+g spectrometer based on the Portable Hyperspectral Imager for Low—Light Spectroscopy
+E (PHILLS) airborne imaging sensor. HICO was developed by the US Naval Research
+4% Laboratory (N RL) for the Ofﬁce of Naval Research (ONR) as an Innovative Naval Prototype
+3 (Corson 2011; Corson and DaVis 2011). ONR also supported the ﬁrst three years of operations
+E including the development and operation of the HICO website at Oregon State University (0 SU).
+C; HICO offers the environmental monitoring community an unprecedented opportunity
+E to observe changes in coastal and estuarine water quality across a range of spatial scales
+2 not feasible with ﬁeld-based monitoring. The 95 X 95 m (at nadir) spatial and S6 nm
+5 bandwidth spectral (Lucke et a1. 2011) resolution of the HICO instrument offers a unique
+: capability for characterizing a wide range of water colour parameters that can provide a
+ﬁ detailed understanding of estuarine and near-coastal environmental conditions.
+g In this article, we derive and test the robustness of algorithms to derive Chl a, CDOM
+H: absorption, and turbidity from the spectral signatures of HICO images of four estuarine/
+E coastal systems of northern Florida taken during April 2010—May 2012 on the 188 during
+Q 188 Expeditions 24—31.
+2. Methods
+2.1. Field and laboratory analysis
+Field surveys were conducted in four Florida estuaries along the Florida Panhandle during
+April 2010 and June 2011 to June 2012. The systems selected represented a range of
+optical characteristics (e.g. high vs. low particulate loads), were of sufﬁcient size to be
+adequately resolved in remote-sensing imagery, and were close enough to the EPA Gulf
+Ecology Division (GED) in Gulf Breeze, FL, to make sampling during an ISS overpass
+feasible. The systems sampled were Pensacola Bay, Choctawhatchee Bay, St Andrews
+Bay, and St Joseph Bay (Figures 1 and 2). Field sampling and sample analysis were
+conducted in accordance with an approved Quality Assurance Plan (Schaeffer 2011).
+
+"
+"4","2930 DJ. Keith et al.
+31°N _
+N
+s
+. .-- i!
+r‘ ' ' ' l
+E H II. {’9‘ 1
+O I
+N i
+8 . '~_. _ _ '_ . fall. -._1
+E _ ""““""“"" “""2 Lunar
+3 \‘3 .1 ' ' ..
+3 30°N . r’ \
+m _
+g 0 2000 4000 6000
+[\ LI._I_I._I_I_LLI_I_I._I_LI._I_I_I_I_I 1'
+T: ""HE km ll!-
+0 . ‘~-. _- 1% I ""i
+(\l _ ‘Hﬁh _ :1.
+El _ . ' . . .
+8 — — — —
+g 87°W 87°W
+o
+E Figure 1. Map of the study region in the northern Gulf of Mexico with only the main rivers
+2» identiﬁed. Locations of sampling stations are indicated as ﬁlled black circles. Estuaries are identiﬁed
+a as Pensacola Bay, Choctawhatchee Bay, St Andrews Bay, and St Joseph Bay from left to right.
+H
+.“é
+5 Three of the coastal systems sampled are characterized as shallow (~4.0 m), microtidal
+: (tidal range ~l .0 m) estuaries located along the northwest Florida coast. Pensacola (30° 42’ N;
+§ —87° 22’ W), Choctawhatchee (30° 40’ N; —86° 62’ W), and St Andrews (30° 16’ N; —85°
+§ 66’ W) bays are partially mixed, lagoonal estuaries bordered on the ocean side by a barrier
+TC; island system through which a tidal inlet provides coastal water exchange with the Gulf of
+5 Mexico. On the landward side, freshwater discharge is supplied ﬁom rivers that drain adj acent
+Q watersheds (Figure 1). St J oseph Bay (29° 80’ N; —85° 36’ W) is a slightly deeper (~8 m) coastal
+embayment partially isolated from the Gulf of Mexico by St J oseph Peninsula and is the only
+waterbody in the eastern Gulf ofMeXico not inﬂuenced by the inﬂow offresh water (Figure 1).
+Sampling stations were located to characterize water quality and optical properties
+where HICO imagery could be acquired as well as along the major salinity gradients of
+each estuary (Figure 2). A Sea—Bird 25 CTD (Sea—Bird Electronics, Bellvue, WA, USA)
+was deployed to measure the vertical proﬁles of temperature, salinity, and depth.
+Additional integrated instruments included Chl a, turbidity, and CDOM ﬂuorometers.
+Water samples were collected 0.5 m below the surface, away from boat engines, using a
+2L brown Nalgene bottle for the post-cruise analysis of Chl a and coloured dissolved
+organic matter absorption. All collection bottles were triple rinsed with surface water.
+Samples were typically processed within 24 hours of collection.
+Water samples were ﬁltered through Whatman 47 mm GF/F ﬁlters (nominal pore
+size = 0.7 pm) for chlorophyll analysis. Filters were extracted in methanol and
+
+"
+"5","International Journal ofRemote Sensing 2931
+III
+PEH
+.PBII 4'
+GPBIJ ﬂ
+*FBI
+0%?! till“!
+' ﬁrm?
+a mm: H,“
+m wan ﬂ . 0.:
+P3249 ' rim 5B1: Fﬂﬁm
+Pun.
+”250.
+W
+V
+S Pensacola Bay
+(\1
+3-4
+B
+E
+3
+CL
+:33
+3 cm EH“ ”9K“? an?“
+1\ cm: .- Em EH13... *1 EH” acm-
+0 «a
+:1 ""2? at cm: Em % CH“ 99m
+3 «u “'5 CHM
+*5 h
+F
+8
+g Chuciawhatchee Bay
+m
+LH
+o m
+>» ' *5
+E ‘51-""
+61>) H15 5,“; ""'2. +5.!""
+'5 a ° ° - ' 5w
+E a a a: '51
+'0 '0' 'I’
+E i 5%:
+PD H '5»?
+% "" 5.114
+CG 1* D
+o q.
+_ 1' 510:
+g "" ‘1 . $5531 535
+o as
+Q 1.
+St. Andrew Bay Stjnseph Ea}?
+Figure 2. Location of sampling stations within each estuary. Dark circles represent stations where
+HyperSAS, CTD, and water samples were collected. Open circles represent stations where only
+HyperSAS and CTD data were collected. In Pensacola Bay, WQM represents the locations of water-
+quality moorings that provided a time series of chlorophyll, turbidity, and CDOM data.
+ﬂuorescence was measured with 21 Turner Designs (TD700) ﬁuorometer. Associated
+pigment interference ﬁom chlorophyll b and phaeopigments were minimized using a
+436 nm excitation ﬁlter, 680 nm emission ﬁlter, and two neutral density reference ﬁlters
+with a blue lamp (Welschmeyer 1994).
+
+"
+"6","2932 DJ. Keith et a1.
+
+CDOM absorption was determined using water ﬁltered through Whatman 47 mm GF/
+F ﬁlters (nominal pore size = 0.7 mm) into combustion glass ﬂasks. Absorption was
+measured using a 10 cm cuvette with a Shimadzu UV1700 dual-beam spectrophotometer.
+Data were collected at 1 nm intervals between 200 and 750 nm. Milli-Q deionized water
+was used in the reference cell. Spectra were normalized by subtracting each wavelength
+from the measured value at 700 nm (Pegau et al. 2003).
+
+Remote-sensing reﬂectance (Rrs, sr_l) was derived using a hyperspectral surface acqui-
+sition system (HyperSAS, Satlantic Inc, Halifax, Nova Scotia). The HyperSAS logged
+spectral measurements of above-water radiance (LtOQ), sky radiance (Li(7t)), and down-
+welling sky irradiance (EsOQ) from 350 to 800 nm (interpolated at 1 nm intervals ).
+HyperSAS radiance sensors were mounted on the port side of the pilot house roof of a
+25ft boat to provide 400 nadir and zenith Viewing angles (Mobley 1999). During data
+
+v acquisition, the boat was positioned so the radiance sensors were perpendicular to the Sun’s
+
+S azimuth and to avoid boat shadow and wake. The irradiance sensor was mounted above the
+
+(:3 deck canopy for an unobstructed View of the sky. The above-water remote-sensing reﬂec-
+
+g tance spectra were corrected, following the surface correction algorithm of Gould, Arnone,
+
+3 and Sydor (2001), using the average absorption at 412 nm and the derived spectral
+
+g scattering shape (Gould, Arnone, and Martinolich 1999). Concurrently with the
+
+g HyperSAS acquisition, an AC-s (WET—Labs, Philmoth, OR) quantiﬁed in-Situ vertical
+
+5: proﬁles of absorption (a) and beam attenuation (c) from 400 to 735 nm interpolated to
+
+g every 1 nm. Temperature and salinity corrections were applied using corresponding Seabird
+
+ES CTD data (WET—Labs, 2008). The AC—s light absorption (a), attenuation (c), and derived
+
+E backscatter (19) values were averaged over the surface of the water column to secchi depth.
+
+o
+
+g
+
+E 2.2. Autonomous underwater vehicles
+
+C; Autonomous underwater vehicles (AUVs) were deployed as part of the ﬁeld programme
+
+E concurrently with HICO overpasses. The AUVs were operated by the Naval Research
+
+2 Laboratory Stennis Space Center Detachment (NRL/SSC) and the USEPA Atlantic
+
+5 Ecology Division (AED) in Narragansett, Rhode Island.
+
+: From August 2011 to May 2012, NRL/SSC deployed a Slocum electric glider ﬁve
+
+ﬁ times along the Florida coast. The glider collected in Situ data roughly following the 15—
+
+% 30 m bathymetric contours just south of the Pensacola Bay. The payload provided proﬁle
+
+% data of pressure, temperature, conductivity, backscatter (19;) at 470, 532, and 660 nm,
+
+E beam attenuation (c), chlorophyll ﬂuorescence, and CDOM ﬂorescence.
+
+Q A Hydroid, Konsberg Maritime REMUS 100 (Remote Environmental Monitoring
+Unit) AUV was acoustically navigated along a predetermined transect Via multiple
+transponder placement. The AUV autonomously surveyed inshore areas using on-board
+payload sensors, which recorded Chl a, turbidity, temperature, conductivity, and salinity
+data at a depth of approximately one metre. Deployments were designed to coincide with
+the offshore deployments of the NRL/SSC glider and HICO overpasses. The REMUS 100
+was deployed on 19 January 2012 in Escambia Bay, on 20 January 2012 in East Bay
+sections of greater Pensacola Bay, and on 25 August 2011 and 21 January 2012 in
+Choctawhatchee Bay.
+
+2.3. HICO image processing
+During the course of this study, 49 images were acquired from HICO for all four estuaries
+from April 2010 to May 2012. Images were processed at the EPA AED and an image
+
+"
+"7","International Journal ofRemote Sensing 2933
+from 28 October 2011 was processed by NRL/SSC. The highest number of images
+(n = 20) was acquired from St Andrews Bay. Sixteen images were acquired from
+Pensacola Bay, seven images were acquired from Choctawhatchee Bay, and siX images
+were acquired from St Joseph Bay. Each image was part of a scene that covered a
+50 X 200 km swath per orbit. Seven images were not processed owing to excessive
+cloud cover, problems with the Sun’s positional data in the header ﬁle, or problems
+warping the image during geo—rectiﬁcation. The images were acquired between 0800 and
+1430 GMT from altitudes ranging from 344 to 421 km above the Earth.
+
+Images from the estuaries were downloaded as radiometrically calibrated Level 1B
+top—of—atrnosphere (TOA) at—sensor radiances from the OSU website (http://hico.coas.
+oregonstateedu/index.shtml) (Figure 3, Step 1). The Level 1B data ﬁles also contained
+information that allowed for image geometric correction. The data arrived as a single tar
+
+v ﬁle, which contained 10—12 compressed ﬁles associated with each scene including an
+S ASCII header ﬁle. Each image is composed of 512 cross—track pixels (samples), 87 bands
+2
+B
+S
+B
+0%
+U) Shml _ .
+at sensarraﬂlantns
+q.
+o
+2
+8
+ES ' . __ -'
+8
+g ..
+a m.tim
+“a
+.2» mnmwlmvwm ""
+g ' “Wfﬂlﬁﬁlﬂﬂ Determine Mean Eula:
+.E . :.-- .-.- -... -- -.- "" I d. l:
+8 - '15.“: mimﬁw lrammillancnfrnmsun
+Po .
+ct: tapmelﬂﬂl
+% create GLT+ E eulncatad + Warped Images
+3
+0
+Q Etuud
+{tip estuaryshapeﬁletuWarpEdimage
+111:? .: ll nltdld}
+
+Expun dipped HT, daiatoExEEl _
+
+Figure 3. Processing steps used to convert HICO Level 1b radiances to remote-sensing reﬂec-
+tances using the dark—pixel atmospheric correction scheme and export the data for the development
+of water-quality algorithms.
+
+"
+"8","2934 DJ. Keith et al.
+Table 1. List of acronyms used in equations.
+Acronym Units Description
+7» nm Wavelength
+Li W 111—281—1Hm—1 Wavelength radiance
+L(640) W 111—281—1Hm—1 Radiance at 640 nm
+L(750) W 111—281—1Hm—1 Radiance at 750 nm
+Lt (7») W m_ZSI‘_1},Lm_1 Total at-sensor radiance
+LW (Offshore) W m_ZSI‘_1},Lm_1 Offshore water-leaving radiance
+LW (estuary) W m_ZSI‘_1},Lm_1 Estuary water-leaving radiance
+La (7») W m_ZSI‘_1},Lm_1 Aerosol radiance
+T (7») Total transmittance
+pW ILLW 111—281‘_1Hm_1 Surface reﬂectance
+LWOt) ILLW 111—281‘_1Hm_1 Water—leaving radiance
+E F 0 ILLW 111—281‘_1Hm_1 Mean solar irradiance
+a Os degrees Solar zenith angle
+H H km Altitude
+B Rrs( 9t) sr_1 Remotely sensed reﬂectance
+g to Diffuse transmittance Sun to pixel
+1% ”Cr _1 Rayleigh optical thickriess
+m aph m Phytoplankton absorptlon
+g aw In—1 Water absorption
+5: Chl a measured pg 1:: Extracted Chl a concentration
+g Chl a predicted pg 1 Predlcted Chl a concentratlon
+E?
+g from 400 to 900 nm, and 2000 lines in ENVI software format and stored as binary ﬁles in
+8 band sequential (BSQ) format. HICO images were processed using EXELIS ENVI
+E version 4.7. During Step 1, the data were converted to band interleaved format (BIL).
+C; A list of acronyms and units used in the following equations is provided in Table 1.
+12 To produce two—byte integer output during pre-Level 1B processing at OSU, the data
+0; are multiplied by 50. Therefore, to convert the scaled integer data to geophysical units of
+S W/mZ/sr/um, the Level 1B data were divided by 50 (Figure 3, Step 2).
+: Owing to its low Earth orbit, the 188 is required to make altitude and orbital
+ﬁ adjustments due to atmospheric drag, which result in changing solar/Viewing geometries
+pg of the HICO sensor. These orbital adjustments could result in image pixels getting
+:3 affected by the specular reﬂection of light from the sea surface or Sun glint. Sun-glinted
+E pixels are a confounding factor in remote sensing as they may not contain any information
+8 about water constituents and benthic features. Pixels affected by Sun glint are common in
+wide-ﬁeld-Of—View image acquisitions from airborne and satellite missions (Hochberg,
+Andrefouet, and Tyler 2003). According to Cavalli, Pignatti, and Zappitelli (2006), Sun
+glint shows strong spatial variations that require individual calculation and correction for
+each pixel depending on the wave state. During image processing, the method of
+Goodman, Lee, and Ustin (2008) was used to independently determine the glint radiance
+for each pixel in a HICO image and correct for Sun glint using the near-infrared (NIR)
+signal. The major assumptions of this approach are that NIR light is strongly absorbed by
+water and any signals reﬂected represent Sun glint reﬂected from the sea surface. The
+amount of Sun glint in the NIR band is linearly related to the glint contribution of the
+Visible bands (Hochberg, Andrefouet, and Tyler 2003).
+In Step 3, each pixel in a HICO image was corrected to remove the effects of Sun glint
+by subtracting radiance at 750 nm from the radiance at each wavelength (Li(7t)) (Figure 3;
+Goodman, Lee, and Ustin 2008; Kay, Hedley, and Lavender 2009). An offset was applied
+
+"
+"9","International Journal ofRemote Sensing 2935
+using radiances at 640 (L(640)) and 750 (L(750)) nm to prevent negative values in the
+NIR due to over—correction as the corrected radiance approaches zero at 750 nm
+(Goodman, Lee, and Ustin 2008; Kay, Hedley, and Lavender 2009). The process to
+correct for Sun glint is expressed as follows:
+Li(7t) : Li(7t) — L(750) + A, (1)
+A : A + B[L(640) — L(750)], (2)
+where A is the offset, and A + B are the constants. In this approach, we used the values of
+Goodman et a1., which are A = 0.000019 and B = 0.1.
+The HICO imagery processed at NRL/SSC was received directly from NRL/DC as
+v level 1B hdf ﬁles and processed with the Naval Research Laboratory’s Automated
+5 Processing System (APS). APS is capable of processing real-time and archived
+(:3 AVHRR, SeaWiFS; MODIS; MERIS; VIIRS, and HICO imagery. It is a powerful,
+g extendable, end-to-end system that includes sensor calibration, atmospheric correction
+3 (with NIR correction for coastal waters), and bio—optical inversion (Martinolich and
+g Scardino 2011). APS incorporates, and is consistent with, the latest NASA MODIS
+g code (SeaDAS), which enables production of the NASA standard MODIS products
+5: (such as chlorophyll from the 0C3 algorithm; O’Reilly et a1. 1998), as well as Navy-
+g speciﬁc products (such as diver Visibility) using NRL algorithms.
+E?
+g 2.4. Atmospheric correction
+3 The ﬁnal approach used to atmospherically correct HICO images (Step 4; Figure 3) was
+F5 determined after an evaluation of results from three processing strategies. During the
+>‘ evaluation, HyperSAS spectral signatures from stations in Pensacola Bay were used as
+E references for comparison (matchups) with spectral outputs derived from the three atmo-
+E spheric correction approaches. For the NRL/APS processing, the HICO hyperspectral
+5 band data were convolved to a reduced band set, representing the MODIS multi-spectral
+: bands, and processed in APS using the standard NASA atmospheric correction (Gordon
+ﬁ and Wang 1994) used for MODIS. This approach ensured processing consistency between
+“QC: ocean colour sensors, but did not address sensor inter-calibration issues. Second, HICO
+H: images were processed using the ENVI Fast-Line-of—Sight Atmospheric Analysis of
+5 Spectral Hypercubes (FLASSH) atmospheric correction programme to retrieve corrected
+Q at-surface reﬂectances (ENVI 2009). FLASSH serves as a user interface to the radiative
+transfer code MODTRAN 4 (Moderate spectral resolution atmospheric TRANsmittance)
+(Berk et a1. 2000).
+Finally, atmospherically corrected at-surface reﬂectances were retrieved from HICO
+images using the dark pixel subtraction approach (Themistocleous et a1. 2012; Tuﬁllaro,
+Davis, and Jones 2011; Chavez 1988) to remove atmospheric effects.
+The dark pixel approach has been successfully applied to HICO images to retrieve
+atmospherically corrected radiances from the ocean (e.g. Midway Atoll), coastal (e.g.
+Columbia River estuary), and near-shore continental shelf (e.g. Clutha and Broadbay,
+New Zealand) environments by Corson (2010) and Tuﬁllaro, Davis, and Jones (2011). In
+the dark pixel subtraction approach, atmospheric effects are removed using the at-sensor
+radiance for a reference pixel characterized by spectra whose radiances were less ‘bright’
+than spectra within the image. These ‘darker’ radiances are subtracted from the total at-
+sensor radiances for the image, leaving residual radiances or as in the case for this study
+
+"
+"10","2936 DJ. Keith et al.
+the estuary water-leaVing radiances (LW (estuary); Figure 5) (Chavez 1988; Goa et al. 2000;
+Miller and McKee 2004; Wang et al. 2010; Tuﬁllaro, Davis, and Jones 2011).
+LTW = LN) + T (l) [Lw (01- (3)
+In the dark pixel model of Tuﬁllaro, Davis, and Jones (2011; Equation (3)), LIOt) is
+the sensor above-water radiance at a wavelength (7»), La accounts for atmospheric and sea-
+surface reﬂection, T denotes transmittance from the water surface to sensor, and LW
+represents radiances from below the water surface. The contributions to LWOL) can be
+decomposed into (LdOt) + Lb(7t)), where Ld represents ‘clear water’ or ‘dark pixel’
+radiances typical for the region and Lb, which represents radiances from ‘bright water’
+v within an image.
+§ The premise of the approach begins with imagining, at every pixel, the at-sensor
+33 radiance that would be seen if the water was clear (i.e. an idealized spectrum). The
+E difference between the idealized spectrum and the signal observed at-sensor provides
+4% information (independent of the atmospheric composition) on the constituents in the water
+ﬂ (Tuﬁllaro, Davis, and Jones 2011). Two basic assumptions with this approach were: (1)
+g the atmospheric radiances (La) were homogeneous across the scene, such that aerosol size
+5: and type did not change over the distance from the dark pixel to the bright pixels, and (2)
+g the amount of light in the red portion of the spectrum emanating from the surface waters
+E? of the offshore pixel was negligible. However, previous studies have shown that the
+E second assumption was not entirely valid in coastal areas and may result in an over-
+”? correction (Palandro 2006; Themistocleous et al. 2012). We applied a correction proce-
+é dure to account for this problem (see below, Section 3.1).
+<3 The atmospherically corrected radiances that resulted from FLASSH and the dark
+3» pixel approach were converted from W 111—211111—1 into MW 0111—211111—1 (Figure 3; Step 5). In
+g Step 6, the dark pixel corrected LW values were converted to surface reﬂectance (pw)
+E following the procedure mentioned in Hu et al. (2004):
+E
+>3 nLW 7»
+ﬁ pW : (F 0020)) ' (4)
+“g 0 s
+F‘: Remote-sensing reﬂectance is deﬁned as LW/Ed. As previously shown, LW can be
+5 derived using the dark pixel approach. However, there is no information on the HICO
+Q image header ﬁles that allowed for the calculation of Ed. The header ﬁle information does
+allow for the calculation of to, F0, and cos05. The diffuse transmittance term was derived
+from Hu et al. (2004):
+to = exp (ﬂ) (5)
+cos GS
+z. = (0.0088(2)_4'15+0'm) (1 — eXp(—0.1188H — 0.011H2)), (6)
+as found in Van Stokkom and Guzzi (1984) and Hansen and TraVis (1974).
+In Step 7, pW was converted to remote-sensing reﬂectance Rrs(0+, 7t) sr_1 from Hu
+et al. (2004):
+
+"
+"11","International Journal ofRemote Sensing 2937
+Rrs(0+7l) : p—Wa (7)
+WW
+Because FLASSH retrieved surface reﬁectances during processing, Step 6 was not
+applied for conversion of these images. However, FLASSH reﬂectances were converted to
+Rrs values using Equation (7). In Steps 8 and 9, HICO Rrs images were geometrically
+corrected using information in the rad_geom ﬁle associated with each image and projected
+using geographic (spherical) coordinates (degree units) of longitude and latitude using
+datum WGS 1984. For this step, the X and Y pixel sizes were initially set to 0.00090
+(approximately 100 m; OSU-HICO 2011). In Step 10, the Image-to—Map Registration
+feature of ENVI was used to compare selected landmarks (e.g. bridges, airport runways)
+on a HICO image with those Viewed on a referenced ArcMap 10 GIS image of the estuary
+v of interest to identify ground control points (GCPs). After adding at least three GPCs to
+g the HICO image, ENVI calculated new coordinates for those points and predicted their
+2 associated root-mean-square (RMS) errors. The RMS errors were errors inherent in
+3 ﬁnding the exact location of a feature in both HICO scene and reference scene. Points
+5 with high errors were removed and not used in the error analysis.
+g Each image was also warped and rotated in ENVI using 1st degree RST (rotation,
+g scaling, and translation) with the nearest neighbour re-sampling method and saved as a
+1\ shapeﬁle. In Step 11, the georeferenced and warped Rrs images were imported into the
+g ENVI Region of Interest (ROI) feature and overlain by GIS shapeﬁles created in ArcMap
+g 10, which were representative of study estuaries. Using the ENVI ROI Tool the georefer-
+E enced Rrs values at each pixel in the image were extracted (clipped) and the clipped values
+g saved as ACSII ﬁles for import into EXCEL.
+8
+E
+C; 2.5. HICO Chlorophyll a model
+E Using the dark pixel corrected Rrs data from images of Pensacola Bay (June, August, and
+2 September 2011), optimal spectral bands were identiﬁed in the red and NIR wavelengths
+5 to retrieve Chl a concentrations from HICO images using the three-band approach applied
+: by Dall’Olmo et al. (2005) and Gitelson et al. (2008) to Case 2 waters.
+§ In the approach, the model takes the form of [Rrs(7t1)_1 — Rrs(7tz)_1] * Rrs(;L3) where the
+“QC: reciprocal of Rrs from two wavelengths (M, M) in the NIR to red spectrum is multiplied by
+% reﬂectance of an NIR band (23) (Gitelson et al. 2011; Moses et al. 2009; Dall’Olmo,
+E Gitelson, and Rundquist 2003; Gons 1999; Gower, Doerffer, and Borstad 1999; Gitelson
+Q 1992). The approach assumes that (1) CDOM and detrital absorption at M are close to
+those at M; (2) RrSOL3) is inﬂuenced by backscatter only, with minimal inﬂuence from
+water constituent absorption; and (3) backscatter (bb(7t)) is approximately equal to the
+three wavelengths (Le et al. 2013; Le et al. 2010). From a bio—optical perspective, the
+three-band approach [RrsWYl — RrsﬂzYlerst) : [0131101) + aWW) — aw(kz)]/aw(k3),
+where aph equals phytoplankton absorption and aw equals absorption due to water (Le
+et al. 2013, 2009). Wavelength k1 is the most sensitive to absorption by Chl a. A
+second wavelength (M), which is located close to M, is minimally sensitive to Chl a
+absorption and corrects for absorption effects by other optically active constituents and
+the third wavelength (k3) is minimally sensitive to absorption by pigments, mineral
+particles, organic detritus, and CDOM (Gitelson et al. 2011; Hunter et al. 2010; Le
+et al. 2009).
+Gitelson et al. (2008, 2011), Moses et al. (2009) Gitelson, Schalles, and Hladik
+(2007), and Dall’Olmo and Gitelson (2006) validated this approach using MERIS and
+
+"
+"12","2938 DJ. Keith et a1.
+
+MODIS satellite data to estimate Chl a in productive coastal waters with concentrations
+between 20 and 40 Mg 1—1. The approach has also be validated over a wide range of
+chlorophyll values (2—50 pg 1—1 with an RSME <5.1 pg 1—1 and 2—20 pg 1—1 with an
+RSME <1.7 pg 1—1) using a MERIS three-band model by Gitelson et a1. (2009).
+
+The optimal spectral bands were determined through an iterative process using Rrs
+values from 657 to 749 nm (HICO bands 45—61) using HyperSAS data (660—735 nm)
+from ﬁve locations sampled during cruises FE1106 (June 2011) in Pensacola Bay and
+laboratory-measured Chl a values from those stations. Initially at each station, the position
+of M was determined using Rrs values at 703 and 735 nm set as placeholders for M and 23,
+respectively. These values along with Rrs values from 657 Z M S 674 nm were input into
+the three-band form to predict Chl a concentrations for Bands 45—48. The difference
+between measured and predicted Chl a concentrations at each wavelength was derived
+
+v and the root-mean-square error (RSME) of Chl a estimation (Gitelson et a1. 2008)
+
+3 determined using Equation (8).
+
+(:3 The HyperSAS band with the lowest RMSE in the wavelength range was selected as
+
+g the position for M. To determine the position of M, the location of the previously
+
+3 determined M and the set position of M, (735 nm) were used to again predict Chl a
+
+g concentrations from 703 to 730 nm. The difference between predicted and measured
+
+g values was derived and RMSE determined. The HyperSAS band in this portion of the
+
+5: spectrum with the lowest RMSE in the wavelength range was selected as the optimal
+
+5 position for M. Finally, 23 was determined using Rrs values from the previously deter-
+
+? mined wavelengths for M and M. Chl a values predicted from Rrs values from 730 to
+
+E 735 nm were compared with measured Chl a values to derive RSME values. The band
+
+4% with the lowest RSME in this range was selected as the position for M.
+
+3 RMSE values of the predicted Chl a concentrations were calculated from the follow-
+
+E ing equation:
+
+E
+
+g RMSE<Hg 1—1) : V(Z Chlameasured _ Chlapredicted)2
+
+.2 N _ 1 (8)
+
+Q 7
+
+E
+
+E The HICO Chl a model was derived using Rrs values from Pensacola Bay images
+
+'8 acquired on 2 June, 26 August, and 9 September 2011 using the optimized wavelengths
+
+23 derived from the HyperSAS datasets. These values were regressed against in Sim chlor-
+
+E ophyll a concentrations from stations in Pensacola Bay sampled concurrently with the 188
+
+E overpass to produce a regionally speciﬁc algorithm. Comparisons were made between the
+
+Q measured chlorophyll values and predicted chlorophyll concentrations to identify outliers
+and algorithm accuracy. Outliers in the dataset were identiﬁed using the quartile method
+(NIST/SEMATECH 2012) and removed. The accuracy of the algorithm was determined
+from the coefﬁcient of determination, R2, using Model 11 linear regression analysis (Laws
+1997)
+2.6. HICO turbidity model
+An empirical relationship was derived between in Situ turbidity (NTU) from stations in
+Pensacola Bay (June 2011) and Rrs at HICO band 43 (Rrs(646)). Turbidity was derived
+from HICO images using the approach of Chen, Hu, and Muller-Karger (2007), which
+was previously applied to MODIS/Aqua 250 m imagery from the Tampa Bay, FL, estuary.
+The accuracy of the turbidity algorithm was assessed by calculating the RMSE of
+the predicted turbidity and the measured turbidity from the stations in St Andrews Bay
+
+"
+"13","International Journal ofRemote Sensing 2939
+during April and June 2010 and in Choctawhatchee Bay using the AED REMUS during
+August 2011.
+2. 7. HICO coloured dissolved organic matter absorption model
+The absorption of light due to coloured dissolved organic matter was determined follow-
+ing the basic precepts of studies conducted by Bowers et a1. (2000, 2004), Binding and
+Bowers (2003), and Tiwari and Shanmugam (2011). In this approach, CDOM absorptions
+at 412 nm (aCDOM 412) data from Pensacola Bay (June, August, and September 2011)
+were regressed against the ratio of waveband reﬂectance in the red (670 nm) and blue-
+green (490 nm) as measured from HICO Rrs from those waters to derive an empirical
+algorithm. Error was assessed by calculating the RMSE of the predicted and measured
+q- Values from a subset of stations sampled in Pensacola Bay during June and September
+§ 2011 and stations sampled in Choctawhatchee Bay during July 2011.
+E
+g 3. Results and discussion
+ﬂ 3.1. Image processing: geolocation
+Er Using HICO scenes with obvious landmarks, GCPs were indentiﬁed on each image-based
+g georeferenced ArcMap 10 scenes. Using coordinates from the ArcMap scenes, GCPs (and
+5:} their RMS errors) were predicted for each HICO scene. Results indicated that an average
+2 of siX ground control points was needed for accurate geolocation. RMS errors ranged from
+E 0.7 to 3.2 m for Choctawhatchee Bay HICO images, from 0.7 to 2.8m for Pensacola Bay
+é HICO images, from 0.5 to 1.1 m for St Andrews Bay images, and from 0.6 to 1.1 m for St
+E J oseph’s Bay HICO images. Although the number of GCPs was small, the predicted RMS
+C; errors are well below the 100 m pixel Size of HICO images.
+'5 3.2. Image processing: Sun glint correction
+D . . . .
+: As stated prevrously, all images were processed to remove the glint radiance caused by
+§ changing solar/Viewing geometries of the HICO sensor. An example of the result of the
+.8 Goodman, Lee, and Ustin (2008) approach is shown in Figure 4, which is from a pixel in
+:3 an 8 J anuary 2012 HICO image from Choctawhatchee Bay. In this ﬁgure, the uncorrected
+E spectrum shows radiance values well into the NIR, which suggested that the entire
+8 spectrum was affected by Sun glint. After processing, the shape of the corrected radiance
+spectrum at that pixel has been preserved, compared to the original spectrum, and radiance
+values beyond 750 nm approach zero, which is in agreement with the assumption that
+NIR light is strongly absorbed by water and any signals reﬂected represent Sun glint
+reﬂected from the sea surface.
+3.3. Image processing: atmospheric corrections and remote—sensing reﬂectance
+A HICO image of Pensacola Bay acquired on 2 June 2011 was processed using the NRL/
+APS programme conﬁgured with the standard SeaDAS routines and then using wave-
+lengths convolved to MODIS multispectral bands; ENVI FLASSH programme; and dark
+pixel subtraction approach for atmospheric correction evaluations. The resulting spectral
+signatures were compared with HyperSAS signatures from 21 stations occupied during
+the ISS overpass.
+
+"
+"14","2940 DJ. Keith et al.
+35
+3O Chocotawhatchee Bay
+\ 8 J anuary 2012
+I \
+25 ‘ \
+H; \
+N1 \
+IE 20 \
+E \ .
+w — - not sun glint corrected
+:2: 15 \ \ — sun glint corrected
+°‘ \
+3 10 \
+8 \ ~ ‘_
+E 5 \ s
+a ~~,-_
+m ‘ —-
+ﬂ 0
+: Wavelength (nm)
+§ Figure 4. An example of the effect of the Sun glint correction routine 0n HICO Level lb radiance
+3 data from Choctawhatchee Bay.
+E
+g HICO hyperspectral images processed using the NRL/APS in SeaDAS mode and the
+E ENVI FLASSH atmospheric correction programme did not yield satisfactory results and
+‘; did not match any of the classic Case 2 spectra characteristic of the HyperSAS spectra
+'5 from Pensacola Bay. HICO spectral signatures produced With the NRL/APS generally
+E were under-corrected in the blue-green spectrum (Figure 5). The under-correction could
+S be the result of noise in the NIR portion of the spectrum, polarization sensitivity, and/or
+: sensor Inis-ealibration at blue wavelengths (400—450 nm). To help resolve these issues,
+ﬁ Vicarious calibration techniques are under development (Lewis et al. 2013). In contrast, all
+g the MODIS Inultispectral values agreed very well With the HyperSAS spectra (n = 42;
+E R2 = 0.89; Figures 5 and 6), indicating that the problems lie With the HICO data and not
+E With the NRL/APS atmospheric correction approach.
+8 Spectral signatures corrected to remove atmospheric effects With the hyperspectral
+module of ENVI FLASSH also did not yield satisfactory results or match the shape of any
+HyperSAS spectral signatures (Figure 7). The entire spectrum was either over—corrected in
+the blue-green spectrum (e.g. PB18: Redﬁsh Cove) or under-corrected in the red/NIR
+region (e.g. PBll: Blackwater Bay). FLAASH is very easy to use, if the user is able to
+specify appropriate input parameters that characterize the atmospheric conditions and
+illumination geometry at the time of image acquisition (Moses et al. 2012). The input
+parameters that describe the atmosphere serve as initial values for an iterative process in
+Which atmospheric correction occurs. If actual information is not available, the user can
+input default values (ENVI 2009).
+These problems encountered in this study may be related to errors in the locations of
+band centre wavelengths for the HICO sensor When these data are processed using ENVI
+FLASSH and problems With the illumination geometry at the time of image acquisition.
+The misidentiﬁcation of band centre positions has been known to introduce signiﬁcant
+
+"
+"15","International Journal ofRemote Sensing 2941
+80
+70
+60
+71“ ' \ — Total at—sensor radiance —
+g 50 \ estuary
+(\1
+IE \
+E 40 \ _
+v — Total at—sensor radlance —
+é \ offshore
+ﬁg 30
+£2 \
+E 20 \
+8 \ \
+3—1
+ﬁg 10 \
+B \
+3 o
+m Ln N 03 l\ <l' H 00 LG N O l\ <f H 00 0 m O l\ <l' H 03
+O N on LG l\ 03 O N <l' LO l\ 01 H N <l' L0 00 03 H m <l'
+ﬁ' ???VVZVZLQLQLQLQLQLQLQLQ‘Q‘Q‘Q‘Q'F'F'F
+O O O O O O O O O O O O O O O O O O O O O O
+.1: Wavelength (gm)
+5
+N (a)
+E?
+a 4.5
+Q
+o
+173 4
+:s
+o
+m 3.5
+m A
+O T
+4:9 i 3 Residual radiance
+E ‘7‘ 2 5
+a a -
+'a E
+E s 2
+C1
+5‘ cg: 1.5
+3 m
+“U 1
+c2:
+.2
+G 0.5
+B
+o
+Q 0
+Ln N 03 l\ <l' H 00 LG N O l\ <l' H 00 0 m O l\ <l' H 03
+O N on LG l\ 03 O N <l' LO l\ 03 H N <l' L0 00 03 H m <l'
+<l' <l' <l' V <l' V LO LO LO LO LO Ln 0 £0 £0 £0 £0 0 l\ l\ l\
+ddddddddddddddddddddd
+Wavelength (um)
+(19)
+Figure 5. (a) Example of the at-sensor total radiance spectra for Pensacola Bay and near-shore
+Gulf of Mexico (GOM) waters; ([9) The residual radiance spectra derived from subtracting the
+‘darker spectrum’ of the GOM waters from the ‘brighter’ waters of Pensacola Bay using the dark
+pixel subtraction approach. The residual spectrum is the spectrum characteristic of Case 2 waters.
+errors into the retrieval of the water signal (ENVI 2009). ENVI FLASSH attempted to
+minimize these errors through a utility that automatically identiﬁed and corrected wave—
+length mis—calibrations using sensor—speciﬁc spectrograph deﬁnition ﬁles. These ﬁles are
+assigned speciﬁc spectral features that are used to correct the wavelength calibrations. For
+
+"
+"16","2942 DJ. Keith et a1.
+25
+. O
+y=O.1454X+ 2.792
+20 R2=O.O378
+O
+O
+O
+15 ° 0 ,’ 9
+i ’ . ’
+no 9 O
+E
+m 6
+ﬂ ’ O. O . O
+O O
+
+E 10 ° .9 . .
+
+O O. Q
+
+(\l 99 ‘ ’ . , o , 9 .
+
+B ‘9... ‘ . . .0 Q
+
+g .3"" .O. O .0. ‘ . ° 9. o
+
+3 V .’ 9’. 00a 3.. ”J... .’ o
+
+if 5 ovs‘.“ 2""» o"" . . . '
+
+ﬁ' ’«ELG’VN O .. c.... . O
+
+0 w}, i. ’x“ 2’?“ ‘05’ Q Q
+
+2 ' E”; TEX; .§..O:‘0.0'. r. 9
+
+O 9 Q 00
+
+(\l o
+
+E? o 5 10 15 20 25 30
+
+F Chlorophyll 0 (mg r1)
+
+8
+
+‘8 Figure 6. TSS concentrations versus Chl a concentrations (n = 641) in Pensacola Bay, St Andrews
+
+E Bay, Choctawhatchee Bay, and St Joseph Bay from October 2009 to September 2011. The low
+
+<45 determination coefﬁcient for linear relationship (R2) indicated T88 and chlorophyll are practically
+
+>a independent, which is characteristic of Case 2 waters.
+
+'5
+
+33‘
+
+.Z
+
+5 example, When AVIRIS data are processed, FLASSH used the oxygen feature at
+
+: 760.17 mm as the reference absorption feature and the C02 feature at 2058.7 nm as
+
+ﬁ well as the full-Width at half-maximum (FWHM) associated With these features to identify
+
+g the bands needed for atmospheric correction. Spectral deﬁnition ﬁles for AVIRIS,
+
+% HYDICE, HYMAP, HYPERION, CASI, and AISA sensors are included as part of the
+
+3 processing package and When accessed automatically recalibrate wavelength errors for
+
+o . . . .
+
+Q these sensors. However, ﬁles SpCClﬁC to the HICO sensor are not included in this sensor
+suite, forcing the use of generic hyperspectral wavelength calibrations included in the
+software package or the creation of a sensor spectrograph deﬁnition ﬁle based on sensor
+characteristics.
+
+Moreover, in the header ﬁle of each HICO image, the user is cautioned that the image
+View and solar View geometries are approximate and do not account for 188 attitude.
+These approximations created problems With accurately deﬁning the zenith and azimuth
+angles. Because of these complications, ENVI FLAASH was not used to atmospherically
+correct HICO images.
+
+In contrast, HICO images processed using the dark pixel subtraction approach yielded
+matchups that spectrally corresponded very well With the HyperSAS signatures (Figure 8).
+Exceptions to this general observation are seen in the spectra from PB07: Pensacola Bay
+and PB24: Pensacola Bay, Which are under—corrected in the blue portion of the spectrum.
+This approach does not require sensor-speciﬁc information for processing and corrects for
+
+"
+"17","International Journal ofRemote Sensing 2943
+11.1114 1 .
+P313: Redﬁsh Cave 1111111 _ P3115: Eﬁcambla Ba}!
+H.012 -
+/H|CU 111312 --
+11.11111 -
+H.010 -
+10-005 - ,‘H r11.111111 - ﬂ'n‘w
+ﬂ 1’ ‘. vaErSﬁ-ﬁ E ""h 1*
+:Eumra - 5:31..“ '. fauna - £3331}.
+.l 1' II- I J I.“
+' 1' ‘- ~ MODIS ,1! 1h
+11.0114 - :2!"" “‘31-- 11.11111 - 1;"" ‘Hh
+r! J"" H‘I‘ 1 fig... 'l -.
+r"".-‘ ‘1 'i-u_ _..-Iii. 1'1.
+1111111 —'“::=""""' ‘ 1111111 --""
+- I‘M. 1. In.-
+‘ [1.43m _______ 1.
+UDD‘U —————""—'———""——""""—""—'—:—'—r""'n""'.——'T1—r--"" m W F. 1:1- “ 1: H mu m .—- 1:1- “ 1:! m m
+$EEEEE$$$ZEEEEE EEE'q‘EmEEEEEEEEE
+'ﬁ' '5' ﬁ' ﬁ' 1: Iﬁ 1-H 1.11 IJ""'I LEI LEI LEI LD- f‘ﬁ 1""- WWEIEI‘IEH'EUHTIF
+Wavelength {nm}
+3 11:11.5 _ {11115 --
+0 PB 15: Redhsh Cave PEI]: Blackwater Bay
+(\1 11:11.1 - ELﬂl-II -
+33‘
+,5 CH3” . {LUIE '
+GS) {LDLD :7. D-GI -
+a r L
+G) EUWE _ ﬂﬂ-UDE : .1""! 1.'I.
+m 1' I . E“ r 1'
+v: ."" ‘1 CE 1 Juli...“ ""
+<1- 11qu . 3 0-005 - 1': n13“---
+O I irri’H'I-H 1-,. 1;!!! hi“- 1.""
+rt!"" I1 'I - 'I. I ”‘1... .- 1'""
+5: 11.1114 . '5', ““11... L'IJZ'ID-d ”__..:ﬂ'; H... ”H.
+o - I'FI:_-' "" n‘q _ I- J ::‘_.l 4.
+a 11.11111 __.._-;:-.-H- H“:""'*. 11:11:12 ._,.. 1‘
+4—) ‘11- ‘u.
+'3' 1111-1111 .. . ‘3' mmﬂqhgmmgﬂqham L:
+: ﬁﬁaﬁaﬁgﬁﬁgﬁaaﬁﬁ Egﬂzamﬁﬁmsmemam
+% Wavelength [nm] Wavelength {nm}
+5
+o
+E
+<45 [1mg — DIED
+_ FEW: Pensacola Eva}r
+:9 {11313 _ P1324. Pensamla lira}:r 111313
+U)
+33 11.1115 - 11.1115
+> .
+'5 11.1114 -_ 111114
+2 : [1.1112 4 :111112
+>~. L L
+.9 .1"". ELﬂlﬂ - ﬂﬂﬂlﬂ
+'5 I: E
+g {1.11113 ~ ‘3‘ ﬂ-ﬂﬂﬁ
+c3 -
+% ﬂ-ﬂﬂﬁ - 4,!"" H.111; 1111115 1'“;
+3 [1.121114 ‘ .------';.3:::‘ ?‘H 1:141:14 45f ‘4'?!»
+O _, ""‘~u_.?.'_~:H_ ' ""_..-ff? ~ . rm...
+Q 11.11111 -- ""H [1.11111 _""'--' “-‘ms. ‘
+11111111 . - - - "" 11111111 '
+I-I'I W -I tr 1""- D H 1.11 II: 4-1 I:- h. :1 n1 u: - - u .
+Dﬂhﬁhmwﬁ'hﬂmi—lmhﬁmﬂw WWHWHDNMWHWHUMM
+ﬁﬁ'ﬁ'ﬁrﬁmuﬁhﬂmkﬁlnﬂ-Lﬂkﬂhh mmmth-zrmmr-Immmgm
+E Wavelength [nm]
+Figure 7. Examples of HICO (solid line) and MODIS (dotted line) spectral signatures processed
+using the NRL automated processing system (APS) from six stations in the Pensacola Bay system
+retrieved from the 2 June 2011 HICO image and compared With HyperSAS (dashed line) values.
+Please note these signatures were not corrected for seabed reﬂectance
+mis—calibration and/or noisy data on a scene—by—scene basis. The correction occurs
+because any inherent problems in the deep—water and near—shore spectral sets are removed
+through subtraction, leaving only the difference spectra. Thus, this inherent difference
+might account for the improved spectral matchups using the dark pixel atmospheric
+
+"
+"18","2944 DJ. Keith et a].
+0.010
+0.008
+T: . .
+2: 0.006 99
+04 Q ’
+""d
+(D
+.2
+i?
+a 0.004 O
+8 o ’
+ﬁ-
+5 2 .. ‘ O R2 = 0.89
+C: n = 42
+""E 0.002 .
+.2 O O
+m
+0)
+m
+g 0.000
+[\ 0.000 0.002 0.004 0.006 0.008 0.010
+—1 H —1
+5 yperSAS Rrs(sr )
+(\l
+E; Figure 8. MODIS Rrs derived from NRL/APS compared to HyperSAS Rrs.
+g
+‘3
+E correction method, compared to the matchups produced using the APS and FLAASH
+<44 approaches.
+0 . . . . . . . .
+E? Sensor—spe01ﬁc information is not required for this type of atmospheric correction
+E because removing the contribution of atmospheric backscattering from the at-sensor
+E radiance curve is not dependent on the precise location of spectral channels for water
+5 vapour and absorption features. Spectrally, the at-sensor radiance curves of image pixels
+: reﬂected the shape of the solar irradiance curve with atmospheric Rayleigh scattering and
+ﬁ fell off roughly as 7C4. ‘Dark pixels’ are assumed to not scatter photons as much as land or
+“QC: ‘brighter’ waters with sediments. It was also assumed that by subtracting the at-sensor
+% ‘dark pixel’ radiance from the at-sensor spectra of ‘bright’ pixels, the spectra produced
+5 had Rayleigh scattering effects removed and contained primarily photons scattered from
+Q the constituents within the water column (Figure 9). This approach was selected as the
+method for atmospherically correcting the remaining HICO images. However, with the
+dark pixel subtraction approach, there was a concern as demonstrated in previous studies —
+the subtraction process could create an over-correction, which results in negative Rrs
+values in the blue portion of the spectrum (Moses et a1. 2009; Palandro 2006). To address
+this issue, an offset (avg 0.003 sr_l) determined by Rrs values at 450 nm was applied to the
+spectra to adjust reﬂectance values so as to yield positive values in the blue portion of the
+spectrum (Hu et a1. 2004).
+3.4. Algorithm development and tuning for estimating chlorophyll a
+In general, the waters sampled had Chl a concentrations, total suspended sediment (TSS)
+concentrations, and turbidity values that varied by more than a factor of 10 (Table 2). TSS
+
+"
+"19","International Journal ofRemote Sensing 2945
+0.010 , .
+PB 18: Redfish Cove 0'010 PBOS' Escambla Bay
+a
+0.008 A 0.008 ’ \
+/ \ HyperSAS ” \
+f: 0.006 I ‘ f: 0.006 [I “
+0‘: 0004 I \ of 0.004 1’ ""
+/ \ ’1 ~
+I ~ a
+0.002 , 0.002 \\
+HICO ~ ~
+0000 0.000
+H
+§§§§§§E§§§§§ §§§§§§E§§§e§
+0.008 . -
+ﬂ. PB 15' RedﬁSh Cove 0 010 PB11: Blackwater Bay
+.4 ’ \ '
+o ’ i
+5 gr I ‘ ‘
+Q LE 0004 ‘ H: 0.006 ‘5...
+3 0C3 \ 8%,, \\
+g ’I ‘s o; 0.004 ‘\
+m 0.002 ,v \-‘ \
+v \ 0.002 \
+O s
+'1; 0.000 m <I- N o o 00 l\ Lo <1- 00 H o 0000
+8 343400080800 §§§§§§E§§§§§
+E; Wavelength (nm) Wavelength (nm)
+E
+‘53 0.008 PB24: Pensacola Bay 0'012 PB07: Pensacola Bay
+:s
+E O 006 I d"" 0.010
+<45 - I, \‘ A 0.008
+H T
+5:9 IE 0.004 ’ 3 0006 ""K
+E m2 I, \\ ace ” \
+g I §‘ 0.004 I \
+'5 0.002 - "" ~ \ a ’ ‘ ~
+D \ 0.002 .— 4 s .. ‘
+|_l \ . ‘ .
+>2 0.000 0.000
+‘9 Ln <l' N O O 00 |\ k0 <l' m H 0 Ln <l' N O O 00 |\ k0 <l' m H 0
+PC 0 00 k0 Ch N <I' |\ O 00 k0 Ch N O 00 k0 Ch N <I' |\ O 00 k0 Ch N
+G) <I' <I' <I' <I' LO LO LO LO LO LO LG |\ <I' <I' <I' <I' LO LO LO LO LO LO LG |\
+'3 Wavelength (nm) Wavelength (nm)
+0
+Ti . . . . . .
+B Flgure 9. Examples of spectral Slgnatures processed usmg ENVI FLASSH from SlX statlons 1n the
+8 Pensacola Bay system retrieved from the 2 June 2011 HICO (solid line) image and those collected
+using HyperSAS (dashed line). Note that these signatures were not corrected for seabed reﬂectance.
+Table 2. Descriptive statistics for optical water-quality parameters for Pensacola, Choctawhatchee,
+St Andrews, and St Joseph Bays from October 2009 to September 2011.
+N Min Max Median Mean STD
+Chl a pg 1_1 640 0.07 28.04 4.40 5.41 3.94
+TSS mg 1_1 640 0.00 22.65 2.80 3.58 2.95
+Turbidity NTU 46 0.13 4.75 0.85 1.08 0.83
+aCDOM(412) m—1 715 0.13 17.20 1.41 2.28 2.42
+Notes: N, number of samples; aCDOM(412), CDOM absorption at 412 nm; STD, standard deviation of
+measurements.
+
+"
+"20","2946 DJ. Keith et a1.
+PB 18° R (11“ h C 9010 PB05° Escambia Ba
+0.010 . e 18 0V8 . y
+r
+0.008
+0.008
+T"" 0006 cho 1 0.006 ‘
+v, \ £1 \.
+v e -
+0.002 ’ HyperSAS \ 0.002 \
+\‘ ‘
+0.000 0.000
+Ln <l' N O O 00 l\ LO <1' 00 H O Ln <l' N O O 00 l\ LO <1' 00 H O
+O 00 L0 03 N <l' l\ O 00 L0 03 N O 00 L0 03 N <l' l\ O 00 L0 03 N
+<1' <1' <1' <1' LO LO LO LO LO LO LO I\ <1' <1' <1' <1' LO LO LO LO LO LO LO l\
+Wavelength (nm) Wavelength (nm)
+0.010 PB 15: Redﬁsh Cove 0-010 PB11: Blackwater Bay
+
+3:
+
+N 0.008 ’ 0008 I \
+
+E A I \ A I \
+
+,9 TL 0.006 I \ TL 0.006 I ~‘
+
+E 3 ’ \ x; ’1
+
+EL 05 0.004 ’ \ o; 0.004 , \
+
+ﬂ /’ s~‘ ”
+
+q- 0.002 -v ~‘ 0.002 ’
+
+o \‘ A ‘
+
+'1: 0000 O'OOOan-Noooonovmao
+
+' ' Ln <l' N O O 00 l\ LO <1' 00 H O
+
+8 eeeamsassssm eeeessassssm
+
+E? Wavelength (nm) Wavelength (nm)
+
+E
+
+453 0.010 0012 PB07: Pensacola Bay
+
+8‘ PB24: Pensacola Bay
+
+m 0.010
+
+9—4 0.008
+
+O A 0.008
+
+>* HA 0.006 1
+
+E I; , x; 0.006 ”‘K
+
+E I “s I’ ‘~
+
+2 0.002 -4 ~~ 0.002 -4 ‘—~
+
+‘ \
+
+>x \ Q
+
+a §§§§§§E§§§§E aggamaasagas
+
+% Wavelength (nm) Wavelength (nm)
+
+E . . . . .
+
+8 Flgure 10. Examples of spectral s1gnatures processed usmg the dark plxel subtractlon approach
+from six stations in the Pensacola Bay system retrieved from the 2 June 2011 HICO (solid line)
+image and those collected using HyperSAS (dashed line). Note that these signatures were not
+corrected for seabed reﬂectance.
+concentrations correlated weakly With Chl a measurements (Figure 10), conﬁrming that
+the waterbodies sampled during this study belong to Case 2 waters (Morel and Prieur
+1977). This suggested that algorithms commonly used for estimating Chl at concentrations
+in Case 1 ocean waters (e.g. O’Reilly et a1. 1998) are inadequate for accurate estimations
+in these Case 2 waters.
+
+Using an optimization procedure, a three—band empirical model was developed using
+HyperSAS spectral data and laboratory—extracted Chl at concentrations from Pensacola
+Bay (June, August, and September 2011) to estimate Chl at concentrations from the HICO
+images.
+
+"
+"21","International Journal ofRemote Sensing 2947
+4.0
+3.5
+3.0 .°o.............
+2.5
+ﬁg 20 ’1 — 700>7tz<730
+g I - - . 660 >7t1<690
+E 1.5 II, ' ' ' ' ' 730>k3<735
+8 ’I
+H O
+0)
+.9 1.0 l'
+E I,
+g o 5 I” O. . '-
+. I 0..
+E:
+5 0.0
+N seessmﬂagaaaaassgzs289339033
+E. ave eng nm
+E Figure 11. Line plots of the root-mean-square error of Chl a from HyperSAS hyperspectral data
+E and measured Chl a at different wavelengths. Minima occurred at 686 nm for 901 (RMSE = 0.002
+.3 pg 1‘1), at 703 nm for 12 (RMSE = 0.006 pg 1‘1), and at 735 nm for 13 (RMSE = 0.217 pg 14),
+C; which correspond to HICO bands 50, 73, and 58.
+S The optimal position of M was derived by setting M and kg, at 660 and 735 rim,
+: respectively, with the minimal RMSE (0.002 Mg 1‘1) occurring at 703 nm (Figure 11, solid
+ﬁ line). To determine the optimal position of k1, k2 was set at 703 nm and kg, was set at
+g 735 nm. Using this combination, the minimum RMSE (0.006) was located at 686 nm
+2 (Figure 11, dashed line). To determine k3, the 686 and 703 nm bands were selected for M
+E and k2, respectively, with the minimal RMSE (0.217) occurring at 735 nm (Figure 11,
+8 dotted line).
+
+With the optimal bands identiﬁed, spectral values at 686 (HICO band 50), 703 (HICO
+band 53), and 735 nm (HICO band 58) from HICO images were used to derive the ratio
+values that were proportional to Chl a concentration (Gitelson et a1. 2011; Hunter et a1.
+2010; Le et a1. 2009; Dall’Olmo and Gitelson 2006). These values were regressed against
+in Situ Chl a concentrations from a total of 17 stations in Pensacola Bay sampled during
+June, August, and September 2011 to produce a regionally speciﬁc algorithm (Figure 12
+(a), Tables 3 and 4). The algorithm was validated using measured in Sim Chl a samples
+collected from April 2010 to September 2011 at 21 stations in St Andrews Bay, Pensacola
+Bay, and Choctawhatchee Bay (Figure 12(19), Table 5).
+
+The algorithm was applied to HICO images from the four estuaries, beginning in April
+2010 and ending in May 2012, to map spatial and temporal changes in Chl a distribution
+during the period. Figure 15(a) represents the chlorophyll distribution within
+Choctawhatchee Bay from a HICO image acquired during fall 2011. This image shows
+
+"
+"22","2948 DJ. Keith et a1.
+9.0
+8.0 .
+6 7.0
+’ o
+c“ 6.0
+:8). 9’ ..
+T 5.0
+Tao . .
+E
+g 4.0
+3»
+£1
+8 3'0 Q‘ . . R2: 0.64
+E O
+E U '
+8 1.0
+E
+""(a 0.0
+3 —0.200 —0.150 —0.100 —0.050 0.000 0.050 0.100 0.150
+33‘ (l/Rrs686 — 1/Rrs703)* 11.8732
+<1- (61)
+o
+.1: 10.0
+8 9.0
+E A 80
+l—I ‘U .
+E O
+E V .
+“a 1 60 .” Q .
+OD
+>a 5.0
+6
+B 2 4.0 O Q
+.2 E"" O
+a C“ 3.0 R2: 0.62
+E“ 6 2.0 n = 21
+8
+“U 1.0
+:0
+g 0.0
+g 0.0 2.0 4.0 6.0 8.0 10.0
+8 HICO predicted Chl a(ttg I ‘1)
+(b)
+Figure 12. (a) Scatterplot of measured Chl a versus the three-band model values using Rrs values
+from HICO images acquired on 2 June, 26 August, and 9 September 2011 and estimates of extracted
+0r ﬂuorometer-derived Chl a from 17 stations sampled in Pensacola Bay; ([9) Scatterplot of
+measured Chl a values versus HICO Chl a from St Andrews Bay (14 April 2010), Pensacola Bay
+(2 June 2011 and 9 September 2011), and Choctawhatchee Bay (24 August 2011).
+a latitudinal gradation in Chl a With higher values in the western bay near the tidal
+inlet connection to the Gulf of Mexico and lower Chl a in the east near the entrance
+to the Choctawhatchee River (Figure 1). At smaller spatial scales, the high pixel
+resolution of HICO also captured the Chl a distribution in the surrounding, smaller
+embayments.
+
+"
+"23","International Journal ofRemote Sensing 2949
+Table 3. Descriptive statistics of samples (n = 17) used in deriving the three-band HICO chloro-
+phyll model.
+Chl 61 Min Max Median Mean STD
+Date Station (measured) (11g 1_1) (11g 1_1) (11g 1_1) (11g 1_1) (11g 1_1)
+2 June 2011 PB04 5.5 2.5 7.6 5.2 4.8 1.6
+2 June 2011 PB05 3.0
+2 June 2011 PB07 2.9
+2 June 2011 PB08 6.5
+2 June 2011 PB12 5.0
+2 June 2011 PB13 3.2
+2 June 2011 PB14 3.2
+2 June 2011 PB17 3.0
+2 June 2011 PB18 2.5
+E 26 August 2011 PB04 6.8
+a 26 August 2011 PB05 6.0
+33 26 August 2011 PB06 5.2
+Q 26 August 2011 PB07 5.6
+g 26 August 2011 PB08 4.8
+g 26 August 2011 PB06 5.6
+m 9 September 2011 PB07 7.6
+g 9 September 2011 PB09 5.8
+1\ —
+3 Note: PB, Pensacola Bay; STD, standard deviation of chlorophyll concentrations.
+(\1
+E?
+F
+B
+‘3 Table 4. Algorithms derived to map the distribution of water-quality indicators derived from
+E atmospherically corrected remotely sensed reﬂectances (Rrs). Also shown are the units of measure-
+<45 ment; the slope (m) and goodness-of-ﬁt (R2) of the relationship between measured and predicted
+% values; the number of values used (77) to derive the algorithm; and the root-mean-square error
+1% (RMSE) of the measurements.
+5—1
+0 —
+- E Indicator Model m R2 n RMSE
+D —
+: Chl 61 (pg 1‘1) 17.477 x [a] + 6.152 a 1.40 0.62 21 1.7
+g; = [l/Rrs(686) — 1/R.s(703)] x 12.3(735)
+g Turbidity (NTU) 2 x 106 x [Rrs(646)2'7848] 1.21 0.67 19 0.6
+g aCDOM412)(m_1) 0.8426 x [Rrs(670)/Rrs(490)] — 0.032 0.90 0.93 18 0.2
+a —
+B
+o
+D
+It is well known that estuaries are highly dynamic interfaces where phytoplankton
+dynamics can change over tidal cycles. To observe Chl a variability associated with
+sampling at different times relative to an ISS overpass, we examined the goodness—of—ﬁt
+between measured and predicted Chl a values as a function of time after an ISS
+overpass. Chl a samples collected within four hours of an overpass were assessed
+from stations in Pensacola Bay, Choctawhatchee Bay, and St Andrews Bay sampled
+during April 2010 and June to August 2011. A strong relationship (R2 = 0.62, p <
+0.001, RMSE = 1.7 11g 1‘1) existed for stations (77 = 21) occupied 0—4 hours of an
+overpass (Figure 12(b), Table 5).
+Chl a values were also derived using the 0C3 SeaDAS algorithm with HICO data
+(processed through NRL/APS). These estimates were compared with NRL glider chlor-
+ophyll values collected on 28 October 2011 along the inner continental shelf waters off
+
+"
+"24","2950 DJ. Keith et al.
+Table 5. Descriptive statistics of samples (n = 21) used to validate the three-band HICO chlor-
+ophyll model.
+Chl a Min Max Median Mean STD
+Date Station (measured) (pg 1‘1) (pg 1‘1) (pg 1‘1) (pg 1‘1) (pg 1‘1)
+14 April 2010 SA02 7.7 2.8 9.2 3.6 5.1 2.2
+14 April 2010 SA08 9.2
+2 June 2011 PB06 3.0
+2 June 2011 PB11 5.7
+2 June 2011 PB19 3.1
+2 June 2011 PB20 3.3
+2 June 2011 PB21 2.8
+2 June 2011 PB22 3.4
+2 June 2011 PB23 6.7
+3 2 June 2011 PB24 3.5
+a 30 July 2011 CH01 3.1
+33 30 July 2011 CH02 3.6
+Q 30 July 2011 CH03 3.6
+g 30 July 2011 CHOS 4.0
+1% 30 July 2011 CH06 3.6
+m 30 July 2011 CH07 3.6
+g 24 August 2011 CH07 6.0
+i: 9 September 2011 PB02 7.8
+5 9 September 2011 PB03 8.0
+5:} 9 September 2011 PB04 8.5
+2 9 September 2011 PB05 6.6
+Q —
+4% Note: SA, St Andrews Bay; PB, Pensacola Bay; CH, Choctawhatchee Bay; STD, standard deviation of
+g chlorophyll concentrations.
+E
+C; Pensacola Bay. The 0C3 values were generally higher than the glider values and
+E approximately constant at 1.3 Mg 1_1 with very low variability (data not shown).
+2 A unique opportunity occurred on 28 October 2011 when a clear MODIS scene was
+5 acquired within 7 min before the HICO overpass. Using the NRL/APS, the 0C3 algo-
+: rithm Chl a and standard SeaDAS atmospheric correction were applied to both HICO
+ﬁ image and MODIS scene (Figure 13(a)). During processing, the 1 km MODIS image was
+,8 re-sampled to the 100 m HICO pixel size and the HICO image was georeferenced to the
+:i ‘new’ MODIS image. A region-of—interest (ROI) was generated near the mouth of
+B Pensacola Bay and all MODIS and HICO chlorophyll values within that ROI were
+8 extracted from the two scenes. During the re-sampling process on the MODIS scene,
+pixels were simply replicated to increase the resolution from 1 km to 100 m. For example,
+if a 1 km MODIS pixel had a value of 1 pg 1_1 then there are now 100 pixels with that
+same value for the comparison to HICO. Results showed there was agreement between the
+HICO and MODIS 0C3 Chl a values than between the HICO and glider values
+(m = 0.38; intercept = 0.81; R2 = 0.85; Figure 13(b)). The high R2 value indicated there
+is a strong linear relationship between the two variables (i.e. the proportion of the variance
+in the HICO Chl a values is accounted for by the MODIS Chl a values). However, the
+non-zero intercept and the bias (slope not equal to 1) indicated that the MODIS and HICO
+values are not necessarily close to each other. For example, HICO values were somewhat
+higher than MODIS values at Chl a concentrations below 1.2 ug 1_1, and lower than
+MODIS at concentrations above 1.2 pg 1‘1. The signiﬁcant regression of 0C3 results from
+HICO and MODIS retrieved by the NRL/APS indicated that other algorithms in the
+SeaDAS processing package could be applied to leverage the high spatial resolution
+
+"
+"25","International Journal ofRemote Sensing 2951
+mi N“ IHI1.1ﬁll.I'E'FWH:qlﬂ'Pl'lIMlilH'lhl-IW'LHIII"" _ M 911. IF IE'WII'H'I'I ﬂ""!
+. . .. Ul'umpfryﬂ mmmUMn. 01:3 Nmﬁ'rn .
+11""” ill H H -.. tl fl ﬂl'l'a' iﬁ'ﬂ. MW 1.1”
+_‘_,r""""1_ }
+warm ""I 1' - I!"" _- ::""_-1_ Fug. . _-:_1 ' - wwn
+"" T'..:‘? "":1; ?M???- I
+ll?” -——.. ___.-"" t-i-‘TIEEI .--.-.—. —__ _-!L.-.___...—__-I'_.-.— E - -> .- ‘22:“: . “,1”
+Exit f I I I . : 1.. {4111""}:
+H'Ji-I'l'i *3 1‘: _3[;¢'_._.___J_J'.;__._.___ —---- -4-—- - - -----I- -—— ' Lyra”:
+3;: E
+$- _ ~.-'. In - [
+Fit. .‘ Es [ |
+2m: Fw——I——.::ET.5:-Hr—— -—-—-----——r—.rt.|
+E ' i - I
+o
+(\1 . .
+5 5*}l-H- _.._._.... --—--—--- - . - - mm:
+a
+a I.W- K'JE-l {IJ'J «1 rn'-] LEI Ll l5
+3
+CL
+g (a)
+v
+o
+E: 6 ..
+6 r,“
+(\l x
+E; 5 1'.""
+El ‘5‘ «r!
+8 |— 4 It; i
+a z»
+9—4 5 3 I '
+O 0') 1’
+.5” 8 x"" I I n
+a O 2 a!
+5 2 x
+.2 I II If R2: 0.85
+5 1 m = 0.38
+|_. .r ' Intercept = 0.81
+3
+Po 0 I
+g 0 1 2 3 4 5 6
+g MODIS 003 Chlor (mg r?)
+T: (b)
+E
+Q Figure 13. (a) HICO and MODIS Chl at concentrations (processed through NRL/APS using the
+0C3 Chl a algorithm) on 28 October 2011, offshore of Pensacola Bay. The red rectangle overlaid on
+the MODIS image from 1900 GMT represents the location of a coincident HICO scene from the
+same day at 1907 GMT. The blue rectangle indicates the pixels included in the matchup comparison.
+([9) HICO Chl at concentrations versus MODIS Chl a values on 28 October 2011, offshore of
+Pensacola Bay; the dashed line corresponds to the 1:1 line.
+capability of HICO relative to 1 km MODIS data if the appropriate atmospheric correc-
+tions could be implemented.
+3.5. T urbidity and CDOM models
+Turbidity is a fundamental indicator of water clarity that is a measure of the ability of
+suspended material to diminish the penetration of light in aquatic systems (AGI 1974).
+
+"
+"26","2952 DJ. Keith et a1.
+Variations in turbidity help trace the distribution of total suspended sediments, which are
+affected by geological processes (e.g. coastal erosion) and the mobilization of pollutants
+(Zhang et a1. 2011; Heyes, Miller, and Mason 2004). Turbidity can vary widely spatially
+and temporally in coastal and estuarine waters. This variability results in the failure of
+conventional sampling methods to accurately characterize turbidity dynamics because of
+limitations in temporal and spatial sampling schemes. We empirically derived a water
+clarity algorithm (Table 4) by regressing in Situ turbidity measured from 18 stations in
+Pensacola Bay on 2 June 2011 against Rrs retrieved at 646 nm from a HICO image
+acquired on that day (Table 6). In the approach, Rrs is assumed to be proportional to
+backscatter (bb), which is equivalent to turbidity for medium to low turbid waters (Chen,
+Hu, and Muller—Karger 2007). Figure 13(a) shows that HICO Rrs(646), which ranged
+from 0.003 to 0.009 sr_l, was closely related (R2 = 0.72) with in Sim turbidity values
+w from 0.10 to 10 NTU (Figure 14(a)). The model was validated using in Situ turbidity
+5 measurements from 14 stations in St Andrews Bay (from April and June 2010) and the
+2 REMUS AUV from two locations along a track in Choctawhatchee Bay on August 2011
+5‘; (Table 7). Chen, Hu, and Muller—Karger (2007) suggested that the approach should be
+3 applicable to other estuaries where CDOM contribution is negligible at the 646 nm
+a . . . .
+g wavelength. This observation was conﬁrmed as results showed a strong relationship
+at (R2 = 0.67; p < 0.001; RMSE = 0.56 NTU) between measured and predicted values
+5: (Figure 14(b)). This relationship was consistent with turbidity values from Tampa Bay,
+5 FL. An example image from St Andrews Bay acquired during spring 2011 is provided in
+g Figure 15(19). St Andrews Bay generally has turbidity values from 0.2 to 2.3 NTU.
+E Higher turbidity (2.4—12.9 NTU) was observed in isolated areas usually associated
+4% where streams enter embayments and along the tidal inlet.
+8
+E
+o
+4%“ Table 6. Descriptive statistics of samples (n = 18) used in deriving the HICO Turbidity model.
+3.. —
+. g Turbidity Min Max Median Mean STD
+5 Date Station (measured) (NTU) (NTU) (NTU) (NTU) (NTU)
+E 2 June 2011 PB03 4.75 0.55 4.75 1.02 1.36 0.99
+'3 2 June 2011 PB04 1.78
+""g 2 June 2011 PB05 0.99
+.2 2 June 2011 PB06 1.71
+E 2 June 2011 PB07 0.55
+8 2 June 2011 PBO8 0.85
+2 June 2011 PB11 1.56
+2 June 2011 PB12 0.94
+2 June 2011 PB13 1.03
+2 June 2011 PB14 0.75
+2 June 2011 PB15 1.60
+2 June 2011 PB16 1.02
+2 June 2011 PB17 0.65
+2June 2011 PB18 1.11
+2 June 2011 PB19 0.85
+2 June 2011 PB20 0.86
+2 June 2011 PB21 1.24
+2 June 2011 PB22 2.90
+2 June 2011 PB23 0.69
+Note: PB, Pensacola Bay; STD, standard deviation of turbidity measurements.
+
+"
+"27","International Journal ofRemote Sensing 2953
+10.00
+g O
+E
+8
+E
+a ‘
+é .
+£9 R2=0.72
+""(3
+E n = 18
+13
+H
+0.10
+0.003 0.004 0.005 0.006 0.007 0.008 0.009
+HICO 11.4646)
+3
+o (a)
+(\1
+H 3.0
+i; O
+3 2.5
+CL
+0)
+g D 2.0
+o H
+5: E 1.5 O Q
+5 H . Q
+L)
+g 1.0 Q Q R2=O.67
+l—I . n = 18
+8 0.5
+173
+5
+E 0.0
+9—4 0.0 0.5 1.0 1.5 2.0 2.5
+o
+3‘ HICO NTU
+.a (b)
+3—1
+G)
+.2 3.0
+Q
+E 5 2 5
+E 3% . ’
+""d (/3
+F8 ,3 2.0 . .
+ce 2 A
+o H
+E 8 IE 1.5 .
+B U V
+8 3 1.0
+g R2=0.93
+é 0'5 § n: 18
+0.0
+0.0 1.0 2.0 3.0 4.0
+HICO CDOM absorption (m‘l)
+(C)
+Figure 14. (a) Scatterplot 0f turbidity measured from CTD casts at stations in Pensacola Bay
+during 2 June 2011 and remotely sensed reﬂectance at 646 nm from the HICO image acquired on
+that day, ([9) scatterplot of measured and predicted turbidities using in Sim measurements from 12
+stations in St Andrews Bay from April and June 2010 and the REMUS AUV from two locations
+(3 0.440N — 86.300 W and 30.43 9N — 86.304W) along a trackline in Choctawhatchee Bay on August
+2011, and (c) scatterplot 0f CDOM light absorption at 412 nm measured during CTD casts from
+stations in the Pensacola Bay system during 11 June, 11 August, and 11 September 2011 versus
+CDOM light absorption at 412 nm predicted from HICO images acquired on those days.
+
+"
+"28","2954 DJ. Keith et al.
+
+Table 7. Descriptive statistics of samples (n = 14) used to validate the HICO turbidity model.
+Turbidity Min Max Median Mean STD
+
+Date Station (measured) (NTU) (NTU) (NTU) (NTU) (NTU)
+
+14 April 2010 SA04 0.85 0.28 1.92 0.83 0.94 0.47
+
+14 April 2010 SAOS 0.38
+
+14 April 2010 SA07 0.65
+
+14 April 2010 SA08 0.58
+
+14 April 2010 SA10 1.09
+
+14 April 2010 SAN 1.92
+
+17 June 2010 SA02 1.22
+
+17 June 2010 SA04 0.81
+
+17 June 2010 SA05 0.51
+
+17 June 2010 SA08 0.28
+
+E 17 June 2010 SA10 0.78
+
+g 17 June 2010 SA11 0.75
+
+5 24 August 2011 CH-AUV 1.45
+
+g 24 August 2011 CH-AUV 1.43
+
+”a Note: SA, St Andrews Bay; CH-AUV, Choctawhatchee Bay REMUS data; STD, standard deviation of turbidity
+
+g measurements.
+
+ES
+
+5:
+
+§ Several studies have shown that CDOM primarily absorbs light in the UV and Visible
+
+2 spectral range and plays a key role in controlling light attenuation and spectral quality in
+
+5 Atlantic and Gulf of Mexico estuaries (Keith, Yoder, and Freeman 2002; Chen et a1. 2007;
+
+g Tehrani et a1. 2013). CDOM, the coloured fraction of dissolved organic matter (DOC), can
+
+E be estimated by ocean sensors and can be utilized to estimate the standing stock of DOC
+
+C; and the carbon cycle in aquatic environments (Coble 2007). Monitoring the distribution of
+
+ﬁg CDOM at several spatial and temporal scales could provide diagnostic information on the
+
+3; natural and anthropogenic factors affecting the capacity of these waters to provide
+
+'5 sufﬁcient sunlight to planktonic and macrophytic vegetation for photosynthesis and
+
+E growth. Previously, D’Sa, Miller, and Del Castillo (2006) used in Situ aCD0M(412) mea-
+
+£ surements, collected With 14 hours of an overﬂight, and the ratio of Rrs(510) and Rrs(5 55)
+
+E from SeaWiFS to derive an algorithm that mapped the surface values of CDOM absorp-
+
+8 tion in the offshore waters of the northern Gulf of Mexico. Statistical analysis revealed the
+
+E algorithm performed well With an R2 of 0.66 and an RSME of 0.23 m_l.
+
+8 We empirically derived an algorithm to study CDOM distribution Within estuarine
+waters of the Gulf coast (Table 4). The algorithm was derived by regressing in Sim CDOM
+absorption measurements (aCDOM(412)), collected Within ﬁve hours of an ISS overﬂight, at
+17 stations in Pensacola Bay from June to September 2011 against the ratio of Rrs
+retrieved from 670 and 490 nm from HICO images acquired on those days (Table 8).
+This approach assumes that in order to retrieve CDOM remotely there is a robust
+relationship between the red/blue-green spectral ratio and the absorption of CDOM. The
+algorithm was validated using measured CDOM absorption values, also collected Within
+six hours of an ISS overﬂight, from 18 stations in Pensacola and Choctawhatchee Bays (2
+June, 30 July, and 9 September 2011; Table 9) and HICO images from those days. During
+this time period, aCDOM412) varied spatially and temporally from 0.6 to 3.1 m_l. A
+comparison of the measured versus predicted absorption values showed an excellent
+relationship (R2 = 0.93, p < 0.001; Figure 14(0)) and an RMSE of 0.21 m_l. Figure 15
+(6) provides an example of the CDOM distribution in Pensacola Bay acquired during 16
+
+"
+"29","International Journal ofRemote Sensing 2955
+‘1. _ 1: 3r: - III -'
+. H . m. * ,l
+' ' . : ' I ""
+.. - _ ‘I I. 'u'l. ﬁﬁ- 'I:
+I .— Ilf {'F': ' I .I :1 .
+' ' h -""""E'!'_ 4"":9 T911
+3:: _ _. II t.” Tr? ..._ '-L;'
+I .. 'i' -
+F {I --.-I' . . . 1‘ -. u
+|- -huﬂ III""
+-I .' __‘_I III: a'_ l .. __ _.l'_' .
+..r-u
+‘. +H: '1 ...... . '|._ ,
+. r hr.“ “:11"" -._. _‘ . I. ._
+MwhalthHJ-w 4“""""-.-.__HIIII_ - .' ""‘ﬁ
+31 ncmher 2n“ ...___
+Chlliull '1 Ha
+E 1 1 — nu ‘-
+'_ j“ —I.Il- H
+I.1 —I.ﬂ
+E - '_: I.1 -1”:
+-1l.1 -1”
+8 12-1 -...“
+H .. . “—mn—-— P
+(D
+E [H]
+<1) 1. _ . . . .
+*"" ”"" 1' ' . 4-. 1. r' I
+o I I _'. |._': l;
+""‘ ‘5! . . . . ~ .
+5 l. - . I E ""111- _' . ""I_ I"" ﬂ-. 1' tiiiil
+(\l "" h...- gilt- ..I'II'---I'r' -.1'
+*5; "" 11* #:15' 7"" -_-"".-*‘_.-- ' ‘ '
+F “-2; :‘ﬂu -""“‘3‘;1r-.=3’:¥4"" r. - 4.: ”
+o WEI“? "" ' '-' ’ ""-' -- ‘ .1
+‘53 .H-I.I.-I‘,§I1 l'ﬁ'P-ﬁ‘féti‘: r? I_ - 1. .-
+5--t..Iﬂvumﬂrua-1I.n.rs ﬂay 'i.i""’¥.'-,}-""”'1'-£-:é-...-' 1: _
+o 19 March 1:111 :ﬂ?! frfsgﬂ '-'.
+o EEDJ—lJ ﬂ: .ﬂ ..
+--.._ , . '1.“ --
+IE,» -_ 1.1 — 1.3 _' '_II_' .I.“ -'*
+3 2.: — «.2 “a 'I'a...‘ _.-t
+Q>J - 4-3 - 1? ""a:- .... _ .
+'5 13 ' ”'9 EFﬁ'ﬁ‘M
+>5 [b]
+a . . .
+*5 J H i _
+a) . -- .__... . . . ._
+O -- . . - ‘1"" :' r IIIII .- II _ .
+B - . "" -. . *:- .- .— '
+_ -. _- ' 71;: '2' {-
+. n.1,.“ 1.1% . _Ir ..-""-I II I 31-? _:;"":E;.-lf.rr_qll..
+.1: '- ""-'-.-';' 'f’ﬁ' T'v- fr 41“. ""-'~ ’15:.-
+. ‘ ..F. "" .1: ' -‘ i': ' PITA ‘Tv'
+- '_ - ""H: .1; ,. #:zr. :{i-- .-
+'-- ' . ‘-' -‘ - . ""-. .3"" *.'r.""..-'--'- ': .-.'.‘ . ...-11; ' ’_:;‘ ' I .
+. . _ - If __ an:_II""-._. ?:?.5- TI- ""-‘J'Wﬂ .
+Pensacola- ﬂau . {I . '.'I_ 5"""": I1 .I_'_-_.H"" "" .-.-' ..- *1 ‘-
+15 1-11qu zﬂﬂ . #ILiﬂimﬁﬂw
+mu"" """"41 I 3W”
+_ =15 ~ 1.1
+' : ; 1.1 — 1.5
+1.? - 2.1
+-24 - 19 .. . ..
+-a - 4.3
+{c}
+Figure 15. Example images of water-quality indicators derived from HICO atmospherically
+corrected data using the dark pixel subtraction approach: (a) Chl a distribution (Choctawhatchee
+Bay, 31 October 2011), (b) turbidity distribution (St Andrews Bay, 19 March 2011), and (c) CDOM
+distribution (Pensacola Bay, 16 January 2012).
+
+"
+"30","2956 DJ. Keith et al.
+Table 8. Descriptive statistics of samples (n = 17) used in deriving the HICO CDOM absorption
+model.
+aCDOM(412) Min Max Median Mean STD
+Date Station (measured) (m_l) (m_l) (m_l) (m_l) (m_l)
+2 June 2011 PB04 1.08 0.63 2.03 1.08 1.19 0.43
+2 June 2011 PB05 0.77
+2 June 2011 PB07 0.63
+2 June 2011 PB12 1.04
+2 June 2011 PB13 0.81
+2 June 2011 PB14 0.83
+26 August 2011 PB03 1.80
+26 August 2011 PB04 1.60
+26 August 2011 PB05 1.62
+E 26 August 2011 PB06 1.17
+a 26 August 2011 PB07 1.18
+33 26 August 2011 PB08 1.02
+£ 26 August 2011 PB09 0.78
+g 9 September 2011 PB06 1.71
+1% 9 September 2011 PB07 2.03
+m 9 September 2011 PB08 1.41
+g 9 September 2011 PB09 0.72
+l\ —
+3 Note: aCDOM(412), CDOM absorption at 412 nm; PB, Pensacola Bay; STD, Standard deviation of CDOM
+(\1 absorption measurements.
+E?
+3
+CD
+8
+I Table 9. Descriptive statistics of samples (n = 18) used to validate the HICO CDOM absorption
+<15 model.
+b —
+E aCDOM(412) Min Max Median Mean STD
+2 Date Station (measured) (m_l) (m_l) (m_l) (m_l) (m_l)
+: —
+E. 2 June 2011 PB03 1.08 0.57 3.12 1.48 1.52 0.73
+E“ 2 June 2011 PB06 0.75
+'8 2 June 2011 PB08 0.57
+“g 2 June 2011 PB09 0.74
+2 2 June 2011 PB15 0.66
+g 30 July 2011 CH01 0.89
+o 30 July 2011 CH02 1.14
+D 30 July 2011 CH03 1.65
+30 July 2011 CH04 1.02
+30 July 2011 CH05 1.41
+30 July 2011 CH06 1.54
+30 July 2011 CH07 1.59
+30 July 2011 CH08 2.49
+30 July 2011 CH09 1.96
+9 September 2011 PB02 3.12
+9 September 2011 PB03 2.44
+9 September 2011 PB04 2.31
+9 September 2011 PB05 1.80
+Note: aCDOM(412), CDOM absorption at 412 nm; PB, Pensacola Bay; CH, Choctawhatchee Bay; STD, standard
+deviation of CDOM absorption measurements.
+
+"
+"31","International Journal ofRemote Sensing 2957
+January 2012 (Figure 15(0)). This image showed the highest CDOM absorption (1.7—4.3
+m_l) in the Vicinities of PB2 and PB3 in the upper parts of the Pensacola Bay system and
+PB12 and PB16 in eastern Pensacola Bay (Figures 2 and 15(0)). The most intense
+absorption was located in the Vicinity of PB07, PB08, PB24, PB25, and PB26 in lower
+Pensacola Bay (Figures 2 and 15(0)).
+4. Conclusions
+HICO hyperspectral data were acquired from the surface waters of four Florida estuaries
+during overﬂights of 188. Several water-quality algorithms were derived to estimate the
+indicators of ecological condition. The ~6 nm spectral resolution and ~95 m spatial
+resolution of HICO acquired images made this sensor unique among the previous and
+v current ocean colour satellites. These attributes not only make HICO a unique tool for
+S algorithm development in coastal waters, but also could provide future value for the
+(:3 monitoring and management of the nation’s coasts in optically complex waters and areas
+g below the spatial resolution of previous sensors. In our study, we found that the dark pixel
+.3 atmospheric correction method worked very well in removing atmospheric effects from
+g HICO images. Using atmospherically corrected HICO Rrs values and in Situ and labora-
+ES tory data from an extensive ﬁeld sampling programme in the study estuaries, algorithms
+5: were created, and tested, which successfully estimated chlorophyll concentrations, light
+6 absorption due to CDOM, and water clarity as expressed by turbidity.
+(\l . .
+ES Although the potential beneﬁts are many, there are several issues that must be resolved
+3 before HICO images and data can be incorporated into routine monitoring programmes to
+4% beneﬁt decisions made by coastal managers. We suggest that HICO Vicarious calibration
+8 and standardized atmospheric correction issues must be resolved, and work is under way
+F5 on these (Lewis et al. 2013). During our analysis, we observed that multiple images of the
+>‘ same target did not cover identical spatial coordinates and resulted in spatial off-
+E sets >10 km. This issue may result from the differences between the actual and predicted
+E 188 ephemeris data, which impacts the times HICO is actually operating. The predicted
+5 188 orbit is used to program when to activate HICO and if the actual orbit differs slightly,
+: at the time of data collection, the location of the targeted image might be off slightly.
+ﬁ Images of the same area were acquired at different times of the day and at different solar
+“QC: zenith/azimuth and View zenith/azimuth angles due to the ISS orbit, which is not Sun-
+% synchronous. ISS altitude adjustments resulted in changes in spatial resolution and cover-
+; age of the target area as scenes were collected at different altitudes owing to changes in
+Q the orbit of the ISS (i.e. predicted vs. actual orbit). We recognize that this problem was
+inherent with sensors ﬂown on the low orbiting 188. However, this may be beneﬁcial
+when testing algorithm performance for geostationary satellites, since these satellites
+measure at different times of the day and under different Viewing geometries in relation
+to the Sun. The 188 orbits the Earth 16 times per day, and HICO is currently limited to the
+acquisition of one image per orbit due to a combination of the time it takes HICO to
+complete an image and data downlink speeds from the 188. In addition, during this study,
+several logistical conﬂicts with supply module dockings and general 188 operations led to
+rescheduling of planned image acquisitions and complications (e.g. logistical difﬁculties
+associated with scheduling ﬁeld data collections at the time of an ISS overpass) because
+uncertain ISS ephemeris data beyond a two week time window made predicting the orbital
+path of the ISS (and image targeting) difﬁcult more than two weeks into the future.
+Additionally, HICO target overpass information was communicated only hours-to-
+days in advance based on a predictive model that incorporated ephemeris (orbit) and
+
+"
+"32","2958 DJ. Keith et a].
+
+predicted mean altitude parameters. Variations in ephemeris and oscillations in altitude
+made reliable estimates for 188 overpasses difﬁcult. The uncertainty associated with
+overpass predictions negatively impacted the potential to effectively deploy ﬁeld crews
+to implement sampling protocols in an efﬁcient and timely manner.
+
+Because satellite-based, hyperspectral data have been rarely available for scientiﬁc
+investigations, HICO has the potential to be a valuable monitoring tool owing to its high
+spectral and spatial resolutions and the corresponding ability to obtain spectral data near
+the land—water interface where water-quality managers continue to focus and humans may
+have the high probability of interacting with the aquatic environment. However, for HICO
+to transition from a proof—of—concept project to full application, the sensor needs to be
+placed into a polar orbit conﬁguration to provide a stable well-characterized platform for
+greater spatial and temporal coverage and geometric ﬁdelity. Furthermore, a polar orbiting
+
+v platform would be highly predictable, allowing image synchronization with any ﬁeld
+3 validation effort. This observation is consistent with the planning of NASA and other
+(:33 agencies to launch several ocean colour missions (e.g. GEO-CAPE, ACE, HyspIRI) with
+g hyperspectral capacity in the future (NRC 2007).
+G)
+a
+O)
+m
+<-
+E Acknowledgements
+1“. This article has been subjected to review by the 0RD National Health and Environmental Effects
+8 Research Laboratory and approved for publication. This is 0RD Tracking Number 0RD — 005315
+E? and EPA Publication Number EPA/600/J 13/173 of the Atlantic Ecology Division, National Health
+E‘ and Environmental Effects Research Laboratory, Ofﬁce of Research and Development, US
+4% Environmental Protection Agency (EPA). Mention of trade names or commercial products does
+3 not constitute endorsement or recommendation for use. The Views expressed in this article are those
+I of the authors and do not necessarily reﬂect the Views or policies of the US Environmental
+<45 Protection Agency or the Naval Research Laboratory (NRL). We thank Robyn Conmy (EPA/
+.39 National Risk Management Research Laboratory), Jessica Aukamp (EPA/NHEERL/Gulf Ecology
+a Division (GED)), and George Craven (EPA/GED) for their support in planning and ﬁeld operations.
+2 We also appreciate the assistance of Diane Yates (EPA/GED) for managing the database and
+5 providing quality assurance measures. James Hagy (EPA/GED), Michael Murrell (EPA/GED),
+H Brandon J arVis (EPA/GED), and Allyn Duffy (EPA/GED) provided support during ﬁeld operations.
+3‘ David Lewis, Andrew Quaid, Courtney Kearney, and Sherwin Ladner (all at Naval Research
+'8 Laboratory/Stennis Space Center) provided support with the HICO image processing and glider
+'3 data collections. We also thank Bryan Milstead, Steve Rego, and Jeffrey Hollister at the EPA/
+% NHEERL/Atlantic Ecology Division (EPA/AED) for their insightful review comments.
+3
+o
+D
+Funding
+This work was funded by the US Environmental Protection Agency Ofﬁce of Research and
+Development (0RD) under the Pathﬁnder Innovation Program and supported by the Safe and
+Sustainable Waters Research Program.
+References
+American Geological Institute. 1974. Glossary of Geology. Washington, DC: American Geological
+
+Institute.
+
+Berk, A., G. P. Anderson, P. K. Acharya, J. H. Chetwynd, L. S. Bermstein, E. P. Shettel, M. W.
+
+Matthew, and S. M. Adler-Golden. 2000. MODTRAN4 Users Manual, 97. Hanscom AFB,
+
+MA: Air Force Research Laboratory, Space Vehicles Directorate, Air Force Material
+
+Command.
+
+"
+"33","International Journal ofRemote Sensing 2959
+
+Binding, C. E., and D. G. Bowers. 2003. “Measuring the Salinity 0f the Clyde Sea From Remotely
+Sensed Ocean Colour.” Estuarine, Coastal and ShelfScience 57: 605—611. doi:10.1016/SO272-
+7714(02)00399-2.
+
+Bowers, D. G., D. Evans, D. N. Thomas, K. Ellis, and P. J . 1e B. Williams. 2004. “Interpreting the
+Colour of an Estuary.” Estuarine, Coastal and Shelf Science 59: 13—20. doi:10.1016/j.
+ecss.2003.06.001.
+
+Bowers, D. G., G. E. L. Harker, P. S. D. Smith, and P. Tett. 2000. “Optical Properties of a Region of
+Freshwater Inﬂuence (the Clyde Sea)” Estuarine, Coastal and Shelf Science 50: 717—726.
+doi:10.1006/ecss.1999.0600.
+
+Cavalli, R. M., S. Pignatti, and E. Zappitelli. 2006. “Correction on Sun Glint Effect on MIVIS Data
+of the Sicily Campaign in July 2000.” Annals of Geophysics 49: 277—286.
+
+Chavez, P. S. 1988. “An Improved Dark-Object Subtraction Technique for Atmospheric Scattering
+Correction of Multispectral Data.” Remote Sensing ofEnvironmem 24: 459—479. doi:10.1016/
+0034-4257(88)90019-3.
+
+Chen, Z. 2006. “Monitoring Water Quality in Tampa Bay: Coupling In Situ and Remote Sensing.”
+
+E In Graduate School T heses and Dissertations. http://sch01arcomm0ns.usf.edu/etd/2479.
+
+3 Chen, 2., C. Hu, and F. Muller—Karger. 2007. “Monitoring Turbidity in Tampa Bay Using MODIS/Aqua
+33 250—M Imagery.” Remote Sensing ofEnvironmem 109: 207—220. doi:10.1016/j.rse.2006.12.019.
+S Chen, 2., C. Hu, R. N. Conmy, F. Muller-Karger, and P. Swarzenski. 2007. “Colored Dissolved
+g Organic Matter in Tampa Bay, Florida.” Marine Chemistry 104: 98—109. doi:10.1016/j.
+
+g marchem.2006.12.007.
+
+V1 Coble, P. G. 2007. “Marine Optical Biogeochemistry: The Chemistry of Ocean Color.” Chemical
+g Reviews 107: 402—418. doi:10.1021/cr050350+.
+
+f: Corson, M. R. 2011. “The Hyperspectral Imager for the Coastal Ocean: Littoral Environmental
+5 Characterization From the International Space Station.” Proceedings of ocean optics XX,
+:1, Anchorage, AK, September 27—October 1.
+
+3 Corson, M. R., and C. O. A. Davis. 2011. “A New View of Coastal Oceans From the Space
+g Station.” E05, Transactians American Geaphysical Unian 92 (19): 161—162. doi:10.1029/
+E 2011E0190001.
+
+O Dall’OlmO, G., and A. Gitelson. 2006. “Effect of Bio-Optical Parameter and Uncertainties in
+E Reﬂectance Measurements on the Remote Estimation of Chlorophyll-a Concentration in
+O Turbid Productive Waters: Modeling Results.” Applied Optics 45 (15): 3577—3592.
+a; doi:10.1364/AO.45.003577.
+
+3.3 Dall’OlmO, G., A. Gitelson, and D. C. Rundquist. 2003. “Towards a Uniﬁed Approach for Remote
+E Estimation of Chlorophyll-a in Both Terrestrial Vegetation and Turbid Productive Waters.”
+:3 Geaphysical Research Letters 30: 1038.
+
+: Dall’OlmO, G., A. Gitelson, D. C. Rundquist, B. Leavitt, T. Barrow, and J. C. H012. 2005.
+9 “Assessing the Potential of SeaWiFS and MODIS for Estimating Chlorophyll Concentrations
+B in Turbid Productive Waters Using Red and Near—Infrared Bands.” Remote Sensing of
+23 Envimnment 96 (2): 176—187. doi:10.1016/j.rse.2005.02.007.
+
+'3 Devlin, M., S. Bricker, and S. Painting. 2011. “Comparison of Five Methods for Assessing Impacts
+E of Nutrient Enrichment Using Estuarine Case Studies.” Biogeochemistry 106: 177—205.
+Q doi:10.1007/510533-011-9588-9.
+
+D’Sa, E. J., R. L. Miller, and C. E. Del Castillo. 2006. “An Assessment of Short-Term Physical
+Inﬂuences on the Bio—Optical Properties and Ocean Color Algorithms in Coastal Waters
+Inﬂuenced by the Mississippi River.” Applied Optics 45 (28): 7410—7428. doi:10.1364/
+AO.45.007410.
+
+ENVI. Atmospheric CorrectionModule. 2009. “QUAC and FLAASH User’s Guide.” In
+Atmaspheric Carrectian Madule Versian 4. 7, 43. Boulder, CO: ITT Visual Information
+Solutions.
+
+Ferreira, J. G., J. H. Andersen, A. Borja, S. B. Bricker, J. Camp, M. C. D. Silva, E. Garcés, A.—S.
+Heiskanen, C. Humborg, L. Ignatiades, C. Lancelot, A. Menesguen, P. Tett, N. Hoepffner, and
+U. Claussen. 2011. “Overview of Eutrophication Indicators to Assess Environmental Status
+within the European Marine Strategy Framework Directive Estuaries.” Estuarine, Coastal and
+ShelfScience 93: 117—131. doi:10.1016/j.ecss.2011.03.014.
+
+Gitelson, A. 1992. “The Peak Near 700 nm on Radiance Spectra of Algae and Water-Relationships
+of its Magnitude and Position with Chlorophyll Concentration.” International Journal of
+Remote Sensing 13: 3367—3373. doi:10.1080/01431169208904125.
+
+"
+"34","2960 DJ. Keith et a1.
+Gitelson, A. A., B.-C. Gao, R.—R. Li, S. V. Berdnikov, and V. Saprygin. 2011. “Estimation of
+Chlorophyll-a Concentration In Productive Turbid Waters Using A Hyperpectral Imager For
+The Coastal Ocean-The Azov Sea Case Study.” Environmental Research Letters 6: 024023.
+doi:10.1088/1748-9326/6/2/024023.
+Gitelson, A. A., D. Gurlin, W. Moses, and T. Barrow. 2009. “A Bio—Optical Algorithm for the
+Remote Estimation of the Chlorophyll a Concentration in Case 2 Waters.” Environmental
+Research Letters 14 (4): 5.
+Gitelson, A. A., G. Dall’olmo, W. Moses, D. C. Rundquist, T. Barrow, T. R. Fisher, D. Gurlin, and J .
+H012. 2008. “A Simple Semi-Analytieal Model for Remote Estimation of Chlorophyll-a
+Concentraton in Turbid Productive Waters: Validation.” Remote Sensing of Environment 112:
+3582—3593. doi:10.1016/j.rse.2008.04.015.
+Gitelson, A. A., J . F. Schalles, and C. M. Hladik. 2007. “Remote Chlorophyll-a Retrieval in Turbid
+Productive Estuaries: Chesapeake Bay Study.” Remote Sensing ofEnvironmem 109: 464—472.
+doi:10.1016/j.rse.2007.01.016.
+Goa, B. C., M. J. Montes, Z. Ahmad, and C. 0. Davis. 2000. “Atmospheric Correction Algorithm
+3 for Hyperspectral Remote Sensing of Ocean Color From Space.” Applied Optics 39: 887—896.
+g doi:10.1364/AO.39.000887.
+33 Gons, H., M. Auer, and S. Efﬂer. 2008. “MERIS Satellite Chlorophyll Mapping of Oligotrophic and
+S Eutrophic Waters in the Laurentian Great Lakes.” Remote Sensing ofEnvironment 112: 4098—4106.
+5 Gons, H. J. 1999. “Optical Teledetection 0f Chlorophyll — a in Turbid Inland Waters.”
+% Enviranmental Science and Technalagy 33: 1127—1132. doi:10.1021/es9809657.
+V1 Goodman, J. A., Z. Lee, and S. L. Ustin. 2008. “Inﬂuence of Atmospheric and Sea-Surface
+2% Corrections 0n Retrieval of Bottom Depth and Reﬂectance Using a Semi-Analytical Model:
+5: A Case Study in Kaneohe Bay, Hawaii.” Applied Optics 47: F1—F1 1. doi:10.1364/AO.47.0000F1.
+5 Gordon, H. R., and A. Morel. 1983. “Remote Assessment of Ocean Color for Interpretation of
+:1, Satellite Visible Imagery — A Review.” In Lecture Nates 0n Coastal and Estuarine Studies,
+3 edited by R. T. Barber, N. K. Mooers, M. J . Bowman, and B. Zeitzschel, 114. New York, NY:
+g Springer-Verlag.
+E Gordon, H. R., and M. Wang. 1994. “Retrieval of Water—Leaving Radiance and Aerosol Optical
+0 Thickness Over the Oceans with SeaWiFS: A Preliminary Algorithm.” Applied Optics 33 (3):
+E 443—452. doi:10.1364/AO.33.000443.
+C; Gould, R. W., R. A. Amone, and M. Sydor. 2001. “Absorption, Scattering, and Remote-Sensing
+3% Reﬂectance Relationships in Coastal Waters: Testing a New Inversion Algorithm.” Journal of
+33 Caastal Research 17 (2): 328—341.
+E Gould Jr., R. W., R. A. Amone, and P. M. Martinolich. 1999. “Spectral Dependence of the
+:3 Scattering Coefﬁcient in Case 1 and Case 2 Waters.” Applied Optics 38 (12): 2377—2383.
+: doi:10.1364/AO.38.002377.
+ﬁ Gower, J . F. R., R. Doerffer, and G. A. Borstad. 1999. “Interpretation of the 685 Nm Peak in Water-
+_8 Leaving Radiance Spectra in Terms of Fluorescence, Absorption, and Scattering, and Its
+8 Observation by MERIS.” Internatianal Jaumal 0f Remote Sensing 20: 1771—1786.
+7:: doi:10.1080/014311699212470.
+E Themistocleous, K. C., D. J. Hadjimitsis, A. Retalis, and N. Chrysoulakis. 2012. “Development of
+Q an Image Based Atmospheric Correction Algorithm for Aerosol Optical Thickness Retrieval
+Using the Darkest Pixel Method.” Journal of Applied Remote Sensing 6: 063538—12.
+doi:10.1117/1.JRS.6.063538.
+Hansen, J. E., and L. Travis. 1974. “Light Scattering in Planetary Atmospheres.” Space Science
+Reviews 16: 527—610. doi:10.1007/BF00168069.
+Heyes, A., C. Miller, and R. Mason. 2004. “Mercury and Methylmercury in Hudson River
+Sediment: Impact of Tidal Resuspension 0n Partitioning and Methylation.” Marine Chemistry
+90 (1—4): 75—89.
+Hochberg, E. J., S. Andrefouet, and M. R. Tyler. 2003. “Sea Surface Correction of High Spatial
+Resolution IKONOS Images to Improve Bottom Mapping in Near—Shore Environments.” IEEE
+Transactians 0n Geascience and Remote Sensing 41: 1724—1729. doi:10.1109/
+TGRS.2003.815408.
+Hu, C., Z. Chen, T. D. Clayton, P. Swarzenski, J . C. Brock, and F. Muller—Karger. 2004.
+“Assessment of Estuarine Water-Quality Indicators Using MODIS Medium-Resolution Bands:
+Initial Results From Tampa Bay, FL.” Remote SenSing of Environment 93: 423—441.
+doi:10.1016/j.rse.2004.08.007.
+
+"
+"35","International Journal ofRemote Sensing 2961
+Hunter, P. D., A. N. Tyler, L. Carvalho, G. A. Codd, and S. C. Maberly. 2010. “Hyperspectral
+Remote Sensing of Cyanobacterial Pigments as Indicators for Cell Populations and Toxins in
+Eutrophic Lakes.” Remote Sensing of Environment 114: 2705—2718. doi:10.1016/j.
+rse.2010.06.006.
+Kay, 8., J. D. Hedley, and S. Lavender. 2009. “Sun Glint Correction of High and Low Spatial
+Resolution Images of Aquatic Scenes: A Review of Methods for Visible and Near—Infrared
+Wavelengths.” Remate Sensing 1: 697—730. doi:10.3390/r51040697.
+Keith, D. J ., J . A. Yoder, and S. A. Freeman. 2002. “Spatial and Temporal Distribution of Coloured
+Dissolved Organic Matter (CDOM) in Narragansett Bay, Rhode Island: Implications for
+Phytoplankton in Coastal Waters.” Estuarine, Coastal and Shelf Science 55: 705—717.
+doi:10.1006/ecss.2001.0922.
+Ladner, S. D., J. C. Sandidge, P. E. Lyon, R. A. Amone, R. W. Gould, Z. P. Lee, and P. M.
+Martinolich. 2007. “Development of Higher Resolution Optical Properties From MODIS.” In
+Praceedings 0f SPIE Caastal Ocean RemOte Sensing, edited by Robert J . Frouin, ZhongPing
+Lee, V01. 6680, 668013-1-668013-9. doi:10.1117/12.736845.
+3 Laws, E. 1997. Chapter 4 — Made] 11 Linear Regressian. Mathematical Methods far
+a Oceanographers, 57—71. New York: John Wiley and Sons.
+33 Le, C., C. Hu, J. P. Cannizzaro, D. English, F. Muller-Karger, and Z. Lee. 2013. “Evaluation of
+S Chlorophyll-a Remote Sensing Algorithms for an Optically Complex Estuary.” Remate Sensing
+g OfEnvirOnment 129: 75—89. d0i:10.1016/j.rse.2012.11.001.
+é Le, C., Y. Li, Y. Zha, D. Sun, C. Huang, and H. Lu. 2009. “A Four-Band Semi-Analytical Model for
+V1 Estimating Chlorophyll a in Highly Turbid Lakes: The Case of Taihu Lake, China.” Remate
+ES Sensing OfEnvirOnment 113: 1175—1182. doi:10.1016/j.rse.2009.02.005.
+5: Le, C., Y. Zha, Y. Li, D. Sun, H. Lu, and B. Yin. 2010. “Eutrophication of Lake Waters in China:
+5 Cost, Causes, and Control.” Environmental Management 45: 662—668.
+:1, Lewis, D., R. W. Gould J r, A. Weidemann, S. Ladner, and Z. Lee. 2013. “Bathymetry Estimations Using
+3 Vicariously Calibrated HICO Data. Ocean Sensing and Monitoring V.” In Proceedings of SPIE,
+g edited by W. Hou and R. A. Amone, V01. 8724, 87240N-1—87240N-12. d0i:10.1117/12.2017864.
+E Lucke, R. L., M. Corson, N. R. McGlothlin, S. D. Butcher, D. L. Wood, D. R. Korwan, R. R. Li, W.
+O A. Snyder, C. 0. Davis, and D. T. Chen. 2011. “Hyperspectral Imager for the Coastal Ocean:
+E Instrument Description and First Images.” Applied Optics 50 (11): 1501—1516. doi:10.1364/
+C; AO.50.001501.
+a Martinolieh, P. M., and T. Scardino. 2011. Automated Processing System Useriv Guide Versian 4.2.
+35 Washington, DC: NRL. http://WWW7333.nrlssc.navy.mil/docs/aps_v4.2/htm1/user/aps_chunk/
+. E indexxhtml.
+:3 Miller, R. L., and B. A. McKee. 2004. “Using MODIS Terra 250 M Imagery to Map Concentrations
+: of Total Suspended Matter in Coastal Waters.” Remote Sensing ofEnvironment 93: 259—266.
+ﬁ doi:10.1016/j.rse.2004.07.012.
+% Mobley, C. D. 1999. “Estimation of Remote-Sensing Reﬂectance From Above-Surface
+8 Measurements.” Applied Optics 38: 7442—7455. doi:10.1364/AO.38.007442.
+'3 Morel, A., and L. Prieur. 1977. “Analysis of the Variations in Ocean Color.” Limnology
+E Oceanagraphy 22: 709—722.
+Q Moses, W. J ., A. A. Gitelson, R. L. Perk, D. Gurlin, D. C. Rundquist, B. C. Leavitt, T. M. Barrow,
+and P. Brakhage. 2012. “Estimation of Chlorophyll-a Concentration in Turbid Productive
+Waters Using Airborne Hyperspectral Data.” Water Research 46: 993—1004. doi:10.1016/j.
+watres.2011.11.068.
+Moses, W. J ., A. A. Gitelson, S. Berdnikov, and V. Povazhnyy. 2009. “Estimation of Chlorophyll-a
+Concentration in Case 11 Waters Using MODIS and MERIS Data—Successes and Challenges.”
+Envimnmental Research Letters 4. doi:10.1088/1748-9326/4/4/045005.
+National Research Council. 2007. “Earth Science and Applications From Space: National
+Imperatives far the Next Decade and Beyand. Cammittee an Earth Science and Applicatians
+From Space: A Cammum'ty Assessment and Strategy far the Future”, 456. Washington, DC:
+National Research Council 0-309-66714-3.
+Nevers, M. B., and R. L. Whitman. 2005. “Newcast Modeling of Escherichia Coli Concentrations at
+Multiple Urban Beaches of Southern Lake Michigan.” Water Research 39: 5250—5260.
+doi:10.1016/j.watres.2005.10.012.
+NIST/SEMATECH. 2012. Chapter 7.1.6. What are Outliers in the Data? NIST/SEMATECH e-
+Handbook of Statistical Methods. http://WWW.it1.nist.g0V/div898handb00k/April2012.
+
+"
+"36","2962 DJ. Keith et a1.
+O’Reilly, J . E., S. Maritorena, B. G. Mitchell, D. A. Siegel, K. L. Carder, S. A. Garver, M. Kahru,
+and C. R. McClain. 1998. “Ocean Color Chlorophyll Algorithms for SeaWiFS.” Journal of
+Geaphysical Research 103 (C11): 24,937—24,953
+Oregon State University — HICO. 2011. Working with the Data — Gealocating the Data. http://hico.
+coas.oregonstate.edu/datsets/geolocation.shtml.
+Palandro, D. A. 2006. “Coral Reef Habitat Change and Water Clarity Assessment (1984—2002) for
+the Florida Keys National Marine Sanctuary Using Landsat Satellite Data.” Dissertation, 116.
+University of South Florida, Tampa.
+Pegau, S., J . V. R. Zaneveld, B. Mitchell, G. Mueller, J . L. Kahru, M. Wieland, J . Malgorzat, and M.
+Stramska. 2003. Inherent Optical Praperties: Instruments, Characterizatians, F ield
+Measurements and Data Analysis Pratacals, NASA/TM-2003-211621/Rev4 - Vol. IV.
+Greenbelt, MD: Goddard Space Flight Center.
+Rieker, M. C., B. K. Odhiambo, and J . M. Church. “Spatial Analysis of Soil Erosion and Sediment
+Fluxes: A Paired Watershed Study of Two Rappahannock River Tributaries, Stafford County,
+Virginia.” Enviranmental Management 41 (5): 766—778. doi:10.1007/500267-008-9094-6.
+E Schaeffer, B. A., J. D. Hagy, J. C. Lehrter, R. N. Conmy, and R. Stumpf. 2012. “An Approach to
+3 Developing Numeric Water Quality Criteria for Coastal Waters Using the SeaWiFS Satellite
+33 Data Record.” Environmental Science and Technalogy 46: 916—922. doi:10.1021/es2014105.
+S Sehaeffer, B. A. 2011. “HICO — Pathﬁnder Innovation Project: Quality Assurance Project Plan.”
+E EPA QAPP-GED/EDEB/BS/2011-01-001, 31 May 2011.
+g Stumpf, R. P., M. E. Culver, P. A. Tester, M. Tomlinson, G. J . Kirkpatrick, B. A. Pederson, E. Truby,
+W V. Ransibrahmanakul, and M. Soraceo. 2003. “Monitoring Karenia Brevis Blooms in the Gulf
+25 of Mexico Using Satellite Ocean Color Imagery and Other Data.” Harmful Algae 2: 147—160.
+5: doi:10.1016/Sl568-9883(02)00083-5.
+5 Tehrani, N. C., E. J. D’Sa, C. Osburn, T. S. Bianchi, and B. A. Sehaeffer. 2013. “Chromophoric
+$1, Dissolved Organic Matter and Dissolved Organic Carbon From SeaWiFS, MODIS and MERIS
+3 Sensors: Case Study for the Northern Gulf of Mexico.” Remote Sensing 5: 1439—1464.
+g doi:10.3390/r55031439.
+E Tiwari, S. P., and P. Shanmugam. 2011. “An Optical Model for the Remote Sensing of Coloured
+O Dissolved Organic Matter in Coastal/Oeean Waters.” Estuarine, Coastal and Shelf Science 93:
+E 396—402. d0i:10.1016/j.ecss.2011.05.010.
+C; Tuﬁllaro, N., C. 0. Davis, and K. B. Jones. 2011. “Indicators of Plume Constituents From HICO.”
+3% Proceedings of ocean optics XX, Anchorage, AK, September 27—October 1.
+35 Van Stokkom, H. T. C. and R. Guzzi. 1984. “Atmospheric Spectral Attenuation of Airborne Remote
+E Sensing Data: Comparison Between Experimental and Theoretical Approaches.” International
+:3 Jaurnal OfRemOte Sensing 5: 925—938.
+: Wang, H., C. M. Hladik, W. Huang, K. Milla, L. Edmiston, M. A. Harwell, and J . F. Schalles. 2010.
+§ “Detecting the Spatial and Temporal Variability of Chlorophyll-a Concentration and Total
+% Suspended Solids in Apalachioeola Bay, Florida Using MODIS Imagery.” International
+8 Jaurnal OfRemOte Sensing: 439—453. doi:10.1080/01431160902893485.
+'3 Welschmeyer, N. A. 1994. “Fluorometric Analysis of Chlorophyll a in the Presenees of Chlorophyll
+E b and Phaeopigments.” Limnology and Oceanography 39: 1985—1992. doi:10.4319/
+Q 10.1994.39.8.1985.
+Werdell, P. J., S. W. Bailey, B. A. Franz, L. W. Harding, Jr., G. C. Feldman, and C. R. McClain.
+2009. “Regional and Seasonal Variability of Chlorophyll-a in Chesapeake Bay as Observed by
+SeaWiFS and MODIS—Aqua.” Remote Sensing ofEnvirOnment 113: 1319—1330.
+Witter, D. L., J . D. Ortiz, S. Palm, R. T. Heath, and J . W. Budd. 2009. “Assessing the Application of
+SeaWiFS Ocean Color Algorithms to Lake Erie.” Journal ofGreat Lakes Research 35 (3): 361—3 70.
+Zhang, Y., Y. Yin, L. Feng, G. Zhu, Z. Shi, X. Liu, and Y. Zhang. 2011. “Characterizing
+Chromophorie Dissolved Organic Matter in Lake Tianmuhu and Its Catchment Basin Using
+Excitation-Emission Matrix Fluorescence and Parallel Factor Analysis.” Water Research 45
+(16): 5110—5122. d0i:10.1016/j.watres.2011.07.014.
+
+"

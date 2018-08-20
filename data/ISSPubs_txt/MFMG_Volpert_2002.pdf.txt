@@ -1,0 +1,358 @@
+"","x"
+"1","81631-0721(02)01467-5/FLA AID: 1467 Vol . 330(0) P . 1 (1-6)
+
+CRAgroup 2002/03/18 Prn:18/04/2002; 9:12 F:PXPP1467.teX bszOL p. 1
+
+C. R. Mecanique 330 (2002) 1—6
+
+Convectlon Induced by composmon gradlents
+
+1n m1sc1ble systems
+
+Vitaly A. Volpert 3, J ohn A. Pojman b, Rozenn Texier—Picard a
+
+a MAPLY UMR 5585, Université Lyon 1, 69022 Villeurbanne cedex, France
+
+b University of Southern Mississipi, 2609 West Fourth Street, M’Cleskey Hall, Roam H, Hathesbrug, MS
+
+39406, USA
+
+Received 11 January 2002; accepted after revision 19 March 2002
+
+Note presented by Sébastien Candel.
+
+Abstract When two miscible ﬂuids, such as glycerol (glycerin) and water, are brought in contact,
+a large concentration (and density) gradient eXists, which relaxes through diffusion. With
+a mathematical model based on the Korteweg stress, we show that convection can occur
+which is analogous to surface-tension induced convection (STIC) 0r Marangoni convection.
+Speciﬁcally, we show that with realistic parameters signiﬁcant ﬂows can occur with plane
+interfaces and that drops of miscible ﬂuids can act like their immiscible counterparts.
+Regarding plane interfaces, an experimental conﬁrmation of this phenomenon is planned
+for the international Space Station. To cite this alfticle: V.A. Volpert et al., C. R. Mecanique
+330 (2002) 1—6. © 2002 Academie des sciences/Editions scientiﬂques et medicales Elsevier
+SAS
+ﬂuid mechanics / computational ﬂuid dynamics / convection / miscible ﬂuid / diffuse
+interface / microgravity / interfacial tension
+Convection induite par des gradients de composition dans les
+systemes miscibles
+
+Résumé Quand deuX ﬂuides miscibles, tels 1e glycerol (glycerine) et l’eau, sont mis en contact, un
+fort gradient de concentration se crée, qui decroit au cours du temps du fait de la diffusion.
+Avec un modele mathematique base sur le tenseur des contraintes de Korteweg, nous
+montrons qu’il peut se produire un phenomene de convection analogue a la convection due
+a la tension de surface, ou convection de Marangoni. En particulier, nous montrons qu’avec
+des parametres realistes 0n peut obtenir des courants signiﬁcatifs avec des interfaces planes,
+et que des gouttes de liquides miscibles peuvent se comporter comme leurs analogues non
+miscibles. Pour les interfaces planes, une conﬁrmation experimentale de ce phenomene est
+prevue dans la Station Spatiale Internationale. Pour citer cet artigle: V.A. Volpert et al.,
+C. R. Mecanique 330 (2002) 1—6. © 2002 Academie des sciences/Editions scientiﬂques et
+medicales Elsevier SAS
+mécanique des ﬂuides / mécanique des ﬂuides numérique / convection / ﬂuides
+msicibles / intreface diffuse / microgravité / tension superﬁcielle
+
+E-mail addresses: volpert@maply.uniV-lyon1.fr (VA. Volpert); j 0hn@p0jman.com (J .A. Pojman);
+
+texier@maply.uniV-lyon1.fr (R. TeXier-Picard).
+
+© 2002 Academie des sciences/Editions scientiﬂques et medicales Elsevier SAS. Tous droits réservés
+
+81631-O721(02)01467-5/FLA 1
+
+"
+"2","ARTICLE IN PRESS
+81631—0721(02)01467-5/FLA AID:1467 Vol.330(0) P.2(1—6)
+CRAgroup 2002/03/18 Prn:18/04/2002; 9:12 F:PXPP1467.teX bszOL p. 2
+VA. Volpert et a1. / C. R. Mecanique 330 (2002) 1—6
+Version frangaise abrégée
+
+Korteweg [l] fut le premier, en 1901, 2‘1 proposer que des gradients de densité dans un ﬂuide pouvaient
+engendrer des forces, analogues 2‘11atensi0n de surface entre ﬂuides non miscibles, mais qui decroissent avec
+le temps du fait de la diffusion. En 1949, Zeldovich [2] s’interessa 2‘1 l’eXistence d’une tension interfaciale
+transitoire, et proposa pour cette tension l’expression (1), 01‘1 AC est 121 variation de fraction massique 2‘1
+travers la zone de transition, et 6 est la largeur de cette zone. Cette relation fur généralisée par Rousar et
+Nauman [3] 2‘1 des systemes loin de l’equilibre, pour des gradients de concentration linéaires, et retrouVée
+également par Cahn et Hilliard [4] dans le cadre de leur théorie sur l’energie libre des ﬂuides non-uniformes.
+
+D’autres travauX ont été consacrés 2‘1 differents aspects de ce phenomene [7,8], notamment 2‘1 la mesure de
+cette tension suivant une méthode proposée par Vonnegut [5] et reprise par Petitjeans pour des ﬂuides
+miscibles [6]. Cependant nous n’avons pas connaissance de travauX sur des courants causes par des
+gradients de concentration ou de temperature, en l’absence de convection naturelle.
+
+Nous montrons ici par des simulations numériques que lorsque deuX ﬂuides miscibles sont mis en contact,
+les gradients de concentration peuvent générer des courants de convection. Ces courants ont des effets
+analogues 2‘1 ceuX de la tension de surface pour des liquides non msicibles. DeuX cas sont étudiés : les
+gouttes de ﬂuides miscibles et les interfaces planes.
+
+Dans l’hypothese 01‘1 les ﬂuides sont incompressibles, ont meme densité ,0, meme Viscosite ,u, on obtient
+le systeme decrit 2‘1 la Section 2.1, 01‘1 C designe la concentration, 1) la Vitesse du ﬂuide, p la pression, et D
+le coefﬁcient de diffusion, suppose independant de C . Enﬁn, T = (T,- j)i, 1:172 est le tenseur de contraintes
+de type Korteweg, 01‘1 k est un parametre que nous estimons par des mesures expérimentales de tension de
+surface. Ce systeme est consideré dans un domaine rectangulaire, avec des conditions au bord de ﬂux nul
+pour la concentration, et de non-glissement pour la Vitesse. Il est discretisé par differences ﬁnies et résolu
+par directions alternees.
+
+Les simulations numériques de ce modele, realisees avec des parametres réalistes, donnent les résultats
+suivants : une goutte elliptique, miscible dans le ﬂuide environnant, prend une forme spherique du fait des
+courants de convection (Fig. 1). Par centre, une goutte tres allongée 21 d’abord tendance 2‘1 se scinder en pe-
+tites gouttes (Fig. 2), mais elle ﬁnit par se contracter en une seule goutte également spherique. Enﬁn, dans le
+cas d’interfaces planes, des gradients de temperature, des gradients de concentration paralleles 2‘1 l’interface,
+ou des gradients de la largeur de la zone de transition peuvent générer des courants de convection (Fig. 3).
+
+Une serie d’expériences en microgravite est prévue pour Veriﬁer les résultats concernant les interfaces
+planes entre un monomere et son polymere. La microgravite doit permettre d’éliminer les phenomenes de
+convection naturelle.
+
+1. Introduction
+
+Korteweg proposed in 1901 that 21 nonuniform density (concentration or temperature) distribution leads to
+stresses in 21 ﬂuid [1]. He was the ﬁrst to propose 21 model how miscible ﬂuids could behave like immiscible
+ﬂuids. When two miscible ﬂuids, such as 21 glycerol (glycerin) and water, are brought in contact, 21 large
+concentration (and density) gradient exists, Which relaxes through diffusion. He supposed that stresses
+caused by the density gradient acted like 21 surface tension that would also relax With time. Zeldovich
+considered the problem of an effective interfacial tension (EIT) for such systems in 1949 and derived an
+expression for this tension [2].
+
+AC2
+0 _ k 6 (1)
+Where k is a system-speciﬁc parameter, AC is the variation of mass fraction through the mixing zone, and
+6 is the Width of that zone.
+2
+
+"
+"3","81631—0721(02)01467-5/FLA AID:1467 Vol.330(0) P.3(1—6)
+CRAgroup 2002/03/18 Prn:18/04/2002; 9:12 F:PXPP1467.teX bszOL p. 3
+To cite this article: V.A. Volpert et al., C. R. Mecanique 330 (2002) 1—6
+
+By assuming a linear concentration gradient, Rousar and Nauman demonstrated that an interfacial tension
+can be found without assuming that the system is at equilibrium and arrived at the same relationship as
+Zeldovich [3]. Cahn and Hilliard considered diffuse interfaces of immiscible ﬂuids [4]. They treated the
+free energy of a nonuniform ﬂuid by including a term proportional to the square of the concentration
+gradient. Their theory predicts that for a linear gradient the interfacial tension has the same form as
+Eq. (1). The interfacial tension between two ﬂuids can be measured using spinning drop tensiometry, which
+was developed by B. Vonnegut [5]. Petitjeans was the ﬁrst to apply this technique to miscible ﬂuids [6].
+Petitjeans measured the EIT for glycerol/water and found that the drop diameter reached a quasi-steady
+value after 100 seconds with a value of 0.6 InN / 1n.
+
+Petitjeans [7] and J oseph and Renardy reviewed many aspects of interfacial phenomena in miscible ﬂu-
+ids [8]. However, we know of 110 works on the problem of convection caused by concentration or temper-
+ature gradients in miscible ﬂuids that is not caused by buoyancy-driven ﬂows. We propose that convection
+can occur that is analogous to surface-tension induced convection (STIC) 0r Marangoni convection. Specif-
+ically, we show that with realistic parameters signiﬁcant ﬂows can occur with plane interfaces and that
+drops of miscible ﬂuids can act like their immiscible counterparts. Experimental conﬁrmation will require
+weightlessness to eliminate the buoyancy-driven ﬂows that would necessarily occur.
+
+2. Mathematical formulation
+2.1. A Korteweg-like stress
+
+In our model, we assume that thermal and diffusive ﬂuxes are small; the ﬂuids are incompressible and
+have the same density and Viscosity. The last assumption is made to simplify the model and to separate the
+inﬂuence of several factors that would complicate the interpretation of the results. With these assumptions
+the Korteweg-like stress takes the form [9]:
+
+2 2
+8C 8C 8C BC
+T11=k — , T12=T21=—k——, T22=k —
+
+8y 8x 8y 8x
+where C is the mass fraction of the ﬁrst liquid, and where k is system-speciﬁc and depends on temperature.
+We emphasize that k is the constant arising in the square gradient energy term in the Cahn—Hilliard theory
+[4] (e = e0 + leClZ).
+
+Writing the mass and momentum conservation equations, we obtain the following system of equations:
+
+8C
+
+§+v-VC=DV2C (2)
+
+8V 1 2 l
+
+——|—(V-V)V=——Vp—|—vVV—|——V-T (3)
+
+at p p
+
+V - V = 0 (4)
+Here D is the coefﬁcient ofmass diffusion, V is the velocity, p is the pressure, 1) the kinematic Viscosity, and
+,0 the density. V2 denotes the Laplacian operator. We recall that v, ,0 and D are supposed to be independent
+of the concentration C .
+
+The problem is considered in a rectangular domain [0, L 1] X [0, L2] with noﬂuX boundary conditions for
+the concentration and with the no-slip boundary conditions for the velocity.
+2.2. Estimation of the square gradient parameter
+
+We estimated the value of the square gradient parameter from spinning drop tensiometer measurements.
+Using a Kruss tensiometer and a custom-built high temperature tensiometer, we studied the effective
+interfacial tension for two miscible systems. For glycerol/water and polymer/monomer (at 2000C) the
+values of EIT are approximately 0.6 mN/m. AC is the difference in mass fraction, which is one. We
+needed an estimate of 6, which we obtained from the diffusion distance, 6 = (Dt)1/2.
+
+3
+
+"
+"4","81631—0721(02)01467-5/FLA AID:1467 Vol.330(0) P.4(1—6)
+CRAgroup 2002/03/18 Prn:18/04/2002; 9:12 F:PXPP1467.teX bszOL p. 4
+VA. Volpert et a1. / C. R. Mecanique 330 (2002) 1—6
+
+Petitjeans and Maxworthy measured the diffusion coefﬁcient for glycerin/water to be on the order of
+10—10 m2 / s. Taking the time on the order of 100 s, we obtain 6 of 10—4 In. For polymer at 200 0C, we
+estimated the width of the transition zone to be 3 X 10—4 m, which would give k = 1.8 X 10—7 N.
+
+Although these are only order of magnitude estimates of the square gradient pareameter, they allow us to
+proceed with realistic simulations.
+
+3. Numerical simulations of miscible drops
+
+For the numerical simulations we introduce the stream function and the vorticity. Artiﬁcial boundary
+conditions for the vorticity are used. They are second-order conditions derived from the noslip boundary
+conditions for the velocity. The problem is discretized with a ﬁnite difference scheme and solved by an
+alternating direction method.
+
+We use the following values for the parameters: 1) = 10—4 mZ/s; D = 2.5 x 10—8 mZ/s; k = 1.08 x
+10—6 N. Note that this value of k is larger than the above estimate. Indeed we use a value of 6 ten times
+as large as the diffusion distance, because we need many points of discretization in the transition area.
+Therefore we have to raise also the value of k to compensate this. The results of the simulations weakly
+depend on values of k and 6 if the product k6 is kept constant.
+
+Our simulations show that an initially elliptic drop forms into a circle in 10 seconds (see Fig. 1). If
+these results are compared with the evolution of the same drop under pure diffusion, it appears clearly that
+convection is responsible for this evolution.
+
+We also consider a long stream in a rectangular domain. After a few seconds the convection leads to
+the constriction of the stream, but it does not break into droplets (see Fig. 2). After a long time (90 s), the
+capillary forces make the drop more circular.
+
+4. Numerical simulations of plane interfaces
+
+We consider a plane interface between two miscible ﬂuids. We found numerically that convection could
+occur by a temperature gradient or a concentration gradient parallel to the interface, or by a gradient in
+the transition width 6. Such a gradient in 6 could be created by a nonuniform photopolymerization. We
+
+W 100 ///W/\\ 100
+1,,“ 80 ‘*-———""’ 80
+0 WW 60 0 W 60
+20 40 4o 20 40 40
+60 20 60 20
+80 1000 80 1000
+(a) (b)
+
+Figure 1. Evolution of an elliptic drop. (a) Initial composition. (b) Composition after 10 seconds. The dimensions of
+the domain are L1 = 0.04 111, L2 = 0.02 m. The initial dimensions of the drop (including transition zone) are
+0.024 mx 0.012 m.
+
+Figure 1. Evolution d ’Lme goutte elliptique. (a) Composition initiale. (b) Composition aprés 10 secondes. Les
+dimensions du domaine 507% L1 = 0,04 m, L2 = 0,02 m. Les dimensions initiales de la goutte (zone de transition
+comprise) 50m 0,024 m X 0,012 m.
+
+4
+
+"
+"5","81631—0721(02)01467-5/FLA AID: 1467 Vol.330(o) P.5 (1—6)
+CRAgroup 2002/03/18 Prn:18/04/2002; 9:12 F:PXPP1467.teX bszOL p. 5
+Pour citer cet article : V.A. Volpert et al., C. R. Mecanique 330 (2002) 1—6
+
+,
+‘ .uI“r.=1=1""IEii'i'ﬁl‘ﬁiﬁﬁﬁﬁé'ilil‘ﬁﬂgiﬂii‘.Etta:i‘llr:.l.:lll::m:::Eiiiiiii'ﬁ'i'iiﬁﬁ‘}W! ‘ .4 1.3.
+0.8 1%.“..luﬂl 0.8 w? \W W
+0.6 n O 6 , ..
+ui""i.u:I.n:nﬁi'ﬁ':'95.EEEiiEEEEEEEEEEEqE212111523339:gait.:ﬁﬁi'uggiiii'mn:i'u-I""11,...‘u"" - W W >
+0-4 :‘ “1‘"".53' ' 0.4 E W
+35.4”:
+r #555?” 120140 fil’jﬂ 120140
+0 ﬂaw 80 100 0 80 100
+20 40 6O 20 40 60
+60 80 100 20 40 60 80 100 20 40
+120 140 O 120 140 O
+t = 0 s t = 60 s
+Figure 2. Evolution of composition for a stream. Dimensions of the domain: L1 = 0.06 m, L2 = 0.02 m. Initial
+dimensions of the stream (including transition zone): 0.05 m x 2 - 10—3 m.
+Figure 2. Evolution de la compasitian d ’une gautte allongée. Dimensians du damaine .° L1 = 0,06 m, L2 = 0,02 m.
+Dimensians initiales de la goutte (207% de transitian camprise): 0,05 m X 2 - 10—3 m.
+0005‘ -'.'::L';~.
+' 0 004
+""0”‘9’77 -0 001 '/ '
+0-5 4 -0 002 '
+j j - H _ —0 005
+’ 150
+100
+100 O
+0 50 SO 100 ‘0
+100 50 ﬁg ‘
+150 200 “ 200 2:10
+250 3000 "" 300 0
+(a) (b)
+Figure 3. Convection caused by a nonuniform transition width 8. Dimensions of the domain: 0.06 m x 0.03 m.
+(a) Initial composition. (b) Stream function after 10 s.
+Figure 3. Convection due 51 une largeur de transitian 8 nan um’farme. Dimensians du damaine : 0, 06 m X 0, 03 m.
+(a) Campasition initiale. (b) Fanction de courant aprés 10 s.
+illustrate the latter case in Fig. 3. The total displacement of a liquid particle because of the convection can
+be up to several millimeters, which would be sufﬁcient to observe it experimentally.
+5. Conclusions and future work
+Our simulations have shown that using realistic parameters, convection can occur in miscible ﬂuids from
+composition gradients. Because the composition gradients would also lead to buoyancy-driven convection,
+experiments must be performed in weightlessness. Preliminary experiments were performed on parabolic
+ﬂights on NASA’s KC-134 airplane in which a drop of water was injected into glycerol and a stream of
+glycerol was injected into water (Fig. 4). The behavior predicted in the simulations was not observed,
+probably because quiescent weightlessness conditions available by free-ﬂoating the apparatus were only 1
+0r 2 s in duration.
+
+"
+"6","S1631-0721(02)01467-5/FLA AID:1467 Vol . 330 (0) P . 6 (1-6)
+CRAgroup 2002/03/18 Prn:18/04/2002; 9:12 F:PXPP1467.teX bszOL p. 6
+VA. Volpert et a1. / C. R. Mecanique 330 (2002) 1—6
+
+. _ ‘ l h
+j ' 1 ‘ I
+.3 '1 1 1 1
+. ‘ {A I
+1 ' i
+1 ' '
+1‘.) ’1 ‘2 ' I
+(a) (b)
+
+Figure 4. (a) Water (with dye) inj ected into glycerol in low g. During the short time of the experiment, a few seconds,
+the drop did not change its shape. (b) A stream of glycerol (with dye) inj ected into water in low g. The stream did not
+break during the few seconds of weightlessness. Both experiments were performed in 0.022 m diameter tubes.
+Figure 4. (21) Eau colorée injectée dams la glycérine enfaible gravité. Pendant la durée de l ’expérience (quelques
+secondes), laforme de la goutte n ’a pas évolué. (b) Glycérine (colorée) injectée dams l ’eau enfaible gravité. La
+goutte ne S ’est pas scindée pendant les quelques secondes de microgravité. Les deux expériences sont réalisées avec
+des tubes de diamétre 0,022 m.
+
+Additional experiments are planned with poly(dodecyl acrylate) and its miscible monomer. The
+Transient Interfacial Phenomena in Miscible Polymer Systems (TIPMPS) experiment will be ﬂown on
+the International Space Station. Photopolymerization 0f the monomer will be performed to create known
+interfacial proﬁles.
+
+Acknowledgements. Support for this project was provided by NASA’s Microgravity Materials Science Program
+(NAG8—973). We thank D. J oseph for allowing us to use a high temperature tensiometer.
+
+References
+
+[1] DJ. Korteweg, Sur la forme que prennent 1es equations du mouvements des ﬂuides si l’on tient compte des forces
+capillaires causées par des variations de densité considérables mais connues et sur la théorie de la capillarité dans
+l’hypothese d’une variation continue de la densité, Archives Néerlandaises des Sciences Exactes et Naturelles 6
+(1901) 1—24.
+
+[2] Y.B. Zeldovich, About surface tension of a boundary between two mutually soluble liquids, Zhur. Fiz. Khim. 23
+(1949) 931—935 (in Russian).
+
+[3] I. Rousar, E.B. Nauman, A continuum analysis of surface tension in nonequilibrium systems, Chem. Eng.
+Comm. 129 (1994) 19—28.
+
+[4] J .W. Cahn, J .E. Hilliard, Free energy of a nonuniform system. I. Interfacial free energy, J . Chem. Phys. 28 (1958)
+258—267.
+
+[5] B. Vonnegut, Rotating bubble method for the determination of surface and interfacial tensions, Rev. Sci. Instrum. 13
+(1942) 6—9.
+
+[6] P. Petitjeans, Une tension de surface pour les ﬂuides miscibles, C. R. Acad. Sci. Paris, Série IIb 322 (1996) 673—679.
+
+[7] P. Petitjeans, Fluides non miscibles/ﬂuides miscibles : des similitudes intéressantes, C. R. Acad. Sci. Paris,
+Série IIb 325 (1997) 587—592.
+
+[8] DD. Joseph, Y.Y. Renardy, Lubricated transport, drops and miscible ﬂuids, in: Fundamentals of Two—Fluid
+Dynamics, Springer, New York, 1992.
+
+[9] L. Antanovskii, Microscale theory of surface tension, Phys. Rev. E 54 (1996) 6285—6290.
+
+6
+
+"

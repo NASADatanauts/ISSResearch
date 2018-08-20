@@ -1,0 +1,310 @@
+"","x"
+"1","HICDPS: HUMAN INTERFACE COMPUTER Beckers F, Verheyden B, De Winne F, Duque P, Chaput D, Aubert A E.
+Hicops: Human interface computer program in space.
+PROGRAM IN SPACE 1 1 J Clin Monit 2004; 18: 131—136
+Frank Bakers.) PhD) MEZg’ Bart Verheyden’ A/gphyfbid’ ABSTRACT. Background. During long experimental set ups, a
+Frank D e l/ane, MEi/Lg, Pedro Duque’ MEi/Lg, Dldler protocol book usually guides cosmonauts. This is not very easy to
+CIWPW; M13748} cmd André E Aubert, P 141); M85] work with in microgravity conditions and is not very efﬁcient.
+For the cardiovascular physiology experiment CARDIOCOG
+during the Belgian Soyuz Mission (Odissea, November 2002)
+we developed a software program that guided the cosmonauts
+through the experiment. The software was developed in Lab—
+VIEW thoroughly tested by CNES and the Russian space au—
+thorities and transported to the 188 as a stand—alone application.
+An adapted version was used during the Spanish Cervantes Mis—
+sion in October 2003. Results. This program provided several
+advantages: (1) error procedures could be easily dealt with in
+using the program’s incorporated error structure; (2) the experi—
+mental sequences were easy to follow for the cosmonauts; (3) the
+experimental duration was exactly the same for all repetitions of
+the experiment, since the program imposed the timing; (4) after
+the ﬂight, we were able to reconstruct all sequences of the exper—
+iment using a log—ﬁle that was automatically created during the
+different steps of the experiment; and (5) we were able to impose
+exact breathing frequencies to the cosmonauts using a Visual aid.
+Conclusion. Less training was necessary for the cosmonauts to
+learn the experiment. Reconstruction of the experiment timing
+was easy. Exact breathing frequencies were Obtained at each rep—
+etition. The program HICOPS worked to the overall satisfaction
+of the cosmonauts and they preferred working with HICOPS
+instead of with paper ﬂow sheets. Data for the cardiovascular eX—
+periment during both missions were Obtained in a standardised
+way.
+KEY WORDS. Space software, graphic language, human interface,
+Odissea, Cervantes, ISS, ESA Soyuz mission, medical informatics,
+telemedicine.
+INTRODUCTION
+The scientiﬁc programs of short—duration space missions
+are Often fully booked. Maximum amount of science (life
+science as well as physical science experiments) is to be
+performed on the few days spent on board the Interna—
+tional Space Station (188). This is also the case for the
+European Soyuz Flights, allowing the European astronauts
+and Russian cosmonauts to work and live on board the
+From the 1Laborat0ry of Experimental Cardiology Department 188.
+of Molecular and Cardiovascular Research,2 Univer51ty Hospital For the Belgian TaXi Fligh t (Odissea Mission, November
+Gasthuisberg, K.U. Leuven, Leuven,Belg1um, ESA astronaut, EAC, _ _
+C Ologne, Germany, and the 3CNES, Toulouse, France. 2002).the protocols of the cardlovascular eicperlments were
+Received 15 Dec, 2003, and in revised form 10 Feb, 2004. Accepted cornbmed to reduce the tOtal preparatlon tmlC' The prepa—
+for publication 20 Feb, 2004. ratlons were 51mllar for all experlments. Durmg all experl—
+, ments, ECG and blood pressure (ﬁnger cuffmethod) were
+Address Correspondence to A.E. Aubert, Laboratory OfExperimen— . . . .
+tal Cardiology, University Hospital Gasthuisberg O/N, Herestraat 49, recorded. contmueusly and In the dlfferent subpartspllYSi—
+3000 Leuven, Belgium Ologlcal 1ntervent10ns were planned 1n order to e11C1t var1—
+E—mail: Andre.aubert@med. kuleuven.ac.be ations in the autonomic control of cardiovascular function.
+Journal ofClinical Monitoring and Computing 18: 131—136, 2004.
+© 2004 Kluwer Academic Publishers. Printed in the Netherlands
+
+"
+"2","132 Journal ofClinical Monitoring and Computing Vol 18 N0 2 2004
+The joint protocol, CARDIOCOG, consisted of four ware has been used for several years at the Laboratory of
+parts: Experimental Cardiology, Leuven, Belgium [2—5], and has
+excellent tools to create user interfaces. Also the possibil—
+1, RHYTHM; (PI; Andre Aubert, K,U, Leuven, Leuven, ity to create stand—alone applications was an asset. Software
+Belgium): baseline measurements theart rate variabil— development started in the ﬁrst months Of 2002 and the
+jty (HRV), blood pressure variability (BPV) and spon— ﬁnal version of the program for the Odissea Mission was
+taneous baroreﬂex sensitivity (1) presented on 19 July 2002 after a critical evaluation by the
+2, RESPI; (PI; Manuel Paiva, ULB, Brussels, Belgium): French space organisation Centre National d’Etudes Spa—
+inﬂuence of imposed breathing frequencies on HRV tiales (CNES). After this date, the pI‘OtOCOlS could be WI‘it—
+and BPV ten and the ﬁnal tests of the hard disk were performed. The
+3, STRESS; (PI; Claude Gharib, Lyon, France): Inﬂuence hardware and software were also evaluated by RosaViakos—
+of mental stress and controlled breathing 0n HRV and mos, a Russian space agency. Special attention was given
+BPV t0 the user interface of the program, which should be con—
+4, TEXT; (PI; Martin ijj; VUB, Brussels, Belgium): sistent throughout the program, Clear and easy to use.
+Cognitive tests and the relation with heart rate. The ﬁnal acceptance procedure went as follows: The
+program was uploaded to the 188 on a removable hard disk
+As a result, the total experiment lasted for 87 min during that allows to bring SPCCiﬁC software related to experiments
+the Odissea Mission (Figure 13). For the Cervantes Mission, from a mission to the station. It also serves for data storage
+a shorter protocol lasting for 30 min (Figure 1b) was worked for results from experiments Obtained during the mission.
+out with Prof. Gharib, France, consisting Of the following: These hard disks have to be resistant to the harsh conditions
+imposed by space ﬂight (especially mechanical constraints
+1. RHYTHM: baseline measurement of ECG, BP and during lift Off and landing).
+respiration; Once the software related to the experiments is loaded
+2. FLEXION: 1 min ﬂexion of the head; onto the hard disk a validation phase is initiated to Check the
+3. STRESS: inﬂuence of mental stress test on cardiovas— appropriate functioning Of each subroutine. Every com—
+cular parameters; mand is tested in both nominal mode and degradation. It
+4. IMPOSED BREATHING: inﬂuence oftwo controlled must be possible to work around every software defect in
+breathing frequencies on cardiovascular variability. order to not endanger the correct execution of an experi—
+ment. Training sessions and pre—ﬂight measurements add to
+In the past, the cosmonauts were guided through such this validation.phase. Remarks about the ergonomy frorh
+an experiment with a lively protocol book, which is difﬁ— the end—user, 1'6"" the eosmonaut, can be integrated until
+cult to handle in microgravity conditions. Also in previous 3 months befere the mISSIOh' _ _
+experiments using ﬁxed or controlled breathing rates, the The hard $115k is then Smeltted t0 testprogtams in C01—
+- - - - laboration w1th R0sav1ak0sm0s before being shipped to the
+respiratory frequency was timed using the wristwatches 0f _ _
+the cosmonauts. This created deviations from the intended 188 by a Progress YCSSCI' This p ?Ogmm veriﬁes the test re—
+frequency and was not very accurate and more demanding sults Oh the hard disk, Checking its integrity after Simulated
+0n the subjects. The use Of the protocol books can also be space ﬂlght' Finally, every coinmand 0.fthe software p reseiit
+very time consuming. For this reason, the exact timing of Oh the hard (hSk 1_S tested Wlth a dedicated p rogram' Th1s
+an experiment was hard to predict and experiments were test is repeated tw1ce: ﬁrst time by ESA/CNES in Western
+not standardised. Europe. All remarks are corrected when needed before the
+Therefore, we opted to develo p a software program to second and ﬁnal test by R0sav1ak0sm0s 1n Russ1a.
+guide the cosmonauts through the different protocols, in
+a uniform manner, resulting in ﬁxed experiment timelines
+and very standardised experimental procedures. APPLICATION
+— The software program was used during the pre—ﬂight base—
+PREPARATIONS line data collections to familiarise the cosmonauts with the
+program. Also, the software was used during the hardware
+The software platform Chosen was LabVIEW version 5.1 training sessions.
+(Laboratory Virtual Instruments, National Instruments, The Odissea Mission with Belgian ESA astronaut Frank
+Austin, TX, USA). LabVIEW is a graphical language using De Winne (ﬂight engineer), together with his two Russian
+blocks as programming elements (subroutines). This soft— crewmembers, Sergei Zaletin (commander) and Yuri
+
+"
+"3","Beckers et al: Hicops: Medical Space Software 133
+a Putting on
+Equipment
+16 min 20 min i 17 min 24 min
+”—H r \ 10 min /——/¥—‘—ﬂ
+Rhythm Respi Stress Text
+Pace.d Stress Controlled
+breathing test breathing
+15-75-9-6-12
+E .m I“
+Putting off
+Equipment
+calib = calibration
+basal = baseline recording of parameters
+br/min = breaths/minute
+b .
+Putting on
+Equipment
+BASELINE FLEXION 'STRESS FREQ_1 FREQ_2
+1 min 10 min 1 min 1 min 5 min 1 min 5 min 1 min ' 5 min
+Putting off
+Equipment
+Freq_1: controlled breathing at 12 breaths/min
+Freq_2: controlled breathing at 15 breaths/min
+Fig. 1. Time line of the cardiovascular experiments during the Odissea Mission (a) and the Cervantes Mission ([9).
+Lonchakov (ﬂight engineer), lifted Offon 30 October 2002 The software was used on ﬂight days 5 and 8. An adapted
+at 03:11 UT (04:11 CET) from the Baikonur cosmodrome version of the software was used on the Spanish Cervantes
+With a brand—new type of Soyuz spacecraft: the Soyuz— Mission With Spanish ESA astronaut Pedro Duque. The
+TMA. They reached the 18$ 2 days later, on 1 Novem— launch took place from the Baikonur Cosmodrome in
+her and successfully docked With the Station at 05:00 UT Kazakhstan at 07.38 CET on 18 October 2003. Docking
+(06:00 CET). took place on 20 October.
+
+"
+"4","134 Journal ofClim'cal Monitoring and Computing Vol 18 No 2 2004
+I) l .udmt:u:)1Hn<;lhIII Hump: Hh-a. F1135?
+n: Tm
+it‘s] . 'v ’ r-V ‘l i- '.‘ on: ‘A ’ I ‘7 ‘ 6:2;
+1:"": .‘. e. 5r: ‘3 C C“ C C C C C 7,;
+‘2‘, Baseline % Imposed Rastperiod % Baseline Stresstost m Controlled -W
+5.3: 1 min measurement breathing ‘ measurement breathing 1 min ‘- .-
+1. 15 minutes 19min 10 minutes ' 5minutes 5minutas 5minutes
+2d 1 ‘ hf“
+I"". ‘u L'
+:3   c a a q a a. c o ,
+‘31 15 br/min Rest 7.5 br/min Rest 9br/min Gbrlmin Rest 12 brfmin ‘2 ,1;
+'2: 3min 1min 3min 1min 3min 3min 1min 3min 9}!""
+23::
+$7171
+;; ""
+3,2] l“ , ; 4 M] “iv ‘ ""‘2;""-‘» ,l'W. ‘I'f A 0,.“ . T-‘Z'l,
+~ 1: :2’ ‘- 1“}: ' «i.-
+. ., "". .‘ t .‘s- 'I'. -.’ '3.“
+?€- .A h ' .t 1:. (.3: 1-.\ :4“
+~.. '~ *v'.» ’ vs {'5'-
+3; ' 63:3
+'52 1 :4};
+1 1‘3""»
+'5"" %
+V- 1?-
+%; WWWWM‘CRFJJV:M'W U‘fn‘ﬁammw LW 3: {i
+33? 2C!
+‘3’: "",ITITIT[’7-TQTJEZTTTTTT : 1 1 , r i , i t {32
+"" * ‘5'
+9 f)» Go to other phase ﬁg.
+.3: odﬂea eta""
+V,‘ r.)
+5; T :
+r. ' “0 311:“.1 ‘ 'A 7'? 3"".152' '9' 2“ -""‘.‘."".""r ' ‘. ""‘x "" , > "" ' . "" “1 “.7‘-' ”Why"" 9’ “J. . .K' br-J'r""! 'N.—"" 7-"". tr..°\ "" ""b‘u‘tu'. “..A‘. ""WW1"" 0'4"". 'uJ‘L—""if’r 1'1 ""'--"" 1"" »'!.1.
+Fig. 2. HICOPS user intey‘ace. Software translation of the Odissea protocol. The bar imposes breathing at ﬁxed rate.
+
+The installation of the software on board 188 was re— There are strong arguments for developing more user—
+ported as ‘easy’ by the cosmonauts. It was done by chang— oriented software. This approach allows standardised pro—
+ing the removable hard drive of the laptop and rebooting cedures for physiological parameter recordings. It is also a
+from the drive. All icons needed to conduct the experi— compulsory procedure for long—term ﬂights or deep space
+ment were readily available on the centre of the desktop. missions where communication with Earth would suffer
+Different icons were available for each crewmember, fur— signiﬁcant delays.
+ther facilitating the start—up of the software. In the past, some software was developed to obtain an
+
+The software was mostly self—explanatory, leading to an objective physical state evaluation [6] of cosmonauts, and
+easy execution of the experiment. Indications were very accordingly make individual prescriptions for current state
+clear and it was very easy for the crew to follow instructions, optimisation. This software can be developed into a com—
+including the breathing rhythm, which was found very puter expert system for stand—alone operation during long—
+intuitive by all crewmembers. Figure 2 shows the protocol term ﬂights.
+translated into the HICOPS software. Other software was designed as an expert system allowing
+
+to estimate the cosmonaut’s current psycho—physiological
+
+— state and also to individualise the physical training programs
+DISCUSSION [7] .
+
+Another project consisted of developing a management
+
+Space missions would have been impossible without the aid information system, including a database management sys—
+
+of informatics. Ever since the ﬁrst space exploration more tem and a decision support system [8], to dynamically anal—
+
+then 40 years ago (Y. Gagarin, April 1961), informatics has yse the variable nutritional content of foods grown and
+
+been an important part of every ﬂight. However, most of prepared in an Advanced Life Support System such as re—
+
+the software, if not the major part, are purely related to quired for long—duration space missions. A health mainte—
+
+operational aspects. nance facility has been developed for use in the 18$ [9].
+
+"
+"5","Bakers et al: Hicops: Medical Space Software 135
+Its essential component is a computerised medical decision procedures could be generated by hardware failures, or
+support system to facilitate automatic decision—making be— by emergency tasks to be carried out by the cosmonauts,
+fore making ground links with supporting physicians. A thereby interrupting the experiment execution.
+supporting telemedicine network, connecting the partners 2. The experiment sequences were easy to follow for
+on an organisational and technical level, facilitates the har— the cosmonauts because of the Visual time indicators.
+monisation process and provides new means for effective Therefore, less pre—ﬂight training time could be assigned
+cooperation between medical professionals [10]. to this experiment.
+
+Our program is intended to be a personal manager for 3. The experiment duration was exactly the same for all
+the crew during the cardiovascular experiments. It guided repetitions of the experiment, since the program im—
+the subjects throughout the different phases of the exper— posed ﬁxed timings for each sequence of the protocol.
+iments. Even in case of drawbacks, the program could be 4. After the ﬂight, we were able to reconstruct all se—
+stopped and continued at any point after the problem had quences of the experiment using a log—ﬁle that was
+been solved. Data loggers allowed to document all differ— automatically created during the different steps of the
+ent phases and special events during the recording sessions. experiment. This log—ﬁle allowed us to monitor off—
+Other versions for ground—based baseline data collection line the sequences of the program and the different user
+and pre—ﬂight training were easily derived from the space interactions with the interface.
+version. The software was easily adapted to the different 5. We were able to impose exact breathing frequencies to
+set up during the Cervantes Mission and will be adapted the cosmonauts using a Visual aid for each repetition of
+for the Delta Mission. Adapted versions of this application the experiment.
+can be used for bed—rest studies or for Mars base simulation 6. The program is very versatile and could easily be adapted
+studies at Concordia in the Antarctic continent. to other situations (pre— and post—ﬂight recordings,
+
+adaptations for other space missions).
+Roomfor improvements 7. Results of cardiovascular experiments during both the
+Odissea Mission and the Cervantes Mission were ob—
+On—screen instructions were only available in English, and tained in a standardised, uniform way for 311 subjects,
+for Russian crewmembers it would have been easier to have as well for the pre— and post—ﬂight recordings as for the
+the instructions also in Russian. in—ﬂight measurements.
+
+Further more, not all instructions were displayed on the The program HICOPS worke d to the overall satisfac—
+screen. During the procedure, the crew also had to ma— _ _ _
+
+. 1 te the Porta res device. Porta res rocedures were tion of the cosmonauts and they preferred working w1th
+I11Pu a P P P -
+
+l ' 'l r but sli htl different throu hout the HICOPS instead ofpaper ﬂow sheets.
+aways very s1m1 a g y g
+whole experiment. These instructions were not presented
+on the sereen so the crew had to use an additional crew ACKNOWLEDGEMENTS
+card, Wthh made the execution more difﬁcult. It was rec— —
+ommended by the cosmonauts that once the software and . . . .
+
+. . . We thank all persons haying supported our part1c1pation
+Portapres installation is complete, the complete procedure . . . .
+would be run from the laptop so that the crew would not H? the Odissea and Cervantes MISSIOHS: DWTC in Bel—
+h f ds. gium and from ESA/ESTEC. We also thank the Odissea
+
+ave to re er to crew car . . . .
+and Cervantes crew for their efforts in making these mis—
+sions a success. This study was supported by a grant from
+
+CONCLUSIONS— the Belgian Federal Ofﬁce of Scientiﬁc Affairs (PRODEX
+— Program) and BUSOC.
+
+Our application of medical informatics could also be
+
+adapted for use in the ongoing development of telemedi— REFERENCES—
+C1ne [11] to support eXtended space ﬂights. As space vehi— —
+Cles move farther and farther from earth, current telemetry 1' Beékels. E Verheyden. B, Albert AB EVfﬂquD Of heart Fate
+systems will not be able tot provide timely medical support. 333:??? £362? dunng and after Spaceﬂlght'l Grew” Physwl’
+Hence, there Wlll be _a need for Oﬂboard medical support 2. Beckers F. Linear and non—linear analysis of cardiovascular vari—
+SyStemS that are intelligent and autonomous [12l' ability: Validation and Clinical applications. Leuven University
+
+Our program HICOPS provided following advantages. press, 2002.
+
+3. Beckers F, Ramaekers D, Aubert AE. Approximate entropy of
+1- Error Procedures COUId be easily dealt With by 11$ng heart rate variability: Validation of methods and application in
+the program’s incorporated error structure. These error heart failure. Cardiovasc Eng 2001; 1: 177—182.
+
+"
+"6","136 Journal ofClinical Monitoring and Computing Vol 18 N0 2 2004
+
+4. Aubert AE, Ramaekers D, Beckers F, et al. The analysis theart 8. Kang S, Both A]. A management information system to study
+rate variability in unrestrained rats. Validation of method and space diets. Life Support Biosphys Sci 2002; 8: 191—197.
+results. Comput Methods Programs Biomed 1999; 60: 197— 9. Gardner RM, Ostler DV, Nelson BD, Logan JS. The role of
+213. smart medical systems in the space station. Int] Clin Monit
+
+5. Beckers F, Ramaekers D, Aubert AE. ACTS: Automated calcu— Comput 1989; 6: 91—98.
+lation Oftachograms and systograms. Prog Biomed Res 1999; 4: 10. Wilke D, Padeken D, Weber T, Gerzer R. Telemedicine for the
+160—165. International Space Station. Acta Astronaut 1999; 44: 579—581.
+
+6. Sonkin V, Kozlovskaya I, Bourchick M, Zaitseva V. Working 11. GrigorieV AI, Sarkisian A. A steps to the medicine of the fu—
+ability ergometric testing of Russian cosmonauts during long— ture: Russian experience in telemedicine. Comput Technol Med
+term ﬂights.] Gravit Physiol 1997; 4: 119—120. 1996; 2: 56—64.
+
+7. Sonkin V, Zaitseva V, Bourchick M, Kozlovskaya I, Stepantsov V, 12. GrigorieV AI, Koslovskaya IB, Potapov AN. Goals ofbiomedical
+Sonkin V: Elaboration of on—board automated training system. support Ofa mission to Mars and possible approaches to achieving
+J Gravit Physiol 2000; 7: 163—164. them. Aviat Space Environ Med 2002; 73: 379—384.
+
+"

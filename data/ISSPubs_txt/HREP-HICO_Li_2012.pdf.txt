@@ -1,0 +1,411 @@
+"","x"
+"1","824 IEEE TRANSACTIONS ON GEOSCIENCE AND REMOTE SENSING, VOL. 50, NO. 3, MARCH 2012
+A T echnique For Removmg Second—Order L1 ght
+Effects From Hyperspectral Imaging Data
+Rong—Rong Li, Robert Lucke, Daniel Korwan, and BO—Cai Gao
+
+Abstract—The Hyperspectral Imager for the Coastal Ocean to the low sensitivity of the sensor at extreme blue and red
+(HICO) instrument currently 0“ bOaI‘d the International Space wavelengths. It is expected that improved understanding of the
+Statteh is a new sensor deStghed Speetheahy for'the Sththes ef global coastal waters as well as certain inland lakes [3] can be
+turbid coastal waters and large Inland lakes and rivers. It covers . .
+the wavelength range between 0.4 and 0.9 pm with a spectral Obtained through analys1s Of HICO data.
+resolution of 5.7 nm and a spatial resolution of approximately Within the nominal spectral range 0f 0-35—1-08 ,um covered
+90 m. The HICO sensor is not equipped with a second-order by the HICO sensor, the second—order light in the wavelength
+bIOCking ﬁlter in fl‘Ont 0f the fOCal plane array. AS a 1‘95““, the interval between 0.35 and 0.54 ,um falls in the same pixels as
+second-order light from the shorter Visible spectral region falls the ﬁrst—order light in the 0.7—1.08—um wavelength interval.
+onto the detectors coverlng the near-'IR spectral. region above It was ori inall 1 (1 th t d— (1 b1 k' ﬁl t
+0.8 pm. In order to have accurate radiometrlc calibratlon 0f the g y p anne a a secon 0r er 0e ing er
+near-IR channels, the second-order light contribution needs to be WOUId be placed Close to the focal plane array (FPA) 0f HICO,
+removed. The water-leaving radiances Of these near—IR channels but mechanical mounting problems were encountered, and the
+over clear ocean waters are close to zero because of strong liq- tight development schedule of the program did not leave time
+hid water absorptienabove 0‘8 ”m' Through analysis Of H.1CO to ﬁnd a reliable solution. As a result, the near—IR channels of
+lmagmg data containing features 0f shallow underwater ObJeCtS’ the HICO sensor receive both the ﬁrst—order radiances from the
+such as coral reefs, we have developed an empirical technlque
+to correct for the second-order light effects in near—IR channels. near—IR spectr 31 region and the second—order radiances from the
+HICO data acquired over Midway Island in the Paciﬁc Ocean and Visible region.
+the Bahamas Banks in the Atlantic Ocean are used to demonstrate In order to achieve accurate radiometric calibrations 0f the
+the effeettvehess Of the new technique. HICO near—IR Channels above 0.8 pm, the second—order light
+
+Index Terms—Hyperspectral imager, imaging spectrometer, effects must be removed. The real water—leaVing radiances 0f
+FemOte SEHSinga SECOnd-Ol‘der light COI‘I‘ECtiOH- the near—IR channels over Clear ocean waters are Close to zero
+
+because of strong liquid water absorption above 0.8 ,um [4].
+1. INTRODUCTION Based on the water absorption property and through analysis of
+HICO imaging data containing features of shallow underwater
+T HE Hyperspectral Imager .for the Coastal Ocean (HICO) objects, such as coral reefs, we have developed an empirical
+sensor [1] 1s a spaceborne imaging spectrometer des1gned technique to correct the second—order light effects in near—IR
+speciﬁcally for remote sensing Of the coinplen coastal enyiron— Channels. In this paper, we describe the empirical correction
+ment. It is a conventional hyper spectr a1 imaging sensor, incor— technique and present results from application of the technique
+porating an Offner grating—type spectrometer [2] and covering t0 HICO data. The same technique is, in principle, applicable
+a scene in push—broom mode. The HICO sensor was hhht at the for the correction of second—order light effects from hyperspec—
+Naval Research Laboratory In Washington, DC' It was launched tral imaging data acquired with similar sensors without order—
+into space on a J apanese HII—B rocket from Tanegashima Space separation ﬁlters.
+Center, Japan, on September 11, 2009, and docked with the
+International Space Station (188) on September 24, 2009. HICO
+is now generating hyperspectral imaging data in the wavelength 11- BACKGROUND
+range .of 0.4—0.9 ,um with a spectral resolution of 5.7 nm and Previously, through analysis of hyperspectral imaging data
+a spatial resolution Of appi0X1mate1y 90 m. The total spectral collected with the Airborne Visibleﬂnfrared Imaging Spectrom—
+range covered by HICO is from 0'35 .to 1'08 um, hht data eter (AVIRIS) [5], [6], we have found that shallow underwater
+0uts1de 0f the 0.4—0.9—um range are typically not reported due objects are not observed in near—IR Channel images. AVIRIS is
+an instrument free of the second—order light effects because it
+is equipped with several order—separation ﬁlters [6]. Fig. 1(a)
+shows a true—color AVIRIS red—green—blue (RGB) image (red:
+0.66 pm; green: 0.55 pm; blue: 0.47 pm) acquired over French
+_ _ _ _ Frigate Shoals in Hawaiian waters in April of 2000. Underwater
+
+Manuscnpt recelved December 13, 2010; reV1sed Aiprll 6, 2011; accepted features such as coral reefs (SPO t in ligh t green color) and shal—
+June 19, 2011. Date of pubhcatlon September 15, 2011, date of current vers10n ’
+
+February 24, 2012. This work was supported in part by the US. Ofﬁce of Naval low water (in light blue color), are Clearly seen. Fig. 1(b) shows
+Reseamh' _ _ _ _ _ a 1.0—um single—Channel image of the same scene. Underwater
+
+The authors are Wlth the Remote Sens1ng D1V1s10n, Naval Research Labora— . . .
+wry, Washington, DC 20375 US A (e-mail: r0ng-r0ng.1i@nrlnavymil). coral reef features are no longer seen in this image because of
+
+Digital Object Identiﬁer 10.1109/TGRS.2011.2163161 strong liquid water absorption in the near—IR spectral region.
+
+US. Government work not protected by US. copyright.
+
+"
+"2","LI et (.21.: TECHNIQUE FOR REMOVING SECOND-ORDER LIGHT EFFECTS 825
+.K . ‘ - -, 0.55 ,um in the Visible is as large as 90%. Based on Fig. 2(b),
+l""~. "" . ‘._. '_,' we expect that the underwater objects 2 m below the air—water
+. v . \1. .._- i interface will be seen in Visible Channel images but not in
+' ' '5 __ ‘ j‘ ' Na"" '3' images of near—IR Channels above 0.75 ,um.
+' ’ -. :1.“ l ’3‘ Soon after the ISS HICO data became available, we observed
+‘ ,' shallow underwater features in images of near—IR channels
+0 Close to 0.9 ,um. Based on our previous experiences with
+s? ‘ AVIRIS data [see Fig. 1(b)], we realized that the underwater
+J 9 features in these images resulted from the second—order light of
+' Visible Channels. Fig. 3 shows an example of a HICO data set
+(a) (b) acquired over Midway Island in the Paciﬁc Ocean on October
+20, 2009. The image in Fig. 3(a) is the true—color RGB image,
+Fig. l. (a) True—color AVIRIS image acquired over French Frigate Shoals in and the images in Fig, 3(b)—G) are single—band images at the
+Hawaiian waters in April of 2000 and (b) a l.0—,u.m single—channel image of the wavelengths stated in each image. In the RGB image, the area
+same scene. Underwater coral reef features are seen obV1ously 1n (a) but not 1n , , , , , ,
+(b) due to strong liquid water absorption in the near—IR spectral region. In llght blue COIOI 15 the atoll. The surrounding regions In blaCk
+color are deepwater areas. Eastern Island (left) and Sand Island
+1.0000 (right) also appear in the lower region of the atoll. Spatial
+""'2 features of shallow underwater objects are seen in the RGB
+12"" image and in the images of shorter wavelength Channels, such
+5 0.1000 as those wavelengths at A : 0.502 and 0.600 ,um. Because of
+E strong liquid water absorption in the near—IR spectral region,
+g these underwater features should disappear in all the near—IR
+“a 0.0100 channel images. The spatial features are not seen obViously
+E ' in the 0.857—,um Channel image [see the image in Fig. 3(e)],
+E where only the two small islands and the outline of the atoll are
+§ 0.0010 seen. However, due to the increased second—order light effects,
+3 the underwater features reappear in the images for Channels at
+E longer wavelengths starting from Fig. 3(f) and become stronger
+0.0001 as wavelength increases [see the images in Fig. 3(f)—(j)].
+1.0000
+0900‘) III. METHOD
+2 0.8000 .
+g In order to recover the true near—IR Channel radiances from
+E 07000 HICO data, the second—order light needs to be removed com—
+5 0.6000 pletely from the total radiances received by these Channels.
+2 05000 Through analysis of data acquired over water surfaces with
+E 04000 underwater features, such as coral reefs, we have developed
+:3 an effective empirical method for quantifying the second—order
+E 03000 light. This method uses the fact that, if second—order light were
+0.2000 not present, spatial features of coral reefs and other objects in
+0.1000 , shallow—water areas should not be observed in images taken
+00000 at wavelengths near 1 ,um. This is because solar radiation at
+0.3 0.4 0.5 0.6 0.7 0.8 0.9 1 1.1 these wavelengths is totally absorbed by liquid water. The ob—
+Wavelength (Hm) servation of spatial features of shallow—water objects in images
+_ _ _ _ _ _ of channels near 1 pm is an indication of the presence of
+Flg. 2. (a) L1qu1d water absorptlon coefﬁc1ent as a functlon of wavelength and . . . .
+(b) transmittance spectrum for light passing through a 4—m—thick liquid water second—order llght. Based on thlS, WC eStathh an equatlon to
+layer. calculate the intensities contributed by the second—order light
+and subtract them out from the radiances of near—IR channels.
+In order to illustrate the liquid water absorption properties, It should be pointed out that, although no spatial features are
+we show in Fig. 2(a) the liquid water absorption coefﬁcient observed over deepwater areas in near—IR Channel images [see
+[7] in the range of 0.3—1.1 ,um. It is noted that the liquid Fig. 3(f)—(j)], the signals of these Channels are also affected by
+water absorption coefﬁcient increases by two orders of mag— the second—order light of Visible Channels.
+nitude from 0.55 to 0.86 ,um. Fig. 2(b) shows the calculated To develop the method, we extract a pair of spectra over
+transmittance spectrum for light passing through a liquid water shallow water S (A) and nearby deep water D()\) from the
+layer with a thickness of 4 m. The transmittance of pure water HICO observation of Midway Island shown in Fig. 3. The
+decreases rapidly with increasing wavelength in the 0.5—l.0—,um points are Chosen just inside and just outside the coral reef,
+spectral region. For wavelengths greater than about 0.75 ,um, separated by, at most, a few kilometers in order to minimize
+the transmittances are Close to zero, while the transmittance at atmospheric path radiance differences between them (we will
+
+"
+"3","826 IEEE TRANSACTIONS ON GEOSCIENCE AND REMOTE SENSING, VOL. 50, NO. 3, MARCH 2012
+(a) RGB (b) 0.502 0m (0) 0500 m (d) 0703 pm (9) 0.857 m
+"" "" ' 1* 1 “ 1*
+s "" s- '1“. v 4 1""...‘.- ' :7 "":.O.‘-.'_ 1‘? ’.'-“_.' ' “'71” .ps.,'_
+Jur'. :.-> ...-. :.- ""‘:9.f‘°.'. .,,:.;‘;.'L . o‘.>&.‘::...'
+. .t , r _‘ 1 A -. .r . l' ‘3 .. . .W .
+{I ' I :A‘ ' “ ‘ ' l a .
+«=3 » <12 - ~ 41 .
+(1) 0.903 pm (9) 0.955 um (h) 1.001 um (i) 1.035 0m (j) 1.054 0m
+,mﬁm‘tﬁ . 3-13—5313"", . 8-23—51: .2» {m—sfs: ’o-;'.;-.‘J*.. .
+. ‘avﬁﬁégo-L “b ‘35,: :0 ‘u ‘6’: :0 533-."" f . ' 7...»:‘5:‘ 3"" . ""
+‘q .. ' 1.. ., ' '4. ~. ' ”4.. - '71, . d
+(k) 0.903 um (I) 0.955 um (m) 1.001 um (n) 1.035 um (o) 1_054 Hm
+.,,...'--.,‘ :‘io‘.’ . _ :‘ﬁﬁi- ‘* .. '3’”, - “V. . .. I v-ﬁéi’ - - 5‘“. . -.:-‘.‘:_,Aa‘.${f . 3;:-
+. u ‘7‘“: f.“ ' 'l ' . 04' 9.8,.3‘. ’9 ' ""‘7' n 3.3., ’9 ‘ J“. '. 3.03.2. ’4! ‘ at? ”£313“?!
+1... 3;; . f 0 I “?& z :i.:: .‘?& = g: 0.... ‘I?é: :7». 0"": _ $23,7é -‘ 514-:
+. .4. :1 -. ‘ 4"". -. ' ~51. -. ' .5}. -. ‘ \
+V .‘ V"" -.""- .1 V"" .‘""_ i, V“ ""‘1. . V'
+' t."" ' L. . ’ 03"": ' ;. . ' ""3'5 ' ;_ . ' 3‘4 ' l. _ . * ‘ 37“
+_' , . ‘- 9! -"".,;,. s."" .- . gulf"". _;‘ ‘_ i ,"",'~.~’,- .: _, y‘- ’._“'. ‘1: ,
+Fig. 3. Sample 188 HICO images acquired over Midway Island in the Paciﬁc Ocean on October 20, 2009, (ﬁrst and second rows from a to j) before and (third
+row from k to 0) after the removal of second—order light. See text for detailed descriptions. (a) RGB. (b) 0.502 urn. (C) 0.600 urn. (d) 0.703 urn. (e) 0.857 urn.
+(f) 0903 um. (g) 0.955 urn. (h) 1.001 um. (i) 1035 um. (j) 1.064 urn. (k) 0903 um. (1) 0.955 urn. (m) 1.001 urn. (n) 1035 um. (o) 1.064 urn.
+return to this point in Section V). Note that the Width of the the near—IR wavelength )1 contributed by the signal at )1/ 2 for
+Midway scene is about 30 km. We use p(A) to represent the the shallow—water spectrum. Similarly, the term p(A) D()\ / 2)
+empirical correction factor for removing second—order light. on the right side of (1) is the second—order signal for the
+The basic equation for the derivation of p(A) is deepwater spectrum. After the corrections of the second—order
+effects, the near—IR Channel signal over the shallow—water and
+S(A) — p(A)S()\/2) : D()\) — p(A)D()\/2) (l) deepwater areas should be equal. Solving for p(A), (1) can be
+rewritten as
+Where S ()1) is the signal (in digital numbers (DNs) from the
+FPA, not in radiometrically calibrated values) from the shallow— _
+water area at )1, D01) is the signal from the deepwater area at )1, p(A) _ [S(A) _ D00] / [S(A/Z) _ B(A/ZH ' (2)
+S ()1 / 2) is the signal from the shallow—water area at half wave—
+length (A / 2), D()\ / 2) is the signal from the deepwater area at An empirical scaling factor p(A) can be calculated from hyper—
+)1 / 2, and p(A) is the empirical scaling factor for correcting the spectral imaging data according to (2).
+second—order light effect, Which is also the fraction of the ﬁrst— In order to generate p(A) for the second—order light cor—
+order light leaking into the near—IR detectors. In principle, (1) rections to all HICO data, we selected a number of pairs of
+applies to wavelengthslonger than about 0.75 um. However, the shallow—water and nearby deepwater spectra. We calculated
+Characteristics of the HICO grating are such that second—order an empirical curve for each pair of spectra using (2). Each
+light is nearly zero at wavelengths near 0.8 um, and indeed, no spectrum used in the calculations was obtained from a spatial
+second—order artifacts appear in Fig. 3(e). In practice, then, (1) averaging of spectra over 3—by—3 to 10—by—10 homogeneous
+is applied to wavelengths longer than about 0.85 um. water pixels With a standard deviation less than 3%. Fig. 4
+Both the shallow—water signal S ()1) and deepwater signal shows examples of correction curves obtained from several
+D()\) are directly obtained from the original HICO data in DNs. pairs of water areas. They are approximately linear func—
+S ()1 / 2) and D()\ / 2) are the corresponding quantities at the tions of wavelength, particularly for wavelengths greater than
+half wavelength ()1/ 2), and their values are obtained through 0.9 um. The black diamonds are the averaged values from
+linear interpolation of the original HICO spectraldata. The term all the selected data points. A linear ﬁt (the black line) to
+p(A) S ()1 / 2) on the left side of (1) is the second—order signal at the averaged values gives a correlation coefﬁcient of 0.97.
+
+"
+"4","LI et al.: TECHNIQUE FOR REMOVING SECOND-ORDER LIGHT EFFECTS 827
+0.030 ’
+0.025 [,52 ’ ‘ ,.
+0.020 ”.24"" '
+m 2 8’
+g 0.015 5.13335!“
+(>3 1'1""}4’ F
+0.010 “7:44""! <5 .0 i
+0.005 X- .7 . .
+J
+0.000
+0.85 0.90 0.95 1.00 1.05 1.10 . ""
+Wavelength (pm)
+Fig. 4. Empirical scaling factors as a function of wavelength for second—order (a)
+light corrections over different locations. The black line shows the averaged 6000
+values of all the locations. 120
+Approximately 1% t0 3% 0f the ﬁrst—order light in the Visible is 5000 100 ..
+leaked into the near—IR detectors. g 8° \_ _ 2
+g 4000 60
+Z 40 4
+IV. SAMPLE DATA SETS AND RESULTS 5 ‘ 3
+350 3000 20 ._ \
+After generating the scale factor p(A), we make the correc— 2 o \’\
+, , . . . D 0.80 0.85 0.90 0.95 1.00
+t10n for HICO data sets on a pixel—by—pixel bas1s. The equation 2000
+to correct the data is ,
+1000
+CW = f (A) — 190M f W 2) (3) ' _
+Where f (A) is the signal at A, p(A) is the correcting factor, 0 0.4 0.5 0.6 0.7 0.8 0.9 1.—
+f()\/2) is the signal at A/Z, and p(A) >|< f(A/Z) is the second— Wavelength (Pm)
+order contribution. C(A) is the signal after the second—order (b)
+correction.
+We have applied (3) t0 HICO data sets, and quite reasonable Fig. 5. (a) Magniﬁed HICO RGB image acquired over Midway Island in the
+. Paelﬁc Ocean on October 20, 2009, and (b) examples of spectral plots for HICO
+results have been obtained. The results from two HICO data data in DNs. See text for detailed descriptions.
+sets are presented hereinafter.
+A. Midway Island water spectra from area 1 and area 2, as marked in Fig. 5(a),
+and two deepwater spectra from area 3 and area 4, also marked
+Examples of second—order corrected Midway Island images in the image, are plotted. In the Visible spectral region, the
+are shown in the third row in Fig. 3. The images in Fig. 3(k)—(0) shallow—water areas have DNs between approximately 3000
+correspond to the images in Fig. 3(f)—(j), except for the second— and 6000, While the deepwater areas have DNs about 2000. The
+order light correction. The shallow—water features seen in the inset is a magniﬁed spectral plot for a smaller wavelength range
+images in Fig. 3(f)—(j) have disappeared in the images in between 0.8 and 1.05 ,um. The dashed lines are the spectra
+Fig. 3(k)—(0). This demonstrates that the second—order light of the four locations before the second—order light corrections.
+effects have been removed properly. It is noted that the two Both types of spectra, either shallow—waters from area 1 and
+small islands, the Circle around the edge of the atoll, and Clouds area 2 0r deepwaters from area 3 and area 4, contain extra
+are still present. The Circle is most likely resulted from the DNs due to the second—order light from the Visible spectral
+scattering of solar radiation by foams from breaking waves, and region. The DNs vary from approximately 40 for deepwater
+it is not due to the second—order effect of Visible light. spectra (areas 3 and 4) to as high as 100 for the shallow—
+In order to facilitate the sensitivity and error analysis on our water spectrum (area 1) at 1 ,um. The solid lines are the same
+second—order light correction technique, we have enlarged the spectra but after the removal of the second—order light effects.
+image in Fig. 3(a) around the Midway Island. Fig. 5(a) shows It is seen that, after the corrections, both the shallow—water
+the resulting image. Fig. 5(b) shows examples of spectral plots and deepwater spectra (solid lines) above 0.85 mm are reduced
+for HICO data in DNs over shallow—water and deepwater areas signiﬁcantly. The signals from both types of waters are reduced
+before and after the second—order light removal. TWO shallow— to about ten DNs at 1 ,um, Which are approximately 70% to 90%
+
+"
+"5","828 IEEE TRANSACTIONS ON GEOSCIENCE AND REMOTE SENSING, VOL. 50, NO. 3, MARCH 2012
+Before Correction (1pm) After Correction (1 Hm) over the Bahamas in the Atlantic Ocean on October 22, 2009,
+200 using the correction factor derived from the Midway scene.
+The image in Fig. 7(a) is the true—color RGB image. The left
+150 portions of the image in blue and green colors are shallow—water
+areas. The right dark portions of the image are deepwater areas.
+
+100 The white spots in the images are cumulus Clouds.
+Spatial features in shallow—water areas are Clearly seen in
+50 the left portions of the image. A sharp boundary is observed
+0 between the shallow—water and deepwater areas. The images
+in Fig. 7(b)—(h) are single—band images with the wavelength
+Fig. 6. HICO images at the l—,u.rn channel (left) before and (right) after the Stated above eaeh image. When the second—order effeets are
+second—order light correction over Midway Islands on October 20, 2009. not present, the Spatial features should not appear in the images
+in Fig. 7(d)—(h) because of strong liquid water absorption for
+(1a)1GB11 . (b) ..“~'02.. (d) wavelengths longer than 0.8 ,urn [see Fig. 2(b)]. Fig. 7(d) shows
+1 1"" i J ""715.32.. J ' f 34,. i '5‘ 2.157;... the 0.86—t1m image, in which the shallow—water features are not
+. f ' . 7 ' . 5'15“} . 5 seen obviously, just as expected. However, the spatial features
+_ 1 . . 415-1111 1 1.1. 5511; 1 1 31:13:; 1 1 79511; reappear in the images in Fig. 7(e)—(h) due to the presence of
+51.111 1 .1) «893“ :31 «89“ -35 43.3, 1.111 14311“; the second—order light effects. The irnages in Fig. 7(i)—(l) are the
+6 01903 m f 01955 m 1 1101 m h 11035 m same Channel images as those in Fig. 7(e)—(h), except that the
+.. . ';.«....;.~1.1..; ..‘;.1...1.~ :g‘;_‘..-. .15.; $3.; _ {14.132.11.- ~_ ;. second—order light effects are removed. After the correction of
+1 ‘v‘ 1} 1 ‘13 f“ . 1 ‘14:,“ 1 :31,“ the second—order light effect, the shallow—water features in the
+' f '.._; 1 ' 1 7 ""“11? 1 ' 1 ""ff "" -. .1 ""'11-. near—IR Channel images have disappeared, while the cumulus
+
+; . __.1.1 ;'; e, a. ' 1. ,1’; "" cloud features remain in the images.
+(i) .903 um (j) 0.9550m (k) 1.001 pm (I) 1035 pm1 V. DISCUSSION
+
+' "":7 .-‘_'r 1,1' . ' .ﬁ'.‘ 1‘ . ' .~’_‘.' . ' .f’r 1_' . The HICO sensor is not the only hyperspectral sensor built
+1' without a blocking ﬁlter to eliminate the second—order light
+.' .' .' I. .‘ ’ effects. Over the past three decades, many hyperspectral sen—
+1.:~"" g- .5. MET}. O; 1:511? .. Of, M533 .. OO. «5 sors were built without implementation of blocking ﬁlters.
+1' J 1' J For example, the Airborne Imaging Spectrometer (AIS) [8],
+Fig. 7. Sample 188 HICO images acquired over Bahamas in the Atlantic [9] COVered 3 Spectral interVal 0f 0-9—2-4 Hm and contained
+Ocean O_n Octobef122, 2009- Image (a) is the true-COIOI1RGB image. The no blocking ﬁlters in the optical train to prevent overlapping
+1:: 11:21:23.8 ?fhéhiigill?g1;3;:Egvfﬁeifyiﬁlgagléogfigejirgﬂéfizggoiafg? spectral orders at infrared wavelengths. The radiances measured
+Images (b)—(h) are single—band images at wavelengths as shown. The spatial Wlth AIS 1n the early 19803 for Channels above 1-5 Hm were
+feature? Obsered in images (e)—(h) are due to the presence of the seeend- positively identiﬁed to be contaminated by radiances from the
+2221:3112:stagzaiiiizyﬁgg?.ngzfszizigsoezféiz)(aegigli'3301: M2 wavelength mterval [101- .At the m a new removal of
+(C) 0.600 Mm. (d) 0.860 pm (6) 0903 um. (f) 0955 um. (g) 1001 pm the unwanted spectral contamination did not seem poss1ble, and
+(h) 1-035 #111 (1)0903 Mm (1)0955 pm Hi) 1.001 Mm (1) 1035 pm blocking ﬁlters were recommended for inclusion in the optical
+reductions from their uncorrected signals. The estimated error “2}th Of lmagmg speetrometers [10]. Later Oh’ the Compact
+in the second—order light correction is approximately 2%. ngh RCSOIUUOH Imaging Spectrometer (CHRIS) [11] covering
+In order to further demonstrate the effects of second—order a solar spectral range between 0'4 and1 1:05 pm on board the
+light correction, we show a single—Channel false—color image at PI‘OJCCt for on Board Autonomy—l m_lSSIOh Of the European
+1 pm in Fig. 6 before (left plot) and after (right plot) the second— Space Agency dld hOt contain a blocking ﬁlter either. CHRIS
+order light correction. The two images used the same color bar, was intended for land use, where the Slghal ht the red end
+as shown in the middle plot in Fig. 6. From the left image in (> 0'65 urn) Of the spectrum is typically thh higher than that
+Fig. 6, it is seen that the DNs are approximately in the range for awater scene.1Therefore, the contamination by second—order
+between 70 and 140 in shallow—water areas and about 40—60 in hght from blue is less important for CHRIS than h.” HICO'
+deepwater areas before the correction. After the correction, the At p resent, some airborne imaging spectrometers built for the
+DNs over both the shallow waters and deep waters are reduced spectral ??‘th between approX1mately 0'4 and 1‘05. 101m use
+as shown. By comparing the two images in Fig. 6, it is seen spe01al s1111con detector arrays, Wthh have low sens1t1V1ty for
+quantitatively the dramatic reduction of unwanted DNs after the blue hght m the region Of the array where red h.ght from the
+removal of the s e c on d— order li ght effect. grating would fall. Thus, the second—order ﬁlter is effected in
+the construction of the FPA. However, this approach is not as
+B. Bahamas, Atlantic Ocean effective as a second—order ﬁlter that cornpletely blocks short—
+wavelength light, and the empirical technique described in this
+Another example of the second—order correction is shown in paper should be applicable for the correction of second—order
+Fig. 7. The images are processed from the HICO data acquired light effects of hyperspectral data measured with these sensors.
+
+"
+"6","LI et al.: TECHNIQUE FOR REMOVING SECOND-ORDER LIGHT EFFECTS 829
+
+Ideally, there would be no spread in the curves shown in REFERENCES
+Fig. 4- To explain the eXiStehee 0f the spread, WC ﬁrSt examine [1] R. L. Lucke, M. Corson, N. McGlothlin, S. Butcher, D. Wood, D. Korwan,
+in more detail the assumption that no light comes from below R. Li, W. Snyder, C. Davis, and D. Chen, “The HypeISpeCtral Imager for
+the water surface at near—IR wavelengths AS S een in Fig 3 the the Coastal Ocean (HICO): Instrument descrlptlon and ﬁrst1rnages,”Appl.
+
+, , ' ' ’ 0pt.,Vol. 50, no. 11,pp. 1501—1516,Apr. 2011.
+ShorteSt anelehgth at Wthh a perceptible second—order effeet [2] P. Mouroulis, R. 0. Green, and T. G. Chrien, “Design of pushbroorn
+is Visible is about 09 um, Inspection of Fig, 2(a) shows that imaging spectrometers for optimum recovery of spectroscopic and spatial
+- - - information,” App. 0pt., vol. 39, no. 13, pp. 2210—2220, May 2000.
+
+the 1/6 absorption path Of water at thls wahelhhgth ls abOUt [3] C. 0. Davis, J. Bowles, R. A. Leathers, D. Korwan, T. V. Downes,
+15 cm. Thus, if the water column contains a Signiﬁcant amount W. A. Snyder, W. J. Rhea, W. Chen, J. Fisher, W. p. Bissett, and
+of scattering material within a quarter meter or so of the R. A. Reisse, “Ocean PHILLS hyperspectral imager: Design, characteri—
+- - - zation, and calibration,” Opt. Exp, vol. 10, no. 4, pp. 210—221,Feb. 2002.
+surface’ the assumphOh that ho hght IS ,rehh‘heh frhm below [4] R.—R. Li, Y. Kaufman, B.—C. Gao, and C. Davis, “Remote sensing of
+the surface may hOt be Stﬂetly Vahd- Thls COhtﬂbUUOh t0 the suspended sediments and shallow coastal waters,” IEEE Trans. Geosci.
+
+signal in (1) would cause an error in the calculation of p(A) RemoteSens.,V01. 41,n0- 3,1311 559-566,Mar. 2003.
+usin (2) [5] G. Vane, R. 0. Green, T. G. Chrien, H. T. Enmark, E. G. Hansen, and
+g ' , , W. M. Porter, “The Airborne Visible/Infrared Imaging Spectrometer,”
+
+AS 110th 111 36011011 11L the ShaHOW-Watef and deepwater Remote Sens. Environ.,vol. 44, no. 2/3,pp. 127—143, May/Jun. 1993.
+comparison points were chosen just inside and just outside of [6] R. 0. Green, M. L. Eastwood, C..M. Sarture, T. Chrien, M. Ar0n889n,
+the coral reefs. Atmospheric path radiance normally Changes 13' Chlppendale’ J' Falls? 13' PaVrPC- ChOVIt’ and M: 80118’ Imagmg
+
+, , , , , spectroscopy and the Alrborne V1s1ble Infrared Imaglng Spectrometer
+Very Sllghtly OVCY a dIStanCC Of a few kIIOmCtefS, but It IS (AVIRIS),”Rem0te Sens.Envir0n.,vol.65,no.3,pp.227—248,Sep. 1998.
+possible that the atmosphere, particularly the near—surface at— [7] D. M. Wieliczka, _8-S_ Weng, and MR. Quarry, “Wedge shaped cell for
+mosphere iS sufﬁciently different between the tWO points that highly absorbent 11qu1ds: Infrared optlcal constants of water,” Appl. Opt.,
+’ , , , vol. 28, no. 9, pp. 1714—1719,May 1989.
+the assumption of the constancy of atmospheric path radiance [8] A. F. H. Goetz, G. Vane, J. Solomon, and B. N. Rock, “Imaging
+is not strictly Valid, spectrometry for Earth remote sensing,” Science, vol. 228, no. 4704,
+- - - - pp. 1147—1153, Jun. 1985.
+
+WC atthlbuw the spread m the, CUI‘YCS. 1h Flg' 4 t0 the [9] G. Vane, A. F. H. Goetz, and J. B. Wellman, “Airborne Imaging
+aforemehtmhed effects, hm the baSIC Vahdlty 0f the methOd ls spectrometer: A new tool for remote sensing,” IEEE Trans. Geosci.
+demonstrated by the fact that the correction coefﬁcient derived Remote Sens.,V01. GE-22,n0- 6,1313. 546-549,Nov. 1984. _
+from four small areas in the Midway S cene works very well for [10] J. Conel, S. Adams, A. G. Hoover, and S. Schultz, “AIS radlornetry and
+
+, , the problem of contamination from mixed spectral orders,” Remote Sens.
+the whole scene, as shown in Section IV—A. If long—wavelength Environ, vol. 24,110. 1, pp. 179400, Feb. 1988.
+light from the water column (or the bottom) were interfering, [11] L. Guanter, L. Alonso, and J. Moreno, “A method for the surface
+- reﬂectance retrieval from PROBA/CHRIS data over land: application to
+then the COUCChOh WOUld hOt hp p 1y t0 the WhOIC SCCIIC unless ESA SPARC campaigns,” IEEE Trans. Geosci. Remote Sens, vol. 43,
+the water properties and/or bottom type were the same every— n0. 12,1313. 290849111360 2005.
+where, which is extremely unlikely. Similar remarks apply to
+the effects of atmospheric path radiance variations. The case
+for the method’s validity is reinforced by the fact that the same
+correction coefﬁcient also applies equally well to a completely a , “e Rong-Rong Li received the B.S. degree in physics
+different scene in the Bahamas, as shown in Section IV—B. ' W. “ from Nankai University, Tianjin, China, in 1982,
+The second—order correction factor based on the Midway and the,M°S° and PhD' degrees, 1“ Phys“ from the
+, , , , _ ,» Un1vers1ty of C1nc1nnat1, C1nc1nnat1, OH, 1n 1989
+scene has been applied to other scenes w1th Similarly good ,3 ' 7 ‘ and 1995, respectively.
+results. _ 3"" She is currently with the Remote Sensing
+. . . . . ‘ Division, Naval Research Laboratory, Washington,
+', “L , . DC. Her present work includes characterization and
+VI SUMMARY “- , --\ 7 ' calibration of hyperspectral imaging sensors. Her re—
+. Iii ,5- ‘r ’1 search involved atmospheric corrections, vegetation
+Because the HICO sensor, currently on board the 188, is _ _ _ 1Hd1068, ﬁres and burnt 8Cafcletect10ns, and coastal
+. . . water studles us1ng multlspectral and hyperspectral lmaglng data acqu1red from
+not equipped With an order—separation ﬁlter, the second—order both the ahemft and satellite platforms.
+light from the shorter Visible spectral region falls onto the
+detectors covering the near—IR spectral region above 0.8 ,um.
+We have developed a new technique to correct for the second—
+order light effects, using the fact that water—leaVing radiances ’ 9 . , Robert Lucke received the MS. and Ph.D. de—
+of near—IR Channels above 0.8 ,urn over shallow ocean waters ‘ , __ ‘5. ; gree? 1“ PhySICS ,from the JOhnS HOPkmS hmVerSlty’
+. . . ' 3-} q Baltlrnore, MD, 1n 1971 and 1975, respectlvely.
+are close to zero because of strong liquid water absorption. ‘ ,, ._ Since 1982, he has been with the Naval Research
+The technique is developed us1ng pairs of shallow—water and . . 1. Laboratory, Washington, DC, where he has ﬂown air—
+nearby deepwater spectra acquired over Midway Island in the V’ 130:1“: Syﬁtems f3” megsgrmgl 1R (Signature: Oftargeis
+. . . an ac ngllIl S an CV6 ope COHlpll 61‘ H10 6 S
+Paelﬁc Ocean. Its effectiveness has been demonstrated us1ng and image processing techniques to analyze the data
+the full Midway Island image and the image acqu1red over . that they return. He has worked extensively in optical
+the Bahamas Banks in the Atlantic Ocean. The technique has nholglehng, lnctl'lldmsg'the118969foehrat1§ntheoiilatﬁd
+. . . . . O our1er Op 1CS. 1nce , 6 as 66H W1 6
+been used operationally for 1‘ adlometﬂc calibrations .Of. the Remote Sensing Division, Naval Research Laboratory, where he has worked in
+entire HICO data sets. The same technlque should, in pr1n01ple, the areas of sparse—aperture and synthetic aperture imaging, optical system de—
+be applicable for the correction Of second—order light effects sign, and, recently, hyperspectral imaging from airborne, and now spaceborne,
+f h 1 . . d . d . h . .1 platforms. He headed up the team that built the Hyperspectral Imager for the
+tom yperspectra irnaging ata acqmre Wlt 81ml 8.1” sensors Coastal Ocean, which is now returning images from the International Space
+w1thout order—separation ﬁlters. Station.
+
+"
+"7","830 IEEE TRANSACTIONS ON GEOSCIENCE AND REMOTE SENSING, VOL. 50, NO. 3, MARCH 2012
+Daniel Korwan received the Ph.D. degree in physics Bo-Cai Gao received the BS. degree in physics
+from Virginia Polytechnic Institute and State Univer— from Nankai University, Tianjin, China, in 1982, and
+sity, Blacksburg, in 1996. N the MS. and Ph.D. degrees in physics from The
+
+He joined the Remote Sensing Division, Naval Re— 3*” Ohio State University, Columbus, in 1984 and 1988,
+search Laboratory, Washington, DC, in 1996, where ‘ E2};- 9/ respectively.
+his primary work has focused on the development \“L; ’ “:7 He is currently with the Remote Sensing
+and deployment of space— and airborne—based Visible t Division, Naval Research Laboratory, Washington,
+and infrared spectral sensors, primarily for ocean and 4-: DC. He has conducted research on remote sensing
+atmospheric research. He was part of the team that ’ : «3 / ‘ 0f cirrus clouds, atmospheric water vapor, and
+/ speciﬁed and constructed the Hyperspectral Imager ﬁwk , N coastal water using multichannel data collected with
+for the Coastal Ocean and was the lead for the optical ' ' the National Aeronautics and Space Administration
+alignment, optical characterization, and radiometric characterization of the (NASA) Terra and Aqua Moderate Resolution Imaging Spectroradiometer
+instrument. instruments. He is the inventor of the normalized difference water index, which
+is widely used in the vegetation research community.
+
+Dr. Gao was a recipient of the Prize Paper Award from the IEEE Geoscience
+and Remote Sensing Society in 1991 for his development of an operational
+atmospheric radiative transfer code to retrieve surface reﬂectance spectra from
+hyperspectral imaging data measured with the NASA/Jet Propulsion Labora—
+tory Airborne Visible/Infrared Imaging Spectrometer.
+
+"

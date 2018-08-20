@@ -1,0 +1,468 @@
+"","x"
+"1","45th AIAA Aerospace Sciences Meeting and Exhibit AIAA 2007-545
+8 - 11 January 2007, Reno, Nevada
+Electronlc Repalr Concepts for Long-Duratlon Spaceﬂlght
+J ohn Eastonlf and Richard D. Pettegrewi.
+National Centerfor Space Exploration Researchf, Cleveland, Ohio, 44135
+and
+Peter M. Struk*
+NASA Glenn Research Center, Cleveland, Ohio, 44135
+[Abstract] Constraints on the mass and volume that can be allocated for electronics
+spares and repair equipment on long-duration space missions mean that NASA must look at
+repair strategies beyond the traditional approach, Which has been to replace faulty
+subsystems in a modular form, termed Orbital Replacement Units or Line Replacement
+Units. Other possible strategies include component and board-level replacement, modular
+designs that allow reprogramming of less-critical systems to take the place of more critical
+failed systems, and a blended approach Which uses elements of each of these approaches,
+along With a limited number of Line Replacement Units. This paper presents some of the
+constraints and considerations that affect the decision on how to approach electronics repair
+for long duration space missions, and discusses the beneﬁts and limitations of each of the
+previously mentioned strategies.
+I. Introduction
+NASA’S plans for long duration missions to the Moon and, especially, to Mars require a much greater degree of
+self sufﬁciency on the part of the crew than ever before. Such missions Will have greatly reduced logistic
+support from Earth, compared to International Space Station (188) operations. Returning to Earth in the event of an
+emergency may not be an option either, as a lunar return ﬂight could require two to three days, and a Martian return
+ﬂight Will require much longer.
+
+One area of mission support that NASA must plan for is electronic repairs. Despite the rigorous testing required
+by NASA, electronics faults have already occurred in both Space Shuttle and 188 operationsl’z, leading to the use of
+backup systems or loss of capability to some degree. While the electronics and other systems used in a long
+duration space mission Will undergo rigorous testing, the crew of such missions Will most likely encounter an
+electronics failure at some point in the mission. With the design of the Crew Exploration Vehicle (CEV) already
+beginning and likely inﬂuencing the design of future spacecraft and hardware, it is not too early for NASA to begin
+exploring and designing techniques and tools for crew members conducting electronics repair during long duration
+space mission. These considerations include system design (for accessibility, parts type and sizes, and board
+complexity), repair infrastructure (including diagnostic capabilities, tools, and other needed equipment), and
+logistics constraints. The decisions on how to approach each of these considerations depends on the overall repair
+strategy that is chosen.
+
+The current repair scheme used for the ISS focuses on orbital replacement units (ORU). An ORU is a modular
+electronics assembly or system, designed to be replaced as a unit. When an electronic fault is detected, it is isolated
+to speciﬁc ORU through system performance information. The crew then removes the entire ORU, replacing it With
+a spare. Most replacement ORUS are ﬂown from the ground as needed, With limited spares on hand. Preliminary
+designs for the CEV use a similar design for electronic systems, also referred to as line replacement units (LRUM)3 .
+
+Previous work regarding electronics repairs during missions has focused largely on the economics of performing
+repairs, in terms of crew time, upmass, and volume of spares. Accola et. a1.4 examined the implications of crew
+members performing varying amounts of repair onboard the then-proposed Space Station Freedom. Their model
+T Staff Scientist, NCSER, 21000 Brookpark Rd, MS 110-3, AIAA Member
+* Aerospace Engineer, NASA GRC, 21000 Brookpark Rd, MS 110-3, AIAA Member
+M This paper uses the LRU name convention for any modular electronics system onboard a spacecraft.
+
+1
+American Institute of Aeronautics and Astronautics
+Copyright © 2007 by the American Institute of Aeronautics and Astronautics, Inc.
+The U.S. Government has a royalty-free license to exercise all rights under the copyright claimed herein for Governmental purposes.
+All other rights are reserved by the copyright owner.
+
+"
+"2","predicted that increasing crew performed repairs could save on mass and volume of spares compared to reduced
+levels of repair, up to eliminating repairs altogether and simply replacing faulty LRUs With good ones. These
+repairs cost a small amount of crew time, With this cost more than offset by volume and mass considerations.
+
+NASA researchers have also begun studies of soldering electronics components in reduced gravity. These
+studies include a demonstration of soldering Wires in orbit5 as well as many studies of soldering aboard a reduced
+gravity aircraft 1aboratory6’7’8’9’10. These later studies show an increase in solder joint void fraction in reduced
+gravity compared to solder joints formed in normal gravity. An increase in joint void fraction indicates a greater
+risk for the joint to fail over time; these results show a need for NASA to explore methods of mitigating the increase
+in void fraction.
+
+This paper Will discuss the factors that must be considered When choosing a repair strategy for long-duration
+space missions, and several potential repair strategies are examined. The relative advantages and disadvantages of
+each approach are discussed, as well as suggestions for a ‘blended’ approach, in Which elements of each may be the
+optimal solution.
+
+11. Factors Affecting Electronics Repair During Space Missions
+
+A number of factors must be considered When selecting a strategy for electronics repair during a mission,
+particularly since each of these factors needs to be addressed during the design of the spacecraft and the mission
+proﬁle. For the purpose of this paper, these factors are deﬁned as Electronic System Design (Which includes design
+considerations at the board level and subsystem level), Diagnostics, Repair Infrastructure (Which includes the tools
+and equipment needed to perform the repairs, as well as the logistics of the spares stores) and Crew Considerations.
+While the details on each of these topics are beyond the scope of this paper, each Will be discussed in a high-level
+fashion in the following subsections.
+
+A. Electronic System Design
+
+The design of the electronics for a long-duration mission is one of the ﬁrst factors to be considered, since these
+designs can enable or prevent elements of the different repair strategies, and decisions regarding the electronic
+systems design are likely to be made early in the overall spacecraft design process. With regard to repair
+considerations, electronic systems must ﬁrst be designed for accessibility, meaning the crew member must have
+access to the system in order to repair it. While this may seem self—evident, volume and other design constraints
+may make a signiﬁcant portion of the subsystems inaccessible to crew members from inside the craft. If this is the
+case, then either robotic or EVA (Extra Vehicular Activity) provisions must be made to allow access.
+
+If the selected repair strategy involves component—level (or board-level) repair, then the concept of accessibility
+
+Fmﬁrpﬂmﬁrhwwu needs to be extended down several levels further. Individual boards
+“”Z'M‘II‘I“'”“‘""””I"""" (Within the LRU or subsystem) must be accessed and disconnected,
+_ . + ‘ _ ' _ - _ _ _ _ _ _ - . + i q 1 and, if components are to be replaced, then the conformal coating on
+IIIIIIIII'I I IIIIIII II the board must be removable. While most coatings can be removed
+IIIIII I II II I I I I I II II With various methods in ground-based facilities, limitations on
+chemicals and equipment that can be ﬂown make conformal coating
+I I I I I I I I I I I _I I I . removal an accessibility issue that must be considered.
+II I I I II I I I II II The strategy of component—level repair, as well as the degree to
+Which that strategy is implemented Will also require consideration in
+I I II I I I I I : : : j : : : : ; : 1 3595 the design of circuit boards and the choice of components used. If
+I I I I I I I I I I I I I I I I I I I I manually-operated repair tools (such as a soldering iron) are used,
+‘ 1 1 I I I 1 i ' ‘ i ' ' ' ' ‘ ‘ I ' ' limits Will eXist on What components can be repaired. One example of
+i“ m i“ l“ m- ili Ill 1“ ill : HII-lﬂll such a compohent. is the .‘ball .grid array’ conﬁguratioh of an
+__ I I | | | | 55523; g; i l'iTt integrated Circuit (Figure 1), 1n Wthh the leads are not access1b1e to a
+“* I _ 5-” -.-I E SE ' soldering iron. Other factors, such as the pitch of the leads, may also
+. 1 ' make manual repairs intractable in some cases. While some of these
+. . limitations may be addressed using other repair technologies (such as
+Flgure 1: Example 0f ball—grld ari'ay a semi-automated repair station), such limitations may be minimized
+(BGA) electronlc component, showmg or avoided through careful design.
+the array of contacts on the bottom
+side of the component.
+2
+American Institute of Aeronautics and Astronautics
+
+"
+"3","B. Diagnostics
+
+Regardless of the repair philosophy chosen, the problem remains that diagnostics must be included to determine
+Where the problem lies in a faulty system. At a high level, the ﬁrst layer of diagnostics Will include isolation of the
+problem to a speciﬁc subsystem, or LRU. This may be through symptomatic diagnosis, or through system-Wide
+levels of built-in tests (BIT).
+
+If LRU replacement is chosen, this level of diagnostics is sufﬁcient. If component—level repair is to be
+implemented, then further diagnostics are needed to pinpoint Which component is faulty. A trade study completed
+by the authors11 determined that diagnostics needed for component—level repair are likely to include non-functional
+test equipment, Which tests components in a non-powered state and compares their signatures against known good
+data. These diagnostics Will also be needed for post—repair veriﬁcation, prior to returning a subsystem to service.
+Additionally, crew members Will require standard diagnostic tools such as oscilloscopes, multimeters, etc., to
+properly locate a faulty component. Diagnostic capabilities also require some levels of crew training, and may also
+include a ground support Via telemetry.
+
+C. Repair Infrastructure Requirements
+
+Within the scope of this paper, repair infrastructure is deﬁned as the set of tools and spare parts required to
+implement the repair. The tools requirements Will vary, depending on the strategy chosen. Most strategies are likely
+to entail at least a limited set of small hand tools, for disconnecting fasteners, etc. Component—level repair Will also
+
+require some specialized tools, such as
+a soldering iron or other soldering
+. technology, and specialized tools for
+component removal. If a semi-
+automated component—level repair is
+_ implemented, then an X-Y positioning
+I-l' ‘ 'I“ --——l.._ 1 1__ ' . stage (Figure 2) is also needed.
+
+_ I-""""'|""'r ' _ [—- I: 3 "" The logistical aspect of spares
+I —ﬂ_ _ J '4g:-'-___ : ' -‘ . represents a key element of the
+' L_i i "" "" 5. .- infrastructure requirement, With Wide
+—__ __.__ '_—L haiku. _ . variations between the requirements
+L.E- for LRU replacement and component-
+level repair. Careful choices must be
+made to insure that adequate quantities
+of spares are available, in the event of
+Figure 2: Example of a semi—automated, electronics diagnostic multiple failures. , The issue 9f mass
+system With X-Y translation stage. and volume required t9 prov1de that
+number of spares is likely to be a
+central issue When deciding on a repair
+
+strategy.
+
+D. Crew Considerations
+
+An additional factor in the selection of a repair strategy is the skill and training requirements on the crew, as well
+as time required to implement the various repair strategies. Each of the different repair strategies Will require
+signiﬁcantly different speciﬁc skills and training to implement the repairs, although some of the skill requirements
+may be partially mitigated through the use of a ‘tele-science’ approach, in Which speciﬁc portions of the diagnosis of
+the problem are handled in conjunction With ground-based engineers. Up—linked training materials on speciﬁc repair
+issues can also help minimize the need to pre-train the crew for every speciﬁc incident, though a baseline of
+knowledge and experience Will clearly be needed.
+
+Crew time required to perform a repair Will also be a relevant consideration. Critical systems may (in some
+circumstances) require repair strategies Which can be implemented very quickly, While other repairs may not be
+time-critical. Crew time is always considered a high-value resource, but the value of the crew time must be weighed
+against all of the other considerations When examining the choice of repair strategy. Clearly, less crew time is
+required for LRU replacement, but this may be overridden by the need to reduce the volume of spares for the
+mission.
+
+3
+American Institute of Aeronautics and Astronautics
+
+"
+"4","III. Possible Strategies for Electronics Repair
+
+The general strategies for addressing electronic failures during a mission can be classiﬁed broadly as:
+
+1) LRU Replacement: This approach involves removing and replacing modular subsystems, Which are
+comprised of ‘blocks’ of circuit boards.
+
+2) Component-Level Repair: This approach entails repair of individual faulty components on a circuit
+board
+
+3) System Re-Programming / “Scavenging”: This approach involves the use of “common modules” (to
+the degree possible) Which can be removed from service on less crucial systems, and re-programmed to
+replace critical systems that have undergone failure.
+
+4) Combined Approach: This approach uses a blended combination of each of the three distinct
+strategies, in an attempt to provide an optimal repair/maintenance solution.
+
+Additionally, the ‘component-level repair’ strategy can be divided into manually performed repairs (i.e., hand
+tools only), and semi-automated repair (With mechanized aids for diagnostics, component placement, and soldering).
+Each of these approaches has distinct advantages and disadvantages, in terms of system design requirements, the
+diagnostics and repair infrastructure needed, and crew considerations. The following sections examine some
+possible implementations of these strategies, With discussion of the beneﬁts and limitations of each approach.
+
+I. LRUReplacement
+
+LRU’s are modular subassemblies that generally contain a series of related circuit boards, designed to
+collectively perform a speciﬁc function (or multiple functions) Within a larger system. These units are packaged for
+relatively easy installation and removal, and require comparatively low crew time and training to use.
+
+A representative range in LRU spatial dimensions is from about 3” X 3” X 3” to 28” X 17” X 7”, With mass
+ranging from approximately 1 1b to 75 lbs. Figure 3 shows an example of a typical LRU”. When an electronic
+system fails, the fault is isolated to a speciﬁc LRU, using system performance observations and some level of built-
+in diagnostics. The crew member then removes the entire LRU and replaces it With a spare 0r relies on a backup
+
+system. The faulty LRU then returns to Earth With
+the shuttle, Where it may be repaired, tested and
+returned to a pool of spares awaiting return to space.
+The use of LRU’s affords several important
+gﬂ beneﬁts. Since the unit can be thoroughly tested
+_!_,F___——_—*;;’;: ulna: _ prior to ﬂight, the reliability of LRU replacement as
+v? .—-—'-'_‘-'“j“._"".'-7-;' . a repalr strategy is very high. Also, the requirement
+1' ifs -*"" _ e-x‘g'ihﬂ‘iuv} 0n crew training and experience is minimal, and the
+i ; k”: ~$~f ?mi- LRU’s can generally be replaced fairly quickly and
+""j:_=1_ ‘1”: 1‘.- (f ﬂ-“i‘f-‘ﬁ, ' With minimaltools.
+
+\I.‘ .f‘ 999 ‘ d However, the LRU replacement strategy carries
+“a ;_ .tm_-__f-""' l’ .‘9 . a high penalty in terms of mass and volume,
+\\\\i .' g ' considering the likely requirements of multiple
+“‘ '- ?:I ' spares per system. Furthermore, long-duration
+"" missions may require travel times that prohibit re-
+m"" supply from Earth, particularly Martian missions.
+The mission must bring along all potentially-needed
+Figure 33 Example Of an LRU (Electrical Power and spares With them. Given the complexity of a long
+Control Unit, referred to as EPCU)12~ duration spacecraft, the number of spares required
+for adequate mission safety for each LRU is
+
+probably prohibitive.
+
+2. Component-Level Repair
+
+While LRU replacement approaches electronic repair from the standpoint of subsystem replacement, component-
+level repair addresses the problem at the lowest possible level. This approach offers the greatest savings in terms of
+mass and volume of spares, it does require at least some additional tools and infrastructure (such as additional
+
+4
+American Institute of Aeronautics and Astronautics
+
+"
+"5","diagnostics, beyond the BIT diagnostics already used in LRU’s). Further, crew training becomes much more
+important, and time requirements to perform the repairs increase.
+
+NASA has already begun investigation of eomponent-level electronics repair, with the CLEAR proj eet (standing
+for Component-Level Electronie-Assembly Repair)13 . This effort, which is a combination of trade studies, normal
+gravity demonstrations, and reduced gravity testing aboard aircraft facilities and the 188, is examining the feasibility
+of manually-operated, eomponent-level repairs (i.e., with a soldering iron) for long-duration missions. Early efforts
+have shown the general feasibility of electronics repair in this environment, building on previous research done on
+the effects of the reduced gravity environment on the soldering process6'10.
+
+An extension of that work would be to perform eomponent—level repair using a semi-automated re-work station,
+as previously noted. Such stations use computer controlled translation stages and machine Vision to position
+diagnostics or soldering/de-soldering devices on faulty components whose size or conﬁguration would not typically
+permit manual repair. This capability would allow repair of a broader Class of electronic components, as well as
+advanced soldering technologies such as infrared re-ﬂow, or convective heating re-ﬂow. Systems of this type would
+allow inclusion of more components in the “repairable” category than manual repair (thereby further reducing the
+need for spare LRU’s), and would help to minimize the need for crew experience in manual repairs.
+
+3 . System Re-ngmmming / Scavenging
+
+The notion of re-programming or scavenging systems to repair or work around failures is a strategy that could
+have several embodiments. One version of this involves the use of existing, reprogrammable resources to reprogram
+faulty subsystems and work around damaged components. Although there are several methods to implement this,
+ﬁeld programmable gate array (FPGA) devices*** can be used as an example. With an FPGA, the actual
+conﬁguration is typically loaded into the FPGA after power-up. The conﬁguration can be stored in non-volatile
+memory and could be Changed. For example, if the failed subsystem were a power supply or power conditioning
+module, re-programming could allow supply voltages to be programmed to different settings. The same approach
+can be taken at the LRU level, where sub-systems could be comprised of items that could be transferred to different
+applications. This could include computer cards, motion ampliﬁers/eontrollers, etc., with the different functionality
+being determined by the FPGA code that is loaded.
+
+Another strategy for recovering from electronic failures would be to scavenge existing parts or subsystems to
+repair a faulty Circuit board, or work around a fault. With scavenging techniques, crew members would remove
+components from a good board in another system deemed less crucial to operations and crew well-being than the
+system with the damaged Circuit. Crew skill and time requirements for this approach are not very different from the
+eomponent-level repair plan already discussed. This strategy, though, will require considerable work prior to
+launch. Mission designers and planners will have to compile a list of components available that is easily accessible
+to the crew or ground support teams, use common components across all Circuit boards to the greatest degree
+possible, and prioritize systems and Circuit boards to aid in deciding which Circuit board to scavenge.
+
+4. Combined Approach
+
+The discussions of the strategies listed in this paper may seem to suggest that these strategies are exclusive of
+each other, when the most practical approach is likely to be a combination of each of these. For example, a
+comparatively small number of spare LRU’s may be required for critical systems, so that the functional system
+could be brought back on-line while the faulty component is found and repaired in the original unit. Less critical
+systems, in certain areas, may be addressed using a scavenging and re-programming approach, with the faulty LRU
+being repaired, then re-installed in place of the scavenged LRU. An additional implementation could involve board-
+level replacement within the LRU for components that are not easily repairable given the infrastructure or tools that
+are available. This approach is a compromise between true eomponent-level repair and full LRU replacement; while
+it does require more spare storage space than true eomponent-level repair, it requires considerably less space than
+that of full LRU replacements. A combined strategy of eomponent-level repair on some (signiﬁcant) fraction of
+parts, with non-repairable parts being replaced at the eircuit-Card level, along with a minimal number of LRU spares,
+and LRU’s that are designed (where possible) for re-programming and re-use, would allow the greatest ﬂexibility in
+repairing a range of faults while still minimizing the logistics footprint required, to the degree possible.
+
+W FPGA’s are programmable hardware devices, in which the internal hardware conﬁguration is controlled Via
+software, allowing implementation of custom logic circuits.
+5
+American Institute of Aeronautics and Astronautics
+
+"
+"6","IV. Discussion
+
+The previously described strategies represent three distinct approaches to electronics repair on long-duration space
+missions. Each carries certain advantages over the others, along With corresponding disadvantages. For the purpose
+of this discussion, comparisons Will be made in two broad areas; ease of repair / extent of crew training required,
+and volume and mass savings. A major assumption in this discussion is that all of the three methods are in fact
+practical, and can be implemented effectively from an operational standpoint. In practice, only the LRU
+replacement method has been previously implemented, and therefore fully proven. While early results show
+signiﬁcant promise, eomponent-level repair is a strategy still being investigated by NASA13 .
+
+Ease ofRepair and Extent ofCrew T mining
+
+The ﬁrst area of comparison is ease of repair and minimizing training, repair, and practice time for the crew.
+Crew training and repair time is an important consideration because of the extensive amount of training for all
+aspects of a mission prior to launch and the planned scientiﬁc, housekeeping, and maintenance exclusive of repair
+during a mission. For these reasons, plans that reduce the training and repair workload for the crew are typically
+given strong consideration by NASA planners.
+
+Replacing LRUs has advantages over the other repair plans in terms of required crew training time, practice
+time, and time spent performing a repair. Replacing a LRU requires little training beyond familiarity With electrical
+and mechanical connectors for the LRUs, Which is required for any repair scenario. Replacement strategies can also
+use a standardized set of procedures, Which also simpliﬁes the repair process. Replacing LRUs also limits the
+amount of ground support required for the repair. Ground support teams Will most likely receive BIT results
+regardless of the repair plan used, and need only adVise crew members as to Which LRU to replace, Where to ﬁnd the
+replacement and stow the faulty unit, and any speciﬁc procedures for replacing the LRU in question.
+
+The other repair plans require more crew training and time than simply replacing the LRU. Reprogramming
+FPGA or similar devices requires training to open an LRU, ﬁnd the faulty component, and load a neW program.
+This also requires extensive diagnostic testing, and involvement With a ground support team to properly diagnose the
+fault, and to possibly send neW code for the failed device from Earth. Seavenging and replacing a failed component
+may face many of the same ground support requirements as reprogramming components — aid in diagnosis and
+planning and implementing a repair. These processes also require extensive crew training prior to the ﬂight. This
+training includes soldering techniques With the available tools, performing diagnostic testing and some interpretation
+of the results, and techniques for handling a Circuit board and components beyond soldering component leads. Crew
+members may also require practice in soldering techniques to retain competency in performing repairs.
+
+Volume and Mass Savings
+
+Saving on the volume and mass of electronic repair tools and parts, as With any other system carried into space,
+is of critical importance. Mass and volume savings in one area translates to allowances in other areas. Repairing a
+board requires some volume and mass, both in tools and spare parts. This plan requires storing spare Circuit boards
+and spare components, as well as providing diagnostic and repair tools. Seavenging and reusing or reprogramming
+components saves mass and volume by reducing the amount of spare Circuit boards and components, but does not
+eliminate the need for diagnostic and repair tools. Replacing LRUs, though, is likely to require much more volume
+and mass, compared to the other methods. While replacement does not require the same level of diagnostic and
+repair tools that may be required by the other methods, it does require full-sized LRUs to be stored. Given that an
+entire LRU typically contains multiple boards, as well as a framework and external housing, it is Clear that replacing
+an entire LRU is less efﬁcient, in terms of storage of spares, than the other methods. This is particularly signiﬁcant
+When considering the need for multiple spares, to allow multi-fault tolerance (i.e., multiple or repeated failures or
+damage to the same system).
+
+Design and Support Considerations
+
+For the implementation of any level of component or board level repair strategy to be successful, systems would
+need to be designed so that “non-repairable” components were segregated, to the greatest degree possible, on
+smaller ‘daughter’ cards, allowing a larger number of smaller cards to be carried. Further, the Circuit boards and
+LRUs must be designed for repair, Which includes allowing accessibility to the boards, use of common components
+When possible, board layouts that reduced the difﬁculty of performing a repair, common LRU and board interfaces
+Where possible, and extensive BIT to reduce the diagnostic tasks left to a crew member. These techniques Will
+
+6
+American Institute of Aeronautics and Astronautics
+
+"
+"7","reduce the crew workload during a repair, and the amount of training time necessary for crew competence. Ground
+support teams Who are able to examine diagnostic test results (With engineering models of electronics on hand) can
+greatly aid in the diagnosis and repair of faulty electronics. Finally, one or more crew members should be
+knowledgeable in the ﬁeld of electronics. This does not mean that a crew member should be an electronics engineer
+or technician, but should be trained in some electronics repair similar to the U.S. Navy 2M program”, or similar
+program focused on the types of repairs and components expected during a space mission.
+
+V. Conclusions
+
+This paper examines strategies for the repair of faulty electronics in long duration space missions. The
+discussion ﬁrst focused on factors affecting the crew’s ability to perform these repairs. These factors include
+designing the electronics so they can be repaired during a mission, the diagnostics required to both determine the
+source of a fault and to test a repair before returning the system to use, and crew considerations including training,
+experience, and ground support through te1eseienee. The paper then discusses three general strategies for
+performing repairs during a mission: replacing a LRU, repairing components on Circuit boards Within a faulty LRU,
+and reprogramming 0r scavenging parts from a less critical LRU for a faulty, but necessary, LRU. Finally, the
+authors recommend a mix of replacing entire LRUs When the system is a critical component, having spare Circuit
+boards for Circuits requiring complex repair techniques, and spare components for LRUs that are not mission critical
+and do not require difﬁcult repair procedures. Combined, these methods reduce the volume and mass required for
+spare parts and increase the capabilities and increase the likelihood of overall mission success.
+
+While the development and implementation of such a repair capability will require effort and expenditure, the
+cost of failing to provide a well-planned repair capability could be catastrophic, both economically and in human
+terms, if the failure to make such repairs were to lead to mission failure and loss of life. When considered in those
+terms, the efforts needed to explore, develop, and implement appropriate repair strategies to allow sustainable and
+supportable long-duration missions don’t appear nearly as costly.
+
+Acknowledgments
+
+The authors Wish to thank Gary Latta and Andrew Ganster 0f the Naval Surface Warfare Center, Erie Anderson
+of Zin Technologies, and Gary Goreeki of NASA Glenn Research Center for their assistance in this effort. This
+work is funded by the Supportability Project in NASA’s Exploration Technology Development Program Ofﬁce
+(Barmae Taleghani, Program Manager, NASA Langley Research Center).
+
+References
+
+1 Beddingﬁeld, K.L., Leach, RD, and Alexander, M.B. (editor), “Spacecraft System Failures and Anomalies Attributed to
+the Natural Space Environment”, NASA Reference Publication 1390, August, 1996.
+
+2 Rutledge, P.J., Mosleh, A., “Dependent-Failures in Spacecraft: Root Causes, Coupling Factors, Defenses, and Design
+Implications”, Proceedings of the IEEE Annual Reliability and Maintainability Symposium, 0149-144X/95, (1995), pp. 337-342.
+
+3 Constellation Architecture Requirements Document, NASA-CXP-70000, effective date September 18, 2006.
+
+4 Accola, A., Fincannon, H.J., Williams, G. J ., and Meier, R. T., “Sensitivity Study of Space Station Freedom Operations
+Cost and Selected User Resources,” 1AA Symposium on Space Systems Cast Estimation Methodolagies and Applications, San
+Diego, May 1990.
+
+5 Grugel, R.N., Cotton, L.J., Segre, P.N., Ogle, J.A., Funkhouser, G., Parris, F., Murphy, L., Gillies, D., Hua, F., and
+Anilkumar, A.V., “The In-Space Soldering Investigation (1881): Melting and Solidiﬁcation Experiment Aboard the International
+Space Station”, 44th AIAA Aerospace Sciences Meeting and Exhibit, 2006, AIAA 2006-521.
+
+6 Pettegrew, R.D., Struk, P.M., Watson, J.K., and Haylett, D.R., “Experimental Methods in Reduced Gravity Soldering
+Research”, NASA-TM2002-211993 (2002).
+
+7 Pettegrew, R.D., Struk, P.M., Watson, J.K., Haylett, D.R., and Downs, R.S. “Gravitational Effects on Solder Joints”,
+Welding Journal, pp. 44-48 (2003).
+
+8 Struk, P.M., Pettegrew, R.D., Downs, R.S., and Watson, J .K., “The Effects of an Unsteady Reduced Gravity Environment
+on the Soldering Process”, AIAA-2004-1311 and NASA / T M -2004-21 2946 (2004).
+
+9 Struk, P.M., Pettegrew R.D., Downs, R.S., and Watson, J .K., “The Inﬂuence Of Gravity on J oint Shape for Through-Hole
+Soldering”, AIAA-2005-0541 and NASA / TM 2005-213589 (2005).
+
+10 Watson, J.K., Struk, P.M., Pettegrew, RD, and Downs, R.S., “Experimental Investigation of Solder Joint Defect
+Formation and Mitigation in Reduced-Gravity Environments”, AIAA Journal ofSpacecraft and Rockets, accepted for publication,
+2006.
+
+7
+American Institute Of Aeronautics and Astronautics
+
+"
+"8","11 Pettegrew, R.D., Easton, J ., Struk, P.M., Anderson, E., “In-Flight Manual Electronics Repair for Deep Space Missions”,
+IEEEAC Paper #1208, Submitted for IEEE Conference, March, 2007; also to be a NASA TM, spring, 2007 .
+
+12 Combustion Integrated Rack Comprehensive Design Review, FCF-DOC-1421, 2004 (NASA document).
+
+13 Pettegrew, R.D., Easton, J ., Struk, P.M., “Repair of Electronics for Long-Duration Spaceﬂight”, 45th AIAA Aerospace
+Sciences Meeting and Exhibit, 2007, AIAA 2007-1364.
+
+14 Naval Surface Warfare Crane center information, http_://www.crane.naﬂ.mi1/2m/2mpage.htm
+
+8
+American Institute Of Aeronautics and Astronautics
+
+"

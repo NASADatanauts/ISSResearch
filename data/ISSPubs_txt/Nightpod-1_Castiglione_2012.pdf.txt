@@ -1,0 +1,483 @@
+"","x"
+"1","63rd International Astronautical Congress, Naples, Italy. Copyright ©2012 by the International Astronautical Federation. All rights reserved.
+IAC-12-B3.3.12
+THE NIGHTPOD — AN ORBITAL MOTION COMPENSATION MECHANISM FOR 188 BASED
+IMAGING
+Luigi Castiglione 1’ §, Simon Silvio C0nticello*, Marco Esposit0*, Rody Oldenhuis*, Scott G. M00n*, Anja
+Nicolait, Stephan Stoltzt, J an DettInann:t
+
+In support of ISS Andre Kuipers' long term PromISSe mission, ESA uploaded a system supporting the
+Astronaut in taking pictures of the Earth at Night from inside the ISS Cupola. In particular, the NightPod has
+been used for Observation of human settlements (e.g. Cities, roads, sea establishments), wild ﬁres, volcano
+activities, and is expected to provide an unprecedented resolution of < 15 m/pixel.
+
+The NightPod is a state-of—the-art electro-Inechanical system which accommodates commercial Optical
+cameras and compensates for the orbital motion and attitude of the 188. The compensation is achieved by a non-
+linear motorized rotation of the camera with arcsecond accuracy. The NightPod computer directly controls the
+camera and synchronizes the n0n-linear rotation of the pointing aXis and the integration time Of the camera. The
+NightPod allows rotation in 4 axes. Two axes are used to align the NightPod t0 the 188 local nadir direction. The
+third motorized aXis rotates during Operation keeping the desired target steady in the camera's ﬁeld of View for
+the several seconds integration period. The fourth aXis is used to manually point at Off-track targets.
+
+The NightPod is stowed disassembled and can be easily mounted in Cupola before Operation. When
+assembled, the NightPod interfaces to the Cupola Via custom-Inade, easy to use locking mechanisms.
+
+In this paper the system engineering approach to fulﬁl the strict technical, safety and programmatic
+requirements for the development of the NightPod is presented. The NightPod is the ﬁrst payload installed by
+BSA in the Cupola. The lessons learned from this project will be beneﬁcial to the development of future
+payloads for Earth Observation from 188. The Challenging ﬂight hardware design and development process,
+together with a full ProtO-Flight testing campaign, was successfully concluded in only ﬁve months in order to be
+on time for the launch of the Soyuz 298 to the 188, on the 21th of December 2011. Commissioning has been
+successfully completed on the 24th of February 2012. The NightPod is part Of the Crew standard training and
+will be Operated by all Crew Members ﬂying to the 188 in the coming years. The NightPod is the result of an
+efﬁcient collaboration between cosine (NL) as prime contractor, Astro-und Feinwerktechnik (DE) as
+subcontractor, and the directorate Of Human Space Flight and Operations (ESA)- HSO. The proj ect is funded by
+ESA under the GSTP programme, with the support of the Dutch and German delegates.
+
+I. 188 NIGHT PHOTOGRAPHY Some astronauts have tried to improve the situation
+by turning the camera while its shutter is Open, to try
+
+The Cupola on board the International Space and keep it pointing to the same location on the
+Station (188) provides a unique vantage point for ground. While this already improves the photographs
+remote sensing of the Earth. quite drastically (best image Obtained has a precision
+
+There has been a steadily increasing awareness of Of approximately 60 meters per pixel), the most
+the potential for high resolution global photography of successful attempt until now was by NASA astronaut
+the night side of the Earth ever since the Earth Don Pettit in 2003. He constructed a motorized barn
+Observation group from the defence meteorological door tracker from spare parts on board the 18$ [1]. His
+satellite program started releasing coarse resolution tracker enabled much longer exposure times while
+photographs of the night side of the Earth. Because a preserving most of the image resolution.
+dedicated satellite is not foreseen in the near future,
+the most likely candidate suppliers of high resolution, Don Pettit's device was driven by a battery-
+global, nocturnal imagery is the crew on board the ISS. powered motorized screw driver and had to be
+
+calibrated manually. The success of his apparatus
+
+Given the low radiance of the scenes observed on triggered the development of a professionally built
+the dark side of the Earth, long exposure times are tracker, the end product of which is this very
+required for imaging. The long exposure time in mechanism, the NightPod.
+combination with the swift pace of the 188 results in The NightPod consists of a Cupola ﬁxation
+extremely blurry pictures, even when taking pictures structure (which connects the NightPod t0 the Cupola
+0f the brightest Cities. seat tracks), a Control BOX (containing a single board
+
+— computer, a rotary stage and the necessary control
+
+* cosine Research BV, The Netherlands electronics), a standard camera interface and
+
+tAstro- und Feinwerktechnik Adlershof GmbH mechanical support for four actuated axes shown in
+
+it European Space Agency (BSA), The Netherlands Fig. V.
+
+§ Space Application Services (SAS), Belgium
+
+IAC-12-B3.3.12 Page 1 0f7
+
+"
+"2","63rd International Astronautical Congress, Naples, Italy. Copyright ©2012 by the International Astronautical Federation. All rights reserved.
+Fig. I shows the barn-door tracker concept applied 0 Compact Volume for stowage 0n orbit and t0
+
+t0 the NightPod. The NightPod rotates the camera, comply with the Soyuz cargo constrains.
+
+With a non—linear SPGGd that depends 011 the Iss 0 Capability to interface cameras and lenses
+
+altitude, to compensate the 188 vs. Earth relative ranging from 10.5mm to 800mm focal lengths
+
+motion and hold the Field of View on the target during (and similar physical lengths).
+
+the relatively long exposure time.
+
+In order to simplify the design life cycle, the
+
+’3§ [5% NightPod has been conceived as a combination of
+
+\‘ k \ m custom built parts and 188 compatible COTS items.
+‘ Breadboarding activities took place before an
+,’,' Engineering Model (EM) was manufactured in order
+
+5' I to verify the integrated design.
+,1. -' Besides regular and frequent programmatic and
+/’ technical meetings to assess the project status, the
+’ Agency ran formal tailored reviews involving
+independent Experts.
+
+A Design Review (DR) was held to verify design
+maturity. Several independent Safety Reviews (SR)
+ran in parallel to verify adequacy of deliverables to
+
+H E a Crew operations, launcher, ISS and Cupola
+
+,. "" ""-'-- environments. A Final Acceptance Review (FAR)
+
+/.’l X”: veriﬁed compliance of deliverables to all applicable
+
+,' I “I .“ requirements. The Cupola I/F requirements have been
+
+ﬂit! deﬁned, processed and veriﬁed together with NASA
+
+,JE‘I-‘l' . by means of Technical Interchange Meetings. A ﬁt-
+
+! :3” "" check (Fig. 11) was performed using the Cupola mock-
+
+' ff up in J SC to verify mechanical UP and operational
+
+_._ aspects of the integrated conﬁguration (including
+validation of operational products).
+
+Fig. I: NightPod operational description: the image .'.' -r l ;..- '. : I""1'- E '1 |_ .
+motion blurring effect is reduced by rotating the _.'_I '~ 1 '- -' {1.15: ' _
+camera so that Line Of Sight points to the same .th :I' _.lli's;
+target on ground during exposure. 1‘. . ; l"" _ __
+
+wag?""- ,. L. uh
+II. DEVELOPMENT APPROACH _ '-"""" j _ i
+
+$.11- J . ,.-_;:- -‘- ""i --
+
+The NightPod has been commissioned as Crew '5' *"" i. -' _t :_ li-l "" I'
+
+attended and operated device. ., ‘- 'I ' FE- _ _ .. '
+
+The mission objective was to assist the Crew in -. - _ ‘_ '1'; i""?! ' 3 ill:-
+
+taking high-resolution pictures 0f.the Earth at Night Fig. 11 The NightPod in the Cupola mock—up in the
+
+from Cupola, us1ng 0n-b0ard available Cameras and N AS A Johnson Space Center (JSC), Houston, TX.
+enses.
+. The total available time from project Kick Off to Three Models were delivered:
+
+shipment for integration on launcher was less than SlX . The Proto—Flight M 0 del (PFM), currently on
+
+months. board the ISS, operated during Expedition 30
+The main design drivers identiﬁed were: 1‘? etfit. by Crew members A. Kuipers and D.
+. Crew Safety: 0 The Engineering Model (EM), used to verify
+o Easy-to—use interfaees to allow the astrenaut to design prior manufacturing of the PFM and
+
+quickly Inount/ (11511.10th the nghtP0d9 currently available at the Erasmus USOC, in
+a90urately align 1t? P_Omt and ShOOt'. . The Netherlands, to support operations and
+
+0 High accuracy on alignrnent and p01nt1ng. troubleshooting;
+
+o Structuial strength to w1thstancl all load cases . Training Model (TrM), used for Astronaut
+(including launch and crew j‘kicloloads”) and training and currently available at the EAC in
+double fault-tolerant mechanical interfaces. Koln. The TrM was also the ﬁrst Model built
+
+' Maximum 10 kg total launch mass (incl. to assess integrated design and operational
+launch packaging). aspects.
+
+IAC-lZ-B3.3.12 Page 2 0f7
+
+"
+"3","63rd International Astronautical Congress, Naples, Italy. Copyright ©2012 by the International Astronautical Federation. All rights reserved.
+protection and are qualiﬁed by the National
+
+Analysis and tests were conducted on these models Aeronautics and Space Administration (NASA) for
+to verify fulﬁlment of the requirements. ﬂight on—board the ISS and the Space Shuttle.
+
+The PFM has been veriﬁed With proto-ﬂight The custom battery UP is veriﬁed against all the
+approach: tests were performed directly on this model safety requirements for battery usage on board the 188.
+at qualiﬁcation level and reduced duration. Fully charged batteries allow continuous operation
+
+for more than 6 hours in worst case conditions.
+
+Items also underwent many inspections to verify
+compliance to requirements and manufacturing Camera i/f
+quality.
+
+Camera ‘ Power ""On"" Button
+Fastener and
+III. DESIGN Power ""On"" LED
+. am? 9 u c,
+
+111.1 Design desorip_tion OLED D'Sp'a 2‘ ‘ 9 LOW Vo'tage
+
+The NightPod consists of (see also in Fig. 111): User I/F *‘ ‘ ‘ Battery LEDS
+
+o the “Head”, providing 3 manually adjustable Bgttons _
+
+axes, single motorized rotary stage With micro— Flg' IV: nghtPOd Control BOX'
+
+stepper motor controlled by a single board
+
+computer electronics enclosure (the Control The Control Box also accommodates the buttons to
+Box) Camera interface USB port and Crew control the payload, the Organic Light Emitting Diode
+interfaces (OLED) display to show the information, and the USB
+
+. two “Legs” providing 4 seat track interfaces data interface used to communicate With the camera
+
+to Cupola and the interface to the NightPod and to upgrade the control S/W. The interface to the
+
+“Head”' 9 camera is located on top of the Control Box, and
+
+. a L ens ,Suppo rt (for the Nikkor 400 mm lens accommodates the captive tripod mounting screw to
+only) mount the camera itself.
+
+' The box is vented to Withstand the negative
+
+The design is optimized to accommodate a Nikon pressure durlng the ascent ﬂlght'
+
+D3s [4] camera mounting a Nikkor 400mm lens. . .
+
+Shorter lenses can be use d as well. The non-llnear rotation of the camera to
+compensate for the ISS orbital motion is actuated by a
+rotary stage. The rotary stage is composed by a gear
+box, a micro—ste er motor, a motor controller and an
+
+PP
+optical encoder. The encoder is also used as stall
+_ warning system in case any force is applied to the
+N'kO” D33 assemb'y camera lens While rotating.
+Lens Support )1
+4th
+NightPod Head
+—> _ 3rd
+NightPod Legs - -
+’ . 2nd
+_ _ 1st
+F1g.V: nghtPod axes.
+
+Fig 111 NightPod main components exploded View Gear drives are used to set and lock the orientation
+
+' With Nikon D3s assembly of the NightPod axes as shown in Fig. V. The gears are
+
+' adjusted Via an enumerated dial and their gear ratio
+
+The NightPod is powered by two batteries provides high adjustment accuracy and ensures the
+connected in series and placed on the side of the correct allgnment durlng operatlons.
+
+Control Box (Fig. 1V) Which contains the control .
+
+electronics. The batteries have internal over-current The Leg assernblles are connected to theHead by
+two interfaces (Fig. V1) that look into pos1tion When
+
+IAC-12-B3.3.12 Page 3 of7
+
+"
+"4","63rd International Astronautical Congress, Naples, Italy. Copyright ©2012 by the International Astronautical Federation. All rights reserved.
+the Head is correctly inserted by the crew members. In
+order to dismount the system, release levers shall be -
+operated and, once unlocked, a body release lever shall
+be used to disengage the three components completely. * _ _ _ _________ _ ___.1
+1.1.1.1 11.111.111.11 ?_— ”17‘""
+' . . / ?:?:rRetease - l #1:! _ I
+‘ $221213... _ ""‘ Iii?)
+Fig. V1: NightPod legs - head interface. _ _"""" _
+
+The interface to Cupola is at the seat-tracks Fig. 1X: NightPod in its transport/stowage container.
+alongside the Cupola lateral Windows (Fig. VIII). The _ _ _ _ _
+NightPod seat-track interface consists of a custom Tab1e1summarizes main nghtPOd spe01ﬁcat10ns.
+designed mechanism equipped With a self—locking
+system as shown in Fig. V11.
+
+Table 1: Summary of the NightPod technical
+speciﬁcations; * using the Nikon D3s camera and
+the 400 mm f2.8 lens.
+
+Opened position 111.11 Safety assessment
+Closed position The NightPod has been designed and tested for
+Fig. V11 NightPod seat track interface in the locked compliancy With the requirements for human
+
+(left) and open (right) positions. spaceﬂight safety for pressurised payloads. These
+requirements cover a Wide range of areas from
+
+’1 -. ' ' -_ interface deﬁnition to outgassing requirements.
+
+\ /£;( 1H:- 11‘1“- "" The impact of different load cases, including
+:1 ~_1I- K g}: launch, de-pressurization and creW-induced (kick)
+
+. . rf§~w""ﬂ .*:.=__- ' c—fx loads on structural integrity was analysed With the
+33—1 1 _ __ ' I ""J Finite Element Method (FEM) model of the NightPod,
+#1 \1- __ 1:17. +=- ' ‘11 and veriﬁed at later stage by qualiﬁcation and
+ﬂ _ . ' _ :‘F' 511‘}. _ 7‘1. 1'3 J acceptance testing. The mechanical and electrical
+Ii 1 . """"-:: -—:""_""f- -* fin ff- interfaces are labelled, locking is Visually veriﬁable
+J ' '\ _ ‘ J: __ -- . .- (5‘ g and secured against inadvertent disengagement.
+
+.! “a ____. "" _ 11""‘1-1'"" - ‘5; The system has been designed to be operated With
+ii - ‘1 5:59” h"" ' one hand once installed and is free from pinching
+
+1 -. "" . 1:5 points and sharp edges.
+Fig. V111: NightPod installed in cupola With astronaut
+
+A- Kuijpers (credits ESA/NASA)~ Light Emitting Diodes (LEDs) are used to indicate
+the power status of the main power line and of single
+
+The NightPod i5 stowed disassembled into its 4 battery low-Voltage. Power is automatically cut-off
+components, inside its ﬂight transport container. The when the voltage goes below the security margin set
+container is made of low density polyethylene foam by the ISS safety policy.
+covered With Nomex, and Velcro.
+
+The storage conﬁguration is showninFig.1X. Clearance analyses were performed on baseline
+operational scenarios as shown in Fig X. Operational
+envelope limits are reported in Table 11. The motor
+speed and full swap angle has been analysed (and
+mechanically constrained) to avoid impact and
+consequent injury to astronaut during operation.
+
+1AC—12—B3.3.12 Page 4 0f7
+
+"
+"5","63rd International Astronautical Congress, Naples, Italy. Copyright ©2012 by the International Astronautical Federation. All rights reserved.
+Axis Operational ranges for Ranges for non-main
+alignment / pointing Windows position
+lsthaw i 20 degrees i 60 degrees mode
+2ndzRoll i 20 degrees +40 / -20 degrees /
+constrained b -
+i\1ightPod georilietry)
+3rdzPitch i 20 degrees i 20 degrees
+“Odding ,.if:1‘]ijIi'fjfffiill'ffiff:TILII‘fﬁYfffiIf:ff:I'.'.'I'.'.'.'.‘T.'.'.'IIf:'""WW""""WW"":
+Table 11: NightPod operational ranges Periodically reset
+gto calibration mode;
+Materials and components have been selected and
+veriﬁed in compliance With requirements for human Fig. X13 NightPod operation modes.
+spaceﬂight safety. Flammability and explosion
+assessments have also been supported by qualiﬁcation Fig. XI ShOWS the different NightPod operational
+test. modes and possible state transitions:
+The control Box is veriﬁed for structural integrity
+under the different load cases and provides ' Calibration
+containment for inadvertent ﬂame (Which would self- 0 Manual Mode
+extinguish) and shatters (Which would be contained). 0 Automatic Mode
+A successful off—gassing test has been performed
+on the PFM. Calibration
+_ The NightPod (With the camera installed) must be
+-. ; _ calibrated in order to account for the current 188
+_ "" .44, -,\ __ attitude and altitude. The calibration is performed
+. 5:3,? 4, ,. '- ' inserting the ISS orbit attitude information in terms of
+- - *- ""1:3 4,44 ' \ . yaw pitch and roll in the NightPod computer, Which
+,""ﬂ __ 2 ______.--- - K, I] ) then calculates how much each aXis on the NightPod
+| f . . 4,. ‘ _' _ should be rotated so that the camera is pointing nadir.
+| . .
+. | '4- 4 y] - The crew member shall adjust the yaw and roll aX1s
+, \ I 3"" n . .' .- using the scales engraved on the axes. The motorized
+'. '4' *_ ' \ ""iii ' aXis is then set by software. Once this calibration is
+1,1"" ,_ . s "" complete the Nightpod is ready to be used and an
+I ‘ 1 3,1 1' ' operational mode can be selected. It is however
+_ *-_ \3 possible to switch between all operational modes
+. ‘i _ _ _ _ during a session.
+Fig. X: NightPod operational envelope in Cupola.
+111.111User1nterface and Operational Modes
+Besides the power buttons, there are eight buttons
+on the Control Box used to navigate through the
+different operational modes, set the parameters (e.g.
+the current 188 altitude and attitude) and control motor Fig. XII: Calibration menu with parameters inserted.
+and camera. Output can be seen in real time on the right part of
+All the information is displayed on the OLED the screen.
+display located above the buttons. OLED and other
+LEDs dim during shooting to avoid straylights. Manual mode
+The manual mode is intended to assist in manually
+The user interface has been designed to be intuitive pointing the camera to speciﬁc targets (either pre-
+and user friendly and has been tested and review selected by their latitude/longitude coordinates or
+several times during the project also With the support hand-picked by the user), and making single-shot
+0f Crew members. pictures of those targets. The motorised aXis rotates to
+compensate the orbital motion of the 188. The crew
+member decides When to take the picture.
+IAC—12-B3.3.12 Page 5 of7
+
+"
+"6","63rd International Astronautical Congress, Naples, Italy. Copyright ©2012 by the International Astronautical Federation. All rights reserved.
+
+Automatic mode a very short time a well performing device, built with a
+
+This mode is a semi-automatic mapping mode, the relatively low budget, optimizing the use of custom
+camera makes a number of pictures in a row, selecting built parts and state—of—the—art COTS.
+the integration times and tracking aXis reset times such The NightPod has been the ﬁrst ESA P/L
+that the entire swath covering the ISS ground track accommodated in Cupola and a valuable experience
+during one pass is imaged with minimum smear and for future development and accommodation of P/L’s
+distortion per image. dedicated to Earth Observation in the 188.
+
+The idea behind the automatic mode is to use the The pictures produced during the ﬁrst half of 2012
+mechanism to systematically take pictures of adjacent have already raised the attention of scientists from the
+areas on the surface, so that combining these pictures Earth Observation community who expressed interest
+results in large-scale but high resolution “maps” of the in further development of this project.
+night side of the Earth. This principle is shown NightPod is still available onboard the 188 to be
+schematically in Fig. XIII. Given enough time and used by the ISS Crew and provide more images. A
+enough passes, equal areas can be imaged under a S/W update introducing additional features and
+wide variety of angles and lighting conditions, improvement has been developed and awaiting
+increasing the quality of the resulting maps and installation.
+increasing the number of areas of scientiﬁc research The new features will allow even more accurate
+that can beneﬁt from the data. operation and shooting of “daily light” and stars
+
+pictures.
+1—“; ""T""“‘9‘*"".*‘”” The full set of pictures is publicly available 0n
+5“0'#1 5mm: sham” shut” http://e01.jsc.nasa.g0V/ [2]. Some examples are shown
+%§F}§§~: ”?‘T’ 13""}??? for referenee here-in (Fig. XTV and XV). This paper
+am --... .11 Hin— Q—E dees not aim to .pr0V1de an in depth analys1s 0f the
+. [‘3 pictures taken With the NightPod but focuses on the
+_ i . development process. For more information and
+-' . i ""a selected pictures please contact BSA [3].
+n’ ‘ ""H,
+"" ‘1 ’ - m1}; . .
+:JH - JT- ‘ ‘ i i: h .
+image #n—1 ' J; 1 ’ 7 1 ,3 .l-Ajiiiiiérii V v, , ‘ ‘
+huge ﬁn E,\L/ A ' x"" .3 . ‘
+image#nﬂ i' . - ' ,r- 7; 7 1' 1 ‘ ‘
+Fig. XIII: automatic mode. . w b .1 :‘M;
+IV . CONCLUSIONS . ,3“ '5» {g
+
+The NighPod was successfully commissioned in Flg' XIV: The Hague and Amsterdam area, The
+
+February 2012 and has been used during the Netherlands(cred1ts ESA/NASA)‘
+
+Expedition 30 & 31 by both A. Kuipers and D. Pettit _ _ .: _ ¥ .;
+
+who took thousands of pictures, some of which have :1 i 1;? “Ha . '
+been shared with the public directly by the astronauts . _ J?Eﬂﬁrﬁ‘ .- _-
+during their mission. z 5' iﬂ'I-irﬂ-g‘i . I '
+
+It has been conﬁrmed that the NightPod helps 1n 31""“: “*3. _ ' . . -
+taking sharper high resolution images of the Earth at 3; ' - .
+night. However, whereas Cupola is an outstanding 1;. _- ' _-__.- ' _ . '
+location for optical observation, the windows (and in E; h ”‘4‘ .
+particular the protective panes) limit the use of high .__.; T “r;- 1*! _ _- __ _ I . '
+focal lengths. It has been observed that any picture ' . I r..;l_.;—.= “1 ' '
+taken using lens with focal lengths above 180mm 5
+would result in “b1urry”images. _ ""I"" "" - -
+
+Fig. XV: Naples area and the VesuV1us volcano, Italy
+
+The NightPod has been a successful example of a (credlts ESA/NASA)‘
+fast-track project where a committed international
+team designed, manufactured, veriﬁed and launched in
+
+IAC-12-B3.3.12 Page 6 0f7
+
+"
+"7","63rd International Astronautical Congress, Naples, Italy. Copyright ©2012 by the International Astronautical Federation. All rights reserved.
+ACRONYMS
+ADP Acceptance Data Package
+COTS Commercial Off The Shelf
+DR Design Review
+EM Engineering Model
+EAC European Astronaut Center
+ESA European Space Agency
+FAR Final Acceptance Review
+FEM Finite Element Method
+GSTP General Support Technology Program
+H/W Hardware
+I/F Interface
+188 International Space Station
+J SC J ohnson Space Center
+K/O Kick—Off
+NASA National Aeronautics and Space Admin.
+OLED Organic Light Emitting Diode
+P/L Payload
+PFM Proto-Flight Model
+SR Safety Review
+S/W Software
+TI‘M Training Model
+REFERENCES
+[1]
+http://earth0bservat0[y.nasa.gOV/Features/CitiesAtNig
+ﬂ
+[2]
+http://e01.jsc.nasa.g0v/
+[3] .
+www.esa.1nt
+[4]
+http://WWW.nik0nusa.Com/Nikon-Products/Product-
+Archive/Digital-SLR-Cameras/25466/D3S.htm1
+[5]
+CSC-NZMI-ADP issue 2.2, NightPod ADP
+[6]
+http://cosine.n1/ ?id=newsitem&code=201 1 1220
+IAC-12-B3.3.12 Page 7 0f7
+
+"

@@ -1,0 +1,577 @@
+"","x"
+"1","International Symposium on Physical Sciences in Space IOP Publishing
+J ournal of Physics: Conference Series 327 (2011) 012027 doi:10.1088/1742—6596/327/1/012027
+Numerical Modelling of Liquid Droplet Dynamics
+in Microgravity
+S. Easter, V. Bojarevics, K. Pericleous
+University of Greenwich, Park Row, London SE10 9LS, UK
+V.B0jarevics@gre.ac.uk
+Abstract. Microgravity provides ideal experimental conditions for studying highly reactive
+and under-cooled materials Where there is no contact between the sample and the other
+experimental apparatus. The non-contact conditions allow material properties to be measured
+from the oscillating liquid droplet response to perturbations. This work investigates the impact
+of a strong magnetic ﬁeld on these measurement processes for weakly Viscous, electrically
+conducting droplets. We present numerical results using an axisymmetric model that employs
+the pseudo-spectral collocation method and a recently developed 3D model. Both numerical
+models have been developed to solve the equations describing the coupled electromagnetic and
+ﬂuid ﬂow processes. The models represent the changing surface shape that results from the
+interaction between forces inside the droplet and the surface tension imposed boundary
+conditions. The models are used to examine the liquid droplet dynamics in a strong DC
+magnetic ﬁeld. In each case the surface shape is decomposed into a superposition of spherical
+harmonic modes. The oscillation of the individual mode coefﬁcients is then analysed to
+determine the oscillation frequencies and damping rates that are then compared to the low
+amplitude solutions predicted by the published analytical asymptotic theory.
+1. Introduction
+The experiments With liquid metal droplets levitated in AC magnetic ﬁeld show difﬁculties related to
+conﬁnement instability and a need for complex correction functions to establish a correlation between
+the measurements and the droplet material properties [1-3]. A very intense internal ﬂuid ﬂow is
+Visually observed, apparently being in the turbulent regime for earthbound conditions. The
+combination of AC and DC magnetic ﬁelds was recently recognised as an efﬁcient tool for the
+electromagnetic processing of materials and for thermophysical property measurements Without a
+contact to contaminating walls [4, 5]. The intense AC magnetic ﬁeld required to produce levitation,
+along With the buoyancy and thermo-capillary forces, results in turbulent large-scale toroidal
+recirculation Within the droplet, Which prevents accurate measurements. The use of a homogenous DC
+magnetic ﬁeld allows the toroidal ﬂow to be damped. However the intense recirculation generates
+turbulence Which could make the effective Viscosity behave in a non-linear fashion depending on the
+DC and AC magnetic ﬁeld intensity [5]. The ﬂow in a typical droplet is approaching the conditions
+With laminar Viscosity and heat transfer When a uniform DC magnetic ﬁeld reaches about 4-5 T.
+Even a purely DC magnetic levitation, using para- and dia-magnetic properties of the materials, can be
+used for advanced material research [6, 7]. Due to the low values of magnetic susceptibility for typical
+liquid materials the ﬁelds are large (typically > 10 T), requiring superconducting coils With an
+associated cooling system. The vertical ﬁeld gradient permits to compensate gravity along the central
+Published under licence by IOP Publishing Ltd 1
+
+"
+"2","International Symposium on Physical Sciences in Space IOP Publishing
+J ournal of Physics: Conference Series 327 (2011) 012027 doi:10.1088/1742—6596/327/1/012027
+aXis, while the radial variation opposes motion of the droplet and acts to centre it on the aXis for stable
+leVitation. However, in practice a small Vibration of the droplet as a whole remains even in carefully
+conducted experiments [7].
+
+The oscillations in a high DC magnetic ﬁeld are quite different for an electrically conducting
+droplet, like liquid metal. In a recent publication [8] an asymptotic solution for very high magnetic
+ﬁeld shows damping of the even aXisymmetric modes, but the odd modes are not damped or damped
+moderately. The asymptotic linear theory predicts a considerable shift of the oscillating droplet
+frequencies from the non-magnetic case. The transition of the droplet behavior from the low to high
+magnetic ﬁeld is the subject of investigation in this paper. Numerical models of the ﬂow coupled with
+the moving free surface give an insight to the dynamics and complexity of the events within leVitated
+droplets of various sizes and magnetic ﬁeld intensities. For simplicity we will restrict the study to
+uniform DC magnetic ﬁeld, leaving the more general cases of realistic gradient ﬁelds, as in the
+solenoidal coils of superconducting magnets, for a future work.
+
+2. Droplet oscillation mode decomposition
+The general theoretical approach assumes that the free surface shape of the droplet is deﬁned by a
+small deViation from a sphere of radius R0. The surface position can be represented by:
+1;: R0[1+S(6,¢,t)]. (1)
+The function deﬁning the deViation from a sphere (S) varies in time and space and can be represented
+in spherical polar coordinates as a series of spherical harmonics:
+L=ooM=L
+saw =2 2A? (012M (6) cos<M¢>+AzM (01):” (6) mew), <2)
+L20 M20
+The YOU = P00 mode is included to account for conservation of mass (volume). The time-dependent
+surface coefﬁcients are assumed to be harmonic with exponential damping:
+A2” (t) = eos(a)£4t) eXp(—7/2Wt) (3)
+The mode dependent oscillation frequency and damping constants are generally derived by following
+a perturbation approach. The zero order result for the frequency was calculated by Rayleigh [9], and is
+given for a droplet with density ,0 and surface tension F by:
+M L(L—1)(L+2)F
+0L = —3 (4)
+,0 R0
+The zero order result for the damping coefﬁcient for a droplet of Viscosity V was determined by Lamb
+[10]:
+M (L—l)(2L+l)v (5)
+7/ L _ R3
+It is interesting to note that the zero order approximation for both the frequency and the damping
+constant are independent of the azimuthal number M. These formulae provide a good ﬁrst
+approximation for low amplitude oscillations of droplets in microgravity conditions where the effects
+of any external forces used to position the droplet are negligible compared with surface tension and
+Viscous forces. However it is worth noting that these formulae are restricted and are only valid in the
+limit that the amplitude of oscillation and also non-linear effects tend to zero. Modiﬁcations to these
+lowest order formulae have been derived by Tsamopoulos & Brown [11]; they showed that for
+‘moderate amplitude’, the frequency decreases with increasing amplitude and that a coupling of the
+spherical harmonic modes appears at the second order.
+
+Performing experiments in conditions where any external positioning forces are negligible (drop
+
+shafts, parabolic ﬂights, space) is limited due to eXpense and also by the amount of time in which
+2
+
+"
+"3","International Symposium on Physical Sciences in Space IOP Publishing
+Journal of Physics: Conference Series 327 (2011) 012027 doi:10.1088/1742—6596/327/1/012027
+experimental measurements can be made. The oscillating drop technique has been used in terrestrial
+conditions Where the forces used to balance gravity and position the droplet are in the form of some
+sort of leVitation, acoustic, aerodynamic, electromagnetic, 0r electrostatic. The use of a positioning
+ﬁeld results in a more signiﬁcant impact on the droplet dynamics and adjustments to the theoretical
+formulae are required. In the case of electromagnetic leVitation correction formulae have been derived
+by Cummings & Blackburn [2], in Which the external ﬁeld is shown to remove the degeneracy of the
+L=2 modes resulting in a splitting of the frequency spectrum. Other leVitation forces have also been
+considered by Suryanarayana & Bayazitoglu [3].
+
+Perhaps the most promising method of conﬁnement for conducting measurements using the
+oscillating droplet technique is diamagnetic leVitation in a superconducting magnet. In this case the
+weak diamagnetic properties eXhibited by many materials can be harnessed by a large magnetic ﬁeld
+and used to balance the force of gravity Without the more invasive Lorentz forces associated With AC
+electromagnetic leVitation. The resulting total magnetic force on the droplet allows gravity to be
+compensated, although there is some variation in the force and a component that acts towards the aXis,
+Which means that it is a good approximation to microgravity conditions but not completely equivalent.
+F requency measurements using the oscillating drop technique have been conducted for water droplets
+by Beaugnon et al. [6], Where estimates were made as to the frequency modiﬁcation due to the
+magnetic ﬁeld. More recent experiments have been conducted by Hill & Eaves [7], in Which a
+derivation of the frequency modiﬁcations due to the magnetic ﬁeld are made and compared With the
+experimental results.
+
+In a recent paper Priede [8], considers the effect of a constant high intensity magnetic ﬁeld on the
+oscillation frequency and damping rate of an electrically conducting drop. The magnetic ﬁeld is shown
+to signiﬁcantly alter the dynamics of the droplet With some interesting results. There are two distinct
+cases; the longitudinal modes When (L-M) is odd and the transversal modes When (L-M) is even. The
+frequencies for the odd and even modes respectively are given by:
+
+M (L—1)(L+2)F
+Q = —, (6)
+,0 R0
+L —1 L + 2 F
+L (L + 1) —M p13,
+
+The damping constant consists of two components, damping due to the magnetic ﬁeld B0 and
+damping due to Viscosity V. The damping contribution of the magnetic ﬁeld for the odd and even
+modes respectively are given by:
+
+1 032 R3
+7/2”28(L—1)(L+2)((L—1)(L+2)+2M2)% (8)
+2 2 2 2 2
+M (L—1)(L+2)(L —M )((L+1) —M )(3L(L+1)—2M ) 033123
+7/ L 2—22 T (9)
+6(L(L +1) —M )
+The contribution to the damping constant due to Viscous forces is given by:
+M M V
+7/ L :CL E (10)
+0
+Where (C 31 ) are coefﬁcients determined by evaluation of an integral Without a closed form solution.
+In this paper we are only concerned With the low order mode With coefﬁcients as given in [8]:
+5 35
+C1 = — C2 = 5 C0 = — 11
+2 2 2 3 3 ( )
+3
+
+"
+"4","International Symposium on Physical Sciences in Space IOP Publishing
+J ournal of Physics: Conference Series 327 (2011) 012027 doi:10.1088/1742—6596/327/1/012027
+In the following section an outline is given of an aXisymmetric and a 3D numerical model that Will
+be used to investigate these effects. F ollowing results are presented that demonstrate quantitatively the
+theoretical predictions and the gradual transition With the increase of the magnetic ﬁeld.
+3. Numerical Model
+The 3D numerical model uses a grid point formulation of the spectral collocation method With the
+ChebysheV grid for the radial direction and F ourier in the angular directions. The model uses a
+coordinate transformation for the free surface, Which allows the problem to be solved on a unit sphere.
+The equations solved by the numerical model are the momentum and mass conservation equations
+. . . . 25., 1312
+With the P01ss0n equation for the modiﬁed pressure, Pmod 2P + pgz —2— :
+[“0
+6V 1 J x B
+—+ (V-V)V=——VPm0d+vV-(VV+VVT)+—; V-V=0; (12)
+at p p
+l 2 l
+—V Pmodz—V- (V-V)V——J><B . (13)
+,0 ,0
+The total force due to the magnetic ﬁeld consists of two components, the Lorentz force due to the
+conducting properties, Which is added to the momentum equations as a body force and the diamagnetic
+force, Which is potential and is implemented in the model as boundary condition to the pressure
+equation along With the gravitational force, Which is also potential. The full boundary conditions for
+the equations (12) and (13) relate the normal stress to the three forces (surface tension, gravity, and
+diamagnetic):
+2
+B
+en-H-en2 FK+ng—m, (14)
+2/10
+the continuity and the tangential stress conditions:
+V-V = O, (15)
+en°H°e71=0, (l6)
+en-H-erzzo, (17)
+Where en , 311 , 672 are the unit vectors normal and tangential t0 the free surface, H is the stress tensor,
+K is the surface curvature, and IV is the volumetric magnetic susceptibility.
+The free surface shape is defined by its deviation from a sphere of radius R0 by an amount S given
+as a function of time and the angular coordinates:
+rs =R0[1+S(6,¢,t)] (18)
+The new surface position at each time step is evaluated using the kinematic condition:
+6r
+—S-en=V-en. (19)
+5t
+3.1. Electromagnetic F orces
+The magnetic ﬁeld from a solenoid is modelled as a superposition of the magnetic ﬁeld generated
+by aXisymmetric coil ﬁlaments of radius a. The aXisymmetric magnetic ﬁeld in cylindrical
+coordinates, B(r, 0, Z) 2(3),, 0, 32) , is obtained from the analytical formulae [l2]:
+4
+
+"
+"5","International Symposium on Physical Sciences in Space IOP Publishing
+J ournal of Physics: Conference Series 327 (2011) 012027 doi:10.1088/1742—6596/327/1/012027
+I a2 + r2 + 2
+Br :_,u0 —Z 2 —K+—2 Z2 E (20)
+2” r(/(a+r) +22 (“—7”) +Z
+I l a2 — r2 — 2
+1;Z=#<)_—2 K+—2Z2E (21)
+2” a/(a+r) +22 (“—7”) +Z
+Where, a = coil radius, I = electric current, K, E are the complete elliptic integrals of the ﬁrst and
+—1
+second kind respectively With argument, [(2 =4a r [(61 + r)2 + Z2:| .
+The stable levitation conditions can be established by adjusting the electric current in the coils to
+form a minimum in the magneto-gravitational potential (per unit volume):
+2
+z. B
+Uvol :ng_‘—"" (22)
+2H0
+The Lorentz body force requires an additional equation to be solved for the electric potential. The
+electric current density is given by:
+J: 0(—V¢E +V><B). (23)
+The equation for the electric potential is obtained from the charge conservation condition:
+V-J =0. (24)
+Taking the divergence of the electric current density gives:
+V2¢E =V-(VXB). (25)
+This equation is solved subject to the boundary condition:
+J-en = 0. (26)
+
+The magnetic ﬁeld in this paper is mostly prescribed as the constant ﬁeld given in cylindrical
+coordinates by:
+
+B(r,¢,z) =(0,0,BO). (27)
+4. Results & Discussion
+The following section contains the results of numerical simulations made using both the 2D
+aXisymmetric [l3] and 3D modes compared With theoretical asymptotic results from [8].
+
+The material chosen for the numerical test cases is either molten silicon having the material
+property values for surface tension coefﬁcient, density, kinematic Viscosity, volumetric magnetic
+susceptibility, and conductivity, respectively: F = 0.865 N m'1 , ,0 = 2510.0 Kg m'3 , V = 3.75e-7
+m2 s'1 , XV = -4.2e-6, G = 1.3e6 S ml; or for the molten nickel: F = 1.778 N m'1 , ,0 = 7995 Kg m'3 ,
+v = 6.2e-7 m2 s'1 , XV = 1.6e-6, G = 1.18e6 s m'1
+4.1. F reely Oscillating Droplets, AXisymmetric Mode (2,0)
+
+The ﬁrst case considered is the aXisymmetric mode 1’02 for the droplet of radius (R0 = 5.0 mm), initial
+
+amplitude (A02 = 0.01), and the velocity V=0. The constant magnetic ﬁeld has strength (BO = 2.5T).
+
+The initial amplitude corresponds to a polar deformation of 1% 0f the equilibrium droplet radius. A
+5
+
+"
+"6","International Symposium on Physical Sciences in Space IOP Publishing
+J ournal of Physics: Conference Series 327 (2011) 012027 doi:10.1088/1742—6596/327/1/012027
+small volume correction is applied in the form of 21 (A00) coefﬁcient, With the magnitude determined
+numerically.
+
+Figure 1 shows the ﬂow for a droplet moving in the (1’02) mode With the external magnetic ﬁeld.
+Maximum deformation occurs When t = 0, then monotonously decreases to reach the spherical shape
+as shown in the Figure 2 for various ﬁeld magnitudes.
+
+_ z
+W: -0.00036 0.00018
+Y
+X
+5004
+Figure 1. Oscillation mode (2,0), instantaneous velocity vectors and vertical velocity contours for Si
+droplet in 2.5 T magnetic ﬁeld.
+0.010 Oscillation Mode Y2
+—! "".UMH'UM
+‘-‘ II'IHM'I,”
+: 1‘
+:g |\
+.15 i \
+5 l \ — TheoreticalSi 25T
+a 0'005 ‘_ ‘ — — — - Numerical Si, ’2.5 T
+g ‘. ‘ NumericalSi,10T
+u; \ \ — - — - — - - Numerical Ni, 2.5 T
+3 ‘\ \
+U) — \
+\- \
+\ \
+.\ \
+*\‘ \ x. M
+0.000 ""~- ‘ ...... -- -.v~_-.-._... .. _ _ _ _ _
+0.00 0.05 0.10 0.15 0.20 0.25 0.30 0.35
+Time, s
+Figure 2. Surface deviation (Rtop-Roﬂ R0 function evaluated at the top point for Si and Ni droplets in
+various magnetic ﬁelds.
+6
+
+"
+"7","International Symposium on Physical Sciences in Space IOP Publishing
+J ournal of Physics: Conference Series 327 (2011) 012027 doi:10.1088/1742—6596/327/1/012027
+Theoretical asymptotic analysis for high B shows that the mode is over-damped by the magnetic
+ﬁeld, the oscillation frequency is zero and the magnetic damping constant is given by:
+032 R3
+yg=12#. (28)
+F
+The reason for this result is clear When observing the ﬂow proﬁle in the F igure 1. The ﬂow
+component in radial direction u is perpendicular to the uniform magnetic ﬁeld along the z-aXis. Due to
+the symmetry of the ﬂow it is not possible to satisfy mass continuity With a potential ﬂow only in the
+z-direction. F igure 2 shows the results of a numerical simulation compared With the theoretical
+asymptotic result. In this case the numerical model shows a higher level of damping than the
+theoretical because the result (28) does not include the Viscous damping for the aXisymmetric mode at
+the ﬁnite value of the magnetic ﬁeld. The numerical results show the dependence on the material
+properties and the ﬁeld intensity. For the very high field (10 T) the damping leads to a very slow
+motion, and the droplet reaches the spherical shape in a considerably longer time than Without ﬁeld.
+4.2. F reely Oscillating Droplets, AXisymmetric Mode (3,0)
+EIEI’IEI . .
+i Uselllatmn Made Y3
+. :
+0.005 '1
+mm ‘ylvsﬁlvi
+""BEDS ' —l— Thenretical
+' —I— ED Numerical
+—I-— 30 Numerical
+-|:|.|:|1|:|
+ELEM] EH35 _E|.1E| 0.15 IIIEEI
+Tlme [5]
+Figure 3. Surface deviation function, (Rmp-Roﬂ R0 , evaluated at the top point for Ba =2.5 T.
+The next case considered is the aXisymmetric mode (Y03) droplet perturbation, the radius, amplitude,
+and magnetic ﬁeld strength are all the same as in the previous case. An initial volume correction is
+again made to preserve the volume of the sphere With the radius R0. Theoretical analysis shows that
+the oscillation frequency and the magnetic and Viscous damping constants are given, respectively, by:
+600 _ 10F (29)
+3 _ —3
+,0 R0
+yo _50 033 R3 + 35 v (30)
+3 3 r 3 R3 '
+7
+
+"
+"8","International Symposium on Physical Sciences in Space IOP Publishing
+J ournal of Physics: Conference Series 327 (2011) 012027 doi:10.1088/1742—6596/327/1/012027
+Figure 3 shows the results of the numerical simulations With both the 2D and 3D modes compared
+With the theoretical result. There is reasonably good agreement With all 3 results.
+
+Figure 4 shows 21 Ni droplet oscillating in the (1’03) mode With a high external magnetic ﬁeld BO
+=10 T. The radial ﬂow is damped by the magnetic ﬁeld, however the symmetry and continuity
+restrictions are not present here and the droplet continues to oscillate in the (1’03) mode. The internal
+ﬂow is quite different to the case Without the magnetic ﬁeld (Figure 5). In the presence of the strong
+DC magnetic ﬁeld in the z-aXis direction there is practically no radial ﬂow, and the ﬂuid oscillates in
+columns along the direction of the external magnetic ﬁeld.
+
+— Z W-0.045 -0.02 0.005 0 0 '
+W-0.012 -0.004 0.00
+E;
+X
+51
+Figure 4. Oscillation mode (3,0) in BO =10 T magnetic ﬁeld, velocity ﬁeld at two moments: 0.226
+s, and 0.232 s for the liquid Ni droplet.
+— Z w: 008-0035 0.01
+W005 001 0.03 0.07 W .. l
+H l'tilllll'illtl l, .. Y X
+5
+Figure 5. Oscillation Mode (3,0) Without the magnetic ﬁeld, velocity ﬁeld at two moments for the
+liquid Ni droplet.
+8
+
+"
+"9","International Symposium on Physical Sciences in Space IOP Publishing
+J ournal of Physics: Conference Series 327 (2011) 012027 doi:10.1088/1742—6596/327/1/012027
+— E=ﬂ
+— — — — — B=D.5T
+— E=2T
+I” I I I l l I I I I 3:1“
+[I .0050: h ,
+.1.
+II:
+‘5’
+[1.005 m .np—-———-———-—— ——-—-——
+IL“ | I""
+n. I H
+3 I
+D'.‘ .
+[1.00495 I ' . . I l I I
+I I «I I I I I I I
+0 0 .1 D .2 0.3
+t
+Figure 6. Oscillations 0f the top position for Ni droplet obtained in axisymmetric model for the (3,0)
+mode in different intensity uniform Bz ﬁeld.
+qumal Mode_Frequencies
+2. 551 O Prlede 5 solution
+|=3
+|=2 |=3 |=4
+2.0E-1O
+L1.5E-10
+cu
+g _._._._._. 3:0
+0 _ 3:10 T
+n'1.0E-10 :
+Ii
+55 Ii
+5.0E-11 ii
+Ii
+5 ! i
+O'OEJ'OOO 20 40 6O 80 100
+F requency, H 2
+Figure 7. Spectra for the high magnetic ﬁeld 10 T compared to the nonmagnetic case and the
+asymptotic solution [8] for the liquid Ni droplet.
+9
+
+"
+"10","International Symposium on Physical Sciences in Space IOP Publishing
+J ournal of Physics: Conference Series 327 (2011) 012027 doi:10.1088/1742—6596/327/1/012027
+It is of interest to investigate the oscillation change With the gradual increase of the magnetic ﬁeld
+magnitude. Rayleigh normal mode frequency remains practically unchanged for a moderate magnetic
+ﬁeld 0.5 T, however With the increased damping rate (F igure 6). Oscillations are close to overdamping
+at about 2 T. For extreme ﬁelds (10 T and more) the frequency gradually decreases to the asymptotic
+
+value given in [8]. We can conclude from these results that a DC ﬁeld up to 0.5 -l T is beneﬁcial to
+stabilize the oscillation, damp the turbulence While preserving the Rayleigh frequency. High DC ﬁelds
+(5 T and more) need updated models to interpret measurements. F igure 7 demonstrates that the
+asymptotic solution predicted frequency is achieved for the ﬁeld 0f 10 T.
+4.3. F reely Oscillating Droplets, Non-AXisymmetric Mode (2,1)
+. . 1
+mm Dsmllatmn Made Y2
+!
+l a _
+1:15: 0.005 : i "" .
+m I ‘ k I
+.5 .
+i ii '
+EDDIE]. ‘ i ‘- iji,
+E fgytrr
+.2 '
+U .
+E .
+3 41.005 p. ‘
+U I' —I— ED Humen'cal
+.1 ' —i— Thenretical
+-EI.I:I1I:I
+Ill] I11 I12 I13 I14 I15 [LE
+Time [s]
+Figure 8. Time-Dependent Coefﬁcient t0 (1’12) mode.
+The next case considered is the non-aXisymmetric mode (1’12), the droplet radius, amplitude, and
+magnetic ﬁeld strength are for the Si droplet at 2.5 T. A volume correction is again made. Theoretical
+analysis shows that the oscillation frequency and the magnetic and Viscous damping constants are
+given by:
+F
+a): =2‘ /—3 , (31>
+pRo
+032 3 5 v
+y§=4A+—7, (32)
+F 2 R0
+F igure 8 shows the results of the 3D numerical simulation compared With the theoretical result. The
+two results show very good agreement. F igure 9 shows plots of the ﬂow variables, ﬂow for this mode
+only occurs in the X-Z plane. It is clear from these contour plots that the surface oscillation mode is
+unchanged by the external magnetic ﬁeld; however the internal ﬂow has changed. The radial
+component of the ﬂow is damped out and the ﬂuid oscillates as columns along the direction of the
+magnetic ﬁeld.
+10
+
+"
+"11","International Symposium on Physical Sciences in Space IOP Publishing
+Journal of Physics: Conference Series 327 (2011) 012027 doi:10.1088/1742—6596/327/1/012027
+Oscillation Mode Y; 00 t = () Oscillation Mode Y;
+I I (D t = 7t/4
+t— 3 /4 Z
+0° _ 7‘ Oscillation Mode Y;
+Oscillation Mode Y; x 00 t = 7t/2
+Phase [(0 t= M2]
+Velocity
+0.05
+Pressure
+| 383.0
+375.5
+388.0
+380.5
+353.0
+345.5
+338.0
+330.5
+323.0
+315.5
+308.0
+300.5
+293.0
+285.5
+Figure 9. Oscillation mode (2,1), pressure contours and velocity vectors.
+4.4. Freely Oscillating Droplets, Non-AXisymmetric Mode (2,2)
+The next case considered is the non-aXisymmetric mode (1/22), the droplet radius, amplitude, and
+magnetic ﬁeld strength are all the same as the previous case. A volume correction is again made.
+Theoretical analysis shows that the magnetic damping coefﬁcient is zero and the oscillation frequency
+and Viscous damping constant are the same as for the non-magnetic case:
+2 _ 8F (33)
+a)2 — —3 ,
+,0 R0
+2 —0 +5 L (ma netic + Viscous) (34)
+7/ 2 _ R2 g I
+o
+11
+
+"
+"12","International Symposium on Physical Sciences in Space IOP Publishing
+Journal of Physics: Conference Series 327 (2011) 012027 doi:10.1088/1742—6596/327/1/012027
+Dscillatiun Made 11': _._ 30 Humming.
+—lr— Theoretical
+0.010 ,_
+1 - 1 g I
+“E 0.000 E ' I
+111- ' .l .
+13
+E i . .
+,5 0.000 .
+E ' .
+.2 - . -
+U _
+o -0 .000 - . -
+1.1 _ '1
+-0 .010 ' ' '
+0.00 0.00 0.10 0.10 0.20
+Time [0]
+Figure 10. Time-Dependent Coefﬁcient to (1/22) mode.
+(1) t = 0 - '1' 1 (1) t = 71/ 4
+\. ""1 1' '
+(D t : 375/4 (D t = 75/2 Veluciw
+l].l]?ﬁ
+‘_ .. Pressure
+2/ x 000
+.2 001
+001
+042
+.. 000
+‘3“ f 200
+_, 220
+202
+210
+220
+211
+101
+Figure 11. Oscillation mode (2,2), pressure contours and velocity vectors.
+12
+
+"
+"13","International Symposium on Physical Sciences in Space IOP Publishing
+J ournal of Physics: Conference Series 327 (2011) 012027 doi:10.1088/1742—6596/327/1/012027
+F igure 10 shows the results of the 3D numerical simulation compared With the theoretical result.
+The two results show very good agreement, the oscillation is unaffected by the external magnetic ﬁeld.
+The reason for this behavior can be clearly understood from the plots of the ﬂuid ﬂow variables in
+F igure 11. F luid ﬂow for this mode only occurs in the X-y plane resulting in an electric ﬁeld (Vx B)
+perpendicular to the ﬂow but conﬁned in the same plane. Due to the potential nature of the ﬂuid ﬂow,
+charge continuity cannot be satisﬁed and so an equal and opposite electric ﬁeld (—V¢) eXists that
+results in zero net current and n0 damping of the ﬂow by the Lorentz force.
+5. Conclusions
+The oscillating drop technique is a valuable method for measuring surface tension and Viscosity of
+materials in a non-contact environment. Numerical results have been presented that conﬁrm the
+asymptotic theoretical results relating surface tension and Viscosity to frequency and damping rates for
+conducting droplets in a constant magnetic ﬁeld. F urther work involves use of the 3D numerical model
+to ﬁnd qualitative and quantitative results for the oscillating drop technique in the presence of gravity
+forces. Comparison Will also be made With experimental results Where large amplitude and non-linear
+effects have a signiﬁcant contribution to the dynamics and can impact on the measurement process.
+References
+[1] Egry I, Lohofer G, Seyhan I, Schneider S and Feuerbacher B 1999 Int. J. T hermaphys. 20 (4)
+1005
+[2] Cummings D L and Blackburn D A 1991 J. F luid Mech. 224 395
+[3] Suryanarayana P V R and Bayazitoglu Y 1991 Phys. F luids A 3 (5) 967
+[4] Kobatake H, Fukuyama H, Minato I, Tsukada T and Avaji S 2007 Applied Physics Letters 90
+094102
+[5] Bojarevics V, Easter S, Roy A and Pericleous K 2009 Proc. Int. Symp.Liquid Metal Processing
+and Casting, Santa F e, TMS, ed-s Lee P, Mitchell A, Williamson R, 319
+[6] Beaugnon E, F abregue D, Billy D, Nappa J and Tournier R 2001 Physica B 294-295 715
+[7] Hill R J A and Eaves L 2010 Phys. Rev E 81 (5) 056312
+[8] Priede J 2010 J. Fluid Mech. 671 399
+[9] Lord Rayleigh 1879 Proc. Royal Soc. London A 29 71
+[10] Lamb H 1895 Hydrodynamics, Cambridge University Press, Cambridge
+[11] Tsamopoulos J A and Brown R A 1983 J. Fluid Mech. 127 519
+[12] Smythe W R 1950, Static and Dynamic Electricity, McGraW-Hill, London
+[13] Bojarevics V and Pericleous K 2003 ISIJInternational 43 (6) 890
+13
+
+"

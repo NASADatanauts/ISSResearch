@@ -1,0 +1,186 @@
+"","x"
+"1","‘ . Imaging and Applied Optics Technical Digest © 2011 OSA
+' AIMA1.pdf
+ANITA — an FTIR—based Contlnuous Alr Quallty ‘
+Monltorlng System on the ISS (Internatlonal Space Statlon)
+Atle Honnel, Henrik Schumann-Olsenl, Kristin Kaspersenl, Herbert Mosebachz, Dirk Kampf2
+’SINTEF 1C7; Forskrzingsv. 1, P.0.Box 124, Blindem, N0-0314 0510, Norway. E -mail A IIe.Honne@simefno
+2Kayaer—Threde GmbH, Wolfratshauser Str. 48, 81379 Munich, Germany
+Abstract: ANITA applies a modiﬁed commercial FTIR instrument and novel analysis software ,
+that solves most challenges of multi-gas measurement. Its fast and fully automatic analyses make
+. it suitable for air quality monitoring and other multi-component measurements. .
+
+OCIS codes: (300.0300) Spectroscopy; (300.6340) Spectrosc0py, infrared; (300.6300) Spectroscopy, Fourier transfoxms;
+(010.1120) Air pollution monitoring
+
+1. Introduction '
+
+' Ensuring crew health and safety is a prime concern in spacecraft and other closed manned habitats. The air quality is
+of particular importance. The crew health and well—being could be affected, or even endangered, by uncontrolled .
+accumulation of gaseous trace contaminants. Sources of air contaminants include off-gassing (from structural
+materials, electronic equipment, etc.), system failures (leaks, trace gas control system break-through, etc.), and the
+crew itself (metabolic products). Therefore, ESA (European Space Agency) has a long-term research and
+development programme where SINTEF is developing advanced air quality monitoring technology (calibration and .
+analysis) in co—Operation with Kayser-Threde GmbH (hardware and system). The key technologies employed are
+FTIR (Fourier Transform Infra-Red spectroscopy), simulations of the measurement process, and PLS (Partial Least
+Squares), a family of multivariate statistical methods applied for calibration. The soﬁware includes novel
+compensation methods for hardware insufﬁciencies. ANITA was launched on the Space Shuttle STS-118 in August
+2007. After installation and start-up in the US lab Destiny on the ISS in September, the system successfully
+monitored the trace gas dynamics in the ISS cabin air until August 2008.
+
+2. ANITA system development and testing
+The measurement task is very demanding. T here are more than 30 gas compounds to be monitored. Any combi—
+nation of the compounds may be present, and each compound may be present in a wide range of concentrations.
+Many of the compounds may give (too) high optical absorption, but still low or very low detection limits are
+required, typically low ppm (parts per million) or ppb (parts per billion) concentrations.
+~ ESA’s research and development programme started with technology selection. FTIR absorption spectrometry
+was selected as the basic technique, since it had the best potential to fulﬁl the requirements on simultaneous multi—
+compound detection and continuous air quality analyses. FTIR instruments can simultaneously collect spectral data
+with high resolution in a wide spectral range, and this extremely efﬁcient collection of information is combined with
+excellent spectral stability. Also, most gas compounds of interest have unique spectral signatures in the mid IR
+region normally covered in FTIR. However, the complexity of Optical multi—gas measurements required
+_ development of novel software for calibration and gas analysis. This software was developed at SINTEF in and in
+parallel to ESA’S programme [1]. .
+The initial system development went through two main breadboard phases. Commercial laboratory FTIR
+
+' instruments were applied with optimised settings and moderate adaptations. The calibration and analysis software
+was implemented with increasing abilities and functionality. An important step in proof of the concept was the very
+successful competitive blind sample testing for NASA (N ational Aeronautics and Space Administration) in 2000 [2],
+where the ANITA precursor emerged as a clear winner. A
+
+The ANITA system for the ISS required that the applied commercial FTIR instrument was rebuilt to reduce mass
+and volume and allow operation in microgravity. It is equipped with an automatic sampling system applying a pump
+‘ downstream from the gas cell. This pump also allows background measurements on very low gas cell pressure. —
+Neither pure nitrogen (anyway applied to reﬁll air on the ISS) nor space vacuum (seemingly abundant in space)
+could be used for background measurements for reasons of safety, logistics, and ﬂexibility in the positioning of
+ANITA.
+The ANITA FTIR instrument applies a Globar IR source (SiC blackbody), helium—neon reference laser, White
+gas cell with 10 m measurement path, DTGS detector (pyroelectric, uncooled), resolution 0.7 cm-l (0.5 cm‘1 before '
+_ apodisation), applied spectral area 700 —- 3400 cm"" (3 — 14 pm), and a measurement time of 2 minutes.
+
+"
+"2",". Imaging and Applied Optics Technical Digest © 2011 OSA
+AIMALpdf '
+
+The calibration procedure relies on ﬁve main steps: 1. Measurement of one or more reference spectra for each V
+gas compound at accurately known concentration(s) in nitrogen. 2. Realistic simulations of the measurement process '
+applying the reference spectra and known instrument parameters and behaviour to produce numerous synthetic
+measurement spectra for calibration. 3. Pre-processing of the synthetic spectra to sort the available spectral
+information to aid the following statistical analyses. 4. Multivariate linear statistical analyses to produce one optimal
+linear calibration model for each compound. 5. Establish a table for non-linear correction for those compounds that ‘
+give non—linear spectral response owing to narrow spectral lines that are not fully resolved by the instrument.
+
+The resulting calibration includes the following properties: First and foremost it solves the three main problems V V
+of multi-gas spectroscopy, viz. optical spectra] interference between gases, instrument baseline drift, and optical
+saturation effects (too high spectral absorption). It gives optimal noise handling utilising information from numerous
+spectral data points. It includes automatic run-time correction for non-linear spectral response. The runtime
+operation is simple, fast, and fully automatic — all complexity is handled in the calibration procedure. The calibration
+is permanent, unless the conditions change beyond the speciﬁcations (regarding gas scenario and instrument
+behaviour). It allows easy adaptation by recalibration, even after deployment in space — without astronaut
+involvement. It also allows post-mission analyses, and even post-mission calibration, analysing stored measurement
+spectra using calibration models optimised for the observed gas scenario. (In general, calibration models for an
+easier gas scenario allow gas measurements with better precision and detection limits, since the calibration models
+
+. do not need so much built-in robustness towards the worst cases.) The method may be readily applied to any well-
+designed FTIR instrument and to many types of multi-component measurements.
+
+In addition to estimating gases, ANITA’s analyses comprise an automatic outlier detection ﬁmction. Based on all
+estimated gas concentrations, the properly scaled reference spectra are subtracted from each measured spectrum.
+
+The remaining spectral details represent noise and unexplained spectral features. Based on several criteria, the
+system may give outlier warnings, pinpointing problematic spectral areas and suspicious spectral features. Outlier
+warnings may be triggered by unexpected gas compounds, spectral artefacts (""ghosts""), or excessive noise.
+
+An impoxtant step in the system testing before going to the ISS was the gas measurement testing on 30
+accurately known multi-gas mixtures, applying 1 minute measurement time [3]. With a gas scenario of 32 gases,
+including strong spectral inﬂuence from the background gases water, carbon dioxide, and methane, ANITA ‘
+exhibited estimated detection limits for the 29 trace gases ranging from 0.003 ppm to 1.0 ppm.
+
+3. ANITA on the ISS
+
+‘ _Q ' ‘ it ,"", W v 4f: 5;; __ v ,3? “:tgéfrgggéga
+
+A ll»: ”waéllz;
+
+W ’3 fa ” “ ”ﬂ 3* 0%“! Mt?! ”£13 %¢/
+
+aka 3 {A l tum f/p) 3% [frmgg
+
+. é 1’ tr é -— + : m. / t '
+
+«M Q ' 15%? m“ L? ' a6“
+
+V i W?) Q.’ / "" , ' ”t “ , l ?ﬁ *3 w M V
+
+-” a ll A t” ‘g’ 91' s ggwﬁt’é ft ‘5’“ 1’
+
+a Q a L}; 3’?”th a»? ﬁe
+
+‘3‘“;th )
+
+Etta ;,§
+Figure 1. Photos from the ISS. To the left close-np of ANITA in two standard rack inserts. In the middle ANITA's special flight engineer Clayton
+
+Anderson with ANITA close to his right lower arm. To the right Clay taking a remote air sample with a hand pump. (Photos: NASA)
+After installation on the ISS, ANITA was mostly operating fully autonomously, taking air samples locally and Q
+making automatic air analyses every 6 minutes [4, 5]. In addition, whenever desired, remote air samples could be Q
+taken by'a hand pump in a sample bag (see ﬁg. 1, right) and fed to ANITA for automatic analyses. In periods of the
+time, mostly owing to. computerproblems not directly related to ANITA, ANITA was not in operation. These
+periods are shown as red intetpolation lines in ﬁgure 2. .
+
+"
+"3",". Imaging and Applied Optics Technical Digest © 2011 OSA ‘
+. ' AIMAl.pdf ‘
+Right from the ﬁrst measurement on the ISS, ANITA gave outlier wamings [5]. Thanks to the automatic
+enhancement of unknown spectral features, one feature could easily be identiﬁed as a probable unexpected gas, and
+it was soon identiﬁed as sulphur hexaﬂuoride. Since this gas only has a rather narrow absorption band in the applied
+V spectral region, it was a good preliminary solution to make a new calibration (on the spot in the control centre) with
+~ this band excluded. This gave a new, applicable preliminary calibration for all the expected ~ gases without much
+interference from the new gas. The sulphur hexaﬂuoride could only be estimated more roughly by manual analysis
+of its very characteristic spectral feature, Later, when a proper reference spectrum of sulphur hexaﬂuoride could be '
+measured on the ANITA Ground Model, a ﬁll] calibration for 33 gases was produced, uplinked to the ISS, and
+installed in ANITA without astronaut involvement. — The sulphur hexaﬂuoride on the ISS originated as tracer gas in
+a medical experiment, and it survives all air cleaning actions.
+ANITA provided considerable new information on trace gas dynamics in the ISS air, since most of the gases had
+never before been measured with high time resolution. Some gases had never been measured in the ISS air at all. A
+good example is perﬂuoro propane (PFP), which earlier had only been estimated without any measurement. PFP is
+used in cooling systems on the ISS and in 188 Soyuz spacecraft. Two example curves are shown in ﬁgure 2 [5, 6].
+' A Perﬂuoro propane Perﬂuoro propane '
+19 ...--.-..-..----. __ . ~
+_ kg 5 mm Data gaps interpolated \5 W Data gaps interpolated
+E 16 ‘ E MW‘LWW—WM
+0 ~ ‘t . . . 3 : 2
+0 i I ' 2 o : : :
+o 50 100 150 I515 220 225 230
+Days from start 24~Sep-2007 00:00:00 Days from start 24-Sep-2007 0013000
+Figure 2. AN IT A measurements on PFP in the [88 air. The Ieft—hand plot shows the ﬁrst ﬁve months of operation. The bands of large variations
+may look like noise, but are regular oscillations with a full period of 4 hours 49 minutes, and they occur when the US CDRA (Carbon Dioxide
+Removal Assembly) is running. The oscillations reveal that PFP is temporarily adsorbed and then released back into the ISS air by dual action
+sorbent beds with somewhat different capacities. A step down in concentration occurs each time 188 is exchanging air with PFP—free spacecraft '
+(two Shuttle visits and subsequent Opening of new air-ﬁlled ISS modules). These PFP steps actually allow calculation of the relative air volumes
+of the spacecraft and modules. The only increase in PFP occurs from day 19, through the visit by a PFP-containing ISS Soyuz. The n'ght-hand
+plot shows 17 days around a PFP leak event April 29, 2008. ANITA could quickly detect and quantify the PFP release and monitor the effects of .
+the clean-up actions. ANITA proved these actions to be ineffective, so that they were just given up, saving electric power and equipment wear.
+— 4. Conclusion and outlook '
+ANITA has proven its applicability and usefulness as an air quality monitor through operation on the ISS in 2007-
+2008, when it was ﬂown in an ESA-NASA cooperation. Development of a ﬁthher improved system ANITA2 is
+. ongoing, aiming for permanent operation on the ISS, and possibly for an ANITA3 for exploration missions. The .
+novel analysis techniques are well suited also for general workplace air monitoring, industrial processes, and other
+multi»component measurement tasks. . ' A
+5. References
+[l] Johansen I-R, Lines G T, Honne A, Midtgaard T, “Calibration of an FT-IR spectrometer for ambient air monitoring using PLS”, Applied
+SpectrOSCOpy, Vol. 51 No. 10, 1540-46 (1997). . s
+[2] Home A, Johansen l—R, Tan G, Stufﬂer T, “Blind Test Performance of the ESA FTIR-Based Multi-Component Monitoring System for ,
+Spacecraft Air Analysis”, ICES 2001, Orlando, Florida, USA. Paper no. 2001;01-2157. ‘
+‘ [3] Home A, Odegard H, Schumann-Olsen H, Stufﬂer T, Mosebach H, Kampf D, Tan G, “ANITA -- Preparing for Automatic Air Analyses on
+the ISS”, ICES 2005, Rome, Italy. Paper no. 2005-01-2931. ‘
+[4] Stufﬂer T, Mosebach H, Kampf D, Home A, Schumann-Olsen H, Kaspersen K, Supper W, Tan G, “ANITA Air Monitoring on the
+International Space Station. Part 1: The Mission”, ICES 2008, San Francisco, California, USA. Paper no. 2008-01-2042.
+' A [5] Home A, Schumann-Olsen H, Kaspersen K, Clausen S, Mosebach H, Kampf D, Stufﬂer T, Supper ‘W, Tan G, “ANITA Air Monitoring on
+the International Space Station. Part 2: Air Analyses”, ICES 2008, San Francisco, California, USA. Paper no. 2008-01-2043. Also selected for
+SAE Int. J. Aerosp. 1(1), 173-192 (2008). . .
+[6] Home A, Schumann-Olsen H, Kaspersen K, Limero T, Macatangay A, Mosebach H, Kampf D, Mudgett P D, James! T, Tan G, Supper W,
+’ “ANITA Air Monitoring on the International Space Station: Results compared to other measurements”, ICES 2009, Savannah, Georgia. USA.
+~ Paper no. 2009-01-2520. .
+
+"

@@ -1,0 +1,393 @@
+"","x"
+"1","Acta Mech 201, 269—276 (2008)
+D01 10.1007/800707—008~0063~1
+T, Ktatte , T). Eaahe . M. M. Weistogei - M. Dreyer
+
+a *1 sEE ”3' 12- '-.=:; ""22:; ' 3 =22: :s:' 1-2. i: '23::
+fast nrnueneai pdmeeure fer steady eapi ary in epen
+ehnnaeis
+Dedicated to meessor Wilhelm Schneider 0n the occasion of his 701k birthday
+Received: 29 J anuary 2008 / Revised: 8 April 2008 / Published online: 25 July 2008
+© Springer—Verlag 2008
+Abstract The surface evolver (SE) algorithm is a valued numerical tool for computations of complex
+equilibrium interfacial phenomena. In this work, an iterative procedure is implemented such that SE can
+be employed to predict steady—state ﬂows along capillary channels of arbitrary cross~secti0n. As a demonstra—
+tion, a 0ne-dimensi0nal stream ﬁlament ﬂow model is solved that approximates the pressure Changes inside
+the channel. Despite its simplicity, the precision, stability, and speed of the method afﬁrm it as an efﬁcient and
+unique design tool for a variety of capillary ﬂow problems. The procedure is ideally suited for slender column
+ﬂows such as open wedge Channel ﬂows, several of which are validated herein Via parabolic ﬂight and drop
+tower experiments.
+t introduction
+Surface tension dominated ﬂows along capillary Channels are of signiﬁcant practical interest, spanning
+microﬂuidie t0 macmﬂuidic phenomena from Lab-On—Chip technologies to micmgravity fuels management
+aboard spacecraft. Despite continued advancements in computatiehal methods and hardware, 3—D numet‘icat
+Naviethtekes solvers with interface tracking or interface interpeiation methods continue t0 tequh‘e a signif—
+icant computationat effort with Tong seiutiOh times limiting large pat‘atttett‘ie spaces t0 he studied thetehghty
+and efﬁciently. The method. pursued heteih ptesents a fast numetieaT teeT for design and parametric studies 0f
+capillary ﬂaws in Open channels.
+
+Fer surface tension dominated ptehlems, Brakke’s [1] surface evolvet (SE) aigetithm is teem t0 he a fast
+and tisefui tool to compute precise information about liquid positiett and interfaciai area for steady state (ie. ‘
+Equilibrium”) prohiems. The algorithm solves for the minimum 0f the integrated uset—deﬁhed energy for an
+arbitrary geometry subject t0 numerous hsei‘adeﬁned constraints. Further applieatiensg examples, and teehnicai
+detaits can he found in the SE user manna} [2]. Example applicatiehs, that implement uset—deﬁned ehetgies
+can else he cited [3].
+
+Tt is of practieai interest te expand SE’S steady state capahihties by adding ft‘ietieh iesses as weiT as
+convective pressure changes fOt“ constant ﬂow rate problems in capillary Channels. The aim of this article is
+t0 deserihe the ptesent ,imptemehtatieh Of a ‘dynamic’ pressure modeT Within SE and to identify its timits 0f
+applieahitity. Sitttiiatities in terms at grid management and iteration procedure exist to the there expensive
+3. Kiatte - D. Haake ~ M. Dreyer (E)
+
+Center of Applied Space Technology and Micmgtavity, University of Bremen, 28359 Bremen, Germany
+Eﬁmaii: ch‘eyet@zatm.uni~htemen.de
+
+J. Klatte
+
+Email: kiatte@zatmtmi—htemmdt:
+
+M. M. WeisiegeT
+
+Department of Mechanical Engineering, Pettiahd State University, Portland, OR; 97201 USA
+
+"
+"2","270 J. Klatte et a}.
+, and time—dependent Stokes solvers [4]. Exact analytic approaches for free surface ﬂows in groeve and wedge
+geometries exist [5, 8], but are limited herein to the viscous—dominated regime.
+
+The proposed numerical procedure is demonstrated for liquid ﬂows inside wedge and rectangular groove
+open capillary Channels, where analytical and experimental data are available for comparison. As will be seen,
+interface proﬁles, ﬂow rates, and ﬂow rate limits compare well with the experimental data.
+
+2 Medet
+A laminar, isothermal, incompressible, and Newtonian liquid ﬂow through an open wedge-shaped channel is
+sketched in Fig. 1. A passive overlying gas is assumed such that stresses at the interface may be neglected.
+The liquid—gas interface is represented with a moving ﬁnite element grid, and precise contact angle 01‘ pinning
+conditions can be deﬁned at the interface boundaries. The liquid pressure p(x) is approximated using the 1-D
+stream ﬁlament theory along the x-axis, where
+2
+p Q
+-——-——-—+ (x)+ {0020. (1)
+2 A2(x) p p
+Employing a mass balance, the convective term with density ,0 appears in Eq. (1) as a function of the constant
+“ ﬂow rate Q and eross—seetional area A. Constant pressure throughout each cross~seetion is assumed. The
+constant C is deﬁned by the pressure difference to the overlying gas phase, but is insigniﬁcant if the liquid
+volume of the system is constant. The additional friction factor pf,
+X /
+Q77 ' Ka(h(x ))
+Pf(x) 1‘: — —__/2—_7_dx/9 . (2)
+2 D1106 ) A(x )
+0
+with dynamic viscosity :7 and hydraulic diameter Dh, approximates the pressure loss along the ﬂow. As one can
+a see in T able 1, numerical integrations of Poisson’s equation are used to determine the pressure loss coefﬁcient
+Kg. The friction model assumes a fully developed velocity proﬁle at each cross—section and neglects transition
+losses [8—10]. As long as the ﬂuid pressure p(x) can be evaluated from the interface position, one is free to
+extend or modify the pressure model t0 suit.
+
+In SE, the pressure p(x) or any other quantity must be implemented as an energy integral over the liquid
+
+boundaries S , e.g., the surface tension 0 is applied as a surface energy E, 2 MS ordS. With the deﬁnition
+"".
+P(X) E / p(xikixfa (3)
+'0
+the divergence theetem applied to the energy Ea) of the ﬂuid pressure yields
+Ep : /// p(x)dV : // O hdS. (4)
+. . . V . S Q
+(a) (b) n .
+-‘ t x""- 1.. Q
+,82 ' ”
+"" "" -° ""3 ~> - ' f
+x’ig -—B 3 nout . ‘ ' _ » *1""\""
+93‘ ‘zzizi1 ’ ’ 4’;<%§°'§ 225:1.“ nsym M ‘KTWLQLT V » V V
+R_ [-32% “wall t. 'Lj:g;§§§;;._ let V_ ‘1' __.
+high T Notation for liquid ﬂow in am open capillary wedge. The ﬂuid ﬂows from the inlet to the outlet area With a constant ﬂow
+tate Q a The ihithd sketch 0T SE Whh the boundary normals of the ﬂuid votume V, The symmetry plane reduces eemputahenai
+time. h Gtaphieat output at the ihtetfaee between moving liquid in the corner and Sttrretthdthg gas phase
+
+"
+"3","Fast numeﬁcal procedure for steady capihary ﬂow 271
+,2 ,,
+Table 1 A typical ve1ocity contour and comparisons of analytical [6] and numerica1 [7] friction constants K 2:: 9-9;} 45: 53% for
+fully deve1oped laminar ﬂow 111 an open capillary corner
+a GUI) Kanaty Knum Diff 1%)
+"" 10° 10° 45.93 46.02 0.196
+I, 7 10° 40° 49.02 49.10 0.163
+“H-451” . 10° 70° 49.82 49.91 0.181
+30° 10° 43.79 43.82 0.069
+30° 30° 50.68 50.71 0.059
+~ “~::\.:::.af}"" 30° 50° 54.20 54.22 0.037
+50° 10° 42.86 42.91 0.117
+y 50° 20° 49.26 49.31 0.102
+50° 30° 53.56 53.60 0.075
+. Free slip and a constant curvature radius are assumed at the interface. The contact angle 6 depends on the m1nimal interface
+height h. The good agreement validates the numerical tool, which can be used to calculate the pressure loss of arbitrary Channels
+To simplify the grid management and save computational time, Only the moving interface boundary SS with ,
+normal 115 is modeled for the liquid volume V, as seen in Fig. l. The energy equat10n is thus an integral over
+the free surface SS and its boundary edges e1_4. Because all boundary normals except :15 are constant and
+P(O) : 0, Eq. (4) yields
+. 1’00
+EP 2 // 0 'nst + P(L)Souta (5)
+. 5S 0
+with the outlet area
+' y
+Sout = z .... — dy- (6)
+tan 0: ~
+«64
+A. general analyhe expressteh w1th vattab1e coefﬁcients a,- 15 used te evahtate P(x). 1711'st, the preseure 12(1)
+01 E11. (1) 18 apptemmetted hy 21 111‘th 01111—11“ 13013711011118].
+p(x) % 610 + £11): -+— (1212 + a3x3 + 614x41 + 615365 (7)
+(note that h1ghe1‘ Order pe1y110m1a18 pteduee neghgihle imprevethehts 111 accuracy). Tegethet, the pressure
+energy Ep y1e1<18
+“I 2 a5 6
+£923 aox+—~x +--«+—x,@,0 -ttgdS
+. . 35 2 6
+a1 a5 )7
++(aoL+—L2+~-+——L6)[(z—m)dy. (8)
+2 6 . 12111 01
+64
+Thus 15211, (131112111110 ehahhe1 ﬂows ate modeled. as a pressure energy quahttty w1th111 SE. 1101171317131. the ptessute
+11e1t118 e011p1e11 t0 the free surface shape 3.11C1 1111.131; be recalculated durthg the eemptttahen 1181111.; the 10110191119;
+1te1‘at1ve pt‘eeedttte.
+1. Ca1eu1ate the 110w pressut‘e pf using Eqs. (1) and (2) at discrete points alehg the x-d1reet1e1’1. The CI’OSS-
+seet1011 at‘ea A(x) and the 111011011 factor K (01, h (x)) are evaluated from the 111terfaee Shape.
+2. Evahtate the new 1hte1p01atien constants al- of Eq. (7) to update the pressure energy g1‘ve11 by Eq. (8).
+3. Perform SE 1te1atiet18 to adapt the interface shape by minimizing the teta1 energy 01 the system.
+4. Repeat steps 1-3 1111111 heth the total energy and coefﬁcients 52,: converge.
+After tetthtnattttg the 1te1‘at1011100p, the ihtettacial and ﬂow pressutes ate ha1811ee11 and a steady State 8011111011
+1111' (5011812111111821/ tttte Q 18 ehttthtett. Addhiehat 8011111011 deta11s are 1eft 10 the Appehdm. The pt‘GCSdttt‘e 16111111138
+seve1‘81 11111111‘tes 1111 11 Stahdettt deskteh eempttter.
+
+"
+"4","Fast numerical procedure for steady capillary ﬂow 275
+A} Energy equations
+The contact line at the interface boundary is either pinned, which can be deﬁned as a ﬁxed constt‘aint, 01‘ has a
+deﬁned centact angle 6, which must be included as tension energy, or combination of both. The contact angle
+energy can be evaluated from Young’s equation and for the wedge Channel yields
+. y '
+Eamon, = “-0 008(6in/out) / (z — —-—) dy, (9)
+. tan 01
+63/4
+z
+ngall 2 ""—0 COS(6wall) / (w) dx, (10)
+, cos a
+Q
+where a is the surface tension of the liquid. In capillary systems, gravity plays a minor role due to small Bond
+numbers. N evertheless, constant accelerations in the z-direction can be implemented as the potential energy
+Eg 2 pg jjfv de, yielding
+Zx L 2 h
+Egz-pg // 0 -ﬁSdS+~—/ ng_yz___ dy. (11)
+. . 5S 0 2 . tan a
+64
+A2 Evolver code
+An extract of SE is provided here to exemplify the implementation of the energy equations and iteration scheme
+for the pressure model. With the deﬁnition of the interpolation coefﬁcients,
+- define aa real[6]={inlet_pressure,0,0,0,0,0}
+the surface integral of Eq. (8) can be implemented as an additional quantity,
+quantity E_p energy method facet_generalmintegral
+scalar_integrand: X4*(aa[0]*x+aa[1]/2*x“2+aa[2]/3*X“3+\
+.aa[3]/4*X“4+aa[4]/5*X“5+aa[5]/6*x”6)
+The miSsihg edge integraﬁ ahd Eqst (9) and (10) can be deﬁned as eehsh‘aihts fer the contact hhe. Te amid:
+sihgietetter parameters, LL is the parameter for the length L.
+constraint inlet
+formula: sz
+energy:
+e1 : O
+€2:m(z~y/tan(alpha))*sigma*cos(theta_in)
+e3 2 O
+constraint outlet
+formula: X:LL
+energy:
+e1 : O
+e2:(aa[0]*x+aa[l]/2*x“2+aa[2]/3*X“3+aa[3]/4*X“4+aa[4]/5*x”5+\
+aa[5]/6*x“6—sigma*cos(theta_out))*(z~y/tan(alpha))
+e3 : O
+constraint wall
+formula: y:z*tan(alpha)
+energy:
+el:~z/cos(alpha)*sigma*cos(thetamwall)
+e2 : C3
+e3 : O
+
+"
+"5","Fast numerical procedure for steady capillary ﬂow 27l
+Table 1 A typical velocity contour and comparisons of analytical [6] and numerical [7] friction constants K 2 3%: g: g—g for
+fully developed laminar ﬂow in an open capillary corner
+01 601) Kanaly Knum Diff (‘70)
+10° 10° 45.93 46.02 0.196
+i, 7 10° 40° 49.02 49.10 0.163
+10° 70° 49.82 49.91 0.181
+' 30° 10° 43.79 43.82 0.069
+30° 30° 50.68 50.71 0.059
+- ' ‘Qf-QIQZZ' ' 30° 50° 54.20 54.22 0.037
+50° 10° 42.86 42.91 0.117
+y 50° 20° 49.26 49.31 0.102
+50° 30° 53.56 53.60 0.075
+Free slip and a constant curvature radius are assumed at the interface. The contact angle 9 depends on the minimal interface
+height h. The good agreement validates the numerical tool, which can be used to calculate the pressure loss of arbitrary channels
+To simplify the grid management and save computational time, only the moving interface boundary SS with ,
+normal n3 is modeled for the liquid volume V, as seen in Fig. 'l. The energy equation is thus an integral over
+the free surface SS and its boundary edges el_4. Because all boundary normals except us are constant and
+P(O) : 0, Eq. (4) yields
+. - P<x>
+1* Ep = // 0 - :1st + 130550.”, (5)
+. 5s 0
+with the outlet area
+' y
+sow = / (z — —) 4y. (6)
+tan 07 ~
+64
+A general analytic expressteh with variable coefﬁcients ai is used te evaluate P(x). Fitst, the pressute p(x)
+of Eq. (l) is apptextmated by a ﬁfth etdet pelynemtal
+mm 5% a0 + atx + azxz + a3x3 + (24% + 625.255 {7)
+(mete that higher Qtdet potyhethials pteduee negligible improvements ht accuracy). Tegether, the ptessure
+energy Ep yields
+(11 05
+Epm // <a0x+*X2+-~+—~x6.0,0> -ttSdS
+, , SS 2 6
+a1 05 y
++(aoL+—LZ+~-+—L°)/(::—-~—-—-—-—)dy. <81
+2 6 ten 07
+64
+Thus tat, dynamic channel llews are modeled as a pressure energy quantity within SE. However, the pteSSttte
+ﬁeld l8 coupled t0 the tree Surface Shape and must be te—calculated during the computation using the follewihg
+iterative pt‘eeedttre.
+l. Calculate the flow pressure pf using Eqs. (1) and (2) at discrete paints along the x~dit‘eett0h. The et088~
+seetteh area A(x) and the frietien factor K (07, h(x)) are evaluated frem the interface Shape.
+2. Evaluate the new tnterpolatieh constants (15 of Eq. (7) to update the pressure energy given by Eq. (8).
+3. Pethtm SE iterations t0 adapt the interface shape by minimizing the total energy of the system.
+4. Repeat steps l—3 hhttl heth the total energy and coefﬁcients ai converge.
+After tetththatihg the ttettttteh loop. the interfacial and ﬂow pressures are balanced and a steady state 80httt0h
+t‘et eeeetattt flew tttte Q £8 ehtathed. Addtttehal sotutieh details are left t0 the Ahhehttix. The pmeettttte regettee
+several minutes; 0h 3; Stahdatd desktep eethputet‘.
+
+"
+"6","276 J. Klatte et a].
+content:
+cl:0.5*z“2*tan(alpha)
+C2 : 0
+C3 : 0
+The additional content is important to correct the liquid volume. T 0 implement the iteration 100p deseribed in
+Sect. 2, it is useful to redeﬁne the iteration command
+g:::={system ""NewPressure.exe”; system ""Interpolation.eXe"";
+read ""UpdateCoefficents.txt""; g 5; NewGrid;}
+With Eq. ('1), external executables ﬁrst calculate the pressure at discrete points and later perform the interpola-a
+tion. The resulting coefﬁcients are stored in the UpdateCoef f icents textﬁle which can be read t0 update
+the coefﬁcients of the energy quantities E_p and constraint outlet. After some iterations, the NewGrid
+function adjusts the ﬁnite element grid and stores the new interface location for the next iteration.
+References
+1. B'rakke, K.A.: The suxface evolver. Exp. Math. 1, 141—165 (1992)
+2. Brakke, K.A.: Surface Evolver Manual. Susquehanna University, 2.2621 (2005)
+3. Collicott, S.H.: Example impact of nonuniform acceleration ﬁelds on liquids in spacecraft. J . Spacecr. Rockets 44,
+725—727 (2007)
+4. Walkley, M.A., Gaskell, P.H., J imack, P.K., Kelmanson, M.A., Summers, J .L.: Finite element simulation of three—dimensional
+free—surface ﬂow problems. J . Sci. Comput. 24, 147—162 (2005)
+5. Scholle, M., Aksel, N .: An exact solution of visco-capillary ﬂow in an inclined channel. ZAMP 52, 749—769 (2001)
+6. Ayyaswamy, P.S., Catton. 1., Edwards, D.K.: Capillary ﬂow in triangular grooves. J. Appl. Mech. 4, 332-336 (1974)
+7. Matlab. Partial differential equation toolbox. The MathWorks Inc., 7.1.0.246(R16) (2005)
+8. Weislogel, M.M., Lichter, S.: Capillary 'ﬂow in an interior comer. J . Fluid Mech. 373, 349-378 (1998)
+w 9. Jaekle, D.E.: Propellant management device conceptual design and analysis: Vanes. In: AIAA/SAE/ASME/ASEE 27th J oint
+Propulsion Conference, number AIAA 91—2172, pp. 1—13, Sacramento, CA, June (1991)
+10. Rosendahl, U., Ohlhoff, A., Dreyer, M.E.: Choked ﬂows in open capillary channels: theory, experiment and computations.
+J. Fluid Mech. 518, 187—214 (2004)
+11.. Haake, D., Rosendahl, U., Ohlhoff, A., Dreyer, M.E.: Flow rate limitation in open capillary channel ﬂows. Ann. NY Acad.
+Sci. 1077, 443—458 (2006)
+
+"
+"7","272 I. Klatte et a1.
+3 Appiieatieiis and vaiidetieh '
+It is necessary to validate the numerical model and show its generality for capillary systems. In the f0110wing, the
+model is first compared to analytical results for capillary wedge ﬂows for different wedge angles. Comparisons
+are then made to reduced—g and terrestrial experimental data for both wedge and rectangular groove eapi11ai‘y
+channels. The example ﬂows selected demonstrate the capability of the model to study systems with ﬁxed
+or variable controi volume V for different eross—seetions and different inlet and outlet contact 1ine boundary
+- conditions.
+. 3.1 Analytical comparison
+The model is ﬁrst used to examine viscous-dominated capillary wedge channels ﬂows for which anaiyticai
+solutions are in hand [8]. The good agreement within the limit of the viscous analytic solution (Re < 90) in
+Fig. 2 and Table 2 provides a degree of validation of the SE model. Additional computations for greater wedge
+angles 01 (R e > 90) are performed to identify the limit of the viseous—analytic model and the inﬂuence of inertia.
+The SE model captures this presence of increased inertia in the ﬂow and identiﬁes the limits of applicability
+of the viscous solution. This point is clariﬁed by review of Table 2, where quantitative comparisons are made.
+As expected, deﬂection differences between the analytic versus numeric surface predictions increase with R e.
+In this approach the liquid volume V is ﬁxed and independent of gas pressure pa. Thus, the constant C of
+Eq. (1) has no bearing on the solution. At the inlet and outlet, the contact line is free to move with a defined
+contact angle known from the analytical selution for capillary driven ﬂow.
+32 Viscous—dominated capillary ﬂows: wedge
+, In Fig. 3, the SE model is compared to experimental data from M. M. Weislogel. Two plots are shown in
+the ﬁgure to demonstrate the accuracy of the method. The ﬁrst comparison is performed in a reduced gravity
+environment(parab01ic ﬂight) with a constant ﬂow rate of 0.0 1 9 m1/s, Fig. 3 (lower left). The second comparison
+plot is selected for a terrestrial experiment with a ﬂow rate of 0.039 ml/s, Fig. 3 (lower right). Good agreement
+is obtained for both the environments with errors less than 2% (note the exaggerated scales). Experimental
+uncertainty 0f i2 px is shewn using dashed lines on the ﬁgure.
+V .~,A..A. .-A.A..ga:10M ‘__ _
+' 7 I “- ' l ' ' I 15 __ I ‘ ‘nﬂ .
+LBJ v. .7. .., _ v V' ‘v- v . v v 25 o . .. Z Ii’a 3
+0 .g. . . _ . _ . ‘ ' V v 'V. ' ,;:§':;. ”W5:'3°5:. ' 3
+FE: 0.6 I . ""O ..V ... .30 . _ . __,_ ' y -.:.:-:;5:W
+.. , . .... _ .. ‘ I"" w ~- .. 35 ,_ '°' . . X ""'97:“
+0.4 _____ Analytic 45 ¢ "" . i;:;:;éz§z§s;:.. ,,
+A-~- Evolvet 3 V , h(x)
+0 1 2 3 4i 5 ‘ ""
+x {cm}
+Fig. 2 Analytic interface heights fer viseeus—deminated wedge ﬂows compared t0 SE ealcuiations. The 1eft ﬁgure campai‘es the
+center iihe 01° the interfaces for tiiffei‘ent wedge angies oz. The volume V 2 1.160 m1 of the pet'feetiy wetting htitiid HFE7500,
+which is eapiiiaiy driven with a ﬂow rate of Q = 0.2 mI/s. The good agreement vaiidates the SE medei
+Tahie 2 Deﬁeetieh vaiues and Reynolds numbers Re : Dh Q /(/—1v) with hydraulic diameter Dh :: 4A / P, for the compatisens
+in Fig. 2
+Haif—angie at 10° 15° 20° 25° 30° 35° 40° 415°
+Deﬂectieh (‘70) 0.12 0.17 0.18 0.22 0.32 0.77 0.87 1.45
+Reyheitis number 50 61 71 79 85 93 97 .105
+The defieetieh increases with ihei‘easihg Re, the presence 01"" inertia is not captured by the Viseeiisvttnaiytie sohitieii
+
+"
+"8","Fast numerical procedure for steady capillary ﬂow . 273
+M
+Inlet F 10W Outlet $ g i
+x 5%—
+
+....» L '———~——""‘*’§
+15 . 10
+E 9 \‘ﬁ . 6 .
+, ---— Evolver '\ V ‘_ ‘
+- ~ ~ - Experiment 1 ’
+6 ~ 1 1 Ex. Error 4
+0 20 40 60 0 20 40 60
+x [mm] x [mm]
+Fig. 3 Model comparison with viscous—dominated reduced—gravity (left) and terrestrial (right) capillary ﬂow experiments
+(Bo < 1), where H = 14.88 mm, L :2 73.5 mm, and wedge half—angle oz : 5°. The test ﬂuid is perfectly wetting 1
+Silicone oil with kinematic viscosity v = 10 cs at liquid volume V :2 0.675 ml (left) and u 2 5 cs at liquid volume V 2: 335 ml
+(right)
+15.0 2 _ 15.0 .
+“..‘-. -—-- Evolvcr Vj"" ‘ . 51'
+14.5 ‘1 - - - ' Experiment '47 14.5 é; 1‘
+' \ 1 Exp. Error 7 ‘1': 1
+'—‘ 14’0 g; .7, Si f
+a 1;; . ' .2 14.0 . ,
+13.0 .. 13.5
+12.5 13.0
+0 10 20 0 10 20 30 40
+x [mm] x [nun]
+Fig. 4 Mode} comparisons with large capillary length scale zero—gravity drop tower experiments. Ftow through open rectangular
+gmeve channel, where a = 5 mm, b = 30 mm, for a perfectly wetting liquid T3072: (left) length L = 28.97 mm and critical
+ﬂow rate Q 8 6.30 mT/s, (right) L : 47.50 mm and Q % 5.70 ml/s (note the exaggerated scale)
+
+The SEE medei fat the tedueed—gtavity case is demensttated in Fig. 5. Again, the liquid vehtme V 115 ﬁxed
+and independent at gas pressure pa. ht centtast, the experimental thTet and outlet of the test section is at z 2: G
+as Shawn 111 Fig. 3 (top). The crosswﬁow 15 not captured by the SE made}, but can he neglected due t0 high
+viseeus ﬂew (Re «I 1). Per this setup. mixed. pinning and ﬁxed contact angle boundary conditions were applied.
+eTehg the interface boundaries. The additiehai gravity ﬁeid for the tettesttiat ease is implemented with Eq. (T t).
+32.3 Thettta~demihated eapihaty ﬂaws: rectangular groove
+The medeT was 31,150 apphed t0 the emblem of ﬂow through a rectangular gteovewshaped capillary chanhei
+as investigated. experimentehy hy Haahe et at. [T B] using a drep tewet‘. Sampte eempertsehe are presented in
+ﬁg. 4. The parameters along with a sketch 0f the ﬂow cross—section is Shawn in Fig. 5. As observed hem the
+ﬁghte. the interface ptoﬁles ate in geod agreement with the numerical: predictions with ertets less than 1%.
+The experiments employ an apparatus that strives to maintain constant pressure at the ehahheT inlet allowing
+the hquici volume V at the test section to vary. Nevertheless, the constant C of Eq. (1) is well—deﬁned by the
+ﬂew history, which is 111 turn a function of the ﬂow rate Q. Again, mtxed pinning and ﬁxed contact angle
+heundaty eonditiehs at the eentact hhe were apphed.
+
+Th eddtttett t0 computing interface pteﬁles and ﬂow rates, the mode}. is fetthd to he capable of computing
+maximum (01' hmttthg) ﬂew tates Tet given geemetties and hetthdttty eehéttiem. T301: exampTe, £111 Simhat
+expetttttehte pett'etthett hethg a petahet piete capillary ehahnei at target tehgth ehd htetttet seete. Reeehttaht
+
+"

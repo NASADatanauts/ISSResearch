@@ -1,0 +1,439 @@
+"","x"
+"1","AIAA SPACE 2013 Conference and Exposition AIAA 2013-5439
+September 10-12, 2013, San Diego, CA
+Effects of MicrograVIty on Extrusmn based Additive
+Manufacturing
+Michael P. Snyderi J ason J . DunnT, and Eddie G. Gonzalezi
+Made In Space, Moﬂett F ield, CA, 94035
+Made In Space, Inc. participated in four weeks of microgravity testing with NASA’s
+Flight Opportunities Program during the Fall of 2011 and Summer of 2013. The company
+tested the effects of microgravity on custom built and commercially available extrusion
+3 additive manufacturing machines, more commonly known as 3D printers. The testing took
+3 place on board a modified Boeing 727 aircraft ﬂown by the Zero-G corporation, in
+§_ conjunction with NASA’s Reduced Gravity Ofﬁce and Flight Opportunities Program. The
+E company has utilized the knowledge gained through this campaign on the project that will
+E deliver the first 3D printer to the International Space Station (188). 3D printing in space is
+3 an enabling technology that is crucial to the exploration of space beyond the low Earth orbit
+8 environment. In order for 3D printing to ﬁnally be realized as a permanent ﬁxture in space
+g exploration, the behavior must be fully understood in microgravity. Various 3D printers
+g were ﬂown and tested, as well as multiple individual sub-components. With some
+g modiﬁcation to the key systems, Made In Space was able to demonstrate that additive
+2 manufacturing with extrusion-based machines functions similarly in microgravity as it does
+E on the ground, allowing for a full proof of concept. The microgravity ﬂights enabled the
+2 Technology Readiness Level (TRL) of the technology to be elevated to a TRL-6.
+E
+E I. Introduction
+E MADE In Space, Inc. was founded in 2010 and is based out of NASA’S Ames Research Park. The company
+é initiated the directives to build the infrastructure for in-space additive manufacturing. Three progressive goals
+g were tolz
+é 0 Study the underlying physics and fundamentals of 3D printing in the microgravity environment by ﬂying
+g 3D printers on a microgravity ﬂight.
+2 o Adapt commercial 3D Printing technology for use in microgravity.
+é 0 Fly a 3D printer on board the 188.
+E All of these goals were aimed at implementing additive manufacturing in space within a short three year time
+% frame. Made In Space accomplished the ﬁrst goal, to study the effects of 3D Printing in microgravity under a
+<23 contract with NASA’S Flight Opportunities Program (FOP). The FOP program provides ﬂight opportunities for
+4: space technologies to be tested in relevant environments. Under this contract Made In Space ﬂew a series of reduced
+ﬁg gravity ﬂight campaigns to study the effects of extrusion-based additive manufacturing in micro-, 1unar-, and
+g Martian- gravity. These ﬂight campaigns were conducted during the months of July, August, and September of
+5 2011, and again in June of 2013. In 2012 Made In Space took the lessons learned from the initial FOP campaigns
+and designed the 3D Printer for the ISS, satisfying the second goal of adapting commercial 3D Printing technology
+for use in microgravity. Now on the third goal, Made In Space is currently building the ﬁrst printer under a Phase III
+contract that will launch to the ISS on SpaceX-S in 2014.
+
+Additive Manufacturing (AM) has only recently become a competing manufacturing method to typical methods
+such as CNC Machining. This is due to the increasing capability in micro-electronics, micro-computers, and
+microcontrollers over the past two years that has allowed for precision controlled mechanical drives at relatively low
+cost.
+
+* Director of Research and Development, Made In Space, 20-1 S. Akron Rd., AIAA Member
+T Chief Technology Ofﬁcer, Made In Space, 20-1 S. Akron Rd.
+I Simulation Design Lead, Made In Space, 20-1 S. Akron Rd.
+1
+American Institute of Aeronautics and Astronautics
+Copyright © 2013 by Made In Space Inc.. Published by the American Institute of Aeronautics and Astronautics, Inc., with permission.
+
+"
+"2","Unlike today, in the early 2000’s additive manufacturing was not commercially capable of building complex
+geometries out of titanium, aluminum, and space grade polymers with tolerances approaching precision CNC
+machined parts. Conclusively, in 2002, a method was proposed by Skycorp for in-space assembly of a spacecraft in
+which all components would be built on the ground and shipped to space2. The main beneﬁt was the clever
+packaging of components for launch could reduce ﬁnal structural mass of the spacecraft components. Reducing
+spacecraft mass has many obVious advantages, and thus the idea was quite valid. However, with today’s additive
+manufacturing capabilities another layer of abstraction can be removed for in-space assembly of a spacecraft when it
+incorporates in-space manufacturing.
+
+While the general consensus a decade ago didn’t recognize the beneﬁt of AM for in-space manufacturing, some
+pioneering work had been performed at Marshall Space Flight Center by Ken Cooper. In 1999, recognizing the
+potential for AM to achieve the goal on in-space manufacturing he began to test various AM methods in simulated
+microgravity environments.
+
+Testing a circa 1999 Stratasys Fused Deposition Modeling (FDM) 3D printer on its side, Cooper found that the
+
+3 extrusion based technology could still function without gravity acting in the typical direction. In later tests, Cooper
+3 ﬂew the same extrusion-based FDM machine on the NASA KC135 reduced gravity plane3. These ﬂights mark the
+§ ﬁrst and only other documented microgravity 3D printing tests ﬂights aside from those made by Made In Space.
+
+3 These reduced gravity ﬂights marked the near end of Cooper’s research on this subject. Some of his ﬁnal
+E recommendations for moving forward were:
+
+g o Acquire candidate polymer hardware geometry currently stocked as spare parts on the space shuttle or
+3 station, and fabricate these designs using ground-based FDM systems with ABS plastic.
+
+95? 0 Determine build time requirements for each component, in order to properly schedule parts to be built in
+g space during a short duration mission.
+
+:5 0 Determine maximum allowable factors for a space-based demonstration FDM unit, including weight and
+g physical dimensions, environmental effects, i.e. toxicity, heat output and power consumption limits.
+
+5 0 Determine, from parts inventory and feasibility study, the maximum build envelope capacity of the reduced
+8“ FDM system.
+
+:3 0 Design and build part storage containers for safe return of test articles to Earth.
+
+2% 0 Place the FDM demonstration ﬂight unit in the queue for Space Shuttle ﬂight experiments.
+
+E The technology ﬁnally began to catch up with Cooper’s Vision a decade after his research began, when Made In
+3 Space conducted its own microgravity ﬂight testing in 2011.
+
+E
+
+(53 11. Research Goals
+
+(:3 The fundamental concepts of what parameters are capable of working in microgravity had to be learned before
+% signiﬁcant progress could be made in the technology. Parameters such as feedstock ﬂow rates, extruder
+% temperatures, construction materials, environmental controls, power sources, and general sizing of all components
+a had to be investigated before the design of a 3D printer for space could be solidiﬁed.
+
+Q During the microgravity ﬂight campaigns, the Made In Space team set out with a list of research goals:
+
+i o Conﬁrming that extrusion-based 3D printing works in microgravity.
+
+i o Researching and understanding the fundamental physics of 3D printing microgravity and its effectiveness
+$3 when compared to ground-based 3D printing.
+
+3 0 Investigate the feasibility of using commercially available components and machines in microgravity.
+
+E 0 Determine how to adapt commercial technology to function in microgravity to reduce the time from initial
+Q concept to ﬁnal ﬂight design.
+
+The primary objectives for the ﬂight campaigns was to evaluate the functionality of extrusion-based 3D printing
+for use in microgravity environments. Initial experimental plans stemmed from the work by Cooper et al., which
+was the ﬁrst study of an extrusion-based 3D printer in microgravity. The ﬁrst goal was to replicate the work done in
+1999 to establish a baseline for future research within Made In Space.
+
+Moving beyond the replication of the Cooper study, another primary goal was to understand on a deeper level
+just how well the manufacturing process works in microgravity. Very little empirical data exists to establish
+certainty that the manufacturing process compares well to Earth built parts when built in reduced gravity. Therefore,
+it was extremely important to validate the extrusion-based process by studying characteristics such as layer
+adhesion, layer height, and strength of the 3D printed parts created in microgravity.
+
+Initial hypothesis for the functionality of 3D printing in microgravity stemmed off the previous research. It was
+hypothesised that the 3D printing would function in microgravity similarly to how it would nominally function in
+
+2
+American Institute of Aeronautics and Astronautics
+Copyright © 2013 by Made In Space Inc.. Published by the American Institute of Aeronautics and Astronautics, Inc., with permission.
+
+"
+"3","Earth graVity. No change in layer heights or strength of printed parts was expected as a result of the microgravity
+environment.
+111. Experiment Setup
+Due to power, mass, and budget constraints a simple experiment box was constructed out of 80/20, 10 series
+aluminum rails and Acrylite FF panels. Three 3D printers were chosen to be installed within the experiment box for
+the ﬂights. The ﬁrst printer chosen was the Extended Structure Additive Manufacturing Machine (ESAMM) which
+is a Made In Space 3D printer designed to build structure larger than itself. The second choice for a printer was
+MakerBot brand 3D printer. The MakerBot was chosen to test
+the functionality of 3D printer that is on the lower end of the
+;__ ._ ‘ price market and is widely available to the public. The last 3D
+E f"" printer chosen to ﬂy was Bits From Bytes’ BFB 3000. The BFB
+a .0 m 7 f“. //"" 3D printer is a more advanced commercially available printer.
+% i 5. — d ’ Aside from minor alterations to the structures in order to
+g ' ' properly secure the 3D printers to the experiment box, the
+g J "" - w __ H !_ 7. E . MakerBot and BFB had no alterations made to the internal
+g» e' =7"": 7 workings of the 3D printers at the beginning of testing.
+2' ,. _ T"" T The ESAMM and MakerBot printers were placed on the top
+(2 ' _:_:_ i 4- _ half of the experiment box while the BFB was placed in the
+:0 L lower half of the experiment box as shown in Figure 1. The
+E _ experiment box was designed to function with minimal
+g 7 interaction from the ﬂight crew during the parabolas. The
+$3 .7 addition of high deﬁnition cameras at strategic locations to
+g _ ., capture the printing process ensured that the ﬂight crew would
+5 ‘ 49' have Video data to analyze after the ﬂights in order to make
+3“ ’ _ I . adjustments where necessary.
+g _, r W! The outside of the experiment box contained a series of D—
+E rings that allowed cargo straps that were connected to the
+E Figure 1. Experiment Box 3D printers Mounted aircraft ﬂoor to heattached to the experiment box. The straps
+E ' ' were mounted Within a 60” X 60” area around the 24.5” X 29.5”
+E experiment. The location of the experiment box within the
+g aircraft is shown in Figure 2.
+(L3 The 3D printers in the experiment box each Q
+(32 had a speciﬁc purpose and job to complete . .2_-_
+E during the ﬂight campaigns. The purpose of the . ""
+(é ESAMM during the ﬂight campaigns was to P_—'—“\
+9 build a core sample and operate throughout the ‘ . ‘ i .
+(<0: entire ﬂight, thus creating parts that were built in t J .
+<23 ﬂuctuating graVity environments, and prove the OUTE’ASW ‘"" C . m .
+E functionality of the ESAMM in a microgravity £33.32 V‘
+:3 environment. The MakerBot printer and BFB 3D l . ‘
+:3 printers were not altered for the ﬁrst ﬂight J- T — - - 2 , , Topomoomoome
+8 campaign in order to determine their ‘ i"" I OUTBD OUTBD OUTBD OUTS; 002180 OUtYBO ‘ ' \T‘nggiFLOOR BEAM
+functionality in microgravity environment suoswm mg: 3385 32%: ‘ 3:382 :33; 333‘
+straight “out of the box.” Once functionality was Gm ma“ “RR” ”R"" 8”“ “R” 3‘”
+determined, the MakerBot was tasked With Figure 2: Location of Experiment Inside Aircraft
+creating coupons to determine material
+properties when printing in a reduced graVity enViroment. The BFB was tasked with building columns during
+reduced graVity that would later be analyzed for layer thickness. The BFB also printed the same columns while on
+the ground before ﬂights in order to obtain a baseline value for layer thickness.
+IV. Experiment Methodology
+The ﬁnal experiment box layout and the 3D printers chosen for the microgravity ﬂights came as a result of the
+weight and power limitations of the aircraft in which the experiment was mounted in for the ﬂights. These
+limitations are in place to ensure the safety of personnel aboard the aircraft.
+3
+American Institute of Aeronautics and Astronautics
+Copyright © 2013 by Made In Space Inc.. Published by the American Institute of Aeronautics and Astronautics, Inc., with permission.
+
+"
+"4","Since the experiment had relatively low prior development, some issues arose during the initial ﬂights. The
+commercially available off the shelf 3D printer tests revealed areas that needed modiﬁcation to work in
+microgravity. Several 3D printer mechanisms experienced issues working properly outside of Earth graVity. It had
+been anticipated that such modiﬁcations would be required and so the ﬁrst ﬂight week Video data was used to
+determine the required changes that had to be made to each individual printer in order to ensure proper functionality
+in microgravity. It was observed during the following ﬂight weeks that the proper functionality of the 3D printers
+had been restored after a large amount of modiﬁcations.
+
+The purpose of the columns construed by the BFB 3000 was to
+determine the difference in layer to layer resolution of a 3D printed
+part made in different graVity regimes; one-g, Lunar-g, Martian-g, Layer DiStance
+and microgravity. The main question to answer was how do the
+layer thicknesses differ in a 3D printed part in various graVity
+regimes? Subsequent questions were on the feasibility to control the
+
+3 layer-to-layer resolution in different graVity regimes to equal that on
+
+3 Earth. To characterize the layer-to-layer resolution, layer distance
+
+§ was deﬁned as the distance from mid-point of two consecutive
+
+3 layers, as shown in Figure 3. The columns printed during the ﬂights
+
+E were stained with graphite to expose the ridges of individual layers.
+
+g A location on the sample was then chosen and photographed at
+
+E 400x optical zoom, at a 1600 X 1200 resolution, using a Veho VMS- Figure 3: Deﬁnition of Layer Distance
+
+95? 004D Digital Microscope and the MicroCapture software. The Represents Mid-Point of One Layer t0 the Next
+§ microscope was calibrated by capturing an image of a micrometer scale, which allowed for the image frame size to
+g be calculated. The tolerance 0n the measured values was +/- 12 pm. This particular method of measuring was
+E“ chosen over others due to the non-destructive nature of the process.
+
+4:“
+
+§ V. Results
+
+g Over the course of the three ﬂights weeks several parts were manufactured on each of the 3D printers. During
+g the ﬁrst ﬂight week the Made In Space designed ESAMM was tested and was found to produce parts identical to
+g those built by the ESAMM in the laboratory. The MakerBot and BFB 3000 mechanisms experience issues
+3 functioning in microgravity, and the ﬁrst ﬂight week was spent making modiﬁcations to the printers in order to
+E establish nominal functionality.
+
+é During the second ﬂight
+
+53 week a larger focus was Placed Average Layer Thickness Across Va rying
+
+g on the BFB 3000, the most . .
+
+% advanced 0f the 3D printers GraVIty Reg'mes
+
+m tested during the ﬂight 15
+
+E campaigns. During this week 5; 1 4 .
+
+(<0: sample columns were built. TE '
+
+<23 Each column was built during g 13 .
+
+E the microgravity portion of the E,
+
+'0 . . . m 1.2
+
+ﬁg ﬂight, this resulted in a core 3
+
+g sample that had been built in g 1.1 - —Pre Modification
+
+8 only one grayity regime E 1 . —Post Modification
+
+The third ﬂight week 3%. —Earth Control
+offered some new testing 3 0.9 ‘
+opportunities. First and go 0 8 V
+foremost, ﬂying both Lunar .5
+and Martian parabolas allowed 0-7 ’
+for new data sets to be Micro Lunar Martian 2-(3
+collected on manufacturing GraViW Pr°f“e
+und;rh:h0:aetagrag::ge::{31111;er' the Figure 4: Average Layer Thickness Across Varying Gravity Regimes
+layer thickness for all of the ﬂight campaign is presented in the Figure 4.
+
+This graph illustrates the changes in the layer thickness of the parts printed during the different graVity regimes.
+The data has been normalized so that the averaged nominal prints in the control fall on 1 0n the graph and the
+
+4
+American Institute of Aeronautics and Astronautics
+Copyright © 2013 by Made In Space Inc.. Published by the American Institute of Aeronautics and Astronautics, Inc., with permission.
+
+"
+"5","rernaining data scales equivalently. The parts that were built before the 3D printers were modiﬁed had larger layer
+thickness than the ground samples. The deviation from the ground sarnples decreased as the graVity regirne became
+closer to Earth graVity. Samples built in microgravity had larger deviations from the ground sarnples than those built
+in Martian graVity.
+
+After the 3D printers were modiﬁed the deviations from the Earth samples was minimized. The values for the
+layer thickness across all the graVity regirnes was close enough to the Earth samples that any deviations from the
+Earth sarnples could be accounted to the error in measurement (+/— 12 pm).
+
+VI. Discussion
+
+The goal of these experiments was not only to demonstrate that “ "" _
+extrusion based 3D printing works in microgravity, but it was also a
+way to determine what commercial components work in .
+
+a microgravity and what cornponents need to be modiﬁed in order to
+
+% properly function in a reduced graVity environment. The goal of
+
+g dernonstrating extrusion based printing in microgravity was achieved
+
+g as many parts were built during the reduce graVity portions of ﬂight
+
+i such as the ones shown in Figure 5.
+
+2' The secondary goals of determining if commercial printers
+
+(2 function in microgravity was also achieved. The MakerBot and the
+
+E BFB . 3D pr1nters both required rnodiﬂcations to their internal Figure 5: Two Parts Printed in Microgravity; a
+
+g workings in order for the 3D printers to function properly in Standard ESAMM Coupon and a Wrench
+
+§ microgravity. The changes were achieved during the ﬁrst ﬂight week
+
+if and an example of the results can be seen Figure 6.
+
+g Made In Space used the ﬁndings from
+
+5 these experiments to design the 3D Printer
+
+3“ for the ISS under a NASA contract in 2012.
+
+g \‘p «i: Luigi Due to the nature by which the 3D Printers
+
+g i E‘; .17 — "" were modiﬁed to work in microgravity a
+
+g *1 1' secondary beneﬁt is that they also would
+
+3 Ii 1 work in all other graVity regmies as well. In
+
+E . the end, the 3D Printer developed for the ISS
+
+% . ...-..; ——. ‘ is essentially a graVity indpendent 3D Printer;
+
+0 - . .
+
+(L3 ‘ the ﬁrst of it’s kind.
+
+E ' In June of 2013 Made In Space brought a
+
+m . .
+
+E prototype of this 3D Printer on another
+
+(A parabolic ﬂight campaign. Testing of the
+
+E Figure 6: In Flight 3D Printed Part Before and After Modiﬁcation deVice showed that it was indeed graVity
+
+(:0: independent. The ﬁrst version of this technology to ﬂy to the ISS will arrive in 2014 on SpaceX—S.
+
+‘z‘
+
+43 VII. Conclusion
+
+é? Overall, the three ﬂight weeks presented an amazing amount of opportunity and fast paced research and
+
+E development for Made In Space. HaVing just three weeks between each ﬂight week caused the team to rapidly
+
+9 developed experiment modiﬁcations and data processing from previous ﬂight to prepare for the next. This fast paced
+development helped advance the company much further and faster than if the ﬂight opportunity was not available.
+
+The ﬂight opportunity was extremely successful. The initial goal of understanding how well the 3D printing
+process works in microgravity was met, and additional questions were answered. The data collected has helped
+solidify the Made In Space business model and provide steps forward to the next phase of the rnission—ﬂying a 3D
+printer to space.
+
+The next steps for rnaturing the technology comes in two forms: First, continuing to analyze the parts that were
+3D printed during the 2011 and 2013 microgravity ﬂight weeks. Second, pushing the technology to the next level,
+speciﬁcally into the space enVironrnent.
+
+Made In Space will launch and integrate the in—space 3D printer with the ISS in 2014. Once integrated, the in—
+space 3D printer will undergo further research and the capability will be further demonstrated by building usable and
+workable parts for the crew. The company will then seek to build a business around 3D printing parts and hardware
+in space, further advancing the technology and its uses.
+
+5
+American Institute of Aeronautics and Astronautics
+Copyright © 2013 by Made In Space Inc.. Published by the American Institute of Aeronautics and Astronautics, Inc., with permission.
+
+"
+"6","References
+1Dunn, J .J ., et a1, “3D Printing in Space: Enabling New Markets and Accelerating the Growth of Orbital Infrastructure”,
+Space Manufacturing 14: Critical T echnologies for Space Settlement Conference, October 29-31, 2010, Mountain View,
+California.
+2Wingo, D., “Transforming Spacecraft Economics Via On Orbit Assembly,” Space Daily [online article], URL:
+http://www.spacedaily.com/news/satellite-tech-02a.htm1 [cited 15 July 2013].
+3Cooper, K.G. and Grifﬁn M.R., “Microgravity Manufacturing ViaFused Deposition,” Marshall Space Flight Center,
+Marshall Space Flight Center, Alabama, USA, NASA/TM - 2003-212636, July 2003.
+0\
+§
+2,
+E
+8
+53
+8
+Q
+E
+O.
+E
+E
+E
+5
+Z
+8
+m
+Lu
+P
+%
+0
+Lu
+o
+<:
+%
+Z
+o
+E
+Q
+<:
+m
+<:
+Z
+5‘
+""G
+g
+L3
+Q
+B
+O
+Q
+6
+American Institute of Aeronautics and Astronautics
+Copyright © 2013 by Made In Space Inc.. Published by the American Institute of Aeronautics and Astronautics, Inc., with permission.
+
+"

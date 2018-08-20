@@ -1,0 +1,849 @@
+"","x"
+"1","AIAA 2016-2406
+SpaceOps Conferences ®
+16-20 May 2016, Daejeon, Korea
+SpaceOps 2016 Conference
+ngzémgrk
+Human Error and the Internatlonal Space Station:
+Challenges and Triumphs 1n Selenee Operatlons
+Samantha S. Harris* and Beau C. Simpson1
+NASA Marshall Space F light Center, Huntsville, AL, 35812
+Abstract: Any system with a human component is inherently risky. Studies in human factors and psychology
+have repeatedly shown that human operators will inevitably make errors, regardless of how well they are
+trained. Onboard the International Space Station (188) where crew time is arguably the most valuable
+resource, errors by the crew or ground operators can be costly to critical science objectives. Operations
+experts at the ISS Payload Operations Integration Center (POIC), located at NASA’s Marshall Space Flight
+é Center in Huntsville, Alabama, have learned that from payload concept development through execution,
+g there are countless opportunities to introduce errors that can potentially result in costly losses of crew time
+8 and science. To effectively address this challenge, we must approach the design, testing, and operation
+E processes with two speciﬁc goals in mind. First, a systematic approach to error and human centered design
+E methodology should be implemented to minimize opportunities for operator error. Second, we must assume
+:- that human errors will be made and enable rapid identiﬁcation and recoverability when they occur. While a
+a systematic approach and human centered development process can go a long way toward eliminating error,
+95“ the complete exclusion of operator error is not a reasonable expectation. The [88 environment in particular
+g poses challenging conditions, especially for ﬂight controllers and astronauts. Operating a scientiﬁc laboratory
+g 250 miles above the Earth is a complicated and dangerous task with high stakes and a steep learning curve.
+E; While human error is a reality that may never be fully eliminated, smart implementation of carefully chosen
+5 tools and techniques can go a long way toward minimizing risk and increasing the efﬁciency of NASA’s space
+E science operations.
+3 I. Introduction
+E Throughout history, humans have proven themselves to be both capable of incredible achievement and susceptible
+E3 to catastrophic errors. Between 2005 and 2007, the National Motor Vehicle Crash Causation Survey analyzed a
+8 sample of 5,470 automobile crashes in the United States and determined that 94% 0f the total crashes could be
+é attributed to human error.1 In 2014, IBM’s yearly Cyber Security Intelligence Index revealed that 95% of cyber
+% security incidents investigated for the report involved human error.2 And in a study of NASA mishaps between 1996
+a and 2005, 57% of type A1 mishaps were attributed to human error.3 Despite their tendency to commit errors, humans
+9 remain an integral component of many systems, including payload operations aboard the International Space Station
+§ (188). Fortunately, typical limitations on human perception, cognition, and physical performance have been well
+<2: studied and documented. However, 24 X 7 ﬂight operations present additional, unique challenges to human operators.
+ﬂ Factors common to space operations environments such as stress and fatigue have proven to further limit human
+Q‘E information processing and decision making capabilities in individual and unpredictable ways. Because of these and
+E other limitations on performance capabilities, human errors are inevitable in all systems with human components. The
+{3 relevant question becomes how to best address human error as a component of ISS payload operations, where errors
+are often costly to critical science objectives.
+** Payload Communications Manager, Training and Crew Operations Branch, NASA Marshall Space Flight
+Center/EO20, Huntsville, Alabama, USA. samantha.s.harris@nasa.g0v
+1 Payload Operations Director, Operations Directors Ofﬁce, NASA Marshall Space Flight Center/EOO3, Huntsville,
+Alabama, USA. beau.c.simp_son@nasa.g0v
+1 A Type A Mishap is a mishap resulting in one or more of the following: (1) an occupational injury or illness resulting
+in a fatality, a permanent total disability, or the hospitalization for inpatient care of 3 or more people within 30
+workdays 0f the mishap; (2) a total direct cost of mission failure and property damage of $1 million or more; (3) a
+crewed aircraft hull loss; (4) an occurrence of an unexpected aircraft departure from controlled ﬂight (except high
+performance jet/test aircraft such as F-15, F-16, F/A-18, T-3 8, OV-10, and T-34, when engaged in ﬂight test activities).
+1
+American Institute of Aeronautics and Astronautics
+This material is declared a work of the US. Government and is not subj ect to copyright protection in the United States.
+
+"
+"2","II. Humans Make Mistakes
+At its core, human performance is limited by the capability of the physical human body. Human eyes can only see
+to a certain distance. Human ears can only hear within certain frequencies. Human brains can only process so much
+information simultaneously. Beyond physical limitations, human performance is further complicated by the more
+personal aspects of the human experience. Temporary feelings and conditions like emotion, stress, and fatigue
+signiﬁcantly impact the performance of human operators in unique ways. Due to the constrained and variable nature
+of human performance, no amount of effort will eliminate human error entirely in systems with human elements.
+However, studying and developing an understanding of the various limits on human capability and the factors that
+inﬂuence human behaVior can enable us to better predict and eliminate many human errors in space operations.
+A. Visual and Auditory
+To make decisions and solve problems, humans must ﬁrst take in information from their surroundings. For the
+average operator, Vision serves as the primary source for this information. Human Vision can roughly be broken down
+§ into two stages; physical reception of stimuli, and interpretation and processing of stimuli. When it comes to physical
+3 reception, the structure of the human eye dictates the way humans perceive characteristics like size, depth, brightness,
+Q and color. Understanding how the structure of the eye impacts human abilities to perceive Visual information can help
+E us to eliminate some human errors in operations. For example, we know that cones, one of the two primary types of
+g photoreceptors in the retina, are more densely packed toward the center of the Visual ﬁeld. This concentration of cones
+:. makes it easy for humans to focus on a stimulus at the center of our Vision, but difﬁcult to read or distinguish stimuli
+8 at increasing distances from that focal point. Rods, the other type of photoreceptors in the retina, are concentrated in
+g the outer part of the Visual ﬁeld and are sensitive to change. This concentration of change-sensitive rods enables the
+g average human to see one speciﬁc type of stimulus well in peripheral Vision: movement.4 As designers and operators,
+g we can use this knowledge to decrease the odds that a human operator will miss a stimulus in their peripheral Vision
+3 by introducing motion into that stimulus.
+E In order to keep up with the vast number of stimuli physically
+é perceived by our eyes each day, humans rely on a variety of Visual
+N“ processing techniques. One technique that humans use to resolve
+2;) ambiguity is reliance on expectations. While our expectations The lazy Orange
+2 generally enable us to correctly interpret the information we see, d
+34: relying on expectations sometimes causes us to make errors. For cat Sleeps un er the
+E example, is the text in Figure 1 correct? While human perception '
+<2 systems tend to be efﬁcient, they are also prone to error. the COZy armChalr-
+35 To supplement information gathered Via the visual systeni,
+% humans use the auditory system. The human auditory system allows
+% the body to collect sounds and interpret them into meaningful - v -
+m . . . . . Flgure 1. Proofreader s Illus10n.
+E messages. The human ear is limited by what it is capable of
+E detecting, and if sounds are not the correct volume or frequencies
+Q are too similar, humans are unable to differentiate sound. In a world of remote operations, operators at the Payload
+E Operations Integration Center (POIC) are more reliant on their sense of hearing than average operators. Face to face
+3 operations with astronauts and scientists are often not possible, so a signiﬁcant amount of information is exchanged
+E solely over voice channels (referred to as loops). Most operators monitor many loops simultaneously. For example,
+E the Payload Communications Manager (PAYCOM) monitors an average of approximately ﬁfteen loops including four
+D primary Space to Ground (S/G) loops and many ground loops. Studies have shown that humans are capable of fully
+processing only one stream of auditory information at a time. When operators are asked to monitor multiple loops
+simultaneously, the auditory system ﬁlters out background information (or noise) in order to focus on important
+information (or signals). When there are multiple simultaneous conversations on the loops, operators must cope with
+what is referred to as a low signal-to-noise ratio. Low signal-to-noise ratios have been shown to result in increased
+frequency of human error.5
+B. Movement
+After a stimulus is received through sensory receptors such as the Vision or auditory system, the information is
+transmitted to the brain. The brain processes the information and sends commands to the appropriate muscles to
+respond to the stimulus. The total time required for a human to respond to a stimulus can be broken down into reaction
+time and movement time. Both reaction time and movement time depend on a variety of factors and are subject to
+limitations in human capability. For example, there is a lower limit on how quickly a human operator is capable of
+2
+American Institute of Aeronautics and Astronautics
+
+"
+"3","recognizing that a command needs to be sent to the vehicle, and physically clicking the button to send the command.
+By effectively designing operator tools and environments with human factors in mind, it is possible to minimize
+movement time. However, a human operator will never be capable of instantaneous action. It is important that we
+consider these and additional limitations (such as reach envelopes, repetitive movements, fatigue, etc.) on human
+operator capability as we design tools, tasks, and processes in our operations environment. For example, an operator
+will be able to send a command more quickly if the tools he must use to do so are comfortably within his reach
+envelope. If the operator must wheel his chair down his desk a few feet and reach for a mouse to send the command,
+the time required to complete the task will be longer. A great deal of work has been done in the ﬁeld of ergonomics
+that can be used to assist with increasing efﬁciency and minimizing error by ensuring tools, tasks, and procedures are
+appropriately designed for operators.
+C. Memory
+The human memory system is used to store and retrieve information. It is generally accepted that there are
+3 three types of human memory: sensory memory, short-term or working memory, and long-term memory. Sensory
+3. memory is the shortest term element of memory and is used to store information received through the senses.
+é Information stored in sensory memory is either re-written as more information arrives or moved from sensory memory
+g into short term memory through attention. Attention is the process used by humans to ﬁlter out what is important from
+i the vast amount of information in sensory memory at any given time. Humans are able to focus attention selectively,
+S but are limited in the number of stimuli they can attend to simultaneously.
+<2 Short-term or working memory is used for temporary recall of information. Short-term memory can be accessed
+E rapidly, but it also decays quickly and is limited in capacity. It is relatively well known that the average person is
+g limited to recalling 7i2 chunks of information using short term memory. This seems straightforward, but research
+§ done on short term memory has proven it can be quirky. Things like the recency effect, or the tendency for humans to
+f5? better recall items seen more recently than those in the middle of a list, and interference have been shown to impact
+53‘: short term memory under certain circumstances.4
+g Long-term memory is used for the long-term storage of information and is where we store everything we know.
+i Long-term memory takes longer to access than short-term memory, but has a huge, if not unlimited, capacity.
+2;) Information is moved from short to long-term memory through rehearsal, and many factors such as the total time spent
+5 learning, the distribution of practice sessions through time, and the meaningfulness of the information impact the
+g; efﬁciency of the transition.4 After transition to long-term memory, information is subject to decay and interference.
+E Information is retrieved from long-term memory through recognition or recall, with recall being the more difﬁcult of
+(53 the two.
+8 Operators at the FDIC rely heaVily on memory to recall factual information as well as knowledge of actions and
+g procedures. For example, the Operations Controller (0C) is required to recall a wide variety of documentation
+% including Payload Regulations and Flight Rules that govern payload operations. While not expected to recall
+% everything they have read, OCs are expected to recognize situations that fall under the jurisdiction of existing
+Q documentation. This is a difﬁcult job that requires efﬁcient and effective recognition and recall abilities. Human
+:5 memory is limited under the best of circumstances, and the ﬂight control environment provides especially challenging
+<2: conditions. Many conditions commonly experienced by ﬂight controllers, such as stress, anxiety, and sleep
+4: deprivation, have been shown to negatively impact memory. Sleep deprivation speciﬁcally has been repeatedly proven
+g to negatively impact both working memory and attention.6
+Q
+E D. Reasoning and Problem Solving
+After information is received and stored, humans apply that information to reason and solve problems. These
+thinking processes can be complex and introduce many opportunities for error. One notoriously unreliable technique
+humans commonly use is called inductive reasoning. Inductive reasoning involves generalizing from cases seen to
+infer information about cases unseen. Since the number of cases seen is typically limited, inductive reasoning is a
+convenient process that humans use out of necessity to draw conclusions about the rest of the world. However,
+inductive reasoning has a high error rate.4 For example, a ﬂight controller who has witnessed only false ﬁre alarms
+may infer that the next ﬁre alarm he observes is false as well. The next time there is a true ﬁre event, he may respond
+less diligently to the alarm due to his incorrect inductive reasoning.
+3
+American Institute of Aeronautics and Astronautics
+
+"
+"4","Another tool humans use to decode the world around them is mental models. Mental models are the theories
+individuals develop to explain the behavior of situations or systems. Mental models are especially dangerous because
+they tend to be partial, unstable, and unscientiﬁc. For example, an ‘- ; -
+astronaut may develop a mental model that payloads are powered on - I ' _ I
+by placing the power switch in the up position because most payloads A, I
+he has seen operate this way. If he is asked to operate a payload that ""I 1- ' e A'-
+is inconsistent With this model, the astronaut may be more likely to ’
+commit an error and place the switch in the incorrect position. A real ‘
+example of this can be seen With the Minus Eighty—Degree Lab
+Freezer for ISS (MELFI) racks onboard the ISS. For MELFI racks H ‘ '
+located in the US Lab, the rack is powered on by ﬂipping the Rack ’ ,‘
+
+Power Switch (RPS) down as shown in Figure 2. For MELFI racks ~
+located in the Japanese Experiment Module (JEM), the rack is 'i .
+. . I _
+3 powered on by ﬂipping the RPS up. - r -
+El One ﬁnal opportunity for error that Will be discussed in this ‘ “
+E abbreviated list is the way humans acquire skills. As humans reach I
+g mastery of particular skills, behavior has a tendency to become «$.- t
+is automatic. Automatic behavior can be efﬁcient, but results in errors
+2' When the context of the activity changes Without the operator . .
+c2 noticing. For example, a PAYCOM Who is accustomed to using S/G Flgure 2° Rack Poower SWItCh for
+:0 2 to call astronauts aboard the space station may fail to notice that S/G MELFI Rack 1n the US Lab.
+3 2 has been privatized for a medical conference and make an erroneous
+3 call on that channel out of habit.
+g E. Affect
+g The above sections have discussed human perceptual and cognitive abilities under the implied assumption that
+i humans operate at full capability most of the time. In truth, human performance and error are much more complicated
+2;) than that. Humans experience a Wide range of feelings that are unique to individuals at speciﬁc moments in time.
+E Affect comprises emotions (such as anger and frustration), moods (such as cheerfulness), and dispositional traits (such
+:2 as competitiveness 0r optimism). A lot of research has been done on the impact affect has on performance, and that
+E research has revealed that affect impacts many skills necessary for successful operations including decision making,
+5 creativity, prosocial behavior, negotiation, conﬂict resolution, and leadership effectiveness.7 These ﬁndings suggest
+8 that even the most proﬁcient ﬂight controllers are susceptible to the effects of emotions or moods manifesting Within
+(32 their work quality. For example, an operator Who consistently earns excellent performance ratings may be pulled over
+% by a trafﬁc ofﬁcer and receive a speeding ticket on the way into work resulting in a negative attitude that hinders her
+a decision making for the duration of her shift.
+9
+(:2: F. Stress
+a Another factor that has been shown to negatively impact human perceptual and cognitive performance is stress.
+ﬁ Studies have linked increased stress levels to decreased performance in tasks that utilize memory, especially When
+é utilization of working memory or retrieval of information stored in memory is required. Stress has also been linked to
+E decreased performance in tasks that require diVided attention or decision making.8 Stress tends to be an especially
+8 difﬁcult condition to quantify and control because it is a highly individualized experience. Conditions that result in
+stress induced errors for one operator may not impact the performance of another. For ﬂight controllers, stress levels
+vary Widely and change by the minute. For example, a Stowage engineer may work many hours With no signiﬁcant
+events, only to be caught completely off guard by a call from an astronaut Who cannot ﬁnd a tool in the provided
+location. The Stowage ofﬁcer then immediately ﬁnds himself under immense pressure to ﬁnd a workaround for the
+problem by providing alternative locations or backup options for the missing item as quickly as possible to preserve
+available crew time.
+G. Fatigue
+
+There is a great deal of literature describing the link between fatigue and cognitive impairment. In general, research
+has consistently associated insufﬁcient sleep With “cognitive problems, mood alterations, reduced job performance,
+reduced motivation, increased safety risks, and physiological changes.”9 Many of the most notable disasters in history,
+including the Three Mile Island nuclear disaster, the Exxon Valdez oil spill, and the loss of NASA’s space shuttle
+Challenger, have been attributed, at least in part, to human error due to sleep deprivation and fatigue.10 In a 24 X 7
+
+4
+American Institute of Aeronautics and Astronautics
+
+"
+"5","space operations environment Where operators work schedules that require rotational sleep shifting, fatigue is an
+unavoidable reality. In addition to fatigued ground operators, fatigue of the astronaut crew operators onboard the space
+station must be considered. A 2014 study of 64 astronauts from 80 space shuttle missions and 21 astronauts from 13
+ISS missions concluded that “sleep deﬁciency was prevalent not only during space shuttle and ISS missions, but also
+throughout a 3 month preﬂight training interval.”11
+H. Additional Error Producing Factors
+Additional reseaich in human error has Table 1. Summary of Error Producing Conditions ranked in
+focused on the spe01ﬁc features of the tasks order of known effect.”
+operators complete. In 1986, J.C. Williams
+developed the Human Error Assessment and ——————
+Reduction Technique (HEART) to calculate H
+the probability that a human error Will occur Upfamiliarity with the task (X17)
+. . Time shortage (x l 1)
+3 during the performance of a particular task. poo, signalznoise ratio (x10)
+3. The HEART, Which is still used today, P00? human SYSEem interface (X8)
+\0 . . Desxgner user mismatch (x 8)
+§ accounts for the impact of a list of pre-deﬁned Irreversibility of errors (X8)
+g Error Producing Conditions (EPCs) on task gongfgiggg’fglgig” t k (:2)
+Z». performance. HEART EPCs represent Msgsﬂcepdon of risk em as S E)“;
+2 conditions that have been proven through Poor fetfdback from System , . (X4)
+5 research to result in increased frequency of glexpenencef mt 1“"" 0f mmmg (X 3)
+Q . oor instructions _or procedures (X 3)
+:0 human performance errors and include many Inadcqyatc Ch§ckln8 . (X3)
+5 . . . . Educanonal mismatch of person Wlth task (X 2)
+g- conditions common in space operations. Some Disturbed sleep patterns (X 1.6)
+§ 0f the most signiﬁcant EPCs relevant to space Hostile environment (X1'2)
+33 . . . . . . . Monotony and boredom (X 1-1)
+§ operations 1nclude. unfamiliarity With a low —_____—__
+3% frequency event, time shortage for error
+g detection and correction, lOW signal-to—noise ratio, operator inexperience, a mismatch between the mental models of
+i the operator and the designer, a lack of obvious means to reverse unintended actions, information overload, a need to
+2;) transfer speciﬁc knowledge from task to task Without loss, ambiguity in performance standards, and impoverished
+5 quality of information conveyed by person to person interaction.5 Table 1 provides a summary of some selected EPCs
+g; ranked in order of known effect per HEART guidelines. These examples represent only a small portion of all EPCs
+E that may impact a typical shift for a payload operator. However, even this small list illustrates the difﬁculty of reducing
+é human error in a space operations environment.
+5%
+53 III. Preventing Errors Before They Occur
+g The ﬁrst and most effective line of defense that should be implemented against human error is prevention. While
+E it Will never be possible to prevent all human errors from occurring, it is possible to improve upon current statistics
+3 by changing the way we think about human error. Dr. James Reason, a leading psychologist in the ﬁeld of human
+in: error, has identiﬁed two primary paradigms that may be used When addressing the problem of human error: the person
+E approach and the system approach.13 In the person approach, blame is placed on the individual WhO committed the
+g error and a moral shortcoming of the operator such as forgetfulness, inattention, or lack of motivation is identiﬁed as
+g the root cause of the error. Efforts to prevent similar errors from recurring are targeted at attempting to reduce variation
+5 in individual operator behavior through doing such things as requiring additional training, developing neW procedures,
+Q publicly shaming operators WhO make mistakes, and sometimes even threatening termination for mishaps. While this
+approach has historically been preferred in the United States, it has some signiﬁcant drawbacks that must be
+considered. First, a person approach to error discourages error reporting and creates a culture of blame and secrecy.
+Second, this approach fails to identify a root cause that can be reliably ﬁxed. Human performance, by nature, is
+constrained and variable, and no amount of threats or training Will prevent humans from making errors. While a person
+approach to error is sometimes necessary to correct recurring abnormal or harmful behavior patterns in speciﬁc
+individuals, attempts to achieve complete control over human behavior Will always prove futile.
+
+The alternative to the person approach, Which the FDIC has strived to increasingly adopt as we work to combat
+human error, is the system approach. In the system approach, human operators are assumed to be fallible and expected
+to err. The systems approach shifts focus away from the behavioral shortcomings of individual operators and instead
+addresses the external, upstream conditions that allow errors to occur. Errors are Viewed as systematically connected
+to the features of operators’ tools and tasks rather than their behavior alone. Operator behavior is difﬁcult to change,
+but tools and tasks are much simpler to reliably correct. In the systems approach, root cause analyses are conducted
+
+5
+American Institute of Aeronautics and Astronautics
+
+"
+"6","to determine the true cause of individual errors, and the root causes are addressed in ways that prevent similar errors
+from being made again by any operator in the future. While it is not possible to engineer out variability in operator
+behavior, it is possible to increase the robustness of systems so that variability no longer results in errors. The systems
+approach is one of constant Vigilance and continuous improvement that minimizes errors in organizations by
+systematically eliminating opportunities for those errors to occur.
+I. Data Gathering
+To effectively prevent errors in organizations, we must ﬁrst understand Where those errors are occurring in our
+unique system. To understand What kind of errors are occurring Within our operations, the FDIC uses tools including
+the FDIC Error Log shown in Figure 3 and the Payload Action Item List (PAIL). When a ﬂight controller commits an
+error, the individual is asked to ﬁll out an Error Report through the Error Log. Error Reports contain information about
+the console discipline of the
+operator Who committed the m Mom
+8 error, the date and time of the Em WE‘SBOLQM E.[Eg£.m!m_ng.ggmc.nm Cunemmms
+3. error, and a written description of
+g the error. The Error Report is Fi'ter10r Searchforr—In —E
+g sent to the operator’s team lead,
+E3 WhO assumes I‘CSpOIlSlblllty fOI‘ Roponﬂ Position om Summary Resolution status
+2 conducting the root cause Janua'v 20‘“
+(2 analysis and supplying a w Due l 13 29m ion..- Supplied ToBc Dclcmiucd OPEN
+g resolution for the report. mm 3:: 3:12: I:::::::::::::: {::::::::::::::::::1 21::
+g are used to document anomalies 9% l).\l(‘ 15mm 'I‘nnc Supplied ‘l'ollclktcmnincd (WW
+§ in payload products that must be “‘3'“
+if corrected before that product is Decombor2015
+E used again. For example, a PAIL Figure 3, POIC Error Log,
+\3 would be submitted if the crew
+CD . . .
+2“ onboard the Space Station reported an error in a written procedure.
+1;) There is no one size ﬁts all approach to gathering error data, and individual approaches must be tailored to speciﬁc
+5 organizations and industries. However, one of the most critical steps in gathering accurate data in any organization is
+g; the creation of a safe and just reporting culture. Employees must have faith that “the boss can hear bad news” and
+E reporting their own errors beneﬁts the greater good of the organization. If errors result in consequences Viewed by
+g employees as unjust, Inost errors that can be covered up Will not be reported. Without an accurate account of Inishaps
+8 and close calls, risk management becomes more difﬁcult for the organization because patterns indicating systematic
+(32 issues may not be discovered until problems become Widespread or catastrophic. The FDIC error reporting system has
+% enabled the identiﬁcation and correction of many common operator and payload errors. However, culture change is
+a still required for these efforts to reach full effectiveness. A stigma on error reporting remains, and many operators are
+9 hesitant or unwilling to submit reports unless requested to by management. Due to this stigma, errors are not always
+:5 reported honestly and many opportunities for systematic organizational improvement are missed.
+<2: In addition to error reporting systems, debriefs are a useful tool for gathering data on errors and close calls. In
+4: many industries, for example military aViation, debriefs are standard practice. Within the Space Station program, it is
+g common practice to debrief “Lessons Learned” after each ﬂight increment and after signiﬁcant but uncommon or off—
+E nominal events. It is also standard practice Within the FDIC to debrief all simulated training events. These debriefs
+8 have played a signiﬁcant role in the identiﬁcation of error patterns and creation of opportunities for systematic
+improvement in payload operations. However, debriefs have proven difﬁcult to integrate into the current real time
+operations model at the FDIC. Managers at the FDIC have often discussed the potential beneﬁts of team debriefs after
+each real time console shift ends, but logistical difﬁculties have so far been determined to outweigh anticipated
+beneﬁts.
+J . Analysis and Prevention Measures
+Once the organization has a better understanding of Where errors and close calls are occurring, root cause analyses
+should be conducted to determine Why those errors are occurring. Often, human error patterns tend to follow Pareto
+principle (also known as the 80—20 rule), With states that approximately 80% of effects come from 20% of causes.
+Said another way, a study of speciﬁc errors in an organization is likely to reveal that around 80% of human errors are
+caused by 20% of causes. Many errors Will likely be traced back, at least in part, to operator limitations and error
+producing conditions described in section II of this paper. Payload operations onboard the ISS are multifaceted and
+may be broken down into many different types of operations and errors.
+6
+American Institute of Aeronautics and Astronautics
+
+"
+"7","1. Command Errors
+One source of error in payload operations is command errors. Command errors occur when an operator sends an
+incorrect command to the ISS or fails to send a command at the appropriate time. To better understand the root causes
+of command errors in ISS spaceﬂight operations,
+NASA conducted a Human Error Analysis that —
+included data from the ISS Command Error Database ISS Command Error Database PSF
+(CED) at Johnson Space Center (JSC). While this Categories
+database does not track errors in payload commands
+from the FDIC, it does provide data for commands
+being sent to the ISS from a 24 X 7 operations 44%
+environment similar to the FDIC and is therefore a
+useful analogy. The NASA study analyzed data on
+g 414 errors out of 746,790 total commands captured 22% 21%
+El between August 2004 and June 2008. Investigators 13% 10%
+g categorized the self—reported contributing factors for 7% 2% 2%
+g those errors as shown in Figure 4. The most often
+3 Cited contributing factors were. cognitive overload ‘06 96 ‘06 d . 06 85° -\o° 6”
+T. and available time, which were Cited in 22% and 21% $5: $90 \e/o @929 (9&3 99° 03 95$
+c2 of errors, respectively. Additional contributing 05""?“ ""‘60 $2? 0&9 .69 Q«°° 0g? (£029
+:0 factors included complacency (13%), stress/fatigue 6° 055° V“ L ‘5“ 250$ \{é‘
+E (10%), procedures (7%), team collaboration (2%) (’0 ”\Q’ «‘7’
+g and training/experience (2%).14 .
+5;? Since commanding tasks are software based,
+4% operator errors can often be effectively addressed Figure 4. Error Data Broken Down by Category from the
+g through targeted human factors improvements to ISS Command Error Database.“
+8“ existing software tools. For example, a recently
+§ reported error involved an incorrect command being sent to the ISS. An analysis determined that the command sent
+3 in error was obsolete, so that command was removed from the operator display entirely. Removing obsolete commands
+E from displays may not prevent all command errors, but it does ensure those speciﬁc commands will not be sent in
+E error by any operator again. In another incident, an operator failed to re-start health and status polling to a payload
+5 after an off—nominal event. The root cause analysis revealed that power data for payloads in that particular location
+8 was not included in the operator’s console display. The missing information was added to the display during the next
+(3:. update, and the error has not occurred again.
+% For commands deemed to be critical, the FDIC employs redundant veriﬁcation to prevent operator error. Before
+% sending a critical command, the commander must obtain permission from the Payload Operations Director (POD)
+Q who obtains permission from the ISS Flight Director. After
+:5 ermission is received, the commander must enable the '—“ ____ ——“i
+<2: Eommand, select the command, and verify the command Your Applicatlon Name 23
+4: before it is sent to the vehicle. After a critical command is sent,
+g it is automatically disabled to protect against redundant .--
+g delivery. For both critical and non-critical commanding .‘0'. Do you really want to exit?
+8 operations, veriﬁcation techniques including software .-. ‘
+prompts like the one in Figure 5 have proven to be a valuable
+defense against errors. They provide operators the option to
+undo unintended actions without causing damage to systems.
+Multiple teams within the FDIC have eliminated operator
+errors through the use of redundant operator veriﬁcation
+within the chain of command and targeted implementation of Figure 5. Veriﬁcation Prompt.
+human factors tools such as veriﬁcation prompts in software
+applications.
+Another technique the FDIC has employed to minimize human error is automation. The Payload Rack Ofﬁcer
+(PRO) team is one of the most commanding-heavy teams at the FDIC and takes an especially proactive systems
+approach to commanding errors and automation. The PRO team identiﬁes patterns of recurring errors using the Error
+Log, and develops scripts that guide operators through commanding sequences that are most likely to result in operator
+errors. These scripts automate commands when possible and use prompts to guide operators through coordination and
+7
+American Institute of Aeronautics and Astronautics
+
+"
+"8","decision making tasks that cannot be automated. Command scripts have proven especially useful for sequences of
+commands that are always performed in the same order. For example, PROs utilize a script to power on speciﬁc
+chambers Within the lab freezers. Command scripts have successfully been used to minimize or eliminate many of the
+most common payload command errors at the FDIC. However, automation introduces its own unique challenges.
+Automation may cause operators to become complacent and less situationally aware, Which reduces their ability to
+respond to unexpected events in real time. Also, it is important that operators maintain the knowledge necessary to
+recover When automated tools fail to perform as expected.
+2. Communication Errors
+Another source of operator error Within payload operations, ineffective communication, tends to be more difﬁcult
+to quantify and systematically prevent. While command errors can often be addressed using software solutions,
+communication based tasks are more heaVily interpersonal and less amenable to technical solutions. The operations
+model at the FDIC is designed around multiple ﬂight control discipline teams Who each specialize in a payload system
+3 and work together to operate payloads owned by remotely located Payload Developers (PDs) and Principal
+El Investigators (PIs). Successful payload operations require extensive and efﬁcient communication both Within the real
+5 time ﬂight control room and remotely With payload owners and back room specialists. A 24 X 7 operations model also
+g requires shift handovers to communicate relevant information between off—going and on-coming console operators.
+in Systematic standardization of such tasks has proven difﬁcult due to the impact personality and communication styles
+2 have on the way individual operators perform them. Recent examples of payload operations errors ultimately attributed
+c2 to communication errors include: an error in a crew stowage product due to miscommunication With a PD, failure to
+:0 communicate the need for uplink of a product from a back room to the real time ﬂight control team, and failure to
+3 hand over information between shifts.
+§ Payload operations necessitate the timely transfer of large amounts of diverse information between many
+if stakeholders. To ensure that the information gets to the proper places at the proper time, it is important to establish
+3% standardized processes for information routing and control. For example, When a crew member onboard the space
+g station leaves a written note for the payload operations team, the PAYCOM is responsible for disseminating that
+i information to the proper stakeholders. A formal Standard Operating Procedure (SOP) provides instructions for how
+1;) this information should be shared. SOPs are established for many processes and establish consistency, responsibility,
+5 and accountability for communication practices. When processes are not standardized (or standardized processes are
+g; not followed), performance standards may be ambiguous to operators, thus resulting in greater error frequency. Errors
+E may also occur When communications processes are used inconsistently, or When information is communicated using
+5 multiple uncontrolled processes. For example, information passed from back room support specialists to real time
+5 ﬂight controllers is a recurring source of error at the FDIC. While a root cause has not been identiﬁed, these errors are
+(E; likely at least partly caused by inconsistency in how this information is communicated. For example, at one point in
+% time, real time PAYCOMs were required to check at least three separate information sources (including email,
+a handover notes, and a daily planning report) to determine Whether a back room support specialist had identiﬁed any
+Q topics for the morning Daily Planning Conference.
+:5 When possible, the FDIC utilizes software tools to help standardize information routing, for example during shift
+it handover. Shift handovers require signiﬁcant knowledge transfer between operators and, While necessary, introduce
+4: opportunities for communication errors. To help mitigate communication errors from shift handovers, each cadre
+é position is expected to keep a log of pertinent information throughout their shift. Speciﬁc log entries that on-coming
+g operators need to be aware of or possibly work during their shift are color coded using position speciﬁc ﬂagging
+8 systems as shown in Figure 6. Flagging a log entry as a “handover item” alerts on-coming operators that they Will
+need to take action pertaining to that speciﬁc log entry during their shift. Log entries ﬂagged as handover items also
+serve as reminders for the off-
+gfﬂl’lg Operator . t0 .Verbally LoglEntry: POD TestLogr' 1851291 Subject: H&S ‘Payload: EnterPaonad name(Paonad A)
+dlscuss the Open Item in person Gmmmme ground.
+. . . 3 he believes the data connector may have been bumped 0r disconnected somehow
+Wlth the on-COInlng operator
+before ChCCkll’lg Ollt fOI‘ the I V ' gOrbitZ suggest asking the crew to check data cable at ER102 lockers locations
+day. In addition to , W , W W
+. . . . lLog/Entry: POD TestLogf1851290;Subject: Handover Complete lPayload:
+communicating information @TWW—i—
+across handovers, console logs lF'asv—§ FlightDirector= Dr snme
+are a useful tOOl for Author: Simpson. Beau C . .
+' 111:5 entry and the entries above are only examples of how we log at the
+communicating real time P°'°f°r Space OPS Paper2°16
+operations information to other Figure 6. Logging Tool With Handover Flag.
+stakeholders.
+8
+American Institute of Aeronautics and Astronautics
+
+"
+"9","Another software tool used to assist With communication is the Stancil recorder. Most real time operations
+communication is done over voice loops. Flight controllers are required to monitor many loops at a time, Which can
+result in a low signal—tO—noise ratio and challenge the capabilities of the human auditory and information processing
+systems. The Stancil recorder automatically records voice trafﬁc on most loops, and provides a backup solution by
+allowing operators to playback information that is not fully understood during initial calls. Operators can search for
+clips by time or loop, and can save and send speciﬁc clips to other operators or back room support specialists as
+necessary.
+
+Checklists may be either software based or simply written on a piece of paper, and may be used to encourage
+consistent, repeatable, and error—free operations. Checklists are standard practice in many high hazard, high
+consequence industries like aviation, medical care, and manufacturing. They are popular because of their demonstrated
+ability to minimize risk and error, and improve efﬁciency and performance outcomes.15 Many of the most efﬁcient
+payload operators use checklists, but currently, a Widespread checklist culture does not exist Within the FDIC. While
+consistent checklist implementation Will not eliminate all errors, it would help mitigate the effects of many of the error
+
+3 producing conditions payload operators must cope With daily.
+
+El Real time payload operations are constantly changing and often unpredictable. Standardized procedures and
+E checklists are important tools, but cannot account for the Wide variety of potential outcomes. To cope With such
+g uncertainty, human operators themselves must be
+is trained to serve as a defense against error. T0
+2' effectively prepare operators for such challenging jobs,
+(2 Leadership a technique called Crew Resource Management (CRM)
+:0 may be useful. Pioneered by NASA research in
+E response to a series of aviation disasters in the 1970s,
+§ CRM focuses on improving operator performance
+g; Adaptability 23:23:: through emphasis on the interpersonal arid cognitive
+2 skills necessary to manage resources in complex
+g systems. Skills targeted for improvement through CRM
+8“ include communication, leadership, situational
+§ awareness, teamwork, conﬂict resolution, stress
+3 management, and decision making. CRM encourages
+Q . .
+
+Q: cooperation through leadership at all levels, and seeks
+E to empower all operators to speak up When necessary.
+é Communication Decision Making In highly technical industries like space payload
+8 operations, the “soft skills” emphasized by CRM are
+(32 sometimes neglected in favor of emphasis on technical
+% skills. This is a loss, because While technical skills are
+% Assertiveness important, operators thoroughly trained in lLth
+Q technical and CRM skills are more empowered in
+:5 systems requiring interpersonal cooperation, and are
+E likely to be better prepared to achieve positive
+5 Figure 7. Foundations of Crew Resource Management. outcomes despite the presence of error producing
+§ conditions in their work environment.
+
+§
+
+8 3. Hardware Errors
+
+For operations that require the use of tools or hardware, the hardware itself may be considered an important tool
+in error prevention. Clever implementation of human factors theories and techniques in the hardware design phase can
+go a long way toward elimination of operator error during the operations phase. One example of such a technique is
+poka—yoke mistake prooﬁng. The term poka—yoke was coined in J apan by an engineer working at Toyota in the 1960s
+and is still in Wide use in industrial engineering today. Essentially, poka—yoke devices prevent, correct, or clearly draw
+attention to operator errors as they occur. Poka—yoke devices are especially useful in hardware that Will be operated
+by astronaut crews. One example ofpoka—yoke hardware currently used onboard the space station is keyed connectors.
+Keyed connectors may only be assembled one way, the correct way, thereby preventing operator errors by disallowing
+incorrect assembly.
+
+Because payloads are designed and manufactured by a Wide variety of payload developers, standardizing payload
+hardware to human factors design criteria can be a challenge. To assist payload developers as they design hardware,
+the Space Station program provides a variety of resources. The Human Factors Implementation Team (HFIT) includes
+
+9
+American Institute of Aeronautics and Astronautics
+
+"
+"10","astronaut representatives and human factors experts, and helps
+
+identify potential human factors issues early in the hardware
+
+design process. The Astronaut Ofﬁce also provides consultation ‘ \ ‘l l ‘
+
+and feedback for hardware operability differences that may be ~ ‘ ‘ ‘ ‘ ~ ‘ ‘ x I
+
+encountered in microgravity. For example, payload developers ‘ \ \ j\\ . A ._v-,- ¥
+
+may not consider that fasteners and screws are difﬁcult to keep ‘ ‘ \ l \‘ \ \\ _7 a T‘ 5
+
+track of in microgravity. An expert in microgravity operations ‘ \\\ ""1‘ ‘3"" l ' ‘11,, _ =
+
+may suggest the use of captive fasteners, like the one shown in _ \ ‘ ’ __ - .5: ’f - ""
+
+Figure 8, to prevent fastener loss and preserve crew time. The ISS ' ‘
+
+Payload Label Approval Team (IPLAT) ensures consistency in “ ' .
+
+crew interface payload labeling to facilitate crew understanding ' ‘
+
+of hardware. For payloads that include crew interfaces With '
+
+graphic user displays, the Payload Displays ReVieW Team Figure 8. Captive fastener 011 payload
+g (PDRT) performs usability testing and suggests ways interfaces hardware.
+El should be improved. Taking the proper time to design hardware
+3 for usability now is an investment that can greatly reduce the risk
+g of operator errors that may result in science loss later.
+in Human factors and usability should also be considered in the design of hardware tools that Will be utilized by
+2 operators on the ground. Tools should be designed to support operators in the tasks they are performing, and should
+(2 be developed using an iterative process that incorporates user feedback into the design. Common usability techniques
+:0 like color coding, auditory cues, standardization With familiar systems, elimination of unnecessary options, and undo
+g capability have all proven useful in payload operations. When errors occur, the results of root cause analyses should
+g be fed back to hardware design teams Who have the ability to improve interfaces through updates or redesigns.
+if Sometimes, operators themselves conﬁgure their personal tool setups to prevent errors. For example, one of the most
+g signiﬁcant PAYCOM errors is accidental transmission over space to ground. To prevent accidental selection of a
+g space to ground loop, many PAYCOMs have conﬁgured their loop selection panel to separate the space to ground
+i loops from other commonly used loops. This minimizes the chance that a PAYCOM Will accidentally select a space
+‘3 to ground loop in error.
+5 While the FDIC has successfully taken strides toward implementing a system approach to human error, there is
+Q: still room to improve. Root cause analyses for Error Reports are typically performed by individual discipline teams
+E With few standard processes or requirements. Consequently, the approach taken by individual analysts varies Widely
+5 between the person and systems approaches. Many errors attributed to human error have been resolved With statements
+5 such as: operator Will pay more attention next time, operator was reminded of the proper protocol, Will continue
+(32 training and stress accuracy of products, or no corrective action necessary. Unfortunately, resolutions like these fail
+E to address the root causes of the errors and do little to prevent future operators from repeating them. In a dynamic
+% operations enVironment, there is always risk that an error that is harmless under one set of conditions may result in
+Q signiﬁcant impact upon recurrence. To achieve continued positive improvement in human error rates at the FDIC, a
+:5 systems approach must consistently be applied to all root cause analyses so underlying causes of errors are effectively
+E: identiﬁed and addressed.
+i
+g IV. Responding to Errors
+E A consistent, systematic approach to error prevention is a powerful tool that can be used to minimize or eliminate
+Q many common operator errors. However, some level of operator error Will always remain and must be accepted as an
+
+operational constraint. Assuming that some errors Will slip through even the best prevention systems, organizations
+
+should consider how to best prepare for and respond to those errors that do occur. To effectively minimize the negative
+
+impacts of these errors, systems must have the ability to do three things: identify that an error has occurred, reduce
+
+the impact of the error, and recover from the error.
+
+K. Identify Errors
+
+To effectively respond to an error, operators must ﬁrst recognize that an error has occurred. For tasks With end
+
+items that can be monitored by software, detection of off—nominal conditions caused by errors is relatively rapid at the
+
+FDIC. Operators utilize a variety of software tools to constantly monitor health and status parameters for racks and
+
+payloads that generate Visual cues and alert tones When parameters go out of limits. Many of the software based tools
+
+used for identiﬁcation of off—nominal conditions, for example POIC’s Exception Monitoring tool, utilize a
+
+combination of human factors friendly elements like auditory cues and color coding to help operators identify and
+
+10
+American Institute of Aeronautics and Astronautics
+
+"
+"11","rapidly process error messages. Another tool is Fault Summary, Which is used to alert console operators and station
+crew to off—nominal events onboard the space station. Fault Summary codes notiﬁcations for emergencies red,
+warnings pink, cautions yellow, and advisories blue. Color coding systems like these allow operators to more rapidly
+assess the criticality of error messages that would otherwise take longer to process. When minimized, Fault Summary
+automatically pops up from the task bar any time a new message populates in the display. This motion effectively
+grabs the attention of operators, even from their peripheral Vision.
+
+Errors that cannot be immediately identiﬁed by software may be more difﬁcult to detect. Some errors are obvious,
+for example an accidental transmission on space to ground. Other errors, like an incorrect location code provided for
+an item in a stowage note, may not be noticed until an astronaut attempts to execute the actiVity and reports them. For
+errors like these, checklists can be useful tools to help identify steps that have been missed.
+
+L. Reduce Impact
+
+After errors are made, focus should switch to minimizing the immediate impact of the error on the system. Efforts
+
+g to reduce the impact of operator errors should be both proactive, targeting errors that have not yet occurred, and
+E. reactive, targeting errors that have already occurred. One technique commonly used to proactively minimize the
+g impact of future errors is fault tolerance. Fault tolerance allows systems to continue to operate nominally after
+g experiencing one or more failures, and should be designed into hardware and processes Whenever feasible. Fault
+i tolerant systems should be robust enough to accommodate the variability of human behaVior, and able to endure one
+2 or more operator errors Without impact to end products or customers. At the FDIC, fault tolerance is generally achieved
+<2 through redundancy. For example, in an effort to preserve valuable astronaut crew time, all products uplinked for use
+g by the crew go through a formal, multi-layer reVieW and approval process. Products are reviewed by enough reviewers
+g that errors missed by one reviewer are usually caught by another. The redundancy in this process allows for individual
+§ reviewers to make isolated errors Without compromising the quality of the end product. The Space Station program
+f5? also utilizes redundant hardware Whenever possible, and many systems onboard the vehicle have some combination
+3:? of hot and cold backups. Fault tolerance does not prevent operator errors, but it does prevent those errors from
+g negatively impacting the operability of the system.
+i For errors that occur despite our best proactive efforts, a reactive approach to mitigate their impact becomes
+2;) necessary. In a dynamic system like payload operations, the ﬁrst step in containing impacts is identifying them. In
+5 some cases, impacts caused by errors may be obvious, but in cases Where the impacts are varied or complex,
+g; identifying and quantifying those impacts may be difﬁcult and time consuming. In real time operations enVironments,
+E conditions are constantly changing and impacts of errors may be additionally complicated by time or path dependency.
+é These impacts may vary Widely in severity depending on the speciﬁc conditions present at the time of impact, and an
+8 error that causes no impact at one time may result in a signiﬁcant impact at another due to condition changes. For
+g example, a power cycle to a facility that provides serVices to multiple payloads has the potential for either very low
+g or very high impact depending on the state of the individual payloads in that rack. At one moment, all the payloads in
+a the rack may be dormant and indifferent to a power cycle. At another moment, a power cycle may result in complete
+Q loss of science for one or more of those payloads. In off—nominal events, operators at the FDIC are trained to determine
+:5 the impacts to their systems and report them to the POD as soon as possible.
+<2: After the POD compiles the list of impacts, he must decide how to most efﬁciently and effectively minimize
+4: damage caused by those impacts. In payload operations, this process typically includes real time stakeholder analysis
+#3 coupled With consultation of documentation of pre-determined priorities. Priority is generally given to successful
+E completion of science objectives, but tradeoffs must often be made With regard to stakeholder considerations such as
+8 astronaut crew time, station resources such as power and cooling, impacts to international partners, and impacts to
+
+other science experiments. In situations like these, established operations documents like Flight Rules and Payload
+
+Regulations are valuable tools. Documentation provides a consistent, pre-determined impact reduction method for
+
+many situations. Another important technique used to reduce the impact of errors in operations is workarounds.
+
+Workarounds, or temporary ﬁxes used to accomplish goals, allow the operations team to continue to execute payload
+
+operations despite noticeable failures or impacts. For example, a lost tool may be substituted With a different but
+
+similar tool as a workaround to preserve science and keep operations on schedule for the day.
+
+M. Recover
+
+Once short-term impacts are contained and workarounds are implemented, the ﬁnal step in error response is
+recovering from the error. Ideally, recovery is accomplished quickly by the real time operations team. However, in
+some cases, recovery efforts may be handed over to the next shift or to a back room support team if recovery is not
+time critical, requires additional expertise or extensive cross-organizational coordination, or detracts from other
+critical real time operations. Recovery efforts may have a combination of technical and non-technical elements, and
+
+l 1
+American Institute of Aeronautics and Astronautics
+
+"
+"12","often require follow up With stakeholders. For errors reported to the ground by the crew, it is sometimes necessary to
+follow up With a resolution. Scope and methods of recovery efforts vary Widely based on the nature of the error and
+severity of impact, but they should always include documentation. Error documentation is critical for historical
+recording, and an important source of lessons learned for the future. Documentation also informs a thorough root
+cause analysis of the error, Which enables the organization to explore ways to prevent the error from happening again
+by instituting a systems approach to error prevention.
+V. Conclusion
+
+On an orbiting laboratory Where critical science opportunities may not be repeatable and scarce resources are often
+not replaceable, the margin for error is unforgiving. Every operator error poses a risk to science outcomes and
+resources, and should be addressed With due diligence. There is no one size ﬁts all method for addressing operator
+error, but the FDIC has discovered that some practices are especially useful in space payload operations. A
+consistent, systems approach to human error prevention that emphasizes continuous improvement of operator tools
+
+§ and processes is Vital to eliminate opportunities for error. Human factors and usability techniques including
+
+3 automation, information routing and control, standardization, and iterative design processes that include user
+
+8. feedback have been successfully employed to reduce operator errors in payload operations. Operators proﬁcient in
+
+E interpersonal and leadership skills such as those emphasized by Crew Resource Management provide an additional
+
+E line of defense against error, and are better equipped to minimize the impact of errors that do occur. Operating a
+
+:. laboratory 250 miles above Earth is a unique challenge that provides endless opportunities to battle human error in
+
+a the pursuit of excellence in payload operations.
+
+95?
+
+E
+
+E
+
+E
+
+g“
+
+3
+
+3
+
+G
+
+0
+
+O4
+
+LU
+
+F
+
+%
+
+U
+
+LU
+
+O
+
+<:
+
+9-1
+
+m
+
+z
+
+o
+
+E
+
+Q
+
+<:
+
+m
+
+<:
+
+z
+
+E
+
+'0
+
+g
+
+L3
+
+Q
+
+a
+
+O
+
+Q
+
+12
+American Institute of Aeronautics and Astronautics
+
+"
+"13","References
+1Singh, 8., “Critical reasons for crashes investigated in the National Motor Vehicle Crash Causation Survey,” DOT HS 812
+115, 2015.
+2“IBM Security Services 2014: Cyber Security Intelligence Index,” IBM Corporation, 2014.
+3Chandler, F., Chang, Y.H., Mosleh, A., Marble, J., Boring, R., and Gertman, D., “Human Reliability Analysis Methods:
+Selection Guidance for NASA,” NASA, 2006.
+4Dix, A., Finlay, J ., Abowd, G.D., and Beale, R., Human-Computer Interaction, 3rd ed., Pearson Education Limited, Essex,
+England, 2004, Chap. 1.
+5Williams, J .C., ""A data-based method for assessing and reducing human error to improve operational performance,""
+8 Proceedings 0fthe IEEE F ourth Conference on Human F actors and Pawer Plants, V01. 1, IEEE, New York, 1988, pp.436-450.
+4
+(\l
+g 6Alhola, P., and Polo-Kantola, P., “Sleep deprivation: Impact on cognitive performance,” Neuropsychiatric Disease and
+g Treatment, V01. 3, N0. 5, Oct. 2007, pp. 553—567.
+4
+E 7Barsade, S .G., and Gibson, D.E., “Why Does Affect Matter in Organizations?,” Academy ofManagement Perspectives, Feb.
+g 2007, pp. 36-59.
+D
+g 8LeBlanc, V .R., “The Effects of Acute Stress on Performance: Implications for Health Professions Education,” Academic
+3' Medicine, Vol. 84, N0. 10, Oct. 2009, pp. 825-833.
+g 9Rogers, A.E., Patient Safety and Quality: An Evidence-Based Handboakfor Nurses., 1St ed., Agency for Healthcare Research
+4%: and Quality (US), Rockville, MD, 2008, Chap. 40.
+§ 10Mitler, M. M. et a1, “Catastrophes, Sleep, and Public Policy: Consensus Report,” Sleep, V01. 11, N0. , Feb 1988, pp. 100—
+g“ 109.
+g
+E 11Barger, L.K. et a1., “Prevalence of sleep deﬁciency and use of hypnotic drugs in astronauts before, during, and after
+% spaceﬂight: an observational study,” The Lancet Neurology, V01. 13, No. 9, Aug, 2014, pp. 904-912.
+E
+Z
+8 12Reason J ., “Understanding adverse events: human factors,” Quality in Health Care, V01. 4, N0. 2, Jun 1995, pp. 80-89.
+m
+o
+a 13Reason, J ., “Human error: models and management,” Western Journal ofMedicine, Vol. 172, N0. 6, Jun 2000, pp. 393-396.
+Z
+% 14Chandler, F., Heard, I.A., Presley, M., Burg, A., Mitten, E., and Mongan, P., “NASA Human Error Analysis,” NASA, 2010.
+E 15Hales B. M. and Pronovost, P. J ., “The checklist--at001 for error management and performance improvement,” J Crit Care,
+Q V01. 21, No. 3, Sep 2006, pp. 231-235.
+E
+""O
+8
+.35
+Q
+B
+O
+Q
+13
+American Institute of Aeronautics and Astronautics
+
+"

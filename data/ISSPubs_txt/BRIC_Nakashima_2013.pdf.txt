@@ -1,0 +1,593 @@
+"","x"
+"1","Plant Biology ISSN 1435-8603
+RESEARCH PAPER
+The actln cytoskeleton IS a suppressor of the endogenous
+skewmg behaVIour of ArabidopSIs prlmary roots In mlcrograVIty
+J.Nakashima1, F. Liaoz, J. A. Sparksl, Y. Tang1 & E. B. Blancaflor1
+1 Division of Plant Biology, The Samuel Roberts Noble Foundation, Ardmore, OK, USA
+2 Department of Computing Services, The Samuel Roberts Noble Foundation, Ardmore, OK, USA
+Keywords ABSTRACT
+Actin; Arabidops/s; cell wall; microgravity; root
+development; Space biology. Before plants can be effectively utilised as a component of enclosed life-support sys-
+tems for space exploration, it is important to understand the molecular mechanisms
+Correspondence by which they develop in microgravity. Using the Biological Research in Canisters
+E. B. Blancaflor, Plant Biology Division, 2510 (ERIC) hardware on board the second to the last ﬂight of the Space Shuttle Discovery
+Sam Noble Parkway, The Samuel Roberts (STS-l31 mission), we studied how microgravity impacts root growth in Arabidopsis
+Noble Foundation, Ardmore, OK 73401, USA. thaliana. Ground-based studies showed that the actin cytoskeleton negatively regu-
+E-mail: eblancaﬂor@hoble.org lates root gravity responses on Earth, leading us to hypothesise that actin might also
+be an important modulator of root growth behaviour in space. We investigated how
+Editor microgravity impacted root growth of wild type (ecotype Columbia) and a mutant
+K- Palme (act2-3) disrupted in a root-expressed vegetative actin isoform (ACT 1N2). Roots of eti-
+olated wild-type and act2-3 seedlings grown in space skewed vigorously toward the
+Received: 4 January 2013? Accemed3 24 May left, which was unexpected given the reduced directional cue provided by gravity. The
+2013 left-handed directional root growth in space was more pronounced in act2-3 mutants
+_ than wild type. To quantify differences in root orientation of these two genotypes in
+dOI:1O.1111/plb.12062 space, we developed an algorithm where single root images were converted into binary
+images using computational edge detection methods. Binary images were processed
+with Fast Fourier Transformation (FFT), and histogram and entropy were used to
+determine spectral distribution, such that high entropy values corresponded to roots
+that deviated more strongly from linear orientation whereas low entropy values repre-
+sented straight roots. We found that act2-3 roots had a statistically stronger skewing/
+coiling response than wild-type roots, but such differences were not apparent on
+Earth. Ultrastructural studies revealed that newly developed cell walls of space-grown
+act2-3 roots were more severely disrupted compared to space-grown wild type, and
+ground control wild-type and act2-3 roots. Collectively, our results provide evidence
+that, like root gravity responses on Earth, endogenous directional growth patterns of
+roots in microgravity are suppressed by the actin cytoskeleton. Modulation of root
+growth in space by actin could be facilitated in part through its impact on cell wall
+architecture.
+and light quality (Correll & Kiss 2008; Ponce et al. 2008; Mons—
+INTRODUCTION hausen & Gilroy 2009; Burbach et al. 2012).
+Upon germination, the emerging root of a seedling typically It is obvious that a basic understanding of root gravitropism
+grows downward toward the direction of the gravity vector. has implications for agricultural productivity here on Earth
+This phenomenon, called gravitropism, results in the develop— because of the potential for using such information for genetic
+ment of a root system that would enable the plant to more efﬁ— engineering of new crop varieties with improved root architec—
+Ciently utilise the available water and nutrient resources from ture. On the other hand, very little is known about how the
+the soil. For their roots to respond to gravity, plants have root system of a plant develops in the microgravity environ—
+evolved elaborate sensory and signalling pathways that include ment of space. The latter question is important, given the
+an amyloplast—based gravity perception apparatus in specialised ambitious goal set by space agencies of various countries to
+cells of the root cap, called the columella, and complex machin— establish human colonies in space. It is envisioned that plants
+ery of inﬂux and efﬂuX transporters that are able to direct the will be a signiﬁcant component of an advanced life—support
+redistribution of auxin to generate differential cellular growth system, not only as a sustainable food source and a means to
+between opposite ﬂanks of the root (Blancaﬂor & Masson 2003; recycle waste, but also to ensure the psychological wellbeing of
+Baldwin et al. 2013). Although gravity is the major stimulus that astronauts during long—duration space missions (Ferl et al.
+dictates the downward growth of a root, this process is inﬂu— 2002). However, before plants can be effectively utilised for
+enced by a number of other environmental factors, such as advanced space habitats, it is essential to obtain a more thor—
+water and nutrient availability, mechanical obstacles in the soil ough understanding of how they adapt to reduced gravity.
+142 Plant Biology 16 (Suppl. 1) (2014) 142—150 © 2013 German Botanical Society and The Royal Botanical Society of the Netherlands
+
+"
+"2","Nakashima, Liao, Sparks, Tang & Blancaﬂor Actin and root growth in microgravity
+Without the directional cue provided by the gravity vector grew in non—random spiral growth patterns that would have
+in space, it can be predicted that plant roots will orient in ran— otherwise been masked on Earth (Kern et al. 2005).
+dom directions. Indeed, roots of garden cress (Lepidium sati- In this paper, we report on results from our plant experi—
+vum) seedlings ﬂown on the Biorack system on the Space ments on the BRIC hardware (BRIC—16) ﬂown on the second
+Shuttle International Microgravity Laboratory mission eXhib— to last mission (STS—131) of the Space Shuttle Discovery. One
+ited random growth orientations (Iohnsson et al. 1996). Roots goal of this spaceﬂight experiment was to test the hypothesis
+of rice (Oryza sativa) seedlings on the Space Shuttle STS—95 that the actin cytoskeleton not only modulates root gravity
+mission also elongated in various directions; however, in this responses here on Earth but is also a prominent component of
+particular experiment, a constant angle of about 550 relative to endogenous root growth patterns in microgravity. Taken
+the aXis of the caryopsis was noted in two—thirds of the roots together, our results support the hypothesis that endogenous
+(Hoson et al. 1999, 2003). In another experiment on the Inter— directional growth patterns of roots observed in microgravity is
+national Space Station (188) using the European Modular Cul— negatively regulated by the actin cytoskeleton, and that actin’s
+tivation System (EMCS), roots of lentil (Lens culinaris) impact on root growth directionality in space can be explained
+eXhibited an initial strong curvature away from the seed, fol— in part through its control of cell wall architecture.
+lowed by autotropic straightening 22 h after germination
+(Driss—Ecole et al. 2008). Other root growth patterns that have
+been documented during spaceﬂight included oscillatory MATERIAL AND METHODS
+movements in lentil (Antonsen et al. 1995), and more recently, P ﬂ‘ h t . f 1 t t . 1
+a left—handed skewing response in etiolated Arabidopsis re 1g processmg O p an ma er1a
+seedlings grown on the Biological Research in Canisters (BRIC) Processing of plant material for microgravity experiments was
+hardware on the middeck of the Space Shuttle Discovery conducted at the Space Life Science Laboratory (SLSL) of the
+(Millar et al. 2011). Despite the aforementioned descriptions of Kennedy Space Center (KSC) in Cape Canaveral, Florida, in
+how roots grow in space, the molecular mechanisms April 2010. Sterilisation and planting methods of Arabidopsis
+underlying such growth phenomenon remain unresolved. seeds are described in detail in Dyachok et al. (2009). Brieﬂy,
+On Earth, the actin cytoskeleton has often been implicated sterilised seeds of wild—type (ecotype Columbia—O) and act2-3
+in root gravity responses and directional root growth. From (SALK_ 048987; Nishimura et al. 2003; Yoo et al. 2012). Am-
+our previous ground—based studies it was shown that the roots bidopsis were planted on growth media (1.2% phyta—agar) con—
+of Arabidopsis, Medicago truncatula and Zea mays eXhibited sisting of 0.5x Murashige—Skoog (MS) salts and 1% sucrose
+enhanced gravitropism when the actin cytoskeleton was dis— (pH 5.7) layered onto 60 mm round Petri dishes (Fig. 1A).
+rupted with drugs such as cytochalasin B and latrunculin B After planting, Petri dishes containing the seeds were placed
+(Blancaﬂor & Hansenstein 1997; Blancaﬂor et al. 2003; Hou into individual Petri Dish Fixation Units (PDFUs; Fig. 1B) and
+et al. 2003, 2004). Consistent with these ﬁndings is a recent sealed with a metal lid under sterile conditions (Fig. 1C). Fixa—
+paper showing that Arabidopsis mutants to a vegetative actin tive consisting of 3% (WV) glutaraldehyde (Electron Micros—
+isoform (ath—S) have stronger root gravitropic responses com— copy Sciences, Hatﬁeld, PA, USA) in phosphate buffered saline
+pared to wild—type seedlings (Lanza et al. 2012). Taken (PBS; pH 7.2) was loaded into a compartment within the
+together, these observations indicate that the actin cytoskeleton PDFU that was physically separated from the planted seed
+might be a negative regulator of gravitropism that functions in (Fig. 1D). Five PDFUs were placed in one BRIC (Fig. 1E and F)
+ﬁne tuning the ﬁnal manifestation of the growth response by and secured in a foam—padded container prior to transport to
+restricting amyloplast movement in the columella cells during the middeck of the Space Shuttle Discovery (Fig. 1G).
+gravity sensing, or by enhancing auXin redistribution in the The experimental set—up involved germinating one set of
+root transition zone (Blancaﬂor 2013). BRICs in microgravity and one set in an Orbital Environmental
+In addition to stronger gravitropic responses, roots of ath—S Simulator (OES) located at the SLSL, which corresponded to
+mutants were reported to display enhanced wavy growth com— the ground controls (Figure 81A). Seedlings grown in space
+pared to wild—type roots (Lanza et al. 2012), indicating that and at the DES were ﬁxed by releasing glutaraldehyde into the
+the actin cytoskeleton might not only be a suppressor of compartment of the PDFU containing the seedlings using an
+gravitropism but also negatively regulate other root growth actuator gun (Figure SIB and C). Fixed seedlings were
+phenomena, such as thigmotropism and/or endogenous retrieved from the BRIC—PDFUs 4h after the Space Shuttle
+Circumnutations. However, the constant gravity vector on Discovery landed, and individual Petri dishes were photo—
+Earth could dampen actin—modulated root growth behaviours graphed prior to processing for microscopy. The Space Shuttle
+that might be triggered by stimuli other than gravity. Indeed, Discovery launched at KSC at 06:21 h on 5 April 2010 and
+experiments on a random positioning machine, which is landed at 09:08 h on 20 April 2010. Additional details on the
+believed to Closely mimic microgravity (Kraft et al. 2000), have logistics of BRIC—16 experiments, particularly in regard to
+revealed novel root growth movements in Arabidopsis, referred information on temperature recordings inside the BRIC hard—
+to as Chiral Circumnutations (Piconese et al. 2003). Other plant ware, and the precise duration that the seedlings spent in
+growth phenomena that occur only in the microgravity enVi— microgravity are described in Millar et al. (2011) and Paul 61‘ al.
+ronment of space have also been reported for other plant (2012a).
+organs. For instance, experiments on the EMCS on the ISS
+uncoyerecl a novel positive phototropic response to red light in Quantiﬁcation of root orientation and growth
+Arabidopszs hypocotyls that would not have been detected in
+the l—g conditions on Earth (Millar et al. 2010). In the moss, Quantiﬁcation of root orientation was accomplished by reﬁn—
+Cerotodon purpureus, grown on the BRIC hardware, protonema ing an algorithm that allowed assignment of a root orientation
+Plant Biology 16 (Suppl. 1) (2014) 142—150 © 2013 German Botanical Society and The Royal Botanical Society of the Netherlands 143
+
+"
+"3","Actin and root growth in microgravity Nakashima, Liao, Sparks, Tang & Blancaflor
+A . B I'M - _ C
+_ ""t""
+'I a I “‘1... \ ii
+. . . . 1- ;. .. .11-
+_- _ 3'.“ ' 1' . -
+f ”'1? J - . . - u
+_ _: s K i' ;_4;
+Ear- “ Ezra: """" -——. ~—_—
+' u- -‘ 3' ..
+
+Fig. 1. Prelaunch processing of Arabidopsis seeds in BRIC-PDFUS. (A) Sterilised seeds spread on top of filter paper (arrows) were planted on agar-coated 60-
+mm Petri dishes using sterile toothpicks. (B) Individual Petri dishes with one row consisting of 35—38 seeds (arrowhead) were placed in a PDFU. PDFUs were
+covered with a metal lid (C) and glutaraldehyde (arrow) was loaded into a separate compartment within the PDFU using a syringe (D). (E) Several processed
+PDFUs in a laminar flow hood at the SLSL prior to loading into a BRIC. (F) Five PDFUs could be placed in one BRIC with the sixth position (arrow) providing a
+temperature HOBO sensor. The numbers correspond to the position of the five PDFUs within the BRIC. (G) Layout of 8 BRIC units secured into a foam-padded
+container prior to launch.
+indeX to individual root images collected from space—grown information theory, we used Shannon entropy to measure the
+and ground control seedlings. This algorithm was based on randomness of the power spectrum distribution, as indicated
+software that we had previously applied for the quantiﬁcation in the equation below:
+of actin ﬁlament organisation in roots (Dyachok et al. 2011).
+The analyses ﬁrst involved manually processing the original H = — Zpﬁ) >r< log (p (i))
+raw images of seedlings from the Petri dishes grown on the
+BRIC—PDFUs (Figure 82A) using Photoshop C85 to remove A higher H value indicated that the image had its power
+the hypocotyls from the image. Software containing this algo— spectrum distributed over a wide area in frequency domain,
+rithm was written in MATLAB (R2011a; Mathworks Inc., and a lower H value corresponded to an image that showed
+Natick, MA, USA). An original root image was ﬁrst imported directional narrow power spectrum distribution. Accordingly,
+as a matrix and converted to a grey—scale image. A gradient H is an indeX that could be used for quantifying the orientation
+magnitude image was made using a two—dimensional (2—D) of root images.
+ﬁrst derivative operator, which highlights the regions where The statistical analysis was conducted using MATLAB with
+there were high ﬁrst spatial derivatives (Figure 82B). Because a statistical toolbox. The bOX—plot was applied to show the signif—
+majority of the very small highlighted regions in the resulting icant statistical differences of indeX values among the groups.
+gradient magnitude image corresponded to the background Because the distribution of indeX value in each image group
+noise, a threshold had been used to delete background noise was not normally distributed, statistical differences among
+from subsequent analyses. groups were conﬁrmed using both one—way ANOVA and Krus—
+
+To analyse the distribution of the derivative directions, FFT kal—Wallis tests (McDonald 2009).
+was used to convert the gradient magnitude images into a 2—D The receiver—operator characteristic (ROC) curve is used for
+power spectrum (Figure 82C). The high frequency components evaluation of classiﬁcation of root orientation by index. The
+were not useful for the orientation analysis because they ROC curve is obtained by calculating true positive rate and
+reﬂected small size variation and consisted mostly of noise. To false positive rate with two data sets: the target data set con—
+cancel the low intensity and high frequency components, a tains binary values made through manual identiﬁcation of root
+50% power spectrum was used through applying a threshold to orientation (one for coiled roots and zero for straight root),
+maintain only the power spectrum components whose values and the test data set is the indeX array with values from 0 to 1
+were >50% of maximum peak value. Thus, if the root is (Figure S3).
+straight, the derivative directions were limited in a very narrow Root length measurements were obtained from photographs
+range or close to parallel, and the power spectrum showed only of individual seedlings retrieved from the PDFUs using Image
+non—zero frequency components within a narrow area near the I. Root length measurements were obtained from 42 seedlings
+direction orthogonal to the derivative directions. Otherwise, for wild—type ground, 38 seedlings for wild—type space, 41 seed—
+the non—zero frequency components would be found all over lings for act2-3 ground and 59 seedlings for act2-3 space. On
+the whole frequency domain if there were various derivative the other hand, skewing measurements were obtained from 16
+directions. seedlings for wild—type ground, 33 seedlings from wild—type
+
+To quantitatively calculate the non—zero value distribution space, 41 seedlings from act2-3 ground and 93 seedlings from
+of the 50% power spectrum, a histogram was used. The histo— act2-3 space. Despite the high germination rate (Table 1), root
+gram was made as a function of the angle in polar coordinates, measurements were obtained from a fraction of the seedlings
+and then divided by total number of non—zero values that because of issues with seedling displacement and the need to
+behaved as a general probability distribution. Thus, based on physically separate roots for microscopy. Such issues prevented
+144 Plant Biology 16 (Suppl. 1) (2014) 142—150 © 2013 German Botanical Society and The Royal Botanical Society of the Netherlands
+
+"
+"4","Nakashima, Liao, Sparks, Tang & Blancaflor Actin and root growth in microgravity
+Table1. Percentage seed germination 01 Wild type and act2-3 on the 3 days under the same conditions. Images were taken with a
+ground 800' in space. Sony DSC—H9 digital camera (Sony Electronics Inc, Tokyo,
+number number average Japan).
+PDFU of seeds of germination germination
+w RESULTS
+ﬂlgch: wild type 35 34 97 Seed germination and root elongation in the BRIC hardware
+C2 Wild type 38 38 100 Our group was allocated 14 PDFUs with which to conduct our
+C3 Wild type 30 27 90 95 (Wild type) space experiments. We utilised siX of the PDFUs for ultrastruc—
+C4 30? '3 32 29 91 tural and root morphology studies described in this paper, with
+C5 3073 35 34 97 three Petri dishes planted with wild—type seed and the other
+G4 ‘3ng 37 35 94 94 (aCt2'3) three planted with act2-3 mutant seed. The other eight Petri
+ground . dishes were utilised for transcriptomic studies and will be
+C1 wildtype 35 34 97 described in a separate paper. For the experiments outlined
+E: ml: 3:: :2 :2 188 99 (wild type) here, a single row of seed was planted in the centre of the Petri
+dish (Fig. 1B) and the number of seed using this planting
+C4 act2-3 35 34 97 .
+C 5 act2-3 34 34 100 schenae ranged frorn 34 to 38 per dish. The average percentage
+G 4 (3ng 37 35 94 97 ($123) germination for Wild—type and act2-3 seed in BRIC—PDFUs at
+— the DES was 99% and 97%, respectively, whereas the mean ger—
+mination percentage in space was 96% for wild type and 94%
+for act2-3 (Table 1).
+accurate determination of root length and orientation from all Seedlings in the BRIC—PDFUs grew for about 2 weeks in the
+seedlings that germinated. dark. Thus, they displayed typical etiolated morphology,
+wherein seedlings had long hypocotyls, yellow cotyledons and
+Ligh t and transmission electron microscopy short prinaary roots (Pyachok et al. 2011; Figs 2A and 3). There
+were no signiﬁcant differences in primary root length between
+After retrieval of etiolated seedlings from the PDFU, they were wild type and act2-3 mutants, or between seedlings in ground
+washed siX times with PBS, dehydrated in a graded ethanol ser— controls and in space (Fig. 2B).
+ies and embedded in either Quetol 651 (Electron Microscopy
+Seiences, Hatﬁeld, PA’ USA).or LR Whlte resin (Londoff Resin Primary roots of etiolated Arabidopsis seedlings exhibited
+Co., Reading, UK). The resin was polymerised at 60 C (for 1 ft-h d d k . . . . t
+Quetol 651) or at 55 0C (for LR White resin) for 3 days. Serial e an e S ew1ng 1n m1crograv1 Y
+0.5 and 0.1 um longitudinal sections were cut with a diamond As expected, roots of seedlings in the ground controls grew
+knife on a Leica EM UC7 ultramicrotome (Leica Mikrosys— downward toward the gravity vector (Fig. 3A). Because of
+teme, Vienna, Austria). Semi—thin sections (0.5 um in thick— the lack of gravity, we hypothesised that roots of etiolated
+ness) placed onto the slide glasses were stained with 1% (w/V) Arabidopsis seedlings would exhibit random growth orienta—
+toluidine blue 0 (with 1% (w/V) sodium borate) for 5 min and tions in space. However, upon Closer examination of ﬁxed,
+observed under a Nikon Microphot—2 (Nikon Corp., Tokyo, space—grown seedlings, we observed that their roots exhibited
+Japan). Ultrathin sections (0.1 um in thickness) were then put a tendency to skew to the left (Le. when photographs were
+onto formvar—carbon coated copper grids and stained with 2% taken from the top side of the Petri dish; Fig. 4B). This root
+uranyl acetate for 30 min, followed by incubation with Sato’s skewing behaviour was also reported in etiolated seedlings of
+lead for 2 min. Specimens were observed under a Zeiss 10A the Lansberg ecotype of Arabidopsis grown on the same
+(Carl Zeiss, Oberkochen, Germany) or IEOL 2000—FX (IEOL, BRIC hardware (Millar et al. 2011). Although both wild—type
+Tokyo, Japan) transmission electron microscope (TEM) and act2-3 roots displayed obvious left—handed skewing
+operated at 80 kV. (Fig. 3C), act2-3 roots exhibited a more robust response,
+with many act2-3 roots forming left—handed coils (Fig. 3D).
+. . . . . Given the complex nature of the root skewing response in
+Two-dlmensmnal cllnorotatlon experlments . . . .
+m1crograv1ty, we developed an image analysis platform to
+Seeds of Arabidopsis wild type and act2-3 mutant were surface quantify the observed root orientation patterns in space—grown
+sterilised by immersing them in 95% ethanol and 10% bleach wild—type and act2-3 roots. Quantiﬁcation of root orientation
+for 3 min each, followed by rinsing in sterilised distilled water. was accomplished through reﬁning an algorithm that allowed
+The seeds were then planted on a thin ﬁlm (ca. 5—mm thick) of the assignment of a root orientation index to individual root
+Arabidopsis media similar to that used for the BRIC16 experi— images collected from space—grown and ground control seed—
+ments in 90—mm square plastic Petri dishes and wrapped with lings (see Material and Methods). 011 the basis of this analysis,
+Paraﬁlm. Petri dishes were kept at 4 0C for 3 days then main— a higher root orientation index corresponded to highly mis—
+tained in the vertical position at 80 ttmol-m_2-s_1 for a 14 h/ aligned roots (Le. more intense coiling and meandering),
+10 h light/dark cycle, and temperature maintained at 22 0C for whereas low values represented roots that grew fairly straight.
+3 days, when the root reaches ca. 1—Cm long. An equivalent set Using one—way ANOVA, the root orientation indeX showed that
+of seedlings was maintained in darkness. The seedlings were there were signiﬁcant differences between the space and ground
+then placed and rotated on a 1 rpm 2—D Clinostat for another control groups in both wild—type and act2-3 roots (F = 74.59,
+Plant Biology 16 (Suppl. 1) (2014) 142—150 © 2013 German Botanical Society and The Royal Botanical Society of the Netherlands 145
+
+"
+"5","Actin and root growth in microgravity Nakashima, Liao, Sparks, Tang & Blancaflor
+A
+.III . ___ 1. I
+' '1 _ -':r. B
+15
+a a
+I .I E
+I' E
+' . E 1::
+C
+E
+. '. E
+- E
+E
+E 5
+'=
+n.
+n
+wiId-type auras Wild-typ-E auras
+:gmund} lgrnund} tapacal innate:
+Fig. 2. Morphology and root length of seedlings grown in BRIC-PDFUs. (A) Images of living 2-week-old Arabidopsis seedlings in 60-mm Petri dishes kept in
+BRIC—PDFUs at the SLSL. Because they were grown in the dark, seedlings exhibited the typical elongated hypocotyls (arrows) and short primary roots (arrow—
+heads). Fixed seedlings grown in space and those used as ground controls in the DES were the same age as those shown in this panel. (B) Primary root length
+of wild type and act2-3 were not significantly different in space and in the ground controls (Tukey test, P< 0.01). Values are means of 35—59 roots pooled
+from all three plates i SD.
+A Wildvtype [grﬁundr B Wim-typa [a C wim-type lgrﬂund} D arﬂd {gruundj
+-.._ ._ -..:::£::_~I:~I
+_ i
+._ ,-""'- "". 1H ”J—. I
+qr""- ~""-.._ fr""; III'II.
+‘3'“.- I'.II- -:_-.ﬂ:' I I'Ii
+x .. qt '-., .- _ -
+""' t. ‘H a' ‘. 1, .,
+'- I I II '-
+WIId-type (apnea: actE-J [space]:
+-r 'l .
+.'t
+Fig. 3. Left-handed skewing of primary roots in microgravity. (A) Roots of wiId-type seedlings on the ground grow downward toward the gravity vector. (B) In
+microgravity, roots of wiId—type seedlings skew strongly to the left. (C, D) Like the wild type, roots of act2-3 mutants on the ground grow primarily downward
+toward the gravity vector. However, in contrast to wiId—type roots, act2-3 roots exhibit a stronger left—handed growth response that is often manifested as
+enhanced root coiling (arrows in D).
+df =3, P = 0.0000). Also, signiﬁcant differences were found account the percentage of roots that exhibited a speciﬁc root
+using the Kruskal—Wallis analysis (H = 139.14, df =3, orientation indeX value. For example, it was found that about
+P = 0.0000; Fig. 4). 21% 0f the Wild—type roots grown in space still maintained
+Differences in root growth directionality between Wild type straight growth, but only 2.1% of act2-3 roots maintained
+and act2-3 mutants in space can also be inferred by taking into straight growth. Thus, compared With Wild—type roots, the
+146 Plant Biology 16 (Suppl. 1) (2014) 142—150 © 2013 German Botanical Society and The Royal Botanical Society of the Netherlands
+
+"
+"6","Nakashima, Liao, Sparks, Tang & Blancaflor Actin and root growth in microgravity
+Table 2. Average number of vacuoles per root cell. ilcﬂtﬁrpe {spam} “I B acri—E {spam}
+wild type (space) act2-3 (space) '-. * 1 l:
+935(480) 4.32 (352) "" "" . ‘
+wild type(ground) act2-3(Ground) t "" I .
+4.05 (358) 3.44 (410) 1.; 'n __'
+— a :- _ ..' _ ‘ .. - '
+Upper number: mean value of vacuolar compartments per single root cell. . _- 1|:- l ""1"" '
+Number in parenthesis: total cells sampled from four TEM micrographs of __1 t ; ' ' 1'5- '
+root tips. '75, Ir IE'
+‘3 w""
+‘ ﬂ
+‘I '11
+115 . .Wlldftype {grﬂrurrmj}$3 _- D acfﬂ-Jltgruund}
+E as .1; .' ~ I. '15::
+‘E m 1? . '
+g .
+3 +16 J .- . -.
+I: l ‘ .
+E “-5 i .. :
+. p ‘5' ' '-'--.--.
+E :14 111:“; _ r? ._ . ‘
+”'3 "" ““1155 .13! , mg"".
+112 __ -' 1‘"" “11......
+ﬂﬁ‘ﬂf TmT lgﬂﬁfm Eff; Fig. 5. Toluidine blue O-stained, semi-thin sections (0.5 am in thickness)
+taken from a median longitudinal section of Arabidopsis root tips from etio—
+Fig. 4. Root orientation index of the wild type and act2-3 mutants derived Iated seedlings grown in space flight BRIC-PDFU hardware in microgravity
+from FFT analysis of root binary images. Note that act2-3 mutants have (space: panels A and B) and the ground set (ground: panels C and D). The
+higher root orientation indices in space compared to the wild type. overall structure of wild type (A and C) and act2-3 mutant (B and D) roots
+was not dramatically different between ground control and space. Note
+more extensive vacuoles in space—grown roots.
+act2-3 roots had a general tendency to coil in the microgravity
+enVironment Of space. The extensive root coiling of act2-3 mutants in space is
+mimicked on a 2-D clinostat
+Cell wall uoltrastructure of act2-3 roots is altered in Previous ground-based experiments have shown that
+m1crograv1ty d' . . . .
+1srupt1ng the actin cytoskeleton us1ng pharmacological 0r
+Ground and space-grown seedlings ﬁxed in glutaraldehyde genetic approaches led to a more robust gravitropic response in
+were examined under light and TE microscopes to ﬁnd an roots ofvarious plant species, including Arabidopsis (Hou et al.
+explanation as to why roots of microgravity-grown seedlings 2003, 2004; Yang et al. 2011; Lanza et al. 2012). The enhanced
+were skewed. At the light microscope level, it was observed gravity responses of roots with disrupted actin were more pro-
+that roots from seedlings in space appeared to have a higher nounced in a slowly rotating 2-D clinostat, wherein providing
+number of vacuoles. The act2-3 mutant also appeared to only a short horizontal gravistimulus was sufﬁcient to trigger a
+have a poorly developed root cap when grown in micrograv— robust bending response toward the original gravity vector
+ity (Fig. 5). The increase in the number of vacuoles was (Hou et al. 2003, 2004). We therefore compared the growth of
+observed in both epidermal and cortical cell layers, which wild-type and act2-3 roots on a 2-D clinostat. Interestingly,
+were adjacent to the lateral root cap. The differences in regardless of growth conditions (light or dark), we found that
+vacuole number in roots from space and ground controls both wild-type and act2-3 mutant roots skewed to the left,
+were even more obvious at the TEM level (Fig. 6). We quan- which was reminiscent of root growth in the BRIC-PDFUs in
+tiﬁed the number of vacuoles in ground and space grown microgravity. Moreover, like in microgravity, root skewing of
+roots from equivalent TEM micrographs, and indeed roots the act2-3 mutant was more pronounced, in that their roots
+from seedlings of two genotypes grown in space had a higher formed tighter coils compared to the wild type (Figure S4).
+average number of vacuoles per cell than roots from ground
+controls.(Table 2). In addition to differences in the level of DISCUSSION
+vacuolation, there were clear structural deformities in the cell
+walls of roots, particularly in act2-3 mutants grown in micro- In this paper, we describe results from our plant space biol-
+graVity (Figs 6 and 7). Abnormalities in the roots of act2-3 ogy experiments on the BRIC-PDFU hardware that was
+mutants included a disruption of newly developed cell walls, ﬂown on the STS-131 mission of Discovery. Germination
+with more pronounced waving of their primary cell walls, rates of the two Arabidopsis genotypes (wild type and act2-
+and cell walls having a signiﬁcant reduction in electron 3) in both ground controls and in space were above 94%
+opaque material (Fig. 7). (Table 1). Earlier studies have documented the generally
+Plant Biology 16 (Suppl. 1) (2014) 142—150 © 2013 German Botanical Society and The Royal Botanical Society of the Netherlands 147
+
+"
+"7","Actin and root growth in microgravity Nakashima, Liao, Sparks, Tang & Blancaflor
+I . *-
+A ”:11;ng . .3 __'. _1—‘9‘ .. aqtlﬁ
+- s_ac‘e} ‘2' it ""h : spapﬁ]
+1' r. .. - - . _.-. 1- ' .
+. _l' '__.-.. _.' t_‘r!
+‘ I' ' II I ' ‘- h ﬁn“ --1.-IIIII‘ .I'I::-'""J. ? 1. 3'- I
+Iv "" - .1. i - #:1121211!“ 1 Im- '
+. "" ‘ 1_ . i ' 1'1='I'I . I ,5...“ I
+.I I '-.-"" I . ;* r ' ""I- .- d: . i
+. I-I I - . 1kg . ‘ #1.!“ - E: q""
+‘ : 1""1ﬁnh
+1.!"" "" .. L' .2‘ .—""r II I .; - '-
+i' r"" 1 vi "" c '; .1
+.h' ‘
+f F I. . ”I . . .. .1 _.
+' '-:.
+49 WHEI-WPE [grnun'ﬂ} H‘ I 501243 {'9 '1. H1111?! - "" -- Fig. 6. Transmission electron micrographs taken from a
+1 ' _ _ "" __.-"" """" . . . . . .
+_ - - . . ﬂ _. _..- I ~ median longitudinal section of an Arabrdopsrs root cap
+-' - 3. ‘ - 5. . from seedlings grown on the BRIC—PDFU hardware in
+. - -- i... . .
+_ --I_ _ . u ‘. . mrcrogravrty (space: panels A and B), and the ground set
+. 1.. ' 1 - _ (ground: panels C and D). Typical fibrous structure of the
+- ‘ _ﬁ _ __.,_ "" "" - ""':_ - primary cell wall was observed in the ground set from
+- 1:- I _ ,- ' . . . -_ .1 """" both the wild type (panel C) and act2-3 mutant (panel
+"". _1 _ __ _.-: .._II-r 1| ___... -- —--. I
+. ' *- ' -;- 1' ' ."" :1. ' -- . _ -—_—.—.- _ “"" ., D). However, newly developed cell walls of space—grown
+. . r"" T.
+H __ _.:-"" 1. act2-3 mutants were more disrupted and showed a
+. "" ' ' ' '1. ‘. wavy pattern in their primary cell walls (arrows in B)
+I . . .
+1. ' ' :1: __ _____ ._ ..—- ' compared to Wild type, and ground control WIId—type
+' I. h -_ _ L_- - """"_""._ .'.- and act2-3 mutant seedlings. Images are representative
+‘- - - ""H' 'i - 1' of three roots per genotype.
+‘= . - -' _ 1.: .
+A WIId-type_{5papaj_ ' .- B anti?- _ pace}
+"" ' J Fig. 7. Higher magnification of transmission electron
+.H' ._ ___ Jr Ir micrographs taken from a median longitudinal section
+4! . I * ‘1 ' I of an Arabidopsis root tip from seedlings grown on the
+F I m.‘ * BRIC—PDFU hardware in microgravity (space: panels A
+1""! 1 _i and B). Typical fibrous structure of the primary cell wall
+‘ 9-: - ' ' was observed in the wild type (panel A). However, newly
+’3'; 1| - . _
+developed cell walls of space—grown act2-3 mutants
+-- D.$tn 15""}; ._ were more disrupted and have low electron opaque
+' ' ' material compared to the wild type.
+poor health of plants in microgravity, most likely because of pouches within BRIC-60 0n STS-87 (GENEX) increased their
+problems associated with spaceﬂight hardware limitations root production in space (Levine et al. 2000; Levine & Piastuch
+that led to the build-up of volatile gases (e.g. ethylene), and 2005), similar to observations with Arabidopsis roots in the
+hypoxia due to microgravity’s impact on air convection CHROMEX-03 and 05 experiments on STS-54 and STS-68
+(Porterﬁeld & Musgrave 1998). The appearance of ﬁxed (Porterﬁeld et al. 1997). Moreover, adventitious root length in
+seedlings retrieved from the light-tight BRIC-PDFUs after sweet potato stem cuttings was lower in microgravity com-
+2 weeks indicated overall healthy growth. Furthermore, the pared to ground controls (Mortley et al. 2008). The aforemen-
+root length of etiolated Arabidopsis seedlings in space was tioned ﬁndings with sweet potato cuttings, soybean seedlings
+not signiﬁcantly different from the ground controls, regard- and Arabidopsis are in contrast to those of cress roots, which
+less of the genotype. On the basis of the aforementioned elongated less in microgravity compared to ground controls
+observations, we believe that the quality of recovered tissue (Johnsson et al. 1996). Also, recent results using the Advanced
+from seedlings enclosed within the BRIC-PDFUs through Biological Research System (ABRS) hardware on the 155
+which we based our conclusions was excellent. showed generally slower root growth of light-grown Arabidop-
+Our results are in agreement with a previous report showing sis roots (Paul at al. 2012b). Such variability in root growth
+no signiﬁcant differences in root growth in lentil seedlings when comparing different spaceﬂight studies can likely be
+grown in microgravity and on the ground (Lorenzi & Perbal attributed to differences in plant species, light conditions and
+1990). However, there are studies documenting both an the type of plant growth hardware used.
+enhancement and an inhibition of root growth in microgravity. An intriguing observation from our study is that roots of the
+For example, etiolated soybean seedlings enclosed in moist seed Arabidopsis ecotype Columbia exhibited a left-handed growth
+148 Plant Biology 16 (Suppl. 1) (2014) 142—150 © 2013 German Botanical Society and The Royal Botanical Society of the Netherlands
+
+"
+"8","Nakashima, Liao, Sparks, Tang & Blancaflor Actin and root growth in microgravity
+response despite the absence of graVity. Our results are in higher incidence of unevenly deposited cell wall material (Le.
+agreement with studies on the Arabidopsis Landsberg ecotype cell wall aniness) and lower electron opaque regions in the cell
+conducted on the same BRIC—16 mission (Millar et al. 2011). wall. These defects in cell wall formation in the act2-3 mutants
+Directional growth responses of roots, instead of the random could then translate into more pronounced differential growth
+growth patterns that one would typically expect when graVity is between the ﬂanks of the root, leading to a stronger coiling
+absent, have been reported in previous spaceﬂight experiments response in space. Second, another mutant isoform of ACTIN2
+(Hoson et al. 2003). However, the biology behind such non— (ath—S; Lanza et al. 2012) was recently shown to display
+random growth patterns in space has not been established. One enhanced graVity responses on Earth similar to roots treated
+explanation for such non—random growth responses is that in with Iatrunculin B (Hou et al. 2004). Furthermore, ath—S
+the absence of graVity, plant roots could hone in on other enVi— (Lanza et al. 2012) and act2-3 (our unpublished observations)
+ronmental gradients that develop within the spaceﬂight hard— eXhibited stronger root aning in inclined hard agar surfaces.
+ware used to culture the plants. For example, Arabidopsis roots The act2-3 mutant used in this study contained a T—DNA inser—
+on the space shuttle ﬂights STS—54 and STS—68 were discovered tion in the third exon of the ACTZ gene, and is represented by
+to orient toward high sources of oxygen (Porterﬁeld et al. SALK_ 048987 (Nishimura et al. 2003; Yoo et al. 2012). The
+1997). Follow—up, ground—based studies have conﬁrmed that ath—S mutant, on the other hand, was isolated in a forward
+pea (Pisum sativum) roots can indeed sense oxygen and grow genetic screen for brassinosteriod constitutive responses and
+toward the oxygen source (oxytropism). In a—graVitropic pea has a single point substitution (Arg—179 to Cys) in the third
+mutants, root oxytropism is enhanced (Porterﬁeld & Musgrave exon of the ACTZ gene (Lanza et al. 2012). Because root WW—
+1998), supporting the notion that in the microgravity enViron— ing on agar surfaces is thought to be due to a combination of
+ment of space, other directional stimuli are masked by the con— touch and gravity sensing (Thompson & Holbrook 2004), the
+stant 1—g force on Earth. In this regard, in a recent study on the reduced graVity on STS—131 could have allowed the touch com—
+ABRS hardware on the ISS, directional right—handed skewing ponent of the root wavy response to predominate, which was
+of roots was documented in the Wassilewskija (WS) ecotype of then manifested as a robust coiling response in space. In this
+light—grown Arabidopsis seedlings, which was attributed in part regard, it was intriguing to ﬁnd that the robust coiling
+to negative phototropism (Paul 61‘ al. 2012b). responses of act2-3 roots were also observed on a 2—D clinostat.
+Although a couple of recent articles have reported enhanced This observation suggests that with regard to certain aspects of
+root skewing in microgravity, there appears to be some root growth, clinorotation could mirror microgravity and serve
+discrepancy in the description of the phenomenon, particularly as an excellent experimental tool for follow—up studies of root
+with regard to the direction of skewing. Paul 61‘ al. (2012b), for growth orientation behaviours that are observed in space.
+instance, showed right—handed skewing, whereas Millar et al. Taken together, our results indicate that the actin cytoskeleton
+(2011) and our study documented left—handed skewing. Fur— might be involved in integrating gravity and touch signalling
+thermore, in contrast to the present study, Paul 61‘ al. (2012b) both in space and on Earth, and that the enhanced root skew—
+observed minimal skewing in the Columbia ecotype. A possible ing when actin function is altered could be a manifestation of
+explanation for such differences is that the seedlings of Paul up—regulated mechanostimulation or circumnutations rather
+et al. (2012b) were exposed to light in the ABRS hardware than an effect that is solely dictated by graVity. Third, it was
+whereas the current study and that of Millar et al. (2011) were found that spaceﬂight led to the extensive formation of
+grown in continuous darkness in the BRIC hardware. There is vacuoles in roots of both the wild type and act2-3 mutants.
+accumulating eVidence that light stronglyinﬂuences root devel— This ﬁnding could have important implications for graVity
+opment, such that roots exposed to light display enhanced sensing and root growth direction, given the role of vacuole
+elongation and stress responses, which in turn is manifested as dynamics and actin in graVitropism (Morita 2010; Blancaﬂor
+an escape type of tropism (Yokawa et al. 2013). Actin and 2013).
+auXin have been implicated in light—triggered root developmen— In summary, our spaceﬂight experiments using the BRIC—
+tal responses (Dyachok et al. 2011; Sassi et al. 2012). Differ— PDFU hardware on board the STS—131 mission uncover an
+ences in light conditions could translate into differences in important role for the actin cytoskeleton in deﬁning endoge—
+actin dynamics and auXin transport between ABRS— and BRIC— nous root growth directionality in space. Our conclusions are
+grown roots, explaining discrepancies in skewing magnitude supported by the development of an algorithm for quantifying
+and direction between the Paul 61‘ al. (2012b) and the current root orientation and the use of a mutant to a root—expressed
+study. vegetative ACTIN isoform. Our data show that part of actin’s
+A major ﬁnding from our studies is the observation that impact on root orientation may be through both regulation and
+roots of act2-3 mutants eXhibited a more pronounced root delivery of cell wall components to the growing primary root.
+coiling response in microgravity compared to the wild type,
+indicating that like on Earth (Hou et al. 2003, 2004), the actin ACKNOWLEDGEMENTS
+cytoskeleton 1s a signiﬁcant component of signalling pathways
+that specify the extent of root directional growth movements in This work was supported by grants from the National Aeronau—
+space. There are possible explanations as to why act2-3 roots tics and Space Administration (NASA; grants NNX10AF43G
+eXhibited stronger coiling responses in space than wild—type and NNX12AM94G). We thank staff at the Kennedy Space
+roots. First, the actin cytoskeleton, through myosin—based Center, especially Howard Levine, Kimberly Slater, Stacy Engel,
+molecular motors, is crucial for the targeted delivery of vesicles Monica Soler, David Cox, Christopher Comstock, David Reed,
+carrying cell wall precursors (Sparkes 2011). During space— Susan Manning—Roach, Todd Mortensen and April Spinale, for
+ﬂight, the defective actin cytoskeleton in act2-3 mutants might their excellent technical support during the conduct of the
+have led to ampliﬁed cell wall abnormalities, as shown in the BRIC—16 experiments.
+Plant Biology 16 (Suppl. 1) (2014) 142—150 © 2013 German Botanical Society and The Royal Botanical Society of the Netherlands 149
+
+"
+"9","Actin and root growth in microgravity Nakashima, Liao, Sparks, Tang & Blancaflor
+
+SUPPORTIN G INFORMATION Fignre 82. Developnjient bf computational tools for the
+
+quantiﬁcation of root orientation.
+
+Additional Supporting Information may be found in the online Figure S3. ROC curve from root orientation indeX for the
+
+version of this article: quantiﬁcation of root orientation of seedlings grown in space.
+
+Figure 81. Ground controls and ﬁxation of seedlings in Figure S4. Left—handed skewing ofArahidopsis in micrograv—
+
+BRIC—PDFUs. ity is mirrored in a 2—D clinostat.
+REFERENCES Hou. G., Kramer V.L., Wang Y.-S., Chen R., Perbal G., sugars, and starch concentration O.f sweet .potato
+Gllroy S., Blancaﬂor EB. (2004) The promotion of stem cuttings. Journal of the Amerlccm Sowety for
+
+Antonsen F., Iohnsson A., Perbal G., Driss-Ecole D. gravitropism in Arabidopsis roots upon actin disrup- Horticultural Science, 133, 327—332.
+
+(1995) Oscillatory growth movements of roots in tion is coupled with the extended alkalinization 0f Nishimura T., Yokota E., Wada T., Shimmen T., Okada
+weightlessness. Physiologia Plantarum, 95, 596—603. the columella cytoplasm and a persistent lateral K. (2003) An Arabidopsis ACTZ dominant-negative
+
+Baldwin K.L., Strohm A.K., Masson PH. (2013) Gravity auxin gradient. The Plant Journal, 31, 113—125. mutation, which disturbs F-actin polymerization,
+sensing and signal transduction in vascular plant Iohnsson A., Karlsson C., Iversen T.-H., Chapman reveals its distinctive function in root development.
+primary roots. American Journal of Botany, 100, D.K. (1996) Random growth movements in weight- Plant and CellPhysiology, 44, 1131—1140.
+
+1—17. lessness. Physiologia Plantarum, 96, 169—178. Paul A.L., Zupanska A.K., Ostrow D.T., Zhang Y., Sun
+
+Blancaﬂor EB. (2013) Regulation of plant gravity Kern V.D., Schwuchow I.M., Reed D.W., Nadaeu I.A., Y., Li I.L., Shanker S., Farmerie W.G., Amalﬁtano
+sensing and signaling by the actin cytoskeleton. Lucas I., Skripnikow A., Sack FD. (2005) C.E., Ferl RJ. (2012a) Spaceﬂight transcriptomes:
+American Journal ofBotcmy, 100, 143—152. Gravitropic moss cells default to spiral growth on unique responses to a novel environment. Astrobiol-
+
+Blancaﬂor E.B., Hansenstein K.H. (1997) The organi- the clinostat and in microgravity during spaceﬂight. ogy, 12, 40—56.
+zation of the actin cytoskeleton in vertical and gravi- Planta, 221, 149—157. Paul A.L., Amalﬁtano C.E., Ferl R.I. (2012b) Plant
+responding primary roots of maize. Plant Physiology, Kraft T.F.B., van Loon I.I.W.A., Kiss I.Z. (2000) Plastid growth strategies are remodeled by spaceﬂight. BMC
+113, 1447—1455. position in Arabidopsis columella cells is similar in Plant Biology, 12, 232.
+
+Blancaﬂor E.B., Masson PH. (2003) Plant gravitro- microgravity and on a random-positioning machine. Piconese S., Tronelli G., Pippia P., Migliaccio F. (2003)
+pism. Unraveling the ups and downs of a complex Planta, 211, 415—422. Chiral and non-chiral nutations in Arabidopsis roots
+process. PlantPhysiology, 133, 1677—1690. Lanza M., Garcia-Ponce B., Castrillo G., Catarecha P., grown on the random positioning machine. Journal
+
+Blancaﬂor E.B., Hou G., Mohamalawari DR. (2003) Sauer M., Rodriguez-Serrano M., Péez-Garcia A., ofExperimentalBotany,389,1909—1918.
+
+The promotive effect of latrunculin B on gravitro- Sénchez-Bermejo E., Mohan T.C., Leo del Puerto Y., Ponce G., Rasgado F.A., Cassab G.I. (2008) Roles of
+pism of maize roots is concentration-dependent. Sandalio L.M., Paz-Ares I., Leyva A. (2012) Role of amyloplasts and water deﬁcit in root tropisms. Plant,
+Advances in Space Research, 31, 2215—2220. actin cytoskeleton in brassinosteroid signaling and Cell and Environment, 31, 205—217.
+
+Burbach C., Markus K., Zhang Y., Schlicht M., Baluska in its integration with the auxin response in plants. Porterﬁeld D.M., Musgrave M.E. (1998) The tropic
+F. (2012) Photophobic behavior of maize roots. DevelopmentalCell,22,1275—1285. response of plant roots to oxygen: oxytropism in
+Plant Signaling and Behavior, 7, 874—878. Levine H.G., Piastuch W.C. (2005) Growth patterns Pisum sativum L. Planta, 206, 1—6.
+
+Correll M.I., Kiss I.Z. (2008) Space-based research on for etiolated soybeans germinated under space- Porterﬁeld D.M., Matthews S.W., Daugherty C.I.,
+plant tropisms. In: Gilroy S., Masson P.H. (Eds), ﬂight conditions. Advances in Space Research, 36, Musgrave M.E. (1997) Spaceﬂight exposure effects
+Plant tropisms. Blackwell, Oxford, UK. Chapter 8. 1237—1243. on transcription, activity, and localization of alcohol
+
+Driss-Ecole D., Legué V., Carnero-Diaz E., Perbal G. Levine H.G., Sharek I.A., Johnson K.M., Stryjewski dehydrogenase in the roots of Arabidopsis thaliana.
+(2008) Gravisensitivity and automorphogenesis 0f E.C., Prima V.I., Martynenko 0.1., Piastuch W.C. PlantPhysiology,113,685—693.
+lentil seedling roots grown on board the Interna- (2000) Growth protocols for etiolated soybeans ger- Sassi M., Lu Y., Zhang Y., Wang 1., Dhonukshe P.,
+tional Space Station. Physiologia Plantamm, 134, minated within BRIC-60 canisters under spaceﬂight Blilou 1., Dai M., Li I., Gong X., Iaillais Y., Yu X.,
+191—201. conditions. Advances in Space Research, 26, 311—314. Traas I., Ruberti 1., Wang H., Scheres B., VernouX
+
+Dyachok I., Yoo C.M., Palanichelvam K., Blancaﬂor Lorenzi G., Perbal G. (1990) Root growth and statocyte T., Xu J. (2012) COPl mediates the coordination of
+EB. (2009) Sample preparation for ﬂuorescence polarity in lentil seedling roots grown in micrograv- root and shoot growth by light through modulation
+imaging of the cytoskeleton in ﬁxed and living plant ity or on a slowly rotating clinostat. Physiologia Plan- of PIN1- and PIN-dependent auxin transport in
+roots. In: Gavin R.H. (Ed.), Cytoskeleton methods tarum, 78, 532—537. ArabidopsisDevelopment, 139, 3402—3412.
+and protocols: methods in molecular biology series. McDonald I.H. (2009) Handbook ofhiological statistics, Sparkes I. (2011) Recent advances in understanding
+Humana Press, Totowa, NI, USA, pp 157—169. 2nd edition. Sparky House Publishing, Baltimore, plant myosin function: life in the fast lane. Molecular
+
+Dyachok I., Zhu L., Liao F., He 1., Huq E., Blancaﬂor MD, USA. Plant, 4, 805—812.
+
+EB. (2011) SCAR mediates light-induced root Millar K.D.L., Kumar P., Correll M.I., Mullen I.L., Thompson M.V., Holbrook NM. (2004) Root—gel
+elongation in Arabidopsis through photoreceptors Hangarter R.P., Edelmann R.E., Kiss I.Z. (2010) A interactions and the root waving behavior ofArahid-
+and proteasomes. The Plant Cell, 23, 3610—3626. novel phototropic response to red light is revealed in opsis. Plant Physiology, 135, 1822—1837.
+
+Ferl R., Wheeler R., Levine H.G., Paul A.L. (2002) microgravity. New Phytologist, 186, 648—656. Yang W., Ren S., Zhang X., Gao M., Ye S., Qi Y.,
+Plants in space. Current Opinion in Plant Biology, 5, Millar K.D.L., Johnson C.M., Edelmann R.E., Kiss I.Z. Zheng Y., Wang 1., Zeng L., Li Q., Huang 8.,
+258—263. (2011) An endogenous growth pattern of roots is Hea Z. (2011) BENT UPPERMOST INTER-
+
+Hoson T., Soga K., Mori Y., Saiki M., Nakamura Y., revealed in seedlings grown in microgravity. Astrohi- NOD13] encodes the class II formin FH5 crucial
+Wakabayashi K., Kamisaka S. (1999) Stimulation of ology, 11, 787—797. for actin organization and rice development. The
+elongation growth and cell wall loosening in rice Monshausen G.B., Gilroy S. (2009) The exploring root Plant Cell, 23, 661—680.
+coleoptiles under microgravity conditions in space. — root growth responses to local environmental con- Yokawa K., Kagenishi T., Baluska F. (2013) Root
+Plant and CellPhysiology, 43, 1067—1071. ditions. Current Opinion in Plant Biology, 12, 766— photomorphogenesis in laboratory-maintained
+
+Hoson T., Soga K., Wakabayashi K., Kamisaka S., 772. Arabidopsis seedlings. Trends in Plant Science, 18,
+Tanimoto E. (2003) Growth and cellwall changes in Morita MT. (2010) Directional gravity sensing in 117—119.
+rice roots during spaceﬂight. Plant and Soil, 255, gravitropism. Annual Review of Plant Biology, 61, Yoo C.M., Quan L., Cannon A.E., Wen I., Blancaﬂor
+19—26. 705—720. EB. (2012) AGDl, a class 1 ARF-GAP, acts in com-
+
+Hou G., Mohamalawari D.R., Blancaﬂor EB. (2003) Mortley D.G., Bonsi C.K., Hi11W.A., Morris C.E., Wil- mon signaling pathways with phosphoinositide
+Enhanced gravitropism of roots with a disrupted liams C.S., Davis C.F., Williams I.W., Levine L.H., metabolism and the actin cytoskeleton in controlling
+cap actin cytoskeleton. Plant Physiology, 113, Petersen B.V., Wheeler RM. (2008) Inﬂuence of Arabidopsis root hair polarity. The Plant Journal, 69,
+1360—1373. microgravity environment on root growth, soluble 1064—1076.
+
+150 Plant Biology 16 (Suppl. 1) (2014) 142—150 © 2013 German Botanical Society and The Royal Botanical Society of the Netherlands
+
+"

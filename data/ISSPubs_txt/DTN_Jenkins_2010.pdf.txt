@@ -1,0 +1,527 @@
+"","x"
+"1","Delay/Dlsruptlon-Tolerant Networklng:
+thht Test Results from the Internatlonal Space Statlon
+Andrew J enkins, Sebastian Kuzminsky, Kevin K. Gifford Robert L. Pitts, Kelvin Nichols
+BioServe Space Technologies NASA Marshall Space Flight Center
+University of Colorado MSFC
+Boulder, CO 80309 Huntsville, AL 35812
+303.492.0299 256.544.0666
+andrew. j enkins@colorad0.edu, seb@highlab.com, 1ee.pitts@nasa.g0v,
+gifford@rintintin.coloradoedu kelvin.nichols@nasa.gov
+Abstract—The University of Colorado is working With This paper reviews networked space communication and
+NASA to extend Earth’s internet into outer space and across provides the context of the DTN—on-ISS deployment. Next,
+the solar system. The new networking technology is called it describes the requirements and features of the DTN—on-
+Disruption Tolerant Networking (DTN), and is being tested ISS implementation. Early results from DTN operations are
+on the International Space Station. DTN Will enable NASA presented and discussed. Constraints 0f the current system
+and other space agencies around the world to better implementation are identiﬁed and enhancements to resolve
+communicate With international ﬂeets of spacecraft that Will these limitations are presented. Finally, a look forward to
+be used to explore the moon and Mars. This technology is the future of DTN 0n the International Space Station and
+evolving into an Interplanetary Internet. afﬁliated ground systems is presented.
+In this paper we describe the design and features of the 2, RELATED WORK
+DTN—on-ISS implementation as well as reporting initial .
+results from the experimental deployment. 1,2 Apollo astrenauts 0n the lunar surface relayed veice
+communications through the Lunar Module [5]. The
+T ABLE OF CONTENTS Command/Service Module, Limar Module, and the Earth-
+based Manned Space Flight Network formed a
+1. INTRODUCTION .............................................................1 communication network robust to failures and 1ine-0f_sight
+2. RELATED WORK...........................................................1 interruption. The Tracking and Data Relay Satellite System
+3. DTN-ON-ISS IMPLEMENTATION .................................2 (TDRSS) [6] forms bent-pipe relays t0 Shuttles and the 18$
+4. OPERATIONS DATA.......................................................3 However9 neither of these systems provides an automated
+5. CUSTODY SIGNAL COMPRESSION................................4 Smmﬂndfomam capability.
+6. CUSTODYTRANSFERRETRIEs.....................................6
+7o CONCLUSIONSooooo.ooooo.ooooo.oooo00000000000000ooooooooooooooooooooooooooo6 The Mars neighborhOOd ineludes an increaSingly dense
+8. FUTURE WORKoouoooou.uouooou.oooouoooouoooooooooooooooooooooooouo6 mesh of orbiting and surface spacecraft that support
+9. ACKNOWLEDGEMENTS.................................................6 secondary relaying activities simultaneous with primary
+REFERENCESo.00000000oocoo.ooooo.ooooo.ooooo.oooocooooo0000000000000000000000000000.7 SCience experiments [7]. The cmCial Store_and_f0rward
+BIOGRAPHY cooo.0000000o.0000000o.0000000o.0000000o.0000000000000000000000000000.00007 buffer capacity is a constrained resource. AS W611, the
+human effort required to schedule communications among
+1. INTRODUCTION Mars assets and the DSN is signiﬁcant.
+Cemmunications in space are characterized by their The Interplanetary Internet Special Interest Group designed
+disrupted, Wireless nature. Whether due to occultation, . . .
+. a space internet [8], and the Consultative Committee for
+scheduling, cost or solar ﬂares, spacecraft must handle . .
+. . . . . . . Space Data Systems engineered interoperable protocols [9],
+interruptions in connectiwty and data losses [1]. Disruption . . . .
+. . . underpinning the cross-layer, cross-m1ss10n, cross-agency
+Tolerant Networking (DTN) [2,3] can maxnnize the . .
+. . support required for networked space exploration and
+efﬂuent use of links to and among spacecraft. As part of . . . .
+, . seience communication. These space-oriented groups
+NASA s efforts to research DTN in space, the authors have . .
+. . collaborate With the Delay-Tolerant Networking Research
+deployed an implementation of the DTN Bundle Protocol . . . . .
+(BP) [4] to a a 10a d on the International S ace S tation Group [10], Which includes terrestrial applications of DTN.
+(188) p y p The central protocol of the DTN architecture is the Bundle
+' Protocol, BP, [4], Which describes a mechanism for
+bundling data for store-and-forward delivery over a network
+1978-1-4244-3888—4/10/$25.00 ©20101EEE. that may face challenges in delay, asymmetry, disruption
+2 IEEEAC paper #1279, Version 35, Updated 2009: 12:01 and Power-
+1
+
+"
+"2","’ w 4, 4/; 6. ﬁr w . __ Payload Data Services System, PDSS, is used to transmit
+§, e ‘4 ”é, / ‘ * . - .3 ,' payload telemetry to remote control sites such as the
+‘ ‘ V ‘7 .. ‘ ' 2;; _ . ' Boulder POCC. Each payload makes use of an application
+k - , "" l 52: m?” 2* ~ . _..- identiﬁer (APID) that maps the per—payload telemetry to a
+2. ""j: .- ‘I: _ r‘gl‘ ‘ - I ‘ destination IP address and UDP port; and 2) The Enhanced
+-- a s , f )4), k . HOSC Shppert, EHS, Remote Interface System (ERIS) is
+‘- ' \ _--*“1‘*._‘.’ used for issuing commands and message acknowledgements
+i; .L from the ground to the on—orbit payload. Figure 2 also
+l . , ,_ ,n/ shows the payload Rack Interface Computer, RIC, onboard
+' “""“ii'i'ii . .V/ ‘ \ the ISS, Which serves as an IP gateway to the ISS payload
+. ‘ ‘ \v‘ 1 . . LAN.
+‘ \/
+agge-omwmzasa ‘ 1 Tide”. ERIS
+Figure 1 — CGBAS onboard ISS being attended to by CG§2A5
+Astronaut Terrence W. Wilcutt (from [15]). cgbaS-gse PD 5 S '
+The ﬁrst experiments With the Bundle Protocol in space
+. . . . . . . 1d
+utilized the Disaster Monitoring Constellation [11,12] in Bou er I HOSC I ISS I ISS EXPRESS Race
+January 2008. The Deep Impact Network Experiment Figure 2 _ The Ground-Space Disruption Tolerant
+(DINET) used the EPOXI (formerly DI) spacecraft and Network between the CU-Boulder POCC and the ISS.
+Earth nodes to simulate an Earth—Mars network in October
+2008 [13,14].
+Non-DT N Operations
+These previous experiments demonstrated the feasibility of Before the deployment of DTN, remote operations involved
+the bundle protocol and related technologies to form an scheduling sessions for issuing commands to CGBAS days
+automated store—and—forward . oyerlay network among or weeks in advance. Commands were limited to 88—byte
+spacecraft and Earth assets. Similar to DMC and DINET? packets, and a typical session might include 5 or fewer
+our deployment of DTN involved modifying software that is commands (440 bytes a week). Commands could not be
+currently 1n—ﬁ1ght and has a primary purposethat is not used to provide communications feedback, so telemetry
+DTN' The preV10us deployments were experimental and from CGBAS was delivered Via a ""transmit—in—the—blind”
+short—lived. In contrast, this paper describes an architecture mechanism:
+to transition an ISS life science payload to use DTN for day—
+to—day operations for the remainder of its lifetime. . Always transmit per—second h e a 1th and status.
+° Service longer—term science and status through a
+3. DTN-ON-ISS IMPLEMENTATION priority—based repeat system named playback.
+T h l f DT h B l P l h .
+I e dep oyment O N and t .6 uhd e rotoco. to t e The playback system downhnks the newest telemetry ﬁles
+nternational Space Station begins W1th developing and . . .
+. . ﬁrst and uses the remaining bandWIdth to repeat older ﬁles.
+installing a bundle protocol agent (BPA, a bundle router) to . . . . . .
+. . . The downlink path is interrupted by losses in connectwity
+the CommeICIal—Grade Bioprocessmg Apparatus 5
+. . . . . between the ISS and Earth due to normal TDRSS
+(CGBAS, Figure 1). CGBAS is primarily an enVironmental .
+. . . . handovers, as well as losses experienced as UDP packets
+control chamber for life seience experiments, but pr0V1des
+. . . . traverse a congested Internet from Alabama to Colorado.
+an embedded computational/communications platform W1th .
+. . . To compensate for losses W1th0ut feedback, the telemetry
+these characteristic features. .
+ﬁles may be replayed hundreds or thousands of times. For
+. 1 GHz Intel Celeron processor (32—bit) ﬁles in Which the very ﬁrst attempt was successful, this
+. 1 GB R AM; 4 GB solid—state disk. geprestegts a:largeg’overhead of useless retransmiss10ns as
+° Debian Etch operating system on Linux 2.6.21. epic e in igure '
+CGBAS is remotely monitored from Boulder, CO in the A custgm framing and Irlialtliplexmlg pretocol naiﬁed chairing]
+Payload Operations Control Center (POCC). It may be is use to support m.u Up e app ications on .t .e pay 0a '
+. Each CGBAS application (such as playback) utilizes its own
+commanded and controlled either by a crewmember 0n . . . .
+. . . channel, Just like a UDP port. In addition, CGBAS
+station, or remotely from the POCC, Via the HuntSVIlle . . . .
+O . applications can submit data units up to 2048 bytes
+perations Support Center (HOSC). . . .
+regardless of the underlying RIC frame Size, as shown in
+Payload users like the CGBAS team interface With ISS—to— Table 1'
+Ground communications interface systems located in the
+HOSC. The HOSC provides two systems of interest: 1) The
+2
+
+"
+"3","In addition to the downloadable releases, some
+Table 1 — Channel Characteristics for CGBAS specialization has been performed by the authors.
+Specialization that consists of bug-ﬁxes and the addition of
+m new capabilities described in4this paper that are not present
+m [hitw‘m in ION are publicly available , either under the ION license
+—‘ or as free software. Spe01alizat10n that adapts ION t0
+uplink 95 9343 151'} CGBAS is not available, in compliance with ITAR and EAR
+[100111ka 133-13 W45 133331} restrictions. The ION software suite is desirable for many
+embedded applications because it is under active
+Disruption-Tolemnt Operations development, and is lightweight (incorporating features
+. . . . . . deemed most relevant to space applications). The total
+The ﬁrst step in Disruption-Tolerant 0perat10ns is adding a uplink size of the packaged version of ION used on CGBAS
+feedback hnk. to increase the downlink efﬁmeng’ 0f the (including extra applications) is 524kB. Table 2 outlines the
+payload. Thls enables a Simple form Automatic Repeat sizes of the major components of ION for a recent uplink
+request (ARQ) that is delay and disruption tolerant. This (build82). While some ION components are unused on
+system preserves reliability with much less overhead, thus CGBAS, they are uplinked anyway since they are a part of
+allowing for higher ﬁdelity science operations because the the normal ION distribution, and may be used at a later date.
+downlink is used much more efﬁciently.
+The HOSC extended their systems to support a new class of 4° OPERATIONS DATA
+commands that may only carry feedback acknowledgments. Deployment t0 the International Space Station began in June
+These are administrative bundles (custody signals and status 2009. After a checkout, the ﬁrst experiments occurred on
+reports) in the language of the Bundle Protocol. The ISS July 10, 2009 [16,17,18] and involved downlinking images
+Payload Rack Ofﬁcers at the HOSC can readily disable 0r of a previous CGBAS experiment where a metal salt is
+""o 300 . . . . . . ‘ “o 1200 _ . . _ . f 1
+c ; ; ; ; ; ; c : : : : : : :
+8 50 8 200
+U 0 - - - - - - u 0 - - . - - - .
+0 500 1000 1500 2000 2500 3000 3500 4000 0 500 1000 1500 2000 2500 3000 3500 4000
+Retries (non-DTN) Retries (DTN)
+Figure 3 — Histograms of redundant space-to-ground transmissions for three days (N=1008) of typical non-DTN (left)
+and DTN (right) operations. In the non-DTN case, ﬁles are received on the ground between 3276 and 3651 times. In
+the DTN case, no ﬁle is received on the ground more than four times, 96% of ﬁles are received only once.
+enable these DTN acknowledgements without advance Table 2 — The size of ION components on CGBAS
+notice to the payload team in response to higher priority Size 00
+commanding requirements. Uncompressed 1638400 1000 0
+With this link, enhancements to payload software allow —C0mpressed Debim package 335680 3300
+monitoring of the DTN software and new telemetry
+software adapted to the DTN architecture. Modiﬁcations to 12121112 bpehlt bpstatsZ 30936 20 0
+operations procedures and software accompany the new - ‘“ ~ . H
+DTN software. The DTN software communicates Via its Core executables 720060 440°
+own channels in the multiplexing system, so legacy Libraiy code 370176 2300
+commanding and telemetry systems are still supported. Packaging support 19328 10 0
+The payload and POCC Ground Support Equipment (GSE) AMS (unused) 271436 17 0
+software’s DTN capabilities are built around the W
+Interplanetary Overlay Network (ION) software originally added to a silicate solution and insoluble silicates form. A
+developed at the JetPropuls10n Laboratory. .Sonieyersions frame of the experiment was sliced into small pieces, and
+9f ION are publicly available through Ohm Univers1ty, these pieces were downlinked over a disrupted space-to—
+including the vers10n utilized by CGBAS.
+3— 4 Utilities are at http_://bi0serve.colorado.edu/www/2009/06/test-apps-f0r-
+https://i0n.ocp.0hi0u.edu ion-available . Bug-ﬁxes are discussed on the ion-users mailing lists.
+3
+
+"
+"4","ground link. Figure 4 shows an example frame from the themselves are bundles with a special payload layout.
+
+Video, and the full Video is available online5. Unlike link—layer acknowledgements, the next custodian is
+not necessarily the next bundle hop; if a bundle agent is
+
+This initial deployrnent demonstrated the success of the unwilling to take custody (perhaps due to storage constraints
+
+bundle protocol in handling disruptions. The payload (data or low power) it can forward the bundle along in the hopes
+
+sender) had no feedback regarding the state of the space—to- that a bundle agent further along the route will accept
+
+ground link, and the experiment was chosen to occur over a custody.
+
+planned TDRSS handover. During TDRSS handovers, the
+
+space—to—ground and ground—to—space links experience Q. ' '
+
+disruptions on the order of several minutes. The payload _ '
+
+responded to this disruption as designed, by custodial f .
+
+retransrnission after a conﬁgurable tirneout.
+
+The next evolution of the DTN—on—ISS network involved
+
+using the DTN for unattended operations. The payload
+
+would downlink its status telernetry ﬁles Via the non—DTN
+
+transmit—in—the—blind conﬁguration as well as Via a DTN
+
+conﬁguration. Figure 3 shows the result for a 3—day period ,
+
+in which 14 ﬁles an hour were generated. In this period, the J: \3‘
+
+non—DTN scherne resulted in an average of 3504 redundant ‘
+
+receptions per ﬁle. The DTN scheme performed much
+
+better at an average of 0.06 redundant receptions per ﬁle.
+
+While many autornatic repeat request (ARQ) systems would
+
+provide similar beneﬁts over an inefﬁcient transmit—in—the— / »
+
+blind scheme, they do not meet the same interplanetary \
+
+networking goals as DTN. / -
+
+Operations Lessons Learned »
+
+Throughout this experiment, the operations personnel at the
+
+HOSC supported the investigators at the University of
+
+Colorado, and communication was key. From the
+
+perspective of HOSC and MCC ﬂight controllers, DTN , ‘ * ‘__7, J
+
+custody signals are payload commands. The concept 0f Figure 4 — A snapshot from a Video of DTN downlinking
+
+autonornously generated payload commands requires close images of insoluble silicates in spite of disruptions.
+
+scrutiny from those who are charged with protecting the
+
+lives of the crew and the success of the ISS mission as a
+
+WhOIC- The downlink from CGBAS can send any number of
+bundles, up to 400 Kbits/second (bundle headers and
+
+5. CUSTODY SIGNAL COMPRESSION payload). To share bandwidth with other ISS payloads, we
+
+The needfor custody Signal compression limit the uplink to CGBAS to one bundle every 5 seconds,
+with 90 bytes available for the bundle header and any
+
+To downlink reliably in spite of disruptions of many payload (in comparison with Table 2.4, we are here
+
+minutes, the CGBAS bundle agent transrnits bundles with assuming that 6 bytes of RIC payload are used for channel
+
+custody transfer. In this mode, a bundle agent who has header; 96—6=90). The downlink has about 2800 times more
+
+custody of a bundle will retain custody (become the bandwidth than the uplink.
+
+custodian) until it receives a signal from the next custodian.
+
+While custody is retained, the bundle agent will retain a This link asymmetry is justiﬁed by design for non—
+
+copy of the bundle. If it believes custody transfer has failed networked spacecraft. Before DTN, ISS payload users were
+
+(due to an external event like link—layer notiﬁcation or not permitted to send autornated network acknowledgments
+
+internal custody transfer countdown timer tirneout), it may to their payloads. If the Interplanetary Internet is to be
+
+attempt to re—forward the bundle, possibly selecting a successful, this kind of asymmetry (especially but not
+
+different route or otherwise using more robust exclusively present in legacy systems) must be
+
+communication. accommodated. In order to efﬁciently utilize the CGBA—S
+downlink channel, any acknowledgment (custody signal or
+
+A bundle agent is notiﬁed that another agent has taken otherwise) uplinked must be smaller than the data it is
+
+custody of a bundle Via a custody signal. Custody signals acknowledging by at least a factor of 2800. When
+considering custody transfer as an acknowledgment
+
+5 , mechanism, calculations indicate that the minimum efﬁcient
+
+http://bloserve.colorado.edu/~andrew/dtncanvas
+4
+
+"
+"5","downlink bundle size for the CGBAS communications link each second, spanning 5 seconds, with an additional 23
+is given below: bytes above the uncompressed custody signal. Thus, a new
+nominal custody signal bundle size (for 250 bundles) would
+Eguation 1: be (compare to Equation (1)):
+Minimum CT Slgnal Bundle SIZE (49 Bytes) Eguations 5 & 6:
+(24 + 3 + 22) - 2800 = 140KB 4
+CBHE BPB Admin BlOCk Hdr Custody Sig CT Signal Bundle Size (250 signals, 72 Bytes)
+—A—
+One of the ﬁrst applications on CGBAS that we are CBIié4BPB+ Admin 1.3310ck Hdr+Comp Ciiod)r Sig
+attempting to sw1tch from us1ng our “channel” transport
+protocol to using BP is called playback. This application
+transmits ﬁles containing telemetry data from CGBAS to the .
+GSE computer. The data ﬁles are stored, compressed and 2800- 1 CT 8‘3 Bundle : 0.80KB
+transmitted. The average ﬁle size is approximately one 2-50 Bundles
+kilobyte. Our “send ﬁles over BP” application puts each ﬁle
+into its own bundle, and sends it with custody transfer Th .
+. us, the optimal bundle must be no smaller than 800 bytes.
+enabled F01"" 31400 kbps downhnktelemetrymte WC haVe‘ This allows the downlink channel to be fully utilized by
+. normal CGBA bundle sizes (1 KB > 800 B) without
+w limitation by the uplink channel.
+1 ﬁle * IRIIOByt'e * 8 blt's : SkllObltS The bundle protocol does not suggest that bundles
+bundle ﬁle Byte bundle forwarded to a particular bundle agent are forwarded in
+sequential order, which would provide the maximum
+400ki10bit8 SkilObitS _ Bobundles compression. However, we note that implementations of
+i V/ m — ' Y bundle agents are free to perform this optimization if they
+wish, and even if they do not, the overhead of bundle
+Per section 510.1 of RFC 5050’ a Bundle Agent that headers and endpoint identiﬁers is much greater than that of
+accepts custody for a bundle must generate a “Succeeded” sequence numbers.
+custody signal for the bundle and send it to the bundle’s . . . . .
+current custodian. Thus the GSE must send 50 custody A Simple mechanism for interoperating with bundle agents
+signals per secon d back to CGB A5 on ISS: that may not support compress1on is needed. A
+compress1on-enabled agent should send a compressed
+E uation 4: custody signal if it doesn’t know that the custodian supports
+_q_ compression. If the custodian later re-forwards any bundles
+Uplink Req Uplink Avail that were mentioned in the compressed signal, the
+.. ,—A—\ ,—A—\ compression agent should assume that the custodian doesn’t
+500T Slgnals _ 49 bytes : 2500 Bytes >> 18 Bytes support compression and send uncompressed custody
+399 CT Signal 50C 89C signals. This technique is vulnerable to false-negatives if
+custody signals are lost in the network, and more advanced
+As cited in Eq (1), the minimum size of a CBHE-encoded heuristics are possible.
+primary bundle block (for a bundle larger than 16KB) is 24
+bytes. The minimum size of the Administrative Block custody accepted
+Header is 3 bytes. The minimum size of a bundle payload /\
+block containing a custody signal for a bundle with a small - _ - .
+CBHE source is 22 bytes. /lpn{ lpn'\1'3
+A mechanismfor Custody Signal Compression tlmel tlmez tlmel
+We propose extending the bundle protocol to support a new /\ I I
+kind of custody signal. This new custody signal will accept 0 +13 15 +4 0+10 0 +5
+custody for multiple bundles, using a compact encoding. An
+example compression based on ideas from TCP Selective Figure 5 — Experimental custody transfer compression
+Acknowledgment [19] is shown in Figure 5. encoding for 36 bundles in one CT signal. The bundle
+from ipn:1.1 at timel with sequence number 14 is not
+CGBAS could downlink 50 bundles per second if not acknowledged.
+limited by GSE uplink custody signal bandwidth. Using the
+example compression, the GSE could uplink one custody
+signal bundle that signaled reception of 50 out of 51 bundles
+5
+
+"
+"6","6. CUSTODY TRANSFER RETRIES We have identiﬁed two key areas to address for DTN
+. . . . . protocol improvement utilizing selective acknowledgements
+Custodytransfer 1s a mechanism to promote reliability that and improving custody transfer algorithms. From a
+is described in RFCSOSQ and 1s desenbed as an open practical network management perspective, we advocate for
+research area [201 It des1gnates eustodians 1n the network in-depth instrumentation to aid in the assessment of the
+that have an elevated respons1bility to deliver bundles. An DTN protocol suite performance.
+example scenario that beneﬁts from custody transfer is
+presented in Figure 6. Here, node 1 is sending a bundle to
+node 3, and node 2 is a custodian (this would be reasonable 8' FUTURE WORK
+in the case where link A is expensive so end-to-end retries Next, the DTN—on-ISS network will be expanded to include
+should be avoided if possible). Link A is unidirectional, so another CGBA payload called CGBA4; this will expand the
+node 2 can only send acknowledgments (like custody network to 2 space nodes and 2 ground nodes and enable
+signals) through link B, and then through a disrupted experimentation with cross-node routing and one-way
+network. In this case, bidirectional acknowledgments (as custody transfer.
+used in TCP and LTP) are not possible. End-to-end retries
+are undesirable due to the cost of link 1. Custody transfer, For the results described in this paper, the HOSC supports
+namely retries from 2 to 3 without involving 1, is a solution. DTN by augmenting its command infrastructure for
+autonomous, delayed and disrupted commanding but does
+not perform the higher-layer responsibilities of a bundle
+protocol agent such as bundle routing, custody transfer,
+ﬂ *a. bundle quality of service, or the bundle security protocol.
+""(<9 ‘i The HOSC is extending its DTN capabilities to include a
+‘ g 9 bundle protocol agent located at the HOSC. In addition, the
+HOSC bundle protocol agent will not be ION—based so it
+will provide important long-terni interoperability testing
+0 between bundle protocol implementations. In the ﬁrst stage
+of this project the CGBAS payload will function as the DTN
+Figure 6 _ A network of bundle agents for which Gateway onboard the ISS and will proxy communications
+convergence layers cannot provide reliability. Node 1 from other 155 payloads t0 the HOSC-
+has an expensive unidirectional link A to a custodian,
+node 2. Node 2 can only provide custody signals back to Compressed custody signals and custody transfer
+node 1 through link B and a disrupted network. countdown timers remain active areas of research for the
+authors.
+Future disruption-tolerant networks may retry custody
+transfer at intervals that are informed by routing, contact The Japanese Aerospace Agency, JAXA» has their OWh
+schedules, network management events, CLA events, or experiment module (“KihO”) at the 155- NASA, JAXA, and
+other sources. While the details of exchanging bundles for CU-Boulder have developed an initial plan t0 deploy a DTN
+custody signals are described in RFC5050, there are many node at the JAXA mission control center in Tsukuba (near
+aspects not described and not yet understood for DTNs like TOKYO) that can communicate Via DTN t0 the CGBAS
+the IPN: when should custodial retransmission be triggered, payload. Interestingly, thiS experiment enables DTN
+who should be a custodian9 and whether the beneﬁt of communications over bOth the NASA TDRSS link to the
+custody transfer is worth the extra effort, ISS and the JAXA DRTS COIIlIIlllthathhS link to 188.
+As a ﬁrst step, RFCSOSO describes an optional mechanism, The METERON (Mars Ehd'TO'Ehd Robotic Operations
+which triggers retransmissions based on the expiration of a Network) project iS interested in utilizing DTN as the base
+Custody Transfer Countdown Timer, or CTCT. BioServe network technology for rover eXploration of Mars.
+has added a simple timeout-based CTCT to the BioServe Additionally, ESA has its own experiment module onboard
+branch of ION. This CTCT leverages custody transfer retry 155 (“Columbus”) for possible execution 0f DTN
+support developed by JPL. Research into more intelligent eXperiments similar to the NASA-JAXA DTN eXperiment
+CTCTs is ongoing. concept.
+7, CONCLUSIONS 9. ACKNOWLEDGEMENTS
+In this paper we have described a signiﬁcant NASA ﬂight The authors W0111d like t0 acknowledge the support 0f
+experiment with the goal of maturing the DTN technology Adrian Hooke and the NASA DTN Readiness Group, Dr.
+to enable networked spaee_based communications. The Vlht Cerf, and the helpful SllppOI't Of SCOtt Burleigh, David
+project’ while still in its infancy9 has wide—spread Young, Keith SCOtt and others in the NASA ION Working
+implications as the basis for an Interplanetary Internet. Group. ThiS work was performed under NASA contract
+NNJOSHEIOG.
+6
+
+"
+"7","REFERENCES [15] Experiment/Payload Overview: Delay-Tolerant
+Networking. ISS Program Scientist’s Ofﬁce. Available
+
+[1] Robert C. Durst, Patrick D. Feighery and Keith L. Scott, from:
+
+“Why not use the Standard Internet Suite for the htgpz//Www.nasa.gOV/mission pages/station/science/exper
+Interplanetary Internet?” Available from: iments /DTN.htm1 .
+htgg://WWW.ipnsigerg/teehinfo.htm. —
+
+. . . [16] Lester Haines, “NASA ﬁres up the ‘interplanetary
+
+[2] thon G. Cerf, Scott Burlelgh, Adrlan Hooke et 211., internet’,” The Register, 7th July 2009, Situation
+“Delay-Tolerant Networking Architecture,” Internet Publishing, London UK. Available from:
+Research Task Force RFC 48389 April 2007' htgg://WWW.theregister.co.uk/2009/07/07/dtn_n0de/ .
+
+[3] Forreet Warthman, “Delay-Tolerant Networks (DTNS)3 A [17] Brian Handwerk, “‘Space Internet’ to Link Worlds by
+Tutorlal V11: 9’ . Avallable from: 2011?” National Geographic News, 9th July 2009,
+http://WWW.dtnrg.org/docs/tutonals/warthman—1.1.pdf, National Geographic Society, Washington, DC.
+March 2003' Available from:
+
+htgg://news.nationalgeographic.com/neWS/2009/07/09070
+
+[4] Keith Scott and Scott Burleigh, “Bundle Protocol 9-space-internethtml.
+
+Specification,” Internet Research Task Force RFC 5050,
+April 2007- [18] Terry Jessup, “CU Researchers Working On Outer
+Space Internet,” CBS 4 Denver, 7th July 2009, Denver,
+
+[5] John H. Dabbs and Oren L. Schmidt, “Apollo Experience Colorado. Available from:
+RCPOTt — V0106 Communications Techniques and htgg://cbs4denver.com/local/CU.researchers.0uter.2.10757
+Perfonnance,” NASA Technical Note D—6739, March 98.htm1.
+
+1972. —
+[19] Matt Mathis, Jamshid MahdaVi, Sally Floyd and Allyn
+
+[6] J- T9195» M-V- Samii and CE D011» “Overview Of Romanow, “TCP Selective Acknowledgement Options,”
+TDRSS,”Adv.SpaceReS.16,(12)67-(12)76,1995. Internet Engineering Task Force RFC 2018, October
+
+1996.
+
+[7] Roy Gladden et 211., “Mars Relay Coordination Lessons
+Learned,” IEEE Aerospace Conference Proceedings, [20] Kevin Fall and Stephen Farrell, “DTN: An Architectural
+March 5'12 2005- Retrospective,” IEEE Journal on Selected Areas in
+
+Communication, V01. 26 N0. 5, June 2008.
+
+[8] The Interplanetary Internet Special Interest Group,
+
+[9] Consultative Committee on Space Data Systems, BIOGRAPHY
+htgpz//Www.ccsds.0rg .
+
+‘ {1.533% Andrew Jenkins is a software developer
+
+[10] Delay Tolerant Networkng Research Group, :3: .. With the BioServe Space T echnologies
+http://WWW.dtnrg.0rg. {r 3 \ Automation Group. He has developed
+
+: 3 J“, software and hardware for scientiﬁc
+
+[11] Lloyd Wood et 211., “Use of the Delay-Tolerant ii; “ £3“; payloadsfor deep-Space, Earth- and Shh""
+Networking Bundle Protocol from Space,” 59th : ' x observing, and manned missions. He has
+InternationalAstronauticalCongress, September 2008. A“ 35- and MS- degrees th Electrical and
+
+Computer Engineering from the University of Colorado at
+
+[12] Will Ivancic et a1., ""Delay/Disruption—Tolerant Network Boulder.
+
+Testing Using a LEO Satellite,” 8th NASA Earth Science
+Technology Conference, June 2008.
+
+[13] Ross M. Jones, “Disruption Tolerant Network Sebastian Kuzminsky t5 a softwar e
+Technology Flight Validation Report,” JPL Publication 9- '1, developer thh the BioServe Space
+2, February 2009. “‘9 .' f ‘ . T echnologies Automation Group. He has
+
+developed communications, command,
+
+[14] Jay Wyatt, Scott Burleigh, Ross Jones, Leigh Torgerson v and contr 01 softwar e for Spaceﬂight for
+and Steve Wissler, “Disruption Tolerant Networking ‘ the past 15 years and t5 the lead softwar e
+Flight Validation Experiment on NASA’S EPOXI architect for the BioNet—DTN command,
+Mission,” 1St Intl. Conference on Advances in Satellite control and communications system.
+and Space Communications, 2009.
+
+7
+
+"
+"8","Kevin Gifford is a researcher with
+BioServe Space T echnologies at the
+University of Colorado in Boulder
+Aerospace Engineering Department. He
+has developed communications, command,
+and control softwarefor spaceﬂightfor the
+past 15 years. Kevin is the Principal
+Investigator for the BioServe DTN-on-ISS
+project and for the open-standard BioNet distributed
+command, control and communications architecture.
+Robert L. Pitts is the Lead System Engineer
+ﬂ for the Huntsville Operations Support
+. 153,5 Center (HOSC). He is employed by the
+‘2‘ Computer Science Corporation and
+: responsible for the initial and ongoing
+design, development, maintenance and
+support of HOSC systems and the continued operational
+support that it provides to NASA's Space Shuttle, Space
+Station, and Constellation programs.
+w .23» A. Kelvin Nichols is an engineer with
+NASA at the Marshall Space Flight
+1 a 5 Center located in Huntsville, Alabama.
+.3 ""'5 '3 65‘? He has worked with the Payload
+”3""."" .r ‘ ' Operations and Support Center (POIC)
+in support of the International Space
+Station's (ISS) voice, command, and
+telemetry ground distribution systems
+for the past 9 years.
+8
+
+"

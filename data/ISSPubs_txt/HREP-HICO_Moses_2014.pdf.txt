@@ -1,0 +1,380 @@
+"","x"
+"1","IEEE GEOSCIENCE AND REMOTE SENSING LETTERS, VOL. 11, NO. 6, JUNE 2014 1111
+Wesley J . Moses, Anatoly A. Gitelson, Sergey Berdnikov, J effrey H. Bowles, Vasiliy Povazhnyi,
+VladislaV Saprygin, Ellen J . Wagner, and Karen W. Patterson
+Abstract—We present here results that demonstrate the poten- in water is a key indicator of the biophysical status of a water
+tial 0f near-infrared (NIR)—red models to estimate chlorophyll-a body (e.g., [1]) and is one Of the primary water quality parame—
+(Chl'a) concentration 1“ coastal waters “5mg data from the Sp‘f‘ce' ters. The optical complexity of turbid productive coastal waters
+borne Hyperspectral Imager for the Coastal Ocean (HICO). Slnce d t' 1 b1 1 . h 1. b1 f
+the recent demise of the MEdium Resolution Imaging Spectrome- ren ers conven lona ue—green a goat ms unre 1a e er es—
+ter (MERIS), the use Of sensors such as HICO has become critical tlmatlng Chl'a concentratlon (e.g., [2])- Numerous algorlthms
+for coastal ocean color research. Algorithms based on two- and based on analytical and semi—analytical spectral inversion tech—
+three-band NIB-I‘Ed mOdEIS, WhiCh WEI‘E 'PI‘EViOUSIY “Shd very niques and band combinations in the red and near—infrared
+successfully w1th MERIS data, were apblled tO.HICO Images. (NIR) regions of the spectrum have been recently developed
+The two- and three-band NIR—red algorlthms yielded accurate (1 f 11 1. d d f . . hl . .
+estimates of chl-a concentration, with mean absolute errors that an success u y V3 1 ate or estlmatlng C —a concentratlon 1n
+were only 10.92% and 9.58%, respectively, of the total range of 1nland and 0035t31 waters. Matthews [3] and Odermatt et al. [4]
+chl-a concentrations measured over a period Of several months have provided comprehensive lists of such algorithms and their
+in 2012'ar'1d .2013 Oh the Taganrug Bay in RUSSia- GiVen the associated accuracy values in estimating Chl—a concentration.
+uncertalntles 1n the radlometrlc cahbratlon of'HICO, the results Many of these algorithms were regionally tuned using data
+Illustrate the robustness of the NIR—red algorithms and validate f . ﬁ t b d' d 1. . d . h . b' .
+the radiometric, spectral, and atmospheric corrections applied to 10111 speC1 C wa Eff O 1es an are 1m1te H.” 6“ IO_geO_OpUC
+HICO data as they relate to estimating chl-a concentration in scope 0f appllcatlon, whereas some algorlthms have demon—
+productive coastal waters. Inherent limitations due to the charac- strated a potential for quasi—universal application to turbid and
+teristiCS 0f the SEHSOI‘ and itS Orbit PI‘Ohihit HICO fl‘Om Pl‘OVidihg productive inland and coastal waters from various locations
+anywhere near the level of frequent global coverage as provided [5]—[10]
+by standard multispectral ocean color sensors. Nevertheless, the Th .f t' d 3 4 . 1 1
+results demonstrate the utility of HICO as a tool for determining . e a oremen lone reports [ ]’ [ ] contaln severa ago—
+water quality in select coastal areas and the cross-sensor appli- nthms that were developed based on data from the MEdlum
+cability 0f NIR—red models and provide an indication of what Resolution Imaging Spectrometer (MERIS). MERIS has been
+'COUId' he ?ChiEVEd With future §PaC€h0me hYPEI‘SPECtI‘al SEHSOI‘S a reliable tool for monitoring water quality in coastal waters.
+1“ esnmatmg coastal water quahty’ The availability of a spectral Channel at 708 nm made MERIS
+Index Terms—Chlorophyll-a,InternationalSpace Station (188), preferable over the MODerate resolution Imaging Spectrora—
+near—infrared (NIR)-I‘€d algOI‘ittha PI‘OdUCtiVe COaStal waters, diometer (MODIS) for estimating Chl—a concentration in turbid
+remOte sensmg' productive waters, particularly at low—to—moderate Chl—a con—
+1. INTRODUCTION centrations, where the results from MODIS are unreliable (e.g.,
+. . [5] and [6])-
+R EMOTE sensmg has become a yery valuable and .Vlrtually The demise of MERIS in April 2012 has caused a gap in the
+1nd1sp ensable “ml for determining water quality 1n inland availability of reliable ocean color data for coastal waters. This
+and coastal waters. The concentratlon 0f Chlorophyll—a (chl—a) data gap is crucial because no hyperspectral or multispectral
+sensor with similar or better spectral, spatial, and temporal
+Manuscript 1FeceiVed September 4, 2013;revised October 10, 2013; accepted Characteristics is scheduled to be launched in the immediate
+October 14, 2013. Date of publication November 20, 2013; date of current - - 9
+version January 28, 2014. This work was supported in part by the Ofﬁce of ﬁlture' The Ocean .Land C0101“ Insuument’ Wthh ls MERIS
+Naval Research, through the Karles Fellowship awarded by the US. Naval replacement and W111 haVe all the spectr 31 Channels 0f MERIS
+Research Laboratory to W. J. Moses, and by the NASA Land Cover Land Use in addition to a few extra Channels, iS scheduled to be launched
+Change Program extended to A. A. Gitelson. - - -
+W. J. Moses, J. H. Bowles, E. J. Wagner, and K. W. Patterson are with the onboard the satelhte Sent1ne1—3 111 2914' Several hyperspectral
+U.S. NavalResearch Laboratory,Washingt0n,DC 20375 USA. SCHSOTS, SUCh 3.5 the Japanese mISSIOH HprI‘SpCCtl‘al Imager
+A. A. Gitelson is with the Center for Advanced Land Management Infor— SUIte (HISUI), the Italian mission PRecursore IperSpel-l-rale
+mation Technologies, School of Natural Resources, University of Nebraska— . . . . .
+Lincoln, Lincoln, NE 68583 USA. ciella Mzsszone Applicatzvu (PRISMA), and the German mls—
+S. Berdnikov, V. Povazhnyi, and V. Saprygin are with the Southern Scientiﬁc SlOIl Env110nmental Mapplng and Analys1s Program (EHMAP),
+Center of the Russian Academy of Sciences, 344006 RostOV—on—Don, Russia. are either under design 01‘ development, With EHMAP being
+Color versions of one or more of the ﬁgures in this paper are available online h 1 1 h d h. h . . 1 d
+athttp://ieeeXplore.ieee.org. t e C osest to a aunc ate, w 1C 1s tentatlve y set aroun
+Digital Object Identiﬁer 10.1109/LGRS.2013.228745 8 2017—2018.
+1545—598X © 2013 IEEE. Personal use is permitted, but republication/redistribution requires IEEE permission.
+See http://www.ieee.org/publications_standards/publications/rights/index.html for more information.
+
+"
+"2","1112 IEEE GEOSCIENCE AND REMOTE SENSING LETTERS, VOL. 11, NO. 6, JUNE 2014
+UKRAINE RUSSIA TABLE I
+«2- Descending .1 N DATES OF INSITU AND SATELLITE DATA COLLECTION
+
+j, -v-...,_,5/AView 22,. A , ,2, .3; —
+
+4353;? ""7’1“: , 2 .- ,.,..-.;«vﬁ f? ""‘3§M,§,,;jf-*fj""ff Campaign N0. of Stations In Situ Date HICO Date Time Difference
+
+eagf-gigie” ﬁg, .54“ 4.. 1 6 27 Jul’ 12 26 Jul’ 12 -1Day
+‘ ,, , nﬁ””;sc§ndmg 2 10 24 Aug’12 25 Aug’l2 +1Day
+
+, ” _ mug! View 1.9, ;_ 3 12 27 Aug’ 12 27 Aug’ 12 0 Days
+
+Sea of "" "" i "" ”HM? ,.;.~:’4,: 4 3 18 Sep’l2 20 Sep’ 12 +2 Days
+
+Azov , ,1, 20m, ”'3‘? 5 6 28 Feb’13 27 Feb’13 -1Day
+
+. . . and the spatiotemporal dynamics of these water bodies make
+F1g. 1. Map of the Taganrog Bay, w1th screenshots of HICO lmages taken , , , ,
+from the sensor’s ascending and descending orbits overlaid. The yellow dots them umquely su1table pI‘OVIHg grounds for deVelOpmg remOte
+represent the stations where in situ measurements were taken. sensing techniques for turbid and productive coastal and inland
+
+H ' h' h 1 h d ' 2000 h b d waters'
+
+yperion, W 1C was aunc e 1n , ’ as , een 1,186, Algal blooms are common in the bay and occur throughout
+for coastal water studies. However, its s1gnal—t0—n01se ratio is . . .
+
+, , , , the year, particularly in summer. The Taganrog Bay receives a
+very low [11], and the sensor is unreliable for quantitatively . 'ﬁ f f h . h h ff f h
+
+timatin water ualit arameters due to roblems such as s1gn1 cant amount 0 res water 1np utt roug runo romt e
+68d. g , 1391, 3112p p Don River, the Kalmius River, the Mius River, and the Yeya
+ra iometrlc 1nsta 1 1ty [ ]' River. The rapid industrial development in the watershed area
+
+The Hyperspectral Imager for the Coastal Ocean (HICO), . h 1 d . . d . ﬂ f .
+
+b ilt b the U S Naval Research Laborato as a low—cost ro— in recent years as resu te in increase in uX 0 terrigenous
+u y b. ' h 1 ry 'ﬁ 11 d .p d nutrients into the bay [15], leading to enhanced eutrophication.
+totyp e space orne yperspectra sensor SPCCI ca y es1gne Variations in the freshwater input through precipitation and
+for coastal waters, has been operational s1nce October 2009. ﬂ . . .
+, uV1al runoff affect the spatiotemporal dynamics of the algal
+Spaceborne hyperspectral sensors offer unique advantages over . . . . .
+
+, , , population and the spe01es divers1ty 1n the bay [16]. Changes
+
+multispectral and airborne hyperspectral sensors for detailed . . . . .
+, , 1n the algal biomass and the spe01es comp0s1t10n have conse—
+coastal water analys1s that can be of much help to enV1r0nmen— . . .
+, , quent effects on the ﬁsh population. Intense eutrophication has
+tal de01s10n makers and managers of coastal systems. . .
+, , , , , , , caused drastically adverse effects on the ﬁsh population and,
+Bearlng 1n m1nd that HICO 1s a demonstration m1ss10n and . . .
+, , consequently, on the local economy in the region [17]. Ded1—
+was not des1gned as an alternative to sensors such as MERIS, . .
+, , cated efforts have been undertaken by the local authorities to
+we have used a multitemporal dataset to assess the potential . . .
+, , implement integrated watershed management plans to monitor
+of HICO, 1n the absence of MERIS, as a tool for quant1ta— . .
+, , , , , , and regulate the water quality in the Taganrog Bay and the Sea
+tively determining water quality in coastal waters. PreV10us 0f Azov
+deles :HZOLVIEIg largedtatatsletshsplanmng mult1p :16 yearsthavela Researchers at the Southern Scientiﬁc Center of the Russian
+emons ra e 6? COHSIS en y 1g accuracy an opera 10na Academy of Sciences, in RostOV—on—Don, Russia, undertook
+potential of algorithms based on reﬁectances 1n the red and NIR . . . . .
+
+t 1 h 1 f MERI S t t' t h 1 t t' ﬁve m Sim data collection campaigns on the Taganrog Bay 1n
+,Spet; raT C anne SBO , R , O 768 H321 6130 ‘61 cencen ra 10n 2012 and 2013, resulting in data from 37 stations (see Table 1).
+1n (1 ,6 agarclirog f ay 1n 111881121; ]_[, ]' Séng la 8mg e [image Water samples were collected at each station and ﬁltered
+an m SUM ata mm on y 61g t stat10ns, 1te son et a ' [ ] through Whatman GFﬂ: glass ﬁlters. Chl—a was extracted from
+showed that HICO can be used to quantitatively detect chl—a . . .
+
+d , t h h , d h th , the ﬁlters us1ng hot ethanol, and its concentration was deter—
+an accessoryp1grnen S sue as? ycocyan1n .an p ycoery r1n mined spectrophotometrically using the trichromatic equations
+in water, albe1t Without any validation of then chl—a alg0r1thm. . . .
+
+, of Jeffrey and Humphrey [18]. The m Slll/t dataset did not
+In this study, we have used data collected from the Taganrog .
+
+, , , , 1nclude reﬂectance measurements.
+Bay durlng multiple campaigns in 2012 and 2013 after the
+demise of MERIS to test the applicability of NIR—red models to
+HICO data to retrieve accurate quantitative estimates of chl—a B. HICO Data
+concentrationf. ""flhis studyhalsb preyides an irclidireiet qualitativle HICO is a push broom sensor that captures data in the
+assessmenft £11218 ezitmosp erlc corrjcgmnhan ra iometrfic £121 _ wavelength range 350—1080 nm, with a spectral resolution of
+1 ration O laial 3: assesse y t e accuracy 0 C ‘61 5.73 nm. At a nadir Viewing angle, its cross—track and along—
+estimates across mu t1p e ates. track ground coverage are 42 and 192 km, respectively, re—
+sulting in a total image area of approximately 8000 km2. The
+11. DATA AND METHODS ground sampling distance is approximately 90 m at nadir, which
+. is ﬁne enou h to ca ture the s atial d namics of hetero eneous
+A. Study Area and In 51m Measurements g p p y . . g
+coastal waters (e.g., [19]). A complete description of the sensor
+
+The Taganrog Bay is located on the northeastern part of characteristics can be found in [20].
+the Sea of Azov (see Fig. 1), which is a shallow inland sea As a low—cost instrument, HICO has certain ineVitable data
+adjoined by Russia on the east and Ukraine on the west. The quality issues. The sensor does not have a ﬁlter to block second—
+Taganrog Bay and the Sea of Azov are Characterized by low order light at shorter wavelengths from falling on the detector
+salinity, shallow bottom, and high inﬂux of nutrients through pixels for longer wavelengths. Therefore, the data recorded in
+runoff from several rivers, resulting in conditions that are the spectral channels between roughly 700 and 1080 nm are
+typically encountered in eutrophic lakes [14]. The spatial extent contaminated by diffracted second—order light in the wavelength
+
+"
+"3","MOSES et al.: HICO-BASED NIR—RED MODELS FOR ESTIMATING CHL-a CONCENTRATION IN COASTAL WATERS 1113
+range of 350—540 nm. Li et al. [21] have developed an empirical capability of HICO helps maximize image acquisitions over
+method to correct for the effects of second—order light, which high—priority targets for continual (though sporadic) monitor—
+is applied routinely to all HICO images. HICO was calibrated ing, with images that may be acquired at different Viewing and
+spectrally and radiometrically in the laboratory prior to its illumination geometries and at time intervals that can be as
+launch, but the sensor was not equipped with an onboard light short as a day or as long as a few weeks.
+source for post—launch calibration. Therefore, Vicarious tech— Table I shows the dates of acquisition of the HICO images
+niques had to be adopted to monitor the spectral and radiometric used in this study. Three of the ﬁve images were acquired during
+stability of the sensor. an ascending pass and covered the entire bay (see Fig. 1).
+
+Gao et al. [22] reported post—launch shifts in the spectral
+and radiometric Characteristics of the sensor. They used well— ,
+deﬁned prominent spectral features such as the oxygen absorp— C' NIR—Red Algorzthms
+tion band at 765 nm to examine the spectral stability of the NIR—red algorithms take advantage of the reﬂectance trough
+sensor and observed that there were signiﬁcant spectral shifts around 670 nm due to absorption of light by chl—a (e.g., [26])
+in the data. The spectral shift was as high as 1.72 nm in the and the reﬂectance peak in the NIR region due to a minimum
+ﬁrst few images and progressively decreased until it became in the combined absorption by chl—a and water (e.g., [27]). The
+fairly stable at approximately 0.9 nm. There was a signiﬁcant magnitude and position of this reﬂectance peak vary with the
+decrease in the radiometric sensitivity of HICO after its launch. concentration of chl—a (e.g., [28]),
+The at—sensor radiances from HICO were consistently lower Numerous studies based on data collected using ﬁeld spec—
+than the at—sensor radiances from concurrently acquired (with trometers, airborne sensors, and spaceborne sensors and data
+the time difference less than an hour) MODIS images and simulated using aradiative transfer model (e.g., [5]—[10]) have
+at—sensor radiances simulated using radiative transfer models, demonstrated that the two—band NIR—red model [28]
+particularly in the blue spectral region. Scaling factors were
+determined to radiometrically correct the at—sensor radiances Chl—a O< [Bill >< RM] (1)
+[22]. However, even with the application of the radiometric
+scaling factors, the reﬁectances retrieved after atmospheric and the three—band NIR—red model [29]
+correction are often ne ative, articularl at wavelen ths below _ _
+450 nm. Therefore, a riinimalﬁst approaih, assumin: very low Chl—a (X [(R/Ml _ RA: ) X RM] (2)
+atmospheric aerosol loading, was adopted 1h removmg the (RA, is the remote sensing reﬂectance at the spectral Channel
+atmospheric effects from the HICO data, us1ng the 68 [23] centered at A,- nm) yield highly accurate estimates of Chl—a
+vers1on Of Taﬂ<aa [24] . . . concentration in waters of varied bio—geo—optical properties.
+
+The focal p lane array Of HICO contains a back—illuminated NIR—red algorithms based on the red and NIR spectral Channels
+eharge—couple deV1ce (0CD). While the .use of a back— of MERIS (A1 : 665 nm; A2 : 708 nm; A3 : 753 nm) have
+illurninated CCD helps increase the .sens1t1V1ty Of the sensor, been previously shown to yield accurate estimates of Chl—a
+particularly in the blue spectral region, it can also result in concentration in the Taganrog Bay [8], [9]. HICO does not have
+spectral etaloning effects due to multiple r eﬁections 0] p hotons a spectral Channel centered at 665 nm but has Channels centered
+between the layers ofthe .CCD’ Whleh causes undes1red con— at 662 and 668 nm. Therefore, the average of the reﬁectances at
+structiye and destructive interference fringes. The effects of 662 and 668 nm was taken as RAl- HICO has spectral channels
+etaloning .are more pronounced at the NIR wayelengths than centered at 708 nm (A2) and 754 nm (A3). The following are
+ht the y1s11blet wavelengtthst because the 181ml); 1:12;}? ECD. is the NIR—red models based on the spectral Channels of HICO.
+1ncreas1n rans aren a on er wave en s . 0 min—
+imize theg :ffectspof etaloningg, HICO data: were smoothed Two—Band HICO NIR—red Model:
+using a Gaussian ﬁlter with 10—nm full—width at half—maximnm Chl—a oc [R6615 >< R708] . (3)
+(FWHM) for wavelengths shorter than 745 nm and a ﬁlter w1th
+20—nm FWHM for wavelengths longer than 745 nm. Three—B and HICO NIR—red Model:
+
+Mounted on the International Space Station (188) platform,
+HICO orbits around the Earth approximately 16 times a day. Chl—a o< [(Rgﬁl5 — Rig) >< R754] . (4)
+Due to constraints on data transmission at the 188, only one _
+image can be acquired during one full orbit, resulting in a R665 iS the average 0f the reﬁectances at 662 and 668 nm.
+maximum of 16 images per day. The ground coverage of HICO,
+when Viewing nadir, is limited to within 51.60 N and 51.60 S III RESULTS AND DISCUSSION
+latitudes because of the inclination of the 188’s orbit. HICO '
+has off—nadir pointing capability (i.e., 300 to the right and 450 The data collected on July 27 and August 24, 2012 (totaling
+to the left), which extends the imaging range by a few degrees 16 data points) were used to calibrate the NIR—red models, and
+depending on the ISS altitude. Repeat coverage of the same area the data collected on August 27, 2012; September 18, 2012;
+happens intermittently. The 188 does not maintain a constant and February 28, 2013 (totaling 21 data points) were used
+altitude due to the drag from the Earth’s atmosphere and solar to validate the algorithms. The minimum, maximum, median,
+activity and therefore requires periodic boosts to reset its orbit. and mean values of the Chl—a concentrations in the calibra—
+In spite of the orbital constraints of the 188, the pointing tion dataset were, 27.06, 172.77, 103.03, and 95.92 mg m_3,
+
+"
+"4","1114 IEEE GEOSCIENCE AND REMOTE SENSING LETTERS, VOL. 11, NO. 6, JUNE 2014
+p — p -a= - an N
+E, 200 (a) ghi—ggiwsm—Band)4:215 ED 200 (b) rCZhio.8;05.05(3B d)+3:~<9>16 003(a) z“ (b) A
+E 150 0 E 150 0 A0025 4 A;
+¥ 0 0 ¥ . :7. ‘ ~:4/\\V,\
+E 100 <> ° 3 100 0 ° 700151 f‘,‘ 41:84)} Chl-u(mg m--‘)
+U 0 O 0 E “‘1’ ‘v;’- I040
+""U ""O 0.01 4 ~‘\ .
+8 50 8 50 . “ , :iiiii‘iu
+g 0° <> 0 g 9 O o 00050:: 0’5 0'6 017 018 ::f:':::
+2 0 2 O Wavelength (um) '3 51° MW- -311.""
+0.9 1 1.1 1.2 1.3 1.4 -0.05 0.05 0.15 0.25
+_—1 —_1 — R—1 x R
+(R665 XR708) (R665 708) 753 Fig. 4. (a)AtmosphericallycorrectedreﬂectancespectrafromHICO. (b)Ch1—a
+map generated from the August 25, 2012, HICO image for the Taganrog Bay
+Fig. 2. Plots of chl—a concentrations measured in situ versus the (a) two—band using the HICO—based two—band NIR—red a1g0rithn1(5).
+and (b) three—band NIR—red model values for the calibration dataset.
+""PE 160 (a) <><> CE 160 (b) 1:1Line 00 ‘
+g 120 0 Q, E,” 120 \ <2>
+E 80 “Lug <9 o g 80 N
+‘5 4O 0 <9 RMSE=20.11mgm'3 ‘5 40 $69 RMSE=17-73mgm'3 A
+g 0 0 O MAE=15.62mgm_3 g 0 <> 0 MAE: 13.71 mg m—3
+2 0 4O 80 120 160 2 0 4O 80 120 160 Change in (Na (mg m ‘)
+Estimated Chl-a (mg m'3) Estimated Chl-a (mg m'3) —
+o 5 10 20 Miles ""0 '90 ° 2° 4°
+Fig. 3. Plots of chl—a concentrations measured in situ versus chl—a concentra— , , , , , ,
+tions estimated using the HICO—based (a) two—band (5) and (b) three—band (6)
+NIR—red algorithms for the validation dataset. Fig. 5. Changes in the chl—a concentration in the Taganrog Bay between
+August 25 and 27, 2012, as estimated using the HICO—based two—band NIR—red
+. 1 h h d. b f h 1. d algorithm [see (5)]. Positive values indicate higher chl—a concentrations, and
+1‘ esp CCUVC y, W 61‘ eas t e COHCSPOH 1ng Hum 61‘ S 01‘ t 6 V3 1 a"" negative values indicate lower chl—a concentrations on August 27.
+t10n dataset were 8.1, 151.18, 83.48, and 72.26 mg m_3, respec—
+twely’. B(?th NIR—red models showed strong 1111.62“ relationships data. The current dataset contained higher and a wider range
+With my”? chl—a concentrations in the cahbrat10ndataset,w1th 0f chl—a concentrations than the datasets that were used for
+(1.6161111111811011COCfﬁClCHtStof 0'84 and 0'87 (see Flg' 2), leading analysis with MERIS data. The spatial and temporal variations
+to the f0110w1ng two algorithms. of chl—a concentration in the bay were also higher than in the
+Two—Band HICO NIR—Red Algorithm: previous years. Fig. 5 illustrates signiﬁcant Changes in the chl—a
+__1 concentration between August 25 and 27, 2012, as estimated
+Chl—a : 3183?) (R665 X R708) _ 278'15' (5) from HICO images using the two—band NIR—red algorithm (5).
+Three—Band HICO NIR—Red Algorithm: In szm measurements of chl—a cencentrations conﬁrmed such
+high temporal variations. Such high temporal variations make
+Chl—a : 505.05 M R6615 _ R7018) >< R754] + 38.916. (6) the calibration and validation of algorithms inherently chal—
+lenging. For more than 90% 0f the stations in this study, the
+Both NIR—red algorithms yielded accurate estimates Of chl—a time difference between in Sim and satellite data was a day or
+concentration when applied to the validation dataset (see less (see Table 1): WhiCh helped mitigate the effects 0f high
+Fig. 3). The estimates from the two—band NIR—red model had temporal variation. The results also demonstrate that the two—
+a root—mean—square error (RMSE) Of 20.11 mg m—3 and a and three—band NIR—red algorithms are largely resistant to the
+mean absolute error (MAE) of 15.62 mg m‘3, which cor— data—quality issues inherent in HICO data.
+responded to 14.06% and 10.92%, respectively, of the range
+of chl—a concentrations in the validation dataset. The three—
+. . . IV. CONCLUSION
+band NIR—red model gave slightly better estimates, With an
+RMSE of 17.73 mg rn‘3 and an MAE of 13.71 mg m_3, which The accuracy of the results obtained from the multitemporal
+corresponded to 12.39% and 9.58%, respectively, of the range dataset, notwithstanding the issues with the radiometric quality
+of chl—a concentrations. The results also validate the quality and 0f HICO data and the assumptions contained in the atmospheric
+reliability of the atmospherically corrected reﬂectances from correction [22], demonstrates the robustness of the simple two—
+HICO [Fig. 4(a)] for retrieving chl—a concentration. Chl—a maps and three—band NIR—red models and the potential of HICO for
+[e.g., Fig. 4(b)] generated using these algorithms illustrated the estimating chl—a concentration in optically complex productive
+spatial patterns of chl—a distribution and matched quantitatively coastal waters.
+well with in Sim measurements. It should be noted that the speciﬁc two—band (5) and three—
+Although the errors are higher in terms of absolute magni— band (6) algorithms developed here are primarily meant for
+tudes and percentages than what were obtained from MERIS demonstrative purposes and proper caution needs to be exer—
+data in previous years for the Taganrog Bay [8], [9], the cised in applying them to future HICO data from the Taganrog
+results are still remarkable, considering the range and temporal Bay or elsewhere. The validity of the coefﬁcients of these
+variations of the Chl—a concentration in the bay and the uncer— algorithms is contingent on the validity of the radiometric
+tainties in the radiometric stability and integrity of the HICO corrections and the assumptions contained in the atmospheric
+
+"
+"5","MOSES et al.: HICO-BASED NIR—RED MODELS FOR ESTIMATING CHL-a CONCENTRATION IN COASTAL WATERS 1115
+correction of the HICO data. It is conceivable that the current [10] K. Song, L. Li, L. Tedesco, S. Li, H. Duan, D. Lio, B. Hall, J. Du,
+atmospheric correction might fail drastically in coastal waters Z L1, K- Shl’ and Y- Zhao’ “Remme eStImatIOH 0f CthTOPhYH'a 1“ turbld
+. . . . . . . 1n1and waters: Three—band model versus GA—PLS model,” Remote Sens.
+that are adjomed by 1ndustrla1 areas W1th hlgh and varlable Environ, vol. 136, pp. 3424,57, Sep. 2013.
+atmospheric aerosol loading. Moreover, the radiometric sta— [11] C. Hu, L. Feng, Z. Lee, C. 0. Davis, A. Mannino, C. R. McClain, and
+bility Of the instrument and, consequently, the validity Of the B. A. Franz, “Dynamic range and sensitivity requirements of satellite
+. . . . . ocean color sensors: Learnlng from the past,” Appl. Opt, V01. 51, no. 25,
+radlometrlc correctlons need to be contmually monltored. One pp. 6045—6062, Sep. 2012.
+has to bear in mind also that the ISS platform does not permit [12] National Research Council, Earth Science and Applications From Space:
+frequent repeat coverage Of the same area at regular time inter— National Imperatives for theiNext Decade and Beyond, Washington, DC,
+. . . . . . USA: The Nat10na1 Academlc Press, 2007.
+vals. Image acqu1s1t10ns 0f the same area are 1nterm1ttent, W1th [13] A. A. Gitelson, B—C. G210, R_R. Li, S. Berdnikov, and V. Saprygin, “Es—
+time intervals sometimes as short as a day or as long as several timation of Chlorophyll—a concentration in productive turbid waters using
+weeks, WhiCh places a constraint on the ability to monitor ShOI‘t— a hyperspectral imager for the coastal ocean—The AZOV Sea case study,”
+. . Envzron. Res. Lett., V01. 6, n0. 2, pp. 024023—1—024023—6, Apr.—Jun. 2011.
+term phytoplankton dynamlcs m coaStal waters' Nevertheless’ [14] O. Borysova, A. Kondakov, S. Paleari, E. Rautalahti—Miettinen,
+the results presented here demonstrate the utility Of HICO in F. Stolberg, and D. Daler, “Eutrophication in the Black Sea region: Impact
+estimating water quality in productive coastal waters, Which assessment and causal chain analysis,” in Global International Waters
+. . . . . . Assessment. Kalmar, Sweden: University of Kalmar, 2005.
+IS Of Cﬂtlcal value’ paﬁlcumﬂy W1th the demlse Of MERIS' [15] G. Matishov, “System approach to the water quality and bioproductivity
+The availability of spectral Channels at 662, 668, and 708 nm of the Azov Sea basin,” in River Basin Management 111,- WIT Transac-
+0n HICO makes it possible to obtain Chl—a estimates using tions on Ecology and the Environment, C. A. Brebbia, Ed. Southampton,
+. . U.K.: WIT Press, 2005, pp. 347—357.
+the tWO' and three'band NIR—red 318““th W1th reasonably [16] 1. V. Shokhin, M. V. Nabozhenko, s. V. Sarvillina, and E. P. Titova, “The
+good accuracies, Which is not possible With MODIS or the Sea— present—day condition and regularities 0f the distribution of the bottom
+Viewing Wide Field—Of—View Sensor (SeaWiFS) data. The ﬁne communities in Taganrog Bay,” Oceanology, V01. 46, n0. 3, pp. 401—410,
+. . . . May/Jun. 2006.
+hyperspectral Informatlon contalned 1n HICO data can be also [17] E. Leppakoski, T. Shiganova, and B. Alexandrov, “European enclosed
+potentially used for water quality analysis beyond merely Chl—a and semi—enclosed seas,” in Biological Invasions in Marine Ecosystems:
+estimation, such as algal species distinction and quantiﬁcation Ecqloglcal Stud‘es’ G- RIIOV and J- A- CTOOkS’ Eds- Berk“, Germany:
+. . . Sprlnger—Verlag, 2009, ch. 30, pp. 529—547.
+Of anCﬂlary p 1gments 1n water' [18] S. W. Jeffrey and G. F. Humphrey, “New spectrophotometric equations for
+Continued work is planned to acquire more HICO images determining Chlorophylls a, b, c1, c2 in higher plants, algae, and natural
+and in Sim measurements on the Taganro g Bay to develop stable PhytOPlanlfton’” BiOChem- Physwl- Pﬂanzen’ VOL 1674313- 191—194, 1975-
+. . . [19] C. O. DaV1s, M. Kavanaugh, R. Leteher, P. W. B1ssett, and D. Kohler,
+NIR—red algorlthms that can be routlnely apphed t0 HICO data “Spatial and spectral resolution considerations for imaging coastal wa—
+from the bay and elsewhere. ters,” in Proc. SPIE, Characterization Variability Coast. Ocean, Campos.
+BiO-Opt. Properties 11, 2007, V01. 6680, p. 66800.
+[20] R. L. Lucke, M. Corson, N. R. McGlothlin, S. D. Butcher, D. L. Wood,
+REFERENCES D. R. Korwan, R. R. Li, W. A. Snyder, C. 0. Davis, and D. T. Chen,
+
+[1] J. H. Ryther and C. S. Yentsch, “The estimation of phytoplankton pro— “Hyperspectral imager for the coastal ocean: Instrument description and
+duction in the ocean from chlorophyll and light data,” Limnol. Oceanogn, ﬁrst images,” Appl. Opt, V01. 50, no. 11, pp. 1501—1516, Apr. 2011.
+
+V01. 2, n0. 3, pp. 281—286, 1957. [21] R—R. Li, R. Lucke, D. Korwan, and B—C. Gao, “A technique for removing
+
+[2] G. Dall’Olmo, A. Gitelson, D. Rundquist, B. Leavitt, T. Barrow, and second—orderlight effects from hyperspectralimaging data,”IEEE Trans.
+J. H012, “Assessing the potential of SeaWiFS and MODIS for estimating Geosci. Remote Sens., V01. 50, n0. 3, pp. 824—830, Sep. 2012.
+chlorophyll concentration in turbid productive waters using red and near— [22] B—C. Gao, R—R. Li, R. L. Lucke, C. 0. Davis, R. M. Bevilacqua,
+infrared bands,” Remote Sens. Environ, V01. 96, n0. 2, pp. 176—187, D. R. Korwan, M. J. Montes, J. H. Bowles, and M. R. Corson, “Vicarious
+May 2005. calibrations 0f HICO data acquired from the International Space Station,”
+
+[3] M. W. Matthews, “A current review of empirical procedures of remote Appl. Opt, V01. 51, no. 14, pp. 2559—2567, May 2012.
+sensing in inland and near—coastal transitional waters,” Int. J. Remote [23] E. F. Vermote, D. Tanre, J. L. Deuze, M. Herman, and J. J. Morcrette,
+Sens., V01. 32, no. 21, pp. 6855—6899, NOV. 2011. “Second simulation of the satellite signal in the solar spectrum, 68: An
+
+[4] D. Odermatt, A. Gitelson, E. Brando, and M. Schaepman, “Review of overview,” IEEE Trans. Geosci. Remote Sens., V01. 35, n0. 3, pp. 675—
+constituent retrieval in optically deep and complex waters from satellite 686, May 1997.
+imagery,” Remote Sens. Environ, vol. 118, pp. 116—126, Mar. 2012. [24] M. J. Montes, B. C. Gao, and Davis C. 0., “A new algorithm for atmo—
+
+[5] W. J. Moses, A. A. Gitelson, S. Berdnikov, and V. Povazhnyy, “Esti— spheric correction of hyperspectral remote sensing data,” in Proc. SPIE,
+mation of chlorophyll—a concentration in case 11 waters using MODIS Geo-Spatial Image Data Exp. 11, 2001, V01. 4383, pp. 23—30.
+and MERIS data—Successes and challenges,”Envir0n. Res. Lett., vol. 4, [25] Roper Scientiﬁc Inc.. (2000). Etaloning in back illuminated CCDs,
+n0. 4, pp. 045005—1—045005—8, Oct.—Dec. 2009. Trenton, NJ, USA, Tech. Note. [Online]. Available: http://WWW.
+
+[6] D. Gurlin, A. A. Gitelson, and W. J. Moses, “Remote estimation of chl—a princetoninstruments.c0n1/Up10ads/Princeton/Documents/Whitepapers/
+concentration in turbid productive waters—Return to a simple tWO—band etaloningpdf
+NIR—red model?” Remote Sens. Environ, vol. 115, no. 12, pp. 3479—3490, [26] V. M. Albers and H. V. Knorr, “Absorption spectra of single chloroplasts
+Dec. 2011. in living cells in the region from 664 m ,u. to 704 m ,u,” Plant Physiol.,
+
+[7] A. Gilerson, A. Gitelson, J. Zhou, D. Gurlin, W. Moses, 1. Ioannou, and V01. 12, n0. 3, pp. 833—843, Jul. 1937.
+
+S. Ahmed, “Algorithms for remote estimation of chlorophyll—a in coastal [27] A. Vasilkov and O. Kopelevich, “Reasons for the appearance of the max—
+and inland waters using red and near infrared bands,” Opt. Exp., V01. 18, imum near 700 nm in the radiance spectrum emitted by the ocean layer,”
+110. 23, pp. 24109—24 125, NOV. 2010. Oceanology, V01. 22, n0. 6, pp. 697—701, 1982.
+
+[8] W. J. Moses, A. A. Gitelson, S. Berdnikov, and V. Povazhnyy, “Satellite [28] A. Gitelson, “The peak near 700 mm on radiance spectra of algae and
+estimation of chlorophyll—a concentration using the red and NIR bands water—Relationships of its magnitude and position With chlorophyll
+0f MERIS—The AZOV Sea case study,”IEEE Geosci. Remote Sens. Lett., concentration,” Int. J. Remote Sens., V01. 13, no. 17, pp. 3367—3373,
+V01. 4, n0. 6, pp. 845—849, Oct. 2009. NOV. 1992.
+
+[9] W. J. Moses, A. A. Gitelson, S. Berdnikov, S. Saprygin, and [29] G. Dall’Olmo and A. Gitelson, “Effect of bio—optical parameter variability
+V. Povazhnyy, “Operational MERIS—based NIR—red algorithms for esti— 0n the remote estimation of chlorophyll—a concentration in turbid produc—
+mating chlorophyll—a concentrations in coastal waters—The AZOV Sea tive waters: Experimentalresults,”Appl. Opt, V01. 44, n0. 3, pp. 412—422,
+case study,” Remote Sens. Environ, V01. 121, pp. 118—124, Jun. 2012. Jan. 2005.
+
+"

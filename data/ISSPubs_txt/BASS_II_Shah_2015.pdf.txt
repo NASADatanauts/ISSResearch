@@ -1,0 +1,379 @@
+"","x"
+"1","Paper # 134HC-0056 Topic: Heterogeneous Combustion
+Western States Section of the Combustion Institute — Fall 2015 Meeting
+Hosted by Brigham Young University
+October 5-6, 2015
+Modelmg and Analys1s 0f Intermedlate Thlekness PMMA Sheets
+Bummg 1n M10r0grav1ty Opposed Flow
+T irthesh J. Shah1 F letcher J. Miller1
+Sandra Olson2 and Indrek Wichman3
+[Combustion and Solar Energy Laboratory
+Department ofMechanical Engineering, San Diego State University, San Diego, CA, 92182
+F letcher.Miller@sdsu. edu
+2NASA Glenn Research Center at Lewis F ield
+LTX, Combustion Physics and Reacting Systems Branch
+21000 Brookpark Rd, ms 77-5, Cleveland, OH 44135
+3Department ofMechanical Engineering, Michigan State University, East Lansing, MI, 48824
+Combustion of clear cast polymethylmethacrylate (PMMA) samples 10 cm long by either 1 or 2 cm wide with thicknesses ranging
+from 1-5 mm was investigated in opposed ﬂow. Tests included both one sided and two sided bums. The samples were burned in a
+ﬂow duct within the Microgravity Science Glovebox (MSG) 0n the International Space Station (188) to ensure true microgravity
+conditions. The experiment took place in opposed ﬂow with a varying oxygen concentration (uncontrolled) and varying ﬂow
+velocities (controlled). F lames are recorded on two cameras and later tracked to determine spread rate.
+Assuming a linear proﬁle between oxygen concentration at the start and the end of each test we made graphs of oxygen concentration
+vs. time for each test. F rom these we created ﬂammability maps showing the ﬂame behavior at different oxygen concentrations and
+ﬂow velocities. Additionally we have conducted an extinction analysis, plotting the oxygen concentration against the ﬂow velocity at
+the time of extinction with respect to type of test (one sided or two sided). Currently we are modeling combustion of ﬂat PMMA
+samples in microgravity using F ire Dynamic Simulator (FDS 5.5.3). The entire modeling for BASS-II is done in DNS mode because
+of the laminar conditions and small domain. The model employs the same test sample and MSG geometry as the experiment. The
+model predicts a higher ﬂame spread rate than that observed in experiments. So we look to modify the chemical kinetics and materials
+properties to improve the model. Also we plan to do a domain study and grid sensitivity analysis in future.
+1. Introduction
+The NASA Burning and Suppression of Solids-II (BASS 11) experiments examine the combustion of different solid
+materials and geometries in microgravity. While ﬂames in microgravity are driven by diffusion and weak advection due
+to crew movements and ventilation, the current NASA spacecraft material selection test method (NASA-STD-éOOl Test
+1) [l] is driven by buoyant forces since gravity is present. So the Bass 11 results will be used in comparison with ground
+based experimental setups aimed at replacing NASA’s current test method for screening materials used onboard
+spacecraft. The data gathered will also help us understand and know more about behavior of ﬁres in space so that space
+travel can be made safer in future. The BASS 11 experiments have provided us with an extensive thick fuel microgravity
+database which did not eXist previously. Previously thick fuel true microgravity data was obtained by S. Olson and
+others in a study involving Sounding Rocket experiments [2]. The study comprised of a series of combustion
+experiments on PMMA at very low velocity opposed ﬂow and external radiant ﬂux.
+The institutions taking part in BASS 11 operations are Case Western Reserve University, University of California
+Berkley, NASA Glenn Research Center and San Diego State University [3]. There are three categories of samples: ﬂat
+
+"
+"2","WSSCI Fall 2015 Meeting — Paper # 134HC-0056 Topic: Heterogeneous Combustion
+samples, rod samples, and a section of a large solid sphere. The ﬂat sample materials will include acrylic ﬁlms and
+sheets of different thicknesses, and a cotton—ﬂberglass fabric blend Solid Inﬂammability Boundary at Low—Speeds
+(SIBAL) fuel. The rod samples are made of black or clear acrylic, and will provide solid fuel regression rates and
+extinction limits for both opposed and concurrent ﬂow. The large solid spherical section, also made of acrylic, will be
+used to study ignition of thick materials and ﬂame growth over the thick material.
+2. Experimental Setup and Summary
+Rudimm‘h‘r [Illteuas shcwn]
+_.HI 3 - ‘H‘H
+fr"" a, .ﬁncmumttﬂ
+f E ""w.
+,x'"" ""‘ E
+E :1, . .9 '
+1: | 1 - . —:n- i:— E
+_.E E Hutu 2.. I, “E
+HINT E E l: i} E
+E E ’ E
+- E E dt— E . _
+“M“. E”: ---..___?d mm an E x
+“xx BASS icale I
+4.3 cm “mm 5.5 cm [Expused Sample} 13 (m [fmmdun
+SEMP'EEM ID Inlet screen to metal
+heat sink} sample card]
+ll? cm [sample
+card Wldlh}
+Figure 1: Schematic of the BASS II duct.
+Source: [4] Bhattacharjee, S. ""Research on Flame Spread at SDSU: The Bhattacharjee Group.
+http://ﬂame.sdsu.edu/.
+The BASS—II hardware comprises of a small ﬂow duct with an igniter and a small nozzle along with exchangeable fuel
+samples. The BASS II ﬂow duct is placed inside the Microgravity Science Glove box (MSG) (255 liters) [5] on board
+the International Space Station (188). A radiometer placed at the top measures the intensity of the ﬂame. A fan is used to
+produce forced ﬂow of air in the duct. Also present is an anemometer which measures the velocity of air entering into the
+duct. A Nikon digital camera looks through the top of the ﬂow duct normal to the sample surface and a high deﬁnition
+Video camera uses a mirror to look through the front door of the duct at the edge of the sample.
+A total of 20 PMMA Polymethylmethacrylate (PMMA) samples were burnt during the BASS II experimentation .The
+sample thickness varied from 1mm — 5 mm thick .The samples burnt were all either 1 0r 2 cm wide. All the bums are
+either 1 sided or two sided. The air ﬂow was always opposed. Air ﬂow speeds ranging from as low as 3 cm/s up to 20
+cm/s were used in the ﬂow duct.
+Prior to the start of testing at each session, a crewmember installs the hardware in MSG. The fan calibration is set before
+the ﬂame is ignited. Once ignited the ﬂame is allowed to stabilize at ﬁrst and then the airﬂow is adjusted throughout the
+test. Fan speed, radiometer reading and the time is monitored during the entire test. The airﬂow is turned off after the
+test. Videos and data are downlinked to earth [3]. The still images and Videos from the data are tracked using Spotlight —
+16 (NASA image tracking software) [6]. Data are then imported to Excel to obtain ﬂame spread rates. A graph of the
+position vs time for one of the tests is given below. The black line in the plot represents the oxygen concentration proﬁle
+during the duration of the test. A secondary Y aXis shows the oxygen concentration in percent by volume. The red
+portion on the graphs represents the part of experiment where the opposed ﬂow velocity was 10 cm/s. Similarly the
+green and purple regions represent ﬂow speeds of 6 cm/s and 5 cm/s respectively.
+2
+
+"
+"3","WSSCI Fall 2015 Meeting — Paper # 134HC-0056 Topic: Heterogeneous Combustion
+M8; 10-6-5 1111118; 191-1848111021 2111111 thick; 111111 wide; 2 sided
+90 19.2
+80 1 ' 19.1
+y=0.039111+ 23.826 . 19
+TU R3: 0.9989 _..
+18.9 i
+..—. 60 —. . E
+E 12:00- - =11+ 8.6934 . 18.8 p.
+E R3: 0.9- _. ='
+E 50 18. 33
+E 40 18.6 5
+U2
+9 18.5 E?
+0-1 30 H'
+J} 18.4 Ci
+‘0 j=0.0632:~1+ 3.1029 13.3
+10 R3=0.9525 - 13’?
+0 18.1
+0 200 400 600 800 1000 1200 1400 1600 1800
+Time(s)
+0 M8 l 1 0 1111181. 1 6 1111181. >-< .5 1111181. X Oxygen Cuncenﬂ'atiﬂn
+Figure 2: Position vs Time graph
+Table 1 Details of the 20 BASS 11 tests.
+M1 1 mm 2 cm 1 Sided 9 0.071
+M2 3 mm 2 cm 1 Sided 20,15 0.052,0.033
+M3 5 mm 2 cm 1 sided 10,20 0.029,0.024
+M4 5 mm 2 cm 2 sided 5,3 0.045,0.033
+M5 3 mm 2 cm 2 sided 10 0.071
+M6 1 mm 2 cm 1 sided 10,8 Not Tracked
+0.106,0.099,0.083,
+M7 1 mm 1 cm 2 sided 10,6,5,3 0.07
+M8 2 mm 1 cm 2 sided 10,6,5 0.057,0.056,0.04
+M9 3 mm 1 cm 2 sided 14 0.025
+M10 4 mm 1 cm 2 sided 15,10 0.0373,0.03
+M11 5 mm 1 cm 2 sided 21,15,13 0.048,0.028,0.022
+3
+
+"
+"4","WSSCI Fall 2015 Meeting — Paper # 134HC-0056 Topic: Heterogeneous Combustion
+
+M12 2 mm 2 cm 2 sided 12,10 Not Tracked
+
+M13 4 mm 2 cm 2 sided 6,5,4 0.047,0.035,0.033
+
+0.0624,0.055,
+M14 2 mm 2 cm 1 sided 15,14,10 0.0353
+M15 4 mm 2 cm 1 sided 20 0.045
+0.144,0.1309,
+
+M16 1 mm 2 cm 2 sided 5,3,2 0.1062
+
+M17 2 mm 2 cm 2 sided 5,4,3 0.053,0.042,0.026
+
+M18 3 mm 2 cm 2 sided 10,8 0.026,0.013
+
+M19 4 mm 2 cm 2 sided 10,6 0.027,0.0159
+
+M20 5 mm 2 cm 2 sided 10 0.012
+
+M7; 1mm thick M8; 2mm thick M5; 3mm thick M10; 4mm thick M20; 5mm thick
+» Opposed ﬂow velocity of 10cm/s; 2 sided bums with increasing sample thickness
+Figure 3: Flame images from the BASS —11 Experiments
+Above are some of the ﬂame still images taken by the Nikon camera during experiments. The purpose of arranging the
+pictures by keeping a constant ﬂow velocity and increasing the sample thickness was to show the varied nature of ﬂames
+Obtained by just altering some parameters. Differences in oxygen concentration could be the reason why the ﬂames in
+M8 and M5 appear different from the others.
+3. Oxygen Concentration Analysis
+The BASS Hardware does not have a provision to measure oxygen concentration throughout the entire experiment. We
+have oxygen data available at only the start and end of the test. Assuming a linear proﬁle between these two points; we
+made oxygen concentration graphs for each test (see Fig. 2, for example). This helps us know the oxygen concentration
+at any given time during the experiment. Next, the average oxygen concentration was calculated for each ﬂow speed and
+then we made average oxygen concentration (% by volume) vs Opposed ﬂow speed (cm/s) plots summarizing the one-
+sided and two sided tests separately. The data points on these graphs are characterized according to the ﬂame spread rate.
+Additionally the data points at which the ﬂame extinguishes are also added to the summary graphs to see the effects of
+varying oxygen concentration though the duration of test. This analysis will serve as a reference point when more BASS
+Operations are conducted in future.
+4. Numerical Modeling
+We are modeling combustion of ﬂat PMMA samples in microgravity using Fire Dynamics Simulator (FDS v5.5.3) [7]
+which is a computational ﬂuid dynamics model of ﬁre driven ﬂuid ﬂow. The entire modeling for BASS—II is done in
+DNS mode because of the laminar conditions and small domain. The model employs the same test sample and MSG
+geometry as the experiment. The results are Viewed in Smokeview, which is a Visualization package that goes with FDS.
+The experimental data gave upstream velocity at several points using an anemcmeter [8]. A ﬂow proﬁle for the inlet
+velocity is Obtained using Matlab and input into the model (note that the measured ﬂow proﬁle for the BASS II duct is
+quite irregular. The image below shows the geometry setup for the model
+4
+
+"
+"5","WSSCI Fall 2015 Meeting — Paper # 134HC-0056 Topic: Heterogeneous Combustion
+I [1 rt w d {a } 5
+us: 2 m cm mm
+v:—
+3.3 cm '9
+E I gniter _
+—-I—= 4——
+H
+m {IBWC} - {I- ?3 cm “:11
+. PMMﬁ. Sample 1 mm tthIri _ - —
+'1: —- «o:— E
+E 4:—
+4:—
+.ﬂluminum Button"": {5 mm?
+.. 1—
+[H] = 1?.5 cm
+Figure 4: Geometry Setup for 2D Model
+gSmokeview Test (22635) — May 7 2015 - 09:31:30 Slice
+'Smokeview (64 bit) revision222635 hrrpua
+FDS revision:7051 kamZ
+' 225
+203
+180
+158
+135
+Z
+113
+90.0
+67.5
+45.0
+Y | X 22.5
+| 0.00
+Figure 5: Smokeview Heat Release Rate in kW/m2
+For this case the fuel sample used was 3mm thick. The averaged opposed ﬂow rate is lOcm/s. A grid size of 0.389 mm
+in the X direction and 0.376 mm in the Z direction was used for the computation. At the start of simulation we have only
+cold ﬂow. The ﬂow is allowed to stabilize for 1second of simulation time and then the igniter is turned on. It is on for
+around 5 seconds and then ramped down and ﬁnally turned off. The maximum heat release rate obtained in the
+simulation was 225 kW/mz. Smokeview can also be used to obtain quantities like temperature, mass ﬂux, net heat ﬂux
+etc.
+5
+
+"
+"6","WSSCI Fall 2015 Meeting — Paper # 134HC-0056 Topic: Heterogeneous Combustion
+5. Experimental and Modeling Results
+First we go through the oxygen concentration analysis results.
+220 01111111 111111
+02 111111, 1 11111
+21.0
+E 03 111111, 1 11111
+E
+E 20 0 . 0411111111111
+m .
+-'= O
+E5 . O O 05 111111, 1 11111
+E '0 ° 0
+E 19-0 I a 8 .1 111111, 2 1:111
+E o 9 X x
+E . .2 111111, 2 c111
+. 18 0 x
+U .
+E . A O )3 03111111 26111
+“3 O
+E? 0 I I 4 .,
+O 0 111111211111
+1:.) 17.0 I A M13
+“‘3 I
+:1:
+3 04111111 2cm
+% M19
+1 6.0 .5 111111, 2 0111
+Note : A - Indicates 11011 steady spread
+xExtinction
+data
+1 5 '0 WWW
+0 2.5 5 7.5 10 12.5 15 17.5 20 22.5 25
+Oppused Flaw (cmls)
+Figure 6: Average oxygen concentration vs Opposed ﬂow velocity summary graph (two sided burns)
+In the graph above the hollow circles represent 1 cm wide tests and the solid circles represent the 2 cm wide tests. The
+data points enclosed by purple triangle indicate that the spread rate for that ﬂow velocity was not perfectly linear. The
+larger the symbol greater is the ﬂame spread rate at that opposed velocity. Crosses represent the data points at which
+extinction occurs. Also you will notice that as the opposed ﬂow rate increases so does the spread rate which is evident by
+the larger circles we see. The extinction occurs at the lowest ﬂow speed in each of the experiments.
+Currently we have formed summary graphs for lsided and 2 sided BASS 11 experiments which show certain behaviors.
+Shown below is a summary graph for 2 sided burns with data from the model as well.
+6
+
+"
+"7","WSSCI Fall 2015 Meeting — Paper # 134HC-0056 Topic: Heterogeneous Combustion
+0.60 0 1 mm, 1 cm
+0 2 mm, 1 cm
+0.50 A 0 3 mm, 1 cm
+0 4 mm, 1 cm
+E 0 5 mm 1 cm
+5 0.40 ‘ ’
+g 0 1 mm, 2 cm
+ﬁt
+E O 2 mm, 2 cm
+g 0.30
+E; A O 3 mm, 2 cm
+cc
+E O 4 mm, 2 cm
+0.20 O 5 mm, 2 cm
+/ A Mode13mm
+0.10 0 0 A Model 1mm
+0
+° 8
+4 9 8 o
+o 0 °
+0.00
+0 2.5 5 7.5 10 12.5 15 17.5 20 22.5 25
+Opposed Flow (cm/s)
+Figure 7: Flame spread rate vs opposed ﬂow velocity (two sided tests).
+As you see the graph illustrates that the higher the ﬂow velocity, or the thinner the sample, the higher the spread rate is.
+The triangles represent the two model data points Which show a much higher spread rate than experiments [9, 10]. On
+further observation we can see that the plot exhibits a clear Width effect. For thin fuels (1mm thick), especially, the 20m
+Wide samples show a higher spread rate than the 1 cm Wide samples. This Will deﬁnitely help researchers decide sample
+sizes for future planned experimentation aboard 188.
+7
+
+"
+"8","WSSCI Fall 2015 Meeting — Paper # 134HC-0056 Topic: Heterogeneous Combustion
+0.10
+.1 mm, 2 cm
+0.09
+.2 mm? 2 cm
+0.08
+.3 mm, 2 cm
+5 0'0? . O 4 mm, 2 cm
+‘13
+1'11 0.06 . .5 mm, 2 cm
+D:
+g 0
+g 0.05 .
+m
+:1: O
+E: 0.04
+L‘ O
+0.03 . .
+0.02
+0.01
+0.00
+0 2.5 5 7.5 10 12.5 15 17.5 20 22.5 25
+Oppused Flow (culls)
+Figure 8: Flame spread rate vs opposed ﬂow speed (one sided tests)
+The single sided samples burned a lot more slowly than the two sided samples, and also needed a higher opposed ﬂow
+rate to keep burning. So far we have not ran any case with just one sided burning in the model so the graph does not
+show any data points from model.
+6. Conclusions
+The BASS experiments gave some of the ﬁrst ever data regarding combustion of thick fuels in microgravity. The two
+sided summary graphs do show that for thin fuels sample width affects the spread rate. In general the ﬂames spread
+faster for two sided burns compared to one sided burns. The greater the thickness of the fuel the greater is the time taken
+for the ﬂame to spread and so the lower is the spread rate. This is clearly evident in the different thicknesses that we have
+tested. The model currently predicts much higher spread rates than those obtained in the experiment. We need to modify
+chemical kinetics and material properties to improve model accuracy and results.
+Acknowledgements
+The research at San Diego State University was funded by NASA Grant NNXIOAD96A. We thank Dr. Subrata
+Bhattacharjee for his helpful discussions and advice regarding the BASS data collected. Recognition is also due to
+graduate students Garrett Bornand and Greg Sullivan for their help and contribution.
+References
+[1] D. Mulville, ""Flammability, Offgassing, and Compatibility Requirements and Test Procedures"" NASA-STD-
+60013, 2011 .
+8
+
+"
+"9","WSSCI Fall 2015 Meeting — Paper # 134HC-0056 Topic: Heterogeneous Combustion
+
+[2] Olson, S., U. Hegde, S. Bhattacharjee, J . Deering, L. Tang, and R. Altenkirch. ""Sounding Rocket Microgravity
+Experiments Elucidating Diffusive and Radiative Transport Effects on Flame Spread Over Thermally Thick
+Solids."" Combustion Science and T echnology 176 (2004): 557-584.
+
+[3] BASS - Space Flight Systems. Accessed August 29, 2015.
+https://spaceﬂightsystems.grc.nasa.gOV/sopo/ith/psgp/msg/bass/
+
+[4] Bhattacharjee, S. ""Research on Flame Spread at SDSU: The Bhattacharjee Group. “Accessed August 27, 2015.
+http://ﬂame.sdsu.edu/
+
+[5] Microgravity Science Glovebox. Accessed August 29, 2015.
+https://en.wikipedia.org/Wiki/Microgravity_Science_Gloveb0X
+
+[6] R. Klimek and T. Wright, ""Spotlight-16 Image Software Analysis,"" [Online]. Available:
+http://micr0gravity.grc.nasa.g0V/spotlight.
+
+[7] McGrattan Kevin, Randall McDermott, Simo Hostikka, and Jason Floyd. Fire Dynamics Simulator (VersionS)
+User's Guide. National Institute of Standards Technology, 2007.
+
+[8] Personal Communication With Olson, S. , 2014.
+
+[9] Bornand, G. ""Polymethylmethacrylate Combustion in a Narrow Channel Apparatus Simulating a Microgravity
+Environment."" Master’s Thesis, Department Of Mechanical Engineering, San Diego State University, 2014.
+
+[10] Garrett Bornand, Greg Sullivan, and Fletcher Miller, “Flame Spread over Thermally Thick
+Polymethylmethacrylate in a Narrow Channel Apparatus,” Paper 087EF-0034, Western States Section of the
+Combustion Institute Spring Meeting, California Institute of Technology, March 24-25, 2014.
+
+9
+
+"

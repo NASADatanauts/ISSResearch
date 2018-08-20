@@ -1,0 +1,367 @@
+"","x"
+"1","47th AIAA Aerospace Sciences Meeting Including The New Horizons Forum and Aerospace Exposition AIAA 2009-1 151
+5 - 8 January 2009, Orlando, Florida
+Modehng of the Flu1d Mergmg V1seos1ty Measurement
+(FMVM) Internat1onal Space Station exper1mentw1th
+COMSOL Mult1Phys1es
+Edwin C. Ethridge*
+Marshall Space Flight Center, Huntsville, AL, 35812
+William Kauklerl
+University ofAlabama in Huntsville, Huntsville, AL, 35899
+and
+Basil Antari
+University of T ennessee Space Institute, T ullahoma, T N 3 7388
+The purpose of FMVM was to measure the rate of coalescence of two highly Viscous
+liquid drops and correlate the results with the liquid Viscosity and surface tension. The
+experiment takes advantage of the low gravitational force free ﬂoating conditions in space
+allowing the unconstrained coalescence of two nearly spherical drops. The merging of the
+drops is accomplished by deploying them from a syringe and suspension on Nomex threads.
+An astronaut’s slow manipulation of one of the drops toward a stationary droplet till there is
+contact initiates the droplet coalescence. Coalescence and merging occurs due to shape
+relaxation and reduction of surface energy, being resisted by the Viscous drag within the
+liquid. Experiments were conducted onboard the International Space Station in J uly of 2004
+and subsequently in May of 2005. The coalescence was recorded on Video and down-linked
+near real—time. When the coefﬁcient of surface tension for the liquid is known, the increase
+in contact radius can be used to determine the coefﬁcient of Viscosity for that liquid. The
+Viscosity is determined by ﬁtting the time to achieve contact neck diameter equal to half of
+the initial droplet diameter. This time is compared with a relaxation time scaling coefﬁcient
+to arrive at the liquid Viscosity. Recent ﬂuid dynamical numerical simulations with
+COMSOL MultiPhysics of the coalescence process will be presented. The results are
+important for a better understanding of the coalescence process. The experiment is also
+relevant to liquid phase sintering, free form in-situ fabrication, and as a potential new
+method for measuring the Viscosity of Viscous glass formers at low shear rates.
+* AST Ceramics Engineer, Materials & Processes Laboratory, Bldg. 4600 EM40, AIAA non-member.
+T Associate Professor, Department of Chemistry, AIAA non-member.
+I Professor, Department of Mechanical and Aerospace Engineering, AIAA Associate Fellow.
+1
+American Institute of Aeronautics and Astronautics
+092407
+This material is declared a work of the U.S. Government and is not subject to copyright protection in the United States.
+
+"
+"2","I. Introduction
+
+In response to the call for low uprnass experiments, on of the authors (EE) the PI of the NRA “Mechanisms
+for the Crystallization of ZBLAN” proposed the “Fluid Merging Viscosity Measurement” (FMVM) experiment for
+the International Space Station (188). FMVM was a natural follow on to experiments for examining the
+determination of Viscosity of highly Viscous liquids using two drop coalescence. The main purpose of the
+experiment is to advance a totally new and different method for Viscosity measurement. Currently the measurement
+of Viscosity is limited for liquids that are susceptible to crystallization. A method for determining the Viscosity of
+highly Viscous substances that are susceptible to crystallization over the most important Viscosity range for
+crystallization behaVior does not eXist. A method suitable to eontainerless processing to avoid container walls to
+heterogeneous nucleation is needed. The process should use relatively small samples for quickly getting the material
+to temperature and to quickly measure the Viscosity. Even though FMVM uses strings to maintain control of the
+liquid spheres, it is anticipated that one of the containerless processing methods could be utilized in low gravity for
+completely eontainerless property rneasurernent.1 FMVM was only meant to validate the principle.
+
+The relaxation of liquid to a sphere is one potential method for determining the Viscosity of very Viscous liquids.
+During the coalescence of two spheres of liquids to one sphere, the ﬂuid ﬂow is driven by the reduction of surface
+energy but limited by the resistance to ﬂuid ﬂow by the liquid Viscosity. The FMVM experiment was supported by
+prior coalescence experiments on the low gravity KC-l35 parabolic aircraft. Low gravity exploratory experiments
+were performed with glycerin on KC-l35 aircraft for short (10 see) experiment tirnes.1’ 2
+
+The time constant of the experiment is proportional to the Viscosity. Frenkel3 was the ﬁrst to propose an
+analytical model for the coalescence of two spheres where the coalescence time constant is proportional to the liquid
+Viscosity and coalescence time and inversely proportional to surface tension. But, due to the limitations of his
+analytical solution, Frankel was able to model only the initial phases of the coalescence process of two spherical
+drops. Subsequently many others have developed analytical models of the coalescence process.5'8
+
+The FMVM method is also interesting because it can be tested by computational ﬂuid mechanics. Numerical
+models including Boundary Element Method (BEM) simulations have successfully modeled coalescence.9 Using
+BEM,1’2’10’11 Antar was able develop an accurate numerical solution for the coalescence of both two inﬁnitely long
+cylindrical drops as well as two spherical drops. In fact the BEM is capable of accurately modeling the coalescence
+process for any two liquid masses of arbitrary initial shapes. It was shown that the rate of coalescence can be
+Characterized by the rate of neck diameter growth. A comparison of the 2 dimensional cylinder model with the 3-D
+sphere model showed slightly different neck diameter growth rates. Coaleseing spheres grow slower than cylinders.
+The KC-l35 experimental data ﬁt the 3-D spherical coalescence model up to a normalized neck diameter of 0.5.
+Since the experiment constrained the drops keeping them from forming a sphere, the ﬁnal shape was a cylindrical
+liquid bridge and above the 0.5 normalized neck diameter, the data ﬁt the 2-D cylindrical model. The objective of
+FMVM was to examine the coalescence of 2 Viscous drops beyond the limitations of the KC-l35 experiments. The
+188 provided the opportunity for much longer experiments, much larger sarnples, rnore Viscous liquids, and
+unconstrained ﬂuid motion in the weightless conditions in space.
+
+COMSOL MultiPhysies is a Finite Element Analysis (FEA) software package with preprograrnrned solution
+tools that permits the solution processes with coupled physical phenomena. It was determined that COMSOL could
+be applied to the coalescence of liquid droplets with physical properties identical to the FMVM conditions. These
+numerical experiments could then be compared with FMVM experimental data.
+
+11. Fluid Merging Viscosity Measurement ISS Experiment
+
+The experimental design parameters are quite simple. Using supplies on the ISS, setup an apparatus to attach 2
+strings on which liquid drops were deployed to maintain control. The experiment required the measurement of the
+initial diameters of the 2 drops and use an on—board digital camcorder to record the coalescence of the drops.
+Subsequent analysis of the recorded tape provided measurements of the time dependent Change in the neck diameter
+with coalescence time. Several low toxicity Viscous ﬂuids spanning 2 orders of magnitude Viscosity range were
+selected. The manifested ﬂuids were contained in syringes that were also used to deploy the liquids onto the
+strings. The liquids included honey, corn syrup, glycerin, and two different silicone oil Viscosity standards. The
+surface tension of the ﬂight liquids was determined both by the pendant drop methods and the drop-weight and the
+Viscosity was measured with a Brookﬁeld rotating spindle viscometer calibrated with Viscosity standards.
+
+2
+American Institute of Aeronautics and Astronautics
+092407
+
+"
+"3","On—orbit resources such as the MicrograVity Work Apparatus (MWA) Utility Kit (Figure 1), were utilized for
+the experimental setup. The experiment was contained inside the MWA (Figure 2). A conﬁguration was tested on
+the ground during preparation for operations on the 188. The on—orbit supplies were conﬁgured to hold the
+background grid card, and provide support for the Nomex strings that held the drops. A Fluke 190 Scopemeter with
+temperature probe was used to measure the temperature of the liquid drops. A mini—Maglite provided illumination of
+the liquid drops. The experiment was contained inside the MWA (Figure 2). Figure 3 illustrates the ﬁnal
+experimental setup that was used on the 188. The experimental procedures were developed and test by the PI at J SC
+in order to provide detailed descriptions of how the experimental assembly was set up. Crew procedures were also
+written to lead the astronaut through the experimental scenario.
+
+.r ! -=: ""- . "" "" I - {13:2 Ii 1:.""
+I i I - Frin- Tili‘ih... .' ' . _.. :.Ik1_.| II
+Jil | . _ - .. I- {.515 ll' dill .-
+'I.'. 'l ' I '.'.- .' -'~""|..'1' -- I fit _
+EHF—‘ﬁ'J-J. ._ i. . I."" .. - 41.. ._.'- .i. "" *
+'L-h1T.bl1. I-éhri'I-E "" . lqu- 1 I III. ""II - +-
+. _1.-._ r ' ""'1'! _L I -_ I' 'E _ .- IE?
+- _. ﬂ, ____' '.'- . . _._ 1r . ._ _. ._.='
+{E-. -‘--'1'.': .hré-Lhﬁ {1 .I II '. 1w”- :h.
+Tia? {IT .“ . i‘- In. .-'H'-:- .'
+. I :'I ' - ' ' r.” . Hiﬁ|- . ""--. ' h- ""‘ _I,
+._ 4 E1:; - . . -- I
+-' --':F l.F1gure 2. A Ground Support Multipurpose Work
+. Apparatus (MWA) that was used on the International
+Flgure 1. Th6 MWA utllltV klt used t0 set 1113 the FMVM Space Station for containment of the experiment.
+The temperatures of the drops were measured with the on—board Scopemeter with a temperature probe. The
+shape change during coalescence was recorded with an 188 color Video camera. Data was captured on the lab
+camcorder and some Video was transmitted real time to ground. Hi—8mm Video tape was returned from 188 and was
+used for post ﬂight analysis.
+“'1th 1..
+gm
+""la. 53% “ﬁrﬂF-“F‘
+. - _\Z""1'-. Jam "" MW?""
+h. a
+. _ H.
+t J ‘1'
+2+5... H'III
+-_ I
+. 1+
+""- .--- — Truman
+.. -. g. .. -.
+1-1: n ' - . MM
+1 ‘ i t 1' _.
+_ I . ' _____ _ _ * _.
+' I
+_. WW“ - ,. _ . .
+Hmmti'l'ﬂm
+Figure 2. The test setup for FMVM experiments.
+3
+American Institute of Aeronautics and Astronautics
+092407
+
+"
+"4","Astronaut Mike Fincke performed the ﬁrst set of experiment operations including those With the silicone oil
+Viscosity standard liquids (Figure 4). He converted a number of coalescence Video clips from the digital Video tape
+to AVI ﬁles that were down linked to the PI. A captured frame from the Video With 2 silicone oil drops during
+coalescence are shown in Figure 5.
+
+II. I'll."" ' I
+' ""ff."" --'l':EEE.-- .""..::EI!'"".'.'.'3--:-
+~ . ::.::::;_-j;'iiiii:::.'i""':' --I""'-37|'5!'.':;;ii"".':7
+~ - .‘ ~.. 7,! ' -'3-'.'.'.':""--:+'i""i':""'7'-'r33'~‘15-.:""""'LI__'_E
+4P '. {5&3 ‘ '_'::'----'~""§'.'::|l5::3~'!33:i.‘1r[':'.|'. -.:':':':'---|--
+i: 7 L 4, : ‘r': Eiffﬁjji%5£‘=ﬁ 2—;J.+ﬁ'1LL—_l_1=::i_ﬁ%ﬁ-
+, «,- - H"" _ 5 .1 .. . J:_E|L_—_E|E"": :EFifir.I'.-T:‘.~.'-4::'I‘r .‘ ....| 'L""—'.'.'-1'1.L'-
+
+/ ' ‘ x "" 3%? +34::+.r : 17 "" 54 ':-.--:.1:- .-- '--‘—-—|—I:.:1--'. ,
+
+; - we * é—..'~=-+;$: I -- - . i r . 4:34:51: ' *.
+
+b .. .45.; ' _:'__.' ' -—' ""—7-: - mﬁl- '1 ' _-.- . 11:""
+
+- =r$ I '-' hiﬁfﬂ 1-: '-
+
+‘ "" i _‘ ""' _""T.'_--_ ' - . I -_'_--= 'H _' ._. : ' '
+
+. ~rx-w gamut; +1. . -'=!.=EE=;"" = ' U '
+
+_ ' ‘ - - ‘ - :- :l-i =-.-'—?..‘i’—_.!' :T'- ' "" 'Eﬂ'---J-1'—-FI—.:
+
+l . h ' .a'..—_[‘|""-'I--. -' -—'.T"" .. !- .. -- '
+
+‘-. / c -.- w :2 E"" : -'-""3T..|— i'I—TT'ﬁ—H' -~= blip"" ~ i '-'-
+
+:oomeo ‘ . . ' ‘ . . Figure 5. TWO 4 m1 droplets of silicone oil Viscosity
+
+Figure 4. Astronaut Mike Fincke deploying 11qu1d standard in the process of coalescing.
+
+drops onto a NomeX thread 1ns1de the MWA.
+
+III. COMSOL MultiPhysics
+
+COMSOL MultiPhysics is a ﬁnite element analysis software tool that permits modeling of a large number of
+physical and chemical phenomena. Different types of physics (thermal, ﬂuid ﬂow, physical forces, etc.) can be
+integrated into the FEA solution to solve complicated interrelated phenomena. The COMSOL Chemical
+Engineering module automates the Navier-Stokes ﬁnite element calculations applicable to liquid droplet
+coalescence. The “Level Set TWO-Phase Flow” application in COMSOL made it possible to set up and model the
+ﬂuid ﬂow in coalescing spherical droplets and to track the interface between the two ﬂuids (air and liquid sample).
+The discontinuity across the interface is widened and represented by a contour of the globally deﬁned level set
+function, (I). The “Rising Bubble Modeled With the Level Set Method” located in the COMSOL Chemical
+Engineering menu was used to learn how to use the level set method and the initial conditions were used as a
+starting point for the calculations to model our coalescence experiments.
+
+For the level set method, COMSOL MultiPhysics uses a smooth step function across the interface between 2
+ﬂuids (air and liquid droplets in our case). The actual interface is deﬁned as (l) = 0.5 With air occupying the domain
+Where 0 < (l) < 0.5 and the liquid occupying 0.5 < (l) < 1. During the calculation the level set function is continuously
+reinitialized so that it keeps the correct shape across the interface. In the method, the actual ﬂuid interface is deﬁned
+as the isoline 0f the level set function at (l) = 0.5.
+
+4
+American Institute of Aeronautics and Astronautics
+092407
+
+"
+"5","The COMSOL aXi-symrnetrical model was
+eometricall set u with 2 dro s haVin diameters of — '—'—r — — — ' ' — — — — -.-.- — — —
+{1% cm and in iynitial (Fontact with 1each 0th; The model -' i i I I I I i i I '- - 'i' -' -' l
+was 1 - - - IIIII-l-IIIII-I
+popu ated w1th materials propertles and other I - - ﬂ . I .- -'. .I- I
+constants and the initial boundary settings were ,' ' -' '
+d . . III H ' IIII'l-III
+eﬁned for the varlous domalns. Next the mesh was - - _ '. I. _ I - - .l
+initialized and reﬁned. The method requires the - .- I _ i :. i -_ _ -- I
+calculation of the initial level set function. This and I -. . f1.“ ..' '3“ . ' .. - _ i. --|
+the selection of suitable relative and absolute - - - ' ._.' - . p '. ._l_l Il'f ii --
+tolerances required considerable testing. General I - I- i"" w 'i H -
+guidelines are included in the COMSOL Chemical | -. -_ - . -' -i - 1 :-
+Engineering User's Guide12 and insight was gained | - I - .-- i If I-
+from the previous work of Zimmerman13 on | --- l- --, ' ----=
+coalescence. The initial solution time was entered and I - - - l I - - I - -'-- l
+a transient initiation value calculation performed and | - I -' l. - '- J - - II.-
+saved. The analysis was then changed to transient, I - l I - - - EEL- - - '- - _ I
+the time stepping parameters entered, and the iig—ureK T—wo 0.5 ceiliquid drops of honeilfrbnﬁhR/hz.
+coalescence solved. Once we got the model running
+without errors. The material constants were
+changed for parametric analysis modeling of silicone oil and honey representative of the FMVM ISS experiments.
+For different initial sphere diameters, the geometry would have to be modiﬁed, which requires returning to the initial
+geometric setup. Due to the difﬁculty with changes in the geometric setup and the different optimization parameters
+for each geometry, the results presented here are for 1 cm diameter spheres only. Experimental scenarios similar to
+188 experiments can be calculated by the different values of Viscosity, surface tension, and liquid density. Two
+values of surface tension and density, representative of the two liquids (silicone oil Viscosity standard and honey)
+were used for calculations using a large range of viscosities (spanning up to 4 orders of magnitude, see Table II).
+Table 11. Values for COMSOL Calculations, 1 cm Diameter Spheres.
+Liquid Viscosity Density Kinematic Surface ten. t0.51) sec ISS Exp. t0.51) sec
+cP g/cc Viscosity erg/cm2 COMSOL number FMVM
+Silicone oil 125 0.97 129 21.5 0.06
+Silicone oil 1250 0.97 1290 21.5 0.32
+Silicone oil 12500 0.97 12900 21.5 2 "" B1-2 2
+Silicone oil 125000 0.97 129000 21.5 6
+Honey 1250 1.45 862 90 0.1
+Honey 12500 1.45 8620 90 0.5 "" D1-2
+Honey 125000 1.45 86200 90 10
+COMSOL calculations were performed for each of these 7 different conditions and an AVI movie ﬁle with the
+time sequence for coalescence created and saved. Each AVI was examined to determine the time constant at which
+the neck, diameter was half the original drop diameter, t0.5D. In this study, this is deﬁned as the characteristic
+relaxation time for “half coalescence”. The time increment calculation produces a sequence that can be saved as an
+AVI movie ﬁle. Figure 7 shows a sequence of still images from the calculation for two 1 cm diameter honey
+droplets with a Viscosity of 12,500 cP, 1.45 g/cc density, 90 erg/crn2 surface energy. The level set gradient
+boundary is illustrated by the color bands from red to blue. The FMVM Video and calculated AVI analysis for this
+paper was performed manually and is very subj ective. The determination of t0_5D from the COMSOL AVI required
+the determination of the “line” between yellow and green in the level set boundary in the color plot. The COMSOL
+software includes extensive postprocessing and Visualization capabilities that we have not fully implemented at this
+time. Upon receipt of the new version of the software a precise determination of the interface can be calculated
+automatically for more “exact” determination of t0_5D.
+5
+American Institute of Aeronautics and Astronautics
+092407
+
+"
+"6",".. -. . I !~ .
+I' r . .
+i . : - -- I
+
+-. II”. '.|_ -l. -_
+
+|.'- El Ir I.' l. ,1"" _"" .'
+Figure 7. Time lapse sequence from the COMSOL calculation With constants representing 1 cm diameter
+honey droplets (FMVM experiment D1-2). From left to right, 0 sec, 0.5 sec, 1.0 sec, 1.5 sec, 2.0 sec, 3.0 sec, 4.0
+sec, and 5.0 sec. The color band from red to Violet is the level set gradient boundary. The air liquid interface
+is between the yellow and green band representing the level set function 5 = 0.5.
+
+Comparison of the time to reach half coalescence, tow, in the FMVM ISS experiment Video with the COMSOL
+AVI calculation shows the potential of COMSOL modeling of the coalescence process. For silicone oil with a
+Viscosity equal to 12,500 cP, the time for half coalescence, t0_5D , is 2 seconds for both the FMVM experiment and
+for the COMSOL calculation.
+
+The most simple expression for coalescence is Frenkel’s relation2 where the time of coalescence, t, is proportional
+to the viscosity, 1], and droplet diameter, D, and inversely proportional to surface tension, 6,
+
+t ~ (11 D ) / 6
+Actually, a proportunallity constant is required for the Frenkel expression. The simplest expression for the time to
+half coalescence can be written as,
+
+t0.5D = C0.5D ( n D ) / 5
+Solving for time constant to half coalescence, C0_5D,was calculated for each set of conditions in Table 11. These
+were averaged to obtain a proportionality constant, C051), of 0.0067. Using this relation with the liquid properties, a
+theoretical time constant for each coalescence was calculated. The time constant measured from the calculated AVI
+coalescence Video is in reasonable agreement with the theoretical time constant (except for the highest Viscosity
+silicone oil), considering the very subj ective nature of the determination of tow. Error with the calculated tow for
+the highest Viscosity silicone oil may be due to a problem with the COMSOL calculation. It was observed that the
+level set interface between air and oil for this calculation was greatly disrupted and the calculation is probably in
+error because of invalid initial calculation parameters in the model.
+
+These results in general validate the original premise that the characteristic coalescence time constant is
+proportional to the liquid Viscosity and the initial sphere diameter but inversely proportional to the surface tension.
+These results, when averaged, give the same proportionality constant equal to 0.0067 for a liquid with the properties
+of silicone oil and honey. This initial evaluation indicates that by measuring the time constant for coalescence (time
+for coalescence to reach a neck diameter half of the original drop diameter), it will be possible to determine the
+Viscosity from an unknown liquid assuming the surface tension is known reasonably well.
+
+The FMVM coalescence experiment has now come full circle. It started 10 years ago with low gravity KC-l35
+experiments and evolved into the ISS FMVM experiment. As the analysis of the 188 data nears completion, low
+gravity student DC9 aircraft experiments are continuing the experimental side of the science. This data will also be
+compared with COMSOL numerical experiments in the near future.
+
+6
+American Institute of Aeronautics and Astronautics
+092407
+
+"
+"7","IV. Conclusions
+FMVM successfully examined the unconstrained ﬂuid ﬂow behavior of 2 coalescing drops in low gravity on the
+International Space Station with a number of different Viscous liquids. It had been shown that the contact neck
+diameter calculated by boundary element method agrees with 188 results. Likewise in this report, parametric
+analysis using COMSOL FEA calculations of the coalescence of two drops was shown to agree with FMVM 188
+results. A ﬁrst order analysis Of the FMVM data with numerical calculations was examined. A proportionality
+constant was determined, which when added to Frenkel’s relation permitted the calculation of a Frenkel coalescence
+time constant in general agreement with the measured coalescence time constant. This indicates that by knowing the
+surface tension of an unknown liquid one can determine the Viscosity from a measurement of the coalescence half
+time. This work will continue with more COMSOL numerical calculations and parametric analysis with the new
+version of the software to test other more inclusive analytical models from the literature.
+References
+1. Ethridge, E.C., W. Kaukler, and B. Antar, “Preliminary Results of the Fluid Merging Viscosity Measurement Space
+Station Experiment”, AIAA 2006-1142, 44th AIAA Aerospace Sciences Meeting and Exhibit, J an 9-12, (2006).
+2. Ethridge, E., B. Antar, and D. Maxwell ,""Viscosity Measurement of Highly Viscous Liquids Using Drop Coalescence
+in Low Gravity"", AIAA99-0708, 37th AIAA Aerospace Sciences Meeting and Exhibition, J an 11-14, (1999).
+3. Antar, B., E.C. Ethridge, and D. Maxwell, “Utilization of Low Gravity Environment for Measuring the Viscosity of
+Highly Viscous Liquids,“ Advances in Space Research, 24: 1289(1999).
+4. Frenkel, J . “Viscous Flow of Crystalline Bodies Under the Action of Surface Tension,” J . Physics (Moscow), V01. 9
+(5),385-391 (1945).
+5. Rosenzweig N. and N. Narkis, “Sintering Rheology of Amorphous Polymers,” Polymer Eng. and Sci, Vol 21 (17),
+1167-1170 (1981).
+6. Jagota, A. and P. R. Dawson, “Micromechanical Modeling of Powder Compacts,” Acta Metall. V01. 36, (9), 2551-
+2561(1988).
+7. Koch, W. and S. Friedlander, J Colloid Interface Science, Vol 140, p. 419, (1990).
+8. Lehtinen, K. and M. Zachariah, “Effect of Coalescence Energy Release on the Temporal Shape Evolution of nano-
+particles,” Phys. Rev. B Vol 63, (20), (2001).
+9. Van de Vorst, G. A. L., “Numerical Simulation of Axisymetrical Viscous Sintering,” Eng. Annl. Boundary Elem. V01.
+14, 193-207 (1994).
+10. Antar, B. N., E.C. Ethridge, and D. Maxwell, ""Viscosity Measurement using Drop Coalescence in Microgravity"",
+Microgravity Sci. Tech. 14(1),9-19(2003).
+11. Antar, B. N., E. Ethridge, D. Lehman, W. Kaukler, “Fluid Merging Viscosity Measurement (FMVM) Experiment on
+the International Space Station”, AIAA 2007-1151, 45th AIAA Aerospace Sciences Meeting and Exhibit, Jan 8-11
+(2007).
+12. COMSOL Chemical Engineering User’s Guide, Chapter 4, ""Modeling Transport and Reactions"", Multiphase Flow
+section, p. 90.
+13. Zimmerman, W.B. Process Modeling and Simulation with Finite Element Methods, Series on Stability, Vibration and
+Control of Systems, Series A, Volume 15, World Scientiﬁc publisher, NJ. (2004).
+7
+American Institute Of Aeronautics and Astronautics
+092407
+
+"

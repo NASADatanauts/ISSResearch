@@ -1,0 +1,339 @@
+"","x"
+"1","Iopscience inpscience.inp.nrg
+Home Search Collections Journals About Contact us My IOPscience
+Numerical Modelling of the Material Science Lab - Low Gradient Furnace (MSL-LGF)
+Microgravity Directional Solidification Experiments on the Columnar to Equiaxed Transition
+This article has been downloaded from IOPscience. Please scroll down to see the full text article.
+2012 IOP Conf. Ser.: Mater. Sci. Eng. 27 012010
+(http://iopscience.iop.org/1757-899X/27/1/012010)
+View the table of contents for this issue, or go to the journal homepage for more
+Download details:
+IP Address: 128.157.160.12
+The article was downloaded on 18/01/2012 at 15:21
+Please note that terms and conditions apply.
+
+"
+"2","The 3rd International Conference on Advances in Solidiﬁcation Processes IOP Publishing
+IOP Conf. Series: Materials Science and Engineering 27 (2011) 012010 doi:10.1088/1757—899X/27/1/012010
+N umerical Modelling of the Material Science Lab - Low
+Gradient Furnace (MSL-LGF) Microgravity Directional
+Solidification Experiments on the Columnar t0 Equiaxed
+Transition
+W U Mirihanagel, D J Brownel, L Sturz2 and G Zimmermann2
+1University College Dublin, Dublin 4,1re1and
+2 Access .e.V., Aachen, Germany
+E—mail: david.br0wne@ucd.ie
+Abstract. This paper presents a numerical simulation of a directional solidification experiment,
+which was conducted in microgravity conditions in the Material Science Lab (MSL) onboard
+the International Space Station. Solidification of an A1—7wt.%Si alloy in the Low Gradient
+Furnace (LGF) was investigated. The LGF is a Bridgman—type furnace insert for the MSL,
+consisting of two heated cavities separated by an insulated adiabatic zone. The simulation
+results include the prediction of Columnar t0 Equiaxed Transition (CET) and average as—cast
+equiaxed grain diameters. A front tracking algorithm was employed to track the growing
+columnar dendrite front while a volume averaging method was used to model equiaxed
+nucleation, growth and impingement. The thermal boundary conditions for the simulation
+domain were defined and computed Via temperature readings that were recorded during the
+experiment. The experimental data were obtained from a number of thermocouples that were
+attached to the crucible of the sample cartridge assembly. To conclude, the microgravity
+experimental results and the model simulation results, including the CET, are compared.
+1. Introduction
+Metal casting was first developed more as a craft than a science. Solidification of cast metals involves
+many physical phenomena and this makes casting processes very complex to understand. The effects
+of gravity in the solidifying melt are one of the major sources of complication. Natural convection and
+buoyancy—related effects (as a result of gravity), that are present in solidifying liquid alloys, can
+significantly modify or mask important physical mechanisms of heat, mass and species transport. For
+example, macrosegregation in cast components is identified as such a direct effect [1].
+
+In a typical casting we can generally distinguish two different types of dendrites: columnar and
+equiaxed. The columnar dendrites are recognizable Via their large aspect ratio and elongated shape.
+Equiaxed dendrites have a lower aspect ratio than columnar ones, and have random crystal
+orientations. The transition of the macrostructure of a casting from columnar t0 equiaxed is termed as
+the columnar t0 equiaxed transition (CET). CET is an important phenomenon, which strongly affects
+the properties of cast components. Columnar dendrites usually originate at the mould walls and grow
+in a direction parallel with, but in the opposite direction to the heat flow. Equiaxed dendrites nucleate
+within the bulk liquid, normally under relatively low temperature gradients. At some point in the
+Published under licence by IOP Publishing Ltd 1
+
+"
+"3","The 3rd International Conference on Advances in Solidiﬁcation Processes IOP Publishing
+IOP Conf. Series: Materials Science and Engineering 27 (2011) 012010 doi:10.1088/1757—899)Q27/1/012010
+macrostructure formation, a CET will eXist if sufficient equiaxed dendrites nucleate and grow ahead of
+the columnar dendrites, thus blocking their progress [2].
+
+Many experimental studies [2] have been performed to study the CET under terrestrial conditions,
+incorporating the extra complexity caused by gravity. However, only a very limited number of
+solidification experiments have been conducted under microgravity conditions to study CET (for
+examples refer to [3]). The European Space Agency has coordinated a specific Microgravity
+Application Promotion (MAP) project called CETSOL (CET in SOLidification processing) to harness
+microgravity conditions in the study of CET in alloy solidification [4]. The project objectives of the
+CETSOL are to obtain both microgravity and terrestrial experimental results on CET formation
+enabling validation of various modeling approaches. The Material Science Lab (MSL) onboard the
+International Space Station (188) has recently been used as a microgravity platform for CETSOL
+experiments. In this contribution, we present and compare numerical model simulation predictions
+with the results of one of the directional solidification experiments conducted onboard ISS—MSL.
+
+2. Experimental Setup
+
+The LGF is a furnace insert that can be used in the MSL onboard ISS’s Destiny module. The MSL
+consist primarily of a process chamber accommodating furnace inserts and the individual experiment
+cartridges. Various furnace inserts and experiment cartridges allow for different types of materials
+science experiments to be performed. LGF is a Bridgman—type furnace that can directionally move
+relative to the Sample Cartridge Assembly (SCA), which contains the experimental sample. The LGF
+is equipped with seven heating elements. Every single one is independently controlled Via a
+thermocouple placed in the centre of diffusers made of carbon fibre reinforced material. The heaters
+are used to establish a temperature gradient and are separated by an adiabatic zone.
+
+An SCA consists of a cartridge head and a sealed cylindrical sample compartment (cartridge tube).
+The SCA head mainly contains the electrical connections but no software and no complex electronics
+are included in the SCA. The SCA sample compartment is a sealed metal cylinder (the cartridge tube),
+primarily containing the experiment—specific sample within a ceramic crucible. Furthermore, 12
+thermocouples (TCs) are attached to the crucible, fixed at 10 mm intervals in the mid section of the
+sample. The compartment outer body is a tantalum tube, closed by a welded hot end cap on one side,
+with a stainless steel support, and a stainless steel feed—through (at the cold side). The schematic setup
+of the LGF and SCA with dimensions is given in figure 1. SiX experiments have already been
+conducted onboard the ISS, and one will be carried out as a terrestrial experiment as well. One of the
+experiments (named here as FM2) is presented in this paper.
+
+|—Cold Zone—| |— Hot Zone—I
+{ ‘f 511.5 ‘1
+1 |
+—>
+— . .
+I—m_
+I —
+—»
+‘ . 1 1 . I r'-.-'1u:::r-..-'ement
+- 137.5 1 i 72.5 - - 172.5 0
+Figure 1. The schematic setup of the LGF and SCA; all dimensions in mm
+2
+
+"
+"4","The 3rd International Conference on Advances in Solidiﬁcation Processes IOP Publishing
+IOP Conf. Series: Materials Science and Engineering 27 (2011) 012010 doi:10.1088/1757—899X/27/1/012010
+For the experiment, the furnace was initially moved from the right to the left (in the opposite direction
+to the arrows in figure 1) to melt the sample. Retaining the furnace at the left—most position for a long
+time period allowed the temperatures to reach steady state. Thereafter, the furnace was moved from
+left to right initially at the speed of 0.01 mm/s for 2000s, and then at a speed 0.2 mm/s for 250s
+creating two velocity regimes. Temperature readings from the thermocouples attached to the sample
+crucible (thermocouple no.1 is the leftmost one) were electronically recorded during the experiment,
+together with furnace displacement. Table 1 presents the chemical composition of the sample.
+
+Table 1. Chemical composition of the sample
+“III“MEIIEIEI“
+mmm-mm
+
+3. Solidification Model
+
+An approach that combines Front Tracking (FT) of columnar growth [5] and an equiaxed volume
+averaging method [6] was employed to model the experiment. Among the key advantages related to
+this approach are: the ability to explicitly track the undercooled columnar front; the feasibility to
+model equiaxed nucleation from grain refiners; high computational efficiency for modeling equiaxed
+solidification in this range of equiaxed grain sizes; and the macroscopic nature of CET. Furthermore,
+we have already demonstrated the ability to integrate effects of gravity [7]. Therefore, the model will
+be extended and applied to simulate and analyse the other microgravity and identical terrestrial
+experiments (with same MSL—LGF modeling approach), which are planned as part of the CETSOL
+project.
+
+The combined model needs to solve the energy equation with the latent heat source term as
+follows,
+
+aT _ afs 1
+,OCp 6t V(KVT)+L (9t ()
+where ,0 is density, K thermal conductivity; Cp specific heat; fs solid volume fraction, and T and t
+denote the temperature and time, respectively.
+
+The columnar growth initiation from initial solid/mush is considered. The model tracks the
+evolution of the columnar dendrite front over the solidification period. In this simulation, the columnar
+front is assumed to commence its growth from the mushy zone (at liquidus isotherm 0f the Al—7%Si
+alloy) that eXists when cooling (solidification) begins. Therefore, the initial position of the columnar
+makers (front) was placed at the computed temperature profile’s liquidus isotherm.
+
+In an undercooled liquid, ahead of the columnar front, the possibility of equiaxed nucleation from
+grain refiners is considered. It has been shown [8] that TiB2 grain refiner particles with diameter d in
+typical aluminum alloys follow a log—normal size distribution, which can be presented mathematically
+as follows, when 0 and q) are the standard deviation and the geometric mean of the distribution,
+respectively:
+
+1 (1nd —1ngp)2 (2)
+f(d) 061m 6Xp[ 202 J
+The critical undercooling ATcr to start free growth from a particle of a diameter d is given by [8].
+ATCF = 4_V <3)
+ASvd
+3
+
+"
+"5","The 3rd International Conference on Advances in Solidiﬁcation Processes IOP Publishing
+IOP Conf. Series: Materials Science and Engineering 27 (2011) 012010 doi:10.1088/1757—899)Q27/1/012010
+where ASV is the volumetric entropy of fusion and y is the solid—liquid interfacial energy. When these
+data are available, equiaxed nucleation, growth and impingement was computed by integrating the
+volume averaged equiaxed solidification model presented in [6].
+
+The simulation domain is a 132 mm long section from the experimental sample and starts at
+position z = 61.5 (Z is measured from the leftmost end of the sample). To define the thermal boundary
+conditions for the simulations, thermal data recorded during the experiment on the 188 was used. As
+mentioned in section 2., thermal data is collected from 12 thermocouple positions at every 10 seconds
+interval. Intermediate spatial and temporal input data values that are used to feed the model simulation
+were linearly interpolated. It was assumed that all boron atoms are contained in TiB2 particles, which
+makes TiB2 ppm value equals to 15. According to the literature [8, 9], 1 ppt TiB2 in Al—7%Si makes
+8.6X1012 particles in one cubic metre. The figure 15 ppm is therefore equivalent to 129 particles per
+mm3 . Considering the maximum 1% efficiency of TiB2 grain refiners, this value was normalised t0 the
+effective value of 1.25 particles per mm3. A 3D unit depth relevant to the 2D modeling domain, 8 X
+132 mm, will therefore contain approximately 1320 effective grain refiner particles. However our
+model is 2D, and we have assumed that grains nucleated within a thin slice (equal to the approximate
+grain radius) can contribute to our apparent simulated microstructure. Therefore, the input grain
+refiner density for 2D model is obtained Via multiplying the 3D grain refiner density value by a factor
+equal to 0.75rnrn'1 (it was assumed that a slice with thickness equal to half of the average equiaxed
+dendrite diameter contributes to the 2D View; the as—cast average equiaxed dendrite diameter is in the
+range of 1.5mm). Thus, a total of 990 equally spread grain refiner particles were employed for the
+model simulation as potential equiaxed nucleation sites. Thermo—physical data related to TiB2 particles
+and typical particle size distribution of TiB2 inoculants were obtained from [8] while alloy related
+thermo—physical properties and undercooling—dendrite tip growth speed relationship were taken from
+ref. [10].
+
+The grid size for the simulation presented here was 2mm X 2mm. To test the grid size sensitivity of
+the model, other simulations were run using different control volume sizes (ranging from 8mm2 t0
+1mm2) of rectangular or square shape, and the overall outcome (predicted CET position) was quite
+consistent. However, very large control volumes were not considered because (i) a coarser grid is
+unable to correctly represent the thermal gradient in the radial direction of the 8mm diameter sample,
+and (ii) control volume sizes should not be too small compared to the average equiaxed grain size, in
+order to maintain a physically realistic model.
+
+4. Results
+After the experiment, a space shuttle mission downloaded the SCA back to earth and the
+microstructure of the solidified sample was revealed. Microstructure and grain structure of the aXial
+cross sections of the solidified sample is presented in figure 2.
+Z. ""‘ U”. . f4?” “‘1’: ??f’::£;;-; "" i1 73.""'?""-‘3‘f"":.‘.'3..‘¥ ?""xl-i‘} ~52 / 7&1 "" "" '.-‘ 2‘1
+~ A WI~ 7t '"" 7 “""7 «:3; i-wf: .-'-.‘~;:Z*‘?ef-;«._:;§g.f""~‘“'~""""'”“17*2£:’11'§;§515“ $$$ng
+, ‘ ‘ ' mwtiﬁgﬁé ‘ :ih‘ﬁlékﬁi?‘ 2‘ W1’
+_, ~ ' ""”2 W-adé~r~« <1: . ~221§:;:-zé*-~zs~ .- -' .5521» l;
+. L -3 ’ LET?"" Mﬁwt‘;:::a ‘.-‘7‘i‘<-‘-.i‘-‘. ‘ e“? 1:753: f“ .3 . 5151’"" 1""“
+(a) Z=60mm-90mm .—m—« (b) Z=90mm-120mm m-
+3*..1?! r239 . h 2-??2? . , 97;! ‘ 7@325)».""7:255:72 Ir . """"1531 f;2’:;;,;:
+Hilly. . q ’. 9,: 23;: ‘2 “ ‘_ '0 . = > 3"". .n ”1‘”: &, J” “‘5 ""
+(c) Z=120mm-150mm ,_nn-_4 ( d ) 2: 150mm -180mm ?_m‘_4
+Figure 2. FM2 microstructure — aXial cross sections
+4
+
+"
+"6","The 3rd International Conference on Advances in Solidiﬁcation Processes IOP Publishing
+IOP Conf. Series: Materials Science and Engineering 27 (2011) 012010 doi:10.1088/1757—899)Q27/1/012010
+The thermal data collected during the experiment was used as the input data for the model simulation.
+Before solidification begins, the initial (the first time step) liquid/solid positions from the model are
+presented in figure 3. Figure 4 presents the as—cast columnar and equiaxed volume fractions together
+with CET position predicted from the model.
+Columnar Front Temperature (°C) 1:—
+v 560 600 640 680
+20 40 60 80 1 00 1 20
+(z=81 .5) (z=101 .5) (z=121 .5) (z=141 .5) (z=161 .5) (z=181 .5)
+Figure 3. Predicted initial liquidus isotherm (columnar front) and temperature profile in the sample
+CET I Columnar I Equiaxed
+20 40 60 80 1 00 1 20
+(z=81.5) (z=101.5) (z=121.5) (z=141.5) (z=161.5) (z=181.5)
+Figure 4. Predicted final as—cast columnar and equiaxed volume fractions and CET
+5. Discussion
+As seen in figure 2, three solid zones were distinguishable along the length of the as—cast cross section
+of the sample, namely: (a) the un—melted solid; (b)—(c) a partially—stabilized Temperature Gradient
+Zone Melted (TGZM) section, and (b)—(d) the as—cast solidified structure. The boundary between each
+section along the sample was nearly planar and transverse to the central aXis. The TGZM section,
+which was formed from a semi—solid region, developed through melting and the temperature holding
+period prior to solidification. The temperature holding period for this experiment was around 200
+minutes and this time is assumed to be reasonable in order to have a fully stabilized TGZM region.
+Figure 2(b) shows the sample section that contains the end of the TGZM zone and the beginning of the
+solidification zone. The boundary between the two is at a distance z of approximately 110 mm. At the
+very first time step of the simulation, the columnar front lies at approximately 50 mm distance from
+the simulation domain’s cold end (see figure 3). The simulation domain starts at z = 61.5 mm. Hence
+the difference between z distances and ‘X’ aXis position of the simulation results is 61.5 mm.
+Therefore, the agreement between experiment (approx. z = 110 mm) and simulation (approx. 50 mm)
+is reasonably good, and suggests that the model can represent the thermal environment that develops
+in the sample accurately.
+
+During the solidification, the columnar front advances forward and an undercooled liquid zone
+develops ahead the front, thus facilitating equiaxed nucleation. In the simulation, equiaxed nucleation
+from grain refiners follows the free growth model [8]. In most castings grain refiner particles may be
+engulfed 0r pushed by the growing solid liquid interface. So, these grain refiner particles cannot
+initiate grains and normally end up in the grain boundaries [9]. Thus general grain refiner efficiency is
+very low. It was found that the efficiency of the grain refiners is at a maximum when addition level is
+low [8]. 15 ppm TiB2 is a relatively low grain refiner addition level, and it is reasonable to assume
+near 1% maximum efficiency.
+
+From the sample macrostructure examination, CET is at a distance (z) approximately 128 i 2 mm
+(figure 2(0)). In the simulation, CET is predicted at a distance 66 mm from simulation cold end of the
+domain (2 = 127.5 mm) and presented in figure 4. Hence the agreement between model simulation and
+
+5
+
+"
+"7","The 3rd International Conference on Advances in Solidiﬁcation Processes IOP Publishing
+IOP Conf. Series: Materials Science and Engineering 27 (2011) 012010 doi:10.1088/1757—899X/27/1/012010
+experiment is reasonably strong. The columnar length is approximately equal to the distance the
+furnace is moving at a slower velocity and, therefore, it is possible to suggest that CET is related to the
+velocity jump and resulting thermal regime change. However, the inﬂuences of grain refiners need to
+be evaluated carefully. Another identical microgravity experiment (named FM3) under CETSOL MSL
+campaign has been carried out without grain refiners, but also with nearly identical thermal conditions
+to FM2. The experimental analyses of those samples are beyond the scope of this contribution and will
+be the subject of future work. However, the basic analysis of microstructures has not shown CET,
+rather completely columnar solidification, and signifies the importance of grain refiners to form an
+equiaxed zone and CET — as in this experiment.
+
+It was assumed that the 2D simulation represents the conditions in the 3D sample. However, there
+may be some minor thermal differences arising, for example, in the latent heat terms. Therefore,
+currently research is in progress to develop a model, which effectively represents the 3D system by
+using axisymmetric co—ordinates.
+
+6. Summary
+
+Preliminary results of an MSL—LGF microgravity solidification experiment is presented together with
+
+a CET prediction model. CET was observed in the solidified sample of Al—7%Si with grain refiners. A
+
+combined model of columnar front tracking and equiaxed volume averaging that used the thermal data
+
+collected during the experiment as input, is effectively employed to predict CET. Columnar front
+
+progression was tracked employing the front tracking method, and equiaxed dendrite nucleation
+
+criterion was based on free growth of equiaxed dendrites from grain refiner particles. Sample chemical
+
+analysis data together with some information in previous literature was successfully used as realistic
+
+input data to the model. Predicted CET position from the model simulation shows good agreement
+
+with the experimental results.
+
+Acknowledgments
+
+We wish to acknowledge the financial support from the European Space Agency (ESA — contract
+
+number 4200014313). This work is part of the ESA—MAP (Microgravity Applications Promotion)
+
+project Columnar t0 Equiaxed Transition in Solidification processing (CETSOL).
+
+References
+
+[1] MC. Flemings, Solidification Processing, McGraw Hill, New York, 1974
+
+[2] J . A. Spittle, Inter. Mater. Reviews, 2006, 51(4), pp.247—269
+
+[3] S. McFadden, L. Sturz, H. J ung, N. Mangelinck—N0e1., H. Nguyen—Thi., G. Zimmermann., B.
+Billia, D.J . Browne, D. Voss, D. J arVis, J . 0f the J apan Soci. 0f Microgravity Application, 2008,
+25(3), pp.489—494
+
+[4] L. Sturz and G. Zimmermann, Microgravity Sci. and Tech., 2006, 18(3—4), pp.160—164
+
+[5] DJ. Browne, J.D. Hunt, Numer. Heat Trans. B , 2004, 45, pp.395—419
+
+[6] W.U. Mirihanage, D.J . Browne, Comput. Mater. Sci., 46(4), 2009, pp.777—784
+
+[7] W.U. Mirihanage, S. McFadden, D.J. Browne, Proc. 3rd International Symposium on Shape
+Casting, 2009, TMS, Warrendale, PA, USA, pp. 257—263
+
+[8] AL. Greer, A.M. Bunn, A. Tronche, P.V. Evans and DJ. Bristow, Acta Mater., 2000, 48,
+pp.2823—2835
+
+[9] TE. Quested and AL. Greer, Acta Mater., 2005, 53, pp. 4643—4653
+
+[10] Ch.—A. Gandin, Acta Mater., 2000, 48, pp. 2483—2501
+
+6
+
+"

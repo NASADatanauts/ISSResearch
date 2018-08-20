@@ -1,0 +1,622 @@
+"","x"
+"1","Acta Astronautica 69 (2011) 658—666
+* g;1;‘g-‘_;:._;:.g Contents IIStS available at SolenceDIrect '
+«2:13:93»! * g“ "" ' .
+m 1; .3ng Acta Astronaut1ca /
+ELSEVIER journal homepage: www.elsevier.com/|ocate/actaastro '7‘} ll( Sf
+—
+Internet—to—orblt gateway and v1rtual ground statlon:
+O O *
+A tool for space research and sc1ent1ﬁc outreach
+a >X< ° b a
+Ghulam Jaffer ' , Ronnle Nader , Otto Koudelka
+a Institute of Communication Networks and Satellite Communications, Graz University of Technology, Inffeldgasse 12, A 8010, Graz, Austria
+b Space Operations Division, Ecuadorian Civilian Space Agency EXA, Guayaquil, Ecuador
+ARTICLEINFO ABSTRACT
+Article history: Students in higher education, and scientiﬁc and technological researchers want to
+RecelVEd 2 FEbfuary 2011 communicate with the International Space Station (155), download live satellite images,
+Rece‘YEd 1“ FEWSEd form and receive telemetry, housekeeping and science/engineering data from nano—satellites
+9 Aprll 20“ and larger spacecrafts. To meet this need the Ecuadorian Civilian Space Agency (EXA)
+Accepted 17 May 2011 . . . . . . .
+Available online 12 June 2011 has recently prov1ded the c1v111an world w1th an 1nternet—to—orb1t gateway (Hermes—A/
+— Minotaur) Space Flight Control Center (SFCC) available for public use. The gateway has a
+KeJ/WOTdSI . maximum range of tracking and detection of 22,000 km and sensitivity such that it can
+Igtemlet'to'orcl?” gateway receive and discriminate the signals from a satellite transmitter with power~0.1W.
+glrsrljtighzllﬂnioiltjsuon The capability is enough to receive the faintest low—earth—orbit (LEO) satellites. This
+Rgal—time gateway virtually connects participating internet clients around the world to a remote
+Simulation satellite ground station (GS), providing a broad community for multinational coopera—
+Network latency tion. The goal of the GS is to lower ﬁnancial and engineering barriers that hinder access
+to science and engineering data from orbit.
+
+The basic design of the virtual GS on a user side is based on free software suites. Using
+these and other software tools the GS is able to provide access to orbit for a multitude of
+users without each having to go through the costly setups. We present the design and
+implementation of the virtual GS in a higher education and scientiﬁc outreach settings. We
+also discuss the basic architecture of the single existing system and the beneﬁts of a
+proposed distributed system. Details of the software tools and their applicability to
+synchronous round—the—world tracking, monitoring and processing performed by students
+and teams at Graz University of Technology, Austria, EXA—Ecuador, University of Michigan,
+USA and JAXA who have participated in various mission operations and have investigated
+real—time satellite data download and image acquisition and processing. Students and other
+remote users at these institutions undergo training with in orbit satellites in preparation
+for their own use with future university—class nano—satellites’ post launch space operations.
+
+The exclusive ability of Hermes—A/Minotaur to act as a gateway between remote users
+(internet) and satellites (in orbit) makes the virtual GS at user—end more feasible for the
+long—term real—time nano/cubesats space operations. The only requirement is to have a
+mutual agreement between EXA and participating university/research organization and
+broadband internet connection at user—end. With successful and remote satellite tracking
+and downloading of real—time data from many operational satellites, the Hermes has been
+found a reliable potential GS for current and future university missions and a training
+platform for individuals pursuing space operations.
+
+© 2011 Elsevier Ltd. All rights reserved.
+3* This paper was presented during the 61 st IAC in Prague.
+* Corresponding author. Tel.: +43 3168737937; fax: +43 3168737941.
+E-mail addresses: g.jaffer@yahoo.com (G. Jaffer), rnader@exa.ec (R. Nader), koudelka@tugraz.at (O. Koudelka).
+0094—5765/$ — see front matter © 2011 Elsevier Ltd. All rights reserved.
+doi: 1 0.1 01 6/j.actaastro.201 1.05.021
+
+"
+"2","G. jaffer et al. /Acta Astronautica 69 (2011) 658—666 659
+1. Introduction operations. The most common protocol being used for
+university built nano—satellite communication is AX.25
+With the growing market of cubesats and other small [14]. By using this protocol with transmitting commands
+satellites, students in higher education and the research— and receiving data from many satellites Hermes—A becomes
+ers in scientiﬁc and technological research programs a great platform to learn more about these interesting and
+require communication through access to low—earth—orbit applied ﬁelds. Many university student designers have
+(LEO) satellites frequently as one of their major tasks. The worked Closely with the amateur community to beneﬁt
+ground—satellite communications are expensive yet highly from existing design and operations standards.
+signiﬁcant for the success of a space mission and to Satellites in LEO~1000km have communication win—
+envisage end—of—life (EOL) of the satellite mission by clows with CS for about 12—18 min per pass providing only
+continuously monitoring the health of all sub systems brief communication possibilities throughout the clay.
+onboard the satellite. One cost—effective possibility for While connected, among many applications the user may
+honing skills is to use amateur satellite service [1] and an
+online internet—to—orbit (1—2—0) gateway [2,3] conceived 0 have half duplex (HDX) voice communication with
+and built by the Ecuadorian Civilian Space Agency (EXA) analog satellites like AO—51, HO—68, 50—50, etc.,
+[4] publicly available to the space community. This gate— 0 read spacecraft telemetry from almost all amateur
+way virtually connects participating clients around the satellites,
+world to a remote satellite ground station (GS), thus 0 receive housekeeping data by sending commands to
+providing the broad research community to connect activate transmitter of selected satellites like Com—
+globally in support of inter—disciplinary space operations pass—1 [15],
+and to provide synergy among diverse areas of research, 0 hear voices from space using onboard digi—talkers and
+e.g. Meteorology, Space/Satellite Engineering, Physics, receive Slow Scan TV (SSTV) images from CO—66 [16],
+etc., for multinational cooperation. Hermes provides a 0 receive weather images from NOAA—15, 17, 18 and 19
+platform for students pursuing higher education to per— (N’) using automated picture transmission (APT) [17]
+form hands on experiments covering practical research data from the National Oceanic Atmospheric Adminis—
+topics. Such topics in satellite/space engineering include tration (NCAA) [18], transmitted on low—cost very high
+virtual GS design, operational analysis and the use of frequency (VHF) equipment that is very popular in
+application software to perform mission analysis. academia and research organizations in the ﬁeld of
+The main purpose of this synchronous round—the— climate research,
+world test was to involve our international communities 0 receive scientiﬁc satellites’ earth observation images
+through the global experiment: the idea is to democratize from Compass—1, Swiscube and 50—67.
+access to space for education and academic use. The
+capabilities of Hermes—A as online and real—time system Satellite tracking, telemetry/data decoding and mon—
+were veriﬁed by testing it remotely through all four itoring health of above mentioned satellites using a
+modes of Hermes operations (Alpha, Beta, Gamma and virtual GS is a great opportunity for the students in space
+Delta) (Section 4). After successful transmissions and science/engineering to participate in space operations and
+receptions to/from variety of satellites the Hermes—A is post launch mission analysis. The requirement for a client
+now being used as a potential GS for current operational is to have a broadband internet connection with a public
+university—class nano—satellite missions, e.g. radio aurora IP address. To avoid any noticeable latency a 512kbps
+explorer (RAX) [5] and Swisscube [6], and will be used for connection is required. We veriﬁed multi—user test runs,
+the Austrianlightning nano—satellite(LiNSAT) [7—10].The that is, each participant experienced by tracking and
+results of all four modes are discussed in Section 6. receiving telemetry of satellites in real—time. All remote
+Other objective of Hermes is to give academic com— users decoded audio frequency (AF) signals like APT and
+munity an access to spacecrafts like the program telemetry/housekeeping data using suite of free software
+“a satellite in the classroom” [11,12]. The program is discussed in Section 5. We found that their internet
+based on one of the four modes of operation, Delta of the connections were capable of handling the AF input load.
+Hermes—A. It enables school kids to receive live scientiﬁc In fact, Hermes—A manages bandwidth in such a way that
+satellite signals to their classrooms and decode them in more than thousand remote users can receive live NOAA
+real—time, taking education to new heights in their coun— satellites for real—time image processing with acceptable
+try. The Hermes—A GS is also a powerful laboratory that signal to noise ratio (SNR). These results were obtained by
+allows us to experiment and learn for ourselves about the controlling the satellites remotely and simultaneously
+satellite technology from ﬁrsthand experience. It also downloading real—time data and voice by users located
+serves other international institutions abroad and is on four continents namely Europe, North America, South
+sometimes used for national safety purpose by monitor— America and Asia. These coordinated studies are pre—
+ing possible spacecraft collisions on its range of 6000 km, sented to inform the community about latency effects
+like the event of February 5, 2010 between Iridium—33 and the advantages that collaborated space operations
+debris and the EPFL Swisscube [13]. may provide. The learning technique we developed is
+The Amateur radio community has been involved with “Hands on Space Communications Training”. The big
+satellite communications over many decades. They have advantage of virtual GS is that no physical interaction
+helped to establish standards in communication protocols with real equipment is required to accomplish all
+as well as packet radio, satellite development and space operations. Only one remote user at a time is legitimated
+
+"
+"3","660 G. jaffer et al. / Acta Astronautica 69 (2011) 658—666
+to attain full control of Hermes-A. Multiple users have the remote GS operation capabilities. Hermes serves trans-
+capability of communicating with a satellite using virtual port, session and presentation layers. The application
+GS at remote places throughout the world. They work in layer will remain on the user side. The client station is
+international community and this can play a major role in implemented using a software-TNC; Ham Radio Deluxe
+the development of satellite related ﬁelds by sharing their (HRD-DM780, Radio, Sat Track) [19] or MixW [20]. MixW
+earned knowledge through collaborating with space agen- has an advantage of using its notch ﬁlter feature to
+cies like EXA. enhance the data reception. The ﬁnal application lies at
+the user-end in 051 model. In this case the TNC has a big
+. . advantage to vary according to user requirement. The 1-2-0
+2- Hermes-A internet-to-orbit gateway gateway is of great signiﬁcance to use it as a single-node
+. . command and control station for the satellites in a con-
+The Hermes-A/Minotaur Space Fllght Cohtrol Center stellation such as the planned LiNSAT is comprised of three
+(SFCC) shown in Figs..1 and 2 IS compliant With the Open identical nano-satellites for global coverage.
+Systems Interconnection (051) model. It has no Terminal
+Node Controller (TNC), as its main job is to convert
+protocols from one network on the ground (internet) to 3. Hermes-A/Minotaur implementation
+another network, or device in orbit by routing and
+translating the radio or laser waves to a protocol that Hermes-A/Minotaur is composed by the command and
+can be understood by a user-end TNC. It also has full control center (CMC) shown in Fig. 1 and the Minotaur
+’0 f‘ia‘lH‘ﬁCITAlJF’ aria,""
+—' Rotator Control
+\flrtual Hardware
+Rf"": 13m? ""t.”‘iInu‘u‘l I7 El’l’l , .
+Radlo engine
+F'T T IIIFTI'DI
+—
+Software Layer _
+:Ea-letc r: :j‘ IP13. j
+Trxl:::T::r:rol DDE Exchange DDPRemde Webserver
+DDX TrackingSm/er
+Fig. 1. Project Hermes command and control center (CMC) Minotaur engine implementation.
+— Connections Tc: le: paw: F' HF Manna;
+— Blocks 7 7’
+—TI:I PHI: i'x'L—llf P UHF arlterm 3'3.
+— —
+U l :E'Hzlm I L: 01%“ I :DWHE' III:IPHI._.HLHI_P ';1|_I_Il-sll‘:aﬁtEITI‘Iae.
+: : 2 4cm;-
+ET 1:3 LNA VHF LNA UHF LNA 900 T""'3""""3*“9W m pHcm:P
+f: EDGE; {HZIIBI' D,""
+E li’ I '2 L1 :1?le arire‘mara
+E: 2 lo IILRMLS-A CMC lo M LRMLS-A CMC To 21““: CMC Io HlRMLS-A CMC
+E t we onaine adio on inc a '0 en me ad'o en inc .
+E [:3 R Tlrans‘cjeiwe‘rmF R TransgeivelrJHF '23:?“ ghlerangsreivyt:
+a {'5' |> ' ‘: sm‘ ere:
+1%! —T
+Fig. 2. Minotaur sensor array implementation.
+
+"
+"4","G. jaffer et al. /Acta Astronautica 69 (2011) 658—666 661
+Spacecraft
+Radio Waves
+. , : : Interne‘t—Riemote User
+n Iu”u“u”u“u“..“::u“::: AF data or Voice
+’5,""
+. ' I
+1 i « .
+f 3"" 1‘"" ' ""'7 ‘-
+2 /
+,r' _ . ! Hermes-A SFCC
+r"" . ‘ ‘
+Fig. 3. Hermes—A: internet—to—orbit gateway at EXA, Guayaquil, Ecuador.
+sensor array (Fig. 2). All received information from satel— Hermes can handle the following range of frequencies and
+lite will pass through Hermes—A (Gateway) in the form of SNR is enhanced by using ARGOS.
+AF and received by virtual GS anywhere in the world —
+through the internet. The TNC transforms this AF into data Range 22,000 km (Molnya satellite)
+received from the satellite, i.e. telemetry, housekeeping, Sensitivity 0.002W
+scientiﬁC, engineering, etC. Therefore, a remote user con- Radio horizon NO barriers. Reception Of RS 30, AO—51 as low as
+nected to a university node, authorized to access Hermes, ‘1170 (below homo“): ,
+.11 . t al GS and can comman C1 and control Antenna Hellcal w1th dual polarlty rlght— and left—hand
+W1 serve as a V11“ u . . . . circular polarization (RHCP and LHCP) online
+the Hermes—A to transform it into an online and real—time switching capability
+remote GS. The scenario is shown in Fig. 3. 2 m 18—172 MHz RHCP/LHCP 70 dB
+CMC houses the 70 cm 320—500 MHz RHCP/LHCP 75 dB
+33 cm 830—950 MHz RHCP/LHCP 320 dB
+, , 23 cm 2.2—2.6 GHz RHCP 70 dB
+0 Hermes—A 1‘3le 91181116, QHA/APT 137 MHz (NOAAs) 20 dB
+0 audio processing module, —
+0 AF internet server,
+0 database server, ,
+4. Operational modes
+0 ﬁrewall and
+0 two control stations: .
+. . . The gateway can operate in four modes of analog and
+
+1. ﬁrst control station manages the radio engine and di ital s ace 0 erations
+the antenna array tracking for the target spacecraft; g p p '
+
+2. second control station manages the data decod— . .
+ing process, space ﬂight simulation and orbital Mode A (Alpha). Receptionef telemetry data from orbit
+prediction. and relay through internet.
+
+Mode B (Beta): Half/full duplex (HDX/FDX) connection
+
+Minotaur antenna array is a 12 m tall, dual polarity, between computers on the internet and orbiting
+
+variable frequency resonator operating between 1.2 MHz satellites. . .
+
+and 2.4 GHz, while the Gorgon—B is a secondary array Mode C (Gamma). HDX v01ce eonversation between
+
+operating in the VHF narrow band, 137—138 MHz, well any computer on the internet and manned
+
+suited for NCAA satellites reception. spacecrafts. . . . .
+The Minotaur is equipped with advanced radio signal Mode D (Delta): APT/high resolution picture transmis—
+
+gathering from orbiting spacecraft (ARGOS). Its sensibility is 5.1011(HRPT) Signal reception fiom weather satel—
+
+enhanced to 0.002 W at 3000 km. Due to the location of lites to any computer on the internet.
+
+Hermes—A the system has 0—1800 view from North to South.
+
+ARGOS is right now in phase 3, is capable of enhancing a 5. Remote user virtual GS
+
+signal of 174 to 9 dB m through a free space path loss (FSPL)
+
+of 200 dB, and the full ARGOS capability is upto 320 dB. The The basic design of the virtual GS on the user side is
+
+new ARGOS manifold can allow transmissions to the Moon based on the suite of free software namely
+
+in 900 MHz industrial, scientiﬁc and medical (ISM) band,
+
+good for earth—moon—earth (EME) communications. 0 Ham Radio Deluxe (HRD— Radio, Sat Track, DM780) [19];
+
+"
+"5","662 G. jaffer et al. / Acta Astronautica 69 (2011) 658—666
+0 VRS Remote Monitor (VRS—RM) [21]; generally distributed processing of the entire setup using
+c optionally, Google Earth (GE) [22] can be integrated several PCs with multiple displays.
+with HRD to enhance the visualization. While this setup has been tested on a single laptop a
+common distribution is as follows:
+, First PC performs communications control using
+The HRD functions as a proxy Of the real GS located at HRD—Radio and Hermes web interface [23] to start/end
+EXA and VRS'RM (cehtral server) works over the internet the process, antenna polarity selection (Fig. 5) and the IP
+using TCP/IP connection. There are four channels on the antennas (onboard and external view [24]) shown in
+VRS'RM for the audio frequency (AF). Fig. 6. Second PC functions orbital control using HRD—Sat
+, , Track, HRD—Antenna Rotator (Alphaspid RAS; working on
+° Ch't main transce1ver(TRX); local PC at EXA and the results are shown remotely at
+' Ch'2: sub TRX; , , user—end) on ﬁrst monitor and the GE on other display.
+' Ch—3: for the reception Of weather satellites; Third PC carries out decoding/data processing using HRD—
+o Ch—4: Ah reception of the real—time Video relay from the DM780 or MixW as a network client of the ﬁrst and
+Ecuadorian ﬁrst satellite(Pegasus),launch,m1d 2012. second PC, so the decoding program can track the fre—
+quency changes. Fourth PC works orbital simulation by
+The PC running this tracking program determines running STK simulations of the current NOAA satellite,
+azimuth/elevation angles of antennas vs. time and drives showihg the orbital mechanics data in real—time. STK real—
+antenna rotators to compensate spacecraft relative move— time simulations are yvell synchronized 50 that when the
+ment. As a result, the antenna points correctly to the footprint of the satellite in fu113D Simulation touches the
+spacecraft and follows its movement in the orbital velo— antenna, the AF is received by all participating remote
+city vector above the horizon from the acquisition of users. If a faster PC 15 used then both HRD'RadIO and
+satellite (AOS) till the loss of satellite (LOS). The tracking HRD—Sat Track can be run on a Single computer.
+system also compensates Doppler shift on the transmit
+(Tx) and receive (RX) frequencies clue to the signiﬁcant 5- Operational modes: results
+relative movement between spacecraft and GS. These
+frequencies are shown on the HRD—Radio software as The Hermes iS capable 0t handling four modes 0t
+VFO—B and VFO—A, respectively. The Doppler shifting is operation. The results of receive—only modes, Alpha and
+managed internally in the decoding radio receiver by a Delta are detailed in {13}- 111 this paper we focus only 011
+series of linked PLL management circuits with a band— transmission modes, i.e. Beta and Gamma 310118 With the
+width of 250kHz. The signal is stable enough to be constraints in the next sections.
+interpreted by the software on the user—end without
+fading or distortions. Also, the gain of the array guaran— 6.1. Beta mode: data transceiving
+tees a strong signal even 10 below the horizon as many
+users sometimes experience [13]. The virtual GS setup at In this mode of operation the user is able to receive the
+user—end using a suite of softwares as a proxy of real AF input of the target spacecraft in range and also
+hardware located at EXA is shown in Fig. 4. transmits to it using Skype [25] based transmission
+Satellite tracking, remote controlling of communica— through Hermes—A. Hermes—A accepts all transmissions
+tion radio, acquisition of data and post processing are encapsulated in AF. HDX communication is established if
+generally too complicated to be processed and displayed the spacecraft is operating in a single band only, but FDX
+by one or two computers alone. The remote users have communication can be established if the spacecraft
+I
+ll Control Signals
+HRD'SatTrack /
+ﬂ UDP Audio Stream
+VRS-RM Audioneq-eocvcm //
+HRD'DM780 01' "" Daa [mm pagan
+MixW,(WxtoImg) I L‘nkslolocalsoudcard
+. I HiRMESA/MINOTAUR
+Program Suns at. I CI' .
+Intemet Remote Client '9'“ Station
+I at EXA
+I
+Fig. 4. Virtual ground station setup using suite of free software.
+
+"
+"6","G. jaffer et al. / Acta Astronautica 69 (2011) 658—666 663
+operates in mixed modes like Mode U/V or Mode J. Many (CW) telemetry beacon and AFSK housekeeping data.
+Amateur satellites in beta mode use audio frequency shift At the user-end the data was analyzed in real-time as
+keying (AFSK) with different speed e.g. 1200 or 9600 baud shown in Fig. 7. The Skype based transmission link is
+packets to transmit housekeeping data. These packets sometimes difﬁcult to use for DTMF tones and requires
+data can be decoded using either TNC along with radio proper isolation from the receiving link. For transmission
+transceiver or PC soundcard using decoding software like modes (Beta and Gamma), only authorized users (Amateur
+MixW (software-TNC). For this mode we commanded license [26] holders) can transit to the satellites.
+Compass-l [15] with a speciﬁc sequence of dual tone
+multi frequency (DTMF) tones to activate its transponder. , , ,
+
+As a result, the satellite transmitted continuous wave 62' Gamma mode: v01ce transcezvmg
+This mode of operation is used to establish a HDX
+voice communication with a manned/unmanned space-
+craft in orbit. (e.g. AR-ISS, AO-51, etc.). These days, almost
+— (7/ PROJECT HERMES 7* all mode Gamma satellites are locked for security reasons
+(3 3 A y f and to save power during eclipses. To unlock, they require
+{f.gng-f "" a set of pre deﬁned codes to transmit by the GS within
+H [ W Th”,“l""'""‘°’""“""°f°'§“V°i°°’°mxp‘fb""° 63""“? _ . H y ‘ AI visibility/communication window, i.e. AO-51, which uses
+System Shie:MlNOTAUR:ONLlHE-HERMES-A:ONLINE-ALL FUNCTIONING SYSTEMS: 671—12 SUb audible. tones to aCtlvate,the OHbOElfCl TX for
+M y M ,, ‘ _ _ ~;-j-- A [ USER v01ce communication [27]. Any user in the world holding
+~ ; 1‘ tijjjf‘yg gig: an amateur license can accomplish this. The Hermes GS
+RHCP' §§t::;;:;j:}- 3:3; can be used to command a satellite in modes Beta and
+r} Etiifffkt Eff Gamma by remote users. Any form of activation codes
+«mm Puarww encapsulated in AF can be transmitted to satellite for
+i, m l u ‘ ~: - a .7 w . receiving telemetry/housekeeping data.
+7 Like Beta mode the user receives and transmits AF
+WWW A/MTEUR ”MM to/from the satellite/spaceship through a PC soundcard
+via internet using Skype. As stated earlier, AO-51 requires
+€){A a sub audible tone at 67 Hz to activate onboard transmit-
+ter. The tone does not disturb conversations between the
+two remote users connected through the satellite. After
+the link is established a remote user transmits his/her
+voice via microphone and pressing the Tx button on
+HRD—satellite track. As the communication is HDX re pressing
+the button enables Rx to receive the response. Moreover, no
+_ isolation between audio output and audio input is required
+' to prevent echoing but it is recommended. Additionally, it is
+- 4' ' helpful to mute other audio sources within the PC like voice
+announcements from HRD help.
+The high round trip time (RTT > 250 ms) hindered this
+mode to be accomplished. The traceroute shown in Fig. 8
+7- —‘ conﬁrmed that the bottleneck was somewhere in
+between Ecuador and remote user place. The solution to
+this problem has been worked out as a tunnel interface
+Fig. 5. Communications control using Hermes web interface to run/stop using the application programming interface (API) and we
+the process and antenna polarity selection. Will pursue it in near future.
+./ ,
+- .- -:_;f y. '3'}? . _ .
+d _ ‘N' 771$ “W
+. . j‘ ‘ - L ”:5 l
+I ., 13+ r
+' O"" ‘sV ﬁ‘..'~.'.'..~ ' r__ .511, < .,
+. . - ,:.~.?:1~""'§..-.l- ; r»- 1 2,..-
+fEF:r»..-1E:s:—.£-u-r«..4|r-.1E:umantle 1m — am 1—03-02 05512.35 EH45. - HERES-NMIr-wl AUH sI:_tr..s.-'sH:t; - live wdeo
+Fig. 6. Onboard and external 1P camera view. An important web interfaces for remote users to monitor live satellite tracking.
+
+"
+"7","664 G. jaffer et al. / Acta Astronautica 69 (2011) 658—666
+” -— .- , Ea:—
+oum m
+— m M .....
+_. mm” m” w ’ ”m 20:58:07
+mmmmmmwatmmm ""m0“ :
+£££ng JLIL-JLIJLI J‘JLI 3:”... 3”“ 3233333 33 3. 232°: 3. 1:712:21 g. E
+gmmLE-m-a“ nsnn-o 5:53 0 333133;; 3; :‘ gm? 1 3 $3333 3 g
+m_——--_— PowasdoCoul ‘53 SolanelVds 233 V Um-uheCuv ""A TawADCI .2 'C
+m------- 5mm“ m Sd-WMCW am ""A “WADE? »2 ‘C
+m____—_— su-Sdesva: 151 v MM 1 rwwm ~31: ‘6
+mmm‘.nymnxronﬁﬂzzﬁzzjcz ""1-H“. 0;; sea. S&SGM mm M Pm our 1
+w . l——_— kuCm 35 sawsva. 0.00 v 8mm .xPunm [.22— 'c
+Aﬂﬂyﬁ HuuCu: Eu su-Msan m,“ ""A nmsrop E ~YP-urm 127 “c
+DPUCOM>DLDFHA>UL?,F0 (1202 baud): ‘ _ 3:,PWTW [23 ‘C
+,é§8_a ”""SYB' ' ......s..a:....2n... 52?“?3 Wm“ 3,3733%. IE; 2:33:09:— @333 2:3;x [:5 E
+.B.'r.....@...De...yoyﬁy'syryiyo..6......6'....... 2:33... 1333; 3 $2313.13""... $33.52: gm ""1 ”‘3'” '5 1
+FORD SmSmSw [mm 23 lmtm IO HodnLoaonvl [2‘3 mum [T1
+DPOCOM>DLDFHA>UI,?,FU (1202 baud): 5mSWHU“ |annn1 ﬂ
+.es..9) ....2£E...X.d.T.MI.MI.....U.....ppV&°“.. sum... [W W W mm W cm l0_157_
+...COMPASS780000005<46..........‘.’....... ——————————————————————————————————————————————————————————————————————————#
+COMPASS7BDOOUUUS<46000090660100E‘F. . . . . . . . . .. “”W'l‘m’ """"""""' ‘
+j .133? 1.1 .‘J ;Z:SEr:’.'_.I“PZ L'TL‘: :15. Eyzuu 12135 {:1}: 'JLU.;'JL 532.] :xg;:::, EE_E
+======================================;======= v¥63§m£2£6wh£~ ;u;hwhndkwn. : Ihmuu I&G v
+2 l) 1'! EH 53L0313~29 co co m 00 9: 05 4s 03 00 C: 55 :3 6:. EMle '3‘“ V .
+21‘) 0-) 36 6'1 4:1 7|; DC: '11! C_}' 00 02 00 01] 03‘ 55 33 00 1:3 00 E? T! ”CD“ .
+v 9“)'3iﬁiiﬁfiéiéiiii‘iifii‘iﬁéii333335533533;: l
+' 31:39:23 33 aesaaaoaw u a so .3 s; g. s; 3. 5. LM ”WM
+131 .5 33 3!) 3] 30 3'3 3: 'JC 3»: 36 1‘0 30 30 33 Ti 43 36 35 44 151 30 [w ‘
+121 ‘2 33 45 45 GD 30 GE (>0 (0 00 00 00 00 03 00 [—
+TMDGKI
+mwﬂﬁmmmmmw é
+Fig. 7. Mode Beta: Compass-1 tracked, commanded with activation codes and housekeeping data was analyzed in real-time.
+"" (:‘leNDOWS‘Msystem32’acmdxue 7 7 _ Agg]
+HEEQSFE' iiiii&61?§ 3< P7703}: ion 5 . 1 .2668]
+(C) Copyright 1985-2891 ﬂicrnsnft Corp.
+C:\)ping herm237a.exa.ec
+Pinging hernesia.exa.ec [208.24.192.195] with 32 bytes of data:
+Reply fron 200.24.192.105: b9tcs=32 t1ne=246ns TTL=185
+Reply fron 280.24.192.185: bytes=32 tine=381ns TTL=184
+Reply frnn 209.24.192.195: bytcs—32 tinc“251ns TTL—182
+Reply fron 280.24.192.185: b9tu3-32 timu-233n5 TTL-182
+Ping statistics for 200.24.192.185:
+Packets: Sent - 4, Received - 4, Lost - B (82 loss),
+ﬂpproxinatc round trip times in nilli*seconds:
+ﬂininun = 233mg, Haxinun = 381mg, ﬂuerage = 277ns
+C2\)ercurl hcrnus-a.uxu.uc
+Tracing route to hermesia.exa.ec [208.24.192.195]
+over a maximum of 38 hops:
+1 (1 n3 (1 ms <1 m3 129.27.134.1
+2 1 n3 (1 n5 (1 ms rtzid9.tu‘grnz.nc.nt [129.27.1.4l
+3 1 n5 1 m5 1 m5 gigabitcthcrnct? l.grazl.aco.nct [193.171.21.41]
+4 1 n3 1 n3 1 ms ulan323.gra22.aco.net [193.171.15.26]
+5 5 n3 5 ms 4 ms ulan322.wien21.aco.net [193.171.15.21]
+6 5 n: 5 ms 5 n: bundlcicther*21i?3.corc21.aco.nct [193.171.23.42]
+7 175 n: 5 ms 19? n5 212.73.283.17
+8 5 n3 5 ms 5 n3 ae—11~11.car1.Uienna1.Leuel3.net 14.69.135.29]
+9 16 n: 16 ms 1? n3 ae56A6.ehr1.Frankfurt1.Leuel3.net 14.69.135.34]
+18 25 n: 25 n: 25 ms ace46746.cbr2.Paris1.Lcuel3.nct [4.69.143.138l
+11 26 n: 25 ms 25 ms ae-2-52.edge4.Parisl.Louel3.net [4.69.139.234]
+12 44 ns 44 ms 44 m: 213.242.111.1H
+13 123 n: 123 n: 123 ms Xe9~B-B—ﬂ—grtuaseq3.red.telefnnica-uhnlesale.net-126.142.94.in-addr.arpa [94.142.126.851
+14 238 n: 164 m5 178 m3 Xeﬂtﬂtﬁtﬂtgrlmiabr4.red.tclefonicn*uholc$dle.nel [213.148.36.49]
+15 321 n: 227 ms 242 ms Xelliliﬁivigrtluren4.red.telefonica*wholesale.net.126.142.94.in*dddr.arpa [94.142.126.114]
+16 242 us 244 m3 243 ms X85~HAﬂiﬁAgrtsnltu1.red.telefonicn*uholeanle.net.123.142.94.in*nddr.nrpa [94.142.123.121]
+17 243 n: 243 ms 229 ms OTECEL73""2*9*1308~grt5a1tu1.rcd.tclcfonicniwhulcsnlc.nct [84.16.6.42l
+18 * i I Be ucsl Lined out.
+19 238 us 238 ms 238 ms 20g.24.193.258
+2B 247 n: 24? ms 261 ms 299.24.193.249
+21 ~ ' - Ruqucst timed out.
+22 259 ms 254 ms 282 n: 280.24.192.105
+trace complete.
+C:\>
+II— r
+Fig. 8. Current ‘traceroute’ as per February 1, 2011, of Graz, Austria—Hermes, EXA.
+7. Constraints is to use voice over IP (VoIP), e.g. Skype for delta mode
+only when using Minotaur for satellite tracking. It works
+7.1. VRS—RM/port blocking/ﬁrewall in all modes, but as stated earlier VRS-RM is the ﬁrst
+option in all cases. To avoid further issues a web interface
+It has been observed that VRS-RM freezes due to was created for availing all channels like VRS-RM. The
+saturation and requires a reset every few months. Sec- remote users can get AF signals by accessing a remote
+ondly, one remote user in Japan had an issue with port interface on port 94 to process the images after the pass is
+blocking due to ﬁrewall security at their organization, so completed. The AF.wav of all NCAA and other accessed/
+was unable to access Hermes remotely. tracked satellites (last seven days) are available on the
+To resolve these problems at both ends and as a EXA server for later analysis.
+redundant protocol, a ‘broadwave interface’ was created
+as an alternative to VRS-RM but not a complete replace- 7.2. Network latency
+ment. Hermes typically allows access through the ‘broad-
+wave interface’, meant to be used over port 80 when A good internet connection with RTT < 50 ms was
+access to port 264 is not possible due to ﬁrewall issues. It assumed to be required for remote operations. Many
+requires static IP(authenticated by Hermes) to use as this internet service providers (ISP) between a remote user
+provides a layer of security on the router. Another option node and Hermes-A are not offering upto the mark
+
+"
+"8","G. jaffer et al. / Acta Astronautica 69 (2011) 658—666 665
+connections as revealed by ‘traceroute’ and observed in all the participating users was able to reduce RTT less than
+four modes of operations. It was found that the RTT is 150 ms (50 ms requirement). The ‘traceroute’ points out
+usually greater than 250 ms which does not allow for that the bottleneck is somewhere just before Ecuador. As
+synchronous links to Hermes. The ‘traceroute’ and RTT are the internet infrastructure is better in Europe but 5 ms
+shown in Figs. 8 and 9. We found that frequency shift time does not help out. The HRD, ‘ping’ and ‘traceroute’ all
+during i 3 min maximum elevation angle (MEL) was so validate that the RTT is ~250 ms even when the internet
+high that HRD—Sat Track could not function its automated usage is not so much here in Graz, Austria and other
+Doppler compensation properly. The manual frequency remote users’ site. Due to asynchronous option in HRD
+adjustment was necessary during this time window. The settings ‘elastic band’ effect to automated Doppler com—
+network latency problem lasts only for 3—4 min during pensation is observed frequently.
+
+14—18 min pass.
+As the internet speed is never constant and the 8. Amateur license requirement
+calculated results always vary due to multiple router hops
+for the remote client to get into Ecuador. The ehanges in The most important requirement for all remote users
+netwoi‘k latency are th? consequences: The imniediate participating in the ‘hands on experiments’ is to hold an
+effect isseen Wlth freezmg the HRD during satellite 13,355 amateur license to transmit on amateur entitled bands
+acquisition. From command and control point of View (e.g. 2 m, 70 cm band). Most of the AMSAT or/and uni—
+Hermes 15 tested for Alpha and Beta. mode Wlth excellent versity—Class nano—satellites are/will be communicating
+results, ,bUt VOICE lVlode (Gamma) 15 dlfﬁaﬂt t0 accom— with their nano—satellites like RAX, TUGSatl and LiNSAT
+plish With such an issue for remote operations. None of to these frequency bands. Furthermore, as a redundant
+conﬁrmation the remote users must all the times stay in
+contact with local operators in Ecuador to turn off the
+system if required (as per US, Ecuadorian, Austrian and
+,. Japanese law). For modes ‘Alpha and Delta’ certainly
+— Aﬂﬂ anyone can receive a satellite data without holding a
+Roun d trip: W 250 ms <3) il license. The relevant information is tabulated in Table 1.
+9. Future tasks
+Send: IIIIIIIII 0.03 |<st
+Flecv: IIIIIIIIIIIII 0.11KBa’s Our ﬁeld SFCC design is very compact, economical,
+Flefteshintewal: m portable and easy to maintain, hence we believe the
+expansion plan goals are achievable and realistic. Hermes
+Sendfrequency: (3' Async 1"" Sync expansion in Europe, UAE, India and Pakistan is in the
+Regularly Read From Radio development phase. In its ﬁnal conﬁguration the network
+can offer more than an hour of uninterrupted connection
+3' I7 Frequency 2| [— Dlopdowns between internet users and the satellite in orbit, repre—
+senting a signiﬁcant boon for long—term multi satellite
+2"" [— MBtBI'S g l— Sliders communications.
+As Hermes continues development it is likely that
+g '— Buttons .12] '— Status texts enough users will begin using it to require some schedul—
+‘ ing tasks. There currently is no scheduling software on the
+t Raf'BSh '5'"" I 9/ ﬂelp l Hermes computer and this will likely need to be imple—
+mented on the user—end. In addition, the wider user
+Fig. 9. Round trip time from Graz Austria to Hermes Ecuador at remote community Will 3150 have to be StUdiEd to see patterns
+usernode. of use and ﬁnd appropriate methods to assign times
+Table 1
+Information about all four modes of satellite operations.
+Issues/modes Alpha Beta Gamma Delta
+Modulation CW, USB CW, PM PM AM, FM
+data reception Telemetry AF receive—only HDX data Tx, Rx. FDX, HDX analog AF Tx, Rx, FDX Weather AF receive—only
+if dual mode if dual mode
+Amateur license No Yes Yes No
+Sync. loss No No No Yes
+Network latency Yes Yes Yes No/Yes
+Satellite tracking Yes Yes Yes No/Yes
+Doppler shift Yes Yes Yes No
+(detectable at AF)
+Accomplished Yes Yes No (API: future task) Yes
+
+"
+"9","666 G. jaffer et al. / Acta Astronautica 69 (2011) 658—666
+
+(large operational loads, critical tasks, etc.) as the require— [10] G. Jaffer, O. Koudelka, H.U. Eichelberger, K. Schwingenschuh, A LEO
+
+ments for the satellites evolve. nano—satellite mission for the detection of lightning VHF sferics,
+. . Adaptive Filtering, Intech, Vienna, 2011.
+
+As Hermes—A 15 only the ﬁrst of a series of GS, the data [11] ASIC’ <http://exa.ec/bp27/index—en.html>, 2011
+collected regarding automatic operations will be critical [12] R. Nader, H. Carrion, G. Jaffer, HERMES Delta: the use of the DELTA
+for future use. With several stations operating automati— OperatiOh thde Otl the hERMESA/MIN?E°6UR ihtedthEt-tO-Othit
+
+- - gateway to turn a aptop 1n to a Vlrtua groun statlon, 1n:
+cally a user anyWhere 1n the world can connect monitor Procedings of the 615t International Astronautical Congress (IAC),
+and control a formation of satellites from their laptop, a prague, Czech Republic, 2010.
+capability that has not been realized by the small satellite [13] G. Jaffer, R. Nader, A. Klesh, O. Koudelka, Project AGORA: simulta—
+C 0mmunity neously downloading a satellite signal around the world, in: 61 st
+
+' International Astronautical Congress (IAC), Prague, Czech Republic,
+2010c.
+[14] AX.25, <http://www.tapr.org/pr_intro.html#AX.25>, 2011.
+10. Conclusions [15] Compass—l, <http://www.raumfahrt.fh—aachen.de/compass—1/home.
+htm), Aachen University of Applied Sciences, Germany, 2011.
+
+The Hermes—A embodies an excellent laboratory for [16] EELS?Snﬁstelar's/i/till’liegitrfeﬁiclét'mhon u'aC'JplenghSh/mam‘e'html>’
+space operations and research worldwide through inter— [17] NOAA—KLM, <http://Www.ncdc.noaa.gov/oa/pod—guide/ncdc/docs/
+net. A useful tool for educating students in the develop— k1m/htm1/C4/56C4'2-htth>v 20“-
+
+. [18] NOAA, <http://www.noaa.gov/, 2011.
+ment of a small satellite program as the success of these [19] HRD’ <WWWham_radio_deluxe_com/>’ 2011
+missions depends on the post launch space operations [20] MixW, <http://mixw.net/, 2011.
+such as tracking, controlling and decoding university— [3;] XES-Rflr/L </t/lttptIh/WWWI-nch-ij-azlgillrSIremotehtml>. 2011.
+- - - , < ttp: eart .goog e.com >, .
+class satélhtes transmissmns.‘ . [23] Hermes—WI, <http://hermes.exa.ec/>, 2011.
+
+The Vll‘tual GS pl‘OVldes EVldenCE that It can be a key to [24] Minotaur, <http://minotaur_exa_ec/>’ 201‘]_
+
+acquire most of the data/voice related knowledge in [:2] 1111:3156. <hhttpﬁ/WWW-skypE-iomégi12011-
+
+- - - - , < ttp: www.arr.org >, .
+
+space/satellite SClence/engmeermg' We demonStratEd a [27] AMSAT, <http://Www.amsat.org/amsat—new/satellites/satlnfo.php?
+
+synchronous round—the—world test of the Hermes—A by a sat1D=1>, 2011_
+
+distributed team that was able to track, download and
+
+decode amateur satellites transmissions using a suite of Ghulamlaffer received the PhD degree in 2011
+
+free SOftWéll‘ES. in Telecommunication Engineering/Space
+. . ' 1 Science and Technology from Graz University
+
+Among many constraints, port blocking and network _. 7. Of Technology (Institute Of Communication
+latency issues were worked out. After a successful and ‘ \ Networks and Satellite Communications), Aus—
+remote satellite tracking, monitoring and downloading '1‘"" . the! ant] the MSC In Space SCIEHCE ftOlh the
+
+. . . d Unlver51ty of the Punjab, Lahore, Paklstan 1n
+real—time data from many operational satellites, the 2002_ From 2002 to 2005’ he was a Lecturer at
+Hermes—A has proved reliable and capable enough to be "" GC University Lahore,Pakistan,where he devel—
+used as a potential GS for current and future university OPECI Tdecomhthhltatt‘m laboratory ahd dEhY-
+
+. . C1 trainin latform for in diVi duals ursuin ered lectutes on Satelhte Communlcatlons. P115
+
+missmns an a . g p p g research 1nterest IS 1n the ﬁeld of Satelhte
+for space operations. Engineering and Space Communications.
+
+Ronnie Nader graduated in Systems Engi—
+
+neering in 1994 from the Universidad Cato—
+
+Acknowledgments lica Santiago de Guayaquil. He designed and
+
+built Ecuador’s ﬁrst and second generation
+
+, , cybernetic intelligent houses in 1999 and
+
+Authors WlSh to thank EXA and Cmdr. Ronnie Nader 2003,respectively1n2005,‘Ecuadoralgspa_
+for providing access to the Hermes—A. We are grateful to cio’ Project, (ProjectESAA) aimed to start the
+Dr. Andrew Klesh for technical discussions. This work is ' 5:53:11grlggnozgleﬂrigﬁilZroire‘t‘mr'othrirgriﬁ
+funded by Higher Education Commission (HEC) of Pakistan. . "" “ : history’to hip the develomﬁem 2f tie sub_
+
+5 ' orbital space for scientiﬁc experiments. On
+References L ' 1 June 8, 2007, he became ofﬁcially the ﬁrst
+‘ Ecuadorian astronaut by completing the
+ASA/T. On October 12, 2007, he was awarded the ‘Example for Youth’
+[1] AMSAT, <http://Www.amsat.org/amsat—new/satellites/status.php>, medal by the Ecuadorian government. on March 25, 2010, he W35
+2011_ presented with the prestigious Global Citizenship Award.
+[2] Hermes—A, <http://hermes—a.exa.ec/>, 2011.
+[3] HermesProject, <http://www.exa.ec/bp25/index—en.html>, 2011- Otto Koudelka studied Electrical Engineering
+[4] EXA. <httP1//WWW.exa.EC>,2011. at Graz University of Technology, Where he
+[5] RAX-UOM, <http://rax.engin.umich.edu/?page_id=304>, 2011. received Master and PhD degrees (With hon—
+[5] SWiSSCUbE, <http://swisscube.epﬂ.ch>, 2011- ‘ ors) in communications. He is the Head of the
+[7] G. Jaffer, O. Koudelka, K. Schwingenschuh, H.U. Eichelberger, The . _ Institute of Communication Networks and
+detection of sferics by a nano—satellite, in: Proceedings of the 59th V Satellite Communications at TU Graz and Head
+International Astronautical Congress (IAC), Glasgow, UK, 2008, p. 8. ‘ of the Institute of Applied Systems Technology
+[8] K. Schwingenschuh, G. Jaffer, O. I(oudelka, S. Khan, C. Grant, M. '1- ' (Joanneum Research)_ His research and teach—
+Unterberger, H. Lichtenegger, W. Macher, W. Hausleitner, Feasibil— ing activities are in the ﬁelds of satellite and
+ity study for a future Austrian lightning nano—satellite, in: Proceed— ' ' terrestrial broadband wireless communica—
+ings of the 37th COSPAR Scientiﬁc Assembly, Montreal, Canada, _, tions as well as space applications. He has
+2008, p. 2794. . $2-. .'~-_ ' i been involved in many satellite communica—
+[9] G. Jaffer, O. Koudelka, K. Schwingenschuh, H. Eichelberger, A light— ' tions projects by European Space Agency. He is
+ning detector onboard Austrian nanosatellite (LiNSAT), in: Proceed— a Corresponding Member of the International Academy of Astronautics and
+ings of the American Geophysical Union, Fall Meeting, 2010. the Space Communications and Navigation Committee of IAF.
+
+"

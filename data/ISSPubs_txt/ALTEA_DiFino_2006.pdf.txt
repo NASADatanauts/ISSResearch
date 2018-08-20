@@ -1,0 +1,320 @@
+"","x"
+"1","' Available online at www.sciencedirect.com —
+gm CI) ADVANCES IN
+””75; "" s c I E N c E D I n E c T ®
+Lg; ( SPACE
+£35 A RESEARCH
+‘ ' 7 ‘ COSPAR bl' t'
+ELSEVIER Advances in Space Research 37 (2006) 1710—1715 %
+WWW.elseVier.com/10cate/asr
+ALTEA data handhng
+. o a o a o o a o a o o a, o a o o a
+L. D1 F1110 , F. Belh , V. B1d011 , M. Casohno , L. Narlel *, P. Pleozza , A. Rmaldl ,
+o o a a b . b’C . o o d o e
+D. Rugglen , V. Zaeonte , S. Carozzo , W.G. Sanmta , P. Splllantml , V. C0tr0ne1 ,
+. . f . . f f h
+E. Allppl , G. Glanelh , A. Galper , M. Korotkov g, A. PopOV g, V.P. Petrov ,
+. . . h i . . . ' ' ' . . k
+V.P. Salmtskn , S. AVdeeV , W. B0nv1e1n1 J, G. Zampa J, N. Zampa J, R. V1tt0r1 ,
+1 m
+C. Fuglesang , D. Sehardt
+a INFN and University of Rome T or Vergata, Department of Physics, Via della Ricerca Scientiﬁca I, 00133 Rome, Italy
+b Neurophysiopathology-DISM, University of Genoa, Genoa, Italy
+C Department of Psychiatry, S UN Y, Stoony Brook, N Y, USA
+d Department of Physics, University and INFN, Florence, Italy
+6 Italian Space Agency, Rome, Italy
+f Alem'a Spazio S.p.A. — Laben, Milan, Italy
+g Moscow State Engineering Physics Institute, Moscow
+. h Institute for BioMedical Problems, Moscow, Russia
+1 Cosmonaut, Russian Space Corporation ‘Energia’ by name Korolev, Korolev, Moscow region, Russia
+J Department of Physics, University and INFN, T rieste, Italy
+k ESA Astronaut and INFN, Perugia, Italy
+1 ESA Astronaut, Royal Institute Of T echnology, Stockholm, Sweden
+m GSI/Biophysik, Darmstadt, Germany
+Received 14 October 2004; received in revised form 21 J anuary 2005; accepted 31 J anuary 2005
+Abstract
+The ALTEA program is an international and multi—disciplinary collaboration aimed at studying particle radiation in space enVi—
+ronment and its effects on astronauts, in particular the anomalous perception of Light Flashes. This paper describes ALTEA space
+facility scheduled to ﬂy in the International Space Station (ISS) after J uly 2006, What kind of data are produced and how data are
+transmitted to Earth, processed and analyzed.
+© 2006 Published by Elsevier Ltd on behalf of COSPAR.
+Keywards: ALTEA; Cosmic rays; Data handling; 188; Light ﬂash
+Abbreviatians: ALTEA, Anomalous Long Term Effects on Astronauts; ASI, Italian Space Agency; ASMP, Asymmetric MultiProcessor; BEU,
+Brain Explorer Unit; BNL, Brookhaven National Laboratory, Upton, NY, USA; CNSM, Central Nervous System Monitoring; DAU, Data
+Acquistion Unit; DOMSAT, Domestic Satellite; DOSI, Dosimetry; DSP, Digital Signal Processing; EEG, ElectroEncephaloGraph; GSI, Institute
+for Heavy Ion Research, Darmstadt, Germany; HIT, Heavy Ion Therapy; 188, International Space Station; LET, Linear Energy Transfer; LOR,
+Line Outage Recorder; LTU, LapTop Unit; MARS, Microgravity Advanced Research and Support; MICE, Mice Irradiation With Concurrent
+Electrophysiological monitoring; MIP, Minimum Ionizing Particle; MSFC, Marshall Space Flight Center; OBT, On Board Time; PBU, Push Button
+Unit; POIC, Payload Operations Integration Center; RIC, Rack Interface Controller; SDS, Silicon Detector System; SDU, Silicon Detector Unit;
+SGS, Space-to-Ground Subsystem; SSCC, Space Station Control Center; TDRSS, Tracking and Data Relay Satellite System; UHB, User Home
+Base; USOC, User Support and Operation Center; VSU, Visual Stimulator Unit; WSC, White Sands Center.
+* Corresponding author. Tel.: +39 0672594519; fax: +39 062023507.
+E—mail address: narici@roma2.infn.it (L. Narici).
+0273-1177/$30 © 2006 Published by Elsevier Ltd on behalf of COSPAR.
+doi:10.1016/j.asr.2005.01.105
+
+"
+"2","L.D. Fin0 er al. / Advances in Space Research 3 7 ( 2006 ) 1710—1715 1711
+1. Introduction sponses to proper Visual stimuli Will permit to assess
+the Visual system status. It Will also operate in un-
+The length of manned space ﬂights (operations in the manned mode to allow long term measurement of parti-
+International Space Station (188) or the planned journey cle ﬂuxes inside the 188.
+to Mars) will signiﬁcantly increase in the near future. The ALTEA facility (see Fig. 1) is composed by:
+Anomalous Long Term Effects on Astronauts (ALTEA)
+is an international and multi-diseiplinary program 0 Data Acquisition Unit (DAU)
+aimed at studying the effects of particle radiation on 0 Silicon Detector System (SDS) — composed by 6 par-
+the Central Nervous System during long manned mis- ticle detectors (SDU)
+sions on board 188, in particular the anomalous percep— 0 Brain Explorer Unit (BEU) — 32-ehanne1 ElectroEn-
+tion of Light Flashes (Casolino et a1., 2003). ALTEA eephaloGraph (EEG)
+includes a space facility scheduled to ﬂy and operate in 0 Visual Stimulation Unit (VSU)
+the 188 after July 2006 (Nariei et a1., 2003). 0 Push Button Unit (PBU)
+This paper describes What kind of data are produced 0 LapTop Unit (LTU)
+by this facility and how data are transmitted to Earth,
+processed and analyzed; it consists of ﬁve main sections. The Data Acquisition Unit (DAU) is connected With
+In the ﬁrst section a quick overview of the apparatus and the 6 Silicon Detector Units (SDU) and With the Visual
+its main scientiﬁc objectives are presented. The second Stimulation Unit (VSU). The DAU and the LapTop
+section deals With different experiment conﬁgurations Unit (LTU) are connected Via TCP/IP With the ISS
+and data produced during ALTEA space experiments. using the Rack Interface Controller (RIC) connections.
+Third section is about audio and Video requirements. ALTEA is an autonomous experiment from the point of
+Fourth section describes in details data path during View of the interaction With Ground: n0 remote control
+transmission from 188 to ALTEA User Home Base is foreseen and just an initial and guided participation of
+(UHB) in University of Rome Tor Vergata. Last section the astronaut to experiment set-up is required. All data
+gives a hint about processing and analysis of ALTEA from ALTEA are in the form of Express Rack Teleme-
+scientiﬁc: data.
+2. ALTEA facility: general description {W A LTEA FACI LITY
+i... :i 9 {9/ . Pushbutton
+ALTEA is a multi approach program. It consists of hibu'ri'ii M _ -- - - .
+various experiments both laboratory based and onboard g}; ‘ “9m \ . _ , i L
+188. Ground experiments are: ~‘""*’ ' I \ \ ’ V. ""
+ALT'EA In the 155 US LAB Module . ‘1 1 l
+o ALTEA-MICE (Sannita et a1., 2004): started in 2001 . 1E ' --
+E E G
+at G31 and BNL . 9g
+0 ALTEA-HIT: started in 2004 at GSI 2&""3‘ﬁi’i'm'3ﬁa‘bff' -‘ r 7
+o ALTEA-Biophys: started in 2003 at GSI '( ‘l .- AU
+'1‘. _ 0|ng Acqulsltkll Unit
+Space experiments are: ’ R‘
+9 \ ‘ ‘9 : “umﬁﬂaw‘aiéf‘é'k’y'ﬁiﬁ
+
+o Alteino (Casolino et a1., 2002): onboard 188 since I ” ~\\\ \ ’
+Apri12002 ' - , v N
+
+o ALTEA Light Flash Questionnaire (Fuglesang et a1., _ V “(F i - i ' Z; i. J"") 505
+2004): started in 2003 j “r"" “T Mmmm 9
+
+o ALTEA-Space: scheduled to ﬂy in December 2005 i4 I «1% . '_ 9 ‘ 51' 1'] 332%??éﬂiﬂﬁm’fmmm...
+
+o Other future uses of the ALTEA Facility (ALTEA- : . q 9‘ 9-9"" {Up a‘gﬁﬁﬁgﬁlijjﬁttmm
+3D, ALTEA-Shield, etc.) 0 ""r ‘ ‘ :ammmmmssfgsr
+ALTEA-Space Will measure on board 188 the parti- Egaﬁgmnﬁﬁmm 3:3?éétzi'3é1vaucn smcon plane)
+
+cles passing through the brain of the astronauts and ?:ﬁ'W-Tnuﬁgmxum W“""°“‘°-""""""""°““
+
+monitor the cortical electrophysiologieal activity and
+
+the Vlsual SyStem funCtlon.a1 Status. The goal IS t0 deﬁge Fig. 1. Schematic View of ALTEA facility: it is possible to see all
+and measure eleCtrOphySIOloglcéﬂ descriptors 90f bram ALTEA devices attached to Express Rack during CNSM mode;
+funCtlomng and to correlate thelr dynamlcs Wlth space technical speciﬁcations are given for each component. In the upper left
+environments (Nariei et a1., 2004). Measures of re- corner a 3D View of ALTEA inside ISS.
+
+"
+"3","1712 L.D. Fina et a1. / Advances in Space Research 3 7 ( 2006 ) 1710—1715
+Table 1 for the Whole increment is about 1.3 Tb. Second opera-
+Strucmre Of an EXPreSS RaCk Telemetry paCket tive mode is CNSM. Six 90-min sessions are planned as
+-@W@ follows: an astronaut Will wear the EEG cap, insert his/
+_ her head in the SDS and Will signal perceptions of Light
+Flashes With a pushbutton While SDS Will measure cos-
+mic rays ﬂux through his head, so that it Will be possible
+to study concurrently the passage of cosmic radiation
+_ through the brain, the functional status of the Visual sys-
+tem and the electrophysiological dynamics of the corti-
+_ cal activity. Data are stored on the 188 laptop.
+Expected data rate is 1.4 Mbps and each session is eX-
+_ pected to take up about 1.5 Gb. Data are then down-
+__ loaded off—line and erased from the laptop only after
+positive transmission check-
+I—
+Data Byte n-1 Data Byte n
+To assure optimal setup of the experiment, real-time
+audio and Video communications are required. The
+Table 2 . . . audio Will be a bidirectional system, While Video Will
+Telemetry data: main data types are reported together With packet Size .
+and frequency of acquisition be a one-way system from 188 to earth. Fig. 2 shows a
+—. schematic View of experiment timeline in Which audio
+Telemetry data type Packet Size Frequency of . . .
+
+(bytes) acquisition and Video conimunications are reported: we asked
+m for recorded Video during the 611111? system setup
+Service data 24 Event driven and during CNSM setup, While realtime Video and
+Nominalhousekeeping 232 10 Hz audio Will be used only in the last 10min of system
+EEG data 1074 1024 Hz setup and the ﬁrst 15 min of CNSM setup. A second
+Health & Status 34 1 HZ astronaut Will help the subject during part of the CNSM
+
+sessions.
+try packets. In Table 1 the structure of a telemetry pack-
+et is described. In Table 2 various kinds of telemetry 5. ALTEA data ﬂow
+data are reported together With packet length and
+frequency of acquisition. Scientiﬁc telemetry data and This section deals With transmission of data from the
+service data generation depend on instrument Payload on board 188 to the ALTEA UHB, Where data
+operating mode and on involved subsystems. SDS gen- are stored and analyzed. Composition of Space Segment
+erates periodic scientiﬁc data only in calibration mode, and Ground Segment are described together With Trans-
+otherwise data generation is triggered by particle mission Bands used for communications and data distri-
+detection. bution between different segments. In Fig. 3 there is a
+block View of the entire data ﬂow.
+3. Experiment conﬁgurations and expected data rates 5.]. Space data segment
+The two main ALTEA-Space conﬁgurations are 5.1.]. Onboard ISS
+named Dosimetry (DOSI) mode and Central Nervous ALTEA is installed in an Express Rack, that provides
+System Monitoring (CNSM) mode and they are, respec- standard and simple interfaces to payloads, and it com-
+tively, unmanned and manned operative modes. AL- municates over a local LAN to the RIC. The RIC is con-
+TEA Will continuously operate in DOSI mode for a ﬁgured as a passive server and provides the
+period of one increment Without human intervention. communication link between payloads and the Space
+There Will be six interruptions corresponding to the Station data system and ground controllers. The RIC
+CNSM sessions. During DOSI mode ALTEA measures Will route the payload data in packets (Express Rack
+radiation ﬂuxes on board 188. Only Silicon Detector Packets), With headers to identify the payload (see Table
+System (SDS) is switched on and data are downloaded 1), and it Will transmit them through the Space Station
+in real-time, Without any local storage. Expected data data system. All communications onboard 188 are based
+rate is about 0.65 Mbps, so the estimated storage size on TCP protocol.
+
+"
+"4","L.D. Fin0 et al. / Advances in Space Research 3 7 ( 2006 ) 1710—1715 1713
+.(lOmmpass)-(15mmpass) I
+E 1 E E E
+s ! a = a
+System ; I ; E E System
+Setu DOSI u E DOSI IShutdown
+—_+ =
+.(-)t i : I
+{DQSISemp | 5 g : 5 i
+mm} 15¢ I A : lg 91130313 :
+I l . I c: g a .‘ .erup l
+E r—ng. 1 I: Data collection a i E E
+5 i s ‘ mm... i
+' E 0:12;?“ (35315999011 -h’5 - D: 333“ Initiate i .Ku- and S-band
+: 'u ,m: 5 : EIRecorded Video
+g g 5 5 5 i .Realtime\'ideo
+'I: 1 ' E i E i DYoke
+. n a . E i i i DReallime Data
+:1 z: = i —.
+, . . . E 5 (1.36 Mbps) 1
+E 52.533813333533322? _
+This sequence of events repeated 6 times.
+Fig. 2. Schematic View of ALTEA experiment timeline: it is possible to see recorded Video during the entire system setup and realtime Video and
+audio communications during part of the setup.
+. 7: Aszyig. \R
+, 1' 1.. 17:51 ‘
+/ ﬂ '1 \\
+Q- ‘ ISS
+TDRSS ;
+H //00msat\
+EEEEEEEEEEE 211"" _ {-3 §§e gmeg
+E3}: :.::.:::::z::::i-i‘—O :::::::::::... WLﬁyH =‘= =2 :Qézx *
+wsc sssc POIC ASl-NET MARS UHB
+Fig. 3. Schematic View of ALTEA data ﬂow: data are produced by ALTEA facility on board ISS (Section 5.1.1), then transmitted through TDRSS
+and WSC (Section 5.1.2) to NASA Ground Segment (Section 5.2.1) and ﬁnally to Italian Ground Segment (Section 5.2.2).
+5.1.2. T DRSS and WSC Mexico. White Sands Center (WSC) has a Line Outage
+A11 ISS communications to Earth are vehiculated by Recorder (LOR) that records data in case a connection
+Tracking and Data Relay Satellite System (TDRSS). between WSC and one of the NASA centers fails. If that
+TDRSS consists of 6 satellites in geosynehronous orbits happens, WSC can play back the data When the connec-
+and a dedicated ground station. The main task of the tion is restored.
+TDRSS is to provide communication and tracking ser-
+vices for ISS and other low-earth orbit spacecrafts. 5.1.3. Data transmission bands
+TDRSS operates as a repeater, relaying signals to and Transmission Bands used for communications and
+from the ground station. No data processing is done on- data distribution between Space Segment and Ground
+board the TDRSS. Segment are S-band and Ku—Band.
+The ground station that monitors and controls the S-band data is relayed to/from ISS Via TDRSS.
+satellites is the White Sands Ground Terminal in New S-Band carries primarily core system data down and
+
+"
+"5","1714 L.D. Fina et a1. / Advances in Space Research 3 7 ( 2006 ) 1710—1715
+commands up. S-Band operates at 2065.0 and 5.2.2. Italian ground segment
+2085.6875 MHz and it is used for the forward and return Data are transmitted to Italian Segment from the
+link to 188. Italian Space Agency (ASI) Gateway (USA) through
+Ku—Band is used as a return data link and data is sent the ASI-Net backbone to the Mierogravity Advanced
+from the ISS Spaee-to-Ground Subsystem (SGS) to Research and Support (MARS) Center in Naples that
+White Sands Via TDRSS. Data are then sent to the operates as ASI Italian User Support and Operation
+control centers, and ﬁnally to remote users. Ku—Band Center (USOC) and that is responsible for the opera-
+operates at 13,775 and 15003.4 MHz and primarily tions of the Italian Payloads onboard 188. Finally data
+carries High Rate Payload Data, Digital Video (Video reach ALTEA UHB.
+is converted from analog to digital onboard and sent
+down as a part of the Ku—Band data) and Core Playback 5.2.3. ALTEA UHB
+Data. ALTEA UHB Will be able to monitor experiment, to
+store and to analyze collected data. UHB conﬁguration
+5.2. Ground data segment Will be the following (see Fig. 4):
+5.2.1. NASA ground segment (1) One Data Storage Server (With redundant disk
+The two main nodes of NASA Ground Segment are array).
+Space Station Control Center (SSCC) at J ohnson Space (2) One or more multi-proeessor workstation for
+Center and Payload Operations Integration Center Scientiﬁc Data Analysis.
+(POIC) at Marshall Space Flight Center (MSFC). (3) One Video-Conferenee workstation for Video-eon-
+Planning and procedure data are exchanged between ferenee communications With NASA.
+SSCC, FDIC and the Italian Ground Segment. Audio (4) One Voiee-Loop workstation for audio-eommuni-
+coordination is used between sites on the ground. The cations With 188.
+POIC is responsible for scheduling, managing, and 0011- (5) One Wide screen monitor/Video projector to
+trolling the Space Station onboard payload data and display 188 real-time Video or scientiﬁc data.
+Video systems. ALTEA data is received at MSFC’s
+POIC that has the overall responsibility for payload We are considering the use of multi-proeessor Linux
+ground data distribution. At MSFC there is also the workstations With specially developed Asymmetric Mul-
+eapability to monitor Vital payload information. Beside tiProeessor (ASMP) real-time kernel and dedicated Dig-
+ALTEA scientiﬁc data, other kind of data Will be dis- ital Signal processing (DSP) boards for real-time
+tributed: 188 System Telemetry, Air-to-ground Audio analysis. ASMP kernel allows to entirely dedicate one
+and Air-to-ground Video. Data are distributed to or more processor to speciﬁc tasks, reducing overhead
+remote sites using UDP protocol. due to standard system operations.
+g ALTEA User Home Base
+—.1
+$3 @3 § e. e: 6;
+Q Q $2 s s 02
+Offline Online Video conference VOIceloop '
+data anal sis data anal sis Storage workstatlor workstatlor Printer
+.y .y server
+workstatlor workstatlor
+Projector
+Screen
+Fig. 4. Schematic View of ALTEA UHB: it is possible to see the structure of the User Home Base With the private LAN, the analysis workstations,
+the storage server and the devices for communications and data presentation.
+
+"
+"6","L.D. Fino et a1. / Advances in Space Research 3 7 { 2006 ) 1710—1715 1715
+
+6. ALTEA data analysis brain concurrently With his brain electrophysiologieal
+dynamics. Particle trajectory and absorbed doses in
+
+6.]. DOS] analysis brain Will be calculated and the correlation between
+the energy released in diﬂerent cortical regions and
+
+In DOSI mode Health & Status and Housekeeping changes in the electrophysiological signal Will be stud-
+data such as voltages, currents and temperatures Will ied. This Will allow to deﬁne new risk parameters linked
+be monitored to ensure proper functioning of all the to the interaction in space between ion passages and
+instrumentation and to allow emergency deactivation brain functions.
+or to shut down any system or subsystem. Oﬂ-line anal-
+ysis of scientiﬁc data Wi11be able to process scientiﬁc data
+relative to SDS subsystem, perferming pedestal snbti‘ac- Acknowle dgemen t
+tion, adaptive pedestal correction, bad data I'CJCCUOII,
+particle track reconstruction, released enetgy calcula- ALTE A is funded by the I ta1ian Space Agency.
+tion, Linear Energy Transfer (LET) calculation, nuclear
+species discrimination, relative and absolute nuclear
+abundances calculation, diﬂerential and integral radia-
+tion ﬂuxes calculation and statistics on particle direction. References
+In addition to this some ancillary data of the ISS (posi- _ _ _ _
+tion a1titu de and 111011118. tion) will be correlated With Casolino, M. et al. The Sileye-3/Alte1no experiment on board the
+
+’ . . . . . International Space Station. Nuclear Phys1cs B 113B, 71—78, 2002.
+ALTEA data to Obtam Informatlon about radlatlon Casolino, M. et a1. Dual origins of light ﬂashes seen in space. Nature
+ﬂuxes in diﬂerent geomagnetic zones. Work is in progress 422, 680, 2003.
+to process a subset ofthese operations in real-time, in or- Fuglesang, C» et 211- Astronaut Light Flash SurVGY- ESA Report
+der to issue space radiation warnings to the crew. M.SM'AM'AHC'GNC'RP'OOI’ 2004' _
+
+Narici, L. et a1. ALTEA: Anomalous long term effects in astronauts.
+
+A probe on the inﬂuence of cosmic radiation and microgravity 0n
+
+6-2- CNSM analySiS the central nervous system during long ﬂights. Advances in Space
+Research 31, 141—146, 2003.
+
+111 CNSM mode;9 8.11 subsystems will be switched on, Narici, L. et al. The ALTEA/Alteino projects: studying functional
+and in addition to previous ones there will be data from effects of microgravity and cosmic radiation. Advances in Space
+EEG and Push Button Unit (PBU). CNSM data Will be R-eseamh 33’ 1352—1351 2004' . . .
+
+Sannita, W.G. et al. Effects of heavy ions on Visual function and
+analyzed 0131-11116 to measure the energies and trajectories electrophysiology of rodents: the ALTEA-MICE project. Advances
+of the cosmic particles passing through the astronaut’s in Space Research 33, 1347—1351, 2004.
+
+"

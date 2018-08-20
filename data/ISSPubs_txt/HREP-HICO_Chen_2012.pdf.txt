@@ -1,0 +1,377 @@
+"","x"
+"1","IEEE GEOSCIENCE AND REMOTE SENSING LETTERS, VOL. 9, NO. 4, JULY 2012 769
+Surface Veloc31t1es From Multlple-Tracer
+Image Sequences
+Wei Chen, Richard P. Mied, Bo—Cai Gao, and Ellen Wagner
+Abstract—We discuss a new inverse model to estimate surface Implementing the G08 technique on a data set involves
+VEIOCitY ‘15ng an image sequence With 1110113 than One tracer. optimizing the ﬁt between the velocity ﬁeld and the image
+The methed employs théglobal Optimal solution technique, Whieh data, while constraining both of them to satisfy the tracer
+eevehs an Image scene Wlth snbarrays .0]; thes’ Wlthm Whleh ”9‘11 (heat) conservation equation in a least—squares sense. Although
+yeloaty components are speaﬁed as blllnear forms. Substitution GOS h t . 11 b d 'th . 1 t ﬁ 1 d
+into the tracer conservation equation for each tracer yields a as . yplca y een use W1 . a Slhg e racer e ’ we
+system of equations for the velocity ﬁeld, which is constrained may speC1fy the least—squares OphhhzahOh for the VelOCItY
+to ﬁt the image data in a least-squares sense over the entire ﬁCld 118ng tWO 0f many tracers. Th6 potential advantages are
+image domain. Solution is achieved iteratively by a Gauss—Seidel intuitively appealing. While particle motions locally parallel to
+method. A numerical model is used as a benchmark to examine the tracer contours in a single tracer ﬁeld are not resolvable, two
+accuracy 0f thishew technique. Image pairs from the Moderate independent tracer distributions can complement one another
+Resolution Imaging Spectroradiometer (MODIS) instruments on- . . . . .
+boar d the N AS A Terra and Aqua spacecraft and the hyperspectral and overcome this deﬁc1t. To demonstrate. the feas1b111ty of the
+imager for the coastal ocean instrument currently onboard the concept therefore, we examlne results us1ng two tracers from
+International Space Station are also used to demonstrate the new a Moderate Resolution Imaging Spectroradiometer (MODIS)
+inverse model with actual ocean data. The derived vector ﬁeld image pair and a pair of three—tracer images from the new hy—
+from MODIS is then compared With the velocity ﬁeld Obtained perspectral imager for the coastal ocean (HICO) hyperspectral
+by the single-tracer technique, and the reSUhS are found to be sensor. Ocean color has been used previously to derive surface
+qualitatively equivalent. velocities [15]—[18], but this work is the ﬁrst to document the
+Index Terms—Current, current estimation, infrared or ocean advantage of using two or more tracers.
+color images, multiple tracers, velocity estimation. This letter is organized as follows. In Section II, equations
+from the G08 inverse model are derived. Section III shows the
+1' INTRODUCTION solution of those equations. We investigate the robustness of the
+E STIMATION of surface velocity from an infrared image velocity retrievals with detailed statistical comparisons between
+sequence is one of the most Challenging remote sensing the current ﬁelds obtained by the proposed estimator and nu—
+problems in ocean dynamics. Scientists have used a number of merical ocean model. We apply the inverse model to MODIS and
+techniques to solve this inverse problem, but two procedures HICO data. Finally, conclusions are drawn in the last section.
+have achieved prominence over the last few decades. The
+ﬁrst is the maximum cross correlation (MCC) algorithm [1],
+[2], which is a feature—tracking technique used extensively by 11- INVERSE MODEL WITH MULTISPECTRAL DATA
+oceanographers to obtain surface velocities from satellite data. A. Tracer Conservation Equation
+Another technique inverts the heat ﬂow or tracer conservation . .
+. . The conservation of temperature (or a tracer) of a ﬂuid
+equation for the ve10C1ty vector [3]—[11]. . .
+Chen et al. [12], [14] propose an alternate strategy to solve p article on the surface Of the water is governed by
+the inverse problem. By dividing the image domain into many 8
+subimages of several pixels each, they approximate the surface (a + V ' V) T = 0 (1)
+velocities with separate bilinear polynomials over each subim—
+age. The velocity is then Chosen as an optimal ﬁt to the heat . . .
+ﬂow equation over the entire image domain. The result is thus Where T .: T(tE’ y, t) is. the temperature or tracer 1ntens1ty
+globally valid and is called the global optimal solution (GOS). spec1ﬁed 1h (90, y) coordinates and time t’ Whleh 1s advected
+A further development of the G08 by Chen [13] uses B—splines by the veloc1ty .ﬁeld V(x’ y, t) :, (u, v). The effects Of so lar
+instead of the bilinear functions employed earlier. Use of these radiation and mixed—later.deepen1ng have been p arameterized
+higher order functions yields a solution with a differentiable Wlth a Single source function in (1) by Kelly [3] and Chen et al.
+velocity ﬁeld, so that surface divergence and vorticity can be [12]’ bUt subsequent .work by us [14] has shown that greater
+calculated. accuracy can be achieved by disregarding source terms and
+instead normalizing the image at t : 152 with respect to the one
+Manuscript received October 14, 2011; revised November 21, 2011; att :.t1 as descrlbed by LllleStrand [21] for Synthetlc aperture
+accepted December 16, 2011. Date of publication February 3, 2012; date of radar lmagery.
+current version May 7, 2012. This work was supported by the Ofﬁce of Naval F01” a multispectral image sequence, the tracer conservation
+Research through the project WU—4279—01 at the Naval Research Laboratory. equation for a speciﬁc band iS given by
+The authors are w1th the Remote Sensmg D1V1s1on, Code 7230,
+Naval Research Laborator , Washin ton, DC 20375 USA e—mail: wei.chen@
+nrl.navy.mil). y g t % —1— uij % —1— ’Uz-j % = 0 (2)
+Digital Object Identiﬁer 10.1109/LGRS.2011.2181328 at 890 83/
+US. Government work not protected by US. copyright.
+
+"
+"2","770 IEEE GEOSCIENCE AND REMOTE SENSING LETTERS, VOL. 9, NO. 4, JULY 2012
+n . after an additional nm or my pixels are counted. The bilinear
+1 ""1m Jlﬁ- I function H a,b(w, y) is deﬁned by
+.1“; (nm—w+p)(ny—y+q)(a:p and bzq)
+J_ll' H.,.<.y)=; <w—2><ny—ytq><aip+nwaadb=q>
+nmny (”00 90+p)(y g)(a_p andb—(I—l—ny)
+-.-t <m—p><y—q><a=p+nx and b=q+ny>.
+;; a‘— All velocities can be calculated with (3) using the velocity on
+F a node points expressed as qu. Velocity vectors Vij in (2) are no
+-;_ longer independent variables when n : nm : my > 1 except
+i; i J on node points. Adjusting the parameter n 2 1, we can control
+_I ‘ :.__ the number of interpolation points related to the resolution of
+I i-‘i I the displacement ﬁeld and the degree of the overconstraint. The
+i system is overconstrained if n > 1 and S : 1 or n 2 1 and
+. 2- —I S > 1, because we have made a simplifying assumption about
+E'Il H ‘ the form of the velocity ﬁeld in (3).
+n C. Global Optimal Solution
+
+Fig. 1. Image array is divided into subarrays or tiles with n 2 nm = mg The presence Of pOSSible quantization errors and nOise in :[he
+
+pixels on a side, so that the number of pixels per tile equals 712. Here, n = 4 remOte sens1ng measurements suggest the tracer conserVatlon
+
+(block size 4 x 4). Node points (marked with solid squares) of the bilinear equation in (2) is never identically zero; however, we can
+
+aPPfOXimatiOH are indexed With P and 61- choose a set of Vij for which it is minimized in a least—squares
+sense. Accordingly, we deﬁne a chi—squared cost function based
+
+where i and j are pixel indices over the individual image scenes, 011 (2) as
+
+3(1 3 3 g S ) is a band indeX, and S is the number of selected S 2
+
+Visible or near IR bands. With the inclusion of the information X2 : Z Z (% + u. % + v. %)
+
+from the additional bands, we expect that the estimated velocity 3:1 2, j 875 23 890 23 83/
+
+ﬁeld from (2) will generally be more reliable and accurate than ’
+
+01163 calculated from only a single band. where the ranges of i and j are the entire image pixel domain
+(i E [0,Nm — 1] ﬂj E [0,Ny — 1]). By minimizing the cost
+function with respect to the velocity components um and ”um,
+
+3- Velocity Field M0016 ling an overconstrained system of equations for the velocity may be
+
+Equation (2) describes the evolution of a tracer in a velocity written as
+
+ﬁeld. An image having a set of pixels in an NT; >< Ny array has 5
+
+2N3; >< Ny unknown velocity components (u, v) and possesses Z Z (% + uij % + vi]. %)
+
+sufﬁcient information to allow us to derive velocities without 8:1 i,jeﬂkz 8t 396' 83/
+
+additional constraints or assumptions provided S 2 2. aTi , 8T. ,
+
+. . . . 38 7,38 . .
+To develop a uniﬁed adaptive framework for motion estima— >< {8—907 8—} Huh, J) = 0 (4)
+
+tion to average over pixel noise, we expand the velocity ﬁeld 3/
+
+as bilinear polynornial functions [12]’ [14]' The two velocity where the Kronecker—Delta (52'3') allows the sum to be written as
+
+components in an image scene can be expressed as bilinear
+
+polynomials [l4] 3162“ 3’02“ 1 1 . '
+
+1 1 871:; = 871:; = 0;)32::0Hkl<z7])6k,p+anm6l,q+ﬂny-
+Vij : Z Z Vp+04nm,q+ﬁny Hp+0mmq+ﬁny (iv j) (3)
+QZO 3:0 More importantly, the summation domain is now reduced from
+the entire image plane to only a local region 12kg, so that
+
+where Vij : (uij, vij) are the velocity component magnitudes, k+nw_1 l+ny_1
+
+and functions Ha,b(ac, y) are the bilinear forms. We partition 2 _> Z : Z Z
+
+the image domain into a number of subdomains, or tiles, each , , , , , , '
+
+. . . . 2,3 @36le sz—nm—l—ljzl—n —|—1
+
+of which contains an mm X ny array of plXClS (Fig. l). The y
+
+qnantized indices 1? and q are functions 0f 90 and 3/, and are Of the original pixel set, the velocities um and vkl and their
+
+given by nearest neighbors are the only members now contained in
+the summations in (4). To solve this sparse linear equations
+
+{19, q} : {7% [ij my [ij } system, we employ the Gauss—Seidel iteration method with a
+”It ”y Newton—Raphson technique to ﬁnd the roots. Speciﬁcally, the
+roots (the velocities um and Um) are given
+
+where L J denotes an integer operator. The {19, q} serve as tile
+
+indices, since the integer operator increments them by unity VIETH) : V127?) — (Akl)_1B,(€T) (5)
+
+"
+"3","CHEN et al.: SURFACE VELOCITIES FROM MULTIPLE-TRACER IMAGE SEQUENCES 771
+(a) Modeled Velocities and Tracer 1 at Time 18b! —’ 0.35 (m/s) (b) Estimated Velocities and Tracer 1 at Time 20hr (C) Tracer 7- ‘"" Time 18hr
+>2”- ; )ﬁjgyg} . V <'- ‘12. -. ‘ :ff' .
+40
+. I Wf‘ , “""1; I
+,..’-‘:""¢f""7:'.. - -.""""t.'.'.'.'
+4:42:33 . I: Q : ’3 '1’ k, : :5 4‘ aw“. :52: Q '3 \‘ : :' ~l
+E o“““~:\ ‘ We... r""“""‘“ w“- '
+é ‘2: 2 t: “'5‘. : .3: : j 3 : : :3‘ ( (d) Tracer 2 at Time 20hr
+>. .:;“..'.’ I I 2131 ' J.‘ 12222- .. .
+20 ... 3 3 3 33 3 ......:: a . : :3: : :Mmﬁ:
+t : 133:: : : :tttttttt; 7, ; ; -. 1; :33; ; 3:323. .
+- ~r:':::;:::::::::: : 3::: 1221‘. '; ::::::::::::::tttt: '
+‘s"" I“'::::""'OW""IOOC""VV"" [i‘VVE:O“""""’""""“""""""'
+""‘- IZZIMLZIIIIIIIK .:::' “:IIIIIIIIIZIZIIIIU:
+10 :2. -¢:‘;::EE§§:::::::::::::55:::t: :. 1;;iiil‘jjiittttttttiiﬁtti:
+""' ‘,.r00...5.‘ \|§.. ""j 3“, ',...,,...0§\\!.ou.
+gimxl‘w""11222211231“:3 :3 3min.-~:-.:-.::;::;:;~:::
+~§§§1:::2...--~~;a)) ; wmmz..----~;ag,)::
+""i s... \w ‘ ‘ ‘ ""'33- . -‘ "".,~“ . \\~“‘:::3 5.1}...
+0 9?. ""\S‘Wx‘ ;::* ”35.19;. ”*9 W23“ ’1 - I
+O 10 20 30 4O 50 10 20 30 4O 50
+1‘ (km) x (km)
+Fig. 2. Velocity ﬁelds. (a) Modeled velocity ﬁeld (averaged between 18 and 20 h) and tracer #1 distribution generated by the numerical simulation model in a
+50 km square domain (b) The GOS—Calculated velocity ﬁeld (averaged between 18 and 20 h) and tracer #1 distribution at 20 h. (C.) Tracer # 2 distribution at
+t = 18 h. (d) Tracer #2 distribution at 20 h. The coordinates in (C) and (d) are the same as those in (a) and (b).
+where matrix A k: l and VCCtOI' BIS?) are deﬁned by 40 Average Angular and Magnitude Errors vs. Block Size n
+S 8 2 S 8 8 i + Single Tracer
+Ti's 2 . . Ti's Ti’s 2 . . . ‘
+Z Z (3—95) Hm<1=~7> Z Z 3—95 8—;Hkl(zh7) 3 30 y + MumP'eTW’
+821i,jEle 821i,jEle 8
+Am: 5 s 8""
+8Tijs 8T’Lj3 2 . . 8T’lj3 2 2 . . e
+Z 2 8:1; 8y sz(’L=J) Z 2 8y sz(""=~7) 3 20
+8=1iaj69kz 8=1iaj69kl go
+a
+s <‘>’ 10
+8T7; .8 (m) 8Ti ~s (m) 8T7; -8 8T. ~s . . <
+Z Z ( 8i? +uij ax] +1113“ —ayg —a; sz(%.7)
+(m)_ s=1i,j€§2kl
+BM _ S 8TH ()8T~ ()aT-~ 8T~ 1'0
+z. z (...—1.38%.? —+v.;” —)$Hm<m> +
+21173 69M 0'8 -0- Multiple Tracer
+>
+m is a iteration index. 2 0-6
+
+All velocities um and um 0n node points can be obtained 2.231 0 4
+by iterating the equations in (5), and the velocities uij and vij 3
+off node points can be calculated by the interpolation functions 0.2
+in (3). 0 0
+
+Ultimately, all velocities can be determined, and we have an ' 0 5 10 15 20
+optimum solution over the large-scale image, which we call the Block Size (n)
+multiple-tracer GOS (MTGOS). We can adjust the block size . , , ,
+
+. . - Flg. 3. Plots of error measurement generated by the estlmators w1th numerlcal
+parameter n > 1 to control the number of interpolation pomts . _ _
+
+. . . . model data at tlme t1 — 18 h and t2 — 20 h. (a) and (b) average angular and
+Wlthln a tllea ICSOIVC the dISplaCCment ﬁeld, and COHUOI the magnitude errors versus block size for estimators with the single tracer equation
+degree of the overconstraint. (S = 1) and the multiple—tracer equations (8 = 2).
+
+III. EXPERIMENT S 67rcv/L) and allowed to evolve freely. The resulting velocity
+. d l . l . derived from the evolution of these two tracers between times
+A. Multltracer Images From an Ocean M0 6 Szmu anon t1 : 18 and 20 h) is shown in Fig. 2. Small changes in
+
+An objective way to document the performance of the GOS tracer morphology yield the velocity solution. For example,
+with two tracers is to use a numerical simulation. This model the red/yellow feature near the upper left corner of Fig. 2(c)
+is the 3-D nonlinear ocean dynamics simulation described becomes taller and wider in Fig. 2(d) at t = 20 h. A quantitative
+in [12], but initialized with two surface tracers having the measure of the improvement realizable by adding a second
+forms T1(:U, y, 0) = sin(27r:c/L) sin(27ry/L) and T2(:U, y, 0) = tracer depends strongly on the initial tracer morphology, and
+2 sin(27r(:v — y) / 2L) COS(27T(:U + y) / 2L) in a square domain a meaningful investigation of the effects of utilizing different
+with L = 50 km. The initial velocity is deﬁned in terms of initial conditions needs to be done. However, our goal in this
+the ﬁrst three Fourier components (i.e., 27rcc/L, 47T5U/L, and short note is to alert the reader to the potential improvement
+
+"
+"4","772 IEEE GEOSCIENCE AND REMOTE SENSING LETTERS, VOL. 9, NO. 4, JULY 2012
+400 (a) Velocities Estimated by MTGOS (MODIS Dala)atNor1h Sea (b) \""clocilics Estimated by (103 (MODIS Band 4) (c) Velocities Estimated by 605 (MODIS Band 3|)
+300
+E 200
+100 Belgium
+:lm. Lon: - :5""I5'43 51"" 1:. 4t)""59'|.~<_.~<|"" N:
+L L L
+0
+0 100 200 300 400 100 200 300 400 100 200 300 400
+X (km) .\' (km) .\' (km)
+Fig. 4. (a) Velocity vectors estimated by the MTGOS from a two—tracer image sequence at time 11:15 UT and 13:00 UT on March 26, 2007 are superimposed
+on one of the multiple—tracer images (A = 0.545 — 0.565 pm at time 11:15 UT) (false color representation); (b) and (c) Velocity vectors estimated by the G08
+from two one—tracer image sequences at time 11:15 UT and 13:00 UT on March 26, 2007 are superimposed on (b) (A = 0.545 — 0.565 pm at time 13:00 UT)
+and (c) (A = 10.78 — 11.28 pm at time 11:15 UT) images (false color representation), respectively.
+possible by increasing the number of tracers. The two different imagery, we must increase the block size to smooth the noise
+conﬁgurations used in Fig. 2 are meant to be suggestive of and increase the degree of the overconstraint. Our Choice of
+different ﬁelds Visible in coastal imagery (e.g., temperature and the block size parameter in GOS is dependent on the scale of
+Chlorophyll). the feature structures. The selection criterion for an optimal
+The errors in velocity angle and magnitude are deﬁned as block size is similar to the MCC method and is approximately
+_ A A equal to the Characteristic feature scale. For example, the typical
+{A—g, ﬂ} : i Z {arocos (M) 7 W—VWl} scale of the feature structures for the MODIS data in this
+V N 2.]. le'jHVz'jl le'jl letter range from 30 to 50 pixels (determined by calculating
+’ the autocorrelation), so the appropriate block size for MTGOS
+where V and V are the estimated and modeled velocities. If V 7£ computation is about 40 pixels.
+0 and V : 0, we deﬁne its contribution to AV/ V as unity to Velocities estimated by the MTGOS [Fig. 4(a)] can be com—
+aVOid a Singularity in the error calculation. If V = V = 0, we put pared with GOS results using single—tracer image sequences
+the contribution to AV/ V equal to zero. The errors are shown with different wavelengths [Fig. 4(b) and (C)]. The MTGOS
+in Fig. 3. There, we see that for block size n : 3, the MT angle [Fig. 4(a)] and GOS [Fig. 4(b) and (C)] results share similar
+and magnitude errors can be reduced from their single—tracer features. 1) Flow off England parallels the coast and is toward
+values by 30% and nearly 40%, respectively. the south and southeast. 2) Flow off Belgium is toward the
+north or northeast. 3) Flow through the Dover Strait is toward
+B. Multispectral Image Data the south 4) Velocity magnitudes and angles agree generally,
+The MODIS instruments onboard the polar orbiting sun— although details differ at spec1ﬁc locations.
+synchronous Terra and Aqua spacecraft have 36 spectral Chan—
+nels between 0.4 and 14.3 mm for remote sensing of land, ocean, C Hyperspectral Image Data
+and atmosphere [21]. The Channels in the Visible spectral region '
+have been used for remote sensing of suspended sediments and The HICO sensor is the ﬁrst hyperspectral imager designed
+ocean color, while the Channels in the IR spectral region are speciﬁcally for remote sensing of the coastal environment [20]
+for sea surface temperature. We have selected a pair of Terra from the International Space Station (188). It has 128 narrow
+and Aqua MODIS Cloud—free images over the English Channel Channels (5.7 mm wide) covering the contiguous spectral range
+and North Sea with time differences less than 2 h between the between 0.35 and 1.08 mm with a spatial resolution of 100 m.
+data acquisitions. The data sets with a spatial resolution of 1 km Through Visual examination of images from a number of HICO
+are used in our studies of surface velocities. More speciﬁcally, data sets, we have observed that the images of narrow Channels
+the MODIS Channel 4 (wavelength: A : 0.545 — 0.565 ,um), between ~0.55 and 0.72 mm are most useful for remotely
+which is useful for the remote sensing of suspended sedi— sensing suspended sediments. The 188 geometry permits re—
+ments, and Channel 31 (wavelength A : 10.78 — 11.28 ,um) peated observations of high latitude surface targets (N 500 N)
+for sensing sea surface temperature are used. The GOS two— in successive ISS orbits. We obtained one pair of HICO scenes
+tracer result [Fig. 4(a)] shows a general ﬂow to the south. over the English Channel on March 22, 2011 at times 10:05:46
+It also exhibits smaller scale variability between the eastern and 11:41:13 UT. The right column in Fig. 5 shows images for
+and western land boundaries. The direction and magnitudes of Channels centered at 0.606 and 0.720 mm at 10:05:46 UT on
+the resulting GOS velocity vectors are consistent with those March 22, 2011. Three Channels (centered at 0.606, 0.674, and
+inferred from comparing two images at times 751 and 752. Since 0.720 ,um) with different water penetration depths are selected
+noise, brightness variations, and featureless regions eXist in real and the data processed for the velocity ﬁelds. Fig. 5 shows
+
+"
+"5","CHEN et al.: SURFACE VELOCITIES FROM MULTIPLE-TRACER IMAGE SEQUENCES 773
+Estimated Vclocilics from HICO Images at English Channel
+400
+300
+
+A }.:1).()()(»(11m); l0;()5:-1(, UT
+
+E
+100 {1.011.131} = {2°x'25"", 50°51'35"";
+
+France
+}.=1).720(11m); 10:05:46 UT
+0 _
+0 200 400 600 800 l000
+x (km)
+Fig. 5. (Left) Estimated velocity vectors from a three—tracer HICO image sequence (wavelengths: 0.606, 0.674, and 0.720 pm) at times 10:05:46 UT and 11:41:13
+on March 22, 2011 are superimposed on one of the multiple—tracer images (wavelength: 0.674 ,u.m, false c0101 representation at 10:05:46 UT). (Right) Images
+from the A = 0.606 and 0.720 ,u.m channels at time 10:05 :46 UT.
+the estimated velocity vectors superimposed on one of the MT tion using primitive equation model output,” J. Geophys. Res., vol. 105,
+images (wavelength: 0.674 ,um) (false color representation). n0-98’1313- 19499—19514’2000- _ _ _
+Detailed S atial variations 0 f the velocit vectors are seen ver [8] X. Vlgan, C. Provost, R. Bleck, and P. Courtler, “Sea surface ve10c1t1es
+. p . y y from sea surface temperature image sequences 2. Application to the
+Clearly 1n thlS ﬁgure. Brazil—Malvinas conﬂuence area,” J. Geophys. Res., vol. 105, no. C8,
+pp. 19 515—19 534, 2000.
+[9] P. O. ZaVialov, R. D. Ghisolﬁ, and C. A. E. Garcia, “An inverse model
+for seasonal circulation over the Southern Brazilian shelf: Near—surface
+IV’ CONCLUSION velocity from the heat budget,” J. Phys. Oceanogn, V01. 28, n0. 4, pp. 545—
+- - - 562, Apr. 1998.
+
+Thls work (16.818 Wlth the ,uée Of more than 9116 traﬁcer m [10] S. Céte and A. R. L. Tatnall, “The use of the hopﬁeld neural network
+the G08 teChque £01"" 0bta1n1ng surface VCIOCIty est1mates to measure sea—surface velocities from satellite images,” IEEE Geosci.
+from remote sens1ng 1mage sequences. This strategy has two Remote. Sens. Lett., vol. 4, n0. 4, pp. 624—628, Oct. 2007.
+advantages: 1) Multiple tracers provide additional constraints [11] A-Mercétlm’A-anfa’L1Plterbarg’Z°Z?mblanCh1’andM-GMagaldl’
+th t . h f h 1 . . 2 T . h “Est1mat1ng surface ve10c1t1es from satelhte data and numencal models:
+
+3'. can.1mprove t e agcuracy O t 6 V6 OClty’ ) eXture'ﬂC Implementation and testing of a new simple method,” Ocean M0del.,
+reg10ns 1n second or th1rd data sets may augment a featureless V01. 33, n0. 1/2, pp. 190—203, 2010.
+region in a tracer ﬁeld, thus allowing a solution to be derived [12] EV Che? Rd E Mied’Galng 1C Y 31116111 “Neaf‘SUTfaFe ocean VdelfCitJy
+
+. . 10m 1n rare lmages: 0 a Optlma so ut10n to an 1nverse m0 e ,” .
+over the 6mm Image scene' . . Geophys. Res., vol. 113, p. C10 003, 2008. DOI: 10.1029/2008JC004747.
+
+Our purpose has been to suggest that substantlal Improve- [13] w. Chen, “A global optimal solution With higher order continuity for the
+ments in accuracy may be available simply by using the global estimation of surface velocity from infrared images,” IEEE Trans. Geosci.
+optimum solution With the additional spectral bands already Remm‘ se’ZS""VO.l' 48’ 110' 4’ pp' 1931—1939: A131? 2010: .
+
+, , , , , [14] W. Chen, N0n11near 1nverse model for ve10c1ty est1mat10n from an
+Present 111 1mageny. AP 1nd1cat10n 0f the sort of accurécy image sequence,” J. Geophys. Res., vol. 116, p. C06 015, Jun. 2011.
+1mprovement poss1ble 18 shown 1n model compansons us1ng DOI:10.1029/2010JC006924.
+tWO speciﬁc types Of tracer distributions (Fig. 3). Both MODIS [15] C. A. Garcia and I. S. Robinson, “Sea surface velocities in shallow
+
+(1 HI C O 1 h (kit 1 f 1 b d d h seas extracted from sequential coastal zone c0101 scanner satellite data,”
+an a 50 . 3V9 a . 1 101}? use 11 311 5a 31} WC 3V9 J. Geophys. Res., v01. 94, n0. C9, pp. 12 681—12 691, Sep. 1989.
+demonstrated the1r p0tent1al ut111ty for ve10C1ty retr1evals. [16] J . S. Prasad, A. S. Reajawat, Y. Pradhan, O. S. Chauhan, and S. R. Nayak,
+
+“Retrieval of sea surface velocities using sequential ocean color monitor
+data,” Proc. Indian Acad. Sci. Earth Planet. Sci., V01. 111, no. 3, pp. 189—
+195, 2002.
+
+REFERENCES [17] R. I. Crocker, D. K. Matthews, W. J . Emery, and D. G. Baldwin, “Comput—
+
+[1] J . A. Leese and C. S. Novak, “An automated technique for obtaining ing coastal ocean surface currents from infrared and ocean c0101 satellite
+cloud motion from geosynchronous satellite data using cross correlation,” imagery,” IEEE Trans. Geosci. Remote Sens., V01. 45, n0. 2, pp. 435—447,
+J. Appl. Meteor, V01. 10, n0. 1, pp. 118—132, Feb. 1971. Feb. 2007.
+
+[2] W. J . Emery, A. C. Thomas, M. J . Collins, W. R. Crawford, and [18] A. Mendonca, A. Martins, M. Figueiredo, I. L. Bashmachnikov, A. Couto,
+D. L. Mackas, “An objective method for computing advective surface V. M. Lafon, and J . Aristegui, “Source, evaluation of ocean color and sea
+velocities from sequential infrared satellite images,” J. Geophys. Res., surface temperature sensors algorithms using in situ data: A case study
+V01. 91, n0. C11, pp. 12 865—12 878, 1986. of temporal and spatial variability on two northeast Atlantic seamounts,”
+
+[3] K. A. Kelly, “An inverse model for near—surface velocity from infrared J. Appl. Remote Sens., V01. 4, Feb. 3, 2010, Article Number: 043506.
+images,” J. Phys. Ocean, V01. 19, no. 12, pp. 1845—1864, Dec. 1989. DOI: 10.1117/1.3328872.
+
+[4] K. A. Kelly and P. T. Strub, “Comparison of velocity estimates from [19] R. Lillestrand, “Techniques for change detection,” IEEE Trans. C0mput.,
+advanced very high—resolution,” J. Geophys. Res., V01. 97, n0. 6, pp. 9653— V01. C—21, n0. 7, pp. 654—659, Jul. 1972.
+
+9668, 1992. [20] R. Lucke, M. Corson, N. McGlothlin, S. Butcher, D. Wood, D. Korwan,
+
+[5] A. Ostrovskii and L. Piterbarg, “Inversion for heat anomaly transport from R. Li, W. Snyder, C. Davis, and D. Chen, “The Hyperspectral Imager for
+sea—surface temperature time—series in the Northwest Paciﬁc,” J. Geophys. the Coastal Ocean (HICO): Instrument description and ﬁrst images,” Appl.
+Res., vol. 100, no. C3, pp. 4845—4865, 1995. Opt, V01. 50, no. 11, pp. 1501—1516,Apr. 2011, Doc. ID 132361.
+
+[6] A. G. Ostrovskii and L. I. Piterbarg, “Inversion of upper ocean time series [21] M. D. King, W. P. Menzel, Y. J . Kaufman, D. Tanre, B.—C. Gao,
+for entrainment, advection, and diffusivity,” J. Phys. Oceanogn, V01. 30, S. Platnick, S. A. Ackerman, L. A. Remer, R. Pincus, and P. A. Hubanks,
+n0. 1, pp. 201—214, J an. 2000. “Cloud and aerosol properties, precipitable water, and proﬁles of temper—
+
+[7] X. Vigan, C. Provost, R. Bleck, and P. Courtier, “Sea surface velocities ature and humidity from MODIS,” IEEE Trans. Geosci. Remote Sens.,
+from sea surface temperature image sequences 1. Method and valida— V01. 41, n0. 2, pp. 442—458, Feb. 2003.
+
+"

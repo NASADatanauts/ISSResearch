@@ -1,0 +1,512 @@
+"","x"
+"1","Next-Generation Air—Ocean—Wave
+Coupled Ocean/Atmosphere ""h
+Mesoscale Prediction System 1.5. 3,,
+(COAMPS) a ?N-
+“% 'ﬁ
+S. Chen,1 TJ. Campbell,2 S. Gabersek,3 H. Iin,1 Ufa \ 1:“
+and R'M' HOduIA m-m-m-n-rrt: mu Imw
+IMarine Meteorology Division mu mm ﬁvmm
+2Ocean0graphy Dzvzszon @ — @
+3University Corporationfor Atmospheric Research 5""”""""""'ﬂ‘ ""'1' “ﬂ
+4SAIC, Monterey, California FIGURE 1
+A schematic diagram of COAMPS six-way coupling between
+the atmospheric, ocean, and wave models and the fields that
+Introduction A team of NRL scientists from the are eXChanged between eaCh pair Of components-
+Marine Meteorology and Oceanography Divisions has
+. ' . 1 '
+successfully transformed the one-way alr—ocean Cou- and w1nd stress The ocean cotnp 011th a SO p r0V1des
+. . the current and sea surface helght t0 the wave compo-
+pled Ocean/Atmosphere Mesoscale Predlctlon System , , ,
+( C O AMPS®*) in to a siX-way fully coupled air—ocean— nent, wh11e the atmospherlc component unpacts the
+. . . ' - ' . Th
+wave weather and marlne forecastlng system. Th1s was waves through the wmd drlven momentum drag , e
+accomplished using the s tate-o f. the-ar t Earth System feedback of the wave component to the ocean c0ns1sts
+Modeling Framework (ESMF) making C O AMPS the of 10 forcing terms, including the Stokes drift current,
+first limited area model to utilize ESMF in an effort to W136 radlagli? :ressrgrgralcthrelatislwfarve-b01:t0nari:rVrveathe,
+seamlessly couple multiple, individually skillful models a WW6- O 0 cu e a a eque cy. ,
+in to one ﬂexible coheren t modeling system. The com- component feedback to the atmosphere c0ns1sts of a
+ponents used here consist of the COAMPS atmospheric nond1mens1onal roughness length (Charnock number),
+model the Navy Coastal Ocean Model (N C OM) two which is related to the atmospheric momentum drag.
+interchangeable wave models — Simulating WAves Hurricane Forecast Assessment- The prestorm
+Nearshore (SWAN) and WAVEWATCH III — and a '
+. ' ' , h 1 '
+new a1r—sea coupler developed at NRL that surmounted 01C 6:11 Cinffilois ffciaisntﬂ eﬁarThorrcoijiegti112t
+many of the technical challenges that arose during the a 0 g a u ca e ac ’ .ae ce e ap , Y.
+developmen t of the coupled system. A mechanism was change of a hurrlcane. Addltlonally, a hurrlcane can 1n-
+implemented in the air—sea coupler to supper t in terop- duce a tralhng ocean cold wake anomaly (up to several
+erable inter-exchange of two different wave models and
+different wave feedbacks t0 the ocean and atmosphere, !.
+a feature that enhances the capability of the coupled n It ' - -
+system to adapt new components. Additionally, special .- "" . '_:
+atmospheric, ocean, and wave hurricane observations 1- 'I'I- 1""“ _l"" .. i -' 'Zﬁ '_
+were obtained to investigate and validate the sensitivity ""a If an - E - _ ""'- I: h‘ Iil ' i. F i '
+. . 'i - . _
+of hurricane intensity and track change in the forecast n '-- I. 1 t 13% I _'. . '- 1' ""
+system due to various coupling processes. - .'|..- I "" '5' t
+---.-.-' T .L.- Hi- = l "" I
+Coupling Methods: A fully coupled air—sea—wave ' ' ' _ - 1| . ‘
+model can provide a natural mechanism for frequent "" 'l ' '
+two-way feedback between the air—ocean, air—wave, - ' _ _ -
+and ocean—wave components. Figure 1 shows the _ - . '- ' '
+variety of model variables that are exchanged between - '
+each set of coupled components over the course of
+the coupled time-step. As illustrated in the figure, the
+atmospheric component provides a total of six ocean FIGURE 2
+surface boundary forcing fields to the ocean compo- Six-way coupled ICOAMPS 48-h simulation ef Hurricane Fran-
+11th while the ocean model returns a new sea surface ces (2004). The figure shows the 0.1 kg/kg Isosurface plots of
+’ h h h . ﬂ h cloud (yellow), ice (white), rain (green), and graupel (purple)
+temperature to} .e atmosp ere t at 111. uences t e next mixing ratio. The color shading is the sea surface temperature
+tlme-step predlctlon 0f the atmospherlc surface ﬂuxes with darker shade of blue depicting the cooling beneath the
+hurricane. The white arrows represent the 10-m wind (m/s).
+*COAMPS is a registered trademark of the Naval Research Laboratory. The V'ew '8 from the SOUtheaSt flank Of the storm.
+130 2011 NRL REVIEW | atmospheric science and technology
+
+"
+"2","“um“ wmwww 1.
+.H ..—-' [ :l -._-':_"" '1
+ﬂ ___ ___ .F'J'L l._ “I. ____ _ .. ﬂ"".
+. '~.- - ' i ..
+I 'I I5 HE- I I
+in ,' HI ,"" '
+.' - ll 1'
+E III' ' - I I _. 21'1"". - j t”.
+nth I' . Hi! . : '
+“n.3,.mmmm ""ﬁznmmm *
+m m
+HGURE3
+Comparisons of COAMPS simulated Hurricane Katrina (2005) significant wave height (m) without
+the currents forcing in the SWAN wave model (left panel) and the significant wave height difference
+between the run with the current and the run without the current (right panel). The red arrows are the
+surface currents. Note that the wave heights in the front right quadrant of the storm are reduced in
+this five-way coupled run. This is the result of currents being in the same direction of the surface wave
+packet propagation, which tends to increase the wave packet speed and decreases the wave heights.
+degrees) that tends to form preferentially to the right of tend to be found in this quadrant of the storm. Finally,
+the storm track and can extend hundreds of kilometers the 48-h intensity and track differences between the
+to the rear of the storm, shown by our 48-h simulation uncoupled and various coupled runs (one-to six-way
+in Fig. 2. This intriguing feature is important both for coupling) were found to be as large as 18 m/s and 10
+its immediate impact on the storm evolution as well as nautical miles, respectively. Further experiments are
+longer-term climatic impacts to changes in the ocean required to determine if this is typical for other tropical
+heat storage below the thermocline. To examine the im- cyclones that form in other parts of the world as well.
+pact of this feature on the tropical cyclone (TC) simula-
+tion in the model, the team performed a series of runs Summary and Conclusions: Validation of the two-
+to evaluate the impact of coupling vs no coupling on way coupling between the atmosphere and ocean only
+two mature category 4 and 5 hurricanes, Katrina (2005) also showed forecast improvements in a variety of non-
+and Frances (2004). We compared the atmospheric hurricane atmosphere and ocean phenomena.2 With
+model prediction of the hurricane track, intensity, and the new coupling capability in COAMPS, NRL scien-
+gale force Wind radii; the ocean model prediction of the tists can now conduct a Wider range of new research
+hurricane-induced cold ocean wake; and the surface applications to further the understanding of the air—sea
+wave model prediction of the significant wave height interaction processes that are of the utmost importance
+and period with the available observations. Among to the Navy.
+the most important findings are the following. First,
+two-way air—ocean coupling developed a cold ocean Acknowledgments: We thank Dr. Melinda Peng,
+wake that acted to reduce the intensity of the simulated Dr. Jerome Schmidt, Dr. Travis Smith, Mr. Rick Allard,
+storm. This weakening was manifested by an increased and Mr. Eric Rogers for discussions; and Drs. Paul Mar-
+asymmetry in the hurricane secondary circulation and tin and James Doyle for providing the surface wave-
+expansion of the eye wall. Second, it was discovered current and surface wave-Wind feedback algorithms.
+that the horizontal advection of the near—surface cold [Sponsored bY the DOD High Performance Computing
+ocean water contributed to the upper—ocean cooling MOdemizaﬁon Program]
+and weakening of the hurricane as much as the vertical
+. . . 1 References
+m1x1ng and up welling. These new results ShOW that the 1S. Chen, T.]. Campbell, H. Iin, S. Gabersek, R.M. Hodur, and P.
+magnitude and size Of the trailing ocean COld wake can- Martin, “Effect of Two-way Air—Sea Coupling in High and Low
+not be fully represented by coupling with simple one- Wind Speed Regimes,” Mon. Wea. Rev. 138, 3579—3602 (2010).
+dimensional mixed layer models only. Third, including 2 RA A11ard,T-i- Campbell, R-I- Small, T-A- Smith, T-G. Jensen,
+the ocean current and water level forcing in the wave S ChenJ-A- cumming3> “1 Doyle"" X- Hong> and SN- car? 011’
+model reduced the hurricane-induced significant wave vahdatlon Test Réport for the COUpled Ocean-Atmospherlc
+, , , , Mesoscale Predlctlon System (COAMPS), Ver31on 5, NRL/
+helght bias In the front rlght quadrant Of the Storm MR/7322--10-9283, Naval Research Laboratory, (2010).
+(Fig. 3). This may have important implications for l
+improving the maximum forecasted surge heights that
+atmospheric science and technology | 2011 NRL REVIEW 131
+
+"
+"3",". . . model With a sea surface emissivity model that accounts
+New ocean Wll‘ld capab'hty from for Wind-induced roughness and sea surface foam. The
+Space optimization algorithm adjusts the retrieved parameters
+to match the WindSat measurements. Near-real-time
+T.F. Lee,1 M.H. Bettenhausen,2 and ].D. Hawkins1 examples of WindSat products appear at http://WWW.nr1.
+1Marine Meteorology Division navy.mi1/ WindSat/ .
+2 Remote Sensing Division
+Forecasting Case Examples: Figure 4, Which shows
+Introduction: WindSat is a satellite-based polari- a cold front off the west coast of the US, illustrates
+metric microwave radiometer designed and developed the characteristic shift of Winds from the southwest
+by the Naval Research Laboratory Remote Sensing equatorward of a cold frontal band (White) to north-
+Division and the Naval Center for Space Technology.1 west poleward 0f the frontal band. Wind speeds (WS)
+WindSat was launched in 2003 to demonstrate the throughout the image are generally from 20 to 30 kt
+capability of polarimetric microwave radiometry to With some higher speeds in the vicinity of the front. The
+measure the ocean surface Wind vector from space. This convergence of Winds along the front is, in part, What
+demonstration has been highly successful, enabling produces the upward motion responsible for the cloud
+WindSat data to be used operationally for weather band. Shades of gray indicate vertically integrated quan-
+forecasting (for example, to monitor tropical cyclone tities 0f CLW from 0.0 (black) to 0.5 mm (White). White
+structure worldwide) and as input to numerical weather values Without overplotted vectors indicate unavailable
+prediction models of the US. Navy, the US National retrievals due to precipitation. Where black vectors are
+Oceanic and Atmospheric Administration (NOAA), plotted on top of White, retrievals should be examined
+and the United Kingdom Met Ofﬁce. more Closely for consistency. Similar retrievals are as-
+The NRL WindSat ocean retrieval algorithm is similated into numerical weather prediction models.
+an optimal estimation algorithm for retrieving the WindSat Wind plots are used routinely by a variety
+ocean surface Wind vector and sea surface temperature of responsible agencies for routine reconnaissance of
+from WindSat measurements.2 The WindSat measure- tropical cyclones. While heavy rain and Clouds often
+ments represent a combination of microwave energy prevent Wind retrieval of the strongest Winds near the
+emitted and reﬂected from the Earth’s surface and central core of storms, useful Wind information is still
+absorption and emission of the microwave energy as often observed in adjacent areas. Figure 5, Which shows
+it propagates through the atmosphere. The algorithm the WindSat vectors derived from Hurricane Earl,
+also retrieves columnar atmospheric water vapor and shows near—hurricane force Winds of approximately 60
+columnar atmospheric cloud liquid water (CLW). We kt near the storm center in a large cloud-free (nearly
+use a physically based forward model for the WindSat black) region. While CLW amounts are too great for
+measurements that couples a one-layer atmospheric Wind retrieval over most of the interior of the storm
+III-E-""I'I' IJE'TI' IIH'I'I' I'IIE'I'II'I' 533'?! 12'3“?! iiﬁ'ql'l'
+CLW Emmi WE [hmm-
+..--=,:|r'” - r 0.5-:1 I H:
+arm _ .. _'_1__ B-El-‘H 9.45 55
+g. £4“ .-""'_' 1' um i
+55'” ._-.r"" F; _.-. ' '. 5m... ._ 9.35 44D
+-' ._.-.1;"" F m "" - “3‘1 35
+' I ”5;; i E 9.25 31::
+m 5.55:5: ” m — am 35
+1 £3533“; ﬁ'ﬁé’r— u.15 ii:
+11-“ _~y-- - 13m ma 1:}
+am 5
+m. am am 9
+IEE'L'I' 'II'W |3-II""I'I' I'TIE'II'I' 135""” 1EH-""I'I' IEE'I'I'
+FIGURE 4
+Frontal system off California, December 29, 2003. White indicates potential rain con—
+tamination of vector accuracy. Colored vectors show wind speed and direction; black
+vectors should be examined further for reliability.
+132 2011 NRL REVIEW | atmospheric science and technology
+
+"
+"4","W 13-1” um um ?z'w J'u‘w urw
+' CLW Emmi WE [hmm-
+. __ 9.511 W
+an .r 129+:
+9.45 I 55
+Eur "" um 5'”
+45
+55% r. 3.514
+3 ~‘ '_ 9'35 44::
+:4.“ a. .___. _ _ :H'H g I135 3'3
+_ LL- ""' I $.31 25
+21::
+3.9-"" 52"""" £1.15 15
+9.19 1D
+am 5
+1'?” ' :I-EI'H
+. am '1
+ﬂ-[I'H'ul' 'I'ﬂul'l' ?EI'I'J Tﬁ'l'l' TWJ .'I'[|""I'I' EEW'II
+HGURES
+Hurricane Earl off the east coast of the United States, September 3, 2010. White indi—
+cates potential rain contamination of vector accuracy.
+law; 1ww lawn lam.- mm
+_ CLW Emmi WE [hmm-
+f 9.511 H:
+5.3m saw “45 I 55
+- um 5'”
+45
+5.5m 5m
+. ._ 9.35 44::
+. I131 35
+H.“ . 5”. g n.25 3D
+0.2:: 35
+21::
+5?.“ _ 53.” £1.15 15
+9.19 1D
+am 5
+5m: 5TH
+am '1
+1&5""?! EIEIII'I'W' 155'W 15)“?!
+FIGURE 6
+Gap winds south of Alaska, November 30, 2010.
+(White Without vectors), on the periphery of the storm Conclusions: WindSat has pioneered an impor-
+Where CLW is absent or reduced (black or gray), the tant new remote sensing technique for retrieving high
+vectors reveal a counterclockwise circulation. Remotely quality Winds over the world’s oceans. Similar Wind
+sensed Winds from hurricane hunter airplane ﬂights vector products have been available for about a decade
+observed at nearly the same time show a strong cor- from instruments known as scatterometers. They use
+respondence to the Winds observed by WindSat. an “active” strategy, whereby an onboard power supply
+While WindSat cannot retrieve Winds closer than releases periodic microwave pulses and processes the
+35 km from the coast, orographically induced Wind sys- return from the ocean surface. Scatterometers have
+tems can often be observed beyond this threshold and certain advantages over polarimetric instruments,
+sometimes well out to sea (Fig. 6). High Wind events including less sensitivity to precipitation and the capac-
+south of Alaska often originate Within coastal terrain ity for retrievals closer to coastlines. However, the key
+gaps to produce accelerated low-level jets moving over advantage of polarimetric radiometers is that they can
+the ocean. In Fig. 6, two major “gap Winds” appear on be used to retrieve CLW, atmospheric water vapor,
+either side of Kodiak Island (red and orange). MaXi- and precipitation. All three are important for assessing
+mum Wind speeds in each gap are about 55 kt from the marine environment. In particular, CLW is crucial
+the north-northwest. “Safe harbor” conditions appear for assessing the accuracy of Wind retrievals. Ideally,
+just south of Kodiak Island With Winds at about 25 kt passive and active instruments can be used together to
+(green). improve spatial and temporal Wind vector coverage.
+atmospheric science and technology | 2011 NRL REVIEW 133
+
+"
+"5","[Sponsored by the NOAA Ioint Polar Satellite System] a uniﬁed, high-accuracy space weather model that can
+forecast all these effects.
+References Airglow measured by RAIDS is produced by excita-
+IP-W- Gaisen K-M- St Germain, E-M- Twarog, G-A- Poe, W- PurdY> tion of ambient atmospheric gas Via solar radiation,
+D ° RiChardson’ W‘ Grossman’ W°L lones’ D ° Spencer’ G' GOlba’ Charged particle precipitation, and Chemical processes.
+1' Cleveland’ L' Choy’ R'M' BeVﬂvaua’ and RS Chang’ “The Air low measurements are inter reted usin h sical
+WindSat Spaceborne Polarimetric Microwave Radiometer: g _ _ _ _ P g P Y
+Sensor Description and Early Orbit Performance,” IEEE Trans. mOdels Of eXCItatlon and radlatlve transfer P rocesses
+Geosci, Rem, sens, 42, 2347—2361 (2004), to reveal the composition, density, and temperature of
+2M.H. Bettenhausen, C.K. Smith, R.M. Bevilacqua, N.-Y. Wang, the upper atmosphere. RAIDS derives thermOSpheriC
+PW Gaiser, anel S. COX, “A Nonlinea: Optimization Algerithm temperature from the spectral shape (color) of ()2 “at-
+2:1 :Vﬂdgggvzlgd ($32? Retnevals’ IEEE Tmm' G605“ Rem' mospheric band” emission at 760 nm1 With uncertain-
+' ’ ° l ties nearing a few Kelvin (Fig. 7). RAIDS temperatures
+are in agreement With Climatology estimated using the
+NRLMSISE-OO model.2 In addition to this key result,
+Atmospheric Remote Sensing Aboard RAIDS also has provideel new date to enhance dayside
+. . 10n0spher1c remote sens1ngtechn1ques and to study
+the Internatlonal Space Statlon th h . 11 d . . .
+e C emlca y an thermally 1mp0rtantm1n0r spec1es
+nitric oxide.
+S. Budzien and A. Stephan
+Space Science Division -. _ “Fa 1. . ﬁt - -. ‘ lilil‘l
+Introduction: In October 2009, the Remote At- ‘9 f: F%N
+mospheric and Ionospheric Detection System (RAIDS) l“1' '1‘ l‘ l, - -
+experiment entered science operations investigating ""a. ﬁ. _ -_ 3-:
+Earth’s thermosphere and ionosphere from a vantage .: ~51. ' Tampa-Iamra fr-nr'n ﬂ! Mﬂlﬂ'ﬂ
+point on the International Space Station (188). Built _ ' ._ "" ‘55.... _ -
+jointly by NRL and The Aerospace Corporation, RAIDS '*. I - 1' - ﬂ ‘1 _ . ._ ""
+is a suite of eight limb-Viewing optical sensors for . _ I t_ﬁﬁ-r' ﬁlm _ '
+remote sensing of naturally occurring airglow across , 3.4» _ ""nu. 4‘
+the spectrum from extreme-ultraviolet t0 near-infrared 1' H ' ﬁlm '
+wavelengths (55 to 870 nm). The primary objective of r ._n
+the RAIDS mission is to provide the ﬁrst global-scale ' ”arm 2"" 2am
+temperature measurements of the lower thermosphere. ﬂ I-liﬂ'l'l. iﬂ-ﬂ -.'_.I ._ Tr'. Fri”. HI]
+Additionally, RAIDS is serving as a pathﬁnder experi- ' g ;_ ' _1_ 1}: L. 1."". .' “Mifﬂ... _- . -'_'
+ment for atmospheric remote sensing aboard the 188 FIGURE 7
+and providing practical insights for using the 188 as a The goId-blanketed Remote Atmospheric and Ionospheric
+platform for future Navy remote sensing missions. Detection System (RAIDS) experiment (top left) views the aft
+atmospheric limb from the open end of the HICO RAIDS Ex—
+periment Payload (HREP) aboard the International Space Sta-
+Atmospheric Observations: The RAIDS experi- tion. The inset shows March 24, 2010, neutral temperatures
+ment is focused on the transition layer from the coldest derived from near—infrared O2 atmospheric band emission.
+part of the atmosphere at the mesopause near 85 km (PhOtO credit: NASA)
+up to the hottest regions of the thermosphere above
+300 km. The importance of this region connecting Mission: RAIDS and a companion experiment,
+lower—atmospheric phenomena to the edge of space and NRES Hyperspectral Imager for Coastal Ocean (HICO),
+beyond has only recently been recognized. The impact comprise the HICO-RAIDS Experiment Payload
+to civilian and DOD systems is well known. Changes in (HREP) 0n the ISS. HREP iS a collaborative venture in-
+the ionosphere affect operational systems such as GPS volVing the Space Science Division, the Remote Sensing
+navigation, radar, and radio and satellite communica- Division, the Naval Center for Space Technology, and
+tion. Variability in thermospheric composition, density, the Department Of Defense Space Test Program (STP).
+and Winds directly affects satellite drag and space debris HREP successfully demonstrated rapid, lOW-Cost space
+tracking and inﬂuences the development, structure, payload development: it was designed, built, and inte-
+and variability of the ionosphere. RAIDS is address- grated in-house at NRL facilities in only 2 years from
+ing the paucity of global temperature measurements design to delivery.
+that are needed to cohesively couple lower-atmosphere HREP is the ﬁrst US. payload aboard the Japanese
+models and their upper—atmosphere counterparts into Experiment Module (IEM) Exposed Facility (EF).
+134 2011 NRL REVIEW | atmospheric science and technology
+
+"
+"6","On September 10, 2009, HREP was launched from spacecraft dockings, occasionally disrupt observations.
+Tanegashima, Japan, on the inaugural voyage Of the Small 188 pitch oscillations up to i0.75° per orbit as-
+H-IIB rocket and the H-H Transfer Vehicle (HTV), sociated With solar array rotation posed a challenge
+a Japanese unmanned resupply capsule for the 188. for RAIDS limb measurements; NASA responded by
+After a week Of ﬂight maneuvers and tests, the HTV improving the station’s attitude stability. Finally, al-
+docked With the ISS. Astronauts used both the main though manned environments are notoriously dirty for
+133 manipulator arm and a smaller arm on the IBM to contamination-sensitive optical instruments, RAIDS
+transfer the modular payloads from the unpressurized sensors have hOt exhibited any unusual degradation.
+section of the HTV t0 the IEM-EF. HREP was installed The learning curve for developing effective mission
+on September 24 (Fig. 8), and RAIDS entered science operations was steep, as is expected for a pathﬁnder
+operations after 30 days of commissioning activities. mission, but the RAIDS Team has met the challenge.
+RAIDS is functioning well and meeting its scientiﬁc
+Using the 188: The RAIDS team devised several objectives. The RAIDS baseline mission for 1 year
+strategies to maximize the science return from this could be extended up to 3 years, after Whteh HREP Wth
+unique platform. The 51.6° inclination and 340 km be removed from the IEM'EF and placed into an empty
+altitude of the ISS orbit required tailored atmospheric HTV for disposal by atmospheric reentry. BY ﬁlling the
+science objectives. Orbital precession enables observa- gap in mid- and low-latitude temperature and composi-
+tions over a range of local time and solar illumination ttOh measurements that eXtStS th currently operating
+conditions, but also requires brief monthly shutdowns space missions, RAIDS and the 133 have combined
+as the orbital plane intersects the Sun. Extensive station to provide a unique, crucial dataset for studying this
+structures near the ﬁeld-of—regard scatter light that increasingly relevant region 0f the upper atmosphere.
+must be mitigated through good baffling of optical
+Acknowledgments: RAIDS/HICO is integrated
+- L__ .""- and ﬂown under the direction of DOD’s Space Test
+1“ a Program. Support for RAIDS is provided by the Oﬂice
+1' ' of Naval Research and The Aerospace Corporation’s
+_ Independent Research and Development program.
+fir:- F; % [Sponsored by ONR and the DOD STP]
+‘1 l""
+*? 1.;- References
+I ”I - I_"" . , 1].W Heller, A.E. Christensen, ].H. Yee, and WE. Sharp, “Meso-
+,1- - ';'ﬂ ' FE? _ -' t -_ "" spheric Temperature Inferred from Daytime Observation of the
+--_.r’ , q“ I q f 'Hﬁ ” O2 Atmospheric (0,0) Band System,” I. Geophys. Res. 96(A11),
+' _. _ : ' 1 '2' t - l9,499—l9,505 (1991).
+l: _ ' - "". 2].M. Picone, A.E. Hedin, D.P. Drob, and A.C. Aikin, “NRLM-
+' 9- ' SISE-OO Empirical Model of the Atmosphere: Statistical Com-
+-' _ T .- _ - . parisons and Scientiﬁc Issues,"" I. Geophys. Res. 107(A12), 1468,
+__ . ‘1 -.. m '- (2003), doi:10.1029/20021A009430.
+' I
+‘- 7 3 l 4
+.' .l -
+1; _ Geospace Climate Present and Future
+g J I a: “t I t IT Emmert
+1. F _ Hit 1"" ?:L-t—L‘ta-Eﬁ. __—_- Space Science Division
+. ' 1';
+hm]; Introduction: It has long been known that the
+near—Earth space environment responds strongly to
+FIGURE 8 variations in the Sun’s photon, particle, and magnetic
+HREP (the open-ended white. box) is'attached to the remote ﬁeld output. More recently, it has become increasingly
+manlp'ulator arm (top) during Installation onto the Japanese apparent that Earth’s upper atmosphere and ionosphere
+Experiment Module Exposed FaCIIIty. Installation and delnstal— _
+lation are conducted entirely using robotic or unmanned space are also intricately coupled to the underlylng layers 0t
+systems. (Photo credit: NASA) the atmosphere, all the way down to the Earth’s surface.
+It is now clear that a meaningful understanding of geo-
+sensors. Activities aboard the manned station, includ- space behavior — including both climate and weather
+ing construction work and attitude perturbations from — cannot be attained except by considering the
+atmospheric science and technology | 2011 NRL REVIEW 135
+
+"
+"7","atmosphere as a Whole system that responds not only 10.0 ll
+to direct solar inﬂuences, but also to internal variations ”E 50
+and Changes of both natural and anthropogenic origin. 3’ |
+Research by NRL’s Space Science Division is providing 70 2_0
+new insight into geospace Climate and how it is evolV- E: 1 0
+ing, including the atmospheric system’s response to 'g '
+the unusual solar minimum of 2008. This research has 8 0-5
+signiﬁcant implications for several applications, includ- H I I I I I I I I I I I I I I I I I I I I I I I I I H I I I I I I I I I I
+. . . . . . . __III_
+1ng policymaking to mitigate and reduce orbital debris. l ‘
+Figure 9 depicts the typical structure and composi- 260
+tion of Earth’s atmosphere. The thermosphere is the A 220
+operational environment of many satellites, and the E 180
+f 140
+L:- 100
+1 _,--1--""""' g =: -""-T-.._,_' 1970 1980 1990 2000 2010
+gr” 9 _1 ' ”'r-h_,__r__ YEAR
+. a - .- FIGURE 10
+""1, '- E ' f"" (Top) GIobaI-average mass density, derived from the orbits of
+T1,. "" - _.1"" ~5000 objects, at an altitude of 400 km. The dotted horizontal
+""-._I ""._ I"" line indicates the minimum overall density. (Bottom) The daily
+' 1."" _ .' _.-"" - 10.7 cm solar radio flux (Fm) normalized to 1 AU, in solar flux
+""'1 _ . ___ .-""I units (sfu, 10‘22 W rn—2 Hz—i). F107 is a proxy for solar extreme
+:'-'.:.'_'; . _ ""' ' ultraviolet irradiance.
+III _ ;:|_|.'r.:.'--rn _ .u'
+|- ' Ju' . _
+. ' _ _ "" ' Changing Geospace Climate: The same gases that
+I ' have been implicated in lower atmospheric Climate
+FIGURE 9 Change also play important roles in the energy balance
+Thermal and compositional structure of Earth’s atmosphere. 9f the upper atmosphere. C02 is the primary C001""
+The upper atmosphere, comprising the mesosphere, ther— lng agent of the upper mesosphere and thermosphere
+mosphere, and embedded ionosphere, absorbs all incident (Where, unlike in the troposphere, the atmosphere is
+solar radiation at Wavelengths less than 200 nm. Most Of that too thin optically to trap infrared radiation emitted by
+absorbed radiation IS ultimately returned to space Via infrared A h , , , CO ,
+emissions. The plot on the left shows the typical resulting ther— C02)' nt ropogenlc increases in 2 propagate 11.1“)
+mal structure of the atmosphere, as specified by the NRLM— the upper atmosphere, and there are strong theoreti-
+SISE—OO empirical model, when the flux of solar radiation is at cal grounds and experimental evidence” that these
+the rhinimum and max1m0m of its 11—year cycle. The plot on increases are causing the upper atmosphere to cool and
+the right shows the denSIty of nitrogen (N2), oxygen (02), and f h h d' d
+monatomic oxygen (0), the three major neutral species in the contract. Some 0 t e C anges pre 1cte to occur as a
+upper atmosphere, along with the free electron (e') density result of greenhouse gas increases have been detected
+(from the International Reference lonosphere), which is equal in historical upper atmospheric data, and a coher-
+to the combined dehSIty of the various Ion speCIes. The F, E, ent picture is beginning to emerge” (Fig. 11). NRL
+and D layers of the ionosphere are also Indicated. , , ,
+has contributed s1gn1ﬁcantlyto the study of geospace
+climate Change by analyzing the orbital decay rates of
+embedded ionosphere is an electric medium that fun- thousands of low-Earth-orbit (LEO) objects covering
+damentally affects the propagation of radio-frequency the past 40 years; the results indicate that, after ac-
+communication and navigation signals. This region counting for solar inﬂuences, thermospheric density at
+of the atmosphere is heated and ionized primarily Via ﬁxed heights has been decreasing at a rate of 2% to 5%
+absorption of solar extreme ultraviolet (EUV) radia- per decade.4
+tion; at high latitudes, energetic particles of solar origin There are also natural sources of geospace Climate
+and resistive dissipation of magnetospheric currents are change. Long-term variations in the Sun’s photon, par-
+also signiﬁcant energy sources. Solar EUV irradiance ticle, and magnetic ﬁeld output Will directly affect the
+increases by a factor of 2 from the minimum to maXi- structure and climate of the upper atmosphere. Secular
+mum Of an 11-year solar CYCIG, and the thermosphere changes in the geomagnetic ﬁeld Will further alter the
+responds by heating and expanding. The orbital drag distribution of plasma and the location and intensity
+experienced by satellites consequently varies drastically of ionospheric currents. Because the state of the upper
+over a solar CYCIG, as illustrated in Fig. 10. atmosphere responds strongly to solar drivers, both an-
+136 2011 NRL REVIEW | atmospheric science and technology
+
+"
+"8","Ionospheric Electron Density (log1O cm's) ment; 111 one SUCh CODDGCthD, dynamical CVCDtS 111 the
+2 3 4 5 6 7
+400 polar stratosphere can alter the electron content of the
+low-latitude ionosphere by up to 100%.6
+350
+Implications for Orbital Debris: Hie anthropo-
+
+300 genie and natural evolution of geospace climate Will
+
+have a profound effect on the LEO debris population
+
+250 F2 — LAYER because atmospheric drag is currently the only effective
+E mechanism by Which debris is removed from orbit. Of
+E 200 the 16,000 objects in the active satellite catalog (Which
+E only includes objects larger than 10 cm), 12,000 are
+< F1 - LAYER . . .
+
+150 debrls or expended rocket bod1es. Hie greatest dens1ty
+
+of debris is found between 500 and 1100 km altitude,
+THERMOSPHERE _
+100 E — LAYER Where removal by atmospherlc drag can take from 25
+years to centuries. Recent studies have found that even
+50 MESOSPHERE Without any neW launches, the amount of debris in
+STRATOSPHERE LEO _W1_11 1ncrease V1a coll1s1onal fragmentation faster
+0 _> ihoeoshhéh’é'"""" than 1t 1s removed from orb1t by atmospherlc drag.
+o 200 400 600 800 1000 Active debris removal (ADR) strategies are therefore
+Atmospheric Temperature (K) . . . .
+be1ng explored by the 1nternatlonal space commun1ty,
+FIGURE 11 . but it is not clear how geospace climate Change may
+Qualitative summary of observed Iong-term trends In the atmo- ff t th tr t i A . 't' 1 t d b h
+sphere and ionosphere. Orbital drag studies at NRL and other a GC ese S a eg es. n 1n1 1a S u Y Y researc ers
+institutions indicate a decrease in thermospherio temperature. at the Un1vers1ty 0f Southampton suggests that Wheh
+A large body of research demonstrates temperature increases potential long-term contraction of the thermosphere is
+in the lower troposphere, decreases in the stratosphere and taken into account, the effectiveness of ADR is dramati-
+mesosphere, and no significant change near the mesopause 11 r d (1 th 1 b in r in th t f h' .
+(the boundary between the mesosphere and thermosphere). ca Y e uce _’ e e Y. C eas _g e COS S 0 ac 1eV1ng
+Electron densities in the E and F1 layers of the ionosphere a stable debrls populatlon Wlthlh the next hundred
+have increased, and the heights of the E layer and the bot— years.8 In addition to long-term contraction, anomalous
+tomside ionosphere have lowered. This qualitative picture is reductions in thermospheric density, such as occurred
+consistent with the predicted effects of 002 and 03 changes in t (11 d . th t 1 . .
+the atmosphere. unexpec e y urlng e recen so ar m1n1n1um, may
+also adversely affect efforts to control debrls growth.
+[Sponsored by ONR and NASA]
+thropogenic and natural climate Changes of terrestrial
+ori in will, to var in de rees, de end on the hase
+f i 1 1 YC g g 1 P _ 1 dp' References
+0 _t 6 SO ar CYC _e‘ onverse Y» any terrestrla _ rlven 1R.G. Roble and RE. Dickinson, “How Will Changes in Carbon
+Cllmate Chahge 13 eXPeCted to alter hOW the upper Dioxide and Methane Modify the Mean Structure of the Meso-
+atmosphere responds to solar variations. sphere and Thermosphere?” Geophys. Res. Lett. 16, 1441—1444
+Hie exceptionally quiescent 2008 solar minimum, (1989)-
+Which had the greatest number Of days Without sun- 2]. Laétoviéka, R.A. Akmaev, G. Beig, I. Bremer, I.T. Emmert, C.
+. . . . Iacobi, MJ. Iarvis, G. Nedoluha, Y.I. Portnyagin, and T. Ulich,
+spots s1nce the 1933 m1n1mum, has prov1ded a valu- “ . .
+
+1 _ b tt (1 t (1 th' _ t 1 Emerglng Pattern of Global Change 1n the Upper Atmosphere
+ab e Opp ortun1ty to e er un erS an IS 1n erp ay and Ionosphere,” Ann. Geophys. 26, 1255—1268 (2008).
+between solar and lower atmospheric inﬂuences on 3}. Laétoviéka, R.A. Akmaev, G. Beig, 1. Bremer, and I.T. Em-
+geospace Climate. An initial NRL study determined that Inert, “Global Change in the Upper AtmOSphere,” Science 314,
+thermospheric mass density was lower in 2008 than at 1253—1254 (2006)-
+
+4 . . c, .
+
+any time sin C e the b eginning of the Sp a C 6 Age, and 30% I.T. Emmert, I.M. Plcone, and RR. Meler, Therrnospherlc
+1 th (1 . th . 1 . . 5 ( Global Average Den51ty Trends, 1967 —2007 , Denved from Or-
+O_W€r an urlng e P reylous SO ar mlnlmum see bits of 5000 Near-Earth Objects,” Geophys. Res. Lett. 35, L05101
+F1g. 10). Hie unusually qu1et Sun can account for some (2008), (1011001029 /2007GL032809.
+Of thiS reduction, as can record-high 1€V€18 0f atmo- 5].T. Emmert, I.L. Lean, and I.M. Picone, “Record-Low Thermo-
+spheric C02, but the state of the thermosphere during spheric Density during the 2008 Solar Minimum,” Geophys. Res.
+the past few years is still poorly understood and is an 6 Lett. 37, L12102 (2010), doi:10.1029/2010GL043671.
+active research topic at NRL and other institutions. EMF Goncharenko, AJ. Coster, 'I.L. Chan, and CE. Valla'dares,
+B _ d tributin t0 the unusual beha 101‘ of the Impact of Sudden Stratospherlc Warmlngs on Equatorlal
+
+€81 es con g _ V _ _ Ionization Anomaly,” I. Geophys. Res. 115, AO0G07 (2010),
+thermosphere, the qu1etness of the Sun has also fac1l1- (1011001029 3010] A015400.
+tated discovery of previously unrecognized connections 7I.-C. Liou and N.L. Iohnson, “Instability of the Present LEO
+between the lower atmosphere and the space environ- Satellite Populations,” Adv. Space Res. 41, 1046—1053 (2008).
+
+atmospheric science and technology | 2011 NRL REVIEW 137
+
+"
+"9","8 H.G. Lewis, A. Saunders, G. Swinerd, and R. Newland, “Under-
+standing the Consequences of a Long-Term Decline in Thermo-
+spheric Density on the Near-Earth Space Debris Environment,”
+6th IAGA/ICMA/CAWSES Workshop on Long-Term Changes
+and Trends in the Atmosphere, Boulder, Colorado, June 2010.
+
+I
+138 2011 NRL REVIEW | atmospheric science and technology
+
+"

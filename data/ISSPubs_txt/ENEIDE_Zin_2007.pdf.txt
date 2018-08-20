@@ -1,0 +1,318 @@
+"","x"
+"1","A. Zin, S. Landenna et al: ENEIDE: an Experiment of a Space-borne, Ll/L2 Integrated GPS/WAAS/EGNOS Receiver
+A. Zin, S. Landenna, A. Conti, L. Marradi, M S. Di Raimondo
+o
+ENEIDE: an Experlment of a Space-
+borne, L1/L2 Integrated
+GP S/WAAS/E GNOS Receiver
+, , , , , , Introduction
+The ENEIDE mzsszon eonszsted 0f 22 selentzﬁe experzments that
+were carried out .0” the SWIM and 0n the International Space One of the main purposes of the ENEIDE experiment is the ver-
+Statton (ISS) durzng the ﬂzght 0f the Soyuz 105 to the [SS m iﬁcation 0f the beneﬁts of having the real-time data availability
+1.11pm] 2005' Aneong these experzments there WC.” the ENEIDE from WAAS/EGNOS satellites for integrity and positioning
+Instrument, whzeh gave the name to the whole mzsszon. ENEIDE - - - -
+. . . purposes. This concept can drive toward critical space-based
+ZS a Spaee-qttalzﬁee’, dual-frequeney, zhtegmted GPS/WAAS' Operations by deﬁning new integrity standards for space borne
+EGNOS reeezver azmedto the verzﬁeatzon 0f the tracktng (?f GPS receivers. Moreover, since EGNOS is an important part Of
+GBSplus the augmentatzon systems from S1? ace. The reeezver ZS the future GALILEO constellation the ENEIDE experiment can
+buzlt by Thales Alenta Space _ Itaha, Mtlan plant O‘ormerly be seen as a ﬁrst bridge toward integrated GPS/GALILEO oper-
+Laben), 0n the baszs 0f the Spaee-quahﬁed dual-frequeney ations in space.
+reeezver LA GRANGE that M” 19.6 a payload Ofseveml ESA and The mission environment of the ENEIDE experiment is quite
+Itahan Space Agency mzsszons hke E5143 GOCE or the Itahan critical from an Operational point of View. The receiver was
+COSMO SKYMED constellatzon t0 czte few examples. ThlS Operated by the Italian astronaut R. Vittori from within the
+paper addresses the ﬁrst results of the ENEIDE ﬂzght data Soyuz and the 188 in seven pre-assigned observation slots. The
+analyszs. ﬁrst three slots happened in the transfer phase of the Soyuz
+toward the 188. Due to attitude constraints of the Soyuz module,
+the bore sight of the receiver antenna, which is mounted on the
+Soyuz external body, was in a “non-standard” attitude environ-
+ment (Sun-pointing). This is a quite different Operational envi-
+ronment for a GPS antenna which, by default, shall be pointed
+toward zenith (i.e. outer radial). This type of attitude has large
+impacts on GPS satellites Visibility. Moreover, during these
+phases orbital and attitude manoeuvres were executed and were
+reﬂected on the receiver raw data. The remaining observation
+periods happened when the Soyuz was attached on the 188. Also
+in this case the position of the ENEIDE antenna was critical in
+terms of GPS Visibility. As an unexpected side-effect 0f the
+antenna pointing, it was Observed that the GPS satellites can be
+tracked down to the Earth limb. This peculiarity was useful in
+order to analyse the GPS radio—occultation performances (in
+terms of Ll/LZ tracking capabilities) of the receiver, consider-
+ing that it was not optimised at all for this kind of application.
+From a technical point of View there were different chal-
+Authors lenges in this project. First Of all the time constraints: the proj-
+ect started in August 2004 and the validated ﬂight model was
+A. Zin, S. Landenna, A. Conti, L. Marradi, M. S. Di Raimondo ready in February 2005. This was only possible due to the AAS-
+Thales Alenia Space -Italia
+54 © Z-Tec Publishing, Bremen Microgravity sci. technol. XIX-5/6 (2007)
+
+"
+"2","A. Zin, S. Landenna et al: ENEIDE: an Experiment of a Space-borne, L1/L2 Integrated GPS/WAAS/EGNOS Receiver
+I acquired experience in building and validation of GPS toring functions. All the data acquired by the ENEIDE RX were
+receivers. The acquisition of the WAAS—EGNOS navigation stored on the laptop hard drive. At the end of the mission the
+message required the addition of different SW modules w. r. t., data were transferred on a removable PCMCIA hard drive and
+the standard LAGRANGE, like the Viterbi decoder. For this brought back to Earth by R. Vittori.
+experiment the information obtained from the tracking of The ENEIDE receiver processes GPS signals in both the L1
+WAAS/EGNOS satellites were not used in the receiver nominal and L2 frequency bands, allowing compensation of ionospheric
+operations. Instead, they are checked on ground and its usabili- delays. WAAS — EGNOS signals (in L1 band only) are also
+ty for real-time space applications is going to be assessed. The processed. A codeless adaptive tracking scheme ([1]) is imple-
+eornrnunication between the receiver (which does not possess mented in order to process the encrypted P(Y) signals transmit-
+st0rage capability per se) and the test equipment was done ted in the GPS L2 frequency band when Anti-Spooﬁng is on.
+through a Mil Std 1553 I/O that connects on a laptop Operated The instrument was equipped with one hemispherical coverage
+by the astronaut. antenna with (nominal) bore sight pointed to the Zenith direc-
+Another important challenge of the experiment is the GPS ti0n.
+satellite acquisition. Since n0r orbital n0r attitude information Twelve dual-frequency channels were available and divided
+were available at the end, a fully cold-start procedure was in 10 channels for GPS tracking and 2 channels devoted to
+implemented. This technique is an “enhanced blind-search” WAAS—EGNOS tracking. The receiver uses the AGGA-2a sig-
+strategy that proved to be efﬁcient in the instrument validation nal processing chip ([1]) developed by the European Space
+scenarios. On the ISS, time and orbit information were available Agency (ESA).
+but the satellite Visibility was considerably worse, due to the
+ISS attitude and the position of the Soyuz module on the station. The main data generated by the instrument are:
+OVERVIEW OF THE ENEIDE MISSION AND INSTRU- ° L1 C/A-Code phase measurements (pseudO-ranges)
+MENT CONFIGURATION from GPS and WAAS/EGNOS
+° L2 P-Code phases from GPS (serni-codeless tracking,
+The ENEIDE experiment can be ideally divided two main phas- [1])
+es: the ﬁrst on the cruise phase of the Soyuz t0 the ISS and the ° L1/L2 integrated doppler from the GPS satellites
+second after the Soyuz docking 0n the ISS. The following table ° L1 integrated doppler from the WAAS/EGNOS
+shows the seven time slots and their duration: satellites
+° Signal-to-Noise ratio at L1 and L2 bands for GPS
+satellites
+ENEIDE EXPERIMENT - MISSION PHASES (GPS Time) ° Signal to Noise ratio at Ll for EGNOS/WAAS
+satellites
+Phase 1 Soyuz cruise to ISS 06:24 _ 09:00 April 15 ° Filtered (Navigation Kalman Filter) and unﬁltered
+. _ _ . (Single Point Solution) real-tirne navigation solutions
+w using GPS L1 C/A signal
+Phase 3 Soyuz cruise to ISS 15:26 — 03:30 April 16-17
+Phase 4 After docking 0n ISS 0954 _ 1554 April 19 Additional information available from the instrument are the
+. _ . GPS and GEO navigation message (for post-proeessing),
+W receiver “detailed” internal status, Kalman ﬁlter covariance and
+Phase 6 After docking on ISS 08:28 — 10.00 April 23 range residuals.
+w DATA OVERVIEW ON SOYUZ
+Table 1 .° ENEIDE Experiment Missian Phases
+The quantity of data collected corresponds to ~ 45 hours of The ENEIDE receiyer perfgrrnecl according to expectations in
+. . . all the Soyuz tracking sess10ns in terms of tracked satellites,
+receiver act1V1ty. d 1 f b'l't' t I F' 1 th , t k'
+The ENEIDE instrument is composed by a receiver, the RF ua requency capa 1 1 16,8 e. C' n .1gure e “96”“ rac 1ng
+. . capabilities under Sun-p01nt1ng attitude (phase 3 in Table 1) are
+cables that connects the receiver to the antenna and an herni- , , ,
+. . . . shown. In the ﬁgure it can be seen how the Sun pornting makes
+spherical antenna. The receiver was installed in the Soyuz . . . .
+. the number of satellite V1s1ble t0 the antenna from 0 to 12 With-
+Orbital Module and the GNSS antenna was mounted on the sur- . . . . . .
+face 0 f the Soyuz. in an orbital period (~ 90 min). The docking time Of the Soyuz
+An IBM ThinkPad Laptop was use d to interface the ENEIDE spacecraft to ISS is captured in the same ﬁgure, in which the
+. . ﬁnal manoeuvres are V1s1ble starting from 30000 s. In the same
+RX and connected to it us1ng a MIL-BUS 1553 data cable to ‘6 . . ,, . . .
+. . . . . ﬁgure the d01ng NKF solution ﬂag (a quality indicator of the
+provrde communication functions. The MMIpr0V1ded access to . . . . . .
+. . . . . NKF solution status) is also V1s1ble, sh0w1ng essentially no loss
+the main functions of the receiver for cornrnanding and mom-
+MicrograVity sci. teehnol. XIX-5/6 (2007) 55
+
+"
+"3","A. Zin, S. Landenna et al: ENEIDE: an Experiment of a Space-borne, L1/L2 Integrated GPS/WAAS/EGNOS Receiver
+of solution of all the analysed period of time except the docking EGNOS/WAAS TRACKING
+phase, in which additional ranging sensors were activated on the
+Soyuz that probably caused interference to the RX functioning. The added value of the ENEIDE mission was the geostationary
+The equivalent SPS solution ﬂag (“doing SPS”) behaved as tracking of Satellite Based Augmentation Systems from the
+expected, i.e. when the tracked satellite were below four it fell LEO orbit. The tracked satellites are listed in Table 2 :
+down to zero. The docking phase is also evident from the oscu-
+lating orbital elements obtained from the SPS solution. —
+As a general statement, it can be said that even if the receiV- GEOSTATIONARY EGNOS / WAAS SATELLITES
+er was not developed having in mind this kind of attitude enVi- —
+ronrnent, it performed well, continuously providing ﬁltered Satellite PRN Norad Org.
+navigation solution, SPS (when the number of satellites in View —
+were enough) and dual frequency raw data for both GPS and WAAS AOR — W PRN 122 24819 Inmarsat 3F4
+WAAS/EGNOS- WAAS POR — w PRN 134 24674 Inmarsat 3F3
+DATA OVERVIEW ON 188 EGNOS AOR — E PRN 120 24307 Inmarsat 3F2
+EGNOS Artemis PRN 124 26863 Artemis
+AS for the S.Oyuz phases” ENEIDE Performed ae.cordnlg t0 EGNOS IOR — w PRN 126 25153 Inmarsat 3F5
+expectations in all the ISS tracking sess10ns. The orbital att1tude m
+of the 188 allows the tracking of satellites more similar to the a e ' _ sate lies ”ac e y '
+default zenith pointing antenna attitude, but due to the peculiar . . . . . .
+. . . . . The receiver s1gnal process1ng was modiﬁed in order to 1ntr0-
+p0s1t10n 0f the antenna the resulting tracks are d1str1buted as . . .
+shown in Figure 2 where a skyplot 0f the GPS satellite tracked duce a Vlterbl decoder rnodnle (rate U2) in order to. clemodulate
+by ENEIDE can be seen. In the plot 0 degrees represents veloc- the EGNOS./WAAS naV1gat10n message. The acqu1s1t10n Of the
+ity, 180 the anti-velocity directions. The center of the ﬁgure is GEO h staltellites wastperrnigted E y fath pre;l?ﬁfed alrntarliafl 1:
+the local zenith (outer radial direction). The blue line represent W 10 e mean p0s1 ion 0 .eac 0 e. sa e es was S 0 e '
+the local horizon (a plane de ﬁne (1 by Transverse and orbi t new telemetry packet was 1ntr0duced in order to transmit the
+Normal) while the green circle represents the contour of the raw data and. the naV1gat10n message. . .
+Earth as seen from 188 (N _ 20 degrees elevation). The tracking time .Of the GEO satellites during the Soyuz
+Note that, as a side effect, the satellites were tracked down to phase .2 is shown in Figure 3} . . .
+the Earth limb Due to the particular an tenna orientation the As it can be seen, the striking feature is the intermittent track-
+maximum gain. 0 f the an tenna was toward _ 10 degrees eleva- ing of the GEO satellites. Moreover, SNR issues present in the
+tion. This makes ENEIDE a radio—occultation and space weath-
+er (ionospheric monitoring) sensor, even if not optimised at all ENEIDE on ISS _ 20 Apr 2005 - Azimuth I Elevation
+for this application. In both phases of the experiment, the rele- 90
+vant orbital elements are essentially those of the ISS, i.e. a=360 :_ -30
+km, e ~ 0 and i ~ 52 deg. 120‘ ‘ ~%*—— :60
+',_ ' \\ “V, / / _..-..
+mmmwm S§3iféz . ‘ .
+as 15 ‘. ‘ .g \_\_""F"" , «if 30
+‘° 0 §~s\w\- ""
+0o 0.3 1 1,5 gun”: a :5 a "":5 ‘ L. : -i '4 |
+- 1 '. ‘. . ; ’ .. 18° ..... ”i o
+2 1 ~ /,,"".‘--—- .0 0 ‘1
+0I l l x ‘71,, ’ ""7' ‘ ’
+o o: u 1.5 2 2.5 3 3: 4 45 _ ,3 ""Nix:
+comm nd' ’ v, ,_ A, -.
+oa . ,3, - ‘
+as I Q/{_ ‘
+3“]: l I’ (f \ ,‘
+0:0 05 i I5 2 25 3 35 4 ‘5 240 r V“ 7;: —— __-l g 300
+M v “a 270
+F ig. 1 .° ENEIDE; session 3. Number 0ftracked satellites, number of Fig. 2; Sky-plot of GPS satellite tracked by ENEIDE 0n the ISS.
+used satellites in the NKF solution and “doing NKF” solutionﬂag. More details on the text
+56 MicrograVity sci. technol. XIX-5/6 (2007)
+
+"
+"4","A. Zin, S. Landenna et al: ENEIDE: an Experiment of a Spaoe-borne, Ll/L2 Integrated GPS/WAAS/EGNOS Receiver
+Soyuz phases did not allow an optimal tracking to all the GEO have a different meaning for a space user: the most natural def-
+satellites. It has to be pointed out that in order to continuously inition is to link these word to the orbital reference frame, and
+apply the EGNOS—WAAS navigation message corrections to in particular the vertical direction can be linked to the outer
+the raw data, continuous tracking of the GEO satellite would be radial (+R) while the “horizontal” is in the plane deﬁned by the
+required. This can be hard to achieve for particular orbit incli- <T N> directions. This is of course one of the possible choices.
+nations, like the polar orbits, in which periods of complete Another choice could be to still evaluate the East-North plane
+blinding to the GEO satellites can be expected. Since the cor- centered on the satellite (i.e. the horizontal plane) and give the
+reotions provided by the EGNOS—WAAS system have a time of horizontal protection level (HPL) referred to this plane, and the
+applicability, the problem is how to cope with the missing infor- vertical direction, deﬁned to be the outer—radial R (i.e. “‘Up”) for
+mation outside the validity time of applications. the Vertical Protection Level (VPL).
+The GEO Navigation Message, described in [2], consists of
+different message types, providing the user with different types EGNOS/WAAS APPLICATIONS ON ENEIDE
+of information. Types 2-5 (Fast Correction) are corrections sent
+to the user and intended for the correction of fast errors (typi- The main advantages of EGNOS/WAAS tracking are, among
+oally clock errors, like S/A). These corrections apply directly on others, improved accuracy and availability of integrity. The lat-
+the measurements, i.e. pseudorange data. Long Corrections ter basically translates into availability of the Protection Level,
+(Message Type 24-25) provide the user with the means for cor- which provides the user with a bound to the navigation error
+recting slowly varying effects like errors in the broadcast GPS that is usually compared against a speciﬁed Alarm Limit (dif-
+ephemeris and clocks. Integrity values are provided together ferent for speciﬁc user application and criticality of application)
+with these data, giving an overall accuracy of the solution after to state a “use/don’t use” ﬂag about the receiver solution output.
+application of the corrections. It has to be evaluated if ionos- ENEIDE did not have, at experiment time, EGNOS/WAAS
+pherio corrections (Message Type 26) can still be used, since “application software” on-board, only the tracking module was
+they are usually deﬁned for ground (or airborne) users. In any present. Therefore it could not use the EGNOS/WAAS mes-
+oase, the latter requires a ionospheric grid to be built and in sages in real-time. Since we are interested in see the beneﬁts of
+order to do so several instances of the Message Type 18 may be SBAS applications in space we used an in-house developed off-
+needed. The time to perform this operation may be critical due line software for simulation of the integrity functionalities. In
+to the GEO Visibility constraints from the LEO orbit of interest. particular the off—line software is representative of the ENEIDE
+In absence of GEO data it is always possible to compute a receiver in terms of PVT solution performances (it uses the
+degradation factor (from Message Type 7) to the current cor- same pseudorange data as the receiver and GPS ephemeredes
+rection data. It is the subject of the future analysis phase to taken from the Navigation Message and produces an output that
+understand if this is enough to compute a reliable run-tirne hor- was veriﬁed against the true receiver). Inputs to the SW simu-
+izontal and vertical protection levels. Note that, despite from a lator are the ENEIDE raw data (basically time-tagged pseudor-
+standard ground user, the words “horizontal” and “vertical” ange for each satellite in View) and the decoded Geo Navigation
+Messages (all collected in a ENEIDE Packet called 0XA4). A set
+N 5mm? of data from Phase 3 (April 16, 2007) was used as proof of con-
+cept since for this phase a reliable reference solution (computed
+ofﬂine using dual-frequency pseudorange and GPS ephemere-
+132 ‘ des kept ﬁxed on precise International GPS Service (IGS) GPS
+orbits) was available. In this way the ENEIDE receiver SPS
+130 ~ solution is corrected using the EGNOS/WAAS messages and
+Protection Levels can be computed. The steps followed in this
+120 _ process are:
+E m _ _ _ - - Get ENEIDE raw data
+° Correct raw-data and PVT using SBAS messages
+° Estimate the PVT error by comparison of the ENEIDE
+'2‘ "" -"" ‘ — ‘ PVT with the reference solution
+° Compute Protection Level associated to the navigation
+m — — ' - - ~ solution
+m _ i, - ,,___ ,, , It is worth saying that the reference solution is not an high preci-
+° 05 l mus: '5 2 "":5 sion solution since it is still a SPS PVT computed using pseudo-
+range and not carrier phases, but still estimated to be better (i.e.
+Fig. 3., ENEIDE, Phase 4’ EGNOS— WA A S tracking. few meters accuracy) than the ENEIDE real-time solution.
+Miorogravity sci. teohnol. XIX-5/6 (2007) 57
+
+"
+"5","A. Zin, S. Landenna et al: ENEIDE: an Experiment of a Space-borne, L1/L2 Integrated GPS/WAAS/EGNOS Receiver
+It is out of doubts that EGNOS/WAAS systems are designed for ing that only a short sample was used because also of Visibility
+terrestrial applications (land, maritime and aViation). The use of constraints in Phase 3 (Sun-pointing attitude of Soyuz).
+SBAS in space rise few concerns on the applicability of the pro- Even if there are few concerns about ionospheric corrections
+posed SBAS 1CD corrections. In particular the ICD ask the user in space, this data sample shows that the possibility of having
+to apply: real-time integrity in space is feasible. This seems to be a prom-
+ising step for future missions in which integrity is a driver.
+° Fast corrections Soyuz transfer vehicle is clearly one of these cases, even if the
+° Long corrections peculiar Sun pointing attitude prevents the continuous track-
+° Ionospheric corrections ing/Visibility of GEO satellites.
+- Tropospheric corrections
+CONCLUSIONS
+By applying these corrections to the raw data the user is assured
+that the residual UERE is speciﬁed to be within the bounds pro- All the analyses conducted up to now allow to say that the
+Vided by the EGNOS navigation message errors. ENEIDE tro- ENEIDE experiment was carried out successfully. Being based
+posphere error is zero since ENEIDE is above the tropospheric on a new instrument concept of integrated GPS/EGNOS—WAAS
+layer. Therefore the tropospheric correction is not applied nor tracking, the possibilities of real-time use of this instrument for
+the sigma associated (otmpo) considered in the PL computation. critical space operations in which safety is a critical component
+The ionosphere correction requires more attention since the are addressed here. . .
+Soyuz in inside the ionosphere. After an analysis it was decided ENEIDE prov1ded a benchmark for the validation of the
+to exclude from the computation also this correction basically TAS'I receivers 0f LAGRANGE class. The different ehereh'
+because ENEIDE did not collect all the needed ionospheric grid mental conditions 111 Whleh the receiver operated (Sun-pomting
+point at a certain time. Moreover the ionospheric delay for a attitude, orbital attitude, peculiar antenna pointing constraints
+space vehicle is an over—estimate of the ionospheric delay. etc.) make the experiment an important laboratory felt different
+Therefore also the iono correction was excluded and the associ- applications hke attitude analyses, atmospheric sounding, space
+ated (oUIRE) not considered. At the end fast-long corrections weather, real-time naV1gation and control.
+where applied and for the variances oi ﬂt,(fast-long correction In .detail, the set-up (receiver + laptop) worked properly and
+. . . . . ’ . tracking of the WAAS-EGNOS satellites allowed the download
+res1dual variance) oair (receiver n01se and multipath, set con- . . .
+. . . of the full GEO naV1gation message. The tracking of L1 and L2
+servatively to 2 m) were the two components cons1dered 1n the . . . .
+. frequen01es proved to be efﬁ01ent according to the expectation
+PL computations. . . . .
+. . . . . . of the predicted link-budget. At the end this experiment can be
+The PL computations and naV1gation solution error in the hori- . .
+. . . seen as a ﬁrst bridge toward integrated GPS/GALILEO opera-
+zontal and vertical plane are shown in the follow1ng ﬁgure for a . .
+tions in space.
+short sample of data:
+In this sample it can be seen that the protection level bounds
+horizontally and vertically the navigation error. It is worth say-
+,, HPL and Eul-Norm (horizontal) enor estimate for ENEIDE , VPL and vettical m estimate for ENEIDE
+T '—'——————’FL:: so! ' ’ ' ' ' [———‘—L]- VeiucelProtecquevel ‘
+_._ honzonw etror estimate —-— Vegucoterror eﬂmate ‘
+so 7‘ 40:» . , . 4‘ . n a
+""k’J‘v‘ """"""‘""""""‘ .~""f""'1’*‘t‘“.““-*’V‘~*‘A'~J""| L‘H“'.""""'M ~~ v-~
+i i n“ 30;. J 1""“ h 1 “L 141-~A""u_4~v~_,,«_. -,,.;:‘
+w ‘4 ""g; A»A...IL ”AA“ A 1 ,. .-_.«_ II :1.” 444A.» 4%., I ‘ 20:} ' ’
+.i t . 1 it w i
+i .‘.¥f 1 , ht «ﬁt» 10;— ""
+_2o ‘ Ii”! Mm ‘:' ‘1‘ [l q"" . . . i
+E. V ' . Wt.” li ' r i ‘ '5‘ 0' Mn, ML. ""
+. W 4 i; H P W t? a l
+l5 -10- Tilt l ’ M ' "" ‘
+o '- ‘ . . . 9.95111 ‘t W \
+.zolzgi t“; v , , V‘h‘ [ﬂ ' \ft
+H‘— r 30} ~‘Lf.’1-,l-.\‘....‘r""w..r~¢n,re2¥ ""J'V""""~l J Tifﬁ‘f'“??£¥4r~ $ Al]
+N. “-r'w‘wwrf’w 7,!“1 Li ""0? W‘
+40 WW .11, a ‘ . l
+. I I l l , . I l l '50, i
+‘00 15° 20° 25° 30° “mi?! ‘00 ‘50 5°° 55° 100 150 200 250 300 350 400 450 500 550
+bmols]
+F ig. 4: ENEIDE, Session 3 .° Horizontal and Vertical position error Wm. MPOD orbit estimate and evaluation ofProtection Level (HPL and
+VPL).
+58 Microgravity sci. technol. XIX-5/6 (2007)
+
+"
+"6","A. Zin, S. Landenna et al: ENEIDE: an Experiment of a Spaee-borne, L1/L2 Integrated GPS/WAAS/EGNOS Receiver
+ACKNOWLEDGEMENTS
+Special thanks for their contribution to the following people:
+
+Pasquale Di Palermo from ESA/ESTEC, Overall Project
+manager of the integration of the experiments for the ENEIDE
+mission; Daniel Paris from ESA/ESTEC, Project Integration
+Manager for the ENEIDE experiment; Giovanni Fuggetta, TAS-
+I Laben, Head Of Bus and Navigation Programs; Roberto
+Vittori, the Italian Astronaut Who run the Experiment; S.
+Casotto and B. Padovan (University Of Padova) for providing
+the quick look MPOD orbits.
+
+A particular acknowledgment t0 the Italian Space Agency
+(A81) for the contribution to the LAGRANGE receiver devel-
+opment.
+
+REFERENCES
+1. Silvestrin, PL. and Sinander, P The Advanced GPS/GLONASS ASIC
+(AGGA) for Precise GNSS Sensor, in Proceedings of the GNSS '99
+Conference, Genoa, Italy, May 1999.
+2. RTCA, WAAS Minimum Operational Performance Standards (MOPS),
+RCTA/DO-229A, 1998
+Mierogravity sci. teehnol. XIX-2 (2007) 59
+
+"

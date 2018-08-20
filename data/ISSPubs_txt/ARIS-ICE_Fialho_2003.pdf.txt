@@ -1,0 +1,649 @@
+"","x"
+"1","dm— — —-—
+
+Taking H00 T0 The International Space Station : Design,
+
+Implementation and On-orbit Evaluation of Robust
+
+Controllers For Active Microgravity Isolation
+
+Ian J . Fialho, The Boeing Company, Houston TX
+
+Glenn S. Bushnell, The Boeing Company, Seattle WA
+
+J ames L. Allen, The Boeing Company, Houston TX
+
+Naveed Quraishi, NASA J ohnson Space Center, Houston TX
+Submitted to:
+AIAA Guidance, Navigation and Control Conference
+
+August 2003, Austin, Texas
+
+"
+"2","Taking Hoo T0 The International Space Station : Design,
+Implementation and On—orbit Evaluation of Robust
+Controllers For Active Microgravity Isolation
+Ian J. Fialhoi Glenn S. Bushnell“, James L. Allen$ and Naveed Quraishi§
+*$The Boeing Company, Houston TX
+“The Boeing Company, Seattle WA
+§NASA Johnson Space Center, Houston TX
+ABSTRACT approaches are presented. In the first approach the
+position PID parameters are chosen a priori and Ho
+Design, implementation and 0n-0rbit testing of H00 methods are used to shape the acceleration loops alone.
+controllers for the International Space Station (188) The second approach is a full H00 design in which both
+Active Rack Isolation System (ARIS) is presented. The position and acceleration loops are shaped by the Ho
+Active Rack Isolation System is the primary iSOlatiOh design process. The resulting controllers have been
+system aboard the space station and serves t0 isolate implemented and tested 0n-0rbit as part Of the ARIS ISS
+acceleration-sensitive science payloads from station Characterization Experiment. On-orbit data that
+disturbances. A brief OVCI'VICW Of the ARTS isolation demonstrates performance is presented_
+concept is presented along with the advantages H0°
+methods can provide in control law design and 0n-0rbit INTRODUCTION
+Operations of ARIS. Control design Objectives are
+discussed, along with key design constraints such as A primary mission of the International Space Station is
+limited position range sway space, hysteretic stiffness to provide a premier microgravity laboratory
+variation, rack structural mode uncertainty and sensor environment for conducting acceleration-sensitive
+noise. The ARIS control architecture includes scientific experiments. In order to accomplish this goal,
+decoupling compensation and this allows the post- disturbances caused by station activities that occur
+compensated system to be treated as siX decoupled during the microgravity mode of Operation, must be
+degrees of freedom, for which robust H00 controllers are controlled. In addition to source isolation and other
+individually designed to meet overall Objectives. The H0° passive isolation methods, the 188 uses active isolation
+control design interconnection is presented along with a at the receiver, through the use Of an Active Rack
+discussion of the choice of weighting functions used to Isolation System, as part Of its overall Vibration isolation
+shape the control loops. The ARIS controller strategy [1,2,3]. The ARIS strategy is to isolate the
+architecture includes a position control loop that is entire payload rack. The rack is detached from the
+implemented in proporti0nal—integral—derivative (PID) station standoff structure and is held inertially Via an
+form and an acceleration 100p implemented as a bank of active control system. A typical ARIS payload rack is
+adjustable filters. The resulting H0° controller is of ShOWh in Figure 1- The control system uses eight
+relatively high order and hence must be reduced through pushrods, driven by rotary voice coil actuators (labeled
+appropriate decomposition and model reduction in order 5), to perform active Vibration isolation. Inertial
+for it to be implementable. A discussion of these acceleration and relative position are sensed by three
+implementation steps is provided. Two design
+* Corresponding Author; Email: ian.j.fialh0@b0eing.com
+1
+American Institute Of Aeronautics and Astronautic s
+
+"
+"3","triaxial accelerometer heads (labeled 3), and eight force commands to actively cancel sensed accelerations
+position sensors housed in the actuator assemblies. onboard the rack. A schematic of the control algorithm
+architecture is shown in Figure 3. Decoupling matrices
+1 ‘Dualpmcessor . __ and transformations, i.e. IDM, PK, P826, A926 and
+2 ‘3SensorElectmmcumts: 5h”? _' __ F6281 are lised to account for rach mass properties,
+$3Laimzﬂzjgjgﬂfgivsérg? 6%;5ﬁ3 umbilical stiffness, and skewed locations ef sensers and
+3 ‘TriaxialAccelerometerHeads w.“— % actuators. Notable among these rhatrices is the stiffhess
+. 6hr. decoupling matrix PK Wthh is used to effectively
+4‘ fn 5:31:33; 512::er :ﬁ'iiewéitv'ier : Z _ . _ cancel umbilical stiffness. Due to this architecture, from
+°°”S”mp“°"" mks a control design perspective, the multivariable plant
+5"":ﬁgijfggdvt‘:3:333:36and .3 X dynamics reduce to siX decoupled degrees of feedom
+powemonsumpm” . _ #5 for which 8180 controllers are independently designed
+S‘ScifjigiéenSWS: 'ntegratedwnh 5 _ g. to meet control Objectives. This approach simplifies the
+6I:> Hard stop Bumpers 6 '-. f _ _ - -3 control design and on-orbit tuning process considerably.
+J ' ' _.
+0 Verification Points 1\Li§5§£ﬁ‘ .- . . .
+‘- 6 __ The acceleration controller KaCC and the p0s1t10n
+STimgg‘ﬂRBU'ﬁl/EE controller KpOS are software implemented. The position
+Figure 1 : ARIS Payload Rack contreller for. each channel.(three translations ahd three
+rotations) is implemented in PID form With adjustable
+Electrical power, cooling ﬂuid, data and other essential gains and filter settings. The acceleration controllers for
+resources are routed to the rack through a set of each channel are implemented as a series of filters With
+umbilicals that interface With a utility interface panel at adjustable filter coefficients and gain. Each channel has
+the front bottom section of the rack as shown in Figure seven second order filters and a single ﬁrst order section
+2. These umbilicals are the primary load path for station resulting in a maximum implementation order of fifteen
+disturbances entering the rack and hence are a key per acceleration channel. High order controllers such as
+consideration in the design of the active system. The those that result from H00 methods must be coerced, via
+rack must Operate Within a 10.5 inch sway space which appropriate model reduction, into the above form for
+is enforced by a set of siX bumpers located on the front purpose of implementation.
+(labeled 6 in Figure 1) and bottom of the rack.
+In this paper we discuss the application of Ho control
+_ __ _ design methods to achieve active isolation performance
+'. ' _- 'ﬁm; - _ 1 Objectives. Control design using classical 100p shaping
+. .-.'"" . -_ m . . F - i“ l i is time consuming When nonlinear, non-convex
+_- ' "" ' Optimization algorithms are used to Optimize filter
+* :ff _ _' ‘ ' parameters. Ho Optimization algorithms are extremely
+f Hitliiiﬂ- =- _ _ . _'—... _ efficieht and once the control intereonnection and
+.1. '57- {$5.133- -.; 1- .. .. _ I weighting functions are estabhshed design
+1.1““?! -.; .- 1 '. L -,'_ _ *1. . modiﬁcations can.be made in a fraction of the. time
+- I-_ -_ i' . 4g 1"" 5f: '."".'5 :. needed for class1cal des1gns. This is a Significant
+' w. '_ ' - '- 1' J: ' .1; _ ‘~ advantage in on-Orbit payload Operations Where quick
+‘. ' I d ' control design turnaround is necessary. Thus in addition
+I . I .__ "" ' to improved performance, PLO methods Offer signiﬁcant
+-w""-~- “ﬂu? ' ' ' __-. Operational benefits as well.
+Figure 2 : ARIS Umbilicals
+The paper is structured as follows. The next section
+W introduces design Objectives and constraints. The
+. . . . control design framework is then presented, along With
+The ARIS control algorithm is implemented V13 a dual the role of the various frequency weighting functions
+processor that. is housed at the pOttOm .Of the rack that are used in the Ho design. This is followed by
+tlabeled 1 1n 1“ng 1)' LOW authority p0s1t10n feedback frequency domain performance and robustness analysis.
+is combined Wlth 3006165310011 feedback to generate On-orbit test results from the ARIS ISS Characterization
+force. commahds t0 the eight. actuators. The p0s1t10n Experiment are presented and interpreted. Space
+100p 1s a 561311“de 10W bandw1dth 100? Whose goal is to limitations preclude a discussion of PLO methods here.
+track station motion, thereby preventing the rack from The r e a (1 er is r e ferr e d t 0 [4] for details.
+impacting the hardstop bumpers. The acceleration loop
+is a higher bandwidth loop that generates the actuator
+2
+American Institute Of Aeronautics and Astronautic s
+
+"
+"4","P1311
+r____________________________________________________________________________________ ___
+|
+|
+|
+: rlﬁﬂ.
+
+: r"" |1| .11 '1'
+: 3,. 'F-:-i:¥.'-':—':'.-:-=:=i.-
+I n .: 1
+:Fea'm' | 's-‘-'i . .. ._
+5 5 5‘1 1"" “‘ 51 I l' g"" :54
+| Emmi :11: ""'l "".'"""""""""""""".'!:: .
+|
+5 Fm
+|
+.-____________—___________________5 5"";'1'5;_-'r-,.‘-1;':'-.::- '-""'L=='£-'_'= |.'
+I ---—- —— ..
+5
+Figure 3 : ARIS Control Architecture
+Elude Magnitude Diagram
+From: Input Paint
+EU I I IIIIII I I IIIIII I I IIIIII I I IIIIII I I
+555555252 555255555 555525555 255555525 5—H;
+4'3 ---5--5-5-555555----5--5-5-555555----5 -5-5555555---5--5-55-55555----5 :: 5
+555555555 555555555 55'5555555 555555555 5—55'5
+2'3 ---:--'.-'.-.'.'rr:1----.'--:-1-.'t'.t.':--- "" 1L11111.“--1--1-.'1-.'.':11----:— ‘1"" .
+::::::::: :::::::::)I :::::: ::::::::: I—Erl
+""""""':: ::::::""'.-_J'“. :::::: ::::::::: :
+'3 . . . . “.11.“--1--1-.'1-.'.':1t----:--1-'.-.'.'.'.'.
+IE assesses; ::==sssss 5: '=5 25555552; 55555555
+m -— I I IIIIIII I I II II I I I I I IIIIIII I I IIIIII
+3% JD ---:--'.-'.-.'.'rr:1----.'--:-1-.'t'.t.. ""1""?'.‘1'.L.LHT""""l""1"".'.L.‘.‘.‘.
+III I I IIIIIII IIIIII I IIII I I IIIIIII I I IIIIII
+U D— I I IIIIIII Iamﬁtllllll I IIIII I IIIIIII I I IIIIII
+% *3 : :::::::: Isnlﬂtidrillll : :..""':' ::::::: : :::::::
+m '3' -40 ""'l""1'1'f.‘.‘TI‘."""".‘"":'1'.“f‘.f.‘l""""T'f'fﬁi‘...'""11 1-.Lr:1t----:--1-'.-r.'.'.'.
+III: a I I IIIIIII I I IIIIIII I I IIIIIII III... IIIII I I IIIIII
+E'- ::::::::: ::::::::: ::::::::: :\':: : :::::::
+430 ---5--5-5-555555----5--5-5-555555----5--5-5555555---5--5-5'5""15 -- 5 5 555555
+I I IIIIIII I I IIIIIII I I IIIIIII I I IIII I I IIIIII
+I I IIIIIII I I IIIIIII I I IIIIIII I I IIIII I IIIIII
+::::::::: ::::::::: ::::::::: :::::::::""‘1 '::::::
+43” -"":--'.-'.-.'.'55:1----.'""H-51115:""--t""r-.'11111.“--1--1-.'1-.'.':1f---‘1-.'.'.'.'.
+I I IIIIIII I I IIIIIII I I IIIIIII I I IIIIIII Ix\‘::
+: :::::::: : :::::::: : :::::::: : :::::::: : ""11'
+-“|E""3 -"":--'.-'.-.'.'55:1----.'""H-51115:""--1""r-.'11111.“--1--1-.'1-.'.':1t----:--1-'.-..-
+_12D-a I I IIIIII_2 I IIIIIII_1 I I IIIIIIn I I IIIIII1 I I IIIIII2
+1D 1D 1D 1D 1D 1::
+Frequency [Hz]
+Figure 4 : Target isolation and passive rigid-body response
+3
+American Institute of Aeronautics and Astronautic s
+
+"
+"5","ACTIVE CONTROL OBJECTIVES AND frequencies. At higher frequencies, rack structural
+CONSTRAINTS modes come into play and the controller must robustly
+stabilize against those ﬂexible modes that are
+The main control design objective is to achieve a controllable and observable from the actuators and
+prescribed level of attenuation from offboard accelerometers. Natural frequency, damping and
+translational acceleration to onboard translational modeshapes of these ﬂexible modes are highly
+acceleration. The target isolation curve is shown in dependent on the conﬁguration of the rack and the
+Figure 4, along with the rigid body passive response. payloads contained in it. Rack payload configurations
+The curve has a —20 dB/decade rolloff between 0.01 Hz vary significantly from mission to mission. Any attempt
+and 10 Hz, and remains constant at —60 dB above 10 to robustly control the ﬂexible modes would require
+Hz. Low frequency station disturbances cause relative significantly involved identification, modeling and
+motion between the rack and station. In order to prevent control design. Such speciﬁc controller tuning is not
+the rack from bumping into its hardstops, the control compatible with on-orbit payload operations where
+system must cause the rack to follow station motion. issues such as sample shelf life often necessitate quick
+This is captured by the hump in the curve below 0.01 turnaround in the on-orbit tuning process. Due to these
+Hz. The target isolation curve applies to attenuation considerations, the approach adopted in the present
+from offboard translational acceleration magnitude to work is to roll off the control loops so as to gain
+onboard translational acceleration magnitude at eight stabilize structural modes. This limits the control
+onboard verification points (see Figure l) chosen to bandwidth, and as a consequence the isolation
+span the extent of a typical payload mounting volume. performance that can be achieved. Relatively coarse
+The eight onboard points, as opposed to the rack CG structural identiﬁcation tests that determine the
+alone, were chosen to capture the effect of rack rotations structural force to acceleration response along the
+on isolation performance at off-center locations. control directions are used to determine the required
+gain stabilizing margins.
+Plant nonlinearities, model uncertainty and sensor noise
+impose constraints on the control design, placing 15 C°mmand9dmeasmemms=1'1(31351“)
+limitations on achievable isolation performance as
+discussed below. 1
+Umbilical Stiffness Nonlinearity g 0.5 //
+The umbilical set exhibits a hysteretic force versus Er
+displacement curve, and as a consequence the stiffness E D
+matrix K in Figure 3 varies as a function of the relative LL '.
+position of the rack in its sway space. Umbilical '05
+stiffness decreases with increasing displacement, . A
+asymptotically approaching its large amplitude value 3.02 0015 m1 mm H mm m U015 0.02 0,025
+Klarge as displacement increases. Small amplitude pmmm (m
+stiffness, denoted by Kmalla tends to be higher than Figure 5 : X—aXis large amplitude (i 0.24 inches)
+Klarge. Typical force versus displacement large and small stiffness curve
+amplitude curves derived from on-orbit stiffness CommandedlMeasmedAxiS: 1.1 (81357“)
+identification tests are shown in Figures 5 and 6. “'2
+0.15
+Small amplitude stiffness varies with offset from the
+null position, tending to be higher at off—center points. .5. 0‘1 ...um'..“"".:""’""7'l' '
+From the point of View of linear control design, this i 0405 mﬁwlﬁ '11""
+nonlinear displacement-dependent umbilical behavior is 5; D ""19113:!“ |
+modeled as a family of stiffness matrices (and hence E Hhﬁglﬁm
+plants) for which the controller must achieve robust @005 ,,,..!.:i'q"".'i?‘i~1”l""i
+stability and performance. L -01 ‘5“
+Rack Structural Dynamic Uncertainty .045
+‘0'20 0.5 1 1.5 2 2.5 3 3.5 4 4.5
+The model depicted in Figure 3 represents only the Pogiﬁnn (m x103
+mass—spring modes of the rigid rack and umbilical Figure 6 Z X—aXiS small amplitude (i 0.024 inches) stiffness
+springs and as a consequence is only valid for low curve at nullposition.
+4
+American Institute of Aeronautics and Astronautic s
+
+"
+"6","Accelerometer Noise
+The control design interconnection used for the present
+The acceleration controller reacts to accelerometer n0ise problem is shown in Figure 7. As discussed in the
+and drift as if it were true acceleration, applying control introduction, inertia and stiffness decoupling allows the
+forces to actively cancel it out. Reaction of the inherently multivariable problem to be decomposed into
+acceleration loop to low frequency accelerometer n0ise siX single 100p design problems. Hence, the plant model
+causes rack motion and increases the probability of the is a single degree of freedom model corresponding to
+rack bumping into its hardstops. In order to limit motion the aXis being designed. The Offboard acceleration is
+caused by accelerometer noise, restrictions must be filtered through a shaping weight Wdista which is the
+placed on the low frequency acceleration loop gain. inverse of the target isolation curve. The onboard
+This is imposed by a constraint on the transfer function acceleration is weighted with a performance we ight
+from accelerometer noise to onboard acceleration. Wperf which is chosen to be a constant. This choice of
+Wdist and Wperf ensures that the target isolation curve is
+High Freguency Position Resolution achieved when the closed loop norm is less than 1. The
+weight Wpos 0n the position output is chosen to have an
+It is difﬁcult to reliably resolve the extremely small approximate integral term to minimize steady state
+amplitude motion that occurs at high frequency into position error and rolls Off at high frequency. Wposnoise
+positions at rack center and/or umbilical locations. In rolls up at high frequency in an attempt to limit position
+the H00 framework this is modeled as sensor noise and loop bandwidth, thereby reducing closed loop sensitivity
+the position 100p bandwidth must be restricted to reduce to high frequency position sensor noise. The uncertainty
+sensititiVity to high frequency position resolution errors. weight Wuncout scales the size of the output
+multiplicative plant uncertainty. It is chosen to be
+ROBUST H)o CONTROLDESIGN roughly the inverse of the high frequency ﬂexible mode
+gain stabilizing constraint, thereby rolling Off the
+As is standard in the application of Ho methods, the acceleration loop as desired. The acceleration 100p n0ise
+design is based on the speciﬁcation of a control design weight Waccnoise iS chosen t0 reﬂect 10W frequency
+interconnection that captures performance and accelerometer hOiSC- The ihPUt uncertainty weight
+robustness Objectives. The interconnection defines Wuncin models uncertainty in the 019611 100}? natural
+disturbance and error signals, measurement and control frequencies caused by umbilical stiffness variations.
+channels, and includes the open loop plant along with This is a low frequency weight that 10115 Off above the
+several frequency weighting functions. These weights range 0f possible natural frequency variations. 1h order
+shape input spectra and penalize error signals. For more to limit actuator command magnitudes a constant weight
+details the reader is referred to [4]. Wactpenalizes controller OUtPUtS-
+d: - *1
+:4 I11.
+u. i
+—-7 m
+i | 7.5 45
+a ---—* —- ——--
+! |
+: t;
+a —--
+= |
+I— ffi-m-Lmi l
+4---- ._. -._-.
+Figure 7 : Control Design Interconnection
+American Institute Of Aeronautics and Astronautic s
+
+"
+"7","Due to the a priori decoupling in the system, the control using PID settings from an existing classical design. The
+loop for each degree of freedom (three translations and H00 interconnection was then used to design only the
+three rotations) is shaped independently using the above acceleration loops (Km). This is referred to in the sequel
+interconnection. In general, the weighting functions are as a “partial” design. In the second approach both Kace
+different for each of the siX degrees of freedom. The and Kp0s were designed using the Ho interconnection.
+control design interconnection is converted into a This is referred to as a “full” design. In both cases the
+canonical upper 0r10werlinear fractional transformation design optimization was done using the ”Tools
+form and a controller K is designed to minimize the H00 function hinfsyn.
+norm from disturbance inputs to error signals; see [4].
+MATLABTM -based routines such as the MTOOIS function Limited isolation testing was done with the partial Ho
+hinfsyn can be used to compute the optimal COHtYOllCY design. The partial approach served primarily to validate
+and 31550013th optimal COSt- the acceleration 100p design and identify dynamic and
+numerical stability issues associated with the control
+As discussed above, inertia and stiffness decoupling are design and implementation. Two versions of the full
+adopted prior to the H00 control design. The mass matrix design were tested. In both designs the translational
+and Ksmall and Klarge stiffness matrices were derived from loops were exactly the same, while in one design the
+0n-0rbit identiﬁcation tests (see the Appendix for rotational position loops were designed with a lower
+identified values). The inertia decoupling matrix (IDM bandwidth. This was done to investigate the effect of
+in Figure 3) was Chosen to be the mass matrix of the station rotational environment on Off-center isolation
+rack. Off—diagonal elements of the stiffness decoupler performance.
+(PK in Figure 3) were set equal to the negative of the
+null position Ksmau Off-diagonal values. Diagonal PK CONTROLLER ANALYSIS
+terms were set to the negative of the Katee stiffness
+matrix. Rotational stiffness crosscoupling terms are of We proceed to discuss single degree of freedom
+the largest significance and hence the rotational loops frequency domain analysis results for the controllers
+were designed so as to extend their position bandwidth described above. Rigid body isolation and loop gain
+to 0.1 Hz. This is in contrast to the translational loops plots for the three control designs, i.e. full HQ with
+where POSitiOH bandwidth is limited t0 0-01 HZ- This higher rotational position 100p bandwidth (solid), full
+approach minimizes relative rotational motion and as a H00 with lower rotational position 100p bandwidth
+consequence increases system robustness to rotational (dashed) and partial H00 (dotted), are shown in Figures 8
+stiffness crosscoupling. Since the station Offboard through 11_ As is seen from Figure 8 the aggressive
+rotational environment is significantly lower than the stiffness compensation results in exceptional
+translational environment this approach does not translational isolation performance. The loop gain plot
+adversely impact isolation performance measured at Off of Figure 9 is obtained by breaking the loop at the
+center rack locations. Due to the above design approach acceleration controller output. The high frequency gain
+each control loop must be robust to stiffness variations stabilizing rolloff is clearly apparent. Gain and phase
+that lie between 0 and the diagonal (Ksmaﬂ— Klarge) value margins derived from Figure 9 are listed in Table 1
+for the loop under consideration. below.
+The order of the resulting controllers equals the order of Low Frequency High Frequency
+the plant plus the order of the weighting functions used ___
+in the control design interconnection. Hence controller Full H00 with 19.8dB/-51.3 deg 8.02dB/34.5 deg
+model reduction and decomposition is necessary for h' h .
+. . . . . . 1g er rotational
+implementation Within the eX1st1ng ARIS control __-
+software. architecture. Model reciuction was Full H00 with 19.8 dB /_ 51.3 deg 8.02 dB /3 4. 5 deg
+accomplished us1ng balanced truncation and the .
+decom 0siti0n into 0siti0n PID/acceleration ﬁlters was lower rotational
+automated Via use Of MATLAB routines such as
+sdecomp and 332303. . . .
+Table 1 : Translational loop gain and phase margins
+
+WM Rotational 100p isolation and loop gain plots are shown
+Two design approaches, based on the control design in Figures 10 and 11. The design difference between the
+interconnection in Figure 7 were adopted. In the first hwo ﬂavolr: Of fall Hie3deslilgns 1s aptpatent fro]? the plots.
+
+.. . . . . 1 ures an s 0w con r0 er r0 us ness 0
+approach the p0s1t10n controller Kpos is fixed a pr10r1 stiffness variations. The solid lines are translational
+
+6
+American Institute Of Aeronautics and Astronautic s
+
+"
+"8","isolation and loop gains with nominal stiffness while the
+dashed lines correspond to zero stiffness. As is seen mug.
+. . . . r'Inrr-r I:|
+from the gain and phase margins shown in Figure 13, m-mm—meEﬂE—Tmmn—rm
+the controller is extremely robust to stiffness | 5”; ﬂ.
+uncertainty. ESE .;.. :j/E/Jp’r—if/ \Xﬂ
+'1! 3 £351 ' ' 5 Ha
+“min,” EH:- .5.-.. fx-e'fE 5mm.-. .. .._.;.. .
+F'rnhIIIIP-‘l'l I '2 Fr. 5 E
+III . l——!—- E I
+5 '-I_'--. 5 5 5 '“'—'————_|
+5.3. .1-.~..E_._._.E.E _ mmﬁmﬂfjrﬂi‘“ ---------..
+E \hﬂ-‘HL E — '3 I .“nu—rrf—rr'"" E E
+Ii- ! . : ; ""55 n 1 5 e s s
+..m ”[51. ﬂ-w&r.iu“-u&wugﬁﬁ_wL_uH_m
+5 5 5 5 ""L m"": .5"" m“ ”.1""
+_.;E.;. .151... I'mrcr'l'l'lz'l
+Ml I Figure 11 : Rotational Loop Gains (X rotation)
+m"" “1': la: I-1I
+FFlT-Il'l-EI'IH-III
+. . . . D'IIIE-l'u'hlrlﬂil [I
+Figure 8 : Translational Isolation (Y—ax1s) rm:- min?“
+mrﬁw- E i E E
+-'u-.I.n,.-:F'.u I . E
+1|:uI—EI—‘———'—g—E .j. .....-..- .....-............E ..-....-......... .-..-: ............ .
+é: "" “ﬂ 3% 5 5 am “55
+; ; ; ; x511 i 3.1.1.1. _ . E$'\'Q -. -
+.II,I,.EEE I I I I . E; E E E E ._E-EE -EEEEEE
+—§.;ﬂ.-..... .. ""5...”... ....... E i 5 E H
+E: Hull ..... ... . {...u .. ....:..... .. ... ..:.... ...... ...iu ... ......- w - ...-I-H-""EH...-IH-H-HE- H”- -------E In”- """"'E"""" I”...- -
+.:':I |r.' m: :'.I -II ”[1 -:I'_.'I 1|:I: 1II|I
+mezl-EI FI'HI'-'|-='-'II|'|='.I
+Figure 9 : Translational Loop Gains (Y—axis) Figure 12 : Translational Isolation Robustness
+(Y—axis)
+E'HH'H-I-I'iI-ﬂEW'I-I'I
+rmmmd
+:— i w
+E a a ""'55 a. a a 5: «ya: H_ 5.5335,; -
+5c- ' : - ‘5 *--+----
+: 5 5 5 n .E-‘rziqﬂi . -- ""E..-"" q‘ﬁ‘wmih'm .
+.m ...:“HF-Z __:.__-.-.-——-— «...-N— -
+2 2 I E: 'g '1"" ""hgrum... Ewi: ; g
+”I :-:I"" I-J': I-.'-:' m' g: E55} II'. -
+Frmlﬂn - - IEE .
+Figure 10 : Rotational Isolation (X rotation) _ : . ""15 E.-"".
+Figure 13 : Translational Robustness (Y—axis)
+7
+American Institute of Aeronautics and Astronautic s
+
+"
+"9","ON—ORBIT CONTROLLER TESTING being driven by the Offboard environment. The onboard
+
+acceleration illustrates that the isolated acceleration
+The controllers were extensively tested 0n-0rbit during levels are well below the ISS microgravity requirement
+the ARIS ISS Characterization Experiment. For a given at the current Assembly Stage. Ongoin g assessment of
+control design, initial stability tests were run to the environment at assembly complete, and at various
+established stability of the design. Once stability was other rack locations is currently in progress.
+established, a series of isolation performance tests were
+run. The acceleration environment onboard the rack was 4 Oﬁboard (red); Onboard (blue)
+measured using the nine ARIS accelerometer heads. 10
+Offboard station environment was measured using three 3 EiilssuGRequ‘rement '.
+triaxial SAMS-II (Space Acceleration Measurement 10
+System) sensors that were mounted around the ARIS 2 33333353i3535$545133???1535$345333???1535?iiiiiiiiiiif1515353?‘3-:~35535151535?ii3335535i153§1535515
+rack. Quiescent tests that rely only 011 the ambient 10 2%: ﬁg:
+etetiee environment to exeite the ARIS reek were used 22“
+performance. Quiescent tests were run during crew— E 100 :‘
+awake periods to take advantage of the increased 10w :4 3]""?b132aii1 Levels converge
+frequency ambient enVimnment caused by mimics m4 LELIEEEEEELLZ]:
+such as crew exercise. Above 1 Hz the ambient station 31:35“
+environment was not enough to raise the ARIS onboard 10.2 t,g33533;:Tﬁ‘ﬁﬁiieli'iﬁﬁirﬁsem E_
+acceleration levels above the onboard nOise ﬂoor. In EEEEEEEEEEEEEEEEEEIMM3%ECgg;Eggggi????lfgtlelsiiI:ICICSSSSIEIZIZCICZLSZZ
+order to compensate for the lack of high frequency 10-3 ""i""?iiifﬁ'r'""E""?'iiifﬁ""""'i""?iiifﬁi'""???iiiiii'""?'?iiiiiii""‘?'?i'iiiEI
+environment impulse hammer tests were conducted by 10'3 10'2 10"" 10° 10‘ 102 103
+
+- Fre Hz
+
+the crew. The data collected from he quiescent aild Figure 14: Quiescent data illustrrating antibump effect
+hammer tests was used to compute a comp0s1te isolation . .
+curve that spans the frequency range of interest. and hlgh frequency 110186 ﬂoor
+Quiescent Testing
+
+For each control design several quiescent tests of 17
+In addition to the acceleration and position control loops minute and 70 minute duration were run. Onboard and
+described earlier the ARIS controller uses an outer 10 0p Offboard data was segmented onto 50% overlapping
+“antibump” controller to prevent bumping. The windows whose length was chosen to be either 256
+antibump controller evaluates rack relative position and seconds or 1024 seconds. For each window, checks are
+velocity and based on this computes the acceleration made to determine whether the antibumps triggered
+command required to stop the rack at a speciﬁed and/or the rack bumped into its hardstops. Such
+boundary. If the required acceleration command exceeds windows are discarded when computing isolation
+a threshold (set at 15 uG in this work) the command is performance. Two types of isolation performance plots
+applied in order to stop the rack at the boundary (set at i are generated. One is computed by evaluating the
+0.25 inches for the translational degrees of freedom). maximum Offboard acceleration level over all windows
+This acceleration command increases the low frequency for each one-third octave band and comparing it to the
+onboard acceleration levels and hence corrupts the corresponding ARIS level for each corresponding
+isolation measurement. Due to this, isolation band. This isolation plot is referred to as the
+performance is only measured over time windows in “SAMS_maX” in the sequel. The other is simply the best
+which the nonlinear antibump algorithm does not overall isolation for each one-third octave band. This is
+activate. Typical quiescent onboard and Offboard referred to as the “Is01ati0n_min” in the sequel.
+acceleration levels computed over several time windows Isolation is either resolved in terms of rack center
+are shown in Figure 14. The lighter curves represent coordinates or is presented in terms of attenuation from
+station environment while the darker curves represent the Offboard accelerometer head beneath the rack to the
+isolated acceleration levels onboard the ARIS rack. The three onboard ARIS accelerometer heads. The ﬁrst
+higher onboard acceleration levels at low frequency approach is more appropriate for comparison with the
+correspond to windows in which the antibump algorithm analytical single degree of freedom predictions of the
+activates while the lower onboard acceleration curves previous section while the second approach is
+represent antibump -free windows. Above 1 Hz it is seen appropriate for evaluating isolation performance at rack
+that although the spread in Offboard curves is large the points that are signiﬁcantly Offset from the rack center.
+onboard curves converge, indicating that the quiescent As mentioned earlier, the partial HO0 design was used
+onboard levels are in the onboard noise ﬂoor and are not primarily to demonstrate initial feasibility of the
+
+8
+American Institute Of Aeronautics and Astronautic s
+
+"
+"10","approach and hence we do not present any isolation Further investigation revealed that this was due to
+results for this particular design. We proceed to discuss relatively high rotational environment at that same
+isolation performance results for the two full HQ,o frequency. Since the rotational position bandwidth is
+designs. above 0.1 Hz, this rotational acceleration is reﬂected at
+Off-center rack locations, such as the ARIS heads.
+Full H00 with higher rotational position loop
+bandwidth : Typical isolation test results for this
+design are shown in Figures 15 through 20. The test 0.035 6-DOF Rotations (a1434.r0?.p0505
+results displayed correspond to a 70 minute isolation test
+that was conducted during a crew awake period with 0‘03 — 25
+crew exercise advertised on the timeline. The window 0.025
+length used for data analysis was 1024 seconds.
+Translational and rotational positions of the rack are .5 0'02
+shown in Figures 15 and 16 and the antibump § 05015
+commands issued are shown in Figure 17. Rack relative E
+motion is largest in the X aXis and this was correlated 0m
+with station motion induced by crew moving along the 0.005
+long axis of the module. Due to this, X—aXis antibump U
+commands (see Figure 17) are issued frequently during
+crew awake periods. This crew—induced motion and 050050 500 mm 1500 2000 2500 3000 3500 4000 4500
+subsequent antibump triggering will be mitigated with “""1988“
+station buildup. Figure 16 shows that rotational motion Figure 16 : Rack rotational motion
+is very small and this is attributed to the higher position
+100p bandwidth used in these axes. Amiﬁump Commands (3143450253050)
+20
+In order to illustrate isolation performance, Y-aXis 15 :3
+isolation curves corresponding to the “SAMS_maX” and — ><r
+“Isolati0n_min” cases are shown in Figure 18. The 10 :irr
+corresponding onboard and Offboard acceleration levels 5
+are displayed in Figure 19. The measured isolation 33
+performance is misleading above 1 Hz due to the noise E 0
+ﬂoor issue discussed earlier. Hence, the data is only .5
+displayed to this range in Figure 18 . It is clear that the 40
+controller provides exceptional low frequency isolation
+performance and that the isolated levels onboard the 45
+rack are well below the ISS microgravity requirement. 20
+Head isolation plots are shown in Figure 20. Of 0 500 1000 150“ ???rgﬁfgﬂ 3000 3500 400” “500
+particular note is the peaking in head isolation around Figure 17 : Antibump Commands
+0.1 Hz.
+momnslanons(814345055050) m 5 5 5 5 55555 5 5 5 5 55555 5 555 555555
+0'3 —>< .3 u u
+‘1 m: :
+' l lll.‘ l
+.. N ,* '. ' Ill 2'3
+0 “ It . ""ll 1‘] . e 3..
+“V i""! |
+I '4': T"""" -'""T5 52!?!
+03 555555555 555555555 555555555
+—EI:I 3 I I IIIIII'_2 I I IIIIII'_1 I I IIIIII'
+-0.4 1|:I_ “IIII HZ “IIII 1|:
+0 500 1000 1500 2000 2500 3000 3500 4000 £1500
+“mm” Figure 18 : Y—aXis isolation
+Figure 15 : Rack translational motion SAMS_maX : light; lsolati0n_min : dark
+9
+American Institute Of Aeronautics and Astronautic s
+
+"
+"11","~ ' ' ’I‘ . . . . .
+104 EEJEEIEIJJxo ?:TEEITJaxX (:SjglilsnilzlartUOSEZZ:Eeljai1851iifjcffian EEECEEJEIJJE- Flgure 23. NOte that the peaklng 111 head ISOlatlon at 0.1
+3151511111155355555111111155555511311111553555.513.3.115155515.511111515551513.1111. Hz is no longer evident and this is attributable to the
+3 . 1'111111.'""1""1'1111111'""1""1'1111111""'1""1'1111111""'1""1'1111""""'.'.1'111.'. . . . . .
+‘0 better rotauonal Isolauon prowded at thls frequency.
+Once again, the isolation data is not valid above 1 Hz
+113115153352511151Esiggazagiéigiigsagg1:311:3355511121 Offboard and hence this is the range displayed in the figure.
+{5“ --3--1-II]ICEIIIZIIIIICEZZIIIZ[III -..ICIIIICII SCI
+1 111111111 111111111 1 11'.. .. 1""'11 1........ ........
+g D:35:555555553335335555551gr.5555555:35:35:355555253535555555532553555555 BDOFRtt' (1452505 050)
+-— :::::::___:__: ::'.+'::___:_: :::::::___:_: :_::::: - oalons a . .p
+w c — ><r
+.1 "" :"":':::::::""'"" .::::""':"": :::::;;'g::':?-': ::::“‘"""" "" "" _ Yr
+1U .32::2:::f3:::§:?32::::::: 05025 _ Zr
+1131113232” ___24352:55111223232311115333: Onboard
+:
+10-2 511555511111111555‘51511111151511111111115515511111155552:gg::::55515:gg:15..”U2
+..
+1D .3 .2 .1 n 1 2 3 5
+1U 10 1E] 1D 1D 1D 10 g
+Freq(Hz) E 0.01
+Figure 19 : Y—aXis onboard/Offboard levels E 0005
+SAMS_maX : light; Isolati0n_min : dark
+0
+m .' :‘f. i'.‘ 5 ms""
+: ::::'111 111111111 1 1111111 0.01
+n ""4—4—5445”: 1-11 0 200 400 600 800 1000 1200
+1 11111111 ' 11111111 1 1111111 Time(see)
+1 11111111 “11111111 1 1111111 , , ,
+-113 ——1——1—1111ﬁ1———1—' unmuu—Luuu Figure 21 :Rack Rotational Motion
+% 555555555 5555 5...: 5555555 1” 5 55555555 555555555 5 55555555
+—3I:I ""4—4—1441Wr———5——5—i~:~:i¥:r——'- '~:4~:i¥ 1 11111111 1
+5 55555555 5 55555555 I: --1--5-5555555“‘4“
+= 5:55:55: 5 ======== = ==_l_. ”ID 4” 5 1111ﬁ1‘“1""11111ﬁ1
+: :::::::: : :::::::: : ::::::: —2|II ---1--5-1-§-§1§-§§----5--5 1115-:.---5--§--§-§-§1§-§1
+11111111: 11111111: 11111111 II- 111111111 11111111 111111111
+450-3 -1 t 3:. 555555555 5 5555 555555555
+10 1D 10 1|: ‘ __':'_:'T'1'1T1'11'___:__1_T i‘11'___1__.""_1'11'1_11
+HZ 111111111 111:..11 11:1:1111
+. . 111111111 111111""; 11111.'11
+Figure 20:Head1s01at10n 4'3 --~I--1-1111H1---1--1-1111n ---1--1~'411Z~.I
+SAMS_max:1ight;Is01ati0n_min:dark
+an ---- :.
+—EI:| _3 1 1111111'; 1 1111111'_-I 1 1111111'
+, , , , 1D 1D' “ID 1[
+Full H00 w1th lower rotatlonal posmon loop HZ
+bandwidth : Typical isolation test results for this Figure 22 : Y—aXis Isolation
+design are shown in Figures 21 through 23. The test SAMS_max:1ight;Is01ati0n_min:dark
+results displayed correspond to three 17 minute tests
+plus a 70 minute isolation test that was conducted
+during a crew awake period with crew exercise 15:. .' 'f j‘fj."" ""1""“ f,‘ j'f'fjff'
+advertised on the timeline. The window length used for E E E E E i i i i
+data analysis was 256 seconds. SAMS_maX and '3 '""1""§'1‘5‘5€555""T""“““""""""""““”‘
+Isolati0n_min results were computed over all the four -113 __1__1_1111ﬁ1___11 1111ﬁ1___1__11111ﬁ1
+data runs. Rotational positions of the rack are shown in i i 5 ' 1
+Figure 21. Compared to the previous design rotational —2I:I ———§——§—1—§—§1§—§§————§— +1 115—1: ———§——§——§—§—§1§—§1
+position excursions are larger and this is attributed to the % 1 1 1 1
+. .. .. —35:I ———:——:—+44;:—:'r———:——:—;44;.—. ———:—— 4—:4;:—:+
+softer rotational p0s1t10n loops. However stability 5 5 5555555 5 5 5555555 '5 5 ,555555
+robustness was not compromised in any way. -41: - - 1- -1-1111L=1- - -1- 11111141- _ -1- -1 1H' II,
+In order to illustrate isolation performance, Y-aXis 5'3 ""“1""??iﬁﬁ?""'1'""*“*“*""'""““““*
+isolation curves corresponding to the “SAMS max” and 1 1 1
+. . . . _ . —El:| __
+“Isolat10n_m1n” cases are shown in Figure 22. As is 11:1'3 11:"" Hz “:1"" 1::
+seen isolation performance shows improvement at 0.1 . .
+. . . Figure 23 : Head Isolation
+Hz compared to the preV10us des1gn, and is measured to S S 1, ht I 1 t' _ d k
+. . . . . AIVI max: 1 , soaion 111111: ar
+be —44dB at this frequency. Head isolation is shown in — g —
+10
+American Institute Of Aeronautics and Astronautic s
+
+"
+"12","Due to the insufficiency of the ambient station achieve performance and robustness Objectives.
+environment above 1 Hz, impulse hammer tap tests Ongoing investigations are focused on developing
+were conducted to resolve isolation performance in this design methods that work with the full multivariable
+frequency range. High frequency isolation data derived plant model, but result in decentralized controllers that
+from these tests was combined with low frequency can be implemented within the current architecture.
+quiescent data to generate composite isolation plots. As Several alternate formulations of the H00 problem are
+an example, a composite head isolation plot for the full possible and these are being investigated as well. These
+H0° controller with lower rotational position 100p include approaches for describing stiffness and
+bandwidth is shown Figure 24. The peaking in the structural mode uncertainty Via structured perturbations
+isolation curve below 10 Hz is due to dynamic and linear parameter—varying approaches for addressing
+resonances of the umbilicals. As seen in Figure 2, many hysteretic nonlinearities.
+0f the ARIS umbilicals are looped. Each umbilical
+therefore has its own high frequency 100p resonance REFERENCES
+which had earlier been determined, by test and analysis
+to be in this Vicinity. On-orbit structural identification 1- G- 3- Bushnell, T- M- Anderson, M- 13- Becraft, and A- D-
+tests had determined that the first major structural mode Jacot, “Actir/e RaCk ISOlatiOP System Development For
+0f the rack occurred at about 40 Hz. This is further The International Space Station”, AIAA Paper 9 7'1 203 9
+validated by the measured isolation where an increase is 1997' . . .
+. . . 2. G. S. Bushnell, “thht test of an 1nternat10na1 space
+seen above 40 Hz. This is purely a pass1ve response - . . - 9,
+, , statlon actlve rack 1s01at10n prototype system , Smart
+Since the acceleration controller has been rolled Off to Materials and Structures, Vol. 8, No. 6, pp. 791497,
+gain stabilize these modes. We remark that the isolation PII: SO964-1726(99)07555-2, 1999_
+target CUYVC applies to the rigid response 0f the rack 3. I. J. Fialho, Ho Control Design For The Active Rack
+alone. However, it is difficult to decompose Isolation System, Proceedings of T he American Control
+rigid/structural responses based on input-output data and Conference, Chicago, 2000.
+hence the complete response is displayed here_ 4. K. Zhou, J . Doyle, and K. Glover, “Robust and Optimal
+Control”, Prentice Hall, 1996.
+Head2 Isolation
+‘0 523522: 2:22:22 :222222 2:22:22 ééiéiéiis 2222222 APPENDIX
+0
+“U 2 Measured Rack Mass =47.48 slugs
+-30 “ Measured Stiffness ‘
+% IIIIIIIII IIIIIIIII ""I.'III IIIIIII' IIIIIIIII 1.11111:
+-20 -m
+EEEEEEEEE EEEEEEEEE EEEEE‘: .‘EEEEEEE EEEEEi‘E EEEEEEEE X Y Z Xrot Yrot Zrot
+'50
+-20 2
+-80 55555555: EEEEEEEF EEEEEEEEi EEEEEEEE: EEEEEEEF EEEEEEEE
+Freq (Hz)
+Figure 24 : Composite Head isolation
+---—-
+X Y Z Xrot Yrot Zrot
+—CONCLUDING REMARKS -----“l
+In this worh we have successfully apphed H00 techniques ---u
+to synthes1ze controllers for active micrograV1ty
+isolation. In addition to improved performance, these ---“-
+methods facilitate very quick control design cycles and m-
+therefore offer a significant beneﬁt from the standpoint ---”
+0f 0n-0rbit payload Operations. Due to the ARIS
+controller implementation structure, single 100p designs
+in conjunction with system decoupling were used to
+11
+American Institute Of Aeronautics and Astronautic s
+
+"

@@ -1,0 +1,1396 @@
+"","x"
+"1","IOPSCienCG inpscience.inp.nrg
+Home Search Collections Journals About Contact us My IOPscience
+
+The effect of anatomical modeling on space radiation dose estimates: a comparison of doses
+
+for NASA phantoms and the 5th, 50th, and 95th percentile male and female astronauts
+
+This article has been downloaded from IOPscience. Please scroll down to see the full text article.
+
+2011 Phys. Med. Biol. 56 1671
+
+(http://iopscience.iop.org/0031-9155/56/6/010)
+
+View the table of contents for this issue, or go to the journal homepage for more
+
+Download details:
+
+IP Address: 128.157.160.13
+
+The article was downloaded on 02/11/2011 at 18:24
+
+Please note that terms and conditions apply.
+
+"
+"2","IOP PUBLISHING PHYSICS IN MEDICINE AND BIOLOGY
+Phys. Med. Biol. 56 (2011) 1671—1694 doi:10.1088/0031-9155/56/6/010
+The effect of anatomical modeling on space radiation
+dose estimates: a comparison of doses for NASA
+phantoms and the 5th, 50th, and 95th percentile male
+and female astronauts
+Amir A Bahadoril, Mary Van BaalenZ, Mark R Shavers3,
+Charles Dodge4, Edward J Semones2 and Wesley E Bolch1 ’5 ’6
+1 Department of Nuclear and Radiological Engineering, University of Florida, Gainesville,
+FL 32611, USA
+2 NASA Johnson Space Center, Houston, TX 77058, USA
+3 Wyle Integrated Science and Engineering, Houston, TX 77058, USA
+4 University of Houston—Downtown, Houston, TX 77002, USA
+5 Department of Biomedical Engineering, University of Florida, Gainesville, FL 32611, USA
+E—mail: wbolch@uﬁ.edu
+Received 20 October 2010, in ﬁnal form 21 J anuary 2011
+Published 23 February 2011
+Online at stacks.i0p.0rg/PMB/ 5 6/ 1671
+Abstract
+The National Aeronautics and Space Administration (NASA) performs
+organ dosimetry and risk assessment for astronauts using model—normalized
+measurements of the radiation ﬁelds encountered in space. To determine
+the radiation ﬁelds in an organ or tissue of interest, particle transport
+calculations are performed using self—shielding distributions generated With
+the computer program CAMERA to represent the human body. CAMERA
+mathematically traces linear rays (or path lengths) through the computerized
+anatomical man (CAM) phantom, a computational stylized model developed
+in the early 1970s With organ and body proﬁles modeled using solid shapes
+and scaled to represent the body morphometry 0f the 1950 50th percentile
+(PCTL) Air Force male. With the increasing use of voxel phantoms
+in medical and health physics, a conversion from a mathematical—based
+to a voxel—based ray—tracing algorithm is warranted. In this study, the
+voxel—based ray tracer (VOBRaT) is introduced to ray trace voxel phantoms
+using a modiﬁed version of the algorithm ﬁrst proposed by Siddon (1985
+Med. Phys. 12 252—5). After validation, VOBRAT is used to evaluate
+variations in body self—shielding distributions for NASA phantoms and siX
+University of Florida (UF) hybrid phantoms, scaled to represent the 5th,
+50th, and 95th PCTL male and female astronaut body morphometries, Which
+have Changed considerably since the inception of CAM. These body self—
+shielding distributions are used to generate organ dose equivalents and
+6 Author to Whom any correspondence should be addressed.
+0031-9155/1l/06l67l+24$33.00 @2011 Institute Of Physics and Engineering in Medicine Printed in the UK 1671
+
+"
+"3","1672 A A Bahadori et al
+effective doses for ﬁve commonly evaluated space radiation environments.
+It is found that dosimetric differences among the phantoms are greatest for soft
+radiation spectra and light vehicular shielding.
+Online supplementary data available from stacks.iop.org/PMB/56/ 1671/mmedia
+(Some ﬁgures in this article are in colour only in the electronic version)
+1. Introduction
+The space radiation environment differs greatly from anything encountered on Earth. The
+types of radiation encountered are diverse, ranging from electrons to protons to uranium ions.
+Due to their penetration and high level of energy deposition, three Classes of radiation are of
+particular concern: geomagnetically trapped radiations, galactic cosmic rays (GCR), and solar
+particle events (SPEs). Geomagnetically trapped radiations, Which are of concern in low—Earth
+orbit (LEO), mostly consist of electrons and protons, although protons are of greater concern
+in space radiation shielding studies due to their ability to penetrate shielding (NCRP 2002).
+The spectrum of geomagnetically trapped protons, With a maximum energy of about 700 MeV,
+is modulated by the solar activity level and is a function of altitude and orbital inclination.
+GCR consist of ions ranging from protons to uranium ions, although the heaViest ions With a
+signiﬁcant abundance are those of iron nuclei (NCRP 2000, 2006). GCR can have energies
+exceeding 10 MeV n‘l, and are well represented by a spectrum With a broad peak around
+300 to 700 MeV 11—1 (NCRP 2006, O’Neill 2006). GCR are modulated by solar activity, and
+in LEO, the spectrum is further modiﬁed by Earth’s magnetic ﬁeld. SPEs, Which consist of
+protons With energies up to 1 GeV, are sporadic but can result in high doses due to the high
+particle ﬂuence associated With these events (Ballarini er al 2004, Wilson et al 1999, Zapp
+er al 2002).
+
+For National Aeronautics and Space Administration (NASA) astronaut dosimetry, Monte
+Carlo simulation of radiation dose is not implemented in the operational realm, in part due to
+the complexity of transport of the energetic particles through astronaut and vehicle models and
+historical limitations in computing power. Instead, the radiation transport problem is reduced
+to one dimension through the use of ray tracing. Two radiation transport codes are used to
+generate dose proﬁles as a function of aluminum equivalent thickness (representing vehicle
+shielding) and water equivalent thickness (phantom self—shielding). The ﬁrst is HZETRN,
+Which is used to analyze GCR dose, and the second is BRYNTRN, Which is used to analyze
+proton dose from SPEs and geomagnetically trapped protons (Wilson et al 1991b).
+
+To return dose at a particular point, the ray trace results for the phantom self—shielding and
+vehicle shielding are combined With the tabular output from HZETRN and BRYNTRN for a
+given space radiation environment. NASA has developed a specialized program, CAMERA, to
+generate path length distributions With its high—ﬁdelity mathematical phantom, computerized
+anatomical man (CAM) (Billings and Yucker 1973). However, the present trend in phantom
+development is away from stylized and toward voxel—based phantoms or even ‘hybrid’
+phantoms, Which combine the ﬂexibility of stylized phantoms and the anatomical realism
+of voxel—based phantoms. The purpose of this study is twofold: (1) demonstrate that the
+hybrid phantoms developed at the University of Florida (UF) (Lee et al 2010) are compatible
+With the current operational framework of NASA astronaut dosimetry, and (2) demonstrate
+the effect of differences in body morphometry on organ self—shielding distributions and organ
+dose equivalent and effective dose.
+
+"
+"4","The effect of anatomical modeling on space radiation dose estimates 1673
+2. Materials and methods
+
+2.1. CAM and CAMERA
+
+CAM was ﬁrst developed by Martin Marietta Corporation for space radiation protection
+purposes (Kase 1970). The initial iteration of CAM was written to be used with the Modiﬁed
+Elemental Volume Dose Program (MEVDP), and was to be constructed through Boolean logic
+using siX shapes: hexahedron, right Circular cylinder, sphere, hemisphere, truncated 0r pristine
+right Circular cone, and truncated 0r pristine ellipsoid with truncation from up to two planes
+(Liley and Hamilton 1971). The goal was to develop a computational phantom representing
+the1950 50th percentile (PCTL) Air Force male, with 0.1 inch accuracy in length dimensions
+and 10% accuracy in total body weight (Kase 1970). The result was a highly stylized model
+with over 2400 surfaces comprising 1100 solid composite parts.
+
+After the initial development of CAM in 1970, reﬁnements were made for integration into
+a new program, CAMERA. These reﬁnements included explicit bone marrow site modeling
+by adding surfaces within the bone regions consisting of an offset of the external bone contour
+and an update to the geometry system to integrate a more efﬁcient ray—tracing algorithm
+(Billings and Yucker 1973). The two ray selection methods from MEVDP were retained:
+random and systematic. The details of the calculation of ray selection can be found in the
+MEVDP Technical Report (Liley and Hamilton 1971). For the present study, the systematic
+ray selection method with 512 rays was used, as this mirrors the way in which the NASA body
+self—shielding distributions were generated (Billings and Yucker 1973).
+
+For an appropriate comparison with the UP hybrid phantoms, it was necessary to voxelize
+CAM. Voxelization was performed using CAMERA, in a manner similar to that of a previous
+study by Slaba er al (2009). An input ﬁle was prepared with dose points consisting of an
+array of points 0.2 cm apart in all three directions. CAMERA, which speciﬁes the material
+tag of every dose point, was run using the generated input ﬁle, and the material tags were
+subsequently extracted from this ﬁle. A binary ﬁle with the material tags was created using a
+MATLAB (The MathWorks, Natick, MA) script for later ray tracing. In addition to voxelizing
+the model, a layer of skin was added to CAM, and skeletal spongiosa regions were retagged
+so that site—speciﬁc spongiosa compositions could be used. Spongiosa is the mixture of red
+marrow, yellow marrow and bone trabeculae located within cortical bone.
+
+A female version of CAM, known as the computerized anatomical female (CAF) model
+was constructed in the early 1990s. CAF was the scaled version of CAM, with a scaling factor
+of 0.92 in each dimension (Yucker and Huston 1990). The penis and testes were removed from
+CAM, and breast, ovary, and uterus models were added. For this analysis, a CAF model was
+not available. However, since CAF is a scaled version of CAM, the CAP body self—shielding
+distributions can be approximated by multiplying the values from CAM by the 0.92 scaling
+factor. For the female organs, the body self—shielding distributions are as taken from the
+NASA operational risk code (NASA 2009b). Variable scaling was later implemented with
+CAP; however, only the hip region deviated from the 0.92 scaling factor — 1.04 lateral and
+0.94 anterior—posterior (Yucker 1992). This results in a maximum of 5% underestimation of
+ray length for this region.
+
+2.2. UF hybridphantoms
+
+First—generation computerized anatomic models are based on three—dimensional mathematical
+surface equations (stylized phantoms), while second—generation models are created through
+segmented medical images (vexel phantoms). The UF hybrid phantom is a third—generation
+human anatomic model that combines the best features of eaCh—anatomic ﬂexibility, as
+
+"
+"5","1674 A A Bahadori et al
+.3. .
+“I
+I ‘ 5}}
+$9:
+‘l‘ I 1
+Y~u7 ‘
+1 I
+.- i “a
+Figure 1. CAM phantom external View (left), CAM phantom internal View (middle), UF hybrid
+adult male phantom (right).
+afforded by stylized phantoms, as well as anatomic realism, as afforded by vexel phantoms.
+The CAM phantom (ANS 2005) and the UP hybrid phantom are displayed in ﬁgure 1.
+
+To construct the UP Hybrid Phantom Series, organs in previously acquired computed
+tomography (CT) images were segmented. The contour ﬁles were converted to polygon mesh
+ﬁles, and then imported into the NURBS—based solid modeling program Rhinoceros (McNeel
+North America, Seattle, WA). Here, non—uniform rational B—spline (NURBS) models were
+created from the polygon mesh ﬁles. Some organs, namely the brain, lungs, and extrathoracic
+airways, were left in polygon mesh due to the inherent difﬁculty of modeling these organs
+with smooth surfaces. In addition, stylized representations were used for organs such as the
+eyeballs, urinary bladder, eye lens, tongue, and seX—speciﬁc organs, due to the accuracy of
+simple shapes in representing these organs (Lee et al 2010). The organ masses were matched
+to the values reported in ICRP Report 89 (ICRP 2002), while the organ densities were matched
+to the values reported in ICRU Report 46 (ICRU 1992). Internal organs and exterior body
+dimensions were matched to reference values to within 1% and 4%, respectively (Lee et al
+2010). The UF series includes Children of ﬁve ages, as well as the ICRP reference adult male
+and female, which were used in the present study.
+
+Understanding the impact of body size on body self—shielding required the use of target
+anthropometric parameters for scaling of the UP hybrid adult male and female. The most
+recent update to NASA’s anthropometric design criteria are listed in NASA CXP 70024
+Revision C, Constellation Program Human—Systems Integration Requirements document
+(NASA 2009a). This document presents a gender—pooled set of anthropometric parameters,
+and thus it was necessary to consider data from the older NASA—STD—3000, Man—Systems
+
+"
+"6","The effect of anatomical modeling on space radiation dose estimates 1675
+Table 1. Phantom heights and weights.
+
+Measurement (unit) CAM M5a M50 M95 CAF F5 F50 F95
+
+Height (cm) 175.5b 169.7C 179.9C 190.1C 161.5e 158.3f 166.9f 175.5f
+
+Weight (kg) 69.5d 65.8C 82.2C 98.5C 55.9g 45.2f 60.4f 75.6f
+
+a The ﬁrst letter indicates gender. The number that follows indicates percentile.
+
+b Kase (1970).
+
+C NASA (1995).
+
+d Billings and Yucker (1973).
+
+e Yucker and Huston (1990).
+
+f Determined from data provided from the NASA Radiation Health Ofﬁce Group.
+
+g Yucker (1992).
+
+Integration Standards document (MSIS) (NASA 1995). Anthropometric data were provided
+
+for 5th PCTL, 50th PCTL, and 95th PCTL for 40—year—old American males and 40—year—old
+
+J apanese females. As stated in the NASA MSIS, the anthropometric parameters are presented
+
+for these populations since the astronaut population is being drawn increasingly from the
+
+general world population instead of the United States military population (NASA 1995).
+
+While male astronaut height and weight data compare well with the data for the 40—year—old
+
+American male, the female astronaut heights and weights were larger than the data for the
+
+40—year—old J apanese female. A comparison of the heights and weights for the 5th PCTL,
+
+50th PCTL, and 95th PCTL male and female astronauts, along with the heights and weights
+
+of CAM and CAF, are shown in table 1.
+
+To create the set of UP hybrid phantoms representing the 5th PCTL, 50th PCTL, and
+95th PCTL male and female astronauts, ﬁrst the anthropometric parameters for the 50th PCTL
+male and female as listed in the NASA MSIS were matched. Uniform scaling factors for the
+males were then derived for the 5th PCTL and 95th PCTL males based on body measurements
+and total body mass. For the females, all of the phantoms had to be scaled, since the 50th
+PCTL female as deﬁned in the NASA MSIS did not coincide with the 50th PCTL female
+astronaut. Here, scaling in the z—direction was based on stature, while scaling in the xy plane
+was performed to match total body mass. This scaling methodology ensured that the body
+self—shielding distributions would be consistent for all ray directions. Once the phantoms were
+scaled appropriately, they were voxelized using an in—house MATLAB code. Voxel dimensions
+were speciﬁed as 0.2 cm X 0.2 cm X 0.2 cm, which allows for a reasonable skin thickness
+without resulting in an unreasonably large ﬁle size (the phantom ﬁle sizes ranged from 23 MB
+to 49 MB). The UF hybrid adult male—scaled phantoms (UFHADMS, UFHADM50, and
+UFHADM95) are displayed in ﬁgure 2(a), and the UP hybrid adult female—scaled phantoms
+(UFHADFS, UFHADF50, and UFHADF95) are displayed in ﬁgure 2(b).
+
+2.3. Voxel-based ray tracer
+
+T0 ray trace the phantoms subsequent to voxelization, a Visual Basic (Microsoft Corporation,
+Redmond, WA) code, voxel—based ray tracer (VOBRaT), was written. As inputs, the program
+requires the number of voxels in each direction and the voxel resolution in each direction.
+From these parameters, it creates an empty array, which is then populated using the voxel
+array deﬁnition ﬁle. The phantom type (UF hybrid adult male, UF hybrid adult female, or
+CAM) is also requested. The phantom type indicates which phantom material lockup tables
+(LUTs) should be used.
+
+"
+"7","1676 A A Bahadori et al
+(a)
+‘z: ,
+‘g: ' ,‘m
+‘g: "" h\ I f \ \
+I 7h\ \ ; ‘ ‘ é
+—"" J ‘ «2;;
+. “va ‘ J7;
+. ‘1’"" ‘ré ii if
+""a six I{
+92‘ 1,. ; _. ‘
+. 4 . | t )
+' g . ‘ )
+(b)
+‘ a
+\ v ’
+. \ \ )5; ‘5 \
+, ‘ \ ""r ‘ f
+. f? ‘ ti n
+.n-c 85... J...‘ Emu _.-~6 K»..-
+Figure 2. UF hybrid adult phantoms at the 5th (left), 50th (middle), and 95th (right) weight
+percentiles: (21) males and (b) females.
+
+"
+"8","The effect of anatomical modeling on space radiation dose estimates 1677
+Two LUTs required for ray tracing are mass density and 50 MeV proton range. These
+two quantities are utilized in VoBRaT to standardize all rays to linear path lengths in water,
+as required for later use with tabular data generated by HZETRN and BRYNTRN. The mass
+densities for the UP phantom materials were taken from ICRU Report 46 (ICRU 1992), while
+the densities for CAM were taken from the material deﬁnitions of the CAM Model report
+(Billings and Yucker 1973). The 50 MeV proton ranges for the UP phantom materials were
+calculated using the program SRIM—2008 (Ziegler er al 2008). Values from these LUTs are
+used for converting all materials to ‘water equivalent’. Once the voxel array deﬁnition ﬁle is
+loaded and the phantom type is speciﬁed, the density LUT is used to calculate the total mass
+of the phantom as
+N
+m = Z dxdydz, (1)
+1. Pi
+where i is the voxel index; N is the total number of voxels; dx, dy, and dZ are the voxel
+resolutions in the x, y, and z directions, respectively; and ,0,- is the density of voxel i.
+
+The ray—tracing procedure requires the speciﬁcation of both a dose point and a source
+point. For this study, dose points were randomly selected (an exception to this statement is
+the manual selection of some dose points within CAM/CAF due to a lack of an organ being
+explicitly segmented in these phantoms). The random selection procedure for the organs other
+than the BFO is straightforward: the indices of all voxels comprising the organ are determined,
+and the Visual Basic random number generator is used to Choose a row number, which indicates
+a set of coordinates to set as a dose point. Once the row is Chosen, it is removed from the
+array to prevent the possibility of repeating a dose point. As an error—preventing measure, if
+the number of voxels comprising an organ is less than the desired number of random points,
+the user is notiﬁed and every voxel is ray traced. The BFO, on the other hand, is a distributed,
+inhomogeneous organ. In the UP skeletal model, 13 skeletal sites are deﬁned as containing
+active marrow. These sites are the
+
+o Cervical vertebra
+
+o ClaViCle
+
+o Cranium
+
+o Proximal femur
+
+o Proximal humerus
+
+o Lumbar vertebra
+
+o Mandible
+
+o Pelvis
+
+0 Rib
+
+o Sacrum
+
+o Scapula
+
+o Sternum
+
+o Thoracic vertebra.
+In a manner similar to that used for the other organs, the indices of all voxels comprising each
+skeletal site are determined. The ‘desired’ number of BFO dose points is entered, and the
+number of dose points selected from each skeletal site is apportioned based on the relative
+proportion of active (red) marrow in each skeletal site (ICRP 1995). Random voxel selection
+is performed as described previously. Dose point selection is completed when the Cartesian
+coordinates are calculated from the voxel indices.
+
+Once the dose points are selected, the source point selection process occurs. First, the
+distance from the dose point to each corner of the voxel array is determined. The radius of
+
+"
+"9","1678 A A Bahadori et al
+the sampling sphere is taken to be the maximum distance plus 1 cm to ensure that the entire
+phantom is enveloped by the sampling sphere. In VOBRaT, the direction cosines used by
+CAMERA for 512 rays are hard—Wired into the code as a systematic option; future versions
+of the ray tracer Will encompass the entire selection process to allow for different numbers
+of systematically selected rays. The random ray selection process from CAMERA is also an
+option for calculating direction cosines. The source point coordinates are calculated as
+
+x5 xd 04
+
+[k] = |:)’d:| +1” [ﬂ] , (2)
+
+ZS Zd y
+Where xd, yd, and zd are the dose point coordinates; r is the radius of the sampling sphere; and
+04, ,6, and y are the direction cosines. In order to ensure that division by zero does not occur
+later in the ray—tracing process, if the coordinates of the dose point and source point are equal
+in any dimension, the source point coordinate is offset by 1 ,um.
+
+The ray—tracing algorithm employed by VOBRaT is based on that previously outlined by
+Siddon (1985). For a given source point and dose point, the bounds of intersected planes
+and the corresponding parametric values for the ray are calculated using the plane indices of
+the vexels containing the source and dose points and their relative positions. The Cartesian
+coordinates and indices of the ﬁrst intersected vexel at the entrance to the voxel array are found
+using the appropriate ray parametric value. Next, the parameter step size in the x—dimension,
+Which is constant due to the ordered nature of the set of orthogonal planes, is calculated as
+
+djf = —dx . (3)
+
+lxs _ xd I
+
+The parameter step sizes in the other directions are similarly calculated. Starting With the
+parametric intersection of the ray and the vexel array, a do—loop is used to iteratively ﬁnd
+the next parametric intersection value, look up the density and range of 50 MeV protons for
+the current vexel, and calculate the parametric length through the current vexel as
+
+11- = (a1 — a2>piRwRi—1, (4)
+Where all is the parametric value for intersection With the current vexel, a2 is the parametric
+value for intersection With the next vexel, ,0,- is the density of the current vexel, Rw is the
+range of 50 MeV protons in water, and Rl- is the range of 50 MeV protons in the material
+comprising vexel i (Ponomarev er al 2007). The do—loop is terminated When a2 is greater than
+unity, indicating that the dose point is located in the current vexel. The ‘remainder’ parametric
+length from the last voxel is then calculated. Finally, the total radiological path length in water
+is calculated as
+
+J
+1H = r 211-, (5)
+l
+
+Where J is the total number of vexels intersected by the given ray. This procedure is performed
+in two nested for—loops; the outer loop addresses each dose point, While the inner loop addresses
+each source point. For each run of VOBRaT, the direction cosines and resulting radiological
+path length in water are written to an Excel (Microsoft Corporation, Redmond, WA) ﬁle for
+later use.
+2.4. Space radiation environments
+The space radiation environment is time varying and complex; the types of exposure scenarios
+can be roughly divided into geomagnetically trapped protons, GCR, and SPE. Geomagnetically
+trapped radiations are present in the Van Allen belts due to planetary magnetic ﬁeld interactions
+
+"
+"10","The effect of anatomical modeling on space radiation dose estimates 1679
+b 10"" f; ‘0‘ (b)
+=5 10* g- 10‘
+E 10» E 10‘ Hydrogen
+IE 10"" N; 10‘”
+5 ‘0‘ f? 10‘ Helium
+E 104 E 10“, Oxygen
+t: 10: ""E‘ 10:
+:2; °_‘ 1 Iron
+g 10' .g 10‘“
+g 101 g 10'
+Q 3:
+1o: ‘ a 10“ . .
+1o? 10' 1o: 101 1o: 10‘ 10’ 10‘ 10— 10' 10- 10' 10‘ 10""
+Energy (MeV) Energy (MeV n“)
+10“: ‘-
+v; ‘\I\k‘ (C)
+g 10? ...A..‘...‘,.‘... “ l
+E 35kt...
+‘; 1o“ “3.. .
+E: 10‘“ \‘\-_ ,
+.g t
+E 105 . ,
+3% ""~.\
+§ 105 -—o— February19568PE ‘2‘ .
+g —-— October1989 SPE \
+D "".4... Augusl19728PE ‘1 R
+104 . '
+10D 10' 101 103
+Energy(MeV)
+Figure 3. (a) Trapped proton spectrum for the altitude of 351.5 km and the orbital inclination
+of 51.60 at solar minimum, (b) free—space GCR energy spectra (selected elements) for 1977 solar
+minimum, and (c) SPE spectra for three large historic events.
+With charged particles of extra—planetary origin. There are two main belt regions: the inner
+and outer belts. The inner belt consists mostly of protons, Whereas the outer belt consists
+mostly of electrons (NRC 2006). LEO missions are ﬂown Within the inner belt, and so
+the dose contribution from geomagnetically trapped protons must be evaluated. The APS
+geomagnetically trapped proton model With the 1965 International Geomagnetic Reference
+Field model for earth’s magnetic ﬁeld (NRC 2008, Wilson et al 1997) is used in this work.
+Proton spectra for altitude ranging from 300 to 630 km and for orbital inclinations of 28.50 and
+51.60 are available. The solar activity level also has an impact on the geomagnetically trapped
+proton spectrum: at solar maximum, the proton levels are lower than at solar minimum due
+to atmospheric interactions (NRC 2006). The proton spectrum for an altitude of 351.5 km
+(190 nm) and 51.60 inclination at solar minimum Will be used to represent a worst—Case scenario
+for geomagnetically trapped proton levels for an orbit similar to that of the current orbit of
+188. This proton spectrum is displayed in ﬁgure 3(a).
+
+GCR consist of a spectrum of protons and heavy ions representing a low—ﬂux background
+level of slowly varying radiation in space. Protons comprise the majority of GCR, With helium
+ions being the next most abundant species at around 10% 0f the total (NRC 2008). A much
+smaller fraction of GCR consists of ions heavier than helium; iron ions are the heaviest nuclei
+With a signiﬁcant abundance, but GCR is modeled With small cobalt and nickel contributions
+as well (NCRP 2006). The heavy ion component of GCR is a problem in space radiation
+shielding due to fragmentation effects and the high linear energy transfer (LET) nature of
+these highly energetic particles. GCR ﬂuxes are modulated by solar activity, With maximum
+values occurring at solar minimum and minimum values occurring at solar maximum (NRC
+
+"
+"11","1680 A A Bahadori et al
+2008). For this study, the GCR spectra and composition at the 1977 solar minimum, which
+represent the highest observed GCR ﬁuence rates, are used neglecting the effects of Earth’s
+magnetic ﬁeld and solid angle shielding. This is the worst—case scenario, and results in much
+larger radiation doses than for simulations and measurements of LEO GCR as referenced in
+previous studies (Cucinotta er al 2008, Reitz er al 2009). Energy spectra for hydrogen, helium,
+oxygen and iron components of GCR at the 1977 solar minimum are shown in ﬁgure 3(b).
+These spectra are taken from the distribution of HZETRN 2005 (Wilson et al 2006).
+
+SPEs result from spurious solar activity, which accelerates a large number of protons
+with high energies away from the surface of the sun. These events generally last on the
+order of hours or days, and have been shown to result in high doses for high ﬁuence events,
+especially for small shielding thicknesses (Simonsen er al 1992, Ballarini er al 2006). SPEs
+are of particular concern outside of LEO, since the geomagnetic ﬁeld deﬂects most of the
+ions accelerated toward Earth during these events. Unlike geomagnetically trapped protons
+and GCR, the occurrence of SPE is not well forecasted with current capabilities. Despite the
+fact that SPEs contain heavier ions, the relative abundances of these ions are many orders
+of magnitude less than that of protons and hence are neglected in simulation. SPE proton
+energy spectra vary in terms of ﬁuence and shape; ‘soft’ spectra are biased toward lower
+energy protons, while ‘hard’ spectra have protons of very high energies. Soft spectra are of
+concern for lighter shielding conﬁgurations, while hard spectra are of concern for heavier
+shielding conﬁgurations. Historically, a number of very high ﬁuence events have been used to
+represent the most intense SPEs. The three high ﬁuence events of interest for this work are the
+October 1989 SPE, the August 1972 SPE, and the February 1956 SPE, which represent two
+‘soft’ spectra and one ‘hard’ spectrum, respectively. The proton energy spectra for these three
+events are shown in ﬁgure 3(C). These spectra are taken from the BRYNTRN code (Wilson
+et al 1989).
+
+2.5. HZETRN and BRYNTRN transport and dosimetry
+
+In the past, full Monte Carlo radiation transport was not used, due in part to computing
+limitations. Radiation transport was addressed by reducing the problem to one dimension
+and using deterministic methods. The program BRYNTRN was written to transport
+geomagnetically trapped protons and SPE (Wilson et al 1989), while the program HZETRN
+was written to transport GCR (Wilson et al 1991a). BRYNTRN and HZETRN transport the
+incident particles through one—dimensional slabs of aluminum, representing shielding external
+to the astronaut, and water, representing astronaut self—shielding.
+
+Concurrent with transport, both BRYNTRN and HZETRN calculate the dose and dose
+equivalent as a function of slab thickness. The dose at a depth of x within the slab is calculated
+as
+
+00
+D(x) = 23/0 sj(E)c1>J-(x, E)dE, (6)
+J
+where Sj(E) is the stopping power for the particle type j with an energy E, and CIDJ- (x, E ) is
+the ﬂuence for the particle type j with an energy E at a slab depth x. The dose equivalent is
+calculated as
+00
+H(x) = 2/0 Qj(E)sj(E)c1>J-(x,E) dE, (7)
+J
+where QJ-(E) is the quality factor for the particle type j at an energy E (Wilson et al 1991b).
+The quality factor is taken to be a function of LET using the ICRP Report 60 (ICRP 1991)
+deﬁnition (table 2).
+
+"
+"12","The effect of anatomical modeling on space radiation dose estimates 1681
+Table 2. Quality factor deﬁnition (NCRP 2000).
+Unrestricted LET in water (keV ,um‘l) Q (LOO)
+<10 1
+10 to 100 0.32LOO — 2.2
+> 100 300 (LOO)_0'5
+
+Once the dose, D, and the dose equivalent, H, are determined as a function of depth,
+the ray trace results are used to determine the organ dose equivalent. The dose equivalent
+for each ray length is found and the average over all of the rays is computed; this is valid
+since the solid angle represented by each of the 512 rays is approximately the same. In
+practice, dose and dose equivalent are outputted by BRYNTRN and HZETRN in the form of
+a two—dimensional matrix representing depths of aluminum for external shielding and depths
+of water for body self—shielding. Therefore, two interpolations are performed: one over the
+vehicle ray distribution, and another over the phantom distribution. For simplicity, the vehicle
+shielding will be assumed to be a spherical shell in this study.
+
+3. Results
+
+3.1. VOBRaT validation
+
+Validation of VoBRaT was completed to ensure that the calculations were being performed
+as expected. The ﬁrst case tested for validation was a 30 cm diameter unit density water
+sphere surrounded by vacuum. The dose point was speciﬁed to be the center of the sphere.
+For the 512 ray systematic distribution, the mean radiological path length in water was found
+to be 14.984 cm (0.11% error), with a standard deviation of 0.069 cm or 0.46%. The time
+required for the calculation was 0.2 ms per ray on a Dell Precision T3400 workstation with an
+Intel Core 2 Duo E4600 2.4 GHZ processor and 3.25 GB of RAM; thus, the time required for
+ray tracing would not preclude the use of many dose points to represent an organ for future
+analyses. The VoBRaT performed well for this test case, considering that both the absolute
+standard deviation and the absolute error were fractions of the voxel resolution, and that the
+relative standard deviation and relative error were small.
+
+Next, VoBRaT was validated using an actual dose point within CAM. First, CAMERA
+was used to generate the body self—shielding distribution for the right eye lens. For the same
+dose point, the body self—shielding distribution was generated using VoBRaT. Figure 4(a)
+shows the two distributions. Excellent agreement was observed, especially above path lengths
+of 1 cm of water. The agreement below path lengths of 1 cm of water is attributable to artifacts
+from the voxelization process, since the surfaces comprising CAM were no longer smooth.
+A heart dose point was also evaluated, to ensure that VoBRaT would perform well relative to
+CAMERA for a deeper—seated organ. The results are shown in ﬁgure 4(b), and once again
+indicate very good agreement. The validation results from the 30 cm unit density water sphere,
+along with the validation results from two CAM dose points, indicated that the VoBRaT was
+operating properly and could faithfully produce body self—shielding distributions for voxel
+phantoms.
+
+3.2. Phantom ray tracing
+Once the capability for creating body self—shielding distributions for voxel phantoms was
+realized, the impact of body morphometry on the body self—shielding distributions was
+
+"
+"13","1682 A A Bahadori et al
+10 _ . ......... ... 10 _
+RIghtEye Lens .M'” ' Heart . . - ’
+f"" ' .
+0.8 0,8 :1
+X
+ax
+31: 0.6 2 0‘6 ’3.
+E 5 >6
+:3; 04 g 04 X?!
+l .
+.8!"" ,5""
+072 ""_.-' 0,2 92
+8' x
+5; ‘ x CAMERA output 3 x CAMERA output
+(a) ""x : VoBRaT output (b) x
+0,0 ' 0.0
+104 1o” 10‘ 10' 100 10‘ 101
+Thickness in water, t (cm) Thickness in water, t (cm)
+Figure 4. Comparison of CAMERA output and VOBRaT output in CAM for the (a) right eye lens
+dose point, and (b) heart dose point.
+investigated. Important organs for the NASA method of the calculation of effective dose
+include the gonads, colon, and female breast. Important organs for deterministic effects
+include the BFO, skin, and eye lens. The body self—shielding distributions for all organs
+except for those not explicitly segmented in CAM (eye lens, oral mucosa, esophagus, salivary
+glands, adrenals, extrathoracic airways (ET) region, gallbladder, thymus, prostate, breasts,
+ovaries, and uterus) were generated by randomly sampling points within the organ. Five
+hundred points were used for all organs except the skin, BFO, and muscle, unless these
+organs comprised less than 500 voxels; for these highly distributed organs, 8000 points were
+used. The resulting body self—shielding distributions for speciﬁc organs of interest in NASA
+dosimetry (gonads, colon, female breasts, BFO, skin, and eye lenses) are shown in ﬁgures 5(a)
+through (g). Results from the voxelized CAM and CAF are shown for comparison. Body
+self—shielding distributions for the entire complement of organs considered are available in
+electronic annex A available at stacks.i0p.0rg/PMB/56/l67l/mmedia.
+3.3. Organ dosimetry
+Once the body self—shielding distributions were generated for the phantoms, the results from
+BRYNTRN and HZETRN were used to derive the overall organ dose equivalents. Simpliﬁed
+vehicle shielding distributions were assumed: space suit shielding at 0.5 g CID—2 aluminum
+equivalent, a thinly shielded pressure vessel (PV) shielding at 2 g CID—2 aluminum equivalent,
+and a shelter area within a spacecraft at 10 g CID—2 aluminum equivalent. These hypothetical
+shielding thicknesses are similar to those used in previous studies (Simonsen er al 1992, Hoff
+er al 2004, Ballarini er al 2006, Slaba er al 2009). The body self—shielding ray thicknesses
+were interpolated over the depth dose distribution at these aluminum equivalent shielding
+thicknesses in order to return organ dose equivalents. Organ dose equivalent rates for trapped
+protons and GCR in PV shielding are shown in ﬁgures 6 and 7, respectively, while organ
+dose equivalent results for the August 1972 SPE for suit shielding and shelter shielding are
+shown in ﬁgure 8. To more explicitly illustrate the relationship between anatomical modeling
+and organ dose equivalent, the fractional difference between the organ dose equivalents for
+a phantom of interest and the 50th PCTL UF phantom was calculated as the ratio of the
+phantom of interest organ dose equivalent to the 50th PCTL UF organ dose equivalent minus
+unity. Fractional difference results for trapped protons and GCR in PV shielding are shown
+in ﬁgures 9 and 10, respectively, while fractional difference results for the August 1972 SPE
+
+"
+"14","The effect of anatomical modeling on space radiation dose estimates 1683
+1.0 1.0
+Twas I ‘
+,. —-- UFl-MDFSO 1
+/ --- umms I
+0.8 0.8 __ CAF I
+/ i7”,
+:7 . c I
+S 0.0 / E 0.0 4:11
+'5 '5 :
+. , . g.
+E 0.4 7/ g 0.4 [I‘ll
+I
+0.2 — UFHADW 0.2 ,’/,’/’I4
+— UFHADMSO III I
+(a: / : mm (b) ,:,,:
+0.0 0.0 :v Ovaries
+10‘ 10° 10‘ 10"" 10‘ 10° 10‘ 102
+Thickness in water, t (cm) Thickness in water, t (cm)
+""0 1'0 Female Breasts ,. '
+III 35%;. :I/
+--- UFHADFOS 4,?” 0.8 5,!
+00° — UFHADMS / M ’
+— UFHADMSO // I”
+A — UFHADM95 / _"" .7 /
+1"". 0.0 2 22: [I L’, 0.0
+E I E
+E / -°
+'3 0.4 / g 0.4 ,
+n.
+n. . I
+/ :7
+/ ’ ,w :2: 3223:;
+i (d) ,5’ :’ 1': 2:“
+0.0 (C) a, ‘ 0.0 ‘l
+10' 10° 10' 102 ‘0' 10° ‘0' ‘°’
+Thickness in water, t (cm) 0 Thickness in water. t (cm)
+1.
+1.0 ——- UFHADFS , V I I
+--- UFHADFSO ,
+--- UFHADFOS 0.8
+0.8 — UFHADMS ,,:'
+— UFHADMSO :'
+a I W 3;"" 06 ~
+LL 0.0 _ "" ‘
+n /l' g 0.4 . . ' » --- UFHADFS
+g 0-4 . n. - ’ --- UFHADFSO
+n. ' , . ‘ --- UFHADF‘BS
+, ' — umous
+/,:,.~” 02 — unmouso
+0.2 [I "" : moms
+(e) . ’ 00 J (D — CAM
+°'° . 10' 10° 101 102
+‘0‘ Thzockness in water, I (2h) ‘02 Thickness in water. t (cm)
+1'0 Eye Lenses .. 7_
+0.0 , y
+/,,/
+a ,1/1?
+L 0.0 //
+g 4/” ""
+n ,7 .
+3 0.4 ,I 7 7 --- UFHADFS
+E 1’ -—- UFHADFSO
+, . --- UFHADFOS
+, y, — UFHADMS
+0.2 — UFHADMSO
+,1‘ — UFHADMes
+J”, —— CAF
+’.+” (g) — CAM
+0.0
+10‘ 10° 10‘ 102
+Thickness In water, t (cm)
+Figure 5. (a) Testes body self—shielding distributions for CAM and the 5th, 50th, and 95th PCTL
+UF male phantoms; (b) ovaries body self—shielding distributions for CAF and the 5th, 50th, and
+95th PCTL UF female phantoms; (c) colon body self—shielding distributions for CAM, CAF, and
+the 5th, 50th, and 95th PCTL UF male and female phantoms; (d) female breasts body self—shielding
+distributions for CAF and the 5th, 50th, and 95th PCTL UF female phantoms; (e) BFO body self—
+shielding distributions for CAM, CAF, and the 5th, 50th, and 95th PCTL UF male and female
+phantoms using 35 randomly selected points; (f) skin body self—shielding distributions for CAM,
+CAF and the 5th, 50th, and 95th PCTL UF male and female phantoms using 35 randomly selected
+points; and (g) eye lenses body self—shielding distributions for CAM, CAF, and the 5th, 50th, and
+95th PCTL UF male and female phantoms.
+
+"
+"15","1684 A A Bahadori et al
+0.0010 010010
+Male - PV - Trapped ' UFHADMS Female - PV - Trapped v UFHADFS
+O UFHADM50 O UFHADFSO
+A A UFHADM95 A A UFHADFQS
+'71: 0.0008 8 I D CAM ""'1: 0.0008 g I 0 ON:
+> > D
+g D a g u
+‘3 00006 ‘3 00006 i U
+i: 13 1 SD a :- W 3 1° “
+2 i i i 2 i l g V ‘ ‘ y z a v v
+c; g 2 i D C1 1; O x i 9 V D n A v a x
+E- 00004 3 0I 0 ii 0 i‘! .5 0.0004 ‘ u ; D.l 9 vi a 2
+U' A
+2:: 8* I x u g; 1 2 2 i
+U)
+8 00002 E 0.0002
+(3) (b)
+0.0000 0.0000
+sessssesasaEEESEsas>2~22253w sosgezrgssasszsiggsz2aasassw
+oms=~gggsm2g223§§3~3§§g§52g§ 036=~§§$€°3§92$§690=§83§§ g;
+godngI—gg—lﬁmg Eggr'gigégégﬁ: go-‘gmol-gg-lﬁmg gggtgzgéggﬁﬁa
+ﬂ a “’ 8 g a 3 g “‘ 8 3 ﬁ
+:5 S 3 E;
+Figure 6. Organ dose equivalent rates for trapped proton environment With PV shielding: (a)
+males and (b) females.
+010030 0.0030
+Male - PV - GCR ' UFHADMS Female - PV - GCR ' UFHADFS
+O UFHADMSO O UFHADFSO
+A 0.0025 5 UFHADM95 A 0.0025 ‘ UFHADF95
+71: i l :1 c1 CAM '25 I l D D C”:
+> U > D
+§ 00020 i I i . i O D % 0.0020 ' i i i i I 0 a
+:a I 1 :a i I i 0
+x i i i o u D ; a l 3 l I 0 l ‘ i 3 *
+E00015 ' Ill 5 {ii 31"" E00015 ; D; 3 I i i
+R E
+3 .2
+3 3
+5 0.0010 “‘3' 0.0010
+3 8
+O O
+a 0.0005 0 00005
+(a) (b)
+0.0000 0.0000
+aegssﬁesgsggssgéggsagazsgssg 22sassrsassgsgggsagagassgssg
+”m = §§0u°~;92weev°5383§s £2 ”m33“§§3§“3Sﬁgweé§°fs3§§agéé
+g °‘§°°*§§‘5“§ 25§=§2§§§§§5= g °J§“°*5§J£”§ Esgzzséééégﬁ=
+3 s ‘"" 8 g a a g I“ o g .=.
+a 5 s g
+Figure 7. Organ dose equivalent rates for GCR environment With PV shielding: (a) males and (b)
+females.
+for suit shielding and shelter shielding are shown in ﬁgure 11. Plots of organ dose equivalent
+rates/organ dose equivalents and fractional differences for all combinations of space radiation
+environment and vehicular shielding are available in the electronic annexes B and C available
+at stacks.i0p.0rg/PMB/56/1671/mmedia, respectively.
+
+Also of signiﬁcance to space dosimetry is the average radiation quality factor, calculated
+as the quotient of the organ dose equivalent and the organ absorbed dose. Tables of average
+radiation quality factor for the phantom organs are shown for the February 1956 SPE radiation
+environment With space suit shielding (table 3), GCR radiation environment with PV shielding
+(table 4), and the August 1972 SPE radiation environment with shelter shielding (table 5). The
+average radiation quality factor varies as a function of organ location and, to a lesser extent,
+phantom type. The average quality factors for the SPE environments are smaller in magnitude,
+and exhibit less overall variation, than the average quality factors for the GCR environment.
+These radiation quality factors compare well With calculated quality factors for protons and
+GCR exposures as Cited in the previous study by Badhwar er al (2002).
+
+"
+"16","The effect of anatomical modeling on space radiation dose estimates 1685
+25 . 25 .
+Male - Sun - Aug. 1972 SPE ' UFHADMS Female - Sun - Aug. 1972 SPE v UFHADFS
+(a) o UFHADMSO (b) o UFHADFSO
+A UFHADMQS a A UFHADFQS
+20 g a CAM 20 :1 CAP
+; ? X
+e ‘9,
+a ""' a
+C 15 C 15
+% 3 %
+3 .2
+3 8- a
+“J 10 C] U I.” 10 D
+O 0
+m m
+0 O
+o D l
+5 a i B 5 D ‘ i i
+' I I D I 8 I i ! D D
+I I
+0 'i. uiI e 0il i'iall 0 in I an! a El! '3 33!.
+228253rggggggggésggagasss5:3 aesgsserasaaszﬁésgsegassgssg
+om;saggmua._;.gw2§uufgg§8§2§8 Om;saggggOBEEgme'auofgggS'ﬁgEs
+3 E ‘“ 8 7‘1 ﬁ 3 E “’ 8 E i
+3 ° 5 5 ° 5
+1.2 1.2
+Male - Shelter- Aug. 1972 SPE v UFHADMS Female - Shelter - Aug. 1972 SPE ' UFHADF5
+(C) o UFHADMSO (d) o UFHADFSO
+1.0 A UFHADM95 1.0 A UFHADF95
+H a CAM ! B U CAF
+9 i 3‘ ‘
+g 0.8 a 0'8 D
+E D D E D
+'6 '5
+.2 0.6 .2 0.6 i
+3 3
+o- O’ D (:1
+l: D 9 II: V V i
+8 0"" I ' g i D g 0.4 2 I x a
+D l ! D D 2 ‘ D
+i i G V A v v o v
+0.2 'lg n i 08! 02 :‘ l 5 Big 2 ‘2;
+D D ' D D
+I n' u .i‘ 22' I 03 3 i 8 l
+0.0 0.0
+mocaﬁgagsnhggug—chgsgumgocmoo mocgggzghmbgg‘og'c;g:%umgocmm
+gagggg23§§%;s§z§a§§s§§§a§§§§ §a%3g§:s§§%23§z3%8gsg§§%§§§§
+& o anchgé 5 g 3E5 Esgﬁgﬁmﬁs 3 O £m0hg§ ﬁ % Egg gsgéggwﬁa
+:3 E m 8 g .=. m ._ w 8 g a
+.2 E, a 8
+Figure 8. (a) Male organ dose equivalents for August 1972 SPE environment With suit shielding;
+(b) female organ dose equivalents for August 1972 SPE environment With suit shielding; (c) male
+organ dose equivalents for August 1972 SPE environment With shelter shielding; and (d) female
+organ dose equivalents for August 1972 SPE environment with shelter shielding.
+3.4. Eﬂective dose analysis
+The effective dose is used by NASA as an indicator of radiation risk. In this study, an effective
+dose is approximated using organ dose equivalents and gender—speciﬁc tissue weighting factors
+similar to those recommended in ICRP Report 60 (ICRP 1991) (table 6). Although updated
+tissue weighting factors are available from the ICRP, it is current NASA policy to use
+ICRP Publication 60 tissue weighting factors in accordance With NCRP Report No. 132
+recommendation (NCRP 2000). It is recognized that the male weighting factors, With zero
+weighting factor for the male breast, sum to 0.95, While the female weighting factors sum to
+unity. The effective dose rates as a function of vehicular shielding for the eight phantoms are
+shown for trapped protons and free—space GCR in ﬁgures 12(a) and (b), respectively. Similarly,
+the effective doses as a function of vehicular shielding for the eight phantoms are shown for the
+August 1972 SPE in ﬁgure 12(c). Also shown in ﬁgure 12(C) are example age—speciﬁc effective
+dose career limits as given in NASA’s Space F light Human System Standard for comparison
+(NASA 2007). These effective dose career limits correspond to the NASA permissible
+exposure level of 3% radiation exposure induced death, and are shown for ages at exposure of
+
+"
+"17","1686 A A Bahadori et al
+08 0.8
+Male - PV - Trapped v UFHADMSISO Female - PV - Trapped v UFHADFS/SO
+(a) A UFHADM95/50 (b) A UFHADF95/50
+C] CAM/UFHADMSO D CAFI'UFHADFSO
+0.6 0.6
+3 3
+C C
+0 0
+3 0.4 D 0 D B 0.4
+8: 8:
+'5 ‘3 E D D
+a D a ‘3 D
+C C
+,9 0.2 D U 0 ,0 0.2 0 u
+g D U D 0 § 9 D C] e v 9 V V
+‘u? 00 99'99 Sg'ﬁyme """"v9v'lvvv ‘: 00 555"" v'vvev' v 5'!' ""U
+E) Cl
+C]
+~02 -0.2
+geszegteggagszsgsggsgaassggg eesgﬁﬁrsgssgsggasgszgagsg=gg
+omgaaegguuzgi‘333e'éuo-Eg8g§g_5§ 0033.:Egguaz.Egmeauwcggggﬁggi
+g °‘§~°*£§‘a”§ 25§=§s§5253§= g °‘§°°*£§‘E“§ 2§§‘§=§§E§3§=
+.11 5 “‘ 3 3 ﬁ 63 g ‘“ 3 g f.
+8 5 8 5
+Figure 9. Fractional differences for trapped proton environment With PV shielding: (21) males and
+(b) females.
+0.8 08
+Male - PV- GCR ' UFHADMS/SO Female - PV - GCR v UFHADFS/SO
+(a) A UFHADM95/50 (b) A UFHADFQS/SO
+C] CAM/UFHADMSO D CAF/UFHADF5O
+0.6 0.6
+0 Q)
+g 0.4 g 0.4
+a a
+E i
+E 0.2 C! C] .5 0.2 U
+‘6 C1 :1 3 c1 ‘3
+E D g (:1 0
+LI. D U C! 0 LL Cl
+-39¢5 UIVUVIO v.7990vv-vvv —ﬁml""3 VU'VQQ QV'U'u'i ""'5
+00 M 00
+~02 -0.2
+”0:“5‘62g“““E.S°§Tu=“g>gggsg=g mocgogzalghw3jgggé-chgagugﬁgcmm
+53§§2§§§EEEEE§M§§§£§s§3§§%§§ §§§3§233§§§££3w§§§£§3§8§§%§§
+3. gm 58- E E 3E; xEEEEEmED 3 gm mg- IE E 3:: xzféigmﬁ
+3 s “' 5 g i m 5 “’ 3 g 7-.
+a 5 a 8
+Figure 10. Fractional differences for GCR environment With PV shielding: (21) males and (b)
+females.
+25, 35, 45, and 55 years. Effective dose plots for the February 1956 SPE and October 1989
+SPE are available in the electronic annex D available at stacks.i0p.0rg/PMB/56/1671/mmedia.
+4. Discussion
+As previously stated, the results of the three validation tests indicate that VOBRaT can produce
+body self—shielding distributions in voxel phantoms. The results compare favorably to those
+from CAMERA, which performs mathematical ray tracing. The time required for ray tracing
+is minimal 011 a Dell Precision T3400 workstation With an Intel Core 2 Duo E4600 2.4 GHZ
+processor and 3.25 GB of RAM, and so operationally the generation of astronaut—speeiﬁc body
+self—shielding distributions would not greatly add to the time required to evaluate astronaut risk.
+The ability to ray trace voxel phantoms allows for the possibility of creating astronaut—speeiﬁc
+phantoms in order to evaluate risk due to radiation in human spaceﬂight.
+
+"
+"18","The effect of anatomical modeling on space radiation dose estimates 1687
+4 Male - Suit - Aug. 1972 SPE ' UFHADMS/SO 4 Female - Suit - Aug. 1972 SPE v UFHADF5/50
+D CAM/UFHADM50 C] CAF/UFHADFSO
+3 D D 3
+D
+8 8
+5 D g D D
+g 2 § 2 0
+D D
+E E D
+S S 1
+'3 ' 0 a a D '3 U
+E D 0 g D
+u. D D a u. ' ‘3 v e v
+”vvi IVVVF V V'.-vVvvvv vvg' a v '70. "" BV-' ""5
+0 ""AAA AAAAAA“A AAA AAAASA 0 .""ﬁl‘DA AA; A AAAA; AA AAAA
+C]
+(a) (b) O (:1
+-1 -1
+mocgﬁgaghmhg'gg'g-chtaggmg :mm wocgﬁgag-mbg'gg'g—chc>~gam3 :mm
+EﬁéaeEgééééésgﬁéééigzégééééﬁ EﬁéagEggéééasgééééisaégsééié
+:7 gm 5% ‘5 E‘ 3:; xsfgigmﬁz :7‘ 5m 58' ‘5 2' 3:; xsfgiﬁmis
+3 3 m 8 g a ﬁ 3 “’ 8 g i
+s 3 s 5
+4 Male - Shelter - Aug. 1972 SPE v UFHADM5/50 4 Female - Shelter- Aug. 1972 SPE v UFHADFs/so
+A UFHADMQS/SO A UFHADF95/50
+3 D CAM/UFHADM50 3 C] CAF/UFHADFSO
+0 Q)
+U U
+C C
+2 2
+g 2 g 2
+D D
+a D D a
+g 1 D D 8 1 D D D
+f? D f? 0
+r; a D 0 D m 0 0
+-.l9. "".."" ..9 V '99-v'9vvv _v3' 5 vg'v99 gv'UV '9 'V'E
+0 AAA AAA ..A AAA AAAAOA 0 """"""AAA- ‘0 A A LAB AA AAAA
+Cl C] C]
+-1 -1
+mo=ggaaga"";2.§v.§-=;=>2ggz = w mocmguzgawassgs-chg>gggz = '0
+Eagag$383§5§s§%§§8§§§8§%§%§§ §3§§E§§$€§3§33$§§§£§38§§%§§§
+:7 gm hgg '5 2' Egg nggggmﬁa :7 gm Fag .5 2' Egg ¥5§§§13WE°
+3 S I"" 8 E a m E ‘"" 8 E E
+3 ° 5, 5 ° 5
+Figure 11. (a) Male fractional differences for August 1972 SPE environment With suit shielding;
+(b) Female fractional differences for August 1972 SPE environment With suit shielding; (c) Male
+fractional differences for August 1972 SPE environment With shelter shielding; and (d) Female
+fractional differences for August 1972 SPE environment with shelter shielding.
+
+Overall, the body self—shielding distributions for the UF phantoms Clearly exhibit the
+trend of increasing body self—shielding for larger phantoms regardless of organ location. The
+differences between the distributions for the UF phantoms and the NASA phantoms result
+from a combination of anthropometric modeling and overall body size. These differences
+are most pronounced for females in the abdominal region; since CAF is a scaled version of
+CAM, the anthropometric modeling between the two phantoms differs little, and so CAF has
+attributes of a male morphometry. In contrast, the UF female phantoms are based directly on
+female morphometry, and so there are greater differences between the UF male and female
+phantoms. This is Why in many instances the body self—shielding distribution for CAF tracks
+with CAM and the UF male phantoms.
+
+While an overall trend of phantom size and body self—shielding is observed, the impact
+of variations in body morphometry is not consistent over the entire phantom: the closer to the
+center of mass of the phantoms, the more variation is observed among the body self—shielding
+distributions. Greater differences are observed for dose points With more phantom self—
+shielding. An instance of this observation is found When comparing the body self—shielding
+distributions for the colon (ﬁgure 5(C)) and the skin (ﬁgure 5(f)). The ﬁnding that differences
+
+"
+"19","1688 A A Bahadori et al
+Table 3. Average quality factors for February 1956 SPE radiation environment With space suit
+shielding.
+
+Organ F5 F50 F95 CAF M5 M50 M95 CAM
+Eye lens 1.45 1.45 1.43 1.43 1.43 1.43 1.43 1.43
+BFO 1.45 1.45 1.46 1.45 1.46 1.46 1.46 1.46
+Colon 1.45 1.45 1.45 1.46 1.46 1.46 1.46 1.46
+Lung 1.45 1.46 1.47 1.45 1.46 1.47 1.48 1.46
+Stomach 1.45 1.46 1.46 1.49 1.50 1.51 1.52 1.50
+Breast 1.42 1.42 1.42 1.43 N/A N/A N/A N/A
+Ovary 1.49 1.51 1.52 1.50 N/A N/A N/A N/A
+Testis N/A N/A N/A N/A 1.43 1.43 1.43 1.43
+Bladder 1.45 1.46 1.46 1.52 1.53 1.54 1.55 1.53
+Esophagus 1.49 1.51 1.53 1.49 1.53 1.54 1.56 1.50
+Liver 1.46 1.47 1.48 1.49 1.49 1.50 1.51 1.51
+Thyroid 1.43 1.43 1.44 1.42 1.44 1.45 1.45 1.42
+Brain 1.45 1.45 1.46 1.44 1.45 1.45 1.46 1.45
+Salivary gland 1.43 1.44 1.44 1.43 1.43 1.44 1.44 1.43
+Skin 1.47 1.47 1.47 1.47 1.47 1.47 1.47 1.47
+Adrenal 1.49 1.51 1.53 1.48 1.53 1.55 1.56 1.49
+ET region 1.44 1.44 1.44 1.42 1.44 1.44 1.44 1.42
+Gallbladder 1.51 1.53 1.55 1.46 1.55 1.57 1.59 1.47
+Heart 1.48 1.49 1.50 1.48 1.50 1.52 1.52 1.49
+Kidney 1.45 1.46 1.46 1.48 1.49 1.49 1.50 1.49
+Muscle 1.43 1.43 1.44 1.43 1.44 1.44 1.44 1.43
+Oral mucosa 1.46 1.47 1.48 1.44 1.46 1.47 1.48 1.45
+Pancreas 1.50 1.52 1.54 1.50 1.54 1.56 1.57 1.51
+Prostate N/A N/A N/A N/A 1.53 1.54 1.55 1.51
+Small intestine 1.46 1.48 1.48 1.46 1.49 1.50 1.50 1.46
+Spleen 1.45 1.46 1.46 1.49 1.47 1.48 1.48 1.50
+Thymus 1.47 1.48 1.49 1.44 1.49 1.50 1.51 1.44
+Uterus 1.52 1.54 1.56 1.53 N/A N/A N/A N/A
+
+in deep organs are enhanced relative to differences in shallow organs can be explained by the
+relative position of the body With respect to the dose point. For a dose point on the periphery
+of the body, a smaller fractional solid angle about that dose point is subtended by the torso.
+An exception to this observation is the eye lens (ﬁgure 5(g)). This organ is very small and
+located on the periphery of the body. Since the organ is small and thus comprises few vexels,
+it is difﬁcult to adequately sample the organ. When an organ is under—sampled, the effects
+of small differences in shielding around that organ are artiﬁcially enhanced. This explains
+the large differences in body self—shielding distributions between UFHADF5 and UFHADFSO
+and the rest of the phantoms at small ray thicknesses.
+
+Organ dosimetry results follow logically from the body self—shielding results. Larger
+phantoms Which have more body self—shielding have lower organ dose equivalents than their
+smaller counterparts. This is eXhibited Clearly for organ dose equivalent rates and organ
+dose equivalents in ﬁgures 6 through 8 and for fractional differences in ﬁgures 9 through 11.
+In addition, the differences in anatomical modeling (and dose point selection in the case
+of organs speciﬁcally mentioned in section 3.2) between the NASA phantoms and the UP
+
+"
+"20","The effect of anatomical modeling on space radiation dose estimates 1689
+Table 4. Average quality factors for GCR radiation environment with PV shielding.
+Organ F5 F50 F95 CAF M5 M50 M95 CAM
+Eye lens 4.52 4.47 4.40 4.53 4.44 4.39 4.35 4.48
+BFO 3.65 3.54 3.46 3.58 3.49 3.42 3.37 3.50
+Colon 3.61 3.51 3.41 3.58 3.45 3.38 3.34 3.50
+Lung 3.68 3.57 3.49 3.67 3.56 3.49 3.44 3.59
+Stomach 3.62 3.51 3.43 3.33 3.24 3.17 3.12 3.24
+Breast 4.16 4.10 4.05 4.04 N/A N/A N/A N/A
+Ovary 3.32 3.21 3.13 3.44 N/A N/A N/A N/A
+Testis N/A N/A N/A N/A 3.67 3.61 3.59 3.72
+Bladder 3.50 3.42 3.35 3.21 3.12 3.05 3.01 3.12
+Esophagus 3.39 3.27 3.18 3.44 3.21 3.13 3.07 3.35
+Liver 3.49 3.37 3.30 3.31 3.25 3.18 3.13 3.22
+Thyroid 3.91 3.80 3.73 4.25 3.69 3.63 3.57 4.20
+Brain 3.86 3.77 3.67 3.90 3.83 3.76 3.68 3.82
+Salivary gland 3.96 3.85 3.78 4.03 3.90 3.82 3.78 3.96
+Skin 4.49 4.44 4.40 4.39 4.41 4.38 4.36 4.35
+Adrenal 3.31 3.20 3.11 3.35 3.13 3.06 3.01 3.27
+ET region 3.87 3.78 3.69 4.31 3.81 3.75 3.70 4.26
+Gallbladder 3.28 3.16 3.08 3.49 3.09 3.01 2.97 3.41
+Heart 3.45 3.34 3.26 3.41 3.27 3.18 3.14 3.33
+Kidney 3.56 3.45 3.38 3.40 3.26 3.20 3.15 3.31
+Muscle 3.92 3.83 3.76 3.90 3.79 3.74 3.69 3.83
+Oral mucosa 3.69 3.57 3.47 3.87 3.64 3.56 3.49 3.78
+Pancreas 3.30 3.18 3.10 3.31 3.13 3.05 3.00 3.22
+Prostate N/A N/A N/A N/A 3.12 3.05 3.00 3.11
+Small intestine 3.47 3.34 3.26 3.58 3.28 3.20 3.16 3.50
+Spleen 3.60 3.49 3.41 3.32 3.36 3.29 3.25 3.24
+Thymus 3.56 3.44 3.35 3.88 3.38 3.30 3.25 3.80
+Uterus 3.24 3.13 3.05 3.17 N/A N/A N/A N/A
+phantoms result in differences in organ dose equivalents. An example of this is the thyroid.
+The CAM and CAF thyroids are much more lightly shielded (primarily due to the proximity
+of the thyroid t0 the surface of the neck) than the UP phantom thyroids, and so a much larger
+thyroid dose equivalent is observed for these two phantoms. In comparison, the skin organ
+dose equivalents and organ dose equivalent rates are largely insensitive to phantom size and
+anatomical shielding. Differences in small intestine dose equivalent between the UP males
+and CAM are larger than differences in this quantity between the UP females and CAF; this is
+a result of the modeling of the intestines in CAM and CAF as a region of low density (0.457
+g cm_3) material. In the UP phantoms, a tubular intestinal structure is used. For the males,
+the lower density results in a smaller amount of self—shielding and hence a larger organ dose
+equivalent for CAM. For the females, however, this density effect is partially offset by the
+differences in abdominal morphometry between the UP females and CAF.
+
+The degree to Which size and anatomical modeling affect dose differences is dependent
+upon the space radiation spectrum utilized. For space radiation environments with higher
+penetrability, such as GCR and the February 1956 SPE, the dose differences observed are
+much lower than for space radiation environments With lower penetrability, such as the
+
+"
+"21","1690 A A Bahadori et al
+Table 5. Average quality factors for August 1972 SPE radiation environment with shelter shielding.
+Organ F5 F50 F95 CAF M5 M50 M95 CAM
+Eye lens 1.66 1.65 1.61 1.60 1.60 1.59 1.59 1.59
+BFO 1.56 1.56 1.57 1.56 1.57 1.57 1.57 1.57
+Colon 1.56 1.56 1.57 1.56 1.57 1.57 1.58 1.57
+Lung 1.56 1.56 1.57 1.55 1.56 1.57 1.58 1.56
+Stomach 1.55 1.56 1.57 1.59 1.60 1.60 1.61 1.60
+Breast 1.54 1.54 1.54 1.53 N/A N/A N/A N/A
+Ovary 1.59 1.60 1.61 1.59 N/A N/A N/A N/A
+Testis N/A N/A N/A N/A 1.55 1.55 1.55 1.56
+Bladder 1.56 1.57 1.57 1.60 1.61 1.62 1.62 1.61
+Esophagus 1.58 1.60 1.61 1.58 1.60 1.61 1.62 1.59
+Liver 1.57 1.58 1.58 1.59 1.59 1.60 1.60 1.60
+Thyroid 1.55 1.55 1.55 1.56 1.55 1.55 1.56 1.56
+Brain 1.54 1.55 1.56 1.54 1.54 1.55 1.56 1.55
+Salivary gland 1.55 1.55 1.55 1.54 1.54 1.55 1.55 1.54
+Skin 1.71 1.71 1.72 1.72 1.71 1.72 1.72 1.71
+Adrenal 1.59 1.60 1.61 1.58 1.61 1.62 1.62 1.59
+ET region 1.54 1.55 1.55 1.56 1.55 1.55 1.55 1.56
+Gallbladder 1.59 1.61 1.61 1.57 1.61 1.62 1.63 1.57
+Heart 1.58 1.59 1.59 1.58 1.59 1.60 1.61 1.59
+Kidney 1.56 1.57 1.57 1.58 1.59 1.59 1.60 1.59
+Muscle 1.55 1.56 1.56 1.55 1.56 1.56 1.56 1.56
+Oral mucosa 1.56 1.57 1.58 1.54 1.56 1.57 1.57 1.55
+Pancreas 1.59 1.60 1.61 1.59 1.61 1.62 1.62 1.60
+Prostate N/A N/A N/A N/A 1.61 1.62 1.62 1.60
+Small intestine 1.57 1.58 1.59 1.56 1.59 1.59 1.60 1.57
+Spleen 1.56 1.56 1.57 1.59 1.58 1.58 1.59 1.60
+Thymus 1.57 1.58 1.59 1.54 1.58 1.59 1.60 1.54
+Uterus 1.60 1.61 1.62 1.61 N/A N/A N/A N/A
+October 1989 SPE and the August 1972 SPE. Also, dose differences tend to decrease for
+increasing vehicular shielding. This is shown in ﬁgure 11, as the fractional differences among
+the phantoms decrease When shielding is increased from space suit to storm shelter. The effect
+of shielding on organ dose equivalent is very pronounced for the August 1972 SPE (ﬁgure 8).
+Effective doses exhibit a trend similar to that of the organ dose equivalents: decreasin g With
+increasing phantom size (ﬁgure 12). The slope of this inverse relationship is dependent on both
+the space radiation environment and the vehicular shielding. For all but the softest radiation
+spectra, CAM and CAF tend to underestimate effective doses for the smaller phantoms and
+overestimate effective doses for the larger phantoms. For soft radiation spectra such as the
+August 1972 SPE, CAM overestimates effective dose for all three UF male phantoms because
+of high gonad dose equivalent. For this spectrum, it is seen that for a PV shielding, the career
+effective dose limit for a 55 —year—old male would not be exceeded if the UP phantom is used to
+represent the astronaut, While it would be exceeded if CAM is used to represent the astronaut.
+Effective doses observed in this study are similar to those reported in a recent study by Kim
+et al for similar radiation environments (Kim et al 2010).
+
+"
+"22","The effect of anatomical modeling on space radiation dose estimates 1691
+0.0006 Trapped 0.0025 GCR
+0
+0.0005 0 O o
+7; e e O 6 9 0 7; 0.0020 8 8 o
+a . : o 9 a 8 8 9 8 8 8
+£2 0 #3 0.0015 ° 0 e 9 ° 0
+tr m 0 e
+a 0.0003 0 0 6 3
+§ 0 0 O 9 e 9: 0.0010
+§ 00002 .5
+g E
+u: , IN 00005 .
+0.0001 0 Sun 0 Sun
+6 Pressure Vessel 9 Pressure Vessel
+(a) (b)
+0.0000 0, Q 0.0000 Q ‘3 '3‘
+0‘ «‘9 53"" c? 9"" $9 0“"" 0""“ 0“” «4’ 05’ (F ‘9 0°? 49 c,
+32*? $359 $2? ‘69 $319 $09 58"" 0.3""? $3"" ©0239 0639 08*0
+3.5
+Aug. 1972 SPE 0 Sun
+9 Pressure Vessei
+3.0
+— — — Effective Dose Limit
+0
+3. 2.5 0
+U)
+y o o O
+3 2.0 o o
+8 o
+g 1 5 e 0
+§ ’ ea 9 0 559— — 6f — — — —
+E10 55_______ 45____:__
+w——————— %_——————
+0.5 35——————— 25——-————-—
+25 — — — — — — —
+(C) 0 a 9 e 0 e e o
+0.0
+0;“: (‘9 ((96 0‘3 «2: $9 “9‘: 0“}
+OQQS. QQISQ §Q§ §¢§ °¢b§ §¢§
+Figure 12. (21) Effective dose rates for trapped proton environment; (b) effective dose rates for
+GCR environment, and (0) effective doses and example effective dose limits for August 1972 SPE
+environment.
+Table 6. Tissue weighting factors used in this study.
+Organ Male weighting factor Female weighting factor
+Testes 0.2 0
+Ovaries 0 0.2
+BFO 0. 18 0. 1 8
+Colon 0.12 0.12
+Lung 0.12 0.12
+Stomach 0.12 0.12
+Bladder 0.05 0.05
+Breast 0 0.05
+Liver 0.05 0.05
+Esophagus 0.05 0.05
+Thyroid 0.05 0.05
+Skin 0.01 0.01
+Although the results of this research exhibit the trend of decreasing dose With increasing
+body size, two important points need to be emphasized: (1) this general trend may not
+be exhibited With different relative body morphometries (e.g. NASA phantoms versus UF
+
+"
+"23","1692 A A Bahadori et al
+phantoms), especially for soft radiation spectra where differences in shallow ray thicknesses
+dominate differences in dose, and (2) the proj ected radiation dose resulting from an assessment
+including body size factors should not be used as a determining factor in astronaut selection
+for speciﬁc missions.
+
+5. Conclusions
+
+The ray—tracing program, VoBRaT, was validated by ray tracing a 30 cm unit density water
+sphere, and ray tracing a voxelized version of CAM for two different dose points. VoBRaT
+was found to operate relatively quickly; 512 rays required much less than 1 min of CPU
+time on a Dell Precision T3400 workstation with an Intel Core 2 Duo E4600 2.4 GHZ
+processor and 3.25 GB of RAM. These results indicate that the UP hybrid phantoms are
+compatible with the NASA astronaut dosimetry operational framework. This ﬁnding could
+lead to the incorporation of astronaut—dependent phantoms, based on a standard grid of
+height and weight percentiles, or astronaut—speciﬁc phantoms, based on actual astronaut
+anthropometrics. Computed tomography or magnetic resonance imaging, if available from a
+previous occupational or medical study, could also be used for direct voxel—based phantom
+creation. Body morphometry was found to affect the body self—shielding distributions, with
+larger individuals having more self—shielding for a given organ. This effect was greater for
+dose points toward the abdominal region and toward the center of the body, which is accounted
+for by the fractional solid angle subtended by a signiﬁcant portion of the body. Differences
+in this general trend (when comparing the body self—shielding distributions for the NASA
+phantoms and those for the UP phantoms) occur because of differences in local anatomical
+modeling, as noted in the previous section.
+
+In terms of organ dosimetry, the trapped proton organ dose equivalent rates are signiﬁcantly
+less than the GCR organ dose equivalent rates. The SPE organ dose equivalents are highly
+sensitive to vehicular shielding, and for space suit type shielding can be far in excess of the
+career organ dose equivalent limits. When evaluating organ dose equivalent differences amon g
+the phantoms, the largest fractional differences among the phantoms are observed for light
+vehicular shielding and soft radiation spectra. This same trend is observed for the effective
+dose rates and effective doses. Thus, the greatest improvement in accuracy of astronaut
+dosimetry through the use of size—based phantoms would be realized for soft proton spectra
+(both trapped and SPE) and shielding below 10 g cm_2 aluminum equivalent.
+
+Astronauts tend to assume a neutral body position while in spaceﬂight and ﬂuid shifts
+toward the head when eXposed to micro—gravity. Articulating the phantoms used in this study
+and incorporating physiological Changes that occur in a micro—gravity environment could also
+impact body self—shielding distributions. Future work involves investigating the effects of
+these Changes on the body self—shielding distributions and resulting organ dose equivalents.
+Hybrid phantoms such as those of the UP series are ideally suited to these applications in
+astronaut space dosimetry and risk assessment.
+
+Acknowledgment
+
+This work was supported by NASA GSRP Grant NNX09AK14H.
+
+References
+
+ANS 2005 Computational Medical Physics Working Group http://cmpwg.ans.org/phantoms/camera.pdf (accessed
+26 January 2009)
+
+"
+"24","The effect of anatomical modeling on space radiation dose estimates 1693
+
+Badhwar G D, Atwell W, BadaVi F F, Yang T C and Cleghorn T F 2002 Space radiation absorbed dose distribution
+in a human phantom Radiat. Res. 157 76—91
+
+Ballarini F et al 2006 GCR and SPE organ doses in deep space With different shielding: Monte Carlo simulations
+based on FLUKA code and coupled to anthropomorphic phantoms Adv. Space Res. 37 1791—7
+
+Ballarini F et al 2004 Role of shielding in modulating the effects of solar particle events: Monte Carlo calculation of
+absorbed dose and DNA complex lesions in different organs Adv. Space Res. 34 1338—46
+
+Billings M P and Yucker W R 1973 The Computerized Anatomical Man (CAM) model Final Report MDC-G4655
+(Huntington Beach, CA: McDonnell Douglas Astronautics Company—West)
+
+Cucinotta F A, Kim M H, Willingham V and George K A 2008 Physical and biological organ dosimetry analysis for
+international space station astronauts Radiat. Res. 170 127—38
+
+Hoff J L, Townsend L W and Zapp E N 2004 Interplanetary crew doses and dose equivalents: variations among
+different bone marrow and skin sites Adv. Space Res. 34 1347—52
+
+ICRP 1991 Publication 60: 1990 recommendations of the international commission on radiological protection Ann.
+ICRP 21 1—201
+
+ICRP 1995 Publication 70: basic anatomical and physiological data for use in radiological protection: the skeleton
+Ann. ICRP 25 1—180
+
+ICRP 2002 ICRP Publication 89: basic anatomical and physiological data for use in radiological protection—
+reference values Ann. I CRP 32 1—277
+
+ICRU 1992 Photon, Electron, Proton and Neutron Interaction Data for Body Tissues I CRU Report No 46 (Bethesda,
+MD: International Commission on Radiation Units and Measurements)
+
+Kase P G 1970 Computerized anatomical model man Technical Report AFWL-TR-69—I 6] (Kirtland AFB, NM: Martin
+Marietta Corporation)
+
+Kim M Y, Quall G D, Slaba T C and Cucinotta F A 2010 Comparison or organ dose and dose equivalent for human
+phantoms of CAM vs MAX Adv. Space Res. 45 850—7
+
+Lee C, Lodwick D, Hurtado J, Pafundi D, Williams J L and Bolch W E 2010 The UF family of reference hybrid
+phantoms for computational radiation dosimetry Phys. Med. Biol. 55 339—63
+
+Liley B and Hamilton S C 1971 Modiﬁed elemental volume dose program (MEVDP) Technical Report AFWL-TR-
+69-68 (Kirtland AFB, NM: North American Rockwell Corporation)
+
+NASA 1995 Man—systems integration standards—revision B NASA-STD-3000 (Washington, DC: NASA)
+
+NASA 2007 Space ﬂight human system standard: volume 1—creW health Technical Standard NASA-STD-300]
+(Washington, DC: NASA)
+
+NASA 2009a Constellation program human—systems integration requirements CxP 70024 Revision C (Washington,
+DC: NASA)
+
+NASA 2009b Dosimetry and risk assessment for astronaut exposures to ionizing radiation SD-WI—006 Revision
+Baseline (Houston, TX: Space Medicine Division, NASA)
+
+NCRP 2000 Radiation protection guidance for activities in low—earth orbit NCRP Report N0 132 (Bethesda, MD:
+National Council on Radiation Protection and Measurements)
+
+NCRP 2002 Operational radiation safety program for astronauts in low—earth orbit: a basic framework NCRP Report
+N0 142 (Bethesda, MD: National Council on Radiation Protection and Measurements)
+NCRP 2006 Information needed to make radiation protection recommendations for space missions beyond low—earth
+orbit NCRP Report N0 153 (Bethesda, MD: National Council on Radiation Protection and Measurements)
+NRC 2006 Space radiation hazards and the Vision for space exploration National Research Council (NRC) Report
+(Washington, DC: National Research Council)
+
+NRC 2008 Managing space radiation risk in the new era of space exploration National Research Council (NRC)
+Report (Washington, DC: National Research Council)
+
+O’Neill P M 2006 Badhwar—O’Neill galactic cosmic my model update based on advanced composition explorer
+(ACE) energy spectra from 1997 to present Adv. Space Res. 37 1727—33
+
+Ponomarev A L, Nounu H N, Hussein H F, Kim M Y, Atwell W and Cucinotta F A 2007 NASA—developed ProE—based
+tool for the ray—tracing 0f spacecraft geometry to determine radiation doses and particle ﬂuxes in habitable areas
+of spacecraft and in the human body NASA Technical Paper TP-2007—2] 4 770 (Washington, DC: NASA)
+
+Reitz G et al 2009 Astronaut’s organ doses inferred from measurements in a human phantom outside the international
+space station Radiat. Res. 171 225—35
+
+Siddon R L 1985 Fast calculation of the exact radiological path for a three—dimensional CT array Med. Phys. 12 25 2—5
+
+Simonsen L C, Atwell W, Nealy J E and Cucinotta F A 1992 Radiation dose to critical body organs for October 1989
+proton event NASA Technical Paper 3237 (Hampton, VA: NASA Langley Research Center)
+
+Slaba T C, Qualls G D, Clowdsley M S, Blattnig S R, Simonsen L C, Walker S A and Singleterry R C 2009
+Analysis of mass averaged tissue doses in CAM, CAF, MAX, and FAX NASA Technical Paper TP-2009-215562
+(Washington, DC: NASA)
+
+"
+"25","1694 A A Bahadori et al
+
+Wilson J W, Chun S Y, BadaVi F F, Townsend L W and Lamkin L S 1991a HZETRN: A heavy ion/nucleon transport
+code for space radiations NASA Technical Paper 3146 (Hampton, VA: NASA Langley Research Center)
+
+Wilson J W, Cucinotta F A, Shinn J L, Simonsen L C, Dubey R R, Jordan W R, Jones T D, Chang C K and Kim M
+Y 1999 Shielding from solar particle event exposures in deep space Radiat. Meas. 30 361—82
+
+Wilson J W, Miller J, Konradi A and Cucinotta F A 1997 Workshop on shielding strategies for human space exploration
+NASA Conference Publication 3360 (Houston, TX: NASA Johnson Space Center)
+
+Wilson J W, Townsend L W, Nealy J E, Chun S Y, Hong B S, Buck W W, Lamkin L S, Ganapol B D, Khan F
+and Cucinotta F A 1989 BRYNTRN: a baryon transport model NASA Technical Paper 2887 (Hampton, VA:
+Langley Research Center)
+
+Wilson J W, Townsend L W, Schimmerling W, Khandelwal G S, Khan F, Nealy J E, Cucinotta F A, Simonsen L
+C, Shinn J L and Norbury J W 1991b Transport methods and interactions for space radiations NASA Reference
+Publication 1 25 7 (Washington, DC: NASA)
+
+Wilson J W, Tripathi R K, BadaVi F F and Cucinotta F A 2006 Standardized radiation shield design method: 2005
+HZETRN Proc. Int. Conf. on Environmental Systems (ICES) (July 2006) (Norfolk, VA: SAE International)
+
+Yucker W R 1992 Computerized anatomical female body self—shielding distributions Technical Report MDC—92-H—
+0749 (Huntington Beach, CA: McDonnell Douglas Space Systems Corportation)
+
+Yucker W R and Huston S L 1990 Computerized anatomical female F inal Technical Report MDC—H—6] 07 (Huntington
+Beach, CA: McDonnell Douglas Space Systems Corporation)
+
+Zapp E N, Townsend L W and Cucinotta F A 2002 Solar particle event organ doses and dose equivalents for
+interplanetary crews: variations due to body size Adv. Space Res. 30 975—9
+
+Ziegler J F, Biersack J P and Ziegler M D 2008 SRIM: The Stopping and Range Oflons in Matter (Morrisville, NC:
+Lulu Press) www.srim.0rg
+
+"

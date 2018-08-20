@@ -1,0 +1,941 @@
+"","x"
+"1","ACES Operations: an ISS External Scientiﬁc Payload
+Lookmg for Experlmental Conﬁrmatlons 0n the
+General Relativity Theory
+Mauro Augelli *
+
+Centre National d’Etudes Spatiales (ONES), Toulouse, France
+
+ACES is an ESA mission in fundamental physics based on a new generation of clocks
+operated in the microgravity environment of the ISS. It is expected to reach in microgravity
+conditions a time drift of 1 - 10—16 s/s, corresponding to a time error of about 1 s over 300
+million years.
+
+This accurate time scale reference will be distributed on Earth Via microwave and laser
+links, allowing ACES to perform tests on the Einstein’s theory of general relativity, includ-
+ing an accurate measurement of the gravitational red-shift, a search for time variations of
+fundamental constants and tests of the Standard Model Extension. ACES also develops
+applications in different areas of research including geodesy and Earth observation.
+
+ACES will be launched and installed on the nadir pointing ISS Columbus External
+Payload Facility in 2017 and is foreseen to have an operational mission of 1.5 to 3 years.
+
+This paper gives an overview of the ACES system (on-board and on the ground), de-
+scribes the different interfaces and operational baseline and gives the current status.
+
+Nomenclature
+ACES Atomic Clock Ensemble in Space
+Airbus DS Airbus Defence and Space
+CADMOS Centre d’Aide au Développement des Activités en Micropesanteur et des Operations Spatiales
+CCR Corner Cube Reﬂector
+CEPF Columbus External Payload Facility
+CNES Centre National d’Etudes Spatiales (French Space Agency)
+Col—CC Columbus Control Centre
+COTS Commercial Off—The—Shelf
+DAC Data Analysis Centre
+DAM Debris Avoidance Manoeuvre
+DLL Delay Lock Loop
+ECLSS Environmental Control and Life Support System
+ELT European Laser Timing
+ELT DC ELT Data Centre
+EVA ExtraVehicular Activity
+FCDP Frequency Comparison and Distribution Package
+FS Flight Segment
+GNSS Global Navigation Satellite System
+GPS Global Positioning System
+GS Ground Segment
+GSOC German Space Operations Center
+IGS Interconnect Ground Subnetwork
+INS Inertial Navigation System
+*ACES Mission and Operations Manager @ CADMOS, CNES DCT/ME/EM, 18 Avenue Edouard Belin — 31400 Toulouse
+— France.
+1 0f 15
+American Institute Of Aeronautics and Astronautics
+
+"
+"2","188 International Space Station
+IWG (ACES) Investigator Working Group
+JPL Joint Propulsion Laboratory
+LKB Laboratoire Kastler Brossel
+LOAC Loss of Attitude Control
+SYRTE Systeme de References Temps—Espace (Laboratoire national de métrologie et d’essais)
+MCC Mission Control Centre
+MCO GS System Manager Team
+MWL MicroWave Link
+MWL GT MicroWave Link Ground Terminal
+NASA National Aeronautics and Space Administration
+NICT National Institute of Information and Communications Technology
+NIST National Institue of Standards and Technology
+NFL National Physical Laboratory
+0 / B On—Board
+OC Orbitorgraphy Centre
+PDAM Pre—dermined DAM
+PDU Power Distribution Unit
+PHARAO Projet d’Horloge Atomique par Refroidissement d’Atomes en Orbite
+PN Pseudo Noise
+PTB Physikalisch—Technische Bundesanstalt
+REXP ACES Experiment Manager
+SAMS Space Acceleration Measurement System
+SHM Space Hydrogen Maser
+SI International System of Units
+SIGI Spacecraft Integrated GPS INS
+SLR Satellite Laser Ranging
+SPAD Single—Photon Avalanche Diode
+S / W SoftWare
+TAI International Atomic Time
+TASI Thales Alenia Space Italy
+TC TeleCommand
+TDRS Tracking and Data Relay Satellite
+TM TeleMetry
+USOC User Support and Operations Centre
+UWA University of Western Australia
+XPLC eXternal PayLoad Computer
+I. Introduction
+IN 1967, the second — as the base unit for time in the SI — was newly deﬁned as the duration of 9 192 631
+770 periods of the radiation corresponding to the transition between the two hyperﬁne levels of the ground
+state of the Caesium—133 atom ( 13303). This new deﬁnition was improving the accuracy to extremely high
+values, if compared to the previous standard ephemeris second, based on the Earth’s orbit around the Suna.
+This new extremely reproducible deﬁnition made possible, for the second, to become a privileged unit among
+others and gave an impressive momentum to the usage and related research on atomic Clocks.
+
+Atomic Clocks based on Caesium atoms are commonly called primary frequency standards because they
+are used for the operative deﬁnition of the SI Second. At present the most stable and accurate Clocks are
+represented by atomic fountains based on laser cooled atoms.
+
+ACES, an ESA mission in fundamental physics, is based on a new generation of Clocks operated in the
+microgravity environment of the ISS and will be installed on the ISS CEPF in 2017 (ﬁgure 1).
+
+One of the atomic Clocks aboard 0f ACES (PHARAO) — a primary frequency standard developed by CNES
+
+31the SI second was previously deﬁned as 1/313559259747 0f the time taken for the Earth to orbit around the Sun at the
+epoch of 1900
+2 0f 15
+American Institute of Aeronautics and Astronautics
+
+"
+"3","and based on laser cooled caesium atoms — extends the functioning principle of a ground atomic fountain to
+microgravity conditions, taking advantage of weightlessness to have a more versatile and accurate Clock.
+A second atomic Clock, SHM, an active hydrogen Inaser for
+space applications is compared and locked, one to the other, _.__'=\
+With PHARAO by means of the FDCP, in order to generate an >' 3 ;\.\\
+O / B time scale that combines the short—term stability of SHM (146323
+and the long—term stability and accuracy of PHARAO. “A \\
+This 0 / B time and frequency reference is then distributed .1 ‘
+Via a dual—frequenoy microwave link (MWL) and a laser link 15.5.8: . .
+(ELT) to ground sites situated all over the world. \“ﬁé’z ‘
+The unprecedented accuracy that ACES is expected to E“ § Q¢‘ ‘ ‘
+reach in microgravity conditions (time drift of 1 - 10—16 s/s), ' {\""(ﬁ ’5};
+corresponding to a time error of about 1s over 300 million ‘3 ' .2. .1259 | 4}
+years, allows to open the way to a lot of improvements on the ' 4 \4 . Q i .9; ‘\6
+observation of physical phenomena. As an example, prediction 5%,, i""--':~,,. - I '
+of Einstein’s general relativity theory, is that time is linked V'f‘. a ‘9"" I ,4... . RV
+to gravity, such that, for example, it passes faster at the top ' T .4 .4 —~ ”' i2 a
+of Mount Everest than at sea level. These effects have been I ‘
+proved in experiments on Earth. ACES Will make more precise Figure 1. Artistic rendering of ACES in-
+measurernents as it ﬂies 400 km high on the 188. The accurate Stalled 0“ the COlumbUS eXtemal faCility
+ACES time reference and the distribution Via the microwave platform Of the ISS'
+and laser links Will allow ACES to perform tests of the Ein—
+stein’s theory of general relativity including an accurate measurement of the gravitational red—shift, a search
+for time variations of fundamental constants and tests of the Standard Model Extension. ACES also develops
+applications in different areas of research including geodesy and Earth observation.
+II. The Aces Payload
+ACES is an 188 external payload that Will be installed on the nadir pointing CEPF of Columbus (see
+ﬁgure 1). The payload Will be carried to the 188 by a SpaceX Dragon vehicle and installation on the CEPF
+Will be performed using the ISS robotic arm Without need for a crew EVA. After the initial switch ON,
+ACES Will take advantage of the ISS infrastructure (Columbus and 188) to have TM/TC link capability and
+power. During the mission no interaction With the ISS crew and all the ECLSS subsystems is expected.
+ACES has an overall rectangular cuboid shape With dimensions of 1172 mm X 867mm X 1246 mm and a
+total mass of 227 kg. The estimated power consumption is 450W for nominal functioning.
+GNSS MWL mine. XPLC F(DP fiiefccigier
+antenna 0 ‘/ O
+_, l .
+. . ) PHARAO
+. ‘ UGB
+SHM F M $ (
+~ - “ﬂ?” i (32:35:24
+ll I II 1 §va 3:4 4:21:33.
+‘ ‘1 f 1' Hi} .
+.4 3K5}: dz; 2:"" E~J
+/ . mg? is“ . I
+Figure 2. A view of the ACES Payload with the internal components.
+3 of 15
+American Institute of Aeronautics and Astronautics
+
+"
+"4","The payload is composed of several subsystems and functions (see ﬁgure 2):
+o PHARAO: a primary frequency standard based on samples of laser cooled caesium atoms
+0 SHM: a space active hydrogen maser
+o F CDP: the frequency comparison and distribution package that locks together frequencies of PHARAO
+and SHM and at the same time provides MWL With the O / B reference time.
+o Servo—loops: the two functions that allow to take advantage of PHARAO and SHM time references in
+the regions Where they have the best accuracy. TWO serVO—loops are available: (1) short—term and (2)
+long—term.
+o M WL: the microwave link FS component to exchange time and frequency information to/With ground
+MWL GTs
+o ELT: the European laser timing F8 to exchange time and frequency to/With ground SLR stations.
+0 XPL C: the eXternal PayLoad Computer that is the standard 0 / B computer used for external payload,
+specialised for ACES.
+0 PD U: the power distribution unit that is in charge of managing and distribute, at ACES level, the
+power received by the 188.
+o GNSS: the O / B receivers for orbit determination.
+ACES system is completed also by some speciﬁc components that are installed on the ground:
+0 M WL GT: ground antennae, connected to very precise ground Clocks, that exchange time and frequency
+data With ACES FS
+0 M00 GS: Ground Segment H/W and S/W, installed at the ACES MCC in CADMOS, that allows
+command and control of the ACES mission.
+In the following paragraphs a description of the main ACES components is provided.
+A. PHARAO
+One of the two time and frequency sources 0 / B of
+ACES is PHARAO, an atomic Clock based on laser Cesium'esem"" Tm, magnenbssmem
+cooled caesium atoms, developed by CNES in col- . Coo'ingsphere ‘ Ramsey caviWntmgation)
+laboration With the laboratories SYRTE and LKB 1“ __ \ UMVacuum Tube
+in Paris, France. J “Eu"": __ . __ ( Detection
+
+PHARAO extends the well known concept of m, ’ 1‘ "" », y ‘ [A
+laser cooling that is used for ground based atomic ,‘1 ‘ ._._-_\~;w;‘w;d 1.""
+fountains in a way that allows operability in micro— J"" i ' r .7 _ _ 7
+
+. . . J“ . ‘ Preparation . 7-1.:3/9 '0"" pump
+
+grav1ty conditions. /‘ - ~ andselecﬁon A
+
+Laser cooling is a technique that uses light to . E ,‘
+
+b . Mechanical supports to A905“. J . I
+
+cool atoms to a very low temperature in the 11K ACESP’8”°””(4’99'S’ '-- ‘H
+region.
+
+It works by tuning the frequency of light slightly Figure 3. Pharao components.
+below an electronic transition in the atom. Because
+the light is detuned t0 the “red” (i.e. at lower fre—
+quency) of the transition, the atoms absorb more photons if they move towards the light source, due to
+the Doppler effect. Thus, if lights is applied from two opposite directions, the atoms always scatter more
+photons from the laser beam pointing opposite to their direction of motion. In each scattering event the
+atom loses a momentum equal to the momentum of the photon. If the atom, Which is now in the excited
+state, emits a photon spontaneously, it Will be impacted by the same amount of momentum but in a random
+
+bThe simplest form of laser cooling is referred to as optical molasses, since the dissipative optical force resembles the Viscous
+drag on a body moving through molasses.
+
+4 0f 15
+American Institute of Aeronautics and Astronautics
+
+"
+"5","direction. The result of this absorption and re—emission process is the reduction of the speed of the atom. If
+the absorption and emission are repeated many times, the mean velocity and therefore the kinetic energy of
+the atom are reduced. Since the temperature of an ensemble of atoms is a measure of the average internal
+kinetic energy, this is equivalent to cooling the atoms.
+
+The caesium clock PHARAO is composed of four main subsystems (see ﬁgure 3): (1) the caesium tube,
+(2) the laser source, (3) the microwave source With the ultra—stable oscillator and (4) the O / B management
+unit.
+
+Inside PHARAO, atoms produced by a Caesium oven are used to load an optical molasses. These atoms
+are launched in free ﬂight along the caesium tube and cross the resonant cavity Where they interact twice
+With a microwave ﬁeld (see ﬁgure 4) tuned on the transition between the two hyperﬁne levels of the caesium
+ground state. In the microgravity environment, the velocity of the atoms along the ballistic trajectories is
+constant and can be continuously changed over almost two orders of magnitude (5 to 500 cm/s), allowing
+the detection of atomic signals With a tunable frequency line—Width.
+
+The microwave ﬁeld, almost resonant With the
+transition between the two hyperﬁne levels of the
+ground state excites the atoms. The relative pop—
+ulation of the hyperﬁne levels is ﬁnally measured ' :r ' ""/
+downstream by collecting the ﬂuorescence light in— : 2L 7 .\.&7 x .
+duced by the interaction With a probe laser beam. ./ ‘ //” h, '
+
+This signal is used to actively control the synthesizer \’ "" // ‘ ‘
+driving the microwave ﬁeld in the cavity. “(39V
+
+In a microgravity environment interaction time .*"" I/
+can be much larger than on Earth, and therefore '
+much narrower lines can be detected on the clock
+transition. On the ground, because of gravity,
+
+PHARAO can only be operated like a fountain clock,
+With the atoms launched vertically along the tube.
+Several tests have been performed With engineering
+
+. . . . Figure 4. PHARAO functioning principle. Atoms are
+and ﬂlght mOdels by loadlng caes1um atoms In the launched along the caesium tube and cross a resonant
+optical mOIassesa COOIed down to a few 11K: inter"" cavity Where they interact twice With a microwave ﬁeld.
+rogated on the clock transition by the resonant mi—
+crowave ﬁeld, and detected by laser—induced ﬂuorescence emission. For a typical launch velocity of about
+3.5 m/ s, the duration of the free flight between the two Ramsey interaction regions is about 100 ms, cor—
+responding to a Width of the central fringe of about 5 Hz.1 Once operated in microgravity, the longer
+interaction times Will allow PHARAO to measure line—Widths 10 to 50 times narrower.
+
+Since the tuning and optimization of the instrument on
+ground has been performed With the atomic clouds launched -
+vertically against gravity, speed was set to 3.56 m/s. In these 7)
+conditions, an Allan deviation of 3.5 . 10—13/ﬁ has been mea— . i”::::3 ﬂ
+sured, Where 7' is the integration time expressed in seconds. Aluminiumcamy h II ‘ l”; Quarthulb
+Frequency instabilities of 1 - 10—15 have been reached in less Magneticshields ‘ l 1- Thermalshields
+than 2 days of integration time. The relative frequency stabil— — r ‘ H l .' Intermediate
+ity of the PHARAO clock onboard the 188 is expected to be PCBl-EP iwfznadﬂ baseplate
+better than 10—13 for one second measurement time, 3 - 10—16 Statesman T :ﬁéﬁ—f'i‘ Dlisytfﬁign
+for one day and 1 - 10—16 for ten days.1 This is three orders OCXO ‘ ¥§¢Pké§ﬁ’ Assembly
+of magnitude beyond the clocks Which are currently ﬂying in PCB3'EP ‘ t 7 5i”? 5:— {- PCBz'EP
+GPS satellites. “43:13:33 ' “’55-‘1- - 1::s::i::onbulb
+B» SHM Figure 5. SHM design.
+
+The second time and frequency source 0 / B of ACES is SHM,
+an active hydrogen (H ) maser for space applications developed
+by SpectraTiine2 in Switzerland under ESA contract.
+
+Hydrogen masers are atomic clocks based on the transition at 1.420 GHZ between the two hyperﬁne levels
+of the ground electronic state of atomic hydrogen. H2 molecules are dissociated in a plasma discharge and
+the resulting beam of H atoms is state—selected in the higher quantum state and are directed into a storage
+
+5 of 15
+American Institute of Aeronautics and Astronautics
+
+"
+"6","bulb placed in a microwave cavity that is tuned 0n the atomic resonance to induce the maser action. When
+the atomic ﬂux is high enough, the energy available from the stimulated emission of radiation overcomes
+the microwave losses of the microwave cavity and the maser action starts. The energy generated from this
+process, despite its very low power (in the order of 1 - 10—14 W), is detected by an antenna and converted
+into electrical energy, Where it is further ampliﬁed and synthesized.
+
+SHM provides ACES With a stable oscillator. The main Challenge of SHM is represented by the low
+mass and volume ﬁgures (42 kg, 390mm X 390mm X 590mm) required by the space Clock With respect to
+ground hydrogen masers. For this purpose, the number of thermal shields 0f the Clock has been reduced
+and a dedicated automatic cavity tuning system has been implemented to steer the resonance frequency of
+the maser cavity against thermal drifts. This method allows SHM to reach a target of fractional frequency
+instabilities down to 1.5 - 1015 at 104 s of integration time.
+
+C. FCDP
+The FCDP, developed by Airbus DS and Timetech un—
+der ESA contract, is a main node of ACES. It provides pHARAo
+measurements to perform an optimum combination of the Fiﬁ———_i
+two previous Clocks Which results in a better performance __i m—ﬁi
+
+a
+of the one of SHM or PHARAO taken separately. Practi— _i _ l _ '—
+cally FCDP combines SHM and PHARAO measurements — 3 %‘ ‘ ""— m-
+in an optimum way prov1d1ng 100 MHZ Clock Signals and
+comparing them in both frequency and phase and it is um I F
+the main block of the short—term serVO—loop (described ——'
+in next paragraph).
+
+The direct comparison of the two Clocks has two pur— Figure 6. Short—tem (in blue) and long—term (in
+poses: (1) to drive the short—term serVO—loop for phase red) serv0—100ps.
+locking PHARAO local oscillator onto SHM (see ﬁgure 6)
+and (2) to evaluate the onboard Clock stability.
+
+FCDP is also in Charge of distributing the ACES Clock signal to MWL and ELT for comparison With
+high performance ground Clocks.
+
+D. SerVO—loops
+The relative performance levels of the SHM and
+PHARAO Clocks are such that for mid—term duration,
+typically between 3 s to 3000 s (see ﬁgure 7), SHM stabil— ”1042 ======================================================
+ity iS better then the PHARAO stability A combination EEEEEEEEEEEEEEE
+, , --IIIIIII-IIIIIIII-IIIIIIII-IIIIIIII-IIIII _ SHM II
+of the two clocks thus ewes the best etgnelz PHARAO :mo—t ggiiiiingiiiiinniiiiingiiiiingiii!ii
+is used to guarantee long—term stability Whereas SHM % ESEEEEEEEEEEEEEEE
+.9 --IIII-E!‘!!IIIIII--IIIIIII-IIIIIIII-IIIIIIII-IEIIIIII
+the best midterm statute- Practically, the e em;g""-IIIIelm""slutty“
+done by steering the SHM drift by PHARAO, While the §
+PHARAO local oscillator is locked on SHM. e-""I'me-Illmelll""I"":glllllme-IIIII""
+
+Moreover, as the tWO 010 eke are 10 eked one to each §§i.....§ii.m.§ii.....iiinnﬁiinnuﬁiinm
+other, the two 100 MHZ signals are at the same frequency .IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIi:!!|06
+avoiding low frequency beating between the two Clocks. MD MG Tirrxle [s] X X X
+1. Short—Te'rm Servo—Loop
+The “short—term serVO—loop” is the one allowing the Eigyre 7' ACES tinfle .Scale eXpeCted accuracy’
+
+stlmated Allan DeVlatlon.
+PHARAO local oscillator to be locked to SHM. That en—
+sures a better mid—term stability of PHARAO local oscil—
+lator, Which is mandatory to establish the accuracy bud—
+get of PHARAO, as well as a zero beating between SHM and PHARAO 100 MHZ.
+6 0f 15
+American Institute of Aeronautics and Astronautics
+
+"
+"7","2. Long—Te'rm Servo—Loop
+
+The “long—term servo—loop” is the one allowing to steer the SHM drift thanks to the PHARAO Cesium
+resonator. That ensures the long—term stability and the accuracy of the ACES signal. Long—term servo—loop
+is controlled by ACES XPLC and the O / B application S / W.
+
+E. MWL
+
+The ACES Clock signal distributed by FCDP needs to be compared to ground Clocks and this is the main
+function of the ACES MWL.
+
+The MWL, developed by Airbus DS, Kayser—Threde, and Timeteoh under ESA contract, is a two—way
+crosslink microwave signal transfer system for comparing ACES With high performance ground Clocks.1
+
+The MWL is consisting of a FS integrated into the ACES payload and several MWL GTs installed
+worldwide at major time and frequency laboratories participating in the ACES experiment collaboration.
+
+The system concept of MWL is based on the two—way frequency and time transfer principle that is already
+used by metrologioal institutes since many years. The ACES MWL is designed as a coherent, dual frequency,
+two—way crosslink in Ku—Band. A second downlink exists in S—Band for measurements of the ionospheric
+refraction. It operates continuously thanks to the carrier frequency in the Ku—band (around 15 GHZ) that
+also allows for a noticeable reduction of the ionospheric delay. A PN code modulation of the carrier removes
+the phase ambiguity between successive comparison sessions separated by large dead times.
+
+In addition to the two transmitters (S—band and Ku—band), the Flight Segment incorporates also four
+Ku—band receiver Channels, allowing simultaneous contacts With up to four MWL GTs. The different simul—
+taneous ground users are distinguished by a speciﬁc PN code and Doppler shift. The four identical receiver
+Channels are called DLL.
+
+Code and carrier phase stability determine the performance
+levels achievable in the comparisons of distant Clocks. MWL
+long—term stability is ensured by the continuous calibration of A
+the receiver Channels provided by a built—in test—loop translator.
+
+For shorter durations (N 300 s, corresponding to the ISS pass
+
+duration), time stability is driven by the noise performance ' . '
+of the transmitter Chain and the reproducibility of each DLL ’
+Channel after proper calibration of internal delays. -..—- ' r; ‘. * l
+
+Relativistics effects affecting time or frequency transfer 9-H: .31 ;
+(gravitational shift, 2nd order Doppler effects ...) are cor— I l ‘_ :
+reoted during post—prooessing using orbitography data. ' ’ _ I
+1. M WL Ground Terminals . .-
+The ACES MWL GT is a microwave station interfacing the g -
+local Clock on ground to the ACES payload for spaoe—to—ground
+Clock comparisons.3 It implements electronics similar to the
+MWL ﬂight hardware, symmetry being important in a two—
+way system to reduce instrumental errors. To reduce phase
+instabilities due to the tracking motion, the electronic unit of
+the MWL GT has been rigidly attached to the antenna unit.
+
+The Ku—band signal is delivered to the antenna feeder Via a Figure 8. Illustration of S MWL GT An-
+waveguide, a high stability RF cable is used for the S—band. tenna
+
+The antenna is a 60 cm offset reﬂector With a dual—band
+feed system automatically pointed in azimuth and elevation by
+a steering mechanism. A computer controls the steering unit
+based on 188 orbit prediction ﬁles, collects telemetry and science data both from the local Clock and the
+MWL GT electronics, and interfaces directly With the ACES MCC.
+
+The system is housed below a protective radome cover(see ﬁgure 8), Which also allows to stabilize the
+temperature of the enclosed volume by an air conditioning system, part of a separate service pallet . The
+total weight is 650 kg.
+
+7 of 15
+American Institute of Aeronautics and Astronautics
+
+"
+"8","About 10 kW are needed to power the MWL GT electronics and its temperature control system, the
+steering unit, and the air conditioning below the radome cupola. The thermal design Will allow to operate
+the MWL GTs for an external temperature ranging between —30 OC and 45 OC.
+
+The MWL GTs are remotely controlled by the ACES MCC, responsible for deﬁning the planning of the
+space—to—ground Clock comparison sessions along the ISS orbit
+F. GNSS
+ACES disposes of autonomous GNSS receivers that can be connected to its Clock signal. The system is
+designed to provide orbit determination and payload positioning for evaluating relativistic corrections in the
+space—to—ground Clock comparison measurements.
+
+The GNSS receiver is accommodated in the ACES payload While the antenna is installed externally to
+the ACES box (see ﬁgure 2) looking along the ﬂight direction of the 188, With a tilt angle of about 50 deg
+With respect to the ISS velocity vector and 30 deg in the zenith direction.
+
+The GNSS hardware provides, in the ACES TM, With a completely autonomous system for orbit determi—
+nation. Even if not optimal in terms of Visibility towards the GNSS constellation, the selected accommodation
+of the GNSS antenna fulﬁlls ACES requirements for orbit determination.
+
+The ACES GNSS subsystem consists of a redundant set of COTS receiver boards (J AVAD GNSS Triumph
+TRE—GBTH) and a power/data interface board. The interface board protects the GNSS receiver against
+latCh—up events, formats the native receiver data ﬂow into the ACES time—slotted protocol and converts
+the 100 MHZ ACES Clock signal down to 10 MHZ generating a reference that can be used for the receiver
+operation.
+
+G. ELT
+ELT is an optical link, With speciﬁc 0 / B H / W, that uses laser pulses exchanged between the space segment
+and SLR stations on the ground to compare distant Clocks.
+
+The O / B hardware consists of a CCR, a SPAD and an event timer board connected to the ACES time
+scale.
+
+Laser pulses ﬁred towards ACES by a SLR station are detected by the SPAD diode. The ﬁre and the
+detection events are tagged in the local Clock time scales both in space and on ground. At the same time,
+the BLT CCR re—directs the laser pulse towards the ground station Where it is detected and stamped in the
+time scale maintained at the SLR station.
+
+The measurement of the start and return time on ground and of the detection time in space allows to
+calculate the desynchronization between space and ground Clocks, With the capability to provide additionally
+With precise ranging information.
+
+H. Mission Control Centre — Ground Segment
+One of the peculiarities of the ACES Mission is that science data are collected equally from space and from
+ground.
+
+The main part of the ACES GS is installed at the ACES MCC that is located Within the French USOC
+CADMOS at CNES in Toulouse, France. It includes also the distributed network of MWL GTs, interfaces
+to the SLR Stations as well as other external entities such as the OC and the user community. In addition,
+being ACES an 188 external payload, the MCC is connected to the overall ISS ground architecture that
+provides the communication links between ground and space through Col—CC and NASA ground segment.
+
+The main functions of the ACES ground segment are the monitoring and control of the ACES payload
+and of the MWL GTs as well as the generation, archiving and distribution of the data products based on
+the measurements performed in space and on ground.
+
+The ACES ground segment Will be integrated Within the overall ISS ground architecture providing the
+communication links between ground and space through Col—CC and NASA ground segment.
+
+III. ACES Scientiﬁc Objectives
+
+The overall ACES mission and the associated architecture deﬁnition is based on a set of scientiﬁc objec—
+
+tives. They can be summarised in the following parts:
+8 of 15
+American Institute of Aeronautics and Astronautics
+
+"
+"9","0 Primary Objectives
+
+— High Performance Space Clocks and Time and Frequency link. To demonstrate the high perfor—
+mance of a new generation of atomic Clocks in the space environment and the ability to achieve
+high stability on space—to—ground time and frequency transfer.
+
+— Comparisons of Ground Clocks via the ACES Microwave Link. To demonstrate the capability of
+comparing ground Clocks at high resolution on a worldwide basis using a link in the microwave
+domain.
+
+0 Fundamental Physics Experiments
+
+— Gravitational Red-shz'ft. To measure With an improved accuracy the Einstein’s gravitational red—
+shift.
+
+— Drift of F the Structure Constant. To measure time variations of the ﬁne structure constant oz at
+an increased level of accuracy
+
+— Anisotropy Of Light. To test the validity of special relativity by detecting a possible anisotropy of
+the light velocity With an improved accuracy
+
+0 Secondary objectives
+
+— Space Hydrogen Maser long—term stability. T0 characterise the long—term stability of a space
+active Hydrogen maser.
+
+— Ground Clocks Synehmm’satz’on. To demonstrate feasibility of synchronisation of ground Clocks
+With a low inaccuracy.
+
+— Contribution to the International Atomic Time Scale. T0 incorporate ACES timescale into the
+TAI improving its accuracy.
+
+— Distribution of the Ultm-stable ACES Time Scale. To demonstrate the capability of transmitting
+to ground users an ultra—stable time scale With a good time accuracy.
+
+0 Scientiﬁc Applications
+
+— Relativistic Geodesy. To demonstrate the feasibility of mapping the geoid With a good space and
+time accuracy.
+
+— European Laser Time
+
+>|< Time Transfer. To perform time transfer Via a single and dual laser link.
+>I< Laser Ranging. To use SLRs to perform ISS ranging.
+
+— Clock: Comparisons via the GNSS Network. To support applications in the different areas of time
+and frequency transfer Via the GNSS network.
+
+IV. ACES Operational Organisation
+
+As already explained, ACES operations take advantage of several entities involved that are playing speciﬁc
+roles. In this paragraph, all the entities involved are recalled along With their main tasks. Figure 9 provides
+also a graphical representation of some of the entities as they are geographically located.
+A. CADMOS
+CADMOS, as the ACES MCC, is the central component of ACES GS and has overall responsibility of ACES
+operations.
+
+CADMOS receives through COl—CC ACES downlinked data and issues TCs and uplinks ﬁles, also through
+Col—CC, t0 ACES FS.
+
+CADMOS is also the central node for data exchanged between OC and the end users, receives all data
+from external GS entities such as MWL GTs, ELT DC and high level data products from the DACs.
+
+All data received/processed, that are transferred to CADMOS, are archived in the ACES archive that is
+located Within CADMOS as well as all high level data computed at CADMOS.
+
+9 0f 15
+American Institute of Aeronautics and Astronautics
+
+"
+"10","During ACES operations, starting from ACES launch, CADMOS Will be permanently manned. It is
+in charge of establishing the operations planning based on inputs from IWG and taking into account the
+constrains of the various elements such as 188 operations, maintenance in the different ground sites etc.
+
+CADMOS is the only repository for ACES data products and grants access to these data to allowed
+users.
+
+Within CADMOS, a dedicated console position for PHARAO operations is foreseen to be used by
+PHARAO instrument specialists to perform in—depth monitoring of the instrument and to provide to the
+ACES Operator the speciﬁc commands needed to operate PHARAO.
+
+CADMOS is also in Charge of the operators training, both during operations preparation phase and
+during operations. For simulation purposes several simulators are available at CADMOS.
+
+B. Investigator Working Group
+
+The IWG, composed of representative of the ACES scientiﬁc community, is in charge of coordinating the
+scientiﬁc exploitation of ACES mission data and to to request to CADMOS implementation of speciﬁc
+activities during the mission.
+
+The interface between IWG and CADMOS is at two levels:
+
+0 High level mission interface to deﬁne the different science experiments to be carried out during the
+
+mission and to organise dedicated ACES symposiums, workshops, etc.
+
+0 Operational interface at planning level. IWG provides CADMOS With initial inputs for the ACES
+mission planning. Based on external constrains, CADMOS iterates the process With IWG in order
+to establish the consolidated experiment planning Which is the input for the daily mission operations
+planning.
+
+JPL. .N'ST \ .NICT
+. ACES MISSION CONTROLCENTRE . UWA(TBC)
+. MWL GT ""P'- (. PTB.
+. COL-CC ..
+. Orbitography Centre SYRTE (. (. .
+. ELT DC
+. SLR stations (only some)
+. Data Analysis Centre CADMOS. .
+Figure 9. Different parts of the ACES GS.
+C. Columbus Control Centre
+ACES operations are embedded into the European ISS operational network. In this frame, Col—CC has the
+overall responsibility of Columbus operations and is in Charge of coordinating the operations of the European
+payloads O / B 188 With the international partners. Col—CC also provides the ground communications network
+10 of 15
+American Institute of Aeronautics and Astronautics
+
+"
+"11","(IGS). IGS and the dedicated voice communication system using dedicated voice loops are used for ACES
+operations. To be noted that no dedicated Video is needed to perform ACES operations.
+
+All ACES telemetry is received at Col—CC from NASA (TDRS network) and transferred to CADMOS
+in real time Via the IGS network. Col—CC also transfer automatically in non real—time TM that has been
+stored O / B ISS during comms hand—overs. All Columbus payload TM is stored for a certain amount of time
+at Col—CC and can be replayed on demand of CADMOS in case ACES archive is not complete.
+
+TCs are sent from CADMOS to Col—CC and are then automatically forwarded for uplink on ACES. File
+transfer is also managed by Col—CC as for all the other European payloads and is coordinated With CADMOS
+Via a dedicated procedure.
+
+Columbus provides to ACES power and bandwidth for down and up—link. Coordination between CAD—
+MOS and Col—CC is needed for planning of these facilities.
+
+After installation of ACES on the CEPF, Columbus Will immediately provide keep—alive power to ACES
+and the TM and TC links are activated.
+
+Col—CC has also the possibility to send some commands to ACES such as for an emergency power—OFF.
+D. Orbitography Centre
+The CC is located Within GSOC in Oberpfaffenhofen, Germany. It is in charge of computing and providing
+the various orbit data products needed by ACES.
+
+In order to achieve this, it gets, from CADMOS, ACES telemetry including ACES GNSS data and ISS
+orbit and attitude data on a regular basis. OC computes different orbit data products that are provided
+to CADMOS regularly and distributed further by CADMOS to the users, namely: ACES FS, MWL GTs,
+ELT DC. Precise orbit data products are used further by CADMOS and DAC to compute high level data
+products.
+
+All transfers With CADMOS are automated and continuously performed.
+
+E. ELT Data Centre and SLR Stations
+
+Several ELT SLR stations are involved in ACES mission to provide additional data to those provided by the
+MWL GTs. All the SLR stations are coordinated by the BLT DC, Which is the unique interface to CADMOS
+for SLR stations.
+
+As for the MWL GTs, CADMOS provides regular orbit data, ISS/ACES ancillary data and planning
+data to the BLT DC, Which coordinates the activities of the SLR stations involved in ACES operations.
+
+In addition to those data, CADMOS provides also to ELT DC a speciﬁc ﬂag ﬁle “’GO/NO GO” that
+allows to ﬁre With the laser beam from the scheduled SLR to the ISS. This ﬂag is maintained by CADMOS
+and is polled by ELT DC With a regular interval. In case the ﬂag is set to “NO GO”, or if the ﬂag cannot
+be retrieved by ELT DC, NO GO Will be forwarded by ELT DC to all the involved SLR stations.
+
+ELT DC gathers all the data provided by the SLR stations and computes high level science data that
+are transmitted regularly to CADMOS for archiving. CADMOS does not perform any computation on the
+data provided by the BLT DC.
+
+F. Data Analysis Centre
+
+The Main task of the ACES DAC(s) is to post—process ACES data to extract scientiﬁcally signiﬁcant results
+to be used for veriﬁcation of the ACES scientiﬁc mission objectives and production of scientiﬁc publications.
+From an implementation point of View, DACs have full access to ACES archive and provide high level science
+data to CADMOS for archiving.
+
+The main ACES DAC is located at SYRTE, in Paris, France. Other partial DACs Will be also deﬁned in
+the future for speciﬁc topics.
+
+Key activities of DACs include the analysis of space—to—ground Clock comparisons and the production of
+high level data. ELT DC is considered the ACES DAC for ELT related data and physics.
+
+G. Institutes hosting WML GTS
+As previously explained, in order to perform the Space—to—Ground link for Clock comparisons, several ground
+sites Which host various types of atomic Clocks are equipped With MWL GTs. These MWL GTs, distributed
+11 of 15
+American Institute of Aeronautics and Astronautics
+
+"
+"12","all over the world, are linked to CADMOS Via Internet. In total 7 ﬁxed MWL GT are foreseen for the ACES
+mission. They Will be deployed at the following institute sites (ﬁgure 9 shows their position):
+
+0 PTB in Brauschweig, Germany
+
+0 SYRTE in Paris, France
+
+0 NIST in Boulder, CO, USA
+
+0 JPL in Pasadena, CA, USA
+
+c NICT in Tokyo, Japan
+
+0 NFL in Teddington, UK
+
+0 UWA in Perth, Australia (TBC)
+
+In addition, two mobile MWL GTs are foressen and can be installed at different sites during the mission:
+(1) the same sites than the ﬁxed MWL GTs, in order to perform calibration measurements, (2) Closed to
+SLRs to be used for cross—Calibrations With ELT or (3) alternative sites and be used for other purposes.
+
+Basically, the role of the GT is to transfer Clock signals between ACES FS and the related ground Clock,
+and to provide science data (phase measurements between the ACES reference Clock signal and the ground
+Clocks).
+
+Institutes are in Charge of keeping running the precise ground Clocks. In normal utilisation conditions,
+there is no requirement for the institutes to intervene on the MWL GT Which is remotely controlled by
+CADMOS.
+
+During nominal functioning, CADMOS provides to the MWL GTs all needed data to perform their
+activities. Among these products, there are orbit predictions and planning ﬁles that are used by the MWL
+GT to compute the antenna tracking pattern for each planned Visibility pass.
+
+V. The ACES Mission
+
+The ACES mission has a planned duration of 18 months With a possible extension to 3 years and is
+divided in six phases that can be summarised as follows, putting an emphasis on the operational tasks:
+
+0 Pre—Launch. This phase covers all activities until ﬁnal countdown for launch. The main operational
+activities during this phase are essentially for planning and for monitoring of the deployed GS. During
+this same phase, ACES operators Will be also in Charge of testing the system and of training the
+operational teams. Testing activities include testing of the individual GS entities, bilateral tests, end—
+to—enol tests and system validation tests. The training Will include both stand—alone simulations and
+combined simulations involving several / all GS entities.
+
+0 Launch and in- Orbit Transportation. This phase covers the transportation of ACES from the launch
+pad to its ﬁnal CEPF position. It starts at Launch — 2 days When ACES is in OFF condition and
+integrated onto the SpaceX Dragon that is providing keep—alive power supply to ACES. It Will end
+With ACES installed on CEPF and Columbus feeder providing keep—alive power to ACES. Concerning
+the ACES MCC, no speciﬁc activities are foreseen during this phase.
+
+0 On—Orbz't commissioning. This phase includes the initial power—up and warm—up of the ACES payload,
+the sequential switch ON of ACES subsystems and the functional CheCk—out of ACES payload. This
+phase Will also include functional veriﬁcation of the MWL data transfer and laser data transfer between
+ACES and the ground segment.
+
+With regards to the ACES MCC, all activities Will be planned, executed and monitored by CADMOS.
+At the end of ACES full activation and cheCk—out, the OC and one or several MWL GT Will be involved
+to Check the overall ACES system functioning.
+It is also to be highlighted that, starting With ACES power—on through the Columbus module, CAD—
+MOS Will be manned permanently until the end of active ACES operations.
+12 of 15
+American Institute of Aeronautics and Astronautics
+
+"
+"13","o On—Orbz't Characterisation
+The on—orbit Characterisation phase is related to tuning and calibrating ACES instruments and equip—
+ment parts. On—orbit Characterisation starts individually With the ACES instruments and equipment
+tuning and subsequently adds system functions, namely the serVO—loop interlocking the two 0 / B atomic
+Clocks SHM and PHARAO.
+
+With regards to the ACES MCC, all activities are planned, executed and monitored by CADMOS.
+Starting With the two reference MWL GTs, all available MWL GT Will be progressively integrated in
+the ACES operation and also the BLT SLRs, coordinated by the BLT DC.
+
+Operations, including activities With the MWL GTs Will be performed almost continuously during this
+phase.
+
+0 On- Orbit Utilisation
+This phase starts at the end of the on—orbit Characterisation phase and Will be in continuation With
+the latter.
+
+All ground entities are supposed to be fully operational by beginning of this phase and operational
+activities Will be performed continuously.
+
+During this phase, CADMOS Will identify, based on 188 provisional planning inputs, periods With a
+given duration of best microgravity conditions needed for PHARAO science operations. A minimum
+of 15 of these periods during the ACES mission are required to achieve scientiﬁc results.
+
+It is assumed that all available MWL GTs Will be involved almost continuously in ACES operations,
+depending nevertheless 0n the experiment plan deﬁned by the IWG.
+
+As for the previous phases, all activities are planned, executed and monitored by CADMOS based on
+inputs provided by the IWG and on the ISS and Columbus activities planning.
+
+0 Decommissioning
+After an operational life—tirne of 1.5 to 3 years, ACES Will be switched OFF, With only keep—alive power
+provided by Columbus.
+
+The GS during this phase Will make available and maintain the ACES archive for a minimum duration
+of 10 years.
+VI. ACES Operations
+ACES launch is currently foreseen in August 2017 aboard of Dragon SpaceX#13. Activities to prepare
+operations have started. At the same time With operations preparation, a ﬁrst propaedeutic operational
+activity (SAMS Measurements for ACES) has been baselined, implemented and is on—going. A second one
+(laser ﬁring t0 the 188 before ACES Flight) is under preparation:
+
+0 SAMS Measurements for ACES. ACES performance and stability, in particular for PHARAO, is depen—
+dent on the microgravity environment it is submitted. In order to verify the time needed for PHARAO
+to converge to the expected 10—16 performance, a campaign of measurements of the ISS microgravity
+environment, in the internal position closest to the ACES installation point, is on—going.
+
+This measurement campaign is performed using the O / B sensors managed by NASA/SAMS. SAMS
+sensor F05 has been installed at the end—cone position of Columbus 0n the 25th of J anuary 2016 on its
+dedicated support. Data cable has been connected on the 15th of February 2016. Since then, the sensor
+is permanently recording data. CADMOS is in Charge of tracking dynamics events that are happening
+at 188 level as well as identifying periods With crew sleeping and With crew intense activities.
+
+TASI is in Charge of post—processing the recorded data and providing power spectral density of the
+sensed O / B accelerations.
+
+End of activity is foreseen for J une 2016.
+
+0 Laser F z'm'ng t0 the [SS before ACES F light. In order to characterise the signature of the signal received
+back on a given SLR from a CCR positioned on the 188 (188 has already aboard several CCRs Visible
+
+13 0f 15
+American Institute of Aeronautics and Astronautics
+
+"
+"14","from the ground), it is foreseen to perform a test of ﬁring from the SLR of Wettzell in Germany, before
+ACES ﬂight. The main implementation Will be to have the test carried out using actual ISS SIGI data
+received at CADMOS, processed by CC and then forwarded to ELT DC that transmits them to the
+Wettzell SLR.
+In a ﬁrst part, a test of tracking Will be performed using a Visual camera Chasing the ISS and if this
+step is successful, a second one Will consist in ﬁring With the laser beam to the ISS and receiving back
+a signature from the signal scattered back to the SLR.
+The safety related topics of this operation are still under analysis. If no problems are popping up from
+the analysis, it is planned to perform this operation in J une 2016.
+
+A. Aces Operations Concept
+
+CADMOS responsible for ACES operations is the ACES Mission and Operations Manager. Operations Will
+
+be implemented manning two operational positions:
+
+0 REXP: The experiment manager team that is the operation authority on—console by delegation of the
+ACES Mission and Operations Manager.
+
+0 Aces Operators The Aces Operators team that staffs permanently the ACES MCC, in order to ensure
+monitoring of the Flight Segment and of the Ground Segment on a permanent basis. It is also foreseen
+that the ACES Operators Will be able to send some commands to the F8 in the scope of well deﬁned
+and validated procedures. In addition, the Aces Operators position is the focal point of contact for
+ACES operations.
+
+A support to the Aces Operator on console is provided by the REXP team for all topics except for
+GS issues, and by the CADMOS transverse MCO team for all GS related topics. Both teams Will be
+on—call When not physically present at CADMOS.
+
+CADMOS Will perform the following tasks to implement ACES operations:
+
+0 F light Segment monitoring. Monitoring of ACES. A permanent task (24/ 7) that uses displays and
+alarms to react to contingency situations.
+
+0 Ground Segment monitoring. (1) Monitoring of the CADMOS GS by means of dedicated displays, (2)
+monitoring of the overall ACES GS by means of dedicated displays, (3) monitoring of the data transfer
+between CADMOS and the other GS entities and (4) monitoring of the ACES archive completeness
+
+o Payload commanding. Regular commands to be sent to ACES are deﬁned in the daily operations
+plan. Commands can only be sent during agreed (With Col—CC) command Windows. The amount
+of commands to be sent to the payload vary according to the mission phase and have to take into
+account cornms handovers. Commands can be sent for immediate execution or be time—tagged for later
+execution.
+
+o F ﬁle transfers (via Col- CC). Up and downlink of ﬁles in coordination With Col—CC.
+
+0 Ground Stations Operations ( M WL GT3 and SLRS). Operations With MWL GTs managed by CAD—
+MOS are of two orders: (1) planning data ﬁle elaboration and transfer to manage the passes and (2)
+deﬁning the schedule and role of the different MWL GTs involved in the upcoming operations, and
+commands to conﬁgure the MWL GT.
+
+0 Planning activities. Coordination With IWG on the scientiﬁc implementation of operations and With
+Col—CC concerning the request in terms of needed power or TM/TC capabilities. In addition, contri—
+bution With Col—CC to the integrated ISS planning.
+
+0 ACES health and performance assessment. On a regular basis, CADMOS REXP team analyses data
+using quick look displays, replays, etc. in order to determine overall performance of the system.
+
+0 Monitor for [SS dynamic events. CADMOS monitors events that could have an impact on the orbit
+determination and overall scientiﬁc performance of ACES, such as: ISS reboosts, DAMs, PDAMs,
+attitude manoeuvre, LoAC etc. and provides information to 0C.
+
+14 of 15
+American Institute of Aeronautics and Astronautics
+
+"
+"15","0 Data Archive management. CADMOS monitors completeness of data in the ACES archive and manage
+the correct access rights to the archive.
+
+0 Operator training and simulations. CADMOS is also in Charge of organising operators training for
+all ACES related activities. Classroom training With a list of mandatory courses is implemented for
+each newcomer Within ACES project, and simulations With nominal and contingency scenarios Will be
+organised to provide a realistic operational environment for operators training.
+
+0 Support activities. ACES project Will also take advantage of the existing support teams in CADMOS
+for PA activities and documentation management.
+
+VII. Current Status
+
+Part of the ACES payload has been integrated and integration tests are now scheduled for spring/summer
+2016.
+
+Final integration of ACES is scheduled for autumn 2016. At the same time, end—to—enol tests between
+ﬂight model of MWL FS and actual MWL GTs are also scheduled for spring 2016 in order to characterise
+MWL signal and have a system—Wise representative test.
+
+The ﬁrst MWL GT has been deployed at PTB in November 2015. Additional GTs Will be deployed at
+SYRTE, Wetzzell, NIST and J PL by autumn 2016.
+
+ACES GS is expected to be ﬁnalised by autumn 2016 and should be handed over to CADMOS at the
+beginning of 2017.
+
+ACES operations are baselineol for the main part. Preparation of the operational products has started.
+ACES internal operational products under preparations are: (1) ops procedures, (2) displays and (3) auto—
+mated procedures to implement commanding and execution of sequences. Expected end of preparation is
+foreseen for autumn 2016 to start the technical qualiﬁcation and after the operational qualiﬁcation.
+
+VIII. Conclusion
+
+The second is one of the most privileged units in the SI, because extremely reproducible and very accurate.
+Atomic Clocks allow to have this high accuracy.
+
+ACES, an external ISS payload, Will introduce a new generation of space atomic Clocks able to improve
+the accuracy currently reachable on the Earth’s surface. At the same time, the fact that it Will ﬂy at a
+different gravitational potential and its possibility to transfer and compare its very accurate time reference
+to/With ground Clocks, Will allow to improve the precision level of physical phenomena observation. This
+could provide a new conﬁrmation to the Einstein’s general relativity and other fundamental physics theories.
+
+ACES Will be launched in August 2017 for a mission of 1.5 to 3 years. It Will be connected to the nadir
+pointing CEPF and Will start operate converging to the expected high accurate time scale.
+
+ACES system is in ﬁnal development phase and it is expected to be ﬁnalised before the end of 2016.
+
+Operational organisation and operations are mostly baselineol anol ops products preparation is currently
+in progress.
+
+References
+
+1Cacciapuoti, L., Salomon, C. (2011). Atomic clock: ensemble in space. Journal of Physics: Conference Series, 327(1),
+012049.
+
+2Goujon, D., Rochat, P., Mosset, P., Boving, D., Perri, A., Rochat, J., et al. (2010). Development of the Space active
+Hydrogen Maser for the ACES Mission (pp. 1—6). Presented at the EFTF-2010 24th European Frequency and Time Forum,
+IEEE.
+
+3Schmolke, J., zahringer M. Antenna Design and Testing for the ACES Microwave Link:
+
+15 of 15
+American Institute of Aeronautics and Astronautics
+
+"

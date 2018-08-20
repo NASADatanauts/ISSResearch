@@ -1,0 +1,1101 @@
+"","x"
+"1","International Journal of Heat and Mass Transfer 79 (2014) 251—268
+
+yf‘fikﬂfj Contents lists available at ScienceDirect
+
+Aggy Internatlonal Journal of Heat and Mass Transfer
+
+4:; £££ng ‘1‘“
+
+ELSEVIER journal homepage: www.elsevier.com/|ocate/ijhmt
+—
+Slngle bubble dynamlcs under m1crograv1ty condltlons 1n the presence G) CrossMark
+of dlssolved gas 1n the 11qu1d
+Eduardo Aktinol, Gopinath R. Warrier, Vijay K. Dhir*
+Henry Samueli School of Engineering and Applied Science, Mechanical and Aerospace Engineering Department, University of California, Los Angeles, Los Angeles, CA 90095, USA
+ARTICLE INFO ABSTRACT
+Article hiSIOU/I Single bubble dynamics during nucleate pool boiling was experimentally investigated as part of the
+Recel‘md l5 May 2014 Nucleate Pool Boiling Experiment (NPBX) on the International Space Station (155) where the gravity level
+Recelved 1“ rEVISEd form 2 AugUSt 2014 was of the order of 10—7 ge. The effects of variations in pressures, liquid and surface temperatures, and
+Accepted 5 August 2014 . . . . . . . .
+
+. . d1ssolved gas content on bubble dynamics were studied. Two d1mens10nal ax1symmetr1c numerical com—
+
+Avallable on11ne 27 August 2014 . . .
+putatlons that account for time—varying system pressures and wall temperatures as well as the presence
+— of dissolved gas in the liquid were carried out to simulate the experimental conditions. Simulated growth
+Keywords: . . . . .
+. . and wall heat transfer rates are in good agreement With the experimental results. The s1mulat10ns show
+Bmhng . .
+Microgravity that the noncondensable gas accumulates at the top of the bubble as it grows, thus reduc1ng the effect of
+Single bubble subcooling. Although the non—uniform accumulation of gas also induces capillary ﬂow around the bubble
+Dissolved gas due to the varying surface tension force along the liquid—vapor interface, it is shown that this variation is
+very small and the resulting capillary ﬂow has only a second order effect on the ﬂow ﬁeld. Numerical sim—
+ulations predict single bubble departure diameters larger than what the boiling chamber would allow for.
+The results of the experiments conﬁrmed that single bubbles did not depart and remained in contact with
+the surface independent of system parameters.
+© 2014 Elsevier Ltd. All rights reserved.
+1. Introduction scales as tg/tge : (g/ge)‘1'°5. However, these relations only apply to
+gravity levels ranging from 0.01ge g g g 1.8ge.
+
+Due to its efﬁcacy, use of nucleate boiling is widespread in More recently, Dhir et al. [10] reported results of the Nucleate
+industrial applications that require high heat transfer rates such Pool Boiling Experiment (NPBX) on the International Space Station
+as power generation, propulsion, and electronics cooling. Despite (155) which included single bubble dynamics as well as nucleate
+extensive research over a span of several decades, the boiling curve boiling heat transfer. On the 155 the gravity level was 4—5 orders
+still cannot be predicted from basic principles. Further, the effect of of magnitude smaller than on parabolic ﬂights and 2—3 orders of
+highly reduced gravity on nucleate boiling heat transfer has not magnitude smaller than that on sounding rockets. Additionally,
+been thoroughly studied. the duration of the experiments performed on the 155 were signif—
+
+Since the 19605, various investigators have reported results icantly longer than the previously used reduced gravity environ—
+from nucleate boiling experiments under microgravity conditions ments. It was found during in—situ measurements that some
+[1—8]. However, knowledge of single bubble dynamics and its noncondensable gas (air) was dissolved in the liquid during the
+dependence on gravity level can be very instructive in understand— experiments.
+ing the boiling mechanism under microgravity conditions. Qiu Wu and Dhir [11] performed numerical simulations of single
+et al. [9] performed experiments on parabolic ﬂights that focused bubbles growing in a pool of subcooled water under various grav—
+on single bubble dynamics. They found, as predicted from numer— ity levels in the presence of a noncondensable gas. The level of
+ical simulations, that under reduced gravity conditions the growth gravity in the simulations ranged from earth normal gravity to
+period was longer and the bubble departure diameter was larger 10—4 ge and the authors included the effect of the presence of non—
+than that at earth normal gravity. It was found that bubble depar— condensable gas in the bubble embryo. In the simulations the ini—
+ture diameter can be approximately related to gravitational accel— tial mass fraction of gas in the bubble embryo was high (up to 0.4)
+eration through the relation Dd OC (1 /\/§) while the growth period but the liquid contained very small amounts of dissolved gas. As a
+
+result, the mass fraction of gas inside the bubble was observed to
+* Corresponding author. decrease over tlme'
+http://dx.doi.org/10.1016/j.ijheatmasstransfer.2014.08.014
+0017—9310/© 2014 Elsevier Ltd. All rights reserved.
+
+"
+"2","252 E. Aktinol et al. /Intemati0nal journal of Heat and Mass Transfer 79 (2014) 251—268
+Nomenclature
+A dispersion constant Greek symbols
+cp thermal capacity at thermal diffusivity
+C mass fraction [3 coefﬁcient of thermal expansion
+D difoSiOIl coefﬁcient 6 boundary layer thickness
+g gravitational acceleration vector 1c interfacial curvature
+h grid spacing M dynamic viscosity
+hev evaporative heat transfer coefﬁcient p density
+hfg latent heat Of vaporization a surface tension
+H Heaviside function ¢ level set function
+Hg Henry’s law coefﬁcient 90 contact angle
+k thermal conductivity
+171 mass ﬂux vector Subscripts
+M molecular weight 0 Characteristic value
+1? pressure b bulk
+q heat ﬂux e earth
+T radial cbordinate . g noncondensable gas
+R radial Size of domain int interface
+t “me 1 liquid
+T temperature m mixture
+u r—directional velocity 11 nucleation
+L7 velocity vector sat saturation
+Vmim, rate of volume production from microlayer v vapor
+X mole fraction w wall
+Y vertical size of domain
+y vertical coordinate
+The objective of this work is to study the dynamics of a single of the aluminum wafer. The backside ofG—11 base was ﬁlled with an
+bubble under microgravity conditions and compare the numerical insulating epoxy to a depth of approximately 19 mm such that three
+predictions with the experimental data obtained in the NPBX of the thermistors in the G—11 base were embedded in the insulating
+experiments. The effects on bubble dynamics of varying pressures, epoxy, while the fourth (at a depth of 24.5 mm below the wafer) was
+liquid and surface temperatures, and dissolved content of gas in located in the ﬂuid just below the insulating epoxy. The tempera—
+the test liquid are included. In contrast with the work of Wu and tures measured by the three thermistors in the insulation and the
+Dhir [11], the ﬂuid used (Perﬂuoro—n—Hexane) has a molecular thermistor located in the ﬂuid were used to estimate the heat loss
+weight almost 20 times higher than water, the level of gravity is through the backside of the heater assembly.
+three orders of magnitude lower, and the mass fraction of gas dis— The schematic of the experimental apparatus is shown in Fig. 2.
+solved in the liquid is 25 times higher. It consists of the test chamber, heater assembly, bellows, bulk ﬂuid
+heater and a pump. The heater assembly was mounted at the bot—
+, tom of the test chamber. The pressure in the test chamber (mea—
+2' Experiments sured using three pressure transducers) was controlled by
+_ _ _ _ changing the position of the bellows. The bellows were controlled
+Nucleate P001 Belling Experiments perfdrmed by 91“?“ al. [1.0] by external means to minimize any oscillations. The temperature
+used a diamond turned aluminum wafer With ﬁve art1ﬁc1al cav1t1es of the ﬂuid in the test chamber was maintained by the ﬂuid condi—
+en the b0111ng surface. The diameter ef the wafer was 895 mm and tioning loop which consisted of the pump, three inline heaters
+its thickness was 1.0 mm. Five art1ﬁc1al cav1t1es were etched on the (total power = 180 W) and associated plumbing. The test chamber
+heater surface using the Electrical Discharge Machining (EDM) was also provided with six thermistors (labeled #1 through #6 in
+technique. Four of the cavities were located at the corners of a Fig. 2) for measurement of ﬂuid temperatures. Four sapphire win—
+square while the ﬁfth cavity was located at the center. The diagonal dows were provided on the four walls of the test section for visual
+distance between the central cavity and the other cavities was observation. Two cameras were used to record two orthogonal
+27'0 mm. Single bubble departure diameters at 10—4 ge, predicted views of the boiling process occurring on the aluminum wafer.
+using numerical simulations, were used to determine the spacing The test ﬂuid used was ﬁltered, degassed Perﬂuoro—n—Hexane
+between the prefabricated cavities. The spacing chosen was such (PFH) (molecular weight = 338 g /mol).
+that lateral bubble merger would occur prior to departure when The amount of gas dissolved in the liquid was estimated in—situ
+multiple nucleation sites were activated on the heater surface. at periodic intervals. This was done by expanding the bellows,
+Each of the cavities was designed to have the following nominal causing ﬂash boiling to occur and saturation conditions to be
+dimensmnszldiameter ”10 um and depth ”100 um. , , reached quickly in the liquid. The saturated liquid temperature
+The heating of the aluminum waferlwas accomplished usmg (Tsat,PFH) and test chamber pressure (Prom) were then measured
+strain gage heaters bondedto the back—51de Of the wafer as shown and recorded. At saturation conditions, the partial pressure of the
+in Fig. 1. In addition, thermistors were also bonded to the bacl<51de PFH vapor is known,
+of the wafer to monitor the wafer temperature at several locations.
+The strain gage heaters and thermistors were grouped such that = (T ) (1)
+each of the ﬁve cavities could be activated independently. The alu— ppm 19 sat’PFH
+minum wafer was bonded toaG—11 base and four additionaltherm— Knowing the partial pressure of the PFH vapor and the total
+istors were placed in the epoxy ﬁlled G—11 base. These thermistors pressure in the system, the partial pressure of the gas in the vapor
+were placed at depths of5.3,8.6, 14.7, and 24.5 mm from the bottom space can be obtained using Dalton’s law of partial pressures.
+
+"
+"3","E. Aktinol et aL/Intemational journal of Heat and Mass Transfer 79 (2014) 251—268 253
+(a) 19.09 mm El, ~___ Gravity vector
+/ ‘- ,— 89.50 mm x
+, "" ‘ \v
+,/‘ z .
+I / ' 3 ' 2 X =
+t """"1 \‘1
+19.09 mm .""l ‘1
+_, 1., i: . ~1— }--— Camera 2
+1‘ 27.00 mm 3
+l. 4 \5 / Heater
+V.’ (130 W) #2 -_
+' * Test chamber Bellows
+"" -‘__ _ __, ""(Cavity 2287.168. mm (690 cc)
+( #4
+Camera] m I 11% m
+66.5 mm V *3
+1.0011111!
+i 26 40.6 mm
+6.35 mm g 'U] l 190mm I
+¥ __._1 1 50 nun —
+‘t.’ Heater assembly
+5—8
+(h) ll M3mm—~t
+j—‘ Pump 2:]
+cm B: ' 014 S: Fig. 2. Schematic of Nucleate Pool Boiling Experiment (NPBX) apparatus.
+'l‘hcnmgtxjr (W ‘ 1.,
+=7”- 5,»? l ' ss ‘ 3: ¥- S: M
+EL“ 1 B‘ ""3 E Cg = MXg—gM (5)
+—’ss m“ gl :1“ 81 ‘—\S_ j s: Xg g +XPFH PFH
+3 0 T1 1 . where prH is the mole fraction of the liquid (=1 — xg).
+B"" (1‘? B: B' . F1 ”35 B‘ B' B‘ (“’""C’"" ' A sample calculation to obtain the dissolved gas in the liquid,
+1 H 1 31 :8! . T] which is assumed to be air, is presented next. In one of the tests,
+_'_ _‘_ after expanding the bellows and causing ﬂash boiling of the liquid,
+3, °_‘ s4 81 '_“ S‘ the liquid temperature and test chamber pressure were measured
+4"" H Bl . lH "" \K 39 mm as Tsat’pFH = 42 °C and prom) = 71.4 kPa. According to regression anal—
+/,-/ ”8 .TP “9 ss ' ysis from NIST data, the pressure of the PFH vapor is given by,
+(‘nvily . S4
+”1 I 19pm = p(TsatyFH) = p(42 0C) = 58.1 kPa
+The dissolved gas in the liquid can then be obtained directly
+from Eq. (4) as,
+L‘amel'al Xg : Hg [protal — p(Tsat,PFH)]
+Fig. 1. Schematics of (a) the aluminum heater dimensions with cavity locations and = 5.4 X 10—5 kPa_1 [71.4 — 58.1 kPa]
+(b) the strain gage and thermistor arrangement on the backside of the wafer. _ 7 2 X 1 0—4
+The mole fraction, or concentration, is therefore 720 ppm for
+19g : ptotal _ pPFH (2) this case. Similarly, Eq. (5) 15 used to cgnvert the niole fraction of
+720 ppm to a mass fraction of 6 x 10— . Note that, in the absence
+where 13mm: 15 the aforementioned test chamber pressure that was of gas under the same conditions, the saturation temperature
+measured in the liquid at saturated conditions. Once the partial would have been 55 °C higher at 475 0C. For a total pressure of
+pressure 0f the 335, 13g, is known Henry’s law provides a relationship 71.4 kPa, the uncertainty in the calculated mole concentration
+between the partial pressure 0f the gas 111 the vapor space and the can be obtained from the uncertainty in the measured temperature
+corresponding mole fraction of the gas dissolved in the liquid, (:02 0C) and pressure (:1 kPa) as provided by Dhir et al. [10].
+x = H p (3) When including those uncertainties in Eq. (4) the resulting uncer—
+g g g tainty in the sample calculation of xg becomes $0.29 x 10—4 or i4%.
+where Henry’s coefﬁcient, Hg, has inverse pressure units. Henry’s For a more detailed description 0f the experimental setup, PFO-
+coefﬁcient for air in FC—72 for temperature range from 31 to 60 0C cedure, data tedUCtIOH, and anomalies encountered during experi—
+was used in the present work (Horacek et a1. [12]). It is assumed ments please refer to Dhlt et al. [10]-
+that this coefﬁcient applies to PFH as FC—72 is the commercial grade
+3M ﬂuid comparable to PFH. Combining Eqs. (1 )—(3), the mole frac— 3, Numerical formulation
+tion of the gas in the liquid can be calculated as,
+x _ H [p _ p (T )] (4) In analyzing the bubble growth on a single nucleation site, the
+g g “m” sat’PFH computational domain is divided into micro and macro regions
+Finally, the mass fraction of the gas dissolved in the liquid can as shown in Fig. 3. The macro region consists of the bubble and
+be obtained from the mole fraction using molecular weights as the liquid surrounding the bubble, whereas the micro region con—
+follows, tains the liquid ﬁlm (microlayer) underneath the bubble. The liquid
+
+"
+"4","254 E. Aktinol et al. /Intemati0nal journal of Heat and Mass Transfer 79 (2014) 251—268
+y = Y .- - - - - - - - - - - - - - - - - - - - - - - - --I The pressure in the liquid and vapor phases are related as,
+: Macro region I A C12
+: ] pl:(pv+pg)_0K_—3+ 2 (11)
+. 6 h
+. : pv fg
+I where surface tension, 0, is taken to be a function of temperature,
+: . . and A is the dispersion constant relating disjoining pressure to the
+I L'qu'd ; ﬁlm thickness. In Eq. (11), the second term on the right—hand side
+I accounts for the capillary pressure, the third term accounts for
+‘ the disjoining pressure, and the last term originates from the recoil
+: pressure. The curvature, K, of the interface is deﬁned as,
+: 1 a 86 / 86 2
+o . K = — — r— 1 — 12
+=J ; r8r<8r/ +(8r)> ()
+where 6 is the liquid ﬁlm thickness and r is the radial distance. The
+: mass, momentum, and energy equations can be combined to yield a
+I relationship for the liquid ﬁlm thickness,
+(p : IIII
+‘ '4 IR 5 =f(6, 6', 6”, 6'”) (13)
+Wall r ‘ .
+where the prime denotes a/ar.
+The boundary conditions for Eq. (13) are speciﬁed at two loca—
+, , , - ‘ ' ” ' ‘ ‘ "" - ~ \ \ tions. At the inner edge of the microlayer, r = R0
+,’ I Micro region \ 5 = 5
+’l \\ l 0m (14)
+[I \ 6 I 6 Z O
+5 hr’ where 60 is of the order of a molecular size. At the outer edge of the
+y 0 .' 5 ‘ ; microlayer, r = R1
+\r 2 R0 Wall r = R1,: 5 = h/2
+t 6’=tango (15)
+Fig. 3. Computational domain. 5” = 0
+ﬁlm thickness in the micro region varies on the outer edge from the where h/ 2 is the vertical distance to the ﬁtSt computational node for
+mesh size used in the macro region to the order of molecular size the level set function, Q in the macro region and go is an apparent sta—
+on the inner edge. For details see Son et al. [13], In carrying out the tic contact angle. The contact angle in the simulations was assumed
+analysis all processes are assumed to be axisymmetric and ﬂows to have a static value 0f30° 50 35 to closely approximate the mean 0f
+are taken to be laminar. Fluid properties such as density, viscosity, dynamic contact angles obtained visually from the recorded videos 0f
+and thermal conductivity are assumed to be constant in each the experiments. Experimental contact angles varied in the range of
+phase. However, variation of surface tension with temperature is 25-35° for receding and advancing interfaces, respectively. 111 imple—
+considered. Lubrication theory is used for the momentum equation mentng the boundary C0hditi0h5, the radius R1 was determined
+in the micro region. Assuming the process is quasi—static, such that from the SOIUtiOh 0f the macro region. For a speciﬁed contact angle,
+amt: O, the mass conservation equation in the microlayer is writ— the microlayer formulation (ECI- (13)) is integrated using the six
+ten as, boundary conditions given by Eqs. (14) and (15), assuming the dis—
+5 persion constant and R0 are unknown. For the contact angle of 30°
+i = _ 1 2 / ml dy (6) the dispersion constant was found to be —1.7 x 10—19].
+plhfg r 8r 0 In solving for the macro region, the modiﬁed level set formula—
+Neglecting inertia terms, the momentum equation for the tion [131 15 used. The interface separating the liqu1d and vapor
+microlayer is written as phases lS captured by solvmg the followmg equation for the level
+2 set function, 45,
+819, 8 Ll]
+— = — 7 8 a
+8r “183/2 ( ) 8—1) = —uth - V4) (16)
+The energy conservation equation neglecting convection in the where
+ﬁlm yields, a
+a a m
+T — T- u- = u + — 17
+q : [QM?SHH) (8) mt p ( )
+Using a modiﬁed Clausius—Clapeyron equation, the evaporative and the evaporation/conclensation rate, m, 15 calculated based on
+h e at ﬂux is written as mass conservation at the interface
+T _ T- ) 171 : p(ﬂint — ﬂ) = kVT/hfg (18)
+=kl(W—mt=h T- —T+ — T h 9
+q 6 wt mt 7’ (pl 197,) 22/101 fg] ( ) The following level set reinitialization equation is solved until
+where steady state is obtained to ensure that |Vq5| = 1,
+8
+h _ 2M 1/2 pvhfgg_ T —T (p ) (10) a_fZLZO _|V¢|) (19)
+ev — —TCRT7, —Tv 7 v — sat 1/ /¢(2J + h
+
+"
+"5","E. Aktinol et aL/Intemational journal of Heat and Mass Transfer 79 (2014) 251—268 255
+where gbo is a solution of Eq. (16). The ﬂuid properties are given by opening at the top of the computational domain. As such, during
+bubble growth liquid gets pushed out through the opening and
+p 2 pm + (p; _ pm)H : p), + pg + (p; _ p1, _ pg)H during bubble shrinking liquid ﬂows back in.
+M = #1, + (Hz — HJH (20)
+k 2 k1, + (k, — kv)H
+4. Computational procedure and validation
+The mixture density, pm, is the sum of the vapor and gas densi—
+ties. In the sharp interface model employed here, the Heaviside The governing equations were normalized using the following
+function (H) is a step function given by, reference quantities
+H_1ifgb>0 (21) 102W
+H=01f¢<0 g(pz—pv)
+The equations governing conservation of mass, momentum, L10 2 \/gTO (28)
+energy, and species in the macro region are written as, t 10
+0 = _
+Z—‘Z+V-<pﬁ>=0 <22> ”0 . .
+The pool of llquld was assumed to be stagnant 1n1t1ally and the
+8d thickness of the thermal layer above the heater was calculated
+p (a + a . Vﬁ) : —Vp + pg _ pﬂ(T _ Tsar»)? _ GKVH + V assuming pure conduction in the liquid as follows
+- Wﬁ + v - uvaT (23) 5t 2 ’V “0“” (29)
+where tn denotes the time interval between initiation of heating and
+8T s bubble nucleation for each case. Based on experiments this time
+p Cp (8t + u ' VT) 2 V ' kVT for H > 0 (24) interval was of the order of a few hundred seconds, such that the
+T : TRAP”) for H = 0 initial thermal layer thickness ranged from 3 to 8 mm at the time
+of bubble nucleation. The initial mass fraction of gas inside the bub—
+8C a ble embryo was assumed to be the same as that dissolved in the
+p(atg + u - VCg) = V - ,ODVCg for H = O (25) liquid.
+For the single bubble cases studied presently, the bubble was
+Cg 2 Cal for H > 0 symmetric about an axis going vertically through its center. Taking
+The solution of Eq. (25) provides a mass fraction distribution of advantage Of the Symmehy two—dnnensmnal computations were
+noncondensable gas inside the bubble. Assuming uniform pressure perfornied. A staggered—grid ﬁn1te difference scheme was used to
+exists inside the bubble, the distribution of partial pressure of dlscretlze the equatlons where the scalar variables (such as tem—
+vapor is obtained from the distribution of noncondensable gas. perature, pressure, and level set) were deﬁned at the cell centers
+Therefore, it should be noted that, although the energy conserva— and VEIOCIW components were StOFEd at the cell edges. A projec—
+tion equation (Eq. (24)) is not solved inside the bubble, due to tlon method was used to decouple the pressure solutlon from the
+the presence of the noncondensable gas, local partial pressures of momentum equatlons: 1“ thls standard method, the mass and
+vapor vary and therefore so do local saturation temperatures. naomentum conservatlon equatlons .are combined and then spht
+Using the same approach employed by Wu and Dhir [11], the mass Into a monientum and pressure (.POISSOH) equation. More details
+conservation equation (22) can be rewritten as, on the prOJectlon method 1nclud1ng treatment at the llquld—gas
+. . interface can be found in Son and Dhir [14]. A multigrid method
+V - ﬂ = p% - Vp + Vmim 2 15:72 - Vp + me for condensation was used to achieve faster convergence of the pressure equation
+2 WT . Vp + V . for evaporation since it takes up most of the computational time. In general, con—
+hngZO—CgJ) mm vection terms were solved explicitly using a second order END
+(26) scheme and diffusion terms were solved implicitly using a central
+_ _ _ difference scheme. The computational steps are summarized in the
+where the term (1 — CgJ) 1n the denominator accounts for the add1— following list.
+tion of gas during evaporation assuming that no extra energy is
+required for release of gas. The term Vmicm is obtained from the Time step loop
+microlayer solution as,
+V R1 k1(Tw _ Tim) d 27 . 1. Solve the level set advectionequation (Eq. (16)) and reinitial—
+micro — /R0 1% hfg 5AVmicro(1 _ ngl) T T ( ) ize the level set functlon (by solv1ng Eq. (19) to steady state).
+where Ale-m, is a vapor—side control volume near the micro region. Iteration loop for coupling of energy and species conservation
+Another key assumption is that there is no gas concentration gradi—
+ent in the liquid such that the mass fraction of dissolved gas just a. Make appropriate guess for interface temperature for ﬁrst
+outside of the interface is the same as in the bulk liquid (i.e., the iteration of ﬁrst time step.
+species concentration equation is not solved in the liquid). b. With guessed interface temperature as the boundary condi—
+The boundary conditions for the macro region are given at four tion, solve the energy conservation equation (Eq. (24)) for
+sides (see Fig. 3). They are (i) the axis of symmetry at r= 0, (ii) an temperature on the liquid side. Calculate heat transfer rate
+insulated wall at r = R, (iii) a heated wall at y = 0, and (iv) an insu— through bubble interface based on the calculated tempera—
+lated wall at y = Y. A small opening at y = Y (5 mm radius beginning ture ﬁeld in the liquid.
+at r=0) is included to simulate the opening connecting the test c. Using the heat transfer through bubble interface as the
+chamber to the bellows. This open boundary is simulated by boundary condition (obtained in step b), solve species con—
+imposing a known constant pressure and zero velocity gradients. servation equation (Eq. (25)) for concentration inside the
+The ﬂuid can ﬂow freely into and out of the chamber through this bubble.
+
+"
+"6","256 E. Aktinol et al. /Intemati0nal journal of Heat and Mass Transfer 79 (2014) 251—268
+(a) (a) 85 56
+1.2 Othmer [15] Present 54
+l Cg Z = 0.02 —C9 1, = 0.05 80
+O C = 0.05 52
+1.0 9,1 75
+5O
+Sparrow and Lin [16] 70
+0'8 —~—-C _ =0.02 A 48
+9,1 us A
+o ---C =0.05 g 65 46 0
+O 9,1 v CL,
+5 0.6 o. .52
+60 44 '—
+42
+0'4 _‘—‘-'—'—---—.._,___._._._.--_._U 55
+\ 40
+',__—————____2___2_--
+0-2 50 l 38
+45 35
+0.0 o 50 100 150 200
+2 4 6 8 10 12 t (S)
+TI-TW (°C)
+(b) 14 10
+(b) 0.20
+12 J 8
+‘ — TI-T = 6 °C
+W 10 6
+0.15 _ _ -T|-Tw=2 C
+8
+6 4 A
+0V 6 08
+:1; 2 §
+0‘” 0.10 4 I;
+0
+2
+0.05 t 0 A -2
+x
+\
+\ \ \ -2 '4
+“-—______ 0 50 100 150 200
+0.00 ”5)
+0.0 0.5 1.0 1.5 2.0 2.5
+Fig. 5. Time—dependent experimental conditions (a) system pressure and satura—
+y (mm) tion temperature and (b) wall superheat and liquid subcooling.
+Fig. 4. (a) Comparison of heat transfer reductions for Cg,oo=0.05 obtained in 80
+experiments [15], analytical predictions [16], and present numerical simulations,
+and (b) representative proﬁles of noncondensable mass fraction for Cgoo = 0.017 and
+various wall subcoolings 5 mm away from the leading edge. 70 hm. .
+rv""
+.""-'-'
+60 / ’
+Table 1 _ / ’
+Experimental conditions for each case studied. 50 f ’ , ’
+— A - ' /
+Case 1 Case 2 E 40 """" ___ _ _ a ’
+Gas content, Cg, 6 X 10‘5 2 X 10‘5 g I , ’ ’
+Pressure (kPa) 60—80 145—160 g 30 , ’
+Change 1n Tsar (°C) 4.9—6.4 0.9—1.0 D _ Experiments
+Duratlon (s) 200 800
+ATW(°C) 2—13 (—1)t03 20 . _
+ATM, (00 0—2 7_9 Simulations
+Bubble size history Growth Growth, shrinkage 10 — Equilibrium
+— - - -Non-equi|ibrium
+- a a a a a a 0
+cl. Determlne saturatlon temperature dlstrlbutlon 1n51de bub— o 50 100 150 200
+ble and at bubble interface using the distribution of noncon— t (s)
+densable gas obtained in step C (by reversing the procedure
+detailed in Eqs. (1)_(5)) Fig. 6. Growth history comparison between experiments and simulations.
+e. Check the change in mass fraction of noncondensable gas
+between the previous two iterations. If the change is within 3. Solve the Poisson equation for total pressure (pv + pg inside
+an order of magnitude of the machine accuracy, proceed to bubble).
+step 2; otherwise, go back to step b for the next iteration. 4. Correct the velocities with the new known pressure gradients
+to ensure mass iS COHSEFVECI.
+2. Solve the momentum equation for velocity terms. 5. Go back to step 1 for the next time step.
+
+"
+"7","E. Aktinol et aL/Intemational journal of Heat and Mass Transfer 79 (2014) 251—268 257
+[I ..
+0.12 . . .
+/ / q = 709 chmzi/
+0.10 z; 2 E
+q = 574 chm 5 q = 387 chm3 3
+0.08 I
+NE 0.06
+E
+a- 0-04 i i 5
+0.02
+.40 .20 0 20 40 .40 .20 o 20 40 .40 .20 o 20 40
+r (mm) |' (mm) r(mm)
+(a) (b) (C)
+Fig. 7. Bubble shape and wall heat transfer rate comparison between simulations and experiments at (a) 20 s, (b) 100 s, and (c) 180 s.
+
+In order to test the accuracy of the simulation including the Bubble dynamics under two different pressures, liquid subcoo—
+presence of the noncondensable gas, the standard problem of ﬁlm lings, and dissolved mass fraction of gas were considered. The gas
+condensation on a cooled vertical plane wall was studied. Numer— was assumed to be air with a molar mass of 29 g/mol. A summary
+ical simulations were performed for two cases: (i) condensation of of the experimental conditions for the two cases studied is given in
+pure water vapor on a cooled wall and (ii) condensation of water Table 1.
+vapor in the presence of air (noncondensable gas) under identical
+conditions. The reduction in the rate of heat transfer clue to the
+presence of the noncondensable air was then quantiﬁed for differ— 5- Results and discussion
+ent wall temperatures and different bulk mass fractions of air.
+
+Fig. 4(a) shows the ratio between the condensation heat transfer 5-1- Case 1
+
+rate when air is present (Q) and for pure steam (Q0) as a function
+
+of the temperature difference between the wall and the bulk ﬂuid. The mass fraction 0t gas dissolved in the htlthtl (Cg) for the htSt
+It can be seen that for a bulk air mass fraction of only 0.05 the case was 6 X 10—5- The experimental conditions for the htSt case
+reduction in heat transfer rate is more than 60%. The ﬁgure also are Shown in Fig. 5(a) and (h)- Note that Fig. 5 shows data after
+includes the experimental results obtained by Othmer [15] and bubble nucleation occurred (i.e., nucleation occurred at t= O s).
+the simpliﬁed problem solved analytically by Sparrow and Lin During bubble growth the system pressure varied from 60 t0
+[16].The good agreement observed between the numerical simula— 80 kPa. The pressure varied because the bellows could not keep
+tions and experimental results lends credibility to the approach up With the rapid increase in vapor volume caused by the growing
+employed in this study. There is some discrepancy between the bubble. The saturation temperature of the PFH was calculated
+results from the simulations and those obtained by Sparrow and based on the mass fraction 0t dissolved gas as follows
+
+Lin at low temperature differences. The reason for the discrepancy
+
+is not clear but it should be noted that Sparrow and Lin made sev— xg : M
+
+eral simplifying assumptions in order to obtain an analytical solu— Cg/Mg T CPFH/MPFH
+
+tion for ﬁlm condensation in the presence of a noncondensable gas. pPFH : Prom: _ x_g (30)
+Fig. 4(b) shows representative proﬁles of the mass fraction of non— Hg
+
+condensable gas 5 mm downstream of the leading edge. The coor— TwappH = T(pPFH)
+
+dinate y is measured horizontally outwards from the liquid—vapor
+
+interface. The mass fraction of gas is seen to drop rapidly, reaching where CPFH = 1 — Cg. Due to the varying pressure, the calculated sat—
+its bulk value within 2 mm. For identical conditions, the interface uration temperature correspondingly varied from 36 to 46 °C. As
+mass fraction of gas is seen to be strongly dependent on condensa— mentioned previously, the power supplied to strain gage heaters
+tion rate (which is primarily dependent on the temperature differ— was controlled to maintain a constant surface temperature. How—
+ence between the saturated vapor and the wall). ever, because of system pressure Change, T56,t Changed, which
+
+"
+"8","258 E. Aktinol et al. /International journal of Heat and Mass Transfer 79 (2014) 251—268
+resulted in ATW ancl ATsub changing with time. Fig. 5(b) shows the transfer rates clue to the transient nature of the heat losses through
+variations of ATW and ATM for the ﬁrst 200 s of bubble growth. the insulation under the heater. Fig. 8(a) shows the temperatures
+The growth history for the bubble is shown in Fig. 6 where the measured at different depths inside the insulation for the ﬁrst
+equivalent bubble diameter (Deq) is plotted as a function of time. 200 s of bubble growth. The time—dependence of the temperatures
+Deq is deﬁned as the diameter of a perfect sphere having the same indicates that the heat losses are not constant in time. Since all the
+volume as the actual bubble. The experimental data show that power was supplied at the bottom of the aluminum wafer (depth
+equivalent bubble diameter, Deq, grew to approximately 50 mm in of 0 mm), the best approximation of the instantaneous heat losses
+80 s, at which point ATW was still decreasing and ATM], increasing. is given by the temperature gradient between the bottom of the
+This was due to the increase in system pressure and corresponding aluminum plate and the ﬁrst temperature measured inside the
+increase in Tsar. The bubble size became nearly constant (bubble insulation (at a depth of 5.3 mm). However, the conductivity is
+growth rate almost zero)because the condensation rate from bubble not known precisely at such a shallow depth clue to the fact that
+interface increased with increasing ATM], while the evaporation rate the wires (thermistor wires and strain gage wires for power) are
+at the base and bubble interface decreased with decrease in ATW. As densely packed within the ﬁrst few millimeters of the insulation.
+the bubble stopped growing, the continued expansion of the bellows This introduces another uncertainty in the calculation of the heat
+ﬁnally caused the pressure in the test chamberto drop. Additionally, losses. The instantaneous heat losses based on the temperature
+the wall temperature was increased at around 100 s. As a result of gradient between the bottom of the aluminum plate and the ﬁrst
+the increase in ATW and decrease in ATsub, the bubble began to grow temperature measurement inside the insulation are given in
+again. The solid line in Fig. 6 shows the simulated results assuming Fig. 8(b). At any given time, the average wall heat ﬂux was calcu—
+equilibrium conditions inside the bubble. In this case the species lated based on the total power supplied at that time minus the
+conservation equation is not solved because, at equilibrium, the instantaneous heat losses. Due to heat losses, it is possible that
+mass fraction of gas inside the bubble is assumed to remain constant the heat ﬂux was negative at the locations where the heaters were
+and is found using Eqs. (1)—(5). This case provides an upper limit for turned off. However, it is assumed that the losses in those locations
+the gas content inside the bubble. Accordingly, this approach also were small since they would otherwise result in automatic heating.
+provides an upper limit for the reduction in saturation temperature. Therefore, heat ﬂux is shown to be zero under the bubble in Fig. 7.
+The agreement between the simulation and the experimental
+results during the ﬁrst 150 s is remarkable. After 150 5, however, (a) 54
+the simulation results begin to diverge from the experimental data.
+The dashed line shows the results from simulations performed 1
+when the species conservation equation is solved in the vapor space. 8 52
+This approach provides a more complete and realistic picture of the 0V ‘ ‘
+physical processes taking place, including the addition of noncon— 2 50 Depth = 0 mm
+densable gas into the bubble and distribution of gas inside the bub— +3 '
+ble as it grows. Although the dashed line does not show as close an E y
+agreement with the experimental data as the solid line, it does a 2' 48 .
+noticeably better job of capturing the growth rate and oscillations B ' Depth = 8-6 mm
+observed in the ﬁnal 100 s of bubble growth. 5 46
+Bubble shape and size obtained from the simulations are com— *5
+pared with the experimental results in Fig. 7. At 20 s the shape and 3 Depth = 14'7 mm '
+size of the simulated bubble matches the experimentally obtained 5 44
+bubble size well. However, at 100 s the experimental bubble equiv— _
+alent diameter is under—predicted by approximately 8 mm (about
+20%). At 180 5, many small extraneous bubbles can be seen nucle— 42 o 50 100 150 200
+ating and merging with the primary bubble. These mergers _
+resulted in the wavy interface seen in the ﬁgure and an estimated Time (5)
+increase in the size of the experimentally measured bubble of
+approximately 5%. The simulation under predicted the size of the (b) O_14
+bubble by 13% at 180 s.
+The average wall heat ﬂux obtained from the experiment is also Q12
+shown in Fig. 7 alongside the local wall heat transfer rate predicted «A
+from the simulation. The experimental wall heat ﬂux is given as an E
+average over the entire surface except where the heaters were E 0'10
+turned off. Since the heaters were controlled to maintain a con— I
+stant surface temperature, they were automatically turned off a 0-03
+where the surface was dry clue to the low heat transfer coefﬁcients ‘5
+present in those locations. The peaks shown from the simulations 2 0.06
+coincide with the location of pinning of the liquid—vapor interface 5
+on the wall and are due to the contribution of microlayer evapora— 5:; 0.04
+tion. The peak values vary because the microlayer heat transfer 3
+rates vary linearly with the wall superheats. The oscillation in local 5 0.02
+wall heat transfer rate immediately adjacent to the liquid—vapor
+interface is caused by the temperature ﬁeld that develops around
+the bubble as will be shown later (Fig. 903)). The wall heat transfer °-°° o 50 100 150 200
+rate predicted is in good agreement with the experimental values _
+at 20 and 100 5. At 180 s the average wall heat transfer rate predic— Tlme (S)
+tion is almOSt 30% lower than the exPerimental data- Howeverv Fig. 8. (a) Temperatures measured inside the insulation and (b) calculated
+there iS substantial uncertainty in the experimental wall heat instantaneous heat ﬂux through the ﬁrst 5.3 mm of the insulation for Case 1.
+
+"
+"9","E. Aktinol et aL/Intemational journal of Heat and Mass Transfer 79 (2014) 251—268 259
+(6M) (3,“) (aJii)
+— AT. = 0.6°C — AT. = 0.6°C — AT. = 0.6°C
+1 cm ISO 1 cm ISO 1 cm ISO
+ﬂ
+, 1 4 “MR At) A KL
+—\J, .«Lf— _—\JA. , a A. LL; Q MM
+(bi) (W) (ini)
+1:"" Acg=5x10'5 1:"" Acg=2x10'4 1:"" Acg=2x10'4
+, ‘ cg?
+/ \
+f \
+(c,i) (c,ii) (CM
+(CM) (d’ii) (d’iii)
+Fig. 9. Contour plots showing: (a) streamlines in the liquid, (b) isotherms, (c) lines of constant mass fraction, and (d) streamlines inside the bubble at (i) 20 5, (ii) 100 s, and
+(iii) 180 s.
+
+"
+"10","260 E. Aktinol et al. /Intemati0nal journal of Heat and Mass Transfer 79 (2014) 251—268
+2.0 0.010 48.26 9.424
+~73 , , - - — ~?
+E 1.5 0.008 8 ’ ‘ ‘ 7 7 A
+g m °V 48.24 ’ E
+V (U a) / \
+3‘ m S / 9.422 E
+3 1.0 0.006 “5 E 7/ v
+X g 8- g
+.3 ,5 E 48.22 / .7)
+a. U a.) / C
+E 0.5 0.004 E 9.. / B
+.9 ""J, 8 , ’ 9.420 8
+'6' .. _ :: _ U) ‘5 .. , ’ cc
+3 /,—- “---~ g E 48.20 ‘1:
+g 0.0 ”r 0.002 E ‘3
+> , I ‘— ‘—
+LU .. __ __ g ’
+-0.5 0.000 48.18 9.418
+0 15 30 45 60 75 90 0 15 30 45 60 75 90
+Angle along interface Angle along interface
+(3,1) (1),!)
+2.0 0.010 50.44 9.288
+A 50.42 ~ —’
+NW / ‘ \ 9.286
+E A 50.40 I x E
+E 1.5 - —' 0.008 0 / 7 \ ...
+f? ,’ ‘ \ m L 50.38 , ’ 9.284 E
+V \ x ‘ a, / \
+2 , , ’ \ g ‘5 50.36 I ’ E
+?- 1.0 ,’ 0.006 “5 E 50_34 I 9.282 V
+X / c d) / g
+g / ,9 O- 50.32 9.280 -—
+'- ° 0’ 50 30 c
+E 0.5 / 0-004 9 ""’ ' ’ 9278 '9'
+° ’ ""' q’ 50 28 ’ ' 0:
+.5 / m g - / o
+19 W 0:
+'5 / g ‘5 50.26 /’ 9.276 ‘t
+% 0.0 / 0.002 E 5024 I , w
+> , ’ <— , ‘_ 9.274
+I-IJ _ - ’ 50.22 - — ’
+-0.5 0.000 50.20 9.272
+0 15 30 45 60 75 90 0 15 30 45 60 75 90
+Angle along interface Angle along interface
+(aaii) (b,ii)
+2.0 0.010 49.14 9.376
+N73 49.12 9.374
+g, 1.5 0.008 :3 49.10 A
+x w v ’ _ a 9.372 E
+V as 2 49.08 , 4 \ 2
+9° ﬂ _ a 5’ 3 ’ ’ \ 9 370 E
+‘- 1.0 , .. — ’ \ 0.006 “5 E 49.06 ’ \ ' v
+a: / _C_> °- 49.04 , \ 9.368 .9
+E / \ H E \ w
+h / \ 0 q, \ c
+E 0.5 \ 0.004 g .... 49.02 , ~ _ 2 9 366 3
+o I \ _ ~ ‘0- 8 / ' a,
+'15 ’ 3 m 49.00 , g
+3 I <20 ‘5 / 9.364 t
+g 0.0 ’/ 0.002 E 48.98 , , 5
+Li _ , I ’ .— 48.96 - , ’ < 9362
+-0.5 0.000 48.94 9.360
+0 1 5 30 45 60 75 90 0 15 30 45 60 75 90
+Angle along interface Angle along interface
+(a,iii) (b,iii)
+Fig. 10. Evaporation rate, mass fraction of gas, interface temperature, and surface tension along interface of bubble at (i) 20 5, (ii) 100 s, and (iii) 180 5. Angle along the
+interface is measured from the horizontal boiling surface up to the vertical axis of symmetry.
+The steps in temperature at 100 and 190 s are a result of imposed Fig. 9(a) shows streamlines outside the bubble. At 20 s the bub—
+increase in wafer temperature at those times. ble was still in its initial phase of fast growth. Correspondingly, the
+It should be noted that the primary bubble slid over the boiling streamlines in the liquid shown in Fig. 9(a, i) spread radially out—
+surface during the experiments clue to variations in the level of wards from the bubble and then up towards the top of the domain
+gravity in the plane of the wafer. Bubble sliding can lead to alter— where the opening to the bellows is located. At 100 s the growth
+ation of thermal boundary layer and therefore directly affect the rate has slowed down signiﬁcantly and the streamlines in
+wall and interface heat transfer rate. This phenomenon was not Fig. 9(a, ii) show that recirculation patterns start to form around
+included in the numerical simulations and therefore can be a the bubble. Finally, at 180 s, the bubble is growing faster again
+source of uncertainty in predicted bubble size and wall heat trans— and the ﬂow can be seen in Fig. 9(a, iii) to be pushed out and up
+fer rate. However, its magnitude is expected to be of second order. while the recirculation patterns become smaller. Fig. 9(b) shows
+
+"
+"11","E. Aktinol et aL/Intemational journal of Heat and Mass Transfer 79 (2014) 251—268 261
+O O
+ATiso = 0.6 C ATiso = 0.6 C
+1
+J J
+Q 0.
+0009 000 2 \
+$ \ A \
+_ t» \32 |\
+(a) (b)
+Fig. 11. Isotherms on the left and lines of constant mass fraction on the right after 180 s of growth for (a) variable surface tension and (b) constant surface tension.
+(a) 162 74 60
+150
+158 73
+156 50
+72
+154 _
+A 152 71 4o ’ I n""...
+m I A
+g 150 oC.) , .. — - _ ‘ “4H
+. 7o :6 ’ ’ ‘ \ \ -
+0- 148 P |_m E 30 I x - ‘35
+i E / k
+145 1 v , r
+1 69 g , 1,. ‘ \
+144 I D I . ‘ \ ‘
+, . . 20 f/ - Experiments 1...
+142 —’ .. 1 . ,1 _ 68 , -
+14o ' ' - . ’- Simulations
+138 67 10 r J —Equilibrii1tn . 1
+o 200 400 600 800 - - -Non-equlllbrlum
+1(8) o
+0 100 200 300 400 500 600 700 800
+(b) 3.0 12 t (S)
+2.5 Fig. 13. Growth history comparison between experiments and simulations,
+including the cases of equilibrium conditions assumption and the full solution of
+2-0 the species conservation equation.
+1.5
+10
+1.0 atop the bubble is a consequence of the energy added to the liquid
+9 O 5 06 through condensation. The size of the plume can be seen to
+1—3 ‘13 increase with time, starting out barely noticeable in Fig. 9(b, i) at
+4 0-0 lg” 20 5. After 100 s, Fig. 9(b, ii) shows an appreciable plume signifying
+_0.5 . ‘1 8 the presence of more substantial condensation. The plume growth
+is slowed down between 100 and 180 s because the condensation
+4-0 ' rate decreased. The recirculation patterns described previously
+-15 ‘ lead to the thickening of the thermal layer around the sides of
+the bubble seen in Fig. 9(b, ii) and (b, iii). In Fig. 9(c) lines of con—
+‘2'0 0 200 400 500 8006 stant mass fraction of noncondensable gas are shown inside the
+t bubble with intervals between lines of 2 x 10—4. Fig. 9(c, i—c, iii)
+(5) show that the gas mass fraction is smallest near the base of the
+Fig. 12. Time—dependent experimental conditions including system pressure, 1311131316 and increases towards the tOp Where condensation takes
+saturation temperature, wall superheat, and liquid subcooling. place and the noncondensable gas accumulates. It should also be
+noted that, due to the fact that the molecular weight of the gas is
+lines of constant temperature (isotherms) in the liquid surrounding an order of magnitude smaller than that of the vapor, this conﬁg—
+the bubble. The interval between each isotherm represents a con— uration of gas accumulation is aided by the very limited buoyancy.
+stant temperature difference of approximately 0.6 0C. The plume Finally, streamlines are shown inside the bubble in Fig. 9(d).
+
+"
+"12","262 E. Aktinol et al. /Intemati0nal journal of Heat and Mass Transfer 79 (2014) 251—268
+25
+(a)
+20
+A 15
+E I I I I
+‘1, 10
+0
+D I
+5 I Experiment
+—Simulation
+0
+(b) 0.025
+0.020
+A 0.015
+N
+E
+x 0.010
+E
+‘a
+c"" 0.005
+0.000
+-0.005
+0 20 40 60 80 100
+t(S)
+Fig. 14. (a) Bubble growth history and (b) net interface heat ﬂux as a function of time for the second case.
+El I
+0.20 _ . .
+0.16 / / /
+q = 166 chm2 q = 212 chmg2 q = 70 chng
+A 0.12
+""s s a
+2 3 3 :
+2 0-08 i i E
+a
+0-04
+40 -20 0 20 40 40 -20 0 20 40 40 -20 o 20 40
+r (mm) 7 (mm) r (mm)
+(a) (b) (C)
+Fig. 15. Bubble shape comparison between simulations and experiments at (a) 100 s, (b) 300 s, and (c) 700 s.
+Fig. 9(d, i—d, iii) shows that the ﬂow pattern inside the bubble— becomes relatively large at 180 5, some recirculation patterns are
+predominantly from the base of the bubble t0 the top—remains also seen to develop inside the bubble.
+similar for the ﬁrst 180 s. This ﬂow pattern further reinforces the Fig. 10 shows evaporation/condensation rate, mass fraction of
+conﬁguration set up by condensation in which the noncondensable gas, interface temperature, and surface tension along the interface
+gas accumulates at the top of the bubble. However, as the bubble of the bubble. Each of the interface conditions is plotted as a
+
+"
+"13","E. Aktinol et aL/Intemational journal of Heat and Mass Transfer 79 (2014) 251—268 263
+function of the angle along the interface, starting at 0° (horizontal the pressure dropped below the speciﬁed point and the bellows
+wall) and ending at 90° (vertical axis of symmetry). It was previ— had to shrink in order to increase the system pressure back to its
+ously noted that the noncondensable gas tends to accumulate at original set point. The varying system pressure was the cause for
+those locations where the vapor condenses and leaves behind the most of the wall superheat and liquid subcooling variations shown
+noncondensable gas. This behavior is detailed in Fig. 10. It can be in Fig. 12(b). After the initial 80 s, the wall superheat gradually
+seen in Fig. 10(a, i) that the mass fraction of noncondensable gas increased and the liquid subcooling gradually decreased for the
+begins to rise steeply at approximately a 25° angle along the inter— ﬁrst 400 s, at which point the wall temperature was intentionally
+face, coinciding with the angle at which condensation begins decreased in steps. As a result, the wall superheat slowly decreased
+(evaporation becomes negative). At 100 s, Fig. 10(a, ii) shows that while the liquid subcooling increased.
+at approximately 65° the condensation rate begins to drop clue to The wall superheat and liquid subcooling variation over the
+the presence of the plume atop the bubble. Correspondingly, the course of 800 s is reﬂected in the bubble growth history seen in
+mass fraction of gas at the interface also drops as the rate of vapor Fig. 13. The experimental data show that the bubble grew quickly
+removal decreases. An exception to this can be observed in at ﬁrst and then the growth slowed down and it subsequently
+Fig. 10(a, iii) in which the condensation rate begins to decrease at started to shrink as the condensation rate became larger than the
+an angle of approximately 65° while the mass fraction of gas along evaporation rate. The solid line represents the results from the sim—
+the interface of the bubble begins to decrease at a smaller angle of ulation assuming equilibrium conditions exist inside the bubble as
+60°. Although the distribution of mass fraction of gas adjacent to explained previously. The dashed line shows the results obtained
+the interface of the bubble is primarily a function of the local con— when the species conservation equation was solved in the vapor
+densation rate, other factors affecting local mass fraction of gas are region. The equilibrium assumption provided a simulated bubble
+convection and diffusion inside the bubble. The recirculation pat— growth history that better matched the experimental observations
+terns inside the bubble (as seen in Fig. 9(d, iii)) show downwards for the ﬁrst 200 5. However, it is seen that the simulation assuming
+ﬂow of the vapor—gas mixture adjacent to the interface at the angle equilibrium conditions inside the bubble started to over predict the
+range mentioned. The downwards convective ﬂow probably leads experimental results at longer times. Conversely, the simulation
+to the decrease in mass fraction of gas despite the high condensa—
+tion rate shown in Fig. 10(a, iii). Fig. 10(b, i—b, iii) shows that inter—
+face temperature has a negative correlation with the mass fraction (3) 72
+of gas. This is due to the fact that an increase in mass fraction of gas
+results in a decrease of partial pressure of vapor. Therefore, the 70 Depth = 0 mm
+accumulation of the noncondensable gas inside the bubble leads A
+to decreasing interface temperature which effectively reduces the é’,
+effect of subcooling. It should be noted that the scales in 93 68 «m
+Fig. 10(b, i—b, iii) are not the same clue to the fact that interface *3 'epth = 8-5 mm m
+temperature and surface tension also depend on system pressure '5, 66 . .
+which varies signiﬁcantly throughout the duration of the experi— 2'
+ment (65 kPa at 20 s and 80 kPa at 100 s). .9 64 Depth = 14-7 mm
+
+The accumulation of noncondensable gas, decrease of partial g ‘
+pressure ofvapor, and corresponding increase in interface tempera— 3% 62 ‘
+ture are responsible for the variations in surface tension observed in a .
+Fig. 10(b). Since the surface tension has a negative correlation with g
+the local vapor pressure (or saturation temperature), it is seen to 60
+peak where vapor content is lowest (noncondensable gas content
+is highest). This variation in surface tension along the bubble inter— 53
+. . o 200 400 600 800
+face can induce thermocapillary ﬂow around the bubble. However,
+careful examination of the surface tension force per unit length Time (5)
+shows that the variation is extremely small (<0.2%). As such, ther—
+mocapillary ﬂow only has a second order effect on the ﬂow ﬁeld (b) o_2o
+around the bubble at any given moment. In order to elucidate the
+accumulated effect of capillary ﬂow for a relevant period of time,
+the same exact simulation was repeated assuming constant surface «A Q16 l
+tension. Fig. 11 shows isotherms on the left and lines of constant E
+mass fraction on the right at 180 s for (a) the case with variable sur— E
+face tension and (b) the case with constant surface tension. The dif— I Q12
+ference between the two is barely noticeable, thus corroborating the g ""
+claim that capillary ﬂow has a weak effect on the ﬂow and temper— ‘5 .
+ature ﬁelds even after signiﬁcant accumulation of gas. 2 0.08 ‘ .
+.5 w
+5.2. Case 2 E
+3
+. . . ‘0 0.04
+In this case, the system pressure 1S higher by a factor of two 5
+while the mass fraction of the dissolved gas in the liquid is lower ,
+at 2 x 10—5 (factor of three). Fig. 12(a) shows that the pressure var— IN
+ied considerably during the experiment (800 s). The initial spike in 0'00 o 200 400 600 800
+pressure was caused by the inability of the bellows to keep up with _
+the rapidly increasing vapor volume of the bubble. At approxi— Time (s)
+matdy 80 5 the pressure bEgan to drop as the contiHUEd exPaHSion Fig. 16. (a) Temperatures measured inside the insulation and (b) calculated
+Of the bellOWS caught up With the growth Of the bubble. Eventually, instantaneous heat ﬂux through the ﬁrst 5.3 mm of the insulation for Case 2.
+
+"
+"14","264 E. Aktinol et al. /Intemati0nal journal of Heat and Mass Transfer 79 (2014) 251—268
+| l \ /
+\. /
+. ‘.. jg
+(a,i) (a,ii) (a,iii)
+— ATiso= 1°C — ATiso= 1°C — ATiso= 1°C
+1 cm 1 cm 1 cm
+W __J‘{{gJ x 21L.— f‘ l
+%E Q4 AL? J L AL
+(bi) (W) (ini)
+— Acg=5x10'5 — Acg=5x10'5 — Acg=2x10'4
+1 cm 1 cm 1 cm
+/ \ cg 1‘
+A cg 1‘
+9? A bl- ‘
+A
+A A -
+(c,i) (c,ii) (c,iii)
+(d’i) (d’ii) (d’iii)
+Fig. 17. Contour plots showing: (a) streamlines in the liquid, (b) isotherms, (c) lines of constant mass fraction, and (d) streamlines inside the bubble at (i) 100 5, (ii) 300 s, and
+(iii) 700 s.
+
+"
+"15","E. Aktinol et aL/Intemational journal of Heat and Mass Transfer 79 (2014) 251—268 265
+As seen in Fig. 13, for a period of about 50 5 during the experi—
+_ AT. = 1°C ment, the bubble equivalent diameter remained approximately
+1 cm '5° constant at 13 mm. This is clue to the fact that, as a bubble grows
+in subcooled liquid, an increasing portion of the bubble interface
+comes in contact with the subcooled liquid. This increases the con—
+densation rate which decreases the bubble growth rate. Wu and
+Dhir [17] have shown that, for certain subcooled nucleate pool
+boiling conditions, a bubble may grow until the point when con—
+densation balances evaporation. Under these conditions the bubble
+remains attached to the wall indeﬁnitely. A similar situation is
+encountered in the present case, where evaporation is balanced
+by condensation during the early stages of bubble growth
+A (<70 5). Beyond 70 5, clue to changing system pressure that leads
+“ to increased wall superheat and reduced liquid subcooling, evapo—
+ration exceeds condensation and the bubble begins to grow again.
+i I Fig. 14(a) shows, on an expanded scale, the ﬁrst 100 s of experi—
+L 4 mental and simulated bubble growth histories. The ﬂat portion in
+(a) which the bubble equivalent diameter remains constant can be
+seen clearly in both the experimental data and the results obtained
+from the species—conserving simulation. Fig. 14(b) shows the net
+interface heat transfer rate (evaporation minus condensation heat
+_ ,— _ “I ﬂux) for the ﬁrst 100 s of the simulation. It can be seen that in the
+f ' ’I-‘EF; ' j 4"" I simulation the evaporation and condensation rates balance each
+A: -- ‘ :ﬁ‘g other out resulting in zero interface heat transfer rate for over 30 s.
+. I -' l r ,I Fig. 15(a—c) shows comparisons between experimentally
+, t I x . : j ‘I ‘L observed and numerically calculated bubble shapes and sizes at
+H- ;‘u .5- . I"" I ' 100, 300 and 700 s, respectively. At 100 and 300 s the bubble size
+a "" “ -.. is under—predicted by the simulation such that the calculated
+r 2' “5. "" equivalent diameter is about 10—20% smaller than that obtained
+I ‘ 1: :d ' ‘ ‘-. l E in the experiment. At 700 s the simulation over predicts the exper—
+imentally observed bubble size. Wall heat transfer rates are also
+shown in Fig. 15 with the experimental results on the left side of
+(h) each frame and the numerical results on the right. The large spikes
+in heat ﬂux in the simulations coincide with the location of the pin—
+_ I . _ . . . ning of the vapor—liquid interface on the wall. As stated earlier, the
+' . ' r"" ' S , 015%)“ ‘ 'f; peak values represent the contribution of the microlayer and vary
+,I-i , ?J = . - $141)? ”in: 2 5'. . linearly with the wall superheat. The clips in wall heat ﬂux imme—
+‘ ~ ‘ 'I é’l Y», J; - . diately adjacent to the peaks are a result of a local thickening of the
+I I f [34"" :1 $4: {N A ‘9 :- thermal layer around the base of the bubble (as shown later in
+I - II _ . -""_ ,.' £3 , ‘. .‘s S . I' 5"" Fig. 17(b)). At all three times the wall heat transfer rates predicted
+~ ' ,I L}??? I ' ' I '-. are lower than those obtained in the experiments. At 100 s the
+I‘ ' . , ‘ "" 1"": 3%“; ~. ' '9' ‘ , - under prediction is larger than 50%. However, as mentioned earlier,
+8: ' ' . - ' 1391. M( ._ "" ' -~ . ‘ there is signiﬁcant uncertainty in the estimation of heat losses in
+1 - - fit .1 , ' ' the experiments clue to their transient nature. The time depen—
+V - . ' It ~ . , _)- dence of the temperatures measured inside the insulating epoxy
+' ' - r. ~. . . {é .,II\'--I‘ _ I gen, ,‘ , — (under the heaters) is shown in Fig. 16(a) for the 800 s duration
+. - I . "" ’ - A . {3} 4“. v'I; -""I‘ I’ v"" of the experiment. At any given instant, the best approximation
+1' III 7 .I I, ‘ 1.4%} _ ‘ , I _ ' 7 I of the heat losses can be obtained from the temperature gradient
+”ii -- . eff III ‘ .""I -_ z; Mm {“1"" ' between the bottom of the aluminum plate and the ﬁrst thermo—
+{~“. I. I , I. J, ' “ f~. "" :5 It“ couple located inside the insulation at a depth of 5.3 mm. The wall
+i‘vﬁl 7 f, ‘ \V. ,. ’37,: heat ﬂuxes reported earlier (Fig. 15) are calculated based on the
+""‘ ‘ y; ‘1 ‘ 2'3 ‘. ‘ f ' ah“ ‘ total power supplied to the strain gage heaters minus the approx—
+imate instantaneous losses as shown in Fig. 16(b).
+(C) Fig. 17(a) and (b) shows streamlines and isotherms in the liquid
+_ , , , while Fig. 17(c) and (cl) shows lines of constant mass fraction and
+Fig. 18. Comparison between the temperature ﬁeld obtained by (a) the numerical . . . . . . .
+calculations performed in the present study at g/ge ~ 10—7, (b) interferogram results StreamlmeIS mSlde the bUbeIE at V&ll‘lgll? Itlmes' The Streamlmes m
+reported by Abe and Iwasaki at g/ge ~ 10—5 [17], and (c) interferogram reported by Flg- 17(3’ 1) ShOW that, durlng the mltlal phase 0f faSt bUbble
+Straub at g/ge~10—‘1 [18]. growth, the liquid ﬂowed radially out from the bubble and up
+towards the opening at the top of the boiling chamber. At 300 s
+Fig. 17(a, ii) shows the formation of recirculation patterns as the
+which accounted for species conservation had a slightly slower growth rate of the bubble has slowed down signiﬁcantly. The main
+growth rate initially but eventually yielded a better prediction of contrasting feature for this case can be observed in Fig. 17(a, iii)
+the overall growth history observed in the experiment. Speciﬁcally, when the bubble is actually shrinking (at 700 s). As the bubble
+the species—conserving simulation did anoticeably betterjob ofpre— shrinks, the liquid begins to ﬂow back from the bellows into the
+dicting the stoppage in bubble growth from 20 to 70 s and capturing boiling chamber through the opening placed vertically above the
+the shrinking observed during the last few hundred seconds. center of the cavity. This results in a large portion of the liquid
+
+"
+"16","266 E. Aktinol et al. /Intemati0nal journal of Heat and Mass Transfer 79 (2014) 251—268
+1.0 0.012 77.50 _ _ _ 7.082
+f - \
+/ 2
+A 0.8 l ,
+(D 0.010 A 77.48 ’
+NE 0.6 l 9 / ’ ’ A
+Am 0) v 7.080 E
+o / s
+5 0 4 0 008 w ‘- 77 46 / Z
+. - O3 3 -
+:3 u— +.- / E
+O O E / V
+>< 0.006 ,9 D- 77.44 7.078 .9
+w u E ’ m
+S E *-' ,r B
+c -0.2 ._ 0.004 ""J, 8 77.42 / 0
+.2 w W / 8
+4&- _ ..—-———__ c0 1: / 7.076':
+. .0.4 ’, 4 E g / ‘— 3
+g , , , ’ 0.002 5 77.40 , ’ co
+g -0.6 ’ ’ ﬂ _ ,. , a ,
+l“ ’ _ —-
+-0.8 0.000 77.38 7.074
+0 1 5 30 45 60 75 90 0 15 30 45 60 75 90
+Angle along interface Angle along interface
+(391) (b,1)
+1.0 0.012 76.84 7.136
+”6‘ 0.8 I , x \
+E 0.010 A 7632 / \\ 7.134
+3-, 0.6 03 / ~ A
+i"" W g, 76.80 I —> E
+“I h z
+S! 0.4 0.008 c) 3 / 7.132
+2 “5 ‘6 ’ 5
+x 0.2 C a 76.78 / / c
+3 0-006 .9 °- 7.130 2
+:— m g 76.76 , n:
+c ,. A ‘ 6‘: 0.» , 4-
+.2 -0.2 ’ 0.004 U, o / 7.128 0’
+‘I-l m , U
+:0 m 76.74 :0
+I— (B t / ’ t
+o -0.4 E g x . 3
+g 0.002 5 76 72 , , 7.126 U)
+> ' ’
+LIJ -0.6 r
+-0.8 0.000 76.70 7.124
+0 15 30 45 60 75 90 0 15 30 45 60 75 90
+Angle along interface Angle along interface
+(3,11) (b,11)
+1.0 0.012 76.22 7.194
+A 0.8 76-20 / “ \ ‘ 7.192
+NW , - ‘ 0.010 A 76-13 I’ ‘ ~ 2 _ 7.190
+g 0.6 / ‘ ~ - 00 76.16 I —- 7188 A
+U) / ‘ 7 m V ' E
+x :0 0’ 7614 ’ ‘
+v 0.4 I 0.008 m 5 ' r 7.186 E
+g / 4-:
+o / 3 2 76'12 / 7.184 V
+‘- 0.2 , c a: 76.10 ’ S
+X x 0.006 ,9 O- I 7.182 .—
+0: 00 ‘.—__. / 4-! E 76.08 , g
+‘5 ' / 8 8 / 7.180 m
+L ’ , q: a) 76.06 , *5
+.5 -0.2 I I / 0.004 g 8 76.04 / , 7.178 U
+E , , ' (u E 76 02 , ’ 7.176 5:“
+:5 -0.4 / E u - / l 3
+Q 0.002 E 76.00 7.174 (I)
+(U -0.6
+> 7.172
+|.l.l 75.98
+-0.8 0.000 75.96 7.170
+0 15 30 45 60 75 90 0 15 30 45 60 75 90
+Angle along interface Angle along interface
+(a,111) (b,111)
+Fig. 19. Evaporation rate, mass fraction of gas, interface temperature, and surface tension along interface of bubble at (i) 100 5, (ii) 300 s, and (iii) 700 5. Angle along the
+interface is measured from the horizontal boiling surface up to the vertical axis of symmetry.
+actually ﬂowing down. The only streamlines still showing upwards patterns that develop around the base of the bubble as described
+ﬂow are above the bubble and are a result of the presence of the previously. The signiﬁcantly lower dissolved gas content in this
+large plume of hot liquid (as shown later in Fig. 17(b, iii)). The pres— case, combined with the longer duration and higher subcooling,
+ence of the plume of hot liquid above the bubble in Fig. 17(b, i) lead to higher condensation rates. As a result, the rising plume that
+shows that condensation is already appreciable at 100 s. develops on top of the bubble is signiﬁcantly larger than it was for
+Fig. 17(b, ii) conﬁrms the continued contribution of condensation Case 1. The resulting thickness of the thermal layer around the
+as the plume grows appreciably after 200 more seconds have bubble determines the local condensation rate which in turn deter—
+passed. In addition to the enlarging plume, the thickening of the mines the rate of accumulation of noncondensable gas inside the
+thermal layer around the sides of the bubble is evident in bubble. It can be observed in Fig. 17(c, i—c, iii) that the mass frac—
+Fig. 17(b, iii). This thickening is a consequence the recirculation tion of noncondensable gas is low near the base of the bubble
+
+"
+"17","E. Aktinol et aL/Intemational journal of Heat and Mass Transfer 79 (2014) 251—268 267
+Water 5.3. Bubble departure diameter
+3
+1O \ \ (P = 54:2 PF5060 The numerically predicted bubble departure diameter as a func—
+\ \ D d ~ g (p = 10° tion of gravity level is given in Fig. 20 for water and PFH. Data from
+o: 102 ; \ \ D ~ g'0‘42 the experiments of Qiu et al. [9] and Straub [5] are also included. In
+Du” \ \ \ d the experiments of Qiu et al. in the parabolic ﬂights, the bubbles
+Ev Dhir et. al. (2012) l\ \ lifted off from the surface. However, in Straub’s experiments, the
+PFH Bubble f \ bubble did not lift off so the diameter shown in Fig. 20 is the largest
+101 till attached Straub (2001 )\ \ diameter of the bubble while still attached to the heater surface. In
+R113 Bubble “ \ the present experiments, single bubbles never departed the sur—
+Sti"" attached / \ \ face. The points are nevertheless included in the ﬁgure and it can
+100 Qiu et al. (2000) be seen that the largest bubble equivalent diameters obtained in
+the experiments are well below the numerically predicted bubble
+10-7 10-6 10-5 10-4 10-3 10-2 10-1 10° departure diameters. According to the numerical prediction, at
+9/96 the gravity level encountered on the 155 the boiling chamber would
+have to be signiﬁcantly larger to allow a bubble to acquire a large
+Fig. 20. Numerically predicted and experimentally obtained bubble departure enough diameter to depart the surface.
+diameters for varying gravity level.
+where evaporation occurs and increases towards the top of the 6' Conclusmns
+bubble where condensation is dominant. The streamlines inside , , , ,
+the bubbl e pl ott e cl in Fig. 17(d, i—d, iii) show a pattern of ﬂow pre— Numerlcal calculatlons were successfully carrled out to Slmu—
+dominantly from the base of the bubble to the top, reinforcing the late the process Of a smgle bUbbJ? nucleatlng and grow1ng on a ﬂat
+distribution of noncondensable gas established by the local evapo— plate under m1crograv1ty condltlons and in the presence Of dls—
+ration/condensation rate. SOIVEd gas in the hqmd'
+Fig. 18(a) shows the hot liquid plume atop the bubble for Case 2
+at 700 5 while Fig. 18(b) and (c) are interferograms showing similar ° Over the course Of several hundrecI seconds O.f bubble ngth
+hot plumes as obtained experimentally by Abe and Iwasaki [18] and ShF‘IIkaEE’ boubble SIZES Dr_EdICt,Ed by Simulations were
+and Straub [19]. The experiments of Abe and Iwasaki were per— always Wlthm 20/0 0f thoseobtained 1n the experlnaents. .
+fo r m e cl in a cl r o p t ow e r with the gravity level reported to be o WalIheat transfer rates dur1ng bubble growth predicted by 51m—
+between 10—4 and 10—5 go The binary ﬂuid mixture us e cl was ulatlons were up to 30%10wer than those ebtalned 1n the exper—
+CFC112/CFC1 2. The ﬂuid us e cl in Straub’s experiments was R123 iments. Howeyer, tran51ent effects led to Slgniﬁcant uncerta1nty
+and they were performed in the Space Shuttle with a reported in th‘? calculation 0f heat 105565 in the experinaents.
+gravity level between 10—3 and 10—5 ge. Therefore, signiﬁcant dif— ° Solution Of, ”16,513,606? conservation equatlon 1n the vapor
+ferences exist between the ﬂuids’ thermophysical properties and region prbv1ded1n51ght1ntolocal concentratlon of noncondens—
+between the conditions encountered in the experiments and those able gas in the bubble. ,
+used in the numerical simulation. Nevertheless, the isotherm pat— ° It has been found. that accumulation Of noncondensable gas
+terns observed in the ﬁgures are remarkably similar. In addition to caused Iocal drop in vapor pressure and reduced the effect Of
+the plume growing above each of the bubbles, the interferograms subcoohng. , , , ,
+show the thickening of the thermal layer along the sides of the o Surface tensmn variation along the bubble Interface was found
+bubbles. The region where the thermal layer is thinnest is at an to be small and the resulting capillary ﬂow had only a second
+angle of approximately 650; this is similar to the value predicted order effect en theloverall ﬂ9W ﬁdd' ,
+by the simulations. The size of the plume is signiﬁcantly larger in ° Numerical simulatlons predlctecI bubble departure diameters
+the case of Straub but the author explained that the interferogram much larger than what the 'PO‘Img chamber WOUld allow for.
+reported was not from a single bubble but from a sequence of bub— Accordingly: single bubbles d,ld not grow large enough to d‘iBa“
+bles that continuously grew and collapsed in cycles. from the b0111ng surface dur1ng the experlments at g N 10 ge.
+Fig. 19 shows evaporation rate, mass fraction of gas, interface
+temperature, and surface tension as functions of the angle along Conﬂict of interest
+the interface. The solid lines in Fig. 19(a) show the evaporation/
+condensation rate. At 100, 300, and 700 s, respectively, None declared.
+Fig. 19(a, i—a, iii) shows a decreasing overall rate of evaporation.
+However, the overall condensation rate remains nearly constant. Acknowledgment
+As a consequence, the mass fraction of gas (represented by the
+dashed lines in the same ﬁgures) is seen to increase with time as This work was supported under the N ASA Microgravity Fluid
+more noncondensable gas accumulates inside the bubble. The peak physics program.
+mass fraction of gas at 100 s is only slightly over 0.003
+(Fig. 19(a,i)), increasing to 0.005 by 300 s (Fig. 19(a,ii)) and to
+almost 0.011 by 700 s (Fig. 19(a, 111)). The solid lines in References
+Fig“ 1903’ i_b’ iii) ShOW that the interface temperature decreases [1] HS. Lee, H. Merte, F. Chiaramonte, Pool boiling curve in microgravity, J.
+as a function of angle along the interface until reaching a minimum Thermophys. Heat Transfer 11 (2) (1997) 216—222.
+which coincides with the maximum mass fraction of gas. Con— [21 $¥§$§§ﬁi§§gR3 (13113636113552 0“ P001b0iling experiment PFOtOWPe
+versely, the surface tensmn (mpresentEd by the daShEd lmes m [3] T.Oka,Y.Abe,Y.H.Mori,A.Nagas’hima,-Poolboi1ing ofn—pentane,CFC—113,and
+1:13. 1903)) Can be $6611 to lnCl'eaSE aS a fUHCthH 0f angle along water under reduced gravity: parabolic ﬂight experiments with a transparent
+the interface and peak at the same angle as the mass fraction of heaterJ- HeatTransfer 117 (2) (1995) 408-417-
+gas. HOWEVEI‘, the effect Of the variation Of surface tension along [4] H. Ohta, K. Kawasakies. OI<ada, H..Azuma, S. Yoda, T. Nakamura, On the heat
+_ _ transfer mechanlsms 1n m1crograv1ty nucleate b0111ng, Adv. Space Res. 24 (10)
+the Interface on the ﬂow ﬁeld 15 of second order. (1999) 1 325-1330
+
+"
+"18","268 E. Aktinol et al. /Intemational journal of Heat and Mass T ransfer 79 (2014) 251—268
+
+[5] J. Straub, Boiling heat transfer and bubble dynamics in microgravity, Adv. Heat [13] G. Son, V.K. Dhir, N. Ramanujapu, Dynamics and heat transfer associated with
+Transfer 35 (2001) 57—172. a single bubble during nucleate boiling on a horizontal surface, J. Heat Transfer
+
+[6] J. Kim, ].F. Benton, D. Wisniewski, Pool boiling heat transfer on small heaters: 121 (3) (1999) 623—631.
+effect ofgravity and subcooling,lnt.].Heat Mass Transfer 45(19)(2002)3919— [14] G. Son, V.K. Dhir, A level set method for analysis of ﬁlm boiling on an
+3932. immersed solid surface, Numer. Heat Transfer, Part B: Fundam. 52 (2) (2007)
+
+[7] ].F. Zhao, S.X. Wan, C. Liu, N. Yan, W.R. Hu, Subcooled pool boiling on thin wire 153—177.
+in microgravity, Acta Astronaut. 64 (2) (2009) 188—194. [15] DE Othmer, The condensation of steam, Ind. Eng. Chem. 21 (6) (1929) 576—
+
+[8] O. Kannengieser, C. Colin, W. Bergez, Inﬂuence of gravity on pool boiling on a 583.
+ﬂat plate: results of parabolic ﬂights and ground experiments, Exp. Thermal [16] EM. Sparrow, S.H. Lin, Condensation heat transfer in the presence of a
+Fluid Sci. 35 (5) (2011) 788—796. noncondensable gas, J. Heat Transfer 86 (3) (1964) 430—436.
+
+[9] D.M. Qiu, V.K. Dhir, D. Chao, MM. Hasan, E. Neumann, G. Yee, A. Birchenough, [17] J. Wu, V.K. Dhir, Numerical simulations of the dynamics and heat transfer
+Single—bubble dynamics during pool boiling under low gravity conditions, J. associated with a single bubble in subcooled pool boiling, J. Heat Transfer 132
+Thermophys. Heat Transfer 16 (3) (2002) 336—345. (2010) 111501.
+
+[10] V.I<. Dhir, GR. Warrier, E. Aktinol, D. Chao, J. Eggers, W. Sheredy, W. Booth, [18] Y. Abe, A. Iwasaki, Observation of vapor bubble of non-azeotropic binary
+Nucleate Pool Boiling Experiments (NPBX) on the International Space Station, mixture in microgravity with a two-wavelength interferometer, in:
+Microgravity Sci. Technol. 24 (5) (2012) 307—325. Proceedings of 5th ASME/JSME Joint Thermal Engineering Conference,
+
+[11] J. Wu, V.K. Dhir, Numerical simulation of dynamics and heat transfer AJTE99-6418, San Diego, California, 1999.
+associated with a single bubble in subcooled boiling and in the presence of [19] J. Straub, Origin and effect of thermocapillary convection in subcooled boiling,
+noncondensables, J. Heat Transfer 133 (2011) 041502—1. Ann. N. Y. Acad. Sci. 974 (1) (2002) 348—363.
+
+[12] B. Horacek, T.I<. Kenneth, J. Kim, Single nozzle spray cooling heat transfer
+mechanisms, Int. J. Heat Mass Transfer 48 (8) (2005) 1425—1438.
+
+"

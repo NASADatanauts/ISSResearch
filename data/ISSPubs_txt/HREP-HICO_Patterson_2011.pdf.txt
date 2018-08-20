@@ -1,0 +1,609 @@
+"","x"
+"1","Inﬂuence of aerosol estimation on coastal water products retrieved
+from HICO images
+Karen W. Patterson, Gia Lamela
+Naval Research Laboratory, 4555 Overlook Ave SW, Washington, DC 20375
+ABSTRACT
+The Hyperspeetral Imager for the Coastal Ocean (HICOTM) is a hyperspeetral sensor Which was launched to the
+International Space Station in September 2009. The Naval Research Laboratory (NRL) has been developing the Coastal
+Water Signatures Toolkit (CWST) to estimate water depth, bottom type and water column constituents such as
+Chlorophyll, suspended sediments and chromophorie dissolved organic matter from hyperspeetral imagery. The CWST
+uses a look-up table approach, comparing remote sensing reﬂectance spectra observed in an image to a database of
+modeled spectra for pre-determined water column constituents, depth and bottom type. In order to successfully use this
+approach, the remote sensing reﬂectanees must be accurate Which implies accurately correcting for the atmospheric
+contribution to the HICO top of the atmosphere radianees. One tool the NRL is using to atmospherieally correct
+HICOTM imagery is Correction of Coastal Ocean Atmospheres (COCOA), Which is based on Taﬂ<aa 68. One of the user
+input parameters to COCOA is aerosol optical depth or aerosol Visibility, Which can vary rapidly over short distances in
+coastal waters. Changes to the aerosol thickness results in Changes to the magnitude of the remote sensing reﬂectanees.
+As such, the CWST retrievals for water constituents, depth and bottom type can be expected to vary in like fashion. This
+work is an illustration of the variability in CWST retrievals due to inaccurate aerosol thickness estimation during
+atmospheric correction of HICOTM images.
+Keywords: hyperspeetral, remote sensing, ocean color
+1. INTRODUCTION
+In order to estimate ocean color parameters from space, sunlight must ﬁrst pass through the atmosphere down to the
+ocean surface, interact With the water and then pass back up through the atmosphere to the satellite sensor. The
+atmospheric contribution to the satellite signal is typically on the order of about ninety percent of the total at sensor
+radiance and varies over time due to Changes in aerosols, ozone, water vapor content and other atmospheric constituents.
+Ocean color algorithms are typically developed using surface normalized water leaving radiance or remote sensing
+reﬂectance, Which means the atmospheric component must be accurately removed in order to accurately derive ocean
+color parameters, such as Chlorophyll concentration. In coastal areas, accurately accounting for the aerosol component
+of the atmospheric correction can be quite difﬁcult as the aerosol optical depth (aerosol Visibility) can Change rapidly
+both temporally and spatially across the image. On-line sources of aerosol optical depth eXist, such as the satellite-
+derived MODIS atmospheric products and surface measured AERONET measurements, but since aerosols can Change
+rapidly in both space and time, estimating the proper aerosol optical depth to use in atmospheric correction is a process
+With high uncertainty potential.
+The work presented here looks at the impact of uncertainty in the aerosol optical depth value used in atmospheric
+correction on shallow water estimates of water depth, bottom type and water column constituents derived from
+hyperspeetral satellite imagery. If the aerosol Visibility is underestimated during the atmospheric correction then the
+atmosphere is taken to be more transparent than it really is. This results in water remote sensing reﬂectance (RRS)
+values being higher than reality. Higher RRS values typically indicate either increased scattering from suspended
+particulates or increased bottom reﬂection contribution. Therefore, if the aerosol Visibility is underestimated, one might
+expect RRS-based algorithms to return water depths that are too shallow, bottom reﬂections that are too bright and/or
+water particulate concentrations that are too high. The reverse might be expected if the aerosol Visibility is estimated to
+be too high so that the atmospheric contribution to the at-sensor radianees is overestimated resulting in RRS spectra that
+are lower than reality.
+Ocean Sensing and Monitoring ”I, edited by Weilin W. Hou, Robert Arnone, Proc. of SPIE Vol. 8030,
+803005 - © 2011 SPIE - CCC code: 0277-786X/11/$18 - doi: 10.1117/12.883263
+Proc. of SPIE Vol. 8030 803005-1
+Downloaded From: http://pr0ceedings.spiedigitallibrary.org/ on 09/18/2014 Terms of Use: http://spiedl.org/terms
+
+"
+"2","2. DATA
+The Hyperspeetral Imager for the Coastal Oceans (HICOTM) sensor has been ﬂying on the International Space Station at
+an altitude of approximately 350 km since September 2009 and is operated by the Naval Research Laboratory in
+Washington, DC. Due to data volume limitations, imaging is limited to at most one 42X192 krn scene (512x2000 pixels)
+per orbit for a maximum of 15 images per day. In routine operating mode, HICOTM collects 384 bands in the 350-1080
+nm range which are binned by three to produce 128 data bands with a bin width of 5.73 nm. Typically data are
+speetra11y trimmed to 400-900 nm prior to external distribution as artifacts due to low sensitivity, second order light and
+other effects tend to signiﬁcantly impact data quality outside this range.1’2
+The HICOTM image of Lee Stocking Island, Bahamas collected on June 16, 2010 at approximately 13:39 GMT was
+selected for this work. Aside from some very small Clouds in the image, the atmosphere appeared relatively uniform.
+Bottom features in shallow areas were Clearly Visible. Deep optically Clear water also eXisted in this image which
+allowed estimation of atmospheric Visibility using the common dark pixel method. At sensor radianees were calculated
+using version 3 of the HICOTM Level 0 to Level 1 processing without spectral smoothing.
+3. METHODOLOGY
+The HICOTM image was atrnospherieally corrected with Taﬂ<aa 683 using a tropical atmosphere and maritime aerosol
+type. The scene elevation was 0.0 km (sea level) and the sensor altitude was 360.63 km. Tota1 column ozone was
+estimated to be 305 DU from the NASA Tota1 Ozone Mapping Spectrometer web site.4 Tota1 column water vapor was
+estimated by Taﬂ<aa 6s using the 823 nm water vapor absorption feature using 3 bands within the absorption feature
+centered on 823 nm and 2 bands each on either side of the absorption feature centered on 766 nm and 869 nm.
+Atmospheric correction was run several times using different estimates of aerosol Visibility. In deep water, the remote
+sensing reﬂectance around 869 nm should be near zero. Based on the RS value of the 869 nm band in deep water areas
+of the Lee Stocking Island image, the aerosol Visibility would be approximately 40-45 km. The images processed using
+aerosol Visibilities of 30, 40 and 50 km were selected for analysis. This corresponds to aerosol optical depth at a
+wavelength of 550 nm of approximately 0.182, 0.145 and 0.121 respectively. A +/— 10-krn spread may seem excessively
+large to some people. However, only one value for aerosol Visibility is entered for the entire image. Natural variability
+across the scene and/or a novice user can easily reach or exceed this level of uncertainty.
+The RRS images produced by Taﬂ<aa 68 using the three different aerosol Visibilities were run through the Coastal Water
+Signatures Toolkit (CWST) developed by the Naval Research Laboratory to estimate water depth, bottom type and water
+constituents simultaneously using a look-up table approach. Remote sensing reﬂectance spectra are calculated using
+Eeolight © (Curtis D. Mobley, Sequoia Scientiﬁc, Inc.) for speciﬁc water depths, bottom types, sediment types and
+concentrations, pigment types and concentrations, particulate scattering phase function, chromophorie dissolved organic
+matter (CDOM) absorption at 440 nm and CDOM spectral slope parameter. The model RRS spectra and model input
+parameters are saved in a database. Then the water depths, bottom types and water constituents are retrieved for an
+airborne or sate11ite-derived RRS image by searching the database for the Closest matching spectra. Prior to executing the
+CWST, the HICOTM derived RRS images were trimmed to a spectral range of 400-750 nm and a land and Cloud mask
+was applied. Outside the 400-750 nm range, the HICOTM spectra were deemed unreliable due to high noise and
+calibration issues currently under reView. Despite the application of a Cloud rnask, sorne Cloud edges and shadows
+remained in the RRS images.
+The three CWST retrieval ﬁles were compared qualitatively by looking at the images and identifying areas where there
+was a lot of variability. Parameters stored by type or identiﬁcation number were quantitatively compared by counting
+how often the same type or identiﬁcation number was Chosen for each pixel in the three different image retrievals. The
+CWST also records when the retrieved spectrum is Classiﬁed as optically deep, meaning bottom reﬂection has no impact
+on the RRS spectrum and when no spectrum is found within the speciﬁed error angle. These two variables were also
+counted similar to the type variables. Water depth, pigment concentration, sediment concentration, and CDOM
+absorption at 440 nm return numeric values. For these variables, the total range spanned between the three retrievals was
+calculated and analyzed by counting the number of pixels that fe11within speciﬁed range intervals.
+Proc. of SPIE Vol. 8030 803005-2
+Downloaded From: http://pr0ceedings.spiedigitallibrary.org/ on 09/18/2014 Terms of Use: http://spiedl.org/terms
+
+"
+"3","4. RESULTS
+The Lee Stocking Islands, Bahamas region has Clear open ocean type waters. The portion of the CWST database used to
+process the RRS images contained little or no pigrnents, sediments or CDOM absorption. Since the area has fairly Clear
+waters and the portion of the database used to process the images contained only small amounts of water constituent
+concentrations, analysis of these parameters is of little practical signiﬁcance and will not be discussed. Analysis will be
+focused mainly on water depth and bottom type retrievals. The frequency at which the optically deep and no match
+found ﬂags were set will also be discussed as these ﬂags are indicators of the proportion of the image which returned
+potentially useable results.
+The same best match spectrum was retrieved from the database for less than 6% of the image pixels for all three aerosol
+Visibilities (Table 1). For over 94% of the pixels, a different spectrum was retrieved for at least one of the three aerosol
+Visibilities. For about 62% of the pixels, a different spectrum was retrieved for each of the three RRS images.
+Therefore, uncertainties in the aerosol value used in the atmospheric correction Clearly impacts CWST retrievals.
+However, different does not necessarily mean signiﬁcant. All parameters could be the same except the water depth for
+the best match spectrum is 25.2 In when using one aerosol Visibility and 25.3 In when using another. The best match
+spectrum is different, but a depth variability of <0.4% is probably not signiﬁcant for most purposes.
+Table l. CWST variability in best match spectrum and bottom type retrieved and the frequency with which the no match
+found and optically deep ﬂags were set. All values are expressed as the percentage of pixels within the image. For spectral
+ID and bottom type ID, the numbered columns indicate the number of unique ID’s retrieved for a given pixel in the three
+RRS images. A column header of 1 indicates the same ID was retrieved for all three images and a column header of 3
+indicates a different ID was retrieved for each of the three RRS images. For the ﬂags, the column header indicates the
+number of times the ﬂag was encountered for a given pixel. A column header of 0 indicates the ﬂag was not set in any of
+the images and a column header of 3 indicates the ﬂag was set for that pixel in all three CWST retrievals.
+—‘-———
+—————
+———-m_
+—————
+The range of water depth retrievals obtained using the three aerosol Visibilities roughly followed the bathyrnetry in the
+area with smaller absolute differences in the shallow areas and larger absolute differences in the deeper areas. The
+percent depth difference, calculated as the total range spanned by the three retrievals divided by the average depth and
+multiplied by 100 was also smallest in the very shallow water areas with highly reﬂective bottoms (Table 2). In these
+shallow areas, variability in retrieved water depths was generally less than 2%.
+Bottom type retrievals (Figure 3, Table 3) were most consistent in the very shallow waters with bright sandy bottoms. In
+these regions, the same bottom type was retrieved using all three aerosol Visibilities (Figure 4). In deeper waters and/or
+in areas with darker bottorns, two or three different bottom types were retrieved. However, the variability in retrieved
+bottom types isn’t extreme. There are several bottom types in sand and green vegetation/green algae categories with
+similar reﬂective properties. Uncertainty in aerosol Visibility makes it more difﬁcult to distinguish between these similar
+bottom types.
+In the deepest waters of the image, if the aerosol Visibility was too low so the atmosphere is estimated to be more opaque
+than reality, then no spectral match could be found within the speciﬁed error angle. If the aerosol Visibility was too high
+so the atmosphere is estimated to be more transparent than reality, then a few more of the deeper waters were ﬂagged as
+optically deep, but this was not a large effect. These ﬂags were also set near Clouds, which is probably due to the poor
+performance of the Cloud mask.
+Proc. of SPIE Vol. 8030 803005-3
+Downloaded From: http://pr0ceedings.spiedigitallibrary.org/ on 09/18/2014 Terms of Use: http://spiedl.org/terms
+
+"
+"4","Table 2. Variability in the CWST water depth retrieved. The ﬁrst column is the percent depth difference calculated as the
+maximum depth retrieved minus the minimum depth retrieved divided by the average depth multiplied by 100 for each
+pixel. The second column is the percentage of pixels in the image that fell within each depth difference range. Pixels that
+only returned water depth in one retrieval image are counted in the 0-2 percent depth difference category since no water
+depth is reported when the no match found ﬂag is set.
+
+Difference Image Pixels
+—_E_
+——m_
+
+5. CONCLUSIONS
+Uncertainty in aerosol Visibility estimates used during atmospheric correction of satellite imagery caused different
+CWST retrievals in over 94% of the image. The areas of highest impact were the deeper waters where bottom reﬂection
+has only a tiny impact on the RRS spectrum. In these areas, if the aerosol Visibility was correct, then the CWST returned
+a spectrum with water depth, bottom type and water constituents. If the aerosol Visibility was too high or too low, then
+the CWST retrieval returned either the no match found or optically deep ﬂags. The no match ﬂag was set when the
+aerosol Visibility was set lower than reality so that more atmosphere was removed than should have been. Since the
+waters in this area are very Clear, over-subtraction of the atmospheric component resulted in too little remaining RRS
+signal to perform further analysis. However, in very shallow water with bright bottom reﬂection, uncertainty in aerosol
+Visibility had very little to no impact on CWST retrievals. The water leaving radiance in these areas was great enough to
+overcome the error in the atmospheric correction. In the intermediate water depths (roughly 5-10 meters for this image),
+the CWST water depth and bottom type retrievals were different, but the differences weren’t large. The water depth
+retrieval was still generally within about 20%. In terms of bottom type, with uncertainty in the aerosol Visibility resulted
+in a loss of ability to differentiate between bottom types with similar reﬂectance Characteristics. For instance, the CWST
+database contains both the Ecolight © Clean seagrass and the Lee Stocking Island measured seagrass bottom types.
+When the CWST is run with RRS spectra obtained using multiple aerosol Visibilities during atmospheric correction, the
+retrievals may switch between these two speciﬁc seagrass bottom types, but it still returns a type of seagrass. Therefore,
+while uncertainty in aerosol Visibility resulted in different CWST retrievals, the variation in the retrieved water depth and
+bottom type likely is not prohibitive for many practical applications of this type of work.
+Proc. of SPIE Vol. 8030 803005-4
+Downloaded From: http://pr0ceedings.spiedigitallibrary.org/ on 09/18/2014 Terms of Use: http://spiedl.0rg/terms
+
+"
+"5","-.’-_‘. w ‘
+.‘u “ “i 1: ' “f-
+
+_ ‘- :» ‘ "" .3, .. 2;. (
+
+» .a' - tfwawm ' f
+
+3 ‘ ’a‘ 2'1qu N I‘
+
+J . _- - —10-O
+. v3; 0-1
+""' -- “-r ‘1', . .r; 1 —2
+1:31”!!- ' 3 3:; .-“ 1: ‘._.s. f
+
+1'34 '11-‘73: 3'»: ~27? *‘ j; '3 2-3
+,, Is 1"".“ 3—4
+
+L; w h, _ 1' v
+
+. - 3%.. "" ‘(I 4—5
+x ' N z
+'. ° V”. v‘; 5-6
+3 6—7
+x w . 7-8
+‘. 7“ i:
+' K ' t 3—9
+. .bv ‘ .
+- L k , 9-10
+.‘I '3'; f _ '3. '.
+fr -'| ‘5 “
+n —» ~ -
+‘ .-. ""i: ’. 10—12
+akin. :7 = 12-14
+7 2‘ g.'¥. ”~2- a ?‘f ‘ Q
+' .' ‘.' k a Egg. t 14-16
+; . “ ’.-‘ ., .ur.>“' I \~
+:1”. '.‘ n - ‘\ t ,. I ‘I-
+""Fig?“ .. {-5 - ‘u' u"" - ~ , {‘34 1‘\ 1 6— I 8
+'""' a "" ""ir' ’
+: :—~ .. t t . i
+:4 ~ , t "" 4K v a 18-20
+1.3; h ‘. I7 ‘~‘\- g"" _ $.74. _‘\
+V3, ‘ 7 ML“: ' ~
+
+.. ??""‘isr. ,- “ f“
+
+, ~~3,""5~ -, . 20—25
+, . m - - L. 25—30
+' ,3 ‘ _’ , - HQ 45-._.~"" . O . '4‘. , ~ ,_
+
+‘ ~ *ta,t-:.:.:?3». ‘; ""~’ '
+' , u;;:a-;--, - ~
+.. '— ‘7‘"": W F ""1. .""~. .' ‘4
+t M“ .3 , ,_ 3 ‘2‘ .5...» x '
+_. ‘ . ‘l - _ C ‘1 .‘"":‘:.¢v~‘
+' A J ’i . ""“-
+' ”‘5 ﬁt:v ’. a- ‘ ;
+Figure 1. Water depth retrieved for the Lee Stocking Island, Bahamas HICOTM image processed using an aerosol Visibility
+of 40 km. The black areas labeled as -10-0 on the color scale are areas masked as land or clouds.
+Proc. of SPIE Vol. 8030 803005-5
+Downloaded From: http://proceedings.spiedigitallibrary.0rg/ on 09/18/2014 Terms of Use: http://spiedl.0rg/terms
+
+"
+"6","7‘ . ""*‘ —10-o
+A?a_ $35395 2-5
+‘3’;¥“§3"" 20—30
+‘ 'ij:3§7 30—40
+_ u ‘j; 40-60
+f*f T’* ﬁt.» ‘1‘ 60—80
+' h‘I .i; - 80-100
+, . -_ _ a 100—200
+“iij‘lﬁgsVT‘?¥igg-. 200-300
+Figure 2. Percent depth difference for the Lee Stocking Island, Bahamas image. Percent depth difference is calculated as the
+maximum depth retrieved minus the minimum depth retrieved divided by the average depth for that pixel multiplied by 100.
+The black areas labeled as -10-0 on the color scale are areas masked as land or clouds.
+Proc. of SPIE Vol. 8030 803005-6
+Downloaded From: http://proceedings.spiedigitallibrary.0rg/ on 09/18/2014 Terms of Use: http://spiedl.0rg/terms
+
+"
+"7","=' 1... :I 51-35“; $3511??? -. ' ‘. -. lﬁﬁ-‘j: 1&3. 1. . 23411-7153
+1-- 1 4"" ""31-3.;
+c"" « ' .-~£~=~ . .. . .. . .1
+. . . ;;¢_.-.~,'.;. .- ‘-‘-‘-«..-- _. ;- 5' :33; - .-~..—.~;‘: Igf
+. . ..-.,.-I' 3-2.3. =‘1 -— ""3} """"1. . 3-,.“ 32‘-
+."" ‘ ‘3‘ -'~ ‘1 -:“£""-1=.-'-"". ""11* '~ :- 1. ' , L. 1‘ ’-:.:'
+' '5 "" Well. “55.51%; ‘- '- g” ' ' y m .- ;.. .. 55.; :15..-
+1. 9'. F""?- -1 «5.3.. :é-f- ~11. - .- *i :33: '.*-*:-
+4 1'. -_ -: ' ‘:. “‘:.-3'1:- =2"" "" '- ‘.‘waﬁ ., -
+I .I s- =’1‘I}-‘«1 ‘- ~@'$§;-§ =I- q - ‘...‘1'1‘5MI' -. I‘11155
+"" "" , a . ‘.:-3' 1- ‘ ?.«.3
+‘\ ﬁn. W'aE‘I-‘ékﬁ"" , I, _ 312.33,. """".II""1‘I""1‘.-.
+- ‘.' .1. .1. - 1 ..-°--:‘ -. ' “1-3:,”
+2-"" ‘ 1 "" "" 12%.“. ‘1'??? - .‘ Wféﬁﬁi'Iciié'ffil-‘ﬁ?
+1- y 3.1-... ‘ ;-.‘; ?- .21»- ‘ :3“,
+"" - . , «Jr . 1-1:... - ._.. .‘ ::~‘:§sm:-:';;>is ﬁg!
+$ . . ‘ «i -I ""':..l‘ . 5. .IoIi-‘I \- 1. (5,432 .3.
+. 5 ' '1 '.u I ~- I: ,""IEI: 3""; “:~=5“.4,'I:-.22-"" ""
+‘ 3‘? ' ""§i-'!ET'-.'é~:=..‘-..«"" ~-! “
+’ ’ -‘ - 35.1.9. :I I .- . ':"".Ii.I-I-.""~I'III'I-“I""' 7-,L5""$""‘I_4-.-I-;-I,'.‘.-. k d
+' ‘v -' :' .i.‘ '..:- 41“.? mas e
+‘ 2.1""” 53.5.? I 1‘35; {.31 - “ ‘i:-.:-?23'.1é-‘:-‘s‘.11._-5‘?T'f'.'-‘- i
+' 1"" :' - ' r“- 2 ' ""1 3’13:-
+’. .21"" ""- 1-: . 1"":3‘ .3
+. .. .3... ~ ~ .. . . '....g-‘w ='.,.
+. ‘f ‘.:.- ._ ~.. 3 3 .4...“ - v.‘ 3.1“”; ._
+. ‘ :3? .:..;""1 - ‘:- ---.°-- s."" .
+- .. no match
+' w '5 3.33"".“ .3 173:1”?
+. _ x-g III; 5%.- g) 2 .. '.I','i'7'?;33."":-.;;:I.ge‘;- 011,1
+I5 - .._"" . '.‘"" '1“ ‘ “I .I. ’.I.I‘I‘I‘LII;III‘«.+’::I Q3."" @Ih xi)
+. .53! . 2-, II. IP‘- ..- . - .‘ J .91: $5755.21."" ?""I‘ “521.4%“;‘3
+‘... .‘iI'I'?- ' ""'51; "" 1. 3. '\ I ‘ .' Afiiﬁﬁ -f--I-I@$§L§J’6?é$x .
+3:“. 4:1} ;1 wguz"" ,1 . ‘ _.‘ .. .‘$E;QE3E§§§IW i-3.\‘I“;?;1.~;E .
+-' . ""1v ;.. ’ . 1 '- ii"". 1.317433 -; ""1."""".:...’~.'-.~.~Ij.‘:n-Iv
+- 3‘» 13-: «,1 a...“- .1gﬁgggéjgw‘“ optlcaﬂy deep
+""""- “. 1 - ‘- . .‘. .1""; L 1. “J z .: cw
+- L 1&5’333-1’. '« ~.--=..' ' 553:1” 11‘
+- I'I «: £337“ ' .“ ' I ‘ﬁ' .‘ ‘ 4; ’..;é’a: {.1 I‘ 1143"" : ’2
+1,1"" ”5."" - . 1‘ gjfggi’ ?%ﬁp‘; ”4‘
+' ""-.. -. '- .1113 «.11
+I. 3'5 .. ' - ‘ . I' '1 ' ' 1.1% .-. I331”? I’ “3.2.115!
+6- . ’.‘-:4yr% ,j s. 139’ , £32133“
+'.‘"" '- . z -. ‘ 3- 3'1 §‘x-.-""I.,«..f #3:; £12.:
+' ""“t- “€33 1-1 dark sed
+"" ‘ 1 I e; 'I 511%: ""4 ‘ «.3751ng""""'.'-’I""3'1'-,-...!?;-‘5
+- ‘ ‘ ?W 253 ’ 31- 33.89331? 571""; é‘iin :.
+‘. ' '1‘ 1* .e’ﬁ‘»-22’r«a’gf’ ' : :«1-«1-{1‘1
+“ . ' -.. . - “r .11” :-'-‘.--:i ”-11.3“. . :- .5.
+. Ia. "" ,T .5 ‘1 ‘ V'I‘I‘I: I ""IVQﬁ‘II AI ‘2’,“ 3%“ 571?“:
+' , ”3.1.3335: .3 I21:.;."". 3'- i'I Wﬁﬁ‘g‘k 1:;3
+. ' ' I3-‘v'.I_, . . - ‘IL‘«' :1” II I "" 3.17:!
+. 1.‘ ‘ “V“ ‘.'. .7 ' I..- - 1’25?""-
+. 2. :‘ 3.. . ~53; .- :21: - 31' SC veg Ian
+. . 1;: ﬁg?“ 1-3: -
+\"" ' '3 .1}, %§. . 3éw“3’--EI«I;‘1;‘..‘I‘I 511 {1155513. ‘ ‘1‘... 4333‘
+._ ‘ .-.I..1II’.14. 115,343... «.13.- . 255533-5‘11‘L:
+‘1‘ . .. 3 2:
+- 1...“ :13. -: .z-t-ﬁzgéﬂ, #133; o
+-. 1.1 .3: .""“I""‘ . ‘I‘.I“»I""‘. _.-' 1 In}? 11;.
+. z .51 18A) gray
+0.11-1.1- 1' .«E- - - «is: '1? 9
+‘-‘ , 1 ‘---'£-§:2""3""« 3-.""-
+. .- , 2:11;: ' «L .I"":'.~»'».; ; g::.1_
+' . 2;; 1. ‘-.-3.12. *1- 3:
+3-... t E... . $351M d a]
+- -. t 3-1 : 1-1: re gae
+- ‘ I I .I .-I_,:'2\“..' H15.“ '.I I-IL
+.1. .. “'1 "" ..-'-%£ 3331""“ ,- .1
+‘u- A I ; =,:‘E""3.I I; I .3 “5""j‘iI;-:IL-
+, “41.4 5r .-‘ ‘3‘ . ‘1- ' 1.- ~ Air“?-
+.. '-~‘.' '.' g- ‘3‘- 5%
+a- I ' I I'M I I “3“: g.gjéi1fI-‘l'
+. - . . .4. 51M."" .3 $55.55..
+.- .4 . . 3-13-13 brown algae
+. . I1: 0. 5% “I 33,
+‘..: ”-1 .."".‘ _. . '~. ':.-1 :1 i; 1
+‘ ‘.. a."" ﬁ. ﬁ H153 v :I‘ ""vi“ _ {15 .I.
+'1 '- 11:... - 1‘ :33: 1% i'- veg
+_ “I .. . 1 ‘ 31 ‘..I ‘qéf _-
+I ” 1‘- ‘ II, ‘ ‘Vf .II E; . :I7 111-555.;
+'- 3' '.. I, - I. ‘& 1I I"";"".1f-.r“ '.: Jégﬁif‘""
+. ‘ ‘ _ "" "" ‘-_ \. (M). .‘ ‘. I’E‘r- - #5?) .
+‘ '1.~;. 1 1 -. ,. ~16“ - 5.1-.
+.. :1,» ‘.- 3‘ . «1,3 ;’ ""‘2‘ -.2':3' .
+_ .. - _, , .; - -- - sand/veg mlx
+-- - 1*» '-. r15” ‘ .
+.: . 5.“ ‘ “e. ‘ ""?'I'1.'-I*I'-- ‘
+:5 W18. :- -. 4 .. ‘3. .. 1-. '-
+-:-’\.v.- .. 5&10‘311. “453.“ ._ 1!. ‘ ,8; i‘lvé’?’ d
+I3» #1.} -. “ ""*3. a .15; 3. 8311
+9 . I. -“-.’:.‘*.ng“:. j. 51*"" ;-$.-;‘ . s f‘ . I “w:
+'03 .‘. .. ‘.'""?- ‘ £51; 1""“. V .53.:
+- 23.1.1. 9‘ V ‘ 5.25.1: ‘- ‘1
+.. “’.'..‘T‘\ .1\6‘%I~‘. ’.:; '.. 5 I.‘ x- . a .1.
+. .41: £353.32»; ‘ ‘5: 9 . '12.: - '
+. . : 31.3%... -- '- I.I""I §\ :9. a]
+""f. .. «5&1.» .1 . x- . = 001'
+. ,— 1 9:“. ' -’.-'r- '_. . ‘ . {.- - L,- ‘
+3&2‘311:5»z-,: ~. - -.
+. .-. II? 1.“5.~:,_I.I-_7- why. . 'I 1:? .111.” I 5 ""‘
+’I --- ‘.- 35;. I. I.- ""‘45-'33 “ $1..."" .3: II '
+:1 .':~ I x - 5 {1.1 “-.:-:2 1 I. .J 2 II. ..
+(3:76"" ' ‘.:; r«‘%‘ﬁ 5.5.413?» _Ié‘:'-_:""I‘;-‘.‘-I ' ‘.1';-.1.,$.I..""-‘ 15“.” 1 ""
+6:- ' 22-?"" [.3 f -.-.I""’ _':,:‘f-;‘$. g.“ .e'""..'I.., Am §- . ’R.
+5‘ kw. -. .. h, :.-w.. -~""- -:‘-'.~.r1;e.' 5-1; II --_ . . 1 - , N .
+.3. Ac, .‘f-""If'iilIvI'fIij II‘:;§§II ‘I'.I---I-I ..-_H- ”.1 0‘ ’5.
+' ”'1. -.: '3 W«
+15-; «‘3' .- *1: '- .' ‘3 ‘ . M.
+':e. .2 ..:*;-’?c. Rm. r- = =.. . . '-
+13"" ‘»--.,\1-'; - ..: .- '.‘: 9w IPL' 1‘ . 1 ""v ‘4 “f“.fw‘Z ""l “' (I. *-
+"" ’ 3‘1, u-.1'5..-.7‘;’_~;i’-.:‘ 1"".'b.""‘., irr- ""I.5~-:ﬁ '.'J;-I""1‘5v- “-{Alk‘fﬂ- .' . .9- . . .
+w. ""‘.'I-I‘; ?:ﬁ'é:‘I.Ij-E‘LI‘: ""_¢\w< .""_ 375""“ “I _
+-- .3. .13;- ‘3
+11515.5”: "" mat I I‘I'I 3’2““ ITZ‘fI-‘ﬁéII’I'.I:..-:‘ '.
+§¢i=~..'"":'.1‘.--'.<<:‘7-5-,i;ii $.53: 5-213%: ' ' {.1 ' “3'5?- .
+3.1-” , ”+- “ ~32:- x
+'-'-“'I ’;;.-:1-'-""...-'-.' ,. . ‘.’: .. #_--;;;.-«,1. ""“.""='""‘-'-‘.:. ""51:."" .- - .- E
+L151? mﬁ .3 I53 3;. '
+Flgure 3. CW ST bottom type retrleval for the lmage processed usmg an aerosol Vlslblhty 0f 40 km. Thls IS a compressed
+category hst. The full hst IS glven m Table 3.
+Proc. of SPIE Vol. 8030 803005-7
+O O O O O 0
+Downloaded From: http://proceedlngs.spledlgltalllbrary.0rg/ on 09/18/2014 Terms of Use: http://sp1edl.0rg/terms
+
+"
+"8",". 556.1%? ""- 3-2;. a .; : .-.'-""1'. 2‘,» =E'ir'wx-‘t-zv‘1'3-1: :-~
+§1-Y‘I‘Iﬁﬁ'.» ggﬁ'g' :-"".-2Lf.5 ﬁgﬁ; i; a rﬁéﬁxw"" 3153:5313.»-€;_,».=1 ‘2 5-,»;
+a , . , -.. ' h, .3“, v - . .-_._- ‘1‘ - ,1» .~ 7W1}: - »,.:.'-=-.t.;..,-.~.~.
+""13' th-xﬁc;;»;a:-'a»..§g‘ H“? '99?- -2. ‘ ""3?:
+fa» wméu 51‘ 3.x. »»
+-'. 34,-2-33'3- ’;‘~‘E':«‘:i~-.-»5:~‘:iﬁ»;“ ' --.-'.1.-...:. “-3; . “‘1 +19 :95,“
+a‘""’=‘»;‘a‘;-:‘:g:»: 11' .-:.. .2» {k .agtﬁ'gﬁéxﬁv ”£2:
+ﬁﬁ~%tﬁﬁzﬂ.§:§£ﬁ‘z'3“ “?VJUR‘ELﬁ/e mai‘fﬁﬁﬁ' ‘ V ,utiéd :5. ""1"".‘5"" ""1'?"" :r‘.’”""""
+'11‘ . '.9 _, ....q'? .'I.-1g;-;tf -‘. m.ﬁ"", 1."", 3 _-,..n »I‘£,-.._‘i- ~ . ‘. 1' «p 'I ‘: a :. RIVT'IA‘Q? ».‘.;.,‘-*‘._'
+wéefqﬁiif ‘- $5595 5‘7. unﬁt..- 4"" a 53‘s,;ﬁ‘gsr,» f . ??:?:?s5éo'i
+
+..W ~ w.» -.w~ . -- M ""'--.-. .,»<,--.-,- ""r : ,. J ' '""---: '
+‘W.’¥5£§¥h*""""?3323 «‘9? E. .-‘3h11‘£"".‘§f4-""r'35 i3” ~§w""""°~'~t:-‘ r.“-
+1Q. I .1...» , _ . _ .» .‘x’ 'n\‘\‘:--r (- J... 21:», , um)?“ 3.....- .._;..J
+..Sii'ﬁgig‘Kﬁ‘gi' ‘..-~-, 941;. '1“ .-‘-‘ 9:: ':-.l:»-.'.;-,.-.-""-~""-' w ,wéumr..---‘.-.-;,-5v..~-.~s=.-;-1‘11“:
+£»-1§?4:1”$‘§‘33""¥’ ‘73 .1 ,5; ;, ﬁrth?"" ‘2 »$3.}f‘$ug~
+:F?€i.-""-rij.~- ..»-:13, .’ »:,""-z,?o.q -- - ﬁg 1""“: $13953“: ;':-»:' 2-~ ,-II..:- '. -. ""::..‘:::.,""""-£_.'~'_-»:I.-jr...«
+""a""»;?<““‘4;’°’< "": W;§ .. ‘53» ""
+
+,:I._&1_.g.»;5;3~1,§§‘,,-- = 4:13“ ,._‘ x- .334”, _ -=.-.-1'1_'I.';‘:Ijj-.';-'11:,~I~.:‘-.' 3'!""
+
+. 3.1.3» . :, 4w». ..., “w?” -.-.‘... - ’3‘ _ _‘;-..-.-..-"" ..
+
+‘1‘?» €35,»- ’f 1 ,2.- m3 '
+
+..»t"": ‘1» ""“‘W‘w @651 i'- {.‘.-.z.’r"";""'=.-'?'-""""?’f‘». 1""""-'
+
+-. . ...». “- 1'- . ‘
+, "" ""2‘; .7"") “mm,“- f1..."" 5"" - .
+. 3.3.; .1 ""t 53;?“ {Rf}; : ii '.- .""iﬂMLH-IZ V '. ’i/H'r'r- ‘ _.
+ts ‘5 '"" 7. 935$. f? “rﬂ'ﬁa -‘ ‘.»{§ 2""
+>»."".""' :' ‘1‘.“ ‘W.~‘a""§#ﬁh 1‘3» ' .»;',,-. .‘-- '~
+‘ h. 4.3..»- 2‘52""» 11:13:15“: 233:4.»257 . ..
+XT,‘ ., . . :55: 4 _‘ 72:5, 1,-5.3""? w’ ”.s'v‘ 1.2.9.: ?«E-Erhh. .t') ' .
+
+. “'21:“ ,1 _ my ‘gnjr In v: :. .-‘-""'-"" ---. .. ‘--. .‘-‘ 1- >
+
+7 . 11‘ 11,. , - '
+1%.. “‘39""; xai‘r »-&E“""§;'"";‘T‘- ...L‘r -::""‘.~.; ‘ ' '
+,g!’ . .--.-.""--”‘ ‘31» “5551333592 1I:'., ?.g *1 ‘tw- ‘ “
+
+’---v-""e»...3?r;; ~2'.--{:1‘1‘-71‘::,. d, ..r “33* .. ‘~ ‘9? z.
+9.;- . us,- ~ ..-@‘::1‘.» . ‘~. .7 ,2 ' '=‘-'v£- LAC; ‘<*-..» i‘
+""‘ . :31. .kﬁ "" 'JH’ 5-"" 35;!"" ..h“: ’ sf . w"" L 3'. 351' q- 1.3-3,"" 4:
+-.‘-- ""-.';... 3“ ~. “ -;'.-~-i‘~?' .l?::'1--'.‘é-.. ' ' 1231+:1ré-u-v 13-
+: 39.5., «.‘;: -..-, ' ~ 4.,31‘ ”..n #mﬁﬁn "" - i» ‘ . K"".»""4;v. 3""»); .‘~ 2--
+.‘5. *a 33:51:;- , z... i... t -‘ 3.5!“. ,P:' ~‘ “'~ ""~ ,'."" . ,.!.‘G'-.-.g.,§:j»:.ui-.; ""-:- wk;
+“w."" 5*» .- "" .71.»:-
+' --"":“§ ““7?“ - --'-=5"".1'=;:""~- . «ﬂvw‘e T"". 0
+2.2; - M1,“, ‘3’...“ .534, -»,.:.~»'- *ﬁy»m»
+‘- ﬂ» . '. .'H'I ~'- ,, .""."" 2,. 1-”? . I _. “““—Z;"".!.' .‘.'-‘
+?‘= 5""“ ‘— .' 11-931E33i: 1-1'.-“1§§%g a, ”“559“
+:. 53-12515“: H.311“? .‘,gg:-~::°:I;-.,§;:;;.Az ' (.‘;; «5'3 155,; 23%?
+
+-. .1, ,.; . » x: u; :-»;. ,-I:v - .u': gm . _.
+
+. . » »».1 mi?» '“” 555’ y? 5%
+""33‘ 1: »»/~-“ ‘ém .';""? ,
++32%“ - Hi"", 3-"" 15% ,mm .» .
+Elygiﬁéf""? ,2,“ c':»‘:.‘.’ 13;». W’é‘ﬁ‘?‘ ?. ”?‘ng
+» r, 3.2. ..; : .5: »_'2'1,',».-.»_ . ,. :-:'.r ..‘M 1' ‘5. .45...-
+_. r574»: ""-‘»':a$;-;m. - ., 9‘. 'u‘~’ ”-3: :7“. ""3'""; ; . gig”
+M -‘.-»r'»’ 1""; £3“ -""-‘i""»""""r7‘""""9; ‘ ""“ Vi?“
+'ga l7“: H“ . ..z .:..u'~;,3'.'f-.» -. ~ '-‘-‘~.n.{- ’ '- 3* ‘3; «IE N: .
+
+.3» N .. 1. -__I.,:-w's-,.;,-.;v -- ._.-','-'=-'='1'.-' ‘ . . .-'g . .4.- '- . ,. ' ».-
+320,“;7-1:§:~,.I':3j»'a,>?§a-.zfz_ ;- ~53? ﬁne. £55)!” ..‘- =5».
+. , m- .1.. .‘;-9mg ',?.‘-_ -..,». .3. 39. .. .. .1 I.""- ».. ~. r 33“.. g- .y ,. . .-
+rgf‘w. «.*’~1»'a-~’-» ' .-. .~. ~ . -»- >-
+&exzh‘ﬁﬁw M6 15.4?“ .97“: 1""“ ‘53.»
+- '2“:1""§zﬂ:f:‘.’e»:=2:.=-':‘~‘.““:‘E' . 1 1 t; a‘w -
+WM; TE? 1. .- 1.23%.:ﬂ11.,.;¢1§,54.{§ - w!
+12v: -.-»;*.-‘~‘-' w -'~::.i"" ,- ' 3 I.- . ‘ "" 'r 44.2w
+""E'ﬁisﬂ‘ 2:23;;- .. ‘13:: M“. {“5397 i"" 3.1;?"" £95.51. ‘35»: .5. 13:93;
+»:-':-“‘>. “-.»-:3 ' .. :',.i.'; ‘°' ». ”ma"" : -‘.
+”r "" ""-239 233’ 9""
+t “c. 31k 7 ""‘x~.“~"":“”?”“‘f"""" ~
+
+,. .. -- .. , «09;».- w usurgtﬁ‘wu .::..-'-.a—7+~a??w 9 445319;»:
+., » I- - , .. 2.24% , - ., Van"" ﬁiezoiﬁasaagwr-‘zr.:.--.:é-2.€:éfﬁg’iﬂiiﬁwt
+£.-»._'1,-,: . ,2'2. "" . :4: «.195: -. ii? ""¢;£3$)1v:""‘72'4-“—?t""‘""'.'61‘.""-:'=‘$.""fsi§;"" 53:5.- “36.39 -.-r""~
+f‘v-‘t. ~. '-», sz""-*'“<:;,. V4: f9,»4%‘$3}.£r§} ~..~-»‘§“1~=""2.’.’-'I' .=
+411*? : 5 ‘1""? ”-3134"" £533}, %’?J‘2§fﬁ»c:r<?§§
+whit .' ""u; ""3w""; "" 45’ '3»:5;"":“.—'=;‘£""§.::‘-9» »’<‘»’1~’»‘€1’.»"".i'r~» 113—:1: ‘ :14»:
+sang, . :"". ..' ‘=. T- 3“ ”3:37"". 51-13;.‘rzﬁfr‘1i :35» 4‘;_»;;&»::.1~:;;»,»
+~- -‘;. 2M."" 1
+a ”4:3,. 59»;- “1»,‘ .‘H‘mrﬂ‘ﬁm
+er-cz' : \,.-'; _. %' ..;,','»_ ..ltﬁ’ . .. ”-NMI‘--:$;.‘#gy$‘§.gtj~“ﬁ§f‘séiz‘vz’r-‘g‘g‘1‘“;
+gtzﬁf...‘ - I; §gg-«Y 3‘?! »- :31 av. ..yly'gq‘uﬁﬁqﬁrrﬁiiﬁgc 1?» 44,; ‘ . .
+..~'.;:x.‘ '9‘ _ 39:... 2 .7,.',I1,.,.-',‘... >~ . -' :3. ;; ”j- g,‘ »
+, ' wea- .»'>-» gnaw, .. :‘F.§':;»1""5‘\§;39' -+
+»~— :-.-.» .' ' a . """" - t 539.2..- :t. v. wr-‘n .rb‘R-‘E‘ 1 ,-
+». 5x.»- ""r . ..»- 'u. -. , :Mméd' $h§¥qm=é 3;“..- 1?; - ~-
+' ""t. . ....‘~' 9» ""#8- 4» :91 '1» -1
+.--': 5» '- 1 1-. ""~57“ {..» 1%“ «i - v.55""; '1' ‘19:.‘W ?i-
+C ‘Z:.'-:""I .5»‘-. . - *‘Pﬁ' ' '~""‘n“-""‘~ ' -.3‘-’1-‘,1,-u;-‘§»-'-”szf""'1¥c
+:“ ""= 1,. . . '- *3)"": '51zﬁ1’1'-‘;2"".“§-’I‘“\.ﬁ‘.'h...‘""€““"" “5-St-
+
+' '.'y-.'-..-_;. 1 . -:. ' -. "".Y-g=_,.<s"""" ""I‘M” 3);“; “3',_ ‘ 1-1-7» --.-,\""¥""-,_v}-§I
+
+. ""1:23.21. 1 ': ”1“ 9»:'»:-a‘-S.;‘/'ea.¥éfv~“’-‘z»,e‘“
+
+' ~ -’ ~ '- ‘ “ m»:- 11;», 3?» Maw;
+;:""'. ‘.1§7.?E‘.""»"" ‘ . ' ~',. *‘ -’;-#133113»? ii. aijiﬁijtji?"" x} ""1655-""...
+',.'"""".\1‘,'"" - ‘7 “. 1' - ?:?:‘1: '.”§f:-¥"",:3§ ?g"";.~.b“lkti Mm. IR
+
+7? e-‘rﬂe‘. '3: ‘ » I ..~'>-' r""“""“> _»:'I”'+1-f»1. 7A»3-.~'::1»‘m:%""d?’3r?.“' 3J5} ‘
+
+'.-I"". d?z§:"":.' . ..-_- ,. ""g”; ‘5 1.""“_,-“; ¥gugﬁ‘ﬁéwagr‘gﬁrﬁgg . '1‘
+
+""-'-'~’ 255.92. '- .‘;.”ﬁ - ""j '_-' . “£331; 13.? ~12 I'ger.:»;-K:;12ZLC1’ -
+
+' Fain. ' . ‘-'..-.--».'.""-;_. 3"".- - » agguiw.#~
+
+f;- » 1: C ‘ ""...- , ‘ "".i"".»‘1~.‘4:¥ 3‘51""}:l‘5“n.333«'13;‘.""’42 1""? 1
+
+-:-‘- » V - ' ; ""‘<*¥::~"" mv- sl‘ei5-3 i"" a
+
+‘--. .""""-. '~ . -. ~' .';-tor. r‘ .f .9"". g},t.~""‘""--5I.‘r: 2&1?» z.
+
+7 1:12"": _-».'-.'-;=?""""=f:; - '- > . "" ':~."":¥‘-u.-.,x._ 1:53;»:-:“s'Q-iéiélaiav’ﬂékgv
+._ ':, .'~':l‘£‘3‘}""f.~""‘ ""-.; '3 .1' _. -' .35 \ W5. ~Q€1“‘3{€:‘€1é’“ ’3, i!
+2-2;; ;-,:‘s;‘ i. at ” ’ . ~"".»»'.'; ?gszﬁaﬁ:;‘;2%i¥91§§‘éfz>h;r
+ige- -F-.:1-‘f- J- ;.‘_.; ,9 ; “‘4' V?r_.i-'9I""»‘)j'-""..“""‘~!n'-2"" ‘1 ' v.5
+2""?»“1' ""-gg‘qx' - ,-, 1 . ' 9. juﬁ..9”;1:bg-Zgf§$.‘l,’_,~jzs.¥if9‘i*’Iafﬁfis,
+-. ;._ .- :22. :._'.-.-,-.-»'<.:""-' '~“ .; ' ' 3 "" 6+;-zatﬁsjifgifggwgv «$21k;
+' _ '35? 2.9» ,.-'.:’w,' -. .' 1“,: W’h.7:‘3f»11}355‘r
+'- :'~‘- '»I "" ~. »‘.. 3' » » '6 wk."" .2 ‘-‘-':. 5'»:
+-‘ '1! J53 JV ’ -- .-.-:.‘ ”$61,?!
+. y}. n. ' 1. %‘ .zazzzee~::-.»::‘_-.::ré ,'.1-‘
+11 . $.33,
+- "" .- : , 331», «(gig
+""a"" I ' ' V“ \W“ I 5 ‘ 'v‘H .- 1""»:‘95‘55 ';€é§%§);{.'
+‘~: ‘- ': ‘ 1 Ziffﬁéf-‘Tff'.’ '
+-g-.,_ »~ - ' ‘2 ~ '. _ 2am 3.723,; -;;';..-. ' ~
+3:"" ' .31 g I : 3' . - , ’ W‘,‘Zﬁf¥‘ﬁt’5i\3¢f ,
+
+. - » : ' : “vagragggar
+""w 2'75; ”I“ z-- "" - ‘ .' 3. . W»Lﬁ§‘e~f{5fl iiZ-C: f ‘
+
+‘~--. »‘-- '. . ‘f; : . - : .- ~91: ls-1:.=~-=.-1.-.-'.'
+;‘-‘-.;:,.:;--:.._ . . "" r.- "" '.;--':»:‘:1-i
+'3“? ‘9» ~€~»."".—:~.=»-.""‘-?i. . - '» ‘ ‘ +2 :3""!=-'t'-i;""'§:-i:“""::~:‘
+WE \f- ""; ':»:' ' ‘. 1% a.grgv‘» :5? ‘ ',
+
+‘ ’A '_;'I( -. ,. ‘45 . . 1 «5;»qu ""_:'-~- g ‘-:_ .12.“
+“as"". 4‘31. ‘15:»..4.“ ' . ""-:-:ZT'v"" .';-‘5: -' -._-'.:""-?-: .2-
+Wi.=$§f}af ' ' ' ‘ ‘ ‘3§%%""§”« ,-
+53?»; '..- ‘;é:»:.~'- “i l‘r '1‘ "" "" '-. -“ 7% ”ﬁr”: 1-; ‘
+. '_ ' 9-»: 1, '- ""
+1 ""w ‘ - 1
+'13.; , ,_‘;._';‘4"":»:—"".'A“,-:{' ‘ """" -.,""3.‘.:,,I- '1' .. ~‘ ‘ 'n §§- "":03 1 2‘2}: E?""
+5.5!» #5”. ~.- “~35 \ P011531. 'ﬁir' 2.1.59“?
+._. _T| ..~ ) , .. .5 L . n. , ;
+$\an - .. 5‘ '» '..2.i.».-""-""‘:""=‘-:-~'5~ ""9 ‘52): ‘ » “dun! $545553
+115-1. S: 9“ 1 2%.»: m
+'a‘f’f'fs-iﬁ'éiiv‘lr' """"“'-»-""v‘ “V”: » ‘ +3.“:
+f».- -: M :4».- fa'ﬁi.""‘i'»';’55 ;."".'».:-;--*< “I . 1 : up»; «:3;
+g: M- 1.3}: '1'»; :.‘-'5>~1.)?::‘.~;-""-'.'»p;‘ ' 2 ' ' 4""""?ih.‘
+""‘5', “€333: 13:2. ’:r’».-§""."":‘i§?.f’-.:;’-J""jii- . v.3,» '. . 3g
+
+. 1.1,, a” ""715-"" 9 e. . -“ ""'-..:.-.:'. 1, . .';»: » "" . 1:
+¢.¢""""'§?f’ 1&3,» ”Re"" .‘;-{.1-21'3.» ~.""¥l§;{vw 'v“""35"".. - , ""’.:.-.-"".“’-a
+1 Yr. Jﬁi’lwar‘ﬁfn, 1:, *‘z u."" ,r-{vg v*.A * -» ‘-€ .. -‘
+$195!»: .‘¢§?§$«g»$*@ \‘KPI‘aiu-‘i .'h'."":~f ' . {a
+'1‘ ..»-jg»: :- . 13,951. 4 ,7,” ‘ ""13,-. ‘15:...- 'f-‘LJ' "" '_.~' ._ ». ‘.1 ‘.
+
+m. - x 3. v 3 .- 9» - . .--~.-.-?""1 .ww. ..
+31""“ - {?Wg‘ 1““ «1’? 1
+:~.~.. r -. '. . ‘ : .»‘. 4.1.“: ""2' ..e'ﬂwEL» -.. .- ' . 1-,
+MM» “ﬁﬁ‘s wig. Q». i '-:1-.:.: J&- ' 2&2:
+“@5343 9’ Wu?» ""'5“ 335313“ Mac. -: - --:-: KW? “53%?” »
+1'- , :&«‘v 12:» "":.-”.""5;""5'=1's-,-:ist-.'»:.-»-, 4-1» aria: .4; *
+
+"" :é’w 9553‘?“ ’1’???) ,.;,I.;;:,.-';'i'1;.a,,;ag5. ' ‘ ‘
+""4 . ~'- ‘ $5555“ '5 aw, . """"34""? 1'.‘ .1‘ ‘ “Fa"" 5:15-51“? -- . 'I‘ »
+' «?%‘1‘ 74""“4'f'573'7-JL'.» -
+1»- wish . 5 *
+3. 14%!»‘132'3:3 “' ?‘Vggﬁﬁé’wxc. 1’1 -; - ""L . .
+5%» 2325???) 1-“- ;~=- ""
+‘ 5' ..m' ~ -p;xr' .»'« ._ m #3:; 2.1"" "" ,ng 919: ..»-1,7,1. . -;-:I;:i~~""_"":- g. ”..»
+”576193‘53‘3‘ 5 “M- “R; int: ~' - ’ 1
+‘ga :w' » -- I _'-., ”yam - 32$ 1‘ ‘ »,;“-M4-,bvi‘>»»k""“»| ‘43:. 1"" .- » . -
+“Mai, v = 3 , ’c'v‘t-Ie a , . ' «ﬂ? - ,wwgﬁay . -:-'b- »"".~»; ,. :1: ~ '9 .
+13411:. ytdgén .2 . :3‘§§»l“?£3&m 1.» “Z, » 9-
+.55:7! .» ff ‘3’“733'A‘ '.-"" ‘..-»{ .""tﬁg‘ >2, ’4‘ 3-» 4 1
+ﬁg.” .- 2.1% ‘1, g.»»? ¢va xug&~? “1"" 1:» I, .»2:'-
+$3ng JQ...‘*E~-*;$».1 151,. ,
+'::.-, am. MQNH 3“}‘§:2\‘§‘ 51:3. W I Ihﬁxg 55533196 1x ‘3. .';
+. ‘ .- Hm fine,» 'w‘ nan, .;-.‘9'-;~*'A¥:1'-"" 19:."" "" .'-.i.
+‘ -' T'- ' ' ‘-‘-.“.‘.‘. ‘15. 1‘3, """"ﬁgﬁ'a-?:’p:'“vr.1§-‘~;:;.é§r,ﬁiéggi .3941“ w»
+I .. r. _ ., ~ _ -\‘ .I *@¥r§“ﬂ I,-
+-:- .. ‘ ». ~“‘**r~‘-r:""= ??.xﬁ-sig.» .,;1-?4g:';¢;;9z£::“:»~~'- »-
+. . , . . . .
+Flgure 4. Number of d1fferentbott0mtype ID 3 retrleved for the three RRS lmages. Zero 1ndleates areas masked as land or
+e ouds. One 1ndleates the same bottom type ID was retrleved for all three lmages. Two 1ndleates the same bottom type was
+retrleved for two of the three lmages. Three 1ndleates a dlfferent bottom type ID retr1eva1 for each of the RS 1mages.
+C C C C C C
+O 0
+Downloaded From. http.//proceedlngs.spledlgltalllbrary.org/ on 09/18/2014 Terms of Use: http://sp1edl.org/terms
+
+"
+"9","Table 3. Bottom type classes used by CWST and the compressed 1ist classiﬁcation used to create Figure 3. If an item has
+LSI in parentheses after it, the bottom reﬂection spectrum was measured in the ﬁeld at Lee Stocking Island. If the item has
+EL in parentheses after it, the bottom reﬂection spectrum is one of the bottom types that comes with Ecolight ©.
+OoidSand(LSI) 50% & TurfAlgae(LSI) 50%
+Ooid Sand(LSI) 75% &Turf A1gae(LSI) 25%
+Turf A1gae(LSI) 75% &Ooid Sand(LSI) 25%
+Dark Sediment(LSI) 50% & Turf A1gae(LSI) 50%
+Turf A1gae(LSI) 75% & Dark Sediment(LSI) 25%
+Dark Sediment(LSI) 75% & Turf A1gae(LSI) 25%
+ACKNOWLEDGEMENTS
+This work was ﬁanded by the Ofﬁce Of Naval Research.
+REFERENCES
+[1] Lucke, R., Corson, M., MeGlothlin, N. Butcher, S., Wood, D., Korwan, D., Li, R., Snyder, W., Davis, C. and Chen,
+D., “The Hyperspectral Imager for the Coastal Ocean (HICO): Instrument description and ﬁrst images,” Applied
+Optics, doe. ID 132361 (posted 7 February 2011, in press).
+[2] Montes, M., “HICOTM 1.6 processing description,” (01 June 2010, unpublished)
+[3] Montes, M., Gao, B. and Davis, C., “NRL atmospheric correction algorithms for oceans: T afkaa user’s guide,”
+Naval Research Laboratory Tech Memo NRL/MR/7230—04-8760 (2004).
+[4] http://t0ms.gsfc.nasa.gOV/teaeher/ozone_overhead_V8.html
+Proc. of SPIE Vol. 8030 803005-9
+Downloaded From: http://pr0ceedings.spiedigitallibrary.0rg/ on 09/18/2014 Terms of Use: http://spiedl.0rg/terms
+
+"

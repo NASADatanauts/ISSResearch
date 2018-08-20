@@ -1,0 +1,2157 @@
+"","x"
+"1","An Atomic Gravitational Wave Interferometric Sensor in LOW Earth Orbit
+(AGIS—LEO)
+Jason M. Hogan, David M. S. Johnson, Susannah Dickerson, Tim Kovachy,
+Alex Sugarbaker, Sheng—wey Chiow, Peter W. Graham, and Mark A. Kasevich*
+Department of Physics, Stanford University, Stanford, California 94805, USA
+Babak Saif
+_ _ _ I Space Telescope Science Institute, Baltimore, Maryland 21218, USA
+: F4 Surjeet Rajendran
+- O - Center for T heoretz'cal Physics, Laboratory for Nuclear Science and Department of Physics,
+' N ' Massachusetts Institute of Technology, Cambridge, MA 02189, USA and
+: 8: Physics Department, Johns Hopkins University, Baltimore, Maryland 21218, USA
+: m Philippe Bouyer
+. ﬁ- . Laboratoire Charles Fabry de l’Institut d’Optique,
+' v—4 ' Centre National de la Recherche Scientiﬁque, Université Paris Sud 11,
+: ' Institut d’Optique Graduate School, RD 128, 91127 Palaiseau Cedex, France
+I ﬂI
+Ha Bernard D. Seery, Lee Feinberg, and Ritva Keski—Kuha
+. I . NASA Goddard Space Flight Center, Greenbelt, Maryland 20771, USA
+- a - (Dated: September 15, 2010)
+' 8 ' We propose an atom interferometer gravitational wave detector in low Earth orbit (AGIS—LEO).
+: c3 ' Gravitational waves can be observed by comparing a pair of atom interferometers separated over
+. (0’ . a N 30 km baseline. In the proposed conﬁguration, one or three of these interferometer pairs
+' O - are simultaneously operated through the use of two or three satellites in formation ﬂight. The
+: ' a : three satellite conﬁguration allows for the increased suppression of multiple noise sources and for
+. >5, the detection of stochastic gravitational wave signals. The mission Will offer a strain sensitivity
+: v5:: ' of < % in the 50 mHz — 10 HZ frequency range, providing access to a rich scientiﬁc region
+. Q: With substantial discovery potential. This band is not currently addressed With the LIGO 0r LISA
+- H- instruments. We analyze systematic backgrounds that are relevant to the mission and discuss
+: F4 : how they can be mitigated at the required levels. Some of these effects do not appear to have
+. > I been considered previously in the context of atom interferometry, and we therefore expect that our
+- N - analysis Will be broadly relevant to atom interferometric precision measurements. Finally, we present
+: O ' a brief conceptual overview of shorter—baseline (f, 100 m) atom interferometer conﬁgurations that
+. l\ . could be deployed as proof—of—principle instruments on the International Space Station (AGIS—ISS)
+. N . or an independent satellite.
+. Q .
+I O I
+I O I
+' T: ' Contents
+: x I. Introduction and Science Goals 2
+' H ' . . .
+- C23 - II. MISSIOI’I OverV1ew 3
+"" ' ' ' A. Atom Interferometry 4
+B. The Gravitational Wave Phase Shift 6
+C. Gravitational Wave Sensitivity 7
+D. Satellite Conﬁguration 9
+1. TWO—Satellite Conﬁgurations 9
+2. Three—Satellite Conﬁgurations 10
+III. Instrument Overview 11
+*Electronic address: kasevich©stanford.edu
+
+"
+"2","2
+
+A. Cold Atom Source 12
+
+B. Atom Optics 13
+
+C. Detection 13
+
+IV. Atom Interferometer Laser Beam Considerations 14
+
+A. Telescope Design 14
+
+B. Wavefront Aberrations 15
+
+1. Wavefront Aberration Phase Shift Calculation 15
+
+2. Transverse Vibration Induced Phase Noise 17
+
+3. Dynamic Wavefront Induced Phase Noise 17
+
+4. Atom Distribution Induced Phase Noise 20
+
+5. Wavefront Aberration Noise Mitigation 20
+
+C. Laser Phase Noise 21
+
+V. Environmental Considerations in Low Earth Orbit 22
+
+A. Error Model 23
+
+B. Orbital Altitude 25
+
+C. Vacuum Requirements 25
+
+D. Magnetic Fields 25
+
+E. Gravity Gradients 26
+
+1. Satellite Position J itter 26
+
+2. Non—Spherical Earth Gravity Gradients 26
+
+3. Lunar and Solar Tidal Forces 27
+
+4. Free Earth Oscillations 28
+
+5. Newtonian Gravity Spectral Signatures 29
+
+F. Laser Pointing Angle J itter 29
+
+VI. Short—Baseline Conﬁgurations 31
+
+A. Lattice—Hold Interferometer Gravitational Wave Phase Shift 32
+
+B. Lattice—Hold Interferometer Gravitational Wave Sensitivity 32
+
+C. Environmental Considerations near the International Space Station 33
+
+D. Three—Axis Boom—Based Conﬁguration 34
+
+VII. Secondary Objectives 35
+
+VIII. Summary 35
+
+Acknowledgments 35
+
+References 35
+
+I. INTRODUCTION AND SCIENCE GOALS
+
+Gravitational waves (GWS) provide an unexplored Window into the Universe. All current astrophysical observations
+rely on electromagnetic waves. Gravitational waves, by contrast, are sourced by energy, not Charge, and can thus
+reveal entirely new types of sources that are difﬁcult or impossible to observe electromagnetically, including black hole,
+White dwarf, and neutron star binaries. Further, gravitational waves are not screened even by dense concentrations
+of matter and can thus be used to probe environments, including the very early universe, that are inaccessible to
+any other telescope. Unlike electromagnetic waves, gravitational waves permit observations beyond the surface of
+last scattering. Such observations could Change our understanding of the fundamental laws of physics, shedding light
+on the birth of our universe in reheating after inﬂation or revealing evidence that our universe underwent a phase
+transition at extremely high temperatures. Historically, the ability to observe new sections of the electromagnetic
+spectrum has led to many new discoveries. Similarly, the gravitational spectrum seems likely to be ﬁlled With sources
+that Will provide unique information about astrophysics, cosmology, and high energy physics [1—3]. However, it may be
+the unpredicted sources of gravitational radiation that have the greatest effect on our understanding of the universe.
+We propose a 10W Earth orbit gravitational wave observatory based on atom interferometry, AGIS—LEO, Which Will
+be sensitive to signals in the frequency band 50 mHz — 10 Hz, complementary to the reach of the LIGO and LISA
+instruments. The frequency band probed by AGIS—LEO is home to a variety of interesting astrophysical phenomena.
+
+"
+"3","3
+Textbook sources of gravitational radiation are compact object binaries, which give a coherent, oscillatory gravitational
+wave signal. These binaries consist of systems where both components are compact objects such as white dwarfs,
+neutron stars, or black holes [2]. They strongly radiate gravitational waves because they contain large—mass stars
+orbiting in close proximity, and the frequency of the emitted waves traverses through the AGIS—LEO frequency band
+as the binaries merge.
+
+The lifetime of such a source is a strong function of the gravitational wave frequency and ranges from several
+thousand years for a source at 10 mHZ to about a week for a source at 1 Hz. These observation times are signiﬁcantly
+longer than the lifetime of a comparable source in the frequency band of LIGO. This long lifetime enhances the
+number of such sources in this frequency band relative to that of LIGO and increases their detectability owing to the
+increased observation time. Additionally, due to their large physical size, the mergers of white dwarfs end before they
+enter the frequency band accessible to LIGO but lie well within the frequency band of AGIS—LEO. Numerous such
+binaries are expected to lie in the Milky Way, and AGIS—LEO may be able to detect the brightest of these sources,
+such as a compact solar mass binary within N 100 kiloparsec.
+
+Other major sources of gravitational radiation in the AGIS—LEO band include the inspirals of solar mass black holes
+into intermediate mass (102MQ § M § 104M®) black holes out to distances of N 1 megaparsec and into massive
+(104MQ § M g 107MQ) black holes out to distances of N 10 megaparsecs. There are signiﬁcant uncertainties in
+the expected merger rate of such objects, particularly because their detection is a Challenge through electromagnetic
+methods. In fact, the detection of the gravitational waves emitted by these objects is one of the cleanest ways to
+observe them, and hence there is great scientiﬁc importance in achieving this goal.
+
+The detection and parameter estimation of these mergers could play an important role in enhancing our under—
+standing of the growth of structure in our Universe. For example, they can help uncover the nature of seed black
+holes that lead to the formation of massive black holes at the centers of galaxies. These binary mergers will also
+test general relativity in the strong ﬁeld regime — a regime which is currently inaccessible to terrestrial and solar
+system tests of gravity. Furthermore, the detection of a large number of such binary mergers may permit their use
+as standard gravitational wave sirens (analogous to an electromagnetic standard candle), thereby providing a new,
+precision cosmological probe [4].
+
+There are also several possible cosmological sources of gravitational radiation, described below, which are more
+easily observable in the low frequency band below 10 Hz. Although these sources are by no means certain to exist,
+the discovery of any one would be incredibly important for cosmology and high energy physics.
+
+We believe our universe began in a period of inﬂation; the subsequent reheating produced all the matter we see
+today. This period of reheating after inﬂation produces gravitational waves which are potentially strong enough to
+be detectable [5—7]. The gravitational wave spectrum produced by reheating is expected to be peaked; the frequency
+of the peak is model—dependent and varies with the scale of reheating. After redshifting, this peak can lie anywhere
+between roughly 10 mHz and 109 HZ, so it may be possible for AGIS—LEO to observe gravitational waves from
+reheating.
+
+A ﬁrst—order phase transition in the early universe can produce gravitational waves through bubble nucleation and
+turbulence [8, 9]. A phase transition at the well—motivated TeV scale is likely to produce gravitational waves with
+a frequency today in a range near 100 mHz. In some models with new physics at the weak scale [10], including
+some supersymmetric [11] and warped extra—dimensional [12] models, the electroweak phase transition can produce
+gravitational waves well above the threshold for detection by atom interferometers.
+
+A network of cosmic strings produces a stochastic background of gravitational waves from cusps, kinks, and Vibra—
+tions of the strings. If such a network exists, calculations [13, 14] indicate that the gravitational waves produced may
+well be strong enough to be observable in the low frequency band from N 100 mHz to 10 HZ for cosmic string tensions
+as low as GM N 10—8 (or lower for a more advanced detector that could be realized in the future).
+
+There are many other possible sources of gravitational waves from fundamental physics in the early universe,
+including Goldstone modes of scalar ﬁelds [15], or radion modes and ﬂuctuations of our brane in an extra dimensional
+scenario [16, 17]. Pre—big bang [18] or extended [19] inﬂation could also lead to a strong gravitational wave signal in
+the relevant frequency range. Other astrophysical sources may lead to an interesting stochastic gravitational wave
+background (for a review see [3]).
+
+II. MISSION OVERVIEW
+
+We propose to search for gravitational waves using light—pulse atom interferometry [20, 21]. (An alternative approach
+using conﬁned lattice—hold interferometry will also be explored in Sec. VI A.) In this section, we describe atom
+interferometry and how it can be used to make a sensitive space—based gravitational wave detector, AGIS—LEO. We
+will also introduce the multiple—satellite conﬁgurations that arise naturally from the application of atom interferometry
+to the detection of gravity waves.
+
+"
+"4","4
+
+z <—>(——> <——><—>
+
+d~31n lx~15m lx~15m d~31n
+y;—>X (——)
+L ~ 30 km
+FIG. 1: Schematic of one beam line of the proposed setup. Two satellites $1 and SQ house the lasers and atom sources. The
+dashed lines represent the path of length la; traveled by the atoms during the interferometer sequence. At their Closest approach,
+the atoms are a distance d from the satellites. The red band represents the paths of the lasers along the axis between the
+satellites.
+A. Atom Interferometry
+
+In a light—pulse atom interferometer (AI), an atom is forced to follow a superposition of two spatially separated
+free—fall paths. This is accomplished by coherently splitting the atom wavefunction With a pulse of light that transfers
+momentum hkeﬂ: to a part of the atom [20], Where keff is the effective wavevector of the light. As a result of the
+momentum recoil from the interaction With the light, the two halves of the atom wavefunction spatially separate
+along the light propagation direction, each following its own Classical path due to the velocity difference. Note
+that the interferometer paths considered here are all nominally one—olimensional along the direction of keﬂs; unwanted
+displacements perpendicular to keff arise only because of Coriolis forces present in low Earth orbit and Will be discussed
+below (see Figs. 2 and 3 for examples). When the atom wavefunction is later recombined, the resulting interference
+pattern depends on the relative phase accumulated along the two paths. This phase shift results from both the free—fall
+evolution of the quantum state along each path and from the local phase of the laser, Which is imprinted on the atom
+during each of the light pulses [21]. Since it precisely compares the motion of the atom to the reference frame deﬁned
+by the laser phase fronts, the phase shift is sensitive to inertial forces present during the interferometer sequence. To
+be concrete, the lasers are ultimately anchored to the frame of the AI sensor, so the AI phase shift is a record of the
+motion of the inertial atom With respect to the sensor frame as measured by the laser phase fronts, Which act as a
+sub—mioron periodicity ruler. Equivalently, the atom interferometer phase shift can be Viewed as a Clock comparison
+between the time kept by the laser’s phase evolution and the atom’s own internal Clock. Sensitivity to gravitational
+waves may be understood as arising from this time comparison, since the presence of space—time strain Changes the
+light travel time between the atom and the laser [22].
+
+Gravitational waves can be detected by recording the phase shift they induce in the atom interferometer. Since this
+phase shift is also directly sensitive to unavoidable phase noise and Vibration noise present on the laser light pulses
+that act as the atom beamsplitters and mirrors, a practical gravitational wave detector must be differential. The
+concept of the AGIS—LEO instrument is to compare the phase shifts of two separate atom interferometers that are
+manipulated by the same laser, and that are therefore subject to the same laser noise. The differential phase shift is
+still sensitive to the gravitational wave While the laser noise is suppressed as a common mode.
+
+Figure 1 illustrates the AGIS—LEO differential interferometer concept. Two satellites $1 and $2 separated by baseline
+L provide a pair of counter—propagating laser beams required to implement the necessary two—photon transitions
+commonly used for atom optics in alkali atoms [23—25]. The atom interferometer regions (dashed lines) are each
+near one of the laser sources and have size la; along the laser direction (the x—direction). As mentioned above, the
+atom wavepackets are separated along the laser propagation direction so that the paths of the interferometer arms
+are nominally one dimensional along :10. Both satellites are in orbit around the Earth, and for simplicity we take the
+orbital angular velocity vector to be (2 = nory (for a leader—follower orbit, as seen in Fig. 6).
+
+The speciﬁc sequence of light pulses used to implement the atom interferometer is an important consideration since
+it affects both the gravitational wave response and the sensitivity to noise. The standard three—pulse accelerometer
+pulse sequence (7T/ 2 — 7T — 7T/ 2) consists of an initial beamsplitter pulse, a mirror pulse a time T later, and a ﬁnal
+interfering beamsplitter pulse after an additional time T . Such an interferometer is sensitive to gravitational waves as
+well as uniform acceleration; this interferometer geometry is discussed in detail in [26]. However, in a leader—follower
+low Earth orbit (see Fig. 6) the three—pulse sequence cannot be used by the AGIS—LEO instrument because the large
+rotation bias prevents the overlap of the interferometer arms. In order to observe interference and thereby measure a
+phase shift, the arms of the atom interferometer must overlap at the end of the pulse sequence Within the size of the
+
+"
+"5","5
+X [m]
+C D
+4 /'&\
+’ \
+I, ‘
+I \
+2 ,’ \\ 4
+I
+A ,” \\ F
+’ t[s]
+\\ 5 I
+\\ ’I 2
+_2 \ ’1
+\ /
+_4 \\\ I” a 0
+\ ’ 2‘ ‘——— -‘~
+C B E N ”/¢’ F ‘~~~~~~
+2 [cm] ”/ V\\
+—2 z s
+4 (\B D ’3
+\x ”f
+2 4 K~~~ ”¢”
+A F ~N“~~-—__y-——-—”/
+~~ ’a t [S]
+\\ 5 10 ’z’ 15 —4 —2 O 2 4
+\ I
+—2 \ B D / x [m]
+\ I
+_4 \\\\~ ’I”’
+FIG. 2: Four—pulse atom interferometer sequence using double—diffraction LMT beamsplitters under the inﬂuence of a leader—
+follower low Earth orbit rotation bias. The upper arm of the interferometer is the solid (blue) path and the lower arm the
+dashed (red) path. Interactions With the light pulses are shown as points labeled by letters A through F. The interferometer
+laser pulses are directed along the x—direction With kz- : miceﬂsfc for 1 S 2' S 4. The normalized wavevectors have values m : 1,
+n2 : 2, n3 : 2 and R4 : 1. The pulses occur at times 751 : 0, t2 : T, 753 : ST and t4 : 4T With interrogation time T : 4 s.
+See Fig. 1 for the deﬁnition of coordinate axes.
+atomic wavepacket (i.e., Within the spatial coherence length of the atom). For 87Rb atoms, the coherence length of
+the atom’s external degrees of freedom is Am 2 h/Ap N 10 ,um‘ / w for atom ensemble temperature 7'. The large
+Coriolis forces experienced in low Earth orbit can cause deviations to the nominal paths of the atom interferometer’s
+arms that exceed this coherence length, causing the interferometer not to Close. To address this problem, AGIS—LEO
+uses multiple—pulse sequences With appropriate symmetry to facilitate interferometer Closure.
+
+An example of a pulse sequence that Closes even in the presence of large Coriolis forces is the symmetric four—pulse
+sequence (7T/2 —7T —7T —7T/2) shown in Fig. 2, Where the four laser pulses propagate along the ac direction With effective
+wavevectors kz- 2 k1)? for 1 g 73 g 4. This interferometer uses two mirror pulses, resulting in a two—loop interferometer
+geometry along the ac direction. Although the interferometer is nominally one dimensional along :10, the Coriolis force
+causes transverse deﬂections so that at point C the upper arm z—position is 2:0 : % ‘29 X V‘ T2 : Qor(keﬂ:/m)T2 N
+2 cm, Where once again Qor is the orbital angular velocity of the AGIS satellites. For increased symmetry between the
+arms, the interferometer in Fig. 2 uses double—diffraction beamsplitters [27] in Which the upper and lower arms of the
+interferometer are given a positive and negative recoil kick, respectively. In contrast to the typical single—diffraction
+beamsplitter Where only one arm Changes velocity, the double—diffraction beamsplitter results in symmetric Coriolis
+deﬂections Which are needed to Close the interferometer.
+
+Multiple—pulse sequences such as the one in Fig. 2 also help reduce systematic errors in the instrument. For
+example, by adjusting the time spacings between the pulses, the four—pulse sequence can be tuned to be insensitive to
+either uniform accelerations or gravity gradients and Coriolis effects [26, 28]. This is useful for suppressing spurious
+noise from these sources. The sequence shown in Fig. 2 uses a symmetric pulse spacing With pulses occurring at
+times 751 = 0, t2 = T , t3 2 3T, and t4 : 4T. As a result, this interferometer is insensitive to acceleration noise, but it
+remains sensitive to gravity gradients.
+
+A ﬁve—pulse sequence (7T/2 — 7T — 7T — 7T — 7T / 2) offers a number of advantages that make it a promising candidate for
+the AGIS—LEO mission. Figure 3 shows an example of a symmetric ﬁve—pulse sequence With pulses at times 751 : 0,
+t2 = T , t3 2 3T, M 2 ST, and t5 2 GT and With variable pulse wavevectors lo; along the x—direction assuming large
+momentum transfer (LMT) atom optics With magnitudes k1 = keﬂs, k2 = gkeﬂ‘, k3 = gkeﬁ‘, k4 = %keﬂ:, and k5 = 2keﬂs,
+
+"
+"6","6
+X[II1]
+A D
+I \\
+5 C I, \ G 6
+l’ \\
+I \
+’I \\ ’
+AA/ \AH"" 4
+t s
+\\ 5 ’1’ \\ 20 ’,’ ‘ [ ]
+\ I \ / F C
+\\\ ’I’ \\\ ’I’ 2 \
+_5 . B . F \\\
+g 0 D ,0
+N /
+Z [cm] ”/
+—2 z’
+4 ’_‘ B G
+’l’ \\\
+I \
+I o —4
+2 E / \F
+I \
+A I \ H ’ [ 1
+‘ A t s —6
+\\ 5 10 ,l 2 -5 0 5
+\\ [ID
+—2 \ B ’I G X [m]
+4 \\\ ”I
+_ \.,1
+FIG. 3: Five—pulse atom interferometer sequence using double—diffraction LMT beamsplitters under the inﬂuence of a leader—
+follower 10W Earth orbit rotation bias. The upper arm of the interferometer is the solid (blue) path and the lower arm is the
+dashed (red) path. Interactions With the light pulses are shown as points labeled by letters A through H. The interferometer
+laser pulses are directed along the x—direction With kz- : miceﬂsfc for 1 S 2' S 5. The normalized wavevectors have values m : 1,
+m2 : %, m3 : 3, m4 : g and R5 : 2. The pulses occur at times 751 : 0, t2 : T, 753 : ST, 754 : ST and t5 : 6T With interrogation
+time T : 4 s. See Fig. 1 for the deﬁnition of coordinate axes.
+Where hkeﬂ: = ZOOEk (see Sec. 11113). The three mirror pulses in this sequence result in a three—loop interferometer
+geometry along the x—direction, and these particular 75%- and 196- values are Chosen to simultaneously meet the constraints
+of interferometer Closure in ac and z and symmetry in time (see the detailed discussion in Sec. VA). For four— and
+ﬁve—pulse sequences With the same IOW—frequency detection limit, the z—deﬂection 0f the ﬁve—pulse interferometer is
+intrinsically smaller than that of the four—pulse interferometer since it goes through zero at the midpoint. Smaller
+deﬂection is desirable since the atoms must stay Within the beam waist of the interferometer lasers (see Sec. IV). In
+addition, the ﬁve—pulse sequence is insensitive to both acceleration noise and gravity gradient induced background
+noise Which reduces the temperature requirements (kinematic constraints) of the atom source (see Sec. III A).
+B. The Gravitational Wave Phase Shift
+The gravitational wave—induced phase difference between two ﬁve—pulse (7T/2 — 7T — 7T — 7T — 7T / 2) atom interferometers
+separated by baseline distance L along the direction of propagation of the laser light is
+. 7 —1— 8 cos wT ,
+AgbGW : SkeﬂshL s1n4(wT/2) (f) s1n QGW (1)
+Where h is the gravitational wave strain for a gravitational wave of frequency w, T is the interrogation time of
+the interferometer, and keﬂ: is the effective wavevector 0f the AI beamsplitter. Here QGW 2 cat is the phase of the
+gravitational wave at the time t of the measurement. This result follows from a fully relativistic phase shift calculation
+discussed in [29, 30] applied to the ﬁve—pulse sequence described in Sec. II A.
+To maximize the strain sensitivity of the detector, the baseline L should be made as large as possible. This is
+a straightforward scaling to implement since only the laser light needs to travel the distance L between the atom
+interferometers; each AI can remain relatively small, situated at the ends of the long baseline (see Fig. 1). From Eq.
+
+"
+"7","7
+10—14
+10—15
+10—17 a
+10-18 LISA ‘ ‘
+N b V A
+Q m 10-19 I AGIS—LEO
+C
+10—21
+LIGO
+10—22
+—23
+10 Adv LIGO
+10—24
+10—5 Hz 10—4 Hz 10—3 Hz 10—2 Hz 10—1Hz 1H2 10 Hz 102 Hz 103 Hz 104 Hz
+FIG. 4: The thick (red) curve shows the enveloped strain sensitivity versus gravitational wave frequency of a ﬁve—pulse inter—
+ferometer sequence for a single arm of the proposed AGIS—LEO instrument. Analogous plots for LIGO [31], Advanced LIGO
+[32], and LISA [33] are included for comparison. Curves a—d show gravitational wave source strengths after integrating over the
+lifetime of the source or one year, Whichever is shorter: (a) represents inspirals 0f 103MQ, 1M9 intermediate mass black hole
+binaries at 10 kpc, (b) inspirals 0f 105MG, 1M9 massive black hole binaries at 10 Mpc, (C) White dwarf binaries at 10 kpc, and
+(d) inspirals 0f 103MG, 1M9 intermediate mass black hole binaries at 10 Mpc.
+(1), the interferometer is maximally sensitive to GW frequencies at and above the corner frequency we 2 % (:0s_1 g m
+27? ' 0.29 / T at Which point Agbgw : (125/ 16)keﬂshL sin QGW. For lower frequencies w < we, the 3 0113 point occurs at
+wgdB = % csc_1[4/\/5] % 27? ' 0.19 / T and sensitivity falls off as of. At higher frequencies w > we, the envelope of
+the sensitivity curve is constant and the periodic anti—resonant frequencies that are present in (Eq. 1) can easily be
+avoided by varying T [26].
+
+In order to observe a gravitational wave, the phase shift Aqﬁgw must be sampled repeatedly as it oscillates in time due
+to the evolution of QGW. To avoid aliasing, the sampling rate fr must be at least twice the frequency of the gravitational
+wave. The sampling rate can be increased (Without decreasing T ) by operating multiple concurrent interferometers
+using the same hardware [26]. In these multiplexed interferometers, atom Clouds With different velocities would be
+addressed Via Doppler shifts of the laser light.
+
+C. Gravitational Wave Sensitivity
+
+The phase sensitivity of an atom interferometer is limited by quantum projection noise 6q5 = 1/SNR = 1/\/Na,
+Where Na is the number of detected atoms per second. For shot—noise limited atom detection, the resulting strain
+sensitivity to gravitational waves becomes h : 813% (:s(:4 (wT / 2) (W). Figure 4 shows the AGIS—LEO mission
+strain sensitivity (enveloped) for a single pair of satellites using the ﬁve—pulse interferometer sequence from Fig. 3
+With hkeﬂ: = ZOOEk beamsplitters, an L = 30 km baseline, a T : 4 s interrogation time, and a phase sensitivity of
+
+"
+"8","8
+10—14
+10—15
+10—17
+10-18 LISA
+N
+a |E
+10—20
+10—21
+LIGO
+10—22 a
+b IS—future
+—23
+10 C Adv LIGO
+10—24
+10—5 Hz 10—4 Hz 10—3 Hz 10—2 Hz 10—1Hz 1H2 10 Hz 102 Hz 103 Hz 104 Hz
+FIG. 5: The thick (red) curve shows the enveloped strain sensitivity versus gravitational wave frequency of a ﬁve—pulse inter—
+ferometer sequence for a single arm of a sensor that could be realized in the future. Analogous plots for LIGO [31], Advanced
+LIGO [32], and LISA[33] are included for comparison. Curves a—C show gravitational wave source strengths after integrating
+over the lifetime of the source or one year, Whichever is shorter: (a) represents inspirals 0f 105MG, 1M9 massive black hole
+binaries at 10 Gpc, (b) White dwarf binaries at 10 Mpc, and (c) inspirals 0f 103MQ, 1M9 intermediate mass black hole binaries
+at 10 Gpc. It should be noted that the stochastic background of White dwarf binaries Will likely overwhelm all but the strongest
+of these sources at frequencies less than N 0.5 HZ (see Fig. 9). Note also that this sensitivity curve assumes atom shot noise
+limited detection and does not include limits that could be imposed by systematic effects present in the future apparatus.
+6q5 = 10—4 rad/V Hz. Although the sensitivity spectrum contains periodic nulls corresponding to frequencies at Which
+AqﬁGw = 0, in practice the entire strain sensitivity envelope shown in Fig. 4 can be accessed by scanning T over a
+small range on repeated interferometer sequences.
+
+Many of the parameters that set the instrument sensitivity can eventually be improved as A1 technology continues
+to evolve. Figure 5 shows the gravitational wave sensitivity that would be possible With a more advanced version of the
+AGIS instrument. This future sensitivity curve assumes the same ﬁve—pulse interferometer sequence and hkeﬂ: = ZOOEk
+atom optics, but With an L : 104 km baseline, a T : 40 s interrogation time, and an improved phase sensitivity
+of 6q5 = 10—5 rad/x/ HZ. We note that this sensitivity curve does not include limits that might be imposed by the
+systematic effects relevant to such a future apparatus, since its purpose is simply to illustrate the potential for atomic
+gravitational wave detectors to improve as technology advances. The large baseline of this future instrument would
+require a solar orbit and is not addressed here.
+
+"
+"9","9
+y é a “I
+/ /
+x ' ‘U’
+\
+Z
+X
+Z
+FIG. 6: Conceptual orbit diagrams for two possible AGIS—LEO two—satellite conﬁgurations, not to scale. In each ﬁgure, the
+locations of the satellites (black dots) are shown at quarter—intervals (left) or sixth—intervals (right) of the orbital period,
+connected by a green line corresponding to the interferometer baseline axis of the gravitational wave detector at that instant.
+Left: A leader—follower (LF) conﬁguration in which both satellites follow circular orbits with the same altitude and angle of
+inclination, but with different angles of true anomaly (i.e. phases). In this formation, the baseline’s length does not change,
+but it rotates constantly as the satellites orbit the Earth. Unless otherwise speciﬁed, the leader—follower orbit is assumed in this
+paper. Right: An inclined—great—circles (IGC) conﬁguration in which both satellites are in circular orbits of the same radius,
+but with different angles of inclination. If the true anomaly difference between the satellites were zero, then the baseline axis
+would not rotate, but it would ﬂip twice per period and it’s length would oscillate. Practically, however, it is necessary to add
+some anomaly to ensure that the satellites do not collide. In this case, one satellite appears to move in an ellipse centered on the
+other. The eccentricity of this ellipse is determined by the ratio between the anomaly and the inclination, allowing continuous
+tuning from a conﬁguration that favors nearly constant orientations at the cost of length variations to a conﬁguration with
+invariant lengths and constant rotation rates. Note the difference in deﬁnitions of the coordinate axes in the satellite frames
+between the LF and ICC conﬁgurations. In the LF conﬁguration (as in Fig 1), the x—direction is ﬁxed to the rotating baseline
+and the y—direction is normal to the satellites’ mutual orbital plane. In the ICC conﬁguration, the baseline lies on the y—axis
+and the x—axis is chosen to be tangential to the satellite’s orbital curve.
+D. Satellite Conﬁguration
+1. Two-Satellz'te Conﬁgurations
+
+As shown in the preceding sections, gravitational waves can be detected with a pair of atom interferometers manip—
+ulated by two satellites separated by a baseline of length L. Ideally, the satellites would be inertial and the baseline
+length would be constant. Instead, many practical issues must be addressed for the non—inertial low Earth orbits we
+discuss here. The simplest two—satellite conﬁguration is the Circular leader—follower (LF) conﬁguration (see Fig. 6),
+which yields baselines of constant length, but also with constant orbital rotation rate, Qor. While this rotation bias
+yields off—aXis Coriolis deﬂections (as discussed in Sec. II A and Figs. 2 and 3), the LF conﬁguration provides a simple
+starting point for our analysis. Thus, an equatorial, circular, two—satellite, LF orbit will be assumed throughout this
+paper unless stated otherwise.
+
+However, it should be noted that other orbital conﬁgurations exist for two satellites that have some advantages over
+the simple LF conﬁguration. For instance, the inclined—great—circles (IGC) conﬁguration shown on the right in Fig.
+6 reduces the impact of rotation bias at the cost of a variable baseline length. While any orbit pair at equal altitude
+requires the satellites to circle each other once per period, this conﬁguration can concentrate most of this rotation
+at the orbit crossing points. During the rest of the orbit, the baseline deviates little from one of two antiparallel
+orientations. For instance, at an orbital altitude of 1000 km (105 minute period), an IGC orbit with a maximum
+separation of 30 km and a minimum separation of 100 rn exhibits sub—degree angular deviations during two 45—minute
+windows centered at the points of maximum separation.
+
+The potential beneﬁts of the ICC conﬁguration are substantial. Most important, the small angular deviations
+decrease rotation bias and Coriolis deﬂections (see Fig. 7), relaxing many of the constraints based on (2m in the
+LF conﬁguration. Further improvements are then possible with star—tracker—based satellite pointing stabilization and
+active servoing of the beam delivery optics to compensate for residual rotation [21]. Finally, if the baseline axis
+points toward the Sun, this conﬁguration makes a sunshield more practical, since it would only have to protect the
+interferometer region along its transverse extent rather than its full length. (As will be discussed in Sec. VB, the
+Earth’s shadow could also be used for sun shielding, yielding about 35 minutes of uptime per period at 1000 km of
+
+"
+"10","10
+4 0.2
+§ 0.0
+Q
+.3 _0'20 5 10 15 20
+.§ 0 x‘ I,’ time(secondS) ‘\
+33 \\\ II
+3 \ I”
+g \\ I”
+3‘3 —2 \\ [’1'
+_4 “~--""
+0 5 10 15 20
+time (seconds)
+FIG. 7: Coriolis deﬂection from the interferometer axis for inclined—great—Circles and leader—follower orbits. Leader—follower
+deﬂection is shown in solid (blue) and dotted (red) lines With a maximum transverse separation of 8 cm between the two
+arms of the interferometer, While the inclined—great—Circles deﬂection is shown in solid (green) and dashed (purple) lines With a
+maximum separation of 160 pm. The inset shows a Close—up View in order to detail the inclined—great—Circles deﬂection.
+altitude. This corresponds well With the 45—minute Window of small angular deviations discussed previously.)
+
+The variable baseline length in an IGC conﬁguration implies that the atoms from the two satellites have a non—
+zero relative velocity along the interferometer axis. This requires that the lasers be phase—Chirped to account for the
+Doppler shift caused by this Changing relative velocity over the duration of the interferometer. Additionally, the atoms
+released from the two satellites Will have different respective Doppler shifts. Thus, two different sets of frequencies
+Will be needed to address a pair of interferometers in a differential conﬁguration (With one interferometer released
+from each satellite). The two frequency sets can be realized by electro—optically generating multiple sidebands from
+a common source laser.
+
+The relative velocity between the two interferometers is advantageous for Doppler—based multiplexing of multiple
+interferometers during the same time Window. The relative velocity between the atoms and the satellite depends on
+AT, the time since the start of each interferometer. Thus, each Cloud is naturally tagged With a different frequency
+Which allows for easy individual addressability.
+
+2. T hree—Satellite Conﬁgurations
+
+While a single pair of atom interferometers along a common baseline is sufﬁcient for detecting gravitational waves, a
+multiple—arm conﬁguration With several AI pairs offers many potential advantages, Which we Will discuss shortly. Our
+three—arm proposal consists of three satellites maintaining constant separations of N 30 km in formation ﬂight (Fig.
+8). Such a formation can be pictured as a chief point on a Circular Earth—orbit, With deputy satellites in Circular orbits
+in a Hill frame around the chief point. It has been shown that such orbits exist With low station—keeping costs even
+When one accounts for the J2 oblateness of the Earth [34]. Lasers located inside each satellite send light to both of
+the other satellites, forming a set of three arms consisting of counter—propagating light beams. Each arm has an atom
+interferometer at both ends — near, but outside of, the satellites (Fig. 1). The pair of atom interferometers along a
+given arm is manipulated by the counter—propagating light beams of that arm, and the phase difference between these
+AIs due to a gravitational wave is given by Eq. (1). As a result, each arm of the instrument acts as an independent
+gravitational wave detector.
+
+The desire for multiple, independent GW detectors in the AGIS instrument is motivated by one of our primary
+science goals: the detection of stochastic GWs. While a coherent GW signal, such as one from a binary merger, can
+be detected by a single arm of AGIS, stochastic GWs can be detected only by studying correlations in the signals
+
+"
+"11","11
+. .- Aagl Aagl
+FIG. 8: AGIS—LEO three—satellite orbit simulations. Left: Equatorial orbit of the entire AGIS—LEO constellation at an altitude
+of 1000 km. Right: Closer View of three AGIS satellites in an equilateral triangular formation. The simulations were done
+using the STK software package from AGI.
+
+Baseline 30 km Gravitational Wave Sensitivity (Sec. II C)
+
+Atom Flux 108 @ Cold Atom Source (Sec. III A)
+
+Cloud Temperature N 100 pK Cold Atom Source and Wavefront (Sec. IIIA and IVB4)
+
+Cooling Laser Powers N 100 mW Cold Atom Source (Sec. 111A)
+
+Interferometer Sequence Multiple 100p Atom Interferometer Pulse Sequence (Sec. II A)
+
+Momentum Separation of Interferometer Arms N 2007119 Atom Optics (Sec. 111B)
+
+TABLE I: Instrument parameters summary. For interferometer laser requirements, see Table II.
+
+from at least two independent GW detectors. In Fig. 9, the sensitivities of the AGIS—LEO and future instruments are
+plotted against expected stochastic backgrounds. Following the analysis in [26], we display the sensitivities as 95%
+conﬁdence limits on the gravity wave energy density, QGW. To account for the effect of the satellite conﬁguration
+on the instrument’s sensitivity to stochastic sources, the calculation includes the appropriate overlap function value
+v 2 7T for an equilateral triangle geometry [35]. As indicated by the sensitivity of the future—technology curve, sensors
+using AIs have the potential to detect stochastic GWs from cosmic strings and, depending on the exact frequency
+cutoff of the White dwarf background, possibly even inﬂation and TeV scale phase transitions.
+
+There are also technical advantages to the AGIS—LEO three satellite conﬁguration over a single arm design. Addi—
+tional suppression of laser phase noise and Vibration noise is possible by combining the signals from multiple arms.
+Noise that originates from a particular satellite can have a signiﬁcant common component for the two arms serviced
+by that satellite. Comparison of the signals from multiple arms can be used to subtract this common noise, allowing
+for additional noise cancellation in the event that the single arm differential suppression is not sufﬁcient. Finally, the
+use of three independent arms provides redundancy and improves uptime. A ﬁnal determination of the AGIS—LEO
+orbital conﬁguration Will require a more thorough analysis of the costs and beneﬁts outlined here.
+
+III. INSTRUMENT OVERVIEW
+
+A single phase measurement in an atom interferometer consists of three steps: atom Cloud preparation, interferom—
+eter pulse sequence, and detection. In order to attain the 10‘4 rad/x/ Hz phase sensitivity, the instrument must be
+designed to provide, maintain, and measure a cold atom ﬂux of 108 atoms/s. Instrument parameters resulting from
+the discussion below are summarized in Table I.
+
+"
+"12","12
+
+10—3Hz 10—2Hz 10—1Hz 1 Hz 10 Hz 102 Hz 103 Hz
+
+1 1
+10—2 10—2
+10—4 —LIGO S4 10—4
+
+BBN + CMB
+G = 10-8
+
+10—8 G = 10—10 - 10—8
+
+5 _10 Advanced LIGO _10
+
+C} 10 10
+V A G = 10—16
+10—12 V 10—12
+_ ‘ _ __________Iﬁﬂa_ti<3n_______________' _
+
+10 14 10 14
+
+10‘16 RSI 10—16
+
+10—18 10—18
+
+10—3Hz 10—2Hz 10—1Hz 1 Hz 10 Hz 102 Hz 103 Hz
+FIG. 9: The 95% conﬁdence limits on the sensitivity of the instrument in terms of gravity wave energy density, Slaw, for
+present and future parameters are plotted as thick (red) curves. These sensitivities are for a ﬁve—pulse interferometer sequence.
+The limit from the LIGO Science Run 4 and the projected limits from initial and advanced LIGO are shown [36]. The limits
+from models of big—bang nucleosynthesis (BEN) [37] and the cosmic microwave background (CMB) [38] apply to the integral of
+the stochastic gravitational wave background over frequency. The possible region of gravitational waves produced by a period
+of inﬂation (not including reheating) is shown. The upper limit on this region is set by the COBE bound [39]. The gray band
+shows a prediction for the stochastic gravitational wave background from extragalactic White dwarf binaries; its Width shows
+an expected error [40]. The (green) curve labeled R81 corresponds to an example spectrum of gravity waves from a TeV scale
+phase transition, in this case from the R81 spacetime geometry [12]. The (orange) lines labeled With GM correspond to one
+prediction for a network of cosmic strings With tensions GM : 10—8, GM : 10—10 and 10—16 (With 04 : 0.1 and ”y : 50) [14].
+Note that these cosmic string estimates have large uncertainties and may be Optimistic assumptions.
+A. Cold Atom Source
+
+The suppression of velocity—dependent backgrounds requires the atoms to be 00101, With RMS velocity Widths as
+small as N 100 ,um/s, corresponding to Cloud temperatures of N 100 pK. Cold atom Clouds With 108 to 1010 atoms
+are readily produced using modern laser cooling techniques [41]. Furthermore, it has been demonstrated that the
+hardware necessary for these standard techniques is simple and can be made robust and compact — enough to perform
+well in drop towers and on airplanes [21, 42, 43]. It is possible to make cold atom sources With ﬂuxes of 1010 atoms/s
+that ﬁt in a volume of less than 20 cm3 and require N 100 mW of laser power [44].
+
+The required N 100 ,um/s Wide Cloud can be extracted from a large (2 1010 atom) ,uK—temperature thermal
+Cloud by applying a velocity—selective cut using Doppler sensitive tWO—photon transitions [45]. Alternatively, the
+necessary velocity spread can be achieved by adiabatically expanding a cold atom ensemble in a harmonic trap or by
+implementing delta kick cooling [46], both of Which are aided by being in microgravity, or by cooling the atoms in an
+optical lattice [47]. Adiabatic expansion of a cold atom ensemble in an all—optical trap, Which requires only simple
+cavities and low power lasers, can be realized With a setup similar to that described in [48]. In any of these cases, low
+densities are desirable to mitigate possible systematic noise sources associated With cold collisions. If necessary, an
+array of multiple atom sources can be placed in each satellite in order to meet the atom ﬂux requirement.
+
+"
+"13","13
+
+After preparation, the cold atom ensemble must be positioned outside the satellite in the interferometer region (see
+Figs. 1 and 10). This can be accomplished using laser light along the primary interferometer beam axis. Counter—
+propagating light from two satellites is used to form an optical standing wave, trapping the cold atoms. Such an
+optical lattice trap can then shuttle the atom Cloud out to the appropriate initial position [49].
+
+In leader—follower low Earth orbits, positioning the atoms outside the satellites must account for signiﬁcant Coriolis
+forces. For example, moving an atom Cloud 10 rn from the satellite in a time of 1 s can lead to transverse accelerations
+of iv X (2‘ N 10—39. Using a red—oletuneol optical lattice can provide transverse conﬁnement during Cloud positioning,
+but this may require small lattice beam diameters, potentially limiting the baseline due to laser light diffraction effects.
+To avoid this baseline constraint, a more tightly focused beam may be sent out from each satellite in addition to the
+larger diameter optical lattice, acting as a source of transverse conﬁnement for the atoms near the satellite from which
+the small beam originates.
+
+B. Atom Optics
+
+Conventional Raman atom optics transfer momentum hkeﬂ: 2 26k to the atom at each beamsplitter [23]. To
+achieve the desired sensitivity, it is necessary to increase keﬂ: using large momentum transfer (LMT) bearnsplitters.
+An N th order LMT beamsplitter (corresponding to an hkeﬂ: = 2Nhk momentum separation between the arms of an
+interferometer) yields an N —folol enhancement of the phase difference in Eq. (1). LMT bearnsplitters can be achieved
+by adiabatically accelerating the atoms with an optical lattice [49—52] or by applying sequential two—photon Bragg
+pulses. In addition to the desired stimulated transitions, the atoms can undergo unwanted spontaneous two—photon
+transitions when in the presence of the laser ﬁeld, consisting of the stimulated absorption of a photon from the
+laser ﬁeld followed by the spontaneous emission of a photon in a random direction. Atoms that undergo spontaneous
+emission are lost and do not contribute to the interferometer signal, so this effect must be minimized. The spontaneous
+emission rate can be written as RSC = %, where ﬁst = W is the Rabi frequency of the desired stimulated
+two—photon transitions, I is the laser intensity, F is the spontaneous decay rate of the excited state, A is the laser
+oletuning, and [sat 2 2°57: is the saturation intensity of the atomic transition with resonant cross section 00 N A2 and
+frequency w = 27TC/A. The time tN needed for an N th order LMT beamsplitter is given by tN N N 9i In order
+for spontaneous emission not to degrade the signal signiﬁcantly for q concurrent interferometers, we thereiore require
+that qNQist SJ Bi. For example, for rubidium atoms (Isat % 2.5 2“ng and F m 27? ' 6.066 MHZ) we can meet this
+requirement for 671 N 100 LMT beam splitters and q N 10 concurrent interferometers by choosing ﬁst N 27? X 0.4 kHz
+and laser powers of N 1 W with a beam waist of 10 cm.
+
+In addition to minimizing spontaneous emission, we must ensure that noise in the differential phase between
+interferometers due to AC Stark shifts [41] (including those due to off—resonant two—photon transitions) is below
+10—4 rad/\/H—Z. This can be achieved with the parameters given above by stabilizing ﬂuctuations in the laser intensity
+at the N 0.01% level. Off—resonant shifts are discussed in detail in [50].
+
+When multiple concurrent Doppler—multiplexeol interferometers are used, for certain parameters it may be optimal
+to Choose the launch momentum difference between successive interferometers to be smaller than the momentum
+splitting between the arms of a single interferometer. If this is the case, then there will be instances when two arms
+of two different interferometers will cross each other in momentum space. The existence of such crossings will require
+only minor alterations to the pulse sequence to avoid interactions with the undesired arm.
+
+C. Detection
+
+A normalized phase measurement at the end of a pulse sequence consists of counting the number of atoms at each
+output port of the interferometer. Since the interferometry takes place outside the satellite, this counting must be
+done remotely. Fluorescence imaging, commonly used in laser cooling and trapping experiments, is an inherently
+remote state—sensitive atorn—counting technique. A ﬂuorescence—baseol detection scheme can be implemented with
+CCD cameras on the satellites and the same telescopes used to enlarge the primary atom interferometry beams (see
+Sec. IV A). For instance, a detection beam tuned to resonance with an optically allowed atomic transition can be
+generated and enlarged to a 10 cm waist with the telescope on one satellite. Backscattereol ﬂuorescent light can be
+collected using the same telescope.
+
+The details of such a scheme are as follows. Prior to detection, atoms exiting a port of the atom interferometer can
+be transferred from the interferometer atomic state (one of the ground state hyperﬁne levels) to the imaging state
+(the other ground state hyperﬁne level) using a Doppler sensitive two—photon Raman transition. Here the Doppler
+sensitivity of the transition is used to distinguish the output ports of the interferometer, since the atoms in the
+
+"
+"14","14
+
+Parameter Speciﬁcation Location in Text
+
+Power N 1 W Atom Optics (Sec. III B)
+
+Waist N 10 cm Atom Optics and Laser Pointing Angle Jitter (Secs. IIIB and VF)
+
+Intensity Stability < 0.01% Atom Optics (Sec. III B)
+
+Wavefront < ﬁ Wavefront Aberrations (Sec. IV B)
+
+Phase Noise < —100 % Laser Phase Noise (Sec. IV C)
+
+Fractional Frequency Stability < 10—11 Laser Phase Noise (Sec. IV C)
+
+TABLE II: Interferometer laser pulse requirements.
+
+different output ports have different longitudinal velocities (see for instance, Fig. 3). A subsequent short detection
+pulse (N 1 ms) (tuned to be resonant with the transition between the imaging state and an optical excited state)
+scatters ﬂuorescent photons. A fraction of these photons is collected by the imaging optics and focused onto a CCD
+detector. With Na N 108 atoms in the Cloud, a phase sensitivity of N 10—4 raol requires the ability to measure Changes
+in atom number at the m N 104 level (the atom shot—noise limit). This limit can be achieved by scattering enough
+photons from the atomic ensemble so that at least 1 photon per atom is detected. The required number of scattered
+photons is determined by the solid angle subtended by the light collecting optics, which for a 30 cm primary telescope
+mirror at a distance of 10 rn from the atom Cloud is AS) N 6 X 10—5 sr. For the above parameters, the detection
+laser must have I / [sat N 10 to achieve 1 photon per atom in 1 ms. The outputs from multiple Doppler—rnultiplexed
+interferometers run concurrently can be detected with a sequence of appropriately tuned velocity—selective Raman
+pulses. Finally, the fact that the detection is spatially resolved allows for Characterization of possible optical wavefront
+curvature errors in the sensor (see Sec. IVB 5).
+
+Having shown that it is possible to produce, maintain and detect the necessary cold atom ﬂux, we now consider
+the noise sources that may compete with gravitational waves at this level of phase sensitivity. These sources fall into
+two general categories: noise of the laser beam wavefronts and noise from the environment. The former affects the
+atoms’ reference frame while the latter affects the atoms’ motion relative to that reference frame.
+
+IV. ATOM INTERFEROMETER LASER BEAM CONSIDERATIONS
+
+The laser wavefronts form the reference frame against which the motion of the atoms is compared. Thus, it is
+important that any non—cornmon noise in the wavefronts that is imprinted on the interferometers falls below the phase
+sensitivity limit in the frequency band of interest. In this section, we discuss telescope design, wavefront aberrations,
+and laser phase noise as they relate to this requirement. For a summary of the resulting interferometer laser pulse
+parameters in particular, see Table II.
+
+A. Telescope Design
+
+To generate interferometry beams with Rayleigh ranges equal to half our satellite separations (see Sect. VF), we
+will need telescopes to magnify the beam waists to 5 — 10 cm. These beam waists should also be large compared
+to the typical sizes of the atom Clouds, N 1 cm FWHM. The telescopes serve multiple purposes in the instrument:
+their beam line can be used to shuttle atoms into the interferometry region before a measurement (Fig. 1), they
+magnify the primary atom optics beams (Sec. III B), and they form a part of the detection imaging system (Sec.
+III C). As discussed in the remainder of this section, the atom optics beams place the most stringent requirements on
+the telescope design. Each beam is used in two atom interferometers, one a few meters outside the laser’s originating
+satellite, and the other N 30 km away. Thus, the telescope’s design must account for both small—scale imperfections
+and large—scale aberrations. For instance, the secondary rnirror must not obstruct the path of the beam and the
+primary mirror must be large enough to avoid aperture diffraction effects. A N 30 cm diameter off—axis Schiefspiegler
+or off—axis Gregorian telescope could be capable of meeting these requirements [53, 54]. A Gregorian telescope has the
+additional advantage that its real intermediate focus could be used for pinhole spatial ﬁltering, which would eliminate
+wavefront errors from all optics and lasers before the primary mirror (see Fig. 10).
+
+"
+"15","15
+Secondary 4-»
+error /=l
+""ism Interferometry
+\\ Beam Source
+_ \ ,‘éféy‘
+° .4...‘ \..“gr¢’\ 4
+Retro error "" 1%?3‘3‘38‘,‘
+Aw; “ anary
+ﬂ§\“ error
+\\\\‘
+a ‘
+/
+/ Atom Shuttling
+' - Lattlce
+I Cold Atom
+Source
+FIG. 10: Conceptual diagram of a single AGIS telescope as a 30 cm off—axis Gregorian system. Note the intermediate focus
+of the Gregorian telescope, Which allows for the use of pinhole spatial ﬁltering to remove wavefront aberrations from upstream
+optics and lasers. Also shown approximately to scale is the cold atom source and a lattice beam that could be used to shuttle
+the atoms into the middle of the primary interferometry beam. The primary beam line can in turn be used to shuttle the atoms
+away from the satellite prior to an interferometer sequence.
+B. Wavefront Aberrations
+Wavefront aberration of the interferometer laser beams is a potential source of noise. Since the phase of the laser
+is imprinted on the atom during each light pulse, any transverse phase variation results in a phase shift that depends
+on the transverse position of the atom With respect to the laser beam spatial proﬁle. This effect can result in phase
+noise (i) due to satellite transverse position noise during the interferometer pulse sequence, (ii) due to ﬂuctuations in
+the mode itself induced by temporal variations in the optics path or (iii) due to jitter in initial atom Cloud position
+01‘ Width from shot to shot. The effect is in general not common—mode suppressed since wavefront perturbations
+With high transverse spatial frequency diffract out of the beam over distances smaller than the satellite separation.
+The perturbations become common—mode suppressed at transverse wavelengths At longer than the corner wavelength
+AC 2 V LA N 17 cm (30%)1/27 Where AC is deﬁned as the transverse spatial length scale Which has a Rayleigh range
+of L. In addition, since the in the simplest case the interferometer phase measurement is determined by the total
+number of atoms in a particular state, aberrations With transverse wavelengths smaller than the size of the Cloud can be
+suppressed by spatially averaging over the atom Cloud. However, by performing this average, the phase measurement
+becomes sensitive to Changes in the atom Cloud size from shot to shot, a noise source Which we also discuss below.
+1. Wavefront Aberration Phase Shift Calculation
+The phase shift imparted to the atoms as a result of non—uniform transverse spatial phase of the laser wavefronts
+can be calculated by summing the local phase ¢(Jj, z, t) imparted to the atom at each of the light pulses:
+TL TL
+(Pt = Z ¢(5L’ja Zjatj) = 29(1117 kt,tj) Siﬂikt(zj — 53021)) + 9t] (2)
+j=1 i=1
+
+"
+"16","16
+Here the position of the atom is referenced to the coordinate system shown in Fig. 1, where 303- is the longitudinal
+position of the atom along the direction of keﬂ: at the time tj 0f the jth pulse and zj is the transverse position at
+time tj (for simplicity we suppress the transverse coordinate yj). The sum is taken over the n light pulses of the
+interferometer sequence; in the cases considered here n = 5 and the coordinates (:Ej,zj,tj) are taken to be those
+shown in Fig. 3. For simplicity, we consider the response to a single Fourier component of amplitude 6(110, kt, t) and
+transverse spatial wavevector kt = 27T/At. The general phase 91; allows modeling of both quadratures. The time—
+dependent reference position 6z(t) accounts for Vibrational noise that affects the relative transverse position of the
+atom and the satellite. In the paraxial limit, the amplitude of each Fourier component evolves as the beam propagates
+along the ac direction according to the paraxial propagator given by 6(110, kt, t) = 60%, 75) exp [—73%(30 — 1100)] where :30
+is the reference plane at which 6(kt,t) is known. Finally, in order to model time—dependent wavefront aberrations,
+we decompose each Fourier coefﬁcient into a static and a dynamic component: 6(kt, t) E 60(kt) + 66(kt, 75). Here the
+term 66(kt,t) represents an explicitly time—dependent variation of the amplitude of the aberration with transverse
+wavevector kt.
+
+The phase shift (Pt given by Eq. (2) depends on the initial coordinates ($1, 271, 751) of the atom Cloud at the ﬁrst laser
+pulse. Since the atom wavefunction is spatially delocalized, the ﬁnal phase shift will vary with position across the
+atom. These position dependent phase shifts lead to an atom probability distribution (in one of the output ports) that
+may be written as l\I1(X)l2 = A(X) + B (X) cos (Q50 + ¢(X)), where ¢(X) is the spatially varying phase shift. Assuming
+lgb(x)l << 1, the total probability of detecting an atom in this port then depends on the spatial average of the phase
+over the atom wavefunction:
+
+00
+P: / W<x>l2dw ~ A+BCOS(¢0 + <¢<x>>> l¢<x>l << 1 (3)
+—00
+where A E [3:0 A(X)dac, B E [3:0 B(X)dac, and (¢(X)> E % [3:0 B(X)q5(x)dac.
+
+For this noise analysis, we want to calculate the differential response between two atom interferometers separated
+by a distance L along the laser propagation direction (see Fig. 1). This gradiometer phase is denoted ACID): E
+((1)1;(301 : L)> — ((1)1;(301 = 0)), where the expression given in Eq. (2) has been evaluated at initial positions 0 and L
+along the ac axis and the angle brackets indicate a spatial average over the atom distribution. Note that in practice
+the spatially resolved atom detection scheme discussed above (see Sec. III C) allows direct resolution of the transverse
+spatial dependence of the phase shift. In this section, we assume that we simply average over this information in
+order to set upper limits on the allowed aberrations 0f the optical system.
+
+Since we are only concerned with calculating time—dependent phase shifts originating from the jitter amplitudes 6z(t)
+and 66(kt, t), we may ignore any constant phase shift piece in Eq. (2) that does not depend on either jitter amplitude.
+T0 enforce this condition, we consider only the ﬁrst—order jitter susceptibilities 8(ACIDt)/8(6z) and 8(ACIDt)/8(66’). We
+then consider the response at frequency w of Eq. (2) for the position and phase jitter amplitudes, 6z(t) = 62(w)e_m
+and 66(kt,t) = 66(kt,w)e_m. Assuming that the system can be linearized for small jitter, the transfer function
+Hn(w) that relates each noise source 6n(t) t0 the phase error is simply the ﬁrst—order susceptibility evaluated at zero
+jitter amplitude.
+
+With these transfer functions, we can relate the amplitude spectral density of the measured phase g to the
+amplitude spectral density of noise sources 6—”. In general, the spectral densities are matrices, but because the
+measured phase is a scalar quantity and the noise sources are assumed to be uncorrelated, the relationship reduces to
+
+6qu = 2 law)? 6n 2 (4)
+TL
+where lHn(w)l is the magnitude of the transfer function. As noted above, the transfer function H n (w) of the particular
+noise source 67105) takes the form 8(ACIDt)/8(6n)l{5n}:0 in this analysis.
+
+By taking the square root of Eq. (4), we ﬁnd the amplitude spectral density of the phase noise imprinted on the
+atom (in [rad/ﬁb in terms of the amplitude spectral density of the transverse position jitter 5(a)) (in [m/VED
+and 0f the wavefront variation @(kt, w) (in [rad/ﬁbz
+
+6— k _ 8(A<I>t) 6— 2 8(A<I>t) E k 2 5
+M W— (|W| 4“”) +(lml (W) U
+2 2 2
+: 2 NH (i—jﬂkﬂg) .1. E2 (5 — 9 cos [¥] cos[2wT] + 4cos[3wT]) sin [%] exp [—41:3%] (6)
+where the noise contributions from transverse motion and dynamic wavefront variation have been summed in quadra—
+ture since they are assumed to be uncorrelated. The atom position distribution is taken to be a Gaussian with width
+
+"
+"17","17
+
+Transverse Position < 10 % Wavefront Aberration (Sec. IV B)
+
+Angle Jitter < 1 Lﬂi—j Laser Pointing Angle Jitter (Sec. VF)
+
+Angular Rate < 1 nrad/s Rotational Effects (Sec. VA)
+TABLE 111: Satellite position and angle control requirements. These requirements form constraints on one satellite’s laser
+position and angle relative to the counter—propagating beam from the Opposing satellite. We therefore can split the requirements
+into a coarse constraint on the satellite and a ﬁne constraint on the laser’s mounting platform. The constraints apply to both
+leader—follower and inclined—great—Circle orbits.
+0 (FWHM), N = keﬂF/Zk is the order of the LMT beamsplitter, and T is the interrogation time. The Coriolis—induced
+transverse position separation of the upper and lower interferometer paths is given by Az. A ﬁve—pulse sequence is
+assumed in obtaining Eq. (6). Finally, Eq. (6) represents the magnitude of the response With respect to the aberration
+phase 9t (i.e., the quadrature sum of both sine and cosine aberrations).
+
+We note that as A2: —> 0, the frequency dependence of the wavefront noise given in Eq. (6) is identical to the GW
+phase response for a ﬁve—pulse sequence (see Eq. (1)). This is expected since both effects arise from What amounts
+to a time variation in the local phase of the laser. However, as opposed to the GW signal, the response to wavefront
+aberration is suppressed to the extent that the aberrations are common between the two interferometers.
+
+2. T ransve’rse Vibratian Induced Phase Noise
+
+Here we focus on the wavefront—induced noise due to stochastic variation of the relative transverse position 62: 0f the
+atom With respect to the aberrated beam during the interferometer pulse sequence. This type of transverse position
+jitter may result from lariations in the satellite position. Sensitivity to transverse position jitterif the satellite is
+given by Eq. (6) With 66(w) = 0. In order for this noise source to be less than the atom shot noise 6gb, the maximum
+allowable wavefront aberration (in fractions of an optical wave) is given by
+
+6A 90(kt) 1 E)“: 7TLA 7T20'2 27TAz _1
+
+—E—:——_CSC— ex — 62+6300s — 7
+
+A 27v «2 N52: 2A3 p 4A31n2 At ( )
+assuming keﬂ: : ZNk = 200k LMT atom optics, E = 10—4 rad/x/ Hz, and motion 62: at the GW peak sensitivity
+frequency we 2 % cos_1\/§. Figure 11(a) shows the general wavefront constraint for all spatial wavelengths due to
+627 Vibration With amplitude 5 = 10 nm/@ for both the leader—follower and inclined—great—Circle orbits. Note the
+expected exponential relaxation of the wavefront constraint due to spatial averaging for At < 0 as well as the expected
+corner wavelength at At N \/L—)\ above Which the perturbations start to be common for the two interferometers. For
+wavelengths in the intermediate region 0 < At < AC, Which are not suppressed by spatial averaging and are not common
+between the interferometers, the maximum allowable wavefront aberration in waves is 6A N ﬂ (3—51) (w).
+For the leader—follower orbit, however, the larger transverse position separation (Az N 4 cm versus 80 ,um) results in
+resonant cancellation of certain transverse wavelengths. In the vicinity of these particular wavelengths, the wavefront
+requirements are signiﬁcantly relaxed.
+
+3. Dynamic Wavefront Induced Phase Noise
+
+Temporal ﬂuctuations of the spatial mode can also be a problem if the mode varies at frequencies Withiﬂ the GW
+detection band. The phase noise induced by such dynamical wavefront va_riati0ns is given by Eq. (6) With 6z(w) = 0.
+Figure 11(b) shows the required constraint on the ﬂuctuation amplitude 66(kt, we) in order for this noise source to be
+less than the atom shot noise. To be maximally conservative, the wavefront ﬂuctuation is assumed to be at the GW
+peak sensitivity frequency we.
+
+To put the dynamical wavefront constraints given in Fig. 11(b) into perspective, we consider several well—known
+sources of wavefront ﬂuctuation associated With aberrations caused by the mirrors in the optics system [55]. To be
+concrete, we model the wavefront aberrations caused by Vibrations and thermal ﬂuctuations of the 30 cm primary
+telescope mirror. The primary mirror is signiﬁcant since it is the last element that the beam encounters before
+propagating t0 the atoms, and n0 wavefront spatial ﬁltering can be done after this element. We emphasize that the
+same analysis can easily be extended to other elements in the optics system as necessary.
+
+"
+"18","18
+10 1
+I H
+15 . I E!
+':-'- r. H : x E
+1.1:: 52 : x %
+ll "" ll ' ‘ ’ E
+II H n ,' \V/ FD
+'1“ H ,’ A °°
+0.01 I i‘ 1"" \\ ’,I m 10-6
+0001 0.5 1.0 5.0 10.0 50.0 100.0 10—8 0.5 1.0 5.0 10.0 50.0 1000
+At [cm] L [cm]
+(a) (b)
+FIG. 11: Transverse spatial phase proﬁle requirement as a function of transverse wavelength. Both ﬁgures assume the ﬁve—pulse
+interferometer of Fig. 3 with 2007110 atom optics, L : 30 km baseline, and a w : 10—4 rad/x/E phase noise requirement. (a)
+Static wavefront requirements due to satellite transverse motion with amplitude 5 : 10 nm/x/E at frequencies within the
+GW detection band versus spatial wavelength of the perturbation. The atom Cloud size is taken to be a : 1 cm (FWHM).
+The blue (dashed) curve assumes a leader—follower orbit, while the solid (green) curve assumes an inclined—great—Circles orbit.
+The large notches in the dashed (blue) envelope arise from resonant cancellations 0f the wavefront aberration with the large
+transverse separation of the leader—follower interferometer paths. Both curves have been partially enveloped. (b) Temporal
+stability requirements for wavefront perturbation amplitude versus spatial wavelength of the perturbation. This constraint
+applies only to perturbation amplitude variations that occur at temporal frequencies within the GW detection band. The pair
+of curves show the effect of averaging over the atom Cloud size. As labeled, the curves assume atom Cloud widths of a : 1 cm
+(FWHM) and a : 10 cm (FWHM). Both curves have been enveloped.
+
+Fluctuations 0f wavefront aberrations are a source of stochastic noise in the interferometer. As a result, they
+contribute to the strain noise ﬂoor of the gravitational wave detector. Figure 12 shows the effective strain noise
+contributed by the various sources of dynamical wavefront aberrations that we model. For comparison, the atom
+shot—noise limited strain sensitivity from Fig. 4 is reproduced in blue (labeled “‘Shot”).
+
+The ﬁrst effect we consider is dynamic wavefront aberrations caused by vibrations of the primary telescope mirror.
+We consider a mirror modeled as a solid cylindrical disk with diameter D = 30 cm. The mirror surface is nominally
+polished so as to produce a collimated Gaussian beam upon reﬂection (see Fig. 10 for example). However, the surface
+of the mirror can become deformed as a result of vibrations of the mirror substrate, and these aberrations will be
+imprinted onto the laser beam as a spatially dependent phase. It is convenient to decompose the mirror Vibrations
+into a set of normal modes and consider the effect of each mode separately. For example, the lowest frequency
+mode corresponds to the bowl—shaped deformation given by 6:100“) = 6:100J0(2j0,17°/ D), where J0 is the zeroth order
+Bessel function of the ﬁrst kind, and j0,1 is the ﬁrst zero of Jo. (For simplicity, we assume Dirichlet boundary
+conditions on the mirror edge.) In order to leverage the results of Fig. 11(b), this deformation can be rewritten as a
+discrete Fourier series. Since the ﬁrst term in the series has a 97% overlap with the deformation, the mirror surface
+proﬁle is well—approximated by the truncated series 6:100“) % 6:100 cos (wr/D). Therefore, excitations of the the lowest
+order normal mode of the mirror correspond to dynamic wavefront perturbations with transverse spatial wavelength
+At : 2D x 0.6 In in Fig. 11(b).
+
+The normal modes of the mirror can be excited by vibration of the satellite. We conservatively assume a white
+noise acceleration spectrum of g : 10—7g/\/E which acts as a driving force for this motion [56]. The Vibration
+response to acceleration of one of the normal modes is a narrow Lorentzian centered at the resonant frequency of the
+mode:
+
+V7102) 2 (SE = + (8)
+
+5a \/ (W73 — 602V + (27716002
+
+Here y” is the (structural) damping of the mode with resonance frequency can. Even the lowest of the mirror resonances
+(corresponding to the At 2 2D mode discussed above) tends to be relatively high frequency (can > 100 Hz) and sharply
+peaked (Qn E W > 102), so the response of the mirror surface in the GW detection bandwidth is relatively ﬂat,
+corresponding to the tail of the Lorentzian. The phase noise induced by these off—resonant mechanical Vibrations is
+given by Eq. (6) with 5(0)) : 0 and E = k Vn(w)E. The resulting effective strain noise from mechanical vibrations
+of the lowest mirror mode (with At 2 2D) is shown in red (labeled “‘Mechanical”) in Fig. 12.
+
+"
+"19","19
+10—17
+Shot
+10—18 SB
+N —19 :
+T [E 10 Mechanical
+10—20 TE
+10—21 _
+0.001 0.01 0.1 1 10
+Frequency [Hz]
+FIG. 12: Effective strain induced by several sources of wavefront noise. Each of the effects are caused by a phase aberration
+that is imparted to the laser beam as it reﬂects off the ﬁnal telescope mirror. “Mechanical” (red) is the off—resonant mechanical
+acceleration noise of the mirror assuming a normal mode With can : 27r X 2 kHz and Qn : 102 and a White noise acceleration
+amplitude spectral density of 10—7g/x/E. “SB” (yellow) is substrate Brownian noise at temperature 7' : 300 K for a m : 1 kg
+mirror assuming a normal mode With can : 27r X 2 kHz, Qn : 102, and With effective mass fraction om : 10—3. “TE” (green) is
+thermoelastic noise for a beryllium mirror substrate at temperature 7' : 300 K assuming a Gaussian deformation scale factor
+of we : 1 cm.
+
+The effect of higher order normal mode oscillations is generally suppressed since these modes have correspondingly
+higher resonance frequencies, and the size of the mechanical response in the GW band scales as N wg2. However,
+since they are also associated With smaller At, these modes can induce a larger intrinsic response (see Fig. 11(b)).
+Speciﬁcally, for long spatial wavelengths At > AC, the phase response scales as At—2. Assuming a linear dispersion
+relation for the mirror modes, the transverse wavelength of the mode goes as At N w; 1. As a result, the ﬁrst several
+normal modes make roughly equal contributions to the noise ﬂoor. Beyond this, higher frequency normal modes With
+transverse wavelengths At < AC are suppressed by the decreased mechanical response and (eventually, for At < 0) by
+spatial averaging over the atom Cloud.
+
+In addition to external mechanical excitation, the normal modes of the mirror also Vibrate as a result of the ﬁnite
+temperature of the substrate[55, 57]. These thermally excited mirror Vibrations are known as substrate Brownian
+(SB) noise. The phase noise caused by substrate Brownian noise is given by Eq. (6) With 5 = 0 and W = 69313 Where
+
+69313:;zﬁnma/L372ﬂ (9)
+
+moaned,” w
+
+and where %n is the amplitude spectral density of the Vibration amplitude of the mirror mode With resonance
+frequency can, structural damping v”, and effective mass man [57]. This result follows from the ﬂuctuation dissipation
+theorem for a mirror substrate of temperature 7' [58]. Here m is the mass of the mirror itself and ozn quantiﬁes the
+effective fraction of the mirror mass that oscillates for a particular mode. Values for the effective mass man of the
+mode depend on the details of the mode shape as well as material properties of the substrate and the geometry of the
+mirror. As an example, the values of ozn reported by [57] range from 10—3 to 10 for a 10 cm diameter, 8.8 cm thick
+fused silica mirror With mass m = 1.6 kg. For a conservative estimate, we take m = 1 kg and oz 2 10—3. The resulting
+effective strain noise caused by substrate Brownian noise of the the lowest mirror mode (With At 2 2D) is shown
+in yellow (labeled ‘SB’) in Fig. 12. As With mechanical noise above, the ﬁrst few higher mirror modes (Which have
+smaller At) are potentially of comparable size since the phase response scales as At—2. However, the overall response
+for the different modes Will depend on the detailed scaling of ozn for the speciﬁc mirror geometry, and this is beyond
+the scope of our analysis.
+
+Thermal ﬂuctuations in the mirror substrate can also cause wavefront aberrations by inducing non—uniform thermal
+expansion, an effect known as thermoelastio noise [55, 58, 59]. This effect depends strongly on the material properties
+of the mirror substrate, such as the coefﬁcient of thermal expansion, thermal conductivity, density, and speciﬁc
+heat. As an example, we consider the thermoelastio noise for a beryllium mirror at 300 K. Note that this is a
+conservative estimate, since the James Webb Space Telescope (JWST) Will use a beryllium mirror at 30 K, and
+
+"
+"20","20
+the lower temperature signiﬁcantly reduces thermoelastic noise [60]. The power spectral density of thermoelastic
+Vibrations has previously been calculated for a Gaussian deformation with scale factor wo [55, 59]. To be maximally
+conservative, we Choose the scale factor to be wo = 1 cm since this maximizes the thermoelastic amplitude spectral
+density in the GW frequency band for the beryllium mirror. Represented in the Fourier domain, a Gaussian surface
+deformation contains a distribution of transverse wavelength components At 2 wo. The total phase noise response to
+the Gaussian deformation is then the sum of each spectral component weighted by the amplitude of the phase noise
+spectral response @0315, w) given by Eq. (6). As a conservative simpliﬁcation, we take the value of the peak response
+of $(khw) which occurs at At % 10 cm as the response for the entire Gaussian spectrum. The resulting effective
+strain due to thermoelastic noise is shown shown in green (labeled “‘TE”) in Fig. 12.
+
+The dynamic wavefront noise effects considered so far are all caused by a phase aberration that is imparted to the
+laser beam as it reﬂects off the ﬁnal telescope mirror. Alternatively, wavefront noise may be present on the beam as
+a result of the intrinsic limitation of the spatial mode purity of the laser source. To eliminate this type of aberration,
+the laser beam can be sent through a high ﬁnesse mode—scrubbing optical cavity prior to delivery to the ﬁnal telescope
+optics. In this case, the wavefront noise upon exiting the optical cavity will be limited by the same sources of dynamic
+wavefront noise shown in Fig. 12 as applied to the mirrors in the optical cavity, rather than by anything intrinsic to
+the laser.
+
+,4. Atom Distribution Induced Phase Noise
+
+Quantum projection noise and variation in the preparation of the atom sample result in shot—to—shot ﬂuctuations
+of the atom Cloud size and its position in the interferometer beam. At zero temperature, if the two paths of the
+interferometer do not separate transversely, the Cloud size variation induces no net phase error as both paths average
+over the same wavefront error at each pulse. Such a constant phase is perfectly cancelled by the pulse sequence. Due
+to ﬁnite temperature, however, the expansion of the Cloud will result in a phase error since the cancellation will no
+longer be perfect between pulses. Moreover, the interferometer paths do separate in general, and each path explores
+a slightly different region of the wavefront aberration, resulting in non—zero phase shift. If the Cloud size or transverse
+position Changes from shot to shot, this phase—shift varies in time, mimicking a gravitational wave.
+
+We compute the phase noise due to stochastic variations in the atom Clouds’ initial size and position. The size during
+the interferometer is determined by the linear expansion associated with the Clouds’ ﬁnite temperature. Assuming
+the typical FWHM Cloud size and the corresponding amplitude spectral density for the two distant atom Clouds
+are identical, but uncorrelated, and assuming that the amplitude spectral density of the transverse position is also
+identical and uncorrelated, we ﬁnd that the maximum allowable wavefront aberration is proportional to csc[7rAz/)\t]2.
+This scaling factor indicates that transverse wavelengths longer than the transverse separation will be quadratically
+suppressed, as expected. As previously mentioned, the Cloud expands linearly once released from the trap due to its
+non—zero temperature. At temperatures of 100 pK and corresponding velocities of 100 ,um/s, this effect is negligible.
+
+The transverse trajectory deﬂection of the inclined—great—Circles orbit is suppressed by N L / R N 103 compared to
+that of the leader—follower orbit (see Fig. 7). Consequently, for the same wavefront aberration, the inclined—great—Cirole
+orbit has a signiﬁcantly relaxed Cloud size and position constraint, as shown in Fig. 13. The size of the transverse
+wavepacket separation (A2: = 4 cm for the LF orbit, and A2: = 80 am for the ICC orbit) is the only difference between
+the two curves. In both cases, the shot—to—shot atom Cloud size and centroid position variation are assumed to be at the
+shot—noise limit. For an atom Cloud of Na N 108 atoms with size 0 = 1 cm, the centroid transverse position uncertainty
+due to shot—noise is 627 N mg N 1 am. Likewise, the Cloud size uncertainty is given by 60 N Ma N 1 am . These
+values represent a lower bound on the centroid position and Cloud size variation from shot—to—shot. Since the results
+of Fig. 13 assume spatially averaged detection, the curves represent maximally conservative wavefront requirements
+that can be relaxed through the use of more sophisticated detection schemes (see Sec. IVB 5).
+
+5. Wavefront Aberration Noise Mitigation
+
+In an alternative interferometer beam geometry, the atom optics laser beams can be made to ﬁrst propagate between
+two satellite stations along a path that is displaced from the atoms before being redirected to interact with the atoms.
+As a consequence, the ﬁrst propagation segment would serve as a spatial ﬁlter, allowing high frequency wavefront noise
+to diﬁract out of the beam. This arrangement is still sensitive to wavefront aberrations caused by the beam steering
+optics, but these are potentially more well deﬁned than the mode of the laser source. If needed, this alternative beam
+geometry could be used in conjunction with a mode—scrubbing cavity.
+
+Commercially available interferometers can measure wavefront aberration with RMS repeatability 6A < A/ 1000
+[61]. In principle, the aberration can be monitored in real time using such a wavefront sensor. Furthermore, we
+
+"
+"21","21
+10 ’
+v”
+1 ’z’ A
+-..¢ ,1 IGC
+0.1 x %
+""E I” A
+g 0.01 /’ m
+[I
+0.001 ,I’ LF %
+II”
+10‘4 \ ,./’ 1%
+10—5
+0.1 0.5 1.0 5.0 10.0 50.0 100.0
+At [CID]
+FIG. 13: Transverse spatial phase proﬁle requirement as a function of transverse wavelength for shot—tO—shot noise sources. All
+curves have been enveloped and assume the ﬁve—pulse interferometer of Fig. 3 with 2007110 atom optics, an L : 30 km baseline,
+and a w : 10_4 rad/x/E phase noise requirement. The Clouds are assumed to be 1 cm FWHM, and the amplitude spectral
+densities of the Cloud size and Cloud centroid position noise are both 1 ,um/x/E (This assumes a fr : 1 HZ repetition rate
+with 108 atoms per shot). The curves associated with the leader—follower and inclined—great—Circles orbits have been labeled
+“LF” (blue) and “IGC” (green) respectively. The solid curves are associated with ﬂuctuations in initial atom Cloud size, while
+the dashed curves are associated with ﬂuctuations in initial Cloud position in the beam. Note that the wavefront requirements
+shown here are maximally conservative; those from the LF curves in particular can be signiﬁcantly mitigated by Characterizing
+the wavefront and by reducing the transverse separation through multiple—pulse interferometer sequences (see Sec. IVB 5).
+can leverage the fact that the detection is spatially resolved (see Sec. III C) to perform in situ measurements of the
+wavefront. If necessary, in addition to measuring the spatial phase distribution for each of the ﬁve—pulse sequences, we
+can interleave alternate pulse sequences tailored to be maximally wavefront—sensitive. The initial transverse velocity
+and the time between pulses can be varied to gain maximal information about the wavefront.
+
+Spatially resolved detection of the atom Cloud can help mitigate the wavefront requirements that result from spatial
+averaging (Fig. 13). In particular, the requirements shown in Fig. 13 for the 1eader—f0110wer orbit exceed the range of
+current technologies [61]. However, these bounds are maximally conservative since with spatially resolved detection
+we can directly measure the shot—to—shot variations of the Cloud size and centroid position in real time. The additional
+information provided by spatially resolved detection should allow the wavefront requirements shown in Fig. 13 to be
+relaxed by an amount that depends on how well the shot—to—shot wavefront Characterization can be performed.
+
+Finally, to lessen the impact of shot—to—shot noise sources, it is possible to use interferometer sequences with more
+pulses than considered here to reduce the transverse wavepacket separation. The quadratic scaling of the phase noise
+with respect to this separation makes it a useful tool for shot—to—shot phase noise management.
+
+C. Laser Phase Noise
+
+As the laser phase is the reference used to measure the atom motion, noise of the laser phase is imprinted as noise
+on the atom phase. We consider two sources of laser phase noise: noise of the laser phase 605 and noise 610 of the
+center frequency of the laser. For both, the noise is signiﬁcantly suppressed by using common lasers.
+
+Despite the use of common lasers, the laser phase 605 is asymmetrically imprinted due to the ﬁnite light travel time
+% N 100 as between the two interferometers [26]. If the laser pulses are longer than the the light travel time, however,
+the phase noise at only the beginning and end of the pulses will be n0n—comm0n; the rest of the pulse overlaps in time
+and is common. Modeling the LMT pulse as a sequence of a large number of pulses, we note that if each component
+pulse is longer than the ﬁnite light travel time, laser phase noise at frequencies lower than N ”TC 2 30 kHz will be
+suppressed.
+
+In addition, each interferometer is insensitive to static phase offsets and will suppress phase noise at frequencies
+below N %. Moreover, the atoms average the laser phase at frequencies higher than the effective Rabi frequency
+of the LMT pulse, Qst/N, where N is the number of pulses. By calculating the quantum evolution of the phase
+of the atom states through the interferometer sequence, we can analytically ﬁnd the transfer function T ¢( f) that
+
+"
+"22","22
+10
+
+A ""\
+
+Pd 1 -‘I‘vuw
+
+'3 0.1 ""W“ \\
+
+H “..‘IOQg.........---------- \
+
+‘3: 0.01 ‘g \\
+
+R4 N‘
+
+0.001
+10‘4
+0.1 10 1000 105
+Frequency (Hz)
+
+FIG. 14: The transfer function relating laser phase noise to atom phase noise as a function of frequency. Sharp oscillations have
+been enveloped. All three curves have ﬁxed interferometer time T : 4 s and baseline L : 30 km. The solid (black), dashed
+(red), and dotted (green) curves have effective LMT Rabi frequencies of 100, 10, and 1 HZ respectively. Below % : 0.25 HZ,
+phase noise is suppressed due to the interferometer’s insensitivity to static phase Offsets and overlapping pulse suppression.
+The sensitivity to phase noise rises until the atom begins to average the phase above the effective LMT Rabi frequency. This
+effective low pass ﬁlter balances the high pass ﬁlter of the overlapping pulse suppression, producing the ﬂat region. Above the
+corner frequency of the overlapping pulse suppression, ”TC N 30 kHz, the atom’s averaging suppresses phase noise.
+relates laser phase noise to atom phase noise for a ﬁve—pulse sequence (see [62] for a similar calculation). In Fig. 14
+we show this transfer function for three sample Rabi frequencies ﬁst : 10,1,0.1 kHz for ﬁxed baseline L = 30 km
+and interferometer time T N 4 s. Note the corner frequencies at 0.25 Hz, Qst/N, and 30 kHz corresponding to the
+interferometer lOW—frequency suppression, the atom’s LMT Rabi frequency suppression, and the overlapping pulse
+suppression respectively.
+
+Drift 6k in the central frequency of the laser between pulses differentially Changes the position of the laser phase
+reference relative to the near and far interferometers. While the near interferometer sees negligible motion of the
+phase front, the far interferometer sees a wavefront shifted by 610 L. Equivalently, this effect can be understood in
+the time domain as an extra phase accumulated at a rate 610 during the time L / c during Which the light pulse is not
+common for the two interferometers.
+
+To place an upper bound on laser phase noise control constraints, consider the maximally conservative Rabi fre—
+quency N 10 kHz . As the 605 and 610 L phase noise sources are uncorrelated, they must be added in quadrature as
+N ﬂ/(6qﬁ)2 + (6k L)2. For this contribution to be < 10‘4 rad/x/ Hz, the phase noise of the laser must be < —100 %
+at an offset of N 20 kHz , and the fractional stability in the laser frequency must be N 10‘15(1O7+_1) over time scales
+N T . Both requirements are experimentally achievable [63, 64].
+
+Alternatively, in a three or more satellite conﬁguration, two non—parallel beam lines designed to share a common
+laser can be used to greatly suppress the laser phase noise due to frequency instabilities. Noise from each beam’s
+counter—propagating laser is common to both interferometers on that line, While noise on the shared laser is common
+to both pairs of interferometers. The gravitational wave signal remains present because it has different components
+along the two beam lines. The residual phase shift is N 6k6L, Where 6L is the difference in length of the two beam
+lines. If the arm lengths are known to N 1 m, then the laser frequency drift may be relaxed to a fractional stability
+
+fN 10—11(1O7 m—l)
+o —k .
+V. ENVIRONMENTAL CONSIDERATIONS IN LOW EARTH ORBIT
+
+The sensitivity curve in Fig. 4 assumes atom shot noise limited phase noise. Many environmental effects, however,
+can contribute noise and spurious signals. We analyze these potential backgrounds for both leader—follower and
+inclined—great—circle orbits. The error model we consider includes the effects of rotation (Coriolis and centrifugal
+forces), non—uniform gravity, and magnetic ﬁelds. In addition, the analysis accounts for laser pointing errors and the
+
+"
+"23","23
+effect of the ﬁnite curvature of the laser wavefronts.
+A. Error Model
+
+To calculate the phase shifts caused by these effects on the atom interferometer, we follow the standard procedure of
+calculating the contributions from propagation phase, separation phase, and laser phase [21, 65] for both orbital con—
+ﬁgurations shown in Fig. 6. In both cases, we compute the phase shift between two atom interferometers separated by
+baseline L. The light pulse sequence used for the calculations is the ﬁve—pulse, double—diffraction interferometer shown
+in Fig. 3. The two interferometers are assumed to have an uncontrolled initial velocity difference of (6113;, 6%, 60,2)
+and position offset of (6:10, 6y, 62:), both of which may vary stochastically shot to shot. Since we are concerned only
+with terms that vary in time in the detection band, all constant offset phase shift terms have been subtracted. Here
+Tij E —8jgz- is the gravity gradient tensor and gr; is the gravitational ﬁeld vector. Values for T ij assume a spherical
+Earth. The results for the leader—follower orbit are presented in Table IV using the coordinate system shown in Fig. 1,
+where the x—axis is the chord connecting the two satellites. The inclined—great—circles conﬁguration results are shown
+in Table V, where the connecting chord is along the y—axis as shown in Fig. 6.
+
+Both of these calculations share many commonalities, and we can make the following general statements. Since
+the atoms are in free fall, many of the largest phase shift terms cancel in pairs. This occurs because in circular orbit
+around a spherical Earth, {231. : g / R : T XX : %T227 where R is the radius of the orbit and g is the local gravitational
+acceleration at altitude. As an example, see terms 1 and 2 in both Table IV and Table V. There are also more
+elaborate cancellations, such as terms 5, 8 and 9 in Table IV, which together all cancel as a result of V ' g : —TZ-Z- = 0.
+Additionally, the orbital rotation of the laser axis, Qor can couple with variations in the atoms’ launch velocity and
+position as well as variations in the laser axis orientation itself to produce many of the dominant backgrounds.
+
+Finally, the T 4 scaling of the leading order phase shifts in Table IV is expected given the symmetric triple—loop
+geometry of the ﬁve—pulse sequence (see Fig. 3). The conventional three—pulse, single—loop (g—W—g) gravimeter
+sequence is sensitive to the quadratic N §gt2 motion of the atom, resulting in a T 2 leading—order scaling of the
+phase shift. Additional symmetric loops have the effect of making the interferometer sensitive instead to higher—
+order components of the motion N t(AH), yielding a T (AH) leading phase shift, where A is the number of loops.
+As a consequence, symmetric multiple—loop interferometers respond to higher—order derivatives of the gravitational
+potential, since the ﬁrst non—triVial correction due to the derivative 809$ appears as motion proportional to ISM“).
+A corollary of this is that the response to lower—order derivatives 8(0qﬁ with 73 < A is highly suppressed. Therefore,
+the use of multiple—loop interferometers can substantially reduce the interferometer’s sensitivity to background effects
+due to inhomogeneous ﬁelds, since the perturbations caused by higher—order derivatives are signiﬁcantly smaller for
+typical ﬁelds.
+
+From the phase shift list for the LF orbit, we note that the largest term that does not cancel (term 12 in Table IV)
+results from a coupling between gravity gradients and rotation. This term sets the limit of the size of the transverse
+velocity jitter 6025 for the LF conﬁguration: for ZOOEk beamsplitters, 4 s interferometer time, and Qor N 10—3 rad/s,
+6025 g 10—8 m/s. This shot—to—shot velocity variation is equivalent to g 100 pK in atom cloud temperature for 108
+atoms. Term 13 constrains the laser pointing error rotation rate to 69 N 1 nrad/s. Term 14 limits the longitudinal
+position variation of the atoms to 6:10 N 10 ,um. Term 15 is reduced below the shot noise limit by this latter constraint.
+These requirements are not strict, but imply a trade—off with several other parameters. If necessary, a small reduction
+in interferometer time at the expense of bandwidth, for example, could signiﬁcantly relax these constraints, as both
+terms scale with multiple orders of the time.
+
+The ICC orbit offers many systematic beneﬁts over the LF orbit. Note that the largest non—cancelling term in the
+ICC list (term 3 in Table V) is the leading term from Table IV but suppressed by an additional power of QorT. This
+suppression arises because the ICC interferometer axis is nearly parallel with the orbital rotation axis. Therefore the
+transverse trajectory deviations due to the Coriolis force are suppressed by % as compared to the LF orbit, which leads
+to a phase shift suppression cc QorT. For the same stochastic atom position jitter, the contributions to the ICC phase
+shifts are smaller than those of the LF. The largest phase shift due to atom jitter for the ICC is term 5 in Table V,
+which remains below atom shot noise for position ﬂuctuations of 6y N 20 um instead of N 10 ,um. Similarly, velocity
+variations of N 1 um/ s instead of N 10 nm/ s could be tolerated. However, if the tight atom kinematic constraints can
+be achieved and 69 effects can be controlled, then the interrogation time could be doubled to bring these systematics
+t0 the same size as atom shot noise. This would lower the instrument corner frequency by a factor of two, potentially
+allowing for the detection of lower frequency GWs.
+
+The current IGC analysis does not account for the relative velocity between the two atom clouds, or the required
+orbital phase offset between the satellites to avoid collision. Both of these effects can be removed by rotating and
+chirping the interferometer laser to make it remain inertial during the interferometer sequence [21, 66]. As mentioned
+in Section II D, the relative velocity between the clouds is useful for Doppler shift frequency tagging of the individual
+
+"
+"24","24
+Differential phase shift Size (rad)
+1 —60keﬂ:LQ§r6§2 T4 — 1.15
+2 60keﬁ‘L Txxnorén T4 +1 . 15
+3 888keﬁLniran T6 +3.67 x 10—4
+4 444keﬁL Tzzngran T6 —3.67 x 10—4
+5 44415...ch TXXTZZnoran T6 +3.67 X 10—4
+6 sokeﬁnirava‘l +1.92 X 10—4
+7 15keﬁTZanava4 —1.92 x 10—4
+8 —444keﬁL Txxniran T6 —1.84 X 10—4
+9 —444keﬁL foﬂoréﬂ T6 —1.84 X 10—4
+10 425/56.ch szngrén T5 —1.24 X 10—4
+11 —%keﬁL TXZTZZm T5 +1.24 X 10—4
+12 15keﬁsTXX§20r6va4 +9.62 X 10—5
+13 —%keﬁL TXZTXXm T5 —6.19 X 10—5
+14 —4—;keﬁn§raxT4 —1.67 x 10—5
+15 15keﬂsTXXQgr6xT4 +1.11 X 10—5
+TABLE IV: Differential phase shift error budget for AGIS—LEO in a leader—follower orbit. The results are based on the triple—
+loop interferometer in Fig. 3, and the phase difference assumes the gradiometer conﬁguration shown in Fig. 1 between two
+atom interferometers separated by L : 30 km in a leader—follower orbit (see Fig. 6). An unimportant constant phase shift has
+been subtracted. The jitter in the atom initial position and velocity are taken to be 6m : 1 pm and 60g : 10 nm/s, respectively.
+The laser pointing error rotation rate is 69 : 1 nrad/s. The orbital radius R and rotational rate Qor are for a 1000 km orbital
+altitude. Interrogation time is T : 4 s and the LMT beamsplitters have hkeﬁ: : 2007119.
+Differential phase shift Size (rad)
+1 —%keﬁ%Tmngran T5 +8.25 x 10—5
+2 —%keﬁL—;Tﬁzan T5 —8.25 x 10—5
+3 ¥keﬁL—gnﬁrm T5 +6.19 x 10—5
+4 %keﬁ%T§yan T5 +2.06 x 10—5
+5 LgkeﬁTfyay T4 +5.57 X 10—6
+6 45 IgefJELTWan2 T4 +7.47 X 10—7
+7 ijkeﬁTfyavy T5 +6.69 x 10—7
+8 15keﬂr%6vmﬂng4 +3.95 x 10—7
+9 %keﬁ%TzzavanrT4 —3.95 x 10—7
+10 1—25keff%TXX6vaOFT4 +1.98 X 10—7
+TABLE V: Differential phase shift error budget for AGIS—LEO in an inclined—great—Circle orbit. The results are based on the
+triple—loop interferometer in Fig. 3, and the phase difference assumes the gradiometer conﬁguration shown in Fig. 1 between two
+atom interferometers separated by maximum distance L : 30 km in an inclined—great—Circles orbit (see Fig. 6). The required
+N 100 m offset to avoid collision is not included. An unimportant constant phase shift has been subtracted. The jitter in the
+atom initial position and velocity are taken to be 6y : 1 pm and 6’03; : 60y : 10 nm/s, respectively. The separation distance L
+is taken to be 30 km, Which is the maximum separation over the course of the orbit, and the point of largest systematic error.
+The laser pointing error rotation rate is 69 : 1 nrad/s. The orbital radius R and rotational rate Qor are for a 1000 km orbital
+altitude. Interrogation time is T : 4 s and the LMT beamsplitters have hkeﬂr : 2007119.
+Clouds.
+
+It is important to note that the above calculation assumes that the laser beams are plane waves, ignoring the ﬁnite
+curvature of the laser wavefronts. This is a rough approximation, since the interferometer beams we consider have
+a Rayleigh range comparable to the satellite separation L, and so they are maximally curved for their size at the
+position of the interferometers. These effects of wavefront curvature are a correction to the results of Table IV. The
+effect of Gaussian curvature is analyzed for high frequency laser pointing jitter in Section VF, and in this case, the
+physical beam results in less—stringent pointing requirements than for the plane wave case. The full Gaussian analysis
+for the above error model would conceivably result in a similar reduction in rotation rate error 69 sensitivity.
+
+"
+"25","25
+B. Orbital Altitude
+
+The error model in the previous section indicates that many systernatic effects are mitigated at larger orbital radii,
+where the rotation rate, {20“ is smaller. In general, the selection of the satellites’ orbital altitude needs to account for
+several factors, including vacuum requirements, magnetic ﬁelds, gravity gradients, rotational effects, and the fraction
+of an orbital period spent in the Earth’s shadow. Of these, only the last favors lower orbits, since without a satellite
+sunshield we rely on the Earth’s urnbra to protect the interferometers’ atom Clouds from a large N 10 s‘1 scattering
+rate with solar photons [26]. For an equatorial orbit at 1000 km, a satellite spends approximately one third of its
+time in the Earth’s shadow. All of the other altitude—inﬁuencing factors mentioned improve with increasing height,
+and in the following subsections we argue that their effects are acceptable at or even below 1000 km.
+
+C. Vacuum Requirements
+
+Collisions with particles in the background gas cause the decoherence of atoms in the interferometer region. While
+this is not a source of noise and does not introduce a spurious phase shift, the removal of atoms from the Cloud
+reduces the sensitivity of the instrument. Around 700 km above the Earth’s surface, the atmosphere is dominated by
+H, He, and atomic O with densities of 106 $ at temperatures near 1000 K [67]. This corresponds to pressures of
+10‘10 Torr, typical for low—baokground—oollision—loss atom interferometry experiments. At this pressure, the average
+time between collisions of an atom with the background gas is N 100 s [26], several times longer than the proposed
+interferometer time of N 10 s. Thus, satellites constructed with low—outgassing materials at altitudes above 700 km
+are sufﬁcient to meet the vacuum requirements of AGIS—LEO.
+
+D. Magnetic Fields
+
+Since the atom interferometers take place outside of the AGIS—LEO satellites, the atoms are in a region of space
+with uncontrolled magnetic ﬁelds. The local magnetic ﬁeld deﬁnes the quantization axis used for the atom—laser
+interaction and shifts the atomic energy levels, which can cause an unwanted phase shift in the atom interferometer.
+Variations in the direction of the magnetic ﬁeld have been addressed in the original AGIS proposal [26], and similar
+strategies to deﬁne the quantization axis, such as a large permanent magnet, can be employed in AGIS—LEO.
+
+Phase shifts due to time—dependent variation in the atomic energy levels are more concerning. In order to mitigate
+these effects, we perform interferometry on atoms in the [m = 0) Clock state which is ﬁrst—order insensitive to energy
+shifts from magnetic ﬁelds. However, alkali atoms have a second order energy shift AE = éozéa and since é varies
+between the two AGIS—LEO interferometers, there is a differential phase shift between them. We analyzed the in—situ
+magnetic ﬁeld for various AGIS—LEO orbits using the World Magnetic Model 2010 (WMM2010) [68]. The WMM2010
+models the Earth’s magnetic ﬁeld using a 12th order spherical harmonic expansion with the minimum wavelength of
+28.80. This spatial resolution is much larger than the orbital arc traversed during a 24 second interferometer sequence,
+so we can model the ﬁeld as B7) + ?%th — to) where A is the orbital longitude. The leading order response of a single
+three—pulse atom interferometer to these spatial gradients is:
+
+N hkeﬂ: 2 8B 8A N hkeﬂ: 2 8B 1
+A¢B _ m QT BO 8A 8:10 _ m QT BO 8A RE (10)
+
+For this long—wavelength rnodel, variations are suppressed by the ratio of the interferometer size to the radius of
+the Earth, R E. The differential phase shift between two interferometers spaced by a baseline L away from each other
+is
+
+2
+ACbl3agradiorneter 2 $05T2% (11)
+
+This is further suppressed by the ratio of the baseline L to the radius of the Earth. For an example 850 km equatorial
+orbit, using WMM2010, we expect N 200 mG magnetic ﬁelds with [39—]: N 1 mG/deg. longitude. This results in a
+differential phase shift of ACngradiometer N 10‘8 rad which is well below threshold. Magnetic ﬁeld dependent phase
+shifts are expected to be further suppressed by the proposed ﬁve—pulse sequence.
+
+Additionally, there may exist ﬁner local variation in the magnetic ﬁeld due to the presence of the spacecraft.
+However, the interferometer sequence takes place a distance d 2 3 rn from the spacecraft, and local spurious magnetic
+
+"
+"26","26
+ﬁelds fall off as N d3. Therefore the magnetic ﬁeld gradient differences between the two spacecraft can be controlled
+below our required threshold of 10—8G/m. Furthermore, pulse sequences that use larger numbers of pulses, such as
+the four— and ﬁve—pulse sequences discussed above, will have additional suppressions of this effect.
+
+E. Gravity Gradients
+
+Fluctuations in the Newtonian gravitational ﬁeld can masquerade as a gravitational wave. Therefore we have
+engineered a pulse sequence and use a differential measurement satellite conﬁguration to minimize the phase shift
+caused by the Newtonian gravitation potential g9. As discussed in Sec. IV A, AGIS—LEO beneﬁts from many exact
+cancellations due to its pulse sequence symmetry and the orbital symmetry which demands $231. 2 g / R = T XX : éTZZ.
+The above analysis assumes a spherical earth and does not take into account the local presence of the satellites. We
+now analyze the impact of a large local mass with position jitter and the effect of the AGIS—LEO constellation orbiting
+in the Earth’s inhomogeneous gravitational ﬁeld.
+
+1. Satellite Positian Jitter
+
+The motion of the satellite is typically a major source of concern for a space—based precision test mass experiment,
+as it causes large time—dependent gravity gradients that can be a signiﬁcant source of error. We take advantage of the
+disposability 0f the atomic test masses and perform our precision measurement outside of the satellite to decrease our
+sensitivity to these spurious gravity gradients. Since we are searching for time—dependent gravitational wave signals,
+we are concerned only with background noise in our detection band; overall static phase offsets between the two atom
+interferometers are not important. Therefore we require the satellite jitter position 611953492) to be small enough in
+our measurement frequency band so that spurious phase shifts are below 10—4 rad/x/ Hz.
+
+We calculate the response of a single atom interferometer to satellite position jitter using perturbation theory [66].
+T0 ﬁrst order in the jitter amplitude dacsatﬁu) the perturbing Lagrangian ALsat is
+
+GM tm
+
+ALsat(w) 2 %6xsat(w) (12)
+where Msat is the mass of the satellite, m is the atom mass, and d is the distance between the atom and the
+satellite. The resulting propagation phase shift [21] from this perturbation as a function of frequency determines the
+interferometer’s sensitivity to satellite position jitter. The required satellite control to reduce the position jitter phase
+shift below atom shot noise is shown in Fig. 15. The peak control requirement is N 1 um/V Hz at w N 1 / T where T
+is the interrogation time. This requirement is signiﬁcantly less stringent than that imposed by wavefront aberrations
+and thus is not a driving factor in the mission design.
+
+2. NOn—Sphe’rz'cal Earth Gravity Gradients
+
+The proximity of the Earth’s non—uniform gravitational ﬁeld to the observatory is also a source of non—trivial
+Newtonian gravitational backgrounds. The near—Earth gravity ﬁeld is well known and is Characterized in the Earth
+Gravity Model 2008 (EGM2008) by a spherical harmonic expansion [69]. EGM2008 resolves spatial wavelengths as
+small as 5 arcminutes, which is on the same order as the orbital arc subtended by AGIS—LEO. If the two interferometers
+are in different gravitational ﬁelds, they will record different phase shifts. These phase shifts will Change over the
+course of the orbit, producing a time—dependent background signal.
+
+As the non—spherical Earth produces a time—varying gravitational potential 95 which can be Characterized by spher—
+ical harmonics, these spherical harmonics form a natural basis to use for computing the AGIS—LEO response to
+gravitational deviations from the static, spherical earth. Expanded in this basis, the gravitational potential (I) is
+
+GM
+cm, 9, A, t) = —E + 9(9, 9, A, t) (13)
+7“(75)
+GM ”max R n n . —
+9(9, 9, m) = —E 2 —E 2 (an, m] costh) + 399,99] s1n mA(t)) P,7;[cos9(t)] (14)
+7“(75) ”:2 7“(75) m:0
+
+"
+"27","27
+1
+0.1
+A 0.01
+N
+§|E
+g 0.001
+10—4
+10—5
+0.001 0.01 0.1 1 10
+Frequency (Hz)
+FIG. 15: Satellite position jitter requirements as a. function of frequency. This plot is for a. single interferometer and assumes
+the ﬁve—pulse sequence of Fig. 3 With 2007110 atom optics, a. satellite mass M : 1000 kg, an initial atom Cloud distance d : 10 m
+from the satellite, and a. 6gb : 10_4 rad/x/ HZ phase noise requirement.
+Where M E is the mass of the Earth, 05 is the aspherical potential, T(t), 6(75), and A(t) are the radial distance, northern
+spherical polar distance (00:1atitude), and longitude of the atom Cloud, E[n,m] and §[n,m] are the coefﬁcients of
+the EGM2008 model, and P71”; [cos 605)] are the fully normalized associated Legendre functions of the ﬁrst kind [69].
+The effects of gravity gradients from a spherical Earth are accounted for in the phase shift calculation presented in
+Sec. VA. Therefore we compute the atom interferometer response to an arbitrary spherical harmonic component 0f
+05 using perturbation theory. We compute the response to the following perturbing Lagrangian for the AGIS—LEO
+leader—follower equatorial orbit
+Rn
+AL[n,m,t] = —E (E[n,m] cos th) + §[n,m] sin mA(t)) (15)
+7a(t)n—|—1
+We then sum the response of each individual spherical harmonic to produce the total phase shift A05.
+m ”max 77»
+A05 2 —EGME Z 2 (/ AL[n,m,t]dt —/ AL[n,m,t]dt) P?Q[O] (16)
+”:2 777.20 upper lower
+The 105 minute orbital period of the AGIS—LEO constellation causes spherical harmonics of order m to induce
+time—dependent phase shifts With frequency cum 2 771((20r — 9E), Where GE is the Earth’s rotation rate. In order to
+ﬁnd the full frequency response due to Earth gravity for a 1 year AGIS—LEO science run, we sum the phase shift
+response for all spherical harmonic components With effective frequency 02m, and divide by the AGIS—LEO frequency
+response for a 1 year—1 bandwidth. This procedure is identical to that used for plotting gravity wave sources in Figs.
+4 and 5. The effective strain response is plotted With Circles (blue) on Fig. 16. At 10W frequencies (f < 30 mHz), this
+Newtonian gravity background is the dominant systematic.
+3. Lunar and Salon“ Tidal Forces
+The tidal forces from the Moon and the Sun form a non—negligible contribution to the AGIS—LEO Newtonian gravity
+background. We treat both sources as perfect spheres and thus their tidal forces arise from gravity gradients, since
+AGIS—LEO is in free—fall With respect to both the Sun and the Moon and does not see a direct gravitational force
+from either. While the ﬁve—pulse interferometer sequence is insensitive to gravity gradient phase shifts for uniform
+
+"
+"28","28
+0.01 . . ,
+_6 I . . '.'.':&.0
+10 4:,
+.0 ‘ok
+10—10 .3
+T iﬁ ' . . 3;.
+10—14 .9. :3
+10—18 2, a
+10-22 1 a'.
+0.5 1. 5. 10. 50. 100. 500.
+Frequency [mHz]
+FIG. 16: Newtonian Gravity Backgrounds. Each point on this plot is the effective h/x/ HZ for a Newtonian gravity background
+frequency component With a measurement bandwidth of 1 year_1. The Circles (blue) are EGM2008 components, the squares
+(red) are phase shifts due to lunar tidal forces, and the diamonds (green) are for free earth oscillations normalized to a 80,2,0
+peak amplitude of 1 cm. This plot is for two interferometers separated by 30 km and assumes the ﬁve—pulse sequence of Fig. 3
+With 2007110 atom optics, a T : 4 s interrogation time, and a 6gb : 10—4 rad/x/ HZ phase sensitivity for the AGIS—LEO sensitivity
+CUI'VG.
+gradients (i.e. those of the Earth, Which it is orbiting), it is sensitive to gradient differences between the satellites. As
+the satellite constellation orbits the Earth, the orientation of the sensors Changes With respect to the vector pointing
+toward the Moon (0r Sun). Therefore the orientation of the Moon gravity gradients Mij Changes With respect to the
+interferometer axes, and the two satellite orientations are slightly different. Similarly, one satellite is often farther
+from the moon than the other, and this creates a difference in size between the gradients experienced by the two
+sensors, even though their orientations may be the same. Thus Mg; is not the same as M113, Which induces a phase
+shift that is modulated by both the AGIS—LEO and Moon orbital velocities. We compute the phase shift response
+for a 6Mij : Mij,1 — Mij,2 using perturbation theory, and the 1 year science run results are shown as squares (red)
+on Fig. 16. The frequency of the response is determined to ﬁrst order by Qor arid the spatial frequency of the phase
+3
+response. The Sun produces a similar response, but smaller by %A% N 45%.
+OOD Sun
+,4. Free Earth Oscillatwns
+
+The gravitational potential of the Earth is not constant in time and undergoes free earth oscillations at frequencies
+Which are potentially interesting When searching for gravitational waves [70]. Free earth oscillations are spherical
+harmonic eigenmodes 0f the Earth Which ring at frequencies < 10 mHZ and can be excited by major earthquakes,
+Which can produce > 1 cm height deviations at all points on the Earth’s surface [70]. Not only are these signals
+naturally time—dependent, the orbital motion of the satellite also splits their frequency spectrum, making spectral
+data analysis techniques more difﬁcult. It is important to note that free earth oscillations are Characterized by the
+geophysics community and Will be well—known during AGIS—LEO science runs.
+
+The standard formalism for computing the shape and oscillation frequency for the normal modes of the Earth is
+well documented in the geophysics community, and we Will lean heavily on their analysis [71]. The Earth can oscillate
+in three fundamental Classes of modes: radial, toroidal, arid spheroidal. Radial modes are Characterized by expansion
+and contraction of the Earth in a purely radial direction With s = f (M72, Where s is the displacement of the Earth’s
+surface. Toroidal modes produce shearing motion between sections of the Earth’s surface and have angular variation,
+but do not contain radial displacement. For a spherical Earth, radial and toroidal modes do not produce a Newtonian
+gravitational signal for AGIS—LEO. On the other hand, spheroidal modes have angle—dependent radial deviation Which
+create ripples in the Newtonian gravitational ﬁeld that AGIS—LEO measures during its orbit.
+
+"
+"29","29
+
+In order to determine the AGIS—LEO response to free earth oscillations, we compute the perturbing potential Q5
+resulting from an arbitrary surface displacement, which gives
+
+X’ s X’ . X — X’
+¢=_G/p<)()(3 km (17)
+V HX — X’ ll
+where p is the density proﬁle of the Earth and S(X’) = sn,l,m(r, 6’, A, t) is the displacement associated with the (n, l, m)th
+Earth eigenrnode [71]. Therefore the gravitational potential Q5 only depends on (7°, 6’, A,t) and the initial amplitude
+and phase of the displacement.
+Rl-l—l
+E ' n
+¢n,l,m(7°797)\775) : W6”) ’l(t+tO)Yl,m(67)\)f(RE) (18)
+where f (RE) is the integrated scale factor, to is an arbitrary time offset, can); is the eigenfrequency, and Y1,m(6’, A)
+is shorthand notation for the fully normalized spherical harmonics that were previously deﬁned, with E[m,n] and
+§[m, n] set to unity. The normal mode eigenfrequencies strongly depend on the Earth composition and are not well
+approximated by a simple analytic model. Therefore we use the MINEOS geophysics software package to calculate
+eigenfrequencies using the Preliminary Reference Earth Model (PREM) for p(x) [72].
+
+We compute the phase shift for this time—dependent Q5 using perturbation theory, as described in the previous
+sections. We plot the response with diamond markers (green) on Fig. 16 where we have taken f (RE) such that the
+peak displacement for 30,2,0 is 1 cm, which was the minimum displacement of any location on Earth immediately after
+the 2004 Sumatra—Andarnan earthquake [70]. This provides an upper bound to the 1 year integrated coherent signal
+response.
+
+5. Newtanian Gravity Spectral Signatures
+
+It is important to note that AGIS—LEO GW sources will persist over many satellite orbital periods, and can be
+discriminated from possible signals of terrestrial origin by their spectral signature (Fig. 17). Signal sources which are
+ﬁxed to the Earth (such as those arising from the non—uniform geoid characterized by EGM2008) will be shifted in
+frequency by the Earth rotation rate if the satellite is in an equatorial orbit. However, signal sources which are in
+the inertial frame and not ﬁxed to the rotating Earth, such as gravitational waves, will have their signal split into
+a doublet spaced by twice the orbital frequency. Free Earth oscillations are decoupled from the Earth rotation rate
+and also form doublets which are spectrally indistinguishable from gravity waves. However, free Earth oscillations are
+independently monitored by ground—based seismic networks and can be subtracted during signal post—processing.
+
+F. Laser Pointing Angle Jitter
+
+In addition to the shot to shot laser pointing rotation rate error quantiﬁed by 69, the pointing angle may vary
+from pulse to pulse. To determine the spectral response of the atoms to this jitter, we turn to an analysis procedure
+similar to that_in Sec: IVB 1. In the particular case of laser pointing, the jitter is modeled as an oscillatory rotation
+angle 66(75) 2 66(w)e_“""t that changes the direction of the wavevector keff at each pulse time. Here, 66(w) is the angle
+amplitude spectral density and w is the frequency of the rotation jitter.
+
+A realistic model of laser pointing jitter must account for the ﬁnite curvature of the laser wavefronts at the position
+of the atoms. To reduce sensitivity to pointing jitter, the curvature of the wavefronts may be chosen so that the phase
+of the beam at the position of the atom is minimally sensitive to beam rotation. For a Gaussian beam propagating
+along the x—direction, the phase imprinted during one of the light pulses on an atom at position (:10, y, z) is given by
+
+<I>(ac, y, z) : kw —1— ﬁﬁf + 272) — arctan (30/303) (19)
+where R(ac) E :E —1— $%/$ is the radius of curvature of the wavefronts and :ER is the Rayleigh range of the beam. Notice
+that for an atom at position :10 = am, the radius of curvature is R(wR) = 2303. Therefore, a beam with :ER : L/2
+and a beam waist placed at the midpoint between the two atom interferometers separated by baseline L will have
+a radius of curvature equal to the baseline distance at the position of the atoms (this is the same conﬁguration
+as a confocal cavity). This conﬁguration results in a dramatic suppression of laser pointing sensitivity because the
+wavefront curvature at the position of the atom is locally the same as the curvature of a spherical wave originating
+from the point of rotation of the beam (see Fig. 18).
+
+"
+"30","30
+gym gym - Inertial Source (21)
+— Earth—Fixed Source (b)
+’ ‘ WE Source Frequency
+0)
+60 Vaz‘ a
+’1’ l ._ \\‘ ’ S T Fa
+W ‘H ., H’ ‘ "" I 5
+,_ 'y x <
+‘ 3 ’ ""
+QFE \. I
+'Qor 'mQE 0 +Qor
+D t t dF Sh'ft
+(a) (b) (C) 6 CC C requency 1
+FIG. 17: Discrimination of Newtonian gravity gradient signals by their spectral signatures for equatorial satellite orbits. (a)
+Inertial signal sources include gravity waves (at frequency w) and free—earth oscillations (QFE, “football mode” shown). (b)
+Non—inertial Earth—ﬁxed sources include the non—uniform geoid and terrain features, which rotate with the planet at a frequency
+of 93 (the spherical harmonic component pictured has m : 10). (c) Amplitude spectral signatures of the effects pictured in
+(a) and (b). For an equatorial orbit, inertial sources (blue, thicker bars) are amplitude modulated by the satellite’s orbital
+frequency, Qor, and appear as doublets at :|:Q0r relative to the source frequency (gravity wave or free—earth oscillation). For
+satellites in equatorial orbits, Earth—ﬁxed sources would appear as signals at mﬂor were it not for the rotation of the Earth.
+With the Earth rotating at 93, these sources are downshifted by 7719;; (red, thinner bar). This picture is strictly correct only
+for an equatorial orbit, since a ﬁnite inclination angle would lead to doublet signatures even for Earth—ﬁxed sources.
+\
+\
+\
+Yé"" ‘\
+\
+\
+z / l x |.
+H/ “ l l ‘ \ MW
+n l ‘ l l l l l ll 1""
+i x i x l l a l s. »
+‘\‘~.‘\ l‘l/I“
+l \ \ l.‘ l l l l ’l l / :l I/
+I
+I
+I
+2% 1'
+I,
+X I
+FIG. 18: Pointing jitter insensitivity due to wavefront curvature of the Gaussian interferometer beams. The two satellites are
+depicted as points labeled “n” and “f” for near and far, respectively. The satellites are separated by a baseline L, and the atom
+interferometers are assumed to operate in Close proximity to each of the satellites. The interferometer beam waist is located
+at the midpoint between the two satellites and the beam has a Rayleigh range $3 : L / 2 so that the radius of curvature of the
+wavefront at the far satellite is R : L. As a result, the laser phase at the location of the far satellite is insensitive to pointing
+jitter caused by uncontrolled rotation of the beam about the near satellite.
+
+To calculate the residual sensitivity to pointing jitter, we assume the laser conﬁguration shown in Fig. 18 in which
+the beam waist is placed at the midpoint between the satellites and the Rayleigh range is 903 : L / 2. We consider
+the phase shift resulting from a two—photon transition (Raman or Bragg), and we assume that each of the two
+satellites serves as the point of origin for one of the two (counter—propagating) frequencies involved in the transition.
+For simplicity, we further assume that only one of the satellites experiences pointing jitter, so that only one of the
+counter—propagating Gaussian beams will have a variable propagation direction. For the case that the near satellite
+is jittering (point “n” in Fig. 18), the phase of the two—photon phase shift at the location of the far satellite (point
+“f” in Fig. 18) is approximately given by
+
+x
+mm, zf) : 2m + m (f) 590:) + kL . 0 [(xf/L)2 , (Zf/L)2 , (kL)_1] (20)
+where 90f is the longitudinal position offset of the far atom away from the ideal Rayleigh range position, Zf is the
+transverse offset, and we take 3/ = 0. Notice that at the exact position of the Rayleigh range (am 2 0) the phase
+is (to ﬁrst—order) independent of 69(75). Likewise, the two—photon phase shift at the location of the near satellite is
+
+"
+"31","31
+Differential Phase Noise Maximum Term Size [prad/x/E]
+1 ¥keﬂséxn%ﬂng2x(wT)m 108
+2 9k§ff%ﬂorT3 sin(2 wT) E 50
+3 4 keﬁaznw + 8 cos(wT)) sin4 (§) @ 13
+4 4 keff(6xf/L)6zf (7 + 8 cos(wT)) sin4(%) E 4.2
+TABLE VI: Differential phase noise due to laser pointing jitter for AGIS—LEO. The results are based on the triple—loop
+interferometer in Fig. 3, and the phase difference assumes the gradiometer conﬁguration shown in Fig. 1 between two atom
+interferometers separated by L : 30 km. The orbital radius R and rotational rate Qor are for a 1000 km orbital altitude. The
+results are for the leader—follower orbit conﬁguration. Interrogation time is T : 4 s and the LMT beamsplitters have hkeff :
+2007119. The frequency response of term 1 is given by x(wT) E V155 + 100 cos(wT) — 39 cos(2wT) — 16 cos(3 wT) sin2 (%).
+The maximum term size is taken as the high—frequency limit of the enveloped response curves With the following parameters:
+E : 1 nrad/x/E, (Szn : 1 pm, 62f : 1 mm, 6% : 10 m, and 6x” : 10 m.
+approximately
+mum, Zn) : 2m + kzn (1 + 3%) 59(1) + kL . 0 [(wn/L)2 , (zn/L)2 , (kL)_1] (21)
+Where in this case 1% is the longitudinal position of the near atom With respect to the point of rotation of the beam
+and zn is the transverse offset. Note that the phase ACIDD at the position of the near atom is still sensitive to 66(15)
+since the wavefront curvature cannot be matched at that distance from the rotation point.
+
+We perform the phase shift calculation outlined in Sec. VA using the rotated Gaussian beam phase shifts of Eqs.
+(20) and (21). This analysis assumes the leader—follower orbit conﬁguration and the coordinate system shown in
+Fig. 1. The four largest terms of the RMS differential angle jitter response appear in Table VI. The results have
+been simpliﬁed by enforcing the orbital conditions 9 = QgrR and T XX : Tyy : —%TZZ : Qgr. Terms 3 and 4 are a
+consequence of the position dependence of ACIDD and ACIDf. Term 1 appears as the dominant response for the same
+analysis performed With plane waves instead of Gaussian beams; here the term is suppressed by 6:10” / L N 3 X 10—4
+compared to the plane wave case as a result of the curved wavefront at the far satellite. Finally, term 2 consists of
+equal contributions from both the near and the far satellite and is a result of the ﬁnite longitudinal extent of each
+atom interferometer coupled With transverse Coriolis deﬂections.
+
+The angle jitter requirements implied by each of these terms is shown in Fig. 19 as a function of jitter frequency.
+In the relevant gravitational wave bandwidth, the pointing error must be < 1 nrad/VE in order for the phase noise
+contribution to be less than atom shot noise of 10‘4 rad/\/H—z. Table III summarizes the satellite control constraints.
+
+In this analysis we have assumed that the photon recoil effects due to Gaussian curvature are negligible. The
+wavevector E is the gradient of the local phase during the atom—light interaction. The ﬁnite beam curvature causes
+the effective wavevector E to point slightly away from the interferometer axis, at off—axis interaction points. This
+Changes the direction of the momentum kick imparted to the atom, Which leads to additional transverse motion.
+These trajectory modiﬁcations are small compared to other deﬂections present in the problem, such as those caused
+by Coriolis forces. However, the effect of these wavevector perturbations can be computed and this analysis is currently
+ongoing.
+
+The results of the pointing jitter analysis are mostly unchanged for the inclined—great—Circles orbit conﬁguration.
+The main difference is that the transverse Coriolis deﬂections are greatly suppressed for the inclined—great—Circles. As
+a result, term 2 in Table VI no longer appears in the results. However, the jitter requirement is still < 1 nrad/VE
+in the GW band for this orbit conﬁguration.
+
+VI. SHORT—BASELINE CONFIGURATIONS
+
+A proof—of—principle AGIS instrument could be space tested on the International Space Station (AGIS—ISS) or on
+an independent satellite employing booms to house the interferometer regions. While such an instrument would be
+limited to signiﬁcantly shorter baselines, thereby decreasing sensitivity to the scientiﬁcally interesting gravitational
+waves mentioned previously, it would provide useful technology development for a full AGIS—LEO mission.
+
+In addition to serving as a testbed for the light—pulse atom interferometry sequences that Will be used for AGIS—
+LEO, a short—baseline instrument could be used to implement lattice—hold atom interferometry, a recently—proposed
+alternative to light—pulse atom interferometry [50]. Lattice—hold atom interferometry involves the use of optical lattices
+to continuously control the trajectories of the two arms of an atom interferometer. To perform optimally, optical—
+lattice manipulations of the atoms require a larger tWO—photon Rabi frequency (Which is proportional to laser intensity)
+
+"
+"32","32
+100
+50
+6Xf 62f
+@ 20 6X”
+,3 10 6211
+g
+£4 5 Curvature
+CD
+|<o
+2
+1
+1 5 10 50 100 500 1000
+Frequency [mHz]
+FIG. 19: Interferometer laser pointing stability requirements. Each curve corresponds to a different term from Table VI, labeled
+by their corresponding position offsets. “Curvature” refers to Term 2. A11 parameters are the same as in Table VI.
+than may be available in the AGIS—LEO conﬁguration. This is because available laser power is ﬁnite, and so long
+baselines, which require larger beams to mitigate diffraction, have limited intensity. With the smaller beam waist
+allowed by a shorter baseline, the desired intensities for lattice—hold interferometry are more easily attainable. The
+potential improvements in sensitivity of this promising new approach to atom interferometry suggest that it might
+even be capable of observing gravitational waves with ISS—scale baselines. Regardless, it requires the same hardware
+as light—pulse atom interferometry, with only software modiﬁcations needed to Change the durations and frequencies
+of the applied laser light. Thus, a short—baseline mission could provide a space demonstration of both light—pulse atom
+interferometry and lattice—hold atom interferometry, with the possibility of direct gravitational wave detection.
+
+In what follows, we provide a brief conceptual overview of lattice—hold interferometry as it could be applied to an
+ISS or other short—baseline satellite mission. Much of the analysis we have performed for a light—pulse interferometer
+geometry applies also to the case of a conﬁned lattice—hold interferometer. In this section, we focus on the aspects of
+the analysis that must be modiﬁed for conﬁned interferometer geometries and short baselines.
+
+A. Lattice—Hold Interferometer Gravitational Wave Phase Shift
+
+In comparison to light—pulse atom interferometry, lattice—hold atom interferometry offers potentially larger gravi—
+tational wave sensitivities for short baseline conﬁgurations. The graVitational—wave—induced phase difference between
+two lattice—hold interferometers is:
+
+m
+
+Aqﬁgw N EwLDh sin (wT/2) sin QGW (22)
+where m is the mass of the atom, h is the gravitational wave strain, w is the gravitational wave frequency, T is the
+interrogation time, L is the baseline distance between the two interferometers, and D is the wavepacket separation
+in each interferometer. The phase 9Gw of the gravitational wave is deﬁned as in Sec. IIB. The interferometer
+conﬁguration is illustrated in Fig. 20. Equation (22) follows from a fully relativistic calculation in which the space—
+time trajectories along which the lattices guide the atoms are determined by solving for the intersection points of the
+null geodesics traveled by the photons forming the lattices. These intersection points are calculated using the general
+method presented in [30]. An interesting feature of the phase difference in Eq. (22) is that if we set D N L, it scales
+quadratically with L, suggesting the possibility of scientiﬁcally interesting sensitivities with only modest baselines.
+
+B. Lattice—Hold Interferometer Gravitational Wave Sensitivity
+
+To illustrate the promising sensitivity of lattice—hold interferometer gravitational wave detectors over short baselines,
+
+we consider an example set of feasible parameters. For a baseline of L N 10 In, a wavepacket separation of D N 10 In, a
+
+"
+"33","33
+""s‘ D ’)'-:::::”-
+\ I “-
+\\\\\ ”l,
+L
+N
+""s‘ D ”""l:::::""-
+‘\\\ I”, ..-
+\“ ”i
+0 T
+1:
+FIG. 20: Lattice—hold interferometers in a differential conﬁguration that could be realized on the 188. The baseline distance
+between the two interferometers is L, the wavepacket separation in each interferometer is D, and the interrogation time is T.
+The graVitational—wave—induced phase difference between the interferometers is given by Eq. (22).
+gravitational wave frequency of w N 27? X 1 Hz, and a phase sensitivity of N 10—4 rad/x/ Hz, a lattice—holol interferometer
+conﬁguration using Rb atoms has a strain sensitivity of h N 10—16/\/ Hz. For laser intensities of N 100 W/Cm2, a
+sufﬁciently large two—photon Rabi frequency (N 27? X 60 kHz) can be achieved to efﬁciently pull apart and recombine
+the atomic wavepackets over the N 10 In baseline in N 1 s, While the spontaneous emission rate can be kept sufﬁciently
+low (N 0.1 s_l) to avoid signiﬁcant losses.
+
+The parameters described allow for a scientiﬁcally interesting gravitational wave strain sensitivity for an apparatus
+that could be ﬁt on the ISS. Lattice—holol schemes are also promising for ground—baseol detectors. For instance, such
+a detector could be realized in the 10 In atomic fountain currently being constructed at Stanford [30].
+
+C. Environmental Considerations near the International Space Station
+
+As discussed previously, most of the environmental factors of Sec. V become more problematic at lower altitudes.
+At 350 km above the surface of the Earth (the approximate orbital altitude of the 188), the number density of
+atomic oxygen is around 108 %, at least two orders of magnitude worse than required [67]. Thus, the AGIS—ISS
+instrument would need to have an enclosed vacuum tube to protect the interferometry region, though the exterior
+vacuum environment allows the tube walls to be thin and non—structural. This tube would also act as a sunshielol,
+increasing uptime by eliminating the need to operate only in the Earth’s shadow. It could even provide the base for
+a magnetic shield if one were necessitated by the lower orbit or the proximity of the 188. Further study is required to
+determine the impact of gravity gradients and Coriolis effects in the lower ISS orbit and to develop a full systematic
+error budget for AGIS—ISS, although preliminary calculations indicate that the transverse conﬁnement provided by
+red—oletuneol laser beams for a lattice—holol conﬁguration can signiﬁcantly suppress the sensitivity of the instrument to
+Coriolis effects. AC Stark shifts Will be an important factor in Choosing the optimal beam waist and in specifying the
+necessary level of intensity stabilization. These shifts can cause non—common noise in the interferometer phase that
+depends both on the degree of divergence of the laser beams over the interferometer region and on the size of laser
+intensity ﬂuctuations. Finally, to mitigate Vibrational noise from the ISS itself, one option is to tether the instrument
+to the space station, rather than to attach it directly.
+
+"
+"34","34
+.
+2m
+El
+‘v\\ V n l
+I) *‘4x\ 4 V ‘41“ ""4""""
+\Vg W
+{WEAVV a ; V») 2K
+E ’1 ”V
+FIG. 21: Boom conﬁguration for a three—aXis gravitational wave detector, With retroreﬁectors mounted at the end of each
+boom. The shaded red lines indicate the optical path, and the arrows on the upper boom indicate an atom interferometer fully
+ﬁlling its boom (speciﬁcally the trajectories of the atoms during the ﬁrst half of the ﬁrst loop of a sequence, as in Fig. 3 or Fig.
+20). The advantages of a boom conﬁguration are discussed in Sec. VID. Note that the ﬁgure is not to scale, that the vacuum
+bellows in each boom are hidden for Clarity, and that only one of the six interferometer regions is indicated With arrows.
+D. Three—Axis Boom-Based Conﬁguration
+
+A promising conﬁguration for short—baseline detectors involves the use of six booms originating from a central
+module to form interferometer pairs along three orthogonal axes, With each boom housing a single interferometer (see
+Fig. 21). The laser beams can be aligned in a racetrack conﬁguration through the use of retroreﬁeoting elements
+(e.g., corner cubes) at the end of each boom and pentaprisms inside the central module to allow for 90 degree turns,
+enabling us to simultaneously address all six interferometers With a common set of frequency ramps. The central
+module would house the atom source and optics, With bellows extending inside each boom to establish vacuum. As
+mentioned in the previous section, a magnetic shield can enclose each of the interferometer regions or be incorporated
+directly into the vacuum bellows. Compact, self—deploying booms are available from commercial manufacturers [73].
+
+A key advantage of a boom conﬁguration is that the three—axis measurement allows for the mitigation of background
+signals due to ﬂuctuations in centrifugal force gradients, Which arise from rotational noise. For a single—axis sensor,
+such ﬂuctuations have the same signature as a gravitational wave. However, correlation measurements between three
+orthogonal sensors would allow for these ﬂuctuations to be distinguished from a gravitational wave.
+
+A boom conﬁguration can either operate as a free ﬁyer or be attached to the 188, With the capability to implement
+both light—pulse and lattice—hold interferometry due to their identical hardware requirements. In either case, it is
+desirable for each interferometer to ﬁll its respective boom (i.e., the wavepaoket separation should be nearly the
+length of a boom), so that the maximal gravitational wave sensitivity allowed by the instrument is achieved. For a
+free ﬁyer conﬁguration, it may be possible to use boom lengths of up to N 100 m. With such a boom length and With
+hkeﬂ: = ZOOEk beam splitters, the interferometers can ﬁll the booms With interrogation times of N 100 s.
+
+For a free ﬁyer, one axis could be made effectively inertial by orienting it perpendicular to the orbital plane,
+suppressing effects arising from rotation bias and Coriolis deﬂections as is done for the ICC conﬁguration (see Sec.
+II D). With the use of thrusters, it may be possible to make all three axes effectively inertial.
+
+An additional scientiﬁc motivation for the boom conﬁguration is that the three—axis measurement can aid in the
+performance of certain tests of general relativity. For example, the boom conﬁguration appears to be an ideal platform
+for measuring the nonzero divergence of the gravitational ﬁeld in free space predicted by general relativity [30].
+
+"
+"35","35
+VII. SECONDARY OBJECTIVES
+
+Although variations in Earth’s gravity gradients are a noise source for the GW detector, pulse sequences designed
+to measure these variations can provide important geophysical information including data regarding the ﬂow of water
+on the Earth that is important for understanding weather, the Climate, and oceans. Similar arguments have provided
+motivation for satellite missions such as the CHAllenging Mini—satellite Payload (CHAMP), the Gravity Recovery and
+Climate Experiment (GRACE), and the Constellation Observing System for Meteorology, Ionosphere and Climate
+(COSMIC). The method works: GRACE’s monthly gravitational maps have improved our understanding of ocean
+Circulation [74], polar ice loss [75], and water ﬂow of large basins like the Amazon [76].
+
+Furthermore, if the atom Clouds are prepared in a magnetically—sensitive state, [m 7E 0), the gravity wave detector
+becomes a detector of the local magnetic ﬁeld gradient at each of the interferometers. Similar to the gravity gra—
+diometer, the transformed detector would produce a map of the temporal variation in the Earth’s magnetic gradients.
+Data collected by previous satellite missions—Qrsted, CHAMP, and Satellite Argentina Cientiﬁcas — C (SAC—C)—have
+been used to model the static and time—varying geomagnetic ﬁeld [77] and mantle conductivity [78].
+
+The modiﬁcations necessary to make these measurements do not require different hardware, merely different soft—
+ware. With this unique ﬂexibility of atom interferometric measurements, AGIS—LEO can provide complementary
+maps of temporal variations in the Earth’s gravity gradients and magnetic ﬁeld gradients.
+
+VIII. SUMMARY
+
+Atom interferometry offers a means to sensitively measure gravitational waves With short baselines and in low Earth
+orbit. With a strain sensitivity of < 10—18/\/E in the 50 mHz — 10 Hz frequency band, the AGIS—LEO instrument
+can detect gravitational wave signals inaccessible to ground—based alternatives. Such information could impact our
+understanding of the universe from the mergers of nearby White dwarf binaries to phase transitions and reheating at
+the earliest of times. Extensive theoretical analysis of noise sources performed for solar orbits, [26], has been adapted
+to the new conditions of low Earth orbit. We have analyzed possible environmental noise sources from near—Earth
+magnetic ﬁelds and gravity gradients and have found them to fall below the necessary threshold. Laser requirements—
+phase noise, frequency stability, and wavefront—are all achievable With current technology. Rotation effects, Which are
+stronger in low Earth orbits due to the short orbital period, can be mitigated through the invaluable ﬂexibility of
+atom interferometry: the Choice of interferometer pulse sequence.
+
+An apparent strength of the AI approach is that many of the instrument and system level requirements can be
+validated 0n the ground, in suitably conﬁgured terrestrial laboratories. For example, the Stanford 10 In free fall
+tower Will enable Characterization of LMT optical sequences, wavefront and laser jitter requirements, magnetic ﬁeld
+sensitivity, vacuum sensitivity, laser cooling protocols, kinematic requirements for the atom sources, Coriolis and
+gravity gradient sensitivities, etc.
+
+Finally, atom interferometry has the potential for even higher precision. With longer baselines and larger beam—
+splitters, the sensitivity of pulsed atom interferometers to gravitational waves can be increased by multiple orders
+of magnitude. With shorter baselines, lattice—hold atom interferometers, now in development, have the capability to
+provide high sensitivity. In fact, an ISS—scale test mission for AGIS using lattice—hold atom interferometry might be ca—
+pable of directly detecting gravitational waves, While simultaneously ﬂight testing the technology for a full AGIS—LEO
+science mission.
+
+In short, AGIS is a sensitive and scalable instrument that can open the door to information about our universe
+that is currently encoded in gravitational waves.
+
+Acknowledgments
+
+We thank Peter Bender for valuable discussions. TK acknowledges support from the Fannie and John Hertz
+Foundation. TK, SD and AS acknowledge support from the NSF GRFP. AS acknowledges support from an Anne
+T. and Robert M. Bass Stanford Graduate Fellowship and a DOD NDSEG Fellowship. SR is supported by the DOE
+Ofﬁce of Nuclear Physics under grant DE—FG02—94ER40818. SR is also supported by NSF grant PHY—0600465. PB
+acknowledges support from a Fulbright Fellowship and the iXCore Foundation.
+
+[1] B. F. Schutz, Classical and Quantum Gravity 16, A131 (1999), arXiv:gr—qC/9911034.
+
+"
+"36","36
+[2] C. Cutler and K. S. Thorne (2002), arXiv:gr—qC/0204090.
+[3] M. Maggiore, Phys. Rept. 331, 283 (2000), arXiv:gr—qC/9909001.
+[4] B. F. Schutz, Nature (London) 323, 310 (1986).
+[5] J . Garcia—Bellido, D. G. Figueroa, and A. Sastre (2007), arXiv:0707.0839 [hep—ph].
+[6] R. Easther, J. T. Giblin, and E. A. Lim (2006), arXiv:astro—ph/0612294.
+[7] J. Dufaux, A. Bergman, G. Felder, L. Kofman, and J. Uzan, Phys. Rev. D 76, 123517 (2007), arXiv:0707.0875 [astro—ph].
+[8] M. Kamionkowski, A. Kosowsky, and M. S. Turner, Phys. Rev. D 49, 2837 (1994), arXiv:astro—ph/9310044.
+[9] C. Caprini, R. Durrer, and G. Servant, Phys. Rev. D 77, 124015 (2008), arXiv:0711.2593 [astro—ph].
+
+[10] C. Grojean and G. Servant, Phys. Rev. D 75, 043507 (2007), arXiv:hep—ph/0607107.
+
+[11] R. Apreda, M. Maggiore, A. Nicolis, and A. Riotto, Nuclear Physics B 631, 342 (2002), arXiv:gr—qC/0107033.
+
+[12] L. Randall and G. Servant, Journal of High Energy Physics 5, 54 (2007), arXiv:hep—ph/ 0607158.
+
+[13] J . Polchinski (2007), arXiv:0707.0888 [astro—ph].
+
+[14] M. R. DePies and C. J. Hogan, Phys. Rev. D 75, 125006 (2007), arXiv:astro—ph/0702335.
+
+[15] C. J. Hogan (1998), arXiv:astro—ph/9809364.
+
+[16] C. J. Hogan, Phys. Rev. Lett. 85, 2044 (2000), arXiv:astro—ph/0005044.
+
+[17] C. J. Hogan, Phys. Rev. D 62, 121302 (2000), arXiv:astro—ph/0009136.
+
+[18] M. Gasperini and G. Veneziano, Phys. Rept. 373, 1 (2003), arXiv:hep—th/0207130.
+
+[19] M. S. Turner and F. Wilczek, Phys. Rev. Lett. 65, 3080 (1990).
+
+[20] P. R. Berman, ed., AtOm Interfemmetry (Academic Press, San Diego, 1997).
+
+[21] J . M. Hogan, D. M. S. Johnson, and M. A. Kasevich, in Praceedz'ngs 0f the International Schaol 0f Physics ”Enrico Fermi”
+0n AtOm Optics and Space Physics, edited by E. Arimondo, W. Ertmer, and W. P. Schleich (IOS Press, Amsterdam, 2009),
+pp. 411—447, arXiv:0806.3261 [physics.at0m—ph].
+
+[22] S. Dimopoulos, P. W. Graham, J. M. Hogan, M. A. Kasevich, and S. Rajendran, Physics Letters B 678, 37 (2009).
+
+[23] M. Kasevich and S. Chu, Phys. Rev. Lett. 67, 181 (1991).
+
+[24] D. M. Giltner, R. W. McGowan, and S. A. Lee, Phys. Rev. Lett. 75, 2638 (1995).
+
+[25] E. M. Basel, M. K. Oberthaler, H. Batelaan, J. Schmiedmayer, and A. Zeilinger, Phys. Rev. Lett. 75, 2633 (1995).
+
+[26] S. Dimopoulos, P. W. Graham, J. M. Hogan, M. A. Kasevich, and S. Rajendran, Phys. Rev. D 78, 122002 (2008),
+arXiv:0806.2125 [gr—qc].
+
+[27] T. Léveque, A. Gauguet, F. Michaud, F. Pereira Dos Santos, and A. Landragin, Phys. Rev. Lett. 103, 080405 (2009).
+
+[28] B. Dubetsky and M. A. Kasevich, Phys. Rev. A 74, 023615 (2006).
+
+[29] S. Dimopoulos, P. W. Graham, J. M. Hogan, and M. A. Kasevich, Phys. Rev. Lett. 98, 111102 (2007), arXiv:gr—qC/0610047.
+
+[30] S. Dimopoulos, P. W. Graham, J. M. Hogan, and M. A. Kasevich, Phys. Rev. D 78, 042003 (2008), arXiv:0802.4098
+[hep-ph]-
+
+[31] K. Kawabe and the LIGO Collaboration, Journal of Physics: Conference Series 120, 032003 (2008).
+
+[32] J. R. Smith and the LIGO Collaboration, Classical and Quantum Gravity 26, 114013 (2009).
+
+[33] S. L. Larson, W. A. Hiscock, and R. W. Hellings, Phys. Rev. D 62, 062001 (2000), arXiv:gr—qC/9909080.
+
+[34] N. SneeuW and H. Schaub, Gravity, Geoid and Space Missions pp. 12—17 (2005).
+
+[35] N. Christensen, Phys. Rev. D 46, 5250 (1992).
+
+[36] B. Abbott, R. Abbott, R. Adhikari, J. Agresti, P. Ajith, B. Allen, R. Amin, S. B. Anderson, W. G. Anderson, M. Araya,
+et 31., The Astrophysical Journal 659, 918 (2007), arXiv:astro—ph/ 0608606.
+
+[37] B. Allen (1996), arXiv:gr—qC/9604033.
+
+[38] T. L. Smith, E. Pierpaoli, and M. Kamionkowski, Phys. Rev. Lett. 97, 021301 (2006), arXiv:astro—ph/0304393.
+
+[39] B. Allen and S. Koranda, Phys. Rev. D 50, 3713 (1994), arXiv:astro—ph/9404068.
+
+[40] A. J. Farmer and E. S. Phinney, Mon. Not. Roy. Astron. SOC. 346, 1197 (2003), arXiv:astro—ph/0304393.
+
+[41] H. Metcalf and P. Straten, Laser Cooling and T rapping (Springer, New York, 1999).
+
+[42] T. van Zoest, N. Gaaloul, Y. Singh, H. Ahlers, W. Herr, S. T. Seidel, W. Ertmer, E. Basel, M. Eckart, E. Kajari, et 31.,
+Science 328, 1540 (2010).
+
+[43] Stem, G., Battelier, B., Geiger, R., Varoquaux, G., Villing, A., Moron, F., Carraz, 0., Zahzam, N., Bidel, Y., Chaibi, W.,
+et 31., Eur. Phys. J. D 53, 353 (2009).
+
+[44] R. S. Conroy, Y. Xiao, M. Vengalattore, W. Rooijakkers, and M. Prentiss, Optics Communications 226, 259 (2003).
+
+[45] M. Kasevich, D. S. Weiss, E. Riis, K. Moler, S. Kasapi, and S. Chu, Phys. Rev. Lett. 66, 2297 (1991).
+
+[46] H. Ammann and N. Christensen, Phys. Rev. Lett. 78, 2088 (1997).
+
+[47] J.—S. Bernier, C. Kollath, A. Georges, L. De Leo, F. Gerbier, C. Salomon, and M. Kéhl, Phys. Rev. A 79, 061601 (2009).
+
+[48] J .—F. Clement, J .—P. Brantut, M. Robert—de Saint—Vincent, R. A. Nyman, A. Aspect, T. Bourdel, and P. Bouyer, Phys.
+Rev. A 79, 061406 (2009).
+
+[49] J . H. Denschlag, J . E. Simsarian, H. Hffner, C. McKenzie, A. Browaeys, D. Cho, K. Helmerson, S. L. Rolston, and W. D.
+Phillips, Journal of Physics B: Atomic, Molecular and Optical Physics 35, 3095 (2002).
+
+[50] T. Kovachy, J. M. Hogan, D. M. S. Johnson, and M. A. Kasevich, Phys. Rev. A 82, 013638 (2010), arXiv:0910.3435
+[physics.at0m—ph].
+
+[51] P. Cladé, S. Guellati—Khélifa, F. m. C. NeZ, and F. m. C. Biraben, Phys. Rev. Lett. 102, 240402 (2009).
+
+[52] H. Miiller, S.—W. ChiOW, S. Herrmann, and S. Chu, Phys. Rev. Lett. 102, 240403 (2009).
+
+[53] Laser interfemmeter space antenna (lisa) missian concept, LISA Project internal report number LISA—PRJ—RP—0001 (2009).
+
+[54] M. G. Hauser, T. Kelsall, D. Leisawitz, and J . Weiland, eds., COBE Diﬁuse Infrared Backgmund Experiment (DIRBE)
+Explanatery Supplement (NASA/GSFC, Greenbelt, MD, 1998), cobe ref. pub. no. 98 3. ed., available in electronic form
+
+"
+"37","37
+
+from the NSSDC.
+
+[55] K. Numata, M. Ando, K. Yamamoto, S. Otsuka, and K. Tsubono, Phys. Rev. Lett. 91, 260602 (2003).
+
+[56] D. A. Vallado and D. Finkelman, in Astrodynamics Specialist Conference and Exhibit (Honolulu, Hawaii, 2008).
+
+[57] A. Gillespie and F. Raab, Phys. Rev. D 52, 577 (1995).
+
+[58] Y. Levin, Phys. Rev. D 57, 659 (1998).
+
+[59] M. Cerdonio, L. Conti, A. Heidmann, and M. Pinard, Phys. Rev. D 63, 082003 (2001).
+
+[60] D. J. Edinger and A. A. Nordt (SPIE, 2005), V01. 5868, p. 58680X.
+
+[61] For example, see the 4D Technology FizCam 2000 Fizeau interferometer.
+
+[62] P. Cheinet, B. Canuel, F. Pereira Dos Santos, A. Gauguet, F. Leduc, and A. Landragin (2005), arXiv:physics/0510197.
+
+[63] J . L. Genet, J . Kim, C. Bourassin—Bouchet, M. Lours, A. Landragin, and F. P. D. Santos, Optics Communications 282,
+977 (2009).
+
+[64] A. D. Ludlow, X. Huang, M. Notcutt, T. Zanon—Willette, S. M. Foreman, M. M. Boyd, 8. Blatt, and J. Ye, Opt. Lett. 32,
+641 (2007).
+
+[65] K. Bongs, R. Launay, and M. Kasevich, Applied Physics B: Lasers and Optics 84, 599 (2006).
+
+[66] A. Peters, K. Y. Chung, and S. Chu, Metrologia 38, 25 (2001).
+
+[67] A. E. Hedin, J. Geophys. Res. 96, 1159 (1991).
+
+[68] S. Mans, S. Macmillan, S. McLean, B. Hamilton, A. Thomson, M. Nair, and C. Rollins (2010), the US/UK World Magnetic
+Model for 2010—2015, NOAA Technical Report NESDIS/NGDC.
+
+[69] N. K. Pavlis, S. A. Holmes, 8. C. Kenyon, and J. K. Factor, an Earth Gravitational Model to Degree 2160: EGM2008,
+presented at the 2008 General Assembly of the European Geosciences Union, Vienna, Austria, April 13—18, 2008.
+
+[70] J. Park, T.—R. A. Song, J. Tromp, E. Okal, S. Stein, G. Roult, E. Clevede, G. Laske, H. Kanamori, P. Davis, et 81., Science
+308, 1139 (2005).
+
+[71] F. A. Dahlen and J . Tromp, T hearetz'cal Glabal Seismalagy (Princeton University Press, Princeton, NJ, 1998).
+
+[72] G. Masters, M. Barmine, S. Kientz, J . F. Gilbert, and J . Woodhouse, the MINEOS Computational Infrastructure for
+Geodynamics, URL http : //geodynamics . org/Cig/software/mineos.
+
+[73] For example, see ABLE Engineering, 1106., http://WWW.aeC—able.com/Booms/coilboom.html.
+
+[74] B. D. Tapley, D. P. Chambers, 8. Bettadpur, and J. C. Ries, Geophys. Res. Lett. 30, 220000 (2003).
+
+[75] J. L. Chen, C. R. Wilson, D. Blankenship, and B. D. Tapley, Nature Geoscience 2, 859 (2009).
+
+[76] B. D. Tapley, S. Bettadpur, J. C. Ries, P. F. Thompson, and M. M. Watkins, Science 305, 503 (2004).
+
+[77] N. Olsen, H. Liihr, T. J . Sabaka, M. Mandea, M. Rother, L. Tfoner—Clausen, and S. Choi, Geophysical Journal International
+166, 67 (2006).
+
+[78] A. Kuvshinov and N. Olsen, Geophys. Res. Lett. 33, 18301 (2006).
+
+"

@@ -1,0 +1,429 @@
+"","x"
+"1","Radiat Environ Biophys (2010) 49:351—357
+DOI 10.1007/s00411—010—0288—y
+ORIGINAL PAPER
+
+Simulations of the MATROSHKA experiment at the international
+
+space station using PHITS
+
+L. Sihver - T. Sato - M. Puchalska - G. Reitz
+
+Received: 13 October 2009 / Accepted: 17 April 2010 / Published online: 25 May 2010
+
+© Springer—Verlag 2010
+
+Abstract Concerns about the biological eﬂects of space experiment (Reitz and Berger in Radiat Prot Dosim
+
+radiation are increasing rapidly due to the perspective of 120:442—445, 2006). MATROSHKA is an anthropomor—
+
+long—duration manned missions, both in relation to the phic phantom containing over 6,000 radiation detectors,
+
+International Space Station (188) and t0 manned interplane— mimicking a human head and torso. The MTR experiment,
+
+tary missions to Moon and Mars in the future. As a prepara— led by the German Aerospace Center (DLR), was launched
+
+tion for these long—duration space missions, it is important in J anuary 2004 and has measured the absorbed doses from
+
+to ensure an excellent capability to evaluate the impact of space radiation both inside and outside the ISS. Compari—
+
+space radiation on human health, in order to secure the sons of simulations With measurements outside the 188 are
+
+safety of the astronauts/cosmonauts and minimize their presented. The results indicate that PHITS is a suitable tool
+
+risks. It is therefore necessary to measure the radiation load for estimation of doses received from cosmic radiation and
+
+on the personnel both inside and outside the space vehicles for study of the shielding of spacecraft against cosmic radi—
+
+and certify that organ— and tissue—equivalent doses can be ation.
+
+simulated as accurate as possible. In this paper, simulations
+
+are presented using the three—dimensional Monte Carlo Par—
+
+ticle and Heavy—Ion Transport code System (PHITS) Introduction
+
+(Iwase et al. in J Nucl Sci Tech 39(11):1142—1151, 2002)
+
+of long—term dose measurements performed With the Euro— Doses achieved by personnel during space ﬂights depend
+
+pean Space Agency—supported MATROSHKA (MTR) on solar cycle, spacecraft orbit parameters such as orbit
+inclination, altitude, space weather parameters, mission
+
+— duration, and spacecraft shielding. For LOW Earth Orbit
+
+32:3:njszrgitafebgy8212:11.317302138: HES; £36011 $03196, 21:3: nleons m (LEO) spaeeﬂight conditions, the dose distribution inside a
+
+(Germany). spacecraft is the result of both primary and secondary space
+
+— radiation. The primary radiation comes from Galactic Cos—
+
+L. SihVer (E) ' M- Puchalska mic Rays (GCR), Solar Particles Events (SPE), and parti—
+
+Chalmer?’ UniverSity Of TeChnOIOgy’ GOthenburg’ swede“ Cles trapped in the Earth’ radiation belts. The secondary
+
+e—mailz s1hver@chalmers.se , , , , , ,
+radiation is produced by nuclear interactions of the primary
+
+L. Sihver radiation With the materials in the spacecraft and biological
+
+R03n0ke COHCgea Salem, VA, USA tissues of the human body. Estimation of the radiation risks
+
+L. Sihver for humans on board a spacecraft during a space ﬂight can
+
+Texas A &M University, College Station, TX, US A either be performed using measured data of dose and ﬂuX
+distributions in the spacecraft compartments obtained in
+
+T- Sam real space ﬂight conditions or by computer simulations. The
+
+JAEA’ TOkai'mura’ Ibaraki’ Japan complex composition of space radiation and the dynamical
+
+G. Reitz nature of energy and angular spectra in habitable compart—
+
+German Aerospace Center,C010gne, Germany ments of the space stations do not permit to obtain very
+
+@ Springer
+
+"
+"2","352 Radiat Environ Biophys (2010) 49:351—357
+accurate data on radiation conditions based only on dose fa} i, ' -
+calculations. Since it is not possible to perform measure— I 77' “H.
+ments for all possible projectile—target—energy—geometry H '_ I
+combinations, however, computer simulations using parti— . J \. _.
+cle and heavy—ion transport codes are still necessary. It is ‘H I. _
+therefore indispensable to use both measured data and com— } ”I '- I
+puter simulations for estimating the radiation risk of astro— .. .. f 1"" ' q :
+nauts in space. E"": J"" k -w I l I I I
+In this paper, results of calculations are compared with __.| ' i l' I I
+those of measurements performed within the MTR experi— _ PF
+ment (Reitz and Berger 2006), which simulates an Extra 7*-
+Vehicular Activity (EVA) outside the 188 during the time 4 ""
+period February 26, 2004, up to October 18, 2005. Fig. 1 The RANDO phantom: front View (a) and top View of slice 30
+equipped with TL detectors mounted in polyethylene tubes; tube 30 M
+is highlighted (b)
+Materials and methods
+Table 1 Element composition (percentage by weight) of the RAN-
+DO® phantom
+MATROSHKA (MTR) experiment —
+Element Soft tissue Lungs
+The ESA—supported MTR experiment (Reitz and Berger Carbon 67.78 70.74
+2006) consists of an anthropomorphic phantom containing Oxygen 20.31 21.28
+more than 6,000 radiation detectors, mimicking a human Hydrogen 9.18 597
+head and torso. The MTR experiment, which is led by DLR Nitrogen 2.50 1.9
+in Germany, was launched in January 2004 and has mea— Antimon 0.22 0 1
+. . . . y -
+sured the absorbed doses frorn space radiation both 1ns1de Density (g/Cm3) 0.997 0.352
+and 0uts1de the 188. The main goals of the MTR CXpCI‘l— —
+ment were to measure the depth—dose distribution inside the
+phantom and provide data to benchmark radiation transport simulating the shielding of an astronaut’s EVA spacesuit.
+codes. In this paper, simulations with PHITS are compared The absorbed doses measured by the TLDs were calculated
+to measurements performed by the Institute of Atomic and according to the procedure shown in (Reitz et al. 2009).
+Subatomic Physics (ATI, Austria), the Institute of Nuclear The numerical voxel model of the RANDO® phantom,
+Physics (IFJ, Poland) and the German Aerospace Center which was used in the present study, was developed at the
+(DLR, Germany). Institute of Nuclear Physics (IFJ) in Krakow to be used in
+the MTR experiment calculations (Puchalska et al. 2010).
+Phantom This voxel phantom, called NUNDO (Numerical RANDO),
+was constructed based on computed tomography (CT)
+The RANDO® (The Phantom Laboratory) phantom used in scans of the RANDO® phantom. The voxel size of the
+the MTR experiment is composed of a real human skeleton, NUNDO is 1 X 1 X 5 mm3. Masses of each organ and tis—
+embedded into soft tissue—equivalent material (see Fig. 1). sue 0f the NUNDO phantom were scaled those of the ICRP
+The soft tissue material has an effective atomic number of reference man (ICRP 2002). In Fig. 2, the CT scan of the
+7.6 and a mass density of 0.997 g/cm3, which simulates RANDO® phantom (a) and the numerical voxel model
+muscle tissue with randomly distributed fat. Material with a NUNDO (b) are shown.
+lower effective atomic number of 7.1 and almost three times
+lower mass density (0.352 g/cm3) simulates the lungs. The MATROSHKA simulations
+phantom has no arms and no legs and is divided into 33
+slices of 2.5 cm in height. The corresponding material com— The simulations presented here were done using the three—
+positions are presented in Table 1. dimensional Monte Carlo code Particle and Heavy—Ion
+In a regular grid of 2.5 cm inside the phantom, more than Transport code System (PHITS) (Iwase et al. 2002), which
+6,000 passive thermoluminescent detectors (TLDs) were recently has been extensively benchmarked for space appli—
+located (Fig. 1b). The TLDs were put into polyethylene cations (Sato et al. 2006; Sihver et al. 2007, 2008, 2009a, b;
+tubes separated by polyethylene spacers. The RANDO® Gustafsson et al. 2009). Estimates of the external radiation
+phantom including the detectors was put into a carbon ﬁber environment were obtained by using the web—based model
+container with an average mass shielding of 0.35 g/cm2, package Cosmic Ray Effects on Micro Electronics 96
+@ Springer
+
+"
+"3","Radiat Environ Biophys (2010) 49:351—357 353
+{a 3. (h) The Particle and Heavy-Ion Transport Code System
+0 (pm
+,3! I 1 ' __.__=f_"":_-_ ""' PHITS (Iwase et al. 2002) is a general—purpose particle and
+_., j; heavy—ion MC transport code that allows transport of neu—
+_:_ trons from thermal energies up to 200 GeV. Transport of
+2 ‘73? = _- _ neutrons below 20 MeV is performed with the event gener—
+‘r‘ :j _'u' ator mode (Iwamoto et al. 2007; Niita et al. 2007) using
+‘I "" . ' _:=-' — evaluated nuclear data libraries such as ENDF/B—VI
+. '- E _ ' _ (ENDF—201, Cross Section Evaluation Working Group
+""7 "" ""— 1991) and JENDL—3.3 (Shibata et al. 2002; Watanabe et al.
+- - ' 2005).
+* l Above 20 MeV and up to 3 GeV, the Bertini model with
+h. _: . _ _: free p—p and n—n cross—sections parameterized according to
+J: ' '- __ t_- (Niita et al. 2001) can be used, while the simulation model
++ 7‘ .' I _ ' Jet AA Microscopic Transport Model (JAM) developed by
+u: ' ' ' Nara et al. (Niita et al. 2001) is normally used above 3 GeV
+_ for nucleons, above 2.5 GeV for pions, and for all energies
+.. 1 .- - _..._ for all other baryons. JAM is a hadronic cascade model,
+‘3..\ _//""f —___ '3- :__§-:_ which explicitly treats all established hadronic states
+a _ 2""? 9:: Jug? PEI;— including resonances with explicit spin and isospin as well
+_— as their anti—particles. For protons and other hadrons, JAM
+Fig. 2 CT scan of the RANDO phantom (a) and the numerical voxel can be used abOVe 1 MeV, but for Charged partides below
+model NUNDO (b) 1 MeV, only the ionization process is considered until the
+particles are stopped. PHITS can also transport nuclei in
+(CREME96) (Tylka et al. 1997). The phantom, the con— any solid, gas or liquid material. Below 10 MeV/n, only the
+tainer as well as the TLDs within the phantom were simu— ionization process for the nucleus transport is taken into
+lated, and a simpliﬁed ISS geometry was used. The account, while between 10 MeV/n and 100 GeV/n,
+simulations were done on a LinuX—based Cluster at the nucleus—nucleus collisions are described by the simulation
+National Supercomputer Centre in Linkoping, Sweden. To model JAERI Quantum Molecular Dynamics (JQMD)
+reach reasonable statistics, more than 70,000 cpu hours (Niita et al. 1995). In the QMD model, the nucleus is
+were used for the calculations. described as a self—binding system of nucleons, which are
+Fig' 3 Fluxes Of “.2113 p ed p10"" (a) Trapped Protons (b) Galactic Cosmic Radiation
+tons (a) and Galactic Cosmic 103 _ 10
+Rays (b) for apogee 364 km,
+perigee 347 km, and inclination 1
+52 (for GCR only the ﬂuxes of A
+the ions with the highest radia- 102 o_1 _
+tion weighting factors are 1
+shown) g g 0.01
+NE 101 NE 1E-3 [A
+:3,- 1o0 :3,- 1E-5 ; ’ _ proton \
+§ — proton § V — helium
+E E “5'6 _ oxygen
+10'1 1E-7 — O_arbon
+a _ nitrogen
+1E-8 E _ iron
+10'2 1E-9 I
+10° 101 1o2 103 10° 101 1o2 103 104 105
+Energy (MeV/n) Energy (MeV/n)
+@ Springer
+
+"
+"4","354 Radiat Environ Biophys (2010) 49:351—357
+Fig. 4 Simulated geometry of {a} (h)
+phantom, container and founda—
+tion (a), and simpliﬁed ISS
+geometry with MTR facility (b) _
+\
+- cnntniner
+phantom
+stopping power dE/dx, the ﬁrst order of the Moliere model
+for calculation of the angle straggling, and the Gaussian,
+Landau, and VaVilov theories for calculation of the energy
+straggling around the average energy loss according to the
+Charge density and velocity.
+
+The total reaction cross—section and the physical half—life
+of a particle are quantities essential for the determination of
+its mean free path. To calculate the mean free path, PHITS
+Chooses the next collision point using the MC method. To
+generate the secondary particles of the collision, informa—
+tion on the ﬁnal states of the collision is required. It is
+therefore very important that reliable data of total non—elas—
+tie and elastic cross—sections ar used for the particle and
+heavy—ion transport. Parameterizations are used for proton—
+induced reactions for all energies and for the double—differ—
+ential cross—sections of elastic nucleon—nucleus reactions.
+
+F' 5 S' 1 t d t f h t d . l'ﬁ d 188 t Recently, the NASA systematics developed by Tripathi
+M 9 9996 999>
+PHITS simulations tion cross—section was adopted as an alternative to the Shen
+formula (1989).
+interacting with each other through effective interactions Radiation environment
+described based on molecular dynamics. It allows estima—
+tion of the yields of emitted light particles, fragments, and The external space radiation environment for the average
+eXCited residual nuclei resulting from heavy—ion collisions. altitude of the 188 during the period when the MTR was
+The QMD simulation, as well as the JAM simulation, located outside the ISS (apogee 364 km, perigee 345 km,
+describes the dynamical stage of the reactions. At the end inclination 520) was simulated by the CREME96 code
+of the dynamical stage, excited nuclei are created and must (Tylka et al. 1997). CREME96 compensates for the shadow
+be forced to decay in a statistical way to reach the ﬁnal of the Earth. A spherical radiation source, with a diameter
+observed state. In PHITS, the Generalized Evaporation of 345 cm, was used in the simulations. The particles from
+Model (GEM) (Furihata 2000) is employed for light—parti— the source were emitted inward, creating an isotropic enVi—
+Cle evaporation and ﬁssion of the eXCited residual nucleus. ronment inside the sphere. Simulations were done sepa—
+PHITS allows not only simulation of the trajectory of rately for trapped protons (TP) and GCR. The TP occur in
+Charged particles in a ﬁeld but also simulation of collisions the inner Van Allen Belt that extends from an altitude of
+and ionization processes, at the same time. For the ioniza— around 100 km to around 10,000 km, and the particle inten—
+tion process of Charged particles and nuclei, PHITS sity increases as a function of distance from the Earth at
+includes the Stopping Power and Ranges code (SPAR) low altitudes and decreases with intensity at higher alti—
+(Arrnstrong and Chandler 1973) for calculation of the average tudes. However, the majority of the trapped protons lie at
+@ Springer
+
+"
+"5","Radiat Environ Biophys (2010) 49:351—357 355
+Experiment: PHITS simulations: Experiment: PHITS simulations:
+I Matroshka data 0 Trapped Protons I Matroshka data 0 Trapped Protons
+A Galactic Cosmic Radiation A Galactic Cosmic Radiation
+V Total 7 Total
+_ 0.4 0-3
+> + “ i
+>, . \
+(D V E >‘ 0.2
+E E i i E ' (g i i i i i E
+8 8 ’ o e o 5
+'o .0 0.1 o
+2‘ 0.1 g >
+D 0 0 4 4 Tu .e 33 Q Tube 22K
+' 0.0
+_ 0.4 0.3
+>
+g :
+\ 0.3 (U
+5 i i E E 0 2 i E
+E ' i i i o <5 ' E
+a, 0.2 0 g g . i i E
+m o o q, i V t t
+o m a
+U o 01 0
+g 0.1 2‘ I C . . . $
+(0 _
+Q 7 1"" 1‘ ""‘ 1‘ Tube‘4B ""7‘ 4 “ 1"" 1‘ 1""
+0.0 Q 0 0 Tube 23K
+; 0'4 023
+g g
+> g
+o v i g,
+E i ii i j 0 0'2 i i i i
+(D 0.2 o o g i i
+8 ' 0 c0 0 .
+(l)
+E. 0.1 t A .8 0.1 ' o o '
+g 4 1"" é‘ 1‘ T t T 4‘
+0.0 mm 5A 8 1‘ Tube 23L
+-6O 40 -20 0 20 40 6O 80 0'0
+-60 -40 -20 0 20 40 60 80 100
+Y [mm]
+Y [mm]
+Fig. 6 Calculated and measured MTR doses for slices 3—5; ATI Insti— . .
+tute of Atomic and Subatomic Physics; IFJ Institute of Nuclear Phys— mg 7 Calculated and measured MTR doses for shoes 22‘23; AT]
+ics; D LR German Aerospace Center. The number identiﬁes the slice, Institute of Atomic and Subatomic Physics; IFJ Institute of Nuclear
+and the letter after the number the tube within the slice Physics; DLR German Aerospace Center. The number identiﬁes the
+slice, and the letter after the number the tube within the slice
+altitudes above that traversed by the orbit of the 188.
+Figure 3 presents the TP as well as the GCR ﬂuxes used (11.7%), chlorine (0.6%), and sulfur (0.3%), respectively).
+in the simulations. For the complicated GCR particle The phantom, together with the container, was placed on an
+spectrum, which includes protons up to nickel with aluminum foundation of 1 g/cmz thickness. The inside of
+energies from 1 MeV/u up to 100 GeV/u, only the ﬂuxes the foundation as well as the inside of the container was
+of ions with the highest radiation weighting factors are ﬁlled with air. The container together with the foundation
+shown. was located on the simpliﬁed ISS geometry, Chosen as an
+aluminum cylinder with a wall thickness of 15 g/sz. The
+Geometry TLDs inside the phantom were simulated by material com—
+posed of 7Li (O.2691% by weight), 6Li (0.0001), and 19F
+The simulations presented in this paper are based on the (0.7308) with the density of 2.7 g/cm3. The size of a TLD
+NUNDO phantom (Puchalska et al.) with the material com— was taken as 9 x 9 x 20 mm3 (size of a TLD stack in
+position as shown in Table 1. The material density of the MTR: 4 x 4 x 2.7 mm3) to obtain a reasonable statistic. In
+skeleton is equal to 1.3 g/Cm3 (ICRP 2002). The phantom Fig. 4, the geometry of the phantom and the simpliﬁed 188
+was inside a container made of 0.35 glcm2 of carbon ﬁber geometry used in simulations are shown, while in Fig. 5,
+(consisting of hydrogen (4.2% by weight), carbon (42.2%), the spherical radiation source used in the PHITS simula—
+oxygen (4.2%), nitrogen (28.5%), ﬂuorine (8.4%), silicon tions is shown.
+@ Springer
+
+"
+"6","356 Radiat Environ Biophys (2010) 49:351—357
+Experiment: PHITS simulations: Results and discussion
+I Matroshka data 0 Trapped Protons
+: $0150th 008mm Rad'atlon In Figs. 6, 7, and 8, preliminary results of the PHITS sim—
+_. 0.3 ulations are compared with experimental data obtained
+g t during the MTR experiment, for tubes 3B, 4B, and 5A in
+E. 0.2 E the head region; tubes 22 K, 23 K—L corresponding to the
+g . i E i i i 0 height of the Chest; and tubes 30 M, 31L—M in the abdo—
+g . . men region of the phantom. Both the simulated and the
+8 0.1 o o 0 measured data are just the doses obtained for the TLDs,
+%‘ 4; 4; 1* 1‘ 1* 1* 4: without any efﬁciency corrections. Note that the simula—
+D 0 0 Tube 30M tions were done separately for TP and GCR. Figure 9
+0:3 __ shows the ratio of the experimental MTR data and the eal—
+E"" culated PHITS data as the average per tube. As can be
+g i 3; seen, the doses calculated by PHITS are in a very good
+(g 0.2 i i E i . agreement with those measured: the difference is less than
+F 9 E v 23% although a very simpliﬁed geometry for the shielding
+g 0.1 ' . . . 0 0f the 188 was used in the simulations (because the exact
+g ‘1 4, t 1‘ 4, geometry of the 188 was not available). Furthermore,
+w 4‘ 4: . . . .
+Q Tube 31M there were some active detectors put 1ns1de and 0uts1de
+8g _ the phantom that were also not considered in the geometry
+3; 0f PHITS simulations.
+g Note that contribution from trapped electrons was not
+5 0-2 E E E i included in the calculations described in this paper. How—
+% v E g E t . ever, preliminary simulations including trapped electrons at
+g o t a speciﬁed orbit have been performed by PHITS, using the
+I; 0'1 . ‘ g o . trapped—electron spectrum calculated by the AE—8 model
+E A 4: 4‘ 4: +Tube 3"": L (Vette 1991) implemented in the space environment infor—
+0.0 mation system (SPENVIS) (Heynderickx et al. 2003). The
+-40 -20 0 20 40 60 80 100 120 results of the simulation suggest that contributions of
+Y [mm] trapped electrons to the doses close to the surface of the
+Fig. 8 Calculated and measured MTR doses for slices 30—31;ATI human bOdy during an EVA are signiﬁcant and COUld
+Institute of Atomic and Subatomic Physics; IFJ Institute of Nuclear exceed 1 mGy/day. 0“ the Other hand, contribution 0f
+Physics; DLR German Aerospace Center. The number identiﬁes the trapped electrons is negligibly small to the doses deep
+slice, and the letter after the number the tube within the slice inside the human body, since the energies Of trapped elec—
+trons are so low that they generally stop very close to the
+surface of the human body. This will be further investigated
+and compared to measurements performed with detectors in
+g the MTR poncho in a subsequent paper.
+3
+CT) 1.2 Acknowledgments The authors want to greatly acknowledge the
+3 m support and help of Dr. T. Berger from DLR. This project was funded
+g 1.0 — - by the European Commission in the frame of the FP7 HAMLET pro—
+5 ject (Project # 218817).
+5 0.8 I I H H H|||H|||H|
+S
+g 0.6 References
+‘12 | | l | l 23L 31L
+f 0-4 Armstrong TW, Chandler KC (1973) A Fortran program for comput—
+& ing stopping powers and ranges for muons, Charged pions,
+4% 0-2 protons, and heavy ions, ORNL—4869, Oak Ridge National Labo—
+'C ratory
+E 0.0 Cross Section Evaluation Working Group (1991) ENDF/B—VI sum—
+: Tubes Inary documentation, Report BNL—NCS—17541 (ENDF—201)
+Furihata S (2000) Statistical analysis of light fragment production from
+Fig. 9 Ratio of experimental MTR data and calculated PHITS data medium energy proton—induced reactions. Nucl Instr Meth
+(average per tube) B171:251
+@ Springer
+
+"
+"7","Radiat Environ Biophys (2010) 49:351—357 357
+Gustafsson K, Sihver L, Mancusi D, Sato T (2009) PHITS simulations Shen W, Wang B, Feng J , Zhan W, Zhu Y, Feng E (1989) Total reac—
+of the Matroshka experiment. AdV Space Res (submitted) tion cross section for heavy—ion collisions and its relation to the
+HeynderiCkX D, Quaghebeur B, Were J , Daily EJ, Evans HDR (2003) neutron excess degree of freedom. Nucl Phys A 491(1): 130—146
+New radiation environment and effect models in ESA’s space Shibata K, Shibata K, Kawano T, Nakagawa T, Iwamoto O, Katakura
+environment information system (SPENVIS). Proceedings of J , Fukahori T, Chiba S, Hasegawa A, Murata T, Matsunobu H,
+RADECS 2003, pp. 643—646 (see also http://Www.spenVis. Ohsawa T, Nakajima Y, Yoshida T, Zukeran A, Kawai M, Baba
+0ma.be/intr0.html) M, Ishikawa M, Asami T, Watanebe T, Watanebe Y, Igashira M,
+ICRP (2002) Recommendations of the international commission on Yamamuro N, Kitazawa H, Yamano N, Takano H (2002) J apa—
+radiological protection 89. Pergamon Press, Oxford nese Evaluated Nuclear Data Library Version 3 Revision—3: JEN—
+Iwamoto Y, Niita K, Sakamoto Y, Sato T, Matsuda N (2007) Valida— DLE—3.3. J Nucl Sci Technol 39:1125
+tion of the event generator mode in the PHITS code and its appli— Sihver L, Mancusi D, Sato T, Niita K, Iwase H, Iwamoto Y, Matsuda
+cation. International conference on nuclear data for science and N, Nakashima H, Sakamoto Y (2007) Recent developments and
+technology. d0i:10.1051/ndata:07417 benchmarking 0f the PHITS code. AdV Space Res 40: 1320—1331
+Iwase H, Niita K, Nakamura T (2002) Development of general—pur— Sihver L, Mancusi D, Niita K, Sato T, Townsend L, Farmer C, Pinsky
+pose particle and heavy ion transport Monte Carlo code. J Nucl L, Gomes I (2008) Bench marking of calculated projectile frag—
+Sci Tech 39(11):1142—1151 mentation cross sections using the 3—D, MC codes PHITS, FLU—
+Niita K, Chiba S, Maruyama T, Maruyama T, Takada H, Fukahori T, KA, HETC—HEDS, and MCNPX. Acta Astronaut 63:865—877
+Nakahara Y, Iwamoto A (1995) Analysis of the (N, XN’) reactions Sihver L, Sato T, Gustafsson K, Shurshakov VA, Reitz G (2009a) Sim—
+by quantum molecular dynamics plus statistical decay model. ulations 0f the MTR—R and MTR experiments at 188, and shield—
+Phys ReV C52:2620 ing properties using PHITS, in the Prof. of the IEEE Aerospace
+Niita K, Takada H, Seigo S, Ikeda Y (2001) High—energy particle trans— Conf. Big Sky, MT, USA, March 7—14, 2009
+port code NMTC/JAM. Nucl Instrum Meth B184:406 Sihver L, Gustafsson K, Mancusi D, Sato T, Niita K, Iwase H, Iwam—
+Niita K, Iwamoto Y, Sato T, Iwase H, Matsuda N, Sakamoto Y, Naka— oto Y, Matsuda N, Nakashima H, Sakamoto Y (2009b) An update
+shima H (2007) A new treatment of radiation behavior beyond of recent PHITS code. AdV Space Res 45 :892—899
+one—body observables. International conference on nuclear data Tripathi RK, Cucinotta FA, Wilson JW (1996) Accurate universal
+for science and technology. d0i:10.1051/ndata:07398 parameterization of absorption cross sections. Nucl Instr Meth
+Puchalska M, Bilski P, Berger T, Hajek M, Olko P, Reitz G (2010) B117:347
+Radiation hazard to astronauts outside the international space sta— Tripathi RK, Wilson JW, Cucinotta FA (1997) Accurate universal
+tion—the effective dose calculations. Radiat Meas (to be submit— parameterization of absorption cross sections II—neutron absorp—
+ted) tion cross sections. Nucl Instr Meth B 129: 11
+Reitz G, Berger T (2006) The MATROSHKA facility—dose determi— Tripathi RK, Cucinotta FA, Wilson JW (1999) Accurate universal
+nation during an EVA. Radiat Prot Dosim 120:442—445 parameterization of absorption cross sections III—light systems.
+Reitz G, Berger T, Bilski P, Facius R, Hajek M, Petrov V, Puchalska Nucl Instr Meth B155:349
+M, Zhou D, Bossler J , Akatov Y, Shurshakov V, Olko P, Ptaszk— Tylka AJ, Adams JH Jr, Boberg PR, Brownstein B, Dietrich WF, Flu—
+iewicz M, Bergmann R, Fugger M, Vana N, Beaujean R, Burmei— eckiger EO, Pedersen EL, Shea MA, Smart DF, Smith EC (1997)
+ster S, Bartlett D, Hager L, Palfalvi J , Szabo J , O’Sullivan D, CREME96: arevision 0f the cosmic ray effect on micro—electron—
+Kitamura H, Uchihori Y, Yasuda N, Nagamatsu A, Tawara H, ics code. IEEE Trans Nucl Sci 44(6):2150—2160
+Benton E, Gaza R, McKeever S, Sawakuchi G, Yukihara E, Cu— Vette J (1991) The AE—8 trapped electron model environment. Nation—
+Cinotta F, Semones E, Zapp N, Miller J , Dettmann J (2009) Astro— 211 Space Science Data Center, Report 91—24. Greenbelt, Mary—
+naut’s organ doses inferred from measurements in a human land
+phantom outside the international space station. Radiat Res Watanabe Y, Fukahori T, Kosako K, Shigyo N, Murata T, Yamano N,
+171:225—235 Hino T, Maki K, Nakashima H, Odano N, Chiba S (2005) Nuclear
+Sato T, Niita K, Iwase H, Nakashima H, Yamaguchi Y, Sihver L data evaluations for J ENDL high—energy ﬁle. Proceedings of
+(2006) Applicability of particle and heavy ion transport code international conference on nuclear data for science and technol—
+PHITS t0 the shielding design of spacecrafts. Radiat Meas 41(9— ogy, Santa Fe, USA, Sep 26—Oct 1, 2004. AIP CP769:326—331
+10):1142—1146
+@ Springer
+
+"

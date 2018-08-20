@@ -1,0 +1,391 @@
+"","x"
+"1","IOPSCienCG inpscience.inp.nrg
+Home Search Collections Journals About Contact us My IOPscience
+
+CAFE simulation of columnar-to-equiaxed transition in AI-7wt%Si alloys directionally solidified
+
+under microgravity
+
+This content has been downloaded from IOPscience. Please scroll down to see the full text.
+
+2016 IOP Conf. Ser.: Mater. Sci. Eng. 117 012009
+
+(http://iopscience.iop.org/1757-899X/117/1/012009)
+
+View the table of contents for this issue, or go to the journal homepage for more
+
+Download details:
+
+IP Address: 128.157.160.13
+
+This content was downloaded on 07/04/2016 at 22:02
+
+Please note that terms and conditions apply.
+
+"
+"2","4th International Conference on Advances in Solidiﬁcation Processes (ICASP—4) IOP Publishing
+IOP Conf. Series: Materials Science and Engineering 117 (2016) 012009 doi:10.1088/1757—899X/117/1/012009
+CAFE simulation of columnar-to-equiaxed transition in
+Al—7wt%Si alloys directionally solidiﬁed under microgravity
+D R Liula, N Mangelinck-N0é12’3, Ch-A Gandin4, G Zimmermanns, L Sturzs,
+H Nguyen TM” and B Billia2’3
+1 School of Materials Science and Engineering, Harbin University of Science and Technology,
+N0. 4 Lin Yuan Road, Xiang Fang District, Harbin 150040, China
+2 AiX-Marseille University and 3 CNRS, IMZNP, UMR CNRS 7334, campus Saint-Jeréme,
+Case 142, 13397 Marseille CedeX 20, France
+4 MINES ParisTech, CEMEF, CNRS UMR 7635, Sophia Antipolis, France
+5ACCESS e.V., Aachen, Germany
+E-mail: a nacylake@126.com
+Abstract. A tWO-dimensional multi-scale cellular automaton - ﬁnite element (CAFE) model is
+used to simulate grain structure evolution and microsegregation formation during solidiﬁcation
+of reﬁned A1—7wt%Si alloys under microgravity. The CAFE simulations are ﬁrst qualitatively
+compared With the benchmark experimental data under microgravity. Qualitative agreement is
+obtained for the position of columnar t0 equiaxed transition (CET) and the CET transition
+mode (sharp 0r progressive). Further comparisons of the distributions of grain elongation factor
+and equivalent diameter are conducted and reveal a fair quantitative agreement.
+1. Introduction
+Grain morphology has a great inﬂuence on the ﬁnal performance of as-cast products [1]. Depending
+on the applied processing parameters and the alloy physical properties, solidiﬁed grain structures
+could be purely columnar, or totally equiaxed, or a mixture of columnar and equiaxed. Columnar
+grains often grow from near the mold surface under a highly imposed thermal gradient [2]. Although,
+the castings With columnar structure signiﬁcantly increase the strength in the columnar direction,
+columnar structures have been found to be more prone to cracking. Castings 0f equiaxed structure are
+desirable for many applications, since they exhibit homogeneity in physical and mechanical properties
+[3]. Therefore, an accurate control of columnar-to-equiaxed transition (CET) and a quantitative
+understanding of the relationship between CET and casting parameters are essential to industrial
+application and scientiﬁc development.
+
+Within the ESA CETSOL (Columnar t0 Equiaxed Transition in SOLidiﬁcation Processing) project,
+six experiments With different solidiﬁcation parameters were carried out to study CET transition under
+microgravity in the Microgravity Science Laboratory (MSL), using the Low Gradient Furnace (LGF)
+on board the International Space Station (188) [4]. Experimental characterizations of the experimental
+samples were performed by Zimmermann et a1. [4], Mirihanage et a1. [5] and Liu et a1. [6].
+Experimental studies are essential to identify mechanisms at the state of CET. However, during
+solidiﬁcation, a complex interplay of multi-scale phenomena cannot be observed and then, numerical
+modelling offers the possibility to study the CET mechanism and the parameter impacts in details.
+Content from this work may be used under the terms of the Creative Commons Attribution 3.01icence. Any further distribution
+
+BY of this work must maintain attribution to the author(s) and the title of the work, journal citation and D01.
+Published under licence by IOP Publishing Ltd 1
+
+"
+"3","4th International Conference on Advances in Solidiﬁcation Processes (ICASP—4) IOP Publishing
+IOP Conf. Series: Materials Science and Engineering 117 (2016) 012009 doi:10.1088/1757—899X/117/1/012009
+
+Direct macroscopic modelling, such as cellular automaton - ﬁnite element (CAFE) model, has been
+developed by Gandin and co-workers with advantages in numerically investigating CET [7,8]: at the
+size of casting, the topological description of grain structure transition and composition heterogeneity
+can be realized. Comparisons with benchmark experimental data obtained from microgravity
+experiments are necessary to guide further improvement of model.
+
+In this publication, CAF E simulations of CET transition during solidiﬁcation of reﬁned Al-7wt%Si
+alloys under microgravity are compared with benchmark experimental data. Three aspects are
+considered: distributions of grain equivalent diameter and elongation factor, CET position and CET
+transition mode. The inﬂuence of pulling-velocity jump on CET is investigated. The reason why
+simulations cannot quantitatively match some of the experimental results is discussed.
+
+2. Experiment
+The schematic setup of the sample cartridge assembly inserted in the low gradient furnace (LGF)
+available in the Materials Science Laboratory (MSL) on board the International Space Station (188)
+was presented in [4-6]. Rod-like samples of 7.8 mm in diameter and 245 mm in length were placed in
+a protective A1203 cylindrical crucible. The main solidiﬁcation parameters are summarized in table
+1[4]. In the present article, we focus on the samples (FMI / FM5) which are reﬁned Al-7wt%Si alloys
+with 0.5 wt % A1 — 5 wt% Ti — 1 wt% B reﬁner. Processing conditions are identical except the pulling
+velocity. In F M1, a pulling-velocity jump is applied from 0.01 mm s'1 in stage I to 0.2 mm s'1 in stage
+II. For F M5 , the pulling velocity keeps at a low constant value, 0.01 mm s'l, through stages I and II.
+
+Table 1. Processing parameters for samples solidiﬁed under microgravity, where
+
+Vr1 is the furnace pulling velocity and SH the solidiﬁcation length under Vn.
+
+Sample (pg) FMI FM5
+
+Grain reﬁned Yes Yes
+
+Homogenization time (s) 600 600
+
+Initial gradient (0C mm'l) 0.9 0.9
+
+Stage I
+
+Time interval (s) 0 ~ 2000 0 ~ 2000
+
+V1 (mm s'l) 0.01 0.01
+
+81 (mm) 20 20
+
+Stage 11
+
+Time interval (s) 2000 ~ 2250 2000 ~ 4000
+
+V2 (mm s'l) 0.2 0.01
+
+82 (mm) 50 20
+
+Cooling rate (0C s'l) 0.067 0.067
+
+Stage 111
+
+V3 (mm s'l) 3 3
+
+The characterization of the experimental grain structure was performed using electron
+backscattered diffraction (EBSD). For each identiﬁed grain, the grain equivalent diameter and grain
+elongation factor were calculated based on the numerical analyses of EBSD output data ﬁle. The
+equivalent diameter of a non-spherical obj ect is equal to the diameter of a sphere of equivalent area [6].
+The elongation factor is deﬁned as the maj 0r aXis length to the minor aXis length ratio. The two axes
+intersect orthogonally at the centroid of the grain [6].
+
+2
+
+"
+"4","4th International Conference on Advances in Solidiﬁcation Processes (ICASP—4) IOP Publishing
+IOP Conf. Series: Materials Science and Engineering 117 (2016) 012009 doi:10.1088/1757—899X/117/1/012009
+
+The end of columnar growth is determined by Visual examination of the polished sample surface.
+On the one hand, the highest position of dendrites Which develop from the beginning of solidiﬁcation
+is named as CETmm, that is the top boundary of columnar zone. On the other hand, the deﬁnition of
+CET position between transition zone and equiaxed region is dependent on the distribution pattern of
+averaged elongation factor along the solidiﬁcation direction. A critical elongation factor equal to 2 [9]
+is chosen as a criterion. If the proﬁle of the averaged elongation factor varies around 2 Within an area,
+an intermediate zone eXists Where equiaxed and short elongated grains coeXist. If the proﬁle drops
+below 2 at a position and barely bounces back, an equiaxed region is established and this position is
+deﬁned as CETmaX. If there is only CETmm identiﬁed, a sharp CET from columnar to equiaxed grains
+occurs. If CETmm and CETmax coexist, an intermediate region forms and the CET mode is progressive.
+
+The difference in CET transition manner between F M1 and F M5 is explained as: a pulling-velocity
+jump used in FMl leads to a higher degree of constitutional undercooling ahead of the solidiﬁcation
+front. Under such condition, the nucleation rate is enhanced. With an intensive and frequent nucleation
+of grains in the liquid, the newly nucleated grains compete over the continued growth of existing
+grains to form a truly equiaxed zone after columnar zone [9].
+
+3. Modelling
+
+3.1. CAFE modelling
+
+Conservation equations over ﬁnite element mesh (F E) are solved using a volume averaging approach.
+A more detailed presentation of these equations is presented elsewhere [7,8]. For simulation of
+solidiﬁcation under microgravity, the computation of momentum equation is switched off. A few
+assumptions are made. (i) Equal and constant densities in the phases. (ii) No movement of solid phase.
+(iii) Only heterogeneous nucleation of equiaxed grains is considered.
+
+The F E mesh is divided into a regular lattice of ﬁne square named CA cells. The CA technique is
+used to track the development of grain envelopes. A Gaussian distribution is adopted to describe
+nucleation of equiaxed grains [8]. Three input parameters are needed: mean nucleation undercooling
+ATmean, the standard deviation AT6 and maximum nucleation density Nmax. A dendrite tip kinetics
+deﬁned in [8] is used to calculate dendrite growth.
+
+3.2. Calculation domain, boundary and initial conditions
+
+The experimental system that includes the sample cartridge assembly and the heating system is not
+directly simulated. The right half of cylindrical geometries, including alloy sample, crucible and plug,
+are chosen as the computational domains (ﬁgure 1). The conﬁguration is two-dimensional and
+aXi-symmetrical. Since the bottom part of the sample ranging from 0 mm to 70 mm remains at solid
+state through the Whole experimental process, the alloy sample is numerically divided into two parts.
+The top part is simulated using CAF E model and the bottom using only F E model.
+
+To simulate the directional solidiﬁcation, Dirichlet thermal boundary conditions [10] are used in
+this study by imposing temperature proﬁles on the outer surface of three sub-domains “plug”, “top
+crucible” and “bottom crucible”.
+
+Twelve input cooling curves (TCl to TC12) are placed on the outer surface of the top crucible
+(ﬁgure 1) and correspond to experimentally measured proﬁles. The thermocouple positions range from
+(TCl) 72.5 mm to (TC12) 182.5 mm deﬁned from the reference plane (0 mm). Another ﬁve
+temperature proﬁles (SCO: -5.0 mm, SC13: 202.5 mm, SC14: 222.5 mm, SC15: 243.0 mm and SC16:
+281.5 mm) are imposed to strictly maintain the unidirectional heat ﬂow through the “A17Si alloy”
+domain. These temperature proﬁles are deﬁned as a function of time by propagating the time evolution
+of the temperature gradients between thermocouples TCl and TC2, TC11 and TC12, TC12 and SC13,
+SC13 and SC14, SC14 and SC15.
+
+At the beginning of the simulation, the Whole system has an initial temperature of 800.0 0C. F ive
+nuclei With different growth orientations and With a nucleation undercooling of 0 0C are ﬁxed at the
+bottom boundary of “A17Si alloy” domain to reproduce the columnar grain nucleation and competition.
+
+3
+
+"
+"5","4th International Conference on Advances in Solidiﬁcation Processes (ICASP—4) IOP Publishing
+IOP Conf. Series: Materials Science and Engineering 117 (2016) 012009 doi:10.1088/1757—899X/117/1/012009
+_5 0 70 Solidiﬁcation direction 245 284
+SCO TCl TC12 SC13 SC16
+- Plug - A17Sia110y - Solidiﬁed alloy
+- Top crucible - Bottom crucible
+Figure 1. Schematic drawing of casting system With tWO-dimensional aXi-symmetrical
+coordinates. All dimensions are in mm.
+
+CAFE model is used through the software XR2801-CAFE developed by MINES ParisTech
+CEMEF. The thermo-physical properties of Al-7wt% Si alloy are presented in details in [11]. Here,
+only critical parameters used in the present CAFE simulations are listed. FE mesh size is 0.3 mm and
+CA cell size 0.04 mm. The heat transfer coefﬁcients at alloy / crucible, alloy / plug and crucible / plug
+interfaces are 104 W m'2 0Cl, 103 W m'2 0C1 and 103 W m'2 OC'l, respectively. The nucleation
+parameters ATmean = 4 OC, ATS = 0.5 0C and Nmax = 5 X 1010 m'3 are chosen to get a match With the
+experimentally observed grain structures in FMl. All these parameters stay the same for different
+simulation cases. These parameters are kept constant for all the simulations.
+
+4. Results and discussion
+
+4.1. CAFE Simulation ofgrain structure
+
+Figure 2 compares the distributions of averaged grain elongation factor and equivalent diameter along
+two sections (L4 and L5) cut in the longitudinal direction obtained from EBSD analyses (dashed line)
+and from CAFE simulations (solid line) [12]. The experimental CET values given here agree With the
+values obtained from grain size analysis in [13]. According to the deﬁnition methodology proposed in
+section 2, for FMl, the predicted CETmm is 130 mm very close to the measured 127 mm (ﬁgure 2(a)).
+For FMS, both simulation and experiment show two CET positions (ﬁgure 2(a)). The simulated
+CETmm is 140 mm that is 10 mm higher than the measured 130 mm. The predicted CETmax is 165 mm
+Which is 9 mm higher than the measured 156 mm.
+
+A good agreement between simulation and experiment is obtained for the distribution of grain
+equivalent diameter for FMl (ﬁgure 2(b)). In simulations, 67 % and 78 % grains With a diameter
+smaller than 1.0 mm on sections L4 and L5 are measured, respectively, Which is close to the respective
+experimental measurements of 65 % and 63%. For FMS (ﬁgure 2(b)), the general tendency that grain
+size decreases from the intermediate zone to the equiaxed zone is reproduced. Without the application
+of the pulling-velocity jump, both simulation and experiment present a coarse and non-homogenous
+grain structure. In simulations, 19% and 31 % grains With a diameter smaller than 1.0 mm on sections
+L4 and L5 are measured respectively, Which are different from the respective experimental
+measurements of 43% and 53 %. Difference between simulations and experiments is attributed to the
+fact that the formation and development of the grain structure in the tWO-dimensional aXi-symmetrical
+simulation do not exactly correspond to the real experiments regarding the number of effective nuclei,
+the random growing orientations, and the branching in 3D. This discrepancy is less pronounced for the
+cases Where many grains are formed, because statistical reasons minor these effects.
+
+4
+
+"
+"6","4th International Conference on Advances in Solidiﬁcation Processes (ICASP—4) IOP Publishing
+IOP Conf. Series: Materials Science and Engineering 117 (2016) 012009 doi:10.1088/1757—899W117/1/012009
+6 a FMl 5 (b) FMl
+:CETmifBO mm - - - Experiment 4 ' ' ' Experiment
+4 E — Simulation a 3 — Simulation
+1 g 2 . L4e'—>L5
+O _ 4.) . ' \ Ip"" “ ""
+4.; CH . =127 mm D
+5 0 g 0
+a FMS E FMS
+2 6 I I Q 5
+‘05,) CETmin i iCET 2 4 [AﬂeLS
+i i max C3
+E: 4 140 mm; i165 mm E 3 4.,
+m !n l"" i U 2 ‘ f""
+2 - - - 7-""; Jr! ..._|..,‘\ t *f (I I '7‘ - rm- -‘- - .- - LU ""h“ ‘ ”‘5’ I 'n‘h‘ “'n’ u:’ J‘ x
+o iCETM=13O mm !CET""”=156 mm (1) ""
+120 130 140 150 160 170 180 190 120 130 140 150 160 170 180 190
+Position (mm) Position (mm)
+Figure 2. Comparison of (a) grain elongation factor and (b) grain equivalent diameter simulated using
+CAFE model in black With experimental measurements in red on sections L4 and L5: FMl (reﬁned
+A1 - 7 wt% Si alloy, V2 = 0.2 mm s'l); FMS (reﬁned A1 - 7 wt% Si alloy, V2 = 0.01 mm s'l).
+Superimposed red and black vertical dash-dotted lines in (a) correspond to experimentally-measured
+and predicted CET positions, respectively.
+CETmin , .
+.. |; ,2 f:_.'-:’:._§'{~;.-{ {E}; j; _- If? '_
+V .1? ,, I “ f ' 7 7.05: I}
+.1 ' I 7' '31,?1351;3'7'1.‘
+120 130 140 150
+mm mm mm mm
+a "" . a b
+a w a . ( )
+‘WQ"" '3» Lr
+CETmm Growth
+orientation
+CETmin CETmaX —42 42 —44
+-:- ‘ I ‘ , 13:57:? '1!"" 1 ‘1 I 12 14 16
+l-|_|_|_|_|—|_|_|_|_|—|_l_|_|_|—I_I_I_ITI_I_I_I_|—I_I_I_l_| ‘12
+127 137 147 157 22
+mm mm mm mm
+-32 -34 -35
+CETmin
+Figure 3. Comparisons of grain structures on section L4 (b) and (d)
+simulated using CAFE model With (a) and (c) EBSD measurements. (a)
+and (b) FMl (reﬁned A1 - 7 wt% Si alloy, V2 = 0.2 mm s'l); (c) and (d)
+FMS (reﬁned A1 - 7 wt% Si alloy, V2 = 0.01 mm 8'1).
+5
+
+"
+"7","4th International Conference on Advances in Solidiﬁcation Processes (ICASP—4) IOP Publishing
+IOP Conf. Series: Materials Science and Engineering 117 (2016) 012009 doi:10.1088/1757—899X/117/1/012009
+F igure 3 compares grain structures on section L4 obtained from EBSD analyses (ﬁgures 3(a) and
+
+(0)) and from CAF E simulations (ﬁgures 3(b) and (d)) [12]. From the simulated grain structures, it can
+
+be noted that the CET is sharp for FMl (ﬁgure 3(b)) since there is only one CET position (CETmm).
+
+For FM5 (ﬁgure 3(d)), the CET is progressive. The two CET positions (CETmm and CETmaX) are
+
+located on sections L4 and L5, respectively. The predicted CET transition mode is consistent With
+
+experimental observations.
+
+5. Conclusion
+
+Numerical simulations of two MSL-LGF microgravity experiments (F M1 and F M5) performed using
+
+CAF E model are compared qualitatively and quantitatively With the experiments. The inﬂuence of the
+
+pulling velocity on the grain structure is qualitatively and quantitatively reﬂected in CAF E
+
+simulations. The CET transition mode, be it sharp 0r progressive, is retrieved. Distributions of grain
+
+elongation factor and equivalent diameter are fairly reproduced. The discrepancy between the
+
+predicted and measured CET positions is due to the fact that the grain structure development in the
+
+two-dimensional aXi-symmetrical simulations does not correspond to that in the experiments regarding
+
+the nucleation positions and growth orientations. The distributions of grain size and elongation factor
+
+are retrieved but cannot be perfectly identical With experimental measurements due to the statistical
+
+aspect of nucleation events.
+
+Acknowledgements
+
+This research work is supported by the European Space Agency (Noordwijk, NL) in the frame of the
+
+CETSOL project. Authors acknowledge Hydro-Aluminium Gmbh for providing the alloys used in this
+
+work. The 2D CAFE model was developed in the software XR2Sol+CAFE by CEMEF. The ﬁrst
+
+author acknowledges ﬁnancial supports from the National Natural Science F oundation of China (Grant
+
+No. 51101045) and Development and Application of Technology Project for young researcher of
+
+Harbin (Grant No. 2014RFQXJ026).
+
+References
+
+[1] Spittle JA 2006 Int. Mater. Rev. 51 247
+
+[2] Chen Y, Bogno AA, Xiao NM, Billia B, Kang XH, Nguyen-Thi H, Luo XH, Li DZ 2012 Acta
+Mater.60 199
+
+[3] Reinhart G, Gandin Ch-A, Mangelinck—Noel N, Nguyen-Thi H, Spinelli JE, Baruchel J , Billia B
+2013 Acta Mater.61 4765
+
+[4] Zimmermann G, Sturz L, Billia B, Mangelinck-Noel N, Nguyen-Thi H, Gandin Ch-A 2011
+J. Phys. Conferences Series 327 012003
+
+[5] Mirihanage WU, Browne DJ, Zimmermann G, Sturz L 2012 Acta Mater. 60 6362
+
+[6] Liu DR, Mangelinck—Noel N, Gandin Ch-A, Zimmermann G, Sturz L, Nguyen-Thi H, Billia B
+2014 Acta Mater. 64 253
+
+[7] Gandin Ch-A 2010 C. R. Phys. 11 216
+
+[8] Guillemot G, Gandin Ch-A, Bellet M 2007 J. Cryst. Growth 303 58
+
+[9] Hunt JD 1984 Mater. Sci. Eng. 65 75
+
+[10] Cruz K SD, Mangelinck—Noel N, Gandin Ch-A, Billia B 2011 IOP Conf. Ser. Mater. Sci. Eng.
+27 012017
+
+[11] Gandin Ch-A 2000 ISIJInt. 40 971
+
+[12] Liu DR, Mangelinck—Noel N, Gandin Ch-A, Zimmermann G, Sturz L, Nguyen-Thi H, Billia B
+2015 Acta Mater. In press
+
+[13] Zimmermann G, Sturz L, Billia B, Mangelinck—Noel N, Liu DR, Nguyen-Thi H, Bergeon N,
+Gandin Ch-A, Browne DJ, Beckermann Ch, Tourret D, Karma A 2014 Materials Science
+Forum 790-791 12
+
+6
+
+"

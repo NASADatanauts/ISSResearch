@@ -1,0 +1,978 @@
+"","x"
+"1","Big Science, Small—budget Space Experiment Package aka MISSE-S: A Hardware
+and Software Perspective
+Michael Krasowski, Lawrence Greer
+NASA Glenn Research Center, Cleveland, Ohio
+J oseph Flatico, Phillip J enkins
+Ohio Aerospace Institute, Cleveland Ohio
+Dan Spina
+Jacobs Sverdmp, Cleveland Ohio
+Abstract
+Conducting space experiments with small budgets is afaet oflifefor many design groups with low-visibility
+science programs. One major consequence is that specialized space grade electronic components are often
+too costly to incorporate into the design. Radiation mitigation now becomes more complex as a result of
+being restricted to the use Ofcommereial off-the-shelf (COTS) parts. Unique hardware and software
+design techniques are required to succeed in producing a viable instrument suitedfor use in space. This
+paper highlights some of the design challenges and associated solutions encountered in the production ofa
+highly capable, low cost space experimentpaekage.
+Introduction
+The Forward Technology Solar Cell Experiment (FTSCE) is a space solar cell
+experiment built as part of the Fifth Materials on the International Space Station
+Experiment (MISSE-S). It represents a collaborative effort between NASA Glenn
+Research Center (GRC), the Naval Research Laboratory (NRL) and the US Naval
+Academy (USNA). The purpose of this experiment is to place current and future solar
+cell technologies on orbit Where they Will be characterized and validated. This is in
+response to recent on orbit and ground test results Which have raised concerns about the
+in space survivability of new solar cell technologies and about current ground test
+methodology.1 The various components of the FTSCE are assembled into the passive
+experiment container (PEC) which is a 2’X 2’ X 4” folding metal container that Will be
+attached to the outer structure of the international space station (188) by an astronaut.
+Test data is transmitted to Earth and stored in on-board baek-up memory. At the end of a
+nominal one year mission, the PEC Will be removed and returned to Earth. The
+experiment is designed to remain in orbit for two and a half years if the situation arises.
+MISSE-S hardware overview
+MISSE-S is placed in a PEC used to ﬂy space environment samples to space and back
+(ﬁgure 1). It is attached to the exterior of the 188 during an extravehieular activity (EVA)
+to expose samples to space. For MISSES, these samples are 39 advanced technology
+solar cells positioned on the side of the PEC that faces the sun (figure 2). The
+technologies include state-of—the-art and next generation multijunetion InGaP/GaAs/Ge,
+heteroepitaxial GaAs/GeSi/Ge, and amorphous Si and CuIn(Ga)Se2 thin ﬁlm solar cells.2
+NASA/CP—2007-214494 95
+
+"
+"2","16:} wit 3%‘4 __~\ . _.___ - n-.q..r._.-.___:____:_._ 2"":""”.""-'; ____... _. 1‘-—- r—u'
+'6‘ \\\\:\' \ -- ’6' ""H"" ""'5 E3
+/'\\\ | m .. .. ..
+;.*'\ r A? I :':i ii :ii if ::: ii ::: i: i
+,1 Jag“ 1 .‘l ' :1: i: :t: :: ::: :: ::: j: .
+_..— 7:;zannfa '_ . . i
+N .g. </‘“ J :1 H t; , I ; :ii :: ::: i: ii: i: t: ;j ‘
+V N
+Figure 1: This is a drawing of the 2’X2’X4” Fig""? 2: This is a photograph Of the FTSCE
+Passive Experiment container (PEC) 1e)>]<3pCer1ment deck to be placed 1nt0 the MISSES
+In addition to these cells are a number of other sensors to include two-element position
+sensitive diodes for sun position sensing, single point solar cells for radiance and sun
+position sensing and temperature sensors in the form of resistance temperature devices
+(RTD) and three terminal temperature sensors from Analog Devices (ADS 90). The
+electronics assembly to interrogate these sensors and to communicate With the second
+prototype communication satellite system (PCSAT2) has been provided by NASA GRC
+personnel. The PCSAT2 communication system Will be used to telemeter test data to
+Earth and t0 telemeter command and control from earth to the NASA GRC electronics
+using the International Telecommunication Union (ITU) Amateur Satellite Service. In
+the event of a communications failure, the NASA GRC electronics Will continue to
+operate in a stand alone mode, taking data according to time, temperature and sun
+position schedule. Data normally sent to earth Will also be archived in 0n—b0ard ﬂash
+memory. The PEC Will be recovered in a year or two during a subsequent EVA and
+returned to earth Where its data can be downloaded from the ﬂash memory. The NASA
+GRC electronics are made up of the main microcontroller board , or “mother board”
+Which is numbered board 0 and nine data acquisition boards “daughter boards” numbered
+1 through 9 (ﬁgure 3).
+Mother board hardware
+The mother board is centered about a core borrowed from the Mars array technology
+experiment (MATE)3 and the dust accumulation and removal technology experiment
+(DART). 4’5 These experiment packages from the scrubbed Mars 2001 mission were
+designed, qualiﬁed and shipped to ﬂy by the same NASA GRC personnel. This core is
+made up of an 80C32E radiation tolerant (rad-tolerant) microcontroller from Temic (now
+Atmel), a radiation hardened (rad-hard) 8KX8, 67164 RAM from UTMC (now Aeroﬂex)
+and a rad-hard 32KX8 28F256 EEPROM from SEi (now Maxwell). Supporting this core
+is 54AC glue logic from National Which is single event latch-up (SEL) immune With a
+NASA/CP—2007-214494 96
+
+"
+"3","' 7"""": i _ _ . 1.3;; Tara]
+- ..- . s f :=_.'m___ l ‘.
+11(-EE~';E3... I E"" 33-:— "" _ . l—
+1!??? '.g ' ﬂ F. 3—-
+* a (2"" ' E L (6“ . '3
+a . ""_ 3‘"" __: ' ' “=2..."" -_ "" a .I "" '
+(43: - .; = ' E ﬂim) ' ""'
+ﬂ "" = -- _ !- I -'.'_---:"".T. '
+. (51:; - '- - - ;'_..i.c-.9.\ '
+Figure 3: This is a photograph of the data acquisition
+electronics designed, manufactured, programmed and tested by
+engineers and technicians at NASA Glenn Research Center
+mounted on the electronics deck. There is a single “main”
+microprocessor board (0) that controls nine “daughter” boards
+(1-9), Which record the current-voltage (IV) curve, temperature,
+and sun angle data.
+linear energy transfer (LET) greater than 120 and single event upset (SEU) immune With
+a LET in the range of 40 to 60. 6’7 The expected mission environmental speciﬁcation is
+given at an LET of 37. Total dose is not an issue With shielding because radiation levels
+fall below 1 Krad-Si (1 rad-Si=100 ergs/grams of silicon).8’9 The microcontroller is rad-tolerant
+such that it is latch-up hard to a LET greater than 120 but is SEU hard only up to a LET
+of 5. Testing at Temic showed that SEUs can occur in the 80C32E’s RAM. Mitigation
+for this upset has been effected by placing all possible RAM operations, speciﬁcally
+microcontroller state information, in the hard external RAM, and by a triple modular
+redundant (TMR) power-up, brownout, watchdog-timer reset circuit (ﬁgure 4). Thus, if
+the 80C32E gets lost, either internally or through SEUs in the glue logic, it Will be reset
+and forced into a cleansing reboot. The 80C32E can endure a total dose exceeding 100
+Krad-Si.10
+The 8KX8, 67164 RAM from UTMC is rad-hard under speciﬁed operating conditions to
+endure a total dose of 1 Mrad-Si, to be free from latchup and to have a SEU rate of about
+10'13 errors/ bit-day.11 Data is scratch padded in the RAM and the state of the
+microcontroller is stored there as mentioned earlier. As further brown out mitigation, we
+have experimentally shown that the device retains its contents down to Vdd = 2 volts
+indeﬁnitely and also does so repeatedly for 37 m8 excursions down to Vdd = 0.7 volts.
+Therefore, the 32KX8 28F256 EEPROM from SEi is considered rad-hard for this mission.
+Its SEL and SEU thresholds exceed a LET of 120. It can also endure a total dose over
+100 Krad-Si.12 It is only susceptible during write operations (SEU LET=20) but no
+writes shall be effected during ﬂight. The 28F25 6 stores the program memory and data
+ﬁelds for the mission. Beyond the microcontroller core is the power-up, brownout,
+watchdog-timer reset circuit, the power switching for the daughter boards, the serial
+communications multiplexer and level translators for the daughter boards, the ground
+NASA/CP—2007-214494 97
+
+"
+"4","support equipment (GSE) and PCSATZ, the mother board power control and the twin
+ﬂash memory banks.
+Power control for the mother board is provided by a switched +16 volt (+12 nominal)
+bus. A parallel metal-oxide semiconductor ﬁeld-effect transistor (MOSFET) switch is
+provided 011 the mother board Which can be externally operated by PCSAT2 if ground
+operations feel that a wake-up call is necessary due to some detected anomaly. A 10W 011
+this line removes power from the board for a sufﬁciently long period to destroy RAM
+contents and reset the microprocessor.
+The power-up, brownout, watchdog-timer reset circuit is realized as three identical circuit
+slices joined to a voting circuit (ﬁgure 4). At least two of the three slices have to be in
++5 +5 +5
+1. 2R3?
+4.?5K
+2221+: [13K in-
+D1 I 4g ﬁiEcﬁrEnlzu; FEZIIZE'SSCIF
+3 ' 5 Eu
+IE3 4 ._ E216 5E @1349an I
+BE EH‘EHBET ‘3 UMP“ me R35 ‘ 4 EE-
+URI TL431'?‘ H1 Watchdog HE en IIIHH 3
+m 499K 1111K EH‘NEET
+DIE: TE
+: L '46.
+_ 1r ? E I.-
+D5 .ﬁ EN39ﬂ4
+EMBED a HE” E
+Ii. ' U1 4 R34
++5 '5 J—Cll 3 ' EU UHH
+“'5“ RE ELIHF E
+1 493+: 54mm] 3
+Fallive pulse From 4.?5K I""-
+mlcrnprucessnr +5: Eu 3
+1 + [:9 R10 I U1 Dilgaqam TE
+D1
+zlqaqan 3 T 1
+RE R3“? R9
+1 EIHH 1.3M 3.9M ?
++5 13 x
+R11 1.4: U1 IE me in 5E
+4.?5}: 54mm] 4 I""-
+3
+'43
+Elutput From REE 3%.
+Hntchdug H3 EU EIHH 1
+Figure 4: power-up, brownout, watchdog-timer reset circuit
+temporal agreement that a reset must occur for one to be issued. At power-up, the
+microcontroller is held in reset for 100 milli-seconds after Vdd exceeds 4.75 volts. A
+TL431 in each slice functions as a comparator and modulates the reset pulse. A maj ority
+of slices must agree 011 a power-up reset for one to be issued. The same TL431
+NASA/CP—2007-214494 98
+
+"
+"5","comparator circuits will issue a reset after Vdd recovers from a drop below 4.75 volts.
+This function is to keep the microcontroller from doing anything foolish (such as errant
+writes to RAM) while in a brown-out state. A maj ority of slices must agree on a brown-
+out reset for one to be issued. Each slice contains a watoh-dog timeout function. The
+miorooontroller must perform 10 sequential write operations to the memory address
+uniquely associated with each watoh-dog during a 1.4 second period in order to prevent a
+timeout. If two or more watoh-dogs timeout, a 1 second reset will be issued.
+Power switching for the daughter boards is accomplished by a nine bit pattern. A tri-state
+shift register is loaded with a ‘0’ in each location corresponding to a daughter board
+chosen for power-up. Thus, boards can be selectively switched on or off. To conserve
+power, and to reduce the probability of SEUs under bias, all daughter boards are naturally
+powered down. During operations any subset of boards may be powered up depending
+on the state of operations and on the state of daughter board health. For example, every
+ten minutes temperature data is taken. Only the boards possessing temperature sensors
+need to be powered up. Also, if the microcontroller notices that a board is ﬂakey or non-
+operational, it can be masked off and permanently precluded from power up. The shift
+register is made up of a quad 2-input NAND gate (54AC00), an ootal d-type ﬂip—ﬂop
+(54AC3 74) and an ootal transceiver (54AC245). The daughter board power up signal
+line is pulled up to +16 volt (+12 volt nominal) and is diode protected. To power up the
+daughter board, this signal must be pulled to ground. Power switch signal level shifting is
+effected by a XP04311 dual NPN/PNP transistor array connected to each bit in the shift
+register and to its corresponding daughter board.
+The twin ﬂash memory banks are made up of two K9F3208WOA, 4MX8 NAND ﬂash
+memories. This is an “end-of—life” part from Samsung which was the result of a
+renaming of the KM29W3200. The KM29W3200 is the extended voltage (2.7 to 5) volt
+version of the KM29N32000. The KM29N32000 was radiation tested by Maxwell and
+found to be hard to a total dose of 4.45 KRAD biased and 21 Krad-Si unbiased and to
+have an SEL LET and SEU LET of > 60.13 The K9F3208WOA is of the same process as
+the KM29N3200 and can operate at a lower voltage. Thus we cannot guarantee that they
+will operate the same as the KM29N3200 in a radiation environment, but we are
+comfortable enough to design it into the system redundantly with power down control
+and circuit isolation. Every ﬁfteenth data set acquired from the daughter boards is
+written to both ﬂashes. It is only at this time, about once per day, that the ﬂashes are
+under bias. Two are used as a redundant measure should any upsets occur during a write
+operation. The ﬂash is capable of storing 2.4 years of mission data.
+The serial communication multiplexer permits only one communication channel to be
+open at a time. A four bit pattern is written to two MUX16, J FET multiplexers; one for
+transmit and one for receive. The MUX16, using bipolar and J FET technology, is rad-
+hard for this application. Furthermore, the MUX16 requires a Vdd which is a minimum
+of 4 volts greater than the largest signal it will have to pass. Thus, it is powered by the
+switched +16 volt (+12 nominal) bus. The daughter boards use 3.3 volt CMOS levels for
+serial communication therefore transceivers are not used to link to the microcontroller.
+On the other hand, the GSE and PCSAT2 require 2VN3310 MOSFETS and 2N2222
+NASA/CP—2007-2 14494 99
+
+"
+"6","transistor circuits to provide level translation for valid R8232 transmit and receive levels.
+The GSE and PCSAT2 are paralleled off of the same channel as there shall never be a
+case where both are attached to the system simultaneously. Thus, GSE operations can be
+carried out with mother board not knowing if it is GSE 0r PCSAT2 to which it is
+communicating. This allows us to use the same software for ground and ﬂight activities.
+A block diagram of the mother board hardware is shown in figure 5.
+antage
+Regulatnr
+atCthg
+RUM SEU -
+' Tuner
+SEL hard
+SEU,SEL
+hard ""P
+BEL hard Hrm-ﬂﬂt
+_ ._fan
+RAM SEU ~ 6 Meir Fraternal! Pcu
+Mass E D P It h f n I I I'
+ﬂﬂlm In at: ﬂ‘lll'EI' SW] E E! El.""
+Stnraae
+and State
+memnry
+Tn Data Acquisitian Buards
+Figure 5: block diagram of mother board hardware
+Daughter board hardware
+There are nine daughter boards. Each is capable of autonomously acquiring 32 point I-V
+curves from each of four separate solar cells. Each board can also support a two-element
+position sensitive diode for sun position sensing and a combination of single point solar
+cells for radiance and sun position sensing and temperature sensors in the form of RTDs
+and AD590s. The daughter board cored is a C8051F006 mieroeontroller by Cygnal,
+which is not a ﬂight grade part. Conversations with an application engineer at Cygnal
+revealed that they have not been able to force the part into a full scale latch-up, but have
+been able to create local lateh-ups at output pins if those pins were required to source or
+sink over 20 111A. No such occurrences were destructive to the part nor did they
+otherwise disrupt program execution. The local events could be corrected by removing
+current from the pin or from the part. With this in mind, care was taken to resistively
+protect each output such that there would never be a source or sink condition over 10
+NASA/CP—2007-214494 100
+
+"
+"7","mA. A circuit based on an auto-reset electronic circuit breaker (LT1 15 3) was designed to
+remove power from the digital portion of the board if the quiescent current were to reach
+100 mA or if a brown-out were detected. Power to each daughter board is controlled by a
+pull down circuit on the mother board. At power-up, a control line is pulled low by the
+Cell w 12 +i8 R 51 '
+lilli—Tb—L 11 _ 10 1K— bi: [10211: 5%?“ sir? VEHSS +16V
+"" 8 a 6 U 4 <54 ?.SK
+c ell ' R108
+42...}T BI] 4 7V 0.1uF : Z 8
+tell u : a 4W
+8 5 :
+‘1. A l"", i Illl'll 0 3 D 3 If"". i xiii
+ND§§§J45 NDHS-gaélS
+Control lsig(gwl {to A : : R4? :
+hiecmrcbvceon $50 ile r r on ' 4?5 Kj—
+Figure 6: cell load switch and voltage output
+mother board, causing a MOSFET switch on the daughter board to apply +3.3 volts t0 the
+microcontroller and +7.5 volts t0 the DG406 analog multiplexer and t0 the analog section
+consisting of primarily of LT1014ISW quad operational ampliﬁers (opamps). These
+ampliﬁers are bipolar amplifiers and are parametrieally sound up to Krad-Si levels.
+During power down, a MOSFET circuit automatically switches a shunt resistor across
+each cell to keep it under constant load (ﬁgure 6). Thus, during non-operation, each cell
+is still sourcing current. In the event that a board fails to be powered up for some reason,
+at a minimum, the cell will have been aged under load stress and purposeful post ﬂight
+evaluation can be conducted. At power-up, the microcontroller must actively disable this
+function to allow for I-V curve generation.
+A brown out detect circuit is connected to the LT1153 circuit to remove power to the
+microcontroller in the event that the +16 (+12 volt nominal) rail drops lower than +9.5
+volts which is the lower limit for +7.5 volt analog power regulation (ﬁgure 7). Also at
+power-up, the microcontroller does a self check to include RAM test and program
+memory checksum. The results of this test are queried by the mother board during the
+initiation of serial communications. If an error is detected, the mother board may, Via
+ground command, mask it off from future power-up cycles, deeming it a very bad board.
+Each daughter board can perform a 32 point I-V curve on each of four separate solar
+cells. Unlike the I-V curve circuit in MATE, which used a current source to pump the
+NASA/CP—2007-214494 101
+
+"
+"8","UbusE
+FHT EEIIJI'F':
+D?
+31 éma
+lﬂEK 49.53}: +15%!
+l.
+RED
+4.35}: RTE: '83
+115
+9.1V 4:13}: UE. [:33 1 EIHH
+J 8
+IN #5 TED
+a 7 E33
+_ THE [Hp DEN SENSE
+T [EU E31 3 E IUEF
+ElluF [1M STATUE EHTE D4 5 3*
+g ‘4 mm SHT mm 5 . ﬂ . a
+EU am: In D
+: LT1153 : III III 1
+‘1 a
+gas; to
+circuitry
+5.43 E E33
+Wus +15w+12v m: “5 +?.5v JED unuhg IBM +3-W
+1 1 circuitry 1 T 1
+URE '
+um ?ELEB EDT 223
+D3 TBLEIE 3 . 1
+N4001 3 U' 1 lH’IH Uuut
+Poser HEVC *3 5 . m VDHt g
+HEW."" nun) I + g '?E iCl? ‘5‘
+‘II’ E1? “3 TED 1M v
+.__ m5 lam m
+DEL 3 MD39943 : 1 _
+DEL 5 =
+_ m TL431 EIEI
+7 D4 m ‘E!’ m Imur
+:Dwer cmtml 1H91E. 493K ND3994E _ _
+mm micro 4 T T
+i K
+Figure 7: power monitor circuit
+cell, the circuit in the daughter board simply has a series MOSFET and low ohm sense
+resistor across the cell (figure 8).
+Digital to analog converter outputs from the microcontroller are ampliﬁed by an opamp
+circuit to provide bias to the MOSFET gate. A difference ampliﬁer across the sense
+resistor provides a voltage analogous to the current sourced by the cell. The sense
+resistor is referenced to ground and is in the source circuit of the MOSFET. This
+provides negative feedback against self heating induced ﬂuctuations in the channel
+resistance vs. gate to source voltage function. A voltage divider/opamp buffer across
+each cell provides a voltage analogous to the voltage across the cell (ﬁgure 6). While
+sweeping the digital to analog converter voltage, the microcontroller simultaneously
+performs analog to digital conversions (ADC) 0n the current and voltage sense signals
+and creates the I-V curves. The gain and divider component values for the current sense
+circuits and the voltage sense circuits are chosen to reﬂect the short circuit current and
+the open circuit voltage of the cell 011 each channel. Resistor values are chosen to exploit
+the full ADC range of the microcontroller for each cell.
+NASA/CP—2007-214494 102
+
+"
+"9","i 1311 : 909K
+1411 1+ T R16 '
+o W ' 1— R98
+/ 6 I 3 111.214 8 : ”W E US
+_ -9 LT1014
+Celt .!! 31 14 16 R83 E E 11
+I.
+1 DH“ 15 W :49 1a
+[3113 U8 3 11
+. 11494311 4 F288 9 1111114 _ g
+10.21 131‘” 4
+Cell I- J_ 5: 1.08K
+? R31 ? E :4 Cell CUPPEHT
+TED E 3 Set poiﬂt
+R36 19191314 micro
+800
+Figure 8: variable cell load and current sense
+The microcontroller possesses only eight analog channels, but there are fourteen signals
+on the board that require observation. Therefore, a 1-0f—16 analog multiplexer (DG406)
+—L— 1; 1113 Lies:
+7 {THU For single goint solar cell:
+< 111 1.1153 R59 = 101
+R84 ’ . .
+« .4 \l 2.) R69 = Infinite
+temp” 1/301 172/“ 'L H 3.) R84, R103, R85, 1 R104 = 11 [IHH
+temgl 1N9lb 14 g; 3%,9DE {F.DEpn
+'t 1_ ‘ . = n In IE>
+””3 J” 4 “LR“ lb 'iikLg to microcontroller 6.) 114 1 115 = (+1, 113 1 116 = 1-1
+41-253 L 15 7/13 11 ‘ 1.11452 = 1.021
+<11 111 ""111014 8-) R54 1 9""“ = TBDwou De endent
+(3 1.11114 4154 9.) R56 1 R61 = 1111 P
+49/;Ié— For Temg:
+T 1.) R84, R85 = 1.01
+- 55 2.111112 = 111915
+«1.4341 311151159 31.01
+(:2 4.) R69 = Infinite
+' 5.) R52 = 1 [IHM
+4L 6.) R89 = InFinitie
+T 1.11254 1 R60 = 4.991
+ﬂ +15 _ 3; 544163 a‘1'26111114 1241K? 1'
+. . = n In I?
+—i— (>|€1U4 /LH89 For Rm:
+T <11511 ‘~ n — .
+{:1 U8 {3 1.111 [IHM um at 113 to 114
+, 1 R85 4 2.11184 =JR8§= 54.91
+tempd+ J16: iE/\/ 3.) R53 = 2.0K
+/ 4.1111 1 112 = 11 IJHM
+/ J_LVBE’E’ ””915 5.11152 = Infinite
+Tempe IBU 6) R69 = 0 DHM
+§ 1111 41-14
+, H38 ' 4 - :
+mpd‘ Jl T’VV 1‘3 “5-9.1 w 1114 9.1111111311518116
+IBU ff, ”""x./’\/""—<to microcontroller‘ 10,) R103 & R104 = I] en
+15% m 2»! U1 1K 11.11254 ,R6[] = 4.99%
+11 f> 1.11114 1151] 1111114 10.1151 , R61 = Upen
+ﬁ—T 111V 471%?”— 844
+: {—1ng 201111 IJHMS 4t 11 D89 1
+_1_ 1195.12 [IHMS 41 -100 Deg 1
+Figure 9: temperature circuit
+NASA/CP—2007-214494 103
+
+"
+"10","is utilized to multiplex seven signals on one of the analog channels of the microcontroller
+thereby producing a total of fourteen analog channels. The DG406 was chosen because it
+Will run on the single supply voltage of +7.5 volts and also because it is an epitaxial
+CMOS part Which is expected to be latch-up resistant. If the LT1 15 3 senses a current of
+draw over 100 mA, the microcontroller or the DG406 has presumably latched-up and
+power Will be removed from the DG406.
+A versatile two opamp circuit on the daughter board can be adapted to support two
+AD590 temperature sensors, two single point solar cells, one of each of the
+aforementioned or a single three Wire measurement on an RTD (ﬁgure 9). The inclusion,
+omission and/or component value choices determine the circuit function. Temperature
+measurements are important as they give a thermal proﬁle against Which the aging of the
+cells has occurred. Temperature measurements are taken every 50 seconds and stored
+every 10 minutes While I-V curves are taken approximately every 90 minutes or once per
+orbit. Single point solar cells are used for back—up sun position sensing and for
+radiometry.
+Another two opamp circuit is included to condition the signals from a two element
+position sensitive photodiode (PSD) for sun position determination (ﬁgure 10). The PSD
+elements are back biased by one diode drop to keep the device from forward biasing itself
+When high output currents drive its rather large series impedance. The opamps run in the
+transimpedance mode. A single forward biased diode shared by each amp’s non-inverting
+input imposes a reverse bias at each inverting input’s summing junction. The diode
+voltage is read by the microcontroller along With the IR value of the transimpedanee
+amps. In this manner, the diode drop, now summed to the transimpedance values, can be
+subtracted from each signal by the microcontroller.
+R65
+$3: 53% J
+a U 4
+_ 1 567 _&m pogi‘tion 1
+3 + +3.5 1K“ 0 no 109 v0 Ltoge
+,, 6.88K 15.8K ﬁi—T— ”“0 0 e
+: 1N916 5 +U47_ E .11067K J—UEEF
+L T1014 I
+3U”|.,...—§: R66 L T
+4 0 8
+C6 i
+luF
+I R5 8 _Sun positi on E
+T C5 1k ”“Qnul 0g vol tage
+1.0uF 13108 “SSLAF‘I sensor“
+1K _ E 3 [C50 :3; O 5
+Figure 10: sun position sensor circuit
+NASA/CP—2007-214494 104
+
+"
+"11","Daughter board ﬁrmware
+The daughter boards for MISSE-S were designed to serve as multipurpose data
+acquisition units. Each board possesses eight sensor channels reserved for acquiring 32-
+point current-vs-voltage (IV) curves from four individual solar cells. Additionally, there
+are two sensor channels designed to support three different types of temperature sensor
+(AD590, th, shorted cell). Lastly, four sensor channels are dedicated for reading sun
+position sensors. The multipurpose nature of these boards requires supporting software
+that allows for easy transition between many available sensor conﬁgurations.
+Consequently, the software is constructed with conﬁguration blocks that deﬁne the on-
+board hardware, calibration scale factors and health check information for each of the
+nine ﬂight boards and two laboratory boards. Any of these board setups is easily
+selectable and the information within the individual board conﬁgurations is readily
+available for customization.
+The function of the main program is to query the serial port at a standard 9600 baud rate
+for commands sent by the mother board and perform the requested action. Its structure is
+illustrated by the ﬂowchart in ﬁgure 11. A11 serial transfers start with a header byte of
+351"""".I:»'El1""‘v""ﬂ:‘rli 3-3311‘1-'-rvr:’d;-':'
+1'331: '11: i'i'v’:(1:'_i.|.l1:' r3151!
+{3-11 .:u n :21 m .513 T .431;
+9:41 II .3 m r m: n: :1? {-1 r Cm. brig;
+Yes 1.411;} : r-l‘ﬂ‘l EZH‘ N0 £6.31 1111 71w” :4: ii.
+1351 :1 ad | 1111 Iia-jjz,
+Figure 11: main program ﬂowchart
+OXFF and are terminated with a two byte cyclic redundant code (CRC). This simpliﬁes
+the synchronization and validation of data packets sent to and from the daughter boards.
+The command and data block format is shown in ﬁgure 12. There are four commands
+recognized during the 30 millisecond window allotted for polling the serial port. The
+NASA/CP—2007-214494 105
+
+"
+"12","Command format Data Format (Temperature, Sun Sensor and Health Data)
+2 Command 1=get tempsunahealth data
+-_
+3=sendtempasunahealthdata
+4=sendaﬂdata
+_—
+_—
+_— _—
+_—
+_—
+13 Health Flag: Bit0=ROMFai1 (O=passed, 1=failed)
+Bit1=RAMFai1(0=passed, 1=fai1ed)
+Bit2=V1Timeout (O=passed, 1=timed out)
+Bit3=V2Timeout (O=passed, 1=timed out)
+*notel—(for Isc auto-calculate mode use 0x8000) Bit4=V3Timeout (O=passed, 1=timed out)
+.-
+Bit6-Bit7 (not used)
+*note2 — (Bits 15 & 14 used to indicate temperature sensor type:
+0x0000=AD590,0x4000=th, 0x8000=Shorted Cell)
+Data Format (Cell IV Data)
+_—
+——
+——
+——
+——
+*note3 — (Cell voltage high—byte uses msb to indicate if acquisition of
+IV point violated settling time limits. 0=passed, 1=timeout Violation)
+Acknowledge Command Request Format Send Command Error Notiﬁcation
+(sent after unrecognized command received) (sent after all get data commands)
+2
+_ ID=0x03
+Figure 12: command and data format
+NASA/CP—2007-214494 106
+
+"
+"13","ﬁrst command acquires temperature, sun position and health check data and stores it in
+memory. The second command acquires 32-point IV curves 011 each of four channels tied
+to a variety of solar cells and stores the information in memory. The third command
+requests the serial transfer of the temperature, sun position and health data. Finally, the
+forth command requests the serial transfer of all data stored in memory. An error
+message is transmitted if the program detects an errant command. Upon power-up, the
+program performs a RAM memory cheek and a ROM memory check. The temperature
+and sun sensor data are also acquired on power-up. If 70 milliseconds elapsed Within the
+main program loop With 110 reset of the watchdog register, the microcontroller is reset and
+the program re-initialized.
+After experimenting With the n-ehannel FET serving as a variable resistance load for IV
+tests performed on solar cells, some anomalies and non-linearities were discovered.
+Firstly, the rapid change in the FET junction temperature While transitioning through the
+short-eireuit current (Ise) and max—power point portions of the IV curve causes channel
+I d || 1' A . .
+fT'IIIIIIIE? ELHTEFI manna '_I.I'
+current current
+circuit tn settle
+current
+Dﬁ'Set current
+acquired? to float calla med load rESiStDr
+Turn FET fully an
+MD
+ait 139315;”, FET Calculate hext cell
+current uatng table
+I: stabilize Df shDrT-Clrcmt
+current percentagea
+|I- ""-E-E-H-LEE-éaaat1:5 '
+@tjﬁﬁl‘f E}: $115313:
+. um""
+[FHI'F
+'-=.= JHT :éti _:i;:I-:.:I?:-'i:1i.:tr1'
+{mm H .211 EM 5;'-"".=r:
+.--I-'|'1"".r'_'i'.l‘.-1-'- .
+and Uﬁset
+parametera to
+current data
+Settle time errors
+violated Set global
+pasaa’fail flag
+Figure 13: solar cell IV acquisition ﬂowchart
+NASA/CP—2007-214494 107
+
+"
+"14","resistance ﬂuctuations within the FET.14 Consequently, the data points acquired in these
+regions of the IV curve are spurious. Furthermore, the relationship between the FET gate
+voltage and the channel resistance in non-linear. Fortunately, these issues can be resolved
+with some software mitigation illustrated by the ﬂowchart in ﬁgure 13. Initially, all of
+the solar cells are continuously held under load with a ﬁxed resistor that can be switched
+in or out of the circuit. The experiment begins by unloading the cell being tested and
+driving the FET completely off thereby ﬂoating the cells. After waiting 50 milliseconds
+for the drive circuitry to settle, a current reading (Ioffset) is taken to record the offset
+value that must be removed from all subsequent current readings. This presumes that the
+maj or contribution of the current at this load point is from offsets in the signal ampliﬁer
+stages and not from the cell current through the open FET channel. Next, the FET is
+driven to the completely on state thereby shorting the solar cell. As mentioned earlier, it
+was discovered that Isc causes heating within the FET which in turn alters the on
+resistance. If the FET junction temperature was not allowed to reach equilibrium before
+acquiring data, improper current readings were obtained. However, if an adequate
+waiting period for temperature stabilization was afforded (between 500 and 900
+milliseconds), accurate, repeatable current readings were obtained. This program allows
+a full second before proceeding with current readings. Another assumption is that the
+FET has enough thermal mass to allow for the readings past the max power point to occur
+before junction cooling effects impact the data. After shorting the cell, either ISO is read
+or a value is manually entered and stored in memory. All subsequent points on the IV
+curve are driven by a table in ROM that selects the desired current points as a
+-|.IJ|,|'IEI—L5:-:-- .- I‘JIIIEI‘I-ilI-l-T |_.|'-'._=:! "".1511! ni-EI
+
+:T;':-' _l |_-.'-:.—|_ ir_r l_|..""""]_
+
+Eli"" .. 13.31}. j ,_
+
+' “L!"" [H .I1""-:J :=:.I-'=
+
+.1. 12-1.! .11 i-:: .I..'I:-
+
+H- .Ia‘l:.dll..._ Yes ' __""i.'. [‘3- f LP ""1 :5 '-' 5'
+Figure 14: DAC control ﬂowchart
+NASA/CP—2007-214494 108
+
+"
+"15","percentage of Isc. These values are sent to an algorithm that utilizes an onboard 12-bit
+DAC to drive the gate of the FET, through some buffer circuitry, such that the FET
+channel resistance produces cell currents as close as resolvable to the desired values.
+This procedure is illustrated by the ﬂowchart in ﬁgure 14. With each change in cell
+current, the cell voltage is monitored ten times within a 50 millisecond time block. If the
+deviation within these ten samples is acceptable, the data point is considered stable and
+the current/voltage data pair is recorded in memory. On the other hand, if the voltage
+deviation is out of the speciﬁed range, another data point is taken 5 milliseconds later and
+the oldest data point within the ten point sample is discarded. A new deviation is then
+calculated and the process repeated. If after 800 milliseconds an acceptable deviation
+within the window of ten data points is not attained, the most recent current/voltage data
+pair is recorded in memory and ﬂagged as unstable. This process is illustrated by the
+ﬂowchart in ﬁgure 15.
+No _ .
+, ‘ ' i‘ _ “1’35 _
+c-I w
+No _
+t . a - . ‘ ND
+; l ” J "" i ': reg
+
+Figure 15: cell stabilization ﬂowchart Figure 16: analog conversion ﬂowchart
+Each acquisition that results in data stored to memory is actually the mean of twenty
+readings taken at 1 microsecond intervals. This procedure is illustrated by the ﬂowchart
+in ﬁgure 16. After 32 current/voltage pairs have been acquired, the FET is turned fully
+off and the ﬁxed load resister is reactivated. All data, with the exception of the
+temperature data, is output as a calibrated 12-bit ADC value that requires the proper scale
+factor and reference voltage to determine the actual sensor output. This also includes the
+current values sent to manually request a speciﬁc ISC which must be converted from
+amperes to a 12-bit ADC value based on a current scale factor and the voltage reference.
+These scale factors, as shown in table 1, encompass the gains from the signal
+conditioning circuitry on the board and within the microcontroller. In contrast, the
+
+NASA/CP—2007-214494 109
+
+"
+"16","T CALEl T CALE2
+1 2.457 0.606 3.843 Ai)590 Ai)590
+10.0 10.0
+10.0 10.0
+----———
+384306114 10.0 10.0
+----———
+10.0
+----———
+10.0 10.0
+2.441 060606111, 3843061114, RTD SUN1,SUN2
+066706112, 197106113, 10.0
+033306113, 166.6506114
+0'3120e114
+7 2.435 13.43 G A /S' - I AD590 SUN1,SUN2
+--m-———
+_---___
+25.9 25.9
+mm—
+27.7 10.0
+VCELL = (VREF * ADCCELL)/(VSCALEcell * 4096) ICELL = (VREF * ADCCELL)/(ISCALEcell * 4096) ADCSCcell = ISCcell * ISCALEcell * 4096/VREF
+TempAD590,RTD (0K) = (VREF * ADCTEMP)/ (10 * 4096) IGaAs/Si,Si (mA) = (VREF * ADCSCcell)/(TSCALE1,2 * 4096)
+Gsunangle =tan'l[tan(64°)*(SUN1-SUN2)/(SUN1+SUN2)]; SUN1,SUN2 =ADCSUN1,2
+Table 1 - Conversion factors
+temperature output is always OK X10 with the two most signiﬁcant bits used to indicate
+the type of temperature sensor (ﬁgure 12).
+The daughter boards have limited ability to detect total dose radiation damage and single
+event upsets “SEU”. The initial random access memory “RAM” and read-cnly memory
+“ROM” tests check for permanently damaged memory cells which can be an indicator of
+total dose effects. These tests also check for transient bit ﬂips which could be an
+indicator of a SEU. During serial data transfers, the CRC allows for the detection and
+correction of single bit errors which again might indicate a SEU. If any of the nine
+daughter boards continuously fail the RAM and ROM tests after a cold start, it is
+considered unﬁt for service. The mother board can then remove the suspect board from
+the task queue.
+Mother board ﬁrmware
+The software is designed to autonomously take data when user deﬁned conditions of sun
+angle and temperature are met. Also, the experiment can be commanded to measure on
+demand. Also, each daughter board can be commanded individually with a speciﬁc set of
+measurement criteria. This grants the scientists on the ground ﬂexibility in customizing
+experimental data sets. For example, the daughter boards can be commanded to measure
+data once the sun angle is below a set threshold, which allows IV data vs angle of
+incidence data to be generated. Alternatively, the daughter boards can be commanded to
+measure once the temperature has exceeded a set threshold value, which allows IV data
+vs. temperature to be generated. The software resident on the main microprocessor board
+NASA/CP—2007-214494 1 10
+
+"
+"17","is responsible for receiving commands from the terminal node controller (TNC) 0f
+PCSatZ, decoding the commands, and passing the appropriate commands to the daughter
+boards. The main microprocessor software must also take the data from the nine
+daughter boards, translate it into printable ASCII characters and pass it to the TNC for
+down-linking by PCSat2. The main microprocessor software must also “oversee” the
+autonomous operation of the experiment, Which consists of periodically recording
+readings from all of the temperature sensors to give a temperature proﬁle for the PEC
+during each orbit and monitoring the temperature and sun angle data and determining if
+the measurement conditions have been reached. A ﬂowchart illustrating the motherboard
+operations is shown in ﬁgure 17.
+Operatluns Flaw
+LEW” $5112 I-vdma:
+lﬂﬂmjmtes Cummmul Interrupt T E .
+lamp Itn T}:
+Take T&mp
+sec.ﬂ1ﬂ1m:{t 123
+0 bytes wmsu
+Halt TE res Haste“?
+Take I-‘u' ""ﬂﬂiiﬁJII-V
+. 1'
+Cum; Has mm _ hemm-
+elapsed 51m Yes Amarem Tmmjt.
+1mm nmre? nmhﬂﬂ? Ha daiudaFF
+Write data Em
+’[IZI HMI'I Ha
+NI: '2' Hymn
+*5 :f;j:‘,“""’ Reset 3:31
+minute timer
+HI: Yes
+Have 15 data _ . Has 1'] - 32D
+mm Wﬂtﬁ tn Flash . 14'? um; ..
+elapsed? mules elapsed?
+' elapsed?
+HI] Yes
+Reset
+Halt TE
+minute timer
+9 Stare 1'11
+mtat' .;buﬂ""er
+Figure 17: mother board operations ﬂowchart
+NASA/CP—2007-214494 1 1 1
+
+"
+"18","The command structure used to control mother board operations consists of a sequence of
+46 bytes illustrated in table 2.
+Command Byte # Default value
+1 1
+———--
+_ SunThreshold 01010000
+TempThreshold 01110111
+44, DaughterEnable (9 bits uses 2 bytes) 1 1 11 1 11 1,
+45 00000001
+46 0101XXXX
+TempID
+7,6,5,4 3,2,1,0
+Table 2: List Of command variables
+The motherboard clock value can be updated using the 4-byte value, T ime and setting the
+bit SetTime t0 1. If SetTime is set to 0, then the clock is not updated. There are eight
+command actions that can be uploaded to the motherboard. They are part of the command
+parameter Action, 3-bits, Which is decoded in table 3.
+Mother board operation
+_
+_Take I-V curves
+_RESET motherboard
+_Send back current time
+_VVrite current data set to Flash
+_Transmit last data set stored in Flash
+Table 3: Action parameter decoding
+There are three criteria that have to be met in order to take an I-V curve. These criteria
+have been named Time-tO-take-data, Sun Angle and Temperature. Below is a brief
+description of how the decision for each of these eriterions is made.
+Time-to-take-data: The goal is to take I-V curves once an orbit, and to provide a failsafe
+means for acquiring data in ease of temperature or sun angle failure. I-V curves can be
+taken only after 60 minutes has elapsed since the last I-V curves and I-V curves Will be
+taken if 150 minutes has elapsed since the last I-V curves. There are 110 command
+parameters associated With this decision.
+Sun Angle: The sun angle is deﬁned as the angle formed by the sun and the plane of the
+NASA/CP—2007-214494 1 12
+
+"
+"19","MISSE-S solar cells. It is calculated from the two orthogonal sun sensors located in the
+same plane as the MISSE 5 solar cells. Valid sun sensor data is indicated by the output
+signals of the four shorted solar cells on MISSE-S (daughter board 6, bytes 7 & 8;
+daughter board 7, bytes 7&8; daughter board 7 bytes 9 &10; daughter board 8, bytes
+7&8) exceeding a threshold value of 157. If any two of the four Ise cells are above this
+value, the sun sensor data is valid.
+There are two ways the Sun Angle criterion can be met. Firstly, the sun angle is
+calculated to be equal to or less than SunThreshold, a one byte value corresponding t0 00
+to 640 in 0.250 increments. In this case, UseRelSun equals 0. Secondly, the sun angle is
+calculated to be equal to or less than the lowest sun angle value in the rotating buffer plus
+an offset of SunThreshold Which varies from —320 to +320 in 0.25 0 increments. In this
+case UseRelSun equals 1. There is also a need to recover from a known sun sensor
+failure. UseSun is a 2-bit value that decodes as shown in table 4.
+_
+Table 4: UseSun value deﬁnitions
+Temperature: Here we pick a temperature to define When to take I-V curves. To make
+this decision we must ﬁrst pick a temperature sensor. This choice of sensor is given in
+the command parameter T empID Which is deﬁned in table 5.
+————
+——-—
+——I—
+* 1: bytes 7(10) & 8(hi) in the daughter board data format and 2: bytes 9 &10.
+Table 5: T empID value deﬁnitions
+
+NASA/CP—2007-214494 1 13
+
+"
+"20","There are two ways to use the chosen sensor for the decision. Firstly, the temperature
+criterion is met When the sensor temperature is equal to or greater than the
+T empT hreshold value. T empT hreshold is a one byte value corresponding to 173.15 K to
+428.15 K, in one degree increments. In this case, the UseRelTemp bit equals 0.
+Secondly, the temperature criterion is met When the temperature is equal to or greater
+than the highest value of the sensor from the stored values in the rotating temperature
+buffer plus an offset value of T empT hreshold. In this case, T empT hreshold is a one byte
+value corresponding to an offset of —225 to +40 in one degree increments.
+In this case, the UseRelTemp bit equals 1.
+The variable DaughterEnabZe (9 bits) is used to power-on or power-off a given daughter
+board during the experiment. This is used in case a dangerous fault develops When
+powering on a particular daughter board. By setting this parameter low, a daughter board
+Will never be turned on until a new command is sent to undo this action. It is a 9-bit
+parameter. The lsb corresponds to daughter board 1, if the bit is set high then the
+daughter board Will be enabled during all measurement cycles. If the bit is set low, then
+it will remain off forever. The msb corresponds to daughter board 9. For example value
+of 111111111 means all boards are enabled during measurements, the value 000000000
+means all boards are off, the value 0001100111 means only daughter Boards; 1,2,3, 6 and
+7 are enabled.
+The variable IscSetpoint (3 6-bytes) contains the starting Iso values or to use the auto Iso
+function. If all bits are low then auto Iso should be initiated (default mode). Each byte
+corresponds to the most significant 8-bits of a 12-bit starting Iso value. The least
+significant 4-bits should be set to 0000. The mapping of the 36-bytes is shown in figure
+1 8.
+
+LSB = daughter board 1, Cell 1
+
+2nd byte = daughter board 1, Cell 2
+
+3rd byte = daughter board 1, Cell 3
+
+4th byte = daughter board 1, Cell 4
+
+5th byte = daughter board 2, Cell 1
+
+MSB = daughter board 9, Cell 4
+
+Figure 18: ISCSetpoint data format
+Discussion
+In order to participate in a variety of small-budget space missions, engineers and scientist
+must learn to intelligently incorporate COTS parts into their designs. For MISSES a
+combination of rad-hard, rad-tolerant and latoh-up immune parts were conﬁgured using
+TMR, current monitoring, watchdog-timer resets, data backup, error detection and
+
+NASA/CP—2007-2 14494 1 l4
+
+"
+"21","recovery techniques in order to achieve the required level of radiation mitigation. The
+radiation performance of the COTS parts used in MISSES were guaranteed by design,
+process, testing or various combinations of the aforementioned. Software methods such
+as redundant data storage, RAM/ROM CRC checking, data packetization with CRC
+checking, timer watchdogs and repetitive measurements also serve as excellent tools to
+handle SEU and total dose effects on hardware. Lastly, there is no substitute for
+ingenuity as evidenced by the novel circuitry used to interrogate the solar cells. The
+traditional approaches would have either Violated our weight budget with a multitude of
+load resistors or potentially damaged the cells by driving currents above Iso through the
+cell junctions. With all of the constraints of a space grade payload added to the constraint
+of a “coach” budget, we succeeded in producing an instrument that rivals laboratory
+grade equipment. Illustrating this point, a comparison of data measured by one of the
+daughter boards on a 3] InGaP/GaAs/Ge solar cell under illumination by the X-25 solar
+simulator in the NRL Solar Cell Characterization Laboratory with data measured by
+laboratory equipment under illumination by the same simulator is shown in ﬁgure 19.2
+This graph shows accurate reproduction of the IV curves obtained from calibrated
+laboratory equipment and the ﬂight hardware. Furthermore, the deviation between data
+sets is at worst the same and in many regions of the IV curve smaller when using the
+GRC MISSES board when compared to the laboratory equipment.
+0.5
+0'45 33:034.“ 7‘3. 9..» ,. '4.,¢._;.~_.4:‘:,”v"" 3.x ,’ 3.‘ ,’2""~,':91.W,;{»t3.g‘ . x3"" 3% “3&3 ’f “044::33’3‘; ' ‘:~: x . _
+0.4
+0.35 g;
+ii
+0.3 Average Isc: DAC=443mA, NRL=439mA .‘x
+AverageVoc: DAC=2.613V, NRL=2.612V ><
+a s
+E 0.25 x
+< x
+OGRC DAC 1 Q
+0.2 IGRC DAC 2 33
+A GRC DAC 3 ii
+0.15 x NRL 1 :E
+xNRL2 I
+x NRL 3 x
+0.1
+a
+0.05 Q
+0
+0 0.5 1 1.5 2 2.5 3
+Volts
+Figure 19: This graph compares IV data measured on one of the InGaP/GaAs/Ge solar cells by a
+ﬂight daughter (DAC) board and ﬂight software compared to data measured on the same cell by
+laboratory equipment. In each case, three data sets were measured in succession, and the three curves
+are shown. All measurements were made under the same X-25 solar simulator in the NRL Solar Cell
+Characterization Laboratory.
+NASA/CP—2007-214494 l 15
+
+"
+"22","Conclusion
+
+The combination of process tracking COTS parts for radiation hard/tolerant pedigree and
+
+designing hardware and software With radiation mitigation in mind produced a reliable,
+
+space-worthy experiment package that also met our budget restrictions. Furthermore,
+most solar cell experiments employ a bank of switched load resistors or a programmable,
+bipolar current source for making the IV measurements. The MISSES MOSFET
+conﬁguration is much lighter and smaller than the aforementioned and, as compared to
+the current source configuration, also safer for the cells, and thus signifies a substantial
+improvement in the state of the art. Lastly, data accuracy was not sacrificed by meeting
+our radiation and budget constraints. The MISSES equipment performed as well or better
+that the laboratory equipment used to verify its operation.
+
+References
+
+1 ""Advanced Solar Cell Testing and Characterization,"" workshop summary, from the
+proceedings of the 18th Space Photovoltaic Research and Technology Conference, held
+in Brook Park, Ohio, September 16-18, 2003, NASA/CP-2005-213431.
+
+2 “Materials 011 the International Space Station Forward Technology Solar Cell
+Experiment,” presentation at the 6th International Workshop on Radiation Effects 011
+Semiconductor Devices for Space Applications (RASEDA), Robert J . Walters, J . C.
+Garner, S. N. Lam, J . A. Vasquez, W. R. Braun, R. E. Ruth, J . R. Lorentzen J . H.
+Warner, Cdr R. Bruninga (Ret), P. P. Jenkins, J . M. Flatico, D. M. Wilt, M. F.
+Piszezor, L. C. Greer, M. J . Krasowski, S. R. Messenger, and G. P. Summers, October
+6-8, 2004.
+
+3 “Mars Array Technology Experiment and Dust Accumulation and Removal
+Technology,” Geoffrey A. Landis, David Scheiman, Cosmo Baraona, David Brinker,
+15th Space Photovoltaics Research and Technology Conference, Cleveland OH, June
+10-12 1997.
+
+4 “Dust Accumulation and Removal Technology (DART) Experiment on the Mars 2001
+Surveyor Lander,” Geoffrey A. Landis, Phillip P. J enkins, Cosmo Baraona, David Wilt,
+Michael Krasowski, Lawrence Greer, Proceedings of 2nd World Conference 011
+Photovoltaic Energy Conversion, Vienna, Austria, Vol. 111 pp. 3699-3702, July 6-10
+1998.
+
+5 “Characterization of Settled Atmospheric Dust by the DART Experiment,” Geoffrey A.
+Landis, Phillip P. J enkins, Cosmo Baraona, Mars 2001: Integrated Science in
+Preparation for Sample Return and Human Exploration Workshop, Lunar and Planetary
+Institute, Houston, TX, October 2-4, 1999.
+
+NASA/CP—2007-214494 1 16
+
+"
+"23","6 “Radiation Design Test Data for Advanced CMOS Product,” National Semiconductor
+Application Note 925, MC. Maher, J anuary 1994.
+
+7 “SEU and Latchup Tolerant Advanced CMOS Technology,” National Semiconductor
+Application Note 932, R. Koga, KB. Crawford, 8.]. Hansel, B.M. Johnson, D.D. Lau,
+S.H. Penzin, S.D. Pinkerton, M.C. Maher, March 1994.
+
+8 ”Space Station Ionizing Radiation Design Environment,” National Aeronautics and
+Space Administration, Space Station Program Ofﬁce, European Space Agency,
+National Space Development Agency of J apan, Canadian Space Agency, Italian Space
+Agency, June 3, 1994, SSP 30512 Revision C.
+
+9 ”Pre-Test SAA Contours for WFC3,” Space Telescope Science Institute, Olivia L.
+Lupie, March 12, 2002, Instrument Science Report WFC3 ISR 2002-01.
+
+10 “Radiation Tolerance of the 80C32E/80C52E,” Temic Semiconductors, Thierry
+Corbiere, Revision A, March 26, 1996.
+
+11 “UT67164 Radiation-Hardened 8K X 8 SRAM — SEU Hard Data Sheet,” Aeroﬂex
+UTMC, J anuary 2002.
+
+12 “SEi — Radiation Hardened 28C256TRP Datasheet,” Space Electronics 1110., March
+1997.
+
+13 “Summary Radiation Test Report — Samsung KM29N32000,” Maxwell Technologies,
+Document 1003556, revision 1, January 13,2003.
+
+1“ “SI4948EY Dual P-Channel 60-V (D-S), 175°C MOSFET Datasheet,”Vishay
+Siliconix, Document Number 70166 S-99444-ReV E, November 29, 1999.
+
+NASA/CP—2007-214494 1 17
+
+"

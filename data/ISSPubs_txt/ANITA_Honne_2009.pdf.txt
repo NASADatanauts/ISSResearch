@@ -1,0 +1,1039 @@
+"","x"
+"1","2009-01-2520
+Evaluation of ANITA Air Monitoring on the International Space Station
+A. Honne, H. Schumann-Olsen and K. Kaspersen
+SINTEF
+T. Limero and A. Macatangay
+Wyle Laboratories Inc
+H. Mosebach and D. Kampf
+Kayser-Threde GmbH
+P. D. Mudgett and J. T. James
+NASA-Johnson Space Center
+G. Tan and W. Supper
+ESTEC
+Copyright © 2009 SAE International
+ABSTRACT systems. Comparison with other reaI-time instruments
+aboard ISS included the Volatile Organic Analyzer
+ANITA (Analysing Interferometer for Ambient Air) is a (VOA), the Compound SPGCifiC Analyzer — Combustion
+flight experiment precursor for a permanent continuous PFOdUCtS (CSA'CP), the Carbon Dioxide MOHitOF (CDM),
+air quality monitoring system on the ISS (International and the MajorConstituentAnalyzer(MCA).
+Space Station).
+INTRODUCTION
+For the safety of the crew, ANITA can detect and
+quantify quasi-online and simultaneously 33 gas ANITA represents the current status of the European
+compounds in the air with ppm or sub-ppm detection Space Agency ESA’s long term technology development
+limits. The autonomous measurement system is based programme for continuous monitoring of the atmosphere
+on FTIR (Fourier Transform Infra-Red spectroscopy). quality in crewed spacecraft [1-9, 11, 13-22]. At an early
+The system represents a versatile air quality monitor, stage, the FTIR technology combined with sophisticated
+allowing for the first time the detection and monitoring of multivariate statistical data analyses was selected as the
+trace gas dynamics, with high time resolution, in a most promising solution. Based on various study and
+spacecraftatmosphere. breadboard activities, supported by a very successful
+blind sample testing for NASA [10, 12], it was concluded
+ANITA operated on the ISS from September 2007 to that the requirements for on-Iine multi-gas air analyses
+August 2008. This paper summarises the results of are best fulfilled by this combination of techniques.
+ANITA’s air analyses and compares results to other
+measurements acquired on ISS during the operational The launch of ANITA to the ISS was performed in August
+period. The main basis of comparison is NASA’s set of 2007 by the Space Shuttle Endeavour flight STS-118.
+grab samples taken onboard the ISS and analysed on ANITA was set up in an EXPRESS rack in the US
+ground applying various GC-based (Gas module Destiny aiming for six months of operation, and
+Chromatography) and GC/MS (Mass Spectrometry) the system start-up took place in September. Thanks to
+SAE Int. J. ofAerosp. | V01ume4 | Issuel 451
+
+"
+"2","ANITA’s successful operation on the ISS, giving new and sets in an optimal way. For ANITA, IR spectra for known
+
+very valuable information on the gas status and air gas mixtures constitute the examples, and PLS is
+
+dynamics in the spacecraft air, the operation was applied to find the best utilisation of information through
+
+prolonged until August 2008. Then, further operation was avoiding spectral interference and handling statistical
+
+no longer possible, because of a Iong-planned relocation noise optimally. The applied tool is denoted PLS1, which
+
+of the payload rack infrastructure on the ISS. produces a separate calibration model for the
+concentration of each gas compound, taking into
+
+The ANITA mission itself was an ESA-NASA cooperative account the possible influence from all other effects that
+
+project. ESA was responsible for the provision of the are represented in the examples. Although PLS is very
+
+HW, the data acquisition and data evaluation. NASA’s effective optimising the extraction of information, it is
+
+responsibilities were launch, accommodation in the US very advantageous to perform data pre-processing in
+
+module Destiny, operation, and data download. order to apply any pre-knowledge of where in the
+spectrum useful information can occur.
+
+ANITA’s standard, fully automatic mode of operation
+
+applies direct air sampling in front of the system. Asufficiently large example set of IR spectra (hundreds)
+
+Whenever wanted during the mission, air samples for for very accurately known rea| gas mixtures can hardly
+
+automatic analyses could be taken from any human- be produced. The examples must be constructed
+
+accessible position in the ISS or any connected through simulations. Therefore we must be able to
+
+spacecraft and fed to ANITA, using gas bags and a hand describe and simulate the instrument behaviour, applying
+
+pump. However, owing to the experimental character of proper reference IR spectra for all gases involved, the
+
+this ANITA mission, no on-Iine measurement results ideal instrument response, as well as all foreseeable
+
+were visible to the ISS crew. varieties of non-ideal behaviour.
+
+The current ANITA calibration prepared it to detect and In summary, the calibration of ANITA was performed
+
+quantify, quasi-online and simultaneously, 33 gas through four main steps [22]:
+
+compounds in the air down to lower sub-ppm detection
+
+limits. In addition the system has automatic warning 1. Simulations of measurementIR spectra
+
+capabilities covering possible malfunctions, unexpected 2. Pre-processing of the simulated measurement IR
+
+gases, and gas concentrations above preset limits. spectra
+
+Immediately after the system start-up on the ISS, it was 3. Statistical analyses applying PLS
+
+demonstrated how ANITA could be used to detect and 4. Corrections for non-Iinear characteristics
+
+quantify an unexpected gas in the ISS air, and how the
+
+system calibration could be updated from ground [22]. As a result of this method of calibration, the general
+features of the resulting calibration include:
+
+ANITA’S MISSION ON THE ISS
+. Control of optical spectral interference
+
+ANITA CALIBRATION FOR THE ISS (cross-sensitivity between gases, the main problem)
+. Baseline drift compensation
+
+Before the ANITA mission, the system was calibrated for (solves a major problem, since the “true” baseline
+
+the expected worst case gas scenario on the ISS [18]. cannot be observed or synthesised)
+
+The gas scenario is defined through a list of all gas . Optimal noise handling utilising information from
+
+compounds, plus their individual upper limit of numerous spectral data points
+
+concentration variations, that are expected or suspected . Control of possible optical saturation effects
+
+to occur at significant concentration in the cabin air. A (too high spectral absorption)
+
+significant concentration means that the IR absorption of . Simple, fast, and fully automatic runtime calculations
+
+the gas may be large enough to allow detection 01‘ that (all complexity is handled in the calibration process)
+
+gas or large enough to inflict disturbances 0“ the . Semi-permanent calibration: No recalibration is
+
+measurement 0t other gases through spectral necessary unless the gas scenario or the instrument
+
+interference (cross-sensitivity), unless it is prepared for changes beyond the specifications
+
+through the calibration process. . Easy adaptation to new measurement situations
+
+through recalibration, even after deployment in
+
+The occurrence of an unexpected gas, Le. a gas not in space (without astronaut involvement)
+
+the gas “St, may introduce interference 0“ the . A|| complexity is handled in the calibration process.
+
+measurement 0t other gases through spectral The runtime calculations are simple and veryfast.
+
+overlapping that has not been accounted for in the
+
+calibration process. The potential for a semi-permanent calibration relies on
+the inherent optical compensation for intensity changes
+
+A Central tOOI Of the Calibration modelling iS PLS (Partial (aging or contamination of |R source, optics, 0r detector)
+
+Least Squares). It is a family 0t multivariate statistical and the excellent FTIR wavenumber stability achieved
+
+mathOdS [23], Wthh makes It pOSSible to learn from through the buiIt-in |aser reference_
+
+examples how information can be extracted from data
+
+452 SAE Int. J. of Aerosp. |V01ume4 | Issuel
+
+"
+"3","In addition to these general features, ANITA’s calibration is specified in the text of each graph below. This
+includes other mechanisms [17] like special handling of treatment is quite different for the different gases, trying
+non-Iinear spectral interference, automatic correction for to preserve potentially valuable information on the fastest
+non-Iinear gas response, outlier detection, and local significant variations that can be extracted out of the
+calibration models for even better sensitivity. noisy primary gas estimates.
+ANITA OPERATION ON THE ISS ""Sitting"" of the spectra implies removal of all spectra
+
+falling below a pre-set quality limit for each of a number
+After the system set-up on the ISS, the FTIR moving of parameters derived from each spectrum. This
+mirror could not be started [21]. Here, repeated power standard sifting removes the 34.6 °/o poorest spectra out
+cycling led to a warming up and finally to the successful of the initial 6398 spectra downlinked from the ISS.
+start of the system. After this, ANITA produced
+measurement data most of the time. However, problems In order to improve potential outliers in the gas
+mainly with the ISS laptop PC dedicated to ANITA led to estimates, most gases have been filtered with a sliding
+periods of missing data, which are referred to as “data 5-point median filter, ignoring missing data points.
+gaps” below.
+
+For time domain averaging filters, we have applied
+From the very first measurement on the ISS, ANITA Gaussian filters of different widths, taking missing data
+gave outlier warnings, indicating that something was out points into account (i.e. preserving the correct time scale
+of specification. ANITA’s outlier analysis features in the filtering). The FWHM (Full Width at Half Maximum)
+revealed that the problem was an unexpected gas that for each filter is given for each graph.
+could be identified as sulphur hexafluoride (SF6). This
+situation was resolved through recalibration from ground The significance of gas concentration curves after
+[22]. — The gas SF6 is an infrequent contaminant with filtering is of course quite different from the significance
+extremely low toxicity that is used in specific medical of each individual primary gas estimate. With increasing
+investigations. Therefore it had not been among the time averaging, the stochastic noise is increasingly
+target gases of earlier analyses of the ISS air. suppressed, and offset and stability of the system
+Consequently its presence in the ISS air was unknown, become increasingly important as limiting factors.
+and the gas was not included in ANITA’s gas list.
+
+For some gases, two different levels of time averaging
+In addition to the unexpected gaS, a few technical (Gaussian filters with different widths) are shown in the
+surprises occurred on the ISS. The spectrometer’s same graph for maximum usable information — including
+spectral line shape changed slightly through some of the information on the noise level. This twin treatment has
+system restarts, and the spectra contained unexpectedly typically been applied for gases where fast variations
+high levels of noise in addition to variable spectral should be expected in reality, but where the overall
+“ghosts” (spectral signals that falsely reappear in other spectral noise leads to poor significance for the
+positions in the measured spectrum) [21, 22]. At the time estimates on these fast variations. — E.g. for ethanol (see
+of writing, these technical problems are still under Figure 5 and Figure 9), it is reasonable to expect
+investigation, since the ANITA system has only recently relatively fast variations owing to human activities.
+been returned after the mission. However, the occasional negative values in Figure 9
+
+definitely indicate a problem with the significance for the
+The variable line shape was handled through special |eastfi|tered curve, especially early in the flight, when the
+calibration modelling that apply spectral transformations ghost problem was most severe for this gas. Heavier
+(developed based on [24]) in order to match dedicated filtering evidently leads to better significance while hiding
+calibration models to the different line shapes. The noise all information on fast variations in gas concentration.
+and ghost problems were minimised through calibration
+modelling optimised for higher robustness, spectral The following widths (FWHM) were chosen for the
+sifting (automatic rejection of spectra with very poor applied Gaussianfiltersfordifferentgases:
+quality), and time domain filtering of the gas estimates
+(optimised weighted averaging) [221- In total, the applied 0 40 min (alone: No sifting or median filtering): Water
+adaptations and countermeasures were highly and pr (perﬂuoro propane, Freon 218)
+successful, ensuring valuable data from ANITA. . 2_9 hours (alone): 002. Preserves the shape of daily
+
+concentration ”valleys”
+
+POST'PROCESS'NG OF ANITA DATA . 7.5 hours, after sifting and median filtering: 8 gases
+
+. 5 days, after sifting and median filtering: 27 gases
+Depending on the observed, assumed, and/or accessible (5 combined with 75 hours)
+frequency contents of the time series, each gas has its
+special selection among the treatments spectral sifting, For pr, even the very moderate 40-minute Gaussian
+r'nedian. filtering,land Gaussian filtering with a selected filtering was skipped locally around the major leak in
+filter W'dth (defined as FWHM — FU” W'dth at Half order to preserve the extraordinarily steep rise in
+Maximum) [221- The applied data treatment for each gas concentration (see Figure 1, Figure 2, and Figure 10).
+SAE Int. J. of Aerosp. | Volume4 | Issuel 453
+
+"
+"4","MAIN FINDINGS BY ANITA ON THE ISS time-resolved measurement is available. ANITA
+measured ammonia varying mostly between 0.10 and
+ANITA has measured several gases on the ISS that 0.15 ppm in the ISS oabin air, when a 5-day Gaussian
+currently are not detected by other means (ammonia) or filter was applied [22]. This absence of events implies a
+are not routinely measured by reaI-time or archival very important finding, viz. that there was no significant
+methods, including PFP and SF6. In addition, many ammonia leak from the cooling systems. ANITA can
+gases in the ISS air have, for the first time, been measure and track the ammonia oonoentration far below
+measured with high time resolution. The observed gas the human odourthreshold value. And ANITA’s excellent
+dynamics clearly show effects from spacecraft visits to precision allows the detection of even a very small
+the ISS, crew activities and the number of crew ammonia leak that makes the air oonoentration rise
+members present, and the functioning of the air slowly, even over days and weeks.
+revitalisation systems. ANITA has given detailed time-
+resolved information on very different gases such as Perﬂuoro propane
+carbon monoxide, methane, ammonia, PFP, SF6, 120 . . . . . . . . . . . . . . . . . . . . . _Gas estimates
+siloxanes, alcohols, carbon dioxide, and water vapour ii ?
+[22]. An example on how much information may emerge 100 . . . . . . . . ,\ . . . . . . . . . . . . . . . . . . . . . ..
+from time-resolved inform ation on just one single gas is A i 3‘W‘Mxiittii‘iiim.t.eWNW-.-111111011111e22.3M.3MW
+giveninthefollowing. §80y0.1
+C 1 1 .
+ANITA’stime-resolved PFPvariationsgaveseveralnew §6O_3,
+types of information: :5)
+O 1 1 1
+A. ANITA’s observed PFP oscillations during fast 8 4O 3 3 3
+oarbondioxideremovalfromtheISSairreveaIed 20 3 3 3 3 3 3 3 3 3 3 3 3 ; 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 33
+previously unknown coupling between PFP and the j 1 1
+US CDRA (Carbon Dioxide Removal Assembly) [22]. O ‘ ‘ ‘
+B. An incidence on the ISS was suspected to indicate a 215 220 225 230
+PFP leak. This could be ruled out by ANITA’s PFP DaYSfrom Start 24-Sep-2007 00:00:00
+data, limiting the search for the correct diagnosis of
+the incidence [22]. Figure 1. Overview of the main perfluoro propane
+C. A major leak of PFP from an ISS cooling system, leak event on April 29, 2008. The gas estimates have
+and also a later servioe-related release, could be been filtered with a Gaussian fi|ter (FWHM 4o
+quantified and fOHOWGd With high precision and high minutes) except at the steep rise, where the original
+time resolution tor significant time periods. data estimates have been kept. The periods of time
+D- The concentration details 'n item C over hours and where the noise looks larger in reality exhibit regular
+days, revealed that Fhe PFP concentrat'on W35 oscillations induced by the us CDRA (se the text,
+stabilisee rather qunokly, apparently after the PFP esp. list item A, and [22])_
+penetration Into |ess aooessnble air volumes had
+been completed. It could therefore be concluded that pemuom propane
+neither the American nor the Russnan attempts to 140 . 3 . . . . 3X 2183449 . . . 3 . . . . _Gas estimates
+clean the air of PEP were successfull, so that the 3 3 Y: 11866 3 _ Data gaps interpolated
+extra cleanup actions could be terminated. —The 120 3333313 3 3 3 /'\ 3 3 3 3 3 3 3 3 3 3 3 33
+detailed dynamics of item A also helped to explain A j j .6 1 \ae eeeeegeewgow,
+whythe US CDRAfailed to remove PFP from the 2100 'f “18363 i ' T ' ' ' ' ‘5 ' ' ' Q“ ' ' ' ' ' ' ' ' ' ' ""
+ISS air. E: j Y: 104.64 j j 3 More precisexvaluesfor
+E. Owing to the stability of PFP in the ISS air, PFP can 5.3 8° * T * * * * "" * i * T’ * * * * '5 * * * ’7 themd'cated-data pomt?
+. . c0 . . i 1 1 1 (GMT on AprI|29 2008).
+be explonted as a tracer gas to calculate the effective «’5 . $_27178bﬁ58 i 1 1 1
+relative airvolumes of any visiting spacecraft (not § 60 ' ' '3 i i ' ' ' ' ' ' Day H:Min
+carrying PFP!) or new modules sharing oabin airwith 8 4O 3 3 “18353 i 3 3 3 3 3 3 3 3 3 3 3;. 313-323 8333
+the ISS. In practice for the ANITA mission, these 1 Yr 26-34 J j j 1 218:358 0836
+calculations were mainly used in the opposite 20 . .x 218.349 ' . ; . . , , j, , . . ,1, 218.383 08:43
+direction in order to have an extra Check on ANITA’s 1Y1 6-44 1 1 1 218449 10:47
+re|iabi|ity [22]. 0 ‘ ‘ ' ‘ ‘ ‘
+218.2 218.3 218.4 218.5 218.6 218.7 218.8 218.9 219
+Since the major PFP releases to the ISS cabin air DaySfrom Stan 24—89'0'2007 00'00'00
+occurred after submission of ref. '[22], details of the main Figure 2. Details of the main perfluoro propane leak
+leak are shown in Figure 1 and Figure 2 (for full overVIew . .
+s e e Fi gu r e 10). event on April 29, 2008. The gas estimates have been
+filtered With a short Gaussuan filter (FWHM 40
+As mentioned above, ammonia is currently not routinely minutes) except at the steep rise, where the original
+measured in the ISS air, and no standard system for estimates have been kept.
+454 SAE Int. J. of Aerosp. |Volume4 | Issuel
+
+"
+"5","COMPARISONS TO OTHER INFORMATION ON stability as well as potential losses. It should be noted
+THE ISS AIR that ANITA only holds air samples for a few minutes, so
+that all compounds that are stable in the cabin air on this
+BASIS FOR COMPARISONS time scale are stable in ANITA’s air samples as well. The
+main potential problem is losses to the inner surfaces of
+In general, and especially since ANITA is an the sampling system. However, any such losses are
+experimental system, it is important to compare the expected to be small, a“? they WOUId tend to even 9”
+results to other sources of information on the ISS air. over time through saturation oflabsorption or adsorption
+Current operations utilize real-time monitors and archival Oh the surfaces, moehy causing memory effects and
+samplers to achieve a complete picture of ISS air quality. thereby elower reaction. For the reference measure-
+The real-time monitors that target compounds in ments using grab samp'e containers (see below), these
+common with ANITA include the VOA (volatile organics), pmb'ems are p°te“t'a”y worse However, “95“” has
+CSA-CP (CO), CDM (002), and MC A (002, m ethane). shown that the stirfaoe treatment of the GSCs and the
+The arohival samplers, grab sample containers (GSCs), sample handling in general successfully avord errors for
+are returned to ground for analysis by GC and GC/MS the targetoompounds.
+methods. The GSC analysis is considered the reference . ,
+method for most compounds. Exceptions are siloxane AS part Of the evaluation, ,ANITAS results have been
+compounds that have proven to be unstable in the analysed anci cross-tested 'h different ways 'h order to
+GSCs. assess their reliability. Important information on
+significance has also been extracted from how the gas
+Comparison of real-time data to ANITA results is estimates reflect ISS events like spacecraft dookings and
+somewhat limited because with the exception of the gasreleases.
+MCA, the other instruments were operated only , , , ,
+periodically. The other instruments only had occasional Owrng t0 the speoial problems W'th spectral disturbances
+analytical sessions that overlapped with ANITA .(ghosts) and line'shape ohanges for ANITA on the ISS, 't
+operations; however trending from these devices can be !5 highly interesting ,to hhe out whether such non-ideal
+used to achieve some perspective on the ANITA influences in ANITAs optical spectra can have lead to
+performance. Significant errors for a given gas. The most probable
+error would be a concentration offset, and this type of
+Eight grab samples collected in Destiny during the error is difficult to identify from ANITA’s Iconoentration
+ANITA operations can be used for comparisons to curves alone. Therefore other information must be
+ANITA. However, one special grab sample was taken exp|0ited.
+direotl in front of ANITA. This excellent source of data .
+for oorShparison is specially emphasized below. For highly'stable gases like PFP and SF6’ checking for
+concentration offset IS possmle through calculation of air
+Grab samples represent snapshots in time, while ANITA mixmg ratios W'th V'S't'hg spacecraft.
+data give a sequence of data points with six-minute or , , , , , ,
+haIf-hour intervals (for onboard operation and standard In prinoiple, ""F '5 also POSS'P'G t0 '0‘?“ for the srze Of. the
+downlinked spectra, respectively). This sequence of data spectral details Of the gas 'h question. However, th'e !5
+is primarily intended for time resolution of the gas essentially an approach I'ke olassroal spectral analysis
+dynamics, but it has also been exploited for spectral for'gas. estimation, which is highly inferior to ANITAs
+sifting and time domain filtering in order to improve the calibration for rhulti-gas measurement. Therefore. direct
+noise level and detection limits of the gas estimates. For spectral ana'YS!S to support ANITA results "":7 d'fheUIt. 'h
+most gas compounds, this time averaging has a minimal general, and it is not feaSIble Close to ANITAs eetection
+effect on ANITA comparison to other methods, because I'm't for the target gas. For the ISS operations, the
+the ISS air composition usually changes slowly, unless spectral disturbances add to the problems. Still, it has
+an event occurs or crew activities have a localized effect been poSSIble to check for ANITAloffset for two very
+on the air. Exceptions include PFP and 002 [22], but interesting gases, VIZ. carbon monoxide and methane, as
+even for these gases the fast variations only amount to a well as SF6 and PFP under the followrng Circumstances:
+few per cent in concentration. Also, the filtering of . .
+ANITA’s estimates is tentatively limited to preserve the ' The target gas eonoentration '5 Clearly above
+significant variations (see above). In total, a few hours ANITA’S detection “m't for averaged spectra
+difference in air sampling is normally not significant, and ' The target gas exhibits a very distinctive spectral
+anway the comparison graphs may indicate if a time pattern
+difference might be significant. Also, the ISS is a well- ' For each measured IR spectrum, ANITA’S gas
+mixed atmosphere so that samples acquired anywhere in estimates and procedure for calculation 01‘ the
+Destiny can confidently be used for comparison with residual spectrum are applied to emphasize the
+ANITA results. spectral contribution of the target gas (subtracting
+the effects of all other known gases)
+When we compare different air measurements, the ° Many spectra are averaged
+sampling technique is a crucial element affecting sample
+SAE Int. J. of Aerosp. | Volume4 | Issuel 455
+
+"
+"6","The second item in this list is of higher importance than being measured and the variability inherent in any
+normal in order to distinguish real gas features from the analytical method.
+spectral disturbances.
+COMPARISONS TO GRAB SAMPLE TAKEN IN FRONT
+For the abovementioned four gases where such direct OF ANITA
+checking has been possible (carbon monoxide,
+methane, SF6, and PFP), no offset of important size can The results from the GSC acquired in front of ANITA on
+be present. Further use of spectral analyses is discussed October 10, 2007 are compared to the results from
+for each gas. ANITA (Day 16.8468).
+GRAB SAMPLE CONTAINERS At the time of these analyses, the presence of SF6 had
+become known through ANITA. (It should be noted that
+Grab sample containers (GSC), shown in Figure 3, and SF6 could have been detected in the GSC independent
+the methods used to analyze them have been previously from any information from ANITA, if this gas had been
+described (25); therefore, only a brief description will be selected for analysis, refer above.) Upon return of the
+presented. The (3803, obtained from Scientific GSCs to the ground for analysis, an SF6 calibration
+Instrumentation Specialists, Moscow, Idaho, USA, have standard was unavailable, because this contaminant has
+a SUMMA electro-polished interior surface and a volume very low toxicity. When the GSCs were analyzed by
+of approximately 350 mL. Preparations of the (3803 for GC/MS, a B-faotor for SF6 was used to quantify the
+flight include a leak check, analysis for contaminants compound. (A B-faotor is an average response factor for
+(proof), surrogate dosing, and evacuation to hard aoompound derived from aoompilation of data collected
+vacuum (<10' torr). A sample is acquired on orbit by over the years by mass spectrometry.) This is commonly
+opening a valve on the GSC permitting the container used by the JSC Toxicology Laboratory to quantify non-
+vaouum to pull in the air sample. The valve is then target compounds, which may be detected infrequently
+closed to preserve the sample until analysis. The and/or have Iowtoxioologioal impact.
+infrequent Shuttle flights to ISS mean that samples can
+be up to 6 months old before they reach the laboratory. ANITA quantified 12 gases at the relevant point in time.
+The GSC analysis detected and quantified 32 gases (13
+- of these are also on ANITA’s gas list), but only four
+F l i gases were common with ANITA results. In addition, the
+'1 ""5 1"" N GSC detected 27 gases at trace levels. (As opposed to
+' t :x: . ANITA, GC and GC/MS systems may deteot compounds
+3 below their quantification limits, but in this case
+' ‘* concentrations can only be estimated.)
+According to the description above, ANITA’s gas
+estimates have been sifted and filtered in different
+~ combinations. For some gases two different levels of
+filtering have been applied in parallel. This is highlighted
+1wr-'~:-'-1~~1...1...1_ for the different ANITA gas estimates in Table 1, which
+shows the detailed comparisons on the four compounds
+. . in common. To give the best basis for comparison, more
+Figure 3' Grab Sample Container(GSC) than the assumed significant digits are indicated. The
+. estimates for the two lightest alcohols, methanol and
+Egg] returnlto the NASA/JISC loglcoggywligboratoryl, ”.19 ethanol, as well as 002 all show good agreement. This is
+Isamp es were ana yze. y or V0 3“ e particularly impressive given the low aloohol
+organic. compounds according. to Standard work concentrations (low ppm) and high concentration of 002
+Instructions. The GC/MS method IS an adaptation of the (3500 ppm).
+US. Environmental Protection Agency’s TO-17 method
+[26], the primary adaptations being the inclusion of
+standards for the compounds of specific interest for
+spacecraft air assessment. The two critical aspects of
+the GSC process are the assurance of proper instrument
+function and calibration and verifying the integrity of
+samples via trip surrogates. The surrogates cover the
+range of target compound polarity and molecular weight.
+It should be noted that the acceptable error for analysis
+via EPA TO-17 method is +/-25% for most compounds
+and +/-30% for reactive species (i.e., methanol). This
+requirement recognizes the very low concentrations
+456 SAE Int. J. of Aerosp. |Volume4 | Issuel
+
+"
+"7","Grab sample ANITA Ethanol
+concentration concentration 3'5 3 3 3 3 3 3
+GAS (ppm) (ppm) 3'11ﬂ11.
+. . Sifted awa 34.6% ofthe ‘ ‘ 1 1 ‘ ‘ ‘
+Gauss Median filter+ Median filter+ 9’ 3 3/\ YE 2'00 3 3 / \
+filter Gaussfilter Gaussfilter E 2 3/33./3333/3\
+“c6 1 x 16.847 . i 1 1 1
+um #777177"" W“: W \
+o1\\3/3X16847rvwksw/wwrwx
+——-—— \’/w'\«
+Table 1. Comparison of analysis results from ANITA 105-5 16 16-5 17 17-5 18 18-5 19
+and the grab sample taken close to ANITA on Days from Start 24'399'2007 00:00:00
+October 10, 2007 at 20:18 GMT (ANITA measurement Figure 5- Details Of ethanol graph around the grab
+time 16.8458 days from start of regular operation). sample (the black dOt) taken near ANITA at day 17
+* From GC/FID results (10 Oct 2007). After standard spectral sifting, both
+**From GC/FID results; MeOH conc.=GC MeOH 00,70, traces have been filtered with a 5-point median filter.
+(2* GC/MS Acetaldehyde 00,70) The green trace has also been filtered with a
+medium-sized Gaussian filter (FWHM 7.5 hours) and
+For SFe, ANITA measures a considerably higher the blue trace with a longer Gaussian filter (FWHM 5
+concentration than the one reported from the GSC days).
+results. The use of the B-factor for quantification could
+introduce an error as large as a factor of four. This does
+not begin to account for the 2 orders of magnitude 4000 CarbondiOXide
+discrepancy in the two results. It is unclear at this time ; 1 ; ; ; ;
+why the results are so divergent. 1 j $132536 j j 1 1
+3soo\~v:/m\~33
+The three gases with comparable numbers from the two 75‘ \ i i / X; 168417 1 1 1
+systems are shown in detailed views in comparison plots 3/ \\ 3 3 Y: 3379 1 3 3 3
+in Figure 4 — Figure 6 for illustration. ANITA’s sample 5 3000 ' ' ' N 3 ' ' ' ' / ' 3 \\ ' ' ' 3 ' ' ' ' ' 3 ' ' ' /
+point nearest in time to the grab sample is indicated in E \ 3/ \. /
+eachtrace. C \
+\ / 3 3 \\ :1
+O ‘ \J ‘ ‘ ‘ ‘ \ ‘ /
+Meta“ zooomw/
+1 1 o ‘ 1 1 7 1 1 3 3 3 3 3 \J
+‘ ‘ X16.8464\7HHVjV/ﬂﬂ‘hﬂﬂ‘ 1 1 1 1 1 1
+A 0318 Y1: 0'1/9 \\ / \\ 15095.5 16 16.5 17 17.5 18 18.5 19
+S 0.16 7 7 7 7 7 7; 7 7 7 7 7&1 7 / 7 7 \ 7 7 j/ 7 731: 7 1 7 7 7 7 j Daysfromstart24-Sep-200700:00:00
+7:“ x 16.847 f gﬂgwﬂﬂ Figure 6. Details of carbon dioxide graph around the
+1% 0.14 3 1 1 1 . ,.; 1 1 1 Y: 9'14 . 4244f . . 1;. . . 1 ; . . . /,; grab sample (the black dot) taken near ANITA at day
+“’05) 1 Hr j /' j j 1 j / j 17 (10 Oct 2007). The estimates have been filtered
+g 012 7 7 7 7 7 1 7 7 7 y/ 1 7 7 73 711 7 7 7 7 7 7 7 7 7 7 7 7‘1; 7 7/7 7 g withaGaussian filter(FWHM 2.9 hours).
+8 \ I x 16.847 K/ I I \ / I
+\ 1 7Y1 0-12 1 1 1 1 / 1
+0'1 \ x/ The comparisons to the GC analysis on the grab sample
+0.08 \v/ ‘ ‘ ‘ ‘ ‘ ‘ taken in front of ANITA can be summarised as follows:
+15.5 16 16.5 17 17.5 18 18.5 19
+DaySfrom Start24'sep'2007 00:00:00 . 32 gases quantified by GO in grab sample, 13 by
+Figure 4. Details of methanol graph around the grab ANITA
+sample (the black dOt) taken near ANITA at day 17 . Only 4 gases in common (complementary systems)
+(10 Oct 2007). After standard spectral sifting (see the . Methanol, ethanol, and (302 are in good agreement
+tGXt), bOth traces have been filteer With a 5-point . SF6 resuItS do not agree, and it is not readin
+median filter. The green trace has also been filtered apparent why there is this discrepancy.
+with a medium-sized Gaussian filter (FWHM 7.5
+hours) and the blue trace with a longer Gaussian
+filter (FWHM 5 days).
+SAE Int. J. ofAerosp. | V01ume4 | Issuel 457
+
+"
+"8","COMPARISONS TO ALL RELEVANT GRAB SAMPLES 1. 10 October 2007 (ANITA day 17)
+AND OTHER MEASUREMENTS (taken directly in front of ANITA)
+2. 12 November 2007 (ANITA day 50)
+Introduction 3. 7 December 2007 (ANITA day 75)
+4. 11 January 2008 (ANITA day 110)
+When we compare ANITA data to other relevant grab 5- 25 February 2008 (ANITA day 155)
+samples than the one sampled right in front of ANITA’s (taken inside a data gap for ANITA)
+air inlet, the comparisons are normally still fully 6- 19 March 2008 (ANITA day178)
+applicable (refer “Basis for comparisons” above). (taken inside a data gap for ANITA)
+7. 7 April 2008 (ANITA day 197)
+The term “trace” is used in the GSC analytical report to (taken inside a data gap for ANITA)
+describe compounds that are confirmed as present, but 8- 22 May 2008 (ANITA day 242)
+below the lowest calibration point. It is possible to
+estimate the concentration for such a compound, but this In the following subchapters, the results from these eight
+does introduce additional error to the quantification. grab samples are compared to ANITA’S results for nine
+Compounds reported as trace, but shown in the following different gases.
+graphs at derived concentrations are marked in a special
+way in the curves below on carbon monoxide and W
+methane (Figure 11 and Figure 12, respectively). The
+legend for these symbols is shown separately in Figure The overall comparison graph for methanol is shown in
+7, since it is too large for each graph. Figure 8. Details of a small part of this graph are also
+shown in Figure 4. The general picture is that the two
+systems show good agreement. The GC value is higher
+0 NASA GSC data for all the five comparable data points, except the last
+0 NASA GSC data, where ANITA has a data gap one. — The largest difference between the two systems is
+NASA GSC data ..< reported detection limit"" actually for the grab sample taken right in front of ANITA;
+I shown as zero with vertical barindicating detection limit most probably just by chance.
+NASA GSC data ""< reported detection limit""
+D shown as zero with vertical bar indicating detection limit, Methanol
+mANITA data gap 0.45 —Estimates ﬁltered [7.5 hours] . . .
+A NASA GSC data reported as TRACE — Data gaps interpolated
+A NASA GSC data reported as TRACE, in ANITA data gap 0-4 — Estimates ﬁltered [5 days] ‘ ‘
+E 0.35 —Data gapsinterpolated . l ‘
+Figure 7. Common legend for the grab sample data 3/ l l
+in all the comparison graphs. 5 0'3 ‘ ‘ l ‘ ‘ l a l
+E 0.25 l“ ‘ . . l s‘ 7 "" w ~W\\\
+For each gas concentration reported as “trace”, NASA 5 l l l . l l l O M lllll' [J
+has assigned a numeric concentration value, typically § 0'le l l 4i , l“ l ' l1 l ll ‘
+half the estimated detection limit (a triangle in the 0 0'5llll ~ 1: l [l ( O l V
+graphs). For each gas concentration reported as “< l ‘
+reported detection limit”, i.e. not detected (a square in 0.1 x . . . . . .
+the graphs), the data point is shown as zero 005
+concentration. However, in order to indicate the level of ' 0 50 100 150 200 250 300
+the detection limit, i.e. the significance of the non- DaySfrom Start 24-Sep-2007 00:00:00
+detection, a bar up to the detection limit is indicated. For
+the squares and the triangles in the graphs, like for the Figure 8. Methanol: ANITA estimates with NASA‘s
+circles showing the ordinary grab sample data points, the GC estimates indicated as black dots (open circles
+symbols are filled if they can be directly compared to where ANITA has data gaps). Before the specified
+ANITA data and open if they occur in a period where Gaussian filtering, there has been standard spectral
+ANITA has a data gap. sifting followed by filtering with a 5-point median
+filter for both traces.
+The eight grab samples relevant for comparisons were
+taken on the following dates: Ethanol
+The overall comparison graph for ethanol is shown in
+Figure 9 and details in Figure 5. Like for methanol, the
+general picture is that the two systems show good
+agreement, but the agreement is clearly poorer for the
+last grab sample. Also, relative to ANITA, the last grab
+sample gives the clearly most negative deviation.
+458 SAE Int.J.ofAerosp. |V01ume4 | Issuel
+
+"
+"9","Ethanol Perﬂuoro propane
+— Data gaps interpolated — Data gaps interpolated J ""H
+6 —Estimates ﬁltered [5 days] i i i 100 ' ’ ‘ ‘ ‘J W ‘
+E —Data gaps interpolated E Will l
+E 5 lh E 80 ' ' ' ' ' 'llJ '
+ac: l i ( iii i ”i /// cc:
+0 ""H ~ ,1 l ‘ J o
+1 , . Ji { . J . .
+w ll ~ 1 20 Mwllllliiii/Wll ' '
+o I l « . . . . . lillmmmwwwwmwm
+o ”<on
+‘1 0 50 100 150 200 250 300 O0 50 100 150 200 250 300
+Days from start 24-Sep-2007 00:00:00 Days from start 24-Sep-2007 00:00:00
+Figure 9. Ethanol: ANITA estimates with NASA‘s GC Figure 10. Perfluoro propane: ANITA estimates with
+estimates indicated as black dots (open circles NASA‘s GC estimates indicated as black data points
+where ANITA has data gaps). Before the specified (open where ANITA has data gaps). The estimates
+Gaussian filtering, there has been standard spectral have been filtered with a short Gaussian filter
+sifting followed by filtering with a 5-point median (FWHM 40 minutes), except at the steep rise, where
+filter for both traces. the original estimates have been kept. The periods of
+time where the noise looks larger in reality exhibit
+Freon 11 and Halon 3101 regular oscillations induced by the US CDRA (se the
+text, esp. list item A above, and [22]).
+Freon 11 (fluoro trichloro methane, CCI3F) and Halon
+1301 (trifluoro bromo methane, CF3Br) are both Also before any grab sample analysis of PFP in the ISS
+measured at very low levels by ANITA and GSC, and this cabin air had been performed, ANITA’s PFP
+is in agreement with VOA results. ANITA’s results show measurements could undergo solid quality assurance
+higher values and possibly significant variations over based on ISS events. The main aspect without an
+time [22], but this cannot be supported by direct spectral accurate feedback about the ISS measurement quality
+analyses or obvious relations to events on the ISS. The was the scale factor for PFP. Such feedback would in
+VOA and GSC results show Halon 1301 concentrations practice mainly imply an independent check of the gas
+presentduring Shuttle docking, and quickly dissipating to mixing accuracy for the reference measurements of
+zero (<ppt) within a week after Shuttle departs. ANITA’S ANITA (normal accuracy better than 2 °/o for gaseous
+deviations from the VOA and the GSCs may mainly be compounds). No library spectrum for PFP is available to
+caused by a combination of spectral disturbances and give gas concentration feedback like for carbon
+noise. monoxide and methane. However, the combination of
+the large PFP dynamics and the dilution calculations for
+Perfluoro grogane air mixing with visiting spacecraft at modest PFP
+concentrations does not give room for any really
+The initial five grab samples in our comparisons were not significant offset in ANITA’s PFP estimates.
+analysed for PFP because of the extremely low toxicity of
+this compound. Therefore they are not indicated with The ISS crew estimated the size of the main leak of PFP.
+values in the comparison graph for PFP in Figure 10. Diluted in the ISS air volume, the calculated step in PFP
+concentration also matches ANITA’s results. So ANITA’s
+For PFP, ANITA’s measurements have shown that this results on PFP in the ISS air are in accordance with all
+gas leaves the ISS air in significant amounts only known sources of information.
+through air mixing with visiting spacecraft and new
+modules of the ISS, or through air losses [22]. Therefore, Carbon Monoxide
+the PFP curve from ANITA gives a pretty good indication
+of the PFP concentration also in the data gaps. — More In the comparison graph for carbon monoxide in Figure
+detailed PFP values for ANITA’s data gaps can be 11, all the grab sample data are marked as below the
+calculated based on knowledge about the volumes of reported detection limit, and only one value is reported
+visiting spacecraft, new modules, and the ISS overall. as “trace”. For all the five comparable data points, the
+grab samples give no detection, and each data point in
+In the comparison graph of Figure 10, all three grab the graph is indicated as zero concentration with abar up
+sample estimates for PFP are lower than those from to the detection limit (0.5 ppm for the first sample and
+ANITA, but still in good agreement within the uncertainty 0.25 ppm for the other four samples). From the graph,
+of the comparison. we can see that ANITA consistently measured higher
+SAE Int. J. of Aerosp. | Volume4 | Issuel 459
+
+"
+"10","values between 0.7 and 2.2 ppm, i.e. higher than the represents an effective average over about 75
+reported detection limit for GSC. measurements where we have special downlinks
+(including around the points in time for the GSC
+Carbon monoxide samples) and over about 15 measurements elsewhere.
+2'5 _Gas estimates In terms of effective SNR (signal to noise ratio), the
+detection limit for ANITA's CO should therefore be clearly
+2 ii A A A A . ‘3 A below 0.05 ppm.
+A ii
+g H k W [ The scale factor for a gas in ANITA’s calibration relies on
+E15 W ' ' i ' ' h i ' the source gas purity and the gas mixing accuracy for
+'13 km M (0i ﬂit i the reference measurement (normal accuracy better
+“ac: 1| / ht ﬂ ﬂw ﬂ ii inf A , than 2 °/o). Further checking of the resulting reference
+8 r \r Vi MW i concentration was performed through the system testing
+8 i on 30 real gas mixtures. In addition, the accuracy of the
+0.5 A A A A . A reference gas concentration can be checked through
+comparison to a library spectrum. This gives a rather
+rough oheok owing to the unknown (and often
+00 50 100 15 E 200 250 300 questioned) accuracy of the gas concentration applied to
+Days from start 24-Sep-2007 00:00:00 produce the library spectrum. However, comparisons for
+carbon monoxide have ruled out the possibility that such
+Figure 11_ Carbon monoxide: ANITA estimates with errors in the calibration gas concentration could lead to a
+NASA‘s GC estimates indicated as black data points soale error in ANITA in the order of a factor of two or
+(open where ANITA has data gaps). After standard rnore, Wh'Ch WOU'd be necessary to explain the
+spectral sifting, ANITA’s estimates have been filtered differences above.
+with a 5-point median filter and a Gaussian filter with In ANITA’s measurements on the ISS CO is well suited
+FWHM 7'5 hours. for direct spectral analyses as described above. After
+For further comparison, the CSA-CP also produces CO subtraction of the spectral features other gases and
+data. This system has a read-out resolution for CO of 1 averaging 0f many spectra, the very Icharaoteristio
+ppm. It generally shows zero for CO with bounoe to 1 shpeotlral features of CO are easily reoognizable and of
+ppm at times. 'e right srze to match ANITAs estimates. From the
+highest to the lowest concentration the spectral features
+Carbon monoﬁdeAﬁlTeilA 9%: partiCLrillarly we|| Suited for 3:12:32?Sﬁgid'rﬁgyéTgseﬁxﬁmﬁgééhebgoﬁgﬂ:yhghpa;
+measurement y . e gas as a very istinotive . .
+spectral line pattern in a spectral area with moderate Eggggibgpigﬁl ?)?ﬁgis’QZZZZSS'Y: npoéfﬁéuﬁrspgﬁgg
+:Eiﬁjregiz frigtrer’i‘eNrepges, ssgcirafgsﬁost’sngln txzrlySSr-nodest inspection of and calculations on spectral details at the
+time of a local minimum in the carbon monoxide ourve
+ANITA’s curve for carbon monoxide relates well to agree well with ANITA’sIoonoentration estimates. This
+known events on the ISS, most notably the hatch excludes any offset suffioiently large to make ANITA
+openings to visiting spacecraft. And the unexpected _ offseterrors an important source of the differences to the
+and so far unexplained — oonoentration dip before the grab sample estimates.
+first Shuttle visit fits well with a parallel dip for methane . .
+[22]. This combined dip for these two orew-related gases ?grﬁgegiltrrgtiohos Eeﬁzastjlrfgt ripeﬁnralacggfoéiiz vat?
+looks clearly significant, especially since there were no ANITA’s estimated values arg démonstrabl resent in
+observed corresponding effects on other gases or on ANITA’ IR t S Id CO t ANITA? t
+ANITA’s spectra. Thus, there are clear indications that . S 'speo ra. 0200” en er? . sspeo ra
+ANITA’s carbon monoxide curve gives significant W'thO.Ut beinglpresent m the gas oell. Th's '5 hardly
+information, at |eastqua|itative|y. imaginable. Firstly, gases stable In the IR path In the
+Instrument box outsnde the gas cell are cancelled from
+In ANITA's pre-flight system testing on 30 real gas the spectra through'the use 0.“ Ibaok'grouno spectra.
+mixtures, the CO detection limit was estimated to be SgiowglzidannyebheiiraertillcaInga:vggfotlogfegtree gnvsngﬁgt
+slightly below 0.05 ppm. ANITA’s calibration for the ISS Then Gould 00 enterythe as cell from %ther sources
+was later updated in-flight in order to take advantage of ’ . . 9 g. | . | .f h
+the gas scenario observed onboard, which was clearly tharli' thefIShS calbin air. Thésthcoﬁqt IE? possnble II tke
+more favourable than the worst case scenario applied for 2:: ltnhge (satm: Ygtlhrgijsgligr theega: CGIISWLCSn'?h:Za3/é
+the very robust pre-flight calibration. No testing on known . . ' . .
+gas mixtures was then feasible, but simulations in the ff: 'Sazgf/Ig Zéﬁuﬁaed gegorrﬁioﬁfrl‘cgitﬁgetﬁgb'gguggir
+synthetio testing showed improved detection limit for CO Howlzver this wopuldgbe overgom ensate d throgu h the
+by a factor of 2.5. The disturbances on the ISS had small Iow-pressure baokgroun d measureoments becausg then
+consequences for the CO estimates, and the curve the gas cell is pumpe d to a lower pressure and stays
+460 SAE Int. J. of Aerosp. |Volume4 | Issuel
+
+"
+"11","there for a much longer time. Then there would be more Methane
+“false” CO in the background spectrum than in all other 18 _Gas estimates 7 F t F
+spectra, except the first sampling after each background 1_t . , l I
+measurement. Without any leakage, the sampled air is h \
+only exposed to tubing, valves and the gas cell itself. The E 14 ‘ ' Jt \ O ‘ ’ J ‘
+sampling pump is positioned downstream from the gas 312 l a tl \\ ’ a _ l A
+cell. F t l
+1% 10 A a \\ . . 0
+According to these analyses and observations, we have “'05) 8 tttt J t . J . \l t J t .
+not been able to find any sources of error that could 8 6‘ J I . , . \t I ll .
+make ANITA’s estimates different from the GSC results 8 t t t‘ \t M
+in the way we see. 4 t ‘ t ‘ \I‘ f y ‘
+. . . . 2 h, «w WWW“ Wﬂwﬂwt ' \RN / '
+The G80 and Its analysns IS the established reference “t“ A Key
+method for determination of compounds and their 00 50 too 150 200 250 300
+concentration in the ISS atmosphere. The GSCs are leak Days from start 24-Sep-2007 00:00:00
+oheoked (<1x10'2 om3/month) prior to shipment. The
+valve is a metal-metal seal, with no o-rings or other “soft” Figure 12. Methane: ANITA estimates with NASA‘s
+parts. Surrogates are 3(1de t0 the GSCS to insure GC estimates indicated as black data points(open
+sample integrity. Of the three surrogates, 013 -aoetone iS where ANITA has data gaps). After standard spectral
+the most pertinent to this discussion, because of its low sifting, ANITA’s estimates have been fi|tered with a
+molecular weight (i.e., volatility) and itS strong propensity 5-point median filter and a Gaussian filter with
+to adhere to untreated surfaces. Over 20 years, only 2-3 FWHM 75 hours.
+GSCs have leaked on orbit and the leak was due to
+particle matter caught in the metal-metal seal. These The three remaining grab samples (no. 1, 2, and 8) that
+leaks, ee WOUtd be true of any GSC leak, were detected are directly comparable to ANITA estimates are reported
+by sngntftoant losslof surrogate compounds. Even a very as “trace”. This gives a rough quantification Close to zero
+small leak wnll easnly be detected after months of storage. in the scale of the plot, while ANITA measures up to 8
+The GSC analysns for CO IS performed on Valoo helium ppm. These differences called for extra effort in the
+ionization detector. A small sample aliquot IS transferred oross-oheoking of ANITA’s operation and results like for
+to a packed GC column from a sampling valve. The CO above.
+packed GC column insures separation of the light
+components of the mt)l(ture. .The helium Ionization Thanks to ANITA’s technique for calibration, methane,
+detector IS calibrated usnng oerttfted standards and the too, is a gas well suited for measurement by ANITA. This
+oaltbratton '5 checked prior to the analysns. And. the GSC is particularly the case at the low concentration levels
+analyses 'h the present case were performed W'thOUt any observed on the ISS, when all spectral information in the
+5'9“ 0t devnanoe from these standard procedures or main multi-line band of methane can be utilized without
+normal overall quality. optical saturation problems. Like carbon monoxide,
+I I I I methane has a very distinctive spectral line pattern, but
+In oonolusnon, the differences In CO estimates between totally unlike carbon monoxide, there is heavy spectral
+ANITA and the other systems remain unexplained. interference from the C-H parts of many organic
+However, the differences and the CO values themselves molecules. However, this spectral interference is
+are of the same order of magnitude as the detection effectively sorted out by ANITA.
+limits of the other systems. Therefore the differences do
+not represent a b'9 problem. ANITA’s calibration for methane on the ISS was updated
+in-flight in order to take advantage of the favourable
+m concentration range observed. No testing on known gas
+I I I mixtures could be performed, but simulations and
+As can be seen '“ the comparison graph for methane '“ observations allow estimation of the detection limit for
+Figure 12, only two grab samples (no. 5 and 6) have fully methane in the curves from the ISS to be around 0.2
+quantified concentration values. Unfortunately, both ppm or better.
+these samples were taken during a data gap from
+ANITA, but sample no. 5 is sufficiently close in time to Like for carbon monoxide, ANITA’s curve for methane
+support the preceding ANITA data. Also sample no. 6 relates well to known events on the ISS. Also, the
+gives a value that looks quite reasonable compared to unexpected _ and unexplained _ oonoentration dip
+ANITA’S results before and after ”""3 Pomt ""1 t'me- before the first Shuttle visit fits well with the parallel dip
+I I for carbon monoxide, supporting its significance like for
+TWO samples (“0- 3 and 4, Wlth square symbols m the carbon monoxide. Thus, there are clear indications that
+graph) are indicated as zero concentration With bars up ANITA’s methane curve gives significant information, at
+to the detection limit, which is above ANITA’s estimates least qualitatively.
+in this period of time.
+SAE Int. J. of Aerosp. | Volume4 | Issuel 461
+
+"
+"12","Like for carbon monoxide, the source gas purity and the The general information contents of ANITA’s SF6 curve
+gas mixing accuracy for the reference measurement for are confirmed through ISS events like for PFP [22], and
+methane in ANITA were roughly checked and confirmed the dilution calculations for air mixing with visiting
+through comparison to a library spectrum. Likewise, the spacecraft at the lower SF6 concentrations do not give
+fully quantified grab sample no. 5 (and partly no. 6) room for any really significant offset in ANITA’s
+clearly supports the correctness of ANITA’s level of estimates. In addition, the source gas purity and the gas
+response. mixing accuracy for the reference measurement for SF6
+in ANITA could be roughly checked and confirmed
+In the direct spectral analyses, the very characteristic through comparison toa library spectrum.
+spectral features of methane are easily recognizable and
+of the right size to match ANITA's estimates just like for In direct spectral analyses, the very characteristic
+CO. From the highest to the lowest concentration the spectral features of SF6 are easily recognizable and of
+spectral features are scaled accordingly. This excludes the right size to match ANITA's estimatesjust like for CO
+the possibility that important errors are inflicted by line and methane. And in the same way, the analyses
+shape problems, spectral ghosts, excessive noise, or exclude the possibility that important errors are inflicted
+spectral interference from other gases. Also like for by line shape problems, spectral ghosts, excessive
+carbon monoxide, any important estimation offset in noise, or spectral interference from other gases.
+ANITA’s estimates was ruled out through calculations on
+spectral details at the time of a low value in the methane As mentioned earlier, SF6 in the GSC is analyzed by
+curve. GC/MS using a B-faotor value rather than a standard
+calibration mixture. Past experience has shown that for
+Also like for CO, according to these direct spectral some compounds the B-faotor can deviate by as much
+analyses, methane concentrations at least roughly in as 4X the actual response factor for a compound.
+accordance with ANITA’s estimated values are Unfortunately, this difference does not explain the 2
+demonstrably present in ANITA’s IR spectra. And no orders of magnitude difference between ANITA and GSC
+other source of this methane “fingerprint” than methane results.
+from the ISS cabin air in the gas cell seems conceivable.
+In total, ANITA’s estimates of SF6 in the ISS air deviate
+For methane, like for CO, we have not been able to find strongly from the GSCs, and the origin of this difference
+any sources of error that could make ANITA’s estimates is unknown (confer above).
+different from the GSC results in the way we see. All the
+GSC procedures to establish sample integrity (i.e., leak Carbon Dioxide
+checks) and instrument function (standards) applied to
+CO analysis also apply to methane. The main difference The general comparison graph for carbon dioxide is
+is the use Of the flame ionization detector (FID) for shown in Figure 13. Details from a small part of this
+methane. The FID is the detector of choice for simple graph are also shown in Figure 6.
+hydrocarbon compounds (alkanes, alkenes, etc.),
+because the response is very linear and directly Carbon dioxide
+proportional to the oompound’s number of carbons. The r I r _Gas estimates
+degree of confidence is very high for the quantitative 7000 . 0
+accuracy of this method. Therefore, like the CO results,
+the GSCs represent a well established reference method A 6000'] v I I. I , . I I V v
+with no sign of deviance from the standard procedures or g I I II 4 I e I I I I
+normaloverallquality. E5000 iI II I I - I Iii ~ v
+= I II
+In conclusion, ANITA’s methane estimates on the ISS “g 4000 I j «t l II I III ‘ I I III I
+are supported by the GSC at the highest concentration of § , ~ I I I lI I ' II I ’II I I /
+about 16 ppm. The differences between the G80 and 8 3000 I II It I I ’ ‘ I III ‘
+ANITA results for methane concentrations estimated “ I I I I‘ I
+below 10 ppm are unexplained but significant from a 2000 ' ‘ ' ‘ V '
+toxroologioal perspective. 1000 V . , . V V
+O 50 100 150 200 250 300
+Sulghur Hexafluoride Days from start 24-Sep-2007 00:00:00
+AS shown in Table 1, the grab sample taken in front 0t Figure13. Carbon dioxide: ANITA estimates with
+ANITA gave an SFs estimate two orders of magnitude NASA‘s GC estimates indicated as black dots (open
+lower than ANITA- The other grab samples 3'50 ShOW circles where ANITA has data gaps). The estimates
+similar differences to ANITA (bUt WithOUt parallel have been filtered with a Gaussian filter with FWHM
+scaling), so that a common graph would give little 2_9 hours.
+meaningful information.
+462 SAE Int. J. of Aerosp. |Volume4 | Issuel
+
+"
+"13","The general picture is that the two systems show good . Other gases with ANITA estimates above the GC
+agreement for carbon dioxide, especially in the light of values, but at low concentrations where rigorous QA
+the possible Iooal influence from crew presence and for ANITA on the ISS is impossible:
+activity in the different locations for the air sampling of . Halon 1301 estimates by ANITA larger than the
+the two systems. Furthermore, these values are in close GC estimates
+agreement with the CDM, when points can match, and . Freon 11 estimates by ANITA are above the
+lower than MCA. MCA values have been routinely higher reported detection limit for the GSCs with GSC
+than GSC or CDM values. estimates below this detection limit
+W GASES WITHOUT GRAB SAMPLES FOR
+COMPARISON
+For the three fully quantified compounds that are in
+common for ANITA and the grab sample analyses for all For gases that have not been measured on the ISS in
+samples — methanol, ethanol, and carbon dioxide - the parallel to ANITA, no direct comparison is of course
+two Systems show good agreement The same goes for possible. However, for ammonia (ANITA graph in [22]),
+PFP, although this gas was analysed for only in the last NASA has been modelling the air and water contents,
+three grab samples. and ANITA’s results are in good agreement with
+calculations for the ISS.
+For CO, methane, and SF6, the QA (quality assurance)
+Of ANITA’S results through extensive oross-oheoking and ANITA also measured water vapour in the ISS air with
+analyses, only support the results without indicating any presumably good reliability. ANITA’s curve reflects the
+important error. However, ANITA’S estimates for these variations in the MCA results for water vapour, but shows
+three gases show from small to large differences from olearly higher concentrations. The differences may at
+the GSC analyses, which ie the well established least partly be caused by the long, unheated sample
+reference method. The review 0f the GSC sample lines of the MCA. Also, ANITA’s water estimates are
+integrity and analytical method has not uncovered any more in line with the desired humidity levels for the cabin
+deviations that would throw the laboratory results into air.
+question. The origin of these differences is still unknown.
+CONCLUSION
+Freon 11 and Halon 1301 are both measured at very low
+levels by ANITA and GSC’ bUt With higher values from After the successful launch of ANITA on STS 118 in
+ANITA'N‘,’ rigorous QA can supportAN1TAs values, and August 2007 and installation on the ISS in September,
+the devtatiens from the G305 may mainly be'oaused by the system was monitoring the trace gas dynamics in the
+aoomblnatlon of spectral disturbances and norse. ISS cabin air until August 2008. During the mission,
+I I I problems in several areas were solved, leading to an
+Two out of the three Siloxanes In ANITA’s gas list were updated system calibration.
+also apparently detected by ANITA on the ISS, viz.
+hexamethyl oyolo-trisiloxane anct deoamethyl oyolo- On the ISS, ANITA has measured several gases that
+pentasrloxane [221' However, unlike for e.g. CO and currently are not detected by other means (ammonia) or
+methane above, no rigorous. QA for ANITA can support are not routinely measured by reaI-time or arohival
+these values. Also, no applicable reference value from methods, including perfluoro propane and one
+GSC is available, since the siloxanes are not quantified unexpected gas, sulphur hexafluoride. In this case,
+by the GSC method because of poor quantitative results ANITA gave an outlier warning, and the unexpected gas
+dueto wall losses. was detected, identified, and quantified. Later it was
+I I demonstrated how ANITA’s calibration could be updated
+The comparisons to the GSC analysts on the full set of from ground.
+eight grab samples taken in different locations can be
+summarised as fOHOWS: Many gases in the ISS air have, for the first time, been
+. measured with high time resolution. The observed gas
+' Methanol, ethanol, 002, and PFP lh 900d agreement dynamics clearly show effects from spacecraft visits to
+' CO measured by ANITA, With QA support, above the the ISS, crew activities and the number of crew
+reported detection limit for the GSC, but not detected members present, and the functioning of the air
+by the GSC revitalisation systems. ANITA gives detailed time-
+' Methane measured by ANITA,With QA SUPPOTt resolved information on very different gases such as
+. In possible agreement with the two highest GSC carbon monoxide, methane, ammonia, perfluoro
+estimates (> 12 ppm) propane, sulphur hexafluoride, siloxanes, alcohols,
+. At concentrations olearly above the reported carbon dioxide, and water vapour.
+detection limit for the GSC for several samples
+with GSC estimates below this detection limit ANITA’s short response time and high time resolution
+. SF6 measured by ANITA, with QA support, far above makes the system of particular value for detecting and
+the GC estimates following the development of any onboard incident that
+SAE Int. J. of Aerosp. | Volume4 | Issuel 463
+
+"
+"14","affects the cabin air, like leakages or overheating of resolution and is intended to operate primarily on the
+equipment. ANITA’s excellent precision also allows the ISS. This follow-on air monitor is a promising candidate
+detection of slow gas buiId-up from small leakages as for integration into the planning of the future Human
+well as fast feedback on the degree of success of Space Exploration programme.
+countermeasures and olean-up actions.
+
+ACKNOWLEDGMENTS
+On one occasion, ANITA’s gas data helped in the
+diagnosis of a suspected leakage incident on the '88- The described work on ANITA was performed under
+Later it helped to quantify two true leakages 0f perfluoro ESA contract number ESTEC/15743/01/NL/JSS-ANITA.
+propane and to follow the concentration dynamics over
+time. Thereby the attempts at oleanl-up could be REFERENCES
+evaluated and subsequently turned off as Ineffective.
+
+1. Johansen I-R, Honne A, Tsohudi J 1996:
+The reference method for measurement of most gas I . . .
+
+. . . . nvestlgatlon of FTIR Instruments for trace gas
+compounds in the ISS air IS grab samples of the air d t t' S t E V | 8N 6 10-16
+taken by NASA in different locations on the ISS and eecron, peo rosoopy urope, 0' 0' ’ '_
+analysed on ground by various GC-based (Gas 2. Bittner H, tiohansen I-R, Honne A, Tan G 1996.
+Chromatography) and GC/MS (Mass Spectrometry) Breaoboardrng of an FTIR spectrometer for aIr
+systems. A total of eight grab samples relevant for monitoring m manned spacecraft, ICES 1996, SAE
+comparisons to ANITA were analysed, including one technicalpaperno.961372.
+special grab sample taken directly in front of ANITA on 3- Johansen I'R, Lines G T, H0009 A, Midtgaard T
+the ISS for optimal comparison 19972 Calibration Of an FT—IR spectrometer for
+
+ambient air monitoring using PLS, Applied
+The grab samples gave detection and quantification of Spectroscopy, Vol. 51 No. 10, 1540-46.
+more than 30 gases, which compared to ANITA’s 13 4. Tan G B T, Savage C J, Bittner H, Honne A,
+gases, gave an overlap of 9 gases in common. — The Johansen I-R 1997: The monitoring of gaseous
+four gases quantified only by ANITA were ammonia, contaminants in spacecraft cabin atmospheres, ESA
+water vapour, and WC siloxanes. Bulletin, no. 89 Feb., 53-59. (By error, authors no. 4
+
+and 5 were not included in print)
+For four gases — methanol, ethanol, carbon dioxide, and 5_ Stufﬂer T, Bittner H, Honne A, Johansen I-R, Abele
+perfluoro propane — the results from ANITA and from the H, Persaud K, Keding H-J, Tan G, Wessels H, 1998:
+grab samples are 'n 900d agreement. Freon 11 land Fully Operational FTIR Based Multi—Component Gas
+Halon 1301 were measured at very low concentrations Analysis System for Spacecraft Cabin Air Monitoring.
+by bOth systems, bUt at higher values from ANITA' ICES 1998, Danvers, Massachusetts, United States.
+lggienaggnerincesspegrzy drgasjng/ancbgs Caanusecrimisbg iﬁ SAEteohnioal paperseries 981568'
+ANITA 6. Stuffler T, Honne A, Johansen I-R, Abele H, Tan G
+
+' 1999: A Multi—Component Monitoring System for
+
+The three remaining gases in common _ carbon Long Term Gpacecraft Cabin Air Analysis. Part 1:
+monoxide, methane, and sulphur hexafluoride — are also Instrumentation Hardware. Workshop on Advanced
+measured at higher concentrations by ANITA. For these L'fe Support, . ESA/ESTEC’ Noordwijk, The
+gases several types of quality assurance of the results Netherlands, April 13'14 1999- Proceedings: WPP
+from ANITA could be performed, including relations to 163, |SSN1022—6656,June1999.
+known events on the ISS and direct analyses of ANITA’s 7- H0009 A, Johansen I'R, Stuffler T, Abele H, Tan G
+optical spectra. These spectral analyses seem to 19991 A Multi-Component MOWI‘OFI'HQ System for
+exclude that spectral disturbances, noise, or interference Long Term Spacecraft Cabin Air Analysis. Part 2:
+from other gases can have given important errors. Calibration and Analysis Software. Workshop on
+Additionally, it was not possible to find any procedural Advanced Life Support, ESA/ESTEC, Noordwijk, The
+mistakes or deviations from the time-tested GSC Netherlands, April 13-14 1999. Proceedings: WPP
+reference method that would have produced erroneous 163, ISSN 1022-6656,June1999_
+results. Therefore it remains to explain the differences, 8. Stufﬂer T, Honne A, Johansen I-R, Abele H, Tan G
+and further testing is recommended. 1999: Progress in an FTIR-based Multi—Component
+
+Monitoring System for Spacecraft Air Analysis. ICES
+ANITA’s results on the dynamics of gas concentrations in 1999, Denver, Colorado, United States. Paper no.
+the ISS atmosphere have proven the usability of the 1999_01_2150_
+“?ChF‘P'Ogy for air analysis .in ”9”“ cabins. The 9. Honne A, Johansen I-R, Stuffler T, Mosebaoh H,
+Significantly smaller anti more lightweight next 9?“?rat'0.“ Kampf A, Abele H, Tan G, 2000: Current Status of
+FTIR system for continuous air quality monitoring in . . .
+
+. . the ESA FTIR-Based MultI-Component Monitoring
+orewed cabins — ANITA2 — Will be developed based on S t f 8 ﬂ A' A I . ICES 2000
+the lessons learned from the ANITA flight experiment. y S em or pacecr a ’r na y 8’8' ’
+ANITA2 will operate autonomously with high time TOUIOUSG’ France. Paperno. 2000'01'2302
+464 SAE Int. J. of Aerosp. |Volume4 | Issuel
+
+"
+"15","10. Home A, Johansen I-R, Tan G, Stuffler T 2001: Space Station. Part 1: The Mission; ICES 2008, San
+Blind test performance of the ESA FTIR-based Francisco,California, USA. Paperno.2008—01-2042.
+ComponentMonitoring System for Spacecraft Cabin 22. Home, A., Schumann-Olsen, H., Kaspersen, K.,
+DeSign, ICES 2001, Orlando, Florida, United States. Clause“, 8 et alq ""ANITA Air Monitoring 0n the
+Paperno. 2001'01'2157 International Space Station Part 2: Air Analyses,""
+
+11. Stuffler T, Kampf D, Mosebach H, Home A, Ten G SAE [mg JI Aerosp. 1(1)I178-192, 2009,
+2001: ANITA: An FTIR Spectrometer Flight doi:10.4271/2008—01-2043.
+
+Experiment for Spacecraft Cabin Air Analysis. ICES 23. Martens H, Naes T 1989: Multivariate Calibration,
+2001’ Orlando, Florida, United States. Paper “0- John Wiley&Sons Ltd., Chichester, GreatBritain
+2901'01'2160 24. Ahro M, Kauppinen J, Salomaa |, 2000: Detection
+
+12- leero T, James J TI 2001: A P r 00933 to Evaluate and correction of instrumental line-shape distortions
+Advanced Technologies For Future NASA Needs. in Fourier Spectroscopy, Applied Optics Vol. 39, No.
+ICES 2001, Orlando, Florida, United States. Paper 33, Nov. 2000
+“0- 2001'01'2399 . 25. James, J.T., Limero, T., Boyd, J., et al, Toxicological
+
+13- Mosebach H, Stuffler T, Kampf D, GIIer M, Home A, Assessment of the International Space Station
+Johansen ""R, Tan G 20023 Advanced Trace Gas Atmosphere from Mission 5A to 8A. SAE Technical
+Monitoring ”7 Manned Space Cabins - ESA'S Air Paper Series 2002-01-2299, 32nd International
+Analyser ANITA. Part 1: Instrument Description. 2nOI Conference on Environmental Systems, San
+Workshop on Advanced Life Support, ESA/ESTEC, Antonio, Texas, July 2002
+Noordwijk, The Netherlands, Apr” 2002- 26. EPA website for Air Toxic Methods:
+
+14. Home A, Johansen I-R, Mosebach H, Stuffler T, Tan httg://www.ega.gov/ttn/amtic/airtox.htm|
+G 2002: Advanced Trace Gas Monitoring in Manned
+Space Cabins - ESA's Air Analyser ANITA. Part 2:
+
+Calibration and Analysis Software. 2nOI Workshop on
+Advanced Life Support, ESA/ESTEC, Noordwijk, The CONTACT
+Netherlands, April 2002.
+
+15. Stuffler T, Kampf D, Mosebach H, Glier M, Home A, Atle Honne
+Tan G 2002: Status Report on ANITA, an FTIR SeniorResearch Scientist
+Spectrometer Flight Experiment for Manned Space SINTEF ICT
+Cabin Air Analysis, ICES 2002, San Antonio, Texas, P.O.BOX 124, Blindern
+United States. Paper no. 2002-01-2454. N-0314 OSIO
+
+16. Stuffler T, Kampf D, Mosebach H, Home A, Tan G Norway
+2003: ANITA — The Optimized Spacecraft Air Monitor . . I
+on its way to Orbit, ICES 2003, Vancouver, Canada. Location: Forsknmgsvelen 1’ OSIO
+Paper no. 2003'01'2548. Telephone. (+47) 22 06 73 00
+
+17. Stuffler T, Kampf D, Mosebach H, Home A, Direct line: (+47) 22 06 7711
+Odegard H, Tan G 2004: Anita and Anita ll - FaX- _(+47)22 06 73 50
+O timized Anal zers for Advanced Air Qualit Cell phone. (+47) 93 05 92. 86
+
+p . . . y y E-mall: Atle.Honne@smtef.no
+Monitoring [/7 Crewed Spacecraft, ICES 2004,
+Colorado Springs, Colorado, United States. Paper
+no. 2004-01-2265.
+
+18. Home A, Odegard H, Schumann-Olsen H, Stuffler
+
+T, Mosebach H, Kampf D, Tan G 2005: ANITA —
+Preparing for Automatic Air Analyses on the ISS;
+ICES 2005, Rome, Italy. Paper no. 2005-01-2931
+
+19. Stuffler T, Mosebach H, Kampf D, Home A,
+Odegard H, Schumann-Olsen H, Tan G 2006: The
+ANITA Air Monitoring Programme and
+Instrumentation - ISS and other Applications; ICES
+2006, Norfolk, Virginia, USA. Paper no. 06|CES-94
+
+20. Stuffler T, Mosebach H, Kampf D, Home A,
+Odegard H, Schumann-Olsen H, Tan G 2007: The
+[88 Air Monitor ANITA — Going into Operation on
+[88; ICES 2007, Chicago, Illinois, USA. Paper no.
+07|CES—187
+
+21. Stuffler T, Mosebach H, Kampf D, Home A,
+Schumann-Olsen H, Kaspersen K, Supper W, Tan G
+2008: ANITA Air Monitoring on the International
+
+SAE Int. J. ofAerosp. | V01ume4 | Issuel 465
+
+"
+"16","(multivariate statistical method)
+ANITA: Analysing Interferometer for Ambient Air
+SNR: Signal to Noise Ratio
+CDM: Carbon Dioxide Monitor
+TGM: Trace Gas Monitoring
+CSA—CP: Compound Specific Analyzer — Combustion
+Products VOA: Volatile Organic Analyzer
+ESA: European Space Agency
+Calibration model: In connection with the ESA TGM
+EXPRESS: EXpedite the PRocessing of system: A vector (set of numbers) to be multiplied with a
+. . measured absorption IR spectrum to produce a value for
+Experiments to Space Station .
+a gas concentration. (One model for each gas
+(rack for electronic equipment) compound)
+FID: Flame Ionization Detector Calibration modelling: The process of producing
+optimized calibration models, applying advanced
+FTIR: Fourier Transform Interferometerl-metry Simulations and multivariate statistical analyses.
+. . Outlier: A value or set of values that are abnormal, e.g.
+FWHM: FU” W'dth at Half Maxnmum out of specification or indicating an error. Outlier values
+or more complex outlier situations are discovered
+GC: Gas Chromatography through special analyses leading to outlier detection,
+typically leading to a proper outlier warning.
+GSC: Grab Sample Container (Also used to
+denote the techni ue a | in G80 and Residual spectrum: The remainder of the measured
+I q ppy 9 absorption spectrum after the properly scaled reference
+analyses Wlth GC and GC/MS) spectrum for each detected gas compound has been
+subtracted. In popular terms the residual spectrum
+|ss; International Space Station represents the “unused” or unexplained part of the
+measured spectrum.
+JSC: Johnson Space Center, Houston, Texas Synthetic spectrum: An absorption spectrum
+I I constructed as the sum of the properly scaled reference
+MCA: M6110r Constituent Analyzer spectrum for each detected or simulated gas compound.
+MS: Mass Spectrometry
+466 SAE Int.J.ofAerosp. |V01ume4 | Issuel
+
+"

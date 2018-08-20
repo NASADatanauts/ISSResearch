@@ -1,0 +1,714 @@
+"","x"
+"1","Hindawi Publishing Corporation
+The Scientiﬁc World Journal
+Volume 2013, Article ID 185769, 12 pages
+http://dX.doi.org/10.1155/2013/185769
+Hindawi
+Research Artzcle
+O O O
+CIB: An Improved Commumcatlon Archltecture for
+O O O O
+Real-Tlme Momtormg of Aerospace Materials, Instruments,
+and Sensors on the 188
+Michael I. Krasowski,l Norman F. Prokop,1 Joseph M. Flatico,2 Lawrence C. Greer,l
+Phillip P. Jenkins,3 Philip G. Neudeck,l Liangyu Chen,2 and Danny C. Spina4
+1 NASA Glenn Research Center, 21000 Brookpark Road, Cleveland, OH 44135, USA
+2 Ohio Aerospace Institute, NASA Glenn Research Center, 21000 Brookpark Road, Cleveland, OH 44135, USA
+3 U. S. Naval Research Laboratory, 4555 Overlook Avenue SW, Washington, DC 20375, USA
+4]acobs Technology, NASA Glenn Research Center, 21000 Brookpark Road, Cleveland, OH 44135, USA
+Correspondence should be addressed to Norman F. Prokop; norman.f.prokop@nasa.gov
+Received 12 Apri12013; Accepted 4 June 2013
+Academic Editors: T. E. Matikas and M. R. Woike
+Copyright © 2013 Michael I. Krasowski et al. This is an open access article distributed under the Creative Commons Attribution
+License, which permits unrestricted use, distribution, and reproduction in any medium, provided the original work is properly
+cited.
+The Communications Interface Board (CIB) is an improved communications architecture that was demonstrated on the Interna-
+tional Space Station (188). 188 communication interfaces allowing for real-time telemetry and health monitoring require a signiﬁ-
+cant amount of development. The CIB simpliﬁes the communications interface to the 188 for real-time health monitoring, telemetry,
+and control of resident sensors or experiments. With a simpler interface available to the telemetry bus, more sensors or experiments
+may be ﬂown. The CIB accomplishes this by acting as a bridge between the ISS MIL-STD-1553 low-rate telemetry (LRT) bus and the
+sensors allowing for two-way command and telemetry data transfer. The CIB was designed to be highly reliable and radiation hard
+for an extended ﬂight in low Earth orbit (LEO) and has been proven with over 40 months of ﬂight operation on the outside of ISS
+supporting two sets of ﬂight experiments. Since the CIB is currently operating in ﬂight on the 188, recent results of operations will be
+provided. Additionally, as a vehicle health monitoring enabling technology, an overview and results from two experiments enabled
+by the CIB will be provided. Future applications for vehicle health monitoring utilizing the CIB architecture will also be discussed.
+1. Introduction dose damage associated with total ionizing dose (TID) or
+_ _ _ _ _ _ through single event effects (SEE). Long-term or TID results
+The Internat1onal Space Stat1on 15 a un1que space veh1cle m in permanently damaging an IC by altering the crystal lattice
+that it is currently the largest artiﬁcial satellite in orbit around of the semiconductor, which can result in changing bias
+the Earth. The U S port1on 0f the 135 has been des1gnated voltages and currents which affect circuit operation. Where
+as a nat1onallaboratory bY the Congress. The 135 PtOtheS single event upsets (SEU) are transient, energy is transferred
+a umoue environment 0t extreme hot-cold thermal cycl1ng, from ionizing particles to the 1C. This energy transfer is
+cosm1c rad1at1on exposure l1l> atom1c oxygen presence, vac- localized, so individual transistors on an 1C are affected.
+uum, and m1crograv1ty. Th1s allows for long durat1on exper- Single events caused by radiation may only result in the ﬂip of
+1ments and space test1ng 0t deV1ces and structures. Wh1le a single bit or the corruption of an analog signal. If an affected
+testing and experiments take advantage Of this unique enVi- bit is part of an instruction for microcontroller or processor,
+ronment, facility equipment must operate reliably in it. EleC- the result could result in operational failure. Further, an SEE-
+tronic components and integrated circuits (1C) are especially induced phenomenon known as a single event latchup (SEL)
+susceptible to radiation effects from the environment in LEO. could also result in a loss of data but, in extreme cases, may
+These effects can present themselves in two ways: long-term cause a hard destructive failure which could result in the
+
+"
+"2","2 The Scientiﬁc World Journal
+permanent loss of a circuit component. With this in mind, considerations. The CIB was designed by the NASA Glenn
+care must be taken in the design of any electronic system Research Center (GRC) Mobile and Remote Sensing (MaRS)
+expected to operate reliably on the 188 for extended period of Laboratory. The ﬁrst experiment set to utilize the testbed
+time and be tolerant of the expected radiation environment. was the Materials on the International Space Station Seven
+To support science payloads, the 188 as a facility provides (MISSE7) [5]. MISSE7 was comprised of numerous passive
+three telemetry communications interfaces [2] for resident experiments and over 21 active experiments using the com-
+experiments with its associated physical layer/protocol: low mand and telemetry capabilities provided by the CIB. MISSE7
+rate data link: MIL-STD-1553; medium rate data link: Ether- used two Extra-Vehicle Activity (EVA) deployable suitcase-
+net; and high rate data link: ﬁber optic. Each interface can like containers called a Passive Experiment Container (PEC)
+provide telemetry to the ground. Increased bandwidth comes in which numerous experiments are contained. These PECs
+with increased cost in development to meet the physical inter- are carried by astronauts, opened, and mounted on the ELC.
+face requirements. The only interface available throughout When the experiment was completed, an additional EVA was
+the 188 is the MIL-STD-1553 bus. In addition to telemetry used to retrieve the PECs and install a new one for the follow-
+data, the Mil-STD-1553 bus performs the command, health, on experiment set, MISSES. This exchange required aphysical
+and status data transfer. This is done for safety reasons, so that communications link which was swappable. The need for
+health and status data are transmitted on the most reliable on-orbit exchange of PECs required a physical communi-
+communication bus. cations link robust enough to withstand potential damage
+The MIL-STD-1553 [3] “Aircraft Internal Time Division encountered during the swap.
+Command/Response Multiplex Data Bus” deﬁnes a physical The CIB was installed during Space Transportation
+layer as well as a bus protocol. The MIL-STD-1553 bus is System-129 (STS-129) and is currently ﬂying on the exterior
+highly reliable and robust in that it is a deterministic com- of the International Space Station mounted on the Express
+mand and response protocol. The 188 adds additional layers Logistics Carrier 2 (ELC-2). The CIB provides a simple, RS-
+to those of the MIL-STD-1553 standard, in effect making 485-based communications interface between experiments,
+the ISS MIL-STD-1553 implementation a superset of the instruments, or sensor systems and the ELC’s MIL-STD-1553
+military standard.Which allows ISS MIL-STD-1553 hardware bus. This allows developers to design on simple platforms
+to interface with other space and aircraft platforms, but not without having to confront the difﬁculty of integrating their
+necessarily the converse. The MIL-STD-1553 bus is deployed experiments directly into the ELC or the 188. The CIB
+on numerous U S military aircrafts including the F-16 Falcon, currently provides serial communication supporting twenty
+F/A-18 Hornet, AH-64 Apache, and P-3C Orion and has active systems. Figurel shows the CIB within the MISSE7
+also been adopted by North Atlantic Treaty Organization communication architecture including the interface to the
+(NATO). The MIL-STD-1553 bus transmits data at 1 Mbit/sec- ISS telemetry through the ELC. Follow-on experiments
+ond. The command and response protocol of the bus adds (MISSES) leave the CIB in place and swap out one or both
+overhead, reducing the effective bit rate for data transfer. In of the allowed PECs.
+addition, the ISS adds overhead to the bus transfers. One This paper will discuss in detail the technical devel-
+layer added by 188 to the MIL-STD-1553 telemetry is the Con- opment and design of the CIB hardware and architecture.
+sultative Committee for Space Data Systems (CCSDS) head- Recent results from current operations aboard the 188 will be
+ers, which allow for data telemetry routing in space. Each provided. Speciﬁc experiments supported by the CIB like a
+node in the telemetry system is provided with a unique appli- Silicon Carbide Junction Field Effect Transistor (SiC IFET)
+cation identiﬁer (APID), which is part of the CCSDS header, health monitoring and a solar cell health monitoring will be
+to enable routing. These APIDs allow a user on the ground to discussed. Future health monitoring applications to include
+receive telemetry and command their node from anywhere node to node schemes will also be brieﬂy discussed.
+with internet connectivity. The 188 allots 12.8 kBytes of tele-
+metry data per second, some of which is used for overhead. 2. CIB Design
+The 188 allows commands from the ground to be routed to
+APIDs residing on the MIL-STD-1553 bus. The CIB is designed to be a highly reliable and radiation
+Onboard the 188, there is an Express Logistics Carrier hard communications bridge from the ISS/ELC MIL-STD-
+(ELC) facility which is primarily designed to store 188 1553 to onboard experiments, sensors, and health monitoring
+replacement parts but also has two science payload slots per systems. The CIB is constructed from components designed
+platform [4]. Each science payload site has 28 V and 120 V or known to be radiation tolerant of LEO conditions for over
+power available. A MIL-STD-1553 communications repeater 20 years of operation. Further, the CIB is designed to be toler-
+(bus controller) link to the 188 is also provided by the ELC, ant of the electrostatic discharge (ESD) anticipated to occur
+allowing telemetry data to pass through. during removal and insertion of new payload systems over
+The CIB was needed to be the communications backbone multiple missions.
+for a permanent testbed on the ELC of the 188 which would Communications over each RS-485 bus was limited to
+utilize the ISS telemetry of the MIL-STD-1553 bus. The 9600 baud, which is 9600 bits of data per second for eight
+CIB needed to provide simpler communication interface to bit words. Though theoretically capable of at least ten times
+experimenters while maintaining the reliability expected of this bandwidth, the CIB was designed for 9600 baud as a con-
+a space ﬂight system on the 188. The CIB needed to be sequence of some experiments in MISSE7 being only capable
+designed with radiation tolerance and reliability as primary of that rate due to hardware or software constraints. Thus,
+
+"
+"3","The Scientiﬁc World Journal 3
+MISSE7
+delivered on STS—129
+Passive Experiment
+Container (PEC)
+Downhnk
+telemetry ' EX '
+International p ress . .
+Space MIL-STD-1553 LogiStiCS MIL-STD-1553 (lomnfmmcauons
+- nter ace Board 85 us
+”“0“ Ca” (CIB) —m
+Uplink (133) (ELC) .
+command/ I
+FIGURE 1: Diagram of the MISSE7 communication architecture and interface to the International Space Station telemetry through the Express
+Logistics Carrier.
+the lowest common denominator dictated bus speed. A This transmission scheme allows for the full duplex hard-
+reprogrammed CIB could support higher baud rates and ware Universal Asynchronous Receiver Transmitter (UART)
+could dynamically Change baud rate to accommodate each common to most microcontrollers/microcomputers/Compu-
+experiment. A block diagram of the CIB interfaced to a string ters or Which can be easily conﬁgured into programmable
+of experiment systems is given below in Figure 2. Note that logic or as a software UART routine on microcontrollers
+all systems interface to the CIB Via a full duplex RS-485 Which allow for interrupt on transition. Thus, systems may
+bus system and each system has associated With it a unique be easily conﬁgured using simple and available hardware and
+hardware enable line. design tools.
+The byte format is 8bit, one start bit, stop bit, and no
+3. Hardware Interface parity. The baud rate is 9600 Which simpliﬁes requirements
+for the simpler hardware and offer forgiveness in timing and
+The RS-485 standard speciﬁes a multidrop serial bus Which deskew.
+can be full or half-dupleX. The CIB implements a full duplex The CIB rotates around through its list of 20 APIDS,
+multidrop bus, Where each experiment or sensor is a stub or polling each experiment one at a time, in order, as long as
+drop on the bus, and reception and transmission happen on power is applied. This method is Chosen as the desired way to
+separate lines. Since MISSE7 was to support two physically maximize bandwidth for the experiments. If a system needs
+separate experiment containers, the designers provided two to pass more than one packet set of data, it merely waits until
+RS-485 buses from the CIB, one for each container. The the CIB returns to it at a later time.
+multidrop bus provides a concern for reliability as one errant In addition to the transmission lines (TX), receive lines
+transceiver can corrupt the bus. To mitigate against this risk, (RX), +5 Volt power, and ground are the enable lines for the
+the CIB implements a hardware transmission enable, as well experiments. Within the example experiment hardware is the
+as requiring a software enable function on the experiment logic to enable failsafe transmission on the shared RS-485 bus
+side. as required by the CIB Interface Control Document [6]. The
+Experimenters must provide a hardware handshaking separate enable Wire provided to each experiment is detailed
+interface as shown in Figure 3, wherein the enable line from in the following illustration in Figure 4.
+the CIB is shown schematically to provide one half of a An enable line is pulled low for a particular system prior
+signal set necessary to enable a system’s transmit hardware. to the CIB transmitting to that system. A 10 Volt transient
+The second half of the signal set is provided by the system absorber (dual redundant 5volt transient absorbers) and a
+through response to an initiating packet transfer from the 1k!) resistor occupy the output of each enable line as shown
+CIB on the RS-485 bus containing the system’s APID. This in Figure 4 and are present to mitigate against electrostatic
+interface prevents experiments from transmitting Without discharge and also to a short to +28 condition should it occur
+being selected and communicated to by the CIB. The interface at an experiment. As noted earlier, the enable Wire is used
+must be implemented in hardware so that the experiment by the system to enable its transmitter hardware if it has also
+cannot interfere With the RS-485 bus during communications received a valid packet from the CIB. Commencement of the
+slots not associated With it. The cause of this out of order bus packet transfer from CIB occurs no less than 250 ms from the
+use could be the result of a software failure, for example. The assertion of enable. This enable signal removes the obligation
+CIB maintains a permission bitmap that can be overwritten of the systems from having to monitor all the trafﬁc on the TX
+by a command from the ground. If a given experiment is line whilelistening for transmissions dedicated to themselves.
+locked out Via the bitmap (for any number of scheduling Also, this active low enable signal can be used to locally
+reasons or after detection of system failure), its enable is never enable a pass element to provide the system power. Thus, an
+asserted and is prevented from communicating. experiment may come alive upon a powerup initiated by this
+
+"
+"4","4 The Scientiﬁc World Journal
+Dual redundant MIL-STD-1553 bus to 188
+W W
+m m . , .
+CIB Experlment Experlment Experlment
+BU-63825D1-110 number 1 number 2 number n
+‘ ' Serial communications
+G1 . DSl6F95 bus to experiments
+4 ’- mn m.- m.-
+54ACXX _€ XMIT+ ‘
+pm. Ib-AII‘ XMIT_D~Oﬂ"".-l-IIII—IIII—IIII‘
+‘2‘ JIM W|Illl-III-III
+3‘) Data 5 TX ’ 1 (.1-
+co » «II-MftRCV-M
+I_l ‘ 2 - ‘n w _ i
+g ADER DRX MUX J'DAIi RCV+ ”0 -I—II_II .-
+g ‘ E 1 2 Select
+g I 8 IICTRL e V I
+o D E _
+g ‘ g ENBO |
+2 select 2) g ENBO a I 1 ton ENABLE lines |- PEC
+E 9* - bus to experiments
+2 INSTR > 8. g - _
+g ‘ ADDR 8 ENE
+g I 33; I 00 71 >37 . Ground return
+8, ‘. CTRL km to experlments
+S _ Common
+<1 7
+FIGURE 2: A block diagram of the Communications Interface Board (CIB) interfacing between the International Space Station (188) MIL-
+STD-1553 bus and the experiments residing on the Passive Experiment Container (PEC) (image courtesy of NASA).
+An example schematic for experiment n stub onto the PEC RS485 bus and to its ENABLE
+using the DSl6F95
+TX+ TX— RX+ RX— +5 GND ENBO ENBn ENBz
++5
+Recieve W-
+- E
+--w l_-
+'Iéd
+:-
+; -""IIII
+. I
+.— W III-Il-
+Transmit -gb I'll
+SERIAL . A
+ENABLE V
+Note: the above NOR gate represents a NOR function N AS A GRC ﬂight electronics lab
+and does not necessarily specify the use of a NOR gate Stubbing in
+SERIAL ENABLE is generated by experiment 11 upon valid
+handshake with CIB after assertion of ENBn
+FIGURE 3: Schematic diagram of the RS-485 bus interface provided to experiments by Communications Interface Board (CIB) (image courtesy
+of NASA).
+
+"
+"5","The Scientiﬁc World Journal 5
+CIB PEC ground. This relieves developers from the task of implement-
+ing CCSDS packet handling.
+> 1.0 KLW Experiments can be controlled through commands of up
+Exp 1 ENE 10V01t to 104 bytes in length. N0 processing is done on commands
+- by the CIB; they are simply passed to the experiment.
+b 1.0K, L w Commands may contain any kind of data including ﬁrmware
+Exp 2 ENE :10V01t updates. Experiments are polled in round-robin fashion, each
+transaction requiring roughly 2.5 seconds. Experiments can
+transmit up to 2 MB/day. An experiment may receive a com-
+; mand from the ground or transmit data during a single
+° transaction. Data from the experiment is wrapped in a
+CCSDS packet and buffered in the MIL-STD-1553 transceiver.
+MIL-STD-1553 transactions occur in frames. The minor
+1.0K,LW . . . . .
+b A frames contain different transactions. A ma}0r frame c0ns1sts
+EXp nENB 10“)“ of minor frames. The major frames are repeated. The ELC
+uses ten 100 ms minor frames for each major frame. The result
+is that data packets received from experiments are buffered
+FIGURE 4: Schematic of the CIB enable lines for experiments a maximum of one second before being transmitted on the
+onboard the PassiveExperimentContainers (PECs).Current1imit- MIL-STD-1553 bus. In addition to passing data, the MIL-
+ing resistors as well as voltage limiting Zender diodes to protect CIB STD-1553m0dule initializes the transceiver, updates the time,
+enable circuitry from experimental failure are shown within the CIB and transmits the health and status packets ofTable 1 once per
+(image courtesy of NASA). major frame.
+signal. The systems are expected to be capable of accepting a 5' CIB Hardware
+packet from the CIB 250 milliseconds from the assertion of The core of the CIB is the 80C32E-5962-0051801QQC radi-
+the enable, and so boot-up must occur consistent with this t' t 1 t 8 B' t ROMl . t 11 Th' f
+delay. Failure to receive this command and reply after 250 ms aﬁon O eran f 1 t' estimiffrocontro erIEh é?) 3:31;) r1131 8
+results in the CIB disasserting the enable line and moving ah p $013688ng unc. ions W1 in e 8Y8 em. e ﬁ . 7218.
+on to the next experiment. This is of consequence to a sys- :61: :ractivifﬁeliahn‘ellignnnalihﬁi (21322321311? sge5c1c)catlionsin[ 11'
+tem which uses the time between sequential acquisitions of eveﬁDt latch-u (§EL) below zlinear ene)r transfecr) (SLEEP:
+itself by the CIB to perform its tasks. After completion of task p 2 . gY
+and data transfer with the CIB, a system may turn itself off. tgreSEOIEOf 8.0 MeV/(mg/cm ’ and is tested up t: a total dose
+Removal of power when not operating reduces some radia- O 30 ra 8 (SI) accor ing to MIL-.STD-883.met 0d 1019'
+tion total dose effects and can also remove the conditions for Program memory for the CIB 1s stored.1n the AT28C010_
+and thus Clear a nondestructive latchup. 12DK_MQ_.1281.<X8 p arallel EEPROM.WhiCh 1s reprogram-
+EaCh transfer starts with a packet from the CIB containing malgie in CH?“ f}; the bench bu}: Whifh flslant. reprogram-
+the experiments APID, and so theoretically experiments d0 ma e on-or 1? e ATZSCPIO as t e O ow1ng enV1r0n-
+not need to consider the state of an enable line but merely mental operating speoc1ﬁcat10ns [8]: temperature range is
+listen for their APID. Given this fact and since the two com- military (_55 Czto 125, C)’ no SEL below an LET thresholti Of
+munications busses are RS-485 links, with proper wiring con- 80 MeV/mg/cm ’ and is tested up to a total .cose 0f(acc0rd1ng
+siderations, over thirty experiments per RS-485 bus are poss- t0 MILTSTD'883 method 1919): 10 krad (SI) read-only mode
+ible with a re pr 0 g r a m m e d CIB. when biaseci and 30 krad (Si) read-only mode when unbiased.
+Dynamic memory for the CIB is embodied in an
+. . M65608E-5962-8959818MZC radiationtolerant128KX8 very
+4' SOftware Descnptlon low-power Complementary Metal OXide Semiconductor
+The CIB ﬁrmware is built on a commercially available real- Static Random Access Memory (CMOS SRAM)- The
+time kernel. The ﬁrmware consists of serial input/output, M65608M has the following environmental operating spe-
+CCSDS packet building, time keeping, and MIL-STD-1553 Ciﬁcations [9]: military temperature range is (‘55 C to
+support modules in addition to top-level modules that man- “250(3): 110 SEL below a LET threshold 0f 80 MeV/mg/cmz
+age data handling and p011 experiments. @ 125°C, and is tested up to a total dose of 30 krad (Si) accord-
+Data handling is straightforward. Experimenters have ing to MIL'STD'883 method1019.
+only to implement avery simple protocol to enable communi- MIL'STD'1553 communications are effected through the
+cation. A11 packets have a ﬁxed length. Command packets are BU'63825D1'300 Space Advanced Communication Engine
+116 bytes long, data packets are 1274 bytes long, and acknowl- (SP’ACE 11) BC/RT/MT interface module. The SP’ACE H has
+edgment packets are 10 bytes long [6]. The CIB will query the following environmental operating speciﬁcations [10]:
+experiments one at a time. Each query has the form in BOX 1. total gamma dose immunity Ofl X 106 Rad, LET thIGShOId Of
+The ﬁrmware packs experiment data into CCSDS packets 63 MeV/mg/cmz, and a soft error rate of 2.56 X 10—5 errors/
+for transmission and unpacks commands received from the device-day.
+
+"
+"6","6 The Scientiﬁc World Journal
+/ENBn for experiment 11 is asserted
+After 250 milliseconds the CIB will transmit:
+SOP CRC Address Timestamp Packet Type Command or Padding
+If the above packet is valid the experiment will transmit:
+SOP CRC Address Timestamp Packet Type Data and/ or Padding
+If the CIB receives a valid packet from the experiment the CIB will acknowledge the packet:
+SOP CRC Address Timestamp Packet Type 2 ACK
+B0X1
+TABLE 1: Health and status packet format transmitted once per major frame (once per second).
+Type Variable Description
+Unsigned char opto[2] State of optoisolators that determine whether the A0 and FTSCE experiments are enabled
+Unsigned long last_polLtime Beginning of the current polling cycle
+Unsigned short pochycles Number of completed polling cycles
+Unsigned char p011_map[20] Determines which experiments are to be polled
+Unsigned short sequence[20] Packet sequence number of each of the experiments
+Unsigned char valid_crc[20] 0><FF = valid
+Unsigned long last_cmd_time[20] Time last experiment command received
+Unsigned long last_cib_cmd_time Time last CIB command received
+Unsigned char valid_ack[20] 0><FF = valid
+Unsigned short cmd_cnt[20] Count of commands sent to experiments
+Unsigned short cib_cmd_cnt Count of commands sent to CIB
+Unsigned short err_cmd Command for nonpolled APID. Error 2 APID. 0><FFFF = no error
+Unsigned short err_poll Invalid polling table received. Unused
+Unsigned char last_cmd[106] Last command transmitted to experiments
+Unsigned char last_cib_cmd[106] Last command transmitted to the CIB
+Unsigned char last_ftsce_cmd[100] Last command sent to FTSCE
+Unsigned char ftsce_data[124] Data transmitted by FTSCE
+Unsigned char reserved[64]
+
+The core components of the CIB hardware are listed in materials, systems, and components exposed to LEO. The CIB
+Table 2 along with their relevant environmental speciﬁca- was and is the core of two of the earliest science payloads 0n
+tions. the ELC afﬁxed to the external structure of the 188 as part of
+
+MIL-STD-1553 coupling transformers and the two Clock an Express Payload Adapter (EXPA). These two experiments,
+crystals are screened for space applications. All other active deployed by astronauts during EVA, are MISSE7 and -8.
+components are deemed radiation hard to this mission MISSE7 was deployed, had a successful mission, and was
+through consultation with the customer. A photograph of subsequently returned to Earth. MISSE8 remains on orbit at
+the CIB is given in Figure 5. The radiation environment in the time of this writing. The CIB was delivered to the ISS
+LEO consists primarily 0ftrapped protons with some galactic 0n STS-129 in November 2009 along with MISSE7. Table 3
+cosmic rays and solar particles. The expected and agreed lists experiments which use command and telemetry data
+to limit for total ionizing dose for the CIB was less than provided by the CIB. MISSE7 then returned when MISSE8
+300 rad(si) per year (behind shielding). The CIB componen- was delivered in May 2011, with the CIB remaining aboard to
+try is accepted to be SEU tolerant and SEL hard to the ISS provide the simpliﬁed telemetry interface for MISSE8. Table
+LEO radiation environment. As such, the CIB was designed 4 lists MISSE8 experiments utilizing command and telemetry
+for long duration survival to the LEO radiation environment. data enabled by the CIB. MISSE8 is scheduled for return in
+
+March 2014.
+6. Results The original intent for the CIB was to embody the com-
+munications component of a MISSE-speciﬁc infrastructure
+The Communications Interface Board, or CIB, embodies the capable of supporting two PECs with up to 20 separate
+ﬁrst demonstration of a permanent communications and experiments with power, uplink, and downlink capabilities.
+control interface for deployable experiments to Characterize A PEC is a suitcase-like metal container which, when opened
+
+"
+"7","The Scientiﬁc World Journal 7
+TABLE 2: CIB core system components and respective environmental operating speciﬁcations.
+Function Part number Temperature range Single event latchup (SEL) Total radiation dose
+threshold
+Microcontroller 8OC32E —55°C to 125°C >80 MeV/mg/cm2 3O krad (Si)
+Program memory AT28C010 —55°C to 125°C >80 MeV/mg/cm2 3 Ofrlaﬂagff aﬁfndihblie d
+Dynamic memory M65608E —55°C to 125°C >80 MeV/mg/cm2 30 krad (Si)
+MIL STD_1553 BU-63825 Immune 1 Mrad
+interface module
+91.49%” B i .. 1; _ _ _ ) the experiments listed in Table 3 on MISSE7 and Table 4 on
+(“J6 ‘k‘: .3123??? -»i M; Q‘ MISSES, respectively. Broad applications enabled by the CIB
+JJ, s. g - - “v J a should be noted, from processor testing to solar cell health
+§1....,l7§ Jlﬁfxrﬁ‘ ”T RT t—fj monitoring and from CMOS image sensor testing to a variety
+:th Er’m'jg J """"""J J . ""é"" 134' of materials testing. Two individual experiments speciﬁcally
+f” 5 1: 3H; . d .. related to vehicle health monitoring will be discussed in the
+”T FT‘J EH ‘1 :— ' next section.
+“12,17 ; ' ,5 5 7: 7. Health Monitoring Enabled by the CIB
+. u : : :-
+2 V ;;.. gta.ﬁm___.§—lll /,y\ Z]. SiC IFET Health Monitoring Experiment. An example of
+m :11 U I — l. '2: ‘ a health monitoring circuit ﬂown on MISSE7 was the silicon
+9‘3“ 1*“ l y. carbide (SiC) Junction Field Effect Transistor (IFET) Experi-
+tm w, . [44: ""au’ '1‘. ment designed by the NASA GRC mobile and remote sensing
+. . . laboratory and SiC development group. NASA GRC has a
+FIGURE.5: Photograph of the ﬂight Communications Interface Board long history in extreme temperature range silicon carbide
+(CIB) Circuit board. This image was taken prior to delivery, during . . .
+functional testing of the circuit board, and prior to the insertion of electronics and packaglng ﬂevelopment haV1ng demonstrated
+the ﬂight MIL-STD-1553 transceiver (image courtesy of NASA). SIC loglc c1rc:11ts operatlng over a temperature range Of
+—125 C to 500 C [11]. Current long duration extreme tem-
+perature testing is performed in laboratory ovens and cold
+chambers, but future use is anticipated on ﬂight vehicles. In an
+and deployed, presents two opposing experiment surfaces. effort to demonstrate the technology in a ﬂight environment,
+Two PECs can thus provide zenith and nadir along with ram a health monitoring experiment was designed for SiC IFETs
+and wake presentations. This infrastructure greatly reduces in high temperature packaging which was the ﬁrst space
+the ISS interface complexity for future MISSE experiments. ﬂight of this technology. The experiment consisted of two SiC
+Experimenters would thus have a well-deﬁned power and IFETs, one in room temperature commercial packaging, the
+communication interface to the 188 to build to as well as other in high temperature packaging developed by the Ohio
+an EVA compatible mechanical structure for deploying two Aerospace Institute and NASA GRC [12].
+MISSE style PECs. Further, continuous monitoring of com- The experiment monitors the current versus voltage
+ponents and samples while on orbit removes the requirement transfer characteristics or a curve trace of both transistors
+of an experiment returning to Earth for postmission analysis. during the ﬂight. The transfer characteristics of the transistors
+As such, at end of mission, experiments may be disposed of show any electrical or physical degradation of the transistors,
+Via deorbiting as will be the case for part of MISSES. which is the primary concern of this experiment demon-
+The decommissioning of the space shuttle brought with stration. This transfer characteristics are generated with a
+it a loss of EVA deployable experiments, and as such the microcontroller-based curve tracing circuit. The CIB RS-485
+PEC structure is inconsistent with new requirements for protocol includes a timestamp in each transaction, which
+robotic deployment of science payloads and environmental the SiC IFET uses to determine when to initiate a curve
+sensors for insertion onto the ELCs. However, the CIB argu- trace. To minimize bandwidth used, the SiC IFET experiment
+ably represents a communication and control interface for a will only run once every hour. When the CIB queries this
+system consistent with current speciﬁcations. experiment, if the timestamp does not lie in the ﬁrst ten
+While the CIB hardware currently residing on ELC2 minutes of the hour, the experiment will power itself down
+onboard the 188 may not be utilized after the completion to wait for the next query. In addition to using the CIB enable
+of MISSES, it should be recognized that the architecture is line as asafety to lockout transmission on the RS-485 bus, this
+suitable for future use in vehicle health monitoring applica- experiment uses the enable line as a signal to a latch to enable
+tions. The current hardware design has been proven to be powering up. The CIB assertion of the enable line powers the
+highly reliable in the demanding space ﬂight environment. experiment up, after which the experiment listens for the CIB
+The simple telemetry interface provided by the CIB enabled command packet. The experiment receives the timestamp,
+
+"
+"8","8 The Scientiﬁc World Journal
+TABLE 3: Materials on the International Space Station Experiment Seven (MISSE7) ﬂown on 188 from November 2009 to May 2011.
+Short experiment name APID Experiment description Provider
+M CPE 1300 Mu1t1core processor smgle event upset Naval Research
+testmg Laboratory
+. SiC transistor health testing [12], H2
+GRC eXpenment set 1301 sensor, and zenith/nadir AO monitor NASA GRC
+SEUXSE 1302 XilinX FPGA SEU Testing sandla Natlonal
+Laboratory
+Not used 1303
+Not used 1304
+CIE 1305 CMOS imager experiment Assurance technology
+FTSCE II 1306 Solar cell health monitoring [14—18] EﬁﬁiNASA GRC’ and
+Boeing ram side experiment 1307 Materials testing Boeing
+High performance low-power
+HyperX 1308 processor, SEU testing [19] NASA GSFC
+“ ,, Advanced processor design SEU
+SpaceCube A 1309 testing [20, 21] NASA GSFC
+“ ,, Advanced processor design SEU
+SpaceCube B 1310 testing [20, 21] NASA GSFC
+Wake atomic oxygen ﬂuence
+Wake AO ﬂuence monitor 1311 monitor/thermal control paints NASA GRC
+Experiment
+Boeing wake side experiment 1312 Materials testing Boeing
+AFRL wake 1 1313 Tribology measurements AFRL Dayton, U Of
+Florlda
+AFRL wake 2 1314 Tribology measurements AFRL Dayton, U Of
+Florlda
+AFRL ram 1 1315 Tribology measurements AFRL Dayton, U Of
+Florlda
+AFRL ram 2 1316 Tribology measurements AFRL Dayton, U Of
+Florlda
+iMES A 1317 ?gigmtunzed electrostatlc analyzer US. Air Force Academy
+LTESE 1318 Lead-freetechnology expenment 1n M SF C
+space env1r0nment
+. NASA ARC, NASA LaRC,
+Ames 1319 Thermal protectlon systems sensors N AS A ISC, and Boeing
+Boeing PICA 1320 Materials testing Boeing
+Ram atomic oxygen ﬂuence
+monitor/thermal control 1321 NASA GRC
+paints experiment
+determines if the time is Within the ten-minute Window, and the atomic oxygen ﬂuence monitor, neither of these Will be
+then either proceeds With curve tracing or goes to sleep. discussed. The design of the CIE enables many types ofhealth
+Figure 6 shows experiment data in the form of curve monitoring to be performed, With the sample rate being the
+traces from midﬂight monitoring of the SiC transistor health. limiting factor.
+Both the room (Figure 6(a)) and high temperature (Figure
+6(b)) packaged transistor test data are shown. The graph 22. Forward Technology Solar Cell Experiment 11. Another
+overlays preﬂight curves With those 6 months into the ﬂight. experiment toward vehicle health monitoring enabled by the
+These midﬂight results show no degradation of transistor CIB is the Forward Technology Solar Cell Experiment 11
+performance during the 6-m0nth period [12]. (FTSCE II). The experiment was designed by the U. S. Naval
+The experiment board shown in Figure 7 resided at APID Research Laboratory With instrumentation development by
+1301 as shown in Table 3. In addition to the SiC IFET the NASA GRC MaRS Lab. This experiment monitored
+experiment, the circuit board and electronics set also sup- solar cell health by measuring current versus voltage (I-V)
+ported two additional experiments the Makel Gas Sensor and curve Characteristics. Space vehicles in Earth orbit rely on
+
+"
+"9","The Scientiﬁc World Journal 9
+TABLE 4: Materials on the International Space Station Experiment Eight (MISSES) ﬂown on 188 from May 2011 to present (Apri12013).
+Short experiment APID Experiment description Provider
+name _
+None 1300
+Reﬂectarray 1301 Characterize performance of components of N AS A GR C
+a ﬂeX1ble, phased array antenna
+SEUXSE 1302 XilinX FPGA SEU testing Sandia National Lab
+Not used 1303
+Not used 1304
+Lockheed Martin, IAXA,
+PASCAL 1305 Primary arcing effects on solar cells at LEO Kyushu Institute of
+Technology
+FTSCE III 1306 Solar cell health monitoring [23—25] NRL, NASA GRC, and AFRL
+Not used 1307
+High performance low-power processor,
+HyperX 1308 SEU testing [19] NASA GSFC
+SpaceCube A’ 1309 Advanced processor design SEU testing NASA GSFC
+SpaceCube “B” 1310 Advanced processor design SEU testing NASA GSFC
+TO-8 40 ym/lO ym JFET T = 296 K 0 8 40 Mm/ 10 Mm HT-JFET T = 296 K
+0.8 .
+0V 0V
+0.6 0.6
+A Q
+E —1 V g -1 V
+D
+:9 A E —2V §
+§ 0.4 ‘2V 3 g 0.4 To
+‘0 >0 a >
+g —3 V a
+<6 3-1
+—4V
+0.2 0.2
+—5 V _ 6 V
+—6V ,
+/ —8V
+0.0 —8V 0.0 2 -10V
+0 5 10 15 0 5 10 15
+Drain voltage VD (V) Drain voltage VD (V)
+— 0h — 0h
+(a) (b)
+FIGURE 6: Current versus voltage transfer curves for given gate voltages of the two ﬂight silicon carbide (SiC) Junction Field Effect Transistors
+(IFETS). (a) shows characteristics for room temperature packaged IFETs, for preﬂight, and after over siX months of ﬂight. (b) shows the
+characteristics for the high temperature packaged SiC IFET (image courtesy of NASA).
+photovoltaic 0r solar cells as their power source. Space enVi- Photovoltaic cells have current versus voltage Character-
+ronment effects can degrade photovoltaic cell performance istic Which can provide insight into the health of the cell.
+providing less power to the vehicle, and thus affecting the Figure 8 shows an example of a solar cell I-V curve from
+health and operating envelope of the space vehicle. While initial FTSCE II on-orbit data. Performance degradation of
+technology can be used to mitigate the degradation, the space the cell Will show up as less current output, shifting the
+vehicle designer and operator should know how the system curve in Figure 8 downward along the vertical aXis as the cell
+Will degrade and respond to the changing power system degrades. FTSCE II is comprised of 36 experimental solar
+output. cells as shown in Figure 9 along With measurement circuitry
+
+"
+"10","10 The Scientiﬁc World Journal
+AO Fluence Monitor SiC JFET High . 7—1:: L"" ' r. ‘1 «‘—
+Tnsor Connector E 3 in Temp Pa/ckage ‘ J :7' j ‘\‘_
+_ ,,,._~~ .. , v , t f _ - “ ‘1‘ 7
+~ . . ,. . , -""-T'""'.""',':':' ~ . ' - ‘
+//\\ IL“!_ /, /\\- l ' r???:?r Dim! 5 ""H . “‘3 >3—
+Eghvre‘zgﬁgtnm ?;?ngFEaTcg’goem \Makel Gas FIGURE 9: Sun. looking face of the Passive Experiment Container
+Sensor (PEC) containing passwe material samples and cells as ﬂown on
+Materials International Space Station Experiment 7 (MISSE7). Solar
+FIGURE 7: Silicon carbide junction ﬁeld effect transistor (SiC IFET) cells can be denoted bY the wires to attach to the measurement
+health monitoring ﬂight experiment circuit board (image courtesy Cil’CUitl’Y 0f the Forward Technology 30131” Cell Experiment H
+of NASA). (FTSCE 11) (image courtesy of NASA).
+0.45 the CIB may also be realized with a different hardware set
+0.4 9. . . . . .9. . .9. .9. ... § , ... . . . . . . . . . . . . . . to suit other needs. For instance, in a more benign environ-
+035 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\ _ _ _ _ _ ment, the choices for suitable hardware increase signiﬁcantly
+9 and the design could also be shrunk physically. The hard-
+0'3 9 warecouldbeimplementedinavarietyofprocessingplat-
+é 0-25 """"""""""""""""""""""""""""'""""""""""§ ' "" formswhichmightevenincludetheMlL-STD-1553interface
+< 02 ......................................¢. .. onboard. OnelikelyhardwaretargetfortheClBarChitecture
+0.15 9 isaﬁeldprogrammablegatearray(FPGA).Thisreconﬁgur-
+o able platform would allow the processing unit and commu-
+0'1 o nicationto eXistinsingle 1C,greatlyshrinkingthephysical
+0-05 o footprint ofthe circuitry. A smaller CIB would provide
+0 greater access to additional ﬂight platforms.
+0 0-5 1 1-5 2 2-5 Another consideration for future use is the reliability of
+Volts the sensors and instruments which utilize the RS-485 bus. As
+9 FTSCE II the sensors mature and are demonstrated to be more reliable
+sun angle ~5°, in operation, the enable lines provided by the CIB might not
+temperature 52°C be needed. This elimination would reduce the wiring needed
+FIGURE 8: Typical I-V (current versus voltage) curve for a solar cell as well as the phy81cal Slze Of the CIB' , ,
+as measured by the Forward Technology Solar Cell Experiment 11 I-lardware Chapges are not the only p oss1ble archltecture
+(FTSCE II). modiﬁcations which would lead to expanded use. Software
+alterations may also be applied to allow increased use of
+the architecture. For instance, current CIB protocol might
+be expanded. The CIB operated with a command/response
+to provide l-V curve data along with environment parameters protocol, where the CIB controlled the RS- 485 bus in much
+of temperature and sun position in relation to the solar cells. the same way as the bus controller in the MIL—STD-1553 bus.
+The measurement hardware Of FTSCE H ﬂown on MISSE7 One feature possible on a command/response bus is node
+is actually a reﬂight of the same hardware originally designed to node communication. Because the CIB uses packet-based
+for and ﬂown as FTSCE I on MISSE 5 [131° FTSCE H resided at transfers, the software protocol could be expanded to include
+the APID 1306 and would transmit data packets consisting of these no de to node transfers, whereby a request for node to
+l-V curve data along with relevant environmentalparameters. no de transfer is communicated to the bus controller, which
+Future results covering the complete FTSCE ll experiment is then granted by the CIB through an additional message.
+are expected, while selected results from in ﬂight data are Even in the current conﬁguration, node to node transfer is
+presented in [14—17]° possible, since a node needs only to actively listen to the bus,
+for messages encoded in its packet.
+8. Future Health Monitoring Applications Future use of this architecture may be a vehicle health
+monitoring bus included in aircraft/spacecraft electronic
+The CIB design discussed in this paper is one possible systems. The CIB or future hardware could be the interface
+hardware implementation of the architecture. This design was between all health monitoring sensors and the crafts central
+focused on providing reliable operation within a radiation control unit. Used in this manner, the CIB could provide
+environment. So, the hardware implementation described the craft with vehicle health information through a single
+represents a design to achieve this goal. The architecture of interface such as the MlL—STD-1553 bus.
+
+"
+"11","The Scientiﬁc World Journal 11
+9. Conclusion [3] “Aircraft internal time division command/response multiplex
+data bus,” Tech. Rep. U.S. Department of Defense MIL-STD-
+This paper demonstrates that the CIB is an improved archi- 1553B,1996.
+tecture enabling simple vehicle health monitoring on the 18$. [4] “EXPRESS Logistics Carrier (ELC) development speciﬁcation,”
+While the 188 has in place a communications architecture Tech. Rep. NASA SSP-52055 Revision C, 2006.
+which enables health monitoring, telemetry, and CODtl‘OL the [5] P. P. Jenkins, R.].Wa1ters, M. I. Krasowski et a1., “MISSE7: Build-
+CIB improves and adds to this infrastructure by providing a ing a permanent environmental testbed for the international
+simpler interface. This iS accomplished by interfacing with space station,” in Proceedings of the 9th International Conference
+the 155 MIL-STD-1553 bus and providing two multidrop 0n Protection ofMaterials and Structures From Space Environ-
+RS-485 busses for experiments, sensors, and health mon- ment (ICPMSE ’08),V01. 1087,1313. 273—276,May 2008'
+itoring systems to communicate on. The RS-485 busses [6] “Communications interface board serial interface speciﬁca-
+make available the MIL-STD-1553 telemetry, command, and tion,” Tech. Rep. NASA/NRL 1CD Document, Rev1s1on 9, 2009.
+control services without the complex development required [7] Atmel C01”P01” ation, “Raci. T016131“ 8—bit ROMICSS Microcon-
+for MIL-STD-1553. This simpler interface enables sensor and troller 80C32E Datasheet, 2007' _
+instrumentation development for vehicle health monitoring [8] Atmel Corporation, Space l'MBlt (138K)“) Paged Parallel
+applications. EEPROMS AT28C010-12DK Datasheet, 2011.
+The CIB provides this simpler communication interface [9] Atmel Corporation, “Rad. TOICrant IZSKES’ 5‘V01t Very LOW
+while maintaining the reliability expected of a space ﬂight Power CMOS SRAM M65698E Datasheet, 2008‘
+system on the 188. The CIB was developed with radiation [10] Data Dance Corporation, BU_63285,SP§ICC Level MIL_S,TD_
+. . . . . . . 1553 BC/RT/MT Advanced Commun1cat1on Engine (SPACE
+tolerance and re11ab111ty as the prlmary des1gn cons1derat10ns. II . ,,
+. . )TermmalDatasheet, 2005.
+Wlth over three years of successful operatlon on the 188 over ,
+. . . . [11] P. G. Neudeck, M. I. Krasowskl, L.-Y. Chen, and N. F. Prokop,
+two m1ss10ns, the CIB has proven to be hlghly rehable and “Ch . . _ . . . .
+, , , , , aracter1zat10n of 6H 81C IFET 1ntegrated c1rcu1ts over a
+[0161‘th t0 the _LE0 rad1at10neny1r0nment wh11epr0v1d- broad temperature range from —150°C to +500°C,” Materials
+mg s1mpler vehicle health monltorlng communlcatlon sup- Science Forum, vol. 6 45—6 48, pp. 1135—1138, 2010.
+port. _ _ [12] P. G. Neudeck, N. F. Prokop, L. C. Greer III, L.-Y. Chen, and
+The CIB also enabled future materlals and deV1ce devel- M. I. Krasowski, “Low earth orbit space environment testing of
+opment WhiCh lead to further use in health monitoring extreme temperature 6H-SiC IFETS on the international space
+systems. This paper gave two examples of a health monitoring station,” Materials Science Forum, V01. 679-680, pp. 579—582,
+experiment ﬂown on the external 0f the 188 for over a year. 2011.
+The SiC [PET is a high temperature component which has [13] M. I. Krasowski, L. C. Greer, I. M. Flatico, P. P. Jenkins, and
+uses throughout a vehicle to include health monitoring in D. C. Spina, “Big science, small-budget space experiment pack-
+extremely hot environments. The ﬂight on MISSE7 was the age aka MISSE-5: a hardware and software perspective,” in Pro-
+ﬁrst space ﬂight of this technology and was only possible with 533557485 0f the 19th Space P hOtOVOZWC Research and Technology
+the simple telemetry interface provided by the CIB. FTSCE Conference, September 2005'
+11 demonstrated solar cell health monitoring on the 188 with [14] P' R Jenkins) R- 1' Walters, M' Gonzalez et a1., “Initial resflfs
+real-tim e telemetry enabl e d by the CIB. from the second forward technology selar celi experiment, in
+The CIB design discussed is one implementation of the Proceedings of the 35th IEEE Photovoltazc Speczalzsts Conference
+. . . . (PVSC 10 ), pp. 1124—1127, June 2010.
+archltecture. Th1s archltecture mlght be expanded on or .. , ,
+. . . [15] K. M. Edmondson, A. Howard, P. Hausgen et a1., In1t1al on-
+implemented differently for a different platform. Another . . .
+
+. . . . . . . orb1t performance ana1y31s of Inverted Metamorph1c (IMM3I)
+processmg technolegy mlght be utlhzed 111 the archltecture 1n solar cells on MISSE-7,” in Proceedings of the 37th IEEE Pho-
+a more benlgn env1r0nment such as an alrcraft. Future soft- tovoltaz‘c Sp e cz‘ alists Conference (PVSC >11), pp. 3719_3723, June
+ware development may use the CIB protocol to support node 2011.
+to node transfer, allowing sensor fusion techniques for vehicle [16] T. Stern and A. Reid, “Modular solar panels using components
+health monitoring. engineered for producibility,” in Proceedings of the 37th IEEE
+
+Photovoltaic Specialists Conference (PVSC ’11), pp. 1626—1629,
+Acknowledgments June 2011.
+[17] A. D. Howard, D. M.Wi1t, P. P. Jenkins, K. M. Trautz, P. Hausgen,
+The authors would like to acknowledge George Y- Baaklini, and I. M. Merrill, “Selected on-orbit data from the FTSCE II
+branCh ChiefOfthe Optlcal Instrumentation and NDE Branch aboard the MISSE 7 testbed,” in Proceedings of the 38th IEEE
+at the NASA Glenn Research Center, and Robert Walters 0f Photovoltaic Specialists Conference (PVSC ’12), pp. 3275—3280,
+the Naval Research Laboratory for support of this work. This June 2012.
+work was funded by the U. S. Naval Research Laboratory. [18] T. D. Sahlstrom, P. E. Hausgen, I. Guerrero, A. D. Howard, and
+N. A. Snyder, “Ultraviolet degradation testing of space protect-
+References ive coatings for photovoltaic cells,” in Proceedings of the 33rd
+IEEE Photovoltaic Specialists Conference, pp. 1—5, May 2008.
+[1] “Space station ionizing radiation design environment,” Tech. [19] A. S. Keys, 1, H. Adams, R. E. Ray, M. A. Johnson, and J, D.
+RCP- NASA 3313-30512 Revision C, 1111161994. Cressler, “Advanced avionics and processor systems for space
+[2] “International standard payload rack to international space and lunar exploration,” in AIAA Space 2009 Conference and
+station, software interface control document part 1,” Tech. Rep. Exposition, Anaheim, Calif, USA, September 2009, AIAA 2010-
+NASA SSP, 52050 Revision G, 2007. 8783.
+
+"
+"12","12 The Scientiﬁc World Journal
+
+[20] D. Petrick, “SpaceCube: current missions and ongoing platform
+advancements,” The MAPLD Workshop, 2009, https://nepp
+.nasa.g0V/map1d_2009/.
+
+[21] K. M. Zick, C.-C. Yu, I. P. Walters, and M. French, “Silent data
+corruption and embedded processing with NASA’S spacecube,”
+IEEE Embedded Systems Letters, vol. 4, no. 2, pp. 33—36, 2012.
+
+[22] R. Balthazor, M. G. McHarg, C. L. Enloe et a1., “Sensitivity
+of ionospheric speciﬁcations to in situ plasma density obser-
+vations obtained from electrostatic analyzers onboard of a
+constellation of small satellites,” in Proceedings of the AIAA/USU
+Conference on Small Satellites, SSC12-IV-1, Logan, Utah, USA,
+2012.
+
+[23] B. Cho, R. Lutz, I. Pappan et a1., “IMM experimentation in
+the next frontier: Emcore’s participation in the MISSE-S pro-
+gram,” in Proceedings of the 35th IEEE Photovoltaic Specialists
+Conference (PVSC ’10), pp. 110—112, June 2010.
+
+[24] T. D. Sahlstrom, P. E. Hausgen, D. M. Wilt, A. D. Howard, M.
+D. Anderson In, and N. A. Snyder, “Space ﬂight experiment:
+advanced solar cells and protective materials on the ISS exte-
+rior,” in Proceedings of the 35th IEEE Photovoltaic Specialists
+Conference (PVSC ’10), pp. 2610—2615, June 2010.
+
+[25] S. Gasner, M. Tresemer, S. Billets, D. Bhatt, and P. Wallis,
+“Design & fabrication of the lockheed martin solar cell demon-
+stration experiment for the ISS Forward Technology Solar Cell
+Experiment 11,” in Proceedings of the 34th IEEE Photovoltaic
+Specialists Conference (PVSC ’09), pp. 791—793, June 2009.
+
+"
+"13","7"""" —
+‘F‘ ' ‘ “'_""‘,-"" '.  ‘_5' am; “,1 ' \‘h
+__,‘—f"" . ' /' \xs .5 "" ""I ““1517; .
+x 0 . \‘/__.«';'» -
+-__...., m
+. l I ‘ g
+. . .5 I Advances in ‘_ \ >
+Journal of - . .
+The S ClentlﬁC Electrical and Computer A M Mechanical
+World Journal Engineering "" _ Engineering
+I
+y
+Intgrnatipnal Journal of
+Dlstrlbuted
+Sensor Networks
+E, “~23 . .
+a . a I H I ndaWI --
+VLSI Design , , _
+I ""$1 Submit your manuscripts at __ .,
+. QM; http://www.hmdaWI.com -' '
+c. .53.». Modelling&
+.73? :4:- Simulation
+‘ , ' ‘ in Engineering
+I
+_ Journal Of _ . f‘ Hmﬁemmaﬁfﬂeymxu med @u‘
+.. < 5:32? ?fref‘ .,; Amfrgmmga @mﬂ
+- - (7‘ Va ~ x 70/"" “
+. 9. $51!]? Pwpgggﬁmm
+- , - -> ' 539%?"" A 1, Advances in
+I -"""""" ‘ / T l, I j 2‘, V, OptoElectronics
+Joumamf N W C? ‘ Mm“ U . ‘\r""""""“' - .‘
+v’ _ "" q 15/: ' ‘ _ 1 ' ‘ -«————_
+Sensors ‘ w ' , ~
+, s 9,. 1‘ ' ' ‘
+_ — ‘ -.-..- :7: r. . v...
+_ _ . -~ J. ,y. g r .. .. - -
+' L \ ﬂ“\ ' é— ' A. ""Jag “r ,, j; #F'ﬁ"" - rsi..'-.'i‘.5-lv!}!‘=..':5-"".'
+"" ‘ . ME: - i D“ ‘ ; l_..rx '1. I“ ""III. _ _I""L':'i;ll1.'i;L—E-E3{ '|
+‘ . 7‘ » . 5 ‘ V— - 1' :t. ‘3. .b 'l _.- ..-_ Mir _
+- . r» . -: Mamaﬁ
+ISRN ISRN ISRN ISRN ISRN
+Electronics Civil Engineering Robotics Signal Processing Sensor Networks
+
+"

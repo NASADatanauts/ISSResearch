@@ -1,0 +1,506 @@
+"","x"
+"1","Radiat Environ Biophys (2011) 50:115—123
+DOI 10.1007/S00411—010—0330—0
+ORIGINAL PAPER
+Dose estimation for astronauts using dose conversion coefﬁcients
+calculated with the PHITS code and the ICRP/ICRU adult
+reference computational phantoms
+Tatsuhiko Sate - Akira Endo - Lembit Sihver -
+Koji Niita
+Received: 31 March 2010/ Accepted: 28 August 2010/ Published online: 11 September 2010
+© Springer—Verlag 2010
+Abstract Absorbed—dose and dose—equivalent rates for Introduction
+astronauts were estimated by multiplying ﬂuence—tO—dose
+conversion coefﬁcients in the units of Gy.cm2 and SV.Cm2, Evaluation of doses for astronauts due to cosmiC—ray
+respectively, and cosmiC—ray ﬂuxes around spacecrafts in exposure has been an essential issue in the planning of
+the unit of crn_2 s_l. The dose conversion coefﬁcients long—term space missions. Several experiments (e.g.
+employed in the calculation were evaluated using the Yasuda et a1. 2000; Badhwar et a1. 2002; Cucinotta et a1.
+general—purpose particle and heavy ion transport code 2008; Reitz et a1. 2009; Yasuda 2009) have been carried
+system PHITS coupled to the male and female adult ref— out for measuring organ doses in anthropomorphic phan—
+erence computational phantoms, which were released as a toms placed inside or outside spacecrafts. These studies
+common ICRP/ICRU publication. The cosmiC—ray ﬂuxes revealed that doses to the skin were higher than those for
+inside and near to spacecrafts were also calculated by other organs, especially for organs located deep inside the
+PHITS, using simpliﬁed geometries. The accuracy of the phantoms such as stomach, because of body self—shielding.
+obtained absorbed—dose and dose—equivalent rates was For estimation of stochastic risks, evaluation of doses for
+veriﬁed by various experimental data measured both inside such interior organs is more important, since they are
+and outside spacecrafts. The calculations quantitatively generally considered to be radiologically more sensitive in
+show that the effective doses for astronauts are signiﬁ— comparison with the skin. However, the doses for the
+cantly greater than their corresponding effective dose interior organs of an astronaut cannot be directly measured,
+equivalents, because of the numerical incompatibility since it is practically impossible to insert radiation detec—
+between the radiation quality factors and the radiation tors into his/her organs. Thus, computer simulations must
+weighting factors. These results demonstrate the usefulness be used in the evaluation of doses for interior organs and
+of dose conversion coefﬁcients in space dosimetry. effective dose.
+Many authors calculated the doses for astronauts by
+T. Sato (E) - A. Endo performing cosmiC—ray transport simulation in computa—
+Japan Atomic Energy Agency, 2-4, Shirakata—Shirane, tional anthropomorphic phantoms placed inside simpliﬁed
+TOka?’ Ibaraki 319—1195? Japan. structures of spacecrafts, using deterministic codes or
+e—ma11:sat0.tatsuh1k0@Jaea.g0.Jp , ,
+Monte Carlo codes (e.g. Hoff et a1. 2004; Ballar1n1 et a1.
+L. Sihver 2006; Trovati et a1. 2006; Cucinotta et a1. 2008; Slaba et a1.
+Chalmers UniVefSity 0f TCChHOIOgya 2009). Generally, simulations employing Monte Carlo
+41296’ GOthenburg’ Sweden codes are too time—consuming to evaluate astronaut doses
+L. Sihver for various conditions. Adoption of ﬂuence—tO—dose con—
+Roanoke College, 221 College Lane, version coefﬁcients in the dose estimation is an effective
+Salem, VA 24153, USA solution to reduce the computational time required for the
+K. Niita Monte Carlo simulation. For that purpose, evaluation of
+Research Organization for Information Science and Technology, the converSion COCfﬁCientS from ﬂuence t0 nOt only organ
+2—4, Shirakata—Shirane, Tokai, Ibaraki 319—1106, J apan absorbed doses but also organ dose equivalents is necessary,
+@ Springer
+
+"
+"2","116 Radiat Environ Biophys (2011) 50:115—123
+since the organ dose equivalent is generally used as a particles play the dominant role in the astronaut—dose
+surrogate for the equivalent dose in space dosimetry, as estimation.
+suggested in Report 153 of the US National Council on To evaluate the applicability of the calculated dose
+Radiation Protection and Measurements (NCRP) (NCRP conversion coefﬁcients to space dosimetry, astronaut doses
+2006). The dose equivalent can be estimated from the were estimated by multiplying the conversion coefﬁcients
+probability density of absorbed dose in terms of unre— (given in the units of Gy.cm2 and SV.Cm2) and the cosmic—
+stricted linear energy transfer (LET) coupled with the ray ﬂuxes (given in crn_2 s_l) inside and outside space—
+radiation quality factor of the Q(L) relationship deﬁned in crafts. The cosmiC—ray ﬂuxes were calculated from particle
+Publication 60 (ICRP 1991) of the International Commis— transport simulation in which simpliﬁed geometries of
+sion on Radiological Protection (ICRP). spacecrafts were coupled with the PHITS code. A detailed
+Recently, a set of conversion coefﬁcients from ﬂuence description of the calculation procedure is presented below,
+to organ absorbed doses, organ dose equivalents, effective together with some comparisons between calculated and
+doses, and effective dose equivalents were reported for measured values. The numerical equivalence of the wR
+various particles over wide energy ranges (Sato et al. values with the mean quality factors based on both LET
+2009a; Sato et al. 2010). The numerical values of the cal— and y is also discussed by comparing the obtained effective
+culated data were complied in Microsoft Excel ﬁles named doses and effective dose equivalents for astronauts.
+DDCC: Databases of Dose Conversion Coefﬁcients, and
+released to the public Via its Web site (DDCC 2010). Those
+data were calculated using the general—purpose 3—dimen— Materials and methods
+sional Monte Carlo particle and heavy ion transport code
+system PHITS (Niita et al. 2006; Sihver et al. 2010), Estimation of cosmiC—ray ﬂuxes around spacecraft
+coupled to sex—speciﬁc voxel phantoms that represent the
+ICRP Reference Male and Reference Female (ICRP 2009). It is well known that the cosmiC—ray ﬂuxes around space—
+These phantoms are referred to as the ICRPHCRU adult crafts are signiﬁcantly different from those in free space,
+reference computational phantoms in this article. The since the primary cosmic rays are decelerated by the
+radiation and tissue weighting factors, referred to as wR and structures of the spacecrafts, and a variety of secondary
+wT, respectively, updated in ICRP Publication 103 (ICRP particles are produced inside the materials used. We
+2007) were employed in the present calculations. In space therefore performed cosmiC—ray transport simulations
+dosimetry, the term “effective dose” is frequently used around spacecrafts with the PHITS code (Niita et al. 2006;
+interchangeably with “effective dose equivalent”, which is Sihver et al. 2010) version 2.16 and estimated the ﬂuxes of
+the sum of organ dose equivalents weighted by wT, but cosmiC—ray protons, neutrons, electrons, positrons, photons,
+these quantities are explicitly distinguished in this article. pions and heavy ions with atomic numbers up to 28 (Ni)
+Conversion coefﬁcients for the dose equivalents calcu— inside and outside the spacecrafts. The energy ranges of the
+lated based on the Q(y) relationship deﬁned in ICRU calculated cosmiC—ray ﬂuxes were from 10 meV to
+Report 40 (ICRU 1986) instead of the Q(L) relationship 100 GeV for neutrons, 1 MeV—100 GeV for protons and
+have also been reported (Sato et al. 2009a, 2010). These pions, 1 MeV/nucleon to 100 GeV/nucleon for heavy ions,
+data were estimated using a function for calculating the and 10 keV—10 MeV for electrons, positrons and photons,
+probability density of the microdosimetric quantity y in a respectively.
+macroscopic area implemented in the PHITS code (Sato PHITS is a general—purpose 3—dimensional Monte Carlo
+et al. 2009b). The Q(y) relationship expresses the radiation particle transport code system. It can deal with the transport
+quality as a function of the lineal energy, y, for a site of all kind of particles including heavy ions over wide
+diameter of 1 urn in tissue. High—energy particles generate energy ranges, using a variety of physical models imple—
+a number of 5—rays that can deposit their energies far away mented in the code. The uncertainties associated with the
+from the trajectories of the primary particles, and the code for space dosimetry was examined in several studies
+reduction of their ionization densities due to this phe— (Sato et al. 2005, 2006; Sihver et al. 2007, 2008). In our
+nomenon is properly taken into account in the concept of simulation, nuclear reactions induced by hadrons were
+y. On the other hand, the energies imparted by 5—rays are simulated by the Jet AA microscopic transport Model (JAM)
+included in the calculation of LET, i.e. all deposited (Nara et al. 1999), with the free nucleon—nucleoninteraction
+energies except for those imparted by bremsstrahlung are cross sections parameterized by Niita et al. (2001). The
+assumed to be localized in the concept of LET. Thus, the nucleus—nucleus interactions triggered by heavy ions below
+Q(y)—based dose equivalent has the potential to be a key 3 GeV/nucleon were generated by the JAERI Quantum
+quantity in constructing a more sophisticated radiation Molecular Dynamics (JQMD) model (Niita et al. 1995),
+protection system in space dosimetry, since high—energy while those above that energy were generated by a
+@ Springer
+
+"
+"3","Radiat Environ Biophys (2011) 50:115—123 117
+Phantom container (900 x 1000(1)), 0.5g/cm2 carbon fiber
+81.5 82.6 4%....” \
+13.0 29.6 goou—l D t t A 3 (800 800 I g
+. e co 0r rea x 4))
+iiiiiEélié:III...""""""""""""""""""' l .-_-.-_-.-_-.-_-.-;.-;.-;.-;.-;.-;.-;.-;.-;---------- l"":
+“%%%a V5311; 1% ""ﬁx :Eéiﬁiéﬁﬁéiﬁiﬁéita23:35.; Air ._____Eziﬁiz_._ Eziﬁiza,
+'-.‘~.'-.'-.-.I'-.‘-.‘~,-.. -..«. 1... m... m ﬂ ﬂ ﬂ ~. ﬂ . ﬂ .
+' 111% amma M 11%
+._:~:::::e:-r:~t:~:~r::~t:c:-r:~t:~ 121378582233303 ????????i '13.;tggtgglge'a'2‘ Eh ﬁiiﬁiﬁiiEiﬁﬁfﬁiﬁii
+.2555355ﬁ55533h ._'::::t::::::lt:~‘:~'::_~tt:::::::t:~._ 355535. ._‘._4?9‘3i‘f*9?9l?._ ““11; ""?*355""ﬁétLZQ51X1ééé"":‘E£EE$¥*
+“2700 A w‘ 55%‘iﬁﬁ556 “’00 0001’)
+_,_, m;z,___gz,__:;:.____;;, Wan iiiﬂéﬁiﬁﬁii ‘~'
+850 950 F . unit (mm) ~ ~ ~ ~ ~ ~ ~ ~ - ~ ~ ~ ~ ~- ~ ~ ~ ~ (A1) ~ 55.6
+Side View 483 ront Vlew Side View Front View
+Substitution of the space shuttle Substitution of an ISS module and phantom container
+Fig. 1 Simpliﬁed structure of space shuttle and ISS employed in the PHITS simulation. The length values are given in mm, but are not drawn to
+scale
+combination of the JAM and JQMD models. The neutron 0.5 g/cm2 carbon ﬁber, respectively. The inside of the
+transport below 20 MeV was simulated using the evaluated vessels was ﬁlled with 1 atm air, although this hardly
+nuclear data JENDL3.2 (Nakagawa et al. 1995). inﬂuenced the results of the simulation at all.
+
+The PHITS simulations were conﬁgured to reproduce the In the PHITS simulation, these vessels were isotropically
+experimental conditions of three different measurements in irradiated in a radiation ﬁeld while in an orbit of 380 km
+which (1) organ absorbed doses and dose equivalents were altitude and 51.6 degree inclination, which approximates
+measured by passive detectors inserted in a head and torso the ﬂight paths of the STS—91 mission and 188 during the
+phantom mounted in the space shuttle STS—91 mission periods of the above experiments. Simulations were per—
+(Yasuda et al. 2000; Badhwar et al. 2002; Yasuda 2009), (2) formed for both the solar minimum and maximum. Almost
+organ absorbed doses were measured by active detectors all kinds of cosmic rays—galactic cosmic—ray (GCR) pro—
+inserted in the same phantom mounted on the space shuttle tons and heavy ions with atomic numbers up to 28 and
+(Badhwar et al. 2002) and the International Space Station energies up to 100 GeV/nucleon, trapped protons and
+(188) (Cucinotta et al. 2008), and (3) organ absorbed doses electrons up to 600 and 60 MeV, respectively, and albedo
+and dose equivalents were measured by the MATROSHKA neutrons and protons up to approximately 1 GeV from the
+project outside of ISS (Reitz et al. 2009). Yasuda (Yasuda Earth’s atmosphere—were considered as the source parti—
+2009) also estimated the effective dose equivalent for an cles in the calculation. The Cosmic Ray Effects on Micro—
+astronaut, using WT values updated in ICRP103. Electronics Code, CREME96 (Tylka et al. 1997), was
+
+The structures of the space shuttle and 188 had to be adopted for estimation of the GCR spectra outside the
+simpliﬁed to be incorporated into the PHITS simulation, spacecrafts. The trapped proton and electron spectra were
+since they are too complicated and detailed information on calculated by the AP—8 (Sawyer and Vette 1976) and
+them is generally not available. Figure 1 illustrates the AE—8 (Vette 1991) models, respectively, implemented in
+simpliﬁed structures of the space shuttle and 188 employed the Space Environment Information System, SPENVIS
+in our simulation. Our structure of the space shuttle was an (SpenVis 2010). The spectra of albedo neutrons and protons
+aluminum vessel whose shielding distribution was ﬁtted to were obtained from the simulation of the atmospheric
+reproduce those at the locations of other detectors mounted propagation of cosmic rays performed by PHITS (Sato and
+in the STS—91 mission (Badhwar et al. 2002). The validity Niita 2006; Sato et al. 2008).
+of this simpliﬁcation was ascertained by comparing the
+neutron spectrum measured in the space shuttle (Matsum— Estimation of dose for astronauts
+oto et al. 2001) with the corresponding data calculated by
+the PHITS simulation using this vessel (Sato et al. 2006). The cosmic—ray ﬂuxes at the detector areas in the vessels
+The simulation structure of 188 was quite simple; it con— obtained from the PHITS simulations were converted to
+sisted of two cylinders, one representing the ISS module effective—dose and Q(L)— and Q(y)—based effective—dose—
+and the other representing the phantom container for the equivalent rates using the corresponding dose conversion
+MATROSHKA experiment located outside the 188. The coefﬁcients for the isotropic irradiation geometry. The dose
+thickness and material of the ISS module and the phantom and dose—equivalent rates for 15 critical organs/tissues to
+container were assumed to be 15 g/cm2 aluminum and which the WT values were assigned in (ICRP 2007) were
+
+@ Springer
+
+"
+"4","118 Radiat Environ Biophys (2011) 50:115—123
+also derived from the calculated ﬂuxes. Dose conversion In principle, wT deﬁned in ICRP Publication 26 (ICRP
+coefﬁcients for the reference male phantom were adopted 1977) must be employed in the derivation of the effective
+in the estimation of the organ—absorbed—dose and dose— dose equivalents, but wT deﬁned in ICRP103 were substi—
+equivalent rates, since the phantoms employed in the tuted in the present study, in order to investigate the dif—
+experiments represented a male torso. ference of the effective dose and the effective dose
+To calculate the conversion coefﬁcients for organ equivalents for astronauts induced by the numerical
+absorbed doses and dose equivalents, simulations were incompatibility between wR and the quality factors. More
+performed to estimate the absorbed doses per unit ﬂuence, detailed information on the procedures for calculating the
+DT, and their probability densities in terms of LET and y, dose conversion coefﬁcients were given in Sato et al.
+dT(L) and dT(y) respectively, in each organ or tissue, T, of (2009a) and Sato et al. (2010).
+the ICRP/ICRU adult reference computational phantoms,
+using the PHITS code. In the code, dT(L) is simply esti—
+mated from the stopping power of the Charged particles that Results and discussion
+contribute to the energy deposition, while dT(y) is calcu—
+lated using the mathematical function that was developed Comparison with experimental data
+based on the track structure simulation of the Charged
+particles including the production of 5—rays. In the simu— The calculated dose rates are summarized and compared
+lation, these phantoms were irradiated by mono—energetic with the corresponding experimental data obtained from
+particles with the isotropic irradiation geometry. The the aforementioned measurements in Tables 1, 2 and 3.
+absorbed doses in most organs, including skin, were simply The statistical uncertainties in the calculated values are
+estimated from the energies deposited in the voxels negligibly small, i.e., generally less than a few percent. The
+assigned to each organ, divided by their masses. The experimental data given in Table 1are the organ—absorbed—
+conversion coefﬁcients from ﬂuence to effective dose, E, dose and dose—equivalent rates measured by passive
+were derived using the equation: detectors inside the space shuttle (Yasuda et al. 2000;
+Badhwar et al. 2002; Yasuda 2009), while the corre—
+E _ ET: WTHT _ WR ET: WTDT’ (1) sponding calculated data were obtained from the cosmic—
+ray ﬂuxes in the detector area 1 (see Fig. l) at solar min—
+wher e HT denotes the equivalent dose in or gan or tissue, T, imum. In the experiments, thermoluminescence dosimeters
+per unit ﬂuence, which can be simply determined from DT (TLD) were used for measuring doses from lower LET
+multiplied With WR deﬁned in ICRP103' particles, while plastic nuclear track detectors (PNTD)
+The Q(L)"" and Q(y)—based organ dose equivalents, HTL were employed for measuring not only doses from higher
+and HT,» can be determined by the equations: LET particles but also their LET distributions. Both the
+DO calculated and measured effective—dose—equivalent rates
+HT,L : DT / Q(L)dT(L)dL and were derived using the Q(L) relationship and the wT values
+0 (2) updated in ICRP103. Table 2 compares the organ—absor—
+00 bed—dose rates measured by small active detectors based on
+HT,y : DT / Q(y)dT(y)dy, a silicon PIN diode inside the space shuttle and 188
+0 (Badhwar et al. 2002; Cucinotta et al. 2008) with the cor—
+, responding data calculated from the cosmiC—ray ﬂuxes in
+respectively. . .
+Note that dT(L) and dTQ’) satisfy the following nor— the tletector area 1. at solar minimum and area 2 at solar
+malization conditions: max1mum, respectively. The experimental data given in
+00 00 Table 3 are the organ—absorbed—dose and dose—equivalent
+rates measured by the MATROSHKA experiment outside
+/ dT<L>dL : 1 and / dT(y)dy : 1’ (3) 188 (Reitz et al. 2009), while the corresponding calculated
+0 0 data were obtained from the mean cosmiC—ray ﬂuxes at
+respectively. solar minimum and maximum in the detector area 3, since
+The conversion coefﬁcients for the Q(L)— and Q00- the solar activity gradually decreased from solar maximum
+based effective dose equivalents, HE,L and HE,» are cal— to minimum during the experimental period. The detector
+culated by the equations: system consisting of a combination of TLDs and PNTDs
+was also employed in this experiment, although some
+HEvL : Z WTHTvL and HEW : Z WTHTvy’ (4) additional detectors were installed in the phantom.
+T T It is found from Tables 1 and 2 that the agreement
+respectively. between the calculated and measured dose rates inside the
+@ Springer
+
+"
+"5","Radiat Environ Biophys (2011) 50:115—123 119
+Table 1 Organ—absorbed—dose and dose—equivalent rates measured by passive detectors inside the space shuttle (Yasuda et a1. 2000; Badhwar
+et a1. 2002; Yasuda 2009) in comparison With the corresponding calculated data obtained from the PHITS simulation
+Organ/tissue Absorbed—dose rate (mGy/day) Dose—equivalent rate (mSV/day)
+Yasuda et al.* Badhwar et a1. Cale Yasuda et a1.* Cale
+Skin 0.22 :1: 0.017 0.24 :1: 0.007 0.278 0.46 :1: 0.005 0.544
+Thyroid 0.22 :1: 0.012 0.217 0.41 :1: 0.021 0.428
+Bone surface 0.28 :1: 0.024 0.22 :1: 0.008 0.218 0.53 :1: 0.022 0.436
+Esophagus 0.21 :1: 0.013 0.17 :1: 0.006 0.186 0.35 :1: 0.050 0.366
+Lung 0.21 :1: 0.032 0.19 :1: 0.015 0.197 0.45 :1: 0.078 0.394
+Stomach 0.24 :1: 0.031 0.21 :1: 0.023 0.183 0.44 :1: 0.096 0.362
+Liver 0.23 :1: 0.034 0.19 :1: 0.019 0.184 0.41 :1: 0.052 0.365
+Bone marrow 0.18 :1: 0.010 0.18 :1: 0.013 0.191 0.35 :1: 0.041 0.380
+Colon 0.17 :1: 0.022 0.17 :1: 0.016 0.190 0.37 :1: 0.043 0.374
+Bladder 0.18 :1: 0.016 0.16 :1: 0.007 0.178 0.37 :1: 0.024 0.359
+Testis 0.20 :1: 0.005 0.18 :1: 0.013 0.219 0.48 :1: 0.072 0.430
+Breast 0.23 :1: 0.016 0.270 0.46 :1: 0.011 0.534
+Remainder 0.21 :1: 0.015 0.193 0.41 :1: 0.058 0.382
+Effective—dose—equivalent rate 0.41 :1: 0.022 0.397
+Effective dose rate 0.834
+The experimental data were derived from the measured total doses during the Whole mission divided by the ﬂight duration
+* Organ absorbed—dose and dose—equivalent rates are from (Yasuda et a1. 2000), While the effective—dose—equivalent rates are from (Yasuda 2009)
+Table 2 Organ—absorbed—dose rates measured by active detectors coefﬁcients to space dosimetry. Note that the effect Of an
+inSidC the Space Shuttle (Badhwar 6t 31. 2002) and 133 (Cucinotta anisotropic exposure is expected to be less signiﬁcant in the
+et a1. 2008) in comparisoh With.the corresponding calculated data practical dose estimation, since astronauts move around
+obtained from the PHITS Simulation , , , , , ,
+— every direction during their m1ss10n, except for when they
+Organ Organ—absorbed—dose rate (mGy/day) are in their crew quarter.
+Space shuttle STS—91 ISS increment—2 It is evident from Table 3 that the calculated organ
+W W absorbeti—dose rates outside 188 also agree With the cor—
+— responding experimental data for interior organs such as
+Brain 0.222 0.223 0.127 0.142 lungs, esophagus, and stomach. However, the calculation
+Thyroid 0.202 0.217 0.136 0.139 substantially overestimates the measured absorbed—dose
+Stomach 0.126 0.123 rates for organs located Close to the surface of human body,
+Colon 0.128 0.126 especially for the skin. Outside of spacecrafts, the absorbed
+— doses for astronauts dramatically decrease with increasing
+spacecrafts are quite satisfactory, although slight discrep— depth in the body, since a tremendous number of 10W—
+ancies are observed in the data for some organs. The mean energy trapped protons and electrons that stop very Close to
+quality factors derived from the measurements performed the body surface eXist there. For example, a very steep 10—
+by Yasuda et al. also agree With the corresponding calcu— fold decline of absorbed—dose rates from the body surface
+lated data, and both values are approximately 2. The to 8 mm depth was observed in the MATROSHKA
+disagreements in some organ dose rates are partially experiment (Reitz et a1. 2009). Hence, the slight differ—
+attributable to the assumption of the isotropic irradiation in ences between the anatomic parameters of the phantoms or
+the calculation of the dose conversion coefﬁcients. The the geometry of the surrounding environments in the cal—
+ignorance of any anisotropy that might be present in the culation and in the experiment may cause the observed
+real situation induces both overestimation and underesti— signiﬁcant discrepancies between the calculated and mea—
+mation of the organ dose equivalents, but they cancel out in sured absorbed—dose rates for organs located Close to the
+the estimation of the effective dose equivalent. Thus, the body surface outside spacecrafts. For instance, our simu—
+calculated effective—dose—equivalent rates agree Closely lation suggested that only 0.5 g/Cm2 of additional carbon
+With the corresponding experimental data, Within the ﬁber shielding, roughly equivalent to the poncho and the
+experimental uncertainty. This agreement Clearly veriﬁes multilayer insulation worn by the phantom, can reduce the
+the applicability of the calculated dose conversion skin—absorbed—dose rate by a factor of two, and in this case,
+@ Springer
+
+"
+"6","120 Radiat Environ Biophys (2011) 50:115—123
+Table 3 Organ—absorbed—dose and dose—equivalent rates measured by the MATROSHKA experiment outside ISS (Reitz et a1. 2009) in com—
+parison with the corresponding calculated data obtained using mean cosmiC—ray ﬂuxes at solar minimum and maximum
+Organs/tissues Absorbed—dose rate (mGy/day) Dose—equivalent rate (mSV/day)
+Reitz et a1. Cale. Reitz et a1. Cale.
+Skin 0.944 (8) 1.814 1.64 2.196
+Salivary glands 0.33 (7) 0.435 0.724
+Breast 0.39 (10) 0.690 1.036
+Lungs 0.26 (6) 0.279 0.497
+Esophagus 0.24 (6) 0.250 0.443
+Stomach 0.242 (6) 0.245 0.62 0.440
+Values in parentheses specify measurement precision in percent. The relative precisions 0f the measured mean quality factors are between 9 and
+12%
+the calculated value agrees with the experimental data particle. For example, the doses due to the exposure of
+very well. This result suggests that the geometry of the neutrons produced by GCR—proton—induced nuclear reac—
+astronaut’s immediate environment must be precisely tions were included in the contribution from GCR
+reproduced in the dose calculation, for astronauts during protons.
+extra—vehicular activity, s0—ca11ed EVA. It should be also In general, the skin—dose—equivalent rates were larger
+mentioned that the voxel sizes of the ICRPHCRU adult than the corresponding effective—dose—equivalent rates, and
+reference computational phantoms are not small enough to the dose rates outside 188 were greater than the corre—
+reproduce the structure of the sensitive layer of the skin, spending data inside 188, except for the contributions from
+which is considered to be positioned at 70 um from the GCR protons and albedo neutrons. These tendencies can be
+surface. simply accounted for by the shielding effects of the human
+body and 188, respectively. Hence, the reductions in the
+Contributions of GCR, trapped, and albedo particles contributions from trapped particles are signiﬁcant, since
+to astronaut dose the energies of trapped particles are generally lower than
+those of GCRs. For instance, the contribution from trapped
+Table 4 summarizes the calculated Q(L)—based effective— electrons comprises more than one—third of the total skin
+dose—equivalent and skin—dose—equivalent rates inside and dose equivalent outside 188, but is almost negligible inside
+outside ISS broken down into the contributions from siX 188. Thus, the contributions from trapped electrons need to
+types of primary cosmiC—rays: GCR protons and heavy be considered only in the estimation of doses for astronauts
+ions, trapped protons and electrons, and albedo neutrons during EVA. The above exception found in the data for
+and protons. The data given in the table were calculated GCR protons can be explained by the fact that GCR pro—
+assuming solar minimum. It should be noted that the tons can deposit more energy to deeper locations inside the
+doses deposited by a secondary particle produced in the human body and 188, by triggering a cascade of secondary
+wall of 188 were included in the contribution from the particles by successively inducing complex nuclear
+type of primary particle that produced that secondary reactions.
+eTfiggtBije—gjigflelgheiiagri)a:acied Source group Effective—dose—equivalent rate (mSV/day) Skin—dose—equivalent rate (mSV/day)
+skin-dose-equivalent rates Inside ISS Outside ISS Inside ISS Outside ISS
+inside and outside ISS at solar —
+minimum broken down into the GCR proton 0.0972 0.0820 0.102 0.0779
+COPtributionS from Six types of GCR heavy ions 0.114 0.150 0.145 0.198
+pnmary cosmlc rays Trapped proton 0.144 0.408 0.228 0.965
+Trapped electron 0.0004 0.0232 0.0006 0.737
+Albedo neutron 0.0114 0.0115 0.0143 0.0137
+Albedo proton 0.0029 0.0033 0.0032 0.0039
+Total 0.370 0.678 0.492 1.995
+@ Springer
+
+"
+"7","Radiat Environ Biophys (2011) 50:115—123 121
+Comparison between effective dose and Q(L)— the Q(L) relationship and the wR values assigned to those
+and Q(y)—based effective dose equivalents particles.
+It is also seen in Fig. 2 that the Q(y)—based effective—
+Figure 2 shows the calculated effective—dose and Q(L)— and dose—equivalent rates are generally smaller than the cor—
+Q(y)—based effective—dose—equivalent rates inside 188 at responding Q(L)—based effective—dose—equivalent rates, and
+solar minimum, Classiﬁed according to the contributions by approximately 20% in the case of total dose rates. This
+from particles incident upon astronauts. The sum of the tendency can be explained by the difference between the
+contributions from all particles is also presented in the concepts of LET and lineal energy y. In general, the dose—
+rightmost column of the graph. Note that this Classiﬁcation mean lineal energies for high—energy particles are lower
+is different from that in Table 4, since it is not based on the than the corresponding LETs, since the reduction of the
+type of primary cosmic rays from which the particle ionization densities around the trajectory of high—energy
+derived. The dose rates from electrons and positrons are not particles due to the production of 5—rays can be taken into
+shown in this graph, since they are negligible inside ISS. account only by using y. Thus, the Q(L)—based effective
+It is evident from Fig. 2 that the effective dose rates are dose equivalents are excessively high upon comparison
+higher than the effective dose equivalent rates, by a factor with the corresponding Q(y)—based values, since both the
+of 2 in this case, even when the updated wR values given in Q(L) and Q(y) relationships become larger with the
+(ICRP 2007) were used in the derivation of the effective increase of LET and y at least up to 100 keV/ttm.
+dose. This is predominantly due to the fact that a single In addition, the numerical incompatibility of the Q(L)
+value of 20 recommended in (ICRP 2007) for wR for all and Q(y) relationships at low—LET and y regions also
+types and energies of heavy ions is very conservative, induces a discrepancy between the two effective dose
+especially for lighter ions with higher energies, since their equivalents. In the determination of the numerical values of
+LETs are generally below 10 keV/ttm, and the numerical Q(y), the reference radiation was set to be photons with an
+value of Q(L) assigned to such low LET particles is 1. energy near 100 keV. Thus, the Q(y) relationship contin—
+Thus, the effective doses from lighter ions substantially uously drops further below unity with decreasing y, in
+exceed the corresponding Q(L)—based effective dose order to reﬂect the lower biological effectiveness of higher—
+equivalents, egg. by a factor of 12 for high—energy helium energy photons such as y—rays in comparison with lower—
+ions. The effective dose from protons also exceeds the energy photons such as 200 kV X—rays. On the other hand,
+corresponding effective dose equivalent. This result sug— the minimum value of Q(L) was set to be 1, since the
+gests that the wR value assigned to protons is still too large difference between the biological effectiveness of high—
+when used in space dosimetry, although it is lowered from and low—energy photons was not explicitly considered in
+5 to 2 in (ICRP 2007). On the other hand, in space radiation the deﬁnition of the numerical values of Q(L), i.e. its ref—
+ﬁelds, the effective doses from neutrons as well as heavy erence radiation was set to be photons irrespective of their
+ions with atomic numbers over 20 (Ca) agree Closely with energy. The ionization densities around the trajectory of
+the corresponding Q(L)—based effective dose equivalents. high—energy protons and helium ions are so low that they
+This similarity veriﬁes the numerical equivalence between are Closer to those of y—rays rather than of 200 kV X—rays,
+'33 1
+,3 g: l Effective-dose rate
+5; g III Q(L)-based effective'dose'equivalent rate
+5 a 0-1
+$3 5
+S *3 0.01
+g E
+4% E
+“2’ E 0.001
+4—? 5
+II II .In || IIIIIIII IIIII | || II
+La 00001 II I. I I.
+ggs:smozoegegzwemaamsae>sgeszggg
+$5 ”39
+Z D—c
+Fig. 2 Calculated effective—dose and Q(L)— and Q(y)—based effective—dose—equivalent rates inside 188 at solar minimum, Classiﬁed according to
+the contributions from particles incident upon astronauts
+@ Springer
+
+"
+"8","122 Radiat Environ Biophys (2011) 50:115—123
+and hence, the Q(y)_based effective dose equivalents from Acknowledgments We would like to express our appreciation to
+such low—ionizing particles become smaller than the cor— the members Of the ICRP taSk group 0“ radlatlon ,eXposures Of
+(1' L b d 1 astronauts 1n space for then valuable comments and d1seuss10n. We
+respon 1ng Q( )- 386 Va 1163- also wish to thank Dr. D. Satoh and technical staffs of the CCSE
+Ofﬁce Of JAEA for their help in performing the PHITS simulations.
+The research leading to part of these results has received funding from
+Conclusions the European Community’s Seventh Framework Programme FP7
+Within the HAMLET project under grant agreement no. 218817.
+Dose rates for astronauts were estimated by multiplying the
+ﬂuence—to—dose conversion coefﬁcients and the cosmiC—ray
+. . . . References
+ﬂuxes 1ns1de and 0uts1de spacecrafts. The convers10n
+coefﬁcients and cosmiC—ray ﬂuxes were calculated by the Badhwar GD, Atwell W, BadaVi FF, Yang TC, Cleghorn TF (2002)
+PHITS COde coupled to the ICRPHCRU adult reference Space radiation absorbed dose distribution in a human phantom.
+computational phantoms and t0 simpliﬁed geometries of Radiat Res 157376—91
+S acecrafts res ectivel The followin summarizes the Ballarini F, Battistoni G, Cerutti F, Fasso A, Ferrari A, Gadioli E,
+p . ’ p y' g Garzelli MV, Mairani A, Ottolenghi A, Paretzke HG, Parini V,
+conclus10ns deﬂVed from these ealethatlehs; Pellieeioni M, Pinsky L, Sala PR, Scannieehio D, Trovati S,
+(1) The calculated astronaut dose rates inside spacecrafts Zankl M (2006) GCR and SPE organ doses in deep space with
+generally agreed with the corresponding experimental data. different Shielding: Monte C3110 SimUIationS based on the
+The a reement in the Q(L)—based effective dose 6 uiva— FLUKA code coupled to anthropomorphic phantoms. Adv Space
+g , , , ,q Res 37:1791—1797
+lehts was partlcularly good, Wlthlh the experrmental Cueinotta FA, Kim MY, Willingham V, George KA (2008) Physical
+uncertainty. These agreements Clearly indicate the appli— and biological organ dosimetry analysis for International Space
+cability 0f the calculated dose conversion coefﬁcients to CitatiZOOhlgStrOhagtCs. Radiat Res 1703127438
+. . . DD ( ) DD : Databases 0f Dose Conversion Coefﬁcient.
+Spahe d0s1metry. (2) The geometry Of the Immehlate http://phits.jaea.g0.jp/ddee/ Accessed 27 August 2010
+therhmeht sueh as the spacesult mUSt be pre01se1y Hoff JL, Townsend LW, Zapp EN (2004) Interplanetary crew doses
+reproduced in calculating the dose for astronauts during and dose equivalents: variations among different bone marrow
+extra—vehicular activity, since low—energy trapped particles C anilQSkin Sites- AdV Space Res 34313474352
+. . . . I RP ( 77) Recommendations of the International Commission on
+play an 1mp0rtant role 1n the. ca1culat10n. (3) The effectlve Radiological Protection. ICRP Publication 26
+doses for aStrehaUtS were Slghlheahtly greater than the1r ICRP (1991) 1990 Recommendations of the International Commis—
+corresponding effective dose equivalents, even When using sion on Radiological Protection. ICRP Publication 60
+the updated WR in (ICRP 2007) in the derivation Of the ICRP (2007) The 2007 Recommendations of the International
+. . . . Commission on Radiological Protection. ICRP Publication 103
+effeChVC dose' (4) :The hse Of the Q02) 1hlahOhShlp IhStead ICRP (2009) Adult reference computational phantoms. ICRP Publi—
+of the Q(L) relatlonshlp results 1n a reductlon 0f the cation 110
+effective dose equivalent values by approximately 20% ICRU (1986) The quality factor in radiation protection. ICRU
+because of the conceptual differences between LET and R6190rt 40 . .
+lineal energy y together With the numerical incompatibility MatsumOtO H’ GOk.a T’ Koga K’ Iwal 8’ UChara T’ Sato 0’ Takagl S
+. . (2001) Real—tlme measurement of low—energy—range neutron
+between the tWO quahtY'faeter funetlehs- spectra on board the space shuttle STS—89 (S/MM—8). Radiat
+The former two items make further studies necessary, to Meas 332321—333
+estimate cosmiC—ray ﬂuxes at the location of astronauts Nakagawa T, Shibata K, Chiba S? FUkahOh T, Nakajima Y, KikUChi
+more precisely using more realistic geometries of their Y’ Kawano T’ Kanda Y’ Ohsawa T. Matsunohu H Ct 211(1995)
+. . . . . . Japanese evaluated nuclear data 11brary vers10n 3 reV1s10n—2:
+1mmed1ate and surroundlng enV1r0nments. The radlatlon JENDL_3.2. J Nucl SciTeChn013221259—1271
+models used for determining the trapped particle spectra Nara Y, Otuka N, Ohnishi A, Niita K, Chiba S (1999) Relativistic
+outside spacecrafts must be updated in the calculation, ““0163“ cont_SiOHS at 10A GCV energies from P + BC to
+since the models employed in the present study, AP—8 and églgﬁgoylth the hadmmC cascade mOdel‘ Phys Rev
+AE—S, were deVelOped based on an Old geomagnetic ﬁeld NCRP (2006) Information needed to make radiation protection
+model. The latter tWO items provide important information recommendations for space missions beyond low—earth orbit,
+in the discussion about What dosimetric quantities are NCRP RCPOrt 153
+suitable to be employed in space dosimetry However it is Niita K, Chiba S, Maruyama T, Takada H, Fukahori T, Nakahara Y,
+. . . . ' ’ Iwamoto A (1995) Analysis of the (N, xN‘) reactions by
+(hfhetht to draw a conclus10n 0h thlS 1ssue Ohly hem the quantum molecular dynamics plus statistical decay model. Phys
+results obtained in the present study, since the adequacy of ReV C5222620
+the use Of both Q(L) and Q(y) relationships in individual Niita K, Takada H, Meigo S, Ikeda Y (2001) High—energy particle
+. . . - - transport code NMTC/JAM. Nuel Instr Meth B184z406—420
+rrsk estlmatlon hes not yet been sufﬁ01ent1y. dlscussed. Niita K, Sato T, Iwase H, Nose H, Nakashima H, Sihver L (2006)
+Thus, further stud1es are necessary for e1uc1dat1ng the rlsk Partiele and heavy ion transport code system PHITS. Radiat
+of astronauts due to cosmiC—ray exposure. Meas 41:1080—1090
+@ Springer
+
+"
+"9","Radiat Environ Biophys (2011) 50:115—123 123
+
+Reitz G, Berger T, Bilski P, Facius R, Hajek M, PetrOV V, Puchalska Sihver L, Mancusi D, Sato T, Niita K, Iwase H, Iwamoto Y, Matsuda
+M, Zhou D, Bossler J, AkatOV Y, Shurshakov V, Olko P, N, Nakashima H, Sakamoto Y (2007) Recent developments and
+Ptaszkiewicz M, Bergmann R, Fugger M, Vana N, Beaujean R, benchmarking 0f the PHITS code. Adv Space Res 40:1320—1331
+Burmeister S, Bartlett D, Hager L, Palfalvi J , Szabo J , Sihver L, Mancusi D, Niita K, Sato T, Townsend L, Farmer C, Pinsky
+O’Sullivan D, Kitamura H, Uchihori Y, Yasuda N, Nagamatsu L, Ferrari A, Cerutti F, Gomes I (2008) Benchmarking of
+A, Tawara H, Benton E, Gaza R, McKeever S, Sawakuchi G, calculated projectile fragmentation cross—sections using the 3—D,
+Yukihara E, Cucinotta F, Semones E, Zapp N, Miller J, MC codes PHITS, FLUKA, HETC—HEDS, MCNPX_HI and
+Dettmann J (2009) Astronaut’s organ doses inferred from NUCFRG2. Acta Astronautica 632865—877
+measurements in a human phantom outside the International Sihver L, Sato T, Gustafsson K, Mancusi D, Iwase H, Niita K,
+Space Station. Radiat Res 171:225—235 Nakashima H, Sakamoto Y, Iwamoto Y, Matsuda N (2010) An
+
+Sato T, Niita K (2006) Analytical function to predict cosmiC—ray update about recent developments of the PHITS code. Adv
+neutron spectrum in the atmosphere. Radiat Res 166:544—555 Space Res 45 2892—899
+
+Sato T, Sihver L, Iwase H, Nakashima H, Niita K (2005) Simulations Slaba TC, Qualls GD, Clowdsley MS, Blattnig SR, Walker SA,
+of an accelerator—based shielding experiment using the Particle Simonsen LC (2009) Utilization of CAM, CAF, MAX, and FAX
+and Heavy—Ion Transport Code System PHITS. Adv Space Res for space radiation analyses using HZETRN. Adv Space Res
+352208—213 452866—883
+
+Sato T, Niita K, Iwase H, Nakashima H, Yamaguchi Y, Sihver L SPENVIS, The Space Environment Information System (2010).
+(2006) Applicability of particle and heavy ion transport code http://WWW.spenVis.0ma.be/ Accessed 27 August 2010
+PHITS t0 the shielding design of spacecrafts. Radiat Meas Trovati S, Ballarini F, Battistoni G, Cerutti F, Fasso A, Ferrari A,
+41:1142—1146 Gadioli E, Garzelli MV, Mairani A, Ottolenghi A, Paretzke HG,
+
+Sato T, Yasuda H, Niita K, Endo A, Sihver L (2008) Development of Parini V, Pelliccioni M, Pinsky L, Sala PR, Scannicchio D,
+PARMA: PHITS—based analytical radiation model in the atmo— Zankl M (2006) Human exposure to space radiation: role of
+sphere. Radiat Res 170:244—259. http://phits.jaea.g0.jp/expacs/ primary and secondary particles. Radiat Prot Dosim
+Accessed 27 August 2010 122:362—366
+
+Sato T, Endo A, Zankl M, Petoussi—Henss N, Niita K (2009a) Tylka AJ, Adams JH Jr, Boberg PR, Brownstein B, Dietrich WF,
+Fluence—to—dose conversion coefﬁcients for neutrons and protons Flueckiger EO, Petersen EL, Shea MA, Smart DF, Smith EC
+calculated using the PHITS code and ICRP/ICRU adult reference (1997) CREME96: a revision of the cosmic ray effects on micro—
+computational phantoms. Phys Med Biol 54:1997—2014 electronics code. IEEE Trans Nucl Sci 44:2150—2160
+
+Sato T, Kase Y, Watanabe R, Niita K, Sihver L (2009b) Biological Vette J (1991) The AE—8 trapped electron model environment.
+dose estimation for Charged—particle therapy using an improved National Space Science Data Center, Report 91—24, Greenbelt,
+PHITS code coupled With a microdosimetric kinetic model. Maryland
+Radiat Res 171:107—117 Yasuda H (2009) Effective dose measured With a life size human
+
+Sato T, Endo A, Niita K (2010) Fluence—to—dose conversion phantom in a low earth orbit mission. J Radiat Res 50:89—96
+coefﬁcients for heavy ions calculated using the PHITS code Yasuda H, Badhwar GD, Komiyama T, Fujitaka K (2000) Effective
+and ICRP/ICRU adult reference computational phantoms. Phys dose equivalent 0n the ninth Shuttle—Mir mission (STS—91).
+Med Biol 55:2235—2246 Radiat Res 154:705—713
+
+Sawyer D, Vette J (1976) AP—8 trapped proton environment for solar
+maximum and solar minimum. National Space Science Data
+Center, Report 76—06, Greenbelt, Maryland
+
+@ Springer
+
+"

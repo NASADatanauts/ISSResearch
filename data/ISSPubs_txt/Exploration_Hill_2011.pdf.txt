@@ -1,0 +1,910 @@
+"","x"
+"1","O O O O O
+Exploratlon Space Sult Archltecture and Destlnatlon
+O
+EnVIronmental-Based Technology Development
+Terry R. Hill
+NASA — Lyndon B. J 0hns0n Space Center
+2101 NASA Parkway
+Houston, Texas 77058
+281-483-8135
+terry.hi11—1@nasa.g0v
+Abstract—This paper continues forward where EVA Space particular program, and provide architecture and design
+Suit Architecture: Low Earth Orbit Vs. Moon Vs. Mars [1] solutions for space suit systems in time or ahead of need
+left off in the development of a space suit architecture that is dates for any particular erewed ﬂight program in the future.
+modular in design and could be reconﬁgured prior to launch The approach to space suit design and interface deﬁnition
+or during any given mission depending on the tasks or discussion wi11sh0w how the architecture is very adaptable
+destination. This paper will address the space suit system to programmatic and funding changes with minimal re-
+arehiteeture and technologies required based upon human design effort such that the modular architecture can be
+exploration extravehieular activity (EVA) destinations, and quickly and efﬁciently honed into a speciﬁc mission point
+describe how they should evolve to meet the future solution if required. Additionally, the modular system will
+exploration EVA needs of the US human space ﬂight allow for speciﬁc technology incorporation and upgrade as
+program.1’2’ 3 required with minimal redesign of the system.
+In looking forward to future US space exploration to a space TABLE OF CONTENTS
+suit architecture with maximum reuse of technology and
+. . . . 1. INTRODUCTION................................................................1
+functionality across a range of m1ss10n proﬁles and
+. . . . 2. OVERVIEW OF THE CxP SPACE SUIT ARCHITECTURE .. 2
+destinations, a series of exereises and analyses have
+. . . . . 3. METHODOLOGY OF DESTINATION ENVIRONMENT
+pr0V1ded a strong indication that the Constellation Program
+. . . . . DESIGN GROUPINGS 4
+(CXP) space su1t architecture is postured t0 pr0V1de a Viable
+. . . . 2 . . 4. MAPPING DESTINATION ENVIRONMENTS TO MUTUALLY
+solution for future exploration m1ss1ons . The destination
+. . . . INCLUSIVE DESIGN DRIVERS 7
+enV1r0nInenta1 ana1ys1s presented in this paper demonstrates
+- - 5. IMPLICATIONS TO TECHNOLOGY DEVELOPMENT
+that the modular architecture approach could pr0V1de the
+. . . STRATEGIES 12
+lowest mass and m1ss10n cost for the protection of the crew
+. . . . . 6. CONCLUSION 12
+glven any human m1ss10n 0uts1de 0f 10w-Earth orbit (LEO).
+. . . REFERENCES 13
+Add1t10na11y, some of the high-level trades presented here
+. . . BIOGRAPHY 14
+pr0V1de a reV1ew 0f the enV1r0nInenta1 and non-
+environmental design drivers that will become increasingly
+important the farther away from Earth humans venture. 1' INTRODUCTION
+. . . . . Destinationsfor Human Exploration
+This paper demonstrates a logical clustering of destination . .
+design environments that allows a focused approach to Tntlotoking forward to the fnture 0f human space exploration,
+technology prioritization, development, and design that will it is important to ﬁrst eons1der the p0ss1b1e destinations that
+maximize the return on investment, independent of any humans can realistically travel to, survive in, and possibly
+live in for extended periods of time with reasonable
+resources and budget. For example, it can be assumed with
+:U.S. Government work not protected by US. copyright some level Of conﬁdence that there Will be no crewed
+3IEEEACpaper#1330,Yers10n2,submittedJanuary10,2011' _ _ missions to Mercury due t0 the required infrastructure,
+Th1s paper was peer reV1ewed for technlcal content by: Lindsay Aitchison . . . .
+(P . . . logistics train and rocket des1gn that would be needed to
+ressure Garment Englneer), Kimberley Baird (Dep. Branch Manager), . . . .
+Cinda Chullen (EVA Technology Development), B. Michael Lawson (CXP 011mb mm and OUt Of the mher graV1ty well Of the sun-
+Suit Element Life Support Subsystem Manager), Joseph J . Kosmo (Space However, it is reasonable to consider Visitation 0f the Earth-
+Suit Advanced Development Lead Engineer), Amy Ross (Pressure sun libration points. In following this line Of thought, and
+Garment Development Lead), William Spenny (ISS EMU Engineering . t k 1 d f th h . 1 . t f
+Subsystem Manager), Robert Trevino (Space Suit Life Support Technology usmg cnrren. now 6 g6 0 e p ySICa. enVironmen S 0
+Development) and Sandra Wagner (EVA Systems Lunar & Mars dust deStmatlonS 1n the SOlar SyStem from Wthh one can return
+mitigation) - NASA/JSC Crew & Thermal Systems Division, Space Suit in a decade or less, one can very quickly identify the
+3nd Crew suerVal SYStem Braneh- _ _ destination design drivers required for exploration-Class
+One of the remaining challenges of the CXP su1t archltecture was . t
+incorporation of the launch, entry and abort functionality into the system space sul 5'
+without signiﬁcantly compromising the survival or EVA functional
+performance. While this aspect of the architecture is still under debate, the Historically9 technology development for human space
+modularity and cominonahty 0f the archltecture for EVA m1ss1ons 1s st111 exploration primarily did not happen until the mission was
+vahd and worth cons1derat10n.
+1
+
+"
+"2","deﬁned and funded or was done at the component level in common hardware across multiple mission phases (to
+efforts to improve existing systems. Low technology reduce developmental and logistics costs). And also features
+readiness level technology development for pursuing an open architecture that can be reconﬁgured and can
+advanced concepts has been also very limited. While the leverage off components used during other mission phases
+logic in this is understood, given that humans only started where possible. [1]
+venturing beyond the relatively benign environment of Earth
+in the last 50 years and had little idea of what might be The following were the key design ﬁgures of merit that
+encountered at each destination, today the approach should were used in evaluating all of the following different
+be questioned, given that humans have either physically architectures, some of which later became architecture
+stepped on, landed robotic probes, placed orbital vehicles design drivers: operational performance; work efﬁciency;
+around, or had close ﬂy-bys of every single signiﬁcant body launch, entry, and abort overhead; suit attributed mass and
+in the solar system — with the exception of Pluto. Now with volume; ﬁeld rnaintenance; commonality (design and
+the volumes of data growing at a near-geornetric rate, the hardware); extensibility; technical risk/feasibility; life cycle
+knowledge of the environments in which humans can costs; and development schedule risk. The following were
+venture is understood to the point where common design the suit performance criteria that deﬁned the high-level
+drivers and required design elements can be identiﬁed with functional requirements for the suit architecture: intra-
+reasonable conﬁdence. Given this knowledge of the vehicular rnobility; microgravity rnobility; microgravity
+environments and lessons learned from human space ﬂight environmental protection (thermal, radiation, micro-
+operations to date, an internal assessment (performed within meteoroid protection); comfort (un-/pressurized); ease of
+the Space Suit and Crew Survival Systems Branch at the donning and dofﬁng; crew ability to escape the vehicles
+J ohnson Space Center) of the progress that has been made in while wearing the suit; suit sizing methodology; ability of
+human exploration space suit technology with respect to the the suit to have sizing adjustments; high operational reliabil-
+“design space” is proposed in this paper. ity; high evolvability and adaptability; extraterrestrial
+surface mobility; and extraterrestrial surface environmental
+In the following pages, a reView will be performed of the protection
+exploration space suit architecture developed in NASA’s
+Constellation Program (CXP) and how it can be used for After ﬁve years and multiple design iterations, the CSSE
+future human missions. Additionally, a methodical approach suit architecture consisted of the following modular, or
+to common and probable destination environments will be swap-able (from one conﬁguration to another), hardware
+addressed and how this should affect the prioritization of elements: helmet bubble and communications cap, gloves
+space suit technology development in the future. optimized for pressurized usage, boots optimized for lg
+vehicle escape, lower arms and legs with mobility joints and
+2. OVERVIEW ()1: THE CXP SPACE SUIT umbilical connectors; and restraint mechanisms that are
+ARCHITECTURE common in design. The ﬁre protection outer cover layer and
+EVA thermal multilayer insulation (MLI)/therrnal micro-
+The space suit architecture developed by NASA’s rneteoroid protection garment (TMG)4 were unique enough
+Constellation Space Suit Element (CSSE) only addressed to very discrete mission phases that it was felt they would
+crew survival, low earth orbital operations and lunar surface not be included functionally in the modular hardware so as
+EVAS, but at the very core had many, if not all, of the key to reduce the overhead of carrying around hardware for
+design-driVing elements that will be required for human infrequent use or as bad-day risk mitigation. The outer layer
+exploration in the solar system. The CSSE tearn3 addressed of the TMG is not only ﬁre resistant, but it provides low
+this challenge by fully embracing “clean-sheet” or emissivity for reﬂecting solar radiation — thus the white
+“textbook” systems engineering methodology by ﬁrst coloration — and also provides cut, puncture, and abrasion
+deﬁning the operational concepts, which focused on the resistance. The outer layer of the MLI/TMG may require a
+development Of an architecture with all CxP design different coloration on Mars to meet the emissivity require-
+reference missions (DRMs), and keeping an eye on life- ments for that environment.
+cycle program costs. A comprehensive reView of the
+functional designs, strengths, and limitations of previous US With the maturity of human exploration into space is still in
+space suits, in addition to what is known of Russian space its infancy and with limited resources to apply to develop-
+suits, took place to deduce historical lessons learned based rnent, a ﬂexible system that will minimize the cost by
+1101 only 011 what did 1101 work but, more importantly, 011 decreasing the development cost per mission is desirable.
+what worked right. The current strategy to accomplish the However, with a system that operates in varying enViron-
+rather daunting task 0f meeting all space SUit design TCQUiTC' rnents there is the risk that performance in speciﬁc environ-
+ments in the extreme environments previously detailed with rnents will be compromised. As experience in speciﬁc
+a single system hinges on an arrangement that not only uses
+4 Consists of Ortho 116 fabric, 5 layers of aluminized Mylar, and one layer
+3 This team was comprised of NASA ciVil servants and support contractor of neoprene-coated nylon. While the neoprene and nylon will burn in air at
+workforce with the responsibility of deﬁning CXP space suit architecture ambient pressure, the NASA White Sands Test Facility rating of A for the
+and associated functional requirements and to later become the NASA outer layer of Ortho 116 means that the material has a burn length less than
+oversight and subsystem managers. 6 inch for ambient pressure to 10.2 psi with oxygen concentrations of 30%.
+2
+
+"
+"3","environments grows or human habitation is more perma- duration habitation, and to progress eventually to Mars
+nent, then specialized suits and hardware Wi11be warranted. exploration. [3]
+Additionally, the portable life support system will be used The common themes on how the CSSE suit architecture
+only on the lunar surface as life support functions are would be used for the CXP resonate With the possible design
+provided by the vehicle When the crew is inside or While reference missions being discussed today for future human
+performing microgravity EVAs. And, the core torso exploration. At the most fundamental level, every human
+segment, Which is optimized for eight hour surface EVAs, is launch Will need to provide protection for the crew against a
+swapped out With the a11—soft segment used for launch and bad day on the launch pad as well as a launch abort scenario
+landing. Prior to the CXP space suit design effort, a very and protection While reentering the atmosphere on mission
+similar design philosophy was recommended by J oseph completion. Each mission Will either require a planned
+Kosmo, NASA, in 1990. [2] microgravity EVA or the capability to perform contingency
+EVAs in the event the vehicle leaks or other hardware
+How This Works Wellfor the Different Destinationsfor malfunctions require mitigation — particularly during
+Human Exploration. missions With long transit durations. And, as With the
+The fundamental plan was for the CXP to evolve from Constellation suit, it is highly des1rab1e for these. future
+. . . . . m1ss1ons to be able to reconﬁgure a suit to meet the different
+micrograV1ty to lunar exploration With sortie and long-
+Table 1. Destination Environment Design Values Used to Develop Design Driver Groupings for Space Suits.
+—
+Destination LEO/GEO Lagrange In-transit NEO/NEAS Earth’s Moon Moons of Mars, Mars
+EVA/ [4][5][6][7] Points [8] (Deep [9][10][11] Jupiter, and Surface
+Parameter Space) Saturn With No [14][15]
+Mission Atmosphere
+[12][13]
+Mission 1-2 weeks 3-6 months 6 months to 6 months to Sortie: 1-2 Martian moons: 6 months to
+Duration Transit + 3.5 years 3 years weeks 3 to 5 years 1.5 years +
+Mission Outpost: J ovian/ Saturnian transit time
+Dwell time 6 months to 1 moons: 5 to 10
+year years
+Gravity Field Hg “g “g Effectively 1.63 Phobos — 3.71
+(m/sz) ttg Effectively ttg
+Demos —
+Effectively ug
+Europa —
+1.3 14
+Ganymede — 1.43
+Radiation LEO Solar and Solar and Solar and Solar and Solar, Cosmic & Atmospheric
+(Solar Wind, (shielded) CosmimL Cosmic Cosmic Cosmic Trapped Shielded
+Trapped) (trapped)
+Thermal -78 to 125 Shadows at Europa — Min. -87
+Environment poles to center Min. -223 Mean -63
+Touch of crater at Mean -171 Max. 20
+Temperatures equator at lunar Max. -148
+(°C) noon Ganymede— Min.
+(—244 to 120) -279
+Max. -189
+Environment Abrasion Abrasion
+Atmospheric High High Vacuum High High High Vacuum High Vacuum 0.61 (4.57)
+Pressure Vacuum <1 Pa Vacuum Vacuum <1 Pa <1 Pa kPa
+<1 Pa <1 Pa <1 Pa
+—
+T Includes the primary radiation from the source and secondary radiation as a result of the interaction of the source radiation and local
+materials of the space craft and/or space suit.
+3; Moons that have ice processes in place (Europa, Enceladus) may provide sufﬁcient mechanism to provide dust that would fall into the
+Low Abrasion category.
+3
+
+"
+"4","needs of the crew (to save mass and volume) and not carry of experience in performing human EVA operations has
+multiple suits per crew member. taken place in the last 50 years. The environment is thus
+well understood. The local gravitational acceleration, while
+Additionally, multi-program life cycle costs and return on in the gravity well Of Earth, places an Object in a state of
+investment in technology development can be realized in orbital free fall and, therefore, will be quantiﬁed on the
+this approach by designing to the architecture interfaces and order of miero-g’s. Additionally, the atmospheric drag at the
+only performing multiple designs for the hardware speeiﬁe- altitude most Shuttle missions and 188 Operations take place
+ally required for the unique environments. will be considered negligible with regard to space suit
+design. The radiation environment, which is greater than the
+3. METHODOLOGY OF DESTINATION environment high-altitudepilots are exposed to due to lack
+ENVIRONMENT DESIGN GROUPINGS Of an atmosphere, st111 res1des w1th1n the Earth’s Van Allen
+belts. The exception is for a region above the Earth known
+Determination 0fthe Design Drivers as the South Atlantic Anomaly5 where potential EVAs
+. . . . . . f h'l h ' h h h' ' 1' '
+The f011nulat10n 1n a new way of prioritizing technology per ormed W 1et e pass1ngt roug t 1s region are 11n1ted
+. . to 3-5 passes for any particular crew member before they
+development efforts for space su1ts began With the . . . . .
+President’s new Vision for N AS A in February 2010 It are rescheduled, however, the actua1111n1tat10n 1s deﬁned by
+. , ' the personal accumulated radiation dosage which is tracked
+seemed that the proposed emphas1s of NASA s resources . . .
+. . . for the m1ss10n and for life of the crew member. The current
+would be less focused on eont1nu1ng w1th the CXP and . . .
+. . . . . ﬂ1ght rules [16] for EVA radiation exposure state
+bu1ld1ng ﬂ1ght hardware but more 1n geing back to the s eeiﬁeall .
+drawing board and developing the technology that would be p y.
+' d t k l -d t' l t' . .
+requ1re 0 ma e ong ura10n space exp 01a10n more A. For predicted exposure less than the action level
+successful when we as a nation were ready to step out into . .
+space for good. (non-restrietive)
+For this study, a different approach was taken with an 1' dCCinSIiier drelayinlg rthienEVA; up $022“) dailgihgr
+inventory of possible destinations in the solar system that eillyr f O aﬁee e a 5: eg :15 eiiisli hinS
+humans could reasonably explore given the likely W. . e ucge te exposuet Wt ettaeeo p15 g
+technology developments in the next 30 years regarding m1ss1(:1n OIJCC 1:168 001351? :11 W1 norma crew
+launch vehicle, engine, Closed-loop life support systems, groun ru es an eons rain 8' . .
+
+. . . . 2. An EVA 1n progress w111 continue. C0ns1der
+and subsequent durations of m1ss10ns and space suit 11 t d din n h d 1 d it In t i tin
+technology. When the destination list was complete, the .0 a . g .u SC e ue e. S 0 6X S g
+
+. . . t11nel1ne 1f th1s results 1n add1t10nal EVA crew
+subsequent enVironInents and Characteristics were assessed 1
+and grouped for commonality. exposu e.
+B. Predicted crew exposure greater than the action
+Destination Design Environments level at the end of the EVA (restricted)
+The en ironInents 0f the destination locations ill be brieﬂ . . .
+. V . . . W . y 1. Delay EVA up to 14 days if st111 p0ss1b1e t0
+discussed 1n the sections to follow, however, they w1ll not 1. h . . b' t' d 1
+be discussed in great detail as the individual environments accolm p t1s m1ss10121 0 J60 IVCS’ or e ay or
+have been documented in the source materials referenced. It aeee era e e gress _ ICVS' . .
+. . . . . 2. An EVA 1n progress w111 continue. C0ns1der
+1s worth mentioning that for th1s exereise, and to a large d't' t k t . d f .
+extent in space suit design, the exact numbers for environ- CXPC. 1 mi. 3: S n0 requ1re or prnnary
+mental design drivers are not critical discriminators in the m1ss10n 0 J60 IVCS'
+ﬁrst—order design of the system. For example, whether the C, Predicted crew exposure greater than the high dose
+local vacuum of space is 1><10'5 torr or 1><10'13 torr, for a rate limit (high dose rate limits)
+suit pressurized t0 4 lbs/in2, is of marginal consequence. The
+same can be said for designing a suit to tolerate a touch 1. A planned EVA shall be rescheduled as
+temperature of -125 or -148°C (-193 or -234.4°F) in which required to reduce the exposure to below the
+the design Challenge is largely the same and may only high dose rate limit.
+impact ﬁnal material selection or seeond-order suit heater 2. An EVA in progress shall be eXpedited by
+impacts to the power budget. The speciﬁc environmental deleting tasks not required for primary mission
+values that are used for this study are summarized in Table objectives.
+1, and the major suit design drivers for suit development
+will be summarized in each section.
+Low-Earth Orbit (LEO) OperatiOVZS (ISS, LEO satelliteS) 5 The South Atlantic Anomaly is a result of the Earth's magnetic ﬁeld and is
+, , , , , not completely symmetric and aligned with the Earth’s surface and thus
+Th LEO h h h
+e. . . micrograwty CQVIIOPmenta W 10 IS t e mOSt allows a portion of the solar (particle) ﬂux to extend down through LEO
+familiar 1n human exploration, IS where the largest amount and affects communication with satellites, the Hubble space telescope,
+high-altitude aircraft and the Space Shuttle.
+4
+
+"
+"5","D. Predicted crew exposure greater than the joint Lagrangian Points: Sun-Earth-Moon
+exposure limits Interest in human missions to the Lagrangian7, or libration,
+oints in the sun-Earth and Earth-moon s stems has
+1. A planned EVA shall be rescheduled as p . . .y
+. , . . increased 1n recent years. In a two-body graV1tational system
+required to reduce the crewmember s m1ss1on . . . . .
+. . . . 1n Circular orbit about one another (as 1s the case With the
+exposure to below the JOlnt exposure limit. .
+2 A EV A . h 11 b t . t d sun-Earth and Earth—moon systems), there are ﬁve regions
+' n 1n progress S a e erm1na e ' in which the gravitational balance between the two bodies
+The solar wind is still a non-triVial inﬂuence in this environ- are in equilibrium and lend themselves well for placement
+ment and, with most of the EVAs performed to date — and of satellites, observatories, or rendezvous depots for space
+likely in the future — being around human-made structures, missions with minimal fuel consumables for positional
+the effects of the interaction between the solar wind and station-keeping.
+large metallic structures (or solar panel elements), plasma
+generation, and conductance has been an increasing safety The duration of such missions is likely to exceed 3 months —
+concern in the community. with the potential for more than one year depending on the
+libration point; therefore, the time element of the design
+Therefore, the design drivers for this environment will be: would be considered a driver. The environmental design
+pressurized suit mobility in microgravity, life support drivers for this region are encompassed by the GEO
+consumables in a vacuum, thermal exposure and manage- environment.
+ment in a vacuum around human-Inade structures, and
+plasma Charging ﬁelds. In-transit Contingency (Deep Space) Microgravily E VAS
+This classiﬁcation, while more mission s eeiﬁe, does deﬁne
+Geosynchronous Earth Orbit (GEO) Operations (within and - . . . p . .
+, a des1gn enV1ron1nent. Th1s enV1ron1nental scenar1o 1s a
+outszde the Van Allen Belts) . . . . . .
+eatehall for the instances during a m1ss1on 1n wh1eh crew
+Probable future human activity in this region will consist of members are required to go outside the vehicle to either
+retrieving, repairing, refueling, or deploying geosynehron- investigate, repair, or replace hardware associated with their
+ous satellites (35,786 km [22,236 mi] above the Earth’s vehicle. NASA’s experience during the last 50 years of
+surface) or multi-day experimental missions. This environ- operations is that Murphy8 is never far away and having the
+ment is very similar to that of the LEO missions but with the capability to perform unscheduled, or contingency, EVA is
+signiﬁcant difference of being within or outside the Earth’s a critical capability for all missions. This environment is
+Van Allen belts for some or most of the time6, largely encompassed by the GEO environment in terms of
+Consequently, the effects of the solar wind, and to a lesser vacuum, radiation, and plasma Charging. However, the
+extent cosmic radiation, are elevated due to direct exposure thermal environment will probably differ due to varying
+from the sun or the concentration of geomagnetieally trap- distances from the sun. Additionally, due to the fact that the
+ped radiation (electron and proton) in Earth’s magnetic probable mission duration (time away from Earth) will be
+ﬁelds. The inner Van Allen belt extends from an altitude of anywhere from three months to ten years, it is imperative
+1000 to 10,000 km (621.4 to 6,213.7 mi) above the Earth’s that this time away be factored into the suit design,
+surface (the South Atlantic Anomaly is a result of the inner fabrication, and reliability engineering.
+proton belts dipping down as low as 220 km), and the large
+outer radiation belt extends from an altitude of about 19,113 Low-mass Near—Earth Object (NEO)/Near—Earth Asteroid
+to 44,597 km (11,876.3 to 27,711.3 mi) above the Earth’s (NEA) (halfmass 0fthe moon) EVAS
+surface. [17][18] The suit design environment of low-Inass NEO/NEA EVAs
+. . . is an interesting combination of the microgravity environ-
+The duration of such m1ss1ons would not be expected to ment of LEO EVAs and that of the thermal and dust
+exceed a 1- to 2-week duration; therefore, the time element . . .
+. . . . enVironInent of the lunar EVAs (discussed later). Th1s
+of the des1gn would not be eons1dered a driver. The enViron- . . . . . . .
+. . . . . dest1nation 1s ass001ated w1th m1ss1ons to NEO/NEA that
+mental des1gn drivers for this region would be: pressurized
+. . . . . . . . are half the mass of the moon or smaller and would have a
+su1t mob1l1ty 1n micrograV1ty, life support consumables 1n a . . . . .
+. local graV1tational acceleration between micrograV1ty and
+vacuum, thermal exposure and management 1n a vacuum 2 - -
+. 0.817 m/s , thus rendering normal human ambulation not
+around human—made structures, plasma Charging ﬁelds, and . . . . .
+. . . poss1ble. The extremely low graV1tational aeoelerat1on w1ll
+solar/eosmie/eoncentrated radiation effects. . . .
+require the use of attachment mechanisms (to the object
+being studied) and mobility aids to transverse the object. In
+some ways the lack of meaningful gravity will affect the
+6 While the geostationary orbit is above the inner Van Allen belt, it can 7 The concept was ﬁrst conceived by J oseph L. Euler around 1750 when he
+reside in or outside of the outer belt due to the compression of the outer belt predicted the collinear points commonly known as L1, L2, and L3. Later,
+on the side of the Earth facing the sun and the pressure of the solar wind. Luis Lagrange, in his work with two-body orbital mechanics, further
+Therefore, at times the satellite might be on the outer edges or outside the predicted the existence of points L4 and L5; these points were all later
+belt, depending on the relative position with respect to the sun and current named after Lagrange in his honor.
+solar activity levels. 8 Societal reference for when something or a situation can go wrong, it will.
+5
+
+"
+"6","EVAs and how the crew performs tasks due to the fact that EVA environment, mission duration is expected to play a
+any dust generated/stirred up will likely hover in a Cloud major component of the design driver challenges.
+around the work site for indeterminable amounts of time and
+could potentially impact work site Visibility, dust coverage Earth is Moon
+f the s it and d st miti ation strate ies. If d st is resent . . . . .
+O u ’ . u g . . g u .p The recent lunar enV1ronInent deﬁnition for su1t des1gn for
+on these bodies, the Characteristics of the dust (phys1eal and .
+. . . the CXP encompassed the entire range of lunar extremes as
+chemical) are expected to fall Within the range analyzed
+. 9 deﬁned by the CXP goal of global access to the lunar surface
+both from the moon and from recent stud1es of comets . . . . . .
+With a Single su1t system. [1], [3] The dust enVironInent 1s a
+Jovian/Satumian Moons known variable given the experience gained and information
+gathered as part of the surface EVAs and the dust and rock
+This destination environment is one of the more difﬁcult to samples and space suit hardware returned from the Apollo
+deﬁne given the widely varying conditions that can be Program.
+encountered in and around Jupiter and Saturn. In this paper,
+only the moons of both planets were considered as a Viable As part of the “go anywhere, anytime” philosophy of the
+destination because they are relatively stable (Io being an CXP, suit engineers now had to consider the design impacts
+example of a moon that would not make the ﬁrst cut for ﬁrst of suit(s) designs that would allow crew members to
+J ovian mission) and would hold a great deal of either function in the permanently shadowed crater interiors at the
+geological or biological interest. With those parameters, the lunar poles with cryogenic touch temperatures as well as the
+ﬁeld is narrowed signiﬁcantly to Jupiter’s Europa but is solar furnaee-like environments of craters at the equator
+kept generalized to all of the rocky bodies with no during lunar noon.
+atmosphere. Europa — and most Jovian moons of interest —
+lie within the dense bands of trapped radiation and at some The gravity, while one-sixth that of Earth’s gravity, did
+estimates are two to three times what would be experienced provide mobility challenges to the Apollo crews since the
+within Earth’s Van Allen Belts. pressurized suit design hindered natural human ambulation.
+Advances in space suit mobility elements since that time
+It also should be noted that missions to Saturn would have have signiﬁcantly minimized the impact of low gravitational
+to be of incredible interest or necessity for the investment of acceleration combined with suit pressurization to the design
+the additional mission transit time to reach the planet and of a space suit. Therefore design drivers for this environ-
+destinations of interest, such as the moon Eneeladus. Saturn ment, in addition to the mission durations of two weeks to
+does have a region of trapped radiation that is present but it one year and associated reliability design Challenges, will be
+is not as extreme as what is found around Jupiter. Titan as follows: pressurized suit mobility in reduced-gravity; life
+offers reduced gravity acceleration and an atmospheric support consumables in a vacuum; thermal exposure and
+pressure of 147 kPa, but satellite data suggest lakes of liquid management in a vacuum at extreme temperatures; high-
+methane and with signiﬁcant methane in the atmosphere abrasion, very ﬁne, and statically Charged dust; and
+with very little oxygen and indications of atmospheric potential plasma charging ﬁelds.
+lightning. The implications are that a human presence would
+provide a source of oxygen and facilitate a very dangerous Martian Surface Missions
+environment for the crew members. Thus, Titan has been . . . .
+remove d from the analysis performe d for this study The martian surface enVironInent, in many aspects, is the
+' Inost benign of all those to be considered for human EVAs.
+Design drivers for this environment will be nearly identical The presence Of the Inartian atmosphere, albeit much less
+, . . prominent than Earth s, does prov1de the mechanisms for
+to those of the Earth s Inoon With regard to the abras1ve . . . . . . . . .
+. . . . . w1nd eros1on in addition to minimizing thermal extremes,
+dust, cryogenic temperatures. Trapped radiation conditions . . . . . . .
+. . . . . . . solar w1nd protection, and some cosmic radiation shielding.
+(most extreme of EVA destinations), in addition to m1ss1on . . . .
+. . . Recent discoveries from NASA martian rovers and orbiters
+duration and robustness of des1gn due to relatively unknown . . . . .
+. . . . . indicate an ever-1ncreas1ng eV1denee base for the past
+surface conditions and required tasks w111 dramatically . . . .
+. . . . eX1stenee of liquid ﬂow1ng on the surface. Between the
+impact the required des1gn and technologies. . . . . .
+ﬂow1ng of liquid on the surface and the atmospheric eros1on
+. . . . mechanisms, the martian dust physical Characteristics will
+Martzan Moons: PhobOS/Dezmos Mzsszons . . . .
+be eons1dered low abras1on albeit more abras1ve than what
+The environment of the martian moons is expected to might be found on Earth. However, while knowledge of the
+combine lunar dust Characteristics with thermal extremes at Chemical makeup of the martian dust is limited, with the
+vacuum that are no greater than those seen on Earth’s moon, spectral information from the orbiting satellites and the spot
+with the low gravitational acceleration Challenges seen with analyses from the rovers, the generalized list of Chemical
+the NEO/NEA EVA environment. As with the in-transit makeup is growing.
+9 _ The current NASA design reference missions [19], [20],
+Samples of comet Wlld 2 returned by NASA s Stardust and data returned [21] indicate a probable mission duration Of upwards Of 3.3
+from the EPOXI (Extra-solar Planet Observation and Deep Impact Th. . h 11 f . .
+Extendedlnvestigation) spacecraft. years. is poses quite a c a enge or space su1t engineers
+6
+
+"
+"7","to design a suit that is highly operable, does not require low torque and no programming“). While it is largely
+frequent maintenance, is very durable for signiﬁcant usage independent of the gravity ﬁeld, it is one of the leading
+at Mars, and is highly reliable — not requiring repair or causes of astronaut fatigue during miero-gravity EVAs.
+replacement — during the mission. Additionally some
+surface data from the Spirit Mars Exploration Rover Reduced—gmvily DestinationS—The reduced-gravity destin-
+indieates that the surface temperatures can vary from -23 to ation environment group is comprised of potential EVA
+-90 degrees Celsius diurnally from late summer to fall environments in which the local gravity ﬁeld is deﬁned as
+respectively. [22] Therefore some consideration may be 1.6 m/s2 < local acceleration > 6.5 m/sz. Of the possible
+required for long mission stays that may span seasons at destinations where humans can survive and potentially live
+some of the martian latitudes. long term with a return to Earth within ﬁve years, the
+following present themselves as Viable destination
+Therefore, the design drivers for this environment, in candidates: Earth’s moon and Mars. In a reduced-gravity
+addition to the mission durations of as many as 3.3 years environment, as deﬁned previously, the two major design
+and associated reliability design Challenges, will be: drivers are the mobility and mass of the space suit.
+pressurized suit mobility in reduced gravity; life support Similarly, as discussed with the microgravity environment,
+consumables in a rariﬁed atmosphere; thermal exposure and pressurized mobility of the suit and minimizing suit-indueed
+management in a rariﬁed atmosphere at cold to moderate fatigue on the astronaut are highly desirable given the
+temperatures; and low-abrasion, very ﬁne, and potentially relatively short EVA time available and the voluminous lists
+Chemically reactive dust. of desired tasks during EVAs — if crew members are
+eXhausted early in the EVA, not all objectives will be met.
+4. M APPING DESTIN ATION ENVIRONMENTS TO As has been seen in the past, crew fatigue is primarily a
+MUTUALLY INCLUSIVE DESIGN DRIVERS combination of suit pressurization and tasks required of the
+crew of which the gravity environment will obviously frame
+Destination Mapping Phased Approach what tasks are required of the crew.
+The study was approached in three phases to prov1de a Secondly, the mass of the suit is very important in a few
+systematic reV1ew of what is needed in space su1t des1gn as a . . . . . .
+function of the potential destinations for human EVA. The different ways. The graV1ty environment 1n Wthh the suit
+ﬁrst phase of this study, after deﬁning the list of potential W111 be used and the length Of tune the crew member has
+human exploration destinations, was to deﬁne a list of space been. out Of the Ealth S lg enV1ronInent should be
+suit design drivers per destination. The second phase took eons1dered when deﬁn1ng the mass Of the space su1t. For
+the destination-based design drivers for space suit hardware example, If the crew has only been away from Earth for one
+and focused on the physical Characteristics of the local week and W111 be operating 3.1 68.kg (150 lbm) su1t .on the
+environments, grouping them into common design drivers. “10.0“? th1s 1s a manageable s1tuation (other than the 1nert1al
+These subsequent groupings were: microgravity, re duee d res1stanee of the suit) as this suit would appear to weigh on
+gravity, thermal extremes at vacuum, solar, and cosmic the moon the equivalent of 11.3 kg (25 lbs). However, if the
+radiation; high-abrasion dust; low-abrasion dust; and crew member has been on the moon for one year and h1s/her
+thermal management in the presence of an atmosphere. And muscular strength has “3.9.th t0 the moon (6%"" no muscle
+lastly, the third phase of deﬁning the design drivers focused res1stanee tra1n1ng t.0 m1t1gate muscle atrophy), the su1t
+on unique aspects of missions that would affect the design WOUld appear to weigh 68 kg (1.50 lbs) on the moon and
+of space suits; this resulted in: mission length and distance would adve $.61}, affect the fatigue EVCIS Of the crew'
+from Earth (hardware reliability, maintainability, and Gianted this is a scenario.that is unlikely under normal
+complexity) and long durations of exposure to radiation. m1ss1on operatlons, hut 1t 1s used here to exaggerate the
+p01nt. There is grow1ng thought that the EVAs themselves,
+. . . . when done regularly, could prevent atrophy due to the
+Phase 1' Deﬁmng EVA Deszgn Drzvers loading of the skeletal system from the suit; however, the
+Microgravily DestinationS—Mobility in microgravity ISS paradigm would imply the necessity of exercise
+becomes an issue as Newton’s third law of motion comes protocol throughout a mission to prevent the known long-
+into play: Bodies remain in a state of rest or uniform motion term effects of weightlessness.
+(constant velocity) unless they are acted upon by an external
+unbalanced force. How this transfers to suit design is in the There is also growing thought in the space suit community
+ability to move and translate from 0116 location to another that a different look should be taken at how the mass of the
+with minimal resistance from the suit itself, and in smooth suit is Viewed and managed. The thought is that in reduced
+motions that will not eXCite unwanted suit dynamic motion gravity environments, such as Earth’s moon and that of the
+or cause undesired impact forces to interactions with the smaller moons, natural human ambulation as performed on
+local environment that would set the crew member in Earth is not really practical or easy given the presence of
+unwanted directions. What is desired is a suit that provides
+the required pressure and has mobility joints that provide 10 Some space suitmobility joints are made of sets of circular bearings that
+are offset at different angles to obtain the desired range of motion for that
+joint. However, this often results in a mobility joints that require proper
+alignment of the hearings to obtain certain reach zones.
+7
+
+"
+"8","reduced gravity. This was seen in the Apollo EVA Video eroded or smoothed the edges of the particles once formed.
+footage in which the crew would frequently fall over or While the extraterrestrial dust world has further segregated
+would lope across the surface. Loping was easier to do than philosophically — arguments based on particle size and
+traditional earth ambulation and was not as physically whether particles are considered “dust” or “regolith” — for
+taxing. However, as some recent simulated reduced gravity the purpose of this discussion it is not necessary to further
+testing performed at J SC has indicated that even the suit-less stratify the deﬁnition.
+human ambulation changes in the reduced gravity
+environment and that new approaches to suit mobility in Low-abrasion Dust—Low-abrasion dust is characterized
+these environments should be investigated further. generically as in-Situ regolith material the size of granules of
+sand or smaller in which natural erosion processes are
+As with all things relating to space exploration, there is a present; i.e., water or atmospheric mechanisms that have
+trade-off between the amount of mass that can be launched eroded or smoothed the edges of the particles once formed.
+from Earth and that required to perform the task optimally
+in the destination environments. Mass is always king on Extreme T hermal Management at Vacuum:
+la nch da so careful Inass mar in mana ement and
+. u y, . . . . g g . . Lunar Pole in Permanent Shadows of Craters — Cold
+impacts on m1ss1on objectives at the ﬁnal dest1nation, . .
+shoul d be consi dere d Extreme—There has been eV1dence in recent years of lunar
+' ice at or below the surface of permanently shadowed areas
+Radiation—The non-thermal radiation environment for within the craters at the lunar poles. These areas have been
+human exploration missions within and outside of Earth’s p221?th:Oi:t1:t3:$gliere:ie::§cefo?l8:113:11;Sgiiayiter‘: a
+Van Allen belts will increase the risk to human survival in p ry q . . ’ ry
+two general situations: high-energy solar events and long- expens1ve to launch from Earth to support m1ss1ons, and the
+duration exposure to cosmic and solar radiation. Given the products generated through electrolys1s can be used for
+. rocket fuel, any destination that has a form of water
+propuls1on technology of today and the cost of space travel, available for u tiliza tion will be hi hl desirable
+any destination in our solar system will either require g y '
+substantial time for the mission or the time spent at the . . .
+mission destination will be ideally maximized so as to get However, for 196 t0.eXISt It must be protected from the solar
+the return on the ﬁnancial investment. However, in the early W1?(.1dangl sulblnnatfion Eiocgstsh that wojuldb r6913“: 1t “:th
+exploration missions the destination stay duration may be 011:1 :. 61 me Of glgt O b e sun, e ll“: ene: a
+minimized initially to limit the risk with longer durations for Pm. CC ?V6 ayer 0 us? or e a .Cry9genlc 6.11196“ “res”
+subsequent missions Th1s Wlll place the astronauts worklng 1n an enV1ronInent of
+' cryogenic touch temperatures and, in turn, will drive the
+Design Impacts due to Usage Duration—For the same need for development of advanced materials that are highly
+reasons that will be discussed later, most human exploration Eleaﬁflslafgrtht::ehnt:112pcraigrefncigagef :(i‘eljvnceiioiiztiii or
+missions outside of Earth’s orbit will necessitate long p . gy . p .ty.
+. . Advancements w111 also have to be made in order to prov1de
+periods of time away from the safety and resources of Earth. .
+Therefore it becomes critical that space suit design be the thermal management of the crew for long durations at
+robust enough to endure expected usage or be maintainable these temperatures.
+b a crew with minimal recurrin maintenance and re uired
+reyplacement parts during the mission q Lunar Equator, Center of Crater at Noon — Hot Extreme—
+' Earth’s Inoon also offers the other end of the thermal
+This discussion on space suit reliability to a large extent is ::?:§:?:n:r:f§er;lte tic: Scifjtlgrleathlllgaa? EEELOIEEZH 1:113:11:
+an uncharted area of study. Historically, space suit hardware . . ’ . q ' p
+is non-comInercial custom hardware that is manufactured Program Inltigated the nnpacts Of bOth the 001d polar and
+. ’ . . . . . . the hot equatorial thermal extremes by Visiting the mid-
+and operated in non-stat1st1cally Signiﬁcant quantities for latitude areas at lunar twili ht“ While this a roach was
+standard statistical reliability calculation methods. For erfectl acce table for hugmankind’s ﬁrst Vielnture from
+exploration missions, space suits will be Inission-critical p y p . . . .
+items that must fail safe but the trades must be done to home, the approach W111 s1gn1ﬁcantly hand1cap future
+optimize the acceptable iiisk posture Inass impacts due to extensive exploration and permanent habitation away from
+’ . E th.
+robustness and redundancy (extra mass on suits or spare ar
+parts and required tools launched on the vehicle), and cost
+associated with developing design and testing methods to be
+able to characterize and predict the mean time between
+failure and modes Of failure. 11 This is not part ofthe discussion of this study, but it should be noted that
+the tw111ght conditions of the Apollo m1ss1on EVAs, 1n addltlon to
+. . . . . . providing thermal mitigation, also provided an optimum balance of lighting
+H lgh-abr aSlOn DUSt—ngh-abfaSIOn dllSt IS ChaTaCtCTIZCd conditions. In the absence of an atmosphere to diffract light, the contrast
+generically as in_Sil‘u regolith material the size of granules of between the directly illuminated surface and that Of the shadows is difﬁcult
+sand or smaller in which no natural erosion processes are for the 1.111111%“? eye to raédﬂy adapt“ The $5111.“? alaCk Of depth pérceptlon
+. . h . h . h h and an inability to see into shadows untll w1th1n the shadow. Th1s would
+present, 1'6"" water 01‘ atmosp er1c mec anlsms t at ave remain an issue for design and operations of future missions.
+8
+
+"
+"9","Table 2. Space Suit System Mass Values for NASA Historical and Currently Operational EVA-capable EMUs.
+—
+Parameter/Weight 0n Apollo EMU [23] Space Shuttle EMU ISS EMU [25] CXP Suit Element (goal
+Earth: kg (lbs) [23] [24] requirements) [26]
+Space Suit/Pressure 35.4 (78) 43 (94) 65.2 (143.7) 188: 42 (92)
+Garment Lunar: 42 (92)
+Portable Life 60.8 (134) 65.8 (145) 89.2 (196.7) Lunar: 48.9 (108)
+Support backpack
+96.2 (212) 108 (239) 154.4 (340.4) 90.7 (200)
+Operational Pressure 25.9 (3.75) Nominal: 29.7 (4.3) Nominal: 29.7 (4.3) 29.7 (4.3)
+kN/m2 (psia) DCS Treatment: 55.2 DCS Treatment: 55.2
+(8 above ambient) (8 above ambient)
+
+—
+While it is possible that L1 0f the sun—Earth Lagrangian/ Phase II: First-order Environmental Impacts to Design
+libration points has higher solar ﬂux from the sun, the solar The two mos t common rou in s 0 f destination environ-
+albedo12 resulting from a combination of normal reﬂection ments were micrograviti (5E5 GEO sun-Earth-moon
+from the lunar surface (the. angle Of reﬂection and re- Lagrangian points, in-transit mission contingency EVAs,
+absollgption by astronauts is higher) coupled With the solar lOW-Inass NEO /NE A moons 0 f Mars moons 0 f Jupi ter and
+3322:3333 < Sam» am
+
+g . . . . tational ﬁelds of 0ne-third Earth or less: Mars and Earth’s
+crater creates an enVironInent that Wlll be the most radiative . . . .
+
+. . . moon). The de01s10n to group the enVironments in terms of
+thermally Challenging Of any destination humans may the gravity ﬁeld hinged on the mobility of the human
+attempt to V1s1t1nthe foreseeable future. performing the mission tasks and the technology required
+
+. er the eX erience of NASA that the technolo , tools and
+Moderate T hermal ExtremeS—The two enVironInents that ihobility pmethods are dramatically di ffeifzn t for a
+fall .1nt0 this category are LEO (near a structure .Wlth microgravity environment, a reduced gravity environment
+s1gn1ﬁcant thermal mass) and the martian surface. Th1s1s an and that 0 f Earth’s surface raVit EX eriences from
+interesting grouping as these two environments represent the Apollo EVAs and the suit Ifobilit}; desians 0 f the day
+milder thermal management des1gn Challenges for space resulted in the astronauts loping across the lunar surface for
+suits. Tﬂey art: boéh nnique 11: til at tﬁey arc: ltess eligitremetﬁs long traverse as they found this to be an easier and more
+ar .as OWt e es1gn mus e C ange O a ress e expedient means of traversing than ﬁghting the internal
+enVironmen ' pressurized forces of the suit Via a more earth-like
+. . . . ambulation. Likewise the current knowledge of the near
+The radiative thermal enVironInent 1n LEO takesadvantage earth asteroids suggests _ and quite frankly our hope _ that
+Of local albedo .ﬁromthe structure the astronaut 1s Working there are none that approach the size of the moon or larger
+aroundand that is heing reflected ﬁonhthe Earth. le?n the necessitating earth—like ambulation; despite What Hollywood
+approxnnate 90-minute orbit duration (45 minutes in the would have you believe
+sun and 45 in the Earth’s shadow), the conductive '
+[lempegatures 3:16 tilOdCIEﬁPd [and f0 $1 bte farther smoothed The need for human life support (Which in this case Will be
+epen mg on e erma 1ner 1a 0 e S rue ure. deﬁned as requiring, pressure management, thermal control,
+, , inspired oxygen and hydration) Within the biological
+Thed marltian tlhderIInaElOentvnonment can rantgethﬁOIﬁi [:th requirements for normal bodily function is necessary for all
+m0 era. e y CO . empera ures 0’ a .e 0. es human excursions outside the bounds of the Earth’s surface.
+depending upon the latitude, What WOUld be a typical Winter Therefore this is common to all destination environments
+. . . 0 0
+day in Scand1nav1a {-1 12 t0 8 C [470 i0 17'6 F])' The and not called out speciﬁcally as a design driver — With the
+presence Of an atinosphere, albeit 0.116 that is “168$ that Of exception of When there is an atmosphere or not, as this Will
+Earthf, does ptIEthde same :ﬁnvective [anti conclluetivel :16 at inﬂuence the technologies and strategies for providing these
+rans erinc e a ren 6.1:] e curren erma 1nsu a 1011 life support functions. It should be noted that life support
+approac in vacuum 1nV1a e. systems are one of the more complicated and expensive
+systems required in space ﬂight and should therefore not be
+12 The albedo of an object is a measure of how strongly it reﬂects light from terlahzed 01‘ forgOtten When pl‘lorltlZlng development.
+light sources such as the sun. It is therefore a more speciﬁc form of the
+term reﬂectivity. Albedo is deﬁned as the ratio of total-reﬂected to incident
+electromagnetic radiation.
+13 Solar ﬂux, 0r radiative ﬂux, is the amount of energy moving in the form
+of photons at a certain distance from the source per angle of incidence per
+second.
+14 This orbital period is representative of the typical operational orbit for
+the space shuttle.
+9
+
+"
+"10","It should also be noted that the impacts due to the internal
+operational pressure of the suit can signiﬁcantly affect suit 3
+design and system mass. In Table 2, the impact to system '8"" ""‘ 3
+mass of the ISS EMU due to an operational pressure of 8- 3 E 3
+psi, as opposed to the typical 4.3-psi, is signiﬁcant. While a :3 3 3
+designed operational pressure of 8-psi is not required for ‘3 .,.-._..i_.— 3
+EVAs, it does profoundly decrease the amount of pre- ,~’ 3 3
+breathe time on pure oxygen to denitrogenate the blood to 1383 ,-"" g
+prevent decompression sickness. [27] As a 4.3-psi suit V V ,~"" 3»
+impacts the timeline of a mission due to required pre- 3% ,~"" H
+breathe and uses known technology for design, the 4.3-psi g: ,~’.
+suit is considered operationally desirable for this study; it is “3i ,~"" 33, g m
+not singled out as an environmental design driver. :4 ,-"" 3% 3 3
+And lastly the suit operating pressure inside the vehicle has l .,.:'.,""j;‘.':;2':;‘—--”g'g’” 3 3'
+to be coordinated with the cabin atmosphere and pressure, g ;=:’ .' '3 E; 3?;
+oxygen concentrations, which affect ﬂammability consider- 2"" ‘§\ .,~,’."" I 3%
+ations, EVA pre-breathe protocols, and vehicle operational 3 \ )4’\ '1'. 3
+constraints. 3 X \1'\'°... ' g
+~' \ u:'<'<-.. E
+. . E? i...’ \x.“ ......‘.,‘“‘-‘-'-°\£;<-.m 3°
+Phase III: Second—order Envzmnmental Impacts t0 Deszgn g; - ,x \ :1 _______;; 3‘ up
+3‘9 Oz r’ .' -‘ H '3'
+Once the destination environments were grouped, a map— 33 3.3 '3”\\ {\Ni'l' 3 g
+ping t0 the environmental suit design drivers was performed < 3 2—. \J :'\f 1::
+as can be seen in Figure 1. In environment groups in which 3: ..-"",l‘._i‘,\ 3
+all of the included environments contribute to a suit design ff}. I‘~\.::_:.~.=. 3 E 3%
+driver, the line for the group begins at the group boundary I I "",--— 3“” 3 g 3 3
+and proceeds to the design driver. For design drivers in 3 i 1'!” 3 33 3'
+which all of the environments within a group do not map to E . _I"" I' 2;, g 3 g 2
+the design driver, lines speciﬁc to that environment map to 3 :‘Il’ ll 3% E >
+the driver. For example, all of the microgravity environ- ‘ j"": I l__-—..-_-iyu\ 3
+ments map to the microgravity and t0 the extreme-thermal- :WI II..,.-‘III 33 3
+at-vacuum drivers and, thus, the black dotted line maps from 3 '1' .f I I,’ g
+the microgravity destinations group border. However, all of 3 ‘ Ill 3;! I 3
+the microgravity destinations map to the radiation design ‘3 j I II ,I' 3
+driver except for the LEO environment; therefore, all of the 3 .-,' 1' II ,I' 3
+microgravity environments — except for LEO — map Via A II I ll 3
+lines to the radiation design driver. fj'ﬂ ' I ,’ ___: é
+"":5: :: . , x
+, , , , 3 23:23:15 ,' 1 ,’ I ,’ f 3-
+As seen 1n Flgure 1, and perhaps more clearly 1n Flgure 2, 3 I l I ,I , a
+extreme thermal management in vacuum and radiation 3 I 1' I’ ,I' ’I’ 3
+protection from a high—level assessment are design drivers 9 :I II II [I 3
+for 89% of all possible destinations on which humans are I III II 1’ ;‘
+likely to perform EVAs. Coming in a close second at 78% {'1' ’ ’l l, 5 ii
+. . . . . - I B m
+of all dest1nat10n enV1r0nInents are the des1gn drivers due to W 3—417"" 1’ §\ 5.3
+mission duration (time) and microgravity. Following these 3 {I 1’ 3 33‘
+we see at surprisingly low percentages: high—abrasion dust 3' i’,’ 1% 33
+at 44%, reduced gravity at 22%, and moderate thermal and EE 3 :-
+low-abrasion dust tied last at 11%. 3'3 I E 3 3
+z 3; \ 3
+Extreme T hermal at Vacuum—Not surprisingly, all 3 é;
+destination environments listed, with the exception of Mars, i 3 5
+have to contend with thermal management in the vacuum of 3
+space. And, in reviewing the data, it is seen that of the
+destinations available for human EVA, the thermal extremes , ,
+seen on Earth’s moon encompass all other environments. “g?“ ,1 _ Mapplng 0f the probable human EVA,
+dest1nat10n enVIronments t0 the prlmary space sult
+Radiation—Historically, due to mass constraints for launch dBSlgn drlvers.
+capability and cost, protection against solar and cosmic
+10
+
+"
+"11","Destmahon EnVIronments
+5‘ O
+a E
+*3 E"" 2 3 cu
+E g S S 3 E
+g 3 3 S 3 ° 3
+3 g E"" E E 2 3 E .5
+8 o S}, {.3 0 -‘;° '8 ‘E g Percentage of Destination
+5 8 3 § § 2 E 3 E Environments Driving Design
+—IIIIIIIIn
+e I—IIIIIIIu *
+“2’ —IIIIIIIDD
+I—
+-IIIInuqu
+ED ‘
+_Iqununuu
+: —IDDDDDDDD *
+:5
+—::::::::::::::::I *
+_naauunnII *
+0% 10% 20% 30% 40% 50% 60% 70% 80% 90% 100%
+Figure 2 — Mapping of the EVA destination environments to the design drivers so as to identify commonality
+percentages; this will aid in identifying the most common design drivers for all the possible human EVA destinations.
+radiation has been “best-effort” strategy in which outer reliable space suit system. By focusing on the individual
+garments provide protection against alpha particle radiation design element with regard to the most extreme operational
+but limited effectiveness against anything else. To date, environment and the maximum mission duration, the goal
+NASA has mitigated exposure for LEO operations by would be to drive the mean time to failure well beyond any
+monitoring solar activity and limiting EVA time and mission hardware needs. Such a systematic approach will
+providing vehicle shielding during high-activity or solar over time drive out the failure modes, increase the design
+events to limit exposure to the crew. A similar approach was reliability and build a statistical operational experience base
+used for the Apollo missions, but the information regarding such that failures are well understood and at times
+solar activity was limited due to ground-based telescopes predictable.
+and radiation monitors on the lunar lander.
+Microgravity Design DriverS—Similar to the discussion of
+It should be noted that there is no delineation in Figure 2 in thermal management at extreme temperatures in a vacuum,
+the percentages as to what form of radiation each of the the number of destinations with very low to negligible
+environments includes; instead the percentages are rolled gravitational acceleration by far outweigh the destinations in
+up. Environmental groupings in Figure 1 show that radiation which a reduced, yet signiﬁcant, gravity ﬁeld is present that
+protection is a signiﬁcant environmental design driver that is relatively hospitable to humans.
+is common to all destinations outside of LEO and can have a
+profound impact on human life due to the long mission High-abrasion Dust—High-abrasion dust, as a design
+durations and for long-term exposure. Given the leaps of driver, comes into play in less than half of the environments
+understanding on the mechanics of radiation and decay, and discussed in this paper given the number of destinations that
+their effects on humans, it is critical that a concerted effort pertain to deep-space EVAs or Mars, where the dust has
+be applied to suit development for human exploration in this been eroded over time. It should also be noted that our
+area. experience with the dust on Earth’s moon is indicative of
+what is expected for destinations with high-abrasion dust.
+Design Impacts due to T ime—With the exception of LEO
+and GEO, using the assumption that manned vehicles will Reduced Gravity, T hermal Management in cm Atmosphere,
+be limited to current chemical combustion technology, all and Low-abrasion Dust—The last three are grouped
+potential destinations for human EVA will require long because the percentages, while not initially expected, make
+mission durations at quite a distance from the resources and sense when considering all other destinations. All three have
+supplies of Earth. Therefore, it should be recognized that a to do with Mars and Earth’s Inoon, which are the only
+methodical approach must be taken for developing a highly signiﬁcant bodies within current human exploration.
+1 1
+
+"
+"12","Moreover, Mars is the only other body with an atmosphere savings in terms of schedule can be realized since the
+that facilitates two of these three design drivers. Further technology can be developed prior to the mission that is
+implications of these ﬁndings will be discussed later. being deﬁned; i.e., the sooner you launch, the cheaper it is
+given you have saved the money in the out-years due to
+5. IMPLICATIONS TO TECHNOLOGY inﬂated dollarS-
+DEVELOPMENT STRATEGIES , , ,
+It is not the intent of this paper to assess the current state-of—
+Given the past success rate of proj ects to be funded through the-art of space suit design with respect to any of the design
+completion within NASA, it iS advised to obtain funding Via drivers discussed here. It is the intent to bring to the stage
+DOD-ﬂigl’lt program monies, dCVClOp the technologies that the notion that by addressing the design drivers9 in a
+will give the highest probable return on investment with the systematic and well-Inanaged effort, that will be most
+greatest likelihood Of being needed, and coordinate the frequently encountered in human EVAs in the foreseeable
+effort at the agency level to reduce the likelihood Of future will yield the largest return on investment outside of a
+redundant effort or miss-veetoring. speciﬁc mission and destination.
+This study addresses the likelihood of design drivers as a 6. CONCLUSION
+function of the possible destinations that human EVA will
+potentially encounter given the likelihood of technological This study addresses hOW a generic, modular space Shit
+advancements within the next feW decades as have been architecture would be beneﬁcial when combined with the
+seen in the past 30 years. With this in mind, results could study Of all potential destinations in the solar system for
+differ from those one would expect given past efforts in suit human EVAs Withiii the next 30 years (based on current
+design and technology developed to any signiﬁcant level. In technological capability and, using linear extrapolation, that
+the past, these efforts were deﬁned by a particular mission which can be achieved based on experiences during the last
+with a particular destination in mind — usually the ﬁrst time 50 years Of human space ﬂight — no warp drives and force
+Visiting that destination. In that framework, that paradigm of ﬁelds available) combined With a systematic prioritization
+design and technology development prioritization made 0f technology development as deﬁned by likelihood 0f need
+sense. However, in a future in which resources to be applied for human EVAs. These tWO when combined provide a
+to space suit design and technology development will be space suit architecture that is easily modiﬁed depending on
+scarce and prioritization will be expected, the need for the mission destination and can be upgraded when new
+exploration as well as the destinations to be explored will technology is available With minimal cost and redesign. One
+vary with policy makers in power; therefore, a prioritization example to illustrate the modular architecture and ability to
+based on the likelihood of occurrence should be seriously upgrade as required is the TMG- The TMG can be
+considered. minimized for use in LEO, and when a mission is required
+to go to the moon, it can be replaced with a version that is
+If it is clear that Mars is a high-priority destination due to specialized feh the lunar environment. .The TMG can later
+national security, discovery of unobtainiuIn, or survival of be replaced With vers1ons that are optnnlzed for the other
+the species, the prioritization presented here will be thermal and micrometeoroid enVironInents deﬁned in this
+overcome by events. But, lacking such direction, we see paper. As long asthe suit and TMG interfaces are well
+here that half of the signiﬁcant design drivers for space suits deﬁned, it Wiii mlnnnize the .eost 0f upgrading the suit
+encompass 78% to 89% of all destinations for human EVA. capability by not requiring a ma] 0i redes1gn effort.
+What we do see is that only one-quarter of the suit design
+drivers are speciﬁc to Mars. The destination list, which is based on these selection
+criteria, is greatly narrowed and the possible destinations for
+So, from a perspective of return on investment to reach the our human (in-person) exploration .reduees into a well-
+InaXiInuIn yield of dollars invested in space suit design and deﬁned subset ef space shit des1gn drivers that are not likely
+technology development, a new focus should be brought to Change Signiﬁcantly iii the near future and can be used
+into the forefront for discussion. A modular suit architecture now to solve .most — if not all f 0f the major design
+as discussed in [l] and [2], has the potential for a generic set challenges faelng space Shit eng1neers and exploratlon
+of suit hardware components or elements that would address programs today.
+the majority of destination environments while minimizing
+the impact to performance. It would provide hardware and The ﬁndings and rankings presented in this paper provide a
+design interfaces such that suit components that needed to mission-independent, EVA system development approach
+be Changed due to speciﬁc and/or unique environmental based on destination environmental space suit design driver
+constraints would be Changed. Additionally, the modular likelihood. This approach Wiii help ensure the highest
+nature of the architecture would allow integration of new likelihood, and highest return on investment while there is
+technologies as needed without a massive redesign effort. no programmatic destination 0f record and Wiii also ensure
+Furthermore, by minimizing the costs due to suit redesign, the opportunity to provide the largest return 011 taxpayer
+cost savings in terms oflauneh mass, and only launching the dollars that will meet multiple future mission destinations.
+suit components necessary for destinations of that mission, This allows a greater chance 0f providing better technical
+12
+
+"
+"13","solutions to future missions When they are needed, as [8] E. Canalias, G. Gomez, M. Mareote, and J. J .
+Opposed to waiting for a mission to be identiﬁed and then Masdemont, Assessment of Mission Design Including
+starting to solve the technical suit design problems once the Utilization of Libration Points and Weak Stability
+programmatic and budgetary clocks have begun to tick. Boundaries, European Space Agency, the Advanced
+Concepts Team, Ariadna Final Report (03-4103a),
+It is highly recommended that this development approach be 2004.
+considered and managed as a “Flight Program,” meaning
+that development technical requirements, budgets, and [9] J . Pantermuehl and B. Miranda, Thermal Study Of the
+developmental milestones are well deﬁned and managed to Constellation Space Suit Element in Lunar Craters and
+agreed-upon completion dates. This Will help ensure that Plains, NASA’s Lyndon B. Johnson Space Center, JSC-
+these efforts will reach the desired engineering solution in a 65567, July 2007
+reasonable amount of time and aid in maturing the
+technology incrementally as the funding is available. And [10] David A. Paige, et a1, Diviner Lunar Radiometer
+1ast1y, it should be noted that While the environment is the Observations of Cold Traps in the Moon’s South Polar
+primary design driver in space suit design, the largest Region, Science, Vol 330, pg 479, October 22, 2010
+secondary driver is the activity of Which Will be performed
+in the suit and should not be forgotten When formulating the [11] Grant H, Heiken, David T. Vaniman and Bevan M.
+space suit architecture and considering how to incorporate French, Lunar Source Book: A User’s Guide to the
+the needed technologies for the destination environment. Moon, Lunar and Planetary Institute, Cambridge
+University Press, 1991, ISBN: 0-521-33444—6
+[12] Luey-Ann McFadden, Paul Weissman, and Terrence
+REFERENCES Johnson, The Encyclopedia Of the Solar System,
+. . . Elsevier Inc., 2007, pp. 432, ISBN-13: 978-0-12-
+[1] Terry R. H111 and Bnan J. Johnson, EVA Space Suit 088589-3
+Architecture: LOW Earth Orbit Vs. Moon Vs. Mars,
+IEEEAC paper #1209? 2010 [13] Mona L. Delitsky and Arthur L. Lane, Ice Chemistry 011
+. . . the Galilean Satellites, NASA Jet Propulsion
+[2] Joseph J. Kosmo, Des1gn C0ns1derat10ns for Future Laboratory, Journal Of Geophysical Research, Vol.
+Planetary Space SUitS, NASA,S Lyndon B. JOhIlSOIl 1039 NO. 13139 PP 319 :),91_:),19 4039 1998
+Space Center, SAE Technical Paper Series 110. 901428,
+Ju1y1990 [14] Katharina Lodders and Bruce Fegley, The Planetary
+. . . . Scientist's Companion, Oxford University Press US.
+[3] Constellation Des1gn Reference M1ss10n and 1998, p. 190. ISBN 0195116941
+Operational Concepts, NASA Constellation Program,
+CXP 70007 reV1s10n B Change 002, release date June 19, [15] David R. Williams, Mars Fact Sheet, National Space
+2008 Science Data Center, NASA, (September 1, 2004),
+. . . http://nssde.gsfe.nasa.gOV/planetary/factsheet/marsfact.h
+[4] James R. Wertz and Wiley J . Larson, Space M1ss10n tml, Retrieved November 22’ 2010
+Analysis And Design, Mieroeosm, Ine., Third Edition,
+1999’ ISBN: 978—1881883404 [16] Flight Rules: 188 Generic Operational, NASA Lyndon
+, , . B. Johnson Space Center, Volume B, Section B14,
+[5] J . L. Roder, Speeiﬁeation 0f the Plasma Env1r0nment at NSTS—12820, October 05’ 2010
+Geosynehronous Orbit in the Energy Range 87 eV to
+288 keV, The Aerospace Corporation for Space and [17] ECSS—E-ST-10-04C Space Engineering _ Space
+Missile System Center Air Force Materiel Command, Environment, Eurepean Cooperation for Space
+August 15’ 1994 Standardization, cooperative effort With European
+. . . . . Space Agency, November 15, 2008
+[6] Des1gn Env1r0nments for Crew Systems D1V1s10n
+Provided Space Shuttle GFE Hardware, NASA, [18] N. E. Brown, T. R. Dashner and B. C. Hayes,
+Johnson Space Center, Crew Systems DIVISIOH’ JSC' Extravehieular Activities Guidelines and Design
+08708: September 11» 1975 Criteria, NASA CR—2160, 1973
+[7] E' 1"" Yagoda, Alpha Magnetic Spectrometer (AMS—02) [19] Ste hen J . Hoffman and David J . Ka 1an Human
+EVA Touch Temperature Evaluation J Ohnson Space E p - . p - 9
+, , , ’ Xploration of Mars. The Reference M1ss10n 0f the
+Center Engineering and Selenee Contract Group for N AS A Mars Exploration Study Team N AS A Special
+NASA, ESCG-4470-07-TEAM-DOC—0033-B, July 28, Publication 6107 July 1997 9
+2008 9
+13
+
+"
+"14","[20] Bret G. Drake and Mars Architecture Steering Group, BIOGRAPHY
+Human Exploration of Mars: Design Reference _ .
+Architecture 5.0, NASA Special Publication SP—2009— 7 Terry R' HI” ZS a member of the
+566, July 2009 47.,- -- ‘ NASA Lyndon B. Johnson Space
+' ; Jr, . Center (JSC) Internatzonal Space
+[21] Bret G. Drake and Mars Architecture Steering Group, 5 ,2!‘ 1 , Statzan/Shuttle. Extravehzeular
+Human Exploration of Mars: Design Reference g"" 29' 1 M01911“? U7?“ (EMU). Team
+Architecture 5.0 Addendum, NASA Special Publication ""Va. \f wher e . he ZS .respbnszbte for
+SP-2009-566-ADD, July 2009 ’0 555‘ . provza’zng engzneerzng znszght
+' :1 into the 2010 life extension
+[22] Zbigniew Sorbjan, Michael Wolff and Michael D. x 4‘ hardwére, MOdlﬁcathm
+Smith, Thermal Structure of the Atmospheric Boundary : ~ determznzng .what the system
+Layer on Mars Based on Mini-TES Observations, ~ 2. 4 har dwar e zmpaets ar e to
+Quarterly Journal Of The Royal Meteorological . . ?“deg the [SS EM U support
+S ociety, 135:1776—1787, 2009 out untzl 2028, and znvestzgatzng how the EM U can be used
+as a demonstration platformfor technology development.
+[23] Kenneth S. Thomas and Harold J . McMann, US . . , ,
+Spacesuits, Springer—Praxis Ltd., 2006, ISBN: 0—387- Terry has a BS zn Aerospace Engzneerzng and an MS zn
+27919_9 Guza’anee, Navzgatzon, and Control T heory wzth a mznor zn
+Orbital Mechanics from the University of T exas at Austin.
+[24] N AS A Extravehicular Mobility Unit (EMU) SS A Data He began his career at NASA while working on. his graduate
+Book Hamilton Sundstrand initialrelease ca 1983 theszs pmjeet zn developzng banks of szmphﬁea’ Kalman
+’ ’ ’ ﬁlters integrated into an artiﬁcial neural network to obtain
+[25] N AS A Extravehicular Mobility Unit (EMU) LSS /SS A an optimal state solutionforpreeision landing on Mars.
+gjgiemgéoiéloHamﬂton Sundstrand, ICVISIOD P’ While at NASA, T erry has worked on projects and programs
+spanning from [SS navigation software veriﬁcation to
+[26] Space Suit Element Requirements Document, Shuttle navigation design test objectives and baeh-robm
+Constellation Program Extravehicular Activity (EVA) mzsszan support, X38 Crew Return Vehzele navzgatzon
+Systems Project Ofﬁce (ESPO), CXP 72208 revision D, algorzthm development, Space Launch tnztzatzve technolagy
+September 3 2010 a'eveloprnent, Orbztal Space Plane PFOJeet ofﬁce ISS—prznae
+’ zntegratzon, Space Shuttle “Return to thht” STS-107 tzle
+[27] Ryan Lee, Operational Pressure Implications 0n :5]? azr t6?!) 31911122. development, and t0 CxP Space Salt
+Pressure Garment Subsystem Design, NASA Lyndon emen ea ers zp.
+geggggsggogpace Center, JSC_65569/CTSD_CX_5123’ T erry and the Suit Element have been interviewed by the
+Associated Press and covered by media outlets including
+CNN.com, Forbes.com, and National Geographic video
+“Living on the Moon” air date 2009. T erry has also been
+identiﬁed as one of NASA’s Constellation Stars, and was
+identiﬁed as NASA T eeh Brief’s “Who ’s Who at NASA ”for
+November 2010.
+In leading the CxP Suit Element engineering team, T erry
+had the responsibilities of JSC’s Engineering Project
+Manager, the CxP E VA Systems Suit Element Deputy Lead,
+and Element Lead during his tenure 0n the project. He
+facilitated the development of system functional require-
+ments for space suit development and a “elean-sheet”
+design approach that has been widely recognized within and
+outside NASA.
+14
+
+"

@@ -1,0 +1,667 @@
+"","x"
+"1","d“— — —-—
+
+Microgravity Flight Characterization of the
+
+International Space Station Active Rack
+
+Isolation System
+
+Glenn S. Bushnell, The Boeing Company, Seattle WA
+
+Ian J . Fialho, The Boeing Company, Houston TX
+
+J ames L. Allen, The Boeing Company, Houston TX
+
+Naveed Quraishi, NASA J ohnson Space Center, Houston TX
+
+Microgravity Measurements Group Meeting
+The World Space Congress — 2002
+10-11 October 2002, Houston, Texas
+Copyright © 2002 by the authors
+
+"
+"2","Microgravity Flight Characterization
+of the International Space Station
+Active Rack Isolation System
+Glenn S. Bushnell: Ian J . Fialh0**, J ames L. Allen$ and Naveed Quraishi§
+*The Boeing Company, Seattle WA
+**$ T he Boeing Company, Houston TX
+§NASA Johnson Space Center, Houston TX
+ABSTRACT constraint on the range of relative displacement between
+the Station and the rack. The controller design is then
+Space ﬂight experiment test results of a Space Station presented and the performance issues are addressed. A
+Active Rack Isolation System (ARIS) are presented. description of the ARIS International Space Station
+The purpose of ARIS is to isolate microgravity sensitive Characterization Experiment (ARIS—ICE) test hardware
+science experiments mounted in Space Station racks and configuration is described. Several sets of alternate
+from structural Vibrations present 011 the large Space umbilicals and station shaker hardware were developed
+Station orbital structure. The overall Objectives of the and used during the experiment. ARIS actuators were
+experiment were 1) to test and evaluate the ARIS also used to determine the stiffness of the umbilicals and
+design modifications made from 1997 to 2000 as a to Obtain a response of the rack and the station interface.
+result of prototype ﬂight testing performed 011 the Space Tests were also conducted with the payload fans on and
+Shuttle Atlantis, 2) to characterize isolation Off to determine their impact on performance. Isolation
+performance on the International Space Station, 3) to tests during crew awake and sleep periods, and during
+assess the impact that rack payload disturbances have on station shake tests were Obtained. These characterization
+the microgravity environment, 4) to test alternative and isolation test results are presented.
+umbilicals designed to improve isolation performance,
+and 5) to gain on-Orbit Operational experience and INTRODUCTION
+validate procedures. The scope of the material
+presented is limited to microgravity performance issues, One Of the primary Objectives of the International Space
+so only results related to the first four Objectives are Station (188) is to provide an acceleration environment
+presented. suitable for microgravity class science experiments.
+Microgravity experiments include many crystal growth
+Key performance issues discovered during the ﬁrst and ﬂuid experiments that are very sensitive to very low
+prototype ﬂight test are described ﬂrst. These issues are quasi—steady frequency acceleration. The maximum
+related to the behavior of the umbilicals and how to acceleration level considered acceptable for most
+cancel their effects, the dynamic response of the rack microgravity experiments is specified in the
+and control stability, identification of sources of all International Space Station requirement [1] and is
+dominant Vibrations above 1.0 Hz, the impacts of rack shown in Figure 1. This requirement constrains the
+rotation on the microgravity performance at all locations root-mean-square (rms) acceleration level for one-third
+in the rack, and the performance impact due to the octave bandwidths. As can be seen in the figure, the
+* Corresponding Author; Email: glenn.s.bushnell@b0eing.com
+1
+American Institute Of Aeronautics and Astronautics
+
+"
+"3","5 “IE Octave Acceleratiuns
+m ZEEEHH ""I “23:22:
+— Requirement :-::-:::-:IC-I:::-::c::-:-::-1:::-:"""":- :::-__ 3:03:
+_ _ _'__LJJJLUJ.___'__LJ_|_|JL'J.___L J _l 'J.___|__ _|_'_|JL
+4 — Statlun Mammum -I--I—4-lHl—I$---I--I-1'-l-11'LI4---l- 4-.-.1rI$---I-- '-I-11'L'
+“ID — Statiﬂn MIHImum
+— ARIS Maximum EEEESSEEEEEEEEEEESSSEEEE: EESSSSEIEEEEEEESEEEE
+3 — ﬂHIS Minimum II3:13Ill:Z:2:::C]]_'1EI:__-E:E]:IHEIIT.""-11:13?
+1D E55'sEliéiiiHEEEEliEliiiiéHEEEEIEE'Eia'iéHiEEEIEE'EiE.‘ ilﬁiiEEE'EE'Ei'lf IéEEE'EE --EIEH:
+:ZZI::I:IIIIIIIZII::::I::I:I:IIIIIZIE::ZIZZEJJJIDIZZZIZZEJJ :IEIIZZZE: IIZZZEZEIIZIIIIIE-
+ﬂ 333.:3F¥?HEFZIFZFHHHFZIF:FHHH? 3:331:13. IFIF: ”""ZFZFQZHIF
+I'_I'_I ""'I""I'T'I'ITI'lr""'I""I'T'I'ITI'lF""'I""I""I'I'ITI'|T 'I""I""I 'IFIT"" ' 'F'F'I'I'I'Ir
+III 2 ""'1""I'T11TI‘I.’""'I""I'T11TI'IT""'I""I'1'I1TI'IT "" 1.11“” 'f'I'I'I‘J.
+31D E55:55:5é5'5'élal'iEEEIEEIEéi'i'éH'EEEEIEEIEE' é'” ﬁzzle: ' .. . E ---'EiEi:'ii:l
+.: E55:5EEf33ESEEEEEEEEEEEEEEEEEEEE “555:? H ' :EEEEEE
+E 3323311232:33313311132515: 11:25:"" -:12%1 33:31:21:
+E ""'1""I'f1‘.fo""':"":'11‘.1:‘:.‘""':""I'.113“ 'I""I"".'l '. IT""'I"".""I'I'I‘..‘.
+'— 1 I I IIIIIII I I IIIIIII I I I I I II I I I IIIII I I IIIIII
+E10 EEE'EE'EE3EEEEEEEIEEIEHEEEEEEEI==E F !E'EEEEE' __:EEEEE _aae-EEEEEEEE-E-E-a:
+III I22':2':IJJI'I'EIII'II'IIJJI'I'E"" ' ""' 2"" JE'IIIIEI': :‘I'JE'IIII'ZIEZ'I'Z'JE
+3 55:55:5::::::555:55:5::::: ﬁg: EI .ﬁ ‘q::”:"":"" ::::::555:5::5::::
+:1: ___|__|_J.JJJ.L|L___|__|_J.JJ h- ! ___—_LJJJJ ___ _LJJJJLIJ.___L_L_|_|_|JL
+El -I I III""..I 11:11:11: IIIIIIII
+”'0 2 ii
+ZZZIZZIZIIIIIIEI ' I l- _IZZEJZIIIIEIIZZZIZZ I-ZIZIIIEIIZZZEZE:IZIIIIIEIIZZZEZEZIZIZIZIE
+---I--I--l--|-l-l- .- -I- ' --I--|--|-|-|+|-|+---I- -|-|-|-|I-I-I----|--|--|-|-|-||-I+---I--I--|-I-|-|I-
+- '--'-1..'l'---' r7 I----I--I--II 1'. --I--I--I-I-I-II-I%---I--I--I-I-I-II-I%---I--I--I-I-I-II-I
+'1 "" IIIII I I IIIIIII I I I III I I IIIIIII I I IIIIIII I I IIIIII
+1D EE:|=== :lt|:|- _ --|51:l:l - -::| _ -:|:l:t|:|tEE5'5El::l:|:|:lI:|:tEEEtEtddﬂdtltEEEtEtdEIdﬂ -
+__:I__I_I:I:I_ ___ II _i::I:IJIIIII___I__EIIIIIIIIEII___E_EJ:I:IJEII___E_E:I_I:I:|I:-
+222': - :::|:_|_I IIII __IIIICJIIIIIIIIIIIII:II:JIIIIIIEIIIIIIIICIIIIIIIIEIIIIIEIEIIIIIIIIEI
+:_:| 3""“;iﬂt:::l::l:iiji:t::::::tjj:iii::l::tijjjtli:::t:tjjjjtli:::t:tj:ljit
+2 ---.I-H-HI—l'r---I--I-H-I4H'r---I--l--I-l1'+I-H---I--l-1'-l-l-I'rH---l--l--I-l-l-I'rI+---l--'r-l-I-l1""r'
+1l:l- I IIIIII I IIIIIII I IIIIIII I IIIIIII I IIIIIII I IIIIIII
+-3 -2 -1 El 1 2 3
+1|] 1|] 1|] 1|] 1|] 1|] 1|]
+Frequency [Hz]
+Figure 1 : Science Requirement and Measured Acceleration Levels
+Station Vibration Above 5 Hz Excited With Hammer
+rms acceleration magnitudes below 0.1 Hz must be less the Space Station. The rack is outfitted with power,
+than 1.6 micrO-G, and above 100 Hz less than 1.6 communications, and cooling systems to support
+milli-G. Early predictions indicated that the station microgravity payloads. Payloads can be mounted at
+acceleration environment could be as much as 10 times any of eight standard Shuttle mid-deck lockers or in two
+higher than the requirement. Standard Interface Rack (SIR) drawers at the bottom of
+the rack.
+To insure that the requirement was met at certain
+payload rack locations in the Space Station, an Active THE ARIS CONCEPT
+Rack Isolation System (ARIS) was built and tested on-
+0rbit. The first prototype ﬂew on a shuttle mission to The ARIS concept is to isolate the entire rack. The
+the Russian MIR Space Station (STS-79) in September rack is isolated by detaching it from the station structure
+of 1996, and the first ﬂight unit recently ﬂew in April (so that it is free to move) and then holding it motionless
+2001 and was installed on the International Space Via an active control system. The active control system
+Station in the US. Lab (STS—lOO). There are currently consists of inertial accelerometers mounted in the rack
+three types of microgravity science racks that plan to and voice coil type actuators placed between the rack
+use ARIS to isolate their payloads. They are the and the station. Umbilicals remain connected to the rack
+EXpedite the PRocessing of Experiments to the Space to support power, ﬂuid cooling, and data
+Station (EXPRESS) rack, the Fluid Combustion Facility communication as required by the science payload.
+(FCF) rack, and the Materials Science Research Facility Undesirable forces transmitted from the station to the
+(MSRF) racks. All Of these racks use the International rack by the umbilicals are canceled by the active control
+Standard Payload Rack shell, mounting posts, and utility system.
+interface panel. Unique payload hardware is added to
+build each facility. An EXPRESS rack is shown in The ARIS hardware configuration is shown in Figure 3.
+Figure 2, and is the first ARIS rack that was tested on Acceleration is sensed at accelerometer heads located in
+2
+American Institute Of Aeronautics and Astronautics
+
+"
+"4","_ '. .. _ -._-__-__,L 4:_ ﬂ . .. implementation of non-linear “anti—bump” algorithms
+:' i Qﬁ“ ' ' I used to limit the range of rack motion.
+14-- _ _ --3- {E ’ .
+_ - .4I_ Em: u"" . _ __._ The Prototype Experlment
+. . .- HI...“ _1_ _ _= _ _ __ __ .1
+' t ' 5! ” .5dfﬂﬂ.fg}uh . + ._. The ARIS prototype system was ﬂown on the Space
+-| 4.45"" 9. -_ . “Ii 3 Shuttle Atlantis to prove the system concept before
+-"" .,_ - _-: ﬂight production units were built. ARIS ﬂew in the
+E I a '5 1 | 5; Spacehab double module located in the shuttle bay and
+'I . _ _ ____ _____. : _ - : __ . _3 f "" was mounted in an adapter frame with Space Station-
+"": "" ""' :1 like interfaces. The primary objective of the mission
+-- u . _ .'2 ?- was realized by successful completion of both nominal
+. i 31 I ' and contingency operations, and collection of
+' _ __ ' —;"" f...“ 4+""E : performance data taken over an 8 day planned test
+.. ': .1. i"". 3‘, 4 slit? In. .1 '4. 4' period [3]. It was successfully demonstrated that, 1)
+11"" 'ﬂ- 1‘45; 353-14: 'ﬂ.‘ . ' - 3' _ the entire space station rack with large standard space
+:4 ' . _ ' -. __ . 1.1g Ira. E , 44 I station rack utilities could isolate the payload from sub-
+i . H445“! _ - tenth Hz vehicle motion, 2) the skewed non-collocated
+I 'I- ' -' 4 :1 ”E . -_ f multi-input-multi—output (MIMO) system could be
+'- ' - .' """"' 3 'I '- - . stabilized using an intuitive based control architecture
+1. 4. _ 3'“? "" .' li:. *5 : I using SISO feedback systems combined with mass and
+'4 ' ' - 5 I! -' ' Ex. stiffness system identification and decoupling
+-1 . ' _.- ' techniques, 3) the relative motion between the vehicle
+'1‘ ' "" _ __ and the rack was less than 0.5 inches in any direction
+I . —--"""" E: ____._- when the vehicle was in a free-drift microgravity
+{i m operational mode, 4) the n0n-1inear impact prevention
+3 I , 'H' ' ' , algorithm successfully prevented hard impact during
+Figure 2 : Space Station EXPRESS Rack vernier thruster firing events, and 5) the rack motion
+response to accelerometer noise drift did not result in
+the corners of the rack. Each head contains an excessive rack motion.
+ortho 0nal set of sin 1e aXis roof-mass accelerometers. - - - -
+Hard gstop bumpers licated 01:1 the front and bottom of izlgtilgﬁy piiibﬂii? [1:113:35 11d elﬁlzﬁegv 3:6: s 51);:
+3:511:32: p;::e§:n:::r:icils£::$ £13223: ?;ali'ﬁlsﬁ predicted, 2) the isolation performance was better at the
+. . . . . center of graV1ty 0f the rack than at the far corners of the
+Egﬁtgovggﬁﬁghan OLSOinchesth 3.1:), directtion from its rack, 3) there were oscillations around 100 Hz 011 the
+. w au oriy posi ion
+feedback is blended with acceleration feedback
+to keep the rack away from the bumpers so that 1‘ Dual Processor ii. _
+Station structural Vibrations may be isolated 2‘3SensorElectmnicumts: 14:44 5_ . - a _
+without impact interruptions. Further design Programmable analegfilters&gains 6 g— .
+
+. . & 16 bltanalog-to-dlgltal converters. ""'--._ 3 -. --.
+details can be found in Reference [2]. 3 ﬂ Triaxial Accelerometer Heads . 2- % . aq-
+Control algorithms are executed by a digital 4‘8ActuatorDrivers:Pulse width .' W : -
+controller located in the bottom of the rack. 30:13:32,218“ to reduce power _ _ZLsY ,9 l'
+Control features include kinematic and dynamic 5 ﬁ 8 Actuatorswoicecon rotary ' _ : Cf“ , X"" :
+decoupling used to account for the mass actuator used to _reduce profile and _. O3 "" '3'
+properties of the payload, the stiffness powefonsumptlon' _ 0'"".§--5' - .-. i .'
+properties of the umbilicals, and the skewed Sﬂchfjtlgf: sensors; Integrated mm 5 r; ' _ _
+locations of the actuators and sensors. 6:) Hardstop Bumpers 6 _ .5 .'3
+Decoupling is also used to formulate an g 4.},
+intuitive single-input-sing1e-0utput (SISO) . VerificationPoints -
+approach by resolving and compensating the SEATION UMBILICALL
+translational and rotational motion of the rack. STANDOFF STRUCTURE
+This approach simplified control parameter
+selection, and system testing, and facilitated the Figure 3 : ARIS Payload Rack
+
+3
+American Institute of Aeronautics and Astronautics
+
+"
+"5","rack that may have been driven by the controller, and 4) Full characterization testing required additional
+that the isolation performance above 1 Hz could not be hardware. This hardware included a shaker system to
+fully resolved because the vehicle acceleration levels excite station Vibration, space station acceleration
+were attenuated to levels below the quiescent measurement systems to measure the Vibration, and a
+background noise ﬂoor. Post mission analysis and computer to support command and data handling. The
+ground testing showed that the first two issues were test configuration is illustrated in Figure 4. Space
+related to the non-linear stiffness behaVior of the station accelerations were measured using the Space
+umbilicals, that the third issue was due to bad actuator Acceleration Measurement System (SAMS) and the
+drivers, and that the isolation performance above 1 Hz Microgravity Acceleration Measurement System
+could be resolved if the vehicle acceleration was higher. (MAMS). The SAMS Sensor Enclosures (SEs), or
+Solutions were developed to address each of these issues sensor heads, each contain an orthogonal set of single
+and improve performance. aXis accelerometers and were used to measure Station
+acceleration above 0.01 Hz. Three heads were mounted
+THE ARIS INTERNATIONAL SPACE STATION around the rack, one at the top actuator interface, one at
+CHARACTERIZATION EXPERIMENT the bottom umbilical interface, and one on the adjacent
+{ARIS -ICE) rack umbilical interface panel. The MAMS unit was
+used to measure very low frequency accelerations below
+The eight days of ARIS prototype testing had great 0.01 Hz. The rack accelerations were measured using
+value, and results showed that further testing in a the ARIS acceleration measurement system and one
+microgravity environment was needed to resolve SAMS head located on the Physics of Colloids in Space
+performance and operational issues, and test design (EXPPCS) experiment locker. To help resolve
+modifications made as aresult of the prototype testing. isolation above 1 Hz, a shaker was mounted on station
+An ISS Payloads Ofﬁce led partnership of Boeing, structure beneath the rack and used to excite station
+Glenn Research Center (GRC), J ohnson Space Center Vibration. The crew also used a small hammer to excite
+(J SC), and Marshall Space Flight Center (MSFC) the structure by tapping at specified locations around the
+concluded that the first months of on-orbit operation of rack. Ground command, data handling, and data storage
+the first ARIS Space Station ﬂight unit should be capability was provided by the ARIS-ICE Payload On-
+reserved for characterization testing. orbit Processor (POP). Flight data was collected by the
+LAB102 LAB101
+EXPRESS Rack #1 EXPRESS Rack#2 (ARIS)
+ISPR LightTrayLip —> BEE
+m m
+--
+POP Zeolite
+~ Crystal
+-- -
+m
+IFShake m
+mm mm
+Test Avionics
+h Section Section
+l=ll_=.l --
+—— —
+I
+Figure 4 : SPACE STATION FLIGHT EXPERIMENT CONFIGURATION
+4
+American Institute of Aeronautics and Astronautics
+
+"
+"6","POP for one full year beginning in June of 2001 and PROTO EXPRESS MSRF
+over 1700 test runs were completed. Ground X X X X
+
+. . -----
+The rack was launched w1th the POP 1n the upper left Main X X X X
+lockers. The SAMS Interim Control Unit (ICU) was S f X X X X
+located in the bottom left SIR drawer, and spare ARIS— -----
+ICE umbilicals were located in the right SIR drawer. ower _-
+The locker below the POP was used for stowage of 1553A _— X X
+other ARIS-ICE hardware, such as the shaker, when not 1553 B
+in use. The remaining top 2 middeck locker locations ___--
+remained empty until the Zeolite Crystal Growth (ZCG) ngh Rate
+payload was added in December of 2001. Data
+
+——--—
+—Umbilical Alternatives
+Power, thermal cooling, vacuum, and data lines are ___--
+provided to all station racks at interfaces below the rack. Cooling X X X X
+A list of the umbilicals provided is listed in Table l for Water
+the station ARIS racks, and for the prototype rack. Cooling X X X X
+Water
+The prototype set of umbilicals had been designed to —--__
+have low stiffness to improve isolation performance, Vacuum X X
+but the performance benefits were not fully realized due -----
+to hysteresis. Post prototype mission ground data
+ShOWCd that the stiffness increases as the amplitude Of
+motion decreases. The amplitudes of motion are small
+. . . . . . Pump X
+at h1gher frequenc1es, result1ng 1n h1gher st1ffness and ----
+lost performance. The stiffness also varies as the rack , ,
+moves away from its center position. Prior to the F1ber Optrc ___-
+mission, the stiffness was only measured over one large 1' Used V1deo Interface
+amplitude of motion. The lower large motion stiffness 2‘ Used FDS Interface . k
+values, not the small motion higher stiffness values, 3 ‘ Data cahle run between two adjacent FCF rac S
+were used in the controller to cancel stiffness. FCF _ Flu1d Combustron Fac1l1ty . .
+MSRF — Mater1als Sc1ence Research Fac1l1ty
+
+The ARIS controller was designed to allow for Table 1 3 Umbilical Configurations
+measurement of the hnear st1ffness forces and cancel to reduce its stiffness. The lighter gauge wire (3 kW)
+them, but has no prov1s1ons for cancel1ng the hysteret1c . . . .
+
+(1 ﬂ ibl d 11 mi f r The d namic forces had was bu1lt w1th loose sleeve 1nsulat1on to reduced
+an ex e y a C 0. CCS' y . stiffness, and the loop was removed to eliminate the 10
+never been measured pr1or to the prototype exper1ment. .
+
+. . . . Hz mode. The cool1ng water and gas hoses were also
+Follow1ng the exper1ment, an 1neXpens1ve ground test . . .
+. . . . 1mproved by us1ng a softer type of mater1al.
+bed was made ut1l1z1ng eXper1ment hardware to measure
+the stiffness of each individual umbilical and its .
+. . . . -
+dynannc response 1n two d1rect1ons [4]. NASTRAN ARI—g_S ICE Controller Des1 11
+models were also built and correlated to the test data. . .
+. . . A new controller was des1gned to 1mprove performance
+From th1s 1t was found that the large tw1sted copper h . . f h
+power umbilicals accounted for 50 percent of the based upon t e exper1ence ga1ned rom t e prototype
+
+. . . . ' . ' ' ' l' l .
+st1ffness and had a s1gn1f1cant mode at 10 Hz. It was exper1ment The s1gn1f1cant changes are 1sted be OW
+also obwous that the stranded.w1re had s1gn1f1cant 1. Filters were added to gain-stabilize the EXPRESS
+hysteres1s. Several des1gn opt1ons were tested and structural modes and the bandwidth of the
+alternative sets built and ﬂown as part of the ARIS-ICE controller was increased as much as possible A
+m1ss1on. These opt1ons are l1sted 1n Table 2' test correlated NASTRAN model of the EXPRESS
+
+. . . k l B ' h
+The prototype des1gn used a heaV1er gauge w1re to allow EC tlvxlgas dliereloﬁeg liy oe1ng and was added to t e
+for 6 kW power. It had standard pressure extruded a a CO 0 O 6'
+insulation, and like most of the umbilicals, was looped
+5
+American Institute of Aeronautics and Astronautics
+
+"
+"7","153 Dctave Isnlatinn
+........ ........ ........ . —----II-I-I-I
+
+---5-5-555555---5-5-5555555---5--5-55-5555---5 — 55255555555255.2552 I
+
+“IIIID ' ""-III'_.: :::::::: : :lllllll :— FlightMeasurement
+331—15555E53- ""'3555555555555555555555555555--tj—tt:j5:—---:—-5-:-555:55---5-
+:""EEIEEIIEEIEEEI! E5::15:33E3:35:3:35:3::EEE:EE::E::::5:EEEE:EE:E:E::::::EEE:E
+222525255555522252 5555555:II5I:555:5555:2:5:25525555552225I525555555""252
+
+-5 555555555 5 5 5 5555 555555555 555555555 5 5 555555 5
+
+E ”“3 55555555555355555555555 .=55555555555555555;55535555555555: 5: 55 555
+
+a 55 =
+
+E 2:25:52555525:22525255555222-.- '55::55522252255255;::::::: -555:55:::5'
+
+-; ---I--5-I-55'rI-I5---5--I-'rIII'rII---I--I-""' '-III-I----I--I-' ' i-I- -I-'r'rI-II'r- 'r
+
+5 ---5-5-555555---5-5-5555555---5--5-55 -- 5555 -5-55""': :
+
+E -3 I IIIIIIII I IIIIIIII I IIIIIIII . IIIIIII ..IIIIII I
+
+Z 1'] :::I::i:.':iitHi:::i::I:tiii53:::5::I:ii:I:IiH::::I::I::I:I:I:I:IiI ':I::';:I:t'; Iit:::t-
+
+‘5 22252525555552225252555555522252252552555522252255255555522 2522525255 55522252
+""':III:IIIEI:I212325111312:I]:32133312222122:32:31322-I::[3:[[I][:::[:
+---5-5-555555---5-5-5555555---5--5-55-5555---5--55-555555----5 -5-5-55 555---5-
+
+_3 I IIIIIIII I IIIIIIII I IIIIIIII I IIIIIIII I II..IIII I
+13 55555555555555555555555555555555555555555555555555H555555: 55555555555:
+22:525:555555222525:555555522252:5255:5555222522552555555222252. 5255555522252
+553'3 553':5 553"" 1E5” 553‘ 502
+Frequency [Hz]
+Figure 5 : Predicted and Measured Isolation Performance
+
+2. The low frequency acceleration feedback gain was motion between the vehicle and the rack could be
+minimized to reduce the response to acceleration reduced significantly by a small change to the shape
+drift noise. The acceleration drift was bounded 0f the isolation response. Performance at 0.05 Hz
+using quiescent test data collected during the and above was maintained.
+prototype ﬂight test.
+
+3. The position authority on the rotation axes was The preﬂight isolation performance prediction using the
+increased to reduce rack rotations. This was done new updated controller is shown in Figure 5. The
+to improve the performance at locations away from prediction is the worst expected performance at all
+the rack center of gravity. Rack rotations caused by payload attach locations in the rack. The model used to
+Station translation (umbilicals torque rack) will make the prediction was ground test correlated and
+decrease. But the rack will follow station rotation, included models of the rack and umbilical dynamics,
+s0 performance will only improve if station uncertainty in the mass properties of the rack, and
+rotations are small. variations in the stiffness of the umbilical. Umbilical
+
+4. The stiffness cancellation parameters were changed dynamics impacted performance above 7 Hz and the
+to use the larger small amplitude stiffness instead of rack dynamics significantly impacted performance
+the smaller large amplitude stiffness. More linear above 30 Hz. Mass and stiffness uncertainty impacted
+stiffness is cancelled because the small amplitude performance above 1 Hz the most. The performance
+stiffness is greater than the large amplitude prediction does include 12 db of performance
+stiffness. This improves performance over the improvement at 10 Hz resulting from using the 3 kW
+entire bandwidth of the controller. unlooped power umbilicals.
+
+5. The shape of the isolation response was changed so
+that ARIS isolated less around 0.01 Hz. This was ARIS-ICE TEST DATA
+done to prevent the rack from bumping into its hard
+stops due to low—frequency station motion. Station The alternate power umbilical designs were each
+acceleration predictions showed that isolation installed and stiffness and isolation performance data
+around 0.01 Hz was not needed, and the total collected. Umbilical stiffness results are presented first,
+
+6
+American Institute Of Aeronautics and Astronautics
+
+"
+"8","followed by isolation results. The isolation preformed in a loop shape to a bellows type hose with a
+performance with the umbilical set that will be installed braided sleeve.
+on all future station ARIS EXPRESS racks (ARIS-ICE
+C) is presented. This data was taken from crew awake Isolation Performance
+and station tap periods. Motion between the station and
+the rack during a typical isolation period is also Station and rack acceleration levels during crew awake
+presented. Next, data is compared with the EXPRESS periods are shown in Figure 1. Several windows of data
+AAA fan and the ARIS-ICE payload fans on and off to were used and the maximum and minimum levels are
+determine their impact on performance. The ﬂexible shown. The acceleration magnitudes are plotted as the
+response of the EXPRESS rack is shown and stability root-mean-square (rms) acceleration level per one-third
+margins discussed. Finally, performance is predicted octave bandwidths. The Station level was resolved from
+when the station structure assembly is complete and all the SAMS head located on the umbilical standoff
+station Vibration sources operating. structure beneath the rack. The rack level was resolved
+from the three ARIS heads on the rack. Each head has
+Umbilical Stiffness Results three linear accelerometers that are orthogonal to one
+another. The rms 1/3 octave band level was computed
+The measured stiffness ranges of four ﬂight umbilical for each accelerometer, then the three levels for each
+configurations are listed in Table 2. The range was head were root-sum—squared to produce a single
+determined by measuring the stiffness for small magnitude. The rack head accelerations were compared
+amplitude motion (0.05 inches peak to peak) and for over all windows and the maximum and minimum
+large amplitude motion (0.5 inches peak to peak). The envelopes are plotted. The envelope of the SAMS head
+stiffness is higher for small amplitudes. As can be seen accelerations is also plotted.
+in the table, the two 3 kW teﬂon jacketed power
+umbilicals (ARIS-ICE C) alone reduced the small A 5-hour test and 9-minute test were used to compute
+amplitude stiffness of the entire baseline 6 kW set the acceleration and isolation levels shown. The data
+(ARIS—ICE B) by 2.5 to 4.5 times. The range of was split into windows as listed in Table 3.
+stiffness is also significantly reduced. Addition of the
+gaseous nitrogen (GN2), which is the only non-looped Flight Engineer Carl Walz excited the Station Structure
+hose, doubled the small amplitude stiffness. It was by tapping the umbilical standoff structure using the
+originally designed to be looped, but the hose had to be small hammer during the 9-minute test with the AAA
+redesigned to meet pressure requirements. The hose fan turned off. Typical Station acceleration levels
+was changed from a soft Viton material which could be ﬂatten off above 5 Hz to levels shown at about the
+Main Power 6 kW 6 kW 3 kW 3 kW
+Looped Unlooped Unlooped Unlooped
+Pressure Loose Loose Loose
+Extruded Expanded Expanded Expanded
+Silicon J acket Teﬂon J acket Teﬂon J acket Teﬂon J acket
+Saﬂng Power 6 kW 3 kW 3 kW 3 kW
+Looped Unlooped Unlooped Unlooped
+Pressure Loose Loose Loose
+Extruded Expanded Expanded Expanded
+Silicon J acket Teﬂon J acket Teﬂon J acket Teﬂon J acket
+GN2 Included No No No Unlooped
+Teﬂon
+Bellows
+Braided
+NomeX Sleeve
+Table 2 — Power Umbilical Configurations and Stiffness
+7
+American Institute of Aeronautics and Astronautics
+
+"
+"9","Windows (see)
+Table 3 : Performance Data Analysis Parameters
+Station Minimum above 20 Hz. The minimum levels assembly complete to around 1 million lbs, so the
+were Obtained during windows in-between the hammer motion will decrease accordingly. The ARIS controller
+strikes. As can be seen, these levels are too low to allow uses a n0n-linear algorithm to generate anti-bump
+accurate measurement of isolation performance. The commands to insure that the relative range of motion is
+maximum levels Obtained during the hammer strikes are not violated. These anti—bump commands are invoked
+up to two orders of magnitude higher, thus providing a regularly due to crew motion but are limited to 15
+better estimate. micrO-Gs or less. The measured accelerations shown in
+Figure 1 include the effects of the anti—bump commands,
+The corresponding isolation is plotted in Figure 5. The which tend to slightly increase the rack acceleration
+isolation was computed for all three ARIS heads, but below 0.1 Hz.
+only the worst of the three is shown. As can be seen in
+the figure, the isolation measurement follows the
+prediction up to 10 Hz, then becomes much better. The
+isolation performance was expected to be generally
+. . . . arya .
+better than the prediction, but the prediction was made
+with the softer GN2 hose. Better performance was .y
+realized when the GN2 h0se was removed.
+Station Motion
+Table 4 : Length Of Station Modules
+Relative motion between the station and the rack is
+shown during a l-hour test run in Figure 6. The amount MW
+of motion is im ortant because the total ran e of , , , ,
+relative motion is lilinited t0 1 inch in each directioi. As Data was collected Wlth the AVIOHICS AH Assembly
+. . . . . . (AAA) and the POP Fans On and Off. Data was also
+can be seen there is Significant motion in the X ,
+direction. It was determined that the X aXis motion was collected Wlth the POP.fans On and the AAA fan Off‘
+due to the station moving in response to crew movement The AAA, fan is pr0V1ded by EXPRESS to 0001 the
+down the module centerline. This was validated b payloads 1n the rack. It draws payload exhaust heat to
+y . .
+station acceleration measurements and by correlated the rear Of the rack and passes 1t across an a1r-t0-water
+motion Observed during Video transmission. .
+Conservation of momentum requires that the B-DOF Translations (a370rﬂ7p050)
+velocity of the center of gravity of the entire 0‘4 _ ><
+station and its enclosed contents remain 0.3
+constant. This means that the station will move I :I
+in proportion to crew motion as follows, 02 II 'I l
+_ Crew Mass m m V |l\ Jr 11%!“
+XStatlon Station Mass XCrew E U “4 ﬁl‘ill l
+{1.1 ' M’ I
+The total distance that a crew member may move
+down the centerline (X direction) of all the {1.2
+modules is listed in Table 4. The Station I
+configuration is shown in Figure 7. The total '03
+station weight at the time Of the test was 283755 {1.4
+lbs. SO, the station will move 0.96 inches if one D 500 “300 1500 22338 (32:2? 3000 3500 4000 4500
+crew member weighing 175 lbs moves the length
+of the station. The station weight will increase at Figure 6 3 Relative MOtiOD Between Station and Rack
+During Active Isolation
+8
+American Institute Of Aeronautics and Astronautics
+
+"
+"10","a ' \K‘
+
+I-' --‘-' .-=I'-,. "" ' ""1""“. .-._ - "" I '. ‘. ' :T'ﬂw'i: _ - ,-_-- 'l'- 1- .. '
+
+3&3; h — -- -~ h. _ ._ 33‘“: ""h he . ~ . "" - -
+
+. 4-3-1 ”III.- """" T "" - ~ ‘1 -.5- ., ‘
+
+-. “t“‘~-'*'--r 5- ' ‘= V
+
+-*-. .1— """"_._ ""II
+Eh: 'fﬂ' Ams-ICE L \ - SS. Ni-EBE‘W
+Figure 7 : Station Configurations
+heat exchanger. It is mounted in the back of the
+rack behind the locker mounting panel. The m"" “mm""... 150E;i_'f@|jﬂf_ __
+POP has two standard fans in the locker t0 — F'equlremerﬂ liil-Ellii
+circulate air. The head acceleration levels with
+the fans on and off are shown in Figures 8 and 9. 1n1 _:__|_5ﬂ_|=§tl_m1|'~jﬂﬂ5:-fffh_ﬁ F_“|§'_F_' ﬂ a
+..-.....-, ,.:.,..-.-..-.. 1.-..:-..:...-.: . u .- ﬂ-..:T:
+Figure 8 data was collected for 150 seconds and ﬂ 1Elg-gn-Illi.‘-2411};-
+subdivided into 35 windows (50% overlap) of i” ' 2
+8.192 seconds each. The maximum levels over 3 .._.:::Eiffifififlfiflffff ”555555551255 ifiiffffffffiffffifffiff
+all windows and over all the heads are shown. E m, HHZIIE!
+The ARIS isolation system was inactive or 3:»
+passive during the data collection with all fans Why:35355::5353553553535iziziiiazzzzizziazzziiziziiz.
+0n (AAA On), and actively isolating during the m'
+fan offtests (AAA Off and AAA & P0P om.
+The stiffer 6 kW power umbilicals (ARISICE ::::;:::;::;::::1I:I;:§:I;:11:11:;1:131:31;1':::::::::;::::::::;::::1I:::1I::
+B) with the 10 Hz mode were installed for these 15""1 ' ' ' ' I I in' ' ' ' ' I ' ' '1”: ' I I
+tCStS. FIannnc'r' IJ'II']
+, , Figure 8 : Maximum Head Accelerations
+The accelerations are expected to be higher With Fans On and Off
+below 30 Hz during the passive test because the
+rack is free to oscillate 0n the umbilicals. Above 1.51 aﬁmﬁulmim
+30 Hz there is no difference between the passive 1u‘ m.“ _. _ _ . . .-
+and active isolation state. This is because the |_: Eﬁg'ﬁrﬁ ‘33]HCLC
+controller feedback I‘OllS Off at 30 HZ, SO the rack — J-RIE Hnidl m'“? :5:EjjjijZEI1:221:
+behaves passively above 30 Hz even when in an m] : {FEEF'I'EIH E
+active isolation state. As can be seen the POP 3.514;: ; ;;;;:;:;;ﬁ.§""§§?§?§§3""3ffii:;f§3_ ????EE' iii “7'55?
+fans have very little effect, but the AAA drives E ‘- ::: -__n
+signiﬁcant Vibration in the 80 to 200 Hz region 5“ 1""'E""-""‘-
+resulting in levels higher than the requirement at E 1'32 E
+180 Hz. The PSD’s of the acceleration show E ??EEEEEE7:533}???-.g::g:gifﬁf?ff':E????????EEETEE.
+many modes between 80 and 200 Hz, with the if II?I?'_'——""'::'
+highest energy at 90 311(1184 HZ- “3'1 _:;;;; I” 555555;; 2;; :25:
+Figure 9 data was collected with the AAA and ”l“
+POP fans on. The test duration was 524 seconds
+and again subdivided into 8.192—second mu 1n' 15F
+windows. The levels at the three ARIS heads and F'Icr-Inntr IIHI‘J
+the SAMS head mounted on EXPPCS are shown. Figure 9 ; Head Accelerations
+The levels are the maximum over all windows. With Fans On and ZCG Installed
+9
+American Institute of Aeronautics and Astronautics
+
+"
+"11","As can be seen, the levels vary at higher 1: 1:
+frequencies. One ARIS head meets the science _ _ _ 5555 _555 _
+YCQUifement OVCY 311 OCtaVe bands- “15""5:|:'55 152::55zii-55:EEE':55::'-_§_E:5555::5EEEEE::EE-.:'E'-::EEE'E5EE:E:EEE-E'5:5..
+. [5 |:_'E_i555_5555 5555535 55155535555555.3355. 51-51-5-5555555515115
+WW l5.555 55555555535555 555555;. 5.5. l|._'5-' 55555 ""
+13"".-.===.---.5r==.-.E5.-51.~if=--.=5=-=T=5.--.=5-.==.5.-5-11:: 5: I... .--. 'L. 555.5_.!
+The ﬂexible response of the rack was measured EEEEEEEEE53515§i§i§5éi§3§f55551:5*5- I55 $11! '5': 5'11 531-:
+by commanding the ARIS actuators to drive the 1.: 1:"".:""::E: '1ka 1%; : 1 ' ::' ,:':_j::.: . :'::
+rack in a single control direction. The E :[m5'""'""51;5'f""1' 51 ' i5 11""“ ‘5': '
+commanded force was a combination of “3 Jr” - '1-
+superimposed sinusoids spaced every 1/30 of an :':?11555315: :;::: 1:; ;::-.5 1,
+octave in frequency between 30 and 300 Hz. [:1:'xgr;1:111:311f:§:'::§::.::;Blg1d Body-Level j
+The response in each control direction is shown !”5.:'-:'-:.':=.5«“::*=.:'5 5==5E:5¥.=13531.=%:-'1531i575515:""?-351531311515155-‘33151155;
+in Figure 10. The first fundamental mode was 25553::555515:LéE'_L:§-_;sigajeﬁzaiaj35555315553515::15;::§;'::::_-5:::::';
+measured 10 b6 47 HZ. StI'OIlg modes also i 55 5521555552: 55 5355553.. 55:5 55E.55:55555' 55 555 5555 555 5'55
+appear at 112, 146 thru 184, and 285 Hz. The 1.]:
+Objective of this test was to determine what the F'Fqu'm? '1'”?
+control stability margins were. The CODtI‘OllCI’ Figure 10 ; Measured Forced Response Of The Rack
+ﬁltering characteristics had been designed prior
+to ﬂight based on a ground test correlated
+NASTRAN model. M
+40 -Illlll|I-Illllll'“ X “'51
+The preﬂight open loop acceleration response 30-.'l'llll-.lllll|-
+prediction of the controller and ﬂexible rack is 20‘ '—
+shown in Figure 11. The ﬂeXible rack model did %‘ 0L!lllllll--Illllll--
+not include modes past 150 Hz. A 30 Hz 2nd E: -.i!lllll-..lll'll-.
+Order Filter, a 30 Hz 40 db stop band elliptical E -'lliii!!!‘ll'l'""-l
+ﬁlter, and a 119 Hz notch filter were required to §’ -10 ""“53?“ ; § 5‘
+stabilize the modes above 35 Hz. The ﬁrst 2 %-..'|l|'|-~i\‘f\‘|l|l!""-.
+1iunillanﬁntal made 55:55; Eredﬁ05eddtihbf t:2 flvlz.t III'IIII.lwgilllullimlIl
+re 1% es w s a 5, 555 IIIIIIIIIIII1111111.1111“
+mode had around 2 percent damping. The high —40 l 1111 ‘3 V. 3
+damping was attributed to the fact that the mode -.'l'llll-.llii1lllkuilll'l
+shape required the entire rack to deﬂect and -'ll'llll-Illm5ﬂllulu“.
+twist. For the most part, other higher modes '6200 101 5 5102
+were merely local interactions between Frequency (H Z)
+concentrated masses and panels. Wlth danaping Figure 11 : Preﬂight Predicted Open Loop Response
+between 0.5 and 1 percent. This is cons1stent Stability Margins
+with the ﬂight data which shows that 30 db
+attenuatiori is required at 47 HZ ’ and at least 5e facilities use a large Vacuum Resource umbilical and
+db is required above 100 HZ‘ 80’ heavy filtering was that the payload structure is significantly different.
+still required.
+ASSEMBLY COMPLETE PREDICTION CONCLUDING REMARKS
+The station structure at assembly complete will be larger Valuable data has been 0 011 e ct e d durin g the ARIS
+(see Figure 7) and have mere Vibratiori sources.as International Space Station Characterization
+payloads are added. The Stationacceleration prediction Experiment. ARIS has consistently performed
+at assembly complete is shown 1n.F1gure 12 [5]‘ The extremely well over the past year such that station
+15012151011 performance shown in Figure 5 was used to Vibrations were isolated to levels well below the science
+predict the EXPRESS rack accelerat10nlevelssh0wn 1n requirement. This success was a result of less 011s
+Figure .12 at asserhbly complete. The prediction meets learned from the prototype experiment and design
+the seience requirement. Work is currently being changes made to the umbilicals and control parameters.
+conducterl to predict the performance for.the Fluids The unlooped GN2 h0se increased the overall umbilical
+Combustion .lfacﬂity and , the. MicrograV1ty Selence set stiffness, but performance was maintained mainly
+Research Facﬂity. Two major differences are that these
+10
+American Institute Of Aeronautics and Astronautics
+
+"
+"12","5 “IE Octave #cceleratiuna
+1D :::: ::::: _ m:=== :: = : 5:1:EEEEEEEEEEEEEEHEEEEEIEE
+— HeqLIIrement c-J::::I::I:I:-:E:Ec-:::::::
+_ _ _ |_|J____J.__J._J._|_LLL|_|____J__
+4 — Asaemhly Camplete Statlun F'redmtmn Ll: - - - - 4 - -: T l-' ' - - - 4 - -
+1'3 — 93'3“ PrEd'Et'D“ n
+Z:22CI2C:CI333!E2:22EIIEIE!ICED!ZZZZIZZEZEJZCCEEEE:- E :EEEEEEEEEEEEEE
+3 """"I'""I""I'T1111.“""""T""I""I'1'I'I'I'IT""""T"".“ ffl'l'l'l‘."" 'T""T'T'I'T.”""'""""""'
+1D EEE5EE$5$5i555%EEEEEEEEEEEiEEEHiEEEEiEEE E-EELLI E Eissisi=' ccﬁssssis:
+EEE5555:?5:5$3333E55EEﬁffﬁfﬁiflflfliiffffiffﬁ :55
+'-—-' """"I'""I""I'T'I'I'I'IF'""'F""I""I""I'I'I'I'IT""""T""F r 'I' I'I'I"""" T'T'I'rrr""' ' '
+I'_I'.I """"I""'I""I'T'I'I'I'IF""""F""F'F'I'I'I'I'IT""__T__F r I'I'I""_ ""T'T'I'FFF 'I _
+III 2 """"T""I""I'T1111.“""""T""T'T1'I'I'I1T""""T""T T1..""” 'T""T'T'I'T ...""""1""
+31'] EEE5:5E5:55:5éEIEIEIE""EEEEE'EEEIEEIEE'EIEIE:""1'EE=1 """" :Eli'EEEEéEEéEéEIE'E 'EHEEEEE'E:
+: EEEEEEEEEIEE33335555555555.5335"" ' "" * EEEEEEEEEEEEEEEEEE 535555355
+_2 III:::::::::::::::IIII:II:' 1"": __,'I : 2.5:: '2::::::::::: r:ﬂ:::::::
+EH 1 """"I'""I""I'T'I'I'I‘.I'""""I'""I' ' ""T""? I'.'I' ..‘. ' 'T"" .'.I'I'I'I""""‘.""
+3 EEEEEEE:EE:EEE:E:E:EEEEEE::_ _:EE:E:E:2$EEEEEEEEE ;EE:E:::E$ EE EEEEEEEEEEEEEE
+U ----I---I--I-'I'-I-I-I'II'--- ‘I-‘r'I-I-I-I-IT-‘__'I'__I' r‘l‘I-I-I-I'I“__'I' - T‘I‘I'I'I'I-I“__'I__
+:1: ____L__|__|_J._|_|_|JL .-l.L__L_LJ_|_|_|_|J.____J.__L L_|_LLL|J____J.__ _J._|_LLLL|____J__
+III ......... II'III'. ""IIIIIII 11:11:11: I
+1D __==:EEIEEIEI=== _EEEEEE= _-=IE 1 == IEEEE==E===I=EEEEIEEIEIEIEEEEUEEEEJE:
+ﬂ' _i=--I--I-¥=I=I=I F----F--i= - I=I¥ :F--F-F=I-FFFI=I----¥--¥-¥-I-FFFI=I----=I--
+- 2""”: 4555555555 53 E ElfEE35555555355551355355EEEEEEEEEEEEEEEEEE
+-1"""".""""I_I_I_I_I_II"""" :- . :"":':':':':T""""T"":"":"":':':':':':""""T""T'T':':':':':':""""':""
+1D 5555t5==_ *ddddt __EtE5t5td???diEEEE1EEtEtdsttwd5555155151?5ttt5555555=
+____E__I__I I:I:I:I ___I:—-E-E:I_I_I_I:II____I__I:_I::I_I:I:I:I:I____I__I_I_I_I:I:I:I:I____:I__
+====55353- 33 EEEEEEEEEEE33333}EEEEEEEEEEEEEEEEEEEEEEEEEEBEEEEEEEEEEEE
+____;__ﬁ:ﬁ;4444;IIII;II;I;4:ﬁﬁg;IIII;II;I;42;};H::::;::;:;:ﬁ;;;g::::;::
+-2 I IIIIIII I IIIIIII I IIIIIII I IIIIIII I
+1|]
+-1 -1 [I 1 2
+“ID “ID 1|] 1|] ’IEI
+Frequency [Hz]
+Figure 12 : Predicted Station and EXPRESS Acceleration Levels At Assembly Complete
+due to the significant decrease in overall stiffness REFERENCES
+provided by improved power umbilicals developed and
+tested as part Of ARIS-ICE. The expected acceleration 1- 1396.ng Defense & Space Group MiSSiles & Space
+levels 011 an ARIS isolated EXPRESS rack after station DIVISIOH» . System .Sp6010ﬁcat10n for the Internatlonal
+assembly is complete is expected to meet the Space Statlon”, SpeCIﬁcatlon #41000D, NOV. 1, 1995.
+. . . . . 2. G. S. Bushnell, T. M. Anderson, M. D. Becraft, and A. D.
+mlcrograwty selence requlre ment at frequenmes below “ . .
+100 H S . l d d t b d . (1 th t Jacot, Actlve Rack Isolatlon System Development For
+, ,Z‘ , Clence pay ea S nee , 0 e eelgne SO , a The International Space Station”, AIAA Paper 97-1203,
+V1brat10n IS not transmltted t0 the1r own selence locatlon 1997_
+by their own Vibration SOUTCCS if the SCiCHCC 3. G. S. Bushnell, M. D. Becraft, , “Flight test of an
+requ1rement Is to be met at all frequenmes. Performance international space station active rack isolation prototype
+for other ARIS isolated facilities Will be dependent on system”, Smart Materials and Structures 8 N0 6
+the facility rack structure and 011 the stiffness and (December 1999) 791-797 .PHI 50964-1726(99)07555'2-
+dynamics of the Vacuum Resource umbilical. Work 011 4- Edberg» Donatct L» Des1gn and testlng Of. reduced-
+characterizing the Vacuum Resource umbilical is ,Stlffn?ss umblhcals for Space Statlen mlcrograylty
+. . . 1s01at10n”, Structures, Structural Dynamlcs, and Materlals
+currently 1n progress. A detalled, ﬁnal report of the . .
+. . . . Conference and Exhlblt, 41st, Atlanta, GA, Apr. 3-6,
+ARIS-ICE mlssmn and test results W111 be pr0V1ded to 2000 A1 A A Paper 2000-1408
+address the volumes Of data collected. 5. DAC-9 Microgravity Assessment, S. Thampi, presented
+at the Microgravity Integrated Performance Meeting, MIP
+2002, March 12-14, at Regents Park HI, Houston Texas
+11
+American Institute Of Aeronautics and Astronautics
+
+"

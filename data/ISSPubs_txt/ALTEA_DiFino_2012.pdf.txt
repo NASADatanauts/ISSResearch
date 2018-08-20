@@ -1,0 +1,490 @@
+"","x"
+"1","A M n ri WM
+ecepted a use pt ADVANCES IN
+Q SPACE
+Fast Probabilistic Particle Identification algorithm using silicon strip detectors RESEARCH
+L. Di Fine, V. Zaconte, A. Ciccotelli, M. Larosa, L. Narici ' '
+PII: SO273-1177(12)00258-X I - .’ ‘ '
+DOI: 10.1016/j.asr.2012.04.015 . . ~ - :9
+Reference: JASR 10957 _ - . . ”5-.“
+To appear in: Advances 111 Space Research ﬂ - r&ﬁﬂﬁtﬁi
+23:32.
+Received Date: 22 August 2011
+Revised Date: 13 April 2012
+Accepted Date: 14 April 2012
+Please Cite this article as: Di Fine, L., Zaconte, V., Ciccotelli, A., Larosa, M., Narici, L., Fast Probabilistic Particle
+Identification algorithm using silicon strip detectors, Advances 112 Space Research (2012), doi: 10.1016/j.asr.
+2012.04.015
+This is a PDF file of an unedited manuscript that has been accepted for publication. As a service to our customers
+we are providing this early version of the manuscript. The manuscript will undergo copyediting, typesetting, and
+review of the resulting proof before it is published in its final form. Please note that during the production process
+errors may be discovered which could affect the content, and all legal disclaimers that apply to the journal pertain.
+
+"
+"2","Fast Probabilistic Particle Identification algorithm using silicon strip
+detectors
+L. Di Fino*, V. Zaconte, A. Ciccotelli, M. Larosa and L. Narici
+INFN and Department of Physics, University of Rome Tor Vergata, Rome, Italy
+>“Corresponding author. E-mail address: luca.difino@roma2.infn.it
+Abstract
+Active detectors used as radiation monitors in space are not usually able to perform Particle
+Identification (PID). Common techniques need energy loss spectra With high statistics to estimate
+ion abundances. The ALTEA-spaee detector system is a set of silicon strip particle telescopes
+monitoring the radiation environment on board the International Space Station since J uly 2006 with
+real-time telemetry capabilities. Its large geometrical factor due to the concurrent use of siX
+detectors permits the acquisition of good energy loss spectra even in a short period of observation.
+In this paper we present a novel Fast Probabilistic Particle Identification (FPPI) algorithm
+developed for the ALTEA data analysis in order to perform nuclear identification With low statistics
+and, With some limitations, also in real time.
+Keywords: ALTEA, PID, cosmic rays, silicon detector, algorithm.
+Introduction
+The radiation environment in a spacecraft is due to contributions from the different components of
+cosmic radiation. Radiation biology findings strongly suggest the need of radiation quality
+information for an accurate risk assessment. To this end it is important to perform Particle
+Identification (PID) and to estimate their kinetic energy. This would also help in validating
+simulations and transport models inside the spacecraft. The usual PID techniques used in particle
+physics experiments rely on simultaneous measurements of momentum, velocity and energy
+deposition with a combination of different detectors and methods: ionization, time of ﬂight,
+Cherenkov radiation imaging and detection of transition radiation (Lippmann, 2011).
+This approach, used in large experiments at particle accelerators, requires big and complex
+detectors with bending magnetic fields, EM and hadron calorimeters, Cherenkov detectors, etc. (see
+for example Picozza et al. 2007; Battiston et al. 2008) and it is not applicable in measurements
+inside a space vessel Where detector volumes and masses are important issues.
+Active detectors used as radiation monitors in a space habitat are often stacks of silicon planes that
+can only measure the energy released by the particles and if the planes are divided in strips they can
+also measure particle trajectory. Radiation monitors are usually small devices and they cannot act
+like calorimeters that are able to stop particles and measure total energy of particles. Not measuring
+any other of the aforementioned quantities, they are not able to directly measure kinetic energy and
+identify particle Charge. The stochastic nature of the energy loss process and the contribution to the
+radiation environment in orbit from different nuclei with a large range of kinetic energy make this
+identification very difficult. Anyway there are various strategies to approach particle identification
+with this kind of detectors.
+A possible strategy to estimate Charge is to reduce the kinetic energy range. The simplest method
+applicable to small active telescopes consists of requiring the LET to be almost constant in the
+detector, so to select minimum ionizing particles (Casolino et al. 2006, Zaconte et al. 2010a,
+Zaconte et al. 2010b). In this energy range the energy release depends on 22 so rough Charge
+identification can be obtained fitting with multiple Gaussian or Landau functions the LET
+distribution. To achieve an optimal fit a good statistics is needed, and still it is difficult to identify
+the single particle given the fact that peaks for different Z values overlap.
+
+"
+"3","An alternate method to identify particles is to compare the energy losses on single planes with
+theorieal releases (analytical or simulated ones) (Zeitlin et al. 1984). This approach was tried on
+ALTEA data (both beam and ﬂight data) with no results even in the controlled conditions of the
+beam data. The effects of energy straggling ﬂuctuations make this approach unfit to our data. A
+third method is to consider total energy loss versus energy loss in one or multiple planes
+(Scrimaglio et al. 2006) and to study the energy distribution. A last method is to train neural
+networks to identify particle Charge and energy (Zaconte et al. 2008), but it is not suited to work on
+orbit. All these methods are difficult to automate and require a lot of analysis work on them to fine
+tune results.
+
+In this paper we will validate the first identification method applying it to a Monte Carlo simulation,
+and, further exploiting the method, we will introduce a novel Fast Probabilistic Particle
+Identification (FPPI) applied to ALTEA data used even with very low statistics and with little
+computational effort. We will then present a possible application to single particle identification that
+could be used also in real-time.
+
+ALTEA Detector
+
+The ALTEA-space facility consists of an active particle detector system, to measure the cosmic
+rays, an electroencephalograph, to monitor the astronaut brain activity, a Visual stimulator, to verify
+the astronaut Visual condition, and a pushbutton (Nariei et al. 2004; Narici 2008). The ALTEA-
+spaee Silicon Detector System(SDS) includes siX silicon telescope particle detectors (SDUs, Silicon
+Detector Units) arranged in a 3D structure (helmet shapedl), capable to determine the energy loss
+and the trajectory of the cosmic rays. The particle detector results in a full coverage of the solid
+angle (due to the peculiar helmet configuration) and in a geometrical factor of 2300m2sr per single
+SDU and 1190 cmzsr for the whole system, the latter value being less than 6 X 230 because of the
+overlap of the acceptance angles of the different SDUs. A SDU is composed of siX silicon detector
+layers, each 380 pm thick, arranged in three planes; a plane contains two silicon wafers, each
+segmented in 32 strips with 2.5 mm pitch, so a plane includes 64 strips. They are alternatively
+oriented along X and Y directions. Detector Characteristics and typical responses are described in
+(Di Fino et al., 2011; Zaconte et al., 2008, 2010).
+
+In fig. 1 the intervals of the detectable kinetic energy, neglecting the energy straggling, for each Z
+are summarized. The areas 2 and 3 show the energies for the particles detected by the ALTEA-
+spaee detector; in particular, the zone 2 considers fast particles that survive the 10% energy filter
+that we use in this work (see next section for details). The area 1 includes particles whose energy
+loss saturates the detector: these particles are detected and counted by the detector, but they cannot
+be identified.
+
+Standard analysis validation using simulated data
+
+The FPPI algorithm we are going to present is based on the assumption that the radiation
+environment being measured is well known. In this Chapter we are going to validate the standard
+analysis on which the FPPI algorithm is based using a simulated data set. The standard analysis
+used to estimate the number of ions detected is described in previous works by our group: after the
+pedestal subtraction, only the single track events were considered so neglecting the possible
+showers. Two cross calibrations, among different amplifiers on the single SDU and among the
+SDUs, were performed and vertical incidence normalization was applied. Then the requirement of
+almost constant energy loss is applied, selecting only the particles for which the difference of the
+energy losses averaged over the first and the last couple of planes does not exceed 10%. This filter
+1 This structure, featuring a quite large geometrical factor, has been Chosen to perform also measurements of the radiation impinging on the
+astronaut’s head when investigating the processes linked to the perception of anomalous phosphenes in orbit; in this case the astronaut would position
+his/her head inside the helmet— shaped detector.
+
+"
+"4","permits to cut out most of the distribution tails due to slow ions, reducing contamination between
+adj acent nuclei.
+A sum of multiple Landau curves, one for each nuclear species, was used to fit the energy loss
+distribution surviving the selections using the Root-Minuit framework. Each Landau curve is a
+function of three parameters pi
+f {.1} — p"" I 1.1—“ a_“FE'z‘a—F'J sinﬁru} sin
+n
+where p0 is proportional to the height of the single nucleus peak, p; is proportional to the width, p1
+is proportional to the position of each peak of the spectrum and 7x. a dimensionless variable. The
+region between Boron and Iron was considered where the peaks are Clearly distinguishable thanks
+to the high statistics. More details on the data analysis, on the effect of the 10% filter on ALTEA
+data and on the fitting procedure can be found in (Zaeonte et al. 2010a). Similar filters and data
+analysis were also used in (Casolino et al. 2006, Zaconte et al. 2010b, Larosa et al., 2011).
+The simulated data set is populated using the PHITS Monte Carlo code. Even if not essential to the
+validation, the simulation is a reproduction of the actual radiation environment inside the ISS, apart
+from the primary proton and helium contributions. The cosmic ray spectrum was obtained by
+CREME96 package with the ISS orbit and solar minimum conditions as parameters. An isotropic
+and homogeneous ﬂuX with this spectrum was used in PHITS simulation were the 188 was modeled
+as an aluminum sphere with a thickness of 0.7 cm. We simulated only particles which kinetic
+energy is greater than 100 MeV per nucleon. The total number of simulated particles was roughly
+equivalent to a week of actual measurements. Energy loss spectrum (fig. 2) for the simulated
+particle ﬂuX was obtained applying the same processing used for real data, except for the pedestal
+subtraction. This spectrum was fitted and the results were compared with the known input number
+of ions from Boron to Oxygen and Iron from the simulation. The result of the comparison is shown
+in figure 3. The agreement between the events from the simulation and the values of the Landau fit
+is within 1 o for all ions.
+Fast Probabilistic Particle Identification (FPPI) algorithm description
+The technique described above provides therefore a good estimation of the ion population of the
+measured radiation, but it needs a set of data with enough statistics for each single peak to emerge
+from the noise. Nevertheless the real time features of the ALTEA detector call for the possibility to
+process data also if the statistics is low (for example in case of data recorded in a hour, or even in
+real time) using the results of the aforementioned standard analysis applied to a previously collected
+data set. It is possible to use this data set and the results of the fit as a reference for a simple and fast
+algorithm that discriminates ions assigning each particle a probability distribution of the nuclear
+Charge if the measured radiation environment is similar to the reference one. In this paragraph we
+will introduce the FPPI (Fast Probabilistic Particle Identification) algorithm while in the following
+ones we will show its application to various cases with different statistics and we will discuss the
+error estimate.
+The first step is creating a lookup table from the reference spectrum. The reference spectrum RS( E )
+is a function of the energy loss E, that in the case of ALTEA is the energy loss averaged over all siX
+silicon layers, in order to minimize noise. The results of the standard analysis, the total fitting
+function (F if(E )) and the Single Landau curve for each element (Landaug E )) as a function of each
+energy bin E of the spectrum, are stored in a lookup table.
+RAE} n“: FEHE} = Z Landnuzﬂj‘]
+E
+
+"
+"5","FPPI defines a function of released energy and Z (IonPr0b(E,Z)) to give out the probability
+contribution that the single event is a particle having Charge Z and energy value correspondent to
+that E value bin:
+fnanMEJZ} = W
+F Lth}
+In this way every detected particle with a certain value of released energy E is associated with a set
+of probabilities for each Charge Z; by considering these “fractionary ions” we can count the ion
+contributions even with a small integration time.
+The second step is to use the lonProb functions to estimate the contribution of a ion with Charge Z
+to the energy loss spectrum we are measuring:
+N(Z} = 2 N03} - IanPrah{E,Z}
+E
+where N( Z ) represents the deduced number of ions with Charge Z and N( E ) represents the number of
+measured particles with energy loss E.
+A different way to use the FPPI is to apply to a single particle. In this case the mean energy loss E
+of that particle corresponds to a set non-zero lonProb values. In Table 1 a particle with an energy
+loss of 100 (arbitrary energy unit) is shown as an example. The value of the fit function to the
+reference spectrum at that E value is Fit(100) = 8082 counts. The Landau curves have a non-zero
+value only for Z < 8. Dividing the Landau values by the fit value, the resulting lonProb values
+represent the probability that the ion has the corresponding Charge.
+Note that the energy threshold performances of ALTEA detectors do not allow to have resolved
+peaks for elements with Z < 5. This implies that it is not possible to identify ions with Z < 5 since
+there is only one Landau function and one corresponding lonProb value for all of them. This is not a
+limit of the FPPI approach but it is a limit of ALTEA device. Applying the method to detectors with
+lower energy threshold and would result in a complete Charge identification.
+To improve accuracy of FPPI recognition, in particular during a short time integration, the external
+radiation environment variability due to the ISS Changing location in the geomagnetic field has to
+be taken into account. Even if the trapped proton component in the SAA has little effects on the
+FPPI applied to ALTEA detector since elements with Z<5 are not identified, a more precise
+identification will be obtained with different sets of high statistics data collected at different
+geomagnetic regions to use as reference spectra for data analysis for a given location. At least three
+regions (poles, equator and SAA) should be considered, although the 10% energy filter strongly
+reduces the differences between polar and equatorial regions.
+Therefore the extended ion probability formula is
+IanPruhﬂi', 3,1} = W
+F Lth, X]
+where X refers to different locations in the geomagnetic field.
+Similarly the reference spectrum should consider possible transient modifications of the radiation
+environment such as solar events, as in (Larosa et al., 2011) where the reference spectrum used to
+analyze the solar event of December 2006 was the one measured during the activity itself.
+
+"
+"6","The FPPI algorithm is indeed very fast because it performs simple operations instead of complex
+function fitting with many parameters (for ALTEA we are talking about 24 Landau functions with 3
+free parameters each). As already shown, it has some limitations too: it needs the reference
+spectrum to have enough resolution to resolve all ion peaks in the considered energy range and it
+assumes that a previous high-statistics measure of the same radiation environment already eXists.
+Error analysis
+In order to estimate the error of the FPPI algorithm, we first consider the errors associated to the
+standard analysis of the reference spectrum. We have one error for each ion Charge, i.e. for each
+Landau function. For each Z we calculate the ALZ as the quadratic sum of the fit error Afz, that takes
+into account the likelihood of the fit function to the reference spectrum, and the statistical error
+ANLZ of the Landau distribution,
+5L3 = lag: + am:
+Where, for each Z, the fit error 51"" = ﬂfpnpl} is equal to the error associated to the product of po
+and p2 parameters coming from the Minuit fitting routine, ENE. = 1.3% is the statistical error
+associated to the single Landau distribution, i.e. the square root of the integrated Landau
+distribution HI. = I Landau.
+Using the FPPI algorithm we only have a statistical error associated to different ion counts. To
+retain the information about the goodness of the fit, we scaled the ALZ error as it was all statistic,
+obtaining for a single ion Charge the following error
+' a
+EN {3} = E N [3)
+ML:
+With this estimate the error associated with FPPI results depends on the quality of the reference
+spectrum fit. This argument is valid since the hypothesis of a constant shape spectrum is assumed to
+be true. Applying it to the full reference spectrum the error is again ALZ. In next section we show
+that applying the FPPI method to two different length timeframes, the error associated is consistent
+with the error of the standard analysis where this could be applied.
+In the case of a single particle the Charge probabilities give an hint of what Charge the ion is more
+likely to have and so FPPI method is only able to give out a Charge range.
+Applications
+In this section we will show some examples of FPPI application to data acquired from a single SDU
+during sample week (2006, GMT 306-312). When possible, FPPI results will be compared to
+standard analysis to show their consistence.
+First we analyze the entire week (fig. 4) comparing CNO element counts from fit integrals with
+corresponding values from FPPI algorithm. The values are absolute counts of a single SDU, hence
+they are not time normalized. Is it possible to see that both results and corresponding errors are
+consistent.
+On the same week we then compare results for each day of the week (fig. 5). On the first day of the
+week, GMT 306, the telescope acquired events only for about 8 hours. Comparison between the two
+methods is possible only for CNO elements because it has enough statistics during 24 hours to
+apply standard analysis, while Fe counts are shown only for FPPI method.
+
+"
+"7","The relative errors in the estimation of the Nitrogen (Z27) are higher than the others due to
+consistent contamination on all odd Z nuclei peak from the nearby element peaks with even Z (in
+this case Carbon and Oxygen); in this case the fit error is higher. For Iron the relative error is higher
+due to the low statistics (about 40 ions per day).
+The last case (fig. 6) is the application of FPPI to 90 minutes of integration time, nearly the duration
+of an orbit, on the spectrum of all the siX SDUs. For each orbit, the counts of all elements with Z <
+5, the CNO group and the Iron were considered. Error bars are not showed but relative errors are
+about 10% for light ions, 30% for combined CNO group and 140% for Fe.
+Real Time applications
+The FPPI algorithm can be used in Real Time and it is therefore included into the AlteaRTClient
+software used to receive and monitor ALTEA real-time data. The software calculates in real-time
+several radiation parameters such as particle ﬂux, LET spectrum, total dose and nuclear
+abundances. Since ion contribution is associated to each single detected particle according to the
+FPPI method output, the significance of this result gains strength with increasing statistics. The
+output showing the energy loss spectrum and the ion counts histogram is shown in fig. 7. With an
+integration of few minutes the spectrum does not show any eVident peaks while the recognition
+method produces a histogram with correct features such as the odd-even alternating pattern.
+Since the quantity % found in the error formula depends only on the reference spectrum, we can
+3'
+calculate that, applying FPPI to ALTEA, to have errors less than 50% of the output values, counts
+must be higher than about 100 ions for all Charges.
+Conclusions
+In this paper we present a novel Fast Probabilistic Particle Identification (FPPI) algorithm
+developed to analyze data from the ALTEA particle detector system without information on time of
+ﬂight or rigidity. The algorithm identifies fast particles from their energy loss even with short
+integration time and it is based on standard analysis with multiple Landau fits applied to previous
+high-statistic measurement in the same radiation environment. The standard analysis technique is
+validated using a simulated dataset and then the FPPI algorithm and the estimate of the associated
+errors are presented. Results and comparisons applied to different length datasets were shown
+together with real-time applications. The FPPI method is generalizable and applicable to other
+detectors assuming that they provide energy loss measurements, that they are multilayered (to apply
+the 10% filter), and that their energy resolution and threshold makes it possible to resolve peaks of
+adj acent ions. A novel improved method able to perform PID over the full data set with no energy
+selection is currently under development.
+
+"
+"8","References
+
+Lippmann C., Particle Identification, in press, Nucl. Instr. and Meth. A, 2011.
+
+Pieozza P. et a1., PAMELA — A payload for antimatter matter exploration and light-nuclei
+astrophysics. Astropart. Phys. 27, 296—315, 2007.
+
+Battiston R. et 211., The antimatter spectrometer (AMS-02): A particle physics detector in space.
+Nucl. Instr. and Meth. A 588, Issues 1-2, 227-234, 2008.
+
+Casolino M. et a1., Relative nuclear abundances inside 188 With Sileye-3/A1tein0 experiment, AdV
+in Space Res 37, 1685—1690, 2006
+
+Zaconte V. et 211., High Energy Radiation ﬂuenees in the ISS-USLab: ion discrimination and particle
+abundances. Rad. Meas. 45, 168-172, 2010.
+
+Zaconte V. et 211., The radiation environment in the ISS-USLab measured by ALTEA: spectra and
+relative nuclear abundances in the polar, equatorial and SAA regions. AdV. Space Res. 46, 797-799,
+2010.
+
+Zeitlin C. et 211., A modular solid state detector for measuring high energy heavy ion fragmentation
+near the beam axis, Rad. Meas. 23, 65-81, 1994
+
+Serimaglio et a1., Simulation of the ALTEA experiment on the International Space Station with the
+Geant 3.21 program, AdV. in Space Res. 37, 1770-1776, 2006
+
+Zaconte V. et a1., ALTEA: the instrument calibration. Nucl. Instr. and Meth. B 266, 2070-2078,
+2008.
+
+Narici L. et 211., The ALTEA/Alteino projects: studying functional effects of microgravity and
+cosmic radiation. AdV. Space Res. 33, 1352-1357, 2004.
+
+Nariei L. Heavy ions light ﬂashes and brain functions: recent Observations at accelerators and in
+spaceﬂight. New J . Phys. 10, 075010, 2008.
+
+Di Fine L., Casolino M., De Santis C., et 211. Heavy ions anisotropy measured by ALTEA in the
+International Space Station. Rad. Res., Vol. 176, N0. 3, pp. 397-406, 2011.
+
+Larosa M., Agostini F., Casolino M., et a1. 1011 rates in the International Space Station during the
+December 2006 Solar Particle Event. Journal of Physics G: Nuclear and Particle Physics, 38,
+095102, 2011.
+
+"
+"9","Captions
+
+Fig. 1: Intervals of detectable kinetic energy for each Z (the energy straggling is neglected). The
+areas 2 and 3 are the particles detected by the ALTEA-space detector; in particular, the zone 2
+considers fast particles that survive the energy selection filter. The area 1 corresponds to saturation.
+Fig. 2: Energy loss spectrum, simulated by PHITS, fitted With a sum of Landau curves, here shown
+from Boron t0 Oxygen.
+
+Fig. 3: Comparison between the PHITS simulation input ions and the results of the multiple Landau
+fit applied to the simulated energy loss spectrum.
+
+Table 1: FPPI applied to a single particle. Probability that the detected ion has a Z Charge is
+obtained dividing the Landaug E ) value by the F it( E ) value.
+
+Fig. 4: Comparison between FPPI and standard analysis results 011 the sample week period 011 a
+single SDU. Ion counts from C to O are shown.
+
+Fig. 5: Comparison between FPPI and standard analysis results 011 day by day counts of the sample
+week 011 a single SDU. Results for Fe ions are only shown for FPPI method because statistic was
+too low to obtain good fits.
+
+Fig. 6: Particle rate for all the siX SDUs obtained with the FPPI method considering an integration
+time 0f 90 minutes. Relative errors (not shown) are about 10% for light ions, 30% for combined
+CNO group and 140% for Fe.
+
+Fig. 7: Output of the Real Time (:11th showing the energy loss spectrum and the ion count
+histogram for 480 total events (335 With Z<4).
+
+"
+"10","Table 1
+———
+_——
+_——
+
+"
+"11","2r - ~
+24;» 1
+231*
+22?» -
+21L-
+N. . .
+m;
+18>-
+17:»
+m-
+15}—
+
+N N7-
+:3.”
+12%
+Hi»
+10:»
+9r
+O'r-
+7?-
+6?
+51'-
+‘I’
+3:- .
+2;» ‘
+1 ‘ ____L._—___J
+
+O 50 100 150 200 250 300
+Klmrtic EnergyWoWnucloon)
+Fig 1
+
+"
+"12","Q&
+“’ a . .. N ,\ Q}
+.0. . WW
+Fig2 9??
+O
+‘0
+«3
+o
+o
+v
+
+"
+"13","ACCEPTED MANUSCRIPT
+10000
+9000
+8000
+7000
+6000
+g 5000 Q‘
+""‘ 4000
+\
+2000 ,
+1000
+0 J
+B c N 0 Fe
+Fig3 EV
+
+"
+"14","0
+600 GMT 306-312 - CNO I Fpp|
+I FIT
+5000 I
+4000 I —
+§ 3000
+O
+U I —
+2000 I - -
+1000 I - -
+0
+c N 0
+Fig 4
+
+"
+"15","1200
+IFPPI
+lfit
+1000 “M
+800 1 I
+5600 ~ “I
+o Illlllnlllll-
+U
+0
+ONWCDOHN KDNWCDOHN KDNWO‘OHN kDNOOOIOHN
+daHGMT)8888$:m 888838?» 88883354 8888383
+‘0"" c N 0 Fe
+Fig5
+
+"
+"16","lﬂiﬂﬂﬁ , W“ W Hiﬂlﬁllﬂ , liﬂﬁzllﬂ
+
+"
+"17","Energy Spectrum
+$000
+I! —SOU1
+7.5 1‘. ~ - . - . - . ‘ ' ~ souz
+6-0 f‘ ' - —sou3
+45 .. I- . —sou4
+3.5 ""m"" 0 . . . _sous
+2.5 '1 . . . , , , , . 2 . .
+10 ' I... ‘ l i
+0.5 ’ . | : - ~ -
+"" [ J H }
+I 1 1
+f—W—T_T_T—1——1—T—1—T—T—T—f——T—T—T—T—T—_f—
+0 10 20 30 40 50 60 70 80 90 100 110 120 130 140 150 160 170 180
+Ion Count
+30
+8
+4 . .
+
+l . .
+t—7—'T—T—T—T—T—T—'T—T—1_r—Tﬁ—1
+0.0 2.0 4.0 6.0 8.0 10.0 12.0 14.0 16.0 18.0 20.0 22.0 24.0 26.0 28.0
+
+Fig7
+
+"
